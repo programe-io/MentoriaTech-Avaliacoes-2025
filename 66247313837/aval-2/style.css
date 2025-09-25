@@ -1,0 +1,72 @@
+:root{
+  --bg-100: #060617;
+  --bg-200: #0b1220;
+  --panel: rgba(255,255,255,0.08);
+  --muted: rgba(240,240,240,0.85);
+  --accent: linear-gradient(135deg,#ff6b6b,#ffb86b);
+  --accent-solid: #ff6b6b;
+  --text: #ffffff;
+  --shadow: 0 8px 24px rgba(0,0,0,0.6);
+  --radius: 12px;
+  --mono: 'Space Mono', monospace;
+  --sans: 'Montserrat', system-ui, sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:var(--sans);
+  background: linear-gradient(180deg,var(--bg-100),var(--bg-200));
+  color:var(--text);
+  line-height:1.6;
+  font-size:18px;
+}
+
+a{color:var(--accent-solid);text-decoration:none}
+a:hover{opacity:0.8}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(10,10,24,0.85);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.wrap{max-width:1180px;margin:0 auto;padding:16px 20px}
+
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px}
+.brand-mark{
+  width:50px;height:50px;border-radius:12px;
+  background:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;color:#081224;font-size:18px;
+}
+.brand-title{font-weight:800;font-size:18px}
+.brand-sub{font-size:13px;color:var(--muted)}
+
+nav.primary{display:flex;gap:12px}
+nav.primary a{padding:8px 12px;border-radius:8px;font-weight:600;font-size:14px;color:var(--muted)}
+nav.primary a:hover{background:rgba(255,255,255,0.08);color:#fff}
+
+.card{
+  background: var(--panel);
+  padding:20px;
+  border-radius:var(--radius);
+  box-shadow: var(--shadow);
+  margin:12px 0;
+}
+
+h1,h2,h3,h4{color:#fff;margin-bottom:12px}
+.lead{color:var(--muted);font-size:1.1em}
+
+footer{
+  margin-top:28px;
+  padding:20px 0;
+  border-top:1px solid rgba(255,255,255,0.1);
+  background:#0a0a18;
+  text-align:center;
+}
+.footer-inner{color:var(--muted)}
+.small{font-size:14px}
