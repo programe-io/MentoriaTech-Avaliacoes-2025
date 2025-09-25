@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio de Allan</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header, footer {
+      background-color: #1e1e1e;
+      padding: 25px 20px;
+      text-align: center;
+      color: #00bcd4;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      box-shadow: 0 0 15px #00bcd4;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    nav {
+      background-color: #222;
+      padding: 12px 0;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0, 188, 212, 0.4);
+    }
+
+    nav a {
+      color: #00bcd4;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin: 0 20px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      user-select: none;
+    }
+
+    nav a:hover {
+      color: #80deea;
+      text-decoration: underline;
+    }
+
+    footer {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: normal;
+      margin-top: auto;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      flex-grow: 1;
+
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    main {
+      flex: 3;
+    }
+
+    aside {
+      flex: 1;
+      background-color: #1f1f1f;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 188, 212, 0.3);
+      color: #00bcd4;
+      font-weight: 600;
+      user-select: none;
+    }
+
+    aside h2 {
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #00bcd4;
+      padding-bottom: 10px;
+    }
+
+    aside ul {
+      list-style-type: square;
+      margin-left: 20px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #a0e7f7;
+    }
+
+    #sobre-mim {
+      background-color: #1f1f1f;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 188, 212, 0.3);
+      margin-bottom: 60px;
+    }
+
+    #sobre-mim h2 {
+      color: #00bcd4;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    #sobre-mim p {
+      font-size: 1.15rem;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    #projetos {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    article.project {
+      background-color: #1f1f1f;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 6px 25px rgba(0, 188, 212, 0.4);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    article.project:hover {
+      background-color: #00bcd4;
+      color: #121212;
+      box-shadow: 0 8px 30px rgba(0, 188, 212, 0.7);
+    }
+
+    article.project img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    article.project:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.8);
+    }
+
+    article.project h3 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 18px;
+      user-select: none;
+      letter-spacing: 1.2px;
+    }
+
+    article.project p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      font-weight: 600;
+      user-select: none;
+      max-width: 700px;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+
+      aside {
+        width: 100%;
+        margin-bottom: 40px;
+      }
+
+      article.project {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      article.project img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 700px) {
+      article.project, #sobre-mim {
+        padding: 20px 25px;
+      }
+      article.project h3 {
+        font-size: 2rem;
+      }
+      article.project p, #sobre-mim p {
+        font-size: 1rem;
+      }
+      nav a {
+        margin: 0 12px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <header>
+    <h1>Portfólio de Allan</h1>
+  </header>
+
+  <nav>
+    <a href="#sobre-mim">Sobre Mim</a>
+    <a href="#projetos">Projetos</a>
+  </nav>
+
+  <div class="container">
+    <main>
+      <section id="sobre-mim">
+        <h2>Sobre Mim</h2>
+        <p>Olá! Meu nome é Allan. Gosto de jogar jogos casuais como Clash Royale, Minecraft e OSM nos meus momentos livres. Também curto editar vídeos e explorar ferramentas criativas de edição e montagem de conteúdo digital.</p>
+      </section>
+
+      <section id="projetos">
+        <article class="project">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/579400/header.jpg" alt="Clash Royale" />
+          <div>
+            <h3>Clash Royale</h3>
+            <p>Criação de decks personalizados, gerenciamento de partidas em clãs e edições de vídeos com melhores momentos e estratégias em batalhas 1x1 e 2x2.</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <img src="https://www.minecraft.net/content/dam/minecraft/pmp/minecraft-key-art.jpg" alt="Minecraft" />
+          <div>
+            <h3>Minecraft</h3>
+            <p>Construções criativas em mundos survival e criativo. Gravações e edições de timelapses de construções e exploração em servidores multiplayer.</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <img src="https://static.onlinesoccermanager.com/images/logos/app-icon-512.png" alt="OSM" />
+          <div>
+            <h3>OSM (Online Soccer Manager)</h3>
+            <p>Gerenciamento de times de futebol, estratégias táticas e desafios em ligas online. Registro de temporadas com estatísticas e desempenho por vídeo.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <aside>
+      <h2>Jogos Favoritos</h2>
+      <ul>
+        <li>Clash Royale</li>
+        <li>Minecraft</li>
+        <li>OSM (Online Soccer Manager)</li>
+      </ul>
+      <p>Curto também editar vídeos e criar conteúdos digitais.</p>
+    </aside>
+  </div>
+
+  <footer>
+    © 2025 Allan - Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>

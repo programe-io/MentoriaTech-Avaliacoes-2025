@@ -1,0 +1,122 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo e fundo */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #e0e0e0;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container centralizado */
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  flex-grow: 1;
+}
+
+/* Cabeçalho */
+header {
+  background-color: rgba(0, 188, 212, 0.85);
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.5);
+  border-radius: 0 0 20px 20px;
+  color: #121212;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+/* Rodapé */
+footer {
+  background-color: rgba(0, 188, 212, 0.85);
+  padding: 15px 20px;
+  text-align: center;
+  color: #121212;
+  border-radius: 20px 20px 0 0;
+  font-weight: 600;
+  box-shadow: 0 -4px 15px rgba(0, 188, 212, 0.4);
+  margin-top: 40px;
+}
+
+/* Seção Sobre Mim */
+#sobre-mim {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 35px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+#sobre-mim:hover {
+  background-color: rgba(0, 188, 212, 0.15);
+}
+
+/* Título da seção */
+#sobre-mim h2 {
+  color: #00bcd4;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+/* Parágrafos */
+#sobre-mim p {
+  font-size: 1.2rem;
+  color: #d1d1d1;
+  margin-bottom: 20px;
+}
+
+/* Lista dos jogos */
+ul.jogos {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+ul.jogos li {
+  background: #00bcd4;
+  color: #121212;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.6);
+  cursor: default;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+ul.jogos li:hover {
+  transform: scale(1.1);
+}
+
+/* Responsividade simples */
+@media (max-width: 600px) {
+  header {
+    font-size: 2rem;
+    padding: 20px 10px;
+  }
+  #sobre-mim {
+    padding: 25px 20px;
+  }
+  ul.jogos {
+    flex-direction: column;
+    gap: 12px;
+  }
+  ul.jogos li {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
