@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Projeto de Programação</title>
+  <link rel="stylesheet" href="style.css">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <header>
+    <h1>Meu Projeto de Programação</h1>
+    <p>Feito para a Mentoria Tech da Saebi</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#sobre">Sobre Mim</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#jogo">Jogo</a></li>
+      <li><a href="#curiosidades">Curiosidades</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <article id="sobre">
+      <h3>Sobre Mim</h3>
+      <p>Olá! Sou um entusiasta da tecnologia, apaixonado por desenvolvimento web e sempre buscando aprender mais.</p>
+    </article>
+
+    <article id="projetos">
+      <h3>Projetos Recentes</h3>
+      <ul>
+        <li>Jogo "Descubra sobre Mim" em HTML</li>
+        <li>Site de portfólio pessoal</li>
+        <li>Aplicativo de tarefas com JavaScript</li>
+      </ul>
+    </article>
+
+    <article id="jogo">
+      <h3>Jogo com Imagem</h3>
+      <img src="minha-imagem.jpg" alt="Imagem do jogo" class="imagem-jogo">
+      <p>Qual é o tema principal da imagem?</p>
+      <button onclick="responder('tecnologia')">Tecnologia</button>
+      <button onclick="responder('natureza')">Natureza</button>
+      <button onclick="responder('esporte')">Esporte</button>
+      <p id="resultado"></p>
+    </article>
+
+    <aside id="curiosidades">
+      <h3>Curiosidades</h3>
+      <p>💡 Sabia que o primeiro site da história foi criado por Tim Berners-Lee em 1991?</p>
+      <p>📌 Estou aprendendo HTML, CSS e JavaScript para construir meus próprios projetos!</p>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Meu Projeto de Programação | Desenvolvido por [Seu Nome]</p>
+  </footer>
+
+  <script>
+    function responder(escolha) {
+      const resultado = document.getElementById("resultado");
+      if (escolha === "tecnologia") {
+        resultado.textContent = "✅ Correto! A imagem representa tecnologia.";
+        resultado.style.color = "green";
+      } else {
+        resultado.textContent = "❌ Ops! Tente novamente.";
+        resultado.style.color = "red";
+      }
+    }
+  </script>
+
+<script src="script.js"></script></body>
+</html>
