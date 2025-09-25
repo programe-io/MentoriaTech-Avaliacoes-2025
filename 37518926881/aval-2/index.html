@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfólio - Lailson</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #b30000;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .foto-perfil {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffdddd;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            gap: 30px;
+            flex: 1;
+        }
+
+        section {
+            flex: 1 1 600px;
+        }
+
+        aside {
+            flex: 0 0 250px;
+            background-color: #fff;
+            padding: 20px;
+            border-left: 6px solid #b30000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-radius: 5px;
+            height: fit-content;
+        }
+
+        aside h3 {
+            margin-bottom: 15px;
+            color: #b30000;
+        }
+
+        aside ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        aside li {
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        h2 {
+            color: #b30000;
+            border-bottom: 2px solid #b30000;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        article.projeto {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 6px solid #b30000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-radius: 5px;
+        }
+
+        article.projeto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        article.projeto h3 {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        footer {
+            background-color: #b30000;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 1em;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            color: #ffcccc;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        @media (max-width: 900px) {
+            main {
+                flex-direction: column;
+            }
+
+            aside {
+                order: 2;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            section {
+                padding: 30px 15px;
+            }
+
+            article.projeto {
+                padding: 15px;
+            }
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <img src="sua-imagem.jpg" alt="Foto de Lailson" class="foto-perfil" />
+        <h1>Lailson</h1>
+        <p>Meu Portfólio</p>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre mim</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Conteúdo principal -->
+        <section id="sobre">
+            <h2>Sobre mim</h2>
+            <p>Meu nome é Lailson. Gosto muito de mexer no celular e jogar bola com os amigos. Curto tecnologia, esportes e tudo que envolva desafios e diversão!</p>
+        </section>
+
+        <section id="projetos">
+            <h2>Projetos</h2>
+
+            <article class="projeto">
+                <h3>1. São Paulo FC</h3>
+                <p>Criei um projeto homenageando o São Paulo Futebol Clube, destacando sua história, títulos e ídolos. Um time gigante do futebol brasileiro, conhecido mundialmente por sua tradição.</p>
+            </article>
+
+            <article class="projeto">
+                <h3>2. Lucas Moura</h3>
+                <p>Esse projeto fala sobre a carreira de Lucas Moura, um dos jogadores que mais admiro. Falo sobre sua passagem no São Paulo, sua ida à Europa e sua volta ao futebol brasileiro.</p>
+            </article>
+
+            <article class="projeto">
+                <h3>3. Libertadores</h3>
+                <p>Um site dedicado à história da Copa Libertadores da América. Nele, mostro os maiores campeões, curiosidades e o impacto do torneio nos clubes sul-americanos.</p>
+            </article>
+        </section>
+
+        <!-- Conteúdo lateral -->
+        <aside>
+            <h3>Curiosidades</h3>
+            <ul>
+                <li>Time do coração: São Paulo FC</li>
+                <li>Ídolo: Lucas Moura</li>
+                <li>Interesses: Tecnologia e futebol</li>
+                <li>Melhor projeto: Libertadores</li>
+            </ul>
+
+            <h3>Contato</h3>
+            <ul>
+                <li>Email: lailson@email.com</li>
+                <li>Instagram: @lailson</li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2025 Lailson. Todos os direitos reservados.</p>
+        <p>
+            <a href="#">Instagram</a> | 
+            <a href="#">LinkedIn</a> | 
+            <a href="#">GitHub</a>
+        </p>
+    </footer>
+
+</body>
+</html>
