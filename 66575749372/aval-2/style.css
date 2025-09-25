@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" a href="estilo.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Meu Currículo Pessoal</h1>
+        <p>Nayde Maria</p> <!-- MUDAR NOME -->
+
+    </header>
+
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Meus interesses</a>
+        <a href="#">Meus Hobbies</a>
+        <a href="#">Contato</a>
+    </nav>
+
+    <section id ="row">
+
+        <aside>
+            <h2>Sobre Mim</h2>
+            <div class="sobremim">
+                <b>Nome: </b>Nayde Maria<br> <!-- MUDAR NOME DO ALUNO -->
+                <b>Escola: </b>CETI Dr. João Carvalho<br>
+                <b>Série: </b>2º Ano<br>
+                <b>Curso: </b>Desenvolvimento de Sistemas<br>
+
+            </div>
+
+            <h2>Minha Galeria</h2>
+
+            <div class="quadro">
+                <img src="https://classic.exame.com/wp-content/uploads/2024/10/2025-mclaren-w1.jpg" alt=""> <!-- MUDAR IMAGEM -->
+            </div>
+            <div class="quadro">
+                <img src="https://engenharia360.com/wp-content/uploads/2022/08/2-Car-Lab-News-1024x555.jpg" alt=""> <!-- MUDAR IMAGEM -->
+            </div>
+            <div class="quadro">
+                <img src="https://imageio.forbes.com/specials-images/imageserve/6064b148afc9b47d022718d1/Hennessey-Venom-F5/960x0.jpg" alt=""> <!-- MUDAR IMAGEM -->
+            </div>
+
+
+        </aside>
+
+    
+        <main>
+            <article>
+
+                <h2>UM POUCO SOBRE MIM</h2>
+                <img src="game.webp" alt=""> <!-- MUDAR NOME E IDADE -->
+                <p class="postagem">Olá, meu nome é Nayde Maria, tenho 16 anos e atualmente estudo na escola CETI Dr. João Carvalho na cidade de Dom Expedito Lopes no Piauí. Faço o 2º Ano do curso de Desenvolvimento de Sistemas. Tenho interesse na área, gosto de computadores e sempre esou estudando sobre tecnologias. Meu objetivo com os estudos é me preparar para o vestibular e entrar em uma boa universidade. Espero aproveitar ao máximo aaprendendo junto com turma sobre desenvolvimento web.</p>
+
+            </article>
+
+        </main>
+    </section>
+
+    <footer>
+        <p><h3>Todos os direitos reservados</h3></p>
+    </footer> 
+</body>
+</html>
+
+header {
+    background-color: rgb(15, 119, 119); /* MUDAR COR DO TOPO*/
+    padding: 60px;
+    text-align: center;
+    color: aliceblue;
+    font-weight: bold;
+}
+h2{
+    text-align: center;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    background-color: rgb(209, 244, 106); /* MUDAR COR DA BARRA*/
+    justify-content: center;
+}
+
+nav a{
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    
+}
+
+nav a:hover {
+    background-color: rgb(197, 63, 63);
+    color: black;
+}
+
+#row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.sobremim {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 10%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #aaa;
+}
+
+
+.quadro {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 10px #aaa;
+}
+.quadro img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+aside {
+    flex: 30%;
+    background-color: rgb(85, 81, 126);  /*MUDAR COR DO MENU LATERAL*/
+    padding: 20px;
+}
+
+main {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+article {
+    box-shadow: 0px 0px 10px #aaa;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+article img {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.postagem {
+    padding: 30px;
+    text-align: justify;
+    font-size: 20px;
+}
+footer {
+    background-color: rgb(255, 0, 0); /*MUDAR COR COM A MESMA DO TOPO*/
+    padding: 40px;
+    color: azure;
+    text-align: center;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 400px) {
+    nav {
+        flex-direction: column;
+    }
+    
+}
