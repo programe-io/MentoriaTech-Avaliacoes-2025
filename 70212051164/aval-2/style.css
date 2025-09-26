@@ -1,0 +1,87 @@
+body {
+    font-family: 'Verdana', sans-serif;
+    background-image: url('https://images.wallpaperscraft.com/image/graffiti_art_painting_colorful_127694_1920x1080.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #f0f0f0;
+    padding: 30px;
+    margin: 0;
+}
+/* Overlay escuro para leitura */
+body::before {
+    content: "";
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
+}
+h1 {
+    color: #FFDD00;
+    text-shadow: 3px 3px 6px black;
+}
+h2 {
+    color: #00FFDD;
+    text-shadow: 2px 2px 4px black;
+    margin-top: 25px;
+}
+ol {
+    background-color: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #FFDD00;
+}
+li {
+    margin-bottom: 12px;
+    padding-left: 8px;
+    position: relative;
+}
+/* Ícones antes de cada item */
+li::before {
+    content: "✨";
+    margin-right: 6px;
+}
+/* Cores diferentes para listas específicas */
+ol:nth-of-type(2) li::before { content: "🦇"; } /* Quadrinhos e Heróis */
+ol:nth-of-type(3) li::before { content: "🎯"; } /* Curiosidades */
+p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 20px;
+    display: flex;
+    gap: 15px;
+}
+nav a {
+    color: #FFDD00;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+aside {
+    background-color: rgba(255, 221, 0, 0.2);
+    border: 2px solid #FFDD00;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-top: 30px;
+    color: #333;
+    max-width: 500px;
+}
+aside h3 {
+    color: #FFDD00;
+    margin-top: 0;
+}
+aside p {
+    color: #222;
+    font-weight: 600;
+}
+
+/* (opcional) estilo para <article> se quiser dar destaque */
+article {
+    display: block; /* padrão */
+    margin-bottom: 30px;
+}
