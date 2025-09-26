@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Meu site muito top!</title>
+    <link rel="stylesheet" href="style.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header class="top-banner">
+        <div class="container">
+            <h1>Meu site muito top!</h1>
+        </div>
+    </header>
+
+    <!-- Nav principal (tag <nav> como solicitado) -->
+    <nav class="main-nav" aria-label="Navegação principal">
+        <div class="container nav-inner">
+            <a class="nav-item" href="#">Início</a>
+            <a class="nav-item" href="#">Página 2</a>
+            <a class="nav-item" href="#">Página 3</a>
+            <a class="nav-item" href="#">Página 4</a>
+        </div>
+    </nav>
+
+    <main class="container layout">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" aria-label="Barra lateral">
+            <section class="about">
+                <h2>Sobre Mim</h2>
+                <div class="avatar">Fotinha</div>
+
+                <h3>Biografia</h3>
+                <p class="bio">
+                    Meu nome é <strong>José Ricardo Nascimento Silva</strong>. Estou cursando
+                    <strong>Desenvolvimento de Sistema</strong> na escola <strong>CETI Patronato Nossa Senhora de Lourdes</strong>.
+                    Os projetos que já fiz foram: <em>xadrez</em> e <em>calculadora</em>.
+                </p>
+
+                <div class="projects-list">
+                    <h4>Meus Projetos</h4>
+                    <button class="btn btn-primary" id="open-chess">Ver Xadrez</button>
+                    <button class="btn btn-primary" id="open-calculator">Ver Calculadora</button>
+                </div>
+
+                <h4>Minha Galeria</h4>
+                <div class="thumbs" aria-hidden="true">
+                    <div class="thumb">Imagem</div>
+                    <div class="thumb">Imagem</div>
+                    <div class="thumb">Imagem</div>
+                </div>
+            </section>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <section class="main-content" role="main">
+            <article class="post">
+                <h2 class="post-title">Minha Jornada em Desenvolvimento</h2>
+                <div class="post-meta">José Ricardo, 26 Set, 2025</div>
+
+                <!-- tag <img> permanece, mas está escondida por CSS -->
+                <img class="post-image" src="https://via.placeholder.com/600x240.png?text=placeholder" alt="Imagem da postagem (oculta)" />
+
+                <p class="post-text">
+                    Desde que comecei o curso de Desenvolvimento de Sistema no CETI Patronato Nossa Senhora de Lourdes,
+                    venho estudando lógica, estruturas de dados e programação prática. Meus primeiros projetos foram:
+                    um jogo de xadrez com representação do tabuleiro e peças e uma calculadora funcional que realiza operações
+                    básicas. Esses projetos me ajudaram a consolidar conceitos como manipulação do DOM, controle de eventos e
+                    lógica de aplicação. Continuo aprendendo e já planejo novos desafios — interfaces mais ricas, persistência
+                    simples de dados e, futuramente, um pequeno sistema com backend.
+                </p>
+            </article>
+
+            <!-- Demo Sections (hidden by default, abrem com animação) -->
+            <section id="demo-sections">
+                <!-- Chess demo -->
+                <div class="demo-card fade" id="chess-demo" aria-hidden="true">
+                    <h3>Xadrez (demonstração)</h3>
+                    <p>Tabuleiro gerado dinamicamente com as peças na posição inicial.</p>
+                    <div id="chessboard" aria-label="Tabuleiro de xadrez"></div>
+                    <p class="hint">Clique em uma casa para ver suas coordenadas.</p>
+                    <button class="btn btn-outline close-demo" data-target="chess-demo">Fechar</button>
+                </div>
+
+                <!-- Calculator demo -->
+                <div class="demo-card fade" id="calc-demo" aria-hidden="true">
+                    <h3>Calculadora (demonstração)</h3>
+                    <p>Uma calculadora simples: insira dois números e escolha a operação.</p>
+
+                    <div class="calculator">
+                        <input type="number" id="num1" placeholder="Número 1" />
+                        <input type="number" id="num2" placeholder="Número 2" />
+                        <select id="op">
+                            <option value="+">Somar (+)</option>
+                            <option value="-">Subtrair (-)</option>
+                            <option value="*">Multiplicar (*)</option>
+                            <option value="/">Dividir (/)</option>
+                        </select>
+                        <button class="btn btn-primary" id="calc-run">Calcular</button>
+                        <div id="calc-result" class="result">Resultado: <span>-</span></div>
+                    </div>
+
+                    <button class="btn btn-outline close-demo" data-target="calc-demo">Fechar</button>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>CopyRight - Todos os Direitos Reservados - 2024 | Programe.io</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
