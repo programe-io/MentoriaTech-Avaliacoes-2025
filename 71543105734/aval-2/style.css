@@ -1,0 +1,121 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #e8f0fe;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: #27ae60;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.8rem;
+}
+
+main {
+  flex: 1;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+section {
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+section img {
+  width: 45%;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+section div {
+  width: 55%;
+}
+
+h2 {
+  color: #27ae60;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #27ae60;
+  padding-bottom: 5px;
+  font-size: 1.8rem;
+}
+
+.intro, .importance {
+  flex-wrap: wrap;
+}
+
+.tips {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tip {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 30%;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.tip:hover {
+  transform: translateY(-8px);
+}
+
+.tip img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  object-fit: cover;
+  height: 180px;
+}
+
+footer {
+  background: #145a32;
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.9rem;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;
+  }
+
+  section img, section div {
+    width: 100%;
+  }
+
+  .tips {
+    flex-direction: column;
+  }
+
+  .tip {
+    width: 100%;
+  }
+}
