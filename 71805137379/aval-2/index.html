@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Cristiano Ronaldo</title>
+  <meta name="description" content="Blog em HTML sobre Cristiano Ronaldo: biografia, carreira, estatísticas, notícias e galeria.">
+  <style>
+    :root{--accent:#1a73e8;--muted:#666}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.6;margin:0;color:#222;background:#f7f8fb}
+    header{background:linear-gradient(90deg, #0d47a1 0%, #1976d2 100%);color:white;padding:28px 16px}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand h1{margin:0;font-size:20px}
+    nav{margin-left:auto}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;margin-left:18px;font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:center;padding:32px 0}
+    .hero .intro h2{margin:0 0 8px;font-size:28px}
+    .hero .intro p{margin:0;color:var(--muted)}
+    .card{background:white;border-radius:12px;box-shadow:0 6px 20px rgba(20,20,40,0.08);padding:18px}
+
+    .stats{display:flex;gap:12px;margin-top:14px}
+    .stat{flex:1;padding:14px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);text-align:center}
+    .stat strong{display:block;font-size:20px}
+    .posts{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:20px}
+
+    .post img{width:100%;height:180px;object-fit:cover;border-radius:8px}
+    .post h3{margin:12px 0 6px}
+    .post p{margin:0;color:var(--muted)}
+
+    aside .widget{margin-bottom:16px}
+    footer{padding:28px 0;color:#444}
+
+    /* Table */
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{padding:10px;border-bottom:1px solid #eee;text-align:left}
+    th{background:#fafafa}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .posts{grid-template-columns:1fr}
+      nav{display:none}
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center">
+      <div class="brand">
+        <img src="https://images.unsplash.com/photo-1541417908607-8f8a7b0c3f09?auto=format&fit=crop&w=80&q=60" alt="CR7" style="width:56px;height:56px;border-radius:999px;object-fit:cover;border:3px solid rgba(255,255,255,0.15)">
+        <h1>CR7 — Fã Blog</h1>
+      </div>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#carreira">Carreira</a>
+        <a href="#estatisticas">Estatísticas</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="intro">
+        <div class="card">
+          <h2>Cristiano Ronaldo — Um resumo da carreira</h2>
+          <p>Cristiano Ronaldo dos Santos Aveiro, conhecido mundialmente como Cristiano Ronaldo ou CR7, é um dos maiores futebolistas de todos os tempos. Neste blog você encontra biografia, destaques da carreira, estatísticas principais e posts sobre temporadas relevantes.</p>
+
+          <div class="stats">
+            <div class="stat">
+              <small>Clubes</small>
+              <strong>5+</strong>
+            </div>
+            <div class="stat">
+              <small>Títulos</small>
+              <strong>30+</strong>
+            </div>
+            <div class="stat">
+              <small>Gols (aprox.)</small>
+              <strong>800+</strong>
+            </div>
+          </div>
+        </div>
+
+        <section id="carreira" style="margin-top:18px">
+          <div class="card">
+            <h3>Trajetória</h3>
+            <p style="color:var(--muted)">Nascido em 5 de fevereiro de 1985, na Ilha da Madeira, Portugal, Ronaldo começou no Sporting CP, ganhou destaque e foi transferido para o Manchester United, onde se tornou uma estrela global. Passou por Real Madrid e Juventus, entre outros, colecionando prêmios individuais e coletivos.</p>
+            <h4 style="margin-top:12px">Momentos-chave</h4>
+            <ul>
+              <li>Estréia profissional no Sporting CP</li>
+              <li>Sucesso e primeiras Champions League com Manchester United</li>
+              <li>Recordes e gols históricos no Real Madrid</li>
+              <li>Títulos nacionais na Itália e retorno a Portugal/clubes posteriores</li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Últimas notícias</h3>
+          <p style="color:var(--muted)">Posts e atualizações rápidas sobre jogos, transferências e entrevistas (atualize com notícias reais).</p>
+          <div style="margin-top:12px">
+            <a href="#" style="display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:white;text-decoration:none">Ver mais</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4>Assine a newsletter</h4>
+          <p style="color:var(--muted);margin-bottom:8px">Receba novidades direto no seu e-mail.</p>
+          <form>
+            <input type="email" placeholder="seu@email.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eefc;margin-bottom:8px">
+            <button type="submit" style="width:100%;padding:10px;border-radius:8px;background:#0b5ed7;color:white;border:0">Assinar</button>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+    <section style="margin-top:18px">
+      <h2 id="estatisticas">Estatísticas selecionadas</h2>
+      <div class="card">
+        <table>
+          <thead>
+            <tr><th>Temporada / Equipe</th><th>Partidas</th><th>Gols</th><th>Títulos</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Sporting CP (início)</td><td>31</td><td>5</td><td>—</td></tr>
+            <tr><td>Manchester United</td><td>292</td><td>118</td><td>Premier League, Champions</td></tr>
+            <tr><td>Real Madrid</td><td>438</td><td>450</td><td>LaLiga, Champions</td></tr>
+            <tr><td>Juventus</td><td>134</td><td>101</td><td>Serie A</td></tr>
+          </tbody>
+        </table>
+        <p style="color:var(--muted);font-size:14px;margin-top:10px">*Números aproximados — atualize conforme necessário com estatísticas oficiais.</p>
+      </div>
+    </section>
+
+    <section style="margin-top:18px">
+      <h2>Posts recentes</h2>
+      <div class="posts">
+        <article class="post card">
+          <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=60" alt="CR7 gol">
+          <h3>Top 5 gols inesquecíveis</h3>
+          <p>Relembramos cinco gols que marcaram a carreira de Cristiano Ronaldo, pela importância ou pela beleza.</p>
+        </article>
+
+        <article class="post card">
+          <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=1200&q=60" alt="CR7 treino">
+          <h3>Treino e disciplina: rotina de CR7</h3>
+          <p>Como a dedicação nos treinos e a disciplina fora de campo contribuíram para a longevidade da carreira.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="galeria" style="margin-top:18px">
+      <h2>Galeria</h2>
+      <div class="card" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+        <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=60" alt="foto1" style="width:100%;height:160px;object-fit:cover;border-radius:8px">
+        <img src="https://images.unsplash.com/photo-1517927033932-b3c6d5c1c2b9?auto=format&fit=crop&w=800&q=60" alt="foto2" style="width:100%;height:160px;object-fit:cover;border-radius:8px">
+        <img src="https://images.unsplash.com/photo-1520975928458-0f2c6f8b0d4d?auto=format&fit=crop&w=800&q=60" alt="foto3" style="width:100%;height:160px;object-fit:cover;border-radius:8px">
+      </div>
+    </section>
+
+    <section id="contato" style="margin-top:18px">
+      <h2>Contato</h2>
+      <div class="card">
+        <p style="color:var(--muted)">Quer contribuir com conteúdo para o blog? Envie uma mensagem:</p>
+        <form>
+          <label>Nome</label>
+          <input type="text" style="width:100%;padding:8px;margin:6px 0 12px;border-radius:8px;border:1px solid #eee">
+          <label>Mensagem</label>
+          <textarea rows="4" style="width:100%;padding:8px;margin:6px 0 12px;border-radius:8px;border:1px solid #eee"></textarea>
+          <button type="submit" style="padding:10px 14px;border-radius:8px;background:#0b5ed7;color:white;border:0">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <p style="margin:0">&copy; 2025 CR7 — Fã Blog. Conteúdo para fins educativos e de fã-clube.</p>
+        <small style="color:var(--muted)">Design simples em HTML/CSS — personalize à vontade.</small>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Cristiano Ronaldo</title>
+  <meta name="description" content="Blog em HTML sobre Cristiano Ronaldo: biografia, carreira, estatísticas, notícias e galeria.">
+  <style>
+    :root{--accent:#1a73e8;--muted:#666}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.6;margin:0;color:#222;background:#f7f8fb}
+    header{background:linear-gradient(90deg, #0d47a1 0%, #1976d2 100%);color:white;padding:28px 16px}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand h1{margin:0;font-size:20px}
+    nav{margin-left:auto}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;margin-left:18px;font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:center;padding:32px 0}
+    .hero .intro h2{margin:0 0 8px;font-size:28px}
+    .hero .intro p{margin:0;color:var(--muted)}
+    .card{background:white;border-radius:12px;box-shadow:0 6px 20px rgba(20,20,40,0.08);padding:18px}
+
+    .stats{display:flex;gap:12px;margin-top:14px}
+    .stat{flex:1;padding:14px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);text-align:center}
+    .stat strong{display:block;font-size:20px}
+    .posts{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:20px}
+
+    .post img{width:100%;height:180px;object-fit:cover;border-radius:8px}
+    .post h3{margin:12px 0 6px}
+    .post p{margin:0;color:var(--muted)}
+
+    aside .widget{margin-bottom:16px}
+    footer{padding:28px 0;color:#444}
+
+    /* Table */
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{padding:10px;border-bottom:1px solid #eee;text-align:left}
+    th{background:#fafafa}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .posts{grid-template-columns:1fr}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center">
+      <div class="brand">
+        <img src="https://images.unsplash.com/photo-1541417908607-8f8a7b0c3f09?auto=format&fit=crop&w=80&q=60" alt="CR7" style="width:56px;height:56px;border-radius:999px;object-fit:cover;border:3px solid rgba(255,255,255,0.15)">
+        <h1>CR7 — Fã Blog</h1>
+      </div>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#carreira">Carreira</a>
+        <a href="#estatisticas">Estatísticas</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="intro">
+        <div class="card">
+          <h2>Cristiano Ronaldo — Um resumo da carreira</h2>
+          <p>Cristiano Ronaldo dos Santos Aveiro, conhecido mundialmente como Cristiano Ronaldo ou CR7, é um dos maiores futebolistas de todos os tempos. Neste blog você encontra biografia, destaques da carreira, estatísticas principais e posts sobre temporadas relevantes.</p>
+
+          <div class="stats">
+            <div class="stat">
+              <small>Clubes</small>
+              <strong>5+</strong>
+            </div>
+            <div class="stat">
+              <small>Títulos</small>
+              <strong>30+</strong>
+            </div>
+            <div class="stat">
+              <small>Gols (aprox.)</small>
+              <strong>800+</strong>
+            </div>
+          </div>
+        </div>
+
+        <section id="carreira" style="margin-top:18px">
+          <div class="card">
+            <h3>Trajetória</h3>
+            <p style="color:var(--muted)">Nascido em 5 de fevereiro de 1985, na Ilha da Madeira, Portugal, Ronaldo começou no Sporting CP, ganhou destaque e foi transferido para o Manchester United, onde se tornou uma estrela global. Passou por Real Madrid e Juventus, entre outros, colecionando prêmios individuais e coletivos.</p>
+            <h4 style="margin-top:12px">Momentos-chave</h4>
+            <ul>
+              <li>Estréia profissional no Sporting CP</li>
+              <li>Sucesso e primeiras Champions League com Manchester United</li>
+              <li>Recordes e gols históricos no Real Madrid</li>
+              <li>Títulos nacionais na Itália e retorno a Portugal/clubes posteriores</li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Últimas notícias</h3>
+          <p style="color:var(--muted)">Posts e atualizações rápidas sobre jogos, transferências e entrevistas (atualize com notícias reais).</p>
+          <div style="margin-top:12px">
+            <a href="#" style="display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:white;text-decoration:none">Ver mais</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4>Assine a newsletter</h4>
+          <p style="color:var(--muted);margin-bottom:8px">Receba novidades direto no seu e-mail.</p>
+          <form>
+            <input type="email" placeholder="seu@email.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eefc;margin-bottom:8px">
+            <button type="submit" style="width:100%;padding:10px;border-radius:8px;background:#0b5ed7;color:white;border:0">Assinar</button>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+    <section style="margin-top:18px">
+      <h2 id="estatisticas">Estatísticas selecionadas</h2>
+      <div class="card">
+        <table>
+          <thead>
+            <tr><th>Temporada / Equipe</th><th>Partidas</th><th>Gols</th><th>Títulos</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Sporting CP (início)</td><td>31</td><td>5</td><td>—</td></tr>
+            <tr><td>Manchester United</td><td>292</td><td>118</td><td>Premier League, Champions</td></tr>
+            <tr><td>Real Madrid</td><td>438</td><td>450</td><td>LaLiga, Champions</td></tr>
+            <tr><td>Juventus</td><td>134</td><td>101</td><td>Serie A</td></tr>
+          </tbody>
+        </table>
+        <p style="color:var(--muted);font-size:14px;margin-top:10px">*Números aproximados — atualize conforme necessário com estatísticas oficiais.</p>
+      </div>
+    </section>
+
+    <section style="margin-top:18px">
+      <h2>Posts recentes</h2>
+      <div class="posts">
+        <article class="post card">
+          <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=60" alt="CR7 gol">
+          <h3>Top 5 gols inesquecíveis</h3>
+          <p>Relembramos cinco gols que marcaram a carreira de Cristiano Ronaldo, pela importância ou pela beleza.</p>
+        </article>
+
+        <article class="post card">
+          <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=1200&q=60" alt="CR7 treino">
+          <h3>Treino e disciplina: rotina de CR7</h3>
+          <p>Como a dedicação nos treinos e a disciplina fora de campo contribuíram para a longevidade da carreira.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="galeria" style="margin-top:18px">
+      <h2>Galeria</h2>
+      <div class="card" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+        <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=60" alt="foto1" style="width:100%;height:160px;object-fit:cover;border-radius:8px">
+        <img src="https://images.unsplash.com/photo-1517927033932-b3c6d5c1c2b9?auto=format&fit=crop&w=800&q=60" alt="foto2" style="width:100%;height:160px;object-fit:cover;border-radius:8px">
+        <img src="https://images.unsplash.com/photo-1520975928458-0f2c6f8b0d4d?auto=format&fit=crop&w=800&q=60" alt="foto3" style="width:100%;height:160px;object-fit:cover;border-radius:8px">
+      </div>
+    </section>
+
+    <section id="contato" style="margin-top:18px">
+      <h2>Contato</h2>
+      <div class="card">
+        <p style="color:var(--muted)">Quer contribuir com conteúdo para o blog? Envie uma mensagem:</p>
+        <form>
+          <label>Nome</label>
+          <input type="text" style="width:100%;padding:8px;margin:6px 0 12px;border-radius:8px;border:1px solid #eee">
+          <label>Mensagem</label>
+          <textarea rows="4" style="width:100%;padding:8px;margin:6px 0 12px;border-radius:8px;border:1px solid #eee"></textarea>
+          <button type="submit" style="padding:10px 14px;border-radius:8px;background:#0b5ed7;color:white;border:0">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <p style="margin:0">&copy; 2025 CR7 — Fã Blog. Conteúdo para fins educativos e de fã-clube.</p>
+        <small style="color:var(--muted)">Design simples em HTML/CSS — personalize à vontade.</small>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
