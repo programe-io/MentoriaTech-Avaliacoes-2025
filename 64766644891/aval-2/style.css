@@ -1,0 +1,151 @@
+/* Estilo global do corpo do cabeçalho */
+header {
+  background-color: orange;
+  padding: 60px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Estilo global do corpo da página */
+body {
+  background-color: blue;
+  /* fundo azul */
+  color: #f6f6f6;
+  /* cor do texto clara */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Títulos */
+h1,
+h2,
+h3 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #f6f6f6;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+/* Parágrafos */
+p {
+  color: #f6f6f6;
+  margin: 6px 0;
+}
+
+/* Barra de navegação */
+nav {
+  margin: 12px 0 18px 0;
+}
+
+nav a {
+  color: #f6f6f6;
+  text-decoration: none;
+  /* remove o sublinhado */
+  margin-right: 12px;
+}
+
+/* Layout principal: aside (lateral) e main (conteúdo) */
+.row {
+  display: flex;
+  /* organiza lado a lado */
+  flex-wrap: wrap;
+  /* quebra linha em telas pequenas */
+  gap: 20px;
+  /* espaçamento entre colunas */
+}
+
+aside {
+  flex: 1 1 280px;
+  /* cresce, diminui e largura mínima */
+  max-width: 320px;
+  /* limite lateral */
+}
+
+main {
+  flex: 2 1 520px;
+  /* ocupa mais espaço que o aside */
+}
+
+/* Artigos do main */
+article {
+  background: #d6d434;
+  /* fundo verde claro */
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+
+/* Imagens dentro dos artigos */
+article img {
+  width: 100%;
+  /* largura fixa para padronizar */
+  height: 100%;
+  /* altura fixa */
+  object-fit: cover;
+  /* corta o excesso sem distorcer */
+  display: block;
+  /* transforma em bloco */
+  margin: 10px auto;
+  /* centraliza horizontalmente */
+  border-radius: 10px;
+  /* opcional: bordas arredondadas */
+}
+
+/* BLOCO DA FOTO DO AUTOR */
+.fake-img {
+  width: 150px;
+  /* largura da foto */
+  height: 150px;
+  /* altura da foto */
+  background-image: url('foto1.png');
+  /* caminho da imagem */
+  background-size: cover;
+  /* ajusta sem distorcer */
+  background-position: center;
+  /* centraliza a foto */
+  border-radius: 50%;
+  /* deixa a foto redonda */
+  float: left;
+  /* alinha à esquerda */
+  margin-right: 12px;
+  /* espaço entre a foto e o texto */
+}
+
+/* Texto do autor */
+p.autor {
+  font-style: italic;
+  color: #f3f2f2;
+  margin-top: 8px;
+}
+
+/* Descrição do autor */
+p.description {
+  color: #f3f2f2;
+  margin-top: 6px;
+}
+
+/* Rodapé */
+footer {
+  margin-top: 18px;
+  color: #d0d0d0;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #333;
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column;
+    /* empilha o aside e o main */
+  }
+
+  aside,
+  main {
+    max-width: 100%;
+    /* usa a largura total */
+  }
+}
