@@ -1,0 +1,287 @@
+/* ------------------------------
+   Reset e configurações gerais
+---------------------------------*/
+
+/* Remove margens e paddings padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização global do body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: #f5f5f5;
+    line-height: 1.6;
+    font-size: 16px;
+    background-image: linear-gradient(to bottom, #111, #1a1a1a);
+}
+
+/* Links padrão */
+a {
+    color: #ff4f4f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: #ffb347;
+}
+
+/* ------------------------------
+   Header e navegação
+---------------------------------*/
+
+header {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid #ff4f4f;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #ff4f4f;
+    text-shadow: 2px 2px #000;
+}
+
+nav {
+    margin-top: 15px;
+}
+nav a {
+    margin: 0 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* ------------------------------
+   Main e seções
+---------------------------------*/
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+section h2 {
+    color: #ffb347;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Parágrafos e listas */
+p {
+    margin-bottom: 15px;
+}
+
+ol li, ul li {
+    margin-bottom: 8px;
+}
+
+/* ------------------------------
+   Imagens e figuras
+---------------------------------*/
+
+figure {
+    margin: 20px 0;
+    text-align: center;
+}
+
+figure img {
+    border: 3px solid #ff4f4f;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #ccc;
+}
+
+/* ------------------------------
+   Tabela de comparação
+---------------------------------*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #222;
+    color: #fff;
+}
+
+th, td {
+    border: 1px solid #444;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #ff4f4f;
+    color: #000;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+/* ------------------------------
+   Vídeo incorporado (iframe)
+---------------------------------*/
+
+iframe {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border: 4px solid #ff4f4f;
+    border-radius: 10px;
+}
+
+/* ------------------------------
+   Formulário de contato
+---------------------------------*/
+
+form {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ffb347;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+input[type="submit"] {
+    background-color: #ff4f4f;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #ffb347;
+}
+
+/* ------------------------------
+   Aside - Curiosidades
+---------------------------------*/
+
+aside {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-left: 5px solid #ff4f4f;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+aside h3 {
+    margin-bottom: 15px;
+    color: #ffb347;
+}
+
+/* ------------------------------
+   Footer
+---------------------------------*/
+
+footer {
+    background-color: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    border-top: 4px solid #ff4f4f;
+}
+
+footer a {
+    color: #ff4f4f;
+    font-weight: bold;
+}
+
+address {
+    font-style: normal;
+    margin-top: 10px;
+}
+
+/* ------------------------------
+   Responsividade
+---------------------------------*/
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    iframe {
+        width: 100%;
+        height: auto;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #444;
+        padding-left: 40%;
+        position: relative;
+    }
+
+    td::before {
+        position: absolute;
+        left: 10px;
+        top: 12px;
+        width: 35%;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #ffb347;
+        content: attr(data-label);
+    }
+}
+
+/* ------------------------------
+   Animações e efeitos extras
+---------------------------------*/
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    animation: fadeIn 0.8s ease-in-out;
+}
