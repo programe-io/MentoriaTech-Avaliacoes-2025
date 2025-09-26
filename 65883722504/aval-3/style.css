@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f9f5f0;
+    color: #5a3921;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #8b4513;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.categorias {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.categoria-btn {
+    background-color: #d2691e;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.categoria-btn:hover {
+    background-color: #a0522d;
+}
+
+.categoria-btn.active {
+    background-color: #5a3921;
+}
+
+.cardapio {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.item-cardapio {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.item-cardapio:hover {
+    transform: translateY(-5px);
+}
+
+.item-cardapio img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.item-cardapio h3 {
+    padding: 1rem 1rem 0.5rem;
+    font-size: 1.3rem;
+    color: #5a3921;
+}
+
+.item-cardapio p {
+    padding: 0 1rem;
+    color: #7a5a3a;
+    margin-bottom: 1rem;
+}
+
+.preco {
+    display: block;
+    padding: 0 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #8b4513;
+    margin-bottom: 1rem;
+}
+
+.btn-pedido {
+    display: block;
+    width: calc(100% - 2rem);
+    margin: 0 1rem 1rem;
+    padding: 0.8rem;
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-pedido:hover {
+    background-color: #5a3921;
+}
+
+footer {
+    background-color: #5a3921;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #f9f5f0;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    color: #5a3921;
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close:hover {
+    color: #8b4513;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #8b4513;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #5a3921;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cardapio {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        padding: 0 1rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardapio {
+        grid-template-columns: 1fr;
+    }
+    
+    .categorias {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .categoria-btn {
+        width: 80%;
+    }
+}
