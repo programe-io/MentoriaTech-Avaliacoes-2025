@@ -1,0 +1,266 @@
+/*
+  demon-slayer-theme.css
+  Tema: Demon Slayer — estilos abrangentes e bem documentados
+  Como usar: <link rel="stylesheet" href="demon-slayer-theme.css"> dentro do <head>
+
+  Este arquivo contém variáveis de tema, reset leve, estilos semânticos para praticamente
+  todas as tags HTML comuns, utilitários e componentes (cards, botões, tabelas, formulários,
+  galerias, mídia, tipografia, animações e regras responsivas).
+*/
+
+/* ==========================
+   Variáveis do tema (fácil customização)
+   ========================== */
+:root{
+  /* Cores principais */
+  --bg-900: #050617;    /* fundo profundo */
+  --bg-800: #0b1020;
+  --card:   #0f1724;    /* cartão */
+  --glass:  rgba(255,255,255,0.03);
+  --muted:  #94a3b8;
+  --accent: #e53e3e;    /* vermelho Demon Slayer */
+  --accent-2:#fb7185;   /* gradiente secundário */
+  --accent-3:#7c3aed;   /* roxo */
+  --text:   #e6eef6;    /* texto primário */
+  --success:#16a34a;
+  --danger: #ef4444;
+  --glass-2: rgba(255,255,255,0.02);
+
+  /* Tipografia */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --font-mono: SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
+
+  /* Espaçamento (base) */
+  --sp-xxs:4px; --sp-xs:8px; --sp-sm:12px; --sp:16px; --sp-md:20px; --sp-lg:28px; --sp-xl:40px;
+
+  /* Bordas e sombras */
+  --radius-sm:6px; --radius:12px; --radius-lg:20px;
+  --shadow-1: 0 6px 18px rgba(2,6,23,0.6);
+
+  /* Breakpoints */
+  --bp-sm: 640px; --bp-md:900px; --bp-lg:1200px;
+}
+
+/* ==========================
+   Reset e base
+   ========================== */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;padding:0}
+body{
+  font-family:var(--font-sans);
+  color:var(--text);
+  background:linear-gradient(180deg,var(--bg-800),var(--bg-900));
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+img,video,audio,canvas,svg{max-width:100%;height:auto;display:block}
+
+/* Links e foco (acessibilidade) */
+a{color:inherit;text-decoration:none}
+a:focus{outline:3px solid rgba(229,62,62,0.18);outline-offset:3px}
+
+/* Tipografia semântica */
+h1,h2,h3,h4,h5,h6{margin:0 0 var(--sp-sm) 0;font-weight:700;line-height:1.1}
+p{margin:0 0 var(--sp) 0}
+small{font-size:.9em;color:var(--muted)}
+
+/* Headings — pesos e tamanhos escalonados */
+h1{font-size:2.25rem}
+h2{font-size:1.75rem}
+h3{font-size:1.25rem}
+h4{font-size:1rem}
+
+/* ==========================
+   Layout container e utilitários
+   ========================== */
+.container{max-width:1100px;margin:1rem auto;padding:1rem}
+.row{display:flex;gap:var(--sp);flex-wrap:wrap}
+.col{flex:1}
+.center{display:grid;place-items:center}
+
+/* Grid usado no HTML original */
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:1rem}
+@media (max-width: var(--bp-md)){.grid{grid-template-columns:1fr}}
+
+/* Utilidades rápidas */
+.hidden{display:none!important}
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+.text-muted{color:var(--muted)}
+.mono{font-family:var(--font-mono)}
+.rounded{border-radius:var(--radius)}
+.shadow{box-shadow:var(--shadow-1)}
+
+/* ==========================
+   Cards e superfícies
+   ========================== */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--radius);
+  padding:var(--sp);
+  box-shadow:var(--shadow-1);
+  border:1px solid rgba(255,255,255,0.03);
+}
+.card .card-header{display:flex;align-items:center;justify-content:space-between;gap:var(--sp)}
+.card h3{margin-bottom:0.25rem}
+
+/* Glassmorphism variant */
+.card.glass{
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+  backdrop-filter: blur(6px);
+}
+
+/* ==========================
+   Navegação e header
+   ========================== */
+header.site-header{padding:var(--sp);display:flex;flex-direction:column;gap:.75rem}
+.brand{display:flex;align-items:center;gap:var(--sp)}
+.logo{width:64px;height:64px;border-radius:12px;display:grid;place-items:center;font-weight:800;background:linear-gradient(135deg,var(--accent-2),var(--accent-3));color:white}
+nav[aria-label]{margin-top:0.5rem}
+nav ul{display:flex;gap:.5rem;list-style:none;padding:0;margin:0}
+nav a{padding:.45rem .65rem;border-radius:8px}
+nav a:hover{background:var(--glass)}
+
+/* Mobile nav (simple) */
+@media (max-width:480px){
+  nav ul{flex-wrap:wrap}
+}
+
+/* ==========================
+   Tipografia de código e citações
+   ========================== */
+pre{background:#011627;padding:1rem;border-radius:8px;overflow:auto;color:#cfe7ff}
+code,kbd,samp{font-family:var(--font-mono);background:rgba(255,255,255,0.02);padding:.15rem .4rem;border-radius:6px}
+blockquote{border-left:3px solid rgba(229,62,62,0.18);padding-left:var(--sp-sm);color:var(--muted);margin:0}
+cite{font-style:italic}
+
+/* ==========================
+   Imagens, figuras e galerias
+   ========================== */
+figure{margin:0}
+figcaption{font-size:.9rem;color:var(--muted);margin-top:.4rem}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:var(--sp-sm)}
+.gallery img{border-radius:8px;object-fit:cover;height:160px}
+
+/* ==========================
+   Botões e controles
+   ========================== */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .8rem;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+.btn:focus{outline:3px solid rgba(229,62,62,0.16);outline-offset:3px}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 6px 18px rgba(229,62,62,0.12)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+.btn-danger{background:linear-gradient(90deg,var(--danger),#ff7b7b);color:white}
+.btn:active{transform:translateY(1px)}
+
+/* Icon buttons
+   - Expectativa: usar <svg> ou ícones em inline */
+.icon-btn{width:40px;height:40px;display:grid;place-items:center;border-radius:8px}
+
+/* ==========================
+   Formulários
+   ========================== */
+input[type="text"],input[type="email"],input[type="number"],select,textarea{
+  width:100%;padding:.6rem .75rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);font-size:1rem
+}
+input:focus,select:focus,textarea:focus{box-shadow:0 6px 18px rgba(2,6,23,0.6);outline:none;border-color:rgba(229,62,62,0.6)}
+label{display:block;margin-bottom:.5rem}
+fieldset{border:1px dashed rgba(255,255,255,0.02);padding:var(--sp-sm);border-radius:8px}
+legend{padding:0 .5rem}
+.checkbox-inline{display:inline-flex;gap:.5rem;align-items:center}
+
+/* ==========================
+   Tabelas
+   ========================== */
+table{width:100%;border-collapse:collapse;font-size:0.95rem}
+th,td{padding:.6rem .5rem;border-bottom:1px solid rgba(255,255,255,0.03);text-align:left}
+thead th{color:var(--muted);font-size:.9rem}
+caption{caption-side:bottom;padding-top:.5rem;color:var(--muted)}
+.table-striped tbody tr:nth-child(odd){background:rgba(255,255,255,0.01)}
+
+/* ==========================
+   Média (audio, vídeo) e controles
+   ========================== */
+video, audio{border-radius:8px;background:#000}
+.progress-wrap{display:flex;gap:.5rem;align-items:center}
+progress{width:100%;height:12px;border-radius:8px}
+meter{height:12px}
+
+/* ==========================
+   Elementos interativos e ARIA
+   ========================== */
+details summary{cursor:pointer;padding:.5rem;border-radius:8px}
+details[open] summary{background:rgba(255,255,255,0.02)}
+
+/* ==========================
+   Lists e elementos pequenos
+   ========================== */
+ul,ol{padding-left:1.1rem;margin:0 0 var(--sp) 0}
+ul.inline{display:flex;gap:.5rem;list-style:none;padding:0}
+.badge{display:inline-block;padding:.25rem .6rem;border-radius:999px;background:var(--glass);font-size:.85rem}
+
+/* ==========================
+   States e Micro-interações
+   ========================== */
+@keyframes pulse-accent{
+  0%{box-shadow:0 0 0 0 rgba(229,62,62,0.16)}
+  70%{box-shadow:0 0 0 10px rgba(229,62,62,0)}
+  100%{box-shadow:0 0 0 0 rgba(229,62,62,0)}
+}
+.pulse{animation:pulse-accent 2s infinite}
+
+/* Tilted card accent for hero banners */
+.hero-tilt{background:linear-gradient(135deg,var(--accent-2),var(--accent-3));padding:1rem;border-radius:16px;color:white}
+
+/* ==========================
+   Accessibility helpers
+   ========================== */
+:focus{outline-offset:3px}
+button[disabled],input[disabled]{opacity:.6;cursor:not-allowed}
+
+/* ==========================
+   SVG, canvas and decorative shapes
+   ========================== */
+svg.icon{width:1.2rem;height:1.2rem;vertical-align:middle}
+.canvas-art{width:100%;height:auto;border-radius:12px}
+
+/* ==========================
+   Print styles
+   ========================== */
+@media print{
+  body{background:white;color:black}
+  .card{box-shadow:none;border:1px solid #ddd}
+  nav, .controls, video, audio, .gallery{display:none}
+}
+
+/* ==========================
+   Responsividade adicional e refinamentos
+   ========================== */
+@media (max-width: var(--bp-sm)){
+  .logo{width:48px;height:48px}
+  h1{font-size:1.4rem}
+}
+
+/* ==========================
+   Helpers temáticos (Demon Slayer specific)
+   ========================== */
+.theme-accent{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.rashomon{background:linear-gradient(180deg, rgba(124,58,237,0.08), rgba(245,158,11,0.02));border-radius:12px}
+
+/* ==========================
+   Exemplo de classes compostas que combinam com o HTML criado
+   ========================== */
+.personagem{display:flex;gap:var(--sp);align-items:flex-start}
+.personagem img{width:200px;height:200px;object-fit:cover;border-radius:8px}
+.tags{display:flex;gap:.5rem;flex-wrap:wrap}
+.tag{padding:.2rem .5rem;border-radius:999px;background:var(--glass);font-size:.85rem}
+
+/* ==========================
+   Final - nota de manutenção
+   ========================== */
+/*
+  Dicas:
+  - Use as variáveis :root para ajustar cor, tipografia e espaçamentos com facilidade.
+  - Para adicionar modos (ex: light theme), crie um seletor [data-theme="light"] no :root
+  - Separe componentes em arquivos menores se o projeto crescer (buttons.css, forms.css, etc.)
+*/
