@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Site temático: Vingadores - Guerra Infinita. Personagens principais, galeria, detalhes e interatividade.">
+  <meta name="author" content="Seu Nome">
+  <title>Vingadores: Guerra Infinita — Os Melhores Personagens</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/0/0c/Avengers_logo.svg">
+  <style>
+    :root{
+      --bg:#0b1020; --card:#0f1724; --accent:#b71c1c; --glass:rgba(255,255,255,0.04);
+      --glass-2:rgba(255,255,255,0.02); --muted:#9aa4b2; --max-width:1100px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#05060a 0%, #071028 60%);color:#e6eef8}
+    main{max-width:var(--max-width);margin:2rem auto;padding:1.5rem}
+    header.site-header{display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:1rem;border-radius:12px;background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    .brand{display:flex;gap:1rem;align-items:center}
+    .brand img{height:56px;width:56px}
+    nav{display:flex;gap:.5rem;flex-wrap:wrap}
+    a.button{background:var(--accent);color:white;padding:.6rem .9rem;border-radius:8px;text-decoration:none;font-weight:600}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:1.25rem}
+    .card{background:var(--card);padding:1rem;border-radius:12px;box-shadow:0 4px 18px rgba(2,6,23,0.6)}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+    figure{margin:0}
+    figure img{width:100%;height:180px;object-fit:cover;border-radius:8px}
+    footer{margin-top:1.5rem;padding:1rem;text-align:center;color:var(--muted);font-size:.9rem}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:.5rem;border-bottom:1px solid rgba(255,255,255,0.04);text-align:left}
+    form .row{display:flex;gap:.5rem}
+    input,textarea,select{width:100%;padding:.5rem;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+    .tag{display:inline-block;padding:.25rem .5rem;border-radius:999px;background:var(--glass);color:var(--muted);font-size:.85rem}
+    pre{background:#071026;padding:1rem;border-radius:8px;overflow:auto}
+    /* responsive */
+    @media (max-width:900px){.grid{grid-template-columns:1fr} .gallery{grid-template-columns:repeat(2,1fr)}}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <!-- Cabeçalho solicitado -->
+  <header class="site-header" role="banner">
+    <div class="brand">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Avengers_logo.svg" alt="Logo dos Vingadores" />
+      <div>
+        <h1 style="margin:0">Vingadores: Guerra Infinita</h1>
+        <p style="margin:0;color:var(--muted)">Os melhores personagens reunidos em uma única página</p>
+      </div>
+    </div>
+
+    <nav role="navigation" aria-label="Navegação principal">
+      <a class="button" href="#personagens">Personagens</a>
+      <a class="button" href="#galeria">Galeria</a>
+      <a class="button" href="#timeline">Linha do Tempo</a>
+      <a class="button" href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="intro" class="card" aria-labelledby="intro-title">
+      <h2 id="intro-title">Bem-vindo, fã dos Vingadores</h2>
+      <p>Esta página usa várias tags HTML para mostrar estrutura, semântica, formulários, multimídia e interatividade — tudo com o <em>tema</em> de <strong>Vingadores: Guerra Infinita</strong>.</p>
+      <dl>
+        <dt>Filme</dt><dd>Vingadores: Guerra Infinita (2018)</dd>
+        <dt>Diretor</dt><dd>Anthony e Joe Russo</dd>
+        <dt>Vilão</dt><dd>Thanos</dd>
+      </dl>
+      <details>
+        <summary>Curiosidades</summary>
+        <p>O filme reúne personagens do Universo Cinematográfico Marvel (MCU) para enfrentar Thanos.</p>
+      </details>
+    </section>
+
+    <div class="grid">
+      <section id="personagens" class="card" aria-labelledby="personagens-title">
+        <h2 id="personagens-title">Principais Personagens</h2>
+
+        <!-- Lista ordenada -->
+        <ol>
+          <li><strong>Tony Stark / Homem de Ferro</strong> — Gênio, bilionário, herói.</li>
+          <li><strong>Steve Rogers / Capitão América</strong> — Líder e símbolo de coragem.</li>
+          <li><strong>Thor</strong> — Deus do Trovão.</li>
+          <li><strong>Bruce Banner / Hulk</strong> — Força bruta e gênio cientista.</li>
+          <li><strong>Natasha Romanoff / Viúva Negra</strong> — Espiã e estrategista.</li>
+          <li><strong>Peter Parker / Homem-Aranha</strong> — Jovem herói com grande coração.</li>
+          <li><strong>Dr. Stephen Strange</strong> — Mestre das artes místicas.</li>
+          <li><strong>Gamora</strong> — Guerreira e figura trágica.</li>
+          <li><strong>Thanos</strong> — O antagonista com a Manopla do Infinito.</li>
+        </ol>
+
+        <article aria-labelledby="ironman">
+          <h3 id="ironman">Homem de Ferro</h3>
+          <p><mark>Tony Stark</mark> é conhecido por suas armaduras tecnológicas e seu sacrifício final na saga.</p>
+          <figure>
+            <img src="https://via.placeholder.com/600x360?text=Homem+de+Ferro" alt="Homem de Ferro em armadura">
+            <figcaption>Homem de Ferro (Tony Stark)</figcaption>
+          </figure>
+        </article>
+
+        <article aria-labelledby="capitao">
+          <h3 id="capitao">Capitão América</h3>
+          <p>Steve Rogers luta por seus ideais com seu escudo inconfundível.</p>
+        </article>
+
+        <article aria-labelledby="thanos">
+          <h3 id="thanos">Thanos</h3>
+          <p>O Titã louco que busca as Joias do Infinito para reequilibrar o universo.</p>
+        </article>
+
+        <hr />
+
+        <h4>Comparação rápida</h4>
+        <table>
+          <thead>
+            <tr><th>Personagem</th><th>Habilidade</th><th>Importância</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Thor</td><td>Força & Relâmpago</td><td>Alta</td></tr>
+            <tr><td>Dr. Strange</td><td>Magia</td><td>Média</td></tr>
+            <tr><td>Homem-Aranha</td><td>Agilidade</td><td>Média</td></tr>
+          </tbody>
+        </table>
+
+        <p>Tags e elementos semânticos: <span class="tag">header</span> <span class="tag">nav</span> <span class="tag">main</span> <span class="tag">section</span></p>
+
+      </section>
+
+      <aside class="card" aria-labelledby="galeria-title">
+        <h2 id="galeria-title">Galeria & Multimídia</h2>
+
+        <section id="galeria">
+          <div class="gallery" role="list">
+            <figure role="listitem">
+              <img src="https://via.placeholder.com/400x240?text=Thor" alt="Thor segurando o Mjolnir">
+              <figcaption>Thor</figcaption>
+            </figure>
+            <figure role="listitem">
+              <img src="https://via.placeholder.com/400x240?text=Hulk" alt="Hulk em fúria">
+              <figcaption>Hulk</figcaption>
+            </figure>
+            <figure role="listitem">
+              <img src="https://via.placeholder.com/400x240?text=Dr+Strange" alt="Dr. Strange conjurando magia">
+              <figcaption>Dr. Strange</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <hr />
+
+        <section aria-labelledby="video-title">
+          <h3 id="video-title">Trailer (embed)</h3>
+          <figure>
+            <iframe title="Trailer Vingadores" width="100%" height="180" src="https://www.youtube.com/embed/6ZfuNTqbHE8" allowfullscreen></iframe>
+            <figcaption>Trailer oficial — apenas para demonstração.</figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="audio-title">
+          <h3 id="audio-title">Tema</h3>
+          <audio controls>
+            <source src="" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+          </audio>
+        </section>
+
+      </aside>
+    </div>
+
+    <section id="timeline" class="card" aria-labelledby="timeline-title">
+      <h2 id="timeline-title">Linha do Tempo</h2>
+      <ol>
+        <li><time datetime="2018-04-27">27 de abril de 2018</time> — Lançamento nos EUA de <em>Avengers: Infinity War</em>.</li>
+        <li><time datetime="2019-04-26">26 de abril de 2019</time> — Evento em <em>Avengers: Endgame</em> (continuação).</li>
+      </ol>
+
+      <details>
+        <summary>Ver mais eventos</summary>
+        <p>Use esta seção para acrescentar eventos do MCU.</p>
+      </details>
+    </section>
+
+    <section id="contato" class="card" aria-labelledby="contato-title">
+      <h2 id="contato-title">Contato / Envie sua opinião</h2>
+      <form action="#" method="post" aria-describedby="form-help">
+        <p id="form-help" class="tag">Envie um comentário sobre seu personagem favorito.</p>
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" placeholder="seu@exemplo.com">
+
+        <label for="personagem">Personagem favorito</label>
+        <select id="personagem" name="personagem">
+          <option>Homem de Ferro</option>
+          <option>Capitão América</option>
+          <option>Thor</option>
+          <option>Hulk</option>
+          <option>Viúva Negra</option>
+          <option>Homem-Aranha</option>
+          <option>Dr. Strange</option>
+          <option>Thanos</option>
+        </select>
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte-nos o que você acha..."></textarea>
+
+        <div class="row">
+          <button type="submit">Enviar</button>
+          <button type="reset">Limpar</button>
+        </div>
+
+        <fieldset>
+          <legend>Preferências</legend>
+          <label><input type="checkbox" name="newsletter"> Receber newsletter</label><br>
+          <label><input type="radio" name="opiniao" value="positivo"> Positivo</label>
+          <label><input type="radio" name="opiniao" value="neutro"> Neutro</label>
+          <label><input type="radio" name="opiniao" value="negativo"> Negativo</label>
+        </fieldset>
+
+      </form>
+    </section>
+
+    <section class="card" aria-labelledby="extras-title">
+      <h2 id="extras-title">Tags e elementos variados (exemplos)</h2>
+
+      <p>Texto com <abbr title="Alter Ego">AE</abbr>, <small>texto pequeno</small>, <mark>destaque</mark>, <strong>negrito</strong>, <em>itálico</em>, <code>&lt;code&gt;</code>, <var>x</var>, <samp>output</samp>.</p>
+
+      <blockquote cite="https://www.marvel.com">
+        "Com grandes poderes vêm grandes responsabilidades." — frase inspiradora (atribuída no universo do herói). 
+      </blockquote>
+
+      <pre><code>// Exemplo de código
+function salvarFavorito(nome){
+  console.log(`Favorito: ${nome}`);
+}
+</code></pre>
+
+      <p>Imagem responsiva usando <code>&lt;picture&gt;</code>:</p>
+      <picture>
+        <source media="(min-width:800px)" srcset="https://via.placeholder.com/800x400?text=Vingadores+Grande">
+        <img src="https://via.placeholder.com/400x200?text=Vingadores" alt="Banner dos Vingadores">
+      </picture>
+
+      <details>
+        <summary>Informações técnicas</summary>
+        <ul>
+          <li>Usa HTML5 semântica</li>
+          <li>Exemplos de formulários, multimídia e tabelas</li>
+        </ul>
+      </details>
+
+    </section>
+
+    <footer class="card" role="contentinfo">
+      <p>© <time datetime="2025">2025</time> — Fanpage não oficial. Imagens usadas como placeholders.</p>
+      <address>
+        Contato: <a href="mailto:exemplo@vingadores.com">exemplo@vingadores.com</a>
+      </address>
+    </footer>
+
+  </main>
+
+  <script>
+    // Pequena interatividade: salvar favorito localmente
+    document.addEventListener('submit',function(e){
+      if(e.target.matches('form')){
+        e.preventDefault();
+        const nome = document.getElementById('nome').value || 'Anônimo';
+        const personagem = document.getElementById('personagem').value;
+        localStorage.setItem('favorito', JSON.stringify({nome,personagem,quando: new Date().toISOString()}));
+        alert('Obrigado, ' + nome + '! Seu personagem favorito ('+personagem+') foi salvo localmente.');
+        e.target.reset();
+      }
+    });
+
+    // Exemplo de uso de canvas (tag HTML)
+    (function(){
+      if('HTMLCanvasElement' in window){
+        const c = document.createElement('canvas');
+        c.width = 300; c.height = 60; c.style.display = 'block'; c.style.marginTop = '0.5rem';
+        const ctx = c.getContext('2d');
+        ctx.fillStyle = '#0b1020'; ctx.fillRect(0,0,c.width,c.height);
+        ctx.font = '20px serif'; ctx.fillStyle = '#b71c1c'; ctx.fillText('Vingadores',10,30);
+        document.querySelector('footer.card').appendChild(c);
+      }
+    })();
+  </script>
+</body>
+</html>

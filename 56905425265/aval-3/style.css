@@ -1,0 +1,199 @@
+/*
+  Vingadores — Tema CSS completo
+  Arquivo: vingadores_theme.css
+  Descrição: Estilos bem documentados e estruturados para o tema "Vingadores: Guerra Infinita".
+  Como usar: importe este arquivo no <head> do seu HTML:
+    <link rel="stylesheet" href="vingadores_theme.css">
+
+  Observações:
+  - Variáveis CSS (custom properties) para fácil customização.
+  - Componentes: header, nav, cards, botões, formulário, tabela, galeria, multimídia.
+  - Helpers/utilitários: grid, flex, espaçamentos, visibilidade acessível.
+  - Responsivo e impressão.
+*/
+
+:root{
+  /* Paleta — tema escuro com acento vermelho (Vingadores) */
+  --bg-900: #05060a; /* fundo mais escuro */
+  --bg-800: #0b1020;
+  --panel: #0f1724;
+  --glass: rgba(255,255,255,0.04);
+  --muted: #9aa4b2;
+  --text: #e6eef8;
+  --accent: #b71c1c; /* vermelho/alaranjado para destaque */
+  --accent-2: #ff7043; /* tom secundário */
+  --success: #16a34a;
+  --danger: #ef4444;
+  --radius: 12px;
+  --max-width: 1100px;
+  --container-padding: 1rem;
+  --shadow-lg: 0 8px 30px rgba(2,6,23,0.6);
+  --transition-fast: 180ms ease;
+  --font-sans: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* ===== Reset / Normalize básico ===== */
+*{box-sizing:border-box}
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,img,ins,kbd,q,s,samp,small,
+strike,strong,sub,sup,tt,var,b,u,i,center,
+dl,dt,dd,ol,ul,li,fieldset,form,label,legend,
+caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline}
+
+/* Melhor renderização de fontes e antialias */
+html{line-height:1.15;-webkit-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-sans);background:linear-gradient(180deg,var(--bg-900) 0%,var(--bg-800) 60%);color:var(--text);min-height:100vh}
+
+/* Link padrão */
+a{color:var(--accent);text-decoration:none;transition:color var(--transition-fast)}
+a:hover,a:focus{color:var(--accent-2);outline:none}
+
+/* Imagens responsivas */
+img,svg,video,canvas,iframe,picture{max-width:100%;height:auto;display:block}
+
+/* Tipografia */
+h1,h2,h3,h4,h5,h6{font-weight:700;line-height:1.15;margin-bottom:.5rem}
+h1{font-size:2.25rem}
+h2{font-size:1.75rem}
+h3{font-size:1.25rem}
+p{margin-bottom:.8rem;color:var(--muted)}
+small{font-size:.85rem}
+
+/* ===== Layout utilitários ===== */
+.container{max-width:var(--max-width);margin:0 auto;padding:var(--container-padding)}
+.row{display:flex;flex-wrap:wrap;gap:1rem}
+.col{flex:1}
+.center{display:flex;align-items:center;justify-content:center}
+.stack{display:flex;flex-direction:column;gap:.75rem}
+
+/* Grid simples usado na página */
+.grid{display:grid;grid-template-columns:1fr 320px;gap:1.25rem}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
+
+/* ===== Header / Navegação ===== */
+header.site-header{display:flex;align-items:center;justify-content:space-between;padding:1rem;border-radius:var(--radius);background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);box-shadow:var(--shadow-lg)}
+.brand{display:flex;gap:1rem;align-items:center}
+.brand img{height:56px;width:56px}
+nav[role="navigation"]{display:flex;gap:.5rem;align-items:center}
+
+/* Botões de navegação e botões gerais */
+.button,button,.btn{background:var(--accent);color:white;padding:.6rem .9rem;border-radius:8px;border:none;cursor:pointer;font-weight:600;transition:transform var(--transition-fast),box-shadow var(--transition-fast)}
+.button:hover,.btn:hover,button:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(183,28,28,0.15)}
+.btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.06)}
+.icon-btn{display:inline-grid;place-items:center;padding:.5rem;border-radius:999px}
+
+/* ===== Cartões / superfícies ===== */
+.card{background:var(--panel);padding:1rem;border-radius:var(--radius);box-shadow:var(--shadow-lg)}
+.card.flat{box-shadow:none}
+.panel-glass{background:linear-gradient(180deg,var(--glass),rgba(255,255,255,0.02));backdrop-filter:blur(6px)}
+
+/* ===== Galeria / Figures ===== */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.gallery figure{border-radius:8px;overflow:hidden}
+.gallery figcaption{padding:.5rem;font-size:.9rem;color:var(--muted)}
+@media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== Tipos de mídia ===== */
+figure iframe,figure video{border-radius:8px}
+audio,video{width:100%;outline:none}
+
+/* ===== Formulários ===== */
+label{display:block;margin-bottom:.35rem;font-weight:600}
+input,textarea,select,button{font-family:inherit}
+input[type="text"],input[type="email"],select,textarea{width:100%;padding:.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);transition:border-color var(--transition-fast)}
+input:focus,textarea:focus,select:focus{border-color:var(--accent);outline:none;box-shadow:0 6px 20px rgba(183,28,28,0.06)}
+fieldset{border:1px solid rgba(255,255,255,0.03);padding:.75rem;border-radius:8px}
+legend{padding:0 .5rem}
+
+/* Botões do formulário */
+button[type="submit"],button[type="reset"]{padding:.6rem .9rem;border-radius:8px}
+
+/* ===== Tabelas ===== */
+table{width:100%;border-collapse:collapse;background:transparent}
+th,td{padding:.6rem;border-bottom:1px solid rgba(255,255,255,0.04);text-align:left}
+th{font-weight:700}
+
+/* ===== Código / Pre / Quote ===== */
+pre{background:#071026;padding:1rem;border-radius:8px;overflow:auto}
+code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;background:rgba(0,0,0,0.25);padding:.15rem .35rem;border-radius:6px}
+blockquote{border-left:4px solid rgba(183,28,28,0.6);padding:0.5rem 1rem;color:var(--muted);background:linear-gradient(90deg,rgba(0,0,0,0.02),transparent);border-radius:6px}
+
+/* ===== Acessibilidade / utilitários ===== */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.visually-hidden{display:none}
+.badge{display:inline-block;padding:.2rem .5rem;border-radius:999px;background:var(--glass);color:var(--muted);font-size:.85rem}
+.tag{padding:.25rem .5rem;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted)}
+
+/* ===== Componentes especiais ===== */
+.header-hero{padding:2rem;border-radius:16px;background:linear-gradient(180deg,rgba(183,28,28,0.06),transparent);box-shadow:inset 0 -60px 120px rgba(0,0,0,0.3)}
+.hero-title{font-size:2.5rem;letter-spacing:-0.5px}
+.hero-sub{color:var(--muted);margin-top:.25rem}
+
+/* Card de personagem (exemplo) */
+.character-card{display:flex;gap:1rem;align-items:flex-start}
+.character-card img{width:120px;height:80px;object-fit:cover;border-radius:8px}
+.character-card .meta{flex:1}
+.character-card .meta h4{margin:0}
+
+/* Badges de raridade / importância */
+.badge.high{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white}
+.badge.medium{background:rgba(255,255,255,0.03)}
+
+/* ===== Animações sutis ===== */
+@keyframes floatUp{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+.float {animation:floatUp 4s ease-in-out infinite}
+
+/* Hover halo para imagens importantes */
+.img-halo{position:relative}
+.img-halo::after{content:"";position:absolute;inset:0;border-radius:8px;box-shadow:0 10px 40px rgba(183,28,28,0.12);opacity:0;transition:opacity var(--transition-fast)}
+.img-halo:hover::after{opacity:1}
+
+/* ===== Canvas / desenhos simples ===== */
+canvas{display:block;border-radius:8px;background:transparent}
+
+/* ===== Print styles ===== */
+@media print{
+  body{background:white;color:black}
+  .card{box-shadow:none;background:white}
+  nav,.no-print{display:none}
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width:1200px){
+  .hero-title{font-size:2rem}
+}
+@media (max-width:600px){
+  header.site-header{flex-direction:column;align-items:flex-start;gap:.75rem}
+  .brand img{height:48px;width:48px}
+}
+
+/* ===== Extras: elementos menos comuns ===== */
+progress{width:100%;height:1rem;border-radius:8px;background:rgba(255,255,255,0.03)}
+meter{display:inline-block}
+address{font-style:normal;color:var(--muted)}
+abbr[title]{border-bottom:1px dotted rgba(255,255,255,0.06);cursor:help}
+
+/* ===== Utilities para espaçamento rápido ===== */
+.mt-1{margin-top:.5rem}.mt-2{margin-top:1rem}.mb-1{margin-bottom:.5rem}.mb-2{margin-bottom:1rem}
+.p-1{padding:.5rem}.p-2{padding:1rem}
+.text-muted{color:var(--muted)}
+.text-center{text-align:center}
+.text-right{text-align:right}
+
+/* ===== Tema escuro/claro toggle (apenas estrutura — requer JS) ===== */
+:root[data-theme="light"]{--bg-900:#f7f8fb;--bg-800:#f2f4f8;--panel:#ffffff;--text:#0b1220;--muted:#3b4956;--glass:rgba(11,18,32,0.02)}
+
+/* ===== Sugestão de uso em HTML (exemplo) =====
+  <header class="site-header header-hero">
+    <div class="brand">...</div>
+    <nav>...<nav>
+  </header>
+  <main class="container"> <div class="grid"> <section class="card">...</section> <aside class="card">...</aside> </div> </main>
+*/
+
+/* ===== Nota final =====
+  Este arquivo foi escrito para ser didático e cobrir a maioria dos elementos HTML usados em um site temático.
+  Ajuste variáveis no início (:root) para alterar rapidamente o tema (cores, raio, sombras).
+*/
