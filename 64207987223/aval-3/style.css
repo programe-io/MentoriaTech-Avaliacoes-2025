@@ -1,0 +1,52 @@
+@import "tailwindcss";
+/* 1. Diretivas OBRIGATÓRIAS do Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2. Estilos Globais Personalizados */
+
+/* Garante que o cursor seja um ponteiro em todos os links e botões */
+a, button {
+    cursor: pointer;
+}
+
+/* Define a fonte padrão para o corpo, caso o Tailwind não defina */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+}
+
+/* Remove a linha de foco padrão para uma mais discreta */
+*:focus {
+    outline: 2px solid theme('colors.blue.400');
+    outline-offset: 2px;
+}
+
+/* 3. Criação de Componentes Customizados com @apply */
+
+/* Cria uma nova classe chamada .btn-acao 
+   usando várias classes utilitárias do Tailwind (@apply)
+*/
+.btn-acao {
+    @apply 
+        bg-blue-600 
+        hover:bg-blue-700 
+        text-white 
+        font-semibold 
+        py-2 
+        px-4 
+        rounded-lg 
+        shadow-md 
+        transition 
+        duration-200;
+}
+
+/* 4. Estilo para o Menu Mobile */
+
+/* Escondendo o menu em telas pequenas, para o caso de você 
+   adicionar um botão de menu hamburguer no seu header
+*/
+.menu-mobile-oculto {
+    @apply hidden md:block;
+}
