@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a, button {
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+}
+
+*:focus {
+    outline: 2px solid theme('colors.blue.400');
+    outline-offset: 2px;
+}
+
+.btn-acao {
+    @apply 
+        bg-blue-600 
+        hover:bg-blue-700 
+        text-white 
+        font-semibold 
+        py-2 
+        px-4 
+        rounded-lg 
+        shadow-md 
+        transition 
+        duration-200;
+}
+
+.menu-mobile-oculto {
+    @apply hidden md:block;
+}
