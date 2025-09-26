@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jogo da Memória - 1º Ano DS</title>
+  <link rel="stylesheet" href="style.css" />
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <div class="header-top">
+      <!-- IMG incluída aqui -->
+      <img src="logo.png" alt="Logotipo do CETI Gercilio de Castro Macêdo" class="logo" />
+      <div class="header-text">
+        <h1>🎮 Jogo da Memória - 1º Ano DS</h1>
+        <p>CETI Gercilio de Castro Macêdo</p>
+      </div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#regras">Regras</a></li>
+        <li><a href="#creditos">Créditos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h2>Tabuleiro do Jogo</h2>
+      <h3>Encontre todos os pares de colegas</h3>
+      <div class="tabuleiro" id="tabuleiro"></div>
+    </article>
+  </main>
+
+  <aside id="regras">
+    <h2>📌 Regras do Jogo</h2>
+    <h3>Dicas rápidas</h3>
+    <p>O objetivo é encontrar os pares de cartas com os nomes dos colegas da turma.</p>
+    <ul>
+      <li>Clique em uma carta para revelá-la.</li>
+      <li>Clique em outra carta para tentar formar o par.</li>
+      <li>Se acertar, o par fica marcado em verde.</li>
+      <li>Se errar, as cartas voltam a ficar fechadas.</li>
+    </ul>
+  </aside>
+
+  <footer id="creditos">
+    <p>Desenvolvido pelos alunos do 1º Ano de Desenvolvimento de Sistemas - CETI Gercilio de Castro Macêdo</p>
+  </footer>
+
+  <script>
+    const alunos = ["Jhuly", "Raquel", "Kauan", "Ivo", "Julio", "Ronilson"];
+    let cartas = [...alunos, ...alunos]; // duplica para fazer pares
+    cartas = cartas.sort(() => Math.random() - 0.5); // embaralha
+
+    const tabuleiro = document.getElementById("tabuleiro");
+
+    let primeiraCarta = null;
+    let segundaCarta = null;
+    let travar = false;
+
+    // cria as cartas
+    cartas.forEach((nome, i) => {
+      const carta = document.createElement("div");
+      carta.classList.add("carta");
+      carta.dataset.nome = nome;
+      carta.dataset.index = i;
+      carta.textContent = "?";
+      carta.setAttribute("role", "button");
+      carta.setAttribute("tabindex", "0");
+      carta.addEventListener("click", revelarCarta);
+      carta.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") revelarCarta.call(this, e);
+      });
+      tabuleiro.appendChild(carta);
+    });
+
+    function revelarCarta() {
+      if (travar) return;
+      if (this.classList.contains("revelada") || this.classList.contains("combinada")) return;
+
+      this.textContent = this.dataset.nome;
+      this.classList.add("revelada");
+
+      if (!primeiraCarta) {
+        primeiraCarta = this;
+      } else {
+        segundaCarta = this;
+        verificarPar();
+      }
+    }
+
+    function verificarPar() {
+      if (primeiraCarta.dataset.nome === segundaCarta.dataset.nome) {
+        primeiraCarta.classList.add("combinada");
+        segundaCarta.classList.add("combinada");
+        primeiraCarta = null;
+        segundaCarta = null;
+      } else {
+        travar = true;
+        setTimeout(() => {
+          primeiraCarta.textContent = "?";
+          segundaCarta.textContent = "?";
+          primeiraCarta.classList.remove("revelada");
+          segundaCarta.classList.remove("revelada");
+          primeiraCarta = null;
+          segundaCarta = null;
+          travar = false;
+        }, 1000);
+      }
+    }
+  </script>
+</body>
+</html>
