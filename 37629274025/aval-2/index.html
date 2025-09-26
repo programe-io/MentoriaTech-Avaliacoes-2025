@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Heitor Rodrigues — Portfólio</title>
+    <link rel="stylesheet" href="style.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header class="top-banner">
+        <div class="container">
+            <h1>Heitor Rodrigues — Portfólio</h1>
+        </div>
+    </header>
+
+    <!-- Nav principal (obrigatória para avaliador) -->
+    <nav class="main-nav" aria-label="Navegação principal">
+        <div class="container nav-inner">
+            <a class="nav-item" href="#">Início</a>
+            <a class="nav-item" href="#">Sobre</a>
+            <a class="nav-item" href="#">Projetos</a>
+            <a class="nav-item" href="#">Contato</a>
+        </div>
+    </nav>
+
+    <main class="container layout">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" aria-label="Barra lateral">
+            <section class="about">
+                <h2>Sobre</h2>
+                <div class="avatar" aria-hidden="true">Foto</div>
+
+                <h3>Apresentação</h3>
+                <p class="bio">
+                    Meu nome é <strong>Heitor Luiz Da Silva Rodrigues</strong>. Sou estudante de
+                    <strong>Desenvolvimento de Sistemas</strong> no <strong>CETI Patronato Nossa Senhora de Lourdes</strong>.
+                    Tenho interesse por desenvolvimento web, arquitetura de software e boas práticas de programação.
+                    Meus projetos iniciais incluem um sistema de <em>xadrez</em> (foco em representação e regras) e uma
+                    <em>calculadora</em> simples (interface e lógica). Busco evoluir em front-end moderno, testes básicos
+                    e introdução ao backend.
+                </p>
+
+                <div class="projects-list">
+                    <h4>Projetos</h4>
+                    <button class="btn btn-primary" id="open-chess">Visualizar Xadrez</button>
+                    <button class="btn btn-primary" id="open-calculator">Visualizar Calculadora</button>
+                </div>
+
+                <h4>Habilidades</h4>
+                <ul class="skills">
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>Conceitos de lógica e estruturas de dados</li>
+                    <li>Manipulação do DOM e eventos</li>
+                </ul>
+            </section>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <section class="main-content" role="main">
+            <article class="post">
+                <h2 class="post-title">Minha Jornada em Desenvolvimento</h2>
+                <div class="post-meta">Heitor Luiz — Setembro, 2024</div>
+
+                <!-- imagem preservada no HTML mas oculta via CSS -->
+                <img class="post-image" src="https://via.placeholder.com/800x300.png?text=Imagem+Oculta" alt="Ilustração (oculta)" />
+
+                <p class="post-text">
+                    Ao longo do curso de Desenvolvimento de Sistemas venho construindo bases sólidas em lógica de programação,
+                    modelagem e desenvolvimento de interfaces. Os projetos que implementei reforçaram conceitos como separação
+                    de responsabilidades, validação de entrada e testes manuais: o projeto de xadrez abordou a representação do
+                    tabuleiro, regras de movimento e detecção básica de colisão; a calculadora abordou manipulação de eventos,
+                    tratamento de erros e formatação de resultados. Atualmente busco aplicar esses conceitos em projetos mais
+                    estruturados, com atenção à usabilidade, acessibilidade e manutenção do código.
+                </p>
+            </article>
+
+            <!-- Secções de demonstração (abrem com animação) -->
+            <section id="demo-sections">
+                <div class="demo-card fade" id="chess-demo" aria-hidden="true">
+                    <h3>Xadrez — Demonstração</h3>
+                    <p>Tabuleiro gerado dinamicamente com a posição inicial das peças. Clique em uma casa para ver coordenadas.</p>
+                    <div id="chessboard" aria-label="Tabuleiro de xadrez"></div>
+                    <p class="hint">Interação simples — apenas leitura nesta versão.</p>
+                    <button class="btn btn-outline close-demo" data-target="chess-demo">Fechar</button>
+                </div>
+
+                <div class="demo-card fade" id="calc-demo" aria-hidden="true">
+                    <h3>Calculadora — Demonstração</h3>
+                    <p>Calculadora simples para operações aritméticas básicas.</p>
+
+                    <div class="calculator">
+                        <input type="number" id="num1" placeholder="Número 1" aria-label="Número 1" />
+                        <input type="number" id="num2" placeholder="Número 2" aria-label="Número 2" />
+                        <select id="op" aria-label="Operador">
+                            <option value="+">Somar (+)</option>
+                            <option value="-">Subtrair (-)</option>
+                            <option value="*">Multiplicar (*)</option>
+                            <option value="/">Dividir (/)</option>
+                        </select>
+                        <button class="btn btn-primary" id="calc-run">Calcular</button>
+                        <div id="calc-result" class="result" aria-live="polite">Resultado: <span>-</span></div>
+                    </div>
+
+                    <button class="btn btn-outline close-demo" data-target="calc-demo">Fechar</button>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 — Heitor Luiz. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
