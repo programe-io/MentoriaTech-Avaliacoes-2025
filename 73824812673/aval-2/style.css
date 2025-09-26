@@ -1,0 +1,237 @@
+/*
+|----------------------------------------
+| 1. CONFIGURAÇÕES GLOBAIS
+|----------------------------------------
+*/
+:root {
+    --cor-primaria: #007bff; /* Azul vibrante (pode ser alterado para um neon/gamer) */
+    --cor-secundaria: #ff4500; /* Laranja/Vermelho para ênfase (gamer) */
+    --cor-fundo: #f0f0f0;
+    --cor-texto: #333;
+    --cor-fundo-card: #fff;
+    --sombra-leve: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+* {
+    box-sizing: border-box; /* Garante que padding e bordas não aumentem o tamanho total */
+}
+
+/* Estilos gerais do corpo da página */
+body {
+    background-color: var(--cor-fundo); /* Uso de variável */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+    color: var(--cor-texto);
+    margin: 0;
+    padding: 0; /* Removido o padding do body; a centralização será feita no wrapper */
+}
+
+/* Centraliza o conteúdo principal e barra lateral */
+main {
+    display: flex; /* Habilita o layout de duas colunas */
+    gap: 30px; /* Espaçamento entre as colunas */
+    max-width: 1200px; /* Limite de largura para o layout geral */
+    margin: 30px auto; /* Centraliza o <main> e adiciona margem superior/inferior */
+    padding: 0 20px; /* Padding nas laterais em telas grandes */
+}
+
+/*
+|----------------------------------------
+| 2. CABEÇALHO E NAVEGAÇÃO
+|----------------------------------------
+*/
+.cabecalho {
+    background-color: var(--cor-texto); /* Fundo escuro para o cabeçalho */
+    color: var(--cor-fundo-card);
+    padding: 15px 0;
+    box-shadow: var(--sombra-media);
+    margin-bottom: 30px; /* Maior espaçamento do conteúdo */
+}
+
+.cabecalho h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-weight: 900; /* Negrito mais forte */
+    letter-spacing: 2px;
+}
+
+.cabecalho h1 span {
+    color: var(--cor-secundaria); /* Acentua o "verse" */
+}
+
+.menu-navegacao ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Espaçamento entre os links */
+}
+
+.menu-navegacao a {
+    text-decoration: none;
+    color: var(--cor-fundo);
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.menu-navegacao a:hover {
+    color: var(--cor-secundaria); /* Efeito de hover */
+}
+
+/*
+|----------------------------------------
+| 3. CONTEÚDO PRINCIPAL (ARTICLE)
+|----------------------------------------
+*/
+.postagem {
+    /* Removido max-width e width 100% daqui. O flexbox cuidará do tamanho. */
+    flex-grow: 3; /* Faz a postagem ocupar mais espaço que a barra lateral */
+    background-color: var(--cor-fundo-card);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--sombra-media);
+}
+
+.postagem-titulo {
+    font-size: 2.2em;
+    color: var(--cor-secundaria); /* Cor gamer no título */
+    text-align: left; /* Alinhamento mais comum em posts longos */
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-transform: capitalize; /* Deixar as letras maiúsculas no começo de cada palavra */
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.postagem-conteudo p {
+    line-height: 1.7; /* Melhor legibilidade para blocos de texto */
+    margin-bottom: 15px;
+}
+
+/* Estilos para a imagem (game-image é a classe no HTML) */
+.game-image {
+    background-color: #2c2c2c; /* Fundo escuro para destacar o neon */
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+}
+
+.game-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Adicionado um leve efeito de zoom no hover */
+    transition: transform 0.4s ease;
+}
+
+.game-image:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px); /* Leve levantamento */
+}
+
+.game-image:hover img {
+    transform: scale(1.05); /* Leve zoom */
+}
+
+
+/*
+|----------------------------------------
+| 4. BARRA LATERAL (ASIDE)
+|----------------------------------------
+*/
+.barra-lateral {
+    flex-grow: 1; /* Faz a barra lateral ocupar menos espaço */
+    min-width: 250px;
+    background-color: var(--cor-fundo-card);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--sombra-media);
+    align-self: flex-start; /* Fixa o aside no topo */
+}
+
+.barra-lateral h3 {
+    color: var(--cor-primaria);
+    font-size: 1.3em;
+    border-bottom: 2px solid var(--cor-fundo);
+    padding-bottom: 8px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.barra-lateral ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.barra-lateral li {
+    margin-bottom: 8px;
+}
+
+.barra-lateral a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    display: block;
+    padding: 5px 0;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.barra-lateral a:hover {
+    color: var(--cor-secundaria);
+    padding-left: 5px;
+}
+
+/*
+|----------------------------------------
+| 5. RODAPÉ (FOOTER)
+|----------------------------------------
+*/
+.rodape {
+    background-color: var(--cor-texto);
+    color: #aaa;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+
+/*
+|----------------------------------------
+| 6. RESPONSIVIDADE
+|----------------------------------------
+*/
+@media (max-width: 900px) {
+    /* Em telas menores, o layout de duas colunas vira uma única coluna */
+    main {
+        flex-direction: column;
+        gap: 20px;
+        margin: 20px auto;
+    }
+
+    .postagem {
+        padding: 20px;
+    }
+
+    .barra-lateral {
+        min-width: auto; /* Remove a largura mínima */
+    }
+}
+
+@media (max-width: 600px) {
+    .cabecalho h1 {
+        font-size: 2em;
+    }
+    
+    .menu-navegacao ul {
+        flex-wrap: wrap; /* Quebra o menu em várias linhas se a tela for muito pequena */
+    }
+
+    .postagem-titulo {
+        font-size: 1.8em;
+    }
+}
