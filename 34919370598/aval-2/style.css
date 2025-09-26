@@ -1,0 +1,173 @@
+/* Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f172a;
+  color: #fff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: #38bdf8;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #0ea5e9;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e293b;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #facc15;
+}
+
+.nav a {
+  margin-left: 1.5rem;
+  font-weight: 500;
+}
+
+/* Hero */
+.hero {
+  background: url('https://images6.alphacoders.com/909/thumb-1920-909755.jpg') no-repeat center center/cover;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background-color: #3b82f6;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #2563eb;
+}
+
+/* Cartas */
+.card-section {
+  padding: 4rem 2rem;
+  background-color: #1e293b;
+  text-align: center;
+}
+
+.card-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #facc15;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: #334155;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: #facc15;
+}
+
+/* Notícias */
+.news {
+  padding: 4rem 2rem;
+  background-color: #0f172a;
+}
+
+.news h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #facc15;
+}
+
+.news-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.news-item {
+  background-color: #334155;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+}
+
+.news-item h4 {
+  color: #fcd34d;
+  margin-bottom: 0.5rem;
+}
+
+/* Rodapé */
+.footer {
+  background-color: #1e293b;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #334155;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
