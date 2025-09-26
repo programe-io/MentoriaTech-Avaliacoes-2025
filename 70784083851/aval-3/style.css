@@ -1,8 +1,4 @@
-/* ============================= */
-/* CSS Tema Roblox - Estilizado  */
-/* ============================= */
-
-/* Reset básico */
+/* =================== RESET E BASE =================== */
 * {
     margin: 0;
     padding: 0;
@@ -11,59 +7,48 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #ff4d4d, #ffb84d, #4dff4d, #4d94ff);
-    color: #fff;
-    line-height: 1.5;
+    background-color: #f0f8ff;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* ============================= */
-/* Header */
+/* =================== HEADER =================== */
 header {
-    background-color: rgba(0,0,0,0.7);
+    background: linear-gradient(to right, #ffcc00, #ff6600);
+    color: white;
     text-align: center;
-    padding: 30px 20px;
-    border-bottom: 5px solid #fff;
+    padding: 30px 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
 header h1 {
     font-size: 3em;
-    margin-bottom: 10px;
     text-shadow: 2px 2px #000;
 }
 
-header p {
-    font-size: 1.2em;
-}
-
-/* ============================= */
-/* Navegação */
+/* =================== NAV =================== */
 nav {
-    background-color: rgba(0,0,0,0.6);
+    background-color: #ff3300;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    padding: 15px 0;
-    border-bottom: 3px solid #fff;
+    padding: 15px;
 }
 
 nav a {
-    color: #fff;
+    color: white;
     text-decoration: none;
-    margin: 0 15px;
     font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
+    margin: 0 20px;
+    font-size: 1.1em;
+    transition: all 0.3s;
 }
 
 nav a:hover {
-    background-color: #fff;
-    color: #000;
-    transform: scale(1.1);
+    text-decoration: underline;
+    color: #ffff00;
 }
 
-/* ============================= */
-/* Main */
+/* =================== MAIN E ARTICLE =================== */
 main {
     display: flex;
     flex-wrap: wrap;
@@ -71,122 +56,168 @@ main {
     padding: 20px;
 }
 
-/* Sections e Articles */
-section, article {
-    background-color: rgba(0,0,0,0.5);
-    width: 320px;
-    margin: 15px;
-    padding: 15px;
+article {
+    background-color: #fff;
+    border: 2px solid #ff6600;
     border-radius: 15px;
-    border: 2px solid #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
 }
 
-section:hover, article:hover {
+article:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px #fff;
 }
 
-section h2, article h3 {
-    text-align: center;
+article h2 {
+    color: #ff3300;
     margin-bottom: 10px;
 }
 
 article p {
-    margin-top: 10px;
-    text-align: justify;
+    margin: 10px 0;
 }
 
-/* Imagens */
-img {
+article img {
     width: 100%;
-    border-radius: 12px;
-    margin-top: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-/* ============================= */
-/* Aside */
+blockquote {
+    font-style: italic;
+    color: #555;
+    border-left: 5px solid #ff6600;
+    padding-left: 10px;
+    margin: 10px 0;
+}
+
+/* =================== ASIDE =================== */
 aside {
-    background-color: rgba(0,0,0,0.4);
+    background-color: #ffcc99;
     padding: 20px;
-    margin: 15px;
-    border-radius: 15px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 250px;
 }
 
-aside h2 {
-    text-align: center;
+aside h3 {
+    color: #ff3300;
     margin-bottom: 10px;
 }
 
 aside ul {
-    list-style: square;
-    margin-left: 20px;
+    list-style: square inside;
 }
 
-/* ============================= */
-/* Tabela */
+/* =================== MARK, STRONG, EM =================== */
+mark {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+strong {
+    color: #ff3300;
+}
+
+em {
+    color: #0066cc;
+    font-style: italic;
+}
+
+/* =================== FOOTER =================== */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+/* =================== FORM =================== */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+input, textarea, select, button {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ff6600;
+    font-size: 1em;
+}
+
+button {
+    background-color: #ff3300;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #ff6600;
+}
+
+/* =================== TABLE =================== */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
-    color: #fff;
+    margin: 15px 0;
 }
 
 th, td {
-    border: 1px solid #fff;
+    border: 1px solid #ff6600;
     padding: 10px;
     text-align: center;
 }
 
 th {
-    background-color: rgba(255,255,255,0.2);
+    background-color: #ffcc00;
 }
 
-/* ============================= */
-/* Footer */
-footer {
-    background-color: rgba(0,0,0,0.7);
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    border-top: 5px solid #fff;
-}
-
-footer a {
-    color: #ffeb3b;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* ============================= */
-/* Elementos especiais */
-mark {
-    background-color: yellow;
-    color: black;
-    padding: 2px 5px;
+/* =================== DETAILS E SUMMARY =================== */
+details {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #fff0e0;
+    border-left: 4px solid #ff6600;
     border-radius: 5px;
 }
 
-/* ============================= */
-/* Responsividade */
-@media screen and (max-width: 1000px) {
+summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* =================== FIGURE E FIGCAPTION =================== */
+figure {
+    margin: 10px 0;
+    text-align: center;
+}
+
+figcaption {
+    font-style: italic;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* =================== RESPONSIVO =================== */
+@media (max-width: 768px) {
     main {
         flex-direction: column;
         align-items: center;
     }
 
-    section, article {
+    aside {
         width: 90%;
     }
 
-    nav {
-        flex-direction: column;
-    }
-
-    nav a {
-        margin: 5px 0;
+    article {
+        width: 90%;
     }
 }
