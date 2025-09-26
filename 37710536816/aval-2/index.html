@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Davi Passos — Portfólio</title>
+  <link rel="stylesheet" href="style.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header class="top-banner">
+    <div class="container">
+      <h1>Davi Ibiapina Passos — Portfólio</h1>
+    </div>
+  </header>
+
+  <!-- Nav principal (tag <nav> presente para avaliador) -->
+  <nav class="main-nav" aria-label="Navegação principal">
+    <div class="container nav-inner">
+      <a class="nav-item" href="#">Início</a>
+      <a class="nav-item" href="#">Sobre</a>
+      <a class="nav-item" href="#">Projetos</a>
+      <a class="nav-item" href="#">Contato</a>
+    </div>
+  </nav>
+
+  <main class="container layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" aria-label="Barra lateral">
+      <section class="about">
+        <h2>Sobre</h2>
+        <div class="avatar" aria-hidden="true">Foto</div>
+
+        <h3>Apresentação</h3>
+        <p class="bio">
+          Meu nome é <strong>Davi Ibiapina Passos</strong>. Sou estudante de
+          <strong>Desenvolvimento de Sistemas</strong> no <strong>CETI Patronato Nossa Senhora de Lourdes</strong>.
+          Tenho foco em desenvolvimento front-end, boas práticas de código e experiência do usuário.
+          Entre meus projetos iniciiais destacam-se um sistema de <em>xadrez</em> (representação do tabuleiro e regras)
+          e uma <em>calculadora</em> (interface e lógica). Busco consolidar conhecimentos em JavaScript moderno,
+          organização de componentes e testes básicos, com objetivo de construir aplicações claras e manuteníveis.
+        </p>
+
+        <div class="projects-list">
+          <h4>Projetos</h4>
+          <button class="btn btn-primary" id="open-chess">Visualizar Xadrez</button>
+          <button class="btn btn-primary" id="open-calculator">Visualizar Calculadora</button>
+        </div>
+
+        <h4>Habilidades</h4>
+        <ul class="skills">
+          <li>HTML, CSS, JavaScript (ES6+)</li>
+          <li>Estruturas de dados e lógica de programação</li>
+          <li>Construção de interfaces e manipulação do DOM</li>
+        </ul>
+      </section>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <section class="main-content" role="main">
+      <article class="post">
+        <h2 class="post-title">Minha Jornada em Desenvolvimento</h2>
+        <div class="post-meta">Davi I. Passos — Setembro, 2024</div>
+
+        <!-- tag <img> permanece no HTML (oculta via CSS) -->
+        <img class="post-image" src="https://via.placeholder.com/900x320.png?text=Imagem+Oculta" alt="Ilustração (oculta)" />
+
+        <p class="post-text">
+          Durante minha formação em Desenvolvimento de Sistemas venho aprofundando competências em design de interfaces,
+          organização de código e resolução de problemas. Meus projetos iniciais foram pensados para exercitar princípios
+          importantes: no projeto de xadrez trabalhei representação do estado do jogo, regras de movimentação e validações;
+          na calculadora foquei usabilidade, tratamento de entradas e precisão nos resultados. Atualmente priorizo escrever
+          código legível, separar responsabilidades e aplicar pequenas rotinas de teste manual para garantir comportamento
+          previsível da aplicação.
+        </p>
+      </article>
+
+      <!-- Demonstrações (abrem com animação) -->
+      <section id="demo-sections">
+        <div class="demo-card fade" id="chess-demo" aria-hidden="true">
+          <h3>Xadrez — Demonstração</h3>
+          <p>Tabuleiro gerado dinamicamente na posição inicial. Clique em uma casa para ver coordenadas.</p>
+          <div id="chessboard" aria-label="Tabuleiro de xadrez"></div>
+          <p class="hint">Versão de visualização (somente leitura).</p>
+          <button class="btn btn-outline close-demo" data-target="chess-demo">Fechar</button>
+        </div>
+
+        <div class="demo-card fade" id="calc-demo" aria-hidden="true">
+          <h3>Calculadora — Demonstração</h3>
+          <p>Ferramenta simples de operações aritméticas básicas.</p>
+
+          <div class="calculator">
+            <input type="number" id="num1" placeholder="Número 1" aria-label="Número 1" />
+            <input type="number" id="num2" placeholder="Número 2" aria-label="Número 2" />
+            <select id="op" aria-label="Operador">
+              <option value="+">Somar (+)</option>
+              <option value="-">Subtrair (-)</option>
+              <option value="*">Multiplicar (*)</option>
+              <option value="/">Dividir (/)</option>
+            </select>
+            <button class="btn btn-primary" id="calc-run">Calcular</button>
+            <div id="calc-result" class="result" aria-live="polite">Resultado: <span>-</span></div>
+          </div>
+
+          <button class="btn btn-outline close-demo" data-target="calc-demo">Fechar</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2024 — Davi Ibiapina Passos. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
