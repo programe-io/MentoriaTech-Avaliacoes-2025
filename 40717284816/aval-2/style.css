@@ -1,0 +1,134 @@
+/* Reset básico */
+* {
+  margin: 0;
+    padding: 0;
+      box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+          background: #f5f5f5;
+            color: #333;
+            }
+
+            /* TOPO */
+            header {
+              background: orange;
+                color: white;
+                  text-align: center;
+                    padding: 20px;
+                    }
+
+                    header h1 {
+                      font-size: 2rem;
+                      }
+
+                      header p {
+                        font-size: 1rem;
+                        }
+
+                        /* MENU */
+                        nav {
+                          display: flex;
+                            justify-content: center;
+                              background: #333;
+                                padding: 10px;
+                                  gap: 15px;
+                                  }
+
+                                  nav a {
+                                    color: white;
+                                      text-decoration: none;
+                                        font-weight: bold;
+                                        }
+
+                                        #btn-mobile {
+                                          display: none;
+                                            background: none;
+                                              border: none;
+                                                font-size: 1.5rem;
+                                                  color: white;
+                                                  }
+
+                                                  /* LAYOUT PRINCIPAL */
+                                                  main {
+                                                    display: flex;
+                                                      max-width: 1200px;
+                                                        margin: 20px auto;
+                                                          padding: 10px;
+                                                            gap: 20px;
+                                                            }
+
+                                                            /* SIDEBAR */
+                                                            aside {
+                                                              flex: 1;
+                                                                background: #eee;
+                                                                  padding: 15px;
+                                                                    border-radius: 8px;
+                                                                    }
+
+                                                                    aside h2, aside h3 {
+                                                                      margin-bottom: 10px;
+                                                                      }
+
+                                                                      aside .foto img {
+                                                                        width: 100%;
+                                                                          border-radius: 8px;
+                                                                            margin-bottom: 10px;
+                                                                            }
+
+                                                                            aside .galeria img {
+                                                                              width: 100%;
+                                                                                border-radius: 8px;
+                                                                                  margin: 5px 0;
+                                                                                  }
+
+                                                                                  /* POSTAGEM */
+                                                                                  .post {
+                                                                                    flex: 3;
+                                                                                      background: white;
+                                                                                        padding: 20px;
+                                                                                          border-radius: 8px;
+                                                                                            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                                                                                            }
+
+                                                                                            .post h2 {
+                                                                                              margin-bottom: 5px;
+                                                                                              }
+
+                                                                                              .post small {
+                                                                                                color: #777;
+                                                                                                }
+
+                                                                                                .conteudo h3 {
+                                                                                                  margin: 15px 0;
+                                                                                                    color: orange;
+                                                                                                    }
+
+                                                                                                    /* RESPONSIVIDADE */
+                                                                                                    @media (max-width: 768px) {
+                                                                                                      main {
+                                                                                                          flex-direction: column;
+                                                                                                            }
+
+                                                                                                              nav {
+                                                                                                                  flex-wrap: wrap;
+                                                                                                                    }
+
+                                                                                                                      #btn-mobile {
+                                                                                                                          display: block;
+                                                                                                                              margin-left: auto;
+                                                                                                                                }
+
+                                                                                                                                  nav a {
+                                                                                                                                      display: none;
+                                                                                                                                          width: 100%;
+                                                                                                                                              text-align: center;
+                                                                                                                                                  padding: 10px;
+                                                                                                                                                      background: #444;
+                                                                                                                                                        }
+
+                                                                                                                                                          nav.active a {
+                                                                                                                                                              display: block;
+                                                                                                                                                                }
+                                                                                                                                                                }
