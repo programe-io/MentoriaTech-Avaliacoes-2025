@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@layer base {
+    a, button {
+        cursor: pointer;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.5;
+    }
+
+    *:focus-visible {
+        outline: 2px solid theme('colors.blue.400');
+        outline-offset: 2px;
+    }
+}
+
+@layer components {
+    .btn-acao {
+        @apply 
+            bg-blue-600 
+            hover:bg-blue-700 
+            text-white 
+            font-semibold 
+            py-2 
+            px-4 
+            rounded-lg 
+            shadow-md 
+            transition 
+            duration-200
+            focus-visible:ring-2 
+            focus-visible:ring-blue-400 
+            focus-visible:ring-opacity-75;
+    }
+    
+    .btn-secundario {
+        @apply 
+            bg-transparent 
+            hover:bg-gray-100 
+            text-gray-800 
+            font-semibold 
+            py-2 
+            px-4 
+            border 
+            border-gray-400 
+            rounded-lg 
+            shadow-sm 
+            transition 
+            duration-150;
+    }
+}
+
+.menu-mobile-oculto {
+    @apply hidden md:block;
+}
