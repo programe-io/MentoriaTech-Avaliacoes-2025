@@ -1,0 +1,124 @@
+/* Definição da Paleta de Cores */
+:root {
+    --verde-claro: #CCFFCC; /* Fundo e destaques suaves */
+    --branco: #FFFFFF;      /* Corpo das seções */
+    --lilas: #D8BFD8;       /* Fundo das caixas de conteúdo (Thistle, um lilás suave) */
+    --lilas-escuro: #8A4B9F; /* Cabeçalho, títulos e bordas (Lilás forte) */
+    --cor-texto-principal: #333333;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--verde-claro); /* Fundo em verde claro */
+    color: var(--cor-texto-principal);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--lilas-escuro); /* Cabeçalho em lilás escuro */
+    color: var(--branco);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.container {
+    width: 90%;
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--branco); /* Seções em branco */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--lilas-escuro); /* Títulos de seção em lilás escuro */
+    border-bottom: 3px solid var(--lilas);
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-weight: 600;
+}
+
+h3, h4 {
+    color: var(--lilas-escuro);
+    font-weight: 600;
+}
+
+.content-box {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: var(--lilas); /* Fundo das caixas de conteúdo em lilás suave */
+    border-radius: 8px;
+}
+
+/* Estilo para a seção "Um pouco sobre mim" */
+.profile-info {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.profile-image {
+    width: 150px;
+    height: 180px;
+    object-fit: cover; /* Garante que a imagem preencha a área sem distorcer */
+    border-radius: 8px;
+    border: 3px solid var(--lilas-escuro);
+    flex-shrink: 0;
+}
+
+.text-info {
+    flex-grow: 1;
+}
+
+/* Estilo para a seção "O que gosto de fazer" */
+.interest-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.interest-image {
+    width: 100%; /* Ocupa a largura total da caixa */
+    max-height: 120px;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 3px solid var(--lilas-escuro); /* Linha lilás para destaque */
+}
+
+/* Responsividade Básica */
+@media (max-width: 600px) {
+    .profile-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-image {
+        margin-bottom: 15px;
+    }
+}
