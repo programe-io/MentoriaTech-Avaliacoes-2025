@@ -1,0 +1,121 @@
+/* ========= RESET BÁSICO ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========= BODY ========= */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #1e3a8a, #0f172a);
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* ========= HEADER ========= */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: linear-gradient(to right, #1e40af, #1e3a8a);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+header nav {
+  display: flex;
+  gap: 20px;
+  font-weight: bold;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+
+header nav a:hover {
+  color: #60a5fa;
+  border-bottom: 2px solid #60a5fa;
+}
+
+/* ========= MAIN ========= */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 30px 15px;
+}
+
+/* ========= CARDS ========= */
+.post-card {
+  background: #1f2937;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  max-width: 320px;
+  width: 100%;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.post-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+}
+
+.post-card .card-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #3b82f6;
+}
+
+.post-card .card-header h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.post-card img.post-image {
+  width: 100%;
+  display: block;
+}
+
+.post-card .card-content {
+  padding: 15px;
+}
+
+.post-card .card-content p {
+  font-size: 0.9rem;
+  text-align: justify;
+  line-height: 1.5;
+  color: #e5e7eb;
+}
+
+.post-card .card-content span {
+  font-size: 0.75rem;
+  display: block;
+  margin-top: 10px;
+  text-align: right;
+  color: #9ca3af;
+}
