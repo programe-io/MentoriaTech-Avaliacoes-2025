@@ -1,11 +1,17 @@
-// Exemplo de JS para a página Minecraft
+// Apenas a Rolagem Suave (Smooth Scrolling)
 
-// Função para rolar suavemente até a seção quando clicar no menu
-document.querySelectorAll('nav a').forEach(link => {
+document.querySelectorAll('nav a[href^="#"]').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
+
+    // Pega o ID alvo (ex: '#sobre' vira 'sobre')
     const targetId = this.getAttribute('href').substring(1);
     const targetSection = document.getElementById(targetId);
-    targetSection.scrollIntoView({ behavior: 'smooth' });
+
+    if (targetSection) {
+      // Rola suavemente até a seção
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 });
+
