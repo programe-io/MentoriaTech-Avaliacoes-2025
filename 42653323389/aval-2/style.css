@@ -1,0 +1,265 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #121212;
+    color: #eee;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Header */
+header {
+    background: #1db954; /* verde vibrante */
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #d1f7d6;
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #d1f7d6;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: #1ed760;
+    color: #121212;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #1db954, #14833b);
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+#btn-surpresa {
+    background-color: #121212;
+    color: #1db954;
+    border: 2px solid #1db954;
+    font-size: 1.2rem;
+    padding: 10px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#btn-surpresa:hover {
+    background-color: #1ed760;
+    color: #121212;
+    border-color: #1ed760;
+}
+
+/* Jogos */
+.games {
+    padding: 50px 0;
+    background-color: #222;
+}
+
+.games h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #1db954;
+}
+
+.game-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.game-card {
+    background: #121212;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px #1db954;
+}
+
+.game-card img {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+
+.game-card h3 {
+    margin: 15px 0 10px 0;
+    color: #1ed760;
+}
+
+.game-card p {
+    padding: 0 15px 20px 15px;
+    font-weight: 300;
+}
+
+/* Galeria */
+.gallery {
+    padding: 50px 0;
+}
+
+.gallery h2 {
+    text-align: center;
+    color: #1db954;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+    filter: brightness(0.85);
+    transition: filter 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    filter: brightness(1);
+}
+
+/* Contato */
+.contact {
+    background-color: #222;
+    padding: 50px 0;
+}
+
+.contact h2 {
+    text-align: center;
+    color: #1db954;
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: 600;
+    color: #d1f7d6;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: 2px solid #1db954;
+}
+
+button[type="submit"] {
+    background-color: #1db954;
+    color: #121212;
+    font-size: 1.2rem;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #14833b;
+}
+
+/* Resposta formulário */
+#response-message {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    background-color: #121212;
+    color: #555;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    margin-top: 50px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .game-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
