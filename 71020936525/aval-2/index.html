@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site acolhedor e organizado para pessoas com TDAH.">
+  <meta name="author" content="Seu Nome">
+  <meta name="keywords" content="TDAH, atenção, foco, organização, acessibilidade">
+
+  <title>ConcentraMente - Apoio ao TDAH</title>
+
+  <!-- Estilos internos básicos -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f9ff;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, nav, main, aside, footer {
+      padding: 1rem;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+    header {
+      background-color: #0077cc;
+      color: white;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #e6f0fa;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: bold;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    article {
+      flex: 2;
+      background-color: #ffffff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    aside {
+      flex: 1;
+      background-color: #e6f0fa;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #0077cc;
+      color: white;
+      padding: 1rem;
+    }
+
+    section {
+      margin-bottom: 1.5rem;
+    }
+
+    h1, h2, h3 {
+      color: #005fa3;
+    }
+
+    button {
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link href="style.css" rel="stylesheet"></head>
+
+<body>
+  <!-- Cabeçalho -->
+  <header role="banner">
+    <h1>ConcentraMente</h1>
+    <p>Organize-se. Concentre-se. Viva melhor com TDAH.</p>
+  </header>
+
+  <!-- Navegação -->
+  <nav role="navigation" aria-label="Menu principal">
+    <a href="#sobre">Sobre</a>
+    <a href="#dicas">Dicas</a>
+    <a href="#recursos">Recursos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <main role="main">
+    <!-- Artigo principal -->
+    <article>
+      <section id="sobre">
+        <h2>O que é TDAH?</h2>
+        <p>O Transtorno de Déficit de Atenção com Hiperatividade (TDAH) afeta milhões de pessoas em todo o mundo. Nosso objetivo é oferecer ferramentas e dicas que ajudam você a organizar sua vida de forma mais tranquila.</p>
+      </section>
+
+      <section id="dicas">
+        <h2>Dicas para Melhorar o Foco</h2>
+        <ul>
+          <li>Divida tarefas grandes em pequenas etapas.</li>
+          <li>Use lembretes visuais e sonoros.</li>
+          <li>Estabeleça uma rotina diária simples.</li>
+          <li>Faça pausas programadas.</li>
+        </ul>
+      </section>
+
+      <section id="recursos">
+        <h2>Recursos Úteis</h2>
+        <p>Indicamos aplicativos, livros e profissionais especializados.</p>
+        <details>
+          <summary>Apps Recomendados</summary>
+          <ul>
+            <li>Todoist</li>
+            <li>Forest</li>
+            <li>MindNode</li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="contato">
+        <h2>Entre em Contato</h2>
+        <form action="#" method="post" aria-label="Formulário de Contato">
+          <label for="nome">Nome:</label><br>
+          <input type="text" id="nome" name="nome" required><br><br>
+
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required><br><br>
+
+          <label for="mensagem">Mensagem:</label><br>
+          <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </article>
+
+    <!-- Barra lateral -->
+    <aside aria-label="Barra Lateral">
+      <h3>Destaques</h3>
+      <ul>
+        <li><a href="#">Checklist diário</a></li>
+        <li><a href="#">Planner gratuito</a></li>
+        <li><a href="#">Vídeos educativos</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Rodapé -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 ConcentraMente. Todos os direitos reservados.</p>
+    <address>
+      Contato: <a href="mailto:contato@concentramente.com">contato@concentramente.com</a>
+    </address>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Exemplo: alerta de formulário enviado
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Mensagem enviada com sucesso!");
+    });
+  </script>
+</body>
+</html>
+<section id="sobre">
+  <h2>O que é TDAH?</h2>
+
+  <img 
+    src="https://tse2.mm.bing.net/th/id/OIP.K3UeqCKNBWgD_jcip9eOHQHaGA?rs=1&pid=ImgDetMain&o=7&rm=3" 
+    alt="Imagem simbólica do TDAH - Cérebro com luzes e energia" 
+    width="300" 
+    style="display: block; margin: 1rem auto;">
+
+  <p>
+    O Transtorno de Déficit de Atenção com Hiperatividade (TDAH) afeta milhões de pessoas em todo o mundo.
+    Nosso objetivo é oferecer ferramentas e dicas que ajudam você a organizar sua vida de forma mais tranquila.
+  </p>
+</section>
