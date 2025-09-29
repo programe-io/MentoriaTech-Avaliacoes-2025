@@ -1,0 +1,242 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Menu lateral */
+nav {
+  width: 220px;
+  background-color: #262c33;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+nav h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  user-select: none;
+  border-bottom: 1px solid #444c54;
+  padding-bottom: 15px;
+}
+
+nav ul {
+  list-style: none;
+  flex-grow: 1;
+}
+
+nav ul li {
+  padding: 15px 20px;
+  cursor: pointer;
+  border-left: 4px solid transparent;
+  transition: background-color 0.3s, border-left-color 0.3s;
+  user-select: none;
+}
+
+nav ul li:hover,
+nav ul li.active {
+  background-color: #38424d;
+  border-left-color: #f34542;
+  font-weight: 700;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+/* Conteúdo principal */
+main {
+  flex-grow: 1;
+  background: white;
+  padding: 20px 40px 40px 40px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  user-select: none;
+}
+
+header img {
+  height: 50px;
+  margin-right: 15px;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #f34542;
+  letter-spacing: 1px;
+}
+
+header .subtitle {
+  font-size: 0.8rem;
+  color: #666;
+  margin-left: 6px;
+}
+
+/* Article - conteúdo principal */
+article {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Tabela estilo */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  table-layout: fixed;
+}
+
+thead {
+  background-color: #f34542;
+  color: white;
+  text-align: center;
+}
+
+thead th {
+  padding: 14px 12px;
+  font-weight: 700;
+  overflow-wrap: break-word;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+tbody tr:hover {
+  background-color: #ffe4e5;
+}
+
+tbody td {
+  text-align: center;
+  padding: 8px 10px;
+  border-right: 1px solid #ddd;
+  vertical-align: middle;
+  overflow-wrap: break-word;
+}
+
+tbody td:last-child {
+  border-right: none;
+}
+
+th.aluno {
+  text-align: left;
+  padding-left: 16px;
+  width: 140px;
+}
+
+/* Inputs para notas */
+input.nota-input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 4px;
+  font-size: 0.9rem;
+  transition: border-color 0.3s;
+}
+
+input.nota-input:focus {
+  border-color: #f34542;
+  outline: none;
+  box-shadow: 0 0 5px rgba(243,69,66,0.7);
+}
+
+/* Botão adicionar */
+.btn-adicionar {
+  margin-top: 20px;
+  background: #f34542;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Botões de ação */
+.action-btn {
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin: 0 6px;
+  transition: transform 0.2s;
+}
+
+.action-btn:hover {
+  transform: scale(1.2);
+}
+
+.edit {
+  color: #27ae60;
+}
+
+.delete {
+  color: #c0392b;
+}
+
+/* Situação aprovado ou reprovado */
+.aprovado {
+  color: #27ae60;
+  font-weight: 700;
+}
+
+.reprovado {
+  color: #c0392b;
+  font-weight: 700;
+}
+
+/* Aside */
+aside {
+  width: 220px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+aside h3 {
+  margin-bottom: 15px;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside ul li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
