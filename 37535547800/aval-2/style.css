@@ -1,0 +1,120 @@
+/* Paleta de Cores: */
+:root {
+    --rosa-bebe: #F4C4C6;     /* Fundo Suave */
+    --verde-claro: #A8E6CF;   /* Destaque / Botões Secundários */
+    --cinza-principal: #36454F; /* Texto Principal (Cinza Escuro) */
+    --cinza-fundo: #E0E0E0;   /* Fundo Secundário (Cinza Claro) */
+    --branco: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--rosa-bebe);
+    color: var(--cinza-principal);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--verde-claro);
+    color: var(--cinza-principal);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--cinza-fundo);
+    border-bottom: 2px solid var(--verde-claro);
+}
+
+nav button {
+    background-color: var(--cinza-principal);
+    color: var(--branco);
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+nav button:hover {
+    background-color: var(--verde-claro);
+    color: var(--cinza-principal);
+}
+
+#conteudo-principal {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--branco);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da introdução e imagem de perfil */
+.introducao {
+    text-align: center;
+}
+
+.img-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--verde-claro);
+    margin-bottom: 15px;
+}
+
+/* Layout de duas colunas para as seções */
+.secao-conteudo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.item-secao {
+    padding: 15px;
+    border: 1px solid var(--verde-claro);
+    border-radius: 8px;
+    background-color: var(--cinza-fundo);
+}
+
+.item-secao h3 {
+    color: var(--cinza-principal);
+    border-bottom: 2px dotted var(--verde-claro);
+    padding-bottom: 5px;
+}
+
+.item-secao ul {
+    list-style-type: '✧ '; /* Marcador bonitinho */
+    padding-left: 20px;
+}
+
+.item-secao img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--cinza-principal);
+    color: var(--branco);
+    margin-top: 20px;
+}
