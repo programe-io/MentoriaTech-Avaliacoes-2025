@@ -1,0 +1,225 @@
+/* =======================
+   VARIÁVEIS GLOBAIS
+======================= */
+:root {
+  --cor-primaria: #ffcb05;
+  --cor-secundaria: #3b4cca;
+  --cor-fundo: #f0f8ff;
+  --cor-texto: #333;
+  --cor-branco: #fff;
+  --cor-formulario: #e0e0e0;
+  --radius-padrao: 8px;
+  --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* =======================
+   RESET / UNIVERSAL
+======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+/* =======================
+   HEADER
+======================= */
+header {
+  background-color: var(--cor-primaria);
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+header h1 {
+  font-size: 2.5em;
+  color: var(--cor-secundaria);
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--cor-secundaria);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #222;
+  text-decoration: underline;
+}
+
+/* =======================
+   MAIN / SECTIONS
+======================= */
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+h2 {
+  border-bottom: 3px solid var(--cor-secundaria);
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+
+/* =======================
+   CARDS DE POKÉMON
+======================= */
+.pokemon-card {
+  background-color: var(--cor-branco);
+  border-radius: var(--radius-padrao);
+  box-shadow: var(--sombra);
+  padding: 15px;
+  margin: 15px 0;
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.03);
+}
+
+.pokemon-card::before {
+  content: "★";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--cor-secundaria);
+}
+
+.pokemon-card img {
+  width: 200px;
+  display: block;
+  margin-bottom: 10px;
+  border-radius: var(--radius-padrao);
+}
+
+.pokemon-card a {
+  color: var(--cor-secundaria);
+  text-decoration: none;
+}
+
+.pokemon-card a:hover {
+  text-decoration: underline;
+}
+
+/* =======================
+   FORMULÁRIO
+======================= */
+form {
+  background-color: var(--cor-formulario);
+  padding: 20px;
+  border-radius: var(--radius-padrao);
+  box-shadow: var(--sombra);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius-padrao);
+  transition: border-color 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--cor-secundaria);
+  outline: none;
+}
+
+form button {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-branco);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--radius-padrao);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #2a379f;
+}
+
+/* =======================
+   TABELA
+======================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: var(--cor-branco);
+  box-shadow: var(--sombra);
+}
+
+th, td {
+  border: 1px solid #000;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--cor-primaria);
+  color: var(--cor-secundaria);
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #ffe;
+}
+
+/* =======================
+   FOOTER
+======================= */
+footer {
+  background-color: var(--cor-primaria);
+  color: var(--cor-secundaria);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  border-top: 1px solid #ccc;
+}
+
+/* =======================
+   MEDIA QUERY
+======================= */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  .pokemon-card img {
+    width: 100%;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px 0;
+  }
+
+  form input,
+  form textarea {
+    font-size: 1em;
+  }
+}
