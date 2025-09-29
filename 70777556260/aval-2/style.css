@@ -1,0 +1,213 @@
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* ===== ELEMENTOS GERAIS ===== */
+h1, h2, h3, h4, h5, h6 {
+    color: #e2231a;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: #e2231a;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: #e2231a;
+    color: white;
+    padding: 2em 1em;
+    text-align: center;
+    border-bottom: 5px solid #b41c15;
+}
+
+/* ===== NAV ===== */
+nav {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    padding: 1em 1.5em;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background-color: #444;
+}
+
+/* ===== MAIN ===== */
+main {
+    padding: 2em;
+    background-color: #fff;
+}
+
+/* ===== SECTION ===== */
+section {
+    margin-bottom: 3em;
+}
+
+/* ===== ARTICLE ===== */
+article {
+    background-color: #fafafa;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ===== IMAGENS ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== CHARACTERS GRID ===== */
+.characters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.character {
+    width: 220px;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    text-align: center;
+    padding: 1em;
+    transition: transform 0.3s ease;
+}
+
+.character:hover {
+    transform: scale(1.05);
+}
+
+/* ===== ASIDE ===== */
+aside {
+    background-color: #f0f0f0;
+    border-left: 5px solid #e2231a;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1.5em 1em;
+    margin-top: 2em;
+}
+
+/* ===== FORMULÁRIOS (EXTRA) ===== */
+input, textarea, select, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 0.75em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    background-color: #e2231a;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #b41c15;
+}
+
+/* ===== TABLES (EXTRA) ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2em;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.75em;
+    text-align: left;
+}
+
+th {
+    background-color: #e2231a;
+    color: white;
+}
+
+/* ===== LISTAS ===== */
+ul, ol {
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* ===== BLOCKQUOTE ===== */
+blockquote {
+    border-left: 5px solid #e2231a;
+    padding-left: 1em;
+    font-style: italic;
+    color: #555;
+    background-color: #f9f9f9;
+}
+
+/* ===== CÓDIGO (EXTRA) ===== */
+pre, code {
+    background-color: #eee;
+    padding: 0.5em;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: auto;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .characters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .character {
+        width: 90%;
+    }
+}
