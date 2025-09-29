@@ -1,73 +1,110 @@
-<!DOCTYPE html>
-<html lang="pt-br"> <p> <aside> <article>
+<!doctype html>
+<html lang="pt-BR"> <aside> <article> <img>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Serginho Cell 📱</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-
-  <!-- CSS externo -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Stride — Sportswear</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Arquivo CSS externo -->
   <link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
 <body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">S</div>
+        <div>
+          <div style="font-weight:800">STRIDE</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">Performance &amp; Lifestyle</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#">Novidades</a>
+        <a href="#">Masculino</a>
+        <a href="#">Feminino</a>
+        <a href="#">Coleções</a>
+        <a href="#">Ofertas</a>
+      </nav>
+      <div class="icons">
+        <div class="icon" title="Buscar">🔍</div>
+        <div class="icon" title="Conta">👤</div>
+        <div class="icon" id="cartBtn" title="Carrinho">🛒</div>
+      </div>
+    </header>
 
-  <div class="background" aria-hidden="true"></div>
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <div class="eyebrow">LANÇAMENTO</div>
+          <h1 class="headline">Nova coleção Stride Air — velocidade e conforto para todos os dias</h1>
+          <p class="lead">Tecnologia leve, design atemporal e materiais sustentáveis. Projetado para quem treina, trabalha e vive sem parar.</p>
+          <div class="cta-row">
+            <button class="btn btn-primary">Compre agora</button>
+            <button class="btn btn-ghost">Veja a coleção</button>
+          </div>
+          <div style="margin-top:18px;color:var(--muted);font-size:13px">Frete grátis para compras acima de R$ 299 · Devolução gratuita em 30 dias</div>
+        </div>
+        <div class="hero-right">
+          <div class="card-media" role="img" aria-label="Promo shoe image"></div>
+          <div class="promo-bubble">
+            <small>Melhor avaliação</small>
+            <strong>Stride Air — R$ 499</strong>
+          </div>
+        </div>
+      </section>
 
-  <header>
-    <h1>
-      Serginho Cell
-      <!-- Ícone do celular inline SVG -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M7 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H7zm8 18H9v-1h6v1zm0-3H9V5h6v12z"/>
-      </svg>
-    </h1>
-    <nav>
-      <a href="#promo" class="active">Promoção</a>
-      <a href="#video">Anúncio</a>
-      <a href="iniciodapagina.html#promo">Loja</a>
-      <a href="index.html">Home</a>
-    </nav>
-  </header>
+      <section class="section">
+        <h3>Destaques</h3>
+        <div class="grid" id="productsGrid"></div>
+      </section>
 
-  <main>
-    <section id="promo" class="banner" aria-label="Imagem de destaque da loja">
-      <img
-        src="https://istoedinheiro.com.br/wp-content/uploads/sites/17/Reuters_Direct_Media/BrazilOnlineReportDomesticNews/tagreuters.com2021binary_LYNXMPEH7I0J9-BASEIMAGE.jpg?x46096"
-        alt="Imagem destaque"
-      />
-      <div class="banner-text">Mega Promoção! iPhones com até 40% OFF!</div>
-    </section>
+      <section class="section">
+        <h3>Stories</h3>
+        <div style="display:flex;gap:12px;overflow-x:auto;padding-bottom:8px">
+          <div style="min-width:260px;background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)">
+            <h4 style="margin:0 0 8px 0">Sustentabilidade</h4>
+            <p style="margin:0;color:var(--muted)">Como reduzimos impactos com materiais reciclados e processos mais limpos.</p>
+          </div>
+          <div style="min-width:260px;background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)">
+            <h4 style="margin:0 0 8px 0">Treine com Stride</h4>
+            <p style="margin:0;color:var(--muted)">Treinos curtos e eficazes para corredores iniciantes e avançados.</p>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    <section id="video" class="video-section">
-      <h3>Confira nosso anúncio especial</h3>
-      <video controls>
-        <source src="oferece-se.mp4" type="video/mp4" />
-        Seu navegador não suporta vídeo.
-      </video>
-    </section>
+    <footer>
+      <div>
+        <div style="font-weight:700">Stride</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:6px">© <span id="year"></span> Stride — Todos os direitos reservados</div>
+      </div>
+      <div style="display:flex;gap:18px;color:var(--muted)">
+        <div>Ajuda</div>
+        <div>Envio</div>
+        <div>Termos</div>
+      </div>
+    </footer>
+  </div>
 
-    <section id="loja" class="cta">
-      <h3>Não perca essa oportunidade!</h3>
-      <a href="iniciodapagina.html#promo" class="btn-primary" role="button" aria-label="Acessar a loja">
-        Acessar a loja
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M10 17l5-5-5-5v10z"/>
-        </svg>
-      </a>
-    </section>
-  </main>
-
-  <footer>
-    © 2025 Serginho Cell - Todos os direitos reservados.<br />
-    <div style="margin-top: 12px; color: #ffffffcc; font-weight: 600; font-size: 1rem;">
-      Desenvolvido por <span style="color: #00aaff;">Marllon Resende</span> &amp; <span style="color: #00aaff;">Serginho Henrique</span>
+  <!-- Carrinho -->
+  <div id="cartModal" class="cart-modal">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+      <strong>Carrinho</strong>
+      <button id="closeCart" style="background:transparent;border:0;color:var(--muted);cursor:pointer">✕</button>
     </div>
-  </footer>
+    <div id="cartItems" style="max-height:240px;overflow:auto"></div>
+    <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center">
+      <div style="color:var(--muted)">Total</div>
+      <div id="cartTotal" style="font-weight:800">R$ 0</div>
+    </div>
+    <div style="margin-top:12px;text-align:right">
+      <button class="btn btn-primary">Finalizar compra</button>
+    </div>
+  </div>
 
-  <!-- JS externo -->
   <script src="script.js"></script>
 </body>
 </html>
