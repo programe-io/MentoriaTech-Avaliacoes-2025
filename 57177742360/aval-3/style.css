@@ -1,0 +1,203 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonte geral e fundo */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #111;
+  color: #f0f0f0;
+  line-height: 1.6;
+  padding-bottom: 80px;
+}
+
+/* Cabeçalho */
+header {
+  background: linear-gradient(to right, #6a00ff, #a100ff);
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+header p {
+  margin-top: 5px;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #00ffea;
+}
+
+/* Seções principais */
+main {
+  padding: 20px;
+}
+
+/* Banners e imagens */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+/* Produtos */
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+article {
+  background-color: #1a1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  transition: transform 0.3s;
+}
+
+article:hover {
+  transform: translateY(-5px);
+}
+
+article h3 {
+  color: #00ffea;
+  margin-bottom: 10px;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2a2a2a;
+  color: white;
+}
+
+form button {
+  padding: 10px;
+  background-color: #00ffea;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #00bfa5;
+}
+
+/* Aside */
+aside {
+  background-color: #222;
+  color: #ccc;
+  padding: 20px;
+  margin: 20px;
+  border-left: 4px solid #6a00ff;
+  border-radius: 8px;
+}
+
+aside ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+aside a {
+  color: #00ffea;
+  text-decoration: none;
+}
+
+aside a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: #777;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Botão Dark Mode */
+#toggle-dark {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #6a00ff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 0 10px #6a00ff;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+
+#toggle-dark:hover {
+  background: #a100ff;
+}
+
+/* Modo claro */
+body.light-mode {
+  background-color: #fefefe;
+  color: #222;
+}
+
+body.light-mode header {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+body.light-mode article {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+body.light-mode nav a {
+  color: #fff;
+}
+
+body.light-mode footer {
+  background-color: #ddd;
+  color: #333;
+}
+
+body.light-mode #toggle-dark {
+  background: #0072ff;
+  color: white;
+  box-shadow: 0 0 10px #00c6ff;
+}
