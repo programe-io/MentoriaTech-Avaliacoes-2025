@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Sabor & Arte - Cardápio Digital Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #e74c3c;
+            --primary-dark: #c0392b;
+            --primary-light: #ff6b6b;
+            --secondary: #2c3e50;
+            --secondary-light: #34495e;
+            --accent: #f39c12;
+            --accent-light: #f1c40f;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --success-dark: #219653;
+            --warning: #e67e22;
+            --info: #3498db;
+            --gray-light: #f8f9fa;
+            --gray-medium: #e9ecef;
+            --gray-dark: #6c757d;
+            --text: #2d3436;
+            --text-light: #636e72;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
+            --shadow-heavy: 0 10px 30px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+            --transition-slow: all 0.5s ease;
+            --border-radius: 16px;
+            --border-radius-sm: 8px;
+            --border-radius-lg: 24px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Links globais */
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+            color: var(--white);
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow-heavy);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .logo a:hover {
+            color: var(--accent);
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-right: 0.5rem;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        .tagline {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .restaurant-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+        }
+
+        .info-item a {
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-item a:hover {
+            color: var(--accent);
+        }
+
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .badge {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.2rem 0.6rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        /* Menu Sections */
+        .menu-section {
+            display: none;
+            padding: 2rem 0;
+        }
+
+        .menu-section.active {
+            display: block;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: var(--text-light);
+        }
+
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .menu-item.featured {
+            border: 2px solid var(--accent);
+        }
+
+        /* Item Image com tag img */
+        .item-image {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .menu-item:hover .item-image img {
+            transform: scale(1.1);
+        }
+
+        .item-tags {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .item-tag {
+            background: rgba(0,0,0,0.7);
+            color: var(--white);
+            padding: 0.3rem 0.6rem;
+            border-radius: var(--border-radius-sm);
+            font-size: 0.7rem;
+        }
+
+        .badge-veg {
+            background: var(--success);
+        }
+
+        .badge-new {
+            background: var(--accent);
+        }
+
+        .badge-spicy {
+            background: var(--warning);
+        }
+
+        .item-info {
+            padding: 1.5rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-title {
+            font-size: 1.3rem;
+            color: var(--secondary);
+        }
+
+        .item-title a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .item-title a:hover {
+            color: var(--primary);
+        }
+
+        .item-rating {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        .item-description {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .item-details {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+
+        .add-to-cart {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .add-to-cart:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Promoções */
+        .promo-banner {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .promo-banner h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .promo-banner .btn {
+            background: var(--white);
+            color: var(--accent);
+            padding: 0.8rem 2rem;
+            border-radius: var(--border-radius-sm);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: var(--transition);
+        }
+
+        .promo-banner .btn:hover {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        /* Cart */
+        .cart-section {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .cart-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gray-medium);
+        }
+
+        .cart-items {
+            margin-bottom: 1.5rem;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .quantity-btn {
+            background: var(--gray-medium);
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .remove-btn {
+            background: var(--primary-light);
+            color: var(--white);
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+        }
+
+        .cart-summary {
+            background: var(--gray-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius-sm);
+            margin-bottom: 1.5rem;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .checkout-btn {
+            background: var(--success);
+            color: var(--white);
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            font-size: 1.1rem;
+            width: 100%;
+            transition: var(--transition);
+        }
+
+        .checkout-btn:hover {
+            background: var(--success-dark);
+        }
+
+        .empty-cart {
+            text-align: center;
+            color: var(--gray-dark);
+            padding: 2rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--gray-medium);
+            border-radius: var(--border-radius-sm);
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-secondary {
+            background: var(--gray-medium);
+            color: var(--text);
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--success);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius-sm);
+            display: none;
+            z-index: 1100;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-section p, .footer-section a {
+            color: var(--light);
+            margin-bottom: 0.5rem;
+            display: block;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--secondary-light);
+            color: var(--gray-medium);
+        }
+
+        .quick-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .quick-links a {
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        .quick-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link href="style.css" rel="stylesheet"></head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="#entradas">
+                        <i class="fas fa-utensils"></i>
+                        <div class="logo-text">Restaurante <span>Sabor & Arte</span></div>
+                    </a>
+                </div>
+                <p class="tagline">Culinária contemporânea com toque artesanal</p>
+                
+                <div class="restaurant-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Seg-Sex: 11h-23h | Sáb-Dom: 12h-00h</span>
+                    </div>
+                    <div class="info-item">
+                        <a href="https://wa.me/5511999999999" target="_blank">
+                            <i class="fas fa-truck"></i>
+                            <span>Delivery: 40-60 min</span>
+                        </a>
+                    </div>
+                    <div class="info-item">
+                        <a href="#avaliacoes">
+                            <i class="fas fa-star"></i>
+                            <span>Avaliação: 4.8/5</span>
+                        </a>
+                    </div>
+                </div>
+
+                <nav>
+                    <button class="nav-btn active" data-section="entradas">
+                        <i class="fas fa-apple-alt"></i>
+                        Entradas
+                    </button>
+                    <button class="nav-btn" data-section="pratos-principais">
+                        <i class="fas fa-drumstick-bite"></i>
+                        Pratos Principais
+                    </button>
+                    <button class="nav-btn" data-section="bebidas">
+                        <i class="fas fa-wine-glass-alt"></i>
+                        Bebidas
+                    </button>
+                    <button class="nav-btn" data-section="sobremesas">
+                        <i class="fas fa-ice-cream"></i>
+                        Sobremesas
+                    </button>
+                    <button class="nav-btn" data-section="carrinho">
+                        <i class="fas fa-shopping-cart"></i>
+                        Carrinho
+                        <span class="badge" id="cart-badge">0</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Banner de Promoção -->
+        <div class="promo-banner">
+            <h3>🎉 Promoção Especial! 🎉</h3>
+            <p>Primeiro pedido com <strong>20% de desconto</strong> usando o cupom: <strong>PRIMEIRAVEZ20</strong></p>
+            <a href="#carrinho" class="btn">Aproveitar Oferta</a>
+        </div>
+
+        <!-- Seção de Entradas -->
+        <section id="entradas" class="menu-section active">
+            <h2 class="section-title">Entradas</h2>
+            <p class="section-description">Comece sua experiência gastronômica com nossas entradas especiais</p>
+            
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=500&h=300&fit=crop" alt="Bruschetta Italiana">
+                        <div class="item-tags">
+                            <span class="item-tag badge-veg">Vegetariano</span>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-title">
+                                <a href="#bruschetta-details" title="Ver detalhes da Bruschetta">Bruschetta Italiana</a>
+                            </h3>
+                            <div class="item-rating">
+                                <a href="#avaliacoes-bruschetta" title="Ver avaliações">
+                                    <i class="fas fa-star"></i> 4.8
+                                </a>
+                            </div>
+                        </div>
+                        <p class="item-description">Pão italiano grelhado com tomate fresco, manjericão e azeite de oliva.</p>
+                        <div class="item-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i> 10 min
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-fire"></i> 180 kcal
+                            </div>
+                        </div>
+                        <div class="item-footer">
+                            <div class="item-price">R$ 24,90</div>
+                            <button class="add-to-cart" data-id="1" data-name="Bruschetta Italiana" data-price="24.90">
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item featured">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=500&h=300&fit=crop" alt="Carpaccio de Carne">
+                        <div class="item-tags">
+                            <span class="item-tag badge-new">Novo</span>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-title">
+                                <a href="#carpaccio-details" title="Ver detalhes do Carpaccio">Carpaccio de Carne</a>
+                            </h3>
+                            <div class="item-rating">
+                                <a href="#avaliacoes-carpaccio" title="Ver avaliações">
+                                    <i class="fas fa-star"></i> 4.9
+                                </a>
+                            </div>
+                        </div>
+                        <p class="item-description">Finas fatias de carne com azeite, limão e parmesão.</p>
+                        <div class="item-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i> 15 min
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-fire"></i> 210 kcal
+                            </div>
+                        </div>
+                        <div class="item-footer">
+                            <div class="item-price">R$ 38,50</div>
+                            <button class="add-to-cart" data-id="2" data-name="Carpaccio de Carne" data-price="38.50">
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?w=500&h=300&fit=crop" alt="Salada Caesar">
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-title">
+                                <a href="#caesar-details" title="Ver detalhes da Salada Caesar">Salada Caesar</a>
+                            </h3>
+                            <div class="item-rating">
+                                <a href="#avaliacoes-caesar" title="Ver avaliações">
+                                    <i class="fas fa-star"></i> 4.6
+                                </a>
+                            </div>
+                        </div>
+                        <p class="item-description">Alface romana, croutons, parmesão e molho caesar.</p>
+                        <div class="item-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i> 8 min
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-fire"></i> 320 kcal
+                            </div>
+                        </div>
+                        <div class="item-footer">
+                            <div class="item-price">R$ 32,90</div>
+                            <button class="add-to-cart" data-id="3" data-name="Salada Caesar" data-price="32.90">
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Pratos Principais -->
+        <section id="pratos-principais" class="menu-section">
+            <h2 class="section-title">Pratos Principais</h2>
+            <p class="section-description">Nossas especialidades preparadas com ingredientes selecionados</p>
+            
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1588168333986-5078d3ae3976?w=500&h=300&fit=crop" alt="Filé Mignon">
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-title">
+                                <a href="#file-details" title="Ver detalhes do Filé Mignon">Filé Mignon</a>
+                            </h3>
+                            <div class="item-rating">
+                                <a href="#avaliacoes-file" title="Ver avaliações">
+                                    <i class="fas fa-star"></i> 4.9
+                                </a>
+                            </div>
+                        </div>
+                        <p class="item-description">Filé mignon grelhado com batatas rústicas e legumes.</p>
+                        <div class="item-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i> 25 min
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-fire"></i> 580 kcal
+                            </div>
+                        </div>
+                        <div class="item-footer">
+                            <div class="item-price">R$ 89,90</div>
+                            <button class="add-to-cart" data-id="4" data-name="Filé Mignon" data-price="89.90">
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=500&h=300&fit=crop" alt="Salmão Grelhado">
+                        <div class="item-tags">
+                            <span class="item-tag badge-new">Mais Saudável</span>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-title">
+                                <a href="#salmao-details" title="Ver detalhes do Salmão">Salmão Grelhado</a>
+                            </h3>
+                            <div class="item-rating">
+                                <a href="#avaliacoes-salmao" title="Ver avaliações">
+                                    <i class="fas fa-star"></i> 4.8
+                                </a>
+                            </div>
+                        </div>
+                        <p class="item-description">Salmão com crosta de ervas e risoto de aspargos.</p>
+                        <div class="item-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i> 20 min
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-fire"></i> 420 kcal
+                            </div>
+                        </div>
+                        <div class="item-footer">
+                            <div class="item-price">R$ 72,50</div>
+                            <button class="add-to-cart" data-id="5" data-name="Salmão Grelhado" data-price="72.50">
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Bebidas -->
+        <section id="bebidas" class="menu-section">
+            <h2 class="section-title">Bebidas</h2>
+            <p class="section-description">Refresque-se com nossa seleção de bebidas</p>
+            
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=500&h=300&fit=crop" alt="Vinho Tinto">
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-title">
+                                <a href="#vinho-details" title="Ver detalhes do Vinho">Vinho Tinto</a>
+                            </h3>
+                            <div class="item-rating">
+                                <a href="#avaliacoes-vinho" title="Ver avaliações">
+                                    <i class="fas fa-star"></i> 4.6
+                                </a>
+                            </div>
+                        </div>
+                        <p class="item-description">Vinho tinto seco da casa, harmoniza com carnes.</p>
+                        <div class="item-details">
+                            <div class="detail-item">
+                                <i class="fas fa-wine-bottle"></i> 750ml
+                            </div>
+                        </div>
+                        <div class="item-footer">
+                            <div class="item-price">R$ 68,90</div>
+                            <button class="add-to-cart" data-id="6" data-name="Vinho Tinto" data-price="68.90">
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Sobremesas -->
+        <section id="sobremesas" class="menu-section">
+            <h2 class="section-title">Sobremesas</h2>
+            <p class="section-description">Finalize sua refeição com nossas sobremesas artesanais</p>
+            
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=500&h=300&fit=crop" alt="Brownie com Sorvete">
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3 class="item-title">
+                                <a href="#brownie-details" title="Ver detalhes do Brownie">Brownie com Sorvete</a>
+                            </h3>
+                            <div class="item-rating">
+                                <a href="#avaliacoes-brownie" title="Ver avaliações">
+                                    <i class="fas fa-star"></i> 4.9
+                                </a>
+                            </div>
+                        </div>
+                        <p class="item-description">Brownie de chocolate com sorvete de baunilha.</p>
+                        <div class="item-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i> 8 min
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-fire"></i> 380 kcal
+                            </div>
+                        </div>
+                        <div class="item-footer">
+                            <div class="item-price">R$ 28,90</div>
+                            <button class="add-to-cart" data-id="7" data-name="Brownie com Sorvete" data-price="28.90">
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção do Carrinho -->
+        <section id="carrinho" class="menu-section">
+            <h2 class="section-title">Meu Pedido</h2>
+            
+            <div class="cart-section">
+                <div class="cart-title">
+                    <h3>Itens do Pedido</h3>
+                    <span id="cart-count">0 itens</span>
+                </div>
+                
+                <div class="cart-items" id="cart-items">
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart fa-2x"></i>
+                        <p>Seu carrinho está vazio</p>
+                        <p><a href="#entradas">Ver cardápio</a></p>
+                    </div>
+                </div>
+                
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="cart-subtotal">R$ 0,00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Taxa de entrega:</span>
+                        <span>R$ 8,90</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Total:</span>
+                        <span id="cart-total">R$ 8,90</span>
+                    </div>
+                </div>
+                
+                <button class="checkout-btn" id="checkout-btn">
+                    Finalizar Pedido
+                </button>
+
+                <div style="text-align: center; margin-top: 1rem;">
+                    <p>Dúvidas? <a href="https://wa.me/5511999999999" target="_blank">Fale conosco no WhatsApp</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Finalização -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <h2>Finalizar Pedido</h2>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="customer-name">Nome Completo</label>
+                    <input type="text" id="customer-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customer-phone">Telefone</label>
+                    <input type="tel" id="customer-phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customer-address">Endereço</label>
+                    <textarea id="customer-address" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-cupom">Cupom de Desconto (opcional)</label>
+                    <input type="text" id="customer-cupom" placeholder="Ex: PRIMEIRAVEZ20">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-checkout">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Confirmar Pedido</button>
+                </div>
+
+                <div style="text-align: center; margin-top: 1rem;">
+                    <p>Ao confirmar, você concorda com nossos <a href="#termos">Termos de Uso</a> e <a href="#privacidade">Política de Privacidade</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notificação -->
+    <div class="notification" id="notification">
+        Item adicionado ao carrinho!
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Restaurante Sabor & Arte</h3>
+                    <p>Culinária contemporânea com ingredientes selecionados e preparo artesanal.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/saborearte" target="_blank" title="Siga-nos no Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/saborearte" target="_blank" title="Curta nossa página no Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://wa.me/5511999999999" target="_blank" title="Fale conosco no WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Horários</h3>
+                    <p>Segunda a Sexta: 11h às 23h</p>
+                    <p>Sábado e Domingo: 12h às 00h</p>
+                    <p>Delivery: Todos os dias</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><a href="tel:+551134567890"><i class="fas fa-phone"></i> (11) 3456-7890</a></p>
+                    <p><a href="https://wa.me/5511999999999" target="_blank"><i class="fab fa-whatsapp"></i> (11) 99999-9999</a></p>
+                    <p><a href="mailto:contato@saborearte.com"><i class="fas fa-envelope"></i> contato@saborearte.com</a></p>
+                    <p><a href="https://maps.google.com/?q=Rua+Gourmet,+123+-+São+Paulo" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i> Rua Gourmet, 123 - São Paulo
+                    </a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <p><a href="#entradas">Cardápio</a></p>
+                    <p><a href="#sobre">Sobre Nós</a></p>
+                    <p><a href="#promocoes">Promoções</a></p>
+                    <p><a href="#trabalhe-conosco">Trabalhe Conosco</a></p>
+                </div>
+            </div>
+            
+            <div class="quick-links">
+                <a href="#termos">Termos de Uso</a>
+                <a href="#privacidade">Política de Privacidade</a>
+                <a href="#trocas">Trocas e Devoluções</a>
+                <a href="#duvidas">Dúvidas Frequentes</a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Restaurante Sabor & Arte. Todos os direitos reservados.</p>
+                <p>Desenvolvido com <i class="fas fa-heart" style="color: var(--primary);"></i> para amantes da boa gastronomia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let cart = [];
+            
+            // Navegação entre seções
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const target = this.getAttribute('data-section');
+                    
+                    // Atualizar botões ativos
+                    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Mostrar seção correspondente
+                    document.querySelectorAll('.menu-section').forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    document.getElementById(target).classList.add('active');
+                });
+            });
+            
+            // Adicionar ao carrinho
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const id = this.getAttribute('data-id');
+                    const name = this.getAttribute('data-name');
+                    const price = parseFloat(this.getAttribute('data-price'));
+                    
+                    // Adicionar ou atualizar item no carrinho
+                    const existingItem = cart.find(item => item.id === id);
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({
+                            id,
+                            name,
+                            price,
+                            quantity: 1
+                        });
+                    }
+                    
+                    updateCart();
+                    showNotification(`${name} adicionado ao carrinho!`);
+                });
+            });
+            
+            // Atualizar carrinho
+            function updateCart() {
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const total = subtotal + 8.90;
+                
+                // Atualizar contadores
+                document.getElementById('cart-badge').textContent = totalItems;
+                document.getElementById('cart-count').textContent = `${totalItems} itens`;
+                document.getElementById('cart-subtotal').textContent = `R$ ${subtotal.toFixed(2)}`;
+                document.getElementById('cart-total').textContent = `R$ ${total.toFixed(2)}`;
+                
+                // Atualizar lista de itens
+                const container = document.getElementById('cart-items');
+                if (cart.length === 0) {
+                    container.innerHTML = '<div class="empty-cart"><i class="fas fa-shopping-cart fa-2x"></i><p>Seu carrinho está vazio</p><p><a href="#entradas">Ver cardápio</a></p></div>';
+                } else {
+                    container.innerHTML = cart.map(item => `
+                        <div class="cart-item">
+                            <div class="cart-item-info">
+                                <div class="cart-item-name">${item.name}</div>
+                                <div class="cart-item-price">R$ ${(item.price * item.quantity).toFixed(2)}</div>
+                            </div>
+                            <div class="cart-item-controls">
+                                <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                                <button class="remove-btn" data-id="${item.id}">Remover</button>
+                            </div>
+                        </div>
+                    `).join('');
+                    
+                    // Adicionar eventos para controles do carrinho
+                    container.querySelectorAll('.minus').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const id = this.getAttribute('data-id');
+                            const item = cart.find(item => item.id === id);
+                            if (item.quantity > 1) {
+                                item.quantity--;
+                            } else {
+                                cart = cart.filter(item => item.id !== id);
+                            }
+                            updateCart();
+                        });
+                    });
+                    
+                    container.querySelectorAll('.plus').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const id = this.getAttribute('data-id');
+                            const item = cart.find(item => item.id === id);
+                            item.quantity++;
+                            updateCart();
+                        });
+                    });
+                    
+                    container.querySelectorAll('.remove-btn').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const id = this.getAttribute('data-id');
+                            cart = cart.filter(item => item.id !== id);
+                            updateCart();
+                            showNotification('Item removido do carrinho!');
+                        });
+                    });
+                }
+            }
+            
+            // Mostrar notificação
+            function showNotification(message) {
+                const notification = document.getElementById('notification');
+                notification.textContent = message;
+                notification.style.display = 'block';
+                
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 3000);
+            }
+            
+            // Modal de checkout
+            document.getElementById('checkout-btn').addEventListener('click', function() {
+                if (cart.length === 0) {
+                    showNotification('Adicione itens ao carrinho primeiro!');
+                    return;
+                }
+                document.getElementById('checkout-modal').style.display = 'flex';
+            });
+            
+            document.getElementById('cancel-checkout').addEventListener('click', function() {
+                document.getElementById('checkout-modal').style.display = 'none';
+            });
+            
+            document.getElementById('checkout-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                document.getElementById('checkout-modal').style.display = 'none';
+                showNotification('Pedido realizado com sucesso!');
+                cart = [];
+                updateCart();
+            });
+            
+            // Fechar modal ao clicar fora
+            document.getElementById('checkout-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                }
+            });
+
+            // Smooth scroll para links âncora
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
