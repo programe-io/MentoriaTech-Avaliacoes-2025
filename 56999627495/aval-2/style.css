@@ -1,0 +1,139 @@
+/* Reset Básico para melhor controle */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Cor de fundo clara para o body */
+}
+
+/* --- Cabeçalho (Header) --- */
+.header {
+    background-color: #ff9900; /* Cor laranja/amarela */
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.header p {
+    font-size: 1.1em;
+}
+
+/* --- Barra de Navegação (Navbar) --- */
+.navbar {
+    background-color: #333; /* Cor escura */
+    /* Usando Flexbox para alinhar os links */
+    display: flex;
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    padding: 0 20px;
+}
+
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+/* --- Container Principal (Flexbox Pai) --- */
+.main-container {
+    /* O coração do layout de 2 colunas */
+    display: flex;
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 20px auto; /* Centraliza o container na página */
+    background-color: white; /* Fundo branco para as colunas */
+    border: 1px solid #ddd; /* Borda sutil */
+}
+
+/* --- Barra Lateral (Sidebar) --- */
+.sidebar {
+    /* Define a largura da sidebar e o estilo de fundo */
+    flex: 0 0 300px; /* Não cresce, não encolhe, largura base de 300px */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-right: 1px solid #ddd; /* Separador visual */
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.sidebar p {
+    margin-bottom: 5px;
+}
+
+/* Estilo para os placeholders de imagem na sidebar */
+.imagem-placeholder {
+    background-color: #ccc; /* Cor cinza clara */
+    color: #555;
+    height: 100px;
+    margin-bottom: 10px;
+    /* Usando Flexbox para centralizar o texto "Imagem" */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 1px solid #aaa;
+}
+
+/* --- Conteúdo Principal (Main Content) --- */
+.main-content {
+    /* O conteúdo principal ocupa o restante do espaço */
+    flex: 1; /* Permite que cresça para preencher o espaço */
+    padding: 20px;
+}
+
+.post {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.post-title {
+    font-size: 2em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Estilo para a imagem grande do post */
+.fortnite-image-placeholder {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/600x350?text=FORTNITE+IMAGE');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 350px; /* Altura grande conforme o conceito */
+    margin-bottom: 20px;
+    /* Usando Flexbox para centralizar o texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 5px;
+    background-color: gray; /* Cor de fallback */
+}
+
+.post-body {
+    line-height: 1.6;
+    color: #444;
+}
