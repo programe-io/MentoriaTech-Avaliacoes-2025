@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doceria Delícia - Cardápio</title>
+    <link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>🍰 Doceria Delícia</h1>
+                <p>Os melhores doces caseiros da cidade!</p>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="#inicio" class="nav-link active">Início</a></li>
+                    <li><a href="#cardapio" class="nav-link">Cardápio</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <!-- Filtros -->
+            <section class="filters">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="🔍 Buscar doces...">
+                </div>
+                <nav class="category-filters">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="bolos">Bolos</button>
+                    <button class="filter-btn" data-category="sobremesas">Sobremesas</button>
+                    <button class="filter-btn" data-category="doces">Doces</button>
+                </nav>
+            </section>
+
+            <!-- Cardápio -->
+            <section class="menu" id="cardapio">
+                <h2>🎂 Nosso Cardápio</h2>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Produtos serão carregados via JavaScript -->
+                </div>
+            </section>
+
+            <!-- Sobre Nós -->
+            <section class="about" id="sobre">
+                <h2>👨‍🍳 Sobre Nós</h2>
+                <div class="about-content">
+                    <img src="https://via.placeholder.com/400x300/ffe6e6/ff6b6b?text=Nossa+Doceria" alt="Nossa doceria" class="about-image">
+                    <div class="about-text">
+                        <p>Há mais de 10 anos levando alegria e sabor para suas festas e momentos especiais. Todos os nossos doces são feitos com ingredientes selecionados e muito amor!</p>
+                        <ul class="about-features">
+                            <li>✅ Ingredientes frescos e naturais</li>
+                            <li>✅ Receitas caseiras tradicionais</li>
+                            <li>✅ Atendimento personalizado</li>
+                            <li>✅ Entregas em toda a cidade</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contato -->
+            <section class="contact" id="contato">
+                <h2>📞 Contato</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📍 Endereço</h3>
+                        <p>Rua dos Doces, 123 - Centro</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📞 Telefone</h3>
+                        <p>(11) 9999-9999</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>🕒 Horário de Funcionamento</h3>
+                        <p>Segunda a Sábado: 8h às 20h<br>Domingo: 9h às 18h</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Carrinho Flutuante -->
+            <div class="cart-floating">
+                <button class="cart-btn" id="cartBtn">
+                    🛒 <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </main>
+
+        <!-- Modal do Carrinho -->
+        <div class="cart-modal" id="cartModal">
+            <div class="cart-content">
+                <div class="cart-header">
+                    <h2>🛒 Seu Pedido</h2>
+                    <button class="close-btn" id="closeCart">&times;</button>
+                </div>
+                <div class="cart-items" id="cartItems">
+                    <p class="empty-cart">Seu carrinho está vazio</p>
+                </div>
+                <div class="cart-total">
+                    <strong>Total: R$ <span id="totalPrice">0.00</span></strong>
+                </div>
+                <nav class="cart-actions">
+                    <button class="btn clear-btn" id="clearCart">Limpar</button>
+                    <button class="btn checkout-btn" id="checkout">Finalizar Pedido</button>
+                </nav>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <nav class="footer-nav">
+                <a href="#inicio">Início</a>
+                <a href="#cardapio">Cardápio</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+            </nav>
+            <p>© 2024 Doceria Delícia - 📞 (11) 9999-9999</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
