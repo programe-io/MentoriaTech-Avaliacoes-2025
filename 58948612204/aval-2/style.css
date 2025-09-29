@@ -1,0 +1,134 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+}
+
+/* Cabeçalho */
+header {
+  background: orange;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+/* Menu */
+nav {
+  background: #333;
+  position: relative;
+}
+
+nav .menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  display: block;
+}
+
+nav a:hover {
+  background: #555;
+  border-radius: 5px;
+}
+
+/* Botão menu mobile */
+.menu-toggle {
+  display: none;
+  background: #333;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Container */
+.container {
+  display: flex;
+  margin: 20px;
+  gap: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1;
+  background: #eee;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.sidebar h2 {
+  margin-bottom: 10px;
+}
+
+.sidebar .foto img,
+.sidebar .galeria .imagem img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  margin: 10px 0;
+}
+
+/* Conteúdo */
+.conteudo {
+  flex: 3;
+}
+
+.postagem {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.postagem img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  nav .menu {
+    flex-direction: column;
+    display: none;
+  }
+  nav .menu.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  nav li {
+    margin: 5px 0;
+    text-align: center;
+  }
+}
