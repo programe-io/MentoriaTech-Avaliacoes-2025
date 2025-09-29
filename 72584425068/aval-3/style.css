@@ -7,7 +7,7 @@
 }
 
 body {
-  background: #fff8f0;
+  background: #270bdf; /* fundo azul */
   color: #333;
   line-height: 1.5;
 }
@@ -20,7 +20,7 @@ body {
 
 /* Header */
 .header {
-  background: #e31e24;
+  background: #000000;
   color: #fff;
   padding: 15px 0;
   position: sticky;
@@ -70,17 +70,19 @@ body {
 }
 
 .btn-red {
-  background: #e31e24;
+  background: #1d1313;
   color: #fff;
   padding: 10px 20px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
+  cursor: pointer;
+  display: inline-block;
 }
 
 .btn-red:hover {
-  background: #c71a1f;
+  background: #e01212;
 }
 
 /* Cardápio */
@@ -101,21 +103,29 @@ body {
 }
 
 .card {
-  background: #fff;
+  background: #e4e3e6;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   padding: 15px;
-  transition: 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .card img {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 10px;
+  transition: filter 0.3s;
+}
+
+.card:hover img {
+  filter: blur(2px);
 }
 
 .card h3 {
@@ -132,12 +142,15 @@ body {
 .card span {
   display: block;
   font-weight: bold;
-  color: #e31e24;
+  color: #df0606;
   margin-bottom: 10px;
 }
 
-.card .btn-red {
-  display: inline-block;
+/* Mantém o botão nítido no hover do card */
+.card:hover .btn-red {
+  filter: none;
+  position: relative;
+  z-index: 10;
 }
 
 /* Footer */
@@ -153,4 +166,4 @@ footer a {
   color: #ffcc00;
   text-decoration: none;
   margin: 0 10px;
-} 
+}
