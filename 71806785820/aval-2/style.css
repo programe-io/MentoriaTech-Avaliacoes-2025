@@ -1,0 +1,73 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+
+/* Cabeçalho */
+header {
+  background-color: #ff5a8a;
+  color: #fff;
+  padding: 18px 12px;
+  text-align: center;
+}
+header h1 { margin-bottom: 8px; font-size: 1.6rem; }
+nav ul { list-style: none; display:flex; justify-content:center; gap:18px; }
+nav a { color:#fff; text-decoration:none; font-weight:700; }
+
+/* Banner */
+#banner img { width:100%; height:auto; display:block; }
+
+/* Layout principal */
+main {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Articles (conteúdo principal) */
+article.secao {
+  flex: 1 1 560px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  text-align: center;
+}
+article.secao header h2 { color:#333; margin-bottom:12px; }
+article.secao figure { margin: 0 auto 12px; }
+article.secao img { width:100%; max-width:420px; border-radius:8px; display:block; box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+article.secao p { color:#555; font-size:1rem; margin-top:8px; }
+
+/* Cores específicas por article (opcionais) */
+#verao { background-color: #fff8f2; }
+#inverno { background-color: #f2f8ff; }
+#praia  { background-color: #f2fff9; }
+
+/* Aside (complementar) */
+aside[role="complementary"] {
+  flex: 0 1 260px;
+  background: #fffafc;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  height: fit-content;
+}
+aside h3 { color:#ff2f6d; margin-bottom:10px; }
+aside ul { list-style: disc inside; color:#444; line-height:1.6; }
+
+/* Rodapé */
+footer {
+  background:#333;
+  color:#fff;
+  text-align:center;
+  padding:14px;
+  margin-top:24px;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  article.secao { flex: 1 1 100%; }
+  aside[role="complementary"] { flex: 1 1 100%; margin-top: 12px; }
+  nav ul { flex-wrap: wrap; gap:10px; }
+}
