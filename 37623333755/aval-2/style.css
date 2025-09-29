@@ -1,0 +1,62 @@
+:root{
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --accent:#2b8aef;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --radius:12px;
+  --container:1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:var(--container);margin:0 auto;padding:1rem}
+
+.site-header{background:#fff;border-bottom:1px solid rgba(15,23,42,0.06)}
+.header-inner{display:flex;align-items:center;gap:1rem;justify-content:space-between;padding:1rem}
+.logo{font-size:1.5rem;font-weight:700;color:var(--accent);margin:0}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.main-nav a{color:var(--text);text-decoration:none;font-weight:500}
+.btn-primary{background:var(--accent);color:#fff;border:none;padding:.6rem .9rem;border-radius:10px;cursor:pointer}
+
+.hero{padding:2rem 0}
+.hero-inner{display:flex;gap:2rem;align-items:center}
+.hero-content{flex:1}
+.hero-content h2{font-size:2rem;margin:0 0 .5rem}
+.hero-content p{margin:0 0 1rem;color:var(--muted)}
+.btn-cta{display:inline-block;padding:.6rem 1rem;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none}
+.hero-image img{max-width:100%;border-radius:12px}
+
+.content-grid{display:grid;grid-template-columns:1fr 320px;gap:1.5rem;padding:2rem 0}
+.primary .card, .sidebar .card{background:var(--card);padding:1rem;border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,23,42,0.04)}
+
+.post{display:flex;gap:1rem;margin-top:1rem;align-items:center}
+.post-thumb-img{width:120px;height:80px;object-fit:cover;border-radius:8px}
+.post-body h4{margin:0 0 .25rem}
+.post-body p{margin:0;color:var(--muted);font-size:.95rem}
+
+.sidebar .newsletter{display:flex;gap:.5rem}
+.sidebar input{flex:1;padding:.5rem;border:1px solid #e6e9ef;border-radius:8px}
+.sidebar button{padding:.5rem .7rem;border-radius:8px;border:none;background:var(--accent);color:#fff}
+
+.site-footer{border-top:1px solid rgba(15,23,42,0.06);padding:1rem 0;background:transparent}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+.footer-nav a{margin-left:1rem;color:var(--muted);text-decoration:none}
+
+@media (max-width:900px){
+  .hero-inner{flex-direction:column}
+  .content-grid{grid-template-columns:1fr}
+  .main-nav ul{display:none}
+  .header-inner{gap:.5rem}
+}
+
+@media (max-width:420px){
+  .hero-content h2{font-size:1.5rem}
+}
