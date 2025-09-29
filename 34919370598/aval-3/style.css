@@ -1,0 +1,160 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0d0d0d;
+  color: #c0f2c0;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+nav {
+  background-color: #111;
+  border-bottom: 3px solid #00ff6a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav h1 {
+  color: #00ff6a;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #c0f2c0;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: 0.3s;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #00ff6a;
+  transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* HEADER */
+header {
+  background-color: #111;
+  border-bottom: 2px solid #00ff6a;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+header h2 {
+  color: #00ff6a;
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+}
+
+header p {
+  color: #8ef0a2;
+  font-size: 1rem;
+}
+
+/* MAIN CARDS */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+.card {
+  display: flex;
+  background-color: #1b1b1b;
+  border: 2px solid #00ff6a;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  max-width: 800px;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 255, 106, 0.3);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 255, 106, 0.6);
+}
+
+.card img {
+  width: 250px;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  justify-content: center;
+}
+
+.card-content h3 {
+  color: #00ff6a;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-content p {
+  color: #aef0ab;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.card-content span {
+  color: #00ff6a;
+  font-weight: 600;
+  margin-top: 1rem;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+/* FOOTER */
+footer {
+  background-color: #111;
+  border-top: 2px solid #00ff6a;
+  color: #00ff6a;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+  }
+  .card img {
+    width: 100%;
+  }
+}
