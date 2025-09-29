@@ -1,0 +1,178 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+  background-color: #1e1e2f;
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+header nav {
+  margin-top: 15px;
+}
+
+header nav a {
+  color: #ddd;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+
+header nav a:hover {
+  color: #fff;
+}
+
+nav a.active {
+  color: #fff;
+  border-bottom: 2px solid #0077ff;
+}
+
+main {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.intro {
+  margin-bottom: 50px;
+}
+
+.destaques ul {
+  list-style: none;
+}
+
+.destaques li {
+  margin: 10px 0;
+}
+
+.destaques a {
+  text-decoration: none;
+  color: #0066cc;
+}
+
+.destaques a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1e1e2f;
+  color: #fff;
+  margin-top: 50px;
+}
+
+/* ------------------------- */
+/* 🎨 Modo Escuro (Dark Mode) */
+/* ------------------------- */
+.dark-mode {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.dark-mode header {
+  background-color: #111122;
+  color: #fff;
+}
+
+.dark-mode footer {
+  background-color: #111122;
+  color: #ccc;
+}
+
+.dark-mode nav a {
+  color: #aaa;
+}
+
+.dark-mode nav a.active {
+  color: #fff;
+  border-bottom: 2px solid #90caf9;
+}
+
+.dark-mode .destaques a {
+  color: #90caf9;
+}
+
+/* ---------------------------------------- */
+/* 🌙 Botão Flutuante de Modo Escuro/Claro  */
+/* ---------------------------------------- */
+#toggle-dark {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+#toggle-dark:hover {
+  background-color: #555;
+}
+
+/* ---------------------------------------- */
+/* 📨 Formulário de Contato                 */
+/* ---------------------------------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+form input, form textarea {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button[type="submit"] {
+  background-color: #0077ff;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+  background-color: #005dc1;
+}
+
+/* Dark mode para formulário */
+.dark-mode input,
+.dark-mode textarea {
+  background-color: #2e2e2e;
+  color: #fff;
+  border-color: #555;
+}
+
+.dark-mode button[type="submit"] {
+  background-color: #005dc1;
+}
+
+.dark-mode button[type="submit"]:hover {
+  background-color: #003d80;
+}
