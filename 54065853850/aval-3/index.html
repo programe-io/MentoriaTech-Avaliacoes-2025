@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio - Aspas Lanches</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body class="bg-gradient-to-b from-blue-900 to-blue-950 text-white min-h-screen flex flex-col">
+
+  <!-- HEADER PRINCIPAL -->
+  <header class="shadow-md p-8 flex flex-col items-center justify-center relative">
+    <h1 class="text-5xl font-extrabold drop-shadow-lg mb-2">Aspas Lanches</h1>
+    <p class="text-lg text-gray-300">Os melhores sabores da cidade!</p>
+    <!-- SVG decorativo -->
+    <svg class="absolute bottom-0 left-0 w-full h-12 text-yellow-400" fill="currentColor" viewBox="0 0 1440 320">
+      <path fill-opacity="0.2" d="M0,224L60,192C120,160,240,96,360,90.7C480,85,600,139,720,165.3C840,192,960,192,1080,176C1200,160,1320,128,1380,112L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+    </svg>
+  </header>
+<!-- NAVBAR -->
+<nav class="bg-blue-950 bg-opacity-80 backdrop-blur-md sticky top-0 z-50 shadow-md">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo / Nome -->
+      <div class="flex-shrink-0 text-white font-bold text-2xl">
+        Aspas Lanches
+      </div>
+      <!-- Links -->
+      <div class="hidden md:flex space-x-6">
+        <a href="#cardapio" class="text-white hover:text-yellow-400 transition">Cardápio</a>
+        <a href="#sobre" class="text-white hover:text-yellow-400 transition">Sobre</a>
+        <a href="#contato" class="text-white hover:text-yellow-400 transition">Contato</a>
+        <a href="#carrinho" class="text-white hover:text-yellow-400 transition">Carrinho</a>
+      </div>
+      <!-- Menu mobile -->
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden px-2 pt-2 pb-4 space-y-1">
+    <a href="#cardapio" class="block text-white hover:text-yellow-400 transition">Cardápio</a>
+    <a href="#sobre" class="block text-white hover:text-yellow-400 transition">Sobre</a>
+    <a href="#contato" class="block text-white hover:text-yellow-400 transition">Contato</a>
+    <a href="#carrinho" class="block text-white hover:text-yellow-400 transition">Carrinho</a>
+  </div>
+
+  <script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</nav>
+
+  <!-- FEED DE CARDÁPIO -->
+  <main class="py-8 px-4 flex flex-wrap justify-center gap-8 flex-1">
+
+    <!-- CARD 1 -->
+    <div class="bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl shadow-xl overflow-hidden flex max-w-3xl w-full md:w-[800px] hover:scale-105 transition-transform duration-300">
+      <img class="w-60 md:w-72 object-cover" src="https://tse2.mm.bing.net/th/id/OIP.rgbbfRIVjE6P3y2rOgXQ-gHaE7?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Hambúrguer artesanal">
+      <div class="flex flex-col w-full">
+        <div class="flex items-center gap-4 p-6">
+          <img class="h-16 w-16 rounded-full border-2 border-yellow-400" src="https://seeklogo.com/images/M/mibr-logo-3595A82F28-seeklogo.com.png" alt="Logo do Restaurante">
+          <h2 class="text-3xl font-bold">Aspas Lanches</h2>
+        </div>
+        <div class="p-6 flex flex-col justify-between">
+          <h3 class="text-2xl font-bold mb-3">Hambúrguer Artesanal</h3>
+          <p class="text-base text-justify">Pão brioche, carne 150g, queijo cheddar, cebola caramelizada e molho especial da casa.</p>
+          <span class="text-lg text-yellow-400 font-semibold mt-6">R$ 29,90</span>
+          <button onclick="adicionarCarrinho('Hambúrguer Artesanal', 29.9)" class="mt-4 bg-yellow-400 text-gray-900 font-bold py-2 px-4 rounded hover:bg-yellow-500 transition">
+            Adicionar ao carrinho
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl shadow-xl overflow-hidden flex max-w-3xl w-full md:w-[800px] hover:scale-105 transition-transform duration-300">
+      <img class="w-60 md:w-72 object-cover" src="https://tse4.mm.bing.net/th/id/OIP.86Y1g1N1ds1WeREt8NLxEAHaFp?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Pizza Margherita">
+      <div class="flex flex-col w-full">
+        <div class="flex items-center gap-4 p-6">
+          <img class="h-16 w-16 rounded-full border-2 border-yellow-400" src="https://seeklogo.com/images/M/mibr-logo-3595A82F28-seeklogo.com.png" alt="Logo do Restaurante">
+          <h2 class="text-3xl font-bold">Aspas Lanches</h2>
+        </div>
+        <div class="p-6 flex flex-col justify-between">
+          <h3 class="text-2xl font-bold mb-3">Pizza Margherita</h3>
+          <p class="text-base text-justify">Massa fina, molho de tomate, mussarela e manjericão fresco.</p>
+          <span class="text-lg text-yellow-400 font-semibold mt-6">R$ 39,90</span>
+          <button onclick="adicionarCarrinho('Pizza Margherita', 39.9)" class="mt-4 bg-yellow-400 text-gray-900 font-bold py-2 px-4 rounded hover:bg-yellow-500 transition">
+            Adicionar ao carrinho
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl shadow-xl overflow-hidden flex max-w-3xl w-full md:w-[800px] hover:scale-105 transition-transform duration-300">
+      <img class="w-60 md:w-72 object-cover" src="https://tse1.mm.bing.net/th/id/OIP.mO7KeYNRCg_g8wWAFRjErgHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Salada Tropical">
+      <div class="flex flex-col w-full">
+        <div class="flex items-center gap-4 p-6">
+          <img class="h-16 w-16 rounded-full border-2 border-yellow-400" src="https://seeklogo.com/images/M/mibr-logo-3595A82F28-seeklogo.com.png" alt="Logo do Restaurante">
+          <h2 class="text-3xl font-bold">Aspas Lanches</h2>
+        </div>
+        <div class="p-6 flex flex-col justify-between">
+          <h3 class="text-2xl font-bold mb-3">Salada Tropical</h3>
+          <p class="text-base text-justify">Mix de folhas, manga, abacate, nozes e molho cítrico.</p>
+          <span class="text-lg text-yellow-400 font-semibold mt-6">R$ 24,90</span>
+          <button onclick="adicionarCarrinho('Salada Tropical', 24.9)" class="mt-4 bg-yellow-400 text-gray-900 font-bold py-2 px-4 rounded hover:bg-yellow-500 transition">
+            Adicionar ao carrinho
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl shadow-xl overflow-hidden flex max-w-3xl w-full md:w-[800px] hover:scale-105 transition-transform duration-300">
+      <img class="w-60 md:w-72 object-cover" src="https://tse1.mm.bing.net/th/id/OIP.xSK5ughccLYoUAFAdCHq7AHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Sushi Mix">
+      <div class="flex flex-col w-full">
+        <div class="flex items-center gap-4 p-6">
+          <img class="h-16 w-16 rounded-full border-2 border-yellow-400" src="https://seeklogo.com/images/M/mibr-logo-3595A82F28-seeklogo.com.png" alt="Logo do Restaurante">
+          <h2 class="text-3xl font-bold">Aspas Lanches</h2>
+        </div>
+        <div class="p-6 flex flex-col justify-between">
+          <h3 class="text-2xl font-bold mb-3">Sushi Mix</h3>
+          <p class="text-base text-justify">Combinado de sushi variado com salmão, atum e camarão.</p>
+          <span class="text-lg text-yellow-400 font-semibold mt-6">R$ 49,90</span>
+          <button onclick="adicionarCarrinho('Sushi Mix', 49.9)" class="mt-4 bg-yellow-400 text-gray-900 font-bold py-2 px-4 rounded hover:bg-yellow-500 transition">
+            Adicionar ao carrinho
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl shadow-xl overflow-hidden flex max-w-3xl w-full md:w-[800px] hover:scale-105 transition-transform duration-300">
+      <img class="w-60 md:w-72 object-cover" src="https://th.bing.com/th/id/R.374ac105b651e68b0f400326d05d7a40?rik=S8GZQkmtZszlpA&pid=ImgRaw&r=0" alt="Suco Natural">
+      <div class="flex flex-col w-full">
+        <div class="flex items-center gap-4 p-6">
+          <img class="h-16 w-16 rounded-full border-2 border-yellow-400" src="https://seeklogo.com/images/M/mibr-logo-3595A82F28-seeklogo.com.png" alt="Logo do Restaurante">
+        </div>
+        <div class="p-6 flex flex-col justify-between">
+          <h3 class="text-2xl font-bold mb-3">Sucos Natural</h3>
+          <p class="text-base text-justify">Sucos naturais como de Laranja, etc..</p>
+          <span class="text-lg text-yellow-400 font-semibold mt-6">R$ 12,90</span>
+          <button onclick="adicionarCarrinho('Sucos Natural', 12.9)" class="mt-4 bg-yellow-400 text-gray-900 font-bold py-2 px-4 rounded hover:bg-yellow-500 transition">
+            Adicionar ao carrinho
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl shadow-xl overflow-hidden flex max-w-3xl w-full md:w-[800px] hover:scale-105 transition-transform duration-300">
+      <img class="w-60 md:w-72 object-cover" src="https://th.bing.com/th/id/R.0e4ab1835e61060f2efde7d363bceaba?rik=AhoT04zyfZ90xA&pid=ImgRaw&r=0" alt="Bolo de Chocolate">
+      <div class="flex flex-col w-full">
+        <div class="flex items-center gap-4 p-6">
+          <img class="h-16 w-16 rounded-full border-2 border-yellow-400" src="https://seeklogo.com/images/M/mibr-logo-3595A82F28-seeklogo.com.png" alt="Logo do Restaurante">
+          <h2 class="text-3xl font-bold">Aspas Lanches</h2>
+        </div>
+        <div class="p-6 flex flex-col justify-between">
+          <h3 class="text-2xl font-bold mb-3">Bolo de Chocolate</h3>
+          <p class="text-base text-justify">Bolo fofinho com cobertura de chocolate meio amargo e granulado.</p>
+          <span class="text-lg text-yellow-400 font-semibold mt-6">R$ 19,90</span>
+          <button onclick="adicionarCarrinho('Bolo de Chocolate', 19.9)" class="mt-4 bg-yellow-400 text-gray-900 font-bold py-2 px-4 rounded hover:bg-yellow-500 transition">
+            Adicionar ao carrinho
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <section class="flex justify-center mt-8">
+    <img class="h-48 w-auto rounded-full border-4 border-yellow-400" src="https://tse3.mm.bing.net/th/id/OIP.SttvaQJD-IJKYhhyR91CxwHaEr?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Personagem">
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 mt-12">
+    <div class="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex flex-col items-center md:items-start">
+          <h3 class="text-2xl font-bold mb-2">Aspas Lanches</h3>
+          <p class="text-gray-400">Siga-nos nas redes sociais e fique por dentro das novidades!</p>
+          <div class="flex gap-4 mt-3">
+            <a href="#" class="hover:text-yellow-400 transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.27 4.27 0 001.88-2.36c-.82.49-1.73.85-2.7 1.05A4.25 4.25 0 0015.5 4c-2.36 0-4.27 1.9-4.27 4.26 0 .33.03.65.1.96C7.72 8.99 4.1 7.17 1.67 4.15a4.25 4.25 0 00-.58 2.14c0 1.48.75 2.78 1.89 3.55a4.25 4.25 0 01-1.93-.54v.05c0 2.06 1.46 3.78 3.4 4.17a4.3 4.3 0 01-1.92.07c.54 1.68 2.1 2.9 3.94 2.93a8.54 8.54 0 01-5.29 1.83c-.34 0-.67-.02-1-.06a12.07 12.07 0 006.53 1.91c7.85 0 12.15-6.5 12.15-12.15 0-.18 0-.36-.01-.54A8.7 8.7 0 0024 4.56a8.56 8.56 0 01-2.54.7z"/></svg>
+            </a>
+            <a href="#" class="hover:text-yellow-400 transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 4.41 2.87 8.15 6.84 9.48v-6.7H8.9V12h2.98V9.88c0-2.95 1.76-4.58 4.45-4.58 1.29 0 2.63.23 2.63.23v2.9h-1.48c-1.46 0-1.91.91-1.91 1.84V12h3.25l-.52 2.78h-2.73v6.7c3.97-1.33 6.84-5.07 6.84-9.48 0-5.5-4.46-9.96-9.96-9.96z"/></svg>
+            </a>
+            <a href="#" class="hover:text-yellow-400 transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.2c-5.42 0-9.8 4.38-9.8 9.8s4.38 9.8 9.8 9.8 9.8-4.38 9.8-9.8-4.38-9.8-9.8-9.8zm0 18.2c-4.63 0-8.4-3.77-8.4-8.4S7.37 3.6 12 3.6s8.4 3.77 8.4 8.4-3.77 8.4-8.4 8.4z"/><path d="M16 7.3l-5 5-2-2-.7.7 2.7 2.7 5.7-5.7z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="text-gray-500 text-sm mt-6 md:mt-0">© 2025 Aspas Lanches. Todos os direitos reservados.</div>
+      </div>
+    </div>
+    <!-- SVG decorativo do footer -->
+    <svg class="w-full text-yellow-400" viewBox="0 0 1440 120" fill="currentColor">
+      <path fill-opacity="0.2" d="M0,64L60,74.7C120,85,240,107,360,122.7C480,139,600,149,720,133.3C840,117,960,75,1080,58.7C1200,43,1320,53,1380,58.7L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+    </svg>
+  </footer>
+
+  <!-- SCRIPT JAVASCRIPT -->
+  <script>
+    let carrinho = [];
+
+    function adicionarCarrinho(nomeProduto, preco) {
+      carrinho.push({ nome: nomeProduto, preco: preco });
+      alert(nomeProduto + " adicionado ao carrinho!\nTotal de itens: " + carrinho.length);
+      console.log("Carrinho:", carrinho);
+    }
+  </script>
+
+<script src="script.js"></script></body>
+</html>
