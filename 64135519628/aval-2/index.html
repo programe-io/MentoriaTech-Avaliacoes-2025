@@ -2,352 +2,81 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Conversor de Temperatura Completo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-      background-size: cover;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .overlay {
-      background-color: rgba(255, 255, 255, 0.95);
-      padding: 35px 40px;
-      border-radius: 15px;
-      max-width: 400px;
-      width: 100%;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-      text-align: center;
-    }
-
-    h2 {
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    select, input {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      margin: 10px 0;
-      border: 2px solid #ccc;
-      border-radius: 8px;
-      transition: border-color 0.3s;
-    }
-
-    input:focus, select:focus {
-      border-color: #4facfe;
-      outline: none;
-    }
-
-    button {
-      background: #4facfe;
-      color: white;
-      border: none;
-      padding: 12px;
-      font-size: 16px;
-      border-radius: 8px;
-      width: 100%;
-      cursor: pointer;
-      margin-top: 15px;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: #00c6ff;
-    }
-
-    .result {
-      margin-top: 20px;
-      font-size: 18px;
-      color: #333;
-      font-weight: 500;
-    }
-
-    @media (max-width: 480px) {
-      .overlay {
-        padding: 25px;
-      }
-    }
-  </style>
-<script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conversor de Temperatura</title>
+  <link rel="stylesheet" href="style.css" />
 <link href="style.css" rel="stylesheet"></head>
 <body>
   <div class="overlay">
-    <h2>Conversor de Temperatura</h2>
 
-    <select id="escala">
-      <option value="celsius">Celsius (°C)</option>
-      <option value="fahrenheit">Fahrenheit (°F)</option>
-      <option value="kelvin">Kelvin (K)</option>
-    </select>
-
-    <input type="number" id="temperatura" placeholder="Digite a temperatura" />
-
-    <button onclick="converter()">Converter</button>
-
-    <div class="result" id="resultado"></div>
-  </div>
-
-  <script>
-    function converter() {
-      const tipo = document.getElementById("escala").value;
-      const valor = parseFloat(document.getElementById("temperatura").value);
-      const resultado = document.getElementById("resultado");
-
-      if (isNaN(valor)) {
-        resultado.innerHTML = "⚠️ Por favor, insira um número válido.";
-        return;
-      }
-
-      let celsius, fahrenheit, kelvin;
-
-      switch (tipo) {
-        case "celsius":
-          celsius = valor;
-          fahrenheit = (celsius * 9) / 5 + 32;
-          kelvin = celsius + 273.15;
-          break;
-        case "fahrenheit":
-          fahrenheit = valor;
-          celsius = (fahrenheit - 32) * 5 / 9;
-          kelvin = celsius + 273.15;
-          break;
-        case "kelvin":
-          kelvin = valor;
-          celsius = kelvin - 273.15;
-          fahrenheit = (celsius * 9) / 5 + 32;
-          break;
-      }
-
-      resultado.innerHTML = `
-        🌡️ Entrada: <strong>${valor.toFixed(2)} ${tipo === 'celsius' ? '°C' : tipo === 'fahrenheit' ? '°F' : 'K'}</strong><br><br>
-        🌡️ Celsius: <strong>${celsius.toFixed(2)} °C</strong><br>
-        🔥 Fahrenheit: <strong>${fahrenheit.toFixed(2)} °F</strong><br>
-        ❄️ Kelvin: <strong>${kelvin.toFixed(2)} K</strong>
-      `;
-    }
-  </script>
-<script src="script.js"></script></body>
-</html>
-
-<body>
-  <div class="overlay">
-
-    <!-- Header semântico -->
     <header>
-      <h2>Conversor de Temperatura</h2>
-      <p>Escolha a escala, digite o valor e veja as conversões!</p>
-    </header>
-
-    <!-- Área principal de interação -->
-    <select id="escala">
-      <option value="celsius">Celsius (°C)</option>
-      <option value="fahrenheit">Fahrenheit (°F)</option>
-      <option value="kelvin">Kelvin (K)</option>
-    </select>
-
-    <input type="number" id="temperatura" placeholder="Digite a temperatura" />
-
-    <button onclick="converter()">Converter</button>
-
-    <div class="result" id="resultado"></div>
-  </div>
-
-  <!-- Importar o JavaScript -->
-  <script src="script.js"></script>
-</body>
-
-<body>
-  <div class="overlay">
-
-    <!-- Header semântico com h1 -->
-    <header>
-      <h1>Conversor de Temperatura</h1>
-      <p>Escolha a escala, digite a temperatura e veja a conversão em tempo real.</p>
-    </header>
-
-    <select id="escala">
-      <option value="celsius">Celsius (°C)</option>
-      <option value="fahrenheit">Fahrenheit (°F)</option>
-      <option value="kelvin">Kelvin (K)</option>
-    </select>
-
-    <input type="number" id="temperatura" placeholder="Digite a temperatura" />
-
-    <button onclick="converter()">Converter</button>
-
-    <div class="result" id="resultado"></div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-
-<body>
-  <div class="overlay">
-
-    <!-- Header com navegação -->
-    <header>
+      <img
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+        alt="Paisagem natural"
+        class="header-img"
+      />
       <h1>Conversor de Temperatura</h1>
       <p>Escolha a escala, digite a temperatura e veja a conversão em tempo real.</p>
 
       <nav>
         <ul>
           <li><a href="#conversor">Início</a></li>
-          <li><a href="https://pt.wikipedia.org/wiki/Escala_de_temperatura" target="_blank">Sobre Temperaturas</a></li>
+          <li>
+            <a
+              href="https://pt.wikipedia.org/wiki/Escala_de_temperatura"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Sobre Temperaturas</a
+            >
+          </li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- Área principal com id para navegação -->
-    <div id="conversor">
-      <select id="escala">
-        <option value="celsius">Celsius (°C)</option>
-        <option value="fahrenheit">Fahrenheit (°F)</option>
-        <option value="kelvin">Kelvin (K)</option>
-      </select>
-
-      <input type="number" id="temperatura" placeholder="Digite a temperatura" />
-
-      <button onclick="converter()">Converter</button>
-
-      <div class="result" id="resultado"></div>
-    </div>
-
-    <!-- Simulação de uma seção de contato -->
-    <footer id="contato">
-      <p style="margin-top: 30px; font-size: 13px; color: #777;">© 2025 Conversor de Temperatura</p>
-    </footer>
-
-  </div>
-
-  <script src="script.js"></script>
-</body>
-
-<body>
-  <div class="overlay">
-
-    <header>
-      <h1>Conversor de Temperatura</h1>
-      <p>Escolha a escala, digite a temperatura e veja a conversão em tempo real.</p>
-
-      <nav>
-        <ul>
-          <li><a href="#conversor">Início</a></li>
-          <li><a href="https://pt.wikipedia.org/wiki/Escala_de_temperatura" target="_blank" rel="noopener noreferrer">Sobre Temperaturas</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main id="conversor" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-      
-      <section style="flex: 1 1 250px; min-width: 280px;">
+    <main id="conversor">
+      <article>
         <select id="escala">
           <option value="celsius">Celsius (°C)</option>
           <option value="fahrenheit">Fahrenheit (°F)</option>
           <option value="kelvin">Kelvin (K)</option>
         </select>
 
-        <input type="number" id="temperatura" placeholder="Digite a temperatura" />
-
-        <button onclick="converter()">Converter</button>
-
-        <div class="result" id="resultado"></div>
-      </section>
-
-      <aside style="flex: 1 1 200px; background: #f0f8ff; padding: 15px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); min-width: 250px;">
-        <h3>Sobre as Escalas</h3>
-        <p><strong>Celsius (°C)</strong>: Escala usada na maioria dos países, baseada no ponto de congelamento da água em 0°C e ebulição em 100°C.</p>
-        <p><strong>Fahrenheit (°F)</strong>: Usada principalmente nos EUA, com pontos de congelamento e ebulição da água em 32°F e 212°F, respectivamente.</p>
-        <p><strong>Kelvin (K)</strong>: Escala absoluta usada em ciências, começa no zero absoluto (-273,15°C).</p>
-      </aside>
-
-    </main>
-
-    <footer id="contato" style="text-align: center; margin-top: 30px; font-size: 13px; color: #777;">
-      © 2025 Conversor de Temperatura
-    </footer>
-
-  </div>
-
-  <script src="script.js"></script>
-</body>
-
-<body>
-  <div class="overlay">
-
-    <header>
-      <h1>Conversor de Temperatura</h1>
-      <p>Escolha a escala, digite a temperatura e veja a conversão em tempo real.</p>
-
-      <nav>
-        <ul>
-          <li><a href="#conversor">Início</a></li>
-          <li><a href="https://pt.wikipedia.org/wiki/Escala_de_temperatura" target="_blank" rel="noopener noreferrer">Sobre Temperaturas</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main id="conversor" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-
-      <article style="flex: 1 1 280px; min-width: 280px;">
-        <select id="escala">
-          <option value="celsius">Celsius (°C)</option>
-          <option value="fahrenheit">Fahrenheit (°F)</option>
-          <option value="kelvin">Kelvin (K)</option>
-        </select>
-
-        <input type="number" id="temperatura" placeholder="Digite a temperatura" />
+        <input
+          type="number"
+          id="temperatura"
+          placeholder="Digite a temperatura"
+          autocomplete="off"
+        />
 
         <button onclick="converter()">Converter</button>
 
         <div class="result" id="resultado"></div>
       </article>
 
-      <aside style="flex: 1 1 200px; background: #f0f8ff; padding: 15px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); min-width: 250px;">
+      <aside>
         <h3>Sobre as Escalas</h3>
-        <p><strong>Celsius (°C)</strong>: Escala usada na maioria dos países, baseada no ponto de congelamento da água em 0°C e ebulição em 100°C.</p>
-        <p><strong>Fahrenheit (°F)</strong>: Usada principalmente nos EUA, com pontos de congelamento e ebulição da água em 32°F e 212°F, respectivamente.</p>
-        <p><strong>Kelvin (K)</strong>: Escala absoluta usada em ciências, começa no zero absoluto (-273,15°C).</p>
+        <p>
+          <strong>Celsius (°C)</strong>: Escala usada na maioria dos países,
+          baseada no ponto de congelamento da água em 0°C e ebulição em 100°C.
+        </p>
+        <p>
+          <strong>Fahrenheit (°F)</strong>: Usada principalmente nos EUA, com
+          pontos de congelamento e ebulição da água em 32°F e 212°F,
+          respectivamente.
+        </p>
+        <p>
+          <strong>Kelvin (K)</strong>: Escala absoluta usada em ciências,
+          começa no zero absoluto (-273,15°C).
+        </p>
       </aside>
-
     </main>
 
-    <footer id="contato" style="text-align: center; margin-top: 30px; font-size: 13px; color: #777;">
-      © 2025 Conversor de Temperatura
+    <footer id="contato">
+      <p>© 2025 Conversor de Temperatura</p>
     </footer>
-
   </div>
 
   <script src="script.js"></script>
-</body>
-
-<header>
-  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Paisagem natural" style="width: 100%; border-radius: 15px; margin-bottom: 15px;">
-  <h1>Conversor de Temperatura</h1>
-  <p>Escolha a escala, digite a temperatura e veja a conversão em tempo real.</p>
-
-  <nav>
-    <ul>
-      <li><a href="#conversor">Início</a></li>
-      <li><a href="https://pt.wikipedia.org/wiki/Escala_de_temperatura" target="_blank" rel="noopener noreferrer">Sobre Temperaturas</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
-</header>
+<script src="script.js"></script></body>
+</html>
