@@ -1,0 +1,219 @@
+/*
+    -------------------------------------------------
+    1. Reset Básico (Para começar "do zero")
+    -------------------------------------------------
+*/
+* {
+    /* Remove margem e padding padrão em todos os elementos */
+    margin: 0;
+    padding: 0;
+    /* Faz o cálculo de tamanho da caixa mais intuitivo */
+    box-sizing: border-box;
+}
+
+/*
+    -------------------------------------------------
+    2. Estilos Globais (body)
+    ---------------------------------
+*/
+body {
+    /* Cor de fundo do blog */
+    background-color: #f0f0f5; /* Um cinza bem clarinho */
+    /* Fonte principal (importante para o profissionalismo) */
+    font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Fonte divertida, mas com fallback seguro */
+    /* Tamanho de fonte padrão para o corpo do texto (tag <p>) */
+    font-size: 16px; 
+    /* Altura da linha para melhor leitura */
+    line-height: 1.6;
+    /* Largura máxima do conteúdo centralizado */
+    max-width: 960px;
+    /* Centraliza o conteúdo na tela */
+    margin: 0 auto;
+    /* Padding interno para não 'grudar' nas bordas da tela */
+    padding: 20px;
+}
+
+/*
+    -------------------------------------------------
+    3. Estilos do Cabeçalho (header)
+    -------------------------------------------------
+*/
+header {
+    background-color: #ff99cc; /* Cor de destaque (rosa ou outra cor vibrante) */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px 10px 0 0; /* Bordas arredondadas */
+    margin-bottom: 20px;
+}
+
+/*
+    -------------------------------------------------
+    4. Títulos (h1, h2, h3) - Hierarquia e Tamanhos
+    -------------------------------------------------
+*/
+h1 {
+    /* Título principal do site */
+    font-size: 2.5em; /* 2.5 vezes o tamanho padrão */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px #cc6699; /* Sombra sutil para destaque */
+}
+
+h2 {
+    /* Título dos posts */
+    font-size: 1.8em;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffcc00; /* Linha amarela para separar */
+    padding-bottom: 5px;
+}
+
+h3 {
+    /* Títulos de seção (como listas) */
+    font-size: 1.4em;
+    color: #008080; /* Cor verde-água */
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/*
+    -------------------------------------------------
+    5. Estilos de Navegação (nav)
+    -------------------------------------------------
+*/
+nav ul {
+    /* Remove os marcadores de lista */
+    list-style: none;
+    /* Espaçamento interno */
+    padding: 0;
+    /* Exibe os itens lado a lado (flexbox é o método moderno) */
+    display: flex;
+    /* Centraliza os itens */
+    justify-content: center;
+    gap: 20px; /* Espaço entre os links */
+}
+
+nav a {
+    /* Estilos do link (tag <a>) */
+    color: white;
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-weight: bold;
+    padding: 5px 10px;
+    /* Transição suave para o efeito de hover */
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    /* Efeito ao passar o mouse */
+    background-color: #cc6699;
+    border-radius: 5px;
+}
+
+/*
+    -------------------------------------------------
+    6. Estilos de Seção e Conteúdo (main, section, p)
+    -------------------------------------------------
+*/
+main {
+    background-color: white;
+    padding: 30px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.post-recente {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ccc;
+}
+
+p {
+    /* Estilo para parágrafos */
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.meta {
+    /* Estilo para as informações de data/autor */
+    font-style: italic;
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+/*
+    -------------------------------------------------
+    7. Imagens (img) e Figuras (figure)
+    -------------------------------------------------
+*/
+img {
+    /* Garante que a imagem se ajuste ao container */
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove espaços extras */
+    margin: 15px auto;
+    border: 5px solid #ffcc00; /* Borda amarela legal */
+    border-radius: 10px;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: -10px; /* Sobe um pouco para ficar junto da imagem */
+    margin-bottom: 15px;
+}
+
+/*
+    -------------------------------------------------
+    8. Estilos de Lista (ul, li)
+    -------------------------------------------------
+*/
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    /* Estilo de marcador de lista personalizado (pode ser 'circle', 'square' etc.) */
+    list-style-type: '🚀 '; 
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/*
+    -------------------------------------------------
+    9. Botão/Link de "Leia Mais"
+    -------------------------------------------------
+*/
+.btn-leia-mais {
+    /* Estilo de botão */
+    display: inline-block;
+    background-color: #008080; /* Cor de destaque */
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 50px; /* Borda bem arredondada */
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-leia-mais:hover {
+    background-color: #005f5f; /* Cor mais escura no hover */
+}
+
+/*
+    -------------------------------------------------
+    10. Estilos de Rodapé (footer)
+    -------------------------------------------------
+*/
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 0.85em;
+}
