@@ -1,0 +1,212 @@
+/* Resetando margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img {
+    width: 150px;  /* Logo */
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+/* Barra Lateral */
+aside {
+    width: 20%;
+    position: fixed;
+    top: 120px;
+    left: 0;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    height: calc(100% - 120px);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.categories h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.categories ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.categories ul li {
+    margin-bottom: 15px;
+}
+
+.categories ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.categories ul li a:hover {
+    color: #007BFF;
+}
+
+/* Conteúdo Principal */
+main {
+    margin-left: 22%;  /* Dá espaço para a barra lateral */
+    padding: 20px;
+    background-color: white;
+}
+
+.post {
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.post:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.post-image:hover {
+    transform: scale(1.05);
+}
+
+.post-content h2 {
+    color: #333;
+    font-size: 2em;
+    margin-top: 15px;
+}
+
+.post-content p {
+    color: #666;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.post-content a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.post-content a:hover {
+    color: #0056b3;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+footer a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #0056b3;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        text-align: center;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    aside {
+        width: 100%;
+        position: relative;
+        top: 0;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    .post-image {
+        width: 100%;
+    }
+
+    .post-content h2 {
+        font-size: 1.5em;
+    }
+
+    .post-content p {
+        font-size: 1em;
+    }
+}
