@@ -1,0 +1,270 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relógio Virtual em Tempo Real</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: #ecf0f1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header, nav, main, aside, footer {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: rgba(0,0,0,0.3);
+      border-radius: 8px;
+    }
+    header {
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    #clock {
+      font-size: 5rem;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px;
+      border: 5px solid #ecf0f1;
+      border-radius: 12px;
+      width: fit-content;
+      margin: 0 auto;
+      background-color: rgba(44, 62, 80, 0.7);
+      letter-spacing: 10px;
+      user-select: none;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    section, aside {
+      flex: 1 1 300px;
+      background-color: rgba(0,0,0,0.4);
+      border-radius: 10px;
+      padding: 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ecf0f1;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: rgba(236, 240, 241, 0.2);
+    }
+    form label {
+      display: block;
+      margin-top: 10px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      margin-top: 5px;
+    }
+    form button {
+      margin-top: 15px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      background-color: #3498db;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #2980b9;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      background-color: rgba(0,0,0,0.3);
+    }
+    /* Estilo para imagem do header */
+    .header-img {
+      display: block;
+      margin: 0 auto 15px;
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+    /* Destaque para spans */
+    .highlight {
+      color: #f39c12;
+      font-weight: bold;
+    }
+    .footer-name {
+      color: #e74c3c;
+      font-weight: 700;
+    }
+    .small-text {
+      font-style: italic;
+      color: #bdc3c7;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <div class="wrapper-header">
+    <header>
+      <!-- Imagem ilustrativa do relógio -->
+      <img src="https://cdn-icons-png.flaticon.com/512/61/61168.png" alt="Ícone de relógio" class="header-img" width="80" height="80" />
+      <h1>Relógio <span class="highlight">Virtual</span> em Tempo Real</h1>
+      <p>Exemplo com várias tags HTML</p>
+    </header>
+  </div>
+
+  <div class="wrapper-nav">
+    <nav>
+      <ul>
+        <li><a href="#relógio">Relógio</a></li>
+        <li><a href="#formulario">Contato</a></li>
+        <li><a href="#informacoes">Informações</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="wrapper-main">
+    <main>
+      <section id="relógio" aria-label="Relógio digital">
+        <h2>Hora Atual</h2>
+        <time id="clock" datetime="">00:00:00</time>
+        <p><small class="small-text">Atualizado em <span class="highlight">tempo real</span> usando JavaScript.</small></p>
+      </section>
+
+      <section id="formulario" aria-label="Formulário de contato">
+        <h2>Fale Conosco</h2>
+        <form action="#" method="post">
+          <label for="nome">Nome completo:</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" placeholder="email@exemplo.com" required />
+
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite sua mensagem"></textarea>
+
+          <fieldset>
+            <legend>Preferência de contato:</legend>
+            <input type="radio" id="contato-email" name="contato" value="email" checked />
+            <label for="contato-email">E-mail</label>
+            <input type="radio" id="contato-telefone" name="contato" value="telefone" />
+            <label for="contato-telefone">Telefone</label>
+          </fieldset>
+
+          <input type="checkbox" id="aceito" name="aceito" required />
+          <label for="aceito">Aceito os termos e condições</label>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+
+      <section id="informacoes" aria-label="Informações adicionais">
+        <h2>Fuso Horário e Datas</h2>
+        <table summary="Fusos horários de algumas cidades">
+          <caption>Fusos Horários</caption>
+          <thead>
+            <tr>
+              <th>Cidade</th>
+              <th>Fuso Horário</th>
+              <th>Hora Local</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>São Paulo</td>
+              <td>UTC -3</td>
+              <td><time datetime="">--:--</time></td>
+            </tr>
+            <tr>
+              <td>Lisboa</td>
+              <td>UTC +1</td>
+              <td><time datetime="">--:--</time></td>
+            </tr>
+            <tr>
+              <td>Tóquio</td>
+              <td>UTC +9</td>
+              <td><time datetime="">--:--</time></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <aside>
+          <h3>Nota</h3>
+          <p>O horário mostrado no relógio é o horário local do dispositivo.</p>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <div class="wrapper-footer">
+    <footer>
+      <p>© 2025 <span class="footer-name">Seu Nome</span>. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+
+  <script>
+    function pad(num) {
+      return num.toString().padStart(2, '0');
+    }
+
+    function updateClock() {
+      const now = new Date();
+      const hours = pad(now.getHours());
+      const minutes = pad(now.getMinutes());
+      const seconds = pad(now.getSeconds());
+
+      const clock = document.getElementById('clock');
+      clock.textContent = `${hours}:${minutes}:${seconds}`;
+      clock.setAttribute('datetime', now.toISOString());
+
+      // Atualiza as horas na tabela de fusos horários
+      const saoPaulo = new Date(now.toLocaleString('en-US', {timeZone: 'America/Sao_Paulo'}));
+      const lisboa = new Date(now.toLocaleString('en-US', {timeZone: 'Europe/Lisbon'}));
+      const tokyo = new Date(now.toLocaleString('en-US', {timeZone: 'Asia/Tokyo'}));
+
+      const rows = document.querySelectorAll('#informacoes tbody tr');
+      rows[0].querySelector('time').textContent = `${pad(saoPaulo.getHours())}:${pad(saoPaulo.getMinutes())}`;
+      rows[0].querySelector('time').setAttribute('datetime', saoPaulo.toISOString());
+
+      rows[1].querySelector('time').textContent = `${pad(lisboa.getHours())}:${pad(lisboa.getMinutes())}`;
+      rows[1].querySelector('time').setAttribute('datetime', lisboa.toISOString());
+
+      rows[2].querySelector('time').textContent = `${pad(tokyo.getHours())}:${pad(tokyo.getMinutes())}`;
+      rows[2].querySelector('time').setAttribute('datetime', tokyo.toISOString());
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+<script src="script.js"></script></body>
+</html>
