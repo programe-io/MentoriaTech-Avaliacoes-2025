@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exemplo Completo com Todas as Tags HTML</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.5;
+    }
+    header, nav, main, aside, footer, section, article {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+    }
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    nav ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+    }
+    table, th, td {
+      border: 1px solid #888;
+    }
+    th, td {
+      padding: 6px;
+      text-align: left;
+    }
+    figure {
+      margin: 10px 0;
+    }
+    figure img {
+      max-width: 100%;
+      height: auto;
+    }
+    form label {
+      display: block;
+      margin-top: 10px;
+    }
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+    details {
+      margin-top: 10px;
+    }
+    progress, meter {
+      width: 100%;
+      height: 20px;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<header>
+  <div>
+    <img src="https://via.placeholder.com/100x50" alt="Logo do Site" />
+    <h1>Bem-vindo ao Exemplo Completo</h1>
+    <address>
+      Contato: <a href="mailto:contato@exemplo.com">contato@exemplo.com</a><br />
+      Rua Exemplo, 123 - Cidade - País
+    </address>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#conteudo">Conteúdo</a></li>
+      <li><a href="#formulario">Formulário</a></li>
+      <li><a href="#tabela">Tabela</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="sobre">
+    <article>
+      <h2>Seção Sobre Nós</h2>
+      <h3>História</h3>
+      <p>Fundada em 2025, nossa empresa preza pela <strong>qualidade</strong> e <em>inovação</em>.</p>
+      <p><small>Última atualização: 30 de setembro de 2025</small></p>
+      <blockquote cite="https://www.exemplo.com/sobre">
+        "Nosso compromisso é ser referência no mercado." – CEO
+      </blockquote>
+      <p>Usamos as melhores práticas, <del>evitando métodos ultrapassados</del> e <ins>adotando tecnologia moderna</ins>.</p>
+      <p><mark>Destaque para nossa equipe!</mark></p>
+      <pre>
+Código exemplo:
+for(int i=0; i<10; i++) {
+  System.out.println(i);
+}
+      </pre>
+    </article>
+  </section>
+
+  <aside>
+    <h2>Links Úteis</h2>
+    <h3>Menu Lateral</h3>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#conteudo">Conteúdo</a></li>
+      <li><a href="#formulario">Formulário</a></li>
+    </ul>
+  </aside>
+
+  <section id="conteudo">
+    <h2>Conteúdo Multimídia</h2>
+
+    <article>
+      <h3>Imagem com Figura e Legenda</h3>
+      <figure>
+        <img src="https://via.placeholder.com/400x200" alt="Paisagem" />
+        <figcaption>Imagem da bela paisagem.</figcaption>
+      </figure>
+    </article>
+
+    <article>
+      <h3>Vídeo de Exemplo</h3>
+      <video controls width="400" height="225">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeo.
+      </video>
+      <track kind="subtitles" srclang="pt" src="legendas.vtt" label="Português" default />
+    </article>
+
+    <article>
+      <h3>Áudio de Exemplo</h3>
+      <audio controls>
+        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
+        Seu navegador não suporta áudio.
+      </audio>
+    </article>
+  </section>
+
+  <section id="formulario">
+    <h2>Formulário de Contato</h2>
+    <form action="#" method="post">
+      <fieldset>
+        <legend>Informações Pessoais</legend>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo">
+          <option value="">Selecione</option>
+          <option value="feminino">Feminino</option>
+          <option value="masculino">Masculino</option>
+          <option value="outro">Outro</option>
+        </select>
+
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpar</button>
+      </fieldset>
+    </form>
+  </section>
+
+  <section id="tabela">
+    <h2>Tabela de Produtos</h2>
+    <table>
+      <caption>Estoque atual de produtos</caption>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Quantidade</th>
+          <th>Preço (R$)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Caneta</td>
+          <td>50</td>
+          <td>1,50</td>
+        </tr>
+        <tr>
+          <td>Caderno</td>
+          <td>30</td>
+          <td>15,00</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Total de itens: 80</td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+
+  <section>
+    <h2>Listas</h2>
+    <h3>Lista Não Ordenada</h3>
+    <ul>
+      <li>Item A</li>
+      <li>Item B</li>
+      <li>Item C</li>
+    </ul>
+
+    <h3>Lista Ordenada</h3>
+    <ol>
+      <li>Primeiro</li>
+      <li>Segundo</li>
+      <li>Terceiro</li>
+    </ol>
+
+    <h3>Lista de Definição</h3>
+    <dl>
+      <dt>HTML</dt>
+      <dd>HyperText Markup Language</dd>
+      <dt>CSS</dt>
+      <dd>Cascading Style Sheets</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Elementos Inline e Containers</h2>
+    <p>
+      Este é um <span style="color: blue;">texto em span</span> dentro de um parágrafo.
+      Usamos <code>&lt;code&gt;</code> para códigos inline, como <code>for(int i=0; i&lt;10; i++)</code>.
+      A variável pode ser mostrada com a tag <var>x</var>.
+      Resultado da amostra: <samp>OK</samp>.
+    </p>
+
+    <div style="border: 1px solid #aaa; padding: 10px;">
+      Esta é uma div, um container genérico para agrupar conteúdo.
+    </div>
+  </section>
+
+  <section>
+    <h2>Elementos Interativos</h2>
+
+    <details>
+      <summary>Clique para ver detalhes</summary>
+      <p>Este texto fica oculto até você clicar no resumo acima.</p>
+    </details>
+
+    <p>Barra de progresso:</p>
+    <progress value="70" max="100">70%</progress>
+
+    <p>Medidor de temperatura:</p>
+    <meter value="0.6">60%</meter>
+
+    <iframe src="https://www.example.com" width="300" height="200" title="Exemplo de iframe"></iframe>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 Exemplo Completo. Todos os direitos reservados.</p>
+</footer>
+
+<script src="script.js"></script></body>
+</html>
