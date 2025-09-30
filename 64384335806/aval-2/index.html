@@ -3,49 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Simulado Sistema Escolar</title>
+  <title>Conversor de Temperatura</title>
   <link rel="stylesheet" href="styles.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
 <body>
-
   <header>
-    <img src="https://via.placeholder.com/100x50?text=Logo" alt="Logo do Sistema Escolar" />
-    <h1>Simulado Sistema Escolar</h1>
-    <nav aria-label="Menu principal">
-      <ul>
-        <li><a href="#notas">Notas</a></li>
-        <li><a href="#resultados">Resultados</a></li>
-        <li><a href="#gerenciar">Gerenciar</a></li>
-      </ul>
-    </nav>
+    <h1>Conversor de Temperatura</h1>
   </header>
 
-  <main>
-    <article id="notas">
-      <h2>Inserir Notas</h2>
-      <h3>Formulário de Notas</h3>
-      <form id="notasForm" novalidate>
-        <label for="nota1">Nota 1:</label>
-        <input id="nota1" type="number" min="0" max="10" step="0.1" required />
-        <!-- Outros campos aqui -->
-        <button type="submit">Calcular Médias</button>
-      </form>
-    </article>
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
 
-    <aside aria-label="Informações adicionais">
-      <h2>Informações Extras</h2>
-      <h3>Dicas para preenchimento</h3>
-      <p>Use números entre 0 e 10 para as notas.</p>
-      <ul>
-        <li>Não deixe campos vazios.</li>
-        <li>Use ponto para casas decimais.</li>
-      </ul>
+  <div class="main-container">
+    <main>
+      <article class="container">
+        <label for="valor">Digite a temperatura:</label>
+        <input type="number" id="valor" placeholder="Ex: 25" />
+
+        <label for="de">De:</label>
+        <select id="de">
+          <option value="celsius">Celsius (°C)</option>
+          <option value="fahrenheit">Fahrenheit (°F)</option>
+          <option value="kelvin">Kelvin (K)</option>
+        </select>
+
+        <label for="para">Para:</label>
+        <select id="para">
+          <option value="celsius">Celsius (°C)</option>
+          <option value="fahrenheit">Fahrenheit (°F)</option>
+          <option value="kelvin">Kelvin (K)</option>
+        </select>
+
+        <button onclick="converter()">Converter</button>
+
+        <div class="resultado" id="resultado">
+          <p></p>
+        </div>
+      </article>
+    </main>
+
+    <aside class="imagem-container">
+      <h3>Imagem ilustrativa</h3>
+      <img src="https://cdn-icons-png.flaticon.com/512/861/861059.png" alt="Termômetro" />
     </aside>
-  </main>
+  </div>
 
   <footer>
-    <h3>Contato</h3>
-    <p>© 2025 Sistema Escolar. Todos os direitos reservados.</p>
+    <p>&copy; 2025 Conversor de Temperatura. Todos os direitos reservados.</p>
   </footer>
 
   <script src="script.js"></script>
