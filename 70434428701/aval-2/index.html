@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Completo com Tags HTML5</title>
+  <meta name="description" content="Exemplo com quase todas as tags HTML5" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <!-- Header com nav -->
+  <header>
+    <h1>Meu Site Completo</h1>
+    <p>Exemplo usando quase todas as tags HTML5 importantes.</p>
+    <nav>
+      <ul>
+        <li><a href="#main">Ir para Conteúdo Principal</a></li>
+        <li><a href="#sec1">Seção 1</a></li>
+        <li><a href="#sec2">Seção 2</a></li>
+        <li><a href="#aside1">Informações Laterais</a></li>
+        <li><a href="#footer">Rodapé</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Barra de busca -->
+  <form role="search" aria-label="Busca no site" id="searchForm">
+    <label for="searchInput">Buscar:</label>
+    <input type="search" id="searchInput" name="q" placeholder="Digite sua busca..." required />
+    <button type="submit">Pesquisar</button>
+  </form>
+
+  <!-- Banner principal -->
+  <section aria-label="Banner principal" id="banner">
+    <article>
+      <header>
+        <h2>Bem-vindo ao Nosso Site!</h2>
+      </header>
+      <p>Este é um exemplo de uso das tags HTML5.</p>
+      <figure>
+        <img src="https://via.placeholder.com/600x200" alt="Imagem ilustrativa do banner" />
+        <figcaption>Imagem do nosso banner principal</figcaption>
+      </figure>
+    </article>
+  </section>
+
+  <!-- Conteúdo principal -->
+  <main id="main" tabindex="-1">
+    <section id="sec1" aria-labelledby="sec1Title">
+      <header>
+        <h2 id="sec1Title">Seção 1 - Relógio em Tempo Real</h2>
+      </header>
+      <article>
+        <p>Aqui está o relógio que atualiza a cada segundo:</p>
+        <time datetime="" id="clock" role="timer" aria-live="polite" aria-atomic="true">00:00:00</time>
+      </article>
+    </section>
+
+    <section id="sec2" aria-labelledby="sec2Title">
+      <header>
+        <h2 id="sec2Title">Seção 2 - Artigo Exemplo</h2>
+      </header>
+      <article>
+        <header>
+          <h3>Artigo dentro da seção 2</h3>
+          <p><small>Publicado em <time datetime="2025-09-30">30 de setembro de 2025</time></small></p>
+        </header>
+        <p>Este é um parágrafo de exemplo dentro do artigo.</p>
+        <p>Podemos usar <mark>marcações</mark>, <em>ênfase</em>, <strong>importância</strong> e <abbr title="Linguagem de Marcação de Hipertexto">HTML</abbr>.</p>
+        <blockquote cite="https://developer.mozilla.org/">
+          “O HTML é a espinha dorsal da web.” — MDN Web Docs
+        </blockquote>
+        <footer>
+          <p>Autor: <address><a href="mailto:autor@exemplo.com">autor@exemplo.com</a></address></p>
+        </footer>
+      </article>
+    </section>
+  </main>
+
+  <!-- Aside lateral -->
+  <aside id="aside1" aria-label="Informações adicionais">
+    <h2>Informações Laterais</h2>
+    <p>Links úteis:</p>
+    <ul>
+      <li><a href="https://developer.mozilla.org/">MDN Web Docs</a></li>
+      <li><a href="https://www.w3.org/">W3C</a></li>
+      <li><a href="https://html.spec.whatwg.org/">Especificação HTML</a></li>
+    </ul>
+  </aside>
+
+  <!-- Elemento de detalhes com summary -->
+  <details>
+    <summary>Mais informações</summary>
+    <p>Este texto aparece quando o usuário expande o detalhe.</p>
+  </details>
+
+  <!-- Elemento de diálogo -->
+  <dialog id="dialogoExemplo">
+    <form method="dialog">
+      <p>Este é um diálogo modal.</p>
+      <menu>
+        <button id="fecharDialogo" value="cancel">Fechar</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <!-- Rodapé -->
+  <footer id="footer">
+    <p>© 2025 Meu Site Completo</p>
+    <nav aria-label="Links do rodapé">
+      <ul>
+        <li><a href="#">Privacidade</a></li>
+        <li><a href="#">Termos</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </footer>
+<script src="script.js"></script></body>
+</html>
