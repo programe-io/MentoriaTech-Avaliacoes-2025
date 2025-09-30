@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Exemplo completo com todas as principais tags HTML">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Todas as Tags HTML</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+        section, article, aside, footer, header, nav, main { background: #fff; margin: 10px 0; padding: 10px; border-radius: 5px; }
+    </style>
+    <script>
+        function mostrarMensagem() {
+            alert('Você clicou no botão!');
+        }
+    </script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <h1>Site Exemplo com Todas as Tags</h1>
+        <nav>
+            <ul>
+                <li><a href="#texto">Texto</a></li>
+                <li><a href="#lista">Listas</a></li>
+                <li><a href="#tabela">Tabela</a></li>
+                <li><a href="#formulario">Formulário</a></li>
+                <li><a href="#midia">Mídia</a></li>
+                <li><a href="#article">Artigos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="texto">
+            <h2>Texto e Formatação</h2>
+            <p>Este é um parágrafo com <strong>negrito</strong>, <em>itálico</em>, <mark>destaque</mark>, e um <abbr title="HyperText Markup Language">HTML</abbr>.</p>
+            <p>Texto com <code>código</code> inline e um bloco:</p>
+            <pre><code>console.log("Olá, mundo!");</code></pre>
+            <blockquote>Citação usando blockquote.</blockquote>
+            <p>Primeira linha com quebra<br>de linha usando &lt;br&gt;.</p>
+            <p><small>Texto pequeno</small> e <span style="color: red;">um <span>em destaque</span>.</p>
+            <p>Publicado em: <time datetime="2025-09-30">30 de setembro de 2025</time></p>
+            <hr>
+        </section>
+
+        <section id="lista">
+            <h2>Listas</h2>
+            <h3>Lista não ordenada</h3>
+            <ul>
+                <li>Item A</li>
+                <li>Item B</li>
+            </ul>
+            <h3>Lista ordenada</h3>
+            <ol>
+                <li>Primeiro</li>
+                <li>Segundo</li>
+            </ol>
+            <h3>Lista de definição</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>Linguagem de marcação para web</dd>
+                <dt>CSS</dt>
+                <dd>Folhas de estilo</dd>
+            </dl>
+        </section>
+
+        <section id="tabela">
+            <h2>Tabela</h2>
+            <table border="1">
+                <caption>Exemplo de Tabela</caption>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Teclado</td>
+                        <td>R$ 100</td>
+                    </tr>
+                    <tr>
+                        <td>Mouse</td>
+                        <td>R$ 50</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total</td>
+                        <td>R$ 150</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="formulario">
+            <h2>Formulário</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome"><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"><br>
+
+                    <label>Gênero:</label>
+                    <input type="radio" name="genero" value="m"> Masculino
+                    <input type="radio" name="genero" value="f"> Feminino<br>
+
+                    <label>Interesses:</label>
+                    <input type="checkbox" name="interesse" value="html"> HTML
+                    <input type="checkbox" name="interesse" value="css"> CSS<br>
+
+                    <label for="mensagem">Mensagem:</label><br>
+                    <textarea id="mensagem" name="mensagem" rows="4"></textarea><br>
+
+                    <label for="opcao">Escolha:</label>
+                    <select id="opcao" name="opcao">
+                        <option value="1">Opção 1</option>
+                        <option value="2">Opção 2</option>
+                    </select><br>
+
+                    <button type="submit">Enviar</button>
+                    <button type="button" onclick="mostrarMensagem()">Clique-me</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <section id="midia">
+            <h2>Mídia</h2>
+
+            <figure>
+                <img src="https://via.placeholder.com/150" alt="Imagem Exemplo">
+                <figcaption>Imagem de exemplo</figcaption>
+            </figure>
+
+            <audio controls>
+                <source src="audio.mp3" type="audio/mpeg">
+                Seu navegador não suporta áudio.
+            </audio>
+
+            <video width="320" height="240" controls>
+                <source src="video.mp4" type="video/mp4">
+                Seu navegador não suporta vídeo.
+            </video>
+
+            <iframe src="https://www.example.com" width="300" height="200" title="Exemplo de iframe"></iframe>
+        </section>
+
+        <section id="article">
+            <h2>Artigos</h2>
+            <article>
+                <h3>Artigo 1: Tecnologia</h3>
+                <p>Este é um artigo independente sobre tecnologia.</p>
+            </article>
+            <article>
+                <h3>Artigo 2: Ciência</h3>
+                <p>Outro artigo discutindo temas científicos.</p>
+            </article>
+        </section>
+    </main>
+
+    <aside>
+        <h2>Conteúdo Lateral</h2>
+        <p>Links úteis, anúncios ou widgets.</p>
+    </aside>
+
+    <footer>
+        <p>&copy; 2025 - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        console.log("Script no final do body funcionando.");
+    </script>
+<script src="script.js"></script></body>
+</html>
