@@ -1,7 +1,7 @@
-// JavaScript do menu mobile
-const menuBtn = document.querySelector(".menu-btn");
-const nav = document.getElementById("navbar");
+// Script para alternar o menu no mobile
+const menuBtn = document.querySelector('.menu-btn');
+const navbar = document.getElementById('navbar');
 
-menuBtn.addEventListener("click", () => {
-  nav.classList.toggle("show");
+menuBtn.addEventListener('click', () => {
+  navbar.classList.toggle('active');
 });
