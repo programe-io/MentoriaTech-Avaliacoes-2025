@@ -1,0 +1,143 @@
+:root{
+      --bg: #0f1724;         /* fundo escuro */
+        --card: #0b1220;       /* cartões */
+          --accent: #6ee7b7;     /* cor principal (verde água) */
+            --muted: #94a3b8;      /* texto secundário */
+              --glass: rgba(255,255,255,0.03);
+                --radius: 12px;
+                  --maxw: 1100px;
+                    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+                    }
+
+                    *{box-sizing:border-box}
+                    html,body{height:100%}
+                    body{
+                      margin:0;
+                        background: linear-gradient(180deg,#071025 0%, var(--bg) 60%);
+                          color:#e6eef6;
+                            -webkit-font-smoothing:antialiased;
+                              -moz-osx-font-smoothing:grayscale;
+                                line-height:1.5;
+                                  padding-bottom:40px;
+                                  }
+
+                                  .container{
+                                    max-width:var(--maxw);
+                                      margin:0 auto;
+                                        padding:1rem;
+                                        }
+
+                                        /* HEADER */
+                                        .site-header{
+                                          position:sticky;
+                                            top:0;
+                                              backdrop-filter: blur(6px);
+                                                background: linear-gradient(180deg, rgba(11,18,32,0.65), rgba(11,18,32,0.5));
+                                                  border-bottom:1px solid rgba(255,255,255,0.03);
+                                                    z-index:50;
+                                                    }
+                                                    .header-inner{
+                                                      display:flex;
+                                                        align-items:center;
+                                                          justify-content:space-between;
+                                                            gap:1rem;
+                                                            }
+                                                            .brand{display:flex;align-items:center;gap:0.75rem}
+                                                            .brand img{width:48px;height:48px;border-radius:8px;object-fit:cover}
+                                                            .brand h1{font-size:1.25rem;margin:0;letter-spacing:0.2px}
+
+                                                            /* NAV */
+                                                            .main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:0.75rem;align-items:center}
+                                                            .main-nav a{
+                                                              color:var(--muted);
+                                                                text-decoration:none;
+                                                                  padding:0.5rem 0.75rem;
+                                                                    border-radius:8px;
+                                                                      font-weight:600;
+                                                                        font-size:0.95rem;
+                                                                        }
+                                                                        .main-nav a:hover{color:var(--accent);background:var(--glass)}
+
+                                                                        /* HERO / SOBRE */
+                                                                        .hero{
+                                                                          display:grid;
+                                                                            grid-template-columns: 2fr 1fr;
+                                                                              gap:1rem;
+                                                                                align-items:start;
+                                                                                  margin:1.5rem 0;
+                                                                                  }
+                                                                                  .hero article{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:1.25rem;border-radius:var(--radius);box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+                                                                                  .quick-stats{padding:1rem;border-radius:var(--radius);background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+                                                                                  .quick-stats ul{list-style:none;padding:0;margin:0}
+                                                                                  .quick-stats li{margin:0.5rem 0;font-weight:700}
+
+                                                                                  /* PROJECTS */
+                                                                                  .projects header h2{margin:0 0 0.25rem 0}
+                                                                                  .project-grid{
+                                                                                    display:grid;
+                                                                                      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+                                                                                        gap:1rem;
+                                                                                          margin-top:1rem;
+                                                                                          }
+                                                                                          .project-card{
+                                                                                            background:var(--card);
+                                                                                              padding:0;
+                                                                                                border-radius:14px;
+                                                                                                  overflow:hidden;
+                                                                                                    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+                                                                                                      display:flex;
+                                                                                                        flex-direction:column;
+                                                                                                        }
+                                                                                                        .project-card img{width:100%;height:160px;object-fit:cover;display:block}
+                                                                                                        .project-card h3{margin:0.75rem 1rem 0.25rem 1rem;font-size:1.05rem}
+                                                                                                        .project-card p{margin:0 1rem 1rem 1rem;color:var(--muted);font-size:0.95rem;flex:1}
+                                                                                                        .btn{
+                                                                                                          display:inline-block;
+                                                                                                            margin:0 1rem 1rem 1rem;
+                                                                                                              padding:0.5rem 0.9rem;
+                                                                                                                background:linear-gradient(90deg,var(--accent), #3dd6b3);
+                                                                                                                  color:#042022;
+                                                                                                                    font-weight:700;
+                                                                                                                      border-radius:10px;
+                                                                                                                        text-decoration:none;
+                                                                                                                          border:none;
+                                                                                                                            cursor:pointer;
+                                                                                                                              text-align:center;
+                                                                                                                              }
+                                                                                                                              .btn:hover{transform:translateY(-2px);filter:brightness(0.98)}
+
+                                                                                                                              /* RESOURCES */
+                                                                                                                              .resources{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.25rem}
+                                                                                                                              .resource{background:var(--card);padding:1rem;border-radius:12px}
+
+                                                                                                                              /* CONTACT */
+                                                                                                                              .contact{display:grid;grid-template-columns:2fr 1fr;gap:1rem;margin-top:1.5rem}
+                                                                                                                              .contact-form{display:flex;flex-direction:column;gap:0.5rem}
+                                                                                                                              .contact-form label{display:flex;flex-direction:column;color:var(--muted);font-size:0.9rem}
+                                                                                                                              .contact-form input, .contact-form textarea{
+                                                                                                                                margin-top:0.35rem;padding:0.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);
+                                                                                                                                  background:transparent;color:inherit;font-size:1rem
+                                                                                                                                  }
+                                                                                                                                  .link{display:inline-block;margin-top:0.5rem;color:var(--accent);text-decoration:none}
+
+                                                                                                                                  /* FOOTER */
+                                                                                                                                  .site-footer{
+                                                                                                                                    margin-top:2rem;padding:1rem 0;border-top:1px solid rgba(255,255,255,0.03)
+                                                                                                                                    }
+                                                                                                                                    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+                                                                                                                                    .footer-links{list-style:none;margin:0;padding:0;display:flex;gap:0.75rem}
+                                                                                                                                    .footer-links a{color:var(--muted);text-decoration:none;font-size:0.95rem}
+
+                                                                                                                                    /* RESPONSIVO */
+                                                                                                                                    @media (max-width:880px){
+                                                                                                                                      .hero, .contact, .resources{grid-template-columns:1fr}
+                                                                                                                                        .header-inner{flex-direction:column;align-items:flex-start;gap:0.5rem}
+                                                                                                                                          .main-nav ul{flex-wrap:wrap}
+                                                                                                                                            .footer-inner{flex-direction:column;align-items:flex-start}
+                                                                                                                                            }
+
+                                                                                                                                            /* pequenos polimentos visuais */
+                                                                                                                                            .highlight{margin-top:0.5rem;color:var(--accent);font-weight:700}
+                                                                                                                                            .small{font-size:0.9rem;color:var(--muted)}
+                                                                                                                                            
+}
