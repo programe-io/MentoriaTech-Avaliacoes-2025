@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GB Twitter</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #e6ecf0;
+      color: #0f1419;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background: #15202b;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 30px;
+      user-select: none;
+    }
+
+    .sidebar .logo {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 40px;
+      cursor: default;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sidebar .logo img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    nav.menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    nav.menu a {
+      font-size: 18px;
+      padding: 10px 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      color: white;
+      text-decoration: none;
+      display: block;
+      transition: background 0.3s;
+      user-select: none;
+    }
+
+    nav.menu a:hover {
+      background: #1b2836;
+    }
+
+    /* Área principal */
+    main.main-feed {
+      flex: 1;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid #d3dce6;
+      border-right: 1px solid #d3dce6;
+      overflow-y: auto;
+    }
+
+    /* Topo do feed */
+    header.top-header {
+      padding: 15px 20px;
+      font-weight: 800;
+      font-size: 20px;
+      border-bottom: 1px solid #d3dce6;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      user-select: none;
+    }
+
+    /* Box novo tweet */
+    .new-tweet-box {
+      border-bottom: 1px solid #d3dce6;
+      padding: 15px 20px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .new-tweet-box textarea {
+      width: 100%;
+      resize: none;
+      border: 1px solid #ccd6dd;
+      border-radius: 15px;
+      padding: 12px 15px;
+      font-size: 15px;
+      font-family: inherit;
+      min-height: 80px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .new-tweet-box textarea:focus {
+      border-color: #1da1f2;
+      box-shadow: 0 0 8px #1da1f2a3;
+    }
+
+    .new-tweet-box button {
+      align-self: flex-end;
+      background: #1da1f2;
+      border: none;
+      padding: 10px 18px;
+      color: white;
+      font-weight: 700;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-size: 15px;
+      user-select: none;
+    }
+
+    .new-tweet-box button:disabled {
+      background: #8ed0fa;
+      cursor: default;
+    }
+
+    .new-tweet-box button:hover:not(:disabled) {
+      background: #0d8ddb;
+    }
+
+    /* Lista tweets */
+    .tweets-list {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 15px 20px;
+      overflow-y: auto;
+    }
+
+    .tweet {
+      padding: 15px 15px;
+      border: 1px solid #e1e8ed;
+      border-radius: 15px;
+      background: #f5f8fa;
+      font-size: 15px;
+      line-height: 1.4;
+      user-select: text;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+
+    /* Estilização para a tag P dentro do tweet */
+    .tweet p {
+      margin: 0; /* Remove margem padrão do <p> para ficar alinhado */
+      color: #0f1419;
+      font-size: 15px;
+      line-height: 1.5;
+      white-space: pre-wrap; /* mantém quebras de linha */
+    }
+
+    /* Rodapé */
+    .footer {
+      padding: 10px 20px;
+      font-size: 14px;
+      color: #8899a6;
+      text-align: center;
+      background: #fff;
+      border-top: 1px solid #d3dce6;
+      user-select: none;
+    }
+
+    /* Scroll personalizado */
+    main.main-feed::-webkit-scrollbar,
+    .tweets-list::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    main.main-feed::-webkit-scrollbar-thumb,
+    .tweets-list::-webkit-scrollbar-thumb {
+      background-color: #aab8c2;
+      border-radius: 8px;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <div class="sidebar">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/48px-Twitter-logo.svg.png" alt="Logo GB Twitter" />
+      GB Twitter
+    </div>
+    <nav class="menu">
+      <a href="#">Início</a>
+      <a href="#">Explorar</a>
+      <a href="#">Notificações</a>
+      <a href="#">Mensagens</a>
+      <a href="#">Perfil</a>
+      <a href="#">Configurações</a>
+    </nav>
+  </div>
+
+  <main class="main-feed">
+    <header class="top-header">Início</header>
+
+    <div class="new-tweet-box">
+      <textarea id="tweetInput" placeholder="O que está acontecendo?" maxlength="280"></textarea>
+      <button id="tweetButton" disabled>Tweetar</button>
+    </div>
+    <h2>Tweets Recentes</h2>
+    <div class="tweets-list" id="tweetsList"></div>
+  </main>
+  <P>
+  
+   <span
+
+  <div class="footer">&copy; 2025 GB Twitter</div>
+
+  <script>
+    const tweetInput = document.getElementById('tweetInput');
+    const tweetButton = document.getElementById('tweetButton');
+    const tweetsList = document.getElementById('tweetsList');
+
+    tweetInput.addEventListener('input', () => {
+      tweetButton.disabled = tweetInput.value.trim().length === 0;
+    });
+
+    function criarTweet(texto) {
+      const tweetEl = document.createElement('div');
+      tweetEl.classList.add('tweet');
+
+      // Criar a tag <p> para o texto do tweet
+      const p = document.createElement('p');
+      p.textContent = texto;
+
+      tweetEl.appendChild(p);
+      return tweetEl;
+    }
+
+    tweetButton.addEventListener('click', () => {
+      const texto = tweetInput.value.trim();
+      if (texto.length > 0) {
+        const novoTweet = criarTweet(texto);
+        tweetsList.prepend(novoTweet);
+        tweetInput.value = '';
+        tweetButton.disabled = true;
+      }
+    });
+  </script>
+
+</body>
+</html>

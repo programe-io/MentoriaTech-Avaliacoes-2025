@@ -1,0 +1,261 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #e6ecf0;
+  color: #0f1419;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #15202b;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 30px;
+  user-select: none;
+}
+
+.sidebar .logo {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar .logo img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+nav.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+nav.menu a {
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s;
+  user-select: none;
+}
+
+nav.menu a:hover {
+  background: #1b2836;
+}
+
+/* Área principal */
+main.main-feed {
+  flex: 1;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #d3dce6;
+  border-right: 1px solid #d3dce6;
+  overflow-y: auto;
+}
+
+/* Topo do feed */
+header.top-header {
+  padding: 15px 20px;
+  font-weight: 800;
+  font-size: 20px;
+  border-bottom: 1px solid #d3dce6;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  user-select: none;
+}
+
+/* Box novo tweet */
+.new-tweet-box {
+  border-bottom: 1px solid #d3dce6;
+  padding: 15px 20px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.new-tweet-box textarea {
+  width: 100%;
+  resize: none;
+  border: 1px solid #ccd6dd;
+  border-radius: 15px;
+  padding: 12px 15px;
+  font-size: 15px;
+  font-family: inherit;
+  min-height: 80px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.new-tweet-box textarea:focus {
+  border-color: #1da1f2;
+  box-shadow: 0 0 8px #1da1f2a3;
+}
+
+.new-tweet-box button {
+  align-self: flex-end;
+  background: #1da1f2;
+  border: none;
+  padding: 10px 18px;
+  color: white;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 15px;
+  user-select: none;
+}
+
+.new-tweet-box button:disabled {
+  background: #8ed0fa;
+  cursor: default;
+}
+
+.new-tweet-box button:hover:not(:disabled) {
+  background: #0d8ddb;
+}
+
+/* Lista tweets */
+.tweets-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px 20px;
+  overflow-y: auto;
+}
+
+/* Tweet individual */
+.tweet {
+  padding: 15px;
+  border: 1px solid #e1e8ed;
+  border-radius: 15px;
+  background: #fff;
+  font-size: 15px;
+  line-height: 1.4;
+  user-select: text;
+  display: flex;
+  gap: 12px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+  transition: background 0.2s;
+}
+
+.tweet:hover {
+  background: #f5f8fa;
+}
+
+.tweet-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tweet-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.tweet-username {
+  font-weight: 700;
+  color: #0f1419;
+}
+
+.tweet-handle {
+  color: #536471;
+  font-size: 13px;
+}
+
+.tweet-dot {
+  width: 4px;
+  height: 4px;
+  background: #536471;
+  border-radius: 50%;
+  margin: 0 6px;
+}
+
+.tweet-time {
+  color: #536471;
+  font-size: 13px;
+}
+
+.tweet-text {
+  margin-bottom: 8px;
+  white-space: pre-wrap;
+}
+
+/* Ícones básicos (usando Unicode para simplicidade) */
+.tweet-actions {
+  display: flex;
+  gap: 25px;
+  font-size: 14px;
+  color: #536471;
+  user-select: none;
+}
+
+.tweet-actions span {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.tweet-actions span:hover {
+  color: #1da1f2;
+}
+
+/* Rodapé */
+.footer {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #8899a6;
+  text-align: center;
+  background: #fff;
+  border-top: 1px solid #d3dce6;
+  user-select: none;
+}
+
+/* Scroll personalizado */
+main.main-feed::-webkit-scrollbar,
+.tweets-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+main.main-feed::-webkit-scrollbar-thumb,
+.tweets-list::-webkit-scrollbar-thumb {
+  background-color: #aab8c2;
+  border-radius: 8px;
+}
