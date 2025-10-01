@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfólio — Tema Xadrez</title>
+  <link rel="stylesheet" href="styles.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <div class="page-wrapper">
+    <!-- HEADER -->
+    <header class="site-header" role="banner">
+      <div class="header-inner">
+        <h1>Nome do Jogador / Desenvolvedor</h1>
+        <h3 class="tagline">Portfólio — Paixão por Xadrez e Design</h3>
+      </div>
+
+      <!-- NAV principal -->
+      <nav class="main-nav" role="navigation" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#partidas">Partidas</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content" role="main">
+      <!-- Área principal com artigo e aside -->
+      <section class="layout">
+        <!-- ARTIGO PRINCIPAL -->
+        <article id="sobre" class="card article-card">
+          <h2>Sobre</h2>
+          <p>
+            Sou entusiasta de xadrez e desenvolvedor front-end. Neste portfólio
+            apresento projetos ligados ao jogo (análises, estudos de abertura)
+            e também trabalhos de interface inspirados no tabuleiro.
+          </p>
+
+          <h3>Habilidades</h3>
+          <ul>
+            <li>Design responsivo</li>
+            <li>HTML semântico &amp; CSS moderno</li>
+            <li>Visualização de partidas (PGN)</li>
+          </ul>
+
+          <h3 id="projetos">Projetos em destaque</h3>
+          <div class="project-grid">
+            <figure class="project">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Chess_Board.svg/512px-Chess_Board.svg.png" alt="Padrão de tabuleiro de xadrez" />
+              <figcaption>Visualizador de Aberturas</figcaption>
+            </figure>
+
+            <figure class="project">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Chess_pieces.svg/512px-Chess_pieces.svg.png" alt="Peças de xadrez" />
+              <figcaption>Analisador de Partidas</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- ASIDE -->
+        <aside class="card aside-card" aria-labelledby="partidas">
+          <h3 id="partidas">Partidas Recentes</h3>
+          <ul>
+            <li>Blitz: Vitória contra Rafa (5/10/2025)</li>
+            <li>Clássica: Defesa Siciliana — empate (20/09/2025)</li>
+            <li>Torneio local: semi-final (01/08/2025)</li>
+          </ul>
+
+          <h3>Contatos</h3>
+          <p>
+            <strong>Email:</strong> jogador@exemplo.com<br />
+            <strong>GitHub:</strong> github.com/seunome
+          </p>
+
+          <p class="cta">
+            <a href="#contato" class="btn">Me chamar para um treino</a>
+          </p>
+        </aside>
+      </section>
+
+      <!-- OUTRO ARTIGO: Sobre projetos / mais info -->
+      <article class="card article-card" id="detalhes">
+        <h2>Estudos e Metodologia</h2>
+        <p>
+          Gosto de estudar aberturas com base em estatísticas, criar
+          visualizações de partidas e construir interfaces que lembrem o tabuleiro
+          — combina estética e usabilidade.
+        </p>
+
+        <h3>Ferramentas</h3>
+        <p>HTML, CSS (Grid/Flex), JS (para visualização com bibliotecas de xadrez).</p>
+      </article>
+
+      <!-- SEÇÃO DE CONTATO -->
+      <article class="card contact-card" id="contato" aria-label="Formulário de contato">
+        <h2>Contato</h2>
+        <form action="#" method="post" class="contact-form" onsubmit="alert('Formulário de demo — sem envio'); return false;">
+          <label>
+            Nome
+            <input type="text" name="nome" required />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+
+          <label>
+            Mensagem
+            <textarea name="mensagem" rows="4" required></textarea>
+          </label>
+
+          <button type="submit" class="btn">Enviar</button>
+        </form>
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-inner">
+        <p>© <span id="ano"></span> — Portfólio de Xadrez</p>
+        <p class="small">Feito com ♥ — Tema: xadrez</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Script pequeno para ano no rodapé -->
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

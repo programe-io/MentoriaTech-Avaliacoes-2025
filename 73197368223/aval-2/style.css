@@ -1,0 +1,95 @@
+/* styles.css - tema xadrez */
+/* Reset simples */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#111; background: #efefef; }
+
+/* Página wrapper e grid principal */
+.page-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* HEADER */
+.site-header {
+  /* Fundo com padrão xadrez sutil usando gradiente (checkerboard) */
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,0.06) 50%, transparent 50%),
+    linear-gradient(0deg, rgba(0,0,0,0.06) 50%, transparent 50%);
+  background-size: 64px 64px, 64px 64px;
+  background-position: 0 0, 32px 32px; /* cria o efeito de tabuleiro */
+  padding: 1.25rem;
+  border-bottom: 2px solid rgba(0,0,0,0.06);
+}
+
+/* header inner: título + tagline */
+.header-inner { max-width: 1100px; margin: 0 auto; display:flex; flex-direction:column; gap:0.25rem; }
+.header-inner h1 { font-size: 1.6rem; letter-spacing: 0.4px; }
+.tagline { font-size: 0.95rem; color: #333; opacity: 0.9; }
+
+/* NAV */
+.main-nav { max-width: 1100px; margin: 0.75rem auto 0; }
+.main-nav ul { display:flex; gap: 0.5rem; list-style: none; flex-wrap:wrap; }
+.main-nav a {
+  display:inline-block; padding:0.45rem 0.75rem; text-decoration:none;
+  border-radius:6px; background: rgba(255,255,255,0.85); box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+  color: #111; font-weight:600; font-size:0.95rem;
+}
+.main-nav a:hover { transform: translateY(-2px); transition: .18s; }
+
+/* CONTEÚDO: layout com grid (article + aside) */
+.content { max-width: 1100px; margin: 1.25rem auto; padding: 0 1rem; width:100%; flex:1; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 1rem;
+  align-items:start;
+}
+
+/* Cartões */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(250,250,250,0.96));
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(12,12,12,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Article específico */
+.article-card h2 { margin-bottom:0.5rem; font-size:1.15rem; }
+.article-card p, .article-card ul { margin:0.5rem 0; line-height:1.5; }
+.article-card ul li { margin-left:1rem; list-style: disc; }
+
+/* Grid de projetos */
+.project-grid { display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:0.5rem; }
+.project { width:140px; text-align:center; }
+.project img { width:100%; height:100px; object-fit:contain; background:transparent; }
+
+/* Aside */
+.aside-card h3 { margin-bottom:0.5rem; }
+.aside-card ul { list-style: none; padding-left:0; }
+.aside-card li { margin-bottom:0.5rem; }
+
+/* Contact form */
+.contact-form { display:flex; flex-direction:column; gap:0.6rem; }
+.contact-form label { font-size:0.9rem; display:flex; flex-direction:column; gap:0.4rem; color:#0d0d0d; }
+.contact-form input, .contact-form textarea {
+  padding:0.6rem; border-radius:8px; border:1px solid rgba(0,0,0,0.08); background: #fff;
+}
+.btn {
+  display:inline-block; padding:0.6rem 0.9rem; border-radius:8px; text-decoration:none;
+  border: none; cursor:pointer; background: #111; color: #fff; font-weight:700;
+}
+.btn:hover { opacity:0.92; }
+
+/* RODAPÉ */
+.site-footer { background: linear-gradient(180deg, rgba(0,0,0,0.03), transparent); padding:1rem; border-top:1px solid rgba(0,0,0,0.04); }
+.footer-inner { max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; gap:1rem; align-items:center; font-size:0.9rem; color:#333; }
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .main-nav ul { gap: 0.4rem; }
+  .project { width:110px; }
+  .header-inner { align-items:flex-start; }
+}
+
+/* Extra: pequenas variações de cor para peças (estética xadrez) */
+.project figcaption { font-size:0.85rem; margin-top:0.3rem; color:#222; }
+.small { font-size:0.8rem; opacity:0.85; }
