@@ -1,0 +1,46 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
+body{background:#f4f4f4;color:#333;scroll-behavior:smooth;}
+
+header{
+  background: linear-gradient(90deg,#b085f5,#6a1b9a);
+  color:white;text-align:center;padding:60px 20px;
+}
+header h1{text-transform:uppercase;font-size:3rem;text-shadow:2px 2px 5px rgba(0,0,0,0.3);}
+header p{font-size:1.2rem;margin-top:10px;font-weight:500;}
+header .btn{display:inline-block;margin-top:20px;padding:12px 30px;background:#9b59b6;color:white;text-decoration:none;border-radius:6px;font-weight:600;transition:0.3s;}
+header .btn:hover{background:#6a1b9a;box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+
+nav{background:#333;display:flex;justify-content:center;flex-wrap:wrap;transition:max-height 0.3s ease-in-out;overflow:hidden;}
+nav a{color:white;padding:14px 22px;text-decoration:none;display:block;font-weight:600;transition:0.3s;}
+nav a:hover,nav a.active{background:#555;}
+.menu-btn{display:none;background:#333;color:white;padding:14px 20px;cursor:pointer;text-align:center;}
+
+.container{display:flex;padding:25px 20px;gap:25px;}
+aside{flex:1;min-width:220px;background:#eaeaea;padding:20px;border-radius:12px;transition:0.3s;}
+aside h2{margin-bottom:15px;color:#6a1b9a;text-transform:uppercase;letter-spacing:1px;}
+aside p{margin-bottom:15px;line-height:1.6;}
+aside img{width:100%;border-radius:10px;margin-bottom:10px;transition:transform 0.3s;}
+aside img:hover{transform:scale(1.05);}
+
+main{flex:3;}
+.post{background:white;padding:22px;border-radius:14px;box-shadow:0 5px 15px rgba(0,0,0,0.1);margin-bottom:22px;transition:transform 0.3s,box-shadow 0.3s;}
+.post:hover{transform:translateY(-5px);box-shadow:0 10px 20px rgba(0,0,0,0.15);}
+.post img{max-width:100%;border-radius:10px;margin:12px 0;}
+.post h2{text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;color:#6a1b9a;}
+.post small{color:gray;display:block;margin-bottom:12px;}
+.post p{line-height:1.6;}
+
+#contato{background:#eaeaea;padding:25px 20px;border-radius:12px;margin-top:25px;}
+#contato h2{text-transform:uppercase;color:#6a1b9a;margin-bottom:15px;}
+#contato form{display:flex;flex-direction:column;}
+#contato input,#contato textarea{margin-bottom:15px;padding:10px;border-radius:6px;border:1px solid #ccc;font-family:'Montserrat';}
+#contato button{padding:12px;background:#9b59b6;color:white;border:none;border-radius:6px;font-weight:600;cursor:pointer;transition:0.3s;}
+#contato button:hover{background:#6a1b9a;}
+
+/* RESPONSIVO TABLETS */
+@media(max-width:768px){.container{flex-direction:column;}aside{order:2;}main{order:1;}}
+@media(max-width:480px){
+  header h1{font-size:2rem;}header p{font-size:1rem;}header .btn{padding:10px 20px;}
+  .container{padding:15px 10px;}aside,.post{padding:15px;}
+  .menu-btn{display:block;}nav{flex-direction:column;max-height:0;}nav.show{max-height:700px;}
+}
