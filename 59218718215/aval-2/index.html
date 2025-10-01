@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplo Completo de Página HTML</title>
+  <style>
+    /* Estilos básicos para a página */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #007acc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #005fa3;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: #007acc;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <h1>Bem-vindo à Minha Página Completa</h1>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <main>
+    <section id="sobre">
+      <h2>Sobre Nós</h2>
+      <p>Esta é uma página HTML completa de exemplo. Aqui você pode colocar qualquer informação sobre sua empresa, projeto ou ideia.</p>
+    </section>
+
+    <section id="servicos">
+      <h2>Serviços</h2>
+      <ul>
+        <li>Desenvolvimento Web</li>
+        <li>Consultoria de TI</li>
+        <li>Design Gráfico</li>
+      </ul>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <form id="formContato">
+        <label for="nome">Nome:</label><br />
+        <input type="text" id="nome" name="nome" required /><br /><br />
+
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label for="mensagem">Mensagem:</label><br />
+        <textarea id="mensagem" name="mensagem" rows="5" required></textarea><br /><br />
+
+        <button type="submit">Enviar</button>
+      </form>
+      <p id="resposta"></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Minha Empresa. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    // Script simples para validar o formulário e mostrar mensagem de sucesso
+    const form = document.getElementById('formContato');
+    const resposta = document.getElementById('resposta');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Evita envio real do formulário
+
+      const nome = form.nome.value.trim();
+      const email = form.email.value.trim();
+      const mensagem = form.mensagem.value.trim();
+
+      if(nome && email && mensagem) {
+        resposta.textContent = `Obrigado, ${nome}! Sua mensagem foi enviada com sucesso.`;
+        resposta.style.color = 'green';
+        form.reset();
+      } else {
+        resposta.textContent = 'Por favor, preencha todos os campos.';
+        resposta.style.color = 'red';
+      }
+    });
+  </script>
+</body>
+</html>
+<aside>
+</aside>
+<h3>  </h3>
+
+
+<article>
+</article>
+<img>
+</img>
