@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Snake — Jogo da Cobrinha</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --panel:#0b1220;
+      --accent:#22c55e;
+      --muted:#94a3b8;
+      --danger:#ef4444;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    body{
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(180deg,var(--bg),#071029 140%);
+      color:#e6eef8;
+      padding:20px;
+    }
+    .wrap{
+      width:900px;max-width:95vw;
+      display:grid;grid-template-columns:1fr 320px;gap:18px;
+      align-items:start;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;padding:16px;
+      box-shadow:0 8px 30px rgba(2,6,23,0.6);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .game-area{
+      position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;
+      padding:18px;
+    }
+    canvas{
+      background:linear-gradient(180deg,#07122a 0%, #051025 100%);
+      border-radius:10px;
+      width:100%;height:auto;display:block;max-height:72vh;
+      box-shadow:inset 0 0 30px rgba(0,0,0,0.6);
+    }
+    .sidebar{height:100%}
+    h1{font-size:20px;margin:0 0 8px}
+    .meta{color:var(--muted);font-size:13px;margin-bottom:12px}
+    .stats{display:flex;flex-direction:column;gap:10px}
+    .stat{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:8px;background:rgba(255,255,255,0.02)}
+    .controls{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+    button{
+      cursor:pointer;padding:8px 12px;border-radius:8px;border:0;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));
+      color:inherit;font-weight:600;
+      box-shadow:0 6px 18px rgba(2,6,23,0.5);
+    }
+    .hint{font-size:12px;color:var(--muted);margin-top:12px}
+    .overlay{
+      position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+      backdrop-filter:blur(4px);
+      flex-direction:column;gap:10px;
+    }
+    .overlay .panel{
+      background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.55));
+      padding:18px;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,0.04);
+      min-width:260px;
+    }
+    .big{font-size:28px;font-weight:700}
+    .small{font-size:14px;color:var(--muted)}
+    footer{font-size:12px;color:var(--muted);margin-top:12px;text-align:center}
+    @media (max-width:880px){
+      .wrap{grid-template-columns:1fr}
+      .sidebar{order:2}
+      .game-area{order:1}
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <div class="wrap">
+    <div class="card game-area">
+      <canvas id="game" width="640" height="640" aria-label="Canvas do jogo Snake"></canvas>
+
+      <div id="overlay" class="overlay" style="pointer-events:auto;">
+        <div class="panel">
+          <div class="big">Snake</div>
+          <div class="small">Pressione <strong>Espaço</strong> ou clique para começar</div>
+          <div style="margin-top:10px" class="small">Setas / WASD para mover • P para pausar</div>
+        </div>
+      </div>
+
+      <footer id="footer" style="width:100%;text-align:center;color:var(--muted);font-size:13px;margin-top:12px">
+        Use o teclado ou toque na tela (mobile): toque rápido para girar 90°.
+      </footer>
+    </div>
+
+    <aside class="card sidebar">
+      <h1>Informações</h1>
+      <div class="meta">Jogo simples feito em JavaScript — personalizável.</div>
+
+      <div class="stats">
+        <div class="stat"><div>Score</div><div id="score">0</div></div>
+        <div class="stat"><div>Recorde</div><div id="best">0</div></div>
+        <div class="stat"><div>Nível</div><div id="level">1</div></div>
+        <div class="stat"><div>Velocidade</div><div id="speed">Normal</div></div>
+      </div>
+
+      <div style="margin-top:14px">
+        <div class="controls">
+          <button id="btn-start">Iniciar / Reiniciar</button>
+          <button id="btn-pause">Pausar</button>
+          <button id="btn-sound">Som: ON</button>
+        </div>
+        <div class="hint">Dica: cada comida aumenta a velocidade levemente.</div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+  // ===== Configurações iniciais =====
+  const canvas = document.getElementById('game');
+  const ctx = canvas.getContext('2d', {alpha: true});
+  let grid = 20; // tamanho do quadrado
+  let cols = canvas.width / grid;
+  let rows = canvas.height / grid;
+
+  // Estado do jogo
+  let snake = [{x: Math.floor(cols/2), y: Math.floor(rows/2)}];
+  let dir = {x: 0, y: 0};
+  let nextDir = {x:0,y:0};
+  let food = null;
+  let score = 0;
+  let best = Number(localStorage.getItem('snake_best') || 0);
+  let level = 1;
+  let speed = 8; // frames por segundo (base)
+  let running = false;
+  let paused = false;
+  let soundsOn = true;
+
+  // UI refs
+  const overlay = document.getElementById('overlay');
+  const scoreEl = document.getElementById('score');
+  const bestEl = document.getElementById('best');
+  const levelEl = document.getElementById('level');
+  const speedEl = document.getElementById('speed');
+  const btnStart = document.getElementById('btn-start');
+  const btnPause = document.getElementById('btn-pause');
+  const btnSound = document.getElementById('btn-sound');
+
+  bestEl.textContent = best;
+
+  // ===== Sons minimalistas via WebAudio =====
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  function beep(freq=440, dur=0.06, type='sine', vol=0.12){
+    if(!soundsOn) return;
+    const o = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+    o.type = type; o.frequency.value = freq;
+    g.gain.value = vol;
+    o.connect(g); g.connect(audioCtx.destination);
+    o.start(); o.stop(audioCtx.currentTime + dur);
+  }
+
+  // ===== Utilitários =====
+  function randInt(min,max){ return Math.floor(Math.random()*(max-min+1))+min; }
+
+  function placeFood(){
+    // coloca em posição aleatória que não colida com a cobra
+    while(true){
+      const candidate = {x: randInt(0, cols-1), y: randInt(0, rows-1)};
+      if(!snake.some(s => s.x===candidate.x && s.y===candidate.y)){
+        food = candidate;
+        break;
+      }
+    }
+  }
+
+  function resetGame(){
+    snake = [{x: Math.floor(cols/2), y: Math.floor(rows/2)}];
+    dir = {x:0,y:0};
+    nextDir = {x:0,y:0};
+    score = 0;
+    level = 1;
+    speed = 8;
+    placeFood();
+    running = false;
+    paused = false;
+    overlay.style.display = 'flex';
+    updateUI();
+  }
+
+  // ===== Lógica de atualização (game loop) =====
+  let lastTime = 0;
+  let accumulator = 0;
+  function gameLoop(ts){
+    if(!running || paused){ lastTime = ts; requestAnimationFrame(gameLoop); return; }
+    requestAnimationFrame(gameLoop);
+    const dt = (ts - lastTime) / 1000;
+    lastTime = ts;
+    accumulator += dt;
+    const interval = 1 / speed;
+    if(accumulator < interval) return;
+    accumulator -= interval;
+    // atualizar
+    update();
+    render();
+  }
+
+  function update(){
+    // aplicar direção pendente (impede voltar 180)
+    if((nextDir.x !== -dir.x || nextDir.y !== -dir.y) || (dir.x===0 && dir.y===0)){
+      dir = {...nextDir};
+    }
+
+    if(dir.x === 0 && dir.y === 0) return; // não começou a se mover
+
+    // novo head
+    const head = {x: snake[0].x + dir.x, y: snake[0].y + dir.y};
+
+    // colisão com paredes -> embrulhar (wrap-around) para dar jogo mais fluido
+    head.x = (head.x + cols) % cols;
+    head.y = (head.y + rows) % rows;
+
+    // colisão com o próprio corpo -> game over
+    if(snake.some(s => s.x===head.x && s.y===head.y)){
+      gameOver();
+      return;
+    }
+
+    snake.unshift(head);
+
+    // comer comida?
+    if(food && head.x === food.x && head.y === food.y){
+      score += 10;
+      beep(700,0.06,'square',0.12);
+      placeFood();
+      // aumenta dificuldade aos poucos
+      if(score % 50 === 0){
+        level += 1;
+        speed = Math.min(24, Math.floor(speed * 1.15 + 0.5));
+        beep(900,0.08,'sawtooth',0.14);
+      }
+    } else {
+      snake.pop(); // não cresceu -> remove tail
+    }
+    updateUI();
+  }
+
+  function gameOver(){
+    running = false;
+    overlay.style.display = 'flex';
+    overlay.innerHTML = `
+      <div class="panel">
+        <div class="big">Fim de Jogo</div>
+        <div class="small">Score: <strong>${score}</strong></div>
+        <div class="small" style="margin-top:8px">Pressione <strong>Iniciar</strong> ou Espaço para tentar novamente</div>
+      </div>
+    `;
+    if(score > best){
+      best = score;
+      localStorage.setItem('snake_best', best);
+      bestEl.textContent = best;
+    }
+    beep(120,0.18,'sine',0.12);
+  }
+
+  // ===== Render =====
+  function render(){
+    // limpar
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    // desenhar grade sutil
+    const w = canvas.width, h = canvas.height;
+    ctx.save();
+    ctx.globalAlpha = 0.06;
+    for(let gx=0; gx<cols; gx++){
+      ctx.fillRect(gx*grid,0,1,h);
+    }
+    for(let gy=0; gy<rows; gy++){
+      ctx.fillRect(0,gy*grid,w,1);
+    }
+    ctx.restore();
+
+    // desenhar comida
+    if(food){
+      drawRoundedRect(food.x*grid + grid*0.12, food.y*grid + grid*0.12, grid*0.76, grid*0.76, 5, '#ffb86b', true);
+      // brilho
+      ctx.save();
+      ctx.globalAlpha = 0.12;
+      drawRoundedRect(food.x*grid + grid*0.12, food.y*grid + grid*0.12, grid*0.76, grid*0.76, 5, '#fff', false);
+      ctx.restore();
+    }
+
+    // desenhar cobra (head com destaque)
+    for(let i=snake.length-1;i>=0;i--){
+      const s = snake[i];
+      const x = s.x*grid, y = s.y*grid;
+      const t = i===0 ? 1.0 : 0.7;
+      const size = i===0 ? 0.98 : 0.88;
+      const color = i===0 ? '#22c55e' : '#16a34a';
+      drawRoundedRect(x + grid*(1-size)/2, y + grid*(1-size)/2, grid*size, grid*size, 6, color, true, t);
+    }
+  }
+
+  // helper: desenha retângulo arredondado preenchido
+  function drawRoundedRect(x,y,w,h,r,color,fill=true,alpha=1){
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.beginPath();
+    ctx.moveTo(x+r,y);
+    ctx.arcTo(x+w,y,x+w,y+h,r);
+    ctx.arcTo(x+w,y+h,x,y+h,r);
+    ctx.arcTo(x,y+h,x,y,r);
+    ctx.arcTo(x,y,x+w,y,r);
+    ctx.closePath();
+    ctx.fillStyle = color;
+    if(fill) ctx.fill(); else ctx.strokeStyle = color, ctx.stroke();
+    ctx.restore();
+  }
+
+  // ===== UI e eventos =====
+  function updateUI(){
+    scoreEl.textContent = score;
+    bestEl.textContent = best;
+    levelEl.textContent = level;
+    let spText = speed <= 8 ? 'Normal' : (speed <= 12 ? 'Rápido' : 'Muito Rápido');
+    speedEl.textContent = spText;
+    btnSound.textContent = soundsOn ? 'Som: ON' : 'Som: OFF';
+  }
+
+  // controla teclas
+  window.addEventListener('keydown', (e) => {
+    if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d','W','A','S','D'].includes(e.key)){
+      e.preventDefault();
+    }
+    if(e.key === ' '){
+      // espaço: iniciar/reiniciar
+      if(!running) startGame();
+      else { nextDir = nextDir; } // ignora
+    } else if(e.key === 'p' || e.key === 'P'){
+      togglePause();
+    } else if(e.key === 'ArrowUp' || e.key === 'w' || e.key === 'W'){
+      nextDir = {x:0,y:-1};
+    } else if(e.key === 'ArrowDown' || e.key === 's' || e.key === 'S'){
+      nextDir = {x:0,y:1};
+    } else if(e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A'){
+      nextDir = {x:-1,y:0};
+    } else if(e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D'){
+      nextDir = {x:1,y:0};
+    }
+  });
+
+  // click para iniciar / toque para girar 90º
+  canvas.addEventListener('click', (e) => {
+    if(!running){
+      startGame();
+      return;
+    }
+    // toque/click rápido: gira 90° à direita
+    rotateDirRight();
+  });
+
+  overlay.addEventListener('click', (e) => {
+    startGame();
+  });
+
+  function rotateDirRight(){
+    // se sem movimento, começar para a direita
+    const {x,y} = dir;
+    if(x===0 && y===0){
+      nextDir = {x:1,y:0};
+      return;
+    }
+    // rotaciona 90 graus sentido horário: (x,y) -> (y,-x)
+    const nx = y;
+    const ny = -x;
+    // evita inverter 180°
+    if(nx === -dir.x && ny === -dir.y) return;
+    nextDir = {x:nx,y:ny};
+  }
+
+  // botões
+  btnStart.addEventListener('click', () => startGame(true));
+  btnPause.addEventListener('click', togglePause);
+  btnSound.addEventListener('click', () => { soundsOn = !soundsOn; updateUI(); });
+
+  function startGame(forceRestart=false){
+    if(forceRestart) resetGame();
+    running = true;
+    paused = false;
+    overlay.style.display = 'none';
+    // ajeita tempo
+    lastTime = performance.now();
+    accumulator = 0;
+    // garantir que a cobra se mova se estava parada: seta pra direita inicial
+    if(dir.x===0 && dir.y===0 && nextDir.x===0 && nextDir.y===0){
+      nextDir = {x:1,y:0};
+    }
+    requestAnimationFrame(gameLoop);
+  }
+
+  function togglePause(){
+    if(!running) return;
+    paused = !paused;
+    btnPause.textContent = paused ? 'Retomar' : 'Pausar';
+    if(paused) {
+      overlay.style.display = 'flex';
+      overlay.innerHTML = `<div class="panel"><div class="big">Pausado</div><div class="small">Pressione P para retomar</div></div>`;
+    } else {
+      overlay.style.display = 'none';
+      requestAnimationFrame(gameLoop);
+    }
+  }
+
+  // adaptação ao redimensionamento: mantém o grid fixo ao canvas interno
+  function resizeCanvas(){
+    // manter square e número de células fixo
+    const minAxis = Math.min(window.innerWidth * 0.65, window.innerHeight * 0.75, 720);
+    canvas.style.width = Math.floor(minAxis) + 'px';
+    // ajuste cols/rows se quiser escala dinâmica (mantive constantes)
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  // inicializa
+  resetGame();
+  render();
+
+  // === Extra: easter egg touch gestures para mobile (swipe) ===
+  let touchStart = null;
+  canvas.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 1) touchStart = {x:e.touches[0].clientX, y:e.touches[0].clientY, t:Date.now()};
+  });
+  canvas.addEventListener('touchend', (e) => {
+    if(!touchStart) return;
+    const dx = (e.changedTouches[0].clientX - touchStart.x);
+    const dy = (e.changedTouches[0].clientY - touchStart.y);
+    const dt = Date.now() - touchStart.t;
+    touchStart = null;
+    if(Math.abs(dx) > 30 || Math.abs(dy) > 30){
+      // swipe
+      if(Math.abs(dx) > Math.abs(dy)){
+        // horizontal
+        nextDir = dx > 0 ? {x:1,y:0} : {x:-1,y:0};
+      } else {
+        nextDir = dy > 0 ? {x:0,y:1} : {x:0,y:-1};
+      }
+    } else {
+      // tap - rotate
+      canvas.click();
+    }
+  });
+
+  </script>
+</body>
+</html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Space Dodger — Jogo (HTML5)</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body,html{margin:0;padding:0;width:100%;height:100%;background:#000;}
+    header{background:#0f172a;color:#6ee7b7;padding:20px;text-align:center;font-size:28px;font-family:Arial,sans-serif;box-shadow:0 4px 10px rgba(0,0,0,0.6);}
+    canvas{display:block;margin:20px auto;background:#111;border:3px solid #6ee7b7;border-radius:10px;}
+    h1{text-align:center;color:#6ee7b7;font-family:Arial, sans-serif;}
+    .hud{display:flex;justify-content:space-around;align-items:center;color:#fff;font-family:Arial,sans-serif;margin:10px 0;}
+    .hud div{font-size:22px;}
+    button{padding:12px 20px;font-size:16px;margin:5px;border:none;border-radius:6px;cursor:pointer;}
+    #startBtn{background:#6ee7b7;color:#000;}
+    #pauseBtn{background:#60a5fa;color:#000;}
+    #resetBtn{background:#ff6b6b;color:#fff;}
+  </style>
+</head>
+<body>
+  <header>
+    🌌 Space Dodger — HTML5 Game
+  </header>
+  <h1>🚀 Space Dodger — Versão Maior</h1>
+  <div class="hud">
+    <div>Pontuação: <span id="score">0</span></div>
+    <div>Vidas: <span id="lives">3</span></div>
+    <div>Alta pontuação: <span id="highscore">0</span></div>
+  </div>
+  <canvas id="game" width="1080" height="720"></canvas>
+  <div class="hud">
+    <button id="startBtn">Iniciar</button>
+    <button id="pauseBtn">Pausar</button>
+    <button id="resetBtn">Reiniciar</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Space Dodger — Jogo (HTML5)</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body,html{margin:0;padding:0;width:100%;height:100%;background:#000;}
+    header{background:#0f172a;color:#6ee7b7;padding:20px;text-align:center;font-size:28px;font-family:Arial,sans-serif;box-shadow:0 4px 10px rgba(0,0,0,0.6);}
+    canvas{display:block;margin:20px auto;background:#111;border:3px solid #6ee7b7;border-radius:10px;}
+    h1{text-align:center;color:#6ee7b7;font-family:Arial, sans-serif;}
+    p{text-align:center;color:#94a3b8;font-family:Arial, sans-serif;margin:10px auto;max-width:800px;}
+    .hud{display:flex;justify-content:space-around;align-items:center;color:#fff;font-family:Arial,sans-serif;margin:10px 0;}
+    .hud div{font-size:22px;}
+    button{padding:12px 20px;font-size:16px;margin:5px;border:none;border-radius:6px;cursor:pointer;}
+    #startBtn{background:#6ee7b7;color:#000;}
+    #pauseBtn{background:#60a5fa;color:#000;}
+    #resetBtn{background:#ff6b6b;color:#fff;}
+  </style>
+</head>
+<body>
+  <header>
+    🌌 Space Dodger — HTML5 Game
+  </header>
+  <h1>🚀 Space Dodger — Versão Maior</h1>
+  <p>Bem-vindo ao <strong>Space Dodger</strong>! Desvie dos inimigos, colete power-ups e tente alcançar a maior pontuação possível. Use as setas do teclado ou toque na tela para controlar a nave.</p>
+  <div class="hud">
+    <div>Pontuação: <span id="score">0</span></div>
+    <div>Vidas: <span id="lives">3</span></div>
+    <div>Alta pontuação: <span id="highscore">0</span></div>
+  </div>
+  <canvas id="game" width="1080" height="720"></canvas>
+  <div class="hud">
+    <button id="startBtn">Iniciar</button>
+    <button id="pauseBtn">Pausar</button>
+    <button id="resetBtn">Reiniciar</button>
+  </div>
+  <p>Dica: cada nível aumenta a velocidade dos inimigos. Boa sorte, piloto!</p>
+  <script src="script.js"></script>
+</body>
+</html><!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Space Dodger — Jogo (HTML5)</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body,html{margin:0;padding:0;width:100%;height:100%;background:#000;}
+    header{background:#0f172a;color:#6ee7b7;padding:20px;text-align:center;font-size:28px;font-family:Arial,sans-serif;box-shadow:0 4px 10px rgba(0,0,0,0.6);}
+    nav{background:#1e293b;padding:10px;text-align:center;}
+    nav a{color:#6ee7b7;text-decoration:none;margin:0 15px;font-size:18px;font-family:Arial,sans-serif;}
+    nav a:hover{text-decoration:underline;color:#fff;}
+    canvas{display:block;margin:20px auto;background:#111;border:3px solid #6ee7b7;border-radius:10px;}
+    h1{text-align:center;color:#6ee7b7;font-family:Arial, sans-serif;}
+    p{text-align:center;color:#94a3b8;font-family:Arial, sans-serif;margin:10px auto;max-width:800px;}
+    .hud{display:flex;justify-content:space-around;align-items:center;color:#fff;font-family:Arial,sans-serif;margin:10px 0;}
+    .hud div{font-size:22px;}
+    button{padding:12px 20px;font-size:16px;margin:5px;border:none;border-radius:6px;cursor:pointer;}
+    #startBtn{background:#6ee7b7;color:#000;}
+    #pauseBtn{background:#60a5fa;color:#000;}
+    #resetBtn{background:#ff6b6b;color:#fff;}
+  </style>
+</head>
+<body>
+  <header>
+    🌌 Space Dodger — HTML5 Game
+  </header>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#instrucoes">Instruções</a>
+    <a href="#sobre">Sobre</a>
+  </nav>
+  <h1 id="inicio">🚀 Space Dodger — Versão Maior</h1>
+  <p id="instrucoes">Bem-vindo ao <strong>Space Dodger</strong>! Desvie dos inimigos, colete power-ups e tente alcançar a maior pontuação possível. Use as setas do teclado ou toque na tela para controlar a nave.</p>
+  <div class="hud">
+    <div>Pontuação: <span id="score">0</span></div>
+    <div>Vidas: <span id="lives">3</span></div>
+    <div>Alta pontuação: <span id="highscore">0</span></div>
+  </div>
+  <canvas id="game" width="1080" height="720"></canvas>
+  <div class="hud">
+    <button id="startBtn">Iniciar</button>
+    <button id="pauseBtn">Pausar</button>
+    <button id="resetBtn">Reiniciar</button>
+  </div>
+  <p id="sobre">Dica: cada nível aumenta a velocidade dos inimigos. Boa sorte, piloto!<br>Desenvolvido em HTML5, CSS e JavaScript.</p>
+  <script src="script.js"></script>
+</body>
+</html><!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Space Dodger — Jogo (HTML5)</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body,html{margin:0;padding:0;width:100%;height:100%;background:#000;}
+    header{background:#0f172a;color:#6ee7b7;padding:20px;text-align:center;font-size:28px;font-family:Arial,sans-serif;box-shadow:0 4px 10px rgba(0,0,0,0.6);}
+    nav{background:#1e293b;padding:10px;text-align:center;}
+    nav a{color:#6ee7b7;text-decoration:none;margin:0 15px;font-size:18px;font-family:Arial,sans-serif;}
+    nav a:hover{text-decoration:underline;color:#fff;}
+    canvas{display:block;margin:20px auto;background:#111;border:3px solid #6ee7b7;border-radius:10px;}
+    h1{text-align:center;color:#6ee7b7;font-family:Arial, sans-serif;}
+    h3{text-align:center;color:#facc15;font-family:Arial, sans-serif;margin-top:15px;}
+    p{text-align:center;color:#94a3b8;font-family:Arial, sans-serif;margin:10px auto;max-width:800px;}
+    .hud{display:flex;justify-content:space-around;align-items:center;color:#fff;font-family:Arial,sans-serif;margin:10px 0;}
+    .hud div{font-size:22px;}
+    button{padding:12px 20px;font-size:16px;margin:5px;border:none;border-radius:6px;cursor:pointer;}
+    #startBtn{background:#6ee7b7;color:#000;}
+    #pauseBtn{background:#60a5fa;color:#000;}
+    #resetBtn{background:#ff6b6b;color:#fff;}
+  </style>
+</head>
+<body>
+  <header>
+    🌌 Space Dodger — HTML5 Game
+  </header>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#instrucoes">Instruções</a>
+    <a href="#sobre">Sobre</a>
+  </nav>
+  <h1 id="inicio">🚀 Space Dodger — Versão Maior</h1>
+  <h3>Objetivo do Jogo</h3>
+  <p id="instrucoes">Bem-vindo ao <strong>Space Dodger</strong>! Desvie dos inimigos, colete power-ups e tente alcançar a maior pontuação possível. Use as setas do teclado ou toque na tela para controlar a nave.</p>
+  <div class="hud">
+    <div>Pontuação: <span id="score">0</span></div>
+    <div>Vidas: <span id="lives">3</span></div>
+    <div>Alta pontuação: <span id="highscore">0</span></div>
+  </div>
+  <canvas id="game" width="1080" height="720"></canvas>
+  <div class="hud">
+    <button id="startBtn">Iniciar</button>
+    <button id="pauseBtn">Pausar</button>
+    <button id="resetBtn">Reiniciar</button>
+  </div>
+  <h3>Informações Extras</h3>
+  <p id="sobre">Dica: cada nível aumenta a velocidade dos inimigos. Boa sorte, piloto!<br>Desenvolvido em HTML5, CSS e JavaScript.</p>
+  <script src="script.js"></script>
+</body>
+</html><!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Space Dodger — Jogo (HTML5)</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body,html{margin:0;padding:0;width:100%;height:100%;background:#000;}
+    header{background:#0f172a;color:#6ee7b7;padding:20px;text-align:center;font-size:28px;font-family:Arial,sans-serif;box-shadow:0 4px 10px rgba(0,0,0,0.6);}
+    nav{background:#1e293b;padding:10px;text-align:center;}
+    nav a{color:#6ee7b7;text-decoration:none;margin:0 15px;font-size:18px;font-family:Arial,sans-serif;}
+    nav a:hover{text-decoration:underline;color:#fff;}
+    main{padding:20px;}
+    canvas{display:block;margin:20px auto;background:#111;border:3px solid #6ee7b7;border-radius:10px;}
+    h1{text-align:center;color:#6ee7b7;font-family:Arial, sans-serif;}
+    h3{text-align:center;color:#facc15;font-family:Arial, sans-serif;margin-top:15px;}
+    p{text-align:center;color:#94a3b8;font-family:Arial, sans-serif;margin:10px auto;max-width:800px;}
+    .hud{display:flex;justify-content:space-around;align-items:center;color:#fff;font-family:Arial,sans-serif;margin:10px 0;}
+    .hud div{font-size:22px;}
+    button{padding:12px 20px;font-size:16px;margin:5px;border:none;border-radius:6px;cursor:pointer;}
+    #startBtn{background:#6ee7b7;color:#000;}
+    #pauseBtn{background:#60a5fa;color:#000;}
+    #resetBtn{background:#ff6b6b;color:#fff;}
+  </style>
+</head>
+<body>
+  <header>
+    🌌 Space Dodger — HTML5 Game
+  </header>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#instrucoes">Instruções</a>
+    <a href="#sobre">Sobre</a>
+  </nav>
+  <main>
+    <h1 id="inicio">🚀 Space Dodger — Versão Maior</h1>
+    <h3>Objetivo do Jogo</h3>
+    <p id="instrucoes">Bem-vindo ao <strong>Space Dodger</strong>! Desvie dos inimigos, colete power-ups e tente alcançar a maior pontuação possível. Use as setas do teclado ou toque na tela para controlar a nave.</p>
+    <div class="hud">
+      <div>Pontuação: <span id="score">0</span></div>
+      <div>Vidas: <span id="lives">3</span></div>
+      <div>Alta pontuação: <span id="highscore">0</span></div>
+    </div>
+    <canvas id="game" width="1080" height="720"></canvas>
+    <div class="hud">
+      <button id="startBtn">Iniciar</button>
+      <button id="pauseBtn">Pausar</button>
+      <button id="resetBtn">Reiniciar</button>
+    </div>
+    <h3>Informações Extras</h3>
+    <p id="sobre">Dica: cada nível aumenta a velocidade dos inimigos. Boa sorte, piloto!<br>Desenvolvido em HTML5, CSS e JavaScript.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html><!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Space Dodger — Jogo (HTML5)</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body,html{margin:0;padding:0;width:100%;height:100%;background:#000;}
+    header{background:#0f172a;color:#6ee7b7;padding:20px;text-align:center;font-size:28px;font-family:Arial,sans-serif;box-shadow:0 4px 10px rgba(0,0,0,0.6);}
+    nav{background:#1e293b;padding:10px;text-align:center;}
+    nav a{color:#6ee7b7;text-decoration:none;margin:0 15px;font-size:18px;font-family:Arial,sans-serif;}
+    nav a:hover{text-decoration:underline;color:#fff;}
+    main{padding:20px;}
+    article{background:#0f172a;border-radius:8px;padding:20px;margin:20px auto;max-width:900px;box-shadow:0 4px 10px rgba(0,0,0,0.6);}
+    canvas{display:block;margin:20px auto;background:#111;border:3px solid #6ee7b7;border-radius:10px;}
+    h1{text-align:center;color:#6ee7b7;font-family:Arial, sans-serif;}
+    h3{text-align:center;color:#facc15;font-family:Arial, sans-serif;margin-top:15px;}
+    p{text-align:center;color:#94a3b8;font-family:Arial, sans-serif;margin:10px auto;max-width:800px;}
+    .hud{display:flex;justify-content:space-around;align-items:center;color:#fff;font-family:Arial,sans-serif;margin:10px 0;}
+    .hud div{font-size:22px;}
+    button{padding:12px 20px;font-size:16px;margin:5px;border:none;border-radius:6px;cursor:pointer;}
+    #startBtn{background:#6ee7b7;color:#000;}
+    #pauseBtn{background:#60a5fa;color:#000;}
+    #resetBtn{background:#ff6b6b;color:#fff;}
+  </style>
+</head>
+<body>
+  <header>
+    🌌 Space Dodger — HTML5 Game
+  </header>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#instrucoes">Instruções</a>
+    <a href="#sobre">Sobre</a>
+  </nav>
+  <main>
+    <article>
+      <h1 id="inicio">🚀 Space Dodger — Versão Maior</h1>
+      <h3>Objetivo do Jogo</h3>
+      <p id="instrucoes">Bem-vindo ao <strong>Space Dodger</strong>! Desvie dos inimigos, colete power-ups e tente alcançar a maior pontuação possível. Use as setas do teclado ou toque na tela para controlar a nave.</p>
+      <div class="hud">
+        <div>Pontuação: <span id="score">0</span></div>
+        <div>Vidas: <span id="lives">3</span></div>
+        <div>Alta pontuação: <span id="highscore">0</span></div>
+      </div>
+      <canvas id="game" width="1080" height="720"></canvas>
+      <div class="hud">
+        <button id="startBtn">Iniciar</button>
+        <button id="pauseBtn">Pausar</button>
+        <button id="resetBtn">Reiniciar</button>
+      </div>
+      <h3>Informações Extras</h3>
+      <p id="sobre">Dica: cada nível aumenta a velocidade dos inimigos. Boa sorte, piloto!<br>Desenvolvido em HTML5, CSS e JavaScript.</p>
+    </article>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html><!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Space Dodger — Jogo (HTML5)</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body,html{margin:0;padding:0;width:100%;height:100%;background:#000;}
+    header{background:#0f172a;color:#6ee7b7;padding:20px;text-align:center;font-size:28px;font-family:Arial,sans-serif;box-shadow:0 4px 10px rgba(0,0,0,0.6);}
+    nav{background:#1e293b;padding:10px;text-align:center;}
+    nav a{color:#6ee7b7;text-decoration:none;margin:0 15px;font-size:18px;font-family:Arial,sans-serif;}
+    nav a:hover{text-decoration:underline;color:#fff;}
+    main{padding:20px;}
+    article{background:#0f172a;border-radius:8px;padding:20px;margin:20px auto;max-width:900px;box-shadow:0 4px 10px rgba(0,0,0,0.6);}
+    canvas{display:block;margin:20px auto;background:#111;border:3px solid #6ee7b7;border-radius:10px;}
+    img{display:block;margin:0 auto 20px auto;max-width:200px;border-radius:10px;}
+    h1{text-align:center;color:#6ee7b7;font-family:Arial, sans-serif;}
+    h3{text-align:center;color:#facc15;font-family:Arial, sans-serif;margin-top:15px;}
+    p{text-align:center;color:#94a3b8;font-family:Arial, sans-serif;margin:10px auto;max-width:800px;}
+    .hud{display:flex;justify-content:space-around;align-items:center;color:#fff;font-family:Arial,sans-serif;margin:10px 0;}
+    .hud div{font-size:22px;}
+    button{padding:12px 20px;font-size:16px;margin:5px;border:none;border-radius:6px;cursor:pointer;}
+    #startBtn{background:#6ee7b7;color:#000;}
+    #pauseBtn{background:#60a5fa;color:#000;}
+    #resetBtn{background:#ff6b6b;color:#fff;}
+  </style>
+</head>
+<body>
+  <header>
+    🌌 Space Dodger — HTML5 Game
+  </header>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#instrucoes">Instruções</a>
+    <a href="#sobre">Sobre</a>
+  </nav>
+  <main>
+    <article>
+      <img src="nave.png" alt="Nave do Space Dodger">
+      <h1 id="inicio">🚀 Space Dodger — Versão Maior</h1>
+      <h3>Objetivo do Jogo</h3>
+      <p id="instrucoes">Bem-vindo ao <strong>Space Dodger</strong>! Desvie dos inimigos, colete power-ups e tente alcançar a maior pontuação possível. Use as setas do teclado ou toque na tela para controlar a nave.</p>
+      <div class="hud">
+        <div>Pontuação: <span id="score">0</span></div>
+        <div>Vidas: <span id="lives">3</span></div>
+        <div>Alta pontuação: <span id="highscore">0</span></div>
+      </div>
+      <canvas id="game" width="1080" height="720"></canvas>
+      <div class="hud">
+        <button id="startBtn">Iniciar</button>
+        <button id="pauseBtn">Pausar</button>
+        <button id="resetBtn">Reiniciar</button>
+      </div>
+      <h3>Informações Extras</h3>
+      <p id="sobre">Dica: cada nível aumenta a velocidade dos inimigos. Boa sorte, piloto!<br>Desenvolvido em HTML5, CSS e JavaScript.</p>
