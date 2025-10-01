@@ -1,0 +1,182 @@
+:root{
+      --bg:#0b0c10;
+        --panel:#0f1720;
+          --muted:#9aa4b2;
+            --accent:#b7d8ff;
+              --glow: rgba(183,216,255,0.08);
+                --radius:14px;
+                  --max-width:1100px;
+                    --gap:1.25rem;
+                      font-synthesis: none;
+                      }
+
+                      *{box-sizing:border-box}
+                      html,body{height:100%}
+                      body{
+                        margin:0;
+                          background: radial-gradient(circle at 10% 10%, #071019 0%, var(--bg) 40%, #030306 100%);
+                            color: #e6eef9;
+                              font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+                                -webkit-font-smoothing:antialiased;
+                                  -moz-osx-font-smoothing:grayscale;
+                                    line-height:1.5;
+                                      padding:2rem;
+                                        display:flex;
+                                          justify-content:center;
+                                          }
+
+                                          /* container */
+                                          .page-wrap{
+                                            width:100%;
+                                              max-width:var(--max-width);
+                                                margin:0 auto;
+                                                  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+                                                    border-radius:18px;
+                                                      padding:1.25rem;
+                                                        box-shadow: 0 8px 40px rgba(0,0,0,0.6), 0 0 40px var(--glow) inset;
+                                                          overflow:hidden;
+                                                          }
+
+                                                          /* HEADER */
+                                                          .site-header{
+                                                            display:flex;
+                                                              align-items:center;
+                                                                justify-content:space-between;
+                                                                  gap:var(--gap);
+                                                                    padding:0.5rem 0.25rem;
+                                                                      border-bottom:1px solid rgba(255,255,255,0.03);
+                                                                      }
+                                                                      .brand{display:flex;align-items:center;gap:0.85rem}
+                                                                      .logo{
+                                                                        width:64px;
+                                                                          height:64px;
+                                                                            object-fit:contain;
+                                                                              filter: drop-shadow(0 6px 14px rgba(0,0,0,0.6));
+                                                                                border-radius:10px;
+                                                                                  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+                                                                                    padding:6px;
+                                                                                    }
+                                                                                    .site-header h1{
+                                                                                      font-size:1.15rem;
+                                                                                        margin:0;
+                                                                                          letter-spacing:0.6px;
+                                                                                            font-weight:800;
+                                                                                            }
+
+                                                                                            /* NAV */
+                                                                                            .main-nav ul{
+                                                                                              list-style:none;
+                                                                                                display:flex;
+                                                                                                  gap:1rem;
+                                                                                                    margin:0;
+                                                                                                      padding:0;
+                                                                                                      }
+                                                                                                      .main-nav a{
+                                                                                                        text-decoration:none;
+                                                                                                          color:var(--muted);
+                                                                                                            font-weight:600;
+                                                                                                              padding:8px 12px;
+                                                                                                                border-radius:10px;
+                                                                                                                }
+                                                                                                                .main-nav a:hover, .main-nav a:focus{
+                                                                                                                  color:var(--accent);
+                                                                                                                    background: rgba(183,216,255,0.03);
+                                                                                                                      box-shadow: 0 6px 18px rgba(183,216,255,0.04);
+                                                                                                                      }
+
+                                                                                                                      /* HERO */
+                                                                                                                      .hero{
+                                                                                                                        display:flex;
+                                                                                                                          gap:1.25rem;
+                                                                                                                            align-items:stretch;
+                                                                                                                              margin:1.25rem 0;
+                                                                                                                              }
+                                                                                                                              .hero-card{
+                                                                                                                                flex:1;
+                                                                                                                                  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+                                                                                                                                    padding:1rem;
+                                                                                                                                      border-radius:12px;
+                                                                                                                                        border:1px solid rgba(255,255,255,0.03);
+                                                                                                                                          box-shadow: 0 6px 20px rgba(0,0,0,0.55);
+                                                                                                                                          }
+                                                                                                                                          .hero-card .eyebrow{
+                                                                                                                                            margin:0 0 0.5rem 0;
+                                                                                                                                              font-size:0.9rem;
+                                                                                                                                                color:var(--muted);
+                                                                                                                                                  text-transform:uppercase;
+                                                                                                                                                    letter-spacing:1px;
+                                                                                                                                                    }
+                                                                                                                                                    .hero-card h3{margin-top:0;font-size:1.25rem}
+                                                                                                                                                    .hero-card p{color:var(--muted)}
+                                                                                                                                                    .cta{
+                                                                                                                                                      display:inline-block;
+                                                                                                                                                        margin-top:0.75rem;
+                                                                                                                                                          padding:10px 14px;
+                                                                                                                                                            border-radius:10px;
+                                                                                                                                                              text-decoration:none;
+                                                                                                                                                                background:linear-gradient(90deg, rgba(183,216,255,0.06), rgba(183,216,255,0.02));
+                                                                                                                                                                  color:var(--accent);
+                                                                                                                                                                    font-weight:700;
+                                                                                                                                                                      border:1px solid rgba(183,216,255,0.06);
+                                                                                                                                                                        transition:transform .18s ease, box-shadow .18s ease;
+                                                                                                                                                                        }
+                                                                                                                                                                        .cta:hover{transform:translateY(-4px); box-shadow: 0 12px 30px rgba(183,216,255,0.06)}
+
+                                                                                                                                                                        /* HERO ASIDE IMAGE */
+                                                                                                                                                                        .hero-aside img{
+                                                                                                                                                                          max-width:220px;
+                                                                                                                                                                            border-radius:12px;
+                                                                                                                                                                              display:block;
+                                                                                                                                                                                object-fit:cover;
+                                                                                                                                                                                  border:1px solid rgba(255,255,255,0.03);
+                                                                                                                                                                                    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+                                                                                                                                                                                    }
+
+                                                                                                                                                                                    /* SECTIONS */
+                                                                                                                                                                                    .section{display:flex;gap:1.25rem;align-items:flex-start;margin:1rem 0;padding:0.75rem 0}
+                                                                                                                                                                                    .section.about article{flex:1}
+                                                                                                                                                                                    .skills{min-width:220px;background:rgba(255,255,255,0.01);padding:0.9rem;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+                                                                                                                                                                                    .skills h3{margin-top:0;color:var(--accent)}
+                                                                                                                                                                                    .skills ul{margin:0;padding-left:1rem;color:var(--muted)}
+
+                                                                                                                                                                                    /* PROJECTS GRID */
+                                                                                                                                                                                    .projects .grid{
+                                                                                                                                                                                      display:grid;
+                                                                                                                                                                                        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+                                                                                                                                                                                          gap:1rem;
+                                                                                                                                                                                            width:100%;
+                                                                                                                                                                                            }
+                                                                                                                                                                                            .project-card{
+                                                                                                                                                                                              background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+                                                                                                                                                                                                padding:0.85rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
+                                                                                                                                                                                                  transition:transform .18s ease, box-shadow .18s ease;
+                                                                                                                                                                                                  }
+                                                                                                                                                                                                  .project-card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+                                                                                                                                                                                                  .project-card h4{margin:0.5rem 0 0.35rem 0}
+                                                                                                                                                                                                  .project-card p{color:var(--muted);font-size:0.95rem}
+                                                                                                                                                                                                  .project-card .proj-link{display:inline-block;margin-top:0.6rem;text-decoration:none;color:var(--accent);font-weight:700}
+
+                                                                                                                                                                                                  /* GALLERY */
+                                                                                                                                                                                                  .gallery-grid{
+                                                                                                                                                                                                    display:grid;
+                                                                                                                                                                                                      grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+                                                                                                                                                                                                        gap:0.6rem;
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                        .gallery-grid img{width:100%;height:110px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+
+                                                                                                                                                                                                        /* CONTACT */
+                                                                                                                                                                                                        .contact{display:flex;gap:1rem}
+                                                                                                                                                                                                        .contact-list{list-style:none;padding:0;margin:0;color:var(--muted)}
+                                                                                                                                                                                                        .cta-box{min-width:220px;padding:0.8rem;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02)}
+
+                                                                                                                                                                                                        /* FOOTER */
+                                                                                                                                                                                                        .site-footer{margin-top:1.25rem;padding-top:0.75rem;border-top:1px solid rgba(255,255,255,0.03);text-align:center;color:var(--muted)}
+
+                                                                                                                                                                                                        /* RESPONSIVE */
+                                                                                                                                                                                                        @media (max-width:860px){
+                                                                                                                                                                                                          .hero{flex-direction:column}
+                                                                                                                                                                                                            .site-header{flex-direction:column;align-items:flex-start;gap:0.6rem}
+                                                                                                                                                                                                              .main-nav ul{flex-wrap:wrap}
+                                                                                                                                                                                                                body{padding:1rem}
+                                                                                                                                                                                                                }
+}
