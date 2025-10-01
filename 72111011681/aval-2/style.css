@@ -1,0 +1,202 @@
+/* styles.css — tema natureza */
+:root{
+  --bg: #f5fbf6;
+  --card: #ffffff;
+  --accent: #2b8a4a;     /* verde principal */
+  --muted: #6b776f;
+  --shadow: 0 6px 18px rgba(22, 34, 18, 0.08);
+  --radius: 12px;
+  --max-width: 1100px;
+  --gap: 1.25rem;
+  --transition: 250ms ease;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,rgba(235,249,238,0.8) 0%, var(--bg) 100%);
+  color:#14210e;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  padding-bottom:3rem;
+}
+
+/* NAV / HEADER */
+.site-header{
+  background-image: url('https://source.unsplash.com/1600x900/?nature,forest,water');
+  background-size:cover;
+  background-position:center;
+  color: #fff;
+  padding: 1rem;
+  position:relative;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.site-nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding: 0 1rem;
+}
+
+.logo{
+  font-weight:600;
+  letter-spacing:0.3px;
+  color: #fbfffd;
+  text-decoration:none;
+  font-size:1.1rem;
+  background: rgba(0,0,0,0.25);
+  padding:0.4rem 0.6rem;
+  border-radius:8px;
+  box-shadow: var(--shadow);
+}
+
+.nav-list{
+  list-style:none;
+  display:flex;
+  gap:0.75rem;
+  margin:0;
+  padding:0;
+}
+.nav-list a{
+  color: #ecfff1;
+  text-decoration:none;
+  font-weight:500;
+  padding:0.45rem 0.6rem;
+  border-radius:8px;
+  transition: background var(--transition), transform var(--transition);
+}
+.nav-list a:hover{ background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+
+/* Hero */
+.hero{
+  max-width:var(--max-width);
+  margin:2.4rem auto;
+  padding: 2rem 1rem;
+  text-shadow: 0 6px 20px rgba(10,20,10,0.35);
+  border-radius: 12px;
+}
+.hero h1{
+  margin:0 0 .5rem;
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  line-height:1.06;
+  font-weight:600;
+}
+.hero .tagline{
+  margin:0;
+  color: rgba(245,255,240,0.9);
+  font-weight:300;
+  max-width:720px;
+}
+
+/* Layout sections */
+.section{
+  max-width:var(--max-width);
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+  display: grid;
+  gap: var(--gap);
+}
+
+/* About + aside */
+.about{
+  grid-template-columns: 1fr 300px;
+  align-items:start;
+}
+.about-article{
+  background:var(--card);
+  padding:1.15rem;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.profile-aside{
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), #f3fff4);
+  padding:1rem;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+/* Projects */
+.projects h3{
+  margin:0 0 .6rem;
+  color:var(--accent);
+}
+.projects-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:1rem;
+  margin-top:0.5rem;
+}
+.project-card{
+  background:var(--card);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display:flex;
+  flex-direction:column;
+}
+.project-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
+}
+.card-content{
+  padding:0.9rem;
+}
+.project-card h4{ margin:0 0 .35rem; }
+.project-card p{ margin:0; color:var(--muted); font-size:0.95rem; }
+.project-card:hover{
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 18px 40px rgba(20,40,10,0.12);
+}
+
+/* Galeria */
+.gallery-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:0.6rem;
+  margin-top:0.6rem;
+}
+.gallery-grid img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(18,28,14,0.06);
+  transition: transform var(--transition);
+}
+.gallery-grid img:hover{ transform: scale(1.03); }
+
+/* Footer */
+.site-footer{
+  max-width:var(--max-width);
+  margin:2rem auto 0;
+  padding:1rem;
+  text-align:center;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+/* Responsividade */
+@media (max-width: 900px){
+  .about{ grid-template-columns: 1fr; }
+  .projects-grid{ grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 540px){
+  .nav-list{ display:none; }
+  .hero{ margin:1.2rem auto; padding:1rem; }
+  .projects-grid{ grid-template-columns: 1fr; }
+  .gallery-grid img{ height:120px; }
+}
