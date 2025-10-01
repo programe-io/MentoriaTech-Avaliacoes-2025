@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tabela de Notas</title>
+  <link rel="stylesheet" href="styles.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <div class="container">
+    <header>
+      <h1>
+        <img src="logo.png" alt="Logo do sistema de notas" style="height:40px; vertical-align:middle; margin-right:8px;">
+        Tabela de Notas
+      </h1>
+      <p>Use este sistema para cadastrar alunos, disciplinas e suas notas.</p>
+      <div class="muted">Adicione, edite e calcule médias — dados salvos no navegador</div>
+    </header>
+
+    <!-- Barra de navegação -->
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Alunos</a></li>
+        <li><a href="#">Disciplinas</a></li>
+        <li><a href="#">Relatórios</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article class="card">
+        <h3>Cadastro de Notas</h3>
+        <form id="form">
+          <input id="student" placeholder="Nome do aluno" required />
+          <input id="subject" placeholder="Disciplina" required />
+          <input id="grade" type="number" step="0.01" min="0" max="10" placeholder="Nota (0-10)" required />
+          <div class="controls">
+            <button type="submit" class="primary">Adicionar</button>
+            <button type="button" id="clear">Limpar</button>
+          </div>
+        </form>
+      </article>
+
+      <article class="card">
+        <h3>Lista de Registros</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Aluno</th>
+              <th>Disciplina</th>
+              <th>Nota</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+
+        <div class="summary">
+          <div class="box">Média geral: <span id="average">0</span></div>
+          <div class="box">Total de alunos: <span id="count">0</span></div>
+        </div>
+      </article>
+    </main>
+
+    <!-- Conteúdo complementar -->
+    <aside>
+      <h2>Dicas</h2>
+      <img src="tips.png" alt="Ícone de dicas" style="height:32px; margin-bottom:8px;">
+      <p>✔️ Use notas entre <strong>0 e 10</strong>.</p>
+      <p>✔️ Clique em ✏️ para editar um registro.</p>
+      <p>✔️ Clique em 🗑️ para excluir um registro.</p>
+    </aside>
+
+    <!-- Rodapé -->
+    <footer>
+      <p>&copy; 2025 Sistema de Notas — Desenvolvido para estudos.</p>
+      <img src="https://via.placeholder.com/80x30" alt="Logo rodapé">
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
+
