@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mini Rede Social</title>
+    <link rel="stylesheet" href="styles.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <div class="container">
+        <h1>Mini Rede Social</h1>
+        <div class="post-form">
+            <textarea id="postContent" placeholder="Escreva seu post aqui..." rows="4"></textarea>
+            <button id="postButton">Postar</button>
+        </div>
+        <div id="postsContainer">
+            <!-- Posts aparecerão aqui -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
+<body>
+  <div class="container">
+    <header>
+      <h1>Mini Rede Social</h1>
+    </header>
+
+    <div class="post-form">
+      <textarea id="postContent" placeholder="Escreva seu post aqui..." rows="4"></textarea>
+      <button id="postButton">Postar</button>
+    </div>
+    <div id="postsContainer">
+      <!-- Posts aparecerão aqui -->
+    </div>
+  </div>
+</body>
+<body>
+  <div class="container">
+    <header>
+      <h1>Mini Rede Social</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Perfil</a></li>
+          <li><a href="#">Configurações</a></li>
+          <li><a href="#">Sair</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="post-form">
+      <textarea id="postContent" placeholder="Escreva seu post aqui..." rows="4"></textarea>
+      <button id="postButton">Postar</button>
+    </div>
+    <div id="postsContainer">
+      <!-- Posts aparecerão aqui -->
+    </div>
+  </div>
+</body>
+<body>
+  <div class="container">
+    <header>
+      <h1>Mini Rede Social</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Perfil</a></li>
+          <li><a href="#">Configurações</a></li>
+          <li><a href="#">Sair</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="post-form">
+        <textarea id="postContent" placeholder="Escreva seu post aqui..." rows="4"></textarea>
+        <button id="postButton">Postar</button>
+      </div>
+      <div id="postsContainer">
+        <!-- Posts aparecerão aqui -->
+      </div>
+    </main>
+  </div>
+</body>
+<header>
+  <img src="https://via.placeholder.com/50" alt="Logo da Mini Rede Social" class="logo" />
+  <h1>Mini Rede Social</h1>
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Perfil</a></li>
+      <li><a href="#">Configurações</a></li>
+      <li><a href="#">Sair</a></li>
+    </ul>
+  </nav>
+</header>
+<header>
+  <img src="https://via.placeholder.com/50" alt="Logo da Mini Rede Social" class="logo" />
+  <h1>Mini Rede Social</h1>
+  <h2>Conectando pessoas, um post por vez</h2>
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Perfil</a></li>
+      <li><a href="#">Configurações</a></li>
+      <li><a href="#">Sair</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <div class="post-form">
+    <textarea id="postContent" placeholder="Escreva seu post aqui..." rows="4"></textarea>
+    <button id="postButton">Postar</button>
+  </div>
+
+  <p class="welcome-message">Seja bem-vindo! Escreva seu post acima e compartilhe seus pensamentos com a comunidade.</p>
+
+  <div id="postsContainer">
+    <!-- Posts aparecerão aqui -->
+  </div>
+</main>
+document.getElementById('postButton').addEventListener('click', function () {
+    const content = document.getElementById('postContent').value.trim();
+
+    if (content === '') {
+        alert('Por favor, escreva algo antes de postar!');
+        return;
+    }
+
+    const postDiv = document.createElement('div');
+    postDiv.classList.add('post');
+
+    // Criar o texto do post com a palavra "post" destacada
+    const postText = document.createElement('p');
+
+    // Exemplo simples: substituir a palavra "post" por um span colorido
+    const highlightedContent = content.replace(/post/gi, '<span class="highlight">post</span>');
+
+    postText.innerHTML = highlightedContent;
+
+    postDiv.appendChild(postText);
+
+    const postsContainer = document.getElementById('postsContainer');
+    postsContainer.insertBefore(postDiv, postsContainer.firstChild);
+
+    document.getElementById('postContent').value = '';
+});
