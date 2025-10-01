@@ -1,0 +1,127 @@
+/* styles.css
+   Portfólio tema "Squid Game 6"
+      Salve junto do index.html e coloque imagens na pasta images/
+      */
+
+      :root{
+        --bg:#0b0f12;
+          --card:#0f1720;
+            --accent:#00ff8c; /* verde neon */
+              --accent-2:#ff4d4d; /* vermelho de destaque */
+                --muted:#9aa6b2;
+                  --glass: rgba(255,255,255,0.03);
+                    --radius:14px;
+                      --max-width:1100px;
+                        font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+                        }
+
+                        *{box-sizing:border-box}
+                        html,body{height:100%}
+                        body{
+                          margin:0;
+                            background:
+                                radial-gradient(1200px 600px at 10% 10%, rgba(0,255,140,0.03), transparent 10%),
+                                    linear-gradient(180deg,#071018 0%, #071018 40%, #08121a 100%);
+                                      color:#e6eef6;
+                                        font-size:16px;
+                                          -webkit-font-smoothing:antialiased;
+                                            -moz-osx-font-smoothing:grayscale;
+                                              line-height:1.45;
+                                              }
+
+                                              /* NAV */
+                                              .nav{
+                                                display:flex;
+                                                  justify-content:space-between;
+                                                    align-items:center;
+                                                      padding:18px clamp(18px,4vw,40px);
+                                                        max-width:var(--max-width);
+                                                          margin:0 auto;
+                                                          }
+                                                          .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-family:'Orbitron',sans-serif}
+                                                          .logo span{color:var(--accent)}
+                                                          .shape{width:28px;height:28px;border-radius:50%;background:var(--accent);box-shadow:0 6px 18px rgba(0,255,140,0.08)}
+                                                          .shape.square{border-radius:6px;background:var(--accent-2)}
+                                                          .nav-links{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+                                                          .nav-links a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+                                                          .nav-links a:hover{color:var(--accent);background:rgba(0,255,140,0.03)}
+
+                                                          /* HERO */
+                                                          .hero{
+                                                            display:flex;
+                                                              gap:28px;
+                                                                align-items:center;
+                                                                  justify-content:space-between;
+                                                                    max-width:var(--max-width);
+                                                                      margin:26px auto;
+                                                                        padding:28px;
+                                                                          background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+                                                                            border-radius:var(--radius);
+                                                                              box-shadow:0 10px 40px rgba(2,6,23,0.6);
+                                                                              }
+                                                                              .hero-content{flex:1;min-width:280px}
+                                                                              .hero h1{
+                                                                                margin:0 0 6px 0;
+                                                                                  font-family:'Orbitron',sans-serif;
+                                                                                    font-size:clamp(28px,4vw,44px);
+                                                                                      letter-spacing:1px;
+                                                                                        color:white;
+                                                                                        }
+                                                                                        .hero h3{margin:0 0 12px 0;color:var(--muted);font-weight:600}
+                                                                                        .lead{color:var(--muted);margin-bottom:16px}
+                                                                                        .cta{
+                                                                                          display:inline-block;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:700;
+                                                                                            background:linear-gradient(90deg,var(--accent),#00d68a);
+                                                                                              color:#021114;
+                                                                                                box-shadow:0 8px 24px rgba(0,255,140,0.12);
+                                                                                                }
+                                                                                                .hero-visual{display:flex;gap:12px;align-items:center}
+                                                                                                /* shapes */
+                                                                                                .shape.triangle{
+                                                                                                  width:0;height:0;border-left:22px solid transparent;border-right:22px solid transparent;border-bottom:36px solid var(--accent-2);transform:translateY(-6px)
+                                                                                                  }
+                                                                                                  .shape.small{width:16px;height:16px}
+
+                                                                                                  /* MAIN layout */
+                                                                                                  main{max-width:var(--max-width);margin:24px auto;padding:0 18px;display:grid;gap:28px}
+
+                                                                                                  /* Sobre */
+                                                                                                  .about{display:grid;grid-template-columns:1fr 260px;gap:20px;align-items:start}
+                                                                                                  .about article{background:var(--card);padding:18px;border-radius:12px}
+                                                                                                  .stats{background:var(--glass);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+                                                                                                  .stats h3{margin-top:0}
+                                                                                                  .stats ul{padding-left:18px;color:var(--muted)}
+
+                                                                                                  /* Projects */
+                                                                                                  .projects{display:grid;gap:14px}
+                                                                                                  .project{display:flex;gap:16px;align-items:center;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:14px;border-radius:12px}
+                                                                                                  .project img{width:160px;height:100px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
+                                                                                                  .project-info h3{margin:0 0 8px 0}
+                                                                                                  .project-link{display:inline-block;margin-top:8px;text-decoration:none;padding:8px 12px;border-radius:10px;background:rgba(255,255,255,0.02);color:var(--accent);font-weight:700}
+
+                                                                                                  /* Blog posts */
+                                                                                                  .blog{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+                                                                                                  .post{background:var(--card);padding:14px;border-radius:12px}
+                                                                                                  .read-more{display:inline-block;margin-top:10px;color:var(--muted);text-decoration:none}
+
+                                                                                                  /* Footer */
+                                                                                                  .site-footer{margin-top:18px;padding:20px 18px;background:transparent}
+                                                                                                  .footer-inner{max-width:var(--max-width);margin:0 auto;display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+                                                                                                  .social{list-style:none;display:flex;gap:12px;margin:0;padding:0}
+                                                                                                  .social a{color:var(--muted);text-decoration:none}
+
+                                                                                                  /* Responsividade */
+                                                                                                  @media (max-width:900px){
+                                                                                                    .hero{flex-direction:column;align-items:flex-start}
+                                                                                                      .about{grid-template-columns:1fr}
+                                                                                                        .nav-links{display:none} /* manter simples para mobile */
+                                                                                                          .logo{gap:8px}
+                                                                                                          }
+
+                                                                                                          /* Pequenina animação para dar ar moderno */
+                                                                                                          @keyframes pulse {
+                                                                                                            0% { transform: translateY(0); opacity:1 }
+                                                                                                              50% { transform: translateY(-6px); opacity:0.95}
+                                                                                                                100% { transform: translateY(0); opacity:1 }
+                                                                                                                }
+                                                                                                                .cta{animation: pulse 4s ease-in-out infinite}
