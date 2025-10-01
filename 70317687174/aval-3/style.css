@@ -1,0 +1,325 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Estrutura semântica */
+header, nav, main, section, article, aside, footer {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+li {
+    list-style-type: square;
+}
+
+dl dt {
+    font-weight: bold;
+}
+
+dl dd {
+    margin-left: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: left;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form {
+    background-color: #eaeaea;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+fieldset {
+    border: 1px solid #bbb;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin: 8px 0 4px;
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+blockquote {
+    border-left: 5px solid #ccc;
+    padding-left: 10px;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+address {
+    font-style: normal;
+    color: #555;
+}
+
+/* Pseudo-classes e pseudo-elementos */
+a:visited {
+    color: #8e44ad;
+}
+
+a:active {
+    color: red;
+}
+
+p::first-line {
+    font-weight: bold;
+}
+
+p::first-letter {
+    font-size: 200%;
+    float: left;
+    margin-right: 5px;
+    color: #e74c3c;
+}
+
+::selection {
+    background: yellow;
+    color: black;
+}
+
+input:required {
+    border-color: red;
+}
+
+input:valid {
+    border-color: green;
+}
+
+input:invalid {
+    border-color: red;
+}
+
+/* Display & layout */
+.container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Positioning */
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.fixed {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    background: #fff;
+}
+
+/* Animation & transitions */
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.animado {
+    animation: girar 2s linear infinite;
+}
+
+.transicao {
+    transition: all 0.3s ease;
+}
+
+.escondido {
+    display: none;
+}
+
+.visivel {
+    display: block;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    body {
+        background-color: #dfe6e9;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Z-index e Opacidade */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+/* Tipografia */
+strong {
+    color: #000;
+}
+
+em {
+    color: #c0392b;
+}
+
+small {
+    font-size: 0.8em;
+    color: #999;
+}
+
+mark {
+    background-color: yellow;
+}
+
+/* Componentes modernos */
+details {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-left: 3px solid #ccc;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+dialog {
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Custom scrollbar (em navegadores que suportam) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

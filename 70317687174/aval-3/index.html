@@ -1,0 +1,203 @@
+ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Completo com DIV e SPAN</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    .caixa {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .destaque {
+      color: red;
+      font-weight: bold;
+    }
+    .informacao {
+      background-color: yellow;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+  </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <div class="container">
+
+    <!-- Cabeçalho -->
+    <header class="caixa">
+      <h1>Site Completo com Todas as Tags</h1>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Seção de Início -->
+    <main>
+      <section id="inicio" class="caixa">
+        <h2>Início</h2>
+        <p>Este é um exemplo de página com quase todas as tags principais do HTML5.</p>
+        <p>Você está visitando como <span class="destaque">usuário anônimo</span>.</p>
+        <div class="informacao">Essa <span>div com span</span> serve para mostrar dados inline.</div>
+        <button onclick="alert('Você clicou!')">Clique aqui</button>
+      </section>
+
+      <!-- Sobre -->
+      <section id="sobre" class="caixa">
+        <h2>Sobre</h2>
+        <article>
+          <h3>Quem Somos</h3>
+          <p>Somos uma empresa que <span class="destaque">desenvolve soluções web</span>.</p>
+          <p>Fundada em <time datetime="2020-01-01">2020</time>, temos crescido continuamente.</p>
+          <address>
+            <p>Email: <a href="mailto:exemplo@site.com">exemplo@site.com</a></p>
+            <p>Endereço: Rua Exemplo, 123</p>
+          </address>
+        </article>
+        <aside>
+          <h4>Curiosidade</h4>
+          <p>O nome "HTML" vem de <abbr title="HyperText Markup Language">HTML</abbr>.</p>
+        </aside>
+      </section>
+
+      <!-- Formulário de Contato -->
+      <section id="contato" class="caixa">
+        <h2>Contato</h2>
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Informações Pessoais</legend>
+
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="mensagem">Mensagem:</label><br>
+            <textarea id="mensagem" name="mensagem" rows="4" cols="40"></textarea><br><br>
+
+            <label>Sexo:</label><br>
+            <input type="radio" id="masc" name="sexo" value="masculino">
+            <label for="masc">Masculino</label>
+            <input type="radio" id="fem" name="sexo" value="feminino">
+            <label for="fem">Feminino</label><br><br>
+
+            <label for="pais">País:</label>
+            <select id="pais" name="pais">
+              <option value="br">Brasil</option>
+              <option value="pt">Portugal</option>
+              <option value="outro">Outro</option>
+            </select><br><br>
+
+            <input type="checkbox" id="termos" name="termos" required>
+            <label for="termos">Aceito os termos</label><br><br>
+
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- Outros elementos HTML -->
+      <section class="caixa">
+        <h2>Outros Elementos HTML</h2>
+
+        <p><strong>Texto em negrito</strong></p>
+        <p><em>Texto em itálico</em></p>
+        <p><mark>Texto destacado</mark></p>
+        <p><small>Texto pequeno</small></p>
+        <p>Este é um <span style="color: blue;">texto com span inline</span> para estilização.</p>
+
+        <blockquote cite="https://developer.mozilla.org/">
+          "HTML é a linguagem base da web."
+        </blockquote>
+
+        <figure>
+          <img src="https://via.placeholder.com/300x150" alt="Imagem exemplo">
+          <figcaption>Legenda da imagem</figcaption>
+        </figure>
+
+        <details>
+          <summary>Ver mais informações</summary>
+          <p>Este texto aparece ao expandir o detalhe.</p>
+        </details>
+
+        <dialog id="meuDialogo">
+          <p>Este é um diálogo.</p>
+          <button onclick="document.getElementById('meuDialogo').close()">Fechar</button>
+        </dialog>
+        <button onclick="document.getElementById('meuDialogo').showModal()">Abrir Diálogo</button>
+
+        <table border="1">
+          <caption>Tabela de Exemplo</caption>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Idade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>João</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>Maria</td>
+              <td>30</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+        </ul>
+
+        <ol>
+          <li>Primeiro</li>
+          <li>Segundo</li>
+        </ol>
+
+        <dl>
+          <dt>HTML</dt>
+          <dd>Linguagem de marcação</dd>
+          <dt>CSS</dt>
+          <dd>Folhas de estilo</dd>
+        </dl>
+
+        <pre><code>
+const mensagem = "Olá mundo!";
+console.log(mensagem);
+        </code></pre>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="caixa">
+      <p>&copy; 2025 - Todos os direitos reservados.</p>
+      <p>Atualizado em: <time datetime="2025-10-01">1 de Outubro de 2025</time></p>
+    </footer>
+
+  </div>
+
+<script src="script.js"></script></body>
+</html>
