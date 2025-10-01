@@ -1,0 +1,104 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #e91e63;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2em;
+}
+
+/* Navegação */
+nav {
+  background-color: #1e1e1e;
+  text-align: center;
+  padding: 15px 0;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #e91e63;
+}
+
+/* Seção de jogos */
+.games-section {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Cartão de jogo */
+.game-card {
+  background-color: #1f1f1f;
+  border: 2px solid #333;
+  border-radius: 10px;
+  width: 220px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  border-color: #e91e63;
+}
+
+.game-card img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.game-card h3 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.game-card p {
+  font-size: 0.95em;
+  color: #ccc;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .games-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
