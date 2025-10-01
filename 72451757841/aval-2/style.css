@@ -1,0 +1,227 @@
+/* styles.css - Portfólio Assembleia de Deus
+   Salve ao lado do index.html (ex: /project/styles.css)
+*/
+
+/* Variáveis de tema */
+:root{
+  --bg: #f8faf8;
+  --card: #ffffff;
+  --primary: #6b2e2e;       /* bordô/brown-ish para identidade */
+  --accent: #d9a38b;        /* tom quente */
+  --muted: #6b6b6b;
+  --max-width: 1100px;
+  --radius: 10px;
+  --shadow: 0 6px 20px rgba(0,0,0,0.08);
+  --gap: 1.25rem;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+/* Reset simples */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#fff 0%, var(--bg) 100%);
+  color:#222;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding-bottom:40px;
+}
+
+/* Skip link */
+.skip-link{
+  position:absolute;
+  left:-999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.skip-link:focus{
+  left:1rem;
+  top:1rem;
+  width:auto;
+  height:auto;
+  background:#000;
+  color:#fff;
+  padding:.5rem .75rem;
+  z-index:9999;
+}
+
+/* Header */
+.site-header{
+  background: linear-gradient(90deg,var(--primary), #4a1b1b);
+  color:#fff;
+  padding:1rem;
+  box-shadow: var(--shadow);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.header-inner{
+  max-width:var(--max-width);
+  margin:0 auto;
+  display:flex;
+  gap:1rem;
+  align-items:center;
+}
+.logo{
+  width:72px;
+  height:72px;
+  object-fit:cover;
+  border-radius:8px;
+  border:3px solid rgba(255,255,255,0.12);
+}
+
+/* Titles */
+.site-header h1{margin:0;font-size:1.25rem}
+.site-header h3{margin:0;font-weight:400;opacity:.92;font-size:.9rem}
+
+/* Nav */
+.main-nav{margin-top:.75rem}
+.main-nav ul{
+  list-style:none;
+  display:flex;
+  gap:.75rem;
+  padding:0;
+  margin:0;
+}
+.main-nav a{
+  display:inline-block;
+  padding:.45rem .7rem;
+  color:inherit;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:600;
+  background: rgba(255,255,255,0.06);
+}
+.main-nav a:hover,
+.main-nav a:focus{background: rgba(255,255,255,0.12)}
+
+/* Hero */
+.hero{
+  max-width:var(--max-width);
+  margin:1.25rem auto;
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  padding:1rem;
+  border-radius:var(--radius);
+  background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.85));
+  box-shadow:var(--shadow);
+}
+.hero-img{
+  width:45%;
+  max-height:220px;
+  object-fit:cover;
+  border-radius:8px;
+  flex:1 1 45%;
+  box-shadow:0 8px 30px rgba(0,0,0,0.08);
+}
+.hero-text{
+  flex:1 1 55%;
+}
+.hero-text h2{margin-top:0;color:var(--primary)}
+.hero-text p{margin-bottom:0;color:var(--muted)}
+
+/* Layout grid */
+.content-grid{
+  max-width:var(--max-width);
+  margin:1rem auto;
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  gap:var(--gap);
+  align-items:start;
+  padding:0 1rem;
+}
+
+/* Cards / articles */
+.card{
+  background:var(--card);
+  padding:1rem;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.aside-card{position:sticky; top:90px}
+
+/* Ministries grid */
+.ministries-grid{
+  display:grid;
+  gap:1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top:.75rem;
+}
+.ministry img{width:100%; height:140px; object-fit:cover; border-radius:8px}
+.ministry h3{margin:.5rem 0 0.25rem}
+
+/* Gallery */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(160px,1fr));
+  gap:.5rem;
+  margin-top:.5rem;
+}
+.gallery img{width:100%; height:140px; object-fit:cover; border-radius:6px}
+
+/* Footer */
+.site-footer{
+  margin-top:2rem;
+  background:linear-gradient(180deg,#2f1a1a,#2a1616);
+  color:#fff;
+  padding:1rem 0;
+}
+.footer-inner{
+  max-width:var(--max-width);
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  padding:0 1rem;
+}
+.site-footer a{color:rgba(255,255,255,0.9);text-decoration:none}
+
+/* Form */
+.contact-form{
+  display:grid;
+  gap:.5rem;
+}
+.contact-form label{font-weight:600;font-size:.9rem}
+.contact-form input,
+.contact-form textarea{
+  padding:.6rem;
+  border-radius:8px;
+  border:1px solid #e5e5e5;
+  font-size:.95rem;
+}
+.contact-form .btn{
+  margin-top:.5rem;
+  padding:.65rem .9rem;
+  border:0;
+  border-radius:8px;
+  cursor:pointer;
+  background:var(--primary);
+  color:#fff;
+  font-weight:700;
+}
+
+/* Misc */
+blockquote{font-style:italic;color:var(--muted);margin:0;padding:0}
+.events{list-style:none;padding:0;margin:0}
+.events li{margin-bottom:.6rem}
+
+/* Responsive */
+@media (max-width:900px){
+  .header-inner{flex-direction:row;gap:.6rem}
+  .hero{flex-direction:column}
+  .hero-img{width:100%; max-height:240px}
+  .content-grid{grid-template-columns:1fr}
+  .aside-card{position:relative; top:auto}
+  .footer-inner{flex-direction:column; align-items:flex-start}
+  .main-nav ul{flex-wrap:wrap}
+}
+
+/* Pequenas melhorias visuais */
+h2, h3{color:var(--primary)}
