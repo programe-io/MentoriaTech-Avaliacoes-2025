@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jogo da Adivinhação</title>
+  <style>
+    body {
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #282c34;
+      color: white;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    nav {
+      margin-top: 10px;
+      text-align: center;
+      width: 100%;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #61dafb;
+    }
+
+    .main-container {
+      display: flex;
+      max-width: 900px;
+      margin: 30px auto;
+      gap: 20px;
+      padding: 0 15px;
+      flex: 1;
+    }
+
+    main {
+      flex: 2;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    aside {
+      flex: 1;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      font-size: 14px;
+      color: #333;
+    }
+
+    input[type=number] {
+      padding: 10px;
+      width: 100px;
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    #mensagem {
+      font-size: 18px;
+      margin-top: 15px;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    /* Imagem no header */
+    header img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    footer {
+      background-color: #282c34;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+      box-shadow: 0 -2px 4px rgba(0,0,0,0.2);
+      margin-top: auto;
+    }
+
+    footer .social-links {
+      margin: 10px 0;
+    }
+
+    footer .social-links a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+
+    footer .social-links a:hover {
+      color: #61dafb;
+    }
+
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/3082/3082033.png" alt="Ícone alvo" />
+    <h1>🎯 Jogo da Adivinhação</h1>
+  </header>
+
+  <nav>
+    <a href="#jogo">Jogar</a>
+    <a href="#regras">Regras</a>
+    <a href="#sobre">Sobre</a>
+  </nav>
+
+  <div class="main-container">
+    <main>
+      <article id="jogo">
+        <input type="number" id="chute" min="1" max="100" placeholder="Digite um número" />
+        <button onclick="verificarChute()">Adivinhar</button>
+        <p id="mensagem"></p>
+        <button onclick="reiniciarJogo()">🔁 Reiniciar</button>
+      </article>
+    </main>
+
+    <aside>
+      <h3>Dicas para jogar</h3>
+      <ul>
+        <li>Comece chutando um número no meio do intervalo.</li>
+        <li>Use as dicas para ajustar seus próximos chutes.</li>
+        <li>Não desista, você consegue!</li>
+      </ul>
+      <h3>Sobre o jogo</h3>
+      <p>Este jogo é simples e ajuda a exercitar seu raciocínio lógico e estratégia.</p>
+    </aside>
+  </div>
+
+  <section>
+    <article id="regras">
+      <h2>Regras</h2>
+      <p>Você precisa adivinhar o número secreto entre 1 e 100. O jogo vai te dar dicas para você chegar lá!</p>
+    </article>
+  </section>
+
+  <section>
+    <article id="sobre">
+      <h2>Sobre</h2>
+      <p>Este jogo foi feito em HTML, CSS e JavaScript para você se divertir e treinar lógica!</p>
+    </article>
+  </section>
+
+  <footer>
+    <p>© 2025 Jogo da Adivinhação. Desenvolvido por Você.</p>
+    <div class="social-links">
+      <a href="#" title="Facebook" aria-label="Facebook">👍</a>
+      <a href="#" title="Twitter" aria-label="Twitter">🐦</a>
+      <a href="#" title="Instagram" aria-label="Instagram">📸</a>
+    </div>
+    <p>Divirta-se e treine seu raciocínio!</p>
+  </footer>
+
+  <script>
+    let numeroSecreto = Math.floor(Math.random() * 100) + 1;
+    let tentativas = 0;
+
+    function verificarChute() {
+      const chute = Number(document.getElementById("chute").value);
+      const mensagem = document.getElementById("mensagem");
+      tentativas++;
+
+      if (chute < 1 || chute > 100) {
+        mensagem.textContent = "⛔ O número deve estar entre 1 e 100.";
+        return;
+      }
+
+      if (chute === numeroSecreto) {
+        mensagem.textContent = `🎉 Parabéns! Você acertou em ${tentativas} tentativa(s)!`;
+      } else if (chute < numeroSecreto) {
+        mensagem.textContent = "🔼 Tente um número maior!";
+      } else {
+        mensagem.textContent = "🔽 Tente um número menor!";
+      }
+    }
+
+    function reiniciarJogo() {
+      numeroSecreto = Math.floor(Math.random() * 100) + 1;
+      tentativas = 0;
+      document.getElementById("mensagem").textContent = "";
+      document.getElementById("chute").value = "";
+    }
+  </script>
+
+</body>
+</html>
+
