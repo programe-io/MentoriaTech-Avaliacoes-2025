@@ -1,0 +1,71 @@
+/* styles.css */
+/* Estilo para portfólio tema futebol
+   Use fonts/images próprias substituindo a pasta images/ e files/
+*/
+
+:root{
+  --bg: #0b1020;
+  --card: #0f1724;
+  --accent: #ffcc00; /* cor tipo amarelo do uniforme */
+  --muted: #9aa4b2;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 12px;
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#04101a 0%, #081827 60%);color:#eaf0f6;}
+.container{max-width:1100px;margin:0 auto;padding:1rem;}
+
+/* Header */
+.site-header{background:linear-gradient(90deg, rgba(0,0,0,0.25), rgba(0,0,0,0.15));backdrop-filter: blur(6px);position:sticky;top:0;z-index:40;padding:0.5rem 0;}
+.header-inner{display:flex;align-items:center;gap:1rem;}
+.logo{width:56px;height:56px;object-fit:cover;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.5);}
+.site-header h1{font-size:1.25rem;margin:0;font-weight:700;letter-spacing:0.4px;}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:0.5rem;}
+.main-nav a{color:var(--muted);text-decoration:none;padding:0.5rem;border-radius:8px}
+.main-nav a:hover{color:var(--accent)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 320px;gap:1rem;align-items:center;padding:1.25rem 0;}
+.hero-article h3{margin:0 0 0.5rem 0;font-size:1.1rem;color:var(--accent);}
+.hero-article p{margin:0 0 1rem 0;color:var(--muted)}
+.hero-aside img{width:100%;height:auto;border-radius:10px;box-shadow:0 8px 30px rgba(2,6,23,0.7)}
+
+/* Sections */
+.section-header h3{margin:0 0 0.75rem 0;color:var(--accent);font-size:1rem}
+.about{display:grid;grid-template-columns:1fr 220px;gap:1rem;align-items:center;padding:1rem 0;}
+.about-article p{margin:0;color:var(--muted)}
+.skills{margin:0.5rem 0 0 0;padding:0;list-style:disc;margin-left:1rem;color:var(--muted)}
+.about-aside img{width:100%;border-radius:8px;display:block;object-fit:cover}
+
+/* Projects */
+.projects{padding:1rem 0;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;align-items:start}
+.project-card{background:var(--card);padding:0.75rem;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+.project-card img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:0.5rem}
+.projects-aside{grid-column:1/-1;background:var(--glass);padding:0.75rem;border-radius:12px;color:var(--muted)}
+
+/* Gallery */
+.gallery .grid-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem}
+.grid-gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 280px;gap:1rem;padding:1rem 0}
+.contact-form form{display:flex;flex-direction:column;gap:0.5rem}
+.contact-form input,.contact-form textarea{padding:0.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+.contact-aside{background:var(--card);padding:0.75rem;border-radius:12px}
+.socials{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.3rem}
+.socials a{text-decoration:none;color:var(--muted)}
+
+/* Buttons */
+.btn{display:inline-block;padding:0.6rem 1rem;border-radius:999px;background:linear-gradient(90deg,var(--accent),#ffc94d);color:#04101a;font-weight:700;text-decoration:none;border:none;cursor:pointer}
+.btn-outline{display:inline-block;padding:0.5rem 0.75rem;border-radius:999px;border:1px solid var(--accent);color:var(--accent);text-decoration:none}
+
+/* Footer */
+.site-footer{margin-top:2rem;padding:1rem 0;border-top:1px solid rgba(255,255,255,0.03)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.site-footer p{margin:0;color:var(--muted)}
+
+/* Responsividade */
+@media (

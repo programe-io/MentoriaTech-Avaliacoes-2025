@@ -1,0 +1,146 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfólio — Futebol</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Fonte opcional: troque ou remova se preferir -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="images/logo.png" alt="Logo do Portfólio — Bola e escudo" class="logo" />
+      <h1>João Silva — Portfólio de Futebol</h1>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="hero" class="hero">
+      <article class="hero-article">
+        <h3>Paixão, treino e projetos</h3>
+        <p>Sou treinador/analista de desempenho e aqui mostro trabalhos, estatísticas e material visual relacionado ao futebol.</p>
+        <a class="btn" href="#projetos">Ver projetos</a>
+      </article>
+      <aside class="hero-aside">
+        <img src="images/hero-ball.jpg" alt="Bola de futebol em gramado" />
+      </aside>
+    </section>
+
+    <section id="sobre" class="about">
+      <header class="section-header">
+        <h3>Sobre mim</h3>
+      </header>
+      <article class="about-article">
+        <p>Formação em Educação Física, experiência como técnico de base e analista de desempenho. Especialista em scouting e treino técnico-tático.</p>
+        <ul class="skills">
+          <li>Treino técnico</li>
+          <li>Análise de desempenho</li>
+          <li>Scouting e vídeo</li>
+        </ul>
+      </article>
+      <aside class="about-aside">
+        <img src="images/profile.jpg" alt="Foto profissional — João Silva" />
+      </aside>
+    </section>
+
+    <section id="projetos" class="projects">
+      <header class="section-header">
+        <h3>Projetos</h3>
+      </header>
+
+      <article class="project-card">
+        <img src="images/project1.jpg" alt="Análise de jogo — captura de tela" />
+        <h3>Relatório de Análise — Jogo x</h3>
+        <p>Documento detalhado com heatmaps, oportunidades de finalização e proposta de treino semanal.</p>
+      </article>
+
+      <article class="project-card">
+        <img src="images/project2.jpg" alt="Treino tático em campo" />
+        <h3>Sequência de Treinos — Transições</h3>
+        <p>Plano com exercícios focados em transição defesa-ataque e condicionamento funcional.</p>
+      </article>
+
+      <aside class="projects-aside">
+        <h3>Download</h3>
+        <p>Baixe um portfólio PDF com os meus principais trabalhos.</p>
+        <a class="btn-outline" href="files/portfolio.pdf" download>Baixar PDF</a>
+      </aside>
+    </section>
+
+    <section id="galeria" class="gallery">
+      <header class="section-header">
+        <h3>Galeria</h3>
+      </header>
+
+      <div class="grid-gallery">
+        <img src="images/gal1.jpg" alt="Jogador finalizando" />
+        <img src="images/gal2.jpg" alt="Treino de finalização" />
+        <img src="images/gal3.jpg" alt="Mapa de calor" />
+        <img src="images/gal4.jpg" alt="Placar eletrônico" />
+      </div>
+    </section>
+
+    <section id="contato" class="contact">
+      <header class="section-header">
+        <h3>Contato</h3>
+      </header>
+
+      <article class="contact-form">
+        <form action="#" method="post">
+          <label for="name">Nome</label>
+          <input id="name" name="name" type="text" required>
+
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" required>
+
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button class="btn" type="submit">Enviar</button>
+        </form>
+      </article>
+
+      <aside class="contact-aside">
+        <h3>Redes</h3>
+        <p>Siga-me para ver treinos e análises diárias.</p>
+        <ul class="socials">
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="YouTube">YouTube</a></li>
+          <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+        </ul>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> João Silva — Todos os direitos reservados.</p>
+      <nav aria-label="Navegação rodapé">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Atualiza o ano do rodapé automaticamente
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
