@@ -1,0 +1,401 @@
+/* Reset / global */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografia / fontes / texto */
+html {
+  font-size: 16px;
+}
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f9f9f9;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+strong {
+  font-weight: bolder;
+}
+em {
+  font-style: italic;
+}
+
+/* Box model / layout / posicionamento */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.box {
+  display: block;
+  display: inline-block;
+  display: flex;
+  display: grid;
+  /* múltiplos valores só para exemplo, o último prevalece */
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: stretch;
+  gap: 1rem;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 1rem;
+  grid-auto-flow: row;
+}
+
+.positioned {
+  position: relative;
+  top: 10px;
+  left: 20px;
+  bottom: 5px;
+  right: 5px;
+  z-index: 10;
+}
+
+.fixed-element {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.absolute-element {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.sticky-element {
+  position: sticky;
+  top: 10px;
+}
+
+/* Dimensões / margem / preenchimento / borda */
+.demo-box {
+  width: 200px;
+  height: 150px;
+  min-width: 50px;
+  max-width: 300px;
+  min-height: 30px;
+  max-height: 400px;
+  margin: 1em 2em 3em 4em;
+  padding: 0.5em 1em;
+  border: 2px solid #666;
+  border-top: 4px dashed #999;
+  border-radius: 10px 5px 15px 0;
+  border-image: url(border.png) 30 fill repeat;
+}
+
+/* Fundo / cores / imagens de fundo */
+.background-demo {
+  background-color: #fafafa;
+  background-image: linear-gradient(to right, #fff, #eee);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+/* Sombras / efeitos */
+.shadow-box {
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3), inset 1px 1px 2px rgba(255,255,255,0.5);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+  mix-blend-mode: multiply;
+}
+
+/* Transformações / animações / transições */
+.transform-demo {
+  transform: translate(10px, 20px) rotate(10deg) scale(1.2) skew(5deg, 3deg);
+  transform-origin: center center;
+  transition: all 0.3s ease-in-out 0.1s;
+}
+
+@keyframes exemploAnim {
+  0%   { opacity: 0; transform: translateY(-20px); }
+  50%  { opacity: 0.5; transform: translateY(0px); }
+  100% { opacity: 1; transform: translateY(20px); }
+}
+
+.animated {
+  animation-name: exemploAnim;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+/* Transições 2D/3D */
+.perspective-box {
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+.rotate3d {
+  transform: rotateX(10deg) rotateY(15deg) rotateZ(5deg);
+  backface-visibility: hidden;
+}
+
+/* Flex children / alinhamento / ordem */
+.flex-child {
+  flex: 1 0 auto;
+  order: 2;
+  align-self: center;
+}
+
+/* Grid children / alinhamento */
+.grid-child {
+  grid-column: 2 / span 2;
+  grid-row: 1 / 2;
+  justify-self: end;
+  align-self: start;
+}
+
+/* Tabelas / listas */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.5em;
+}
+caption {
+  caption-side: top;
+}
+
+ul, ol {
+  list-style-type: disc;
+}
+ol {
+  list-style-type: decimal;
+}
+ul ul {
+  list-style-type: circle;
+}
+
+/* Pseudoclasses / pseudoelementos */
+.button::before {
+  content: "» ";
+}
+.button::after {
+  content: " «";
+}
+.button:hover {
+  background-color: #0066cc;
+  color: white;
+}
+.input:focus {
+  outline: 2px solid #0099ff;
+}
+li:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+li:nth-child(even) {
+  background-color: #e0e0e0;
+}
+a:visited {
+  color: #551a8b;
+}
+a:active {
+  color: #ff0000;
+}
+
+/* Media queries / responsividade */
+@media (max-width: 768px) {
+  .responsive {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+}
+@media print {
+  .no-print {
+    display: none;
+  }
+  body {
+    color: black;
+    background: white;
+  }
+}
+
+/* Fontes web / ícones */
+@font-face {
+  font-family: "MinhaFonte";
+  src: url("minhafonte.woff2") format("woff2"),
+       url("minhafonte.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Propriedades obsoletas / experimentais / prefixadas exemplo */
+.example-old {
+  zoom: 1;              /* IE */
+  word-wrap: break-word; /* antigo */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-stroke: 1px black;
+  -webkit-font-feature-settings: "liga";
+  -moz-box-shadow: 2px 2px 5px #888;
+  -webkit-box-shadow: 2px 2px 5px #888;
+  box-shadow: 2px 2px 5px #888;
+}
+
+/* Outros exemplos diversos */
+.cursor-demo {
+  cursor: pointer;
+}
+.opacity {
+  opacity: 0.8;
+}
+.visibility {
+  visibility: hidden;
+}
+
+/* Camadas / z-index */
+.layer {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Overflow / contornos / máscara */
+.overflow-demo {
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.clip-demo {
+  clip: rect(10px, 50px, 40px, 0px);
+}
+.mask-demo {
+  mask-image: linear-gradient(to bottom, transparent, black);
+}
+
+/* Colunas / col-count / col-gap */
+.multi-col {
+  column-count: 3;
+  column-gap: 1em;
+  column-rule: 1px solid #666;
+}
+
+/* Conteúdo gerado / counters */
+.counter-demo {
+  counter-reset: section;
+}
+.counter-demo h2::before {
+  counter-increment: section;
+  content: "Seção " counter(section) ": ";
+}
+
+/* Scroll / rolagem suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Conjunto de regras @supports */
+@supports (display: grid) {
+  .suporta-grid {
+    display: grid;
+  }
+}
+
+/* Hierarquia / especificidade / combinadores */
+.intro + .first {
+  margin-top: 1em;
+}
+.main > .item {
+  padding: 1em;
+}
+.wrapper .inner .deep {
+  font-size: 0.8rem;
+}
+
+/* Unit types diversos */
+.units-demo {
+  width: 50%;
+  height: 10vh;
+  margin: 2rem;
+  padding: 1em;
+}
+
+/* Valores especiais / herança / inicial / unset / inherit */
+.inherit-demo {
+  color: inherit;
+}
+.initial-demo {
+  font-size: initial;
+}
+.unset-demo {
+  background: unset;
+}
+
+/* Conteúdo de strings / URLs */
+.content-demo::before {
+  content: url(icon.png) " Demo";
+}
+
+/* Exemplo com outline */
+.outline-demo {
+  outline: 2px dotted red;
+  outline-offset: 4px;
+}
+
+/* Exemplo de backdrop-filter (experimental) */
+.backdrop {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* Texto decorativo */
+.text-stroke {
+  -webkit-text-stroke: 1px #000;
+}
+
+/* Exemplo de writing-mode / text-orientation */
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+/* Exemplo de overscroll-behavior */
+.scroll-container {
+  overscroll-behavior: contain;
+}
+
+/* Exemplo de place-content / place-items / place-self (grid/flex shorthand) */
+.place-demo {
+  place-content: center space-between;
+  place-items: center stretch;
+  place-self: center;
+}
