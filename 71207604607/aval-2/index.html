@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sobre mim — Design</title>
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <!-- CSS separado -->
+  <link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <!-- Header da página (obrigatório) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">Arthur Vinicius</a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#tec">Tecnologias</a></li>
+          <li><a href="#formacao">Formações</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="container layout">
+    <!-- Article obrigatório: todo o conteúdo principal do perfil -->
+    <article class="card profile-article" role="article" aria-labelledby="about-title">
+      <header class="article-header">
+        <h1 id="about-title">Sobre mim</h1>
+      </header>
+
+      <!-- Seção "about" dentro do article -->
+      <section id="about" class="about">
+        <div class="hero">
+          <figure class="avatar-wrap">
+            <img class="avatar" src="PINGUIM.png" alt="foto de perfil de Arthur Vinicius">
+            <figcaption>Arthur Vinicius — Estudante</figcaption>
+          </figure>
+
+          <div class="bio">
+            <h2>Olá, eu sou</h2>
+            <h3>Arthur Vinicius</h3>
+            <p>
+              Gosto muito de jogar futebol, mexer no computador e, no tempo livre,
+              estudo matemática e robótica.
+            </p>
+            <p class="role">ESTUDANTE</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tecnologias -->
+      <section id="tec" class="technologies">
+        <h4>Tecnologias que utilizo</h4>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Flutter</li>
+          <li>Dart</li>
+        </ul>
+      </section>
+
+      <!-- Formações -->
+      <section id="formacao" class="formation">
+        <h4>Minhas Formações</h4>
+        <ol>
+          <li>Téc. em Desenvolvimento Web e de Games</li>
+          <li>Já joguei no futebol piauiense</li>
+          <li>Bom em matemática</li>
+          <li>Especialização em Desenvolvimento Web</li>
+          <li>Especialização em Desenvolvimento de Games</li>
+          <li>Campeão da LIFT, MDE de Matemática</li>
+          <li>Especialização na Área de Computação</li>
+        </ol>
+      </section>
+
+      <footer class="article-footer">
+        <section id="contato">
+          <h4>Contato</h4>
+          <p>Coloque aqui seu e-mail, LinkedIn ou outras formas de contato.</p>
+        </section>
+      </footer>
+    </article>
+
+    <!-- Sidebar separado -->
+    <aside class="card sidebar" aria-label="Informações adicionais">
+      <div class="tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">Design</span>
+        <span class="tag">UI/UX</span>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Footer da página -->
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Arthur Vinicius — Todos os direitos reservados.</small>
+    </div>
+  </footer>
+
+  <script>
+    // atualiza ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
