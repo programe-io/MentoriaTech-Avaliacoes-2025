@@ -1,0 +1,167 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Exemplo de relógio em tempo real com várias tags HTML">
+  <meta name="author" content="Exemplo Completo">
+  <title>Relógio Completo</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #0d1117;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header, footer {
+      background: #161b22;
+      padding: 10px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+    }
+    nav a { color: cyan; text-decoration: none; }
+    main { flex: 1; display: flex; justify-content: center; align-items: center; }
+    article {
+      background: #1f2937;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,255,255,0.4);
+      text-align: center;
+    }
+    #relogio {
+      font-size: 4em;
+      font-weight: bold;
+      display: block;
+      margin: 20px 0;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <header>
+    <h1>⏰ Relógio Virtual</h1>
+    <nav>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#extra">Extra</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <article>
+        <h2>Hora Atual</h2>
+        <div class="container-relogio">
+          <time id="relogio" datetime=""></time>
+        </div>
+        <aside>
+          <p>Este relógio mostra a <mark>hora do sistema</mark> em tempo real.</p>
+        </aside>
+      </article>
+
+      <article id="sobre">
+        <h3>Sobre</h3>
+        <p>Este projeto utiliza <strong>HTML</strong>, <em>CSS</em> e <abbr title="JavaScript">JS</abbr>.</p>
+        <details>
+          <summary>Mais informações</summary>
+          <p>O código foi feito para demonstrar várias tags HTML semânticas.</p>
+        </details>
+      </article>
+
+      <article id="contato">
+        <h3>Contato</h3>
+        <form>
+          <fieldset>
+            <legend>Envie sua mensagem</legend>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="msg">Mensagem:</label><br>
+            <textarea id="msg" name="msg"></textarea><br><br>
+            <button type="submit">Enviar</button>
+          </fieldset>
+        </form>
+      </article>
+
+      <article id="extra">
+        <h3>Extra</h3>
+        <figure>
+          <img src="https://via.placeholder.com/150" alt="Imagem exemplo">
+          <figcaption>Exemplo de imagem com figcaption</figcaption>
+        </figure>
+        <table border="1">
+          <caption>Exemplo de tabela</caption>
+          <thead>
+            <tr><th>Dia</th><th>Evento</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Segunda</td><td>Estudo HTML</td></tr>
+            <tr><td>Terça</td><td>Estudo CSS</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <section>
+        <h3>Mídia</h3>
+        <audio controls>
+          <source src="exemplo.mp3" type="audio/mpeg">
+          Seu navegador não suporta áudio.
+        </audio>
+        <br>
+        <video width="320" height="240" controls>
+          <source src="exemplo.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+        <br>
+        <canvas id="canvasExemplo" width="100" height="100" style="border:1px solid #fff;"></canvas>
+        <svg width="100" height="100">
+          <circle cx="50" cy="50" r="40" stroke="cyan" stroke-width="3" fill="blue" />
+        </svg>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="ano"></span> - Feito para estudo de tags HTML</p>
+    <address>
+      Escreva para: <a href="mailto:exemplo@email.com">exemplo@email.com</a>
+    </address>
+  </footer>
+
+  <script>
+    function atualizarRelogio() {
+      const agora = new Date();
+      let horas = agora.getHours().toString().padStart(2, '0');
+      let minutos = agora.getMinutes().toString().padStart(2, '0');
+      let segundos = agora.getSeconds().toString().padStart(2, '0');
+      let horario = `${horas}:${minutos}:${segundos}`;
+      let elemento = document.getElementById('relogio');
+      elemento.textContent = horario;
+      elemento.setAttribute("datetime", horario);
+    }
+
+    function atualizarAno() {
+      document.getElementById('ano').textContent = new Date().getFullYear();
+    }
+
+    setInterval(atualizarRelogio, 1000);
+    atualizarRelogio();
+    atualizarAno();
+  </script>
+<script src="script.js"></script></body>
+</html>
