@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #F0F8FF;
+  color: #800000;
+}
+
+header {
+  background: #836FFF;
+  color: MidnightBlue;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* NAVBAR */
+nav {
+  background: #000000;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+nav a {
+  color: Gold;
+  padding: 14px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+nav a:hover {
+  background: #00FFFF;
+}
+
+/* Botão hambúrguer (mobile) */
+.menu-btn {
+  display: none;
+  background: #00FFFF;
+  color: blue;
+  padding: 14px 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+aside {
+  flex: 1;
+  min-width: 200px;
+  background: #DC143C;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+aside h2 {
+  margin-bottom: 10px;
+}
+
+aside p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+aside img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+main {
+  flex: 3;
+}
+
+.post {
+  background: #DC143C;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.post img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.post h2 {
+  margin-bottom: 5px;
+}
+
+.post small {
+  color: DarkRed;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Responsivo para tablets */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  aside {
+    order: 2;
+  }
+
+  main {
+    order: 1;
+  }
+}
+
+/* Responsivo extra para celulares pequenos */
+@media (max-width: 480px) {
+  header {
+    padding: 20px 10px;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  aside, .post {
+    padding: 10px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  nav {
+    flex-direction: column;
+    max-height: 0;
+  }
+
+  nav.show {
+    max-height: 300px; /* abre o menu */
+  }
+}
