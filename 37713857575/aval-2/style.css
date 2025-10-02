@@ -1,0 +1,128 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #eee;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #0f1923;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid #e0a92e;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #e0a92e;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: #e0a92e;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+.hero {
+    background: url('https://cdn.cloudflare.steamstatic.com/apps/csgo/images/csgo_logo.png') no-repeat center center/contain;
+    height: 300px;
+    margin: 40px auto;
+    max-width: 400px;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+}
+
+main section {
+    margin-bottom: 40px;
+}
+
+main h2 {
+    color: #e0a92e;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0a92e;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.weapons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.weapon-card {
+    background-color: #1e2733;
+    border: 2px solid #333;
+    border-radius: 8px;
+    width: 220px;
+    padding: 15px;
+    text-align: center;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.weapon-card:hover {
+    border-color: #e0a92e;
+}
+
+.weapon-card img {
+    max-width: 100%;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.weapon-card h3 {
+    color: #e0a92e;
+    margin-bottom: 8px;
+}
+
+.weapon-card p {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+footer {
+    background-color: #0f1923;
+    padding: 15px;
+    text-align: center;
+    color: #666;
+    border-top: 3px solid #e0a92e;
+}
+
+@media(max-width: 600px) {
+    .weapons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .weapon-card {
+        width: 90%;
+    }
+}
