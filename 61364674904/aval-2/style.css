@@ -1,0 +1,138 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(90deg, #1a1a1a, #2a2a2a);
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 3px solid #ff5722;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #ff5722;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+/* Conteúdo principal */
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+/* Cards de jogos */
+.game {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 87, 34, 0.6);
+}
+
+.game img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.game h3 {
+    background-color: #333;
+    text-align: center;
+    padding: 12px;
+    font-size: 1.5rem;
+    color: #ff5722;
+}
+
+.game p {
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    color: #ddd;
+}
+
+.game a {
+    display: block;
+    text-align: center;
+    background-color: #ff5722;
+    color: #fff;
+    padding: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0 0 10px 10px;
+    transition: background 0.3s;
+}
+
+.game a:hover {
+    background-color: #e64a19;
+}
+
+/* Destaque de links dentro do texto */
+.game p strong {
+    color: #ff5722;
+}
+
+/* Rodapé */
+footer {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 15px 10px;
+    border-top: 3px solid #ff5722;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Notícias e categorias adicionais */
+.news, .categories {
+    background-color: #1e1e1e;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 1200px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+.news h2, .categories h2 {
+    color: #ff5722;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.news p, .categories p {
+    color: #ccc;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    .game h3 {
+        font-size: 1.3rem;
+    }
+}
