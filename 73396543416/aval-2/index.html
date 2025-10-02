@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Gamer - Stardew Valley</title>
+  <style>
+    :root{
+      --accent: #ff4444;
+      --bg1: #1a1a1a;
+      --bg2: #333;
+      --card: #2b2b2b;
+      --muted: #cfcfcf;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(120deg, var(--bg1), var(--bg2));
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* header com imagem de fundo (opacidade baixa via gradiente) */
+    header {
+      position: relative;
+      padding: 50px 20px;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+    header::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(26,26,26,0.65), rgba(26,26,26,0.65)),
+        url('https://i.pinimg.com/736x/bb/b1/d5/bbb1d5ecef6f490a11a160cb6aa2c71e.jpg');
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+      opacity: 0.95; /* controla visibilidade da imagem de fundo */
+    }
+    header .header-content{ position: relative; z-index: 1; }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      color: var(--accent);
+      text-shadow: 0 4px 18px rgba(0,0,0,0.6);
+    }
+
+    nav {
+      margin-top: 12px;
+    }
+    nav a{
+      color:#fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: .4px;
+    }
+    nav a:hover{ color: var(--accent); }
+
+    /* layout principal: main + aside */
+    .container {
+      max-width: 1100px;
+      margin: -40px auto 40px; /* puxa o container para sobrepor header */
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 24px;
+    }
+
+    /* Conteúdo principal (article / seção do jogo) */
+    main.article-col {
+      min-width: 0;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(68,68,68,0.95), rgba(60,60,60,0.9));
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    }
+
+    .game-media {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .game-media img{
+      width: 100%;
+      max-width: 420px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.06);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+    }
+
+    .game-desc {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    /* Reviews dentro do main */
+    .reviews {
+      background: rgba(85,85,85,0.95);
+      padding: 18px;
+      border-radius: 10px;
+    }
+    .review {
+      margin-bottom: 12px;
+      padding: 12px;
+      border-left: 5px solid var(--accent);
+      background: rgba(0,0,0,0.15);
+      border-radius: 6px;
+    }
+
+    /* ASIDE (obrigatório) */
+    aside.sidebar {
+      background: var(--card);
+      padding: 18px;
+      border-radius: 12px;
+      height: fit-content;
+      align-self: start;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      position: sticky;
+      top: 20px; /* fixa ao rolar (quando possível) */
+    }
+    .author {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .author img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.06);
+    }
+    .author h4 { margin: 0 0 2px 0; font-size: 1rem; color: var(--accent); }
+    .author p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+    .widget { margin-top: 14px; }
+    .widget h3 { margin: 0 0 8px 0; font-size: 1rem; color: var(--accent); }
+    .categories ul, .recent ul, .tags { list-style: none; padding: 0; margin: 0; }
+    .categories li, .recent li { margin-bottom: 8px; color: var(--muted); font-size: 0.95rem; }
+    .tags li { display: inline-block; margin: 4px 6px 0 0; }
+    .tags a {
+      display: inline-block;
+      padding: 6px 10px;
+      background: rgba(0,0,0,0.15);
+      border-radius: 999px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    .recent li {
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .recent .thumb {
+      width:48px;
+      height:34px;
+      border-radius:6px;
+      object-fit:cover;
+      flex-shrink:0;
+      border: 2px solid rgba(255,255,255,0.04);
+    }
+    .recent span { color: var(--muted); font-size:0.9rem; }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+      border-top: 3px solid var(--accent);
+      color: #ddd;
+      font-size: 0.95rem;
+    }
+
+    /* responsividade */
+    @media (max-width: 900px){
+      .container { grid-template-columns: 1fr; margin-top: -20px; }
+      header h1 { font-size: 2rem; }
+      header { padding: 36px 14px; }
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <h1>Blog Gamer 🎮</h1>
+      <nav aria-label="Navegação principal">
+        <a href="#sobre">Sobre o Jogo</a>
+        <a href="#reviews">Avaliações</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- container com main + aside (aside obrigatório incluído abaixo) -->
+  <div class="container">
+
+    <!-- coluna principal -->
+    <main class="article-col" role="main" aria-labelledby="titulo-post">
+      <article class="card" aria-labelledby="titulo-post">
+        <h2 id="titulo-post">Stardew Valley</h2>
+
+        <div class="game-media">
+          <div class="game-desc">
+            <p>
+              Stardew Valley é um jogo de simulação de fazenda onde você pode plantar, colher,
+              criar animais e interagir com personagens. O jogo conquistou fãs no mundo todo
+              pela sua atmosfera relaxante e viciante.
+            </p>
+            <p>
+              Nesta versão do blog eu usei a imagem enviada como <strong>fundo do cabeçalho</strong>
+              e também como imagem de destaque.
+            </p>
+          </div>
+
+          <img src="https://i.pinimg.com/736x/bb/b1/d5/bbb1d5ecef6f490a11a160cb6aa2c71e.jpg" alt="Imagem de destaque do jogo">
+        </div>
+      </article>
+
+      <section id="reviews" class="card reviews" aria-labelledby="titulo-reviews">
+        <h3 id="titulo-reviews">Avaliações da Comunidade</h3>
+
+        <div class="review">
+          <p><strong>Maria:</strong> "O jogo é perfeito para relaxar depois de um dia cansativo. Recomendo muito!" ⭐⭐⭐⭐⭐</p>
+        </div>
+
+        <div class="review">
+          <p><strong>João:</strong> "Adoro a liberdade de jogar do meu jeito, sem pressão. Muito divertido!" ⭐⭐⭐⭐☆</p>
+        </div>
+
+        <div class="review">
+          <p><strong>Ana:</strong> "A trilha sonora e os personagens são incríveis. Virei fã." ⭐⭐⭐⭐⭐</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ASIDE obrigatório: com autor, categorias, posts recentes e tags -->
+    <aside class="sidebar" role="complementary" aria-labelledby="aside-title">
+      <h2 id="aside-title" style="margin-top:0;color:var(--accent);">Sobre</h2>
+
+      <div class="author">
+        <img src="https://i.pinimg.com/736x/bb/b1/d5/bbb1d5ecef6f490a11a160cb6aa2c71e.jpg" alt="Foto do autor">
+        <div>
+          <h4>Dhonas Silva Sousa</h4>
+          <p>Curador de games • Críticas e dicas</p>
+        </div>
+      </div>
+
+      <div class="widget categories">
+        <h3>Categorias</h3>
+        <ul>
+          <li>Simulação</li>
+          <li>Ação</li>
+          <li>Indie</li>
+          <li>Avaliações</li>
+        </ul>
+      </div>
+
+      <div class="widget recent">
+        <h3>Posts Recentes</h3>
+        <ul>
+          <li><img class="thumb" src="https://i.pinimg.com/736x/bb/b1/d5/bbb1d5ecef6f490a11a160cb6aa2c71e.jpg" alt="thumb"><span>Por que Stardew é tão relaxante</span></li>
+          <li><img class="thumb" src="https://cdn.akamai.steamstatic.com/steam/apps/413150/header.jpg" alt="thumb2"><span>Dicas de plantio e lucro</span></li>
+          <li><img class="thumb" src="https://cdn.akamai.steamstatic.com/steam/apps/1174180/header.jpg" alt="thumb3"><span>Melhores jogos de mundo aberto</span></li>
+        </ul>
+      </div>
+
+      <div class="widget tags">
+        <h3>Tags</h3>
+        <ul>
+          <li><a href="#tag1">#indie</a></li>
+          <li><a href="#tag2">#simulação</a></li>
+          <li><a href="#tag3">#relax</a></li>
+          <li><a href="#tag4">#dicas</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <footer id="contato">
+    <p>© 2025 Blog Gamer | Criado com ❤️ em HTML & CSS</p>
+  </footer>
+
+</body>
+</html>
