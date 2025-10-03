@@ -1,0 +1,127 @@
+<!-- Seção: Formulário de Dados Pessoais -->
+<section class="mb-10">
+  <div class="form-wrapper">
+    <h2>📋 Formulário de Dados Pessoais</h2>
+    <form onsubmit="event.preventDefault(); alert('Formulário enviado com sucesso!');">
+      <table>
+        <tbody>
+          <tr>
+            <td class="label">Nome Completo</td>
+            <td><input type="text" name="nome" placeholder="Digite seu nome completo" required></td>
+          </tr>
+          <tr>
+            <td class="label">Data de Nascimento</td>
+            <td><input type="date" name="data_nascimento" required></td>
+          </tr>
+          <tr>
+            <td class="label">Email</td>
+            <td><input type="email" name="email" placeholder="exemplo@email.com" required></td>
+          </tr>
+          <tr>
+            <td class="label">Gênero</td>
+            <td>
+              <select name="genero" required>
+                <option value="" disabled selected>Selecione seu gênero</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="nao-binario">Não-binário</option>
+                <option value="outro">Outro</option>
+                <option value="nao-dizer">Prefiro não dizer</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="label">Telefone</td>
+            <td><input type="text" name="telefone" placeholder="(XX) XXXXX-XXXX"></td>
+          </tr>
+          <tr>
+            <td class="label">Endereço</td>
+            <td><input type="text" name="endereco" placeholder="Rua, número, bairro, cidade"></td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  .form-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .form-wrapper {
+    background-color: #1a1a1a;
+  }
+
+  .form-wrapper h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #b91c1c;
+    margin-bottom: 20px;
+  }
+
+  .dark .form-wrapper h2 {
+    color: #f87171;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  td {
+    padding: 12px;
+    vertical-align: top;
+  }
+
+  td.label {
+    width: 30%;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .dark td.label {
+    color: #ddd;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+
+  .dark input,
+  .dark select {
+    background-color: #333;
+    color: #fff;
+    border-color: #555;
+  }
+
+  button {
+    margin: 25px auto 0;
+    display: block;
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #b91c1c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #a81919;
+  }
+</style>
