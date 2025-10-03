@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo - Glamour Beauty</title>
+  <style>
+    :root{
+      --bg:#fdf6f9; --card:#ffffff; --accent:#e91e63; --muted:#6b7280;
+      --radius:12px; --shadow:0 6px 18px rgba(16,24,40,.08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#111827}
+    header{background:linear-gradient(90deg,#fff 0%, #fff0f6 100%);padding:28px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+    .logo img{width:100%;height:100%;object-fit:cover}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted)}
+    .controls{display:flex;gap:10px;align-items:center}
+    .search{padding:10px 12px;border-radius:10px;border:1px solid #e6e9ef;background:#fff}
+    .container{max-width:1100px;margin:28px auto;padding:0 20px}
+    .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+    .chip{background:var(--card);padding:8px 12px;border-radius:999px;border:1px solid #f0f1f5;cursor:pointer}
+    .chip.active{border-color:var(--accent);box-shadow:0 2px 10px rgba(233,30,99,.08)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+    .card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative}
+    .card img{width:100%;height:170px;object-fit:cover}
+    .card-body{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+    .title-row{display:flex;align-items:center;justify-content:space-between}
+    .item-title{font-weight:600}
+    .desc{font-size:14px;color:var(--muted);line-height:1.3}
+    .price{font-weight:700;color:var(--accent)}
+    .actions{display:flex;gap:8px;margin-top:auto}
+    .btn{padding:8px 12px;border-radius:10px;border:0;cursor:pointer}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-ghost{background:#fff;border:1px solid #e6e9ef}
+    footer{max-width:1100px;margin:20px auto;padding:12px 20px;color:var(--muted);font-size:14px}
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.4);z-index:60}
+    .modal.open{display:flex}
+    .modal .inner{background:#fff;padding:12px;border-radius:12px;max-width:90%;max-height:90%;overflow:auto}
+
+    /* Estilo do selo "Mais popular" */
+    .popular {
+      position:absolute;
+      top:10px;
+      left:10px;
+      background:var(--accent);
+      color:#fff;
+      font-size:12px;
+      font-weight:600;
+      padding:4px 8px;
+      border-radius:6px;
+      box-shadow:var(--shadow);
+    }
+
+    @media (max-width:520px){header{flex-direction:column;align-items:flex-start} .logo{width:48px;height:48px}}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"><img src="https://i.pinimg.com/736x/d2/53/b2/d253b23a34377f0f8e52e6a5e97b7c7e.jpg" alt="logo"></div>
+      <div>
+        <h1>Glamour Beauty Alanys</h1>
+        <p class="lead">Catálogo online — descubra nossos cosméticos exclusivos</p>
+      </div>
+    </div>
+    <div class="controls">
+      <input class="search" id="searchInput" placeholder="Buscar produto, categoria..." />
+      <button class="btn btn-ghost" id="viewCartBtn">Carrinho (0)</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- filtros -->
+    <nav class="filters" id="filters">
+      <div class="chip active" data-cat="all">Todos</div>
+      <div class="chip" data-cat="maquiagem">Maquiagem</div>
+      <div class="chip" data-cat="skincare">Skincare</div>
+      <div class="chip" data-cat="perfumes">Perfumes</div>
+      <div class="chip" data-cat="cabelos">Cabelos</div>
+      <div class="chip" data-cat="unhas">Unhas</div>
+      <div class="chip" data-cat="acessorios">Acessórios</div>
+    </nav>
+
+    <section class="grid" id="menuGrid">
+      <!-- Produto 1 -->
+      <article class="card" data-cat="maquiagem" data-name="Batom Matte Vermelho">
+        <span class="popular">Mais popular</span>
+        <img src="https://m.magazineluiza.com.br/a-static/420x420/batom-matte-lipstick-m-a-c-macximal/epocacosmeticos-integra/82785/86d114341d05823e4f529691c4b8f9a4.jpeg" alt="batom matte">
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Batom Matte Vermelho</div><div class="price">R$ 39,90</div></div>
+          <div class="desc">Acabamento aveludado, longa duração e alta pigmentação.</div>
+          <h2>Onde comprar:</h2>
+          <ul>
+            <li><a href="https://www.sephora.com.br" target="_blank">Sephora</a></li>
+            <li><a href="https://www.magazineluiza.com.br" target="_blank">Magazine Luiza</a></li>
+            <li><a href="https://www.americanas.com.br" target="_blank">Americanas</a></li>
+          </ul>
+          <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button></div>
+        </div>
+      </article>
+
+      <!-- Produto 2 -->
+      <article class="card" data-cat="acessorios" data-name="Pulseira Pandora">
+        <span class="popular">Mais popular</span>
+        <img src="https://i.pinimg.com/736x/ee/b1/88/eeb188a0b34e1f4b4deb5098721a8750.jpg" alt="Pulseira Pandora">
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Pulseira Pandora</div><div class="price">R$ 49,90</div></div>
+          <div class="desc">Pulseira Prata Com Berloques Pingentes Desenhos Cores Luxo.</div>
+          <h2>Onde comprar:</h2>
+          <ul>
+            <li><a href="https://www.pandora.net/pt-br" target="_blank">Pandora</a></li>
+            <li><a href="https://www.magazineluiza.com.br" target="_blank">Magazine Luiza</a></li>
+            <li><a href="https://www.americanas.com.br" target="_blank">Americanas</a></li>
+          </ul>
+          <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button></div>
+        </div>
+      </article>
+
+      <!-- Produto 3 -->
+      <article class="card" data-cat="skincare" data-name="Hidratante Facial">
+        <img src="https://i.pinimg.com/736x/94/52/c5/9452c51cc32e5f06b89b7eecdd787174.jpg" alt="Hidratante">
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Hidratante Facial</div><div class="price">R$ 59,90</div></div>
+          <div class="desc">Textura leve com ácido hialurônico para hidratação profunda.</div>
+          <h2>Onde comprar:</h2>
+          <ul>
+            <li><a href="https://www.sephora.com.br" target="_blank">Sephora</a></li>
+            <li><a href="https://www.drogariasaopaulo.com.br" target="_blank">Drogaria São Paulo</a></li>
+            <li><a href="https://www.amazon.com.br" target="_blank">Amazon</a></li>
+          </ul>
+          <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button></div>
+        </div>
+      </article>
+
+      <!-- Produto 4 -->
+      <article class="card" data-cat="perfumes" data-name="Perfume Floral">
+        <span class="popular">Mais popular</span>
+        <img src="https://m.magazineluiza.com.br/a-static/420x420/o-boticario-deo-colonia-floratta-flores-secretas-75ml/cheirodobrasilperfumesecosmetico/b-048136/0a74d94d570ed1cab554c0480b6d071e.jpeg" alt="Perfume">
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Perfume Floral</div><div class="price">R$ 129,00</div></div>
+          <div class="desc">Notas de rosas e jasmim para um aroma marcante e delicado.</div>
+          <h2>Onde comprar:</h2>
+          <ul>
+            <li><a href="https://www.boticario.com.br" target="_blank">O Boticário</a></li>
+            <li><a href="https://www.sephora.com.br" target="_blank">Sephora</a></li>
+            <li><a href="https://www.amazon.com.br" target="_blank">Amazon</a></li>
+          </ul>
+          <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button></div>
+        </div>
+      </article>
+
+      <!-- Produto 5 -->
+      <article class="card" data-cat="cabelos" data-name="Máscara Capilar Nutritiva">
+        <img src="https://m.magazineluiza.com.br/a-static/420x420/haskell-manteiga-murumuru-mascara-hidratante/epocacosmeticos-integra/49421/a86e17fc9db5c8462cc506b8402cff59.jpeg" alt="Máscara Capilar">
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Máscara Capilar Nutritiva</div><div class="price">R$ 45,00</div></div>
+          <div class="desc">Restauração intensa com óleos essenciais para brilho e maciez.</div>
+          <h2>Onde comprar:</h2>
+          <ul>
+            <li><a href="https://www.sephora.com.br" target="_blank">Sephora</a></li>
+            <li><a href="https://www.magazineluiza.com.br" target="_blank">Magazine Luiza</a></li>
+            <li><a href="https://www.americanas.com.br" target="_blank">Americanas</a></li>
+          </ul>
+          <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button></div>
+        </div>
+      </article>
+
+      <!-- Produto 6 -->
+      <article class="card" data-cat="unhas" data-name="Esmalte Nude Chic">
+        <img src="https://i.pinimg.com/736x/c2/42/0c/c2420cc8d9feb358a139a12362e6cb1c.jpg" alt="Esmalte">
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Esmalte Nude Chic</div><div class="price">R$ 8,90</div></div>
+          <div class="desc">Cor neutra, secagem rápida e longa duração.</div>
+          <h2>Onde comprar:</h2>
+          <ul>
+            <li><a href="https://www.magazineluiza.com.br" target="_blank">Magazine Luiza</a></li>
+            <li><a href="https://www.americanas.com.br" target="_blank">Americanas</a></li>
+            <li><a href="https://www.amazon.com.br" target="_blank">Amazon</a></li>
+          </ul>
+          <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button></div>
+        </div>
+      </article>
+    </section>
+
+    <div class="modal" id="modal">
+      <div class="inner" id="modalInner"></div>
+    </div>
+
+    <aside>
+      <footer>© 2025 Glamour Beauty Alanys — SAC: (11) 98888-7777 — Av. da Beleza, 123</footer>
+    </aside>
+  </main>
+</body>
+</html>
