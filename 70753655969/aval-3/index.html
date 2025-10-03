@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cardápio - Restaurante Exemplo</title>
+  <style>
+    :root{
+      --bg:#f6f7fb; --card:#ffffff; --accent:#ff6b6b; --muted:#6b7280;
+      --radius:12px; --shadow:0 6px 18px rgba(16,24,40,.08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#111827}
+    header{background:linear-gradient(90deg,#ffffff 0%, #fff9f9 100%);padding:28px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+    .logo img{width:100%;height:100%;object-fit:cover}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted)}
+    .controls{display:flex;gap:10px;align-items:center}
+    .search{padding:10px 12px;border-radius:10px;border:1px solid #e6e9ef;background:#fff}
+    .container{max-width:1100px;margin:28px auto;padding:0 20px}
+    .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+    .chip{background:var(--card);padding:8px 12px;border-radius:999px;border:1px solid #f0f1f5;cursor:pointer}
+    .chip.active{border-color:var(--accent);box-shadow:0 2px 10px rgba(255,107,107,.08)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+    .card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+    .card img{width:100%;height:170px;object-fit:cover}
+    .card-body{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+    .title-row{display:flex;align-items:center;justify-content:space-between}
+    .item-title{font-weight:600}
+    .desc{font-size:14px;color:var(--muted);line-height:1.3}
+    .price{font-weight:700;color:var(--accent)}
+    .actions{display:flex;gap:8px;margin-top:auto}
+    .btn{padding:8px 12px;border-radius:10px;border:0;cursor:pointer}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-ghost{background:#fff;border:1px solid #e6e9ef}
+    footer{max-width:1100px;margin:20px auto;padding:12px 20px;color:var(--muted);font-size:14px}
+    /* modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.4);z-index:60}
+    .modal.open{display:flex}
+    .modal .inner{background:#fff;padding:12px;border-radius:12px;max-width:90%;max-height:90%;overflow:auto}
+    @media (max-width:520px){header{flex-direction:column;align-items:flex-start} .logo{width:48px;height:48px}}
+    .pao{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"><img src="https://i.pinimg.com/736x/f4/9d/f1/f49df1339ecf766caef5ea68e9840c59.jpg" alt="logo"></div>
+      <div>
+        <h1>Restaurante Sabor & Co.</h1>
+        <p class="lead">Cardápio online — selecione e confira nossas opções</p>
+      </div>
+    </div>
+    <div class="controls">
+      <input class="search" id="searchInput" placeholder="Buscar prato, ingrediente..." />
+      <button class="btn btn-ghost" id="viewCartBtn">Carrinho (0)</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="filters" id="filters">
+      <div class="chip active" data-cat="all">Todos</div>
+      <div class="chip" data-cat="cafedamanha">Café da manhã</div>
+      <div class="chip" data-cat="almoco">Almoço</div>
+      <div class="chip" data-cat="lanches">Lanches</div>
+      <div class="chip" data-cat="sobremesas">Sobremesas</div>
+      <div class="chip" data-cat="bebidas">Bebidas</div>
+    </div>
+
+    <section class="grid" id="menuGrid">
+      <!-- Card template entries -->
+      <article class="card" data-cat="cafedamanha" data-name="Pão na chapa com manteiga">
+        <nav><img src="https://i.pinimg.com/1200x/05/bc/18/05bc1811399074b647203ed3296a5576.jpg" alt="Pão na chapa" class="pao">
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Pão na chapa com manteiga</div><div class="price">R$ 6,50</div></div>
+          <div class="desc">Pão francês tostado, manteiga especial e ervas finas.</div></nav>
+          <div class="actions">
+            <button class="btn btn-primary addBtn">Adicionar</button>
+            <button class="btn btn-ghost viewBtn">Ver</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="cafedamanha" data-name="Tapioca recheada">
+       <nav> <img src="https://i.pinimg.com/1200x/a1/77/22/a177220e5c19d1e3adcf1047022f5964.jpg" alt="Tapioca">
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Tapioca recheada</div><div class="price">R$ 9,00</div></div>
+          <div class="desc">Tapioca com recheio à escolha: coco, queijo ou frango desfiado.</div></nav>
+          <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button></div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="almoco" data-name="Filé grelhado com arroz">
+        <nav><img src="https://i.pinimg.com/736x/1e/92/aa/1e92aa11b36449b6d66b7da24b6f0ef7.jpg" alt="Filé">
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Filé grelhado com arroz</div><div class="price">R$ 28,00</div></div>
+          <div class="desc">Filé bovino grelhado, arroz branco, farofa e salada fresca.</div></nav>
+          <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button></div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="almoco" data-name="Lasanha à bolonhesa">
+        <nav><img src="https://i.pinimg.com/1200x/c3/c2/aa/c3c2aa140b59b63ded6ed8d53568e6c7.jpg" alt="Lasanha">
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Lasanha à bolonhesa</div><div class="price">R$ 34,00</div></div>
+          <div class="desc">Camadas generosas de massa, molho bolonhesa e queijo gratinado.</div></nav>
+          <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button></div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="lanches" data-name="Hambúrguer artesanal">
+        <nav><img src="https://i.pinimg.com/736x/5c/b6/f0/5cb6f08f08b730041af0a755abf7cd64.jpg" alt="Hambúrguer">
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Hambúrguer artesanal</div><div class="price">R$ 22,50</div></div>
+          <div class="desc">Pão brioche, carne 180g, queijo cheddar, molho da casa.</div></nav>
+          <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button></div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="sobremesas" data-name="Brownie quente">
+        <nav><img src="https://i.pinimg.com/1200x/cb/36/ed/cb36edecf9a690601f02af1748eee135.jpg" alt="Brownie">
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Brownie quente</div><div class="price">R$ 12,00</div></div>
+          <div class="desc">Brownie de chocolate servido com sorvete de creme.</div></nav>
+          <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button></div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebidas" data-name="Suco natural">
+        <nav><img src="https://i.pinimg.com/1200x/7c/41/b0/7c41b0896e135c028e8f79f0410ba1b6.jpg" alt="Suco">
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Suco natural</div><div class="price">R$ 8,00</div></div>
+          <div class="desc">Suco do dia feito com frutas frescas (laranja, maracujá ou abacaxi).</div></nav>
+          <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button></div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebidas" data-name="Café espresso">
+        <nav><img src="https://i.pinimg.com/736x/7b/54/29/7b54296628a5e1739924ba88a10c7182.jpg" alt="Café">
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Café espresso</div><div class="price">R$ 5,00</div></div>
+          <div class="desc">Café espresso curto, intenso e aromático.</div></nav>
+          <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button></div>
+        </div>
+      </article>
+      <span>
+      <h2>Lista dos Links Das Imagens</h2>
+    </span>
+      <a href="https://br.pinterest.com/pin/328622104080050495/">Link Pinterest Logo</a>
+      <a href="https://br.pinterest.com/pin/68679963061325668/">Link Pinterest Café Expresso</a>
+      <a href="https://br.pinterest.com/pin/661747739036046668/">Link Pinterest Suco de Goiaba</a>
+      <a href="https://br.pinterest.com/pin/327918416622990774/">Link Pinterest brownie</a>
+      <a href="https://br.pinterest.com/pin/583708801733921504/">Link pinterest Hamburger Caseiro</a>
+      <a href="https://br.pinterest.com/pin/342906959154685242/">Link Pinterest Lasanha à Bolonhesa</a>
+      <a href="https://br.pinterest.com/pin/442830575879778930/">Link Pinterest filé de Frango Grelhado</a>
+      <a href="https://br.pinterest.com/pin/238339005273857120/">Link Pinterest Tapioca Recheada</a>
+      <a href="https://br.pinterest.com/pin/135600638776827532/">Link Pinterest Pão</a>
+
+    </section>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="inner" id="modalInner"></div>
+  </div>
+
+  <aside>
+  <footer>© 2025 Restaurante Sabor & Co. — Telefone: (11) 99999-9999 — Endereço exemplo</footer>
+  </aside>
+
+  <script>
+    // filtros
+    const chips = document.querySelectorAll('.chip');
+    const cards = document.querySelectorAll('.card');
+    const searchInput = document.getElementById('searchInput');
+    const cartBtn = document.getElementById('viewCartBtn');
+    let cartCount = 0;
+
+    chips.forEach(chip => chip.addEventListener('click', ()=>{
+      chips.forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      const cat = chip.dataset.cat;
+      cards.forEach(card => {
+        card.style.display = (cat==='all' || card.dataset.cat===cat) ? '' : 'none';
+      });
+    }));
+
+    // busca
+    searchInput.addEventListener('input', ()=>{
+      const q = searchInput.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        const desc = card.querySelector('.desc').innerText.toLowerCase();
+        const match = name.includes(q) || desc.includes(q);
+        card.style.display = match ? '' : 'none';
+      });
+    });
+
+    // adicionar ao carrinho
+    document.querySelectorAll('.addBtn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        cartCount++;
+        cartBtn.innerText = 'Carrinho (${cartCount})';
+        btn.innerText = 'Adicionado';
+        btn.disabled = true;
+      });
+    });
+
+    // ver imagem + modal
+    const modal = document.getElementById('modal');
+    const modalInner = document.getElementById('modalInner');
+    document.querySelectorAll('.viewBtn').forEach((b, i)=>{
+      b.addEventListener('click', ()=>{
+        const card = b.closest('.card');
+        const imgSrc = card.querySelector('img').src;
+        const title = card.querySelector('.item-title').innerText;
+        const desc = card.querySelector('.desc').innerText;
+        const price = card.querySelector('.price').innerText;
+        modalInner.innerHTML = `
+          <div style="max-width:800px">
+            <img src="${imgSrc}" alt="${title}" style="width:100%;height:auto;border-radius:8px;margin-bottom:8px">
+            <h3 style="margin:0 0 6px">${title} — <span style="color:var(--accent)">${price}</span></h3>
+            <p style="margin:0 0 12px;color:var(--muted)">${desc}</p>
+            <div style="display:flex;gap:8px">
+              <button class="btn btn-primary" id="modalAdd">Adicionar ao carrinho</button>
+              <button class="btn btn-ghost" id="modalClose">Fechar</button>
+            </div>
+          </div>
+        `;
+        modal.classList.add('open');
+        document.getElementById('modalClose').addEventListener('click', ()=> modal.classList.remove('open'));
+        document.getElementById('modalAdd').addEventListener('click', ()=>{
+          cartCount++;
+          cartBtn.innerText = 'Carrinho (${cartCount})'
+          modal.classList.remove('open');
+        });
+      });
+    });
+
+    // fechar modal ao clicar fora
+    modal.addEventListener('click', (e)=>{ if(e.target===modal) modal.classList.remove('open') });
+  </script>
+</body>
+</html>
