@@ -1,0 +1,294 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height:100vh;
+}
+
+
+header {
+    background-color: #dda8a0;
+}
+
+/* Código das fontes */
+@font-face {
+    font-family: 'monte';
+    src: url(MonteCarlo-Regular.ttf)
+}
+@font-face {
+    font-family: 'roma';
+    src: url(LuxuriousRoman-Regular.ttf)
+}
+@font-face {
+    font-family: 'expl';
+    src: url(Explora-Regular.ttf)
+}
+
+.nav-links a {
+    font-family: 'expl';
+    font-weight: bold;
+}
+
+aside h3 {
+    font-family: 'roma';
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.autor {
+    font-family: 'monte';
+    font-weight:normal;
+    font
+}
+
+aside p {
+    font-family:'roma';
+}
+
+article h3 {
+    font-family: 'roma';
+    font-weight: 400;
+}
+
+.descrição {
+    font-family: 'roma';
+    font-weight: 100;
+}
+/* Código das fontes*/
+
+/* Código do menu principal */
+.navbar {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#dda8a0;
+    padding: 15px 20px;
+    color: white;
+}
+
+hr {
+    margin: 0;
+    color: white;
+}
+
+.menu{ 
+    display: block;
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    background-color:#dda8a0;
+    padding: 15px 20px;
+    color: white;
+}
+
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+ color:#2e2b2b;
+}
+
+
+@media screen and (max-width: 770px) {
+    .navbar {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+    
+    .hamburger-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none ;
+        flex-direction: column;
+        width: 100%;
+        background-color: #dda8a0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        padding: 10px 0;
+
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px 0;
+    }
+
+     .nav-links.active {
+        display: flex;
+    }
+}
+/* Código do menu principal */
+
+
+/* Código para a imagem com texto */
+header  img {
+    width: 100%;
+}
+
+.imagem-com-texto {
+   position: relative;
+   margin: 0 auto;
+}
+
+.imagem-com-texto img {
+    width: 100%;
+    height: auto; 
+    display: block; 
+}
+
+
+.texto-sobreposto {
+    font-family: 'monte';
+    font-weight: 100;
+    position: absolute;
+    top: 50%;  
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    font-size: 3vw; 
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+/* Código para a imagem com texto */
+
+
+/* Código para o aside e menu principal */
+aside{
+    margin: 0px 0px;
+    padding: 0px 0px 0px 0px;
+    height: 100vh;
+    width: 100%;
+    margin-bottom: 0px;
+}
+aside h3 {
+    margin: 10px;
+}
+aside .autor {
+    padding: 0px 10px 10px 10px ;
+    font-size: 30px;
+    font-weight: 100;
+}
+aside img {
+    width: 100%;
+    margin-bottom: 30px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.row aside {
+  flex: 40%;
+  height: 100vh;
+  position:sticky;
+  background-color: #dda8a0;
+  color: white;
+  padding: 20px;
+ 
+}
+.row main {
+ flex: 60%;
+ padding: 20px;
+ background-color: #dda8a0;
+}
+main .autor {
+    margin: 15px 0px;
+}
+article h3 {
+    padding: 10px;
+    color: #dda8a0;
+}
+article img {
+
+    width:100%;
+    margin-bottom: 30px;
+}
+article .descrição {
+    text-align: justify;
+    margin-top: 0px;
+    color: #dda8a0;
+    font-weight: 200;
+}
+
+
+article {
+    margin: 30px 0px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+    border-radius:10px;
+
+}
+
+p .descrição {
+    font-size: 10px;
+}
+/* Código para o aside e menu principal */
+
+footer {
+    background-color:#dda8a0;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media screen and (max-width: 450px) {
+    
+    .row main {
+        flex: 100%;
+    }
+
+
+    .row aside {
+        flex: 100%
+    }
+
+    footer {
+        flex: 100%
+    }
+   
+}
+
