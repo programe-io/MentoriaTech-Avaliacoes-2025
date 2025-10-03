@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Clique</title>
+    <link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <!-- Barra de navegação -->
+    <nav>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Regras</a></li>
+            <li><a href="#">Sobre o Jogo</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main class="main-container">
+        <!-- Conteúdo do jogo como artigo -->
+        <article class="game-container">
+            <!-- Cabeçalho do jogo -->
+            <header>
+                <h1>Jogo do Clique!</h1>
+                <h3>Teste sua velocidade clicando no botão!</h3>
+            </header>
+
+            <!-- Imagem do jogo -->
+            <img src="https://via.placeholder.com/200" alt="Imagem do Jogo" class="game-image">
+
+            <p>Clique no botão para aumentar sua pontuação:</p>
+            <button id="clickButton">Clique Aqui!</button>
+            <h2>Pontuação: <span id="score">0</span></h2>
+        </article>
+
+        <!-- Barra lateral -->
+        <aside>
+            <h3>Dicas do Jogo</h3>
+            <ul>
+                <li>Clique rápido para aumentar sua pontuação.</li>
+                <li>Use dois dedos para clicar mais rápido!</li>
+                <li>Tente bater seu próprio recorde!</li>
+            </ul>
+        </aside>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2025 Jogo do Clique. Desenvolvido por Cristopher Davi.</p>
+    </footer>
+
+    <script>
+        // Lógica simples do jogo
+        let score = 0;
+        const scoreDisplay = document.getElementById("score");
+        const button = document.getElementById("clickButton");
+
+        button.addEventListener("click", () => {
+            score++;
+            scoreDisplay.textContent = score;
+        });
+    </script>
+</body>
+</html>
