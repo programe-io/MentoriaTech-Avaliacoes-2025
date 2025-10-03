@@ -1,0 +1,49 @@
+:root {
+  --accent: #D63384;
+  --muted: #6b6b6b;
+  --bg: #f7f7fa;
+  --card: #ffffff;
+  --radius: 14px;
+  font-family: Inter, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: #111; }
+
+/* Header */
+header {
+  background: #fff;
+  padding: 20px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.logo { width: 46px; height: 46px; border-radius: 10px; background: var(--accent); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+nav a { margin: 0 10px; color: var(--muted); text-decoration: none; font-weight: 600; }
+.search input { padding: 10px 14px; border-radius: 20px; border: 1px solid #ccc; }
+.cta { padding: 10px 14px; border-radius: 10px; background: var(--accent); color: white; border: none; }
+
+/* Hero */
+.hero { padding: 40px 6%; display: grid; grid-template-columns: 1fr 400px; gap: 20px; }
+.hero-card { background: white; padding: 20px; border-radius: 14px; }
+.categories { display: flex; gap: 12px; margin-top: 15px; }
+.cat { background: var(--card); padding: 10px; border-radius: 10px; display: flex; flex-direction: column; align-items: center; font-size: 14px; }
+.cat img { width: 60px; height: 60px; border-radius: 8px; object-fit: cover; }
+.banner { background: var(--accent); color: white; border-radius: 14px; height: 200px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px; }
+
+/* Produtos */
+main { padding: 30px 6%; }
+.filters { display: flex; gap: 12px; margin-bottom: 20px; }
+.filters select { padding: 10px; border-radius: 10px; border: 1px solid #ccc; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.card { background: white; border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.card img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
+.card .title { font-weight: bold; }
+.price { font-weight: bold; color: var(--accent); }
+.card .actions { margin-top: auto; display: flex; gap: 8px; }
+.btn { flex: 1; padding: 10px; border-radius: 8px; border: none; background: var(--accent); color: white; }
+.btn.secondary { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
+
+/* Footer */
+footer { padding: 20px 6%; margin-top: 30px; display: flex; justify-content: space-between; color: var(--muted); }
