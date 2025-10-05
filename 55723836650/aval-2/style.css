@@ -1,0 +1,133 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Corpo */
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #222;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #ff416c;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Layout principal */
+#row {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Aside */
+aside {
+    flex: 1 1 250px;
+    margin-right: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+aside h2 {
+    color: #ff416c;
+    margin-bottom: 15px;
+}
+
+.fakeimage {
+    background-color: #ddd;
+    height: 150px;
+    margin: 10px 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Main / Artigo */
+main {
+    flex: 3 1 700px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+article h2 {
+    color: #ff416c;
+    margin-bottom: 10px;
+}
+
+article h5 {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+article p {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Imagens dentro do artigo */
+article img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    #row {
+        flex-direction: column;
+    }
+
+    aside {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
