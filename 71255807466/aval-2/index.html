@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Luan Games - Jogo da Memória</title>
+<style>
+  /* Reset básico */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    user-select: none;
+  }
+
+  header img {
+    display: block;
+    margin: 0 auto 10px auto;
+    width: 80px;
+  }
+
+  header h1 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 3rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  }
+
+  header p {
+    color: #ddd;
+    font-size: 1.2rem;
+    margin-top: 8px;
+  }
+
+  nav {
+    margin-top: 15px;
+  }
+
+  nav a {
+    color: #ffffffcc;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #fff;
+  }
+
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  article {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .game-board {
+    width: 360px;
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-gap: 15px;
+    perspective: 1000px;
+  }
+
+  .card {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  }
+
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
+
+  .card .front, .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card .front {
+    background: #fff;
+    color: #333;
+    transform: rotateY(180deg);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .card .front img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card .back {
+    background: #61dafb;
+    color: transparent;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  aside {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 280px;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+  }
+
+  aside h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  aside h3 {
+    font-size: 1.1rem;
+    margin: 8px 0;
+    color: #ccc;
+    font-weight: 600;
+  }
+
+  aside p {
+    color: #eee;
+    line-height: 1.5;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px 0;
+    background: rgba(0,0,0,0.2);
+    color: #eee;
+    font-size: 0.9rem;
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    main {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<header>
+  <img src="https://i.imgur.com/5bXlUqM.png" alt="Luan Games Logo" />
+  <h1>Luan Games</h1>
+  <p>Jogue e divirta-se!</p>
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">Jogos</a>
+    <a href="#">Sobre</a>
+    <a href="#">Contato</a>
+  </nav>
+</header>
+
+<main>
+  <article>
+    <div class="game-board">
+      <div class="card">
+        <div class="front"><img src="https://i.imgur.com/QvKQXRs.png" alt="Cachorro" /></div>
+        <div class="back"></div>
+      </div>
+      <div class="card">
+        <div class="front"><img src="https://i.imgur.com/YGZ1H6j.png" alt="Gato" /></div>
+        <div class="back"></div>
+      </div>
+      <div class="card">
+        <div class="front"><img src="https://i.imgur.com/QvKQXRs.png" alt="Cachorro" /></div>
+        <div class="back"></div>
+      </div>
+      <div class="card">
+        <div class="front"><img src="https://i.imgur.com/YGZ1H6j.png" alt="Gato" /></div>
+        <div class="back"></div>
+      </div>
+      <div class="card">
+        <div class="front"><img src="https://i.imgur.com/D8NHwGG.png" alt="Rato" /></div>
+        <div class="back"></div>
+      </div>
+      <div class="card">
+        <div class="front"><img src="https://i.imgur.com/vYHYpKm.png" alt="Hamster" /></div>
+        <div class="back"></div>
+      </div>
+      <div class="card">
+        <div class="front"><img src="https://i.imgur.com/D8NHwGG.png" alt="Rato" /></div>
+        <div class="back"></div>
+      </div>
+      <div class="card">
+        <div class="front"><img src="https://i.imgur.com/vYHYpKm.png" alt="Hamster" /></div>
+        <div class="back"></div>
+      </div>
+      <div class="card">
+        <div class="front"><img src="https://i.imgur.com/9hC46LQ.png" alt="Sapo" /></div>
+        <div class="back"></div>
+      </div>
+      <div class="card">
+        <div class="front"><img src="https://i.imgur.com/JaIXn6a.png" alt="Galinha" /></div>
+        <div class="back"></div>
+      </div>
+      <div class="card">
+        <div class="front"><img src="https://i.imgur.com/9hC46LQ.png" alt="Sapo" /></div>
+        <div class="back"></div>
+      </div>
+      <div class="card">
+        <div class="front"><img src="https://i.imgur.com/JaIXn6a.png" alt="Galinha" /></div>
+        <div class="back"></div>
+      </div>
+      <div class="card">
+        <div class="front"><img src="https://i.imgur.com/KxMjqOx.png" alt="Urso" /></div>
+        <div class="back"></div>
+      </div>
+      <div class="card">
+        <div class="front"><img src="https://i.imgur.com/5d2pKjJ.png" alt="Coala" /></div>
+        <div class="back"></div>
+      </div>
+      <div class="card">
+        <div class="front"><img src="https://i.imgur.com/KxMjqOx.png" alt="Urso" /></div>
+        <div class="back"></div>
+      </div>
+      <div class="card">
+        <div class="front"><img src="https://i.imgur.com/5d2pKjJ.png" alt="Coala" /></div>
+        <div class="back"></div>
+      </div>
+    </div>
+  </article>
+
+  <aside>
+    <h2>Dica do Dia</h2>
+    <h3>Últimas dicas</h3>
+    <p>Combine as cartas com atenção! O segredo é observar e memorizar. Boa sorte e divirta-se jogando 🎮</p>
+  </aside>
+</main>
+
+<footer>
+  &copy; 2025 Luan Games. Todos os direitos reservados.
+</footer>
+
+</body>
+</html>
