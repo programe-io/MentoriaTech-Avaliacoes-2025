@@ -1,0 +1,259 @@
+<<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Luan Insta</title>
+<style>
+  /* Reset básico */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fafafa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  header {
+    background: #405de6;
+    color: white;
+    padding: 15px 20px;
+  }
+
+  header .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: opacity 0.3s;
+  }
+
+  nav a:hover {
+    opacity: 0.8;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    max-width: 1100px;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  main .content-wrapper {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+  }
+
+  h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #405de6;
+    padding-bottom: 5px;
+  }
+
+  article.posts {
+    flex: 2.5;
+  }
+
+  article.post {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+  }
+
+  article.post .post-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  article.post header {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  article.post header img.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  article.post header h3 {
+    font-size: 1.1rem;
+    color: #333;
+  }
+
+  article.post img.post-image {
+    width: 100%;
+    display: block;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+
+  article.post p.caption {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #555;
+  }
+
+  /* Estilo para as hashtags (span) */
+  span.hashtag {
+    color: #405de6;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  span.hashtag:hover {
+    color: #833ab4;
+  }
+
+  aside.sidebar {
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    height: fit-content;
+  }
+
+  aside.sidebar h3 {
+    margin-bottom: 15px;
+    color: #405de6;
+  }
+
+  aside.sidebar p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+
+  aside.sidebar img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  footer {
+    background: #405de6;
+    color: white;
+    text-align: center;
+    padding: 12px 10px;
+    font-size: 0.9rem;
+    margin-top: auto;
+  }
+
+  /* Estilo para o ano no footer */
+  span.year {
+    font-weight: 700;
+  }
+
+  @media (max-width: 900px) {
+    main {
+      flex-direction: column;
+    }
+
+    aside.sidebar {
+      margin-top: 20px;
+    }
+  }
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<header>
+  <div class="header-container">
+    <h1>Luan Insta</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Perfil</a>
+      <a href="#">Explorar</a>
+      <a href="#">Notificações</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="content-wrapper">
+    <article class="posts">
+      <h2>Últimos Posts</h2>
+
+      <article class="post">
+        <div class="post-container">
+          <header>
+            <img class="avatar" src="https://i.pravatar.cc/45?img=1" alt="Avatar do usuário" />
+            <h3>@luan_gamer</h3>
+          </header>
+          <img class="post-image" src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=600&q=80" alt="Imagem do post" />
+          <p class="caption">Curtindo um dia de jogo! 🎮🔥 <span class="hashtag">#gaming</span> <span class="hashtag">#diversao</span></p>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="post-container">
+          <header>
+            <img class="avatar" src="https://i.pravatar.cc/45?img=3" alt="Avatar do usuário" />
+            <h3>@luan_dev</h3>
+          </header>
+          <img class="post-image" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Imagem do post" />
+          <p class="caption">Nova linha de código, novo desafio vencido! 💻🚀 <span class="hashtag">#programacao</span> <span class="hashtag">#devlife</span></p>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="post-container">
+          <header>
+            <img class="avatar" src="https://i.pravatar.cc/45?img=7" alt="Avatar do usuário" />
+            <h3>@luan_travel</h3>
+          </header>
+          <img class="post-image" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Imagem do post" />
+          <p class="caption">Descobrindo novos lugares no mundo! ✈️🌍 <span class="hashtag">#viajar</span> <span class="hashtag">#aventura</span></p>
+        </div>
+      </article>
+
+    </article>
+
+    <aside class="sidebar">
+      <h2>Sobre Nós</h2>
+      <h3>Sobre o Luan Insta</h3>
+      <p>Bem-vindo ao Luan Insta, sua rede social para compartilhar momentos incríveis, histórias e muito mais!</p>
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80" alt="Imagem lateral" />
+    </aside>
+  </div>
+</main>
+
+<footer>
+  &copy; <span class="year">2025</span> Luan Insta. Todos os direitos reservados.
+</footer>
+
+</body>
+</html>
