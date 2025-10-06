@@ -1,0 +1,182 @@
+/* Reset Básico para melhor consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f4f4f4; /* Cor de fundo leve */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Cabeçalho Principal (Laranja) --- */
+.header-principal {
+    background-color: #ff9900; /* Laranja forte */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.header-principal h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.header-principal p {
+    font-size: 1.2em;
+}
+
+/* --- Barra de Navegação (Preta) --- */
+.navbar {
+    background-color: #333; /* Cinza Escuro/Preto */
+    overflow: hidden;
+    display: flex; /* Garante que os links fiquem lado a lado */
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-right: 1px solid #555; /* Linha divisória sutil */
+}
+
+.navbar a:last-child {
+    border-right: none;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+/* --- Layout Principal --- */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    gap: 20px; /* Espaçamento entre a sidebar e a postagem */
+}
+
+/* --- Sidebar (Coluna Esquerda) --- */
+.sidebar {
+    flex: 1; /* Ocupa 1/4 do espaço */
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc; /* Borda sutil como no exemplo */
+}
+
+.sidebar h2 {
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ff9900; /* Linha de separação */
+    padding-bottom: 5px;
+    font-size: 1.4em;
+}
+
+.sidebar h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.secao p {
+    margin-bottom: 15px;
+}
+
+/* --- Estilos Adicionados para as NOVAS Imagens Reais --- */
+/* Estilo para a imagem de perfil do aluno */
+.imagem-perfil-real {
+    width: 100%;
+    height: auto;
+    max-height: 120px; /* Mantém o tamanho próximo ao original */
+    object-fit: cover;
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+/* Estilo para as imagens da galeria de futebol */
+.imagem-galeria-real {
+    width: 100%;
+    height: auto;
+    max-height: 100px; /* Mantém o tamanho próximo ao original */
+    object-fit: cover;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+/* --- Fim dos Estilos de Imagem Adicionados --- */
+
+
+/* --- Postagem Principal (Coluna Direita) --- */
+.postagem-principal {
+    flex: 3; /* Ocupa 3/4 do espaço */
+}
+
+.card-postagem {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para o card */
+}
+
+.card-postagem h2 {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.meta-data {
+    color: #999;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.imagem-postagem {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.texto-postagem {
+    text-align: justify;
+}
+
+/* --- Responsividade (Ajuste para telas menores) --- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Empilha as colunas em telas menores */
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .navbar {
+        flex-wrap: wrap; /* Permite que os links quebrem linha */
+        justify-content: center;
+    }
+
+    .navbar a {
+        border-right: none;
+        width: 50%; /* Faz com que dois links fiquem em cada linha */
+        box-sizing: border-box;
+    }
+}/* --- Estilo para o Footer --- */
+.footer-principal {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px; /* Dá um pequeno respiro entre o conteúdo e o rodapé */
+    font-size: 0.9em;
+}
