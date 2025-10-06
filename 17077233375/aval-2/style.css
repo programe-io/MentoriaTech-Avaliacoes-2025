@@ -1,119 +1,85 @@
-/* Reset básico */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --bg: #fff7ef;
-  --accent: #c94f3f;
-  --muted: #4b4b4b;
-  --card: #fff;
-  --maxw: 900px;
-  --pad: 18px;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background: linear-gradient(180deg, #fff 0%, var(--bg) 100%);
-  color: var(--muted);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* contêineres principais */
-.site-header,
-.site-main,
-.site-aside,
-.site-footer {
-  width: 100%;
-  max-width: var(--maxw);
-  margin-bottom: 18px;
-  background: var(--card);
-  border-radius: 12px;
-  padding: var(--pad);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+header {
+    background-color: orange;
+    padding: 60px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
 }
 
-/* Imagem decorativa */
-.fruit-image {
-  width: 100%;
-  height: 200px;
-  background: url("bandeja-frutas.jpg") no-repeat center center;
-  background-size: cover;
-  border-radius: 8px;
-  margin-bottom: 16px;
+nav {
+    display: flex;
+    background-color: #333;
 }
 
-/* Texto gerado via CSS nos blocos */
-.site-header {
-  position: relative;
-  overflow: hidden;
+nav a {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
 }
 
-.site-header::before {
-  content: "🍽️ Comida & Alimentação";
-  display: block;
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 8px;
+nav a:hover {
+    background-color: #ddd;
+    color: #000;
 }
 
-.site-header::after {
-  content: "Receitas, dicas e um estilo de vida mais saudável — tudo num só lugar.";
-  display: block;
-  font-size: 14px;
-  color: #666;
+#row {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.site-main {
-  min-height: 260px;
-  white-space: pre-line;
+.fakeimagem {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
 }
 
-.site-main::before {
-  content:
-    "Receitas em Destaque\n\n1) Panqueca Integral — Rápida, nutritiva e versátil.\n- Ingredientes: farinha integral, ovo, leite (ou bebida vegetal), frutas.\n\n2) Salada Mediterrânea — Leve e colorida.\n- Dica: use azeite extra virgem e limão.";
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--muted);
-  display: block;
+aside {
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
 }
 
-.site-aside {
-  min-height: 120px;
-  white-space: pre-line;
+main {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
 }
 
-.site-aside::before {
-  content: "Dicas Rápidas\n\n• Troque refrigerante por água com limão.\A• Planeje refeições da semana para evitar desperdício.\A• Inclua proteína em todas as refeições.";
-  font-weight: 600;
+article {
+    box-shadow: 0px 0px 10px #aaa;
+    padding: 5px;
+    border-radius: 10px;
 }
 
-.site-footer::before {
-  content: "Contato: exemplo@email.com  •  © 2025 Comida & Alimentação";
-  font-size: 13px;
-  color: #555;
-  display: block;
-  text-align: center;
-  opacity: 0.9;
+article img {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
 
-/* Efeitos de fundo decorativos */
-.site-header {
-  background-image: linear-gradient(135deg, rgba(201,79,63,0.06), transparent);
+footer {
+    background-color: #444;
+    padding: 40px;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
 }
 
-.site-main {
-  background-image: radial-gradient(circle at 90% 10%, rgba(201,79,63,0.05), transparent 20%);
-}
-
-.site-aside {
-  background-image: linear-gradient(90deg, rgba(74,170,109,0.03), transparent);
-}
-
-/* Responsivo simples */
-@media (min-width: 900px) {
-  body { padding: 40px; }
-  .site-main { min-height: 300px; }
+@media screen and (max-width: 400px){
+    nav {
+        flex-direction: column;
+    }
 }
