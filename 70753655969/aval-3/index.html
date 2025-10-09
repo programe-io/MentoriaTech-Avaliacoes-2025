@@ -12,7 +12,8 @@
     }
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:#111827}
-    header{background:linear-gradient(90deg,#ffffff 0%, #fff9f9 100%);padding:28px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    header{background:linear-gradient(90deg,#ffffff 0%, #fff9f9 100%);padding:28px 20px;display:flex;align-items:center;
+      justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:12px}
     .logo{width:56px;height:56px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
     .logo img{width:100%;height:100%;object-fit:cover}
@@ -48,6 +49,32 @@
         object-fit: cover;
         border-radius: 10px;
     }
+    .delvalle{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .calabresa{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .feijoada{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .cola{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    
   </style>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -78,7 +105,6 @@
     </div>
 
     <section class="grid" id="menuGrid">
-      <!-- Card template entries -->
       <article class="card" data-cat="cafedamanha" data-name="Pão na chapa com manteiga">
         <nav><img src="https://i.pinimg.com/1200x/05/bc/18/05bc1811399074b647203ed3296a5576.jpg" alt="Pão na chapa" class="pao">
         <div class="card-body">
@@ -92,7 +118,7 @@
       </article>
 
       <article class="card" data-cat="cafedamanha" data-name="Tapioca recheada">
-       <nav> <img src="https://i.pinimg.com/1200x/a1/77/22/a177220e5c19d1e3adcf1047022f5964.jpg" alt="Tapioca">
+      <nav> <img src="https://i.pinimg.com/1200x/a1/77/22/a177220e5c19d1e3adcf1047022f5964.jpg" alt="Tapioca">
         <div class="card-body">
           <div class="title-row"><div class="item-title">Tapioca recheada</div><div class="price">R$ 9,00</div></div>
           <div class="desc">Tapioca com recheio à escolha: coco, queijo ou frango desfiado.</div></nav>
@@ -148,54 +174,125 @@
       <article class="card" data-cat="bebidas" data-name="Café espresso">
         <nav><img src="https://i.pinimg.com/736x/7b/54/29/7b54296628a5e1739924ba88a10c7182.jpg" alt="Café">
         <div class="card-body">
-          <div class="title-row"><div class="item-title">Café espresso</div><div class="price">R$ 5,00</div></div>
+          <div class="title-row"><div class="item-title">Café espresso</div><div class="price">R$ 5,00</div>
           <div class="desc">Café espresso curto, intenso e aromático.</div></nav>
           <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button></div>
         </div>
       </article>
+
+      <article class="card" data-cat="bebidas" data-name="Suco DelValle">
+        <nav><img src="https://i.pinimg.com/736x/a3/a8/f6/a3a8f6227ab60eea340f97a7f31c3992.jpg" alt="suco Delvalle" class="delvalle"></nav>
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Suco DelValle</div><div class="price">R$ 3,50</div>
+        <div class="desc">Suco DelValle Kapo, Leve Gelado e Perfeito para dias de Sol.</div>
+        <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button>
+        </div>
+      </article>
+
+      <article class="card" data-cat="almoco" data-name="Pizza de Calabresa">
+        <nav><img src="https://i.pinimg.com/1200x/6e/30/5c/6e305c4d544a1b8d9f213ac8408c0a31.jpg" alt="Pizza Sabor Calabresa" class="calabresa"></nav>
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Pizza de Calabresa</div><div class="price">R$ 17,50</div>
+        <div class="desc">Pizza de Calabresa Perfeita Para Qualquer ocasião e Qualquer gosto Pessoal.</div>
+        <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button>
+        </div>
+      </article>
+
+      <article class="card" data-cat="almoco" data-name="Feijoada Completa">
+        <nav><img src="https://i.pinimg.com/1200x/19/75/51/1975519c0dd01fd32aa55bf38bcd43ad.jpg" alt="Feijoada" class="feijoada"></nav>
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Feijoada Completa</div><div class="price">R$ 28,50</div>
+        <div class="desc">Uma Ótima Feijoada com Tudo Oque tem Direito.</div>
+        <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebidas" data-name="Coca Cola">
+        <nav><img src="https://i.pinimg.com/736x/5f/82/6f/5f826fd67314a0c5a84643e3e0390527.jpg" alt="Coca Cola" class="Cola"></nav>
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Coca Cola 350ml</div><div class="price">R$ 5,50</div>
+        <div class="desc">Coca-Cola 350ml em Lata Perfeita para Degustar Após um almoço.</div>
+        <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button>
+        </div>
+      </article>
+
+      <article class="card" data-cat="sobremesas" data-name="Salada de Frutas">
+        <nav><img src="https://i.pinimg.com/736x/67/00/8c/67008c44d7696c2e4bfbf0739600275f.jpg" alt="Salada de Frutas" class="Fruta"></nav>
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Salada de Frutas 400g</div><div class="price">R$ 18,00</div>
+        <div class="desc">Salada completa e Perfeita para Pessoas que Querem emagrecer.</div>
+        <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button>
+        </div>
+      </article>
+
+      <article class="card" data-cat="cafedamanha" data-name="Cuzcuz Recheado">
+        <nav><img src="https://i.pinimg.com/736x/1b/93/0f/1b930f1683ef6147ccdcc55f12e52964.jpg" alt="cuzcuz recheado" class="cuzcuz"></nav>
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Cuzcuz Recheado</div><div class="price">R$ 10,00</div>
+        <div class="desc">Cuzcuz Recheado com um Estilo Nordestino.</div>
+        <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button>
+        </div>
+      </article>
+
+      <article class="card" data-cat="lanches" data-name="Sorvete de Pote">
+        <nav><img src="https://i.pinimg.com/736x/2f/40/e3/2f40e394a21c50e7b422321b9ab32c7c.jpg" alt="Sorvete de Pote" class="sorvete"></nav>
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Sorvete de Pote</div><div class="price">R$ 30,00</div>
+        <div class="desc">Sorteves de Vários Sabores Perfeitos em família.</div>
+        <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button>
+        </div>
+      </article>
+
+      <article class="card" data-cat="lanches" data-name="Açaí Gourmet">
+        <nav><img src="https://i.pinimg.com/1200x/d9/58/35/d958359b3dd5f38a2e178801c9e526e9.jpg" alt="Sorvete de Pote" class="sorvete"></nav>
+        <div class="card-body">
+          <div class="title-row"><div class="item-title">Açaí Gourmet</div><div class="price">R$ 0,80mg</div>
+        <div class="desc">Você Monta.</div>
+        <div class="actions"><button class="btn btn-primary addBtn">Adicionar</button><button class="btn btn-ghost viewBtn">Ver</button>
+        </div>
+      </article>
+
       <span>
-      <h2>Lista dos Links Das Imagens</h2>
+      <h2>Redes Sociais do Restaurante</h2>
     </span>
-      <a href="https://br.pinterest.com/pin/328622104080050495/">Link Pinterest Logo</a>
-      <a href="https://br.pinterest.com/pin/68679963061325668/">Link Pinterest Café Expresso</a>
-      <a href="https://br.pinterest.com/pin/661747739036046668/">Link Pinterest Suco de Goiaba</a>
-      <a href="https://br.pinterest.com/pin/327918416622990774/">Link Pinterest brownie</a>
-      <a href="https://br.pinterest.com/pin/583708801733921504/">Link pinterest Hamburger Caseiro</a>
-      <a href="https://br.pinterest.com/pin/342906959154685242/">Link Pinterest Lasanha à Bolonhesa</a>
-      <a href="https://br.pinterest.com/pin/442830575879778930/">Link Pinterest filé de Frango Grelhado</a>
-      <a href="https://br.pinterest.com/pin/238339005273857120/">Link Pinterest Tapioca Recheada</a>
-      <a href="https://br.pinterest.com/pin/135600638776827532/">Link Pinterest Pão</a>
+      <a href="https://www.instagram.com/edson_bandeira007/">Instagram Oficial</a>
+      <a href="https://www.linkedin.com/in/edson-bandeira-8b5b44364/">Linkedin do Restaurante</a>
 
     </section>
   </main>
+
+    </main>
 
   <div class="modal" id="modal">
     <div class="inner" id="modalInner"></div>
   </div>
 
   <aside>
-  <footer>© 2025 Restaurante Sabor & Co. — Telefone: (11) 99999-9999 — Endereço exemplo</footer>
+    <footer>© 2025 Restaurante Sabor & Co. — Telefone: (86) 99409-6527 — R. Santo Antônio</footer>
   </aside>
 
   <script>
-    // filtros
     const chips = document.querySelectorAll('.chip');
     const cards = document.querySelectorAll('.card');
     const searchInput = document.getElementById('searchInput');
     const cartBtn = document.getElementById('viewCartBtn');
-    let cartCount = 0;
+    const modal = document.getElementById('modal');
+    const modalInner = document.getElementById('modalInner');
 
-    chips.forEach(chip => chip.addEventListener('click', ()=>{
-      chips.forEach(c=>c.classList.remove('active'));
+    let cart = [];
+
+    // filtro
+    chips.forEach(chip => chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
       const cat = chip.dataset.cat;
       cards.forEach(card => {
-        card.style.display = (cat==='all' || card.dataset.cat===cat) ? '' : 'none';
+        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
       });
     }));
 
     // busca
-    searchInput.addEventListener('input', ()=>{
+    searchInput.addEventListener('input', () => {
       const q = searchInput.value.trim().toLowerCase();
       cards.forEach(card => {
         const name = card.dataset.name.toLowerCase();
@@ -205,49 +302,145 @@
       });
     });
 
+    // atualizar carrinho
+    function updateCartButton() {
+      cartBtn.innerText = `Carrinho (${cart.length})`;
+    }
+
     // adicionar ao carrinho
-    document.querySelectorAll('.addBtn').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        cartCount++;
-        cartBtn.innerText = 'Carrinho (${cartCount})';
-        btn.innerText = 'Adicionado';
-        btn.disabled = true;
+    document.querySelectorAll('.addBtn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.card');
+        const name = card.dataset.name;
+        const priceText = card.querySelector('.price').innerText.replace('R$', '').trim();
+        const price = parseFloat(priceText.replace(',', '.'));
+        const imgSrc = card.querySelector('img').src;
+
+        const exists = cart.find(item => item.name === name);
+        if (!exists) {
+          cart.push({ name, price, imgSrc });
+          updateCartButton();
+          btn.innerText = 'Adicionado';
+          btn.disabled = true;
+        }
       });
     });
 
-    // ver imagem + modal
-    const modal = document.getElementById('modal');
-    const modalInner = document.getElementById('modalInner');
-    document.querySelectorAll('.viewBtn').forEach((b, i)=>{
-      b.addEventListener('click', ()=>{
-        const card = b.closest('.card');
+    // abrir carrinho
+    cartBtn.addEventListener('click', () => {
+      if (cart.length === 0) {
+        modalInner.innerHTML = `
+          <div style="text-align:center;padding:20px">
+            <h3>Seu carrinho está vazio 🛒</h3>
+            <button class="btn btn-ghost" id="modalClose">Fechar</button>
+          </div>`;
+      } else {
+        let total = cart.reduce((sum, item) => sum + item.price, 0).toFixed(2);
+        let list = cart.map(item => `
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;border-bottom:1px solid #eee;padding-bottom:8px">
+            <img src="${item.imgSrc}" style="width:60px;height:60px;border-radius:8px;object-fit:cover">
+            <div style="flex:1">
+              <strong>${item.name}</strong><br>
+              <span style="color:var(--muted)">R$ ${item.price.toFixed(2)}</span>
+            </div>
+            <button class="btn btn-ghost removeItem" data-name="${item.name}">Remover</button>
+          </div>
+        `).join('');
+
+        modalInner.innerHTML = `
+          <div style="max-width:700px">
+            <h3 style="margin-bottom:12px">🛍 Seu carrinho</h3>
+            ${list}
+            <p style="font-weight:600;margin-top:12px">Total: <span style="color:var(--accent)">R$ ${total}</span></p>
+            <div style="display:flex;gap:8px;margin-top:12px">
+              <button class="btn btn-primary" id="confirmOrder">Confirmar pedido</button>
+              <button class="btn btn-ghost" id="modalClose">Fechar</button>
+            </div>
+          </div>`;
+
+        modalInner.querySelectorAll('.removeItem').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const name = btn.dataset.name;
+            cart = cart.filter(item => item.name !== name);
+            updateCartButton();
+            modal.classList.remove('open');
+            cartBtn.click();
+          });
+        });
+
+        document.getElementById('confirmOrder').addEventListener('click', () => {
+          modalInner.innerHTML = `
+            <div style="text-align:center;padding:30px">
+              <h2>✅ Pedido confirmado!</h2>
+              <p>Obrigado por escolher o Restaurante Sabor & Co.</p>
+              <button class="btn btn-primary" id="modalClose">Fechar</button>
+            </div>`;
+          cart = [];
+          updateCartButton();
+        });
+      }
+
+      modal.classList.add('open');
+      document.getElementById('modalClose').addEventListener('click', () => modal.classList.remove('open'));
+    });
+
+    // detalhes da comida
+    document.querySelectorAll('.viewBtn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.card');
         const imgSrc = card.querySelector('img').src;
         const title = card.querySelector('.item-title').innerText;
         const desc = card.querySelector('.desc').innerText;
         const price = card.querySelector('.price').innerText;
+
+        document.getElementById('confirmOrder').addEventListener('click', () => {
+  modalInner.innerHTML = `
+    <div style="text-align:center;padding:30px">
+      <h2>✅ Pedido confirmado!</h2>
+      <p>Obrigado por escolher o Restaurante Sabor & Co.</p>
+      <button class="btn btn-primary" id="modalClose">Fechar</button>
+    </div>`;
+  
+  // limpar carrinho
+  cart = [];
+  updateCartButton();
+
+  document.querySelectorAll('.addBtn').forEach(btn => {
+    btn.innerText = 'Adicionar ao carrinho';
+    btn.disabled = false;
+  });
+});
+
+
         modalInner.innerHTML = `
-          <div style="max-width:800px">
-            <img src="${imgSrc}" alt="${title}" style="width:100%;height:auto;border-radius:8px;margin-bottom:8px">
-            <h3 style="margin:0 0 6px">${title} — <span style="color:var(--accent)">${price}</span></h3>
-            <p style="margin:0 0 12px;color:var(--muted)">${desc}</p>
-            <div style="display:flex;gap:8px">
-              <button class="btn btn-primary" id="modalAdd">Adicionar ao carrinho</button>
+          <div style="max-width:700px">
+            <img src="${imgSrc}" alt="${title}" style="width:100%;border-radius:10px;margin-bottom:10px">
+            <h3>${title} — <span style="color:var(--accent)">${price}</span></h3>
+            <p style="color:var(--muted)">${desc}</p>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <button class="btn btn-primary" id="addFromModal">Adicionar ao carrinho</button>
               <button class="btn btn-ghost" id="modalClose">Fechar</button>
             </div>
-          </div>
-        `;
+          </div>`;
+
         modal.classList.add('open');
-        document.getElementById('modalClose').addEventListener('click', ()=> modal.classList.remove('open'));
-        document.getElementById('modalAdd').addEventListener('click', ()=>{
-          cartCount++;
-          cartBtn.innerText = 'Carrinho (${cartCount})'
+
+        document.getElementById('modalClose').addEventListener('click', () => modal.classList.remove('open'));
+        document.getElementById('addFromModal').addEventListener('click', () => {
+          const priceValue = parseFloat(price.replace('R$', '').replace(',', '.'));
+          if (!cart.find(i => i.name === title)) {
+            cart.push({ name: title, price: priceValue, imgSrc });
+            updateCartButton();
+          }
           modal.classList.remove('open');
         });
       });
     });
 
-    // fechar modal ao clicar fora
-    modal.addEventListener('click', (e)=>{ if(e.target===modal) modal.classList.remove('open') });
+    // fechar modal 
+    modal.addEventListener('click', e => {
+      if (e.target === modal) modal.classList.remove('open');
+    });
   </script>
 </body>
 </html>
