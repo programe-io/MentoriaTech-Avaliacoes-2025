@@ -1,0 +1,148 @@
+/* 🌸 Tema Rosa Floral com Corações 🌸 */
+* {
+  margin: 0;
+    padding: 0;
+      box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+          background: linear-gradient(180deg, #ffe6f2, #ffd6eb);
+            background-attachment: fixed;
+              color: #5a004d;
+                overflow-x: hidden;
+                }
+
+                /* Cabeçalho */
+                header {
+                  text-align: center;
+                    background-color: #ff66b2;
+                      color: #fff;
+                        padding: 30px 10px;
+                          font-size: 28px;
+                            letter-spacing: 1px;
+                              box-shadow: 0 4px 10px rgba(255, 0, 128, 0.3);
+                                border-bottom: 4px solid #ffa3d1;
+                                  position: relative;
+                                  }
+
+                                  /* Corações decorativos no topo */
+                                  header::before, header::after {
+                                    content: "💖";
+                                      font-size: 25px;
+                                        position: absolute;
+                                          top: 15px;
+                                          }
+                                          header::before { left: 20px; }
+                                          header::after { right: 20px; }
+
+                                          /* Área principal */
+                                          main {
+                                            display: flex;
+                                              flex-wrap: wrap;
+                                                justify-content: space-between;
+                                                  padding: 30px;
+                                                  }
+
+                                                  /* Seção principal */
+                                                  section {
+                                                    flex: 3;
+                                                      background-color: #fff;
+                                                        padding: 25px;
+                                                          border-radius: 20px;
+                                                            box-shadow: 0 0 15px rgba(255, 102, 178, 0.3);
+                                                              border: 2px solid #ffcce6;
+                                                                margin-bottom: 20px;
+                                                                }
+
+                                                                section h2 {
+                                                                  color: #cc0077;
+                                                                    border-bottom: 2px dashed #ff99cc;
+                                                                      padding-bottom: 5px;
+                                                                        margin-top: 15px;
+                                                                          margin-bottom: 10px;
+                                                                          }
+
+                                                                          section p {
+                                                                            font-size: 17px;
+                                                                              line-height: 1.6;
+                                                                                margin-top: 5px;
+                                                                                }
+
+                                                                                section img {
+                                                                                  width: 100%;
+                                                                                    border-radius: 15px;
+                                                                                      margin-top: 10px;
+                                                                                        box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+                                                                                        }
+
+                                                                                        /* Aside (caixinha lateral) */
+                                                                                        aside {
+                                                                                          flex: 1;
+                                                                                            background-color: #fff0fa;
+                                                                                              padding: 20px;
+                                                                                                border-radius: 20px;
+                                                                                                  box-shadow: 0 0 12px rgba(255, 105, 180, 0.3);
+                                                                                                    border: 2px solid #ffcce6;
+                                                                                                      height: fit-content;
+                                                                                                      }
+
+                                                                                                      aside h3 {
+                                                                                                        color: #ff3399;
+                                                                                                          text-align: center;
+                                                                                                            margin-bottom: 10px;
+                                                                                                            }
+
+                                                                                                            aside p {
+                                                                                                              font-size: 16px;
+                                                                                                                line-height: 1.5;
+                                                                                                                }
+
+                                                                                                                /* Rodapé */
+                                                                                                                footer {
+                                                                                                                  background-color: #ff66b2;
+                                                                                                                    color: white;
+                                                                                                                      text-align: center;
+                                                                                                                        padding: 25px;
+                                                                                                                          font-size: 16px;
+                                                                                                                            border-top: 4px solid #ffa3d1;
+                                                                                                                              box-shadow: 0 -4px 10px rgba(255, 0, 128, 0.3);
+                                                                                                                              }
+
+                                                                                                                              /* Corações flutuando 💕 */
+                                                                                                                              @keyframes floatHearts {
+                                                                                                                                0% {
+                                                                                                                                    transform: translateY(0);
+                                                                                                                                        opacity: 1;
+                                                                                                                                          }
+                                                                                                                                            100% {
+                                                                                                                                                transform: translateY(-100vh);
+                                                                                                                                                    opacity: 0;
+                                                                                                                                                      }
+                                                                                                                                                      }
+
+                                                                                                                                                      .heart {
+                                                                                                                                                        position: fixed;
+                                                                                                                                                          bottom: 0;
+                                                                                                                                                            font-size: 24px;
+                                                                                                                                                              color: #ff66b2;
+                                                                                                                                                                animation: floatHearts 6s linear infinite;
+                                                                                                                                                                  z-index: 1000;
+                                                                                                                                                                  }
+
+                                                                                                                                                                  /* Responsividade */
+                                                                                                                                                                  @media (max-width: 768px) {
+                                                                                                                                                                    main {
+                                                                                                                                                                        flex-direction: column;
+                                                                                                                                                                          }
+
+                                                                                                                                                                            section, aside {
+                                                                                                                                                                                flex: 1 1 100%;
+                                                                                                                                                                                    margin-right: 0;
+                                                                                                                                                                                      }
+
+                                                                                                                                                                                        header {
+                                                                                                                                                                                            font-size: 22px;
+                                                                                                                                                                                                padding: 20px;
+                                                                                                                                                                                                  }
+                                                                                                                                                                                                  }
