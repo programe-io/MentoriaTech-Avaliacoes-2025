@@ -1,0 +1,22 @@
+.chamada {
+    border: 4px solid black; /* borda preta */
+    border-radius: 15px;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+    background: white;
+}
+
+/* Adicionando um "contorno" vermelho externo com sombra */
+.chamada::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border: 4px solid red;
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: -1;
+}
