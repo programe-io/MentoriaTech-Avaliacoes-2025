@@ -1,11 +1,18 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const menuBtn = document.getElementById('menu-btn');
-  const mainNav = document.getElementById('main-nav');
+// === ANIMAÇÃO DE APARECIMENTO AO SCROLL ===
+const posts = document.querySelectorAll('.post');
 
-  // Toggle menu on mobile
-  menuBtn.addEventListener('click', function () {
-    mainNav.classList.toggle('open');
+function revealPosts() {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  posts.forEach(post => {
+    const postTop = post.getBoundingClientRect().top;
+
+    if (postTop < triggerBottom) {
+      post.classList.add('visible');
+    }
   });
+}
 
-  // Interação com as miniaturas da galeria
-  const thumbs = document.querySelectorAll('.thumb');
+// Chama ao scroll e no carregamento inicial
+window.addEventListener('scroll', revealPosts);
+window.addEventListener('load', revealPosts);
