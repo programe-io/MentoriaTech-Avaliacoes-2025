@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FroJho Burgers</title>
+  <link rel="stylesheet" href="styles.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <div class="logo">🍔 FroJho Burgers</div>
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#carrinho">Carrinho 🛒 (<span id="cart-count">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>O Melhor Hambúrguer da Cidade</h1>
+      <p>Peça agora e receba em casa rapidinho!</p>
+      <a href="#cardapio" class="btn">Ver Cardápio</a>
+    </section>
+
+    <section id="cardapio" class="menu">
+      <h2>Nosso Cardápio</h2>
+      <div class="menu-items">
+        <!-- Card 1 -->
+        <div class="item">
+          <img src="https://cdn.pixabay.com/photo/2020/04/17/20/47/hamburger-5059909_960_720.jpg" alt="Cheese Burger">
+          <h3>Cheese Burger</h3>
+          <p>R$ 18,90</p>
+          <button onclick="adicionarAoCarrinho(1)">Adicionar</button>
+        </div>
+        <!-- Card 2 -->
+        <div class="item">
+          <img src="https://cdn.pixabay.com/photo/2022/07/26/07/47/burger-7345724_960_720.jpg" alt="Duplo Bacon">
+          <h3>Duplo Bacon</h3>
+          <p>R$ 22,50</p>
+          <button onclick="adicionarAoCarrinho(2)">Adicionar</button>
+        </div>
+        <!-- Card 3 -->
+        <div class="item">
+          <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_960_720.jpg" alt="Veggie Burger">
+          <h3>Veggie Burger</h3>
+          <p>R$ 17,00</p>
+          <button onclick="adicionarAoCarrinho(3)">Adicionar</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="carrinho" class="cart">
+      <h2>Seu Carrinho</h2>
+      <div id="cart-items"></div>
+      <p>Total: R$ <span id="total">0.00</span></p>
+      <button onclick="finalizarPedido()">Finalizar Pedido</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 FroJho Burgers. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
