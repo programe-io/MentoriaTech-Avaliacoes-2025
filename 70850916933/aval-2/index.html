@@ -1,0 +1,315 @@
+<!doctype html>
+<!-- exemplo-completo.html
+     Um único arquivo HTML demonstrando muitos recursos e "funções" do HTML5,
+     CSS e JavaScript — elementos semânticos, formulários, mídia, canvas, SVG,
+     Web Components simples, armazenamento local, fetch, acessibilidade e mais.
+     Use como referência ou ponto de partida.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Exemplo Completo HTML5 — Todas as funções (exemplo)</title>
+  <meta name="description" content="Demo de muitos elementos e APIs web em um único arquivo HTML." />
+  <style>
+    :root{--accent:#0b6efd;--muted:#666}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.5;margin:0;padding:0;background:#f7f7fb;color:#111}
+    header,footer{background:#fff;padding:1rem;border-bottom:1px solid #e6e6ee}
+    header{position:sticky;top:0;z-index:10}
+    .wrap{max-width:1000px;margin:0 auto;padding:1rem}
+    nav a{margin-right:.75rem;color:var(--accent);text-decoration:none}
+    main{display:grid;grid-template-columns:1fr 300px;gap:1rem;padding:1rem}
+    article{background:#fff;padding:1rem;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+    aside{background:#fff;padding:1rem;border-radius:10px;height:fit-content}
+    section{margin-bottom:1rem}
+    h2{margin-top:0}
+    .controls{display:flex;gap:.5rem;flex-wrap:wrap}
+    .small{font-size:.9rem;color:var(--muted)}
+    footer{border-top:1px solid #e6e6ee}
+    pre{background:#0b0b12;color:#e6eefb;padding:0.75rem;overflow:auto;border-radius:6px}
+    label{display:block;margin-bottom:.25rem}
+    input,select,textarea,button{font:inherit;padding:.45rem;border:1px solid #ddd;border-radius:6px}
+    button{background:var(--accent);color:white;border:none;padding:.5rem .75rem;cursor:pointer}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem}
+    .media{display:flex;gap:1rem;align-items:center}
+    .kv{font-weight:600}
+    /* responsive */
+    @media (max-width:900px){main{grid-template-columns:1fr}aside{order:2}}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header role="banner">
+    <div class="wrap">
+      <h1>Exemplo Completo HTML5 — Demo</h1>
+      <nav aria-label="principal">
+        <a href="#semantic">Semântica</a>
+        <a href="#forms">Formulários</a>
+        <a href="#media">Mídia</a>
+        <a href="#apis">APIs</a>
+        <a href="#widgets">Widgets</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article>
+      <section id="semantic">
+        <h2>Elementos semânticos</h2>
+        <p>Uso de &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;aside&gt; e &lt;footer&gt; — importantes para acessibilidade e SEO.</p>
+        <article aria-labelledby="art-title">
+          <h3 id="art-title">Artigo de exemplo</h3>
+          <p>Um parágrafo com <mark>marca</mark>, <strong>ênfase forte</strong> e <em>itálico</em>.</p>
+          <figure>
+            <img src="https://via.placeholder.com/600x180.png?text=Imagem+Exemplo" alt="Imagem de exemplo" style="max-width:100%">
+            <figcaption class="small">Legenda da figura.</figcaption>
+          </figure>
+        </article>
+      </section>
+
+      <section id="forms">
+        <h2>Formulários e controles</h2>
+        <form id="demo-form">
+          <div class="grid-2">
+            <div>
+              <label for="name">Nome</label>
+              <input id="name" name="name" required placeholder="Seu nome">
+            </div>
+            <div>
+              <label for="email">E‑mail</label>
+              <input id="email" name="email" type="email" placeholder="seu@exemplo.com">
+            </div>
+          </div>
+          <div style="margin-top:.5rem">
+            <label for="birth">Data de nascimento</label>
+            <input id="birth" name="birth" type="date">
+          </div>
+
+          <div style="margin-top:.5rem">
+            <label for="range">Satisfação (0‑100)</label>
+            <input id="range" name="range" type="range" min="0" max="100" value="50">
+            <output for="range" id="rangeOut">50</output>
+          </div>
+
+          <div style="margin-top:.5rem">
+            <label for="color">Escolha uma cor</label>
+            <input id="color" name="color" type="color" value="#0b6efd">
+          </div>
+
+          <div style="margin-top:.5rem">
+            <label for="file">Envio de arquivo</label>
+            <input id="file" name="file" type="file" accept="image/*">
+          </div>
+
+          <div style="margin-top:.5rem">
+            <label for="bio">Biografia</label>
+            <textarea id="bio" name="bio" rows="3" placeholder="Fale sobre você..."></textarea>
+          </div>
+
+          <div style="margin-top:.5rem">
+            <label>
+              <input type="checkbox" id="agree" required> Concordo com os termos
+            </label>
+          </div>
+
+          <div style="margin-top:.5rem" class="controls">
+            <button type="submit">Enviar</button>
+            <button type="button" id="saveLocal">Salvar local</button>
+            <button type="reset">Limpar</button>
+          </div>
+        </form>
+
+        <p class="small">Validação nativa, tipos de entrada modernos e API de &lt;output&gt;.</p>
+      </section>
+
+      <section id="media">
+        <h2>Mídia</h2>
+        <div class="media">
+          <video controls width="320" preload="metadata">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+          </video>
+
+          <audio controls>
+            <source src="https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3" type="audio/mpeg">
+            Seu navegador não suporta áudio.
+          </audio>
+        </div>
+
+        <picture>
+          <source srcset="https://via.placeholder.com/800x200.png?text=versao+grande" media="(min-width:600px)">
+          <img src="https://via.placeholder.com/400x100.png?text=versao+pequena" alt="Exemplo responsivo" style="max-width:100%">
+        </picture>
+      </section>
+
+      <section id="graphics">
+        <h2>Canvas &amp; SVG</h2>
+        <p class="small">Exemplo simples de desenho em &lt;canvas&gt; e um SVG inline.</p>
+        <canvas id="cvs" width="400" height="120" style="border:1px solid #ddd;display:block"></canvas>
+
+        <svg viewBox="0 0 100 40" style="width:100%;max-width:400px;margin-top:.5rem">
+          <rect x="2" y="2" width="96" height="36" rx="4" fill="#fff" stroke="#ddd"></rect>
+          <circle cx="20" cy="20" r="10"></circle>
+          <text x="40" y="24" font-family="sans-serif" font-size="8">SVG inline</text>
+        </svg>
+      </section>
+
+      <section id="widgets">
+        <h2>Widgets nativos</h2>
+        <details>
+          <summary>Mostrar código de exemplo</summary>
+          <pre>&lt;details&gt;&lt;summary&gt;Mostrar&lt;/summary&gt;&lt;p&gt;Conteúdo&lt;/p&gt;&lt;/details&gt;</pre>
+        </details>
+
+        <template id="card-template">
+          &lt;div class="card"&gt;
+            &lt;h4&gt;&lt;slot name="title"&gt;Título&lt;/slot&gt;&lt;/h4&gt;
+            &lt;p&gt;&lt;slot name="body"&gt;Conteúdo&lt;/slot&gt;&lt;/p&gt;
+          &lt;/div&gt;
+        </template>
+
+        <p class="small">Exemplo de Web Component (simples) abaixo.</p>
+        <demo-card>
+          <span slot="title">Componente</span>
+          <span slot="body">Exemplo de uso de slots.</span>
+        </demo-card>
+      </section>
+
+      <section id="apis">
+        <h2>APIs e funcionalidades do navegador</h2>
+        <div class="grid-2">
+          <div>
+            <h3>LocalStorage</h3>
+            <p class="small">Salvar e recuperar formulário localmente.</p>
+            <p>Último nome salvo: <span id="lastName" class="kv">(nenhum)</span></p>
+          </div>
+          <div>
+            <h3>Fetch (exemplo)</h3>
+            <p class="small">Busca de uma API pública (dummy) para demonstrar fetch.</p>
+            <button id="btnFetch">Buscar post (jsonplaceholder)</button>
+            <pre id="fetchResult">Nenhuma busca ainda.</pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="accessibility">
+        <h2>Acessibilidade</h2>
+        <p class="small">Uso de atributos ARIA, labels explícitos, foco visível e estrutura semântica.</p>
+      </section>
+
+    </article>
+
+    <aside>
+      <h3>Informações rápidas</h3>
+      <p><span class="kv">User agent:</span> <span id="ua"></span></p>
+      <p><span class="kv">Online:</span> <span id="online"></span></p>
+
+      <h4>Links úteis</h4>
+      <ul>
+        <li><a href="#forms">Formulários</a></li>
+        <li><a href="#media">Mídia</a></li>
+        <li><a href="#apis">APIs</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <small>Exemplo didático — não é código de produção. Atualize conforme necessário.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Manipulação básica do formulário
+    const form = document.getElementById('demo-form');
+    const range = document.getElementById('range');
+    const rangeOut = document.getElementById('rangeOut');
+    const saveLocal = document.getElementById('saveLocal');
+    const lastName = document.getElementById('lastName');
+    const ua = document.getElementById('ua');
+    const online = document.getElementById('online');
+    const btnFetch = document.getElementById('btnFetch');
+    const fetchResult = document.getElementById('fetchResult');
+
+    // Atualiza output do range
+    range.addEventListener('input', ()=> rangeOut.value = range.value);
+
+    // Persistir formulário no localStorage
+    saveLocal.addEventListener('click', ()=>{
+      const data = new FormData(form);
+      const obj = {};
+      for(const [k,v] of data.entries()) obj[k]=v;
+      localStorage.setItem('demo-form', JSON.stringify(obj));
+      alert('Salvo localmente!');
+      lastName.textContent = obj.name || '(nenhum)';
+    });
+
+    // Carregar ao iniciar
+    window.addEventListener('DOMContentLoaded', ()=>{
+      ua.textContent = navigator.userAgent;
+      online.textContent = navigator.onLine ? 'sim' : 'não';
+      const saved = localStorage.getItem('demo-form');
+      if(saved){
+        try{
+          const obj = JSON.parse(saved);
+          for(const k in obj){ const el = document.querySelector('[name="'+k+'"]'); if(el) el.value = obj[k]; }
+          lastName.textContent = document.getElementById('name').value || '(nenhum)';
+        }catch(e){console.warn('erro parse localStorage',e)}
+      }
+
+      // Canvas draw
+      const cvs = document.getElementById('cvs');
+      const ctx = cvs.getContext('2d');
+      ctx.fillStyle = '#0b6efd';
+      ctx.fillRect(10,10,80,80);
+      ctx.fillStyle = 'rgba(0,0,0,0.6)';
+      ctx.font = '16px sans-serif';
+      ctx.fillText('Canvas', 110, 50);
+    });
+
+    // Form submit (exemplo) — prevenir envio default e mostrar dados
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = new FormData(form);
+      const obj = {};
+      for(const [k,v] of data.entries()) obj[k]=v;
+      alert('Dados do formulário:\n'+JSON.stringify(obj,null,2));
+    });
+
+    // fetch demo
+    btnFetch.addEventListener('click', async ()=>{
+      fetchResult.textContent = 'Buscando...';
+      try{
+        const res = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+        if(!res.ok) throw new Error(res.status);
+        const json = await res.json();
+        fetchResult.textContent = JSON.stringify(json,null,2);
+      }catch(err){ fetchResult.textContent = 'Erro: '+err }
+    });
+
+    // Web Component simples
+    class DemoCard extends HTMLElement{
+      constructor(){
+        super();
+        const shadow = this.attachShadow({mode:'open'});
+        const template = document.getElementById('card-template');
+        shadow.appendChild(template.content.cloneNode(true));
+        const style = document.createElement('style');
+        style.textContent = `.card{border:1px solid #eee;padding:1rem;border-radius:8px;background:#fbfbff}`;
+        shadow.appendChild(style);
+      }
+    }
+    customElements.define('demo-card', DemoCard);
+
+    // Exemplo curto de WebSocket (comentado — precisa de servidor)
+    // const ws = new WebSocket('wss://echo.websocket.org');
+    // ws.addEventListener('open', ()=>ws.send('Hello'));
+
+    // Service worker (registro opcional — comentado; necessita HTTPS)
+    // if('serviceWorker' in navigator){
+    //   navigator.serviceWorker.register('/sw.js').then(()=>console.log('SW registrado'));
+    // }
+  </script>
+<script src="script.js"></script></body>
+</html>

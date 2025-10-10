@@ -1,0 +1,267 @@
+/* estilo-completo.css
+   Folha de estilos CSS completa: demonstra variáveis, layout flex e grid,
+   tipografia, temas claros/escuros, animações, transições, responsividade,
+   pseudo-classes, pseudo-elementos, e acessibilidade visual. */
+
+/* ==================
+   VARIÁVEIS E RESET
+   ================== */
+:root {
+  --font-base: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  --color-bg: #f5f7fa;
+  --color-text: #1a1a1a;
+  --color-accent: #0066ff;
+  --color-muted: #666;
+  --radius: 0.75rem;
+  --transition: all 0.25s ease;
+}
+
+/* Tema escuro automático */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0f1117;
+    --color-text: #eaeaea;
+    --color-accent: #4da3ff;
+    --color-muted: #aaa;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-base);
+  line-height: 1.6;
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  transition: var(--transition);
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  border: none;
+  outline: none;
+}
+
+/* ==================
+   LAYOUT GLOBAL
+   ================== */
+header, footer {
+  background: white;
+  color: var(--color-text);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,.05);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+aside {
+  background: white;
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  aside {
+    order: -1;
+  }
+}
+
+/* ==================
+   TIPOGRAFIA
+   ================== */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+h1 {font-size: 2rem;}
+h2 {font-size: 1.5rem;}
+h3 {font-size: 1.25rem;}
+h4 {font-size: 1.1rem;}
+
+p, ul, ol {
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ==================
+   COMPONENTES BÁSICOS
+   ================== */
+.btn {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: #004fd1;
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 3px 8px rgba(0,0,0,.06);
+  padding: 1rem;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}
+
+/* ==================
+   FORMULÁRIOS
+   ================== */
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 500;
+}
+
+input, select, textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  background: #fff;
+  transition: var(--transition);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(0,102,255,0.2);
+}
+
+input[type="submit"], button {
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+input[type="submit"]:hover, button:hover {
+  background: #004fd1;
+}
+
+/* ==================
+   ANIMAÇÕES E EFEITOS
+   ================== */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* ==================
+   TABELAS
+   ================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+th {
+  background: #f0f3f9;
+}
+
+tr:nth-child(even) {
+  background: #fafbfc;
+}
+
+/* ==================
+   UTILITÁRIOS
+   ================== */
+.text-center {text-align: center;}
+.mt-1 {margin-top: 0.5rem;}
+.mt-2 {margin-top: 1rem;}
+.mt-3 {margin-top: 1.5rem;}
+
+/* ==================
+   ACESSIBILIDADE
+   ================== */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ==================
+   RODAPÉ
+   ================== */
+footer {
+  background: #fff;
+  color: var(--color-muted);
+  border-top: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* ==================
+   FINAL
+   ================== */
+/* Fim da folha de estilo completa */
