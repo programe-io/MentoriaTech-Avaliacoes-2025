@@ -1,0 +1,331 @@
+/* ==================================================================================
+   HyperXample — styles.css
+   Arquivo CSS completo para o template HTML fornecido
+   Salve como "styles.css" e linke no head do HTML:
+   <link rel="stylesheet" href="styles.css">
+   ================================================================================== */
+
+/* -------------------------
+   Variáveis e reset
+   ------------------------- */
+:root{
+  /* Cores principais */
+  --bg: #0f1724;
+  --bg-2: #071024;
+  --card: #0b1220;
+  --muted: #99a0b0;
+  --accent: #2563eb;
+  --accent-2: #06b6d4;
+  --glass: rgba(255,255,255,0.04);
+  --radius: 14px;
+  --text: #e6eef8;
+  --shadow: rgba(2,8,20,0.6);
+
+  /* Spacing / typography */
+  --container-max: 1100px;
+  --base-font: 16px;
+  --radius-sm: 10px;
+
+  color-scheme: dark;
+  transition: background-color .2s linear, color .2s linear;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+html{font-size:var(--base-font)}
+body{
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(180deg, var(--bg), var(--bg-2));
+  color: var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  padding:24px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Utility */
+.container{
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+/* -------------------------
+   Header / Nav
+   ------------------------- */
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:28px;
+}
+
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  text-decoration:none;
+  color:inherit;
+}
+
+.logo{
+  width:48px;
+  height:48px;
+  border-radius:10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display:grid;
+  place-items:center;
+  font-weight:700;
+  color:#021029;
+  box-shadow: 0 6px 18px rgba(2,16,41,0.6);
+  flex: 0 0 auto;
+}
+
+.brand > div { line-height:1; }
+.brand .title { font-weight:800; }
+.brand .subtitle { font-size:12px; color:var(--muted); }
+
+/* Nav */
+nav ul{display:flex;gap:12px;list-style:none;padding-left:0;margin:0}
+nav a{
+  color:var(--muted);
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:10px;
+  font-weight:600;
+  display:inline-block;
+}
+nav a:hover,
+nav a:focus{
+  color:#fff;
+  background:var(--glass);
+  outline:none;
+}
+
+/* CTA */
+.cta{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#021029;
+  padding:10px 14px;
+  border-radius:12px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 6px 20px rgba(2,16,41,0.5);
+  display:inline-block;
+}
+
+/* -------------------------
+   Hero / Cards / Layout
+   ------------------------- */
+.hero{
+  display:grid;
+  grid-template-columns: 1fr 380px;
+  gap:20px;
+  align-items:start;
+  margin-bottom:26px;
+}
+
+/* Card base */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: var(--radius);
+  padding:20px;
+  box-shadow: 0 6px 20px var(--shadow);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Headings */
+h1{font-size:28px;margin-bottom:8px}
+h2{font-size:20px;margin-bottom:10px}
+h3{font-size:16px;margin-bottom:8px}
+
+/* Lead paragraph */
+p.lead{color:var(--muted);margin-bottom:16px;font-size:15px}
+
+/* Features */
+.features{display:flex;flex-wrap:wrap;gap:12px}
+.feature{
+  background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);
+  padding:12px;
+  border-radius:12px;
+  flex:1 1 160px;
+  min-width:160px;
+}
+.feature strong{display:block;margin-bottom:6px}
+
+/* Grid of cards */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:14px;
+  margin-top:18px;
+}
+.grid .card{padding:16px}
+
+/* -------------------------
+   Forms / Inputs / Buttons
+   ------------------------- */
+form{display:flex;flex-direction:column;gap:10px}
+
+label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+input[type="text"], input[type="email"], textarea, select{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.06);
+  padding:10px;
+  border-radius:10px;
+  color:inherit;
+  font-size:14px;
+  min-height:40px;
+  outline: none;
+  transition: box-shadow .12s ease, border-color .12s ease;
+  width:100%;
+}
+input::placeholder, textarea::placeholder{color: rgba(230,238,248,0.45)}
+textarea{min-height:100px;resize:vertical}
+select{appearance:none; background-image: none;}
+
+/* Focus state for inputs */
+input:focus, textarea:focus, select:focus{
+  border-color: rgba(37,99,235,0.65);
+  box-shadow: 0 6px 16px rgba(2,8,20,0.45);
+}
+
+/* Buttons */
+.actions{display:flex;gap:10px;align-items:center;justify-content:flex-end}
+button{
+  cursor:pointer;
+  border:0;
+  padding:10px 14px;
+  border-radius:10px;
+  font-weight:700;
+  font-size:14px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  transition: transform .08s ease, box-shadow .12s ease;
+}
+button:active{ transform: translateY(1px); }
+
+.btn-primary{
+  background:var(--accent);
+  color:#021029;
+  box-shadow: 0 8px 22px rgba(37,99,235,0.15);
+}
+.btn-primary:hover, .btn-primary:focus{ transform: translateY(-2px); }
+
+.btn-ghost{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.06);
+  color:var(--muted);
+}
+.btn-ghost:hover, .btn-ghost:focus{ background: rgba(255,255,255,0.02); color: #fff; }
+
+/* Small helper for visually-muted text */
+.muted { color: var(--muted); font-size:13px; }
+
+/* -------------------------
+   Footer
+   ------------------------- */
+footer{
+  margin-top:30px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  padding:18px 0;
+}
+
+/* -------------------------
+   Modal
+   ------------------------- */
+/* Container hidden by default (JS toggles display / aria-hidden) */
+#modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:1200;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Backdrop covers entire screen */
+#modal > [data-close="backdrop"]{
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,0.5);
+}
+
+/* Modal panel */
+#modal .card[role="document"]{
+  width:92%;
+  max-width:560px;
+  margin:auto;
+  z-index:1300;
+  position:relative;
+  transform-origin:center;
+  animation: modal-in .16s ease;
+}
+
+/* Modal animation */
+@keyframes modal-in {
+  from{ transform: translateY(8px) scale(0.995); opacity:0; }
+  to{ transform: translateY(0) scale(1); opacity:1; }
+}
+
+/* -------------------------
+   Accessibility: focus states and keyboard users
+   ------------------------- */
+/* Visible focus for keyboard users */
+:focus{
+  outline:3px solid rgba(37,99,235,0.18);
+  outline-offset:3px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce){
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* -------------------------
+   Responsive
+   ------------------------- */
+@media (max-width: 900px){
+  .hero{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .container{padding: 0 18px;}
+}
+
+@media (max-width: 600px){
+  nav ul{display:none}
+  .grid{grid-template-columns:1fr}
+  .logo{width:42px;height:42px}
+  .hero{gap:12px}
+  body{padding:14px}
+}
+
+/* -------------------------
+   Small helpers & utilities
+   ------------------------- */
+.text-center { text-align:center; }
+.hidden { display:none !important; }
+.visually-hidden {
+  position:absolute!important;
+  height:1px;width:1px;
+  overflow:hidden;clip:rect(1px,1px,1px,1px);
+  white-space:nowrap;border:0;padding:0;margin:-1px;
+}
+
+/* -------------------------
+   Optional: Light theme toggle (uncomment & adapt if needed)
+   ------------------------- */
+/*
+:root.light {
+  --bg: #f7fafc;
+  --bg-2: #eef2f7;
+  --card: #ffffff;
+  --muted: #475569;
+  --text: #0b1220;
+  --glass: rgba(2,6,23,0.03);
+}
+*/
