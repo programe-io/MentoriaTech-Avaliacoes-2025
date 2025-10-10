@@ -1,0 +1,123 @@
+/* ===== style.css ===== */
+
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+  background: linear-gradient(135deg, #007bff, #00b4d8);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-bottom: 5px solid #007bff;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* esquerda, centro, direita */
+  gap: 20px;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== BARRAS LATERAIS ===== */
+.left-sidebar,
+.right-sidebar {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.left-sidebar h3,
+.right-sidebar h3 {
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.left-sidebar ul,
+.right-sidebar ul {
+  list-style-type: none;
+}
+
+.left-sidebar li,
+.right-sidebar li {
+  margin-bottom: 0.8rem;
+}
+
+.left-sidebar a,
+.right-sidebar a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.left-sidebar a:hover,
+.right-sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+.main-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.main-content article img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.main-content p {
+  font-size: 1rem;
+  text-align: justify;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-top: 5px solid #0056b3;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 960px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .left-sidebar,
+  .right-sidebar {
+    order: -1; /* colunas vão para baixo ou cima conforme o layout */
+  }
