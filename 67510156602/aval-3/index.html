@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Posts</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #0f1a36;
+      color: #fff;
+    }
+
+    /* ======= HEADER ======= */
+    header {
+      background-color: #173b8a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+    }
+
+    header h1 {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 30px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ======= MAIN ======= */
+    main {
+      padding: 40px;
+    }
+
+    /* ======= CONTAINER ======= */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    /* ======= CARD ======= */
+    .card {
+      background-color: #1d2b4f;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      background-color: #14264f;
+      padding: 15px;
+    }
+
+    .card-header img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .card-header h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .card-image img {
+      width: 100%;
+      display: block;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    .card-body p {
+      font-size: 0.9rem;
+      color: #d1d1d1;
+      line-height: 1.4;
+    }
+
+    .card-body span {
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    .card-footer {
+      padding: 10px 15px 15px;
+    }
+
+    .card-footer p {
+      font-size: 0.8rem;
+      color: #b0b0b0;
+    }
+
+    .card-footer span {
+      color: #6fa8ff;
+      font-style: italic;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <!-- ======= HEADER ======= -->
+  <header>
+    <h1>LOGO</h1>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Amigos</a>
+      <a href="#">Perfil</a>
+    </nav>
+  </header>
+
+  <!-- ======= MAIN (CONTEÚDO PRINCIPAL) ======= -->
+  <main>
+    <div class="container">
+      
+      <!-- CARD 1 -->
+      <div class="card">
+        <div class="card-header">
+          <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/11/monkey-d-luffy.jpg" alt="Avatar">
+          <h2>Luffy das carne</h2>
+        </div>
+        <div class="card-image">
+          <img src="https://th.bing.com/th/id/R.b972c5e0249eda548ba8749492fb38a3?rik=JNxwmGeiKiNqeQ&riu=http%3a%2f%2fblog.cowboystore.com.br%2fwp-content%2fuploads%2f2018%2f05%2fcortes-de-carne-bovina-para-churrasco-picanha.jpg&ehk=BImWnbH8j1eixfJwWcZ4G3N2NZyyT5EhEqOGV38Glts%3d&risl=&pid=ImgRaw&r=0" alt="Imagem do post">
+        </div>
+        <div class="card-body">
+          <p>Carne das boas <span>😋</span>.</p>
+        </div>
+        <div class="card-footer">
+          <p>Postado <span>há 10 minutos</span></p>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card">
+        <div class="card-header">
+          <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2025/02/sanji-best-moment-one-piece.jpg" alt="Avatar">
+          <h2>SanjiUiche</h2>
+        </div>
+        <div class="card-image">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.0zFdIDR9MT99p4j3Ulmo5AHaEq?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Imagem do post">
+        </div>
+        <div class="card-body">
+          <p>Melhores <span>sanduíches</span> 🤤</p>
+        </div>
+        <div class="card-footer">
+          <p>Postado <span>há 10 minutos</span></p>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="card">
+        <div class="card-header">
+          <img src="https://i.pinimg.com/originals/81/f6/93/81f693234124301e430c2cd3e1cb34c3.jpg" alt="Avatar">
+          <h2>ZoroBurguer</h2>
+        </div>
+        <div class="card-image">
+          <img src="https://s2-g1.glbimg.com/DfWMGdqPpzajIZT2lBw4K6Rwz6M=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/U/N/UYXYMARMOd27xKfRWPPw/captura-de-tela-2023-08-30-073203.png" alt="Imagem do post">
+        </div>
+        <div class="card-body">
+          <p>Hambúrgueres de <span>primeira</span> 😍</p>
+        </div>
+        <div class="card-footer">
+          <p>Postado <span>há 10 minutos</span></p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+<script src="script.js"></script></body>
+</html>
