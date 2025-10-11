@@ -1,0 +1,252 @@
+
+
+
+---
+
+index.html
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Avaliação Mentoria Tech</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- TOPO / HERO -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title">Mentoria Tech — Projeto Avaliação</h1>
+      <nav class="main-nav" aria-label="Menu principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">☰</button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projeto">Projeto</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- LAYOUT PRINCIPAL: ASIDE + CONTEÚDO PRINCIPAL -->
+  <div class="container main-grid">
+    <!-- ASIDE -->
+    <aside class="sidebar" aria-labelledby="aside-title">
+      <h2 id="aside-title">Recursos</h2>
+      <p class="aside-sub">Links úteis, referências rápidas e imagens demonstrativas.</p>
+
+      <div class="thumbs">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=70" alt="Pessoa trabalhando em laptop" />
+          <figcaption>Ambiente de estudo</figcaption>
+        </figure>
+
+        <figure>
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=70" alt="Caderno e caneta" />
+          <figcaption>Anotações</figcaption>
+        </figure>
+      </div>
+    </aside>
+
+    <!-- SESSÃO PRINCIPAL -->
+    <main class="content" id="projeto">
+      <header class="content-header">
+        <h2 class="content-title">Sessão Principal</h2>
+        <p class="content-sub">Título, subtítulo, personagem descrevendo a imagem e um artigo.</p>
+      </header>
+
+      <article class="card article-card">
+        <figure class="featured-image">
+          <!-- IMAGEM: não gerada por IA (Unsplash). Troque o src se quiser -->
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="Pessoa olhando para o monitor" />
+          <figcaption>Foto: ambiente real de trabalho/estudo.</figcaption>
+        </figure>
+
+        <div class="character">
+          <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=70" alt="Avatar do personagem" />
+          <div>
+            <h3>Luiza Rayane</h3>
+            <p class="char-desc">Luiza é a personagem que descreve a imagem: "Aqui eu vejo como a rotina de estudo cria foco — luz suave, caderno aberto e uma xícara ao lado. Me sinto pronta para codar."</p>
+          </div>
+        </div>
+
+        <section class="article-body">
+          <h4>Artigo: Como montar um ambiente produtivo</h4>
+          <p>Este artigo fala sobre organização do tempo, configuração do espaço de trabalho e dicas práticas para melhorar concentração durante sessões de mentoria.</p>
+
+          <h5>Dicas rápidas</h5>
+          <ul>
+            <li>Mantenha o espaço limpo e com boa iluminação;</li>
+            <li>Use blocos de tempo (pomodoro) para estudo;</li>
+            <li>Tenha um caderno para anotações rápidas;</li>
+            <li>Faça pausas curtas a cada 25–50 minutos.</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer" id="contato">
+    <div class="container footer-inner">
+      <p class="copy">© 2025 Mentoria Tech — Projeto de Avaliação. Feito com cuidado e boas práticas.</p>
+      <p class="small">Imagem de exemplo: Unsplash (fotos reais).</p>
+    </div>
+  </footer>
+
+  <script>
+    // JS mínimo para toggle do menu em telas pequenas (sem depender de libs)
+    const toggle = document.querySelector('.nav-toggle');
+    const navList = document.getElementById('nav-list');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        navList.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>
+
+
+---
+
+styles.css
+
+/* Reset simples */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color: #222; }
+
+/* Layout container */
+.container { width: 90%; max-width: 1100px; margin: 0 auto; }
+
+/* HEADER / TOPO */
+.site-header {
+  background: linear-gradient(90deg, #0f172a 0%, #0b6bff 100%);
+  color: #fff;
+  padding: 22px 0;
+}
+.header-inner { display:flex; gap: 16px; align-items:center; justify-content:space-between; }
+.site-title { font-size: 1.6rem; line-height:1; }
+
+/* NAV */
+.main-nav { position: relative; }
+.nav-list {
+  list-style:none;
+  display:flex;
+  gap: 12px;
+}
+.nav-list a {
+  color: #fff;
+  text-decoration:none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background .15s;
+}
+.nav-list a:hover { background: rgba(255,255,255,0.08); }
+
+/* Toggle button (mobile) */
+.nav-toggle {
+  display:none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+/* MAIN GRID */
+.main-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 28px;
+  margin: 28px auto;
+  align-items:start;
+}
+
+/* ASIDE */
+.sidebar {
+  background:#fff;
+  border-radius:12px;
+  padding:16px;
+  box-shadow: 0 6px 20px rgba(11,15,26,0.06);
+}
+.sidebar h2 { margin-bottom:6px; font-size:1.1rem; }
+.aside-sub { margin-bottom:12px; color:#444; }
+.thumbs { display:flex; flex-direction:column; gap:12px; }
+.thumbs figure { margin:0; }
+.thumbs img { width:100%; height:130px; object-fit:cover; border-radius:8px; display:block; }
+
+/* CONTENT / ARTICLE */
+.content-title { font-size:1.3rem; margin-bottom:6px; }
+.content-sub { color:#444; margin-bottom:14px; }
+
+.article-card {
+  background:#fff;
+  border-radius:12px;
+  padding:18px;
+  box-shadow: 0 8px 28px rgba(11,15,26,0.06);
+}
+
+.featured-image img {
+  width:100%;
+  height:auto;
+  border-radius:10px;
+  display:block;
+}
+.featured-image figcaption { font-size:0.85rem; color:#666; margin-top:8px; }
+
+/* character */
+.character {
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  margin:16px 0;
+}
+.avatar {
+  width:64px;
+  height:64px;
+  object-fit:cover;
+  border-radius:50%;
+  flex-shrink:0;
+}
+.char-desc { color:#333; }
+
+/* article body */
+.article-body h4 { margin-top:8px; margin-bottom:8px; }
+.article-body p { color:#333; margin-bottom:10px; line-height:1.5; }
+.article-body ul { margin-left:18px; margin-bottom:10px; }
+
+/* RODAPÉ */
+.site-footer {
+  background:#0f172a;
+  color:#fff;
+  padding:18px 0;
+  margin-top:28px;
+}
+.footer-inner { display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap; }
+.copy { font-weight:600; }
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .main-grid { grid-template-columns: 1fr; }
+  .nav-list { display:none; flex-direction:column; background:transparent; position:absolute; right:0; top:40px; padding:8px; gap:6px; }
+  .nav-list.open { display:flex; background: rgba(255,255,255,0.06); border-radius:8px; padding:8px; }
+  .nav-toggle { display:inline-block; }
+  .header-inner { align-items:center; }
+}
+
+@media (max-width: 480px) {
+  .site-title { font-size:1.1rem; }
+  .avatar { width:56px; height:56px; }
+  .thumbs img { height:110px; }
+}
+
+
+---
+
+
+
+
