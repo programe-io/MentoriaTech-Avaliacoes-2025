@@ -1,0 +1,121 @@
+:root {
+      --bg:#f7f9fb;
+        --card:#ffffff;
+          --primary:#b30000;   /* vermelho moto */
+            --muted:#6b7280;
+              --radius:12px;
+                --container-width:1000px;
+                  font-family: "Inter", system-ui, Arial, sans-serif;
+                  }
+
+                  * { box-sizing:border-box; margin:0; padding:0; }
+                  html,body { background:var(--bg); color:#111827; }
+
+                  /* Containers */
+                  .container {
+                    max-width:var(--container-width);
+                      margin:0 auto;
+                        padding:1.25rem;
+                        }
+
+                        /* Cabeçalho */
+                        .site-header {
+                          background:linear-gradient(90deg, #b30000, #3b0000);
+                            color:#fff;
+                              padding:1.25rem 0;
+                                box-shadow:0 4px 12px rgba(0,0,0,0.2);
+                                }
+                                .header-inner {
+                                  display:flex;
+                                    justify-content:space-between;
+                                      align-items:center;
+                                        flex-wrap:wrap;
+                                        }
+                                        .site-header h1 { font-size:1.6rem; }
+                                        .tagline { font-size:0.9rem; opacity:0.9; }
+
+                                        .main-nav { list-style:none; display:flex; gap:0.75rem; }
+                                        .main-nav a {
+                                          color:#fff;
+                                            text-decoration:none;
+                                              font-weight:600;
+                                                padding:0.4rem 0.6rem;
+                                                  border-radius:8px;
+                                                  }
+                                                  .main-nav a:hover { background:rgba(255,255,255,0.15); }
+
+                                                  /* Cards e seções */
+                                                  .card {
+                                                    background:var(--card);
+                                                      border-radius:var(--radius);
+                                                        padding:1rem;
+                                                          margin:1rem 0;
+                                                            box-shadow:0 6px 18px rgba(8,24,40,0.08);
+                                                            }
+                                                            .card h2 { color:var(--primary); margin-bottom:0.5rem; }
+                                                            .card h3 { margin-top:0.6rem; }
+
+                                                            /* Imagens */
+                                                            .imagem-centro {
+                                                              text-align:center;
+                                                                margin:0.8rem 0;
+                                                                }
+                                                                .imagem-centro img {
+                                                                  max-width:100%;
+                                                                    height:auto;
+                                                                      border-radius:var(--radius);
+                                                                        box-shadow:0 4px 10px rgba(0,0,0,0.2);
+                                                                        }
+                                                                        .imagem-centro figcaption {
+                                                                          font-size:0.85rem;
+                                                                            color:var(--muted);
+                                                                              margin-top:0.3rem;
+                                                                              }
+
+                                                                              /* Tabela */
+                                                                              .schedule {
+                                                                                width:100%;
+                                                                                  border-collapse:collapse;
+                                                                                    margin-top:0.5rem;
+                                                                                    }
+                                                                                    .schedule th, .schedule td {
+                                                                                      border:1px solid #e6e9ef;
+                                                                                        padding:0.5rem;
+                                                                                        }
+                                                                                        .schedule thead th {
+                                                                                          background:#f1f5f9;
+                                                                                          }
+
+                                                                                          /* Formulário */
+                                                                                          .contact-form { display:grid; gap:0.6rem; margin-top:0.6rem; }
+                                                                                          .contact-form label { font-weight:600; color:var(--muted); }
+                                                                                          .contact-form input, select, textarea {
+                                                                                            padding:0.6rem;
+                                                                                              border:1px solid #e2e8f0;
+                                                                                                border-radius:8px;
+                                                                                                }
+                                                                                                .contact-form button {
+                                                                                                  padding:0.7rem;
+                                                                                                    background:var(--primary);
+                                                                                                      color:#fff;
+                                                                                                        border:none;
+                                                                                                          border-radius:10px;
+                                                                                                            font-weight:700;
+                                                                                                              cursor:pointer;
+                                                                                                              }
+                                                                                                              .contact-form button:hover { background:#c70000; }
+
+                                                                                                              /* Rodapé */
+                                                                                                              .site-footer {
+                                                                                                                text-align:center;
+                                                                                                                  padding:1rem;
+                                                                                                                    color:var(--muted);
+                                                                                                                      margin-top:1.25rem;
+                                                                                                                      }
+
+                                                                                                                      /* Responsivo */
+                                                                                                                      @media (min-width:900px){
+                                                                                                                        .historia { display:inline-block; width:65%; vertical-align:top; }
+                                                                                                                          .quick-facts { display:inline-block; width:30%; margin-left:3%; vertical-align:top; }
+                                                                                                                          }
+}
