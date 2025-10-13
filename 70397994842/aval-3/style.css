@@ -1,0 +1,135 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Chakra Petch', sans-serif;
+    background-color: #111;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background-color: #000;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: #e50914;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e50914;
+}
+
+/* SEÇÃO CHAMADA */
+.chamada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, #000, #111);
+    text-align: center;
+}
+
+.chamada h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #e50914;
+}
+
+.chamada p {
+    font-size: 20px;
+    color: #aaa;
+    margin-bottom: 40px;
+}
+
+.chamada iframe {
+    width: 100%;
+    max-width: 800px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+}
+
+/* SEÇÃO CATEGORIA */
+.categoria {
+    padding: 60px 40px;
+    background-color: #111;
+}
+
+.categoria h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+.categoria-videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.categoria-videos a {
+    display: block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.categoria-videos a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.categoria-videos img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .chamada h1 {
+        font-size: 36px;
+    }
+
+    .categoria-videos img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-end;
+    }
+}
