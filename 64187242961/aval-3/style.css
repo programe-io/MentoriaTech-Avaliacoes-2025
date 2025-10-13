@@ -1,0 +1,135 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte padrão */
+body {
+    font-family: 'Chakra Petch', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #1e1e1e;
+    border-bottom: 2px solid #f44336;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #f44336;
+    cursor: default;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f44336;
+}
+
+/* Seção chamada */
+.chamada {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 40px;
+    background: linear-gradient(135deg, #f44336 0%, #9c27b0 100%);
+    text-align: center;
+}
+
+.chamada-texto {
+    flex: 1 1 300px;
+}
+
+.chamada-texto h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.chamada-texto p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #eee;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Iframe do vídeo */
+.chamada iframe {
+    flex: 1 1 560px;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+
+/* Categoria */
+.categoria {
+    padding: 40px 20px;
+    background-color: #1e1e1e;
+}
+
+.categoria h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #f44336;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.categoria-videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.categoria-videos a {
+    flex: 1 1 160px;
+    max-width: 160px;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(244, 67, 54, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoria-videos a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(244, 67, 54, 1);
+}
+
+.categoria-videos img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
