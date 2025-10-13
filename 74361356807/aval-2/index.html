@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Meu Site</title>
+    <style>
+        
+        .collapsible {
+            cursor: pointer;
+            background-color: #444;
+            color: white;
+            padding: 10px;
+            margin-bottom: 5px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.1em;
+        }
+
+        .collapsible:hover {
+            background-color: #555;
+        }
+
+        .collapsible::after {
+            content: '\25BC';
+            float: right;
+            transition: transform 0.3s;
+        }
+
+        .collapsible.active::after {
+            transform: rotate(-180deg);
+        }
+
+        .collapsible-content {
+            display: none;
+            padding: 0 10px 10px 10px;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <h1>Final Fantasy VII Rebirth</h1>
+    </header>
+
+    <nav>
+        <a href="">Inicio</a>
+        <a href="">Pagina 2</a>
+        <a href="">Pagina 3</a>
+        <a href="">Pagina 4</a>
+    </nav>
+
+    <section id="row">
+
+     <aside>
+
+         
+         <button class="collapsible">Sobre o Jogo</button>
+         <div class="collapsible-content">
+             <p>Final Fantasy VII Rebirth é o segundo capítulo da trilogia de remakes de FFVII, lançado em 2024 (PS5) e 2025 (PC). A história continua Cloud e o grupo AVALANCHE enfrentando a Shinra e Sephiroth, com elementos de múltiplas realidades e personagens clássicos como Zack e Aerith.<br>
+             O jogo mistura combate em tempo real com estratégia de RPG, oferecendo exploração mais ampla, missões secundárias e gráficos impressionantes. Foi muito elogiado pela crítica, ganhou prêmios de Jogo do Ano e mantém a essência do original com melhorias significativas.<br>
+             Disponível para PS5 e PC, com versões para Switch 2 e Xbox Series X/S previstas para 2026</p>
+         </div>
+
+         
+         <button class="collapsible">História</button>
+         <div class="collapsible-content">
+             <p>A história de Final Fantasy VII Rebirth continua direto de FFVII Remake. Cloud e o grupo AVALANCHE deixam Midgar e seguem viajando pelo mundo para impedir que a Shinra continue explorando o Lifestream e para confrontar Sephiroth, que busca se fundir ao planeta para obter poder supremo.<br>
+             O enredo mistura eventos do jogo original com novos elementos e realidades alternativas, criando situações onde personagens como Cloud, Aerith e Zack interagem em batalhas que atravessam múltiplas linhas do tempo.</p>
+         </div>
+
+     </aside>
+
+     <main>
+
+         <article>
+
+            <h2>O Melhor Jogo do Estilo RPG já Feito?</h2>
+            <h3>...</h3>
+            <h5>Nicollas, 12 Out, 2025</h5>
+           <img src="https://imgs.search.brave.com/k-wyVkVsqyGDsCtXRTaS8Yzyxp5Sd5OGzuJQUr3Kd6g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9nYW1p/bmctY2RuLmNvbS9p/bWFnZXMvcHJvZHVj/dHMvMTAzNjUvNjE2/eDM1My9maW5hbC1m/YW50YXN5LXZpaS1y/ZWJpcnRoLXBjLXN0/ZWFtLWNvdmVyLmpw/Zz92PTE3NTAzMzY2/ODE" alt="Melhor Jogo do Estilo RPG">
+            <p>Final Fantasy VII Rebirth é uma verdadeira celebração da franquia e uma evolução impressionante do remake lançado anteriormente. Ele consegue fazer algo raro: respeitar profundamente o clássico de 1997, ao mesmo tempo em que reimagina o enredo, o mundo e os personagens com uma riqueza visual e emocional incrível.<br>
+               Logo de início, o que mais chama atenção é o escopo gigantesco do jogo. As áreas abertas são vastas, cheias de vida e com um nível de detalhe que impressiona — cidades, florestas, desertos e montanhas têm personalidade própria, e explorar tudo isso dá uma sensação real de aventura. As missões secundárias estão bem mais envolventes, com histórias que complementam a trama principal e desenvolvem melhor os personagens.<br>
+
+                O sistema de combate é outro ponto alto. Ele mantém o ritmo dinâmico do remake, mas adiciona novas mecânicas de sinergia entre os membros da equipe, o que deixa as batalhas ainda mais estratégicas e divertidas. Alternar entre Cloud, Tifa, Barret e os outros personagens continua sendo fluido e empolgante — cada um tem um estilo único, o que torna as lutas bem variadas.<br>
+
+Em termos de história, Rebirth aprofunda temas como destino, trauma e identidade de forma ainda mais emocional. A relação entre Cloud e Aerith, por exemplo, ganha camadas novas e diálogos que fazem o jogador se importar de verdade com o que vai acontecer. Além disso, as mudanças e surpresas no enredo mantêm até os fãs veteranos atentos, sem nunca perder o espírito do original.<br>
+
+Graficamente, é um espetáculo. As cutscenes, as expressões faciais e a trilha sonora (com novas versões de temas clássicos) criam uma imersão que poucas franquias conseguem igualar.<br>
+
+Em resumo, Final Fantasy VII Rebirth é uma obra ambiciosa e apaixonada, que combina nostalgia e inovação de forma quase perfeita. É uma experiência obrigatória tanto para quem é fã de longa data quanto para quem está conhecendo o universo de FF7 agora.</p>
+
+         </article>
+
+     </main>
+
+    </section>
+
+    <footer>
+        <p>CopyRight - Todos os Direitos Reservados - 2025</p>
+    </footer>
+
+    <script>
+        const coll = document.querySelectorAll(".collapsible");
+        coll.forEach(button => {
+            button.addEventListener("click", () => {
+                button.classList.toggle("active");
+                const content = button.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
