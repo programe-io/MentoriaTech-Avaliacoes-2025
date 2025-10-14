@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #FF6B6B, #FFD93D, #6BCB77, #4D96FF, #9D4EDD);
+    background-size: 400% 400%;
+    animation: rainbowShift 15s ease infinite;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Animação do gradiente */
+@keyframes rainbowShift {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, #ff3c8d, #ffdd00, #32cd32, #1e90ff, #8a2be2);
+    background-size: 200% 100%;
+    animation: rainbowShift 10s ease infinite;
+    padding: 12px 0;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 40px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Container centralizado e espaçado */
+.container {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    padding: 30px 35px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+header h1 {
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: #e91e63;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px rgba(233,30,99,0.6);
+}
+
+header p {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #555555;
+    font-style: italic;
+}
+
+/* Títulos secundários */
+h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #9c27b0;
+    margin-bottom: 22px;
+    border-bottom: 4px solid #e91e63;
+    padding-bottom: 8px;
+}
+
+/* Parágrafos */
+p {
+    font-size: 1.1rem;
+    color: #444444;
+    margin-bottom: 24px;
+    word-wrap: break-word;
+    word-break: break-word;
+    letter-spacing: 0.02em;
+}
+
+/* Links */
+a {
+    color: #e91e63;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #c2185b;
+    text-decoration: underline;
+}
+
+/* Bloco de citação */
+blockquote {
+    margin: 30px 0;
+    padding-left: 22px;
+    border-left: 5px solid #e91e63;
+    font-style: italic;
+    color: #777777;
+    background-color: #ffe4f1cc;
+    border-radius: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .container {
+        margin: 0 15px 30px;
+        padding: 20px 25px;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
