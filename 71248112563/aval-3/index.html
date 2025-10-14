@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Site de Comidas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #fff8f0;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .menu, .carrinho {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .item, .carrinho-item {
+      border: 1px solid #ddd;
+      padding: 10px;
+      width: 200px;
+      background-color: #fff;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #ff914d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff6b00;
+    }
+
+    .total {
+      text-align: center;
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+
+    .finalizar-btn {
+      display: block;
+      margin: 0 auto;
+      background-color: #4CAF50;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<header>
+  <img src="https://via.placeholder.com/100x100?text=Logo" alt="Logo do Site" />
+  <h1>🍔 Cardápio de Lanches</h1>
+  <nav>
+    <a href="#menu">Cardápio</a> |
+    <a href="#carrinho">Carrinho</a>
+  </nav>
+</header>
+
+<main>
+  <div class="menu" id="menu">
+    <!-- Itens do cardápio -->
+  </div>
+
+  <h2 style="text-align:center;">🛒 Carrinho</h2>
+  <div class="carrinho" id="carrinho">
+    <p>Seu carrinho está vazio.</p>
+  </div>
+
+  <div class="total" id="total"><p>Total: <span>R$ 0,00</span></p></div>
+
+  <button class="finalizar-btn" onclick="finalizarCompra()">Fazer Compra</button>
+</main>
+
+<script>
+  const lanches = [
+    { id: 1, nome: "Hambúrguer", preco: 18.90, imagem: "https://via.placeholder.com/200x150?text=Hambúrguer" },
+    { id: 2, nome: "Pizza", preco: 29.90, imagem: "https://via.placeholder.com/200x150?text=Pizza" },
+    { id: 3, nome: "Cachorro-Quente", preco: 12.50, imagem: "https://via.placeholder.com/200x150?text=Hot+Dog" },
+    { id: 4, nome: "Batata Frita", preco: 9.90, imagem: "https://via.placeholder.com/200x150?text=Batata+Frita" }
+  ];
+
+  const carrinho = [];
+
+  function carregarMenu() {
+    const menu = document.getElementById('menu');
+    lanches.forEach(lanche => {
+      const item = document.createElement('div');
+      item.className = 'item';
+      item.innerHTML = `
+        <img src="${lanche.imagem}" alt="${lanche.nome}" />
+        <h3>${lanche.nome}</h3>
+        <p>Preço: <span>R$ ${lanche.preco.toFixed(2)}</span></p>
+        <button onclick="adicionarAoCarrinho(${lanche.id})">Adicionar ao Carrinho</button>
+      `;
+      menu.appendChild(item);
+    });
+  }
+
+  function adicionarAoCarrinho(id) {
+    const lanche = lanches.find(l => l.id === id);
+    carrinho.push(lanche);
+    atualizarCarrinho();
+  }
+
+  function removerDoCarrinho(index) {
+    carrinho.splice(index, 1);
+    atualizarCarrinho();
+  }
+
+  function atualizarCarrinho() {
+    const carrinhoDiv = document.getElementById('carrinho');
+    carrinhoDiv.innerHTML = '';
+
+    if (carrinho.length === 0) {
+      carrinhoDiv.innerHTML = '<p>Seu carrinho está vazio.</p>';
+      document.getElementById('total').innerHTML = '<p>Total: <span>R$ 0,00</span></p>';
+      return;
+    }
+
+    let total = 0;
+
+    carrinho.forEach((item, index) => {
+      const div = document.createElement('div');
+      div.className = 'carrinho-item';
+      div.innerHTML = `
+        <h4>${item.nome}</h4>
+        <p>Preço: <span>R$ ${item.preco.toFixed(2)}</span></p>
+        <button onclick="removerDoCarrinho(${index})">Remover</button>
+      `;
+      carrinhoDiv.appendChild(div);
+      total += item.preco;
+    });
+
+    document.getElementById('total').innerHTML = `<p>Total: <span>R$ ${total.toFixed(2)}</span></p>`;
+  }
+
+  function finalizarCompra() {
+    if (carrinho.length === 0) {
+      alert("Seu carrinho está vazio!");
+      return;
+    }
+
+    const total = carrinho.reduce((sum, item) => sum + item.preco, 0);
+    alert(`Compra finalizada! Total: R$ ${total.toFixed(2)}`);
+    carrinho.length = 0;
+    atualizarCarrinho();
+  }
+
+  carregarMenu();
+</script>
+
+</body>
+</html>
