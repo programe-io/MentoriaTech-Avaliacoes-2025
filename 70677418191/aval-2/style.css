@@ -1,0 +1,131 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #ffb58356;
+  color: #333;
+}
+
+header {
+  background-color: #cf1f00;
+  color: white;
+  text-align: center;
+  padding: 25px 10px;
+}
+
+header h1 {
+  font-size: 2.2em;
+}
+
+header p {
+  font-size: 1.1em;
+  margin-top: 5px;
+}
+
+#row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  gap: 20px;
+}
+
+aside {
+  flex: 1 1 250px;
+  background-color: #ffb4838c;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+}
+
+.fakeimage {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+section {
+  flex: 3 1 600px;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #871400;
+}
+
+.cardapio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 220px;
+  background-color: #f6f6f6;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #8d000c;
+}
+
+.preco {
+  display: block;
+  margin-top: 8px;
+  font-weight: bold;
+  color: #8d000c;
+}
+
+footer {
+  background-color: #d8250de9;
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 30px;
+  font-size: 0.9em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #row {
+    flex-direction: column;
+  }
+
+  aside, section {
+    width: 100%;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
