@@ -1,0 +1,135 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f0f0f0; /* Fundo levemente cinza, se necessário */
+}
+
+/* 1. CABEÇALHO LARANJA */
+.cabecalho-principal {
+    background-color: #ff9900; /* Laranja forte */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid #e68a00; /* Borda um pouco mais escura */
+}
+
+.logo {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.slogan {
+    font-size: 1em;
+    font-style: italic;
+}
+
+/* 2. MENU DE NAVEGAÇÃO */
+.menu-navegacao {
+    background-color: #333; /* Fundo cinza escuro */
+    padding: 10px 0;
+}
+
+.menu-navegacao ul {
+    list-style: none; /* Remove bolinhas da lista */
+    display: flex; /* Alinha os itens lado a lado */
+    justify-content: center; /* Centraliza os itens */
+}
+
+.menu-navegacao li {
+    margin: 0 15px;
+}
+
+.menu-navegacao a {
+    text-decoration: none; /* Remove sublinhado */
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.menu-navegacao a:hover {
+    background-color: #555; /* Efeito hover */
+    border-radius: 4px;
+}
+
+/* 3. LAYOUT PRINCIPAL (SIDEBAR + POSTAGEM) */
+.container-conteudo {
+    display: flex; /* Habilita o layout de coluna/barra lateral */
+    width: 90%; /* Largura do conteúdo central */
+    margin: 20px auto; /* Centraliza o container */
+    background-color: white; /* Fundo branco para a área de conteúdo */
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* BARRA LATERAL (ASIDE) */
+.sidebar {
+    flex: 0 0 250px; /* Largura fixa de 250px para a sidebar */
+    padding: 20px;
+    background-color: #eee; /* Fundo cinza claro para a sidebar */
+    border-right: 1px solid #ddd;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.bloco-info {
+    margin-bottom: 20px;
+}
+
+/* ÁREA DA POSTAGEM */
+.postagem-principal {
+    flex-grow: 1; /* Ocupa o restante do espaço */
+    padding: 20px;
+}
+
+.postagem-principal h2 {
+    font-size: 2.2em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.data-postagem {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* PLACEHOLDERS DE IMAGEM */
+.imagem-placeholder {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-weight: bold;
+    border: 1px solid #999;
+    margin-top: 5px;
+}
+
+.imagem-postagem .imagem-placeholder {
+    width: 200px; /* Imagem maior no corpo da postagem */
+    height: 150px;
+    float: left; /* Alinha a imagem à esquerda do texto */
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.postagem-principal p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
