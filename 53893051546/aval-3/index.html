@@ -1,84 +1,81 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <title>Half-Life - Site com Div, Imagens e Span</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Social Feed</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
-<body>
-  <header>
-    <div>
-      <h1><span>Half-Life</span></h1>
+
+<body class="bg-gradient-to-b from-blue-900 to-blue-950 min-h-screen text-white">
+
+  <header class="shadow-md p-5 flex items-center">
+    <div class="flex-1 uppercase font-bold text-center md:text-left">
+      LOGO
     </div>
-    <nav>
-      <ul>
-        <li><a href="#sobre"><span>Sobre</span></a></li>
-        <li><a href="#personagens"><span>Personagens</span></a></li>
-        <li><a href="#armas"><span>Armas</span></a></li>
-        <li><a href="#curiosidades"><span>Curiosidades</span></a></li>
-      </ul>
+    <nav class="font-bold gap-6 hidden md:flex">
+      <a href="#" class="hover:underline">Inicio</a>
+      <a href="#" class="hover:underline">Amigos</a>
+      <a href="#" class="hover:underline">Perfil</a>
     </nav>
   </header>
 
-  <main>
-    <div id="sobre">
-      <h2><span>Sobre Half-Life</span></h2>
-      <div>
-        <p>
-          <span>Half-Life</span> é um jogo de tiro em primeira pessoa desenvolvido pela <span>Valve</span>. Lançado em <span>1998</span>, revolucionou o gênero com sua narrativa integrada à jogabilidade.
+  <main class="py-6 px-4 flex flex-col md:flex-row md:flex-wrap md:justify-start gap-6 items-center">
+
+    <!-- POST CARD -->
+    <div class="bg-gray-800 py-4 rounded-lg shadow-md max-w-xs w-full md:w-auto">
+      <div class="flex items-center gap-3 px-4 pb-4">
+        <img class="h-12 w-12 rounded-full border-2 border-blue-500" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZyB8oC-MFNThJXn5HuQUHzwCBF7hM2kWNkA&s" alt="perfil" />
+        <h2 class="text-2xl">FroJho</h2>
+      </div>
+      <img class="w-full" src="https://marketplace.canva.com/EAFsxtB6cxM/2/0/1600w/canva-blue-night-sky-cute-whale-desktop-wallpaper-Z3o7FZeI-Ms.jpg" alt="post imagem" />
+      <div class="pt-4 px-4">
+        <p class="text-sm text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod beatae quas nihil sed fugit voluptatibus repellat delectus ut tempora debitis est dolorum deserunt.
         </p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Half-Life_cover_art.jpg/300px-Half-Life_cover_art.jpg" alt="Capa do jogo Half-Life" width="300" />
+        <span class="text-xs text-gray-300 text-right block mt-4">
+          há 10 minutos
+        </span>
       </div>
     </div>
 
-    <div id="personagens">
-      <h2><span>Personagens Principais</span></h2>
-      <div>
-        <div>
-          <h3><span>Gordon Freeman</span></h3>
-          <img src="https://upload.wikimedia.org/wikipedia/en/3/35/Gordon_Freeman.png" alt="Gordon Freeman" width="200" />
-          <p>O protagonista silencioso e físico teórico que enfrenta alienígenas e soldados.</p>
-        </div>
-        <div>
-          <h3><span>Alyx Vance</span></h3>
-          <img src="https://upload.wikimedia.org/wikipedia/en/2/23/Alyx_Vance_HL2.png" alt="Alyx Vance" width="200" />
-          <p>Aliada fundamental, especialista em tecnologia e combatente contra a invasão alienígena.</p>
-        </div>
+    <!-- POST CARD -->
+    <div class="bg-gray-800 py-4 rounded-lg shadow-md max-w-xs w-full md:w-auto">
+      <div class="flex items-center gap-3 px-4 pb-4">
+        <img class="h-12 w-12 rounded-full border-2 border-blue-500" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZyB8oC-MFNThJXn5HuQUHzwCBF7hM2kWNkA&s" alt="perfil" />
+        <h2 class="text-2xl">FroJho</h2>
+      </div>
+      <img class="w-full" src="https://cdn.wallpapersafari.com/12/73/BcG7wj.jpg" alt="post imagem" />
+      <div class="pt-4 px-4">
+        <p class="text-sm text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod beatae quas nihil sed fugit voluptatibus repellat delectus ut tempora debitis est dolorum deserunt.
+        </p>
+        <span class="text-xs text-gray-300 text-right block mt-4">
+          há 10 minutos
+        </span>
       </div>
     </div>
 
-    <div id="armas">
-      <h2><span>Armas Icônicas</span></h2>
-      <div>
-        <div>
-          <h3><span>Crowbar</span></h3>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Crowbar_-_Half-Life_2_Weapon.png/150px-Crowbar_-_Half-Life_2_Weapon.png" alt="Arma Crowbar" width="150" />
-          <p>Ferramenta icônica e arma corpo a corpo.</p>
-        </div>
-        <div>
-          <h3><span>MP5</span></h3>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Heckler_%26_Koch_MP5_K.png/150px-Heckler_%26_Koch_MP5_K.png" alt="MP5" width="150" />
-          <p>Submetralhadora eficiente para combates variados.</p>
-        </div>
+    <!-- POST CARD -->
+    <div class="bg-gray-800 py-4 rounded-lg shadow-md max-w-xs w-full md:w-auto">
+      <div class="flex items-center gap-3 px-4 pb-4">
+        <img class="h-12 w-12 rounded-full border-2 border-blue-500" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZyB8oC-MFNThJXn5HuQUHzwCBF7hM2kWNkA&s" alt="perfil" />
+        <h2 class="text-2xl">FroJho</h2>
+      </div>
+      <img class="w-full" src="https://images4.alphacoders.com/134/1348334.jpg" alt="post imagem" />
+      <div class="pt-4 px-4">
+        <p class="text-sm text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod beatae quas nihil sed fugit voluptatibus repellat delectus ut tempora debitis est dolorum deserunt.
+        </p>
+        <span class="text-xs text-gray-300 text-right block mt-4">
+          há 10 minutos
+        </span>
       </div>
     </div>
 
-    <div id="curiosidades">
-      <h2><span>Curiosidades</span></h2>
-      <div>
-        <ul>
-          <li><span>Half-Life</span> não possui cutscenes tradicionais, a história é contada enquanto você joga.</li>
-          <li><span>Gordon Freeman</span> nunca fala durante o jogo.</li>
-          <li>O jogo inspirou várias mods, como <span>Counter-Strike</span>.</li>
-        </ul>
-      </div>
-    </div>
   </main>
 
-  <footer>
-    <div>
-      <p>© 2025 <span>Half-Life Fan Site</span> - Feito por lazin</p>
-    </div>
-  </footer>
-<script src="script.js"></script></body>
+</body>
 </html>
-
