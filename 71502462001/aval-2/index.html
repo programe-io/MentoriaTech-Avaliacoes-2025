@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Poluição do Meio Ambiente</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #e0f7fa; /* azul claro suave */
+      color: #004d40; /* verde escuro */
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #00796b; /* verde médio */
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #004d40;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .content {
+      background: #b2dfdb; /* verde água claro */
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .gallery h2 {
+      color: #00796b;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .buttons button {
+      background-color: #004d40;
+      color: #e0f7fa;
+      border: none;
+      padding: 12px 20px;
+      margin: 0 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .buttons button:hover {
+      background-color: #00796b;
+    }
+
+    .image-display {
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-display img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: none; /* esconde todas por padrã /*          
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      max-height: 400px;
+      object-fit: cover;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: #004d40;
+      font-weight: bold;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <h1>Poluição do Meio Ambiente</h1>
+    <p>Entenda os impactos da poluição e veja exemplos reais.</p>
+  </header>
+
+  <main>
+    <section class="content">
+      <h2>O que é poluição?</h2>
+      <p>
+        Poluição é a degradação da qualidade ambiental causada pela introdução de substâncias ou energia no ar, solo ou água, que prejudica a saúde humana e dos seres vivos, além de causar danos aos ecossistemas. Essa degradação pode ser resultado de atividades humanas, como a indústria e o transporte, ou de fenômenos naturais, como erupções vulcânicas. 
+Principais características
+O que é: Degradação da qualidade ambiental resultante de atividades que prejudicam a saúde, a segurança e o bem-estar da população. 
+Agentes poluentes: Podem ser de natureza química (substâncias), biológica ou na forma de energia (luz, calor, radiação, som). 
+Causas:
+Humanas: Atividades industriais, veículos automotores, queimadas, descarte inadequado de lixo e uso de produtos químicos. 
+Naturais: Vulcões e ventos, que podem espalhar substâncias e energia. 
+Consequências: Criação de condições adversas às atividades sociais e econômicas, afeta a biota (seres vivos) e altera as condições estéticas e sanitárias do meio ambiente. 
+Exemplos de tipos de poluição
+Poluição do ar: Emissão de partículas e gases como monóxido de carbono, dióxido de enxofre e óxidos de nitrogênio na atmosfera. 
+Poluição da água: Contaminação de rios, lagos e oceanos com resíduos industriais, agrotóxicos e esgoto. 
+Poluição do solo: Acúmulo de lixo, resíduos tóxicos e desmatamento. 
+Poluição sonora: Excesso de ruídos, principalmente em áreas urbanas, causado por tráfego, obras e equipamentos eletrônicos. 
+Poluição visual: Excesso de informação visual em um ambiente, como outdoors, fios e lixo acumulado. 
+Poluição luminosa: Excesso de luz artificial durante a noite, que interfere nos ecossistemas e na observação do céu. 
+
+      </p>
+    </section>
+
+    <section class="gallery">
+      <h2>Imagens de Poluição</h2>
+      <div class="buttons">
+        <button onclick="showImage('poluicao1')">Lixo Urbano</button>
+        <button onclick="showImage('poluicao2')">Poluição Industrial</button>
+        <button onclick="showImage('poluicao3')">Poluição Marinha</button>
+      </div>
+      <div class="image-display">
+        <img id="poluicao1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoLY83rA6keaNPdbtNhIfDP_xTLtMrL9vt6w&s" alt="Lixo Urbano" />
+        <img id="poluicao2" src="https://etica-ambiental.com.br/wp-content/uploads/2019/07/2019-08-01-poluicao-industrial-1.jpg"Poluição Industrial" />
+        <img id="poluicao3" src="https://www.infoescola.com/wp-content/uploads/2017/09/poluicao-marinha-325737683.jpg" alt="Poluição Marinha" />
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Poluição do Meio Ambiente</p>
+  </footer>
+
+  <script>
+    function showImage(id) {
+      const images = document.querySelectorAll('.image-display img');
+      images.forEach(img => {
+        img.style.display = img.id === id ? 'block' : 'none';
+      });
+    }
+
+    showImage('poluicao1');
+  </script>
+</body>
+</html>
+<nav>
+    <span>
+        <a>
+            <aside>
+                <h3>
+                    <article>
