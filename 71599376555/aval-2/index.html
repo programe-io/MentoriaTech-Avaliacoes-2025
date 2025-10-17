@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Jogos Táticos</title>
+    <style>
+        body {
+            background: #25293c;
+            color: #f8f9fa;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 36px;
+            font-size: 2.5em;
+            font-weight: 800;
+            color: #e5eaf6;
+            letter-spacing: 1px;
+        }
+        nav {
+            background: #1d222e;
+            border-bottom: 2px solid #385088;
+            box-shadow: 0 2px 8px rgba(20,34,48,0.09);
+            padding: 0;
+            width: 100%;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav li {
+            margin: 0 24px;
+        }
+        nav a {
+            color: #ffce38;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #dbedf6;
+        }
+        header {
+            padding: 26px 0;
+            text-align: center;
+            background: linear-gradient(90deg, #1d222e 60%, #293d51 100%);
+            font-size: 2em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #354468;
+            width: 100%;
+        }
+        main {
+            max-width: 900px;
+            display: flex;
+            padding: 24px;
+            gap: 24px;
+            width: 100%;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+        .container {
+            flex: 3;
+        }
+        aside {
+            flex: 1;
+            background: #2f3a5a;
+            padding: 20px;
+            border-radius: 14px;
+            box-shadow: 0 6px 12px rgba(22,30,52,0.3);
+            color: #cfd8f2;
+        }
+        aside h3 {
+            margin-top: 0;
+            border-bottom: 2px solid #ffce38;
+            padding-bottom: 8px;
+            font-weight: 700;
+            font-size: 1.4em;
+            color: #ffce38;
+        }
+        aside ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        aside ul li {
+            margin: 10px 0;
+        }
+        aside ul li a {
+            color: #dbedf6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        aside ul li a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            color: #ffffff;
+            margin-bottom: 18px;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+        article.jogo {
+            background: #314168;
+            margin-bottom: 18px;
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 4px 20px rgba(30,40,60,0.14);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        article.jogo:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(52,85,155,0.28);
+        }
+        figure {
+            margin: 0 0 10px 0;
+            padding: 0;
+        }
+        figure img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+        }
+        figcaption {
+            text-align: center;
+            font-size: 0.9em;
+            color: #a2b3d1;
+            margin-top: 6px;
+        }
+        .descricao {
+            margin-top: 8px;
+            color: #dbedf6;
+            font-size: 1em;
+        }
+        .destaque {
+            color: #ffce38;
+            font-weight: bold;
+        }
+        .info {
+            font-size: 1.1em;
+            color: #b8d0e9;
+        }
+        footer {
+            background: #1b1f2e;
+            width: 100%;
+            text-align: center;
+            padding: 18px 0;
+            color: #7a89a1;
+            font-size: 0.9em;
+            border-top: 2px solid #293551;
+            margin-top: auto;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <h1>Portal dos Jogos Atusias</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Jogos</a></li>
+            <li><a href="#">Comunidade</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+    <header>Jogos Táticos de Elite</header>
+    <main>
+        <div class="container">
+            <p class="info">
+                Este portal apresenta os <span class="destaque">melhores jogos táticos</span> do cenário mundial,
+                selecionados especialmente para quem valoriza <span class="destaque">estratégia e realismo</span>.
+            </p>
+            <h2>Seleção dos principais jogos de estratégia e simulação com foco em realismo:</h2>
+
+            <article class="jogo" onclick="mostrarInfo('prbf2')">
+                <figure>
+                    <img src="prbf2.jpg" alt="Project Reality Battlefield 2" title="Project Reality Battlefield 2">
+                    <figcaption>Mapa de batalha icônico em PR:BF2</figcaption>
+                </figure>
+                <strong>Project Reality: Battlefield 2</strong>
+                <div class="descricao">
+                    Experimente combate realista, trabalho em equipe, táticas militares e mapas expansivos.
+                    Um clássico dos jogos <span class="destaque">atusias</span>.
+                </div>
+            </article>
+            <article class="jogo" onclick="mostrarInfo('arma2')">
+                <figure>
+                    <img src="arma2.jpg" alt="Arma 2 Operation Arrowhead" title="Arma 2 Operation Arrowhead">
+                    <figcaption>Realismo e estratégia avançada em Arma 2</figcaption>
+                </figure>
+                <strong>Arma 2: Operation Arrowhead</strong>
+                <div class="descricao">
+                    Simulação fiel de guerra moderna, comandos avançados e editor de missões.
+                    Ideal para quem busca <span class="destaque">autenticidade tática</span>.
+                </div>
+            </article>
+            <article class="jogo" onclick="mostrarInfo('insurgency')">
+                <figure>
+                    <img src="insurgency.jpg" alt="Insurgency gameplay" title="Insurgency Gameplay">
+                    <figcaption>Atmosfera intensa no combate urbano de Insurgency</figcaption>
+                </figure>
+                <strong>Insurgency</strong>
+                <div class="descricao">
+                    Jogo de tiro com foco em trabalho de equipe, mapas urbanos e grande atmosfera de
+                    <span class="destaque">tensão e cooperação</span>.
+                </div>
+            </article>
+            <p class="info">
+                Nossa seleção destaca títulos consagrados, mantendo sempre o foco em <span class="destaque">jogabilidade séria</span> e a experiência <span class="destaque">imersiva</span>.
+            </p>
+        </div>
+        <aside>
+            <h3>Destaques Recentes</h3>
+            <ul>
+                <li><a href="#">Novo mapa lançado em Project Reality</a></li>
+                <li><a href="#">Evento especial em Arma 2</a></li>
+                <li><a href="#">Atualização de balanceamento em Insurgency</a></li>
+                <li><a href="#">Guias e tutoriais para iniciantes</a></li>
+            </ul>
+        </aside>
+    </main>
+    <footer>
+        <p>© 2025 Portal Jogos Atusias – Todos os direitos reservados. Contato: contato@jogosatusias.com</p>
+    </footer>
+    <script>
+        function mostrarInfo(jogo) {
+            let info;
+            if (jogo === 'prbf2') {
+                info = "Project Reality Battlefield 2 é referência mundial em simulação tática, ideal para jogadores exigentes. Comunidade ativa e evolução constante.";
+            } else if (jogo === 'arma2') {
+                info = "Arma 2 revolucionou os jogos militares abertos, oferecendo realismo e liberdade sem igual.";
+            } else if (jogo === 'insurgency') {
+                info = "Insurgency é intenso e estratégico, perfeito para partidas rápidas sem perder profundidade.";
+            }
+            alert(info);
+        }
+    </script>
+<script src="script.js"></script></body>
+</html>
