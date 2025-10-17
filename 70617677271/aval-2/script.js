@@ -1,12 +1,6 @@
-// Exemplo de JS para a página Minecraft
+// Quando o botão for clicado, exibe uma curiosidade sobre o futsal
+document.getElementById("curiosidadeBtn").addEventListener("click", function () {
+    const texto = document.getElementById("curiosidadeTexto");
 
-// Função para rolar suavemente até a seção quando clicar no menu
-document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-    targetSection.scrollIntoView({ behavior: 'smooth' \});
-  \});
-\});
-$0
+    texto.textContent = "Você sabia? Ronaldinho Gaúcho, Neymar e Falcão começaram no futsal antes de brilhar no futebol!";
+});
