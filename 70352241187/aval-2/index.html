@@ -1,128 +1,73 @@
-<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>O Futuro da Inteligência Artificial</title>
-
-  <!-- Fonte futurista -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
+  <title>Meu Blog de Games</title>
   <link rel="stylesheet" href="style.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
-
 <body>
   <header>
-    <h1>O Futuro da Inteligência Artificial</h1>
+    <div class="hero">
+      <h1>Meu Blog de Games</h1>
+      <p>Notícias, resenhas e opinião — feito por Jonathan W.</p>
+    </div>
     <nav>
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#tendencias">Tendências</a></li>
-        <li><a href="#impactos">Impactos</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+      <a href="#">Início</a>
+      <a href="#">Colunas</a>
+      <a href="#">Galeria</a>
+      <a href="#">Contato</a>
     </nav>
-  </header>
-
-  <div class="layout">
-    <aside class="sidebar">
-      <h2>Sobre o Autor</h2>
-      <section class="profile">
-        <div class="photo">
-          <img src="https://i.imgur.com/9Y0Rybh.jpeg" alt="Foto do autor futurista" />
+  </header>  <div class="container">
+    <aside aria-labelledby="sobre">
+      <section class="widget" id="sobre">
+        <h3>Sobre</h3>
+        <div class="profile">
+          <div class="avatar" aria-hidden="true"></div>
+          <div>
+            <strong>Jonathan W.</strong>
+            <div class="meta">Gosto de jogos, mas não tenho tempo.</div>
+          </div>
         </div>
-      </section>
-      <section class="bio">
-        <h3>Minha Bio</h3>
-        <p>Sou pesquisador e entusiasta em tecnologias emergentes, focado em IA e inovação digital.</p>
-      </section>
+      </section><section class="widget" id="galeria">
+    <h3>Minha Galeria</h3>
+    <div class="gallery">
+      <div class="thumb" data-src="https://via.placeholder.com/800x450?text=Imagem+1">Imagem</div>
+      <div class="thumb" data-src="https://via.placeholder.com/800x450?text=Imagem+2">Imagem</div>
+      <div class="thumb" data-src="https://via.placeholder.com/800x450?text=Imagem+3">Imagem</div>
+    </div>
+  </section>
 
-      <section class="gallery">
-        <h3>Galeria Futurista</h3>
-        <div class="thumbs">
-          <img class="thumb" src="https://i.imgur.com/XfqIpSA.jpeg" alt="Robô Futurista 1">
-          <img class="thumb" src="https://i.imgur.com/pmIcOK8.jpeg" alt="Robô Futurista 2">
-          <img class="thumb" src="https://i.imgur.com/4v2lhcu.jpeg" alt="Robô Futurista 3">
-        </div>
-      </section>
-    </aside>
+  <section class="widget">
+    <h3>Tags</h3>
+    <div class="muted">#games #resenha #indie #top</div>
+  </section>
+</aside>
 
-    <main class="content">
-      <!-- INÍCIO -->
-      <article id="inicio" class="post">
-        <header>
-          <h2>O Futuro da Inteligência Artificial</h2>
-          <p><small>Publicado em 09 de Outubro de 2025</small></p>
-        </header>
+<main>
+  <article class="post" aria-labelledby="post1">
+    <h2 id="post1">Game News II</h2>
+    <div class="date">Paulo, 17 Outubro 2025</div>
+    <p class="excerpt">🎮 Curiosidade Rápida:
 
-        <div class="post-media">
-          <img src="https://cdn.pixabay.com/photo/2023/02/02/20/12/artificial-intelligence-7766576_1280.jpg" alt="IA Futurista">
-        </div>
+O som do tiro da arma em Doom (1993) foi gravado de uma tampa de micro-ondas batendo!</p>
+    <a class="btn" id="relatorio-btn">Baixar relatório</a>
+    <div id="relatorio" class="hidden">
+      <p class="muted">Relatório oculto: informações extra sobre a análise do jogo.</p>
+    </div>
+  </article>
 
-        <p>
-          A Inteligência Artificial está moldando o futuro de todos os setores — da medicina à educação,
-          passando pela segurança e até pela arte. Com o avanço de modelos cada vez mais inteligentes,
-          a automação e a criatividade humana estão começando a se unir de formas nunca vistas antes.
-        </p>
-        <p>
-          Especialistas acreditam que, nas próximas décadas, veremos a IA se tornar uma parceira essencial
-          na tomada de decisões, desenvolvimento científico e criação de soluções sustentáveis.
-        </p>
+  <article class="post" aria-labelledby="post2">
+    <h2 id="post2">Black Myth: Wukong</h2>
+    <div class="date">Paulo, 17 Outubro 2025</div>
+    <p class="excerpt">Texto resumido...🎮 Novidades do Mundo Gamer
+Fique por dentro das últimas notícias, lançamentos e tendências dos videogames. Dicas, análises e curiosidades sobre seus jogos favoritos para deixar sua experiência ainda mais divertida e completa.</p>
+  </article>
 
-        <button id="downloadReport" class="btn-futuristic">Baixar Relatório</button>
+  <footer class="site-footer">© Paulo — Todos os direitos reservados. - 2024</footer>
+</main>
 
-        <div id="resumo" class="resumo">
-          <h3>Resumo do Relatório</h3>
-          <p id="resumoTexto"></p>
-        </div>
-      </article>
-
-      <!-- TENDÊNCIAS -->
-      <article id="tendencias" class="post">
-        <header>
-          <h2>Tendências da IA</h2>
-        </header>
-        <p><strong>1. IA Generativa:</strong> Modelos capazes de criar textos, imagens, músicas e vídeos com qualidade quase humana.</p>
-        <p><strong>2. Automação Inteligente:</strong> Processos empresariais e industriais mais eficientes com menos intervenção humana.</p>
-        <p><strong>3. IA Explicável:</strong> Crescente foco em tornar decisões de IA compreensíveis e auditáveis.</p>
-        <p><strong>4. Integração com IoT:</strong> Casas, cidades e veículos inteligentes se conectando de forma autônoma.</p>
-        <p><strong>5. Ética e Regulamentação:</strong> Novas leis e normas para garantir que a IA seja segura e responsável.</p>
-      </article>
-
-      <!-- IMPACTOS -->
-      <article id="impactos" class="post">
-        <header>
-          <h2>Impactos da IA</h2>
-        </header>
-        <p><strong>1. Mercado de Trabalho:</strong> Criação de novas profissões e substituição de funções repetitivas.</p>
-        <p><strong>2. Saúde:</strong> Diagnósticos mais rápidos, precisos e personalizados.</p>
-        <p><strong>3. Educação:</strong> Aprendizado adaptativo, tutorias inteligentes e recursos personalizados.</p>
-        <p><strong>4. Sociedade:</strong> Melhorias na segurança, mobilidade e acessibilidade, mas também riscos de privacidade.</p>
-        <p><strong>5. Economia Global:</strong> Aumento da produtividade e inovação, mas exigindo regulação e ética rigorosa.</p>
-      </article>
-
-      <!-- CONTATO -->
-      <article id="contato" class="post">
-        <header>
-          <h2>Contato</h2>
-        </header>
-        <p>Para saber mais, entre em contato através do email: <strong>contato@futuroIA.com</strong></p>
-      </article>
-    </main>
-  </div>
-
-  <footer>
-    <p>© 2025 - Todos os Direitos Reservados | Desenvolvido por Programe.io</p>
-  </footer>
-
-  <div class="lightbox" id="lightbox">
-    <span class="lightbox-close" id="closeLightbox">&times;</span>
-    <img src="" alt="Imagem ampliada" id="lightboxImg">
-  </div>
-
-  <!-- JavaScript -->
-  <script src="script.js"></script>
-<script src="script.js"></script></body>
+  </div>  <div id="modal" class="modal" role="dialog" aria-hidden="true">
+    <img id="modal-img" alt="Imagem ampliada">
+  </div>  <script src="script.js"></script><script src="script.js"></script></body>
 </html>
