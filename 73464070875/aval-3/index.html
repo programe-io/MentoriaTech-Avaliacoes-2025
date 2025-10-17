@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MiniGram — Post</title>
+
+  <!-- Fonte (opcional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+</head>
+<body>
+
+  <header class="topbar" role="banner">
+    <div class="brand" aria-hidden="false">
+      <div class="logo" aria-hidden="true">MG</div>
+      <div class="site-name">MiniGram</div>
+    </div>
+
+    <!-- espaço para ações futuras (perfil, etc) -->
+    <nav aria-label="menu da aplicação" style="color:var(--muted);font-size:0.9rem">
+      feed
+    </nav>
+  </header>
+
+  <main role="main" style="width:100%;max-width:var(--max-width);">
+    <article class="card" aria-labelledby="post-user-name" >
+      <!-- header: avatar + name -->
+      <div class="post-header">
+        <!-- Avatar: substitua o src pela sua foto -->
+        <figure class="avatar" aria-hidden="false">
+          <img id="avatar-img" src="C:\Users\USER\Desktop\meu site 2\imagem1.jpg">
+        </figure>
+
+        <div class="poster-info">
+          <!-- Nome do usuário -->
+          <h2 id="post-user-name" class="poster-name">Mariana Costa</h2>
+          <div class="poster-meta">@marianacosta · 2h</div>
+        </div>
+      </div>
+
+      <!-- imagem da postagem (substitua o src pela foto da postagem) -->
+      <div class="post-image" role="img" aria-label="Imagem da postagem de Mariana Costa">
+        <img id="post-photo" src="C:\Users\USER\Desktop\meu site 2\imagem2.jpg">
+      </div>
+
+      <!-- ações: curtir -->
+      <div class="actions">
+        <button id="likeBtn" class="like-btn" aria-pressed="false" aria-label="Curtir postagem">
+          <span class="heart" aria-hidden="true">
+            <!-- Dois caminhos: outline + fill; o JS alterna a classe 'liked' no botão pai -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path class="heart-outline" d="M12.1 21.35l-1.1-1.05C5.14 15.24 2 12.39 2 8.5 2 6.02 4.02 4 6.5 4c1.74 0 3.41.81 4.5 2.09C12.09 4.81 13.76 4 15.5 4 17.98 4 20 6.02 20 8.5c0 3.89-3.14 6.74-8.99 11.8l-1.11 1.05z" fill="none" stroke="#222" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path class="heart-fill" d="M12.1 21.35l-1.1-1.05C5.14 15.24 2 12.39 2 8.5 2 6.02 4.02 4 6.5 4c1.74 0 3.41.81 4.5 2.09C12.09 4.81 13.76 4 15.5 4 17.98 4 20 6.02 20 8.5c0 3.89-3.14 6.74-8.99 11.8l-1.11 1.05z" fill="transparent"></path>
+            </svg>
+          </span>
+
+          <span id="likeCount" class="like-count" aria-live="polite">128</span>
+        </button>
+
+        <!-- espaço para outros botões (comentar, enviar) -->
+        <div style="flex:1"></div>
+      </div>
+
+      <!-- legenda -->
+      <div class="caption">
+        <span class="username">marianacosta</span>
+        <a><p>Passeando pelo fim de tarde ☀️🌿 — a natureza sempre dá aquela recarregada. #praia #fotografia</p></a>
+      </div>
+
+      <div class="post-footer">
+        Ver tradução · 20 comentários
+      </div>
+    </article>
+  </main>
+
+<script src="script.js"></script>
+
+<script src="script.js"></script></body>
+</html>

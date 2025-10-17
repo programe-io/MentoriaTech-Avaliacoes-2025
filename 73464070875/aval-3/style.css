@@ -1,0 +1,186 @@
+    :root{
+      --bg:#fafafa;
+      --card:#ffffff;
+      --muted:#8a8a8a;
+      --accent:#ef476f; /* cor do like */
+      --shadow: 0 6px 18px rgba(29,31,33,0.08);
+      --radius:12px;
+      --max-width:560px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #f7f7f9 0%, var(--bg) 100%);
+      color:#111;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:24px;
+    }
+
+    /* Top bar */
+    .topbar{
+      width:100%;
+      max-width:var(--max-width);
+      background:transparent;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo {
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      background:linear-gradient(135deg,#6c5ce7,#00b894);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      box-shadow: var(--shadow);
+      flex-shrink:0;
+    }
+    .site-name{
+      font-weight:600;
+      letter-spacing:0.2px;
+      font-size:1.05rem;
+    }
+
+    /* Post card */
+    .card{
+      width:100%;
+      max-width:var(--max-width);
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .post-header{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:14px 16px;
+    }
+
+    .avatar{
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      flex-shrink:0;
+      overflow:hidden;
+      display:inline-block;
+      border:2px solid #fff;
+      box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .poster-info{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      min-width:0;
+    }
+    .poster-name{
+      font-weight:600;
+      font-size:0.98rem;
+      margin:0;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .poster-meta{
+      margin-top:3px;
+      font-size:0.82rem;
+      color:var(--muted);
+    }
+
+    /* Post image */
+    .post-image{
+      width:100%;
+      background:#eee;
+      display:block;
+    }
+    .post-image img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    /* Actions + caption */
+    .actions{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:12px 14px;
+    }
+    .like-btn{
+      background:none;
+      border:0;
+      padding:8px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      cursor:pointer;
+      border-radius:8px;
+      transition:transform .12s ease;
+    }
+    .like-btn:active{transform:scale(.98)}
+    .like-count{
+      font-weight:600;
+      font-size:0.95rem;
+    }
+
+    /* heart icon styles */
+    .heart{
+      width:28px;
+      height:28px;
+      display:inline-block;
+      position:relative;
+    }
+    /* empty heart (outline) */
+    .heart svg{
+      width:100%;
+      height:100%;
+      display:block;
+      transition: transform .25s cubic-bezier(.2,.9,.3,1), fill .2s;
+    }
+
+    /* caption */
+    .caption{
+      padding:0 14px 18px 14px;
+      color:#111;
+      line-height:1.45;
+      font-size:0.95rem;
+    }
+    .caption .username{
+      font-weight:700;
+      margin-right:8px;
+    }
+
+    /* small meta/footer */
+    .post-footer{
+      padding:10px 14px 18px;
+      color:var(--muted);
+      font-size:0.85rem;
+    }
+
+    /* liked state */
+    .liked svg { transform:scale(1.06); }
+    .liked .heart-fill { fill: var(--accent); stroke: none; }
+
+    /* Responsive */
+    @media (max-width:420px){
+      body{padding:12px}
+      .avatar{width:48px;height:48px}
+      .logo{width:36px;height:36px}
+    }
