@@ -1,0 +1,128 @@
+/* General Reset/Setup */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light gray background */
+}
+
+/* Header/Banner Styling */
+header {
+    background-color: #ff9900; /* Orange color */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 5px 0 0;
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #333; /* Dark background for nav */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Container for Layout */
+#container {
+    display: flex; /* Enables the two-column layout */
+    max-width: 1200px; /* Optional: limit width */
+    margin: 20px auto; /* Center the container */
+    padding: 0 20px;
+}
+
+/* Sidebar Styling (aside) */
+aside {
+    flex: 1; /* Takes up 1 part of the available space */
+    padding: 20px;
+    background-color: #ccc; /* Light gray sidebar color */
+    margin-right: 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Main Content Styling (main) */
+main {
+    flex: 3; /* Takes up 3 parts, making it wider than the sidebar */
+    padding: 20px;
+    background-color: white; /* White background for the main area */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Article/Post Styling */
+article {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+article h2 {
+    color: #333;
+    margin-top: 0;
+}
+
+article h5 {
+    color: #666;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+/* Fake Image Boxes Styling */
+.fakeImage {
+    background-color: #888; /* Gray background for image placeholders */
+    color: white;
+    text-align: center;
+    line-height: 50px; /* Vertically center the text */
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* Specific styling for the main post image */
+main .fakeImage {
+    height: 150px; /* Taller image in the main post */
+    line-height: 150px;
+    margin-bottom: 15px;
+}
+
+/* Footer Styling (optional) */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Media Query for smaller screens (makes it stack vertically) */
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+    aside {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
