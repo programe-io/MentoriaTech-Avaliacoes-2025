@@ -1,1 +1,16 @@
-* script.js */ document.querySelectorAll('.thumb').forEach(t=>{t.addEventListener('click',()=>{const src=t.dataset.src;const modal=document.getElementById('modal');const img=document.getElementById('modal-img');img.src=src;modal.style.display='flex';modal.setAttribute('aria-hidden','false');});}); document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal'||e.target.id==='modal-img'){e.currentTarget.style.display='none';e.currentTarget.setAttribute('aria-hidden','true');}}); const relatorioBtn=document.getElementById('relatorio-btn');if(relatorioBtn){relatorioBtn.addEventListener('click',e=>{e.preventDefault();const rel=document.getElementById('relatorio');rel.classList.toggle('hidden');if(!rel.classList.contains('hidden')){rel.scrollIntoView({behavior:'smooth',block:'center'});}});
+// Modal da galeria
+const thumbs = document.querySelectorAll('.thumb');
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modal-img');
+
+thumbs.forEach(thumb => {
+  thumb.addEventListener('click', () => {
+    modal.style.display = 'flex';
+    modalImg.src = thumb.dataset.src;
+  });
+});
+
+modal.addEventListener('click', () => {
+  modal.style.display = 'none';
+  modalImg.src = '';
+});
