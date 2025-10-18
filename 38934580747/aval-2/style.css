@@ -1,264 +1,144 @@
 :root {
-      --cor-acento: #e10600; /* vermelho de corrida */
-        --texto: #111;
-          --bg: #ffffff;
-            --bg-suave: #f3f4f6;
-              --borda: #d1d5db;
-                --rodape-bg: #0a0a0a;
-                  --rodape-texto: #f5f5f5;
+      --cor-acento:#e50914;
+        --texto:#111;
+          --bg:#ffffff;
+            --bg-suave:#f4f4f4;
+              --borda:#ddd;
+                --rodape-bg:#111;
+                  --rodape-texto:#f1f1f1;
                   }
 
-                  /* Tema escuro */
                   html.escuro {
-                    --texto: #f5f5f5;
-                      --bg: #0d1117;
-                        --bg-suave: #161b22;
-                          --borda: #30363d;
-                            --rodape-bg: #000;
-                              --rodape-texto: #ccc;
+                    --texto:#f4f4f4;
+                      --bg:#0b0b0b;
+                        --bg-suave:#1a1a1a;
+                          --borda:#333;
+                            --rodape-bg:#000;
+                              --rodape-texto:#ccc;
                               }
 
-                              /* --------------------- */
-                              /* ESTILOS GERAIS        */
-                              /* --------------------- */
-                              * { box-sizing: border-box; }
+                              * { box-sizing:border-box; }
 
                               body {
-                                margin: 0;
-                                  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-                                    background: var(--bg);
-                                      color: var(--texto);
-                                        scroll-behavior: smooth;
-                                        }
+                                margin:0;
+                                  font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+                                    color:var(--texto);
+                                      background:var(--bg);
+                                      }
 
-                                        /* --------------------- */
-                                        /* CABEÇALHO             */
-                                        /* --------------------- */
-                                        header {
-                                          position: sticky;
-                                            top: 0;
-                                              z-index: 10;
-                                                background: linear-gradient(180deg, var(--bg-suave), var(--bg));
-                                                  border-bottom: 2px solid var(--cor-acento);
-                                                    backdrop-filter: saturate(1.2) blur(6px);
-                                                      box-shadow: 0 2px 8px rgba(0,0,0,.08);
-                                                      }
+                                      header {
+                                        position:sticky; top:0; z-index:10;
+                                          background:linear-gradient(0deg, var(--bg), var(--bg-suave));
+                                            border-bottom:1px solid var(--borda);
+                                              backdrop-filter:saturate(1.2) blur(6px);
+                                              }
 
-                                                      .limite {
-                                                        max-width: 1100px;
-                                                          margin: auto;
-                                                            padding: 12px 16px;
-                                                            }
+                                              .limite { max-width:1100px; margin:auto; padding:12px 16px; }
 
-                                                            .topo {
-                                                              display: flex;
-                                                                gap: 16px;
-                                                                  align-items: center;
-                                                                    justify-content: space-between;
-                                                                      flex-wrap: wrap;
+                                              .topo {
+                                                display:flex; gap:16px; align-items:center; justify-content:space-between;
+                                                }
+
+                                                h1 {
+                                                  margin:6px 0 0;
+                                                    font-size:clamp(22px, 4vw, 32px);
+                                                      color:var(--cor-acento);
+                                                        letter-spacing:.3px;
+                                                          font-weight:700;
+                                                          }
+
+                                                          .sub { margin:0; opacity:.8; font-size:.95rem; }
+
+                                                          nav ul {
+                                                            display:flex; gap:10px; list-style:none;
+                                                              padding:8px 0 0; margin:8px 0 0; flex-wrap:wrap;
+                                                              }
+
+                                                              nav a {
+                                                                display:inline-block; padding:8px 12px;
+                                                                  border:1px solid var(--borda);
+                                                                    text-decoration:none; color:inherit;
+                                                                      border-radius:10px; background:var(--bg);
                                                                       }
 
-                                                                      h1 {
-                                                                        margin: 6px 0 0 0;
-                                                                          font-size: clamp(22px, 4vw, 32px);
-                                                                            color: var(--cor-acento);
-                                                                              text-transform: uppercase;
-                                                                                letter-spacing: 0.5px;
-                                                                                }
+                                                                      nav a:hover { border-color:var(--cor-acento); }
 
-                                                                                .sub {
-                                                                                  margin: 0;
-                                                                                    opacity: .8;
-                                                                                      font-size: .95rem;
-                                                                                      }
+                                                                      .util {
+                                                                        display:flex; gap:8px; flex-wrap:wrap; align-items:center;
+                                                                        }
 
-                                                                                      .util {
-                                                                                        display: flex;
-                                                                                          gap: 8px;
-                                                                                            flex-wrap: wrap;
-                                                                                              align-items: center;
-                                                                                              }
+                                                                        .btn {
+                                                                          border:1px solid var(--borda);
+                                                                            background:var(--bg);
+                                                                              padding:8px 12px;
+                                                                                border-radius:10px;
+                                                                                  cursor:pointer;
+                                                                                    transition:transform .02s ease;
+                                                                                    }
+                                                                                    .btn:active { transform:translateY(1px); }
 
-                                                                                              .btn {
-                                                                                                border: 1px solid var(--borda);
-                                                                                                  background: var(--bg);
-                                                                                                    padding: 8px 12px;
-                                                                                                      border-radius: 10px;
-                                                                                                        cursor: pointer;
-                                                                                                          transition: all 0.2s ease;
+                                                                                    main {
+                                                                                      display:grid;
+                                                                                        grid-template-columns:1fr 320px;
+                                                                                          gap:18px;
+                                                                                          }
+                                                                                          @media (max-width:960px) { main{grid-template-columns:1fr;} }
+
+                                                                                          .cartao {
+                                                                                            background:var(--bg);
+                                                                                              border:1px solid var(--borda);
+                                                                                                border-radius:14px;
+                                                                                                  padding:16px;
+                                                                                                    margin-bottom:14px;
+                                                                                                    }
+                                                                                                    .cartao img {
+                                                                                                      width:100%;
+                                                                                                        border-radius:12px;
+                                                                                                          margin-bottom:10px;
                                                                                                           }
 
-                                                                                                          .btn:hover {
-                                                                                                            background: var(--cor-acento);
-                                                                                                              color: #fff;
-                                                                                                              }
+                                                                                                          .cartao h2 { margin:0 0 4px; font-size:1.25rem; }
+                                                                                                          .meta { font-size:.9rem; opacity:.8; margin-bottom:8px; }
+                                                                                                          .tag {
+                                                                                                            display:inline-block;
+                                                                                                              font-size:.78rem;
+                                                                                                                padding:2px 8px;
+                                                                                                                  border-radius:999px;
+                                                                                                                    border:1px solid var(--borda);
+                                                                                                                      margin-right:6px;
+                                                                                                                      }
+                                                                                                                      .destaque { outline:2px solid var(--cor-acento); outline-offset:2px; }
 
-                                                                                                              .btn:active {
-                                                                                                                transform: translateY(1px);
-                                                                                                                }
+                                                                                                                      aside .bloco {
+                                                                                                                        background:var(--bg-suave);
+                                                                                                                          border:1px solid var(--borda);
+                                                                                                                            border-radius:14px;
+                                                                                                                              padding:14px;
+                                                                                                                                margin-bottom:14px;
+                                                                                                                                }
 
-                                                                                                                /* --------------------- */
-                                                                                                                /* NAVEGAÇÃO             */
-                                                                                                                /* --------------------- */
-                                                                                                                nav ul {
-                                                                                                                  display: flex;
-                                                                                                                    gap: 10px;
-                                                                                                                      list-style: none;
-                                                                                                                        padding: 8px 0 0;
-                                                                                                                          margin: 8px 0 0;
-                                                                                                                            flex-wrap: wrap;
-                                                                                                                            }
+                                                                                                                                aside h3 { margin:0 0 8px; }
 
-                                                                                                                            nav a {
-                                                                                                                              display: inline-block;
-                                                                                                                                padding: 8px 12px;
-                                                                                                                                  border: 1px solid var(--borda);
-                                                                                                                                    text-decoration: none;
-                                                                                                                                      color: inherit;
-                                                                                                                                        border-radius: 10px;
-                                                                                                                                          background: var(--bg);
-                                                                                                                                            transition: 0.2s;
-                                                                                                                                            }
+                                                                                                                                .ajuda p { margin:.4rem 0; }
 
-                                                                                                                                            nav a:hover {
-                                                                                                                                              border-color: var(--cor-acento);
-                                                                                                                                                background: var(--cor-acento);
-                                                                                                                                                  color: #fff;
+                                                                                                                                footer {
+                                                                                                                                  margin-top:24px;
+                                                                                                                                    background:var(--rodape-bg);
+                                                                                                                                      color:var(--rodape-texto);
+                                                                                                                                        padding:28px 16px;
+                                                                                                                                        }
+                                                                                                                                        .menu-inline {
+                                                                                                                                          display:flex; gap:10px; flex-wrap:wrap;
+                                                                                                                                          }
+                                                                                                                                          .menu-inline a {
+                                                                                                                                            color:var(--rodape-texto);
+                                                                                                                                              opacity:.85;
+                                                                                                                                                text-decoration:none;
+                                                                                                                                                }
+                                                                                                                                                .menu-inline a:hover {
+                                                                                                                                                  opacity:1; text-decoration:underline;
                                                                                                                                                   }
 
-                                                                                                                                                  /* --------------------- */
-                                                                                                                                                  /* CONTEÚDO PRINCIPAL    */
-                                                                                                                                                  /* --------------------- */
-                                                                                                                                                  main {
-                                                                                                                                                    display: grid;
-                                                                                                                                                      grid-template-columns: 1fr 320px;
-                                                                                                                                                        gap: 18px;
-                                                                                                                                                        }
-
-                                                                                                                                                        @media (max-width: 960px) {
-                                                                                                                                                          main { grid-template-columns: 1fr; }
-                                                                                                                                                          }
-
-                                                                                                                                                          /* --------------------- */
-                                                                                                                                                          /* CARTÕES DE ARTIGO     */
-                                                                                                                                                          /* --------------------- */
-                                                                                                                                                          .cartao {
-                                                                                                                                                            background: var(--bg-suave);
-                                                                                                                                                              border: 1px solid var(--borda);
-                                                                                                                                                                border-radius: 14px;
-                                                                                                                                                                  padding: 16px;
-                                                                                                                                                                    margin-bottom: 14px;
-                                                                                                                                                                      transition: transform .2s ease, box-shadow .2s ease;
-                                                                                                                                                                      }
-
-                                                                                                                                                                      .cartao:hover {
-                                                                                                                                                                        transform: translateY(-3px);
-                                                                                                                                                                          box-shadow: 0 4px 12px rgba(0,0,0,.12);
-                                                                                                                                                                          }
-
-                                                                                                                                                                          .cartao h2 {
-                                                                                                                                                                            margin: 0 0 4px;
-                                                                                                                                                                              font-size: 1.25rem;
-                                                                                                                                                                                color: var(--cor-acento);
-                                                                                                                                                                                }
-
-                                                                                                                                                                                .cartao img {
-                                                                                                                                                                                  width: 100%;
-                                                                                                                                                                                    border-radius: 12px;
-                                                                                                                                                                                      margin: 10px 0;
-                                                                                                                                                                                        transition: transform 0.3s ease;
-                                                                                                                                                                                        }
-
-                                                                                                                                                                                        .cartao img:hover {
-                                                                                                                                                                                          transform: scale(1.02);
-                                                                                                                                                                                          }
-
-                                                                                                                                                                                          .meta {
-                                                                                                                                                                                            font-size: .9rem;
-                                                                                                                                                                                              opacity: .8;
-                                                                                                                                                                                                margin-bottom: 8px;
-                                                                                                                                                                                                }
-
-                                                                                                                                                                                                .tag {
-                                                                                                                                                                                                  display: inline-block;
-                                                                                                                                                                                                    font-size: .78rem;
-                                                                                                                                                                                                      padding: 2px 8px;
-                                                                                                                                                                                                        border-radius: 999px;
-                                                                                                                                                                                                          border: 1px solid var(--borda);
-                                                                                                                                                                                                            background: var(--bg);
-                                                                                                                                                                                                              margin-right: 6px;
-                                                                                                                                                                                                              }
-
-                                                                                                                                                                                                              .destaque {
-                                                                                                                                                                                                                outline: 2px solid var(--cor-acento);
-                                                                                                                                                                                                                  outline-offset: 2px;
-                                                                                                                                                                                                                  }
-
-                                                                                                                                                                                                                  /* --------------------- */
-                                                                                                                                                                                                                  /* SIDEBAR / ASIDE       */
-                                                                                                                                                                                                                  /* --------------------- */
-                                                                                                                                                                                                                  aside .bloco {
-                                                                                                                                                                                                                    background: var(--bg-suave);
-                                                                                                                                                                                                                      border: 1px solid var(--borda);
-                                                                                                                                                                                                                        border-radius: 14px;
-                                                                                                                                                                                                                          padding: 14px;
-                                                                                                                                                                                                                            margin-bottom: 14px;
-                                                                                                                                                                                                                            }
-
-                                                                                                                                                                                                                            aside h3 {
-                                                                                                                                                                                                                              margin: 0 0 8px;
-                                                                                                                                                                                                                                color: var(--cor-acento);
-                                                                                                                                                                                                                                  text-transform: uppercase;
-                                                                                                                                                                                                                                    font-size: 1rem;
-                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                    .ajuda p { margin: .4rem 0; }
-
-                                                                                                                                                                                                                                    /* --------------------- */
-                                                                                                                                                                                                                                    /* RODAPÉ                */
-                                                                                                                                                                                                                                    /* --------------------- */
-                                                                                                                                                                                                                                    footer {
-                                                                                                                                                                                                                                      margin-top: 24px;
-                                                                                                                                                                                                                                        background: var(--rodape-bg);
-                                                                                                                                                                                                                                          color: var(--rodape-texto);
-                                                                                                                                                                                                                                            padding: 28px 16px;
-                                                                                                                                                                                                                                              text-align: center;
-                                                                                                                                                                                                                                                border-top: 3px solid var(--cor-acento);
-                                                                                                                                                                                                                                                }
-
-                                                                                                                                                                                                                                                .menu-inline {
-                                                                                                                                                                                                                                                  display: flex;
-                                                                                                                                                                                                                                                    gap: 10px;
-                                                                                                                                                                                                                                                      justify-content: center;
-                                                                                                                                                                                                                                                        flex-wrap: wrap;
-                                                                                                                                                                                                                                                        }
-
-                                                                                                                                                                                                                                                        .menu-inline a {
-                                                                                                                                                                                                                                                          color: var(--rodape-texto);
-                                                                                                                                                                                                                                                            opacity: .85;
-                                                                                                                                                                                                                                                              text-decoration: none;
-                                                                                                                                                                                                                                                              }
-
-                                                                                                                                                                                                                                                              .menu-inline a:hover {
-                                                                                                                                                                                                                                                                opacity: 1;
-                                                                                                                                                                                                                                                                  text-decoration: underline;
-                                                                                                                                                                                                                                                                  }
-
-                                                                                                                                                                                                                                                                  /* --------------------- */
-                                                                                                                                                                                                                                                                  /* ACESSIBILIDADE        */
-                                                                                                                                                                                                                                                                  /* --------------------- */
-                                                                                                                                                                                                                                                                  html.fonte-grande { font-size: 18px; }
-                                                                                                                                                                                                                                                                  html.fonte-gigante { font-size: 20px; }
-
-                                                                                                                                                                                                                                                                  /* --------------------- */
-                                                                                                                                                                                                                                                                  /* ANIMAÇÕES EXTRAS      */
-                                                                                                                                                                                                                                                                  /* --------------------- */
-                                                                                                                                                                                                                                                                  @keyframes fadeIn {
-                                                                                                                                                                                                                                                                    from { opacity: 0; transform: translateY(8px); }
-                                                                                                                                                                                                                                                                      to { opacity: 1; transform: translateY(0); }
-                                                                                                                                                                                                                                                                      }
-
-                                                                                                                                                                                                                                                                      .cartao, aside .bloco {
-                                                                                                                                                                                                                                                                        animation: fadeIn 0.4s ease forwards;
-                                                                                                                                                                                                                                                                        }
+                                                                                                                                                  html.fonte-grande { font-size:18px; }
+                                                                                                                                                  html.fonte-gigante { font-size:20px; }
 }
