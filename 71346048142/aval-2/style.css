@@ -1,0 +1,187 @@
+/* ViagemTop — style.css */
+
+/* Reset e base */
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg,#f0f4f8 0%, #ffffff 100%);
+  color:#2a3d4a;
+  line-height:1.5;
+}
+
+/* Header */
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 28px;
+  background: linear-gradient(90deg,#00a8cc,#007ea7);
+  color:white;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  position: sticky;
+  top:0;
+  z-index:50;
+}
+header h1 { font-size:1.8rem; }
+header h1 span { color:#ffdd00; }
+header nav { display:flex; gap:16px; }
+header nav a { color:white; text-decoration:none; font-weight:600; }
+.header-right { display:flex; gap:12px; align-items:center; }
+
+/* Cart button badge */
+.cart-btn {
+  background:#ffdd00;
+  color:#007ea7;
+  border-radius:8px;
+  padding:8px 12px;
+  cursor:pointer;
+  font-weight:700;
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.cart-count {
+  background:#e74c3c;
+  color:white;
+  font-size:0.8rem;
+  padding:2px 7px;
+  border-radius:50%;
+}
+
+/* Layout main */
+main {
+  max-width:1200px;
+  margin:28px auto;
+  padding:0 18px;
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:28px;
+}
+
+/* Posts grid */
+.posts {
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+  gap:18px;
+}
+
+/* Article / card */
+.animal {
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform .22s ease, box-shadow .22s ease;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+}
+.animal img { width:100%; height:160px; object-fit:cover; }
+.animal strong { margin:12px 14px 4px; font-size:1.05rem; color:#007ea7; }
+.animal p { margin:0 14px 14px; color:#3d5569; font-size:0.95rem; flex:1; }
+.animal:hover { transform: translateY(-6px); box-shadow:0 14px 30px rgba(0,0,0,0.12); }
+
+/* Aside */
+aside {
+  background:white;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  height:fit-content;
+}
+aside h3 { margin-bottom:12px; color:#007ea7; }
+aside ul { list-style:none; margin-bottom:14px; }
+aside ul li { margin-bottom:10px; color:#3d5569; }
+aside ul li a { color:#007ea7; text-decoration:none; }
+aside p { margin:10px 0; font-size:0.95rem; color:#3d5569; }
+
+/* Loja (aside) */
+.loja { display:flex; flex-direction:column; gap:10px; margin-top:12px; }
+.loja .produto {
+  display:flex;
+  gap:10px;
+  align-items:center;
+  background:#f3f8fb;
+  padding:8px;
+  border-radius:8px;
+}
+.loja .produto img { width:60px; height:60px; object-fit:cover; border-radius:6px; }
+.loja .produto p { margin:0; font-size:0.95rem; color:#007ea7; }
+.loja .produto button {
+  margin-left:auto;
+  background:#00a8cc;
+  color:white;
+  border:0;
+  padding:8px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* Footer */
+footer {
+  margin-top:36px;
+  background:#f0f4f8;
+  padding:18px;
+  text-align:center;
+  border-top:1px solid rgba(0,0,0,0.06);
+  color:#3d5569;
+}
+
+/* Cart Drawer */
+.cart-drawer {
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:360px;
+  max-width:92%;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 18px 40px rgba(0,0,0,0.25);
+  overflow:hidden;
+  transform: translateY(8px);
+  z-index:60;
+}
+.cart-drawer header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:12px 14px; background:#00a8cc; color:white;
+}
+.cart-items { max-height:320px; overflow:auto; padding:12px; display:flex; flex-direction:column; gap:10px; }
+.cart-item { display:flex; gap:10px; align-items:center; padding:8px; border-radius:8px; background:#f3f8fb; }
+.cart-item img { width:56px; height:56px; object-fit:cover; border-radius:6px; }
+.cart-item .meta p { margin:0; font-weight:600; color:#007ea7; }
+.cart-item .meta small { display:block; color:#3d5569; margin-top:4px; }
+.qty-controls { display:flex; gap:6px; align-items:center; }
+.qty-controls button { border:1px solid rgba(0,0,0,0.08); background:#fff; padding:6px 8px; border-radius:6px; cursor:pointer; }
+.cart-footer { padding:12px; border-top:1px solid rgba(0,0,0,0.06); display:flex; justify-content:space-between; align-items:center; gap:10px; }
+.checkout-btn { background:#ffdd00; color:#007ea7; border:0; padding:10px 12px; border-radius:8px; cursor:pointer; font-weight:700; }
+
+/* Modal */
+.modal {
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(10,10,10,0.55);
+  z-index:70;
+}
+.modal .card {
+  width: min(760px, 94%);
+  background: white;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 30px 70px rgba(0,0,0,0.45);
+}
+.modal .card .top { display:flex; gap:18px; }
+.modal .card img { width:320px; height:220px; object-fit:cover; display:block; }
+.modal .card .info { padding:18px; }
+.modal .card h3 { margin:0 0 8px; color:#007ea7; }
+.modal .card p { margin:0; color:#3d5569; }
+
+/* Responsive */
+@media (max-width:980px){
+  main { grid-template-columns:1fr; padding-bottom:40px; }
+  aside { order:2; margin-top:18px; }
+}
+.hidden { display:none !important; }
