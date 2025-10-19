@@ -1,0 +1,138 @@
+/* Configurações básicas para simular o corpo de um aplicativo */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Fundo leve */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza a tela do app */
+}
+
+/* O "dispositivo móvel" em si: definimos uma largura máxima e altura para simular a tela */
+#app-screen {
+    width: 100%;
+    max-width: 450px; /* Largura típica de um smartphone grande */
+    min-height: 80vh; /* Altura mínima para mostrar o conteúdo */
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER: Barra superior do app */
+header {
+    background-color: #3e7d56; /* Verde Esmeralda */
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+header h1 {
+    font-size: 1.4em;
+    margin: 0;
+}
+#app-logo {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+#nav-menu {
+    display: flex;
+    gap: 15px;
+}
+#nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+#nav-menu a:hover {
+    color: #d4af37; /* Dourado */
+}
+
+/* MAIN: Conteúdo que muda com a navegação */
+#main-content {
+    padding: 15px;
+    flex-grow: 1;
+    overflow-y: auto; /* Permite scroll no conteúdo principal */
+}
+
+/* ASIDE (Simulando uma barra de filtros que pode ser oculta) */
+#sidebar-filters {
+    padding: 15px;
+    background-color: #e8f5e9; /* Verde claro */
+    border-top: 1px solid #ccc;
+    display: none; /* Oculte por padrão, mostre em rotas específicas (ex: na home para filtros) */
+}
+#sidebar-filters h3 {
+    color: #3e7d56;
+    margin-top: 0;
+    font-size: 1.1em;
+}
+#sidebar-filters ul {
+    list-style: none;
+    padding: 0;
+}
+#sidebar-filters li a {
+    color: #4a235a;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+
+/* ESTILO DE REVIEW (ARTICLE) */
+.review-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+.review-card h3 {
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    margin: 0;
+    color: #4a235a;
+    font-size: 1.2em;
+}
+.review-card-body {
+    padding: 15px;
+}
+.review-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+.rating {
+    color: #ffc107; /* Cor de estrela amarela */
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+.router-link {
+    color: #3e7d56;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Rodapé (Simula barra inferior ou informação) */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #3e7d56; 
+    color: white;
+    width: 100%;
+    max-width: 450px;
+    font-size: 0.8em;
+}
