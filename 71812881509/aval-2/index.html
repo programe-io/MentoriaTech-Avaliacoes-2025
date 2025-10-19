@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog de Jogos — Aleff</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Fonte local: caso queira, troque por Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">GameBlog</a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#minecraft">Minecraft</a>
+        <a href="#dont-starve">Don't Starve Together</a>
+        <a href="#project-zomboid">Project Zomboid</a>
+      </nav>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+    </div>
+  </header>
+
+  <main class="container site-main">
+    <section class="hero">
+      <h1>Bem-vindo ao Blog de Jogos</h1>
+      <p>Reviews, dicas e conteúdo para Minecraft, Don't Starve Together e Project Zomboid.</p>
+    </section>
+
+    <div class="layout">
+      <section class="posts">
+        <!-- Post 1: Minecraft -->
+        <article id="minecraft" class="post card">
+          <img src="https://via.placeholder.com/900x350?text=Minecraft" alt="Screenshot de Minecraft" class="post-media" />
+          <div class="post-body">
+            <h2 class="post-title">Minecraft — Criatividade sem limites</h2>
+            <p class="post-meta">Publicado: 18 de outubro de 2025 • Categoria: Sandbox</p>
+            <p>Minecraft continua sendo a referência para construção, sobrevivência e mods criativos. Dicas rápidas: experimente comandos de redstone, explore biomas antigos e teste pacotes de textura para renovar a jogabilidade.</p>
+            <a class="btn" href="#" aria-label="Ler mais sobre Minecraft">Ler mais</a>
+          </div>
+        </article>
+
+        <!-- Post 2: Don't Starve Together -->
+        <article id="dont-starve" class="post card">
+          <img src="https://via.placeholder.com/900x350?text=Don't+Starve+Together" alt="Imagem de Don't Starve Together" class="post-media" />
+          <div class="post-body">
+            <h2 class="post-title">Don't Starve Together — Cooperação e loucura</h2>
+            <p class="post-meta">Publicado: 10 de setembro de 2025 • Categoria: Sobrevivência cooperativa</p>
+            <p>Don't Starve Together recompensa planejamento e comunicação. Foque em dividir tarefas, proteger-se de temporadas e fabricar ferramentas avançadas para sobreviver às noites mais perigosas.</p>
+            <a class="btn" href="#" aria-label="Ler mais sobre Don't Starve Together">Ler mais</a>
+          </div>
+        </article>
+
+        <!-- Post 3: Project Zomboid -->
+        <article id="project-zomboid" class="post card">
+          <img src="https://via.placeholder.com/900x350?text=Project+Zomboid" alt="Imagem de Project Zomboid" class="post-media" />
+          <div class="post-body">
+            <h2 class="post-title">Project Zomboid — Realismo brutal</h2>
+            <p class="post-meta">Publicado: 25 de agosto de 2025 • Categoria: Simulação / Sobrevivência</p>
+            <p>Project Zomboid é para quem quer simulação profunda: gerenciamento de fome, sono, ferimentos e base. Comece em cidades menos povoadas, estoque água e aprenda táticas de furtividade.</p>
+            <a class="btn" href="#" aria-label="Ler mais sobre Project Zomboid">Ler mais</a>
+          </div>
+        </article>
+      </section>
+
+      <aside class="sidebar">
+        <div class="widget card">
+          <h3>Sobre o blog</h3>
+          <p>Um cantinho com guias rápidos, análises e recomendações para jogadores que amam sobrevivência e construção.</p>
+        </div>
+
+        <div class="widget card">
+          <h3>Categorias</h3>
+          <ul class="categories">
+            <li><a href="#minecraft">Minecraft</a></li>
+            <li><a href="#dont-starve">Don't Starve Together</a></li>
+            <li><a href="#project-zomboid">Project Zomboid</a></li>
+          </ul>
+        </div>
+
+        <div class="widget card">
+          <h3>Tags populares</h3>
+          <div class="tags">
+            <a href="#">Survival</a>
+            <a href="#">Mods</a>
+            <a href="#">Multiplayer</a>
+            <a href="#">Construção</a>
+          </div>
+        </div>
+
+        <div class="widget card subscribe">
+          <h3>Assine</h3>
+          <form onsubmit="alert('Obrigado por assinar!'); return false;">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" placeholder="seu@email.com" required />
+            <button class="btn" type="submit">Assinar</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 GameBlog — Feito com ♥ para jogadores</p>
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <a href="#">Política de privacidade</a>
+        <a href="#">Contato</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Pequeno script para botão de menu em telas pequenas
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+    toggle?.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
