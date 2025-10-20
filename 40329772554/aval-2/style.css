@@ -1,0 +1,147 @@
+
+:root {
+  --magenta-claro: #99ccff;
+  --azul-claro: #99ccff; 
+  --verde-claro: #99ccff;
+  --amarelo-claro: #99ccff;
+  --vermelho-pitanga-claro: #121629;
+  --roxo-claro: #FAFAFA; 
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  background:#5923aa;
+  color: #121629;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: var(--roxo-claro);
+  color: #fffffe;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: 0 3px 8px rgba(94, 10, 10, 0.2);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background: var(--roxo-claro);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav a {
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: #555;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+  border-bottom: 4px solid transparent;
+}
+
+nav a:hover, nav a.active {
+  background: var(--magenta-claro);
+  color: white;
+  border-bottom: 4px solid var(--vermelho-pitanga-claro);
+  cursor: pointer;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  background: white;
+}
+
+/* Cores para cada área */
+#apps-sites {
+  border-left: 8px solid var(--azul-claro);
+}
+
+#inteligencia-artificial {
+  border-left: 8px solid var(--verde-claro);
+}
+
+#jogos-scratch {
+  border-left: 8px solid var(--amarelo-claro);
+}
+
+h2 {
+  color: var(--vermelho-pitanga-claro);
+}
+
+button {
+  background: var(--magenta-claro);
+  border: none;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background: var(--vermelho-pitanga-claro);
+}
+
+/* Interatividade simples */
+.color-button {
+  padding: 1rem;
+  margin-top: 0.8rem;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.3s, border-color 0.3s;
+  user-select: none;
+}
+
+.color-button:hover {
+  border-color: var(--vermelho-pitanga-claro);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--roxo-claro);
+  color: rgb(30, 0, 78);
+  margin-top: 8.1rem;
+  font-size: 0.9rem;
+}
+/* Fundo com imagem no header e nav */
+header, nav {
+  background-image: url('https://img.freepik.com/vetores-gratis/fundo-de-onda-de-particula-gradiente_23-2150521668.jpg?semt=ais_hybrid&w=740&q=80');
+  background-size: cover;         /* faz a imagem cobrir toda a área */
+  background-position: center;    /* centraliza a imagem */
+  background-repeat: no-repeat;   /* impede que repita */
+  color: white;                   /* melhora a leitura do texto */
+}
+
+/* Deixa o texto e botões mais visíveis sobre o fundo */
+header {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+nav a {
+  color: #fff;
+}
+
+nav a:hover, nav a.active {
+  background: rgba(255, 255, 255, 0.3);
+  border-bottom: 4px solid #fff;
+  color: #fff;
+}
