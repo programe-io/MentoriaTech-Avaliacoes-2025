@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoPeças Prime - Venda de Peças Variadas</title>
+    <!-- Carrega Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        /* Estilos personalizados para os painéis laterais */
+        .detail-panel {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        .detail-panel.open {
+            transform: translateX(0);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body class="min-h-screen">
+
+    <!-- MESSAGE BOX (Substitui alert/confirm) -->
+    <div id="message-box" class="fixed top-5 left-1/2 transform -translate-x-1/2 p-3 rounded-lg shadow-xl text-white z-[60] transition-opacity duration-300 hidden"></div>
+
+    <!-- CABEÇALHO (Header) -->
+    <header class="bg-gray-900 shadow-lg sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-indigo-500 tracking-wider">Auto<span class="text-white">Peças</span> Prime</h1>
+            <nav class="hidden sm:block">
+                <a href="#catalogo" class="text-white hover:text-indigo-400 px-3 py-2 rounded-md text-lg font-medium transition duration-150">Catálogo</a>
+                <a href="#" class="text-white hover:text-indigo-400 px-3 py-2 rounded-md text-lg font-medium transition duration-150">Contato</a>
+            </nav>
+            <div class="text-white text-2xl">
+                <!-- Ícone de carrinho e Contador - AGORA CLICÁVEL -->
+                <div class="relative">
+                    <svg onclick="openCartPanel()" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block cursor-pointer hover:text-indigo-400 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <!-- Contador de Itens no Carrinho -->
+                    <span id="cart-counter" class="absolute -top-1 -right-1 bg-red-600 text-white text-sm font-bold rounded-full h-6 w-6 flex items-center justify-center opacity-0 transition duration-300">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL E CATÁLOGO -->
+    <main id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-8 border-b-4 border-indigo-500 inline-block pb-1">Nosso Catálogo de Peças</h2>
+        <p class="text-gray-600 mb-10">Clique em qualquer peça para ver detalhes técnicos, prazos e formas de pagamento.</p>
+
+        <!-- GRID DE PRODUTOS -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Os cards dos produtos serão injetados aqui pelo JavaScript -->
+        </div>
+    </main>
+
+    <!-- PAINEL LATERAL DE DETALHES DO PRODUTO (Modal/Side Panel) -->
+    <div id="detail-panel" class="detail-panel fixed top-0 right-0 h-full w-full md:w-1/3 bg-white shadow-2xl z-50 overflow-y-auto p-6">
+        <button onclick="closeDetailPanel()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-900 p-2 rounded-full hover:bg-gray-100 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <div id="detail-content" class="mt-10">
+            <!-- Detalhes do produto serão injetados aqui -->
+            <h3 id="detail-name" class="text-3xl font-bold text-gray-800 mb-4">Nome da Peça</h3>
+            <img id="detail-image" src="" alt="Imagem da Peça" class="w-full h-48 object-cover rounded-lg mb-6 shadow-md">
+            
+            <p id="detail-description" class="text-gray-700 mb-6 border-b pb-4"></p>
+
+            <div class="space-y-4">
+                <div class="bg-indigo-50 p-4 rounded-lg shadow-sm">
+                    <p class="text-sm font-semibold text-indigo-700">Marca:</p>
+                    <p id="detail-brand" class="text-lg font-medium text-gray-900"></p>
+                </div>
+                <div class="bg-indigo-50 p-4 rounded-lg shadow-sm">
+                    <p class="text-sm font-semibold text-indigo-700">Tamanho/Especificação:</p>
+                    <p id="detail-size" class="text-lg font-medium text-gray-900"></p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg shadow-sm">
+                    <p class="text-sm font-semibold text-green-700">Disponibilidade e Entrega:</p>
+                    <p id="detail-delivery" class="text-lg font-bold text-green-900"></p>
+                </div>
+                <div class="bg-yellow-50 p-4 rounded-lg shadow-sm">
+                    <p class="text-sm font-semibold text-yellow-700">Preço e <span class="font-bold">Modo de Pagar</span>:</p>
+                    <p id="detail-price" class="text-xl font-extrabold text-gray-900 mb-2"></p>
+                    <p id="detail-payment" class="text-base text-gray-700"></p>
+                </div>
+            </div>
+
+            <button id="add-to-cart-btn" class="w-full mt-8 py-3 bg-indigo-600 text-white font-bold rounded-lg shadow-lg hover:bg-indigo-700 transition duration-150">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+    </div>
+
+    <!-- PAINEL LATERAL DO CARRINHO (Novo) -->
+    <div id="cart-panel" class="detail-panel fixed top-0 right-0 h-full w-full md:w-1/3 bg-white shadow-2xl z-50 overflow-y-auto p-6 flex flex-col justify-between">
+        <!-- Cabeçalho e Botão de Fechar -->
+        <div class="flex justify-between items-center border-b pb-2">
+            <h3 class="text-3xl font-bold text-gray-800">Seu Carrinho</h3>
+            <button onclick="closeCartPanel()" class="text-gray-500 hover:text-gray-900 p-2 rounded-full hover:bg-gray-100 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Itens do Carrinho -->
+        <div id="cart-items" class="space-y-4 my-6 flex-grow overflow-y-auto">
+            <!-- Itens do Carrinho serão injetados aqui -->
+        </div>
+        
+        <!-- Rodapé e Resumo -->
+        <div id="cart-summary" class="mt-auto pt-4 border-t-2 border-indigo-200">
+            <p id="empty-cart-message" class="text-center text-gray-500 mb-4 hidden">Seu carrinho está vazio.</p>
+            
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xl font-semibold text-gray-700">Total:</span>
+                <span id="cart-total" class="text-3xl font-extrabold text-indigo-600">R$ 0,00</span>
+            </div>
+            <!-- NOVO: Chama o modal de checkout -->
+            <button onclick="openCheckoutModal()" class="w-full py-3 bg-green-600 text-white font-bold rounded-lg shadow-lg hover:bg-green-700 transition duration-150">
+                Finalizar Compra
+            </button>
+            <button onclick="clearCart()" class="w-full mt-2 py-2 text-red-600 font-medium rounded-lg hover:bg-red-50 transition duration-150">
+                Esvaziar Carrinho
+            </button>
+        </div>
+    </div>
+
+    <!-- NOVO MODAL DE FINALIZAÇÃO DE COMPRA (Checkout) -->
+    <div id="checkout-modal" class="fixed inset-0 bg-white z-50 p-6 overflow-y-auto hidden">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex justify-between items-center border-b pb-4 mb-8">
+                <h2 class="text-4xl font-extrabold text-indigo-600">Checkout</h2>
+                <button onclick="closeCheckoutModal()" class="text-gray-500 hover:text-gray-900 p-2 rounded-full hover:bg-gray-100 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Coluna 1: Endereço e Dados -->
+                <div class="lg:col-span-2 bg-gray-50 p-6 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">1. Endereço de Entrega</h3>
+                    <form id="address-form" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <label class="block">
+                                <span class="text-gray-700">CEP*</span>
+                                <input id="input-cep" type="text" placeholder="Ex: 00000-000" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border" required>
+                            </label>
+                            <label class="block md:col-span-2">
+                                <span class="text-gray-700">Rua*</span>
+                                <input id="input-street" type="text" placeholder="Rua de Exemplo" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border" required>
+                            </label>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <label class="block col-span-1">
+                                <span class="text-gray-700">Número*</span>
+                                <input id="input-number" type="text" placeholder="123" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border" required>
+                            </label>
+                            <label class="block col-span-3">
+                                <span class="text-gray-700">Bairro*</span>
+                                <input id="input-district" type="text" placeholder="Centro" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border" required>
+                            </label>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4">
+                            <label class="block col-span-2">
+                                <span class="text-gray-700">Cidade*</span>
+                                <input id="input-city" type="text" placeholder="São Paulo" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border" required>
+                            </label>
+                            <label class="block col-span-1">
+                                <span class="text-gray-700">Estado*</span>
+                                <input id="input-state" type="text" placeholder="SP" maxlength="2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border" required>
+                            </label>
+                        </div>
+                    </form>
+
+                    <h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4 border-b pb-2">2. Detalhes de Pagamento</h3>
+                    <p class="text-gray-600 mb-4">O modo de pagamento será definido na próxima etapa de um checkout real. Por enquanto, a opção padrão é o Pix (5% de desconto).</p>
+                    
+                    <button onclick="completePurchase()" class="w-full py-4 bg-indigo-600 text-white text-xl font-bold rounded-lg shadow-xl hover:bg-indigo-700 transition duration-150 mt-4">
+                        Confirmar e Pagar
+                    </button>
+                </div>
+                
+                <!-- Coluna 2: Resumo do Pedido -->
+                <div class="lg:col-span-1 bg-white p-6 rounded-xl shadow-lg border-t-4 border-green-500 h-fit">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Resumo do Pedido</h3>
+                    <div id="checkout-summary-list" class="space-y-3 border-b pb-4 mb-4">
+                        <!-- Itens do carrinho serão listados aqui -->
+                    </div>
+                    <div class="flex justify-between items-center text-2xl font-bold">
+                        <span class="text-gray-700">Total a Pagar:</span>
+                        <span id="checkout-total" class="text-green-600">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OVERLAY (Fundo Escurecido) -->
+    <div id="overlay" onclick="closeDetailPanel(); closeCartPanel(); closeCheckoutModal();" class="fixed inset-0 bg-gray-900 bg-opacity-50 z-40 hidden"></div>
+
+    <script>
+        // Dados de exemplo dos produtos
+        const products = [
+            {
+                id: 1,
+                name: "Amortecedor Dianteiro (Par)",
+                brand: "Cofap Turbo Gás",
+                size: "Haste: 22mm / Corpo: 45mm",
+                price: "R$ 680,00",
+                image: "https://placehold.co/300x200/4F46E5/FFFFFF?text=Amortecedor",
+                description: "Amortecedor de alta performance para suspensão dianteira. Ideal para carros de passeio de médio porte. Garante maior estabilidade e conforto.",
+                delivery: "Entrega Expressa: 2-4 dias úteis.",
+                payment: "Cartão de Crédito (até 12x sem juros), Pix com 5% de desconto, Boleto (à vista).",
+            },
+            {
+                id: 2,
+                name: "Filtro de Óleo",
+                brand: "Mann-Filter",
+                size: "Diâmetro: 76mm / Altura: 79mm (Código W712/52)",
+                price: "R$ 45,90",
+                image: "https://placehold.co/300x200/10B981/FFFFFF?text=Filtro+de+%C3%93leo",
+                description: "Filtro de óleo essencial para a proteção do motor. Retém impurezas e garante a longevidade do seu veículo. Consulte compatibilidade.",
+                delivery: "Retirada imediata no local (Pronta-Entrega).",
+                payment: "Pix, Cartão de Débito, Dinheiro.",
+            },
+            {
+                id: 3,
+                name: "Pastilha de Freio Cerâmica",
+                brand: "Fras-Le Premium",
+                size: "Comprimento: 140mm / Largura: 55mm (Jogo completo)",
+                price: "R$ 189,50",
+                image: "https://placehold.co/300x200/F59E0B/FFFFFF?text=Pastilha+Freio",
+                description: "Pastilhas de freio de composto cerâmico. Oferecem frenagem mais silenciosa e maior durabilidade. Livre de amianto.",
+                delivery: "Entrega Padrão: 3-6 dias úteis.",
+                payment: "Cartão de Crédito (até 6x), Boleto.",
+            },
+            {
+                id: 4,
+                name: "Bateria Automotiva 60Ah",
+                brand: "Moura",
+                size: "244mm x 175mm x 175mm (Polo positivo Direito)",
+                price: "R$ 450,00",
+                image: "https://placehold.co/300x200/EF4444/FFFFFF?text=Bateria+60Ah",
+                description: "Bateria de 60 Amperes, selada e livre de manutenção. Alta resistência a vibrações e excelente desempenho elétrico.",
+                delivery: "Retirada em 1 hora ou Entrega no mesmo dia (consulte região).",
+                payment: "Cartão de Crédito (10x), Pix (10% de desconto).",
+            },
+            {
+                id: 5,
+                name: "Lâmpada de LED H4",
+                brand: "Philips X-TremeUltinon",
+                size: "Modelo H4 (Farol Alto/Baixo) - 6000K",
+                price: "R$ 210,00",
+                image: "https://placehold.co/300x200/6366F1/FFFFFF?text=L%C3%A2mpada+LED",
+                description: "Par de lâmpadas de LED para farol. Mais brilho e visibilidade com baixo consumo de energia. Fácil instalação.",
+                delivery: "Entrega Padrão: 4-7 dias úteis.",
+                payment: "Cartão de Crédito (até 4x), Pix.",
+            },
+            {
+                id: 6,
+                name: "Correia Dentada",
+                brand: "Contitech",
+                size: "111 dentes / Largura 20mm (Código CT1045)",
+                price: "R$ 115,00",
+                image: "https://placehold.co/300x200/06B6D4/FFFFFF?text=Correia+Dentada",
+                description: "Correia de distribuição de alta resistência. Essencial para o sincronismo do motor. Recomenda-se troca preventiva.",
+                delivery: "Retirada imediata no local (Pronta-Entrega).",
+                payment: "Pix, Dinheiro.",
+            }
+        ];
+
+        // Elementos DOM
+        const productGrid = document.getElementById('product-grid');
+        const detailPanel = document.getElementById('detail-panel');
+        const cartPanel = document.getElementById('cart-panel');
+        const checkoutModal = document.getElementById('checkout-modal'); // Novo modal
+        const overlay = document.getElementById('overlay');
+        const cartCounter = document.getElementById('cart-counter');
+        const messageBox = document.getElementById('message-box');
+        
+        // Estado do Carrinho
+        let cart = []; 
+
+        // --- FUNÇÕES DE UTILIDADE ---
+        function priceToNumber(priceString) {
+            return parseFloat(priceString.replace('R$', '').replace('.', '').replace(',', '.').trim());
+        }
+        function numberToPrice(number) {
+            return 'R$ ' + number.toFixed(2).replace('.', ',');
+        }
+
+        function showMessage(text, isError = false) {
+            messageBox.textContent = text;
+            messageBox.className = `fixed top-5 left-1/2 transform -translate-x-1/2 p-3 rounded-lg shadow-xl text-white z-[60] transition-opacity duration-300 opacity-100 ${isError ? 'bg-red-600' : 'bg-green-600'}`;
+            
+            setTimeout(() => {
+                messageBox.classList.add('opacity-0');
+                messageBox.classList.remove('opacity-100');
+            }, 3000);
+            
+            setTimeout(() => {
+                 messageBox.className = 'hidden';
+            }, 3300);
+        }
+
+        // --- FUNÇÕES DE CONTROLE DE PAINEL/MODAL ---
+
+        function closeAllPanels() {
+            detailPanel.classList.remove('open');
+            cartPanel.classList.remove('open');
+            checkoutModal.classList.add('hidden');
+            overlay.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function openDetailPanel(productId) {
+            closeAllPanels(); 
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            // Preenche o painel de detalhes
+            document.getElementById('detail-name').textContent = product.name;
+            document.getElementById('detail-image').src = product.image;
+            document.getElementById('detail-image').alt = `Imagem de ${product.name}`;
+            document.getElementById('detail-description').textContent = product.description;
+            document.getElementById('detail-brand').textContent = product.brand;
+            document.getElementById('detail-size').textContent = product.size;
+            document.getElementById('detail-delivery').textContent = product.delivery;
+            document.getElementById('detail-price').textContent = product.price;
+            document.getElementById('detail-payment').textContent = product.payment;
+
+            document.getElementById('add-to-cart-btn').onclick = () => addToCart(productId);
+
+            detailPanel.classList.add('open');
+            overlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDetailPanel() {
+            detailPanel.classList.remove('open');
+            // Só fecha o overlay se nenhum outro painel estiver aberto
+            if (!cartPanel.classList.contains('open') && checkoutModal.classList.contains('hidden')) {
+                overlay.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function openCartPanel() {
+            closeDetailPanel(); // Garante que o painel de detalhes feche
+            closeCheckoutModal(false); // Garante que o checkout feche (mantendo o overlay se o carrinho abrir)
+
+            if (cart.length === 0) {
+                document.getElementById('empty-cart-message').classList.remove('hidden');
+                document.getElementById('cart-total').textContent = numberToPrice(0);
+            } else {
+                 document.getElementById('empty-cart-message').classList.add('hidden');
+            }
+            
+            renderCartItems(); // Renderiza os itens do carrinho
+            
+            cartPanel.classList.add('open');
+            overlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCartPanel() {
+            cartPanel.classList.remove('open');
+            // Só fecha o overlay se nenhum outro painel estiver aberto
+            if (checkoutModal.classList.contains('hidden')) {
+                overlay.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function openCheckoutModal() {
+            if (cart.length === 0) {
+                showMessage("Seu carrinho está vazio. Adicione itens para continuar.", true);
+                return;
+            }
+            closeCartPanel(); // Fecha o carrinho
+
+            renderCheckoutSummary();
+            
+            checkoutModal.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeCheckoutModal(restoreScroll = true) {
+            checkoutModal.classList.add('hidden');
+            if (restoreScroll) {
+                overlay.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // --- FUNÇÕES DO CARRINHO (LÓGICA) ---
+
+        function updateCartCounter() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCounter.textContent = totalItems;
+            if (totalItems > 0) {
+                cartCounter.classList.add('opacity-100');
+                cartCounter.classList.remove('opacity-0');
+            } else {
+                cartCounter.classList.add('opacity-0');
+                cartCounter.classList.remove('opacity-100');
+            }
+        }
+
+        function addToCart(productId) {
+            const productData = products.find(p => p.id === productId);
+            if (!productData) {
+                showMessage("Erro: Produto não encontrado ao adicionar ao carrinho.", true);
+                return;
+            }
+
+            const itemInCart = cart.find(item => item.id === productId);
+            const itemPrice = priceToNumber(productData.price);
+
+            if (itemInCart) {
+                itemInCart.quantity += 1;
+            } else {
+                cart.push({
+                    id: productData.id,
+                    name: productData.name,
+                    price: itemPrice, 
+                    basePriceString: productData.price, 
+                    quantity: 1
+                });
+            }
+
+            updateCartCounter();
+            closeDetailPanel();
+            showMessage(`"${productData.name}" adicionado ao carrinho! Modo de Pagar: ${productData.payment.split(',')[0].trim()}.`);
+            
+            console.log("Carrinho Atual:", cart);
+        }
+
+        function removeItemFromCart(productId) {
+            const itemIndex = cart.findIndex(item => item.id === productId);
+            if (itemIndex > -1) {
+                const item = cart[itemIndex];
+                if (item.quantity > 1) {
+                    item.quantity -= 1;
+                    showMessage(`Uma unidade de "${item.name}" removida.`);
+                } else {
+                    cart.splice(itemIndex, 1); 
+                    showMessage(`"${item.name}" removido do carrinho.`, true);
+                }
+                updateCartCounter();
+                openCartPanel(); 
+            }
+        }
+        
+        function clearCart() {
+            cart = [];
+            updateCartCounter();
+            openCartPanel(); 
+            showMessage("Carrinho esvaziado com sucesso!", true);
+        }
+
+        function renderCartItems() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalElement = document.getElementById('cart-total');
+            
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+
+            if (cart.length === 0) {
+                document.getElementById('empty-cart-message').classList.remove('hidden');
+            } else {
+                document.getElementById('empty-cart-message').classList.add('hidden');
+                
+                cart.forEach(item => {
+                    const subtotal = item.price * item.quantity;
+                    total += subtotal;
+
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'flex items-center justify-between p-3 border rounded-lg bg-gray-50 shadow-sm';
+                    itemDiv.innerHTML = `
+                        <div>
+                            <p class="font-semibold text-gray-800">${item.name}</p>
+                            <p class="text-sm text-gray-500">${item.basePriceString} x ${item.quantity} un.</p>
+                        </div>
+                        <div class="text-right flex items-center">
+                            <span class="font-bold text-lg text-indigo-600 mr-4">${numberToPrice(subtotal)}</span>
+                            <button onclick="removeItemFromCart(${item.id})" title="Remover 1 unidade" class="text-red-400 hover:text-red-600 p-1 rounded-full hover:bg-red-100 transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                </svg>
+                            </button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(itemDiv);
+                });
+            }
+
+            cartTotalElement.textContent = numberToPrice(total);
+        }
+
+        // --- FUNÇÕES DE CHECKOUT ---
+
+        function renderCheckoutSummary() {
+            const summaryList = document.getElementById('checkout-summary-list');
+            const checkoutTotal = document.getElementById('checkout-total');
+            
+            summaryList.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+
+                const listItem = document.createElement('div');
+                listItem.className = 'flex justify-between items-start text-sm';
+                listItem.innerHTML = `
+                    <p class="text-gray-700 font-medium">${item.quantity}x ${item.name}</p>
+                    <span class="text-gray-900 font-semibold">${numberToPrice(subtotal)}</span>
+                `;
+                summaryList.appendChild(listItem);
+            });
+
+            checkoutTotal.textContent = numberToPrice(total);
+        }
+
+        function validateAddressForm() {
+            const formFields = [
+                document.getElementById('input-cep'),
+                document.getElementById('input-street'),
+                document.getElementById('input-number'),
+                document.getElementById('input-district'),
+                document.getElementById('input-city'),
+                document.getElementById('input-state')
+            ];
+
+            let isValid = true;
+            let missingFields = [];
+
+            formFields.forEach(field => {
+                if (field.value.trim() === "") {
+                    isValid = false;
+                    field.style.border = '2px solid #EF4444'; // Borda vermelha para campo inválido
+                    missingFields.push(field.previousElementSibling.textContent.replace('*', '').trim());
+                } else {
+                    field.style.border = '1px solid #D1D5DB'; // Borda padrão
+                }
+            });
+
+            if (!isValid) {
+                showMessage(`Preencha todos os campos obrigatórios (*). Faltando: ${missingFields.join(', ')}`, true);
+            }
+            return isValid;
+        }
+
+        function completePurchase() {
+            if (!validateAddressForm()) {
+                return;
+            }
+
+            const address = {
+                cep: document.getElementById('input-cep').value,
+                street: document.getElementById('input-street').value,
+                number: document.getElementById('input-number').value,
+                district: document.getElementById('input-district').value,
+                city: document.getElementById('input-city').value,
+                state: document.getElementById('input-state').value,
+            };
+
+            const totalAmount = document.getElementById('checkout-total').textContent;
+
+            console.log("--- PEDIDO FINALIZADO ---");
+            console.log("Itens:", cart);
+            console.log("Endereço de Entrega:", address);
+            console.log("Total:", totalAmount);
+            console.log("-------------------------");
+
+            // Simulação de sucesso
+            closeCheckoutModal();
+            clearCart();
+            showMessage(`Pedido concluído com sucesso! Total de ${totalAmount}. Enviamos para ${address.street}, ${address.number}.`, false);
+        }
+
+        // --- INICIALIZAÇÃO ---
+
+        function renderProducts() {
+            productGrid.innerHTML = ''; 
+            products.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-xl shadow-lg hover:shadow-xl p-5 cursor-pointer card-hover transition duration-300 ease-in-out border-t-4 border-indigo-500';
+                card.setAttribute('onclick', `openDetailPanel(${product.id})`);
+                
+                card.innerHTML = `
+                    <div class="h-36 mb-4 overflow-hidden rounded-lg bg-gray-100 flex items-center justify-center">
+                        <img src="${product.image}" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 truncate mb-1">${product.name}</h3>
+                    <p class="text-sm text-gray-500 mb-3">Marca: <span class="font-medium text-gray-700">${product.brand}</span></p>
+                    <div class="flex justify-between items-center pt-2 border-t">
+                        <span class="text-2xl font-bold text-indigo-600">${product.price}</span>
+                        <span class="text-xs font-medium text-green-600 bg-green-100 px-2 py-1 rounded-full">Detalhes</span>
+                    </div>
+                `;
+                productGrid.appendChild(card);
+            });
+        }
+
+        window.onload = () => {
+             renderProducts();
+             updateCartCounter(); 
+        };
+
+    </script>
+    <aside>
+    <article>
+    <footer>
+</body>
+</html>
