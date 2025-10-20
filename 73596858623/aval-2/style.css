@@ -1,0 +1,160 @@
+/* Reset simples */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; font-family: Inter, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#222; background:#0b0b0b; }
+
+/* Container com margem lateral */
+.container {
+  width: calc(100% - 40px);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Top banner (laranja) */
+.site-top {
+  background: #f7a500; /* laranja */
+  color: #111;
+  padding: 14px 0;
+}
+.site-top h1 {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Nav escura */
+.main-nav {
+  background: #222;
+  color: #fff;
+  border-bottom: 6px solid rgba(255,255,255,0.02);
+}
+.nav-inner {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 8px 0;
+}
+.nav-links {
+  list-style:none;
+  display:flex;
+  gap:12px;
+}
+.nav-links a {
+  display:block;
+  padding:8px 12px;
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  border-radius:3px;
+}
+.nav-links a:hover { background: rgba(255,255,255,0.04); }
+
+/* mobile menu button (hidden desktop) */
+.menu-toggle {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+  padding:6px 10px;
+  border-radius:6px;
+  display:none;
+}
+
+/* Layout: sidebar + main */
+.layout {
+  display:flex;
+  gap: 20px;
+  align-items:flex-start;
+  padding: 20px 0 40px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  min-width: 200px;
+}
+.card {
+  background: #f5f5f5;
+  color:#222;
+  padding:14px;
+  border-radius:6px;
+  margin-bottom:16px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+.avatar {
+  margin:10px 0;
+  background:#ddd;
+  height:100px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:4px;
+  font-weight:600;
+}
+.muted { color:#666; font-size:13px; margin-top:8px; }
+
+/* gallery thumbs */
+.thumbs { display:flex; flex-direction:column; gap:8px; }
+.thumb {
+  background:#ddd;
+  padding:10px;
+  border-radius:4px;
+  text-align:center;
+}
+
+/* Main content */
+.content {
+  flex:1;
+  background: white;
+  padding: 20px;
+  border-radius:8px;
+  min-height: 420px;
+}
+.post-header h2 {
+  margin-bottom:6px;
+  font-size:22px;
+  color:#222;
+}
+.post-meta {
+  color:#777;
+  font-size:13px;
+  margin-bottom:12px;
+}
+
+/* Post image */
+.post-image img {
+  width:100%;
+  height:auto;
+  border-radius:6px;
+  display:block;
+  margin-bottom:14px;
+}
+
+/* Post body */
+.post-body p {
+  line-height:1.5;
+  color:#444;
+  margin-bottom:12px;
+}
+
+/* Footer */
+.site-footer {
+  background:#444;
+  color:#fff;
+  padding:26px 0;
+  margin-top:18px;
+  text-align:center;
+  font-size:13px;
+  border-top: 4px solid rgba(0,0,0,0.2);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .layout { flex-direction: column; }
+  .sidebar { width:100%; order:2; }
+  .content { order:1; min-height:300px; }
+  .menu-toggle { display:inline-block; }
+  .nav-links { display:none; position:absolute; left:20px; top:76px; background:#222; padding:12px; border-radius:6px; flex-direction:column; gap:8px; }
+  .nav-links.show { display:flex; }
+}
+
+/* pequenos ajustes visuais para parecer mais com a referência */
+.nav-links li:first-child a { font-weight:600; }
