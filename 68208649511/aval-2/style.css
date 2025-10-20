@@ -1,0 +1,104 @@
+/* === Layout geral === */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+}
+
+body {
+  background-color: #fef3c7;
+  color: #374151;
+  font-family: system-ui, sans-serif;
+}
+
+/* === Estrutura === */
+.bg-amber-800 { background-color: #92400e; }
+.bg-amber-700 { background-color: #b45309; }
+.text-white { color: white; }
+.text-center { text-align: center; }
+.text-2xl { font-size: 1.5rem; }
+.font-bold { font-weight: bold; }
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.mt-8 { margin-top: 2rem; }
+.mb-4 { margin-bottom: 1rem; }
+
+/* === Layout de navegação === */
+.flex { display: flex; }
+.justify-center { justify-content: center; }
+.space-x-6 > * + * { margin-left: 1.5rem; }
+.max-w-3xl { max-width: 768px; margin: 0 auto; }
+
+/* === Componentes === */
+.card-item {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.form-container {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  margin-top: 0.25rem;
+}
+.btn {
+  background-color: #b45309;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover { background-color: #92400e; }
+.btn.danger { background-color: #dc2626; }
+.btn.danger:hover { background-color: #b91c1c; }
+
+.pedido-item {
+  background-color: white;
+  border-left: 4px solid #b45309;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.remover {
+  color: #dc2626;
+  font-weight: bold;
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.remover:hover { transform: scale(1.2); }
+
+.total-box, .pagamento-box {
+  margin-top: 1rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.hidden { display: none; }
+.hover\:underline:hover { text-decoration: underline; }
