@@ -1,0 +1,78 @@
+ <style>
+        /*
+        * A fonte "Bookman Old Style" é uma fonte de sistema.
+        * Usamos uma pilha de fontes para garantir que ela seja exibida
+        * corretamente onde estiver disponível, com fallbacks serifados.
+        */
+        
+        body {
+            font-family: "Bookman Old Style", Georgia, serif; 
+            color: #f7f7f7;
+            background-color: #0d0d0d;
+            /* Imagem de Fundo de NYC */
+            background-image: url('b9cbd533194c44f7505f8c243e488a46.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Overlay escuro e esmaecido para replicar o look da série, garantindo contraste */
+        .main-container {
+            min-height: 100vh;
+            background-color: rgba(0, 0, 0, 0.75); /* Opacidade para esmaecer a imagem */
+            padding: 1rem;
+        }
+
+        /* Estilos do Título Principal GOSSIP GIRL */
+        .gossip-title {
+            font-family: "Bookman Old Style", Georgia, serif;
+            color: #F8DE7E; /* Amarelo Manteiga / Ouro Suave */
+            letter-spacing: 0.15rem; /* Espaçamento reduzido para juntar mais as letras */
+            text-shadow: 0 0 15px rgba(248, 222, 126, 0.9); /* Sombra de brilho intensa */
+        }
+
+        /* Cores das Funcionalidades no Menu Esquerdo (Mantidas do visual anterior) */
+        .color-welcome { color: #00bfff; } /* Azul Neon */
+        .color-gossip { color: #ff007f; } /* Rosa Choque */
+        .color-pics { color: #00ff7f; } /* Verde Água */
+        .color-parties { color: #ffd700; } /* Ouro */
+        .color-links { color: #8a2be2; } /* Roxo */
+        
+        .menu-link {
+            transition: color 0.2s, text-shadow 0.2s;
+            cursor: default; /* Não são links reais, apenas visual */
+        }
+        .menu-link:hover {
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Estilo da Polaroid em destaque */
+        .polaroid-effect {
+            transform: rotate(2deg); /* Rotação sutil */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
+        
+        /* Estilo do Botão de Envio (Rosa Choque) */
+        .submit-button {
+            background-color: #ff007f; 
+            color: white;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .submit-button:hover {
+            background-color: #ff69b4;
+            transform: scale(1.02);
+        }
+
+        /* Scrollbar discreto para a lista de posts anteriores */
+        #gossip-list-container::-webkit-scrollbar {
+            width: 4px;
+        }
+        #gossip-list-container::-webkit-scrollbar-thumb {
+            background-color: #ff007f;
+            border-radius: 2px;
+        }
+        #gossip-list-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>

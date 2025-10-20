@@ -1,0 +1,336 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gossip Girl - Você Sabe Que Me Ama</title>
+    <!-- Carregamento do Tailwind CSS para estilização moderna e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+    <!-- Configuração do Firebase Imports (MANDATÓRIO) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, addDoc, onSnapshot, collection, query, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Variáveis globais obrigatórias injetadas pelo ambiente Canvas
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let db, auth;
+        let userId = null;
+        let isAuthReady = false;
+        
+        // Caminho da coleção pública para posts
+        const GOSSIP_COLLECTION_PATH = `/artifacts/${appId}/public/data/gossip_girl_posts`;
+
+        // Imagem fixa do grupo principal da série
+        const MAIN_CAST_IMAGE = '32b7419596dea43a0c4c608c81a2b002.jpg';
+
+        // Função para inicializar o Firebase
+        async function initializeFirebase() {
+            try {
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+                console.log("Firebase e Auth inicializados.");
+
+                // Autenticação
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+                // Listener de estado de autenticação
+                onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        userId = user.uid;
+                        isAuthReady = true;
+                        document.getElementById('user-info').textContent = `Usuário (ID): ${userId.substring(0, 8)}...`;
+                        // Depois da autenticação, carregue os posts
+                        loadGossipPosts();
+                    } else {
+                        isAuthReady = true;
+                        console.log("Usuário deslogado ou anônimo.");
+                    }
+                });
+
+            } catch (error) {
+                console.error("Erro ao inicializar Firebase ou autenticar:", error);
+            }
+        }
+
+        // Função para carregar e ouvir posts em tempo real (onSnapshot)
+        function loadGossipPosts() {
+            if (!db || !isAuthReady) return;
+
+            const q = query(collection(db, GOSSIP_COLLECTION_PATH));
+            const featuredContainer = document.getElementById('featured-gossip-container');
+            const listContainer = document.getElementById('gossip-list-container');
+            
+            onSnapshot(q, (snapshot) => {
+                const posts = [];
+                snapshot.forEach((doc) => {
+                    posts.push({ id: doc.id, ...doc.data() });
+                });
+
+                // 1. Ordena os posts pelo timestamp (os mais recentes primeiro)
+                posts.sort((a, b) => (b.timestamp?.seconds || 0) - (a.timestamp?.seconds || 0));
+
+                featuredContainer.innerHTML = '';
+                listContainer.innerHTML = '';
+
+                if (posts.length === 0) {
+                    featuredContainer.innerHTML = `
+                         <div class="bg-white p-2 pb-16 shadow-2xl rotate-1 min-h-[400px] w-full">
+                            <p class="text-black text-center text-sm font-bold pt-1 mb-1">AGUARDANDO O PRIMEIRO DRAMA</p>
+                            <!-- Imagem Placeholder Simples (Fallback) -->
+                            <img src="https://placehold.co/300x300/333333/FFFFFF?text=XOXO" alt="Vítima da Fofoca" class="w-full h-auto object-cover border-2 border-gray-300">
+                            <div class="text-black p-2 mt-4 text-center">
+                                <p class="text-sm mt-1">O Upper East Side está quieto demais. Alguém precisa expor um segredo!</p>
+                                <p class="text-xs font-bold mt-4 text-pink-700">XOXO, GOSSIP GIRL</p>
+                            </div>
+                        </div>
+                    `;
+                    listContainer.innerHTML = `<p class="text-center text-gray-500 text-sm p-4">Nenhuma fofoca anterior.</p>`;
+
+                } else {
+                    // 2. Última fofoca (Destaque Central - Polaroid)
+                    const featuredPost = posts[0];
+                    featuredContainer.appendChild(createFeaturedPostElement(featuredPost));
+                    
+                    // 3. Outras fofocas (Lista lateral vertical)
+                    const listPosts = posts.slice(1);
+                    listPosts.forEach(post => {
+                        listContainer.appendChild(createSidebarPostElement(post));
+                    });
+                }
+            }, (error) => {
+                console.error("Erro ao receber posts em tempo real:", error);
+                featuredContainer.innerHTML = `<p class="text-red-500 text-center py-20">Erro ao carregar fofocas.</p>`;
+            });
+        }
+
+        // Função: Postagem em Destaque (Polaroid)
+        function createFeaturedPostElement(post) {
+            const postElement = document.createElement('div');
+            postElement.className = 'w-full max-w-xs mx-auto transform hover:scale-[1.02] transition-transform duration-300';
+            
+            const date = post.timestamp ? new Date(post.timestamp.seconds * 1000).toLocaleDateString('pt-BR') : 'DATA DESCONHECIDA';
+            // Usando a foto do elenco principal como imagem do post
+            const imageUrl = MAIN_CAST_IMAGE; 
+            
+            // Pega a primeira frase ou 50 caracteres para o título em negrito da Polaroid
+            const featuredTitle = (post.content.split('.')[0] || post.content.substring(0, 50) + '...')
+                                .toUpperCase().trim(); 
+
+            const html = `
+                <div class="bg-white p-2 pb-16 shadow-2xl polaroid-effect">
+                    <!-- Título da Fofoca em Evidência -->
+                    <p class="text-black text-center text-sm font-bold pt-1 mb-1">${featuredTitle}</p>
+                    <!-- Imagem do Elenco Principal -->
+                    <img 
+                        src="${imageUrl}" 
+                        onerror="this.onerror=null;this.src='https://placehold.co/300x300/333333/FFFFFF?text=XOXO'" 
+                        alt="Elenco Principal da Fofoca" 
+                        class="w-full h-auto object-cover border-2 border-gray-300"
+                    >
+                    <!-- Informação na parte branca da Polaroid (Cor preta conforme solicitado) -->
+                    <div class="text-black p-2 mt-4 text-center">
+                        <p class="text-xs font-semibold">Publicado em: ${date}</p>
+                        <p class="text-sm mt-1 whitespace-pre-wrap">${post.content}</p>
+                        <p class="text-xs font-bold mt-4 text-pink-700">XOXO, GOSSIP GIRL</p>
+                    </div>
+                </div>
+            `;
+            postElement.innerHTML = html;
+            return postElement;
+        }
+
+        // Função: Postagem na Lista Lateral (Miniaturas de "Outras Fofocas")
+        function createSidebarPostElement(post) {
+            const date = post.timestamp ? new Date(post.timestamp.seconds * 1000).toLocaleTimeString('pt-BR').substring(0, 5) : '??:??';
+             // Usando a foto do elenco principal como miniatura
+            const imageUrl = MAIN_CAST_IMAGE; 
+            
+            const postElement = document.createElement('div');
+            // Elemento de lista lateral com foto (moldura pequena)
+            postElement.className = 'flex items-center space-x-3 p-2 hover:bg-gray-800 rounded-lg cursor-pointer transition-colors border-b border-gray-800 last:border-b-0';
+            
+            const html = `
+                <!-- Moldura Pequena (Foto Circular do Elenco) -->
+                <div class="w-10 h-10 flex-shrink-0 relative overflow-hidden rounded-full border-2 border-pink-500">
+                    <img 
+                        src="${imageUrl}" 
+                        onerror="this.onerror=null;this.src='https://placehold.co/40x40/FF69B4/000000?text=GG'" 
+                        alt="Miniatura do Elenco" 
+                        class="w-full h-full object-cover"
+                    >
+                </div>
+                <!-- Resumo da Fofoca -->
+                <div class="flex-grow min-w-0">
+                    <p class="text-xs font-medium text-pink-400 truncate">Alerta às ${date}!</p>
+                    <p class="text-xs text-gray-400 truncate">${post.content}</p>
+                </div>
+            `;
+            postElement.innerHTML = html;
+            return postElement;
+        }
+
+        // Função para lidar com o envio do formulário
+        window.handleSubmission = async function(event) {
+            event.preventDefault();
+            
+            const contentInput = document.getElementById('gossip-content');
+            const content = contentInput.value.trim();
+            const submitBtn = document.getElementById('submit-gossip-btn');
+            
+            if (!content) {
+                // Substituído alert() por console.error() para evitar quebras em iframes
+                console.error('A fofoca não pode estar vazia! O Upper East Side exige detalhes.');
+                return;
+            }
+
+            if (!db || !isAuthReady) {
+                 console.error('Aguarde, a conexão com o blog ainda está sendo estabelecida...');
+                 return;
+            }
+
+            // Desabilita o botão para evitar múltiplos envios
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Publicando...';
+            
+            try {
+                await addDoc(collection(db, GOSSIP_COLLECTION_PATH), {
+                    content: content,
+                    timestamp: serverTimestamp(),
+                    userId: userId, 
+                });
+
+                contentInput.value = ''; // Limpa o formulário
+
+            } catch (error) {
+                console.error("Erro ao publicar fofoca:", error);
+                // Você pode adicionar um modal de erro aqui se quiser notificar o usuário
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Enviar Dica Anônima';
+            }
+        };
+
+        // Inicializa o aplicativo Firebase ao carregar a janela
+        window.onload = initializeFirebase;
+    </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <div class="main-container max-w-screen-xl mx-auto">
+        <!-- Título Centralizado no Topo -->
+        <header class="text-center py-8">
+            <h1 class="gossip-title text-5xl sm:text-6xl font-bold tracking-widest uppercase">
+                Gossip Girl
+            </h1>
+        </header>
+
+        <!-- Layout Principal: Menu Esquerdo | Fofoca em Destaque | Lista Direita -->
+        <main class="grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
+            
+            <!-- 1. Menu de Funcionalidades e Formulário (Lado Esquerdo) -->
+            <section class="md:col-span-1 space-y-6">
+                
+                <div id="functionalities-menu" class="space-y-4">
+                    <!-- BEM-VINDOS (WELCOME) -->
+                    <div>
+                        <h3 class="color-welcome text-xl font-bold menu-link">BEM-VINDOS</h3>
+                        <p class="text-sm text-gray-300">ao Gossip Girl! O Site SOBRE o Upper East Side, PARA o Upper East Side e PELO Upper East Side!</p>
+                    </div>
+                    
+                    <!-- FOFOCA (GOSSIP - Funcionalidade Primária + Formulário de Envio) -->
+                    <div>
+                        <h3 class="color-gossip text-xl font-bold menu-link">FOFOCA</h3>
+                        <p class="text-sm text-gray-300">A sua fonte anônima de drama instantâneo. XOXO!</p>
+                        
+                        <!-- Formulário de Envio de Dica -->
+                        <div class="mt-4 p-4 rounded-lg bg-gray-900 border border-pink-700">
+                            <form onsubmit="handleSubmission(event)">
+                                <textarea 
+                                    id="gossip-content" 
+                                    rows="3" 
+                                    placeholder="Envie sua dica anônima..."
+                                    class="w-full p-2 bg-gray-800 text-white rounded-md border border-gray-700 focus:ring-pink-500 focus:border-pink-500 mb-2 resize-none text-sm"
+                                    required
+                                ></textarea>
+                                <button 
+                                    type="submit" 
+                                    id="submit-gossip-btn"
+                                    class="submit-button w-full px-3 py-2 rounded-md text-sm"
+                                >
+                                    Enviar Dica Anônima
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- FOTOS (PICS) -->
+                    <div>
+                        <h3 class="color-pics text-xl font-bold menu-link">FOTOS</h3>
+                        <p class="text-sm text-gray-300">Veja o que as fashionistas do UES estão vestindo. GALERIA DE FOTOS ATUAL</p>
+                    </div>
+
+                     <!-- FESTAS (PARTIES) -->
+                    <div>
+                        <h3 class="color-parties text-xl font-bold menu-link">FESTAS</h3>
+                        <p class="text-sm text-gray-300">Seu convite provavelmente se perdeu no correio. CLIQUE AQUI para ver o que você perdeu.</p>
+                    </div>
+
+                    <!-- LINKS -->
+                    <div>
+                        <h3 class="color-links text-xl font-bold menu-link">LINKS</h3>
+                        <p class="text-sm text-gray-300">...</p>
+                    </div>
+                </div>
+
+                <p id="user-info" class="text-xs text-gray-600 pt-8">Conectando...</p>
+            </section>
+
+            <!-- 2. Fofoca em Evidência (Polaroid Central) -->
+            <section class="md:col-span-1 flex justify-center items-start pt-10 order-first md:order-none">
+                <div id="featured-gossip-container" class="polaroid-effect w-full max-w-xs">
+                    <!-- Conteúdo será injetado pelo JavaScript -->
+                    <div class="bg-white p-2 pb-16 shadow-2xl rotate-1 min-h-[400px] w-full text-center">
+                        <div class="animate-spin inline-block w-8 h-8 border-4 border-t-pink-500 border-gray-600 rounded-full mt-20"></div>
+                        <p class="text-black mt-3">Carregando o drama...</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 3. Lista de Outras Fofocas (Lado Direito) -->
+            <section class="md:col-span-1 pt-10">
+                <h2 class="text-xl font-bold text-center mb-4 color-gossip">Posts Anteriores</h2>
+                <div id="gossip-list-container" class="space-y-2 max-h-[600px] overflow-y-auto pr-2 bg-gray-900/50 rounded-lg p-3">
+                     <div class="text-center p-4 text-sm text-gray-400">
+                        Carregando o arquivo de fofocas...
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Rodapé -->
+        <footer class="text-center mt-12 pt-6 border-t border-gray-800">
+            <p class="text-sm text-gray-500 mt-2">You know you love me. XOXO, Gossip Girl.</p>
+        </footer>
+    </div>
+</body>
+</html>
+
+</body>
+</html>
+<nav>
+<a>
+<aside>
+    <article>
+        <img>
+        
