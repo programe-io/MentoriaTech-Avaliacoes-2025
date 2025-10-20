@@ -1,0 +1,153 @@
+:root {
+    --bg: #0b0b0f;
+    --panel: #1b1b1f;
+    --accent: #ffcf00;
+    --muted: #8a8a8f;
+    --card: #202026;
+    --glass: rgba(255, 255, 255, 0.03);
+    --radius: 14px;
+    color-scheme: dark;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+    background: linear-gradient(180deg, var(--bg), #08080a);
+    color: #e9e9ea;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 28px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(2px)
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px
+}
+
+.bat-symbol {
+    width: 54px;
+    height: 54px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, var(--panel), var(--card));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6)
+}
+
+.bat-symbol svg {
+    width: 38px;
+    height: 38px;
+    fill: var(--accent)
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 16px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: .2s
+}
+
+nav a:hover,
+nav a.active {
+    background: var(--accent);
+    color: var(--bg);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6)
+}
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 22px;
+    background: linear-gradient(180deg, var(--panel), var(--card));
+    border-radius: var(--radius);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6)
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: auto;
+    padding: 18px 0
+}
+
+.curios-list {
+    margin-top: 12px;
+    display: grid;
+    gap: 10px
+}
+
+.curio {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+    padding: 12px;
+    border-radius: 10px;
+    border-left: 4px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    gap: 12px;
+    align-items: center
+}
+
+.curio .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent)
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 12px
+}
+
+.thumb {
+    height: 120px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #121217, #1b1b1f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+
+}
+
+.grid img {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #ffcf00;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
