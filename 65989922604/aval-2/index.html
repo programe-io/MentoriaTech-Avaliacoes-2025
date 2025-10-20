@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Família Calegari - Receitas e Bebidas Italianas</title>
+    <!-- Carregando Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles and Inter font setup */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+        
+        :root {
+            --primary-red: #B71C1C; /* Vermelho Italiano escuro */
+            --secondary-green: #388E3C; /* Verde escuro */
+            --bg-cream: #FFFDE7; /* Creme suave */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-cream);
+            color: #333;
+        }
+        .text-logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link href="style.css" rel="stylesheet"></head>
+<nav>
+<a>
+<aside>
+<h3>
+<article>
+<img>
+<body class="min-h-screen">
+
+    <div id="app" class="max-w-7xl mx-auto p-4 md:p-8">
+        
+        <!-- HEADER / LOGO -->
+        <header class="text-center py-6 mb-8 border-b-4 border-gray-300">
+            <h1 class="text-6xl md:text-8xl text-logo" style="color: var(--primary-red);">
+                Família Calegari
+            </h1>
+            <p class="text-xl mt-2 italic text-gray-700">A tradição à mesa, de geração para geração.</p>
+        </header>
+
+        <!-- Main Content Area -->
+        <main id="content" class="min-h-[60vh]">
+            <!-- Content will be injected here by JavaScript -->
+            <div class="text-center py-10">
+                <p>Carregando as delícias italianas...</p>
+            </div>
+        </main>
+        
+        <!-- FOOTER -->
+        <footer class="text-center mt-12 py-4 border-t-2 border-gray-300 text-sm text-gray-500">
+            <p>&copy; 2025 Família Calegari. Mangia che te fa bene!</p>
+        </footer>
+    </div>
+
+    <script>
+        // Dados das Receitas e Bebidas
+        const recipes = {
+            'lasagna': {
+                title: 'Lasagna Clássica (da Nonna)',
+                type: 'Receita',
+                image: 'https://placehold.co/600x400/B71C1C/ffffff?text=LASAGNA+CLÁSSICA',
+                ingredients: [
+                    '500g de massa de lasanha fresca',
+                    '1kg de molho bolonhesa caseiro',
+                    '500g de molho bechamel cremoso',
+                    '300g de queijo mussarela fatiado',
+                    '100g de queijo parmesão ralado'
+                ],
+                preparation: 'Cozinhe a massa. Em um refratário, comece alternando camadas: molho bolonhesa, massa, bechamel e mussarela. Repita as camadas até o topo. Finalize com bastante parmesão. Asse em forno pré-aquecido a 180°C por 30 a 40 minutos, ou até borbulhar e dourar o topo.',
+                description: 'Uma receita tradicional que aquece a alma. Rica, saborosa e perfeita para o almoço de domingo em família.'
+            },
+            'carbonara': {
+                title: 'Spaghetti à Carbonara Autêntico',
+                type: 'Receita',
+                image: 'https://placehold.co/600x400/FFD700/000000?text=CARBONARA+AUTÊNTICO',
+                ingredients: [
+                    '350g de spaghetti de boa qualidade',
+                    '150g de guanciale (ou pancetta de boa qualidade)',
+                    '4 gemas de ovo + 1 ovo inteiro',
+                    '50g de queijo Pecorino Romano ralado',
+                    'Pimenta do reino moída na hora (muita!)'
+                ],
+                preparation: 'Corte o guanciale em cubos e frite em fogo médio até ficar crocante. Cozinhe o spaghetti. Em uma tigela, misture ovos, Pecorino e pimenta. Retire a massa, adicione-a ao guanciale na panela (fora do fogo) e incorpore imediatamente a mistura de ovos e queijo, mexendo rapidamente para emulsionar o molho. Sirva imediatamente.',
+                description: 'A verdadeira simplicidade e intensidade da culinária romana, com um molho incrivelmente cremoso (sem nata, claro!).'
+            },
+            'tiramisu': {
+                title: 'Tiramisu Original e Cremoso',
+                type: 'Sobremesa',
+                image: 'https://placehold.co/600x400/A0522D/ffffff?text=TIRAMISU+SOBREMESA',
+                ingredients: [
+                    '500g de queijo mascarpone',
+                    '4 ovos (gemas e claras separadas)',
+                    '100g de açúcar refinado',
+                    '300ml de café forte frio (sem açúcar)',
+                    'Biscoitos tipo champagne (savoiardi)',
+                    'Cacau em pó 100% para polvilhar'
+                ],
+                preparation: 'Bata as gemas com o açúcar até formar um creme claro. Adicione o mascarpone e misture bem. Bata as claras em neve firme e incorpore ao creme de mascarpone delicadamente. Molhe os biscoitos rapidamente no café e alterne camadas de biscoito e creme em um refratário. Leve à geladeira por no mínimo 6 horas. Polvilhe cacau antes de servir.',
+                description: 'O clássico para "me puxar para cima". Uma combinação perfeita de café, creme suave e cacau.'
+            },
+            'aperol': {
+                title: 'Aperol Spritz (Clássico Refrescante)',
+                type: 'Bebida Italiana',
+                image: 'https://placehold.co/600x400/FFA07A/000000?text=APEROL+SPRITZ',
+                ingredients: [
+                    '90ml de Prosecco (3 partes)',
+                    '60ml de Aperol (2 partes)',
+                    '30ml de água com gás (1 parte)',
+                    'Gelo',
+                    'Fatia de laranja'
+                ],
+                preparation: 'Em uma taça grande de vinho ou copo, adicione bastante gelo. Despeje o Prosecco, o Aperol e complete com um toque de água com gás. Mexa suavemente e decore com uma fatia de laranja.',
+                description: 'O coquetel perfeito para o verão e o ícone do happy hour italiano. Levemente amargo e muito refrescante.'
+            },
+            'chianti': {
+                title: 'Vinho Chianti Clássico DOCG',
+                type: 'Bebida Italiana',
+                image: 'https://placehold.co/600x400/800000/ffffff?text=VINHO+CHIANTI',
+                details: 'Região: Toscana. Uva Principal: Sangiovese. Características: Corpo médio, taninos presentes, acidez agradável e notas de cereja e tabaco. Harmonização: Ideal com carnes assadas, queijos maturados e a própria Lasagna Clássica.',
+                preparation: 'Sirva em taças Bordeaux, à temperatura de 16-18°C. Deixe respirar por 30 minutos, se possível.',
+                description: 'Um vinho tinto de grande prestígio da Toscana. Um clássico que eleva qualquer refeição da Família Calegari.'
+            }
+        };
+
+        const contentDiv = document.getElementById('content');
+
+        // Função para criar um card de item (Home)
+        function createItemCard(key, item) {
+            return `
+                <div onclick="showDetails('${key}')"
+                    class="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer transform transition duration-300 hover:scale-[1.03] hover:shadow-2xl border-b-4 border-l-2"
+                    style="border-color: var(--primary-red);"
+                >
+                    <!-- Imagem Placeholder -->
+                    <img src="${item.image}" alt="${item.title}" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A0A0A0/ffffff?text=IMAGEM+INDISPONÍVEL';" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full mb-2"
+                            style="background-color: var(--secondary-green); color: white;"
+                        >
+                            ${item.type.toUpperCase()}
+                        </span>
+                        <h2 class="text-xl font-bold mb-1 text-gray-800 text-logo">${item.title}</h2>
+                        <p class="text-gray-600 text-sm">${item.description.substring(0, 80)}...</p>
+                        <button class="mt-4 w-full py-2 text-white font-semibold rounded-lg transition duration-200"
+                            style="background-color: var(--primary-red);"
+                        >
+                            Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Função para exibir a página inicial
+        function showHome() {
+            let html = `
+                <h2 class="text-4xl text-center text-logo mb-10 text-gray-800">Nosso Menu: A Tradição em Sua Mesa</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            `;
+
+            // Adiciona todos os itens ao grid
+            for (const key in recipes) {
+                html += createItemCard(key, recipes[key]);
+            }
+
+            html += `</div>`;
+            contentDiv.innerHTML = html;
+        }
+
+        // Função para exibir os detalhes de um item
+        function showDetails(key) {
+            const item = recipes[key];
+            if (!item) {
+                showHome();
+                return;
+            }
+
+            // Lista de Ingredientes / Detalhes
+            const listItems = item.ingredients ? 
+                item.ingredients.map(ing => `<li class="mb-2 flex items-start"><svg class="w-5 h-5 mr-2 mt-1 flex-shrink-0" style="color: var(--secondary-green);" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>${ing}</li>`).join('') :
+                (item.details ? item.details.split('.').filter(d => d.trim()).map(det => `<li class="mb-2 flex items-start"><svg class="w-5 h-5 mr-2 mt-1 flex-shrink-0" style="color: var(--secondary-green);" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>${det}.</li>`).join('') : '<p class="text-gray-600">Nenhum ingrediente ou detalhe listado.</p>');
+
+            const html = `
+                <div class="max-w-4xl mx-auto bg-white p-6 md:p-10 rounded-2xl shadow-2xl border-t-8" style="border-color: var(--primary-red);">
+                    <button onclick="showHome()" class="flex items-center text-lg text-gray-700 hover:text-gray-900 transition mb-6 font-semibold">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                        Voltar ao Menu
+                    </button>
+
+                    <h2 class="text-5xl text-logo mb-4 text-gray-800">${item.title}</h2>
+                    <span class="inline-block px-4 py-1 text-sm font-bold rounded-full mb-6 text-white"
+                        style="background-color: var(--primary-red);"
+                    >
+                        ${item.type.toUpperCase()}
+                    </span>
+                    
+                    <img src="${item.image}" alt="${item.title}" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A0A0A0/ffffff?text=IMAGEM+INDISPONÍVEL';" class="w-full h-64 object-cover rounded-xl shadow-lg mb-8">
+
+                    <p class="text-xl italic text-gray-700 mb-8">${item.description}</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Ingredientes/Detalhes -->
+                        <div class="p-5 border-l-4 rounded-lg" style="border-color: var(--secondary-green); background-color: #f7fff7;">
+                            <h3 class="text-2xl font-bold mb-4 text-gray-800 flex items-center">
+                                ${item.ingredients ? 
+                                    '<svg class="w-6 h-6 mr-2" style="color: var(--secondary-green);" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"></path></svg> Ingredientes' : 
+                                    '<svg class="w-6 h-6 mr-2" style="color: var(--secondary-green);" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg> Detalhes da Bebida'
+                                }
+                            </h3>
+                            <ul class="list-none space-y-2 text-gray-700">
+                                ${listItems}
+                            </ul>
+                        </div>
+                        
+                        <!-- Modo de Preparo -->
+                        <div class="p-5 border-l-4 rounded-lg" style="border-color: var(--primary-red); background-color: #fff7f7;">
+                            <h3 class="text-2xl font-bold mb-4 text-gray-800 flex items-center">
+                                <svg class="w-6 h-6 mr-2" style="color: var(--primary-red);" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5h-7"></path></svg>
+                                Modo de Preparo
+                            </h3>
+                            <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">${item.preparation || 'Nenhuma instrução de preparo necessária para esta bebida.'}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            contentDiv.innerHTML = html;
+            window.scrollTo(0, 0); // Rola para o topo ao mudar a página
+        }
+
+        // Inicializa a aplicação ao carregar a janela
+        window.onload = showHome;
+
+    </script>
+</body>
+</html>
