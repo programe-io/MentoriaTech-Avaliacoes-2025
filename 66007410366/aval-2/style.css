@@ -1,0 +1,337 @@
+/*
+ * style.css
+ * CORES E FONTES CHAMATIVAS (NEON/CYBERPUNK)
+ */
+:root {
+    --color-primary: #FF00FF; /* Pink Neon */
+    --color-secondary: #00FFFF; /* Ciano Neon */
+    --color-background: #101010; /* Fundo Muito Escuro */
+    --color-text-light: #f0f0f0;
+    --color-gold: #FFD700; /* Dourado/Amarelo de Destaque */
+}
+
+/*
+ * RESET E TIPOGRAFIA GLOBAL
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    background-color: var(--color-background); /* Fundo Escuro em TODAS AS PÁGINAS */
+    text-align: center;
+    min-height: 100vh; /* Garante que o fundo escuro cubra a tela toda */
+}
+
+/*
+ * CABEÇALHO (HEADER) - Efeito Neon
+ */
+header {
+    background-color: #000000;
+    padding: 60px 20px;
+    border-bottom: 5px solid var(--color-primary);
+    box-shadow: 0 5px 20px rgba(255, 0, 255, 0.4);
+}
+
+.neon-title h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 5em;
+    color: var(--color-primary);
+    text-shadow: 0 0 10px var(--color-primary), 0 0 25px #f06292;
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+}
+
+.star-glow {
+    color: var(--color-gold);
+    text-shadow: 0 0 5px var(--color-gold), 0 0 15px #ffd966;
+}
+
+header p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5em;
+    color: var(--color-secondary);
+    text-shadow: 0 0 5px var(--color-secondary);
+}
+
+/*
+ * NAVEGAÇÃO (NAV) - Apenas na página principal (index.html)
+ */
+nav {
+    background-color: #000000;
+    padding: 15px 0;
+    border-bottom: 3px solid var(--color-secondary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 15px;
+    font-weight: 700;
+    border: 2px solid var(--color-secondary);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: var(--color-secondary);
+    color: #000000;
+    box-shadow: 0 0 15px var(--color-secondary);
+    transform: scale(1.05);
+}
+
+/*
+ * SEÇÕES E CONTEÚDO
+ */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 40px 30px;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.2);
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    text-shadow: 0 0 8px var(--color-primary);
+}
+
+/* ------------------- PÁGINA PRINCIPAL: BTS ------------------- */
+
+.highlight-section {
+    background: linear-gradient(135deg, #4b0082, #9400d3); /* Roxo e Violeta */
+    border: 5px solid var(--color-primary);
+}
+
+.bts-info-card {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* ------------------- PÁGINA PRINCIPAL: GALERIA ------------------- */
+
+.group-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.kpop-group-card {
+    padding: 25px;
+    border-radius: 10px;
+    border: 3px solid;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.kpop-group-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.kpop-group-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.group-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.kpop-group-card:hover h3 {
+    text-shadow: 0 0 5px var(--color-gold);
+}
+
+
+/* Temas de Cores da Galeria */
+.blackpink-theme {
+    background-color: #1a1a1a;
+    border-color: #ff1493; /* Rosa Choque */
+    box-shadow: 0 0 15px rgba(255, 20, 147, 0.4);
+}
+.blackpink-theme h3 { color: #ff69b4; }
+.blackpink-theme .fandom-tag { background-color: #ff1493; color: white; }
+
+.straykids-theme {
+    background-color: #000000;
+    border-color: #6a5acd; /* Azul Ametista */
+    box-shadow: 0 0 15px rgba(106, 90, 205, 0.4);
+}
+.straykids-theme h3 { color: #b0c4de; }
+.straykids-theme .fandom-tag { background-color: #6a5acd; color: white; }
+
+.twice-theme {
+    background-color: #333333; /* Cinza escuro para contraste */
+    border-color: #ff69b4; /* Pink Quente */
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+}
+.twice-theme h3 { color: #ffc0cb; }
+.twice-theme .fandom-tag { background-color: #ff69b4; color: #1a1a1a; }
+
+/* ------------------- PÁGINAS DE DETALHES DOS GRUPOS ------------------- */
+
+.group-detail-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding-top: 50px;
+    border: 3px solid var(--color-secondary); /* Borda chamativa */
+    background-color: #1a1a1a; /* Fundo ligeiramente mais claro que o body para separação */
+}
+
+.group-detail-section h2 {
+    color: var(--color-secondary); /* Título em ciano neon */
+    text-shadow: 0 0 8px var(--color-secondary);
+}
+
+.group-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.detail-full-width {
+    grid-column: 1 / -1;
+}
+
+.detail-item {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid;
+    transition: transform 0.2s;
+}
+
+.detail-item:hover {
+    transform: scale(1.03);
+}
+
+/* Temas de cores para os itens de detalhe */
+.detail-pink { /* BLACKPINK */
+    background-color: rgba(255, 20, 147, 0.2);
+    border-color: #ff1493;
+    color: #ff69b4;
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+}
+
+.detail-blue { /* STRAY KIDS */
+    background-color: rgba(106, 90, 205, 0.2);
+    border-color: #6a5acd;
+    color: #b0c4de;
+    box-shadow: 0 0 10px rgba(106, 90, 205, 0.5);
+}
+
+.detail-light-pink { /* TWICE */
+    background-color: rgba(255, 105, 180, 0.2);
+    border-color: #ff69b4;
+    color: #ffc0cb;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+/*
+ * BOTÃO DE AÇÃO (CTA) E BOTÃO DE RETORNO
+ */
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 15px 30px;
+    margin-top: 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px var(--color-secondary);
+}
+
+.cta-button:hover {
+    background-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 0 30px var(--color-primary);
+}
+
+/* BOTÃO DE RETORNO: Dourado e Chamativo */
+.return-button {
+    display: block; /* Ocupa a linha toda para centralizar melhor */
+    width: fit-content;
+    margin: 0 auto 30px auto;
+    background-color: var(--color-gold);
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid #000;
+    box-shadow: 0 0 10px var(--color-gold);
+}
+
+.return-button:hover {
+    background-color: #ffffff;
+    box-shadow: 0 0 25px #ffffff;
+    color: #000000;
+}
+
+/*
+ * RODAPÉ (FOOTER)
+ */
+footer {
+    background-color: #000000;
+    color: var(--color-primary);
+    padding: 20px;
+    font-size: 0.8em;
+    border-top: 3px solid var(--color-primary);
+    margin-top: auto; /* Garante que o rodapé vá para o final da página */
+}
+
+/*
+ * RESPONSIVIDADE
+ */
+@media (max-width: 768px) {
+    .neon-title h1 {
+        font-size: 3em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 10px;
+    }
+    
+    .details-grid, .group-details-grid {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .detail-item {
+        width: 100%;
+    }
+}
