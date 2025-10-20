@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapore Italiano - Cultura e Culinária</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<header>
+<nav>
+<img>
+<article>
+<a>
+<aside>
+<footer>
+<body class="min-h-screen">
+    
+    <!-- CABEÇALHO E NAVEGAÇÃO -->
+    <nav class="bg-white shadow-lg sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-red-700">Sapore Italiano</h1>
+            <div class="space-x-2 flex">
+                <button class="tab-button active-tab bg-amber-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-700 transition" data-tab="cultura" onclick="openTab('cultura', this)">Cultura & História</button>
+                <button class="tab-button bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-amber-100 transition" data-tab="menu" onclick="openTab('menu', this)">Pratos Clássicos</button>
+                <button class="tab-button bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-amber-100 transition" data-tab="contato" onclick="openTab('contato', this)">Contato & Reserva</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL INTERATIVO -->
+    <main class="max-w-6xl mx-auto py-12 px-4">
+        
+        <!-- ABA 1: CULTURA & HISTÓRIA -->
+        <section id="cultura" class="tab-content" style="display: block;">
+            <div class="bg-red-50 p-8 rounded-xl shadow-inner border-l-8 border-red-700 mb-8">
+                <h2 class="text-4xl font-bold text-red-800 mb-4">A Mesa é o Coração da Cultura Italiana.</h2>
+                <p class="text-lg text-gray-700 mb-4">
+                    Mais do que uma culinária, a gastronomia italiana é um ritual de <b>família, tradição e paixão</b>.
+                    É a avó (Nonna) cozinhando, a simplicidade dos ingredientes frescos e o momento de partilha.
+                    Entender a comida é entender a alma da Itália, onde cada prato conta a história de uma região.
+                </p>
+                <ul class="list-disc list-inside text-gray-600 space-y-1">
+                    <li><b>Simplicidade:</b> O segredo está na qualidade e frescor, não na complicação.</li>
+                    <li><b>Regionalismo:</b> Cada região (Toscana, Sicília, Emilia-Romagna) tem seus pratos únicos.</li>
+                    <li><b>Tradição:</b> Receitas passadas de geração em geração, mantendo a autenticidade.</li>
+                </ul>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <img src="italianos.jpg" alt="" class="rounded-xl shadow-lg object-cover h-full"
+                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/b91c1c/ffffff?text=Cultura+Italiana'">
+                <div class="flex flex-col justify-center">
+                    <h3 class="text-3xl font-semibold text-amber-600 mb-3">O Ritual à Mesa</h3>
+                    <p class="text-gray-700">
+                        Na Itália, o jantar é um evento longo e sagrado. Começa com o <b><i>antipasto</i></b>,
+                        seguido pelo <b><i>primo piatto</i></b> (<i>massa ou risoto</i>), o
+                        <b><i>secondo piatto</i></b> (<i>carne ou peixe</i>) e finaliza com a <b><i>dolce</i></b>.
+                        Convidamos você a vivenciar essa experiência completa.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABA 2: PRATOS CLÁSSICOS -->
+        <section id="menu" class="tab-content" style="display: none;">
+            <h2 class="text-4xl font-bold text-red-800 mb-6 text-center">Nossos Clássicos da Nonna</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="card p-5 rounded-xl border-t-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-red-700">Spaghetti alla Carbonara</h3>
+                    <p class="text-sm text-gray-500 mb-3">Guanciale, gema de ovo, queijo Pecorino Romano e pimenta preta.</p>
+                    <p class="text-gray-700">A autêntica receita romana, sem creme de leite. Pura paixão e sabor intenso.</p>
+                    <span class="block mt-3 text-xl font-bold text-amber-600">R$ 58,00</span>
+                </div>
+
+                <div class="card p-5 rounded-xl border-t-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-red-700">Lasagna Bolognese</h3>
+                    <p class="text-sm text-gray-500 mb-3">Massa fresca, molho ragu lento, bechamel e Parmigiano Reggiano.</p>
+                    <p class="text-gray-700">O sabor inconfundível de Bologna, cozido lentamente para perfeição.</p>
+                    <span class="block mt-3 text-xl font-bold text-amber-600">R$ 65,00</span>
+                </div>
+
+                <div class="card p-5 rounded-xl border-t-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-red-700">Saltimbocca alla Romana</h3>
+                    <p class="text-sm text-gray-500 mb-3">Vitela, presunto cru (prosciutto) e sálvia fresca.</p>
+                    <p class="text-gray-700">Um prato rápido e saboroso, que "salta na boca" de tão delicioso.</p>
+                    <span class="block mt-3 text-xl font-bold text-amber-600">R$ 78,00</span>
+                </div>
+
+                <div class="card p-5 rounded-xl border-t-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-red-700">Risotto ai Funghi</h3>
+                    <p class="text-sm text-gray-500 mb-3">Arroz Arborio, cogumelos frescos (porcini), vinho branco e manteiga.</p>
+                    <p class="text-gray-700">O cremoso e rico sabor do risoto do Norte da Itália, preparado à perfeição.</p>
+                    <span class="block mt-3 text-xl font-bold text-amber-600">R$ 62,00</span>
+                </div>
+
+                <div class="card p-5 rounded-xl border-t-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-red-700">Ossobuco con Gremolata</h3>
+                    <p class="text-sm text-gray-500 mb-3">Corte de vitela com tutano, cozido lentamente em vinho e vegetais.</p>
+                    <p class="text-gray-700">Clássico milanês, servido com a tradicional gremolata de limão e salsa.</p>
+                    <span class="block mt-3 text-xl font-bold text-amber-600">R$ 95,00</span>
+                </div>
+
+                <div class="card p-5 rounded-xl border-t-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-red-700">Tiramisù Originale</h3>
+                    <p class="text-sm text-gray-500 mb-3">Mascarpone, café expresso, biscoitos Savoiardi e cacau em pó.</p>
+                    <p class="text-gray-700">A sobremesa mais famosa da Itália, leve, cremosa e cheia de sabor.</p>
+                    <span class="block mt-3 text-xl font-bold text-amber-600">R$ 28,00</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ABA 3: CONTATO & RESERVA -->
+        <section id="contato" class="tab-content" style="display: none;">
+            <h2 class="text-4xl font-bold text-red-800 mb-6 text-center">Fale Conosco e Reserve sua Mesa</h2>
+            <div class="bg-gray-50 p-8 rounded-xl shadow-lg max-w-lg mx-auto">
+                <form class="space-y-4">
+                    <input type="text" placeholder="Nome Completo" class="w-full p-3 rounded-lg border-2 border-amber-200 focus:border-red-500 transition">
+                    <input type="email" placeholder="E-mail" class="w-full p-3 rounded-lg border-2 border-amber-200 focus:border-red-500 transition">
+                    <input type="tel" placeholder="Telefone (WhatsApp)" class="w-full p-3 rounded-lg border-2 border-amber-200 focus:border-red-500 transition">
+                    <textarea placeholder="Mensagem / Detalhes da Reserva" rows="4" class="w-full p-3 rounded-lg border-2 border-amber-200 focus:border-red-500 transition"></textarea>
+                    <button type="submit" class="w-full bg-red-700 text-white font-bold py-3 rounded-lg hover:bg-amber-600 transition duration-300">ENVIAR E RESERVAR</button>
+                </form>
+                <div class="mt-6 text-center text-gray-600 border-t pt-4">
+                    <p>📍 Av. da Gastronomia, 123 - Centro</p>
+                    <p>📞 (11) 98765-4321</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
