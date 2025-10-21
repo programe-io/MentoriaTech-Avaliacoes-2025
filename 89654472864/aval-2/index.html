@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nova Noiva - Seu Guia para Casamentos</title>
+    <link rel="stylesheet" href="styles.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link href="style.css" rel="stylesheet"></head>
+
+<body>
+
+    <header>Nova Noiva</header>
+    <nav>
+        <h1>SITE DA KAMYS</h1>
+        <a href="#vestidos">Vestidos</a>
+        <a href="#dicas">Dicas para Casamento</a>
+    </nav>
+
+    <main>
+        <section id="vestidos">
+            <h2>Escolha seu Vestido dos Sonhos</h2>
+            <div class="vestidos-lista">
+                <div class="vestido-card" data-nome="Vestido Princesa"
+                    data-descricao="Um vestido clássico, com saia volumosa e muito charme."
+                    data-img="https://i.pinimg.com/236x/53/6c/f0/536cf0b288889a9d2cf680c66bd17739.jpg">
+                    <img src="https://i.pinimg.com/236x/53/6c/f0/536cf0b288889a9d2cf680c66bd17739.jpg" alt="Vestido Princesa" />
+                    <h3>Vestido Princesa</h3>
+                    <p>Clássico e volumoso, perfeito para um casamento de conto de fadas.</p>
+                </div>
+                <div class="vestido-card" data-nome="Vestido Tubinho"
+                    data-descricao="Elegante e moderno, perfeito para noivas que querem algo simples e sofisticado."
+                    data-img="https://static.dafiti.com.br/p/cia-do-vestido-vestido-longo-noivas-noivado-casamento-civil-corselete-tomara-que-caia-tubinho-sereia-com-fenda-augusta-branco-5205-35289541-1-product.jpg?ims=filters:quality(70)">
+                    <img src="https://static.dafiti.com.br/p/cia-do-vestido-vestido-longo-noivas-noivado-casamento-civil-corselete-tomara-que-caia-tubinho-sereia-com-fenda-augusta-branco-5205-35289541-1-product.jpg?ims=filters:quality(70)" alt="Vestido Tubinho" />
+                    <h3>Vestido Tubinho</h3>
+                    <p>Elegante e moderno, ideal para cerimônias íntimas.</p>
+                </div>
+                <div class="vestido-card" data-nome="Vestido Boho"
+                    data-descricao="Leve, fluido e cheio de personalidade, ideal para casamentos ao ar livre."
+                    data-img="https://i.pinimg.com/564x/71/9c/78/719c78128f3dcd02774bb4a2419b0910.jpg">
+                    <img src="https://i.pinimg.com/564x/71/9c/78/719c78128f3dcd02774bb4a2419b0910.jpg" alt="Vestido Boho" />
+                    <h3>Vestido Boho</h3>
+                    <p>Leve e natural, perfeito para casamentos ao ar livre.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dicas">
+            <h2>Dicas para um Casamento Perfeito</h2>
+            <ul class="dicas-lista">
+                <li>Planeje seu orçamento com antecedência.</li>
+                <li>Escolha fornecedores com boa reputação e avalie depoimentos.</li>
+                <li>Faça provas dos vestidos com bastante antecedência.</li>
+                <li>Prepare uma lista de convidados realista para evitar surpresas.</li>
+                <li>Cuide da saúde e do bem-estar nos meses que antecedem o casamento.</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Modal para detalhes do vestido -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modal-close">&times;</span>
+            <img id="modal-img" src="" alt="Vestido" />
+            <h3 id="modal-nome"></h3>
+            <p id="modal-descricao"></p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Nova Noiva. Todos os direitos reservados.
+    </footer>
+
+    <script>
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalNome = document.getElementById('modal-nome');
+        const modalDescricao = document.getElementById('modal-descricao');
+        const modalClose = document.getElementById('modal-close');
+
+        document.querySelectorAll('.vestido-card').forEach(card => {
+            card.addEventListener('click', () => {
+                modalImg.src = card.dataset.img;
+                modalNome.textContent = card.dataset.nome;
+                modalDescricao.textContent = card.dataset.descricao;
+                modal.style.display = 'flex';
+            });
+        });
+
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+<aside>
+<article>
+</body>
+
+</html>
