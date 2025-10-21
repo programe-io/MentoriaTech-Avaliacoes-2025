@@ -1,14 +1,8 @@
-// Exibe mensagem no console
-console.log("Olá Maria Luiza! O site carregou corretamente!");
+// Espera o carregamento do DOM
+document.addEventListener("DOMContentLoaded", function() {
+    const botao = document.getElementById("btn-alerta");
 
-// Deixa os links do menu piscarem levemente quando clicados
-const links = document.querySelectorAll("nav a");
-
-links.forEach(link => {
-    link.addEventListener("click", () => {
-        link.style.backgroundColor = "orange";
-        setTimeout(() => {
-            link.style.backgroundColor = "";
-        }, 300);
+    botao.addEventListener("click", function() {
+        alert("Você clicou no botão! 🚀");
     });
 });
