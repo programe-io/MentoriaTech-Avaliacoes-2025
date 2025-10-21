@@ -1,108 +1,85 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chuteira Prime - Sua Loja de Chuteiras Online</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loja Premium de Bonés</title>
+    <link rel="stylesheet" href="style.css" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
 <body>
 
-    <header>
-        <div class="header-container">
-            <h1>Chuteira <span class="destaque-logo">Prime</span></h1> 
-            
-            <nav>
-                <div class="menu-principal">
-                    <ul>
-                        <li><a href="#inicio">Início</a></li>
-                        <li><a href="#produtos">Chuteiras</a></li>
-                        <li><a href="#marcas">Marcas</a></li>
-                        <li><a href="#promocoes">Promoções</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                    </ul>
-                </div>
-            </nav>
-            
-            <div class="busca-container">
-                <form>
-                    <input type="search" placeholder="Buscar chuteiras...">
-                    <button type="submit">Buscar</button>
-                </form>
-            </div>
+<header>
+    <div class="container">
+        <h1>Bonés Premium</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Coleção</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Carrinho (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h2>Seu estilo, seu boné.</h2>
+        <p>Explore a nova coleção com design exclusivo e entrega rápida.</p>
+        <a class="btn" href="#produtos">Ver Produtos</a>
+    </div>
+</section>
+
+<main class="container">
+    <section id="produtos">
+        <h2>Produtos em Destaque</h2>
+        <div class="product-list">
+
+            <article class="product">
+                <img src="data:image/jpeg;base64,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" alt="Boné Clássico Azul" />
+                <h3>Boné Clássico Azul</h3>
+                <p class="preco">R$ 49,90</p>
+                <button onclick="addToCart('Boné Clássico Azul')">Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="product">
+                <img src="data:image/jpeg;base64,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" />
+                <h3>Boné Estiloso Cinza</h3>
+                <p class="preco">R$ 59,90</p>
+                <button onclick="addToCart('Boné Estiloso Cinza')">Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="product">
+                <img src="data:image/jpeg;base64,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" alt="Boné Vermelho Esportivo" />
+                <h3>Boné Vermelho Esportivo</h3>
+                <p class="preco">R$ 69,90</p>
+                <button onclick="addToCart('Boné Vermelho Esportivo')">Adicionar ao Carrinho</button>
+            </article>
+
         </div>
-    </header>
+    </section>
 
-    <main>
-        
-        <div id="inicio" class="hero">
-            <h2>Domine o Campo. <span class="texto-enfase">Encontre Sua Chuteira Perfeita.</span></h2> 
-            <p>Novos modelos Nike, Adidas e Puma com até <span class="oferta-percentual">30% off</span>.</p>
-            <button>Ver Lançamentos</button>
-        </div>
+    <aside class="promo">
+        <h3>Promoção Especial</h3>
+        <p>Compre 2 bonés e ganhe <span class="highlight">10% de desconto</span>!</p>
+        <h3>Categorias</h3>
+        <ul>
+            <li><a href="#">Casual</a></li>
+            <li><a href="#">Esportivo</a></li>
+            <li><a href="#">Marca Premium</a></li>
+        </ul>
+    </aside>
+</main>
 
-        <div class="main-content-layout">
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Bonés Premium. Todos os direitos reservados.</p>
+    </div>
+</footer>
 
-            <div id="produtos" class="catalogo">
-                <h2>Nossas Chuteiras</h2>
-
-                <div class="produto">
-                    <h3>Nike Mercurial Superfly 9</h3>
-                    <figure>
-                        <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ76a7iUpJegX92j_PfVewrdMek5H0xs3r8kMTy_8DXmZ24mnAca0glSmWAeQKvAFdn27AeDJQRv5iF8sQ-vgRn4h-j17mGDrVLc6L-QJxZRm96zqiFWWx7" 
-                             alt="Chuteira Nike Mercurial cor laranja e preta">
-                        <figcaption>Velocidade e Tração Imbatíveis.</figcaption>
-                    </figure>
-                    <p>Preço: <span class="preco-valor">R$ 899,90</span></p> 
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-
-                <div class="produto">
-                    <h3>Adidas Predator Accuracy</h3>
-                    <figure>
-                        <img src="caminho/para/predator.jpg" alt="Chuteira Adidas Predator cor preta e vermelha">
-                        <figcaption>Controle de Bola Absoluto.</figcaption>
-                    </figure>
-                    <p>Preço: <span class="preco-valor">R$ 749,90</span></p> 
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-
-            </div>
-            
-            <div class="filtros">
-                <h4>Filtros Rápidos</h4>
-                <ul>
-                    <li><a href="#">Campo (<span class="tipo-grama">FG</span>)</a></li>
-                    <li><a href="#">Society (<span class="tipo-grama">TF</span>)</a></li>
-                    <li><a href="#">Futsal (<span class="tipo-grama">IC</span>)</a></li>
-                </ul>
-            </div>
-
-        </div> 
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="links-uteis">
-                <h4>Institucional</h4>
-                <nav>
-                    <ul>
-                        <li><a href="#">Sobre Nós</a></li>
-                        <li><a href="#">Política de Troca</a></li>
-                        <li><a href="#">Trabalhe Conosco</a></li>
-                    </ul>
-                </nav>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; <span class="ano-atual">2024</span> Chuteira Prime. Todos os direitos reservados.</p>
-                <address>Rua da Bola, 123 - São Paulo, SP</address>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 <script src="script.js"></script></body>
 </html>
+
