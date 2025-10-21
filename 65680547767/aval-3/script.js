@@ -6,6 +6,7 @@
  * Funcionalidades incluídas:
  * 1. Sistema de Carrinho de Compras (Adicionar ao Carrinho).
  * 2. Interação com o botão do Banner (Role para os produtos).
+ * 3. Efeito simples no rodapé usando a tag <span>.
  *
  */
 
@@ -76,4 +77,39 @@ function adicionarAoCarrinho(event) {
 }
 
 /**
- * Função para atualizar elementos
+ * Função para atualizar elementos visuais do carrinho (fictício).
+ */
+function atualizarInterfaceCarrinho() {
+    console.log(`Carrinho atualizado: ${carrinho.length} itens. Total: R$ ${totalCarrinho.toFixed(2)}`);
+    
+    // Se houvesse um span/div para exibir a contagem do carrinho, a atualização seria feita aqui.
+}
+
+
+// =======================================================
+// 3. FUNCIONALIDADE DO SLIDER/DESTAQUE (HERO) E SPAN
+// =======================================================
+
+function inicializarDestaque() {
+    // Seleciona o botão dentro do div com a classe 'hero'
+    const heroButton = document.querySelector('.hero button');
+
+    if (heroButton) {
+        heroButton.addEventListener('click', () => {
+            // Ação: Rola a tela suavemente para a seção de produtos.
+            const produtosSection = document.getElementById('produtos');
+            if (produtosSection) {
+                produtosSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
+    // Exemplo de manipulação do SPAN no rodapé (para fins de demonstração)
+    const anoSpan = document.querySelector('.ano-atual');
+    if (anoSpan) {
+        // Altera o conteúdo do SPAN para o ano atual (garantindo que esteja sempre correto)
+        const ano = new Date().getFullYear();
+        anoSpan.innerText = ano.toString();
+        console.log(`Ano no rodapé atualizado para: ${ano}`);
+    }
+}

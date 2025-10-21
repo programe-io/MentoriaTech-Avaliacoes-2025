@@ -85,4 +85,314 @@ header nav a:hover {
 
 .busca-container button {
     padding: 8px 15px;
-    background-color: #ff45
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.busca-container button:hover {
+    background-color: #cc3700;
+}
+
+/* * -----------------------------------------------------
+ * 2. MAIN E LAYOUT
+ * -----------------------------------------------------
+ */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    font-size: 2em;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* * -----------------------------------------------------
+ * 3. SEÇÃO HERO (DESTAQUE)
+ * -----------------------------------------------------
+ */
+.hero {
+    background-color: #333;
+    color: white;
+    padding: 50px 30px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.hero h2 {
+    color: white;
+    border: none;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* Estilizando o SPAN de ênfase no H2 */
+.texto-enfase {
+    color: #00ff7f; /* Verde neon */
+}
+
+/* Estilizando o SPAN da porcentagem de desconto */
+.oferta-percentual {
+    color: #ff4500; /* Laranja forte */
+    font-weight: bold;
+    background-color: #555;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.hero button {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: opacity 0.3s;
+}
+
+.hero button:hover {
+    opacity: 0.9;
+}
+
+
+/* * -----------------------------------------------------
+ * 4. LAYOUT DE CONTEÚDO PRINCIPAL (CATÁLOGO + ASIDE)
+ * -----------------------------------------------------
+ */
+.main-content-layout {
+    display: flex;
+    gap: 30px;
+}
+
+.catalogo {
+    flex: 3; /* Ocupa a maior parte do espaço */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* * -----------------------------------------------------
+ * 5. PRODUTO (ITEM)
+ * -----------------------------------------------------
+ */
+.produto {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.produto img {
+    max-width: 100%;
+    height: auto;
+    /* Estilo de borda da imagem para combinar com o tema */
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.produto p {
+    font-size: 1.3em;
+    color: #1a1a1a;
+    font-weight: normal;
+    margin: 15px 0 10px;
+}
+
+/* Estilizando o SPAN do preço */
+.preco-valor {
+    color: #ff4500; /* Destaca o preço com a cor primária */
+    font-weight: bold;
+    font-size: 1.1em;
+    display: block; /* Faz o preço ocupar a largura total do p */
+}
+
+.produto button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+.produto button:hover {
+    background-color: #004494;
+}
+
+/* * -----------------------------------------------------
+ * 6. ASIDE (FILTROS)
+ * -----------------------------------------------------
+ */
+.filtros {
+    flex: 1; /* Ocupa 1 parte do espaço */
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.filtros h4 {
+    color: #1a1a1a;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.filtros ul {
+    list-style: none;
+}
+
+.filtros li {
+    padding: 8px 0;
+}
+
+.filtros a {
+    display: block;
+    color: #666;
+    transition: color 0.3s, padding-left 0.3s;
+}
+
+.filtros a:hover {
+    color: #ff4500;
+    padding-left: 5px;
+}
+
+/* Estilizando o SPAN dos tipos de grama nos filtros */
+.tipo-grama {
+    font-weight: bold;
+    background-color: #ff4500;
+    color: white;
+    padding: 1px 4px;
+    border-radius: 3px;
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+/* * -----------------------------------------------------
+ * 7. FOOTER (RODAPÉ)
+ * -----------------------------------------------------
+ */
+footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    margin-top: 40px;
+}
+
+.footer-container {
+    padding: 30px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.copyright {
+    text-align: right;
+}
+
+/* Estilo do SPAN do ano atual */
+.ano-atual {
+    font-weight: bold;
+    color: #ff4500; 
+}
+
+footer h4 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+footer nav a {
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+footer nav a:hover {
+    color: #ff4500;
+}
+
+footer p, footer address {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* * -----------------------------------------------------
+ * 8. MEDIA QUERIES (RESPONSIVIDADE BÁSICA)
+ * -----------------------------------------------------
+ */
+@media (max-width: 900px) {
+    /* Ajusta o layout principal para empilhar itens em telas menores */
+    .main-content-layout {
+        flex-direction: column;
+    }
+    .catalogo {
+        order: 2;
+    }
+    .filtros {
+        order: 1;
+    }
+    .copyright {
+        text-align: left;
+    }
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Ajusta o cabeçalho em telas de celular */
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .menu-principal ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .busca-container {
+        display: flex;
+        width: 100%;
+    }
+    .busca-container input[type="search"] {
+        flex-grow: 1;
+    }
+}
