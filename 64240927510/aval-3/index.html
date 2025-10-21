@@ -1,50 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dean Winchester - Supernatural</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sabores da Casa — Cardápio</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
-<body>
-    <header>
-        <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Dean_Winchester_in_2014.jpg" alt="Dean Winchester">
-        <h1>Dean Winchester</h1>
-        <p>Caçador de monstros, herói e irmão leal</p>
-    </header>
+<body class="bg-gradient-to-b from-amber-50 to-rose-50 min-h-screen text-gray-800">
+  <!-- Nav -->
+  <header class="w-full sticky top-0 z-30">
+    <nav class="max-w-6xl mx-auto p-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-amber-400 flex items-center justify-center font-bold text-white">S</div>
+        <div>
+          <h1 class="text-lg font-semibold">Sabores da Casa</h1>
+          <p class="text-xs text-gray-600">Comida caseira com amor</p>
+        </div>
+      </div>
 
-    <main>
-        <section class="about">
-            <h2>Quem é Dean Winchester?</h2>
-            <p>Dean Winchester é um dos protagonistas da série <strong>Supernatural</strong>. Ele é o irmão mais velho de Sam Winchester e dedica sua vida a caçar criaturas sobrenaturais e proteger a humanidade.</p>
-        </section>
+      <div class="hidden md:flex items-center gap-6">
+        <a class="hover:underline cursor-pointer">Cardápio</a>
+        <a class="hover:underline cursor-pointer">Sobre</a>
+        <a class="hover:underline cursor-pointer">Contato</a>
+        <button id="open-cart" class="relative bg-amber-500 text-white px-3 py-1 rounded">
+          Carrinho
+          <span id="cart-count" class="absolute -top-2 -right-2 inline-flex items-center justify-center w-5 h-5 text-xs bg-red-600 text-white rounded-full">0</span>
+        </button>
+      </div>
 
-        <section class="childhood">
-            <h2>Infância e Origem</h2>
-            <p>Dean nasceu em 24 de janeiro de 1979. Após a morte de sua mãe em um incêndio causado por um demônio, ele foi criado pelo pai como um caçador. Desde cedo, assumiu a responsabilidade de cuidar do irmão mais novo, Sam.</p>
-        </section>
+      <button id="mobile-btn" class="md:hidden p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
 
-        <section class="personality">
-            <h2>Personalidade</h2>
-            <p>Dean é corajoso, sarcástico e extremamente leal à sua família. Ele tem um forte senso de dever e frequentemente coloca os outros antes de si mesmo. Adora carros clássicos (especialmente seu Impala 1967), rock clássico e tortas.</p>
-        </section>
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white/60 glass border-t">
+      <div class="p-4 flex flex-col gap-2">
+        <a class="py-2">Cardápio</a>
+        <a class="py-2">Sobre</a>
+        <a class="py-2">Contato</a>
+      </div>
+    </div>
+  </header>
 
-        <section class="journey">
-            <h2>Jornada em Supernatural</h2>
-            <p>Ao longo das 15 temporadas da série, Dean enfrenta anjos, demônios, deuses, vampiros e até a própria Morte. Ele morre e retorna várias vezes, faz pactos, carrega culpa, salva o mundo e mantém sua humanidade mesmo nas situações mais sombrias.</p>
-        </section>
-    </main>
+  <!-- Hero -->
+  <main class="max-w-6xl mx-auto p-6">
+    <section class="grid md:grid-cols-2 gap-6 items-center">
+      <div class="space-y-4">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Comida que abraça — entregue na sua porta</h2>
+        <p class="text-gray-600">Pratos preparados diariamente com ingredientes frescos e receitas tradicionais. Explore o cardápio abaixo e monte seu pedido.</p>
+        <div class="flex gap-3">
+          <button id="ver-cardapio" class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded">Ver cardápio</button>
+          <button id="ver-sobre" class="bg-white border px-4 py-2 rounded">Sobre nós</button>
+        </div>
+      </div>
 
-    <footer>
-        <p>&copy; 2025 Fã-clube Winchester | Feito com ❤️ para os fãs de Supernatural</p>
-        <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">YouTube</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </footer>
-</body>
+      <div class="bg-gradient-to-br from-rose-100 to-amber-100 rounded-2xl p-6">
+        <img src="https://images.unsplash.com/photo-1604908554033-6a8b6d6b0e1b?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3"
+             alt="Prato" class="w-full h-60 object-cover rounded-xl shadow-lg">
+      </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="mt-10">
+      <div class="flex items-center justify-between">
+        <h3 class="text-2xl font-semibold">Cardápio</h3>
+        <div class="flex gap-2">
+          <select id="category" class="border rounded px-3 py-1">
+            <option value="all">Todas</option>
+            <option value="principais">Pratos Principais</option>
+            <option value="acompanhamentos">Acompanhamentos</option>
+            <option value="sobremesas">Sobremesas</option>
+            <option value="bebidas">Bebidas</option>
+          </select>
+          <input id="search" placeholder="Buscar prato" class="border rounded px-3 py-1" />
+        </div>
+      </div>
+
+      <div id="menu-grid" class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="about" class="mt-12 bg-white p-6 rounded-lg shadow-sm">
+      <h4 class="text-xl font-semibold">Sobre nós</h4>
+      <p class="text-gray-600 mt-2">Sabores da Casa é um restaurante familiar que busca resgatar receitas caseiras. Atendimento rápido e entrega para sua região.</p>
+      <div class="mt-4 flex gap-3">
+        <a class="underline">Instagram</a>
+        <a class="underline">WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Carrinho -->
+  <div id="cart-modal" class="fixed inset-0 hidden items-center justify-center bg-black/40 z-50">
+    <div class="bg-white w-full max-w-2xl rounded-lg p-6">
+      <div class="flex justify-between items-center">
+        <h3 class="text-lg font-semibold">Seu carrinho</h3>
+        <button id="close-cart" class="text-gray-600">Fechar</button>
+      </div>
+      <div id="cart-items" class="mt-4 space-y-3 max-h-60 overflow-auto">
+        <p class="text-gray-500">Carrinho vazio</p>
+      </div>
+      <div class="mt-4 flex justify-between items-center">
+        <div class="text-lg font-semibold">Total: R$ <span id="cart-total">0,00</span></div>
+        <div class="flex gap-2">
+          <button id="clear-cart" class="px-3 py-1 border rounded">Limpar</button>
+          <button id="checkout" class="px-4 py-2 bg-amber-500 text-white rounded">Finalizar pedido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Template -->
+  <template id="menu-template">
+    <div class="bg-white rounded-lg shadow p-4 flex flex-col">
+      <img class="w-full h-36 object-cover rounded mb-3" src="" alt="">
+      <div class="flex-1">
+        <h5 class="font-semibold">Título</h5>
+        <p class="text-sm text-gray-500">Descrição</p>
+      </div>
+      <div class="mt-3 flex items-center justify-between">
+        <div class="font-semibold">R$ 0,00</div>
+        <button class="add-btn bg-amber-500 text-white px-3 py-1 rounded">Adicionar</button>
+      </div>
+    </div>
+  </template>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
 </html>
-<div>
-    <nav>
-        <span>
