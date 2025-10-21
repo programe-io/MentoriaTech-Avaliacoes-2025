@@ -1,0 +1,329 @@
+/* ============================================== */
+/* 1. RESET E VARIAVEIS GLOBAIS                   */
+/* ============================================== */
+
+/* Box Sizing Universal: Facilita o cálculo de padding e border */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Transição suave para a maioria das interações */
+    transition: all 0.3s ease;
+}
+
+/* Variáveis CSS: Personalize as cores e fontes facilmente aqui */
+:root {
+    /* Cores Principais */
+    --cor-primaria: #a052a0;      /* Lilás/Roxo Suave (Elegância) */
+    --cor-secundaria: #ff69b4;   /* Pink Choque (Destaque) */
+    --cor-fundo-claro: #fcfcfc;   /* Branco Quase Puro */
+    --cor-fundo-suave: #f4f4f8;   /* Cinza/Lilás Muito Claro */
+    --cor-texto: #333;
+    --cor-texto-claro: #fff;
+    
+    /* Fontes */
+    --fonte-principal: 'Georgia', serif;
+    --fonte-secundaria: 'Arial', sans-serif;
+    
+    /* Sombras e Bordas */
+    --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --sombra-hover: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    background-color: var(--cor-fundo-suave);
+    color: var(--cor-texto);
+    font-family: var(--fonte-secundaria);
+    line-height: 1.6;
+}
+
+/* Container de Conteúdo */
+.container {
+    width: 95%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* ============================================== */
+/* 2. CABEÇALHO (HEADER) E NAVEGAÇÃO              */
+/* ============================================== */
+header {
+    background-color: var(--cor-fundo-claro);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Fica fixo no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+header h1 {
+    color: var(--cor-primaria);
+    font-family: var(--fonte-principal);
+    font-size: 1.8em;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+}
+
+header nav ul li a:hover {
+    color: var(--cor-primaria);
+}
+
+/* Efeito de Sublinhado ao Passar o Mouse */
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--cor-secundaria);
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Estilo para o Contador do Carrinho (usando a tag span) */
+.carrinho-contador {
+    font-weight: bold;
+    color: var(--cor-secundaria);
+    background-color: var(--cor-fundo-suave);
+    padding: 2px 7px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+/* ============================================== */
+/* 3. BOTÕES E ELEMENTOS DE DESTAQUE              */
+/* ============================================== */
+.btn {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px; /* Borda arredondada */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: #e04e9c; /* Pink mais escuro */
+    transform: translateY(-2px); /* Efeito de elevação */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ============================================== */
+/* 4. BANNER/HERO SECTION                         */
+/* ============================================== */
+#banner {
+    background: linear-gradient(135deg, var(--cor-fundo-suave), var(--cor-fundo-claro));
+    padding: 100px 0;
+    text-align: center;
+}
+
+#banner h2 {
+    font-family: var(--fonte-principal);
+    font-size: 3em;
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+#banner p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Destaques (usando span) */
+.destaque-porcentagem {
+    color: var(--cor-secundaria);
+    font-weight: 900;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ============================================== */
+/* 5. CATÁLOGO DE PRODUTOS (CARDS)                */
+/* ============================================== */
+.catalogo-produtos {
+    padding: 60px 0;
+}
+
+.catalogo-produtos h2 {
+    text-align: center;
+    color: var(--cor-primaria);
+    font-family: var(--fonte-principal);
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+/* Layout com CSS Grid (Para criar o layout de colunas) */
+.lista-produtos {
+    display: grid;
+    /* 3 colunas por padrão, com espaçamento de 30px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+}
+
+.produto-card {
+    background-color: var(--cor-fundo-claro);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--sombra-card);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.produto-card:hover {
+    box-shadow: var(--sombra-hover);
+    border: 1px solid var(--cor-secundaria);
+}
+
+.produto-card img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    /* Garante que a imagem se ajuste bem ao card */
+    display: block; 
+}
+
+.produto-card h3 {
+    color: var(--cor-texto);
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+.produto-card .preco {
+    color: var(--cor-primaria);
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Estilo para a descrição com overflow */
+.produto-card .descricao {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+    /* Garante que a descrição não seja muito longa */
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limita a 2 linhas */
+    -webkit-box-orient: vertical;
+}
+
+/* ============================================== */
+/* 6. OUTRAS SEÇÕES (SOBRE, CONTATO)              */
+/* ============================================== */
+.info-section {
+    padding: 40px 0;
+    background-color: var(--cor-fundo-suave);
+    border-top: 1px solid #e0e0e0;
+}
+
+.info-section h2 {
+    color: var(--cor-primaria);
+    font-family: var(--fonte-principal);
+    margin-bottom: 20px;
+}
+
+/* ============================================== */
+/* 7. RODAPÉ (FOOTER)                             */
+/* ============================================== */
+footer {
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo-claro);
+    padding: 30px 0;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================== */
+/* 8. RESPONSIVIDADE (MEDIA QUERIES)              */
+/* ============================================== */
+
+/* Para tablets e telas menores que 992px */
+@media (max-width: 992px) {
+    .lista-produtos {
+        /* Muda para no máximo 2 colunas */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    #banner h2 {
+        font-size: 2.5em;
+    }
+}
+
+/* Para celulares e telas menores que 600px */
+@media (max-width: 600px) {
+    header .container {
+        flex-direction: column; /* Empilha o logo e a navegação */
+        text-align: center;
+    }
+    
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    #banner {
+        padding: 60px 0;
+    }
+    
+    #banner h2 {
+        font-size: 2em;
+    }
+    
+    .lista-produtos {
+        /* Apenas 1 coluna em telas muito pequenas */
+        grid-template-columns: 1fr;
+    }
+    
+    .produto-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
