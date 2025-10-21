@@ -1,47 +1,79 @@
 /**
  * =======================================================
- * JAVASCRIPT PARA O SITE SIMPLES COM IMAGEM
+ * JAVASCRIPT PARA A LOJA DE CHUTEIRAS (CHUTEIRA PRIME)
  * =======================================================
+ *
+ * Funcionalidades incluídas:
+ * 1. Sistema de Carrinho de Compras (Adicionar ao Carrinho).
+ * 2. Interação com o botão do Banner (Role para os produtos).
+ *
  */
 
+// Array simples para simular o carrinho de compras
+let carrinho = [];
+let totalCarrinho = 0;
+
+// =======================================================
+// 1. INICIALIZAÇÃO E LISTENERS
+// =======================================================
+
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mensagem simples ao carregar a página (Boas-vindas)
-    console.log("Olá! O site foi carregado com sucesso. Bem-vindo(a)!");
+    // 1.1. Adiciona um listener em todos os botões "Adicionar ao Carrinho"
+    // Os botões estão dentro dos divs de classe 'produto'
+    const botoesAdicionar = document.querySelectorAll('.produto button');
+    
+    botoesAdicionar.forEach(botao => {
+        botao.addEventListener('click', adicionarAoCarrinho);
+    });
 
-    // 2. Funcionalidade de troca de imagem ao clicar
-    const imagemElemento = document.querySelector('img');
-
-    // Verifica se a imagem foi encontrada no HTML
-    if (imagemElemento) {
-        // Define as URLs das imagens que serão alternadas
-        const imagemOriginalSrc = imagemElemento.src; // Pega o caminho original
-        // ATENÇÃO: Você precisa criar (ou encontrar) este segundo arquivo de imagem!
-        const imagemAlternativaSrc = "minha_imagem_alternativa.jpg"; 
-        
-        let estaAlternativa = false;
-
-        // Adiciona um "ouvinte" de evento de clique na imagem
-        imagemElemento.addEventListener('click', () => {
-            
-            if (estaAlternativa) {
-                // Se estiver na alternativa, volta para a original
-                imagemElemento.src = imagemOriginalSrc;
-                imagemElemento.alt = "Descrição da imagem original.";
-                console.log("Imagem trocada: Voltou para a original.");
-            } else {
-                // Se estiver na original, troca para a alternativa
-                imagemElemento.src = imagemAlternativaSrc;
-                imagemElemento.alt = "Descrição da imagem alternativa, após o clique.";
-                console.log("Imagem trocada: Exibindo a alternativa.");
-            }
-            
-            // Inverte o estado da variável de controle
-            estaAlternativa = !estaAlternativa;
-            
-            // Opcional: Efeito visual simples (só para mostrar o JS funcionando)
-            alert("Você clicou na imagem!");
-        });
-    } else {
-        console.error("Erro: O elemento <img> não foi encontrado. Verifique se o seletor está correto.");
-    }
+    // 1.2. Inicializa a funcionalidade de interação do destaque
+    inicializarDestaque();
 });
+
+// =======================================================
+// 2. FUNCIONALIDADE DO CARRINHO DE COMPRAS
+// =======================================================
+
+/**
+ * Função responsável por adicionar um produto ao carrinho.
+ * @param {Event} event - O evento de clique.
+ */
+function adicionarAoCarrinho(event) {
+    // Pega o elemento pai do botão (o <div class="produto">)
+    const produtoElement = event.target.closest('.produto');
+
+    // Extrai o nome do produto
+    const nome = produtoElement.querySelector('h3').innerText;
+    
+    // EXTRAÇÃO DO PREÇO: Pega o SPAN com a classe .preco-valor e limpa para obter um número
+    const precoSpan = produtoElement.querySelector('.preco-valor').innerText;
+    // Remove "R$", substitui vírgula por ponto e converte para número
+    const preco = parseFloat(precoSpan.replace('R$', '').replace(',', '.').trim());
+
+    // Verifica se a extração do preço foi bem-sucedida
+    if (isNaN(preco)) {
+        console.error("Erro ao extrair o preço. Verifique o formato do texto no HTML.");
+        alert(`Não foi possível adicionar ${nome} ao carrinho. Preço inválido.`);
+        return;
+    }
+
+    // Cria um objeto de produto
+    const item = {
+        nome: nome,
+        preco: preco,
+        quantidade: 1
+    };
+
+    // Adiciona ao carrinho (Simulação simples)
+    carrinho.push(item);
+    totalCarrinho += preco;
+
+    // Feedback para o usuário
+    alert(`"${nome}" adicionado ao carrinho! \nTotal atual: R$ ${totalCarrinho.toFixed(2).replace('.', ',')}`);
+
+    // Chamada a uma função fictícia para atualizar a interface do carrinho
+    atualizarInterfaceCarrinho();
+}
+
+/**
+ * Função para atualizar elementos

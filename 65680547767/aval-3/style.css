@@ -5,84 +5,84 @@
  */
 * {
     /* Define que padding e border estão inclusos na largura e altura total do elemento */
-    box-sizing: border-box;
+    box-sizing: border-box; 
     margin: 0;
     padding: 0;
 }
 
 body {
-    /* Fonte e cor de fundo */
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f0f2f5; /* Fundo muito claro */
+    background-color: #f4f4f9; /* Fundo cinza claro */
     color: #333;
-    text-align: center; /* Centraliza o texto e os elementos de bloco */
+}
+
+a {
+    text-decoration: none;
+    color: #0056b3; /* Azul padrão para links */
+}
+
+a:hover {
+    color: #007bff;
 }
 
 /* * -----------------------------------------------------
- * 1. LAYOUT PRINCIPAL E CONTEÚDO
+ * 1. HEADER (TOPO DA PÁGINA)
  * -----------------------------------------------------
  */
-main {
-    /* Limita a largura do conteúdo para melhor leitura */
-    max-width: 800px;
-    margin: 40px auto; /* Centraliza o bloco principal */
-    padding: 30px;
-    background-color: #ffffff; /* Fundo branco para o conteúdo */
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+header {
+    background-color: #1a1a1a; /* Preto forte */
+    color: white;
+    border-bottom: 5px solid #ff4500; /* Destaque laranja/vermelho */
 }
 
-header {
-    background-color: #007bff; /* Azul primário */
-    color: white;
-    padding: 20px 0;
-    margin-bottom: 20px;
+/* Container para alinhar logo, nav e busca no header */
+.header-container {
+    padding: 15px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
 }
 
 header h1 {
-    font-size: 2.5em;
-    font-weight: 300; /* Fonte mais leve */
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-p {
-    margin: 15px 0;
-    font-size: 1.1em;
-    color: #555;
+/* Estilizando o SPAN dentro do H1 */
+.destaque-logo {
+    color: #ff4500; /* Cor laranja para destacar 'Prime' */
+    font-weight: 900;
 }
 
-/* * -----------------------------------------------------
- * 2. ESTILO DA IMAGEM
- * -----------------------------------------------------
- */
-img {
-    /* Estilos herdados do HTML, com melhorias */
-    max-width: 100%; /* Garante que a imagem se ajuste a qualquer tela */
-    height: auto;
-    display: block; /* Garante que a imagem se comporte como um bloco */
-    margin: 20px auto; /* Centraliza a imagem no bloco principal */
-    border: 5px solid #007bff; /* Borda azul para destaque */
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out; /* Transição suave */
+/* Navegação */
+.menu-principal ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
-img:hover {
-    transform: scale(1.02); /* Pequeno zoom ao passar o mouse */
+header nav a {
+    color: white;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s;
 }
 
-/* * -----------------------------------------------------
- * 3. RODAPÉ
- * -----------------------------------------------------
- */
-footer {
-    padding: 15px 0;
-    margin-top: 30px;
-    background-color: #333;
-    color: #ccc;
-    font-size: 0.9em;
+header nav a:hover {
+    color: #ff4500;
 }
 
-footer p {
-    margin: 0;
-    color: #ccc;
+/* Busca */
+.busca-container input[type="search"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px 0 0 4px;
 }
+
+.busca-container button {
+    padding: 8px 15px;
+    background-color: #ff45
