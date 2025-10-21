@@ -1,0 +1,201 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+nav {
+    float: right;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Hero section */
+.hero {
+    background: url('https://via.placeholder.com/1200x400?text=Bonés+Premium') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #ffcc00;
+    color: #222;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: #e6b800;
+}
+
+/* Main */
+main {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Produtos */
+.product-list {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.product h3 {
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.product .preco {
+    font-size: 1.2em;
+    color: #ff6600;
+    margin-bottom: 15px;
+}
+
+.product button {
+    background-color: #222;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: #444;
+}
+
+/* Aside / promoção */
+.promo {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    align-self: flex-start;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.promo h3 {
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.promo p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.promo .highlight {
+    color: #ff6600;
+    font-weight: bold;
+}
+
+.promo ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.promo ul li {
+    margin-bottom: 10px;
+}
+
+.promo ul li a {
+    text-decoration: none;
+    color: #222;
+}
+
+.promo ul li a:hover {
+    color: #ff6600;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
