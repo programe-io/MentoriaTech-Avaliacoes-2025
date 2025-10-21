@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essência Pura | Perfumaria Fina</title>
+    <style>
+        /* --- RESET BÁSICO E VARIÁVEIS --- */
+        :root {
+            --cor-primaria: #A0522D; /* Marrom Terroso/Caramelo - Sofisticação */
+            --cor-secundaria: #333333; /* Preto Quase-Preto */
+            --cor-fundo-claro: #F8F8F8;
+            --cor-texto-claro: #EAEAEA;
+            --fonte-titulo: 'Georgia', serif;
+            --fonte-corpo: 'Helvetica Neue', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--fonte-corpo);
+            background-color: var(--cor-fundo-claro);
+            color: var(--cor-secundaria);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--cor-secundaria);
+        }
+
+        /* --- HEADER E NAV --- */
+        header {
+            background-color: white;
+            border-bottom: 1px solid #eee;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .logo { 
+            font-family: var(--fonte-titulo);
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--cor-primaria);
+        }
+        nav a {
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--cor-primaria);
+        }
+
+        /* --- SEÇÃO PRINCIPAL (HERO) --- */
+        .hero {
+            background: url('https://via.placeholder.com/1600x600/D2B48C/A0522D?text=Imagem+Destaque+Perfumaria') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--cor-texto-claro);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+        .hero h2 {
+            font-family: var(--fonte-titulo);
+            font-size: 3.5em;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .btn-hero {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .btn-hero:hover {
+            background-color: #8B4513; /* Marrom mais escuro */
+        }
+
+        /* --- LAYOUT PARA MAIN E ASIDE (Flex Container) --- */
+        .content-layout {
+            display: flex;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            gap: 40px;
+        }
+
+        /* --- SEÇÃO CATÁLOGO (Conteúdo Principal) --- */
+        .catalogo {
+            flex-grow: 3; /* Ocupa mais espaço */
+            text-align: center;
+        }
+        .catalogo h3 {
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: var(--cor-primaria);
+            font-family: var(--fonte-titulo);
+        }
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        /* ESTILO DO ARTICLE (Item de Produto) */
+        .produto-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .produto-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .produto-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        .produto-card h4 {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+        .produto-card .preco {
+            color: var(--cor-primaria);
+            font-weight: bold;
+            font-size: 1.1em;
+            display: block;
+            margin: 10px 0;
+        }
+        .btn-comprar {
+            background-color: var(--cor-secundaria);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn-comprar:hover {
+            background-color: #555;
+        }
+        
+        /* --- SEÇÃO LATERAL (ASIDE) --- */
+        aside {
+            flex-grow: 1; 
+            max-width: 300px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            height: fit-content;
+        }
+        aside h4 {
+            font-family: var(--fonte-titulo);
+            color: var(--cor-primaria);
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        .newsletter-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .newsletter-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--cor-primaria);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .newsletter-form button:hover {
+            background-color: #8B4513;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--cor-secundaria);
+            color: var(--cor-texto-claro);
+            text-align: center;
+            padding: 40px 5%;
+            margin-top: 40px;
+        }
+        .social-links a {
+            color: var(--cor-texto-claro);
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+
+        /* Responsividade básica */
+        @media (max-width: 900px) {
+            .content-layout {
+                flex-direction: column;
+                gap: 30px;
+            }
+            aside {
+                max-width: 100%;
+            }
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <h1>Essência Pura</h1> 
+        <nav>
+            <a href="#colecoes">Coleções</a>
+            <a href="#novidades">Novidades</a>
+            <a href="#sobre">Nossa História</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Descubra Sua Assinatura Olfativa</h2>
+            <p>Coleção Exclusiva de Primavera: Leveza e Sofisticação em Cada Borrifada.</p>
+            <a href="#colecoes" class="btn-hero">Explorar Fragrâncias</a>
+        </section>
+
+        <div class="content-layout">
+            
+            <section class="catalogo">
+                <h3>Mais Vendidos</h3>
+                <div class="produtos-grid">
+                    
+                    <article class="produto-card">
+                        <img src="https://via.placeholder.com/300x250/D2B48C/A0522D?text=Perfume+Feminino+A" alt="Perfume Feminino A">
+                        <h4>Aurora Boreal</h4>
+                        <p>Notas Cítricas e Amadeiradas</p>
+                        <span class="preco">R$ 389,00</span>
+                        <a href="#" class="btn-comprar">Comprar</a>
+                    </article>
+
+                    <article class="produto-card">
+                        <img src="https://via.placeholder.com/300x250/A0522D/FFFFFF?text=Perfume+Masculino+B" alt="Perfume Masculino B">
+                        <h4>Fóssil Íntimo</h4>
+                        <p>Aroma de Couro e Baunilha</p>
+                        <span class="preco">R$ 450,00</span>
+                        <a href="#" class="btn-comprar">Comprar</a>
+                    </article>
+
+                    <article class="produto-card">
+                        <img src="https://via.placeholder.com/300x250/E6E6FA/4B0082?text=Unissex+C" alt="Perfume Unissex C">
+                        <h4>Névoa Noturna</h4>
+                        <p>Inspirado em Especiarias Orientais</p>
+                        <span class="preco">R$ 320,00</span>
+                        <a href="#" class="btn-comprar">Comprar</a>
+                    </article>
+
+                </div>
+            </section>
+
+            <aside>
+                <h4>Assine Nossa Newsletter</h4>
+                <p style="font-size: 0.9em; margin-bottom: 15px;">Receba 10% OFF no primeiro pedido e lançamentos exclusivos.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit">Assinar</button>
+                </form>
+                
+                <h4 style="margin-top: 30px;">Destaque</h4>
+                <p style="font-size: 0.9em; margin-bottom: 10px;">**PROMOÇÃO RELÂMPAGO!** Fragrância Sândalo Real com 20% OFF por tempo limitado.</p>
+                <a href="#" class="btn-comprar" style="background-color: #c0392b;">Ver Oferta</a>
+            </aside>
+
+        </div> 
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Essência Pura. Todos os direitos reservados.</p>
+        <p>Siga-nos:</p>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook">FACE</a> |
+            <a href="#" aria-label="Instagram">INSTA</a> |
+            <a href="#" aria-label="Twitter">X</a>
+        </div>
+        <p id="contato">Fale conosco: contato@essenciapura.com</p>
+    </footer>
+
+<script src="script.js"></script></body>
+</html>

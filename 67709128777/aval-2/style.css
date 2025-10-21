@@ -1,0 +1,180 @@
+/* Variáveis CSS para cores e fontes */
+:root {
+    --primary-color: #3498db; /* Azul */
+    --secondary-color: #2ecc71; /* Verde */
+    --accent-color: #e74c3c; /* Vermelho */
+    --background-color: #ecf0f1; /* Cinza claro */
+    --text-color: #2c3e50; /* Azul escuro */
+    --light-text-color: #ffffff; /* Branco */
+    --font-family-primary: 'Arial', sans-serif;
+    --font-family-secondary: 'Helvetica Neue', sans-serif;
+}
+
+/* Reset básico e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--light-text-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.1em;
+}
+
+/* Seção de Paletas */
+.palette-section {
+    margin-bottom: 40px;
+}
+
+.palette-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.palette-card {
+    background-color: var(--light-text-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.palette-card:hover {
+    transform: translateY(-5px);
+}
+
+.palette-card h3 {
+    padding: 15px;
+    font-size: 1.5em;
+    color: var(--text-color);
+    border-bottom: 1px solid #eee;
+}
+
+.color-swatch {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--light-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Exemplo de cores para as paletas */
+.color-swatch.red {
+    background-color: #e74c3c;
+}
+.color-swatch.orange {
+    background-color: #e67e22;
+}
+.color-swatch.yellow {
+    background-color: #f1c40f;
+}
+.color-swatch.green {
+    background-color: #2ecc71;
+}
+.color-swatch.blue {
+    background-color: #3498db;
+}
+.color-swatch.purple {
+    background-color: #9b59b6;
+}
+.color-swatch.dark-blue {
+    background-color: #2c3e50;
+}
+.color-swatch.gray {
+    background-color: #95a5a6;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-color);
+    font-size: 0.9em;
+    margin-top: 40px;
+    border-top: 1px solid #ccc;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .palette-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .palette-card h3 {
+        font-size: 1.3em;
+    }
+
+    .color-swatch {
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .palette-section h2 {
+        font-size: 1.8em;
+    }
+}
