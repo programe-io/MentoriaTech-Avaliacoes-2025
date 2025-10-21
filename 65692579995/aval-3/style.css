@@ -1,0 +1,117 @@
+/*
+  ESTILOS GERAIS E RESET
+*/
+* {
+    /* Garante que padding e border não aumentem o tamanho final do elemento */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Fonte e cor de fundo */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f9fa; /* Fundo cinza muito claro */
+    color: #343a40; /* Texto em preto escuro */
+    line-height: 1.6;
+}
+
+/*
+  CONTAINER PRINCIPAL
+  Centraliza o conteúdo na tela
+*/
+.container {
+    max-width: 800px; /* Largura máxima do conteúdo */
+    margin: 40px auto; /* Centraliza horizontalmente e adiciona margem superior/inferior */
+    padding: 20px;
+    background-color: #ffffff; /* Fundo branco para o conteúdo */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Centraliza o texto dentro do container */
+}
+
+/*
+  TÍTULO
+*/
+h1 {
+    color: #007bff; /* Azul primário para o título */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e9ecef; /* Linha sutil abaixo do título */
+}
+
+/*
+  PARÁGRAFOS
+*/
+p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #555;
+    text-align: justify; /* Melhora a leitura do texto */
+}
+
+/* Centraliza os parágrafos que estão imediatamente antes/depois da imagem */
+.container > p:first-of-type,
+.container > p:last-of-type {
+    text-align: center;
+}
+
+/*
+  IMAGEM
+*/
+img {
+    /* Garante que a imagem seja responsiva */
+    max-width: 100%;
+    height: auto;
+    
+    /* Estilo da imagem */
+    display: block; /* Garante que a imagem ocupe sua própria linha */
+    margin: 30px auto; /* Centraliza a imagem e adiciona espaço */
+    
+    border: 5px solid #007bff; /* Borda azul para destaque */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.3); /* Sombra azul para enfatizar */
+    transition: transform 0.3s; /* Transição para um efeito hover */
+}
+
+/* Efeito ao passar o mouse sobre a imagem */
+img:hover {
+    transform: scale(1.02); /* Aumenta um pouco a imagem */
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+}
+
+/*
+  CÓDIGO (para o destaque do <code>)
+*/
+code {
+    background-color: #e9ecef;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    color: #c82333; /* Cor vermelha para destacar código */
+    font-weight: bold;
+}
+
+/*
+  MEDIA QUERY (Responsividade)
+  Ajusta o layout para telas menores, como celulares
+*/
+@media (max-width: 600px) {
+    .container {
+        margin: 20px 10px; /* Reduz margens laterais */
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+    
+    img {
+        margin: 20px auto;
+    }
+}
