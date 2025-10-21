@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta tags essenciais para SEO e compatibilidade -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Portal profissional de futebol com notícias, análises, estatísticas e cobertura completa dos principais campeonatos.">
+    <meta name="keywords" content="futebol, campeonato, times, jogadores, análise, estatísticas, notícias">
+    <meta name="author" content="Futebol Pro Brasil">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph para redes sociais -->
+    <meta property="og:title" content="Futebol Pro Brasil - Análises e Notícias de Futebol">
+    <meta property="og:description" content="Acompanhe as melhores análises, notícias e estatísticas do futebol brasileiro e mundial.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://futbolprobrasil.com">
+    <meta property="og:image" content="https://futbolprobrasil.com/imagem-preview.jpg">
+    <meta property="og:site_name" content="Futebol Pro Brasil">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Futebol Pro Brasil">
+    <meta name="twitter:description" content="Análises e notícias de futebol">
+    <meta name="twitter:image" content="https://futbolprobrasil.com/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a472a 0%, #2d5f3f 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        nav {
+            background-color: #0f2818;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+        }
+        
+        nav a:hover {
+            color: #4CAF50;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: #1a472a;
+            margin-bottom: 1rem;
+        }
+        
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        h4 { font-size: 1.25rem; }
+        h5 { font-size: 1.1rem; }
+        h6 { font-size: 1rem; }
+        
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #4CAF50;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        table thead {
+            background-color: #1a472a;
+            color: white;
+        }
+        
+        table th, table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        footer {
+            background-color: #0f2818;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        
+        button, input[type="submit"], input[type="reset"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+        }
+        
+        button:hover, input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+        input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0 1rem 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, #1a472a 0%, #2d5f3f 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+    </style>
+    
+    <!-- Título da página -->
+    <title>Futebol Pro Brasil - Notícias, Análises e Estatísticas de Futebol</title>
+    
+    <!-- Link para fontes externas -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://futbolprobrasil.com">
+    
+    <!-- Alternate language versions -->
+    <link rel="alternate" hreflang="pt-BR" href="https://futbolprobrasil.com/pt-br">
+    <link rel="alternate" hreflang="en" href="https://futbolprobrasil.com/en">
+</head>
+<body>
+    <!-- Cabeçalho principal -->
+    <header>
+        <div class="container">
+            <div class="logo">⚽ Futebol Pro Brasil</div>
+            <p>Análises, Notícias e Estatísticas do Futebol Profissional</p>
+        </div>
+    </header>
+    
+    <!-- Navegação principal -->
+    <nav role="navigation" aria-label="Menu principal">
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#noticias">Notícias</a></li>
+            <li><a href="#campeonatos">Campeonatos</a></li>
+            <li><a href="#times">Times</a></li>
+            <li><a href="#jogadores">Jogadores</a></li>
+            <li><a href="#analises">Análises</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Conteúdo principal -->
+    <main role="main">
+        <!-- Seção Início -->
+        <section id="inicio">
+            <h1>Bem-vindo ao Futebol Pro Brasil</h1>
+            <p>
+                Somos o portal mais completo de futebol profissional do Brasil. Aqui você encontra 
+                <strong>notícias em tempo real</strong>, <strong>análises técnicas detalhadas</strong>, 
+                <strong>estatísticas atualizadas</strong> e <strong>cobertura exclusiva</strong> dos principais 
+                campeonatos nacionais e internacionais.
+            </p>
+            <p>
+                Acompanhe a evolução dos seus times favoritos, conheça os melhores jogadores e fique 
+                atualizado com as últimas movimentações do mercado de transferências.
+            </p>
+        </section>
+        
+        <!-- Seção Estatísticas Gerais -->
+        <section>
+            <h2>Estatísticas Gerais</h2>
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number">380</div>
+                    <div class="stat-label">Jogos Acompanhados</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">1.250+</div>
+                    <div class="stat-label">Gols Registrados</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">850K</div>
+                    <div class="stat-label">Leitores Mensais</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Cobertura Contínua</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção Notícias -->
+        <section id="noticias">
+            <h2>Últimas Notícias</h2>
+            
+            <article class="card">
+                <h3>Campeonato Brasileiro: Rodada 15 com Resultados Surpreendentes</h3>
+                <p><time datetime="2024-10-21T15:30:00">21 de outubro de 2024 às 15:30</time></p>
+                <p>
+                    A 15ª rodada do Campeonato Brasileiro trouxe resultados inesperados. 
+                    Confira os destaques da rodada e as análises técnicas dos principais jogos.
+                </p>
+                <a href="#noticia1">Leia mais</a>
+            </article>
+            
+            <article class="card">
+                <h3>Mercado de Transferências: Grandes Movimentações no Futebol Europeu</h3>
+                <p><time datetime="2024-10-20T14:15:00">20 de outubro de 2024 às 14:15</time></p>
+                <p>
+                    Vários clubes europeus de elite estão em busca de reforços. Acompanhe as 
+                    principais negociações e especulações do mercado internacional.
+                </p>
+                <a href="#noticia2">Leia mais</a>
+            </article>
+            
+            <article class="card">
+                <h3>Análise: Desempenho de Goleiros na Temporada 2024</h3>
+                <p><time datetime="2024-10-19T10:45:00">19 de outubro de 2024 às 10:45</time></p>
+                <p>
+                    Quem são os melhores goleiros da temporada? Confira nossa análise completa 
+                    com estatísticas de defesas, penalidades e desempenho geral.
+                </p>
+                <a href="#noticia3">Leia mais</a>
+            </article>
+        </section>
+        
+        <!-- Seção Campeonatos -->
+        <section id="campeonatos">
+            <h2>Principais Campeonatos</h2>
+            
+            <div class="grid">
+                <article class="card">
+                    <h3>Campeonato Brasileiro</h3>
+                    <p>
+                        Série A - O principal campeonato do futebol brasileiro com 20 times disputando 
+                        o título em 38 rodadas.
+                    </p>
+                    <p><strong>Rodada atual:</strong> 15 de 38</p>
+                    <p><strong>Líder:</strong> Botafogo (45 pontos)</p>
+                    <button>Ver tabela completa</button>
+                </article>
+                
+                <article class="card">
+                    <h3>Copa Libertadores</h3>
+                    <p>
+                        A principal competição de clubes da América do Sul, reunindo os melhores times 
+                        do continente em busca do título máximo.
+                    </p>
+                    <p><strong>Fase:</strong> Quartas de Final</p>
+                    <p><strong>Próximos jogos:</strong> 25 e 26 de outubro</p>
+                    <button>Ver chaveamento</button>
+                </article>
+                
+                <article class="card">
+                    <h3>Liga dos Campeões UEFA</h3>
+                    <p>
+                        A mais prestigiosa competição europeia de clubes, com os melhores times 
+                        do continente em busca da glória continental.
+                    </p>
+                    <p><strong>Fase:</strong> Fase de Grupos</p>
+                    <p><strong>Rodada atual:</strong> 3 de 8</p>
+                    <button>Ver grupos</button>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Seção Times -->
+        <section id="times">
+            <h2>Times Principais</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Posição</th>
+                        <th>Time</th>
+                        <th>Jogos</th>
+                        <th>Vitórias</th>
+                        <th>Empates</th>
+                        <th>Derrotas</th>
+                        <th>Pontos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1º</td>
+                        <td>Botafogo</td>
+                        <td>14</td>
+                        <td>14</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>45</td>
+                    </tr>
+                    <tr>
+                        <td>2º</td>
+                        <td>Palmeiras</td>
+                        <td>14</td>
+                        <td>13</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>41</td>
+                    </tr>
+                    <tr>
+                        <td>3º</td>
+                        <td>Flamengo</td>
+                        <td>14</td>
+                        <td>12</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>38</td>
+                    </tr>
+                    <tr>
+                        <td>4º</td>
+                        <td>Fortaleza</td>
+                        <td>14</td>
+                        <td>11</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>36</td>
+                    </tr>
+                    <tr>
+                        <td>5º</td>
+                        <td>São Paulo</td>
+                        <td>14</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>34</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Seção Jogadores -->
+        <section id="jogadores">
+            <h2>Destaques de Jogadores</h2>
+            
+            <div class="grid">
+                <article class="card">
+                    <h4>Neymar Jr.</h4>
+                    <p><strong>Posição:</strong> Atacante</p>
+                    <p><strong>Time:</strong> Al-Hilal (Arábia Saudita)</p>
+                    <p><strong>Gols na temporada:</strong> 12</p>
+                    <p><strong>Assistências:</strong> 8</p>
+                    <p>
+                        Um dos maiores talentos do futebol mundial, conhecido por sua criatividade 
+                        e capacidade de decisão nos momentos importantes.
+                    </p>
+                </article>
+                
+                <article class="card">
+                    <h4>Vinícius Júnior</h4>
+                    <p><strong>Posição:</strong> Extremo Esquerdo</p>
+                    <p><strong>Time:</strong> Real Madrid</p>
+                    <p><strong>Gols na temporada:</strong> 15</p>
+                    <p><strong>Assistências:</strong> 6</p>
+                    <p>
+                        Jovem talento brasileiro em ascensão, com velocidade impressionante 
+                        e grande capacidade ofensiva.
+                    </p>
+                </article>
+                
+                <article class="card">
+                    <h4>Rodrygo Goes</h4>
+                    <p><strong>Posição:</strong> Extremo Direito</p>
+                    <p><strong>Time:</strong> Real Madrid</p>
+                    <p><strong>Gols na temporada:</strong> 10</p>
+                    <p><strong>Assistências:</strong> 5</p>
+                    <p>
+                        Promissor jogador brasileiro que tem se destacado no futebol europeu 
+                        com suas atuações consistentes.
+                    </p>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Seção Análises -->
+        <section id="analises">
+            <h2>Análises Técnicas</h2>
+            
+            <article class="card">
+                <h3>Tática: O Retorno do 4-3-3 no Futebol Moderno</h3>
+                <p>
+                    Analisamos como a formação clássica 4-3-3 voltou a ganhar espaço no futebol 
+                    contemporâneo, com exemplos de times que utilizam essa estratégia com sucesso.
+                </p>
+                <details>
+                    <summary>Expandir análise completa</summary>
+                    <p>
+                        A formação 4-3-3 oferece um equilíbrio entre defesa e ataque, permitindo 
+                        que os times tenham estabilidade defensiva enquanto mantêm criatividade no 
+                        meio-campo. Grandes clubes europeus como Manchester City e Bayern de Munique 
+                        utilizam variações dessa formação com grande eficiência.
+                    </p>
+                </details>
+            </article>
+            
+            <article class="card">
+                <h3>Estatísticas: Evolução do Xadrez Posicional</h3>
+                <p>
+                    Uma análise profunda sobre como as estatísticas avançadas (xG, xA) estão 
+                    mudando a forma como entendemos o desempenho dos times e jogadores.
+                </p>
+                <details>
+                    <summary>Expandir análise completa</summary>
+                    <p>
+                        As métricas avançadas como Expected Goals (xG) e Expected Assists (xA) 
+                        fornecem uma visão mais clara da qualidade das oportunidades criadas e 
+                        defendidas por um time, indo além dos simples gols marcados.
+                    </p>
+                </details>
+            </article>
+        </section>
+        
+        <!-- Seção Contato -->
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <p>
+                Tem dúvidas, sugestões ou quer contribuir com artigos? Entre em contato conosco 
+                através do formulário abaixo ou pelos nossos canais de comunicação.
+            </p>
+            
+            <form action="https://formspree.io/f/seu-id" method="POST" novalidate>
+                <fieldset>
+                    <legend>Formulário de Contato</legend>
+                    
+                    <div>
+                        <label for="nome">Nome Completo: <span aria-label="obrigatório">*</span></label>
+                        <input 
+                            type="text" 
+                            id="nome" 
+                            name="nome" 
+                            required 
+                            aria-label="Seu nome completo"
+                            placeholder="Digite seu nome"
+                        >
+                    </div>
+                    
+                    <div>
+                        <label for="email">Email: <span aria-label="obrigatório">*</span></label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            aria-label="Seu endereço de email"
+                            placeholder="seu.email@exemplo.com"
+                        >
+                    </div>
+                    
+                    <div>
+                        <label for="telefone">Telefone:</label>
+                        <input 
+                            type="tel" 
+                            id="telefone" 
+                            name="telefone" 
+                            aria-label="Seu número de telefone"
+                            placeholder="(11) 99999-9999"
+                        >
+                    </div>
+                    
+                    <div>
+                        <label for="assunto">Assunto: <span aria-label="obrigatório">*</span></label>
+                        <select id="assunto" name="assunto" required aria-label="Selecione o assunto">
+                            <option value="">-- Selecione uma opção --</option>
+                            <option value="noticia">Enviar Notícia</option>
+                            <option value="analise">Contribuir com Análise</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="reclamacao">Reclamação</option>
+                            <option value="parceria">Parceria</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="mensagem">Mensagem: <span aria-label="obrigatório">*</span></label>
+                        <textarea 
+                            id="mensagem" 
+                            name="mensagem" 
+                            rows="6" 
+                            required 
+                            aria-label="Sua mensagem"
+                            placeholder="Digite sua mensagem aqui..."
+                        ></textarea>
+                    </div>
+                    
+                    <div>
+                        <input type="submit" value="Enviar Mensagem">
+                        <input type="reset" value="Limpar Formulário">
+                    </div>
+                </fieldset>
+            </form>
+            
+            <!-- Informações de contato -->
+            <address>
+                <h3>Informações de Contato</h3>
+                <p>
+                    <strong>Email Principal:</strong> 
+                    <a href="mailto:contato@futbolprobrasil.com">contato@futbolprobrasil.com</a>
+                </p>
+                <p>
+                    <strong>Email Redação:</strong> 
+                    <a href="mailto:redacao@futbolprobrasil.com">redacao@futbolprobrasil.com</a>
+                </p>
+                <p>
+                    <strong>Telefone:</strong> 
+                    <a href="tel:+5511987654321">+55 (11) 98765-4321</a>
+                </p>
+                <p>
+                    <strong>Localização:</strong> São Paulo, SP - Brasil
+                </p>
+                <p>
+                    <strong>Horário de Atendimento:</strong> Segunda a Sexta, 9h às 18h
+                </p>
+            </address>
+        </section>
+        
+        <!-- Seção Redes Sociais -->
+        <section>
+            <h2>Siga-nos nas Redes Sociais</h2>
+            <p>Acompanhe as últimas notícias e atualizações em tempo real:</p>
+            <ul>
+                <li>
+                    <a href="https://facebook.com/futbolprobrasil" target="_blank" rel="noopener noreferrer">
+                        Facebook - Futebol Pro Brasil
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/futbolprobr" target="_blank" rel="noopener noreferrer">
+                        Twitter/X - @futbolprobr
+                    </a>
+                </li>
+                <li>
+                    <a href="https://instagram.com/futbolprobrasil" target="_blank" rel="noopener noreferrer">
+                        Instagram - @futbolprobrasil
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtube.com/futbolprobrasil" target="_blank" rel="noopener noreferrer">
+                        YouTube - Futebol Pro Brasil
+                    </a>
+                </li>
+                <li>
+                    <a href="https://tiktok.com/@futbolprobrasil" target="_blank" rel="noopener noreferrer">
+                        TikTok - @futbolprobrasil
+                    </a>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- Seção Recursos Adicionais -->
+        <section>
+            <h2>Recursos Adicionais</h2>
+            <nav aria-label="Recursos">
+                <ul>
+                    <li><a href="#calendario">Calendário de Jogos</a></li>
+                    <li><a href="#videos">Vídeos e Destaques</a></li>
+                    <li><a href="#podcast">Podcast de Futebol</a></li>
+                    <li><a href="#newsletter">Newsletter</a></li>
+                    <li><a href="#app">Baixar App</a></li>
+                </ul>
+            </nav>
+        </section>
+    </main>
+    
+    <!-- Rodapé -->
+    <footer role="contentinfo">
+        <div class="container">
+            <h2>Futebol Pro Brasil</h2>
+            <p>&copy; 2024 Futebol Pro Brasil. Todos os direitos reservados.</p>
+            <p>
+                <a href="#privacidade" style="color: #4CAF50;">Política de Privacidade</a> | 
+                <a href="#termos" style="color: #4CAF50;">Termos de Serviço</a> |
+                <a href="#cookies" style="color: #4CAF50;">Política de Cookies</a> |
+                <a href="#acessibilidade" style="color: #4CAF50;">Acessibilidade</a>
+            </p>
+            <p>
+                Desenvolvido com <span aria-label="paixão">⚽</span> para os amantes de futebol
+            </p>
+            <p>
+                <small>
+                    Este site utiliza cookies para melhorar sua experiência. 
+                    <a href="#cookies" style="color: #4CAF50;">Saiba mais</a>
+                </small>
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Scripts JavaScript -->
+    <script>
+        // Smooth scroll para links de navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Validação do formulário
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                const email = document.getElementById('email').value;
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                if (!emailRegex.test(email)) {
+                    e.preventDefault();
+                    alert('Por favor, digite um email válido');
+                    return false;
+                }
+                
+                console.log('Formulário validado e pronto para envio');
+            });
+        }
+        
+        // Efeito de hover nas cards
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Log de carregamento
+        console.log('Página Futebol Pro Brasil carregada com sucesso');
+    </script>
+    
+    <!-- Script externo (exemplo) -->
+    <script src="script.js" defer></script>
+    
+    <!-- Google Analytics (exemplo) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Futebol Pro Brasil",
+        "url": "https://futbolprobrasil.com",
+        "description": "Portal profissional de futebol com notícias, análises e estatísticas",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://futbolprobrasil.com/buscar?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</body>
+</html>
+
