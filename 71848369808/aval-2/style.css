@@ -1,0 +1,90 @@
+/* 1. VARIÁVEIS E RESET BÁSICO */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cor-principal: #e53935; /* Vermelho Moto/Agressivo */
+    --cor-secundaria: #333333; /* Preto Escuro */
+    --cor-fundo: #f4f4f4; /* Cinza Claro */
+    --cor-texto-claro: #ffffff;
+    --cor-texto-escuro: #1a1a1a;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-escuro);
+    line-height: 1.6;
+}
+
+/* 2. CABEÇALHO E NAVEGAÇÃO (Mobile-First) */
+.cabecalho {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: var(--cor-principal);
+}
+
+.menu-principal a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu-principal a:hover {
+    color: var(--cor-principal);
+}
+
+/* 3. CONTEÚDO PRINCIPAL E SEÇÕES */
+.conteudo-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.secao {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.secao h2 {
+    color: var(--cor-principal);
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Estilo do Botão de Ação */
+.botao-acao, .botao-detalhes {
+    display: inline-block;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    padding: 12px 25px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.botao-acao:hover, .botao-detalhes:hover {
+    background-color: #c62828;
+}
+
+/* 4. SEÇÃO
