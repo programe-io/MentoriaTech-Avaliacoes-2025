@@ -1,0 +1,227 @@
+/* ------------------------------------------------------------------- */
+/* 1. Reset Básico (Melhora a consistência entre navegadores)         */
+/* ------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8; /* Fundo levemente cinza */
+    color: #333;
+}
+
+a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: inherit; /* Links herdam a cor do pai */
+}
+
+ul {
+    list-style: none; /* Remove as bolinhas das listas */
+}
+
+/* ------------------------------------------------------------------- */
+/* 2. HEADER (Cabeçalho)                                              */
+/* ------------------------------------------------------------------- */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 5%;
+    display: flex; /* Organiza os filhos lado a lado (logo, nav, utilidades) */
+    justify-content: space-between; /* Espaço entre os elementos */
+    align-items: center; /* Alinha verticalmente ao centro */
+    position: sticky; /* Mantém o header fixo no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo a {
+    color: #000;
+}
+
+/* Navegação (Menu) */
+nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #cc0000; /* Cor de destaque ao passar o mouse (vermelho) */
+    border-bottom: 2px solid #cc0000;
+}
+
+/* Ícones de Utilidade */
+.utilidades a {
+    margin-left: 20px;
+    font-size: 1.1em;
+}
+
+/* ------------------------------------------------------------------- */
+/* 3. MAIN (Conteúdo Principal)                                        */
+/* ------------------------------------------------------------------- */
+main {
+    padding: 20px 5%;
+}
+
+/* Banner Principal */
+.banner-hero {
+    position: relative;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.banner-hero img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.chamada-acao {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    padding: 20px;
+}
+
+.botao-cta {
+    display: inline-block;
+    background-color: #cc0000;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.botao-cta:hover {
+    background-color: #aa0000;
+}
+
+/* ------------------------------------------------------------------- */
+/* 4. PRODUTOS EM DESTAQUE (Grade)                                    */
+/* ------------------------------------------------------------------- */
+.produtos-destaque h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.grade-produtos {
+    display: grid;
+    /* Cria 4 colunas de tamanho igual (para telas grandes) */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px;
+}
+
+/* Card de Produto Individual */
+.produto-card {
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #eee;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produto-card:hover {
+    transform: translateY(-5px); /* Efeito de elevação */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.produto-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.produto-card h3 {
+    font-size: 1.1em;
+    margin: 10px 0 5px;
+    color: #000;
+}
+
+.produto-card .categoria {
+    font-size: 0.8em;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.produto-card .preco {
+    font-size: 1.2em;
+    color: #cc0000; /* Preço em destaque */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.produto-card button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.produto-card button:hover {
+    background-color: #000;
+}
+
+/* ------------------------------------------------------------------- */
+/* 5. FOOTER (Rodapé)                                                 */
+/* ------------------------------------------------------------------- */
+footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 30px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+footer h4 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #ccc;
+    display: block;
+    margin-bottom: 5px;
+}
+
+footer a:hover {
+    color: #cc0000;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8em;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
+
+/* ------------------------------------------------------------------- */
+/* 6. RESPONSIVIDADE (Para telas menores/celulares)                   */
+/* ------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    
+    .grade-produtos {
+        /* Al
