@@ -1,0 +1,173 @@
+/* ======================== */
+/* 1. RESET BÁSICO E TIPOGRAFIA */
+/* ======================== */
+
+/* Reseta margens e preenchimentos padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8; /* Cor de fundo suave */
+    color: #333;
+}
+
+/* Estilo para links genéricos */
+a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff5722; /* Cor de destaque ao passar o mouse */
+}
+
+/* Estilo para botões */
+.botao-comprar, .botao-detalhe, .botao-adicionar {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.botao-comprar:hover, .botao-adicionar:hover {
+    background-color: #ff5722; /* Destaque laranja no hover */
+}
+
+/* ======================== */
+/* 2. CABEÇALHO (HEADER) */
+/* ======================== */
+
+.cabecalho {
+    background-color: white;
+    padding: 15px 5%;
+    display: flex; /* Usa Flexbox para alinhar itens na horizontal */
+    justify-content: space-between; /* Distribui o espaço entre logo, menu e ícones */
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    position: sticky; /* Fica fixo no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-size: 1.8em;
+    color: #333;
+}
+
+.menu-principal ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu-principal li {
+    margin-left: 25px;
+}
+
+.icones-usuario a {
+    margin-left: 15px;
+    font-size: 1em;
+}
+
+/* ======================== */
+/* 3. CONTEÚDO PRINCIPAL (MAIN) */
+/* ======================== */
+
+.conteudo-principal {
+    padding: 20px 5%;
+}
+
+/* 3.1 Banner Destaque */
+.banner-destaque {
+    background: url('caminho/para/imagem-banner.jpg') no-repeat center center/cover;
+    background-color: #555; /* Fallback */
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+}
+
+.banner-destaque h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.banner-destaque p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* 3.2 Lista de Produtos em Destaque */
+.produtos-destaque h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.lista-produtos {
+    display: grid; /* Usa Grid para o layout dos produtos */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 4 colunas em telas grandes */
+    gap: 20px;
+}
+
+/* 3.3 Card de Produto Individual */
+.produto-card {
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produto-card:hover {
+    transform: translateY(-5px); /* Efeito de elevação */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.produto-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.produto-card h4 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.produto-card .preco {
+    color: #ff5722;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.produto-card .botao-detalhe {
+    background-color: #ddd;
+    color: #333;
+    margin-right: 5px;
+}
+
+.produto-card .botao-detalhe:hover {
+    background-color: #ccc;
+}
+
+/* ======================== */
+/* 4. RODAPÉ (FOOTER) */
+/* ======================== */
+
+.rodape {
+    background-color
