@@ -1,0 +1,185 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background-color: #121212; /* fundo escuro */
+    color: #f0f0f0; /* texto claro */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #2e7d32; /* verde escuro */
+    color: #ffeb3b; /* amarelo forte */
+    padding: 25px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #558b2f;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 3em;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px #000000;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.3em;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* Navegação */
+nav {
+    background-color: #1b5e20; /* verde escuro */
+    padding: 12px 0;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 35px;
+    box-shadow: 0 0 8px #33691e;
+}
+
+nav a {
+    color: #cddc39; /* verde limão */
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: #ff5722; /* vermelho fogo */
+    text-shadow: 0 0 5px #ff5722;
+}
+
+/* Layout da seção principal */
+#row {
+    display: flex;
+    gap: 30px;
+}
+
+/* Aside */
+aside {
+    flex: 1;
+    background-color: #263238; /* azul petróleo escuro */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+aside h1, aside h2, aside h3, aside h5 {
+    color: #aed581; /* verde claro */
+    margin-bottom: 15px;
+}
+
+aside h1 {
+    font-weight: 700;
+    font-size: 1.4em;
+}
+
+aside p {
+    font-size: 1em;
+    color: #cfd8dc;
+    margin-bottom: 20px;
+}
+
+/* Fakeimage */
+.fakeimage {
+    background-color: #455a64; /* cinza azulado */
+    color: #cfd8dc;
+    padding: 15px;
+    margin-bottom: 18px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1em;
+    box-shadow: inset 0 0 5px #37474f;
+}
+
+/* Imagem da galeria */
+aside img.fakeimage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    box-shadow: 0 0 10px #aed581;
+}
+
+/* Main */
+main {
+    flex: 2;
+    background-color: #37474f; /* azul escuro */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(174, 213, 129, 0.7);
+}
+
+main article h2 {
+    color: #dce775; /* amarelo esverdeado */
+    margin-bottom: 20px;
+    font-weight: 900;
+    font-size: 2em;
+    text-shadow: 1px 1px 3px #000000;
+}
+
+main article p {
+    font-size: 1.1em;
+    color: #eceff1;
+    margin-bottom: 25px;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+}
+
+/* Imagens dentro do artigo */
+main article img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px #cddc39;
+    transition: transform 0.3s ease;
+}
+
+main article img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ff5722;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 15px 0;
+    background-color: #2e7d32; /* verde escuro */
+    color: #ffeb3b; /* amarelo */
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    box-shadow: 0 0 10px #558b2f;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    #row {
+        flex-direction: column;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main, aside {
+        padding: 20px;
+    }
+}
