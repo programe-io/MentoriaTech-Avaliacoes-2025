@@ -1,0 +1,130 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taekwondo Brasil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Aprenda sobre Taekwondo, seus benefícios e técnicas.">
+    <meta name="keywords" content="Taekwondo, Artes Marciais, Saúde, Exercício">
+    <meta name="author" content="Seu Nome">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Taekwondo Brasil</h1>
+        <p>Disciplina, força e confiança em cada movimento</p>
+    </header>
+
+    <!-- NAVEGAÇÃO -->
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#tecnicas">Técnicas</a>
+    </nav>
+
+    <main>
+        <!-- SEÇÃO SOBRE -->
+        <article id="sobre">
+            <h2>Sobre Taekwondo</h2>
+            <div class="content">
+                <div class="text-block">
+                    <h3>O que é?</h3>
+                    <p>O Taekwondo é uma arte marcial coreana conhecida por seus chutes rápidos e altos, combinando disciplina física e mental.</p>
+                    <p>É praticado por pessoas de todas as idades e tem foco no desenvolvimento da força, flexibilidade e concentração.</p>
+                </div>
+                <div class="image-block">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Taekwondo_2012.jpg/800px-Taekwondo_2012.jpg" alt="Praticantes de Taekwondo em ação">
+                </div>
+            </div>
+        </article>
+
+        <!-- SEÇÃO BENEFÍCIOS -->
+        <article id="beneficios">
+            <h2>Benefícios do Taekwondo</h2>
+            <div class="content">
+                <div class="text-block">
+                    <h3>Disciplina e foco</h3>
+                    <p>O treino constante melhora a disciplina e o foco, habilidades importantes dentro e fora do esporte.</p>
+                </div>
+                <div class="text-block">
+                    <h3>Força e resistência</h3>
+                    <p>Exercícios de Taekwondo desenvolvem força muscular, resistência cardiovascular e agilidade.</p>
+                </div>
+                <div class="text-block">
+                    <h3>Autoconfiança</h3>
+                    <p>Aprender novas técnicas e evoluir no esporte aumenta a autoestima e autoconfiança.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- SEÇÃO TÉCNICAS -->
+        <article id="tecnicas">
+            <h2>Técnicas Principais</h2>
+            <div class="techniques">
+                <div class="technique-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Taekwondo_front_kick.jpg/220px-Taekwondo_front_kick.jpg" alt="Chute Frontal">
+                    <h4>Chute Frontal</h4>
+                    <p>Chute rápido e direto, usado para ataque e defesa.</p>
+                </div>
+                <div class="technique-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Taekwondo_side_kick.jpg/220px-Taekwondo_side_kick.jpg" alt="Chute Lateral">
+                    <h4>Chute Lateral</h4>
+                    <p>Chute potente de lado, mantendo distância segura do adversário.</p>
+                </div>
+                <div class="technique-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Taekwondo_back_kick.jpg/220px-Taekwondo_back_kick.jpg" alt="Chute Traseiro">
+                    <h4>Chute Traseiro</h4>
+                    <p>Chute de surpresa, exigindo equilíbrio e precisão.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- BARRA LATERAL FIXA -->
+    <aside class="sidebar">
+        <h3>Curiosidades</h3>
+        <ul>
+            <li>Taekwondo significa "caminho do pé e da mão".</li>
+            <li>É esporte olímpico desde 2000.</li>
+            <li>Desenvolve disciplina, concentração e autoconfiança.</li>
+            <li>Estilos: WT (World Taekwondo) e ITF (International Taekwon-Do Federation).</li>
+        </ul>
+    </aside>
+
+    <!-- FOOTER -->
+    <footer>
+        &copy; 2025 Taekwondo Brasil - Todos os direitos reservados
+    </footer>
+
+    <!-- SCRIPT PARA ANIMAÇÃO E SCROLL SUAVE -->
+    <script>
+        // Fade-in das seções e cartões
+        const sections = document.querySelectorAll('article, .technique-card');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, {threshold: 0.1});
+
+        sections.forEach(section => observer.observe(section));
+
+        // Scroll suave
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+</body>
+</html>
