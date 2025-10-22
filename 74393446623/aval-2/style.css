@@ -1,0 +1,82 @@
+/* ESTILIZAÇÃO DA SEÇÃO DE ESTOQUE COM ASIDE */
+.secao-estoque {
+    background-color: var(--cor-fundo-claro);
+}
+
+.container-estoque {
+    display: flex; /* Habilita o Flexbox */
+    gap: 30px;
+    align-items: flex-start; /* Alinha o conteúdo ao topo */
+    max-width: 1200px; /* Limita a largura central */
+    margin: 0 auto;
+}
+
+/* 1. ESTILO DO ASIDE (BARRA LATERAL DE FILTROS) */
+.filtros-busca {
+    flex: 0 0 250px; /* Não cresce, não encolhe, tem 250px de largura */
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filtros-busca h3 {
+    color: var(--cor-principal);
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.filtros-busca label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.filtros-busca select,
+.filtros-busca input[type="text"],
+.filtros-busca input[type="range"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.filtros-busca .btn-secundario {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.chat-rapido {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #ccc;
+    text-align: center;
+}
+
+/* 2. ESTILO DA LISTA DE CARROS */
+.lista-carros {
+    flex: 1; /* Ocupa o restante do espaço disponível */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Layout de grade responsivo */
+    gap: 20px;
+}
+
+/* Adaptação dos Cards para Grid */
+.lista-carros .carro-card {
+    width: auto; /* Remove a largura fixa do card anterior */
+}
+
+/* 3. RESPONSIVIDADE para telas menores */
+@media (max-width: 768px) {
+    .container-estoque {
+        flex-direction: column; /* Coloca a barra lateral acima do conteúdo */
+        gap: 20px;
+    }
+    
+    .filtros-busca {
+        flex: 0 0 auto; /* Permite que o aside ocupe toda a largura */
+        width: 100%;
+    }
+}
