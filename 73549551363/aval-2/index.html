@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Sobre Nós - Empresa Exemplo de Tecnologia</title>
+    
+    <link rel="stylesheet" href="styles/style.css">
+    
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <meta name="description" content="Saiba mais sobre a nossa missão, visão e equipe de tecnologia inovadora.">
+    <meta name="keywords" content="tecnologia, inovação, equipe, sobre nós, empresa">
+    <meta property="og:title" content="Sobre Nós - Empresa Exemplo">
+    <meta property="og:description" content="Nossa história de sucesso e compromisso com o futuro.">
+<link href="style.css" rel="stylesheet"></head>
+
+<body>
+    <header id="cabecalho-principal">
+        <div class="logo">
+            <a href="index.html" aria-label="Voltar para a página inicial">
+                <img src="images/logo.png" alt="Logo da Empresa Exemplo" width="150">
+            </a>
+        </div>
+        <nav aria-label="Menu Principal de Navegação">
+            <ul class="menu-navegacao">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="sobre.html" aria-current="page">Sobre Nós</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        
+        <section id="missao" data-categoria="institucional">
+            <h1 class="titulo-secao">Nossa História e Compromisso</h1>
+            <p>A <strong>Empresa Exemplo</strong> nasceu em 2010 com o objetivo de revolucionar o mercado de software. Nosso foco é a satisfação do cliente e a entrega de soluções de alta qualidade.</p>
+            
+            <blockquote>
+                <p>"Tecnologia que transforma, pessoas que inovam."</p>
+                <footer>— CEO da Empresa Exemplo</footer>
+            </blockquote>
+        </section>
+
+        <section class="equipe-valores">
+            <h2>Nossa Equipe de Inovação</h2>
+            
+            <article class="membro-equipe">
+                <h3 data-funcao="Lideranca">João da Silva - Fundador e CTO</h3>
+                <figure>
+                    <img src="images/joao.jpg" alt="Foto de João da Silva" loading="lazy" width="100" height="100">
+                    <figcaption>Um líder visionário.</figcaption>
+                </figure>
+                <p>Com mais de 20 anos de experiência em desenvolvimento de software e inteligência artificial.</p>
+            </article>
+
+            <article class="membro-equipe">
+                <h3 data-funcao="Desenvolvimento">Maria Souza - Desenvolvedora Sênior</h3>
+                <p>Especialista em arquitetura de microsserviços e metodologias ágeis.</p>
+            </article>
+        </section>
+        
+        <aside id="conteudo-lateral" aria-labelledby="link-relacionados">
+            <h3 id="link-relacionados">Links Relacionados</h3>
+            <p>Confira também:</p>
+            <ul>
+                <li><a href="blog.html#post-recente">Último Post do Blog</a></li>
+                <li><a href="vagas.html">Trabalhe Conosco</a></li>
+            </ul>
+            
+            <label for="progresso-projeto">Conclusão do Projeto Alpha:</label>
+            <progress id="progresso-projeto" max="100" value="75">75%</progress>
+        </aside>
+
+        <section id="inscricao-newsletter">
+            <h2>Receba Nossas Novidades</h2>
+            <form action="api/inscricao" method="post" autocomplete="off">
+                <fieldset>
+                    <legend>Preencha os dados</legend>
+                    <label for="email-news">Seu melhor E-mail:</label>
+                    <input type="email" id="email-news" name="email" required placeholder="exemplo@mail.com">
+                    
+                    <label for="frequencia">Frequência:</label>
+                    <select id="frequencia" name="frequencia">
+                        <option value="semanal">Semanal</option>
+                        <option value="mensal" selected>Mensal</option>
+                    </select>
+
+                    <button type="submit" disabled>Inscrever</button>
+                    </fieldset>
+            </form>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2024 Empresa Exemplo de Tecnologia. Todos os direitos reservados.</p>
+        <address>
+            Rua da Inovação, 123 - Cidade Tech - SP.
+        </address>
+        <a href="#cabecalho-principal" title="Voltar ao topo da página">Topo</a>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Exemplo de como usar a "variável" de dados customizados (data-*)
+        document.addEventListener('DOMContentLoaded', () => {
+            const lider = document.querySelector('[data-funcao="Lideranca"]');
+            if (lider) {
+                console.log(`Função: ${lider.dataset.funcao}`); 
+                // O atributo data-funcao é acessado via .dataset.funcao
+            }
+        });
+    </script>
+<script src="script.js"></script></body>
+</html>

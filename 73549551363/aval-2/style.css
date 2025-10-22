@@ -1,0 +1,351 @@
+/*
+|=============================================|
+|          ARQUITETURA: STYLE.CSS             |
+|                                             |
+| 1. BASE: (Reset, Tipografia, Variáveis)     |
+| 2. LAYOUT: (Grid/Flexbox de alto nível)     |
+| 3. COMPONENTES: (Módulos reutilizáveis)     |
+| 4. UTILS: (Classes de ajuda, responsividade)|
+|=============================================|
+*/
+
+
+/* ======================================= */
+/* 1. BASE: RESET, VARIÁVEIS E TIPOGRAFIA  */
+/* ======================================= */
+
+/* -- 1.1 Variáveis Globais (CUSTOM PROPERTIES) -- */
+:root {
+    --cor-primaria: #007bff;        /* Azul de marca */
+    --cor-secundaria: #6c757d;      /* Cinza de suporte */
+    --cor-acento: #ffc107;          /* Amarelo de destaque */
+    --cor-fundo-claro: #f8f9fa;
+    --cor-fundo-escuro: #343a40;
+    
+    --fonte-principal: 'Inter', 'Helvetica Neue', sans-serif;
+    --tamanho-base: 16px;
+    --espacamento-sm: 0.5rem;   /* 8px */
+    --espacamento-md: 1.5rem;   /* 24px */
+    --espacamento-lg: 3rem;     /* 48px */
+    --largura-max-conteudo: 1400px;
+    --transicao-padrao: 0.3s ease;
+}
+
+/* -- 1.2. Reset e Estilos de Caixa (BOX MODEL) -- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+html {
+    font-size: 100%; /* Garante que 1rem = 16px por padrão */
+    scroll-behavior: smooth; /* Rolagem suave ao clicar em links internos */
+}
+
+body {
+    font-family: var(--fonte-principal);
+    color: var(--cor-fundo-escuro);
+    background-color: var(--cor-fundo-claro);
+    line-height: 1.6;
+    min-height: 100vh; /* Pelo menos a altura total da viewport */
+}
+
+/* -- 1.3. Tipografia Padrão -- */
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    margin-bottom: var(--espacamento-sm);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; color: var(--cor-primaria); }
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* -- 1.4. Estilos de Links e Citações -- */
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color var(--transicao-padrao);
+}
+
+a:hover {
+    color: var(--cor-secundaria);
+}
+
+blockquote {
+    border-left: 5px solid var(--cor-acento);
+    padding-left: var(--espacamento-md);
+    margin: var(--espacamento-md) 0;
+    font-style: italic;
+    color: var(--cor-secundaria);
+}
+
+/* ======================================= */
+/* 2. LAYOUT: ESTRUTURA GLOBAL E SEÇÕES    */
+/* (Selectors de alto nível: header, main, footer) */
+/* ======================================= */
+
+/* -- 2.1. Container Principal -- */
+.container {
+    max-width: var(--largura-max-conteudo);
+    margin: 0 auto;
+    padding: 0 var(--espacamento-md);
+}
+
+/* -- 2.2. Header (CABEÇALHO) -- */
+#cabecalho-principal {
+    position: sticky; /* Sticky (Fixo ao rolar), melhor que fixed em alguns casos */
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--espacamento-sm) var(--espacamento-md);
+}
+
+.logo img {
+    height: 50px; 
+    width: auto;
+}
+
+/* -- 2.3. Layout da Página (Grid de 2 Colunas) -- */
+main[role="main"] {
+    padding: var(--espacamento-lg) 0;
+
+    display: grid;
+    /* Conteúdo (3 partes) | Sidebar (1 parte) */
+    grid-template-columns: 3fr 1fr;
+    gap: var(--espacamento-lg); 
+}
+
+/* Aplica o layout container dentro do main */
+main .container {
+    /* Faz o container se comportar como o grid */
+    display: inherit; 
+    grid-template-columns: inherit;
+    gap: inherit;
+    padding: 0; /* Remove padding duplicado se já estiver no main */
+}
+
+
+/* -- 2.4. Footer (RODAPÉ) -- */
+footer[role="contentinfo"] {
+    background-color: var(--cor-fundo-escuro);
+    color: #fff;
+    padding: var(--espacamento-lg) 0;
+    text-align: center;
+}
+
+footer a {
+    color: #adb5bd;
+}
+
+
+/* ======================================= */
+/* 3. COMPONENTES: BLOCOS REUTILIZÁVEIS    */
+/* (Classes específicas: .btn, .card, .menu, .form) */
+/* ======================================= */
+
+/* -- 3.1. Componente: Menu de Navegação -- */
+.menu-navegacao {
+    list-style: none;
+    display: flex;
+    gap: var(--espacamento-md);
+    font-weight: 500;
+}
+
+.menu-navegacao a {
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.menu-navegacao a:hover, 
+.menu-navegacao a[aria-current="page"] {
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+/* -- 3.2. Componente: Card da Equipe -- */
+.equipe-valores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--espacamento-md);
+    padding-bottom: var(--espacamento-md);
+}
+
+.membro-equipe {
+    /* BEM: Bloco__Elemento--Modificador */
+    flex: 1 1 300px; /* Flex-grow, Flex-shrink, Flex-basis */
+    min-width: 250px;
+    background-color: #fff;
+    padding: var(--espacamento-md);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transicao-padrao);
+    text-align: center;
+}
+
+.membro-equipe:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.membro-equipe figure img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid var(--cor-acento);
+}
+
+/* -- 3.3. Componente: Formulário de Inscrição -- */
+#inscricao-newsletter {
+    background-color: #e9ecef;
+    padding: var(--espacamento-lg);
+    border-radius: 8px;
+    text-align: center;
+    margin-top: var(--espacamento-lg);
+}
+
+.form-inline {
+    display: flex;
+    justify-content: center;
+    gap: var(--espacamento-sm);
+    margin-top: var(--espacamento-md);
+}
+
+.form-inline input, 
+.form-inline select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* -- 3.4. Componente: Botão Padrão -- */
+.btn-primario {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--transicao-padrao);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn-primario:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.btn-primario:disabled {
+    background-color: var(--cor-secundaria);
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Aplica o estilo de botão ao elemento do formulário */
+#inscricao-newsletter button[type="submit"] {
+    @extend .btn-primario; /* Simulação de SASS/Extends - no CSS puro você repete a classe */
+    /* No CSS puro, ficaria assim: class="btn-primario" no HTML */
+}
+
+/* ======================================= */
+/* 4. UTILS: CLASSES DE AJUDA E MODIFICADORES */
+/* (Classes de uma única função, como .m-0, .text-center) */
+/* ======================================= */
+
+/* -- 4.1. Helpers de Texto -- */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-muted { color: var(--cor-secundaria); }
+
+/* -- 4.2. Helpers de Espaçamento -- */
+.mb-lg { margin-bottom: var(--espacamento-lg); }
+.mt-lg { margin-top: var(--espacamento-lg); }
+.p-0 { padding: 0; }
+
+/* -- 4.3. Modificadores de Estado (usando atributos) -- */
+/* Estilo para elementos com data-categoria="institucional" */
+section[data-categoria="institucional"] {
+    border-bottom: 2px solid var(--cor-acento);
+    padding-bottom: var(--espacamento-md);
+}
+
+/* -- 4.4. Acessibilidade / Elementos Ocultos -- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+
+/* ======================================= */
+/* 5. RESPONSIVIDADE (MEDIA QUERIES)       */
+/* ======================================= */
+
+/* Tablet e Mobile - Layout de coluna simples (abaixo de 992px) */
+@media (max-width: 992px) {
+    
+    /* Redefine o Grid Principal para uma única coluna */
+    main[role="main"], main .container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Faz com que a barra lateral e o formulário ocupem a única coluna */
+    #conteudo-lateral {
+        order: -1; /* Move a sidebar para cima do conteúdo principal (para mobile) */
+        padding: var(--espacamento-md);
+    }
+    
+    /* O cabeçalho fica na vertical */
+    #cabecalho-principal {
+        flex-direction: column;
+        align-items: center;
+        padding: var(--espacamento-sm);
+        position: static; /* Volta a ser estático para evitar ocupar a tela */
+    }
+
+    .menu-navegacao {
+        flex-direction: column;
+        gap: var(--espacamento-sm);
+        margin-top: 10px;
+    }
+
+    .form-inline {
+        flex-direction: column;
+        align-items: stretch;
+        width: 80%;
+        margin: var(--espacamento-md) auto;
+    }
+
+    .form-inline input, .form-inline select {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* Apenas Mobile (abaixo de 600px) */
+@media (max-width: 600px) {
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    
+    /* Diminui o padding e margem em telas muito pequenas */
+    .container {
