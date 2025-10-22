@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meu Blog Pessoal</title>
+  <link rel="stylesheet" href="style.css"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>🌿 Meu Blog Pessoal</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main>
+
+    <!-- Postagens -->
+    <article class="post">
+      <h2>Postagem 1: Viagem à Montanha</h2>
+      <img src="https://source.unsplash.com/800x400/?mountain" alt="Montanha">
+      <p>Fiz uma trilha incrível nas montanhas. A vista era espetacular!</p>
+      <button class="like-btn">Curtir</button>
+      <span class="like-count">0 curtidas</span>
+    </article>
+
+    <article class="post">
+      <h2>Postagem 2: Café da Manhã Perfeito</h2>
+      <img src="https://source.unsplash.com/800x400/?breakfast" alt="Café da manhã">
+      <p>Comecei o dia com frutas, pães, café e muita energia!</p>
+      <button class="like-btn">Curtir</button>
+      <span class="like-count">0 curtidas</span>
+    </article>
+
+    <article class="post">
+      <h2>Postagem 3: Estudando HTML & CSS</h2>
+      <img src="https://source.unsplash.com/800x400/?coding" alt="Codificando">
+      <p>Iniciei meus estudos em desenvolvimento web e estou empolgado!</p>
+      <button class="like-btn">Curtir</button>
+      <span class="like-count">0 curtidas</span>
+    </article>
+
+    <!-- Conteúdo complementar -->
+    <aside>
+      <h3>Sobre o Autor</h3>
+      <img src="https://source.unsplash.com/100x100/?person" alt="Foto do autor" class="author-img">
+      <p>Olá! Meu nome é João. Sou apaixonado por viagens, tecnologia e café.</p>
+
+      <h3>Posts Populares</h3>
+      <ul>
+        <li><a href="#">📌 Como aprender HTML e CSS</a></li>
+        <li><a href="#">🌍 Top 5 destinos para visitar</a></li>
+        <li><a href="#">☕ Receitas rápidas de café da manhã</a></li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 - Meu Blog. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const likeButtons = document.querySelectorAll('.like-btn');
+    const likeCounts = document.querySelectorAll('.like-count');
+
+    likeButtons.forEach((button, index) => {
+      let count = 0;
+      button.addEventListener('click', () => {
+        count++;
+        likeCounts[index].textContent = `${count} curtida${count > 1 ? 's' : ''}`;
+        button.disabled = true;
+        button.textContent = 'Curtido!';
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
