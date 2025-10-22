@@ -1,0 +1,430 @@
+/*
+======================================================
+ESTILOS GLOBAIS E RESET BÁSICO
+======================================================
+*/
+:root {
+    /* Variáveis de cores para fácil manutenção */
+    --cor-primaria: #007bff;     /* Azul de destaque (Botões, Links) */
+    --cor-secundaria: #ffc107;   /* Amarelo/Destaque (Promoções) */
+    --cor-texto: #333;           /* Cor principal do texto */
+    --cor-fundo-claro: #f8f9fa;  /* Fundo da página */
+    --cor-fundo-escuro: #343a40; /* Cabeçalho e Rodapé */
+}
+
+* {
+    /* Reset básico para todos os elementos */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo-claro);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+h1, h2, h3 {
+    margin-bottom: 0.5em;
+    color: #212529;
+}
+
+.container {
+    /* Centraliza o conteúdo e limita a largura máxima */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/*
+======================================================
+HEADER E NAVEGAÇÃO
+======================================================
+*/
+header {
+    background-color: var(--cor-fundo-escuro);
+    color: white;
+    padding: 15px 0;
+    border-bottom: 5px solid var(--cor-secundaria);
+}
+
+header h1 {
+    color: white;
+    font-size: 2.2em;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+header p {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+/* Estilo para a barra de busca */
+header form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0 5px;
+}
+
+header input[type="search"] {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    width: 400px;
+}
+
+header button[type="submit"] {
+    padding: 8px 15px;
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+header button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/*
+======================================================
+SEÇÕES E LAYOUT PRINCIPAL (MAIN)
+======================================================
+*/
+main {
+    padding: 20px 5%; /* Padding em vez de .container para controle total */
+}
+
+/* Estilo para a seção de Destaque/Banner */
+#destaques {
+    text-align: center;
+    background-color: var(--cor-secundaria);
+    padding: 40px 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#destaques h2 {
+    color: #333;
+    font-size: 2.5em;
+}
+
+#destaques p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/*
+======================================================
+PRODUTOS E CARDS
+======================================================
+*/
+
+/* Layout de grid para as categorias de produtos */
+#categorias {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas para as categorias */
+    gap: 40px;
+    padding-top: 20px;
+}
+
+#categorias h2 {
+    grid-column: 1 / -1; /* Título ocupa todas as colunas */
+    font-size: 2em;
+    margin-top: 20px;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 10px;
+}
+
+article {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para a imagem e legenda do produto */
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+figure img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+figcaption {
+    font-style: italic;
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+article h3 {
+    color: var(--cor-primaria);
+}
+
+/* Estilo para preço antigo e novo */
+del {
+    color: #dc3545; /* Vermelho para o preço cortado */
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+ins {
+    color: #28a745; /* Verde para o novo preço/promoção */
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+mark {
+    background-color: var(--cor-secundaria);
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* Estilo para formulário de compra (tamanho/botão) */
+article form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+article button[type="submit"] {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+article button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/*
+======================================================
+CARRINHO E TABELAS
+======================================================
+*/
+#carrinho {
+    margin-top: 40px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+caption {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: left;
+}
+
+thead th {
+    background-color: #e9ecef;
+    font-weight: bold;
+}
+
+tfoot td {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+/*
+======================================================
+ASIDE (Filtros Laterais)
+======================================================
+*/
+aside {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border-left: 5px solid var(--cor-secundaria);
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li {
+    padding: 5px 0;
+}
+
+/*
+======================================================
+CONTATO E ENDEREÇO
+======================================================
+*/
+#contato {
+    margin-top: 40px;
+    padding: 20px 0;
+}
+
+address {
+    font-style: normal; /* Remove itálico padrão */
+    line-height: 2;
+    background-color: white;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px dashed #ccc;
+    max-width: 500px;
+}
+
+/*
+======================================================
+RODAPÉ (FOOTER)
+======================================================
+*/
+footer {
+    background-color: var(--cor-fundo-escuro);
+    color: #adb5bd;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--cor-secundaria);
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* Estilo para o widget <details> (Sobre o Desenvolvedor) */
+footer details {
+    max-width: 500px;
+    margin: 10px auto 0;
+    padding: 10px;
+    border: 1px solid #495057;
+    border-radius: 4px;
+    background-color: #495057;
+    text-align: left;
+}
+
+footer details p {
+    margin-top: 5px;
+}
+
+/*
+======================================================
+RESPONSIVIDADE (MEDIA QUERIES)
+======================================================
+*/
+@media (max-width: 900px) {
+    /* Em telas médias, os produtos ficam lado a lado */
+    #categorias {
+        grid-template-columns: 1fr; /* Uma única coluna */
+    }
+}
+
+@media (max-width: 600px) {
+    /* Em celulares */
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul {
+        flex-direction: column; /* Links da navegação empilhados */
+        gap: 5px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    header form {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    header input[type="search"] {
+        width: 90%;
+    }
+
+    article form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* Ocupa a largura total */
+    article button[type="submit"] {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px; /* Reduz o padding na tabela */
+    }
+}
