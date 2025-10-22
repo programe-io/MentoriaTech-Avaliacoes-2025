@@ -1,0 +1,287 @@
+/*
+====================================
+  1. Variáveis & Reset Básico
+====================================
+*/
+:root {
+    --cor-primaria: #004d99; /* Azul Esporte/Profundo */
+    --cor-secundaria: #ff6600; /* Laranja Vívido/Destaque */
+    --cor-fundo-claro: #f7f9fc;
+    --cor-texto-principal: #333333;
+    --cor-borda: #e0e0e0;
+    --sombra-caixa: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e borda não aumentem o tamanho total do elemento */
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-principal);
+}
+
+/*
+====================================
+  2. Estrutura Geral
+====================================
+*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    /* Adicionando um pequeno espaçamento no topo para não colar o header em telas menores */
+    padding-top: 1px;
+}
+
+section {
+    padding: 40px 0;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: var(--cor-primaria);
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--cor-secundaria);
+    display: inline-block;
+    padding-bottom: 10px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/*
+====================================
+  3. Header e Navegação
+====================================
+*/
+header {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 40px 0 10px; /* Mais padding em cima para impacto */
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 3.5em;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Navegação */
+nav {
+    background-color: var(--cor-texto-principal);
+    position: sticky; /* Fixa a nav no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    display: flex; /* Layout Flexível */
+    justify-content: center;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul li a:hover {
+    background-color: var(--cor-secundaria);
+    color: white;
+}
+
+/*
+====================================
+  4. Sessões de Conteúdo e DESTAQUE (Com Imagens)
+====================================
+*/
+
+/* Layout de Artigos/Produtos - Ideal para a seção de Marcas */
+.artigo-chuteira {
+    display: flex; /* Habilita layout lado a lado */
+    align-items: center;
+    gap: 30px; /* Espaço entre o texto e a imagem */
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artigo-chuteira:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-caixa);
+}
+
+/*
+  Espaço reservado para a IMAGEM
+  A classe 'imagem-chuteira' deve ser aplicada em uma <div> ou <img> no HTML
+*/
+.imagem-chuteira {
+    flex-shrink: 0; /* Impede que a imagem diminua */
+    width: 250px; /* Largura fixa da imagem */
+    height: 180px; /* Altura fixa da imagem */
+    background-color: #cccccc; /* Fundo cinza para placeholder */
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.imagem-chuteira img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+}
+
+.conteudo-chuteira {
+    flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
+}
+
+.conteudo-chuteira h3 {
+    color: var(--cor-secundaria);
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+/* Seção de Destaque - Banners */
+.destaque {
+    text-align: center;
+    padding: 40px;
+    background-color: var(--cor-primaria);
+    color: white;
+    border-radius: 8px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Botão de Destaque */
+.destaque a {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.destaque a:hover {
+    background-color: #cc5500;
+}
+
+/*
+====================================
+  5. Formulários e Rodapé
+====================================
+*/
+#contato form div {
+    margin-bottom: 15px;
+}
+
+#contato label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--cor-primaria);
+}
+
+#contato input[type="text"],
+#contato input[type="email"],
+#contato textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#contato textarea {
+    resize: vertical;
+}
+
+#contato button[type="submit"] {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+#contato button[type="submit"]:hover {
+    background-color: #003366;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-texto-principal);
+    color: var(--cor-borda);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+/*
+====================================
+  6. Responsividade (Opcional, mas Essencial!)
+====================================
+*/
+@media (max-width: 768px) {
+    /* Ajusta a navegação para telas menores (empilha os itens) */
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        padding: 10px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Muda o layout do artigo chuteira para empilhar em telas pequenas */
+    .artigo-chuteira {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .imagem-chuteira {
+        width: 100%; /* Imagem ocupa a largura total */
+        height: 200px;
+        margin-bottom: 15px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+}
