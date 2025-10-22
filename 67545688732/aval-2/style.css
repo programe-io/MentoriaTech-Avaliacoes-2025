@@ -1,0 +1,429 @@
+/* ====================================
+   1. VARIÁVEIS DE COR (Light & Dark Mode)
+   ==================================== */
+:root {
+    /* Cores do Tema Claro (Padrão) */
+    --primary-color: #0d47a1; /* Azul Escuro do Portal */
+    --secondary-color: #ff3d00; /* Laranja/Vermelho de Destaque */
+    --bg-primary: #ffffff; /* Fundo Principal Branco */
+    --bg-secondary: #f4f4f9; /* Fundo Secundário (Aside) Cinza Claro */
+    --text-primary: #1a1a1a; /* Texto Principal Preto */
+    --text-secondary: #555555; /* Texto Secundário Cinza Escuro */
+    --border-color: #dddddd; /* Linhas de separação */
+}
+
+/* Alterações para o Tema Escuro (Adicionado pelo JavaScript) */
+body.dark-mode {
+    --primary-color: #42a5f5; /* Azul Mais Claro */
+    --secondary-color: #ff8a65; /* Laranja/Vermelho Mais Suave */
+    --bg-primary: #121212; /* Fundo Principal Quase Preto */
+    --bg-secondary: #1e1e1e; /* Fundo Secundário (Aside) Cinza Escuro */
+    --text-primary: #f0f0f0; /* Texto Principal Branco Suave */
+    --text-secondary: #aaaaaa; /* Texto Secundário Cinza Claro */
+    --border-color: #333333; /* Linhas de separação escuras */
+}
+
+
+/* ====================================
+   2. RESET BÁSICO E ESTILOS GERAIS
+   ==================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para o Dark Mode */
+}
+
+/* Estilo do Container (centraliza o conteúdo) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex; /* Usado no header e main para alinhamento */
+    gap: 20px;
+}
+
+/* Links em geral */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* ====================================
+   3. CABEÇALHO (HEADER)
+   ==================================== */
+header {
+    background-color: var(--primary-color);
+    padding: 15px 0;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* Botão de Dark Mode */
+#dark-mode-toggle {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+#dark-mode-toggle:hover {
+    background-color: #e64a19; /* Laranja mais escuro no hover */
+}
+
+/* ====================================
+   4. NAVEGAÇÃO (NAV)
+   ==================================== */
+nav {
+    background-color: var(--bg-secondary);
+    border-bottom: 2px solid var(--border-color);
+}
+
+nav .container {
+    padding: 0; /* Remove o padding do container para a nav */
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Flexbox para alinhar os links horizontalmente */
+}
+
+nav li a {
+    display: block;
+    padding: 15px 20px;
+    color: var(--text-primary);
+    font-weight: bold;
+    border-right: 1px solid var(--border-color);
+}
+
+nav li:last-child a {
+    border-right: none;
+}
+
+nav li a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* ====================================
+   5. LAYOUT PRINCIPAL (MAIN E ASIDE)
+   ==================================== */
+
+main {
+    padding: 30px 20px;
+    align-items: flex-start; /* Alinha o conteúdo ao topo */
+}
+
+section#destaque {
+    flex: 3; /* Ocupa 3 partes do espaço */
+    max-width: 75%;
+}
+
+aside {
+    flex: 1; /* Ocupa 1 parte do espaço */
+    max-width: 25%;
+    background-color: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    position: sticky; /* Fixa a barra lateral ao rolar */
+    top: 20px;
+}
+
+aside h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+aside ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+aside li a {
+    color: var(--text-secondary);
+    display: block;
+}
+
+aside li a:hover {
+    color: var(--primary-color);
+}
+
+/* Banner da Sidebar */
+.banner {
+    background-color: var(--border-color);
+    color: var(--text-secondary);
+    padding: 40px 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+/* ====================================
+   6. ARTIGOS E NOTÍCIAS
+   ==================================== */
+
+h2 {
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    font-size: 2em;
+    border-left: 5px solid var(--primary-color);
+    padding-left: 10px;
+}
+
+/* Artigo de Destaque */
+.big-news {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.big-news h2 {
+    font-size: 2.5em;
+    margin: 10px 0;
+    border-left: none;
+    padding-left: 0;
+}
+
+.big-news a {
+    color: var(--text-primary);
+}
+
+.big-news a:hover {
+    color: var(--primary-color);
+}
+
+.news-img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* Grade de Artigos Secundários */
+section#artigos-secundarios h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+section#artigos-secundarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.small-news {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 6px;
+    background-color: var(--bg-primary);
+    transition: box-shadow 0.3s;
+}
+
+.small-news:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.small-news h3 a {
+    font-size: 1.3em;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.small-news p {
+    color: var(--text-secondary);
+    margin-top: 10px;
+}
+
+/* ====================================
+   7. RODAPÉ (FOOTER)
+   ==================================== */
+footer {
+    background-color: var(--text-primary);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer a {
+    color: var(--secondary-color);
+    margin: 0 5px;
+}
+
+/* ====================================
+   8. DARK MODE ESTILOS ESPECÍFICOS
+   ==================================== */
+
+body.dark-mode header {
+    background-color: #1e88e5; /* Azul mais vibrante no dark mode */
+}
+
+body.dark-mode #dark-mode-toggle {
+    background-color: var(--bg-secondary);
+    color: var(--primary-color);
+}
+
+body.dark-mode nav {
+    background-color: var(--bg-primary);
+}
+
+body.dark-mode .small-news {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+/* ====================================
+   9. RESPONSIVIDADE (MEDIA QUERIES)
+   ==================================== */
+
+/* Oculta o botão de menu hamburger por padrão (só aparece em mobile) */
+#menu-toggle {
+    display: none;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    order: 3; /* Garante que fique à direita no header */
+}
+
+@media (max-width: 900px) {
+    /* Layout de coluna única em telas menores */
+    main.container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    section#destaque, aside {
+        max-width: 100%;
+        flex: none;
+        width: 100%;
+    }
+    
+    /* Remove o sticky da sidebar em mobile */
+    aside {
+        position: static;
+        margin-top: 20px;
+    }
+
+    /* Reduz o tamanho das manchetes */
+    .big-news h2 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    /* --------------------------
+       Menu Hamburger (Mobile)
+       -------------------------- */
+    #menu-toggle {
+        display: block; /* Mostra o botão de menu */
+    }
+
+    nav ul#main-menu-list {
+        display: none; /* Oculta a lista de links por padrão */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Ajuste para ficar abaixo do header */
+        left: 0;
+        background-color: var(--bg-secondary);
+        z-index: 100;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        border-top: 1px solid var(--border-color);
+    }
+    
+    /* ESTADO ATIVO: Classe adicionada pelo JavaScript para mostrar o menu */
+    nav ul#main-menu-list.active-mobile {
+        display: flex; /* Exibe o menu quando ativo */
+    }
+
+    nav li a {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        text-align: center;
+    }
+
+    nav li:last-child a {
+        border-bottom: none;
+    }
+    
+    /* --------------------------
+       Ajustes de Header e Botões
+       -------------------------- */
+    header .container {
+        flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+        align-items: flex-start;
+        padding-bottom: 10px;
+    }
+
+    header h1 {
+        width: 100%; /* Ocupa a linha toda */
+        text-align: center;
+        margin-bottom: 0;
+    }
+    
+    header p {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    #dark-mode-toggle {
+        order: 2; /* Coloca o botão na linha de baixo, se necessário */
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Ajustes finos em telas muito pequenas */
+    section#artigos-secundarios {
+        grid-template-columns: 1fr; /* Uma única coluna */
+    }
+    .big-news h2 {
+        font-size: 1.5em;
+    }
+}
