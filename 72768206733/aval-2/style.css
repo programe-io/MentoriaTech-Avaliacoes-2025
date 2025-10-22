@@ -1,0 +1,253 @@
+/* Importando uma fonte elegante do Google Fonts (exemplo: Lato e Playfair Display) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* VARIÁVEIS DE CORES E FONTES */
+:root {
+    --cor-principal: #6F4E37; /* Marrom Café */
+    --cor-secundaria: #A0522D; /* Sela (um marrom mais quente) */
+    --cor-clara: #F5F5DC; /* Bege/Creme */
+    --cor-texto: #333333;
+    --fonte-titulo: 'Playfair Display', serif;
+    --fonte-texto: 'Lato', sans-serif;
+}
+
+/* 1. RESET BÁSICO E ESTILOS GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    color: var(--cor-texto);
+    background-color: var(--cor-clara); /* Fundo bege/creme */
+    line-height: 1.6;
+}
+
+a {
+    color: var(--cor-principal);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* ESTILIZAÇÃO DAS SEÇÕES PADRÃO */
+.secao-padrao {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: var(--cor-principal);
+    border-bottom: 3px solid var(--cor-secundaria);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+h4 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5em;
+    margin: 15px 0 10px;
+    color: var(--cor-principal);
+}
+
+/* 2. ESTILO DO CABEÇALHO E NAVEGAÇÃO */
+header {
+    background-color: #fff;
+    color: var(--cor-texto);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.8em;
+    color: var(--cor-principal);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--cor-texto);
+    font-weight: 700;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--cor-principal);
+    border-bottom: 2px solid var(--cor-principal);
+}
+
+/* 3. ESTILO DA SEÇÃO HERO (BANNER PRINCIPAL) */
+#hero {
+    height: 70vh; /* Altura de 70% da viewport */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    /* Adiciona um overlay escuro para garantir legibilidade do texto */
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Escurece a imagem de fundo */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.botao-principal {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: 2px solid var(--cor-secundaria);
+}
+
+.botao-principal:hover {
+    background-color: transparent;
+    color: white;
+}
+
+/* 4. ESTILO DO CARDÁPIO */
+#cardapio ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cardapio ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ccc;
+    font-size: 1.1em;
+}
+
+/* Estilo para alinhar os preços com "pontilhados" de ligação */
+#cardapio ul li span:first-child {
+    font-weight: 500;
+}
+
+.botao-secundario {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--cor-principal);
+    border: 2px solid var(--cor-principal);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.botao-secundario:hover {
+    background-color: var(--cor-principal);
+    color: white;
+}
+
+/* 5. ESTILO DO RODAPÉ */
+footer {
+    background-color: var(--cor-principal);
+    color: var(--cor-clara);
+    text-align: center;
+    padding: 20px 5%;
+    margin-top: 40px;
+}
+
+/* MEDIA QUERIES (Responsividade para Celulares) */
+@media (max-width: 768px) {
+    /* Ajuste no Header */
+    header {
+        flex-direction: column;
+        padding: 15px 3%;
+    }
+
+    nav ul {
+        margin-top: 10px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+    
+    /* Ajuste no Hero */
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+    
+    .hero-content p {
+        font-size: 1.1em;
+    }
+    
+    /* Ajuste nas Seções */
+    .secao-padrao {
+        padding: 40px 3%;
+    }
+    
+    /* Estilo de lista mais simples para celular */
+    #cardapio ul li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    #cardapio ul li span:last-child {
+        align-self: flex-end; /* Tenta jogar o preço para a direita */
+    }
+}
