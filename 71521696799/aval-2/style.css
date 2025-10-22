@@ -1,0 +1,361 @@
+/*
+    ======================================
+    1. RESET E VARIÁVEIS BÁSICAS
+    ======================================
+*/
+:root {
+    --cor-principal: #a63d40; /* Um vermelho/vinho elegante para sapatos */
+    --cor-secundaria: #f4e9cd; /* Um bege claro */
+    --cor-texto: #333;
+    --cor-fundo: #fff;
+    --cor-fundo-rodape: #4a4a4a;
+    --cor-texto-claro: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-principal);
+}
+
+ul {
+    list-style: none;
+}
+
+/*
+    ======================================
+    2. CABEÇALHO (HEADER E NAV)
+    ======================================
+*/
+header {
+    background-color: var(--cor-fundo);
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 a {
+    color: var(--cor-principal);
+    font-size: 2em;
+    font-weight: bold;
+}
+
+header nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+header nav ul li a {
+    color: var(--cor-texto);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: var(--cor-principal);
+}
+
+/*
+    ======================================
+    3. CONTEÚDO PRINCIPAL (MAIN)
+    ======================================
+*/
+main {
+    padding: 30px 5%;
+}
+
+h2 {
+    font-size: 2.2em;
+    color: var(--cor-principal);
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--cor-secundaria);
+}
+
+/* Seção de Destaques/Banner */
+#destaques {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px;
+    background-color: var(--cor-secundaria);
+    border-radius: 8px;
+}
+
+#destaques img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    /* Ajuste de tamanho para o exemplo, se a imagem for grande */
+    max-height: 300px; 
+    object-fit: cover;
+}
+
+#destaques p {
+    font-size: 1.2em;
+}
+
+#destaques a {
+    font-weight: bold;
+    color: var(--cor-texto);
+    text-decoration: underline;
+}
+
+/* Seção de Produtos */
+#produtos {
+    margin-bottom: 50px;
+}
+
+#produtos h2 {
+    margin-bottom: 40px;
+}
+
+/* Layout dos Cards de Produtos (Grid) */
+#produtos {
+    display: grid;
+    /* 3 colunas, mínimo 300px, adaptando-se à tela */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    justify-content: center;
+}
+
+.produto-card {
+    background-color: var(--cor-fundo);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.produto-card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.produto-card img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.produto-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+    color: var(--cor-texto);
+}
+
+.produto-card .categoria {
+    color: #888;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.produto-card .preco {
+    font-size: 1.5em;
+    color: var(--cor-principal);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-detalhes, .btn-comprar {
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.btn-detalhes {
+    background-color: #eee;
+    color: var(--cor-texto);
+    border: 1px solid #ccc;
+}
+
+.btn-detalhes:hover {
+    background-color: #ddd;
+}
+
+.btn-comprar {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    border: none;
+}
+
+.btn-comprar:hover {
+    background-color: #8f3336; /* Tom mais escuro */
+}
+
+/* Seção de Vantagens */
+#vantagens {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#vantagens ul {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: var(--cor-principal);
+    font-weight: 500;
+}
+
+
+/*
+    ======================================
+    4. RODAPÉ (FOOTER)
+    ======================================
+*/
+footer {
+    background-color: var(--cor-fundo-rodape);
+    color: var(--cor-texto-claro);
+    padding: 30px 5%;
+}
+
+.newsletter {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.newsletter h4 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    max-width: 80%;
+    border: none;
+    border-radius: 5px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.newsletter button:hover {
+    background-color: #8f3336;
+}
+
+.links-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.links-rodape ul {
+    display: flex;
+    gap: 20px;
+}
+
+.links-rodape ul li a {
+    color: var(--cor-texto-claro);
+    transition: text-decoration 0.3s;
+}
+
+.links-rodape ul li a:hover {
+    text-decoration: underline;
+}
+
+/*
+    ======================================
+    5. RESPONSIVIDADE BÁSICA (MEDIA QUERIES)
+    ======================================
+*/
+
+/* Para telas menores que 768px (como tablets e celulares) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 5%;
+    }
+
+    header nav {
+        margin-top: 15px;
+    }
+    
+    header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Reduz o tamanho da fonte dos cabeçalhos */
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    
+    /* Layout dos produtos volta a ser uma coluna simples */
+    #produtos {
+        grid-template-columns: 1fr;
+    }
+
+    #vantagens ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .links-rodape {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .links-rodape ul {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .newsletter form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter input[type="email"] {
+        width: 100%;
+        max-width: 280px;
+    }
+}
