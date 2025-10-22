@@ -1,0 +1,314 @@
+/* ======================================================= */
+/* ARQUIVO: estilo.css */
+/* Este arquivo deve ser salvo na pasta 'css' */
+/* ======================================================= */
+
+/* Estilos Globais e Reset Básico */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Fundo cinza claro */
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ======================================================= */
+/* CABEÇALHO (HEADER e NAV) */
+/* ======================================================= */
+header {
+    background-color: #5a00a0; /* Roxo Escuro */
+    color: white;
+    padding: 20px 40px;
+    border-bottom: 5px solid #ff4500; /* Laranja Vívido */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff4500; /* Cor de hover */
+}
+
+/* ======================================================= */
+/* SEÇÃO HERO (Banner Principal) */
+/* ======================================================= */
+.hero {
+    /* Use uma imagem real no seu site ou mantenha apenas a cor de fundo */
+    /* background: url('../imagens/placeholder_banner.jpg') no-repeat center center/cover; */
+    background-color: #e6e6e6; 
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #5a00a0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+/* Botão Padrão */
+.botao {
+    display: inline-block;
+    background-color: #ff4500; /* Laranja Vívido */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background-color: #e03c00;
+    transform: translateY(-2px);
+}
+
+/* ======================================================= */
+/* CONTEÚDO PRINCIPAL (MAIN e SECTIONS) */
+/* ======================================================= */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.secao {
+    margin-bottom: 60px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.secao h2 {
+    text-align: center;
+    color: #5a00a0;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #ff4500;
+    display: block; /* Garante que a linha cubra a largura da seção */
+}
+
+/* ======================================================= */
+/* GALERIA DE PRODUTOS */
+/* ======================================================= */
+.galeria {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.produto {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    width: 300px; /* Largura fixa para cada produto */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 8px;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.produto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: block; /* Para remover espaçamento extra */
+}
+
+.produto h3 {
+    font-size: 1.4em;
+    color: #5a00a0;
+    margin-bottom: 10px;
+}
+
+.preco {
+    font-size: 1.6em;
+    color: #ff4500;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.botao-comprar {
+    background-color: #38b000; /* Verde */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.botao-comprar:hover {
+    background-color: #2a8a00;
+}
+
+/* ======================================================= */
+/* FORMULÁRIO DE CONTATO */
+/* ======================================================= */
+#contato form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+#contato label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #5a00a0;
+}
+
+#contato input[type="text"],
+#contato input[type="email"],
+#contato textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+#contato textarea {
+    resize: vertical;
+}
+
+#contato .botao {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+}
+
+
+/* ======================================================= */
+/* RODAPÉ (FOOTER) */
+/* ======================================================= */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.redes-sociais a {
+    color: #ff4500;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.redes-sociais a:hover {
+    color: white;
+}
+
+/* ======================================================= */
+/* MEDIA QUERIES (Responsividade) */
+/* ======================================================= */
+
+/* Para telas menores (Ex: Tablets e Celulares) */
+@media (max-width: 992px) {
+    header {
+        padding: 15px 20px;
+    }
+    
+    nav {
+        flex-direction: column;
+    }
+    
+    nav ul {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 5px 10px;
+    }
+
+    .hero {
+        height: 300px;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+
+    main {
+        padding: 0 15px;
+    }
+
+    .galeria {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .produto {
+        width: 80%; /* Ocupa mais espaço em telas menores */
+        max-width: 400px;
+    }
+}
