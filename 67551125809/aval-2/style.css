@@ -1,0 +1,195 @@
+/* 1. RESET BÁSICO E FONTES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Fundo cinza claro */
+    color: #333; /* Cor de texto principal */
+}
+
+/* 2. CABEÇALHO (HEADER) */
+header {
+    background-color: #1a1a1a; /* Preto escuro */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #e74c3c; /* Linha vermelha de destaque */
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-style: italic;
+    color: #ccc;
+}
+
+/* 3. NAVEGAÇÃO (NAV) */
+nav {
+    background-color: #333; /* Cinza escuro */
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Organiza os itens lado a lado */
+    justify-content: center; /* Centraliza os itens */
+    padding: 15px 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #e74c3c; /* Fundo vermelho ao passar o mouse */
+}
+
+/* 4. CONTEÚDO PRINCIPAL (MAIN) e SEÇÕES */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto; /* Centraliza o conteúdo principal */
+}
+
+section {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+section h2 {
+    color: #e74c3c;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* 5. ESTILO DOS ARTIGOS (MODELOS) */
+#modelos {
+    display: flex;
+    gap: 20px; /* Espaço entre os artigos */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas pequenas */
+}
+
+#modelos article {
+    flex: 1; /* Permite que o artigo ocupe espaço igual */
+    min-width: 300px; /* Largura mínima para evitar que fiquem muito estreitos */
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+#modelos article:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#modelos h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#modelos ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.article a { /* Estilo do botão "Ver Detalhes" */
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.article a:hover {
+    background-color: #c0392b;
+}
+
+/* 6. ESTILO DO FORMULÁRIO DE CONTATO */
+#contato label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#contato input[type="text"], 
+#contato input[type="email"], 
+#contato textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#contato input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+#contato input[type="submit"]:hover {
+    background-color: #e74c3c;
+}
+
+/* 7. RODAPÉ (FOOTER) */
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+/* 8. RESPONSIVIDADE (Ajustes para telas menores) */
+@media (max-width: 768px) {
+    
+    /* Na barra de navegação, empilha os links */
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    nav ul li a {
+        text-align: center;
+        border-bottom: 1px solid #444;
+    }
+
+    /* Nos modelos, permite que ocupem a largura total */
+    #modelos article {
+        min-width: 100%;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+}
