@@ -1,0 +1,391 @@
+/* ------------------------------------------------------------------- */
+/* 1. RESET BÁSICO E CONFIGURAÇÕES GLOBAIS                              */
+/* ------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e borda não aumentem o tamanho final do elemento */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Cor de texto principal escura */
+    background-color: #f4f4f4; /* Fundo claro para o site */
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* Links herdam a cor do pai, será ajustado em cada seção */
+}
+
+ul {
+    list-style: none;
+}
+
+/* ------------------------------------------------------------------- */
+/* 2. VARIÁVEIS DE CORES (Opcional, mas recomendado)                   */
+/* ------------------------------------------------------------------- */
+:root {
+    --cor-primaria: #0a0a0a;     /* Preto Escuro (Backgrounds, Texto) */
+    --cor-secundaria: #007bff;   /* Azul Esportivo/Destaque */
+    --cor-destaque: #ff4500;     /* Laranja/Vermelho Vibrante (CTAs, Preços) */
+    --cor-fundo: #ffffff;        /* Fundo dos Cards e Main */
+    --cor-texto-claro: #ffffff;
+}
+
+/* ------------------------------------------------------------------- */
+/* 3. CABEÇALHO (HEADER) E NAVEGAÇÃO                                   */
+/* ------------------------------------------------------------------- */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    border-bottom: 3px solid var(--cor-destaque);
+    position: sticky; /* Fica fixo no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+.cabecalho a {
+    color: var(--cor-texto-claro);
+    transition: color 0.3s;
+}
+
+.cabecalho a:hover {
+    color: var(--cor-destaque);
+}
+
+.logo h1 a {
+    font-size: 1.8em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.menu-principal ul {
+    display: flex;
+    gap: 30px;
+}
+
+.icones-usuario a img {
+    width: 24px;
+    height: 24px;
+    margin-left: 15px;
+    /* Filtrar a imagem para branco (se ela for preta) */
+    filter: invert(100%); 
+}
+
+/* ------------------------------------------------------------------- */
+/* 4. BANNER DE DESTAQUE                                               */
+/* ------------------------------------------------------------------- */
+.banner-destaque {
+    position: relative;
+    height: 400px; /* Altura padrão para desktop */
+    overflow: hidden;
+    text-align: center;
+}
+
+.banner-destaque img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5); /* Escurece um pouco a imagem para o texto se destacar */
+}
+
+.conteudo-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--cor-texto-claro);
+}
+
+.conteudo-banner h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.botao-cta {
+    display: inline-block;
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-claro);
+    padding: 10px 25px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.botao-cta:hover {
+    background-color: #e03b00; /* Um tom ligeiramente mais escuro */
+}
+
+/* ------------------------------------------------------------------- */
+/* 5. CONTEÚDO PRINCIPAL (MAIN) E SEÇÕES                               */
+/* ------------------------------------------------------------------- */
+.conteudo-principal {
+    padding: 40px 5%;
+}
+
+.conteudo-principal h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-destaque);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: fit-content;
+}
+
+/* Seção de Categorias */
+.lista-categorias {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.card-categoria {
+    flex-basis: 30%; /* Três cards por linha */
+    text-align: center;
+    background-color: var(--cor-fundo);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card-categoria:hover {
+    transform: translateY(-5px);
+}
+
+.card-categoria img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-categoria h3 {
+    margin: 15px 0 10px;
+}
+
+.card-categoria a {
+    display: block;
+    padding: 10px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Seção de Produtos em Destaque (Vitrine) */
+.lista-produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas grandes */
+    gap: 25px;
+}
+
+.produto-card {
+    background-color: var(--cor-fundo);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s;
+}
+
+.produto-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.produto-card img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.produto-card h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    height: 3em; /* Garante que o título não "pule" o card */
+    overflow: hidden;
+}
+
+.preco {
+    font-size: 1.4em;
+    color: var(--cor-primaria);
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.preco-antigo {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.9em;
+}
+
+.preco-promocao {
+    color: var(--cor-destaque);
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.tipo-campo {
+    display: inline-block;
+    background-color: #eee;
+    color: #555;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-bottom: 10px;
+}
+
+.adicionar-carrinho {
+    width: 100%;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.adicionar-carrinho:hover {
+    background-color: #0056b3;
+}
+
+/* Seção de Vantagens */
+.vantagens {
+    text-align: center;
+    background-color: #e9e9e9;
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 8px;
+}
+
+.vantagens h2 {
+    border: none;
+    margin-bottom: 20px;
+}
+
+.vantagens ul {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+
+/* ------------------------------------------------------------------- */
+/* 6. RODAPÉ (FOOTER)                                                  */
+/* ------------------------------------------------------------------- */
+.rodape {
+    background-color: var(--cor-primaria);
+    color: #ccc;
+    padding: 40px 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
+}
+
+.rodape h4 {
+    color: var(--cor-destaque);
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.rodape ul li {
+    margin-bottom: 8px;
+}
+
+.rodape a {
+    color: #ccc;
+    transition: color 0.3s;
+    display: block; /* Para os links ocuparem a linha toda */
+}
+
+.rodape a:hover {
+    color: var(--cor-texto-claro);
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.9em;
+}
+
+/* ------------------------------------------------------------------- */
+/* 7. RESPONSIVIDADE (MEDIA QUERIES)                                   */
+/* ------------------------------------------------------------------- */
+
+/* Tablet (Telas menores que 1024px) */
+@media (max-width: 1024px) {
+    .lista-produtos {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    }
+}
+
+/* Tablet Vertical e Mobile Grande (Telas menores que 768px) */
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .menu-principal ul {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+        order: 10; /* Move o menu para baixo no layout flex */
+    }
+
+    .lista-categorias {
+        flex-direction: column; /* Colunas em vez de linha */
+    }
+
+    .card-categoria {
+        flex-basis: 100%;
+    }
+
+    .lista-produtos {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    }
+
+    .rodape {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .vantagens ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Mobile (Telas menores que 480px) */
+@media (max-width: 480px) {
+    .conteudo-banner h2 {
+        font-size: 2em;
+    }
+    .lista-produtos {
+        grid-template-columns: 1fr; /* 1 coluna */
+    }
+}
