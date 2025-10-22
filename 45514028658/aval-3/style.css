@@ -1,0 +1,263 @@
+/* ------------------------------------------------------------------- */
+/* 1. RESET BÁSICO E CONFIGURAÇÕES GLOBAIS                              */
+/* ------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e borda não aumentem o tamanho final do elemento */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Cor de texto principal escura */
+    background-color: #f4f4f4; /* Fundo claro para o site */
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* Links herdam a cor do pai, será ajustado em cada seção */
+}
+
+ul {
+    list-style: none;
+}
+
+/* 2. VARIÁVEIS DE CORES (Ajudam na manutenção) */
+:root {
+    --cor-primaria: #0a0a0a;     /* Preto Escuro (Backgrounds, Texto) */
+    --cor-secundaria: #007bff;   /* Azul Esportivo/Destaque */
+    --cor-destaque: #ff4500;     /* Laranja/Vermelho Vibrante (CTAs, Preços) */
+    --cor-fundo: #ffffff;        /* Fundo dos Cards e Main */
+    --cor-texto-claro: #ffffff;
+}
+
+/* ------------------------------------------------------------------- */
+/* 3. CABEÇALHO (HEADER) E NAVEGAÇÃO                                   */
+/* ------------------------------------------------------------------- */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    border-bottom: 3px solid var(--cor-destaque);
+    position: sticky; /* Fica fixo no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+.cabecalho a {
+    color: var(--cor-texto-claro);
+    transition: color 0.3s;
+}
+
+.cabecalho a:hover {
+    color: var(--cor-destaque);
+}
+
+.logo h1 a {
+    font-size: 1.8em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.menu-principal ul {
+    display: flex;
+    gap: 30px;
+}
+
+.icones-usuario a {
+    font-size: 1.5em; /* Aumenta o tamanho dos ícones textuais */
+    margin-left: 15px;
+}
+
+/* ------------------------------------------------------------------- */
+/* 4. CONTEÚDO PRINCIPAL (VITRINE/CATEGORIA)                            */
+/* ------------------------------------------------------------------- */
+.conteudo-categoria {
+    padding: 40px 5%;
+}
+
+.conteudo-categoria h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-destaque);
+    padding-bottom: 5px;
+    width: fit-content;
+    margin: 0 auto 30px;
+}
+
+/* Container que alinha a barra lateral e a vitrine */
+.vitrine-layout {
+    display: flex;
+    gap: 30px;
+}
+
+/* A barra lateral de Filtros (ASIDE) */
+.barra-lateral-filtros {
+    flex: 0 0 250px; /* Largura fixa para a barra lateral */
+    background-color: var(--cor-fundo);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    height: fit-content; /* Importante para não se esticar demais */
+}
+
+.barra-lateral-filtros h3 {
+    font-size: 1.4em;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 5px;
+}
+
+.filtro-grupo {
+    margin-bottom: 25px;
+}
+
+.filtro-grupo h4 {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--cor-destaque);
+    padding-left: 8px;
+}
+
+.filtro-grupo ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tamanhos-disponiveis {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tamanho-chip {
+    padding: 5px 10px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.2s;
+}
+.tamanho-chip:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    border-color: var(--cor-secundaria);
+}
+
+.botao-aplicar {
+    width: 100%;
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-claro);
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.botao-aplicar:hover {
+    background-color: #e03b00;
+}
+
+
+/* A seção da vitrine de produtos */
+.lista-produtos-categoria {
+    flex-grow: 1; /* Ocupa o espaço restante */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas grandes */
+    gap: 20px;
+}
+
+/* Estilo do Card de Produto */
+.produto-card {
+    background-color: var(--cor-fundo);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s;
+}
+
+.produto-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.produto-card img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.produto-card h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    height: 3em; 
+    overflow: hidden;
+}
+
+.preco {
+    font-size: 1.4em;
+    color: var(--cor-primaria);
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.preco-antigo {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.9em;
+}
+
+.preco-promocao {
+    color: var(--cor-destaque);
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.tipo-campo {
+    display: inline-block;
+    background-color: #eee;
+    color: #555;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-bottom: 10px;
+}
+
+.adicionar-carrinho {
+    width: 100%;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.adicionar-carrinho:hover {
+    background-color: #0056b3;
+}
+
+
+/* ------------------------------------------------------------------- */
+/* 5. RODAPÉ (FOOTER)                                                  */
+/* ------------------------------------------------------------------- */
+.rodape {
+    background-color: var(--cor-primaria
