@@ -1,0 +1,149 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #1e3a8a;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.search {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  width: 200px;
+  outline: none;
+}
+
+/* Layout principal */
+.container {
+  display: flex;
+  max-width: 1100px;
+  margin: 20px auto;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* Barra lateral */
+aside {
+  flex: 1;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  height: fit-content;
+}
+
+.perfil {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+
+.foto-perfil {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.sugestoes h4 {
+  margin-top: 15px;
+}
+
+.sugestoes ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sugestoes li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.sugestoes li img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+/* Feed principal */
+main {
+  flex: 2.5;
+}
+
+.post {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.post-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.post-actions {
+  padding: 10px 15px;
+  color: #555;
+  font-weight: bold;
+}
+
+.post p {
+  padding: 0 15px 15px;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 15px;
+  color: white;
+  background-color: #1e3a8a;
+  margin-top: 40px;
+}
+
+/* Responsivo */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+
+  aside {
+    order: -1;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
