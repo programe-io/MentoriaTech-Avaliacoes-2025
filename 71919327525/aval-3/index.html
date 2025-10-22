@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feed Social</title>
+  <link rel="stylesheet" href="style.css"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>🌐 SocialFeed</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Perfil</a></li>
+        <li><a href="#">Notificações</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Feed -->
+  <main>
+    <!-- Post 1 -->
+    <article class="post">
+      <div class="post-header">
+        <img src="https://source.unsplash.com/50x50/?person,1" alt="Foto do usuário" class="user-photo">
+        <div class="user-info">
+          <h3>Maria Oliveira</h3>
+          <time datetime="2025-10-20">20 de Outubro de 2025</time>
+        </div>
+      </div>
+      <img src="https://source.unsplash.com/800x400/?beach" alt="Praia" class="post-img">
+      <p>Fim de semana incrível na praia com amigos ☀️🏖️</p>
+      <button class="like-btn">Curtir</button>
+      <span class="like-count">0 curtidas</span>
+    </article>
+
+    <!-- Post 2 -->
+    <article class="post">
+      <div class="post-header">
+        <img src="https://source.unsplash.com/50x50/?person,2" alt="Foto do usuário" class="user-photo">
+        <div class="user-info">
+          <h3>Carlos Silva</h3>
+          <time datetime="2025-10-18">18 de Outubro de 2025</time>
+        </div>
+      </div>
+      <img src="https://source.unsplash.com/800x400/?coffee" alt="Café" class="post-img">
+      <p>Hora do café e código! ☕💻</p>
+      <button class="like-btn">Curtir</button>
+      <span class="like-count">0 curtidas</span>
+    </article>
+
+    <!-- Post 3 -->
+    <article class="post">
+      <div class="post-header">
+        <img src="https://source.unsplash.com/50x50/?person,3" alt="Foto do usuário" class="user-photo">
+        <div class="user-info">
+          <h3>Ana Martins</h3>
+          <time datetime="2025-10-15">15 de Outubro de 2025</time>
+        </div>
+      </div>
+      <img src="https://source.unsplash.com/800x400/?mountains" alt="Montanhas" class="post-img">
+      <p>Explorando trilhas nas montanhas! 🏞️</p>
+      <button class="like-btn">Curtir</button>
+      <span class="like-count">0 curtidas</span>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 SocialFeed. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const likeButtons = document.querySelectorAll('.like-btn');
+    const likeCounts = document.querySelectorAll('.like-count');
+
+    likeButtons.forEach((button, index) => {
+      let count = 0;
+      button.addEventListener('click', () => {
+        count++;
+        likeCounts[index].textContent = `${count} curtida${count > 1 ? 's' : ''}`;
+        button.disabled = true;
+        button.textContent = 'Curtido!';
+      });
+    });
+  </script>
+
+</body>
+</html>
+<article class="post">
+  <div class="post-header">
+    <img src="https://source.unsplash.com/50x50/?person,1" alt="Foto do usuário" class="user-photo">
+    <div class="user-info">
+      <h2>Maria Oliveira</h2>
+      <time datetime="2025-10-20">20 de Outubro de 2025</time>
+    </div>
+  </div>
+  <img src="https://source.unsplash.com/800x400/?beach" alt="Praia" class="post-img">
+  <p>Fim de semana incrível na praia com amigos ☀️🏖️</p>
+  <button class="like-btn">Curtir</button>
+  <span class="like-count">0 curtidas</span>
+</article>
