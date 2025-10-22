@@ -1,0 +1,189 @@
+/* Paleta de Cores Sugerida:
+   Roxo Açaí: #4e034e (ou um tom mais vibrante, como #6A1B9A)
+   Contraste/Fundo: #f8f8f8 (quase branco)
+   Destaque/Botão: #5cb85c (Verde para "saudável" ou #FFD700 para "ouro/doce")
+*/
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* 1. Cabeçalho */
+header {
+    background-color: #4e034e; /* Roxo Escuro do Açaí */
+    color: white;
+    padding: 1em 0;
+    border-bottom: 5px solid #5cb85c; /* Linha de Destaque Verde */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8em;
+    letter-spacing: 2px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #FFD700; /* Amarelo/Ouro para Destaque */
+}
+
+/* 2. Seção Hero/Banner */
+.hero {
+    background: url('fundo-acai.jpg') no-repeat center center/cover; /* Substitua 'fundo-acai.jpg' por uma imagem sua */
+    background-color: #6A1B9A; /* Cor de backup */
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    height: 400px; /* Ajuste conforme necessário */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para melhorar a leitura */
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo do Botão */
+.btn {
+    display: inline-block;
+    background-color: #5cb85c; /* Verde Saúde/Destaque */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #449d44;
+}
+
+.btn-whatsapp {
+    background-color: #25D366; /* Cor oficial do WhatsApp */
+}
+.btn-whatsapp:hover {
+    background-color: #1DA851;
+}
+
+/* 3. Seções Conteúdo (Sobre, Cardápio, Contato) */
+section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #4e034e;
+}
+
+.sobre {
+    background-color: white;
+}
+
+/* Cardápio Específico */
+.cardapio {
+    background-color: #ececec;
+}
+
+.itens-cardapio {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+}
+
+.item {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 30%; /* Três itens por linha em desktop */
+    min-width: 250px; /* Garante que não fiquem muito pequenos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item h3 {
+    color: #6A1B9A; /* Roxo Vibrante */
+    margin-bottom: 10px;
+}
+
+/* 4. Rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* Mídia Query para Responsividade (melhor visualização em celular) */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        padding-top: 10px;
+    }
+
+    header nav ul li {
+        margin: 0 5px;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .item {
+        width: 90%; /* Um item por linha em celular */
+        margin-bottom: 20px;
+    }
+}
