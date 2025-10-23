@@ -1,0 +1,328 @@
+/* Configurações básicas */
+:root {
+    --cor-principal: #ff4500; /* Laranja forte (adrenalina) */
+    --cor-secundaria: #333;
+    --cor-fundo: #f4f4f4;
+    --cor-texto-claro: #fff;
+    --cor-texto-escuro: #111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-escuro);
+}
+
+/* Header e Navegação */
+header {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--cor-principal);
+}
+
+#nav-menu a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+#nav-menu a:hover {
+    color: var(--cor-principal);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--cor-texto-claro);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Botões CTA */
+.cta-button {
+    display: inline-block;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #e04000;
+    transform: translateY(-2px);
+}
+
+.secondary {
+    background-color: var(--cor-secundaria);
+}
+.secondary:hover {
+    background-color: #555;
+}
+
+/* Seção Hero (Home) */
+.hero {
+    background: url('https://via.placeholder.com/1500x500?text=Fundo+Loja+Motos') no-repeat center center/cover;
+    color: var(--cor-texto-claro);
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Seções Gerais */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--cor-secundaria);
+}
+
+/* Carrossel de Motos (Destaque) */
+.motos-destaque {
+    background-color: var(--cor-texto-claro);
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden; /* Esconde itens que não estão na tela */
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: max-content; /* Permite que os itens fiquem lado a lado */
+}
+
+.moto-card {
+    min-width: 300px; /* Largura base para 3 cards no desktop */
+    margin: 10px;
+    background: var(--cor-fundo);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.moto-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.moto-card h3 {
+    margin: 15px 0 5px;
+    color: var(--cor-principal);
+}
+
+.moto-card p {
+    padding: 0 15px 15px;
+}
+
+.btn-detalhes {
+    display: block;
+    padding: 10px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-detalhes:hover {
+    background-color: var(--cor-principal);
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5em;
+}
+
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+
+/* Serviços */
+.servicos {
+    background-color: #e6e6e6;
+}
+
+.servicos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.servico-item {
+    flex-basis: 30%;
+    min-width: 250px;
+    background-color: var(--cor-texto-claro);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.servico-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.servico-item i {
+    font-size: 3em;
+    color: var(--cor-principal);
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fundo);
+    padding: 40px 20px 10px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+.footer-info, .footer-social {
+    margin: 15px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+}
+
+.footer-social a {
+    color: var(--cor-texto-claro);
+    font-size: 1.5em;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: var(--cor-principal);
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 0.8em;
+}
+
+/* Responsividade (Mobile First) */
+
+/* Menu Hamburguer */
+@media (max-width: 768px) {
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Altura do header */
+        left: 0;
+        background-color: var(--cor-secundaria);
+        padding: 10px 0;
+    }
+
+    #nav-menu.active {
+        display: flex;
+    }
+
+    #nav-menu a {
+        margin: 10px 0;
+        padding: 10px 30px;
+        text-align: left;
+        border-bottom: 1px solid #444;
+    }
+    
+    #nav-menu a:last-child {
+        border-bottom: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+    
+    .carousel-slide {
+        justify-content: flex-start; /* Alinha para permitir o scroll horizontal */
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 10px;
+    }
+    
+    .moto-card {
+        min-width: 90%;
+        scroll-snap-align: start;
+    }
+    
+    .prev-btn, .next-btn {
+        display: none; /* Esconde os botões de navegação no mobile, usando o scroll */
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
