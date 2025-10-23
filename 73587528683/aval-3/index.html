@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore - A Sua Loja de Jogos</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <h1>GameStore</h1>
+        <nav>
+            <a href="#jogos">Jogos</a>
+            <a href="#adicionar-jogo">Colocar Jogo</a>
+            <a href="#temas">Temas</a>
+            <button id="toggle-theme-btn">Modo Light</button>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="banner">
+            <h2>Novidades Exclusivas!</h2>
+            <p>Os melhores títulos e os preços mais baixos você encontra aqui.</p>
+            <a href="#jogos">Ver Jogos</a>
+        </section>
+
+        <section id="jogos">
+            <h2>Jogos em Destaque</h2>
+
+            <div class="lista-jogos">
+
+                <article class="jogo-card">
+                    <img src="https://cdn.awsli.com.br/600x450/2372/2372925/produto/1714665210911a3feca.jpg" alt="The Elder Scrolls V: Skyrim">
+                    <h3>The Elder Scrolls V: Skyrim</h3>
+                    <p class="descricao">Aventure-se na terra de Skyrim, lute contra dragões e decida o futuro do mundo.</p>
+                    <p class="preco"><span>R$ 49,90</span></p>
+                    <button class="add-carrinho-btn">Adicionar ao Carrinho</button>
+                </article>
+
+                <article class="jogo-card">
+                    <img src="https://images.kabum.com.br/produtos/fotos/sync_mirakl/387660/xlarge/Grand-Theft-Auto-5-GTA-V-Para-PS5_1760471017.jpg" alt="Grand Theft Auto V">
+                    <h3>Grand Theft Auto V</h3>
+                    <p class="descricao">Viva a vida de crime em Los Santos com uma história envolvente e um vasto mundo aberto.</p>
+                    <p class="preco"><span>R$ 69,99</span></p>
+                    <button class="add-carrinho-btn">Adicionar ao Carrinho</button>
+                </article>
+
+                <article class="jogo-card">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_698864-MLB50080262035_052022-O.webp" alt="Halo Infinite">
+                    <h3>Halo Infinite</h3>
+                    <p class="descricao">O Master Chief está de volta para enfrentar o inimigo mais implacável que já encontrou.</p>
+                    <p class="preco"><span>R$ 199,90</span></p>
+                    <button class="add-carrinho-btn">Adicionar ao Carrinho</button>
+                </article>
+
+                <article class="jogo-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg" alt="Cyberpunk 2077">
+                    <h3>Cyberpunk 2077</h3>
+                    <p class="descricao">Torne-se um mercenário aprimorado em Night City, uma megacidade obcecada por poder.</p>
+                    <p class="preco"><span>R$ 99,00</span></p>
+                    <button class="add-carrinho-btn">Adicionar ao Carrinho</button>
+                </article>
+
+            </div>
+        </section>
+        
+        <section id="adicionar-jogo">
+            <h2>Adicionar Novo Jogo ao Catálogo</h2>
+            <form id="form-novo-jogo">
+                <div>
+                    <label for="titulo">Título do Jogo:</label>
+                    <input type="text" id="titulo" required>
+                </div>
+                <div>
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" required></textarea>
+                </div>
+                <div>
+                    <label for="preco">Preço (R$):</label>
+                    <input type="number" id="preco" step="0.01" min="0" required>
+                </div>
+                <div>
+                    <label for="foto">URL da Foto (Sugestão: 300x150):</label>
+                    <input type="url" id="foto" value="https://via.placeholder.com/300x150?text=Novo+Jogo" required>
+                </div>
+                <button type="submit">Colocar Jogo</button>
+            </form>
+        </section>
+
+
+        <aside id="temas">
+            <h2>Explore por Temas</h2>
+            <ul>
+                <li>Ação</li>
+                <li>RPG</li>
+                <li>Ficção Científica</li>
+                <li>Mundo Aberto</li>
+                <li>Estratégia</li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer id="contato">
+        <p>&copy; 2025 GameStore. Todos os direitos reservados.</p>
+        <p>Contato: contato@gamestore.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
