@@ -1,62 +1,139 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #1c1c1c;
-  color: #f5f5f5;
+/* ===== ESTILO GERAL ===== */
+* {
   margin: 0;
-  padding: 0 20px;
-}
-
-header {
-  background-color: #111;
-  padding: 20px 0;
-  text-align: center;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  color: #e2b93a; /* cor dourada */
-}
-
-nav ul {
-  list-style: none;
   padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Georgia', serif;
+  color: #fff;
+  background: radial-gradient(circle at bottom, #1a0000 0%, #000 100%);
+  overflow-x: hidden;
 }
 
-nav ul li {
-  display: inline-block;
-  margin: 0 15px;
+/* ===== CABEÇALHO ===== */
+header {
+  background-image: url('https://i.imgur.com/YM6H1vz.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+header::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+}
+header h1 {
+  position: relative;
+  font-size: 3.5em;
+  text-shadow: 0 0 20px #ff0000;
+  z-index: 1;
+}
+header h3 {
+  position: relative;
+  font-size: 1.5em;
+  color: #f5c36c;
+  z-index: 1;
 }
 
-nav ul li a {
-  color: #e2b93a;
-  text-decoration: none;
-  font-weight: bold;
+/* ===== CONTEÚDO PRINCIPAL ===== */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
 }
-
-nav ul li a:hover {
-  text-decoration: underline;
-}
-
 section {
-  margin: 40px 0;
+  flex: 2;
+  min-width: 300px;
+  margin-right: 20px;
 }
-
-button {
-  background-color: #e2b93a;
-  border: none;
-  padding: 10px 15px;
-  color: #111;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 4px;
+section h2 {
+  color: #f5c36c;
+  border-bottom: 2px solid #f5c36c;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
 }
-
-button:hover {
-  background-color: #cfa832;
-}p {
-  margin: 5px 0 15px 20px; /* espaçamento para ficar visualmente agradável */
-  font-size: 0.9rem;
-  color: #ccc;
+section p {
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.quote {
   font-style: italic;
+  color: #ffdd99;
+  border-left: 3px solid #ff0000;
+  padding-left: 10px;
+  margin: 20px 0;
+}
+section img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+section img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== ASIDE ===== */
+aside {
+  flex: 1;
+  min-width: 250px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 2px solid #ff0000;
+  padding: 20px;
+  border-radius: 10px;
+  height: fit-content;
+}
+aside h3 {
+  color: #ffcc66;
+  margin-bottom: 10px;
+}
+aside ul {
+  list-style: none;
+  padding-left: 10px;
+}
+aside li {
+  margin-bottom: 10px;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+  background: #111;
+  color: #bbb;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9em;
+  border-top: 1px solid #333;
+}
+
+/* ===== EFEITO DE FOGO ===== */
+.fire {
+  position: fixed;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 200px;
+  background: radial-gradient(circle at 50% 80%, rgba(255,140,0,0.2), transparent 70%);
+  animation: flames 2s infinite;
+  pointer-events: none;
+}
+@keyframes flames {
+  0% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+  50% { opacity: 0.8; transform: translateX(-50%) scale(1.1); }
+  100% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  main { flex-direction: column; }
+  section { margin-right: 0; }
 }
