@@ -1,0 +1,348 @@
+ /* ===================================== */
+/* ESTILOS CSS PARA SITE DE COSMÉTICOS (cosmeticos.css) */
+/* ===================================== */
+
+/* Variáveis de Cores */
+:root {
+    --cor-primaria: #8B4513; /* Marrom Rústico (Terra Cotta) */
+    --cor-secundaria: #F5DEB3; /* Bege Suave */
+    --cor-destaque: #6B8E23; /* Verde Oliva (Natural) */
+    --cor-fundo: #FAFAF0; /* Fundo Cremoso */
+    --cor-texto-escuro: #333333;
+}
+
+/* Estilos Globais e Reset Básico */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-escuro);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h2 {
+    font-size: 2.2em;
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Botões */
+.btn-cta, .btn-detalhes {
+    background-color: var(--cor-destaque);
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    display: inline-block;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    border: none;
+}
+
+.btn-cta:hover, .btn-detalhes:hover {
+    background-color: #58791c;
+    transform: translateY(-2px);
+}
+
+
+/* ===================================== */
+/* CABEÇALHO (HEADER) */
+/* ===================================== */
+
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+header h1 {
+    font-family: serif;
+    color: var(--cor-primaria);
+    margin: 0;
+    font-size: 1.8em;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--cor-texto-escuro);
+    padding: 10px 20px;
+    display: block;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: var(--cor-primaria);
+}
+
+/* ===================================== */
+/* SEÇÃO HERO (DESTAQUE) */
+/* ===================================== */
+
+.hero {
+    background-color: var(--cor-secundaria);
+    padding: 60px 0;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-content {
+    max-width: 45%;
+}
+
+.hero-content h2 {
+    font-size: 3em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: left;
+    color: var(--cor-primaria);
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* ===================================== */
+/* SEÇÃO PRODUTOS */
+/* ===================================== */
+
+.produtos {
+    padding: 60px 0;
+}
+
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.produto-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    text-align: center;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.produto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.produto-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: opacity 0.3s;
+}
+
+.produto-card h3 {
+    color: var(--cor-primaria);
+    font-size: 1.4em;
+    margin: 10px 0;
+}
+
+.produto-card p {
+    color: #777;
+    padding: 0 15px;
+    min-height: 40px;
+    font-size: 0.95em;
+}
+
+.preco {
+    display: block;
+    font-size: 1.5em;
+    color: var(--cor-destaque);
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+/* Ajusta o botão de detalhes para ficar no card */
+.produto-card .btn-detalhes {
+    font-size: 0.9em;
+    padding: 10px 20px;
+}
+
+
+/* ===================================== */
+/* SEÇÃO INGREDIENTES/COMPROMISSO */
+/* ===================================== */
+
+.ingredientes {
+    background-color: var(--cor-secundaria);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.compromisso-items {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.item {
+    flex-basis: 30%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.item h4 {
+    color: var(--cor-primaria);
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+/* ===================================== */
+/* RODAPÉ (FOOTER) */
+/* ===================================== */
+
+footer {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    padding: 30px 0 10px 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-info, .redes-sociais {
+    flex-basis: 45%;
+}
+
+footer h4 {
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.redes-sociais a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.redes-sociais a:hover {
+    color: var(--cor-destaque);
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.8em;
+    padding-top: 10px;
+}
+
+/* ===================================== */
+/* RESPONSIVIDADE (MEDIA QUERIES) */
+/* ===================================== */
+
+@media (max-width: 900px) {
+    /* HERO: Altera layout para coluna */
+    .hero .container {
+        flex-direction: column-reverse; /* Conteúdo em cima, imagem embaixo */
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .hero-image {
+        max-width: 80%;
+    }
+
+    .hero-content h2 {
+        text-align: center;
+        font-size: 2.5em;
+    }
+    
+    /* PRODUTOS: Ajuste de grid */
+    .produtos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    /* INGREDIENTES: Altera layout para coluna */
+    .compromisso-items {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .item {
+        flex-basis: 100%;
+    }
+
+    /* RODAPÉ: Altera layout para coluna */
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-info, .redes-sociais {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    .redes-sociais {
+        margin-top: 10px;
+    }
+}
