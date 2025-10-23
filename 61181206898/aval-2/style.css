@@ -1,0 +1,221 @@
+
+/* =============================
+   RESET E CONFIGURAÇÕES GERAIS
+   ============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background-color: #fff9f5;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* =============================
+   LINKS
+   ============================= */
+a {
+  color: #ff6f91;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #ffc94b;
+}
+
+/* =============================
+   CABEÇALHO
+   ============================= */
+header {
+  background: linear-gradient(90deg, #ffe8f0, #fff3d4);
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+  color: #ff6f91;
+  font-size: 2.4em;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #555;
+  font-size: 1.05em;
+  margin-bottom: 15px;
+}
+
+nav a {
+  margin: 0 10px;
+  font-weight: 600;
+  color: #ff6f91;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+nav a:hover {
+  background-color: rgba(255, 111, 145, 0.1);
+  color: #ff4081;
+}
+
+/* =============================
+   ÁREA PRINCIPAL
+   ============================= */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 30px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* =============================
+   POSTAGEM PRINCIPAL
+   ============================= */
+article {
+  flex: 3;
+  min-width: 300px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+article h2 {
+  color: #ff6f91;
+  margin-bottom: 12px;
+  font-size: 1.8em;
+}
+
+article h3 {
+  color: #ffb703;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+article p {
+  margin-bottom: 16px;
+  color: #444;
+}
+
+/* =============================
+   SEÇÃO DE COMENTÁRIOS
+   ============================= */
+.comment-section {
+  margin-top: 25px;
+  border-top: 2px solid #fff1da;
+  padding-top: 20px;
+}
+
+.comment-section h3 {
+  color: #ff6f91;
+  margin-bottom: 10px;
+}
+
+.comment-section textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  resize: vertical;
+  font-size: 1em;
+}
+
+.comment-section button {
+  margin-top: 12px;
+  padding: 10px 22px;
+  background-color: #ff6f91;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.comment-section button:hover {
+  background-color: #ff4d79;
+}
+
+/* =============================
+   SIDEBAR (BARRA LATERAL)
+   ============================= */
+aside {
+  flex: 1;
+  min-width: 260px;
+  background-color: #fff8f0;
+  padding: 22px;
+  border-radius: 15px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+  transition: transform 0.3s ease;
+}
+
+aside:hover {
+  transform: translateY(-3px);
+}
+
+aside h3 {
+  color: #ff6f91;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+aside ul {
+  list-style: none;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+aside ul li {
+  padding: 5px 0;
+  color: #555;
+}
+
+/* =============================
+   RODAPÉ
+   ============================= */
+footer {
+  text-align: center;
+  background: linear-gradient(90deg, #fff3d4, #ffe8f0);
+  padding: 18px;
+  margin-top: 30px;
+  font-size: 0.95em;
+  color: #555;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* =============================
+   RESPONSIVIDADE
+   ============================= */
+@media (max-width: 850px) {
+  main {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  article, aside {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+}
