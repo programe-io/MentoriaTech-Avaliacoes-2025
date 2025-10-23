@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Loja de Sapatos - Calçados com Estilo</title>
+    <link rel="stylesheet" href="style.css"> 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>document.addEventListener('DOMContentLoaded', () => {
+    // -------------------------------------------------------------------
+    // 1. FUNCIONALIDADE DO CARRINHO (Contador e Botões de Compra)
+    // -------------------------------------------------------------------
+
+    // Seleciona o elemento que exibe o número de itens no carrinho no header
+    const contadorCarrinho = document.querySelector('header nav ul li a[href="carrinho.html"]');
+    // Seleciona todos os botões "Adicionar ao Carrinho"
+    const botoesComprar = document.querySelectorAll('.btn-comprar');
+    
+    // Variável para armazenar a contagem de itens (poderia ser armazenada em localStorage)
+    let itensNoCarrinho = 0; 
+    
+    // Função para atualizar o texto do contador no cabeçalho
+    function atualizarContador(quantidade) {
+        contadorCarrinho.textContent = `🛒 Carrinho (${quantidade})`;
+    }
+
+    // Inicializa o contador
+    atualizarContador(itensNoCarrinho);
+
+    // Adiciona um evento de clique a cada botão de compra
+    botoesComprar.forEach(botao => {
+        botao.addEventListener('click', () => {
+            itensNoCarrinho++; // Incrementa o contador
+            atualizarContador(itensNoCarrinho); // Atualiza o display
+
+            // Feedback visual rápido
+            botao.textContent = 'Adicionado!';
+            botao.disabled = true; // Desabilita o botão para evitar cliques múltiplos imediatos
+            
+            // Volta ao estado normal após 1 segundo
+            setTimeout(() => {
+                botao.textContent = 'Adicionar ao Carrinho';
+                botao.disabled = false;
+            }, 1000);
+            
+            // Mensagem no console para fins de desenvolvimento
+            console.log(`Item adicionado. Total de itens: ${itensNoCarrinho}`);
+        });
+    });
+    
+
+    // -------------------------------------------------------------------
+    // 2. FUNCIONALIDADE DO FILTRO DE PREÇO (Slider Range)
+    // -------------------------------------------------------------------
+    
+    // Seleciona o input range de preço
+    const inputRange = document.getElementById('preco');
+    // Seleciona o span onde o valor será exibido
+    const valorPrecoSpan = document.getElementById('valor-preco');
+
+    // Verifica se os elementos existem antes de adicionar o evento
+    if (inputRange && valorPrecoSpan) {
+        
+        // Define o valor inicial do span para o valor inicial do input
+        valorPrecoSpan.textContent = `R$ ${inputRange.value}`;
+
+        // Adiciona um evento que dispara sempre que o slider é movido
+        inputRange.addEventListener('input', () => {
+            // Atualiza o texto do span com o valor atual do input
+            valorPrecoSpan.textContent = `R$ ${inputRange.value}`;
+        });
+    
+
+});
+        <h1><a href="index.html">ShoeStore</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#feminino">Feminino</a></li>
+                <li><a href="#masculino">Masculino</a></li>
+                <li><a href="#infantil">Infantil</a></li>
+             document.addEventListener('DOMContentLoaded', () => {
+    // -------------------------------------------------------------------
+    // 1. FUNCIONALIDADE DO CARRINHO (Contador e Botões de Compra)
+    // -------------------------------------------------------------------
+
+    // Seleciona o elemento que exibe o número de itens no carrinho no header
+    const contadorCarrinho = document.querySelector('header nav ul li a[href="carrinho.html"]');
+    // Seleciona todos os botões "Adicionar ao Carrinho"
+    const botoesComprar = document.querySelectorAll('.btn-comprar');
+    
+    // Variável para armazenar a contagem de itens (poderia ser armazenada em localStorage)
+    let itensNoCarrinho = 0; 
+    
+    // Função para atualizar o texto do contador no cabeçalho
+    function atualizarContador(quantidade) {
+        contadorCarrinho.textContent = `🛒 Carrinho (${quantidade})`;
+    }
+
+    // Inicializa o contador
+    atualizarContador(itensNoCarrinho);
+
+    // Adiciona um evento de clique a cada botão de compra
+    botoesComprar.forEach(botao => {
+        botao.addEventListener('click', () => {
+            itensNoCarrinho++; // Incrementa o contador
+            atualizarContador(itensNoCarrinho); // Atualiza o display
+
+            // Feedback visual rápido
+            botao.textContent = 'Adicionado!';
+            botao.disabled = true; // Desabilita o botão para evitar cliques múltiplos imediatos
+            
+            // Volta ao estado normal após 1 segundo
+            setTimeout(() => {
+                botao.textContent = 'Adicionar ao Carrinho';
+                botao.disabled = false;
+            }, 1000);
+            
+            // Mensagem no console para fins de desenvolvimento
+            console.log(`Item adicionado. Total de itens: ${itensNoCarrinho}`);
+        });
+    });
+    
+
+    // -------------------------------------------------------------------
+    // 2. FUNCIONALIDADE DO FILTRO DE PREÇO (Slider Range)
+    // -------------------------------------------------------------------
+    
+    // Seleciona o input range de preço
+    const inputRange = document.getElementById('preco');
+    // Seleciona o span onde o valor será exibido
+    const valorPrecoSpan = document.getElementById('valor-preco');
+
+    // Verifica se os elementos existem antes de adicionar o evento
+    if (inputRange && valorPrecoSpan) {
+        
+        // Define o valor inicial do span para o valor inicial do input
+        valorPrecoSpan.textContent = `R$ ${inputRange.value}`;
+
+        // Adiciona um evento que dispara sempre que o slider é movido
+        inputRange.addEventListener('input', () => {
+            // Atualiza o texto do span com o valor atual do input
+            valorPrecoSpan.textContent = `R$ ${inputRange.value}`;
+        });
+    
+
+});c   <li><a href="contato.html">Contato</a></li>
+                <li><a href="carrinho.html">🛒 Carrinho (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="destaques">
+            <h2>Nova Coleção de Inverno</h2>
+            <img src="data:image/webp;base64,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" alt="Banner da Nova Coleção de Sapatos de Inverno">
+            <p>Conheça os lançamentos mais quentes da estação. <a href="#novidades">Ver Mais</a></p>
+        </section>
+
+        <div class="produtos-container">
+            
+            <aside class="sidebar">
+                <h3>Filtros de Busca</h3>
+                <form>
+                    <label for="categoria">Categoria:</label>
+                    <select id="categoria" name="categoria">
+                        <option value="todos">Todos</option>
+                        <option value="tenis">Tênis</option>
+                        <option value="bota">Botas</option>
+                        <option value="sandalia">Sandálias</option>
+                    </select>
+                    
+                    <label for="tamanho">Tamanho:</label>
+                    <input type="number" id="tamanho" name="tamanho" min="18" max="45" placeholder="Ex: 37">
+                    
+                    <label for="preco">Preço Máximo:</label>
+                    <input type="range" id="preco" name="preco" min="50" max="500">
+                    <span id="valor-preco">R$ 500</span>
+
+                    <button type="submit">Aplicar Filtros</button>
+                </form>
+
+                <div class="promocao">
+                    <h4>Oferta do Dia!</h4>
+                    <p>30% OFF em todas as Botas de Couro. Aproveite!</p>
+                </div>
+            </aside>
+
+            <section id="produtos">
+                <h2>Produtos em Destaque</h2>
+
+                <article class="produto-card">
+                    <img src="data:image/webp;base64,UklGRqAKAABXRUJQVlA4IJQKAADwOACdASqRAI4APkUgjUUioiERewV0KAREs52/rAxPKdwVbc7ZSFLKBpMOc037AiP992MdklXoXjh+Hp577An8l/xH/J9o//W8m31X/4vcO6UHol/rwOj/7bKMJb28xMxNF5Kpmt8A81HAKTEf5+I9OvIUR4VpLbypl5BTSHBO9uqomOsOt/873xEBXsNHQHxCNM1i7JcczGkE67ajGbLZcAkrzz7S2rdb2dmmdSvmMaBTfTCIALMFaiBR+UBLvSriSfwUdZH+W5HTdmtjiABKdtFGP9I/9Z+RY8EtpKuAVeWRl+gco4KEHOwUTZdiwCDsOeAO2SG0djh3K4n9qeTXrSvFPvni8lGGkzaGgdmSdfgbAbxiPdGA83k73csZ6YxmjHilG/FOLkpVbjLT87AV6FooVJKHgg9X7Xi7+vezMm59Nkh+QkmYSMgmSTNpV8+GczRxkL8ahA1bvYUgqeh1g17V1sh+9MqwVluLbMsyYk2rJ0NmSVd74YcWpUzRuD5bYjubquGMPSWMFyg6lUmJyrROQ6/Z+zKEWAbPihdmzyA1uPGNwArx36WSWlr1X1H/dzpN3VWycJDmCUUb/8IsA778mV+2vXx2Ns3i4KcuOAD++qBqfcjhqAXQNBDp9BDnGErOxzx/1HFUtpU+/7D/sf6kg/an7nxChw+Yt6fwkKicDX//jeRP1A3p78fwNjMXnNzRi9qcdu3G542aUzLrnzct2ZbJXIDmwiq6ZGhfLr6VUTPRlcyeZ8EENrmPEWVUJIIDWmkRj+Txgh3nqfeVrUqnOnU+hLPNKrVOi7n3OY8WRJbp6Uqhiqo4ZGj6N9Pj9bKX8u2vPEJbIyWOmav/3BVrZpdgWUBwPcMI0rUQuuWHRjXNtfuXF3iYs1/hquT+l2iTXNcgUfzMjhWDBGtkK0V2p29i/2hVo0zp7W83QcbAbCz4RWNZNX0APPu31UnOqxpvXFpKqsr46c6HZ28UqOrErwa8j3YJbGS/guT/AonvcszARWGUraETgwniZvH4s+ipdrkE8VJBpbbSYfjfhfqew7XcRhv1CJef5GjPiwXxrDQKDvSxZGDf6cYMGWKmAQJ2XxiiUG5kAjUkJrUgaDiAdJLHHDrQxyO/mQYhgBh0svNl5zYqsIevaN2FYwgyxsyhIPV94mhamIsd4OmOKRvw/PaP/isFEDiFKi3i5YzRwBpcbQoLPufN2uVz9bu6slo3Cl1jmuDJcPOE5GAFTzqIMTrMfvI8m/+o7nwZrkTjK0X7/0BO28FZh4rutiHeJX/B0UZep9XjulK91+fN2CcPTnsiUB8GiHXI7ZQtsmbMUnIaqBUtiJqfNODD+ViL95QGf7Z8+Fyv/lXrxLVSTrYyT0qVwwXssPyg9dN3SDhSK/EeFlOBY2p3m++UP8XCowRaw9mrSjeEErzZAM6AEL4aUpfTCykNB3YnqRsmM2o86FQepr6f2d+e3WfYtCwRenYLQ04GdkCiVKJZNDuyp4DftEm/euJqf5P2ynq9jXn/ZNUAHeqWoPB9HUH1Ru/wkRnF9xU31HGuJEC3bfpZGNPVq7dvtPXNU84IO8DxL+/1r4t/Ed/iAznde/YAKgkHK8GO+zyVlvdhM5EekEA2aGsDjV/Np43JEoGokSuEhhqjKgtV/EN521GrIBcT6Ds0pe3o1Xlz5V7/PYdLemI6s0/E+JAdwntFHJrzeCbVr/x9+BWfz8NTxbaAv+3/80Th5sSrKOr4OBq0napmbUbSAlDYpT4a0jCQDaQjU4fdFGYJ7QohrOkkHrA2DedrA7hG6WP8gGXfhz+hR8R+D0qn/AtTFzmiY8KlC9XmWUHhV8e7kHxq+XTno+GiSMoabNSz8i2WJuHeyapFDX4JHtDJ8WcATQIzNjnhLZgOcSGqF+A1mEilXJWP9WaiTZNiA6heQPX0v3bdGOGCsqQgnGC/DPf/7/tz+J1rZkc1vPwsmuFS4o9Wlak432qXupO9ztrfCpge4hpVGOWAn+gz89UeDTJ+lxUaZMKjOHe5iv5tM6GxCz/Hx1IsXhJF7zKRNt+9zdT95S8Ia1WfpGp8ck9AMeJyUfc4obi2y4I7P/cra5BvzV3cHA91ecRSEsgJ7VtuD1vV23Daxr1fAsp1jJiZQzxIO2/2PtOJlS5x19Z+v1bvzvOQo0e1MGhneCyutDBXiIhQ3mxht+TNXOB0116Uww7e7ho8EXosltaztbktwHli8BwmyVlVtegXuYpw61M07eOLxLh/+mYOsQX9Q3RLLemJvAMiNgcH2nYbN5QLz6VBxye5qOkYlktPHbYv8Ym7FxNswwfspwTqNseDZ5V1Qw+UnHG9PXXmXUHys4YJWD2C6twJ0RW1yyaFgddWdbJMoMRNvQRg7A5t4OYRgoY+H661NbcybMBZxjGLf2wqJ5FG2qRjcj0O0Hf7IdObBXwqKKnjWIFZTqPPuCRXi10M42jgBOLCatTEAj3mUehdIeOJWB9GBW0wZUKKr5NgNpHpNSDZNwkYfwqGOBTGJUty14p/JoNRABYHkIWBxUNThV7SFqSPeM7Y9nXD45PCj2KvJbAh4aAP2pIYPggCxjZOrW1UNR+snGW+CKUZoDGApWrQpCmlNyEWN5T21IKsLMhvrRtFJcrr7nbDWtje5x4fEG8PuY3BMDdO3swn9zcsBN7Bf7a1PwdsDc80fnY+lyo6tD294JmhgC+6d12Yit2N6+cXHBCB1G8WbPdZOQ/pZ/LMwihniT5AUxqsFyHvzoAWyvWJAtWFdB+/TItB/tLrg8SprtevQaLeB9jlYSLn9dmLw2ex4LoZDNbDPH0TtVCNXbDKA4IgNr93+So6kKD/sdgs3K70OGe2RdoI4gmsDW5PkoGIQWqigF6WAo3clsroH2/abKtJq8ulfSEefv/eGy+Nb1Fjoms2ZQaaz8/NpqujXJpuQGhBcFh1GxtOC6O3isyVUbhVPs0xUsNL3eyi0a8hxG3EtM4K2Ftffmjg/RTHcWf8orWeubI4GH7XaQiVEjiHmNf1vaPbZ5k+PLVBjZY0gccSvree1iGfG1Eh5ofPE3U26CJ1gZisR5ZjbeqirEwuXQ/1PtdP3joX2mh60ctvPKdFTIwdv4FmR3e26in01Da43P78nrGseRPzEq8W0IVEn+GyoiU9FavcQP5MvN7vsPphHvtW6dBBnh6i/8/LEID25JJAMxzVeUhzDjl8q5542XniR1FhozYOlUYUaDUpcT8x0WqJZsE/OH6E6/G7tD5t3zDFzGeBxi/5scOKNgVfXErrBBwDS0KmW5pEsqq8bXPXZOGgsAe+Ym/ha2nv7tndHPPCf4GwPPBnO9oQrQt8su8RozSKOAp7x0OeqUlbE77uq5V0H+PzCmAXsyA/T1AoPTkw2oAbYOgm1vIskLU+OC3Iv7pg0aBQFNKothe3anQjDAtgpx7DeSIRylB810AciYyH0NjKO+vXmPcZkjPRwLyt2AQwiJ+K9j1/xQoxPsgvVOeYbd7+rjcTC/cEbYtH6qex6wlkvxF1DsOF6cRwBy5oPTK0Y8wciF6zuJjoSBl4DHpEe48bQAu5FDAjBDeXRDcNX7peoxHqhQtA3LVgF9mVCHid0ykBR6DiAAAAAA==" alt="Tênis Casual Feminino Rosa">
+                    <h3>Tênis Casual Confort</h3>
+                    <p class="categoria">Feminino</p>
+                    <p class="preco">R$ 199,90</p>
+                    <a href="produto_tenis.html" class="btn-detalhes">Ver Detalhes</a>
+                    <button class="btn-comprar">Adicionar ao Carrinho</button>
+                </article>
+
+                <article class="produto-card">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQjLumU7J4T5VYYh7i2Qhec7u5_IHzDthISIsNmVP4sn3oZAfSnVoMhn_MiMG7ccL3Xblr0-G_CD5k6Ie51FkVnRbwM3RnkHki2q9P191wkVH4l1qGbUzYDwkEYWR9FNlKYvQln6BIqiw&usqp=CAc" alt="Bota de Couro Masculina Marrom">
+                    <h3>Bota Adventure Urban</h3>
+                    <p class="categoria">Masculino</p>
+                    <p class="preco">R$ 349,90</p>
+                    <a href="produto_bota.html" class="btn-detalhes">Ver Detalhes</a>
+                    <button class="btn-comprar">Adicionar ao Carrinho</button>
+                </article>
+
+                <article class="produto-card">
+                    <img src="sandalia_infantil.jpg" alt="Sandália Infantil com Estampa Divertida">
+                    <h3>Sandália Kids Alegria</h3>
+                    <p class="categoria">Infantil</p>
+                    <p class="preco">R$ 89,90</p>
+                    <a href="produto_sandalia.html" class="btn-detalhes">Ver Detalhes</a>
+                    <button class="btn-comprar">Adicionar ao Carrinho</button>
+                </article>
+                
+                </section>
+        </div>
+        
+        <section id="vantagens">
+            <h2>Por que comprar conosco?</h2>
+            <ul>
+                <li>Frete Grátis acima de R$ 250,00</li>
+                <li>Troca Fácil em até 30 dias</li>
+                <li>Pagamento em até 10x sem juros</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="newsletter">
+            <h4>Assine nossa Newsletter</h4>
+            <form action="/subscribe" method="POST">
+                <input type="email" placeholder="Seu e-mail" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+        <div class="links-rodape">
+            <p>&copy; 2025 ShoeStore. Todos os direitos reservados.</p>
+            <ul>
+                <li><a href="politica.html">Política de Privacidade</a></li>
+                <li><a href="termos.html">Termos de Uso</a></li>
+                <li><a href="fale-conosco.html">Fale Conosco</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script></body>
+</html>
