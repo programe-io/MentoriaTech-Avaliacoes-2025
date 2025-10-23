@@ -1,0 +1,211 @@
+/*
+    ======================================
+    CSS BÁSICO PARA CONCESSIONÁRIA DE CARROS
+    ======================================
+*/
+
+/* 1. Reset Básico e Definição de Fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e borda não aumentem o tamanho total do elemento */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333; /* Texto principal em cinza escuro */
+    background-color: #f4f4f4; /* Fundo claro para o corpo */
+}
+
+/* 2. Cores e Variáveis (para facilitar a manutenção) */
+:root {
+    --cor-principal: #004c99; /* Azul Marinho (Corporate/Confiável) */
+    --cor-secundaria: #cc0000; /* Vermelho (Destaque/Atenção) */
+    --cor-fundo-claro: #ffffff;
+    --cor-fundo-escuro: #222;
+    --cor-texto-claro: #ffffff;
+}
+
+/* 3. Estilo do Cabeçalho (Header e Navegação) */
+header {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-claro);
+    padding: 15px 0;
+    border-bottom: 5px solid var(--cor-secundaria); /* Linha vermelha de destaque */
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    color: var(--cor-secundaria);
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* 4. Estilo das Seções Principais */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+section {
+    background-color: var(--cor-fundo-claro);
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: var(--cor-principal);
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* 5. Estilo dos Botões (Chamadas para Ação) */
+.button, section a[href^="#"], section a:not([href="#"]) {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.button:hover, section a:hover:not([href="#"]) {
+    background-color: #ff3333; /* Vermelho mais claro no hover */
+}
+
+/* 6. Estilo da Seção de Estoque */
+#estoque {
+    text-align: center;
+}
+
+.carro-destaque {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 20px;
+    display: inline-block; /* Permite que fiquem lado a lado */
+    width: 45%; /* Ocupa menos da metade para caber dois */
+    margin: 10px;
+    border-radius: 6px;
+    text-align: left;
+}
+
+.carro-destaque img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.carro-destaque h3 {
+    color: var(--cor-principal);
+    margin-bottom: 5px;
+}
+
+.carro-destaque p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* 7. Estilo do Formulário (Financiamento) */
+#financiamento form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+#financiamento label {
+    font-weight: bold;
+    color: var(--cor-principal);
+}
+
+#financiamento input, #financiamento select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#financiamento button[type="submit"] {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    border: none;
+    cursor: pointer;
+}
+
+#financiamento button[type="submit"]:hover {
+    background-color: #0066cc;
+}
+
+
+/* 8. Estilo do Rodapé (Footer) */
+footer {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.social-media a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: var(--cor-texto-claro);
+}
+
+/* 9. Responsividade Básica (para telas menores) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+    
+    .carro-destaque {
+        width: 100%; /* Carros empilham em telas menores */
+        margin: 10px 0;
+    }
+}
