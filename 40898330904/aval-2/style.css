@@ -1,0 +1,140 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #ff6f00, #ffb74d);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Navegação */
+nav {
+    background-color: #333;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background-color: #575757;
+}
+
+/* Conteúdo principal e sidebar */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 30px 20px;
+}
+
+.main-content {
+    flex: 3;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar {
+    flex: 1;
+    min-width: 200px;
+    background-color: #fff8e1;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.sidebar h3 {
+    color: #ff6f00;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: disc inside;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    color: #ff6f00;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+/* Seções principais */
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    color: #ff6f00;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.card ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.card li {
+    margin-bottom: 8px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ff6f00;
+    color: white;
+    margin-top: 50px;
+}
+
+/* Responsividade */
+@media(max-width: 900px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+}
