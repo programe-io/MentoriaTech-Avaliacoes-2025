@@ -1,0 +1,547 @@
+/* ============================= */
+/* 0. Configurações Globais (Reset e Variáveis) */
+/* ============================= */
+:root {
+    /* Paleta de Cores: Profissional e de Alto Contraste */
+    --primary-dark: #1e1e24;     /* Fundo Principal Escuro (Robustez) */
+    --accent-blue: #007bff;      /* Azul de Confiança (Links, Destaques) */
+    --secondary-orange: #ff9900; /* Laranja/Amarelo (Ação, Energia, Maquinário) */
+    --text-light: #f4f4f4;       /* Texto Claro */
+    --text-dark: #333333;        /* Texto Escuro */
+    --card-bg: #ffffff;          /* Fundo de Cards Limpo */
+    --light-gray: #dddddd;       /* Separadores e Bordas */
+    
+    /* Fontes (Robusta e Legível) */
+    --font-heading: 'Roboto', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    
+    /* Espaçamento */
+    --spacing-xl: 80px;
+    --spacing-large: 40px;
+    --spacing-medium: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-light);
+    background-color: var(--primary-dark);
+}
+
+section {
+    padding: var(--spacing-xl) 5%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-blue);
+    transition: color 0.3s;
+}
+
+/* Títulos */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 900; /* Extra Bold */
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: var(--spacing-large);
+    color: var(--text-light);
+}
+
+.pro-color {
+    color: var(--secondary-orange);
+}
+
+/* ============================= */
+/* 1. BOTÕES (Ação e Conversão) */
+/* ============================= */
+.btn-primary, .btn-secondary, .btn-cta, .btn-details, .btn-gallery-more {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-cta, .btn-primary { /* Principal CTA: Laranja de Ação */
+    background-color: var(--secondary-orange);
+    color: var(--primary-dark);
+    box-shadow: 0 4px 15px rgba(255, 153, 0, 0.4);
+}
+
+.btn-cta:hover, .btn-primary:hover {
+    background-color: #e68a00; /* Laranja mais escuro */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 153, 0, 0.6);
+}
+
+.btn-secondary { /* Botão Secundário: Fundo Transparente com Borda */
+    background-color: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--text-light);
+    margin-left: 15px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--text-light);
+    color: var(--primary-dark);
+}
+
+.btn-details {
+    background-color: var(--accent-blue);
+    color: var(--text-light);
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+.btn-details:hover {
+    background-color: #0056b3; /* Azul mais escuro */
+}
+
+
+/* ============================= */
+/* 2. CABEÇALHO e NAVEGAÇÃO (Sticky) */
+/* ============================= */
+.main-header {
+    background-color: var(--primary-dark);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--secondary-orange);
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: 900;
+    font-family: var(--font-heading);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li a {
+    color: var(--text-light);
+    font-weight: 500;
+    padding: 8px 15px;
+    text-transform: uppercase;
+}
+
+.main-nav ul li a:hover {
+    color: var(--secondary-orange);
+}
+
+/* Estilo para menu mobile (simples) */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: var(--secondary-orange);
+}
+
+/* ============================= */
+/* 3. SEÇÃO HERO (Destaque Principal) */
+/* ============================= */
+.hero-section {
+    /* É crucial que você use uma imagem de alta qualidade aqui */
+    /* Substitua 'caminhao-moderno-fundo-rodovia.jpg' pela sua imagem real */
+    background: url('caminhao-moderno-fundo-rodovia.jpg') no-repeat center center/cover;
+    height: 80vh; 
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-align: left;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Overlay escuro para destacar o texto */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 0 5%;
+}
+
+.tagline {
+    font-weight: 700;
+    color: var(--secondary-orange);
+    display: block;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.hero-content h1 {
+    font-size: 4.5em;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    color: #ccc;
+    margin-bottom: var(--spacing-large);
+}
+
+.hero-actions {
+    margin-top: var(--spacing-medium);
+}
+
+/* ============================= */
+/* 4. BARRA DE BUSCA RÁPIDA (Funcionalidade) */
+/* ============================= */
+.search-form-bar {
+    background-color: var(--accent-blue);
+    padding: 30px 5%;
+}
+
+.search-form-bar h2 {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.search-form {
+    display: flex;
+    gap: var(--spacing-medium);
+    align-items: center;
+}
+
+.search-form input, 
+.search-form select {
+    padding: 12px 15px;
+    border: 1px solid #0056b3;
+    border-radius: 4px;
+    flex-grow: 1; /* Distribui o espaço entre os campos */
+    font-size: 1em;
+    color: var(--text-dark);
+}
+
+.search-form button {
+    flex-shrink: 0; /* Não deixa o botão diminuir */
+}
+
+/* ============================= */
+/* 5. LISTA DE PRODUTOS (Cards) */
+/* ============================= */
+.truck-list {
+    background-color: #2c2c31; /* Fundo ligeiramente diferente para contraste */
+}
+
+.truck-list h2 {
+    color: var(--text-light);
+}
+
+.truck-card {
+    background-color: var(--card-bg);
+    color: var(--text-dark);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease;
+    display: flex;
+    margin-bottom: var(--spacing-large);
+}
+
+.truck-card:hover {
+    transform: translateY(-5px);
+}
+
+.truck-card img {
+    width: 350px;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: var(--spacing-medium);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-content h3 {
+    color: var(--primary-dark);
+    font-size: 1.8em;
+    margin-top: 0;
+}
+
+.specs {
+    color: var(--accent-blue);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: var(--text-dark);
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--light-gray);
+    padding-top: 15px;
+}
+
+.price {
+    font-size: 1.8em;
+    font-weight: 900;
+    color: var(--secondary-orange);
+}
+
+.full-stock-cta {
+    text-align: center;
+    padding-top: var(--spacing-medium);
+}
+
+/* ============================= */
+/* 6. PROMOÇÃO DE SERVIÇOS (Financiamento) */
+/* ============================= */
+.service-promo {
+    background-color: var(--primary-dark);
+    border-top: 5px solid var(--accent-blue);
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-medium);
+}
+
+.service-item {
+    background-color: #2c2c31; 
+    padding: var(--spacing-medium);
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.service-item:hover {
+    background-color: var(--accent-blue);
+}
+
+.service-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    filter: invert(1); /* Inverte a cor de ícones SVG para branco */
+}
+
+.service-item h3 {
+    color: var(--secondary-orange);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.service-item:hover h3 {
+    color: var(--text-light);
+}
+
+.service-item p {
+    color: #cccccc;
+}
+
+/* ============================= */
+/* 7. RODAPÉ E CONTATO */
+/* ============================= */
+.main-footer {
+    background-color: #111;
+    padding: var(--spacing-large) 5% 20px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-medium);
+    gap: var(--spacing-medium);
+}
+
+.footer-grid h4 {
+    color: var(--secondary-orange);
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+}
+
+.footer-info, .footer-links {
+    flex-basis: 25%;
+    min-width: 200px;
+}
+
+.footer-contact-form {
+    flex-basis: 35%;
+    min-width: 250px;
+}
+
+.footer-contact-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: var(--text-light);
+}
+
+.footer-contact-form button {
+    width: 100%;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+/* ============================= */
+/* 8. ANIMAÇÃO JS (Complemento ao script.js) */
+/* ============================= */
+/* Estilos para o Intersection Observer - Faz o elemento aparecer suavemente */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================= */
+/* 9. MEDIA QUERIES (Responsividade) */
+/* ============================= */
+@media (max-width: 1200px) {
+    .truck-card img {
+        width: 300px; 
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 3em;
+    }
+    
+    /* Mude cards para layout de coluna no tablet */
+    .truck-card {
+        flex-direction: column; 
+        text-align: center;
+    }
+    
+    .truck-card img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+    }
+
+    .card-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .price {
+        order: -1; 
+    }
+    
+    .search-form {
+        flex-direction: column;
+    }
+    
+    .search-form input, .search-form select, .search-form button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    /* Estilos do Menu Mobile */
+    .main-nav {
+        display: none; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-dark);
+        border-top: 1px solid var(--secondary-orange);
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        padding: 10px 20px;
+        border-bottom: 1px solid #333;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-section {
+        height: 50vh;
+    }
+    .hero-content {
+        text-align: center;
+    }
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn-secondary {
+        margin-left: 0;
+    }
+    
+    /* Layout do rodapé em coluna no mobile */
+    .footer-info, .footer-links, .footer-contact-form {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: var(--spacing-medium);
+    }
+}
