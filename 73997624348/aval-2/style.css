@@ -1,0 +1,215 @@
+/*
+ * ============================================
+ * ESTILOS GERAIS E TEMA ESCURO (PRETO)
+ * ============================================
+ */
+
+:root {
+    /* Paleta de Cores do Tema Gamer / Neon */
+    --cor-fundo: #1a1a1a;
+    --cor-texto: #e0e0e0;
+    --cor-primaria: #00eeff; /* Neon Azul Elétrico */
+    --cor-secundaria: #ff00ff; /* Neon Magenta/Roxo */
+    --cor-contraste: #4caf50; /* Verde para sucesso/compra */
+    --cor-destaque-card: #2c2c2c;
+    --cor-sombra-neon: 0 0 10px rgba(0, 238, 255, 0.5);
+    --cor-sombra-card: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    background-color: var(--cor-fundo); 
+    color: var(--cor-texto); 
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-secundaria);
+}
+
+/*
+ * ============================================
+ * LAYOUT FLEX (MAIN e ASIDE)
+ * ============================================
+ */
+
+main.conteudo-flex {
+    /* Habilita o Flexbox para alinhar produtos e carrinho lado a lado */
+    display: flex;
+    gap: 30px; 
+    padding: 30px 5%; /* Padding maior nas laterais */
+    align-items: flex-start; 
+}
+
+.produtos-wrapper {
+    flex-grow: 3; /* Ocupa 3x mais espaço */
+    min-width: 0; 
+}
+
+/*
+ * ============================================
+ * CABEÇALHO (HEADER) E NAVEGAÇÃO
+ * ============================================
+ */
+
+header {
+    background-color: #0d0d0d; /* Preto mais escuro */
+    padding: 25px 5%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid var(--cor-primaria); /* Linha neon */
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif; /* Fonte futurista */
+    font-size: 3em;
+    margin-bottom: 5px;
+    color: var(--cor-primaria);
+    text-shadow: var(--cor-sombra-neon);
+}
+
+header p {
+    font-style: italic;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--cor-texto);
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--cor-destaque-card);
+    border-color: var(--cor-secundaria);
+    color: var(--cor-secundaria);
+    text-shadow: 0 0 5px var(--cor-secundaria);
+}
+
+/*
+ * ============================================
+ * SEÇÕES DE CONTEÚDO
+ * ============================================
+ */
+
+section {
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: #222; /* Cinza escuro para seções */
+    border-radius: 10px;
+    box-shadow: var(--cor-sombra-card);
+}
+
+section h2 {
+    text-align: center;
+    color: var(--cor-primaria);
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-family: 'Orbitron', sans-serif;
+    border-bottom: 3px solid var(--cor-secundaria);
+    padding-bottom: 10px;
+}
+
+/* Estilo Destaque (Banner) */
+#home {
+    text-align: center;
+    background-color: #111;
+    border: 3px solid var(--cor-primaria);
+    padding: 50px;
+}
+
+#home p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #aaa;
+}
+
+.imagem-destaque {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/*
+ * ============================================
+ * LISTA DE PRODUTOS (Cards)
+ * ============================================
+ */
+
+.lista-produtos {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 25px; 
+    justify-content: center;
+}
+
+.produto {
+    width: 300px;
+    background-color: var(--cor-destaque-card);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--cor-sombra-card);
+    border: 1px solid #333;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-5px); 
+    border-color: var(--cor-primaria); /* Efeito neon no hover */
+    box-shadow: var(--cor-sombra-neon), var(--cor-sombra-card);
+}
+
+.produto h3 {
+    color: var(--cor-secundaria);
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.img-produto {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.descricao {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    color: #ccc;
+    height: 40px; 
+}
+
+.preco {
+    font-size: 1.8em;
+    color: var(--cor-contraste); 
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Estilo para preço antigo em promoções */
