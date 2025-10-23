@@ -1,52 +1,69 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. Funcionalidade MODO DIA/NOITE ---
-    const toggleBtn = document.getElementById('toggle-theme-btn');
+    // ==================
+    // 1. Alternância de Tema
+    // ==================
+    const toggleButton = document.getElementById('toggle-theme-btn');
     const body = document.body;
-    const themeKey = 'minecraft-theme'; 
-
-    function applyTheme(isNight) {
-        if (isNight) {
-            body.classList.add('night-mode');
-            toggleBtn.textContent = '🌑 Noite';
-            localStorage.setItem(themeKey, 'night');
-        } else {
-            body.classList.remove('night-mode');
-            toggleBtn.textContent = '🌞 Dia';
-            localStorage.setItem(themeKey, 'day');
-        }
-    }
-
-    const savedTheme = localStorage.getItem(themeKey);
-    applyTheme(savedTheme === 'night');
     
-    toggleBtn.addEventListener('click', () => {
-        applyTheme(!body.classList.contains('night-mode'));
+    const loadTheme = () => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light-theme');
+            toggleButton.textContent = 'Modo Noturno 🌙';
+        } else {
+            body.classList.remove('light-theme');
+            toggleButton.textContent = 'Modo Contraste 🔥';
+        }
+    };
+    
+    loadTheme();
+    
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('light-theme');
+        if (body.classList.contains('light-theme')) {
+            toggleButton.textContent = 'Modo Noturno 🌙';
+            localStorage.setItem('theme', 'light');
+        } else {
+            toggleButton.textContent = 'Modo Contraste 🔥';
+            localStorage.setItem('theme', 'dark');
+        }
     });
 
-    // --- 2. Funcionalidade BLOCO ALEATÓRIO DO DIA ---
-    const generateBtn = document.getElementById('generate-block-btn');
-    const blockOutput = document.getElementById('block-output');
+    // ==================
+    // 2. Funcionalidade do Pop-up (Modal)
+    // ==================
+    const modal = document.getElementById('aviso-modal');
+    const closeBtn = document.getElementById('close-modal');
 
-    const blocks = [
-        { name: "Bloco de OBSIDIAN", detail: "Extremamente resistente, necessário para o portal do Nether. Dica: Use um balde de água para minerar lava e criá-lo!", color: "darkviolet" },
-        { name: "Bloco de ESPONJA", detail: "Essencial para drenar Monumentos Oceânicos. Bônus: Seca no Nether!", color: "#ffeb3b" }, // Glowstone light
-        { name: "BLOCO DE COBRE OXIDADO", detail: "Beleza estética única. Pode ser raspado com um machado e receber 'cera' com um favo de mel para preservá-lo.", color: "darkcyan" },
-        { name: "Pedra do END", detail: "Monótono, mas ideal para grandes construções que precisam de durabilidade e tons neutros claros. Direto da dimensão final.", color: "white" },
-        { name: "DEEPSLATE ESCULPIDO", detail: "Um bloco decorativo raro, perfeito para detalhes finos em castelos subterrâneos. Requer uma bigorna para ser feito.", color: "lightgray" },
-    ];
-
-    function generateRandomBlock() {
-        const randomIndex = Math.floor(Math.random() * blocks.length);
-        const block = blocks[randomIndex];
-        
-        blockOutput.innerHTML = `
-            <h3 style="color:${block.color}; font-size: 1.5em; margin: 0; text-shadow: 1px 1px black;">${block.name}</h3>
-            <p style="margin-top: 5px;">${block.detail}</p>
-        `;
+    // Mostra o modal se o usuário não o tiver fechado antes
+    if (localStorage.getItem('bistecone_modal_closed') !== 'true') {
+        modal.style.display = 'block';
     }
 
-    generateBtn.addEventListener('click', generateRandomBlock);
-    
-    // Gera um bloco automaticamente ao carregar para já ter um conteúdo
-    generateRandomBlock(); 
+    // Função para fechar o modal
+    const closeModal = () => {
+        modal.style.display = 'none';
+        localStorage.setItem('bistecone_modal_closed', 'true'); // Salva que foi fechado
+    };
+
+    // Fechar ao clicar no X
+    closeBtn.addEventListener('click', closeModal);
+
+    // Fechar ao clicar fora do modal
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    // ==================
+    // 3. Contador de Posts (Detalhe Interativo)
+    // ==================
+    const postContainer = document.querySelector('.grid-posts');
+    const postItems = postContainer ? postContainer.querySelectorAll('.post-item').length : 0;
+    const counterElement = document.getElementById('post-counter');
+
+    if (counterElement) {
+        counterElement.textContent = `Total de Zueiras Carregadas: ${postItems}`;
+    }
 });
