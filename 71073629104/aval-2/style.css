@@ -1,0 +1,147 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header/Navegação */
+header {
+    background-color: #4CAF50; /* Verde Pet */
+    color: white;
+    padding: 10px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    float: left;
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Limpar floats após o header content */
+header .container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Título Principal */
+main h2 {
+    text-align: center;
+    color: #4CAF50;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+/* Grid dos Posts */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Estilo do Card do Post */
+.post-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+}
+
+.post-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.post-content {
+    padding: 15px;
+}
+
+.post-content h3 {
+    color: #4CAF50;
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.post-content p {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.post-content a {
+    display: inline-block;
+    background-color: #FF9800; /* Laranja de Destaque */
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.post-content a:hover {
+    background-color: #e68900;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+}
+
+/* Responsividade (Ajustes para telas menores) */
+@media (max-width: 600px) {
+    header h1 {
+        float: none;
+        text-align: center;
+    }
+    header nav {
+        float: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+    header nav ul li {
+        margin: 0 10px;
+    }
+}
