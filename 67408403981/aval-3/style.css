@@ -2,34 +2,42 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Garante que padding e borda não aumentem o tamanho do elemento */
+    box-sizing: border-box; 
 }
 
 body {
-    font-family: 'Playfair Display', serif; /* Fonte elegante */
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: #fcfcfc;
-    color: #444;
+    background-color: #f0f0f0; /* Fundo cinza claro */
+    color: #333;
 }
 
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 0;
 }
 
 h1, h2, h3 {
-    color: #5d006c; /* Roxo Escuro Premium */
+    font-weight: 900; /* Extra Bold */
+    color: #1a1a1a;
 }
 
-/* --- 2. Cabeçalho (Header) e Navegação (Nav) --- */
+/* --- 2. Cores da Marca (Vibrantes) --- */
+:root {
+    --cor-principal: #FF5733; /* Laranja/Vermelho (Energia/Velocidade) */
+    --cor-secundaria: #1a1a1a; /* Preto (Base/Poder) */
+    --cor-acento: #00A8FF; /* Azul Ciano (Tecnologia) */
+}
+
+/* --- 3. Cabeçalho (Header) e Navegação (Nav) --- */
 header {
-    background-color: #ffffff;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    position: sticky; 
+    background-color: var(--cor-secundaria);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
     top: 0;
     z-index: 1000;
+    padding: 10px 0;
 }
 
 .header-content {
@@ -39,8 +47,9 @@ header {
 }
 
 .logo {
-    font-size: 2.2em;
-    font-weight: 700;
+    font-size: 1.8em;
+    color: white;
+    letter-spacing: 2px;
 }
 
 nav ul {
@@ -49,154 +58,44 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 25px;
+    margin-left: 30px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #444;
+    color: white;
     font-weight: 700;
-    padding: 5px 0;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #a600a6; /* Roxo Brilhante */
+    color: var(--cor-principal);
 }
 
 .btn-nav {
-    background-color: #a600a6;
-    color: white !important;
+    background-color: var(--cor-principal);
     padding: 8px 15px;
     border-radius: 4px;
     transition: background-color 0.3s;
+    color: var(--cor-secundaria) !important; /* Cor de texto em destaque */
 }
 
 .btn-nav:hover {
-    background-color: #5d006c;
+    background-color: #ff8c66;
 }
 
-/* --- 3. Banner Principal (Hero Section) --- */
-#banner-principal {
-    background-image: url('https://via.placeholder.com/1600x600/333333/FFFFFF?text=Fundo+Elegante+de+Perfumes');
+
+/* --- 4. Banner (Hero Section) --- */
+#hero-banner {
+    background-image: url('https://via.placeholder.com/1600x600/1a1a1a/FFFFFF?text=Fundo+de+Gramado+com+Efeito+Velocidade');
     background-size: cover;
     background-position: center;
-    height: 500px;
+    height: 550px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    text-align: left;
     color: white;
 }
 
-.banner-overlay {
-    background-color: rgba(0, 0, 0, 0.45); /* Escurece a imagem para o texto sobressair */
-    padding: 40px 60px;
-    border-radius: 8px;
-}
-
-.banner-overlay h2 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    color: white;
-}
-
-.banner-overlay p {
-    font-size: 1.2em;
-    margin-bottom: 25px;
-}
-
-.btn-cta {
-    display: inline-block;
-    background-color: #a600a6;
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.btn-cta:hover {
-    background-color: #5d006c;
-}
-
-/* --- 4. Seção de Produtos --- */
-#produtos {
-    padding: 60px 0;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-}
-
-.produtos-grid {
-    display: grid;
-    /* Layout responsivo com CSS Grid */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.produto-card {
-    background-color: white;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.produto-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.produto-card img {
-    width: 100%;
-    max-height: 250px;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
-
-.produto-card h3 {
-    font-size: 1.6em;
-    margin-bottom: 5px;
-}
-
-.categoria {
-    color: #999;
-    font-style: italic;
-    margin-bottom: 10px;
-}
-
-.preco {
-    font-size: 1.4em;
-    color: #a600a6;
-    font-weight: 700;
-    margin: 15px 0;
-}
-
-.btn-comprar {
-    background-color: #5d006c;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 700;
-    transition: background-color 0.3s;
-}
-
-.btn-comprar:hover {
-    background-color: #a600a6;
-}
-
-/* --- 5. Rodapé (Footer) --- */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 30px 0;
-    font-size:
+.hero-content {
+    /* Efeito de sobre

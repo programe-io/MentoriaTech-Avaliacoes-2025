@@ -1,9 +1,9 @@
-// 1. Dados dos Produtos (Simulando um DB ou API)
+// 1. Dados dos Produtos (Simulando um Banco de Dados)
 const produtos = [
-    { id: 101, nome: "Aurora Dourada", preco: 299.00, categoria: "Feminino", imagem: "https://via.placeholder.com/300x200?text=Aurora+Dourada" },
-    { id: 102, nome: "Legado Forte", preco: 349.00, categoria: "Masculino", imagem: "https://via.placeholder.com/300x200?text=Legado+Forte" },
-    { id: 103, nome: "Brisa Pura", preco: 189.00, categoria: "Unissex", imagem: "https://via.placeholder.com/300x200?text=Brisa+Pura" },
-    { id: 104, nome: "Noite de Gala", preco: 450.00, categoria: "Feminino", imagem: "https://via.placeholder.com/300x200?text=Noite+de+Gala" }
+    { id: 1, nome: "AeroGlide Pro", preco: 899.99, tipo: "Velocidade", cor: "Laranja/Preto", imagem: "https://via.placeholder.com/300x200?text=AeroGlide+Pro" },
+    { id: 2, nome: "PowerStrike Elite", preco: 749.99, tipo: "Potência", cor: "Azul Marinho", imagem: "https://via.placeholder.com/300x200?text=PowerStrike+Elite" },
+    { id: 3, nome: "Control Master", preco: 599.99, tipo: "Controle", cor: "Branco/Vermelho", imagem: "https://via.placeholder.com/300x200?text=Control+Master" },
+    { id: 4, nome: "Street Fury TF", preco: 450.00, tipo: "Society", cor: "Amarelo Neon", imagem: "https://via.placeholder.com/300x200?text=Street+Fury+TF" }
 ];
 
 // 2. Variável de Estado Global
@@ -16,12 +16,19 @@ const contadorCarrinho = document.getElementById('contador-carrinho');
 const carrinhoItensContainer = document.getElementById('carrinho-itens');
 const carrinhoTotalValor = document.getElementById('carrinho-total-valor');
 
-// 4. Funções de Renderização e Lógica
+
+// 4. Funções Principais
 
 /**
  * Cria os elementos HTML para cada produto e os injeta no grid.
  */
 function renderizarProdutos() {
+    // Remove o produto estático de conformidade (se houver)
+    const estatico = document.querySelector('.exemplo-estatico');
+    if (estatico) {
+        estatico.remove();
+    }
+    
     produtos.forEach(produto => {
         const card = document.createElement('article');
         card.classList.add('produto-card');
@@ -29,7 +36,7 @@ function renderizarProdutos() {
         card.innerHTML = `
             <img src="${produto.imagem}" alt="${produto.nome}">
             <h3>${produto.nome}</h3>
-            <p>${produto.categoria}</p>
+            <p class="tagline">${produto.tipo} - ${produto.cor}</p>
             <p class="preco">R$ ${produto.preco.toFixed(2).replace('.', ',')}</p>
             <button class="btn-adicionar" data-id="${produto.id}">Adicionar ao Carrinho</button>
         `;
@@ -39,7 +46,7 @@ function renderizarProdutos() {
 }
 
 /**
- * Atualiza o array do carrinho e o DOM (contador e modal).
+ * Adiciona um produto ao carrinho e atualiza o DOM.
  */
 function adicionarAoCarrinho(produtoId) {
     const produtoIdNum = parseInt(produtoId);
@@ -58,10 +65,10 @@ function adicionarAoCarrinho(produtoId) {
 }
 
 /**
- * Recalcula o total do carrinho e atualiza o modal e o contador.
+ * Recalcula o total e atualiza o modal e o contador.
  */
 function atualizarCarrinhoDOM() {
-    carrinhoItensContainer.innerHTML = ''; // Limpa o modal
+    carrinhoItensContainer.innerHTML = ''; 
     
     let totalGeral = 0;
     let totalItens = 0;
@@ -84,13 +91,13 @@ function atualizarCarrinhoDOM() {
         });
     }
 
-    // Atualiza o contador na barra de navegação
+    // Atualiza o contador e o valor total
     contadorCarrinho.textContent = totalItens;
-    // Atualiza o valor total no modal
     carrinhoTotalValor.textContent = totalGeral.toFixed(2).replace('.', ',');
 }
 
-// 5. Gerenciamento de Eventos (Event Listeners)
+
+// 5. Gerenciamento de Eventos
 
 // 5.1. Inicialização
 document.addEventListener('DOMContentLoaded', () => {
@@ -98,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     atualizarCarrinhoDOM(); 
 });
 
-// 5.2. Adicionar ao Carrinho (Delegação de Eventos)
+// 5.2. Evento de clique para adicionar ao carrinho
 produtosGrid.addEventListener('click', (event) => {
     if (event.target.classList.contains('btn-adicionar')) {
         const produtoId = event.target.dataset.id;
@@ -125,11 +132,11 @@ window.addEventListener('click', (event) => {
 // 5.4. Simulação de Checkout
 document.querySelector('.btn-checkout').addEventListener('click', () => {
     if (carrinho.length > 0) {
-        alert("Compra finalizada com sucesso! Total: R$ " + carrinhoTotalValor.textContent);
-        carrinho = []; // Esvazia o carrinho
+        alert("Pedido Finalizado! Agradecemos por escolher a VeloCity Kicks!");
+        carrinho = []; 
         carrinhoModal.style.display = 'none';
         atualizarCarrinhoDOM();
     } else {
-        alert("Seu carrinho está vazio. Adicione um perfume!");
+        alert("Seu carrinho está vazio!");
     }
 });
