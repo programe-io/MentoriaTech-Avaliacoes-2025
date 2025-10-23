@@ -1,0 +1,142 @@
+/* ======= ESTILO GERAL ======= */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* ======= CABEÇALHO ======= */
+header {
+    background: linear-gradient(to right, #000, #222);
+    color: #f1c40f;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-style: italic;
+}
+
+/* ======= MENU DE NAVEGAÇÃO ======= */
+nav {
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: #f1c40f;
+    text-decoration: none;
+    margin: 10px 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+/* ======= SEÇÃO INICIAL ======= */
+section#inicio {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    border-bottom: 3px solid #f1c40f;
+}
+
+section#inicio img {
+    margin-top: 20px;
+    border-radius: 12px;
+    border: 3px solid #f1c40f;
+    transition: transform 0.3s;
+}
+
+section#inicio img:hover {
+    transform: scale(1.05);
+}
+
+/* ======= CONTEÚDO PRINCIPAL ======= */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+article {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+article h2 {
+    color: #c79d00;
+    border-bottom: 2px solid #f1c40f;
+    padding-bottom: 8px;
+}
+
+article img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+/* ======= ASIDE ======= */
+aside {
+    background-color: #222;
+    color: #f1c40f;
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+aside h3 {
+    margin-bottom: 10px;
+}
+
+/* ======= RODAPÉ ======= */
+footer {
+    background-color: #000;
+    color: #f1c40f;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav a {
+        margin: 8px;
+        font-size: 0.9em;
+    }
+
+    section#inicio img {
+        width: 90%;
+    }
+
+    article img {
+        width: 90%;
+    }
+}
