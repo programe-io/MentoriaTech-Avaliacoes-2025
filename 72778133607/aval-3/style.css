@@ -1,0 +1,349 @@
+/* ========================================================= */
+/* 1. RESET BÁSICO E VARIAÇÕES DE CORES */
+/* ========================================================= */
+
+:root {
+    /* Paleta de Cores: Preto, Branco, Azul (Principal), Vermelho (Destaque) */
+    --cor-principal: #0056b3;        /* Azul escuro/médio (Para links, botões) */
+    --cor-secundaria: #cc0000;      /* Vermelho vibrante (Para destaque, preço) */
+    --cor-fundo-principal: #f4f4f4; /* Cinza claro, suave */
+    --cor-fundo-escuro: #1c1c1c;    /* Preto quase absoluto (Header/Footer) */
+    --cor-texto-claro: #ffffff;
+    --cor-texto-escuro: #333333;
+    --sombra-card: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-escuro);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* ========================================================= */
+/* 2. CABEÇALHO E NAVEGAÇÃO (HEADER & NAV) */
+/* ========================================================= */
+
+header {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-claro);
+    padding: 15px 0;
+    border-bottom: 3px solid var(--cor-secundaria); 
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2em;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-style: italic;
+    color: #cccccc;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--cor-texto-claro);
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent; 
+}
+
+nav ul li a:hover {
+    color: var(--cor-secundaria);
+    border-bottom: 2px solid var(--cor-secundaria);
+}
+
+/* ========================================================= */
+/* 3. SEÇÃO DE DESTAQUE (HERO / CARROSSEL) */
+/* ========================================================= */
+
+.hero {
+    background-color: #2c3e50; 
+    color: var(--cor-texto-claro);
+    padding: 80px 20px;
+    text-align: center;
+    background-image: url('caminho-para-uma-imagem-de-fundo-de-moto.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4); 
+    min-height: 400px; /* Garante altura mínima para o carrossel */
+    display: flex;
+    align-items: center;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: none; /* O JS controla isso */
+    padding: 20px 0;
+}
+
+.carousel-slide h2 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-slide p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn-cta {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s;
+    display: inline-block;
+}
+
+.btn-cta:hover {
+    background-color: #ff3333; 
+    transform: scale(1.05);
+}
+
+/* Estilo dos botões de navegação do carrossel */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* ========================================================= */
+/* 4. SEÇÕES GERAIS E TÍTULOS */
+/* ========================================================= */
+
+section {
+    padding: 40px 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    color: var(--cor-principal);
+    border-bottom: 2px solid var(--cor-secundaria);
+    display: table; /* Para centralizar a linha de baixo com o texto */
+    padding-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========================================================= */
+/* 5. SEÇÃO MOTOS EM DESTAQUE (CARDS) */
+/* ========================================================= */
+
+.destaques {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; 
+    flex-wrap: wrap; 
+}
+
+.moto-card {
+    background-color: var(--cor-texto-claro);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    flex-basis: calc(33.33% - 20px); 
+    box-shadow: var(--sombra-card);
+    overflow: hidden; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.moto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.moto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; 
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.moto-card h3 {
+    color: var(--cor-fundo-escuro);
+    margin: 15px 0 5px;
+    font-size: 1.5em;
+}
+
+.moto-card p {
+    padding: 0 15px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para o preço usando a classe 'preco' adicionada com o <span> */
+.preco {
+    font-weight: 900;
+    color: var(--cor-secundaria);
+    font-size: 1.1em;
+}
+
+.moto-card p:last-of-type { /* Estilo para o parágrafo que contém o preço */
+    font-weight: bold;
+    font-size: 1.3em;
+    padding-bottom: 15px;
+}
+
+.moto-card a {
+    display: block;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.moto-card a:hover {
+    background-color: #004080;
+    color: var(--cor-texto-claro);
+}
+
+/* ========================================================= */
+/* 6. SEÇÕES SERVIÇOS E CONTATO */
+/* ========================================================= */
+
+#servicos ul {
+    list-style: disc;
+    padding-left: 40px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#servicos li {
+    margin-bottom: 10px;
+}
+
+#contato address {
+    font-style: normal;
+    text-align: center;
+    line-height: 2;
+    margin-top: 20px;
+}
+
+/* ========================================================= */
+/* 7. RODAPÉ (FOOTER) */
+/* ========================================================= */
+
+footer {
+    background-color: var(--cor-fundo-escuro);
+    color: #cccccc;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    border-top: 3px solid var(--cor-principal);
+}
+
+/* ========================================================= */
+/* 8. MEDIA QUERIES (RESPONSIVIDADE) */
+/* ========================================================= */
+
+@media (max-width: 900px) {
+    .moto-card {
+        flex-basis: calc(50% - 20px); /* 2 cards por linha no tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 5px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+    
+    .hero {
+        padding: 60px 10px;
+        min-height: 300px;
+    }
+
+    .carousel-slide h2 {
+        font-size: 2em;
+    }
+    
+    .destaques {
+        justify-content: center;
+    }
+
+    .moto-card {
+        flex-basis: 100%; /* 1 card por linha no celular */
+        max-width: 400px;
+    }
+}
