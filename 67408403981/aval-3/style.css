@@ -1,0 +1,222 @@
+/* --- 1. Reset Básico e Tipografia --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e borda não aumentem o tamanho do elemento */
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif; /* Fonte elegante para o corpo */
+    line-height: 1.6;
+    background-color: #fcfcfc;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif; /* Fonte de destaque para títulos */
+    color: #6a0572; /* Cor de luxo (roxo profundo) */
+}
+
+/* --- 2. Cabeçalho (Header) e Navegação (Nav) --- */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    position: sticky; /* Fica fixo no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2em;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #6a0572;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    transition: color 0.3s;
+    padding: 5px 0;
+}
+
+nav ul li a:hover {
+    color: #c90076; /* Cor de destaque (rosa profundo) */
+}
+
+.btn-contato {
+    background-color: #c90076;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-contato:hover {
+    background-color: #a00060;
+}
+
+/* --- 3. Banner Principal (Hero Section) --- */
+#banner-principal {
+    background-image: url('https://via.placeholder.com/1500x500?text=Fundo+de+Perfumes+Elegantes'); /* Substitua por uma imagem real de perfume */
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.banner-content {
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente para o texto */
+    padding: 40px 60px;
+    border-radius: 10px;
+}
+
+.banner-content h2 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    color: white; /* Cor branca para contraste */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.banner-content p {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: #c90076;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: #6a0572;
+}
+
+/* --- 4. Seção de Produtos --- */
+#produtos {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.secao-titulo {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.produto-card {
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.produto-card img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain; /* Garante que a imagem do frasco apareça bem */
+    margin-bottom: 15px;
+}
+
+.produto-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.categoria {
+    color: #999;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.preco {
+    font-size: 1.5em;
+    color: #c90076;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.btn-comprar {
+    display: block;
+    background-color: #6a0572;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-comprar:hover {
+    background-color: #c90076;
+}
+
+/* --- 5. Rodapé (Footer) --- */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #c90076;
+}
