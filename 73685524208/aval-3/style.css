@@ -1,142 +1,221 @@
-/* ======= ESTILO GERAL ======= */
+/* ===== Geral ===== */
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    color: #222;
-    line-height: 1.6;
+    scroll-behavior: smooth;
+    background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+    color: #1b1b1b;
 }
 
-/* ======= CABEÇALHO ======= */
+img {
+    max-width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== Header ===== */
 header {
-    background: linear-gradient(to right, #000, #222);
-    color: #f1c40f;
     text-align: center;
-    padding: 40px 20px;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #0077b6, #00b4d8, #90e0ef);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 3em;
     margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
 header p {
+    font-size: 1.3em;
     font-style: italic;
 }
 
-/* ======= MENU DE NAVEGAÇÃO ======= */
+/* ===== Nav fixo e animado ===== */
 nav {
-    background-color: #111;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 10px 0;
     position: sticky;
     top: 0;
-    z-index: 100;
+    background: linear-gradient(to right, #023e8a, #0077b6);
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    border-radius: 0 0 15px 15px;
 }
 
 nav a {
-    color: #f1c40f;
-    text-decoration: none;
-    margin: 10px 15px;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav a:hover {
     color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s;
 }
 
-/* ======= SEÇÃO INICIAL ======= */
-section#inicio {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #fff;
-    border-bottom: 3px solid #f1c40f;
+nav a:hover,
+nav a.active {
+    background: linear-gradient(to right, #00b4d8, #90e0ef);
+    color: #023e8a;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-section#inicio img {
-    margin-top: 20px;
-    border-radius: 12px;
-    border: 3px solid #f1c40f;
-    transition: transform 0.3s;
-}
-
-section#inicio img:hover {
-    transform: scale(1.05);
-}
-
-/* ======= CONTEÚDO PRINCIPAL ======= */
+/* ===== Conteúdo principal ===== */
 main {
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 30px auto;
     padding: 0 20px;
 }
 
+section,
 article {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.meta {
+    font-style: italic;
+    color: #555;
+}
+
+/* ===== Accordion ===== */
+.accordion {
+    cursor: pointer;
+    padding: 14px 20px;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: #fff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-article h2 {
-    color: #c79d00;
-    border-bottom: 2px solid #f1c40f;
-    padding-bottom: 8px;
+.accordion:hover { background: linear-gradient(135deg, #00b4d8, #90e0ef); }
+.accordion.active { background: linear-gradient(135deg, #023e8a, #0077b6); }
+
+.accordion + p {
+    display: none;
+    padding: 12px 20px;
+    background: #e0f7fa;
+    border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.05);
 }
 
-article img {
+/* ===== Tooltip ===== */
+.tooltip {
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px dotted #0077b6;
+    font-weight: 500;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0077b6;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 10px;
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateX(-50%) translateY(10px);
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ===== Modal ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
     width: 100%;
-    max-width: 600px;
-    display: block;
-    margin: 20px auto;
-    border-radius: 10px;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s;
 }
 
-/* ======= ASIDE ======= */
-aside {
-    background-color: #222;
-    color: #f1c40f;
-    padding: 20px;
-    margin: 40px auto;
-    max-width: 800px;
-    border-radius: 10px;
+.modal-content {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+}
+
+.modal-content:hover { transform: scale(1.05); }
+
+.modal-caption {
+    color: #fff;
     text-align: center;
+    margin-top: 12px;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 
-aside h3 {
-    margin-bottom: 10px;
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 50px;
+    cursor: pointer;
+    transition: color 0.3s;
 }
 
-/* ======= RODAPÉ ======= */
+.close:hover { color: #00b4d8; }
+
+/* ===== Footer ===== */
 footer {
-    background-color: #000;
-    color: #f1c40f;
     text-align: center;
-    padding: 15px;
-    font-size: 0.9em;
+    padding: 25px;
+    background: linear-gradient(135deg, #023e8a, #0077b6);
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
-/* ======= RESPONSIVIDADE ======= */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
-
-    nav a {
-        margin: 8px;
-        font-size: 0.9em;
-    }
-
-    section#inicio img {
-        width: 90%;
-    }
-
-    article img {
-        width: 90%;
-    }
+/* ===== Animação fade-in ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
