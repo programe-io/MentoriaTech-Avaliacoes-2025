@@ -1,27 +1,26 @@
-// 1. Dados dos Produtos (Simulando um Banco de Dados)
+// 1. Dados dos Produtos (Simulando um DB ou API)
 const produtos = [
-    { id: 1, nome: "Essência Lunar", preco: 199.90, categoria: "Feminino", imagem: "https://via.placeholder.com/300x200?text=Lunar" },
-    { id: 2, nome: "Força Negra", preco: 249.90, categoria: "Masculino", imagem: "https://via.placeholder.com/300x200?text=Negra" },
-    { id: 3, nome: "Frescor Cítrico", preco: 149.90, categoria: "Unissex", imagem: "https://via.placeholder.com/300x200?text=Citrico" },
-    { id: 4, nome: "Ouro Real", preco: 329.90, categoria: "Feminino", imagem: "https://via.placeholder.com/300x200?text=Ouro" }
+    { id: 101, nome: "Aurora Dourada", preco: 299.00, categoria: "Feminino", imagem: "https://via.placeholder.com/300x200?text=Aurora+Dourada" },
+    { id: 102, nome: "Legado Forte", preco: 349.00, categoria: "Masculino", imagem: "https://via.placeholder.com/300x200?text=Legado+Forte" },
+    { id: 103, nome: "Brisa Pura", preco: 189.00, categoria: "Unissex", imagem: "https://via.placeholder.com/300x200?text=Brisa+Pura" },
+    { id: 104, nome: "Noite de Gala", preco: 450.00, categoria: "Feminino", imagem: "https://via.placeholder.com/300x200?text=Noite+de+Gala" }
 ];
 
-// 2. Variáveis de Estado (Carrinho)
+// 2. Variável de Estado Global
 let carrinho = [];
 
 // 3. Seleção de Elementos DOM
 const produtosGrid = document.getElementById('produtos-grid');
-const carrinhoBtn = document.getElementById('carrinho-btn');
 const carrinhoModal = document.getElementById('carrinho-modal');
-const closeBtn = document.querySelector('.close-btn');
-const carrinhoItensContainer = document.getElementById('carrinho-itens');
 const contadorCarrinho = document.getElementById('contador-carrinho');
+const carrinhoItensContainer = document.getElementById('carrinho-itens');
 const carrinhoTotalValor = document.getElementById('carrinho-total-valor');
 
+// 4. Funções de Renderização e Lógica
 
-// 4. Funções Principais
-
-// Função para renderizar os produtos na tela
+/**
+ * Cria os elementos HTML para cada produto e os injeta no grid.
+ */
 function renderizarProdutos() {
     produtos.forEach(produto => {
         const card = document.createElement('article');
@@ -39,12 +38,14 @@ function renderizarProdutos() {
     });
 }
 
-// Função para adicionar um produto ao carrinho
+/**
+ * Atualiza o array do carrinho e o DOM (contador e modal).
+ */
 function adicionarAoCarrinho(produtoId) {
-    const produto = produtos.find(p => p.id === produtoId);
+    const produtoIdNum = parseInt(produtoId);
+    const produto = produtos.find(p => p.id === produtoIdNum);
     
-    // Verifica se o produto já está no carrinho
-    const itemExistente = carrinho.find(item => item.id === produtoId);
+    const itemExistente = carrinho.find(item => item.id === produtoIdNum);
     
     if (itemExistente) {
         itemExistente.quantidade += 1;
@@ -53,83 +54,82 @@ function adicionarAoCarrinho(produtoId) {
     }
     
     atualizarCarrinhoDOM();
-    alert(`${produto.nome} adicionado ao carrinho!`);
+    alert(`"${produto.nome}" adicionado!`);
 }
 
-// Função para renderizar os itens e o total do carrinho no modal
+/**
+ * Recalcula o total do carrinho e atualiza o modal e o contador.
+ */
 function atualizarCarrinhoDOM() {
-    carrinhoItensContainer.innerHTML = ''; // Limpa o conteúdo atual
-
-    if (carrinho.length === 0) {
-        carrinhoItensContainer.innerHTML = '<p class="carrinho-vazio">O carrinho está vazio.</p>';
-        contadorCarrinho.textContent = '0';
-        carrinhoTotalValor.textContent = '0,00';
-        return;
-    }
-
+    carrinhoItensContainer.innerHTML = ''; // Limpa o modal
+    
     let totalGeral = 0;
     let totalItens = 0;
 
-    carrinho.forEach(item => {
-        const subtotal = item.preco * item.quantidade;
-        totalGeral += subtotal;
-        totalItens += item.quantidade;
-        
-        const itemDiv = document.createElement('div');
-        itemDiv.classList.add('carrinho-item');
-        itemDiv.innerHTML = `
-            <span>${item.nome} (${item.quantidade}x)</span>
-            <span>R$ ${subtotal.toFixed(2).replace('.', ',')}</span>
-        `;
-        carrinhoItensContainer.appendChild(itemDiv);
-    });
+    if (carrinho.length === 0) {
+        carrinhoItensContainer.innerHTML = '<p class="carrinho-vazio">O carrinho está vazio.</p>';
+    } else {
+        carrinho.forEach(item => {
+            const subtotal = item.preco * item.quantidade;
+            totalGeral += subtotal;
+            totalItens += item.quantidade;
+            
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('carrinho-item');
+            itemDiv.innerHTML = `
+                <span>${item.nome} (${item.quantidade}x)</span>
+                <span>R$ ${subtotal.toFixed(2).replace('.', ',')}</span>
+            `;
+            carrinhoItensContainer.appendChild(itemDiv);
+        });
+    }
 
-    // Atualiza o contador e o valor total
+    // Atualiza o contador na barra de navegação
     contadorCarrinho.textContent = totalItens;
+    // Atualiza o valor total no modal
     carrinhoTotalValor.textContent = totalGeral.toFixed(2).replace('.', ',');
 }
 
+// 5. Gerenciamento de Eventos (Event Listeners)
 
-// 5. Event Listeners
-
-// Inicializa a renderização dos produtos
+// 5.1. Inicialização
 document.addEventListener('DOMContentLoaded', () => {
     renderizarProdutos();
-    atualizarCarrinhoDOM(); // Garante que o contador comece em 0
+    atualizarCarrinhoDOM(); 
 });
 
-// Evento para os botões "Adicionar ao Carrinho" (usa delegação de eventos)
+// 5.2. Adicionar ao Carrinho (Delegação de Eventos)
 produtosGrid.addEventListener('click', (event) => {
     if (event.target.classList.contains('btn-adicionar')) {
-        const produtoId = parseInt(event.target.dataset.id);
+        const produtoId = event.target.dataset.id;
         adicionarAoCarrinho(produtoId);
     }
 });
 
-// Eventos para abrir e fechar o modal do carrinho
-carrinhoBtn.addEventListener('click', () => {
+// 5.3. Controle do Modal
+document.getElementById('carrinho-btn').addEventListener('click', () => {
     carrinhoModal.style.display = 'block';
 });
 
-closeBtn.addEventListener('click', () => {
+document.querySelector('.close-btn').addEventListener('click', () => {
     carrinhoModal.style.display = 'none';
 });
 
-// Fecha o modal se o usuário clicar fora dele
+// Fecha o modal ao clicar fora
 window.addEventListener('click', (event) => {
     if (event.target === carrinhoModal) {
         carrinhoModal.style.display = 'none';
     }
 });
 
-// Evento de Checkout (apenas simulação)
+// 5.4. Simulação de Checkout
 document.querySelector('.btn-checkout').addEventListener('click', () => {
     if (carrinho.length > 0) {
-        alert("Obrigado pela sua compra! Total: R$ " + carrinhoTotalValor.textContent);
-        carrinho = []; // Limpa o carrinho
+        alert("Compra finalizada com sucesso! Total: R$ " + carrinhoTotalValor.textContent);
+        carrinho = []; // Esvazia o carrinho
         carrinhoModal.style.display = 'none';
         atualizarCarrinhoDOM();
     } else {
-        alert("Seu carrinho está vazio!");
+        alert("Seu carrinho está vazio. Adicione um perfume!");
     }
 });
