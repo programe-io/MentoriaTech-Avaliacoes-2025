@@ -1,0 +1,255 @@
+/* Paleta de Cores e Tons Mais Detalhados */
+:root {
+    --color-deepslate: #2c2c31; /* Fundo principal e base escura */
+    --color-deepslate-light: #4e4e55; /* Borda/sombra de blocos */
+    --color-glowstone-light: #ffeb3b; /* Acento primário vibrante (Glow) */
+    --color-prismarine: #3b9e8c; /* Acento secundário (Água/Vida) */
+    --color-redstone: #880000; /* Acento de tecnologia */
+    --color-dirt-dark: #6b4c37; /* Sombra terrosa */
+    --color-text-light: #e0e0e0;
+    --color-text-dark: #1c1c20;
+
+    /* Tema Padrão (Dia) */
+    --body-bg: #f0f0f0;
+    --text-color: var(--color-text-dark);
+    --card-bg: white;
+    --accent-btn-bg: var(--color-glowstone-light);
+}
+
+/* Base Geral e Fontes Pixel-Art */
+body {
+    font-family: 'VT323', monospace;
+    background-color: var(--body-bg);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--color-deepslate);
+    text-shadow: 2px 2px var(--color-dirt-dark);
+}
+
+/* Detalhe Chamativo: Textura de Bloco no Fundo */
+.block-texture {
+    /* Simula uma textura de cobblestone ou deepslate clara */
+    background-image: repeating-linear-gradient(45deg,
+        #f0f0f0, #f0f0f0 10px,
+        #e0e0e0 10px, #e0e0e0 20px);
+}
+
+/* Estilo de Botão Pixelado */
+.pixel-btn {
+    font-family: 'Press Start 2P', cursive;
+    background-color: var(--accent-btn-bg);
+    color: var(--color-deepslate);
+    border: 3px solid var(--color-deepslate);
+    padding: 10px 18px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px 0px var(--color-dirt-dark);
+    font-size: 10px;
+    transition: all 0.1s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.pixel-btn:hover {
+    box-shadow: 1px 1px 0px 0px var(--color-dirt-dark);
+    transform: translate(2px, 2px);
+}
+
+/* Tons de Acento para Texto e Botões */
+.prismarine-text { color: var(--color-prismarine) !important; text-shadow: 1px 1px var(--color-deepslate); }
+.redstone-text { color: var(--color-redstone) !important; text-shadow: 1px 1px var(--color-deepslate); }
+.accent-btn { background-color: var(--color-prismarine); color: white; }
+
+/* Cabeçalho (Deepslate Theme) */
+.main-header {
+    background-color: var(--color-deepslate);
+    border-bottom: 8px solid var(--color-deepslate-light); /* Borda 3D */
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo {
+    color: var(--color-glowstone-light);
+    text-shadow: 2px 2px var(--color-redstone);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px;
+    transition: color 0.3s, background-color 0.3s;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    color: var(--color-deepslate);
+    background-color: var(--color-prismarine);
+    padding: 5px;
+}
+
+/* Conteúdo e Estrutura */
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Banner Principal */
+.hero-banner {
+    background-color: var(--color-prismarine);
+    color: white;
+    padding: 60px;
+    text-align: center;
+    margin-bottom: 40px;
+    /* Borda Deepslate Simula Bloco */
+    border: 6px solid var(--color-deepslate);
+    box-shadow: 10px 10px 0px 0px var(--color-dirt-dark);
+}
+
+.hero-banner h1 {
+    font-size: 2.8em;
+    color: white;
+    text-shadow: 3px 3px var(--color-deepslate);
+}
+
+/* Cartões (Cards) - Novo estilo de Borda */
+.card {
+    padding: 25px;
+    margin-bottom: 30px;
+    background-color: var(--card-bg);
+}
+
+/* Detalhe Único: Efeito Glowstone/Prismarine */
+.glowstone-border {
+    border: 4px solid var(--color-glowstone-light);
+    box-shadow: 4px 4px 0px 0px var(--color-dirt-dark);
+}
+
+.prismarine-glow {
+    border: 5px solid var(--color-prismarine);
+    box-shadow: 0 0 15px rgba(59, 158, 140, 0.7); /* Efeito brilho Prismarine */
+}
+
+/* Imagem Real de Postagem */
+.post-image {
+    width: 100%;
+    height: 180px; /* Altura fixa para manter o layout uniforme */
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--color-deepslate); /* Borda de bloco para destaque */
+    /* Tenta forçar o efeito pixel (pode depender do navegador e da imagem) */
+    image-rendering: pixelated; 
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Placeholder com Textura Temática para o segundo post (Redstone) */
+.image-placeholder {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    border: 3px solid var(--color-deepslate);
+    image-rendering: pixelated;
+}
+
+.redstone-texture-bg {
+    /* Padrão para simular Redstone Dust */
+    background-color: var(--color-redstone); 
+    background-image: radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px);
+    background-size: 6px 6px;
+}
+
+.image-text {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    text-shadow: 1px 1px var(--color-deepslate);
+    font-size: 0.9em;
+}
+
+
+/* Seção de Posts */
+.posts-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 30px;
+}
+
+.post-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 8px 8px 0px 0px var(--color-redstone); /* Borda vermelha ao passar o mouse */
+}
+
+/* Rodapé (Deepslate) */
+.main-footer {
+    background-color: var(--color-deepslate);
+    color: var(--color-glowstone-light);
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    border-top: 6px solid var(--color-redstone);
+    font-size: 1em;
+}
+
+/* ==================================== */
+/* MODO NOTURNO (DARK MODE) */
+/* ==================================== */
+body.night-mode {
+    --body-bg: var(--color-deepslate);
+    --text-color: var(--color-text-light);
+    --card-bg: var(--color-deepslate-light);
+    --accent-btn-bg: var(--color-redstone);
+}
+
+body.night-mode h1,
+body.night-mode h2,
+body.night-mode h3,
+body.night-mode .logo {
+    color: var(--color-text-light);
+    text-shadow: 2px 2px #000;
+}
+
+body.night-mode .hero-banner {
+    background-color: #1a1a1a;
+    border: 6px solid var(--color-glowstone-light);
+    box-shadow: 10px 10px 0px 0px #000;
+}
+
+body.night-mode .pixel-btn {
+    color: var(--color-text-light);
+    border: 3px solid var(--color-glowstone-light);
+}
+
+body.night-mode .prismarine-glow {
+    background-color: #1c2c31; /* Fundo mais escuro para o bloco aleatório */
+    box-shadow: 0 0 15px rgba(255, 235, 59, 0.7); /* Efeito brilho amarelo/glowstone */
+}
+
+body.night-mode .glowstone-border {
+    border: 4px solid var(--color-redstone);
+}
+
+body.night-mode .post-card:hover {
+    box-shadow: 8px 8px 0px 0px var(--color-glowstone-light); /* Destaque amarelo */
+}

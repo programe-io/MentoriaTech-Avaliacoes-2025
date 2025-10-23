@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⛏️ A Jornada do Bloco: Explorando o Inesperado | Blog Minecraft Épico</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">⛏️ A Jornada do Bloco</div>
+        <nav>
+            <ul>
+                <li><a href="#posts" class="nav-link">Posts</a></li>
+                <li><a href="#random-block" class="nav-link">Destaque</a></li>
+                <li><a href="#about" class="nav-link">Sobre o Builder</a></li>
+            </ul>
+        </nav>
+        <button id="toggle-theme-btn" class="pixel-btn">🌞 Dia</button>
+    </header>
+
+    <main class="container">
+
+        <section class="hero-banner block-texture deepslate-border">
+            <h1>O Seu Portal para o Infinito Cúbico!</h1>
+            <p>Guias Avançados, Builds Épicas e o Código Secreto de Redstone.</p>
+        </section>
+        
+        <section id="random-block" class="card prismarine-glow">
+            <h2>🎲 Bloco Misterioso do Dia</h2>
+            <div class="block-info">
+                <div id="block-output">Clique no botão para descobrir o Bloco Aleatório!</div>
+                <button id="generate-block-btn" class="pixel-btn accent-btn">Gerar Bloco!</button>
+            </div>
+        </section>
+
+        <section id="posts" class="posts-section">
+            <h2>Últimos Blocos Publicados</h2>
+
+            <article class="post-card glowstone-border">
+                <h3 class="post-title prismarine-text">Templo Submerso: Mistérios do Monumento Oceânico</h3>
+                <p class="post-meta">Publicado por ArquitetoCúbico em 23 de Outubro, 2025 | Bioma: Oceano</p>
+                
+                <img src="data:image/jpeg;base64,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" 
+                     alt="Imagem de um Monumento Oceânico no Minecraft" 
+                     class="post-image actual-image-style" loading="lazy">
+                
+                <p class="post-excerpt">Desvendamos a defesa dos Guardiões e criamos a farm de Prismarinho mais eficiente de 2025. Este guia detalhado mostra o passo a passo, incluindo como usar a Esponja Seca como arma contra a água.</p>
+                <a href="#" class="read-more pixel-btn">Explorar Profundezas 💧</a>
+            </article>
+
+            <article class="post-card glowstone-border">
+                <h3 class="post-title redstone-text">Redstone Ninja: Circuitos Compactos e Invisíveis</h3>
+                <p class="post-meta">Publicado por Eng.Redstone em 15 de Outubro, 2025 | Elemento: Redstone</p>
+                
+                <div class="image-placeholder redstone-texture-bg">
+                    <span class="image-text">DIAGRAMA SECRETO DE REDSTONE ⚙️</span>
+                </div>
+                
+                <p class="post-excerpt">Aprenda a ocultar portas pistão e criar armadilhas automáticas debaixo do chão. Inclui o diagrama para um relógio de tick zero super rápido, ideal para servidores sem lag.</p>
+                <a href="#" class="read-more pixel-btn accent-btn">Ver Diagramas ⚙️</a>
+            </article>
+
+        </section>
+
+        <section id="about" class="card glowstone-border">
+            <h2>📜 Sobre o Builder: Arquiteto Cúbico</h2>
+            <p>Construo desde a Beta 1.7 e sou obcecado por otimização e beleza. Meu objetivo é provar que sobrevivência não significa viver em uma caixa de terra. Junte-se à jornada!</p>
+        </section>
+
+    </main>
+
+    <footer class="main-footer deepslate-border">
+        <p>Criado por Mariani R., e inspiração. &copy; 2025 A Jornada do Bloco</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+<script src="script.js"></script></body>
+</html>
+<aside>
