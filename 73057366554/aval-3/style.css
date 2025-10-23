@@ -1,0 +1,101 @@
+/* ===== Tema Dança ===== */
+
+/* Fonte e cores principais */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #ff6ec4, #7873f5);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    animation: backgroundMove 20s infinite linear;
+}
+
+/* Animação suave de fundo */
+@keyframes backgroundMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Cabeçalho com destaque */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px #000;
+}
+
+/* Botões vibrantes */
+button {
+    background: #ff4081;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 0 20px #fff;
+}
+
+/* Cartões de conteúdo dançante */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.card:hover {
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Links animados */
+a {
+    color: #ffeb3b;
+    text-decoration: none;
+    position: relative;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    background: rgba(0,0,0,0.3);
+}
+
+/* Animação leve de elementos "dançantes" */
+.dance {
+    display: inline-block;
+    animation: danceMove 1s infinite alternate;
+}
+
+@keyframes danceMove {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(-5deg); }
+    100% { transform: translateY(0) rotate(5deg); }
+}
