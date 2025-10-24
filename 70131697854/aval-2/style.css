@@ -1,0 +1,191 @@
+/* Reset Básico e Tipografia */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Paleta One Piece: Chapéu de Palha (Vermelho, Amarelo/Dourado e Marítimo) */
+  --cor-principal: #e53935; /* Vermelho (Símbolo Pirata/Bandeira) */
+  --cor-secundaria: #ffeb3b; /* Amarelo/Dourado (Tesouro/Sol/Cabelo do Sanji) */
+  --cor-fundo: #f0f8ff; /* Azul Claro Suave (Céu/Mar) */
+  --cor-texto: #1a1a1a; /* Preto (Para Contorno e Leitura) */
+  --cor-borda: #64b5f6; /* Azul Marítimo Claro (Água) */
+}
+
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Fonte divertida, remetendo a mangá */
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  padding-top: 50px; /* Espaço para o cabeçalho fixo */
+}
+
+/* --- Layout Principal --- */
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+article,
+section,
+aside {
+  background-color: #fff; /* Fundo branco limpo para os blocos */
+  padding: 25px;
+  border: 2px solid var(--cor-borda);
+  border-radius: 12px; /* Bordas mais suaves */
+  margin-bottom: 30px;
+  box-shadow: 4px 4px 0px var(--cor-borda); /* Estilo que simula papel ou quadro */
+}
+
+p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* --- Cabeçalho e Títulos --- */
+header {
+  background-color: var(--cor-principal); /* Vermelho */
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 2.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* Dourado para o texto */
+  text-shadow: 2px 2px 0 var(--cor-secundaria); 
+}
+
+h2 {
+  color: var(--cor-principal); /* Vermelho Forte */
+  border-bottom: 3px solid var(--cor-secundaria); /* Linha Amarelo Dourado */
+  padding-bottom: 8px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 2em;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+h3 {
+  color: #0d47a1; /* Azul Escuro (Navy) */
+  font-size: 1.6em;
+  margin-bottom: 10px;
+}
+
+/* --- Navegação --- */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #0d47a1; /* Azul Marítimo Escuro */
+  position: sticky;
+  top: 50px;
+  z-index: 90;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: var(--cor-secundaria); /* Fundo Dourado */
+  color: var(--cor-texto); /* Texto escuro no hover */
+}
+
+/* --- Imagens e Listas --- */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 15px 0;
+  display: block;
+  border: 4px dashed var(--cor-principal); /* Borda Vermelha no estilo mangá/mapa */
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  padding: 10px 0;
+  border-bottom: 1px dotted var(--cor-borda);
+}
+
+ul li:before {
+    content: "🏴‍☠️"; /* Bandeira Pirata */
+    margin-right: 8px;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+strong {
+  color: var(--cor-principal); /* Destaque Vermelho */
+  font-weight: 900;
+}
+
+/* --- Aside --- */
+aside {
+  background-color: #fff9c4; /* Amarelo muito claro (Cor de mapa/pergaminho) */
+  border: 2px solid var(--cor-secundaria);
+  border-left: 8px solid var(--cor-secundaria); /* Destaque lateral Dourado */
+  padding: 20px;
+}
+
+/* --- Rodapé --- */
+footer {
+  background-color: #0d47a1; /* Azul Escuro */
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  font-size: 0.85em;
+  border-top: 3px solid var(--cor-secundaria);
+}
+
+/* --- Links de Contato (Destaque Vermelho) --- */
+#contato a {
+  color: var(--cor-principal); /* Link na cor Vermelha */
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 2px solid var(--cor-principal);
+}
+
+#contato a:hover {
+  color: #0d47a1; /* Fica Azul Escuro no hover */
+  border-bottom-color: #0d47a1;
+}
+
+
+/* --- Responsividade Básica --- */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+  nav a {
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  body {
+    padding-top: 100px;
+  }
+  nav {
+    top: 50px;
+  }
+}
