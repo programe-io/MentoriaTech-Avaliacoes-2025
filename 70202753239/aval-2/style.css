@@ -1,0 +1,182 @@
+/* Reset Básico e Tipografia */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Paleta BILLIE EILISH: Preto, Verde Neon/Slime, Cinza */
+  --cor-principal: #39ff14; /* Verde Neon/Slime Forte (Destaque e energia) */
+  --cor-secundaria: #000000; /* Preto Absoluto (Fundo de navegação/rodapé) */
+  --cor-fundo: #1c1c1c; /* Cinza Escuro/Preto Suave (Fundo Principal) */
+  --cor-texto: #e0e0e0; /* Cinza Claro para o Texto Principal */
+  --cor-borda: #444; /* Cinza Médio Escuro para Bordas e Linhas Suaves */
+}
+
+body {
+  /* Fonte mais forte ou impactante para o tema alternativo */
+  font-family: 'Arial Black', Gadget, sans-serif; 
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  padding-top: 50px; 
+}
+
+/* --- Layout Principal --- */
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+article, section, aside {
+  background-color: #2a2a2a; /* Fundo de card Cinza Escuro (Industrial) */
+  padding: 25px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* --- Cabeçalho e Títulos --- */
+header {
+  background-color: var(--cor-secundaria); /* Fundo Preto */
+  color: var(--cor-principal); /* Título em Verde Neon */
+  padding: 15px 0;
+  text-align: center;
+  position: fixed; 
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid var(--cor-principal); /* Destaque Neon */
+}
+
+header h1 {
+  font-size: 2em;
+  text-transform: uppercase; /* Estilo mais agressivo */
+  text-shadow: 0 0 5px var(--cor-principal); /* Efeito de brilho neon */
+}
+
+h2 {
+  color: var(--cor-principal); /* Títulos importantes em Verde Neon */
+  border-bottom: 2px solid var(--cor-borda);
+  padding-bottom: 5px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.6em;
+}
+
+h3 {
+    color: var(--cor-texto); /* Títulos menores em Cinza Claro */
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+/* --- Navegação (Sticky) --- */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: var(--cor-secundaria); /* Fundo Preto */
+  position: sticky; 
+  top: 50px; 
+  z-index: 90;
+}
+
+nav a {
+  color: var(--cor-principal); /* Texto em Verde Neon */
+  text-decoration: none;
+  padding: 12px 20px;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+}
+
+nav a:hover, nav a.active {
+  background-color: var(--cor-principal); /* Hover inverte para fundo Neon */
+  color: var(--cor-secundaria); /* Texto fica Preto (Alto Contraste) */
+}
+
+/* --- Imagens e Listas --- */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 15px 0;
+  display: block;
+  /* Borda grossa em Verde Neon para destaque */
+  border: 4px solid var(--cor-principal); 
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  padding: 10px 0;
+  border-bottom: 1px dotted var(--cor-borda);
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+strong {
+    color: var(--cor-principal); /* Destaques em Verde Neon */
+    font-weight: 700;
+}
+
+/* --- Aside --- */
+aside {
+  background-color: #1a1a1a; /* Fundo mais escuro que o card */
+  /* Destaque lateral em Verde Neon */
+  border-left: 5px solid var(--cor-principal); 
+  padding: 20px;
+}
+
+/* --- Rodapé --- */
+footer {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-borda); /* Texto em Cinza Escuro */
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  font-size: 0.85em;
+  border-top: 2px solid var(--cor-principal); /* Linha Neon no topo */
+}
+
+/* --- Links de Contato (Destaque Verde Neon) --- */
+#contato a {
+    color: var(--cor-principal); /* Link na cor Verde Neon */
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid var(--cor-principal);
+}
+
+#contato a:hover {
+    color: var(--cor-texto); /* Hover para Cinza Claro */
+    border-bottom-color: var(--cor-texto);
+}
+
+
+/* --- Responsividade Básica --- */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+  nav a {
+    text-align: center;
+    /* Borda para dividir os links verticais */
+    border-bottom: 1px solid rgba(57, 255, 20, 0.5); 
+  }
+  body {
+      padding-top: 100px; 
+  }
+  nav {
+      top: 50px; 
+  }
+}
