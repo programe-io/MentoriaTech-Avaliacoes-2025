@@ -1,172 +1,573 @@
-/* Reset básico */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #0b0c28, #1a1b3a);
+  color: #e0dfff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow-x: hidden;
+  animation: fadeIn 2s ease-in;
 }
 
-/* Cabeçalho */
 header {
-    padding: 50px 20px;
-    background-color: #f0e6ff;
+  background: linear-gradient(135deg, #372b77, #271c57);
+  padding: 25px;
+  border-bottom: 3px dotted #6e5dcf;
+  border-radius: 0 0 40px 40px;
+  animation: pulse 6s infinite alternate;
+}
+
+h1 {
+  font-size: 2.8em;
+  color: #ffffff;
+  text-shadow: 3px 3px 10px #6e5dcf;
+}
+
+.slogan {
+  font-style: italic;
+  color: #cfc9ff;
 }
 
 nav {
-    margin-top: 20px;
+  background-color: #2a2361;
+  padding: 10px;
+  border-bottom: 2px dashed #6e5dcf;
+  border-radius: 0 0 25px 25px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+  margin: 0 15px;
 }
 
 nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #800080;
-    font-weight: bold;
-    transition: color 0.3s;
+  text-decoration: none;
+  color: #cfc9ff;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s;
 }
 
 nav a:hover {
-    color: #ff69b4;
+  color: #a89bff;
+  transform: scale(1.1);
 }
 
-/* Títulos */
-.titulo-rosa {
-    color: #ff69b4;
-    font-size: 48px;
-    font-weight: bold;
-    letter-spacing: 2px;
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
 }
 
-.titulo-purple-lettering {
-    color: #800080;
-    font-size: 36px;
-    font-family: 'Courier New', Courier, monospace;
-    text-transform: uppercase;
-    letter-spacing: 5px;
+article, aside, section {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 2px solid #6e5dcf;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 10px;
+  width: 42%;
+  min-width: 300px;
+  box-shadow: 0 0 15px rgba(110, 93, 207, 0.5);
+  animation: float 6s ease-in-out infinite;
 }
 
-.titulo-fonte-personalizada {
-    color: #4b0082;
-    font-size: 30px;
-    font-family: 'Georgia', serif;
-    font-style: italic;
-}
-
-/* Fontes exemplo */
-.fonte-exemplo {
-    font-family: 'Times New Roman', serif;
-    color: #6a0dad;
-}
-
-.fonte-exemplo2 {
-    font-family: Arial, sans-serif;
-    color: #ff4500;
-}
-
-/* Lettering exemplo */
-.lettering-exemplo {
-    font-family: 'Brush Script MT', cursive;
-    font-size: 28px;
-    color: #ff1493;
-}
-
-/* Efeitos de cores */
-.titulo-sombra {
-    color: #4b0082;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-    font-size: 32px;
-}
-
-.titulo-gradient {
-    font-size: 34px;
-    background: linear-gradient(to right, #ff69b4, #800080);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Descrição */
-.descricao {
-    color: #555;
-    font-size: 18px;
-    margin: 15px 0 30px;
-}
-
-/* Seções */
-section {
-    padding: 50px 20px;
-    border-bottom: 1px solid #ddd;
-}
-
-/* ======== ARTICLE ======== */
-article {
-    background-color: #fff0fa;
-    color: #4b0082;
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 15px rgba(128, 0, 128, 0.15);
-    text-align: left;
-    line-height: 1.8;
-}
-
-article h2 {
-    color: #800080;
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-article p {
-    font-size: 17px;
-    margin-bottom: 12px;
-}
-
-/* ======== ASIDE ======== */
 aside {
-    background-color: #f8e6ff;
-    color: #4b0082;
-    width: 280px;
-    padding: 20px;
-    margin: 40px auto;
-    border-radius: 15px;
-    box-shadow: 0 0 12px rgba(128, 0, 128, 0.2);
-    text-align: left;
-    line-height: 1.6;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px dashed #a89bff;
+  animation: pulseAside 8s infinite alternate;
 }
 
-aside h2 {
-    color: #800080;
-    font-size: 22px;
-    text-align: center;
-    margin-bottom: 10px;
+aside h3 {
+  color: #a89bff;
+  text-shadow: 1px 1px 5px #6e5dcf;
 }
 
-aside p {
-    font-size: 16px;
-    margin-bottom: 10px;
+.space-img {
+  width: 250px;
+  margin-top: 15px;
+  border-radius: 25px;
+  transition: transform 0.5s, box-shadow 0.5s;
 }
 
-/* ======== IMAGENS ======== */
-img {
-    width: 80%;
-    max-width: 500px;
-    margin: 25px auto;
-    display: block;
-    border-radius: 20px;
-    box-shadow: 0 0 15px rgba(128, 0, 128, 0.25);
-    transition: transform 0.3s, box-shadow 0.3s;
+.space-img:hover {
+  transform: rotate(3deg) scale(1.05);
+  box-shadow: 0 0 20px #a89bff;
 }
 
-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(255, 105, 180, 0.4);
+.facts {
+  text-align: left;
+  margin: 0 auto;
+  width: 80%;
+  line-height: 1.8;
+  color: #e0dcff;
 }
 
-/* Rodapé */
+.gallery {
+  width: 90%;
+  margin: 40px auto;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery-container img {
+  width: 220px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #6e5dcf;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #a89bff;
+}
+
+.message {
+  width: 90%;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px dashed #a89bff;
+  border-radius: 25px;
+  color: #e4e1ff;
+  font-style: italic;
+  animation: float 5s ease-in-out infinite;
+}
+
 footer {
-    background-color: #f0e6ff;
-    padding: 20px;
-    font-size: 16px;
-    color: #800080;
+  background: linear-gradient(135deg, #2a2361, #1b1440);
+  padding: 15px;
+  color: white;
+  border-top: 3px dotted #6e5dcf;
+  font-size: 1.1em;
+  border-radius: 40px 40px 0 0;
+  box-shadow: 0 -2px 15px #6e5dcf;
 }
+
+/* Fundo com estrelas suaves */
+body::before {
+  content: "✨ 🌟 💫 🌠 🌌 ✨";
+  position: fixed;
+  font-size: 40px;
+  animation: stars 20s linear infinite;
+  top: 0;
+  left: -100%;
+  white-space: nowrap;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes pulse {
+  0% {background: linear-gradient(135deg, #372b77, #271c57);}
+  100% {background: linear-gradient(135deg, #4a3a9f, #2d1e5f);}
+}
+
+@keyframes pulseAside {
+  0% {box-shadow: 0 0 10px #6e5dcf;}
+  100% {box-shadow: 0 0 25px #a89bff;}
+}
+
+@keyframes float {
+  0%, 100% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+}
+
+@keyframes stars {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(200%); }
+}
+
+/* ===== MELHORIAS SUTIS E DECORATIVAS ===== */
+
+/* Brilho suave no título */
+h1 {
+  background: linear-gradient(90deg, #ffffff, #cfc9ff, #a89bff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: brilhoTexto 6s linear infinite;
+}
+
+@keyframes brilhoTexto {
+  0% {background-position: 0%;}
+  100% {background-position: 200%;}
+}
+
+/* Planetas flutuantes */
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #a89bff, #6e5dcf);
+  opacity: 0.4;
+  animation: orbitar 10s ease-in-out infinite;
+  z-index: 0;
+}
+
+.planet:nth-child(1) { width: 40px; height: 40px; top: 20%; left: 10%; animation-delay: 0s; }
+.planet:nth-child(2) { width: 60px; height: 60px; top: 70%; left: 80%; animation-delay: 2s; }
+.planet:nth-child(3) { width: 25px; height: 25px; top: 50%; left: 40%; animation-delay: 4s; }
+
+@keyframes orbitar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Brilho delicado nos links e rodapé */
+nav a:hover, footer {
+  text-shadow: 0 0 8px #cfc9ff;
+  transition: text-shadow 0.3s ease;
+}
+
+/* Pequeno brilho pulsante no rodapé */
+footer p {
+  animation: brilhoSuave 3s ease-in-out infinite alternate;
+}
+
+@keyframes brilhoSuave {
+  from { text-shadow: 0 0 5px #fff; }
+  to { text-shadow: 0 0 15px #a89bff; }
+}
+
+/* ===== CHUVA DE ESTRELAS SUAVE ===== */
+.shooting-star {
+  position: fixed;
+  top: 0;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(180deg, #ffffff, transparent);
+  opacity: 0.6;
+  border-radius: 50%;
+  animation: shoot 6s linear infinite;
+  z-index: -1;
+}
+
+/* Criar várias estrelas com tamanhos e tempos diferentes */
+.shooting-star:nth-child(1) { left: 20%; animation-delay: 0s; animation-duration: 7s; }
+.shooting-star:nth-child(2) { left: 40%; animation-delay: 2s; animation-duration: 6s; }
+.shooting-star:nth-child(3) { left: 60%; animation-delay: 4s; animation-duration: 8s; }
+.shooting-star:nth-child(4) { left: 80%; animation-delay: 1s; animation-duration: 9s; }
+
+/* ===== BRILHOS SUAVES ATRÁS DOS BORDÕES ===== */
+
+/* Container de brilho para bordões (pode aplicar em frases, títulos, ou mensagens) */
+.brilho {
+  position: relative;
+  display: inline-block;
+  padding: 8px 15px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Criar os brilhinhos por trás */
+.brilho::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  background: radial-gradient(circle, rgba(168,155,255,0.4) 0%, transparent 70%);
+  filter: blur(8px);
+  animation: brilhoFundo 6s ease-in-out infinite;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+/* Animação leve de brilho pulsando */
+@keyframes brilhoFundo {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+/* ===== BRILHOS COLORIDOS SUAVES ATRÁS DOS BORDÕES ===== */
+
+.brilho-colorido {
+  position: relative;
+  display: inline-block;
+  padding: 8px 18px;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* Halo colorido animado */
+.brilho-colorido::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 180%;
+  background: radial-gradient(circle, #a89bff 0%, transparent 60%);
+  animation: brilhoColorido 8s ease-in-out infinite;
+  filter: blur(10px);
+  z-index: -1;
+  opacity: 0.7;
+}
+
+/* Alternância suave entre roxo, lilás e azul */
+@keyframes brilhoColorido {
+  0% {
+    background: radial-gradient(circle, #a89bff 0%, transparent 60%);
+  }
+  33% {
+    background: radial-gradient(circle, #8ec5ff 0%, transparent 60%);
+  }
+  66% {
+    background: radial-gradient(circle, #d2b2ff 0%, transparent 60%);
+  }
+  100% {
+    background: radial-gradient(circle, #a89bff 0%, transparent 60%);
+  }
+}
+
+/* Efeito leve de brilho no texto */
+.brilho-colorido span {
+  background: linear-gradient(90deg, #ffffff, #d7ccff, #a89bff, #9fd1ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: brilhoTextoColorido 5s linear infinite;
+  background-size: 200% auto;
+}
+
+@keyframes brilhoTextoColorido {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ===== PARTÍCULAS FLUTUANDO AO REDOR DOS BORDÕES ===== */
+
+.brilho-colorido {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  overflow: visible;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #fff 30%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Variações nas partículas */
+.particle:nth-child(1) { top: -10px; left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) { top: 20px; left: 80%; animation-delay: 1.5s; }
+.particle:nth-child(3) { top: 40px; left: 30%; animation-delay: 3s; }
+.particle:nth-child(4) { top: -20px; left: 60%; animation-delay: 2s; }
+.particle:nth-child(5) { top: 10px; left: 50%; animation-delay: 4s; }
+/* ===== RODAPÉ MÁGICO COM BRILHOS SUAVES ===== */
+
+footer {
+  position: relative;
+  overflow: hidden;
+}
+
+footer .assinatura {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  color: #d9d2ff;
+  text-shadow: 0 0 10px #a89bff, 0 0 20px #6e5dcf;
+  padding: 5px 15px;
+  border-radius: 15px;
+  z-index: 1;
+  animation: destaqueNome 6s ease-in-out infinite alternate;
+}
+
+/* Animação de brilho no nome */
+@keyframes destaqueNome {
+  0% { text-shadow: 0 0 10px #6e5dcf, 0 0 20px #a89bff; }
+  50% { text-shadow: 0 0 15px #9d8aff, 0 0 30px #d0caff; }
+  100% { text-shadow: 0 0 10px #6e5dcf, 0 0 20px #a89bff; }
+}
+
+/* ===== PARTÍCULAS SUAVES NO RODAPÉ ===== */
+footer .particle-footer {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: radial-gradient(circle, #ffffff 40%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: floatFooter 10s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Posições diferentes das partículas */
+footer .particle-footer:nth-child(1) { bottom: 10px; left: 20%; animation-delay: 0s; }
+footer .particle-footer:nth-child(2) { bottom: 30px; left: 50%; animation-delay: 2s; }
+footer .particle-footer:nth-child(3) { bottom: 15px; left: 80%; animation-delay: 4s; }
+footer .particle-footer:nth-child(4) { bottom: 25px; left: 35%; animation-delay: 6s; }
+footer .particle-footer:nth-child(5) { bottom: 5px; left: 65%; animation-delay: 8s; }
+
+/* Movimento suave e lento */
+@keyframes floatFooter {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-8px) scale(1.1); opacity: 0.9; }
+}
+
+/* ===== DETALHES MÁGICOS NA PARTE INICIAL ===== */
+
+/* Efeito especial para o título principal */
+header h1 {
+  position: relative;
+  display: inline-block;
+  animation: brilhoTitulo 6s ease-in-out infinite alternate;
+}
+
+/* Animação de brilho suave no texto */
+@keyframes brilhoTitulo {
+  0% { text-shadow: 0 0 10px #6e5dcf, 0 0 20px #a89bff; }
+  50% { text-shadow: 0 0 25px #d2caff, 0 0 40px #8b7bff; }
+  100% { text-shadow: 0 0 10px #6e5dcf, 0 0 20px #a89bff; }
+}
+
+/* Estrelinhas mágicas ao redor do título */
+.star {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #ffffff 40%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 4s infinite ease-in-out;
+}
+
+/* Várias posições e tempos diferentes */
+.star:nth-child(1) { top: -15px; left: -25px; animation-delay: 0s; }
+.star:nth-child(2) { top: -20px; right: -30px; animation-delay: 1s; }
+.star:nth-child(3) { bottom: -10px; left: 10%; animation-delay: 2s; }
+.star:nth-child(4) { bottom: -15px; right: 15%; animation-delay: 3s; }
+
+/* Brilho intermitente */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Fundo com um leve gradiente cintilante atrás do header */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top, rgba(168,155,255,0.1), transparent 70%);
+  z-index: 0;
+  animation: aurora 8s ease-in-out infinite alternate;
+  border-radius: 0 0 40px 40px;
+}
+
+@keyframes aurora {
+  0% { opacity: 0.3; filter: blur(6px); }
+  100% { opacity: 0.7; filter: blur(10px); }
+}
+
+header h1, header .slogan {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== AUMENTAR E APRIMORAR A ÁREA INICIAL ===== */
+
+header {
+  position: relative;
+  height: 90vh; /* deixa o início ocupar quase toda a tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #1a1640, #2f246a);
+  overflow: hidden;
+  border-bottom: 4px dotted #a89bff;
+  box-shadow: 0 0 30px rgba(110, 93, 207, 0.6);
+}
+
+/* Título principal com brilho mágico */
+header h1 {
+  font-size: 3.5em;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 0 0 15px #a89bff, 0 0 35px #6e5dcf;
+  animation: brilhoTituloGrande 6s ease-in-out infinite alternate;
+  margin-bottom: 15px;
+}
+
+@keyframes brilhoTituloGrande {
+  0% { text-shadow: 0 0 15px #6e5dcf, 0 0 25px #a89bff; }
+  50% { text-shadow: 0 0 35px #d0caff, 0 0 60px #9d8aff; }
+  100% { text-shadow: 0 0 15px #6e5dcf, 0 0 25px #a89bff; }
+}
+
+/* Slogan com leve brilho */
+header .slogan {
+  font-size: 1.3em;
+  color: #e0dfff;
+  font-style: italic;
+  text-shadow: 0 0 8px #a89bff;
+  animation: flutuarSlogan 5s ease-in-out infinite;
+}
+
+@keyframes flutuarSlogan {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-8px); opacity: 0.9; }
+}
+
+/* Fundo animado de galáxia */
+header::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(168,155,255,0.15), transparent 70%);
+  animation: girarAurora 40s linear infinite;
+  z-index: 0;
+  filter: blur(20px);
+}
+
+@keyframes girarAurora {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Estrelinhas continuam */
+.star {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #ffffff 40%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 4s infinite ease-in-out;
+}
+
+.star:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+.star:nth-child(2) { top: 20%; right: 20%; animation-delay: 1s; }
+.star:nth-child(3) { bottom: 25%; left: 10%; animation-delay: 2s; }
+.star:nth-child(4) { bottom: 30%; right: 25%; animation-delay: 3s; }
