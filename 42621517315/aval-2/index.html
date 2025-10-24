@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Exemplo completo de layout HTML moderno com header, nav, main, section, article, aside, figure e footer.">
+  <title>Layout Completo em HTML</title>
+  <link rel="stylesheet" href="estilo_fundo.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <!-- Fundo animado -->
+  <div class="bg-animado"></div>
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+
+  <!-- Cabeçalho principal -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Meu Site Completo</h1>
+      <ul class="menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="conteudo">
+    <section class="principal" id="inicio">
+      <h2>Bem-vindo!</h2>
+      <p>Este é um layout HTML completo com todas as tags principais estruturadas corretamente.</p>
+
+      <article class="artigo">
+        <h3>Artigo em Destaque</h3>
+        <figure>
+          <img src="https://picsum.photos/700/300" alt="Imagem ilustrativa de exemplo" class="imagem-artigo">
+          <figcaption>Imagem ilustrativa usada no artigo em destaque.</figcaption>
+        </figure>
+        <p>
+          Este artigo mostra como usar a tag <strong>figure</strong> e <strong>img</strong> para adicionar imagens com legendas. Além disso, demonstra boas práticas de estruturação de conteúdo.
+        </p>
+        <p>
+          A semântica correta ajuda na acessibilidade, indexação e manutenção do site.
+        </p>
+      </article>
+    </section>
+
+    <aside class="lateral">
+      <h3>Seções Rápidas</h3>
+      <ul>
+        <li><a href="#noticias">Notícias</a></li>
+        <li><a href="#eventos">Eventos</a></li>
+        <li><a href="#dicas">Dicas</a></li>
+      </ul>
+      <img src="https://picsum.photos/250/150" alt="Imagem lateral decorativa" class="img-lateral">
+    </aside>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <p>&copy; 2025 Meu Site Completo — Todos os direitos reservados.</p>
+    <p>Desenvolvido por <a href="#" target="_blank">Nayra Auany</a></p>
+  </footer>
+
+  <!-- Script do fundo animado -->
+  <script src="fundo_animado.js"></script>
+
+  <style>
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 10;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu a {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .menu a:hover {
+      color: #06b6d4;
+    }
+
+    main {
+      margin-top: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .principal {
+      flex: 2;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 2rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .artigo {
+      margin-top: 2rem;
+      background: rgba(255, 255, 255, 0.07);
+      padding: 1.5rem;
+      border-radius: 10px;
+    }
+
+    .artigo h3 {
+      color: #7c3aed;
+      margin-top: 0;
+    }
+
+    .imagem-artigo {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 0.5rem;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    .lateral {
+      flex: 1;
+      min-width: 250px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.5rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .lateral h3 {
+      margin-top: 0;
+      color: #06b6d4;
+    }
+
+    .lateral ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .lateral a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      display: block;
+      padding: 0.3rem 0;
+      transition: color 0.3s;
+    }
+
+    .lateral a:hover {
+      color: #7c3aed;
+    }
+
+    .img-lateral {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(15, 23, 42, 0.8);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 2rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    footer a {
+      color: #06b6d4;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+<script src="script.js"></script></body>
+</html>
