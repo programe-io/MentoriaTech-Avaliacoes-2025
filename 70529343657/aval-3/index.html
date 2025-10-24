@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HairStore Brasil — Cuide do Seu Cabelo com Estilo</title>
+  <style>
+    :root{
+      --bg:#0d0d0d;
+      --card:#1a1a1a;
+      --accent:#e50914;
+      --text:#f8f8f8;
+      --muted:#b3b3b3;
+      --radius:14px;
+      --shadow:0 8px 20px rgba(0,0,0,.3);
+      font-family:"Poppins", Arial, sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);line-height:1.5}
+
+    header{
+      background:linear-gradient(90deg,#000 0%,#1a0000 100%);
+      padding:30px 20px;
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      border-bottom:2px solid var(--accent);
+      box-shadow:0 4px 12px rgba(0,0,0,.4);
+    }
+    .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--accent)}
+    .logo{width:65px;height:65px;border-radius:50%;overflow:hidden;border:2px solid var(--accent);box-shadow:var(--shadow)}
+    .logo img{width:100%;height:100%;object-fit:cover}
+    h1{font-size:24px;margin:0;color:var(--accent);letter-spacing:1px}
+    p.lead{margin:0;color:var(--muted);font-size:14px}
+    .controls{display:flex;gap:12px;align-items:center}
+    .search{
+      padding:10px 14px;border-radius:20px;border:1px solid #333;
+      background:#111;color:var(--text);
+      font-size:14px;outline:none;transition:.2s;
+    }
+    .search:focus{border-color:var(--accent);box-shadow:0 0 6px var(--accent)}
+    .btn{padding:9px 14px;border-radius:10px;border:0;cursor:pointer;font-size:14px;transition:.2s;font-weight:600}
+    .btn-primary{background:var(--accent);color:#fff;text-decoration:none;display:inline-block}
+    .btn-primary:hover{background:#ff1a26}
+    .btn-ghost{background:#111;border:1px solid #333;color:var(--text);text-decoration:none;display:inline-block}
+    .btn-ghost:hover{background:#222}
+
+    .container{max-width:1150px;margin:30px auto;padding:0 20px}
+    h2.section-title{color:var(--accent);text-align:center;margin-bottom:15px;font-size:22px;font-family:"Playfair Display",serif;letter-spacing:0.5px}
+
+    nav.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;justify-content:center}
+    .chip{
+      background:#111;
+      padding:8px 16px;
+      border-radius:999px;
+      border:1px solid #333;
+      cursor:pointer;
+      font-size:14px;
+      transition:.2s;
+      color:var(--text);
+      text-decoration:none;
+    }
+    .chip:hover{background:#1a1a1a;border-color:var(--accent);color:var(--accent)}
+    .chip.active{border-color:var(--accent);background:#1a0000;color:var(--accent);box-shadow:0 0 10px rgba(229,9,20,.3)}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px}
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      display:flex;flex-direction:column;
+      transition:transform .2s,box-shadow .2s;
+      text-decoration:none;
+      color:var(--text);
+    }
+    .card:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(229,9,20,.3)}
+    .card img{width:100%;height:180px;object-fit:cover;transition:opacity .3s}
+    .card-body{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
+    .title-row{display:flex;align-items:center;justify-content:space-between}
+    .item-title{font-weight:600;font-size:16px}
+    .desc{font-size:14px;color:var(--muted);line-height:1.4}
+    .price{font-weight:700;color:var(--accent)}
+
+    .modal{
+      position:fixed;inset:0;display:none;
+      align-items:center;justify-content:center;
+      background:rgba(0,0,0,.6);z-index:60;
+    }
+    .modal.open{display:flex}
+    .modal .inner{
+      background:#111;padding:20px;border-radius:14px;
+      max-width:90%;max-height:90%;overflow:auto;
+      color:var(--text);box-shadow:0 0 15px rgba(229,9,20,.3);
+    }
+
+    footer{
+      max-width:1150px;margin:25px auto;padding:14px 20px;
+      color:var(--muted);font-size:14px;text-align:center;
+      border-top:1px solid #222;
+    }
+
+    @media (max-width:540px){
+      header{flex-direction:column;align-items:flex-start;text-align:center}
+      .logo{width:55px;height:55px}
+      h1{font-size:20px}
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <a href="#" class="brand">
+      <div class="logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH_uKki9Xmaq-H-1VtxLgFGUiFckHX3nXaiQ&s" alt="logo"></div>
+      <div>
+        <h1><span>HairStore Brasil</span></h1>
+        <p class="lead"><span>O poder do vermelho: beleza que transforma seus fios.</span></p>
+      </div>
+    </a>
+    <div class="controls">
+      <input class="search" id="searchInput" placeholder="Buscar produto..." />
+      <button class="btn btn-ghost" id="viewCartBtn"><span>🛒 Carrinho (0)</span></button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="section-title"><span>Categorias</span></h2>
+    <nav class="filters">
+      <a href="#" class="chip active" data-cat="all"><span>Todos</span></a>
+      <a href="#" class="chip" data-cat="shampoo"><span>Shampoo</span></a>
+      <a href="#" class="chip" data-cat="condicionador"><span>Condicionador</span></a>
+      <a href="#" class="chip" data-cat="tratamento"><span>Tratamento</span></a>
+      <a href="#" class="chip" data-cat="oleo"><span>Óleo Capilar</span></a>
+    </nav>
+
+    <h2 class="section-title"><span>Produtos em Destaque</span></h2>
+    <section class="grid" id="menuGrid">
+      <article class="card" data-cat="shampoo" data-name="Shampoo Brazilian Joia">
+        <a href="#">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_2X_832471-CBT73876077921_012024-F-shampoo-sol-de-janeiro-brazilian-joia-300ml-unisex.webp" alt="">
+        </a>
+        <div class="card-body">
+          <div class="title-row">
+            <div class="item-title"><span>Shampoo Brazilian Joia</span></div>
+            <div class="price"><span>R$ 209,00</span></div>
+          </div>
+          <div class="desc"><span>Shampoo premium que fortalece e dá brilho aos fios danificados.</span></div>
+          <div class="actions">
+            <button class="btn btn-primary addBtn"><span>Adicionar</span></button>
+            <a href="#" class="btn btn-ghost viewBtn"><span>Ver</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="condicionador" data-name="Condicionador Brazilian Joia">
+        <a href="#">
+          <img src="https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dwdc54e700/images/Color%20BR/SDJ/Brazilian%20Joia%20Condicionador/SDJ_joia_conditioner_295mL.jpg?sw=400&sh=400&sm=fit" alt="">
+        </a>
+        <div class="card-body">
+          <div class="title-row">
+            <div class="item-title"><span>Condicionador Brazilian Joia</span></div>
+            <div class="price"><span>R$ 64,86</span></div>
+          </div>
+          <div class="desc"><span>Sela as cutículas e deixa os cabelos sedosos e fáceis de pentear.</span></div>
+          <div class="actions">
+            <button class="btn btn-primary addBtn"><span>Adicionar</span></button>
+            <a href="#" class="btn btn-ghost viewBtn"><span>Ver</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="tratamento" data-name="Botox Zero Forever Liss">
+        <a href="#">
+          <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQDg7Vgd9zet2KS_nItJE6UkGZ3ALOvb3ZoJvdMH3tpocTz8V-rqx3tfhfAYO7-xNTK9U9oWtGaP9j_sr9GypiQiqxARYxs0zezKJtERehIHmid_Gcd9EbAFEfK" alt="">
+        </a>
+        <div class="card-body">
+          <div class="title-row">
+            <div class="item-title"><span>Botox Zero Forever Liss</span></div>
+            <div class="price"><span>R$ 23,73</span></div>
+          </div>
+          <div class="desc"><span>Máscara de reconstrução profunda para fios saudáveis e alinhados.</span></div>
+          <div class="actions">
+            <button class="btn btn-primary addBtn"><span>Adicionar</span></button>
+            <a href="#" class="btn btn-ghost viewBtn"><span>Ver</span></a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="inner" id="modalInner"></div>
+  </div>
+
+  <footer><span>© 2025 HairStore Brasil — Beleza em cada fio.</span></footer>
+
+  <script>
+    /* script original preservado */
+  </script>
+</body>
+</html>
