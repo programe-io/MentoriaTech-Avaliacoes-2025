@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novidades da Moranguinho e Seus Amigos</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+    <header>
+        <h1>Moranguinho: O Festival das Frutas</h1>
+    </header>
+
+    <nav>
+        <a href="#analise">Análise da Novidade</a>
+        <a href="#ingredientes">O Mundo de Moranguinho</a>
+        <a href="#contato">Onde Comprar</a>
+    </nav>
+
+    <main>
+        <article>
+            
+            <section id="analise">
+                <h2>Detalhes do Lançamento: A Boneca Chef Confeiteira</h2>
+                <img src="https://exemplo.com/moranguinho-chef-confeiteira.jpg" alt="Boneca Moranguinho Chef Confeiteira">
+                <p>O novo conjunto da <strong>Moranguinho Chef Confeiteira</strong> é a versão mais detalhada e perfumada já lançada. A linha focou na <strong>qualidade premium do material</strong>, garantindo roupas de tecido, cabelo macio e, claro, o aroma inconfundível de morango fresco.</p>
+                <p>O brinquedo mantém sua característica principal: inspirar a criatividade, permitindo que as crianças preparem receitas imaginárias e compartilhem a alegria, competindo no mercado de bonecas colecionáveis.</p>
+
+                <h3>Amigos em Destaque (Coleção Festival)</h3>
+                <p>O lançamento principal é a <strong>Moranguinho</strong>. Em breve, teremos a <strong>Edição Limitada: Amora Linda com Cesta de Piquenique</strong> e <strong>O Efeito Torta de Maçã</strong> (com a boneca Amiga da Torta de Maçã).</p>
+                <img src="https://exemplo.com/amora-linda-piquenique.jpg" alt="Amora Linda Edição Piquenique">
+
+            </section>
+
+            <aside>
+                <h3>Dica para os Pais (Alerta de Colecionador)</h3>
+                <p>Esta nova boneca vem com 5 pontos de articulação a mais que a versão anterior, permitindo poses de chef realistas! O aroma de morango dura até 6 meses após a abertura da embalagem. É o presente perfeito para incentivar o jogo criativo!</p>
+            </aside>
+
+            <section id="ingredientes">
+                <h2>Ficha Técnica e Conteúdo da Caixa</h2>
+                <ul>
+                    <li><strong>Boneca:</strong> 15cm de altura, com aroma de morango.</li>
+                    <li><strong>Acessórios:</strong> Batedeira de brinquedo, forma de cupcake e luva de forno.</li>
+                    <li><strong>Material:</strong> Plástico não tóxico e tecido lavável.</li>
+                    <li><strong>Idade Recomendada:</strong> A partir de 3 anos (contém peças pequenas).</li>
+                    <li><strong>Perfume:</strong> Essência de morango de longa duração.</li>
+                </ul>
+
+                <img src="https://exemplo.com/acessorios-confeitaria-moranguinho.jpg" alt="Acessórios de Confeitaria da Moranguinho">
+
+            </section>
+
+            <section>
+                <h3>Preço e Sucesso de Vendas</h3>
+                <p>O conjunto está sendo um sucesso estrondoso nas lojas de brinquedos. O preço de lançamento oficial é <strong>R$ 89,90 a unidade</strong>, considerado justo pela qualidade do material e pela inclusão de acessórios exclusivos.</p>
+                <p>Com sua ampla linha de produtos, a Moranguinho é a plataforma ideal para presentear em aniversários e datas especiais, permitindo coleções únicas e criativas inspiradas no mundo das frutas.</p>
+            </section>
+        
+        </article>
+
+        <section id="contato">
+            <h2>Onde Encontrar a Coleção</h2>
+            <p>Para informações de catálogo completo, lojas parceiras e promoções, visite:</p>
+            <p>Site oficial: <a href="https://www.lojinhaamigadomorango.com/colecao-chef/" target="_blank">lojinhaamigadomorango.com</a></p>
+            <p>SAC: <a href="tel:0800-123-4567" target="_blank">0800-123-4567</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Moranguinho & Cia. Todos os direitos reservados. Cheirinho de Morango em todo lugar!</p>
+    </footer>
+
+</body>
+</html>
