@@ -1,0 +1,51 @@
+/* reset */
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+
+:root{
+  --bg:#f5f7fb; --card:#ffffff; --accent:#0b63ff; --muted:#6b7280; --dark:#111827;
+  --radius:12px; --shadow:0 6px 18px rgba(17,24,39,0.06);
+}
+
+body{background:var(--bg);color:var(--dark);-webkit-font-smoothing:antialiased;}
+.container{max-width:960px;margin:0 auto;padding:1rem;}
+
+/* header/nav */
+header{background:#0f1724;color:#fff;}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem;gap:1rem;}
+.logo{font-size:1.2rem;font-weight:700;}
+.logo-first{color:var(--accent);}
+.logo-last{opacity:0.9;}
+
+nav .nav-list{display:flex;gap:0.75rem;list-style:none;}
+nav a{display:inline-block;padding:0.45rem 0.7rem;color:#cfe1ff;text-decoration:none;border-radius:8px;font-weight:600;}
+nav a:hover{background:rgba(255,255,255,0.04);transform:translateY(-2px);}
+
+/* main */
+.main-wrap{margin-top:1.25rem;margin-bottom:1.25rem;}
+.card{background:var(--card);border-radius:var(--radius);padding:1.25rem;box-shadow:var(--shadow);margin-bottom:1rem;}
+.section-title{color:var(--accent);font-weight:700;}
+
+.perfil{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
+.perfil img{width:140px;height:140px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(2,6,23,0.08);}
+.bio h3{margin-bottom:0.25rem;}
+.bio h4{color:var(--muted);margin-bottom:0.5rem;}
+.bio-text{display:block;color:#333;}
+
+/* listas e skills */
+.skills{display:flex;flex-wrap:wrap;gap:0.5rem;list-style:none;padding-left:0;margin-top:0.5rem;}
+.skills li{background:#f1f5f9;padding:0.4rem 0.7rem;border-radius:8px;font-weight:600;}
+
+/* links */
+.links a{margin-right:0.75rem;color:var(--accent);text-decoration:none;font-weight:700;}
+.links a:hover{text-decoration:underline;}
+
+/* footer */
+footer{background:#0f1724;color:#cbd5e1;padding:0.8rem 0;text-align:center;margin-top:1rem;}
+
+/* responsivo */
+@media (max-width:720px){
+  .header-inner{flex-direction:column;align-items:flex-start;}
+  nav .nav-list{flex-wrap:wrap;}
+  .perfil{justify-content:center;text-align:center;}
+  .bio{max-width:460px;}
+}
