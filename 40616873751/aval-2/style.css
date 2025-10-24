@@ -1,0 +1,110 @@
+/* estilo_fundo.css */
+
+:root {
+  --cor-fundo: #0f172a;
+  --cor-gradiente1: #7c3aed;
+  --cor-gradiente2: #06b6d4;
+  --transparente: rgba(255, 255, 255, 0.06);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: var(--cor-fundo);
+  color: white;
+}
+
+/* Fundo animado */
+.bg-animado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, var(--cor-gradiente1), var(--cor-gradiente2));
+  background-size: 200% 200%;
+  animation: moverGradiente 12s ease infinite;
+  z-index: -2;
+}
+
+@keyframes moverGradiente {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Blobs de luz flutuantes */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.6;
+  mix-blend-mode: screen;
+}
+
+.blob1 {
+  width: 400px;
+  height: 400px;
+  background: var(--cor-gradiente1);
+  top: -10%;
+  left: -10%;
+  animation: flutuar1 10s ease-in-out infinite;
+}
+
+.blob2 {
+  width: 350px;
+  height: 350px;
+  background: var(--cor-gradiente2);
+  bottom: -10%;
+  right: -10%;
+  animation: flutuar2 12s ease-in-out infinite;
+}
+
+@keyframes flutuar1 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, 30px);
+  }
+}
+
+@keyframes flutuar2 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-40px, -30px);
+  }
+}
+
+/* Conteúdo principal */
+.conteudo {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.conteudo h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.conteudo p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+}
