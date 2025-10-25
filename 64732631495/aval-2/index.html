@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Estudante - Victor Gabriel Lima Lopes</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f5dc, #d3d3d3);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            background-color: #d3d3c3;
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        header h1 { margin: 0; font-size: 24px; }
+        header p { margin: 5px 0 10px 0; font-size: 14px; color: #555; }
+
+        nav { margin-top: 10px; }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 15px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        nav a:hover { background-color: #c0c0a0; }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 30px 0;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        article {
+            background-color: #fffaf0;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            width: 400px;
+            transition: all 0.3s ease;
+        }
+
+        article:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+        }
+
+        h2, h4 { text-align: center; margin: 0 0 10px 0; }
+        h2 { color: #333; }
+        h4 { color: #666; font-style: italic; margin-bottom: 20px; }
+
+        label { display: block; margin-top: 15px; font-weight: bold; color: #444; }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #bbb;
+            border-radius: 6px;
+            font-size: 15px;
+            background-color: #f9f9f9;
+            transition: 0.2s ease;
+        }
+        input:focus, textarea:focus { border-color: #999; background-color: #fff; outline: none; }
+
+        button {
+            background-color: #808080;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s;
+        }
+        button:hover { background-color: #5c5c5c; }
+
+        .mensagem {
+            text-align: center;
+            margin-top: 15px;
+            color: #2e2e2e;
+            font-weight: bold;
+            display: none;
+        }
+
+        aside {
+            background-color: #f0eee0;
+            padding: 20px;
+            border-radius: 12px;
+            width: 250px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        aside img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+
+        aside h3 { margin-top: 0; color: #333; }
+        aside p { color: #555; font-size: 14px; line-height: 1.5; }
+
+        footer {
+            width: 100%;
+            background-color: #d3d3c3;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: auto;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <img src="https://via.placeholder.com/80" alt="Foto de Victor Gabriel">
+        <h1>Formulário de Estudante</h1>
+        <p>Desenvolvido por Victor Gabriel Lima Lopes</p>
+        <nav>
+            <a href="#formEstudante">Formulário</a>
+            <a href="#sobre">Sobre Mim</a>
+            <a href="#destaque">Destaques</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Article para o formulário -->
+        <article id="formEstudante">
+            <h2>Cadastro de Estudante</h2>
+            <h4>Formulário de Victor Gabriel Lima Lopes</h4>
+
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" value="Victor Gabriel Lima Lopes" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" value="victorlimalopes28@gmail.com" required>
+
+            <label for="estudante">Sou estudante de:</label>
+            <input type="text" id="estudante" name="estudante" value="Informática / Ensino Médio Técnico" required>
+
+            <label for="descricao">Sobre mim:</label>
+            <textarea id="descricao" name="descricao" rows="4">Sou Victor Gabriel Lima Lopes, um estudante dedicado e apaixonado por tecnologia. Tenho interesse em programação, desenvolvimento de sistemas e inovação digital. Busco constantemente aprimorar meus conhecimentos e transformar ideias em projetos criativos e funcionais.</textarea>
+
+            <button type="submit" onclick="enviarFormulario(event)">Enviar</button>
+            <div id="mensagem" class="mensagem">✅ Formulário enviado com sucesso! Obrigado, Victor!</div>
+        </article>
+
+        <!-- Aside -->
+        <aside id="destaque">
+            <img src="https://via.placeholder.com/250x150" alt="Destaques do Estudante">
+            <h3>Destaques</h3>
+            <p>Sou um estudante dedicado, focado em aprender programação, desenvolvimento de sistemas e novas tecnologias. Busco sempre melhorar minhas habilidades e aplicar meus conhecimentos em projetos práticos.</p>
+            <p>Habilidades:</p>
+            <ul>
+                <li>Programação em JavaScript e HTML/CSS</li>
+                <li>Desenvolvimento de sistemas</li>
+                <li>Resolução de problemas e lógica</li>
+            </ul>
+        </aside>
+    </main>
+
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p>Sou um estudante dedicado, apaixonado por tecnologia, programação e inovação digital. Estou sempre buscando aprender coisas novas e criar projetos que façam a diferença.</p>
+    </section>
+
+    <footer>
+        &copy; 2025 Victor Gabriel Lima Lopes. Todos os direitos reservados. | Contato: victorlimalopes28@gmail.com
+    </footer>
+
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault();
+            document.getElementById('mensagem').style.display = 'block';
+        }
+    </script>
+
+<script src="script.js"></script></body>
+</html>
+
+
+
+
