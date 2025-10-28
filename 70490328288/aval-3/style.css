@@ -1,0 +1,137 @@
+/* === ESTILOS GERAIS === */
+* {
+    margin: 0;
+        padding: 0;
+            box-sizing: border-box;
+                font-family: "Chakra Petch", sans-serif;
+                }
+
+                body {
+                    background-color: #000;
+                        color: #fff;
+                        }
+
+                        /* === CABEÇALHO === */
+                        header {
+                            display: flex;
+                                justify-content: space-between;
+                                    align-items: center;
+                                        padding: 20px 60px;
+                                            background-color: rgba(0, 0, 0, 0.9);
+                                                border-bottom: 2px solid red;
+                                                    position: sticky;
+                                                        top: 0;
+                                                            z-index: 100;
+                                                            }
+
+                                                            .logo {
+                                                                color: red;
+                                                                    font-size: 32px;
+                                                                        font-weight: 700;
+                                                                            letter-spacing: 2px;
+                                                                            }
+
+                                                                            nav ul {
+                                                                                list-style: none;
+                                                                                    display: flex;
+                                                                                        gap: 30px;
+                                                                                        }
+
+                                                                                        nav a {
+                                                                                            color: white;
+                                                                                                text-decoration: none;
+                                                                                                    font-weight: 500;
+                                                                                                        transition: 0.3s;
+                                                                                                        }
+
+                                                                                                        nav a:hover {
+                                                                                                            color: red;
+                                                                                                            }
+
+                                                                                                            /* === SEÇÃO CHAMADA === */
+                                                                                                            .chamada {
+                                                                                                                display: flex;
+                                                                                                                    flex-direction: column;
+                                                                                                                        align-items: center;
+                                                                                                                            text-align: center;
+                                                                                                                                padding: 80px 20px;
+                                                                                                                                    background: linear-gradient(to bottom, #111, #000);
+                                                                                                                                    }
+
+                                                                                                                                    .chamada-texto h1 {
+                                                                                                                                        font-size: 48px;
+                                                                                                                                            color: red;
+                                                                                                                                                margin-bottom: 10px;
+                                                                                                                                                }
+
+                                                                                                                                                .chamada-texto p {
+                                                                                                                                                    color: #ccc;
+                                                                                                                                                        font-size: 18px;
+                                                                                                                                                            margin-bottom: 40px;
+                                                                                                                                                            }
+
+                                                                                                                                                            /* === VÍDEO PRINCIPAL === */
+                                                                                                                                                            iframe {
+                                                                                                                                                                max-width: 90%;
+                                                                                                                                                                    border-radius: 8px;
+                                                                                                                                                                        box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+                                                                                                                                                                        }
+
+                                                                                                                                                                        /* === CATEGORIA === */
+                                                                                                                                                                        .categoria {
+                                                                                                                                                                            padding: 60px 40px;
+                                                                                                                                                                            }
+
+                                                                                                                                                                            .categoria h2 {
+                                                                                                                                                                                font-size: 28px;
+                                                                                                                                                                                    margin-bottom: 20px;
+                                                                                                                                                                                        border-left: 5px solid red;
+                                                                                                                                                                                            padding-left: 10px;
+                                                                                                                                                                                            }
+
+                                                                                                                                                                                            .categoria-videos {
+                                                                                                                                                                                                display: flex;
+                                                                                                                                                                                                    flex-wrap: wrap;
+                                                                                                                                                                                                        gap: 20px;
+                                                                                                                                                                                                            justify-content: center;
+                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                            .categoria-videos a {
+                                                                                                                                                                                                                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                .categoria-videos img {
+                                                                                                                                                                                                                    width: 300px;
+                                                                                                                                                                                                                        border-radius: 8px;
+                                                                                                                                                                                                                            border: 2px solid transparent;
+                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                            .categoria-videos a:hover img {
+                                                                                                                                                                                                                                transform: scale(1.05);
+                                                                                                                                                                                                                                    border-color: red;
+                                                                                                                                                                                                                                        box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                        /* === RESPONSIVIDADE === */
+                                                                                                                                                                                                                                        @media (max-width: 768px) {
+                                                                                                                                                                                                                                            header {
+                                                                                                                                                                                                                                                    flex-direction: column;
+                                                                                                                                                                                                                                                            gap: 10px;
+                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                    nav ul {
+                                                                                                                                                                                                                                                                            flex-wrap: wrap;
+                                                                                                                                                                                                                                                                                    justify-content: center;
+                                                                                                                                                                                                                                                                                            gap: 15px;
+                                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                                    .chamada-texto h1 {
+                                                                                                                                                                                                                                                                                                            font-size: 36px;
+                                                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                                                    .categoria-videos img {
+                                                                                                                                                                                                                                                                                                                            width: 100%;
+                                                                                                                                                                                                                                                                                                                                    max-width: 350px;
+                                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                        
