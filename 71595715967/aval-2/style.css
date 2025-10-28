@@ -1,0 +1,215 @@
+/* ============================================
+   🎨 ESTILOS GENERALES Y REINICIO BÁSICO
+============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: #f8f9fc;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* ============================================
+   🧭 ENCABEZADO Y NAVEGACIÓN
+============================================ */
+header {
+    background: linear-gradient(135deg, #004aad, #0072ff);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+}
+
+nav {
+    background-color: #002f6c;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: white;
+    color: #002f6c;
+}
+
+/* ============================================
+   🧱 SECCIONES Y CONTENIDO PRINCIPAL
+============================================ */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+h2 {
+    color: #004aad;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* ============================================
+   💬 TARJETAS / BLOQUES DE CONTENIDO
+============================================ */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ============================================
+   📋 FORMULARIOS
+============================================ */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+input, textarea, select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #004aad;
+    box-shadow: 0 0 5px rgba(0,74,173,0.4);
+    outline: none;
+}
+
+button {
+    background-color: #004aad;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #00337f;
+    transform: scale(1.05);
+}
+
+/* ============================================
+   🦶 PIE DE PÁGINA
+============================================ */
+footer {
+    background-color: #004aad;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.95rem;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   ⚡ EFECTOS Y UTILIDADES
+============================================ */
+.text-center {
+    text-align: center;
+}
+
+.shadow {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.rounded {
+    border-radius: 10px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   📱 DISEÑO RESPONSIVE
+============================================ */
+@media (max-width: 992px) {
+    header h1 {
+        font-size: 2.3rem;
+    }
+
+    nav {
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    header {
+        padding: 40px 10px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 10px;
+    }
+}
