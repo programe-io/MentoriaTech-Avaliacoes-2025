@@ -1,0 +1,185 @@
+/* ======== BOTÕES INTERATIVOS ======== */
+#backToTop, #themeToggle {
+    position: fixed;
+    right: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #b30000;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+}
+
+#backToTop {
+    bottom: 80px;
+    display: none;
+}
+
+#themeToggle {
+    bottom: 20px;
+}
+
+#backToTop:hover, #themeToggle:hover {
+    background-color: #ff0000;
+}
+
+/* ======== MODO ESCURO ======== */
+body.dark-mode {
+    background-color: #111;
+    color: #eee;
+}
+
+body.dark-mode header {
+    background: linear-gradient(135deg, #222, #b30000);
+}
+
+body.dark-mode section {
+    background: #1e1e1e;
+    box-shadow: none;
+}
+
+body.dark-mode nav {
+    background-color: #222;
+}
+
+/* ======== ANIMAÇÃO DAS SEÇÕES ======== */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}/* ======== ESTILO GERAL ======== */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* ======== CABEÇALHO ======== */
+header {
+    background: linear-gradient(135deg, #000, #b30000);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header img {
+    width: 150px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-top: 10px;
+}
+
+/* ======== MENU DE NAVEGAÇÃO ======== */
+nav {
+    background-color: #111;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background-color: #b30000;
+}
+
+/* ======== SEÇÕES ======== */
+section {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #b30000;
+    border-left: 5px solid #b30000;
+    padding-left: 10px;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* ======== LISTAS ======== */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    background: url('https://cdn-icons-png.flaticon.com/512/32/32339.png') no-repeat left center;
+    background-size: 20px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+/* ======== LINKS ======== */
+a {
+    color: #b30000;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ======== RODAPÉ ======== */
+footer {
+    text-align: center;
+    background-color: #111;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+    header img {
+        width: 120px;
+    }
+
+    section {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+}
