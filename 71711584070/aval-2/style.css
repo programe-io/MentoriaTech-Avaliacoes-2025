@@ -1,0 +1,171 @@
+/* ===== RESET E BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.6;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+    width: 100%;
+    background: #1e90ff;
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+header p {
+    margin-top: 0.5rem;
+}
+
+/* ===== MENU ===== */
+nav {
+    width: 100%;
+    background: #0a192f;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 2px solid #1e90ff;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: rgba(255,255,255,0.1);
+    padding: 0.7rem 1.2rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: #1e90ff;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+main {
+    width: 90%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* ===== ARTIGOS ===== */
+section {
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+}
+
+article {
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    animation: fadeUp 1s ease forwards;
+}
+
+article h2 {
+    color: #1e90ff;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+article h5 {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+article img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+article p {
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+article ul, article ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* ===== ASIDE ===== */
+aside {
+    background: rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    animation: fadeUp 1s ease forwards;
+}
+
+.fakeimage {
+    background: #1e90ff;
+    color: #fff;
+    height: 140px;
+    margin: 1rem 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    width: 100%;
+    background: #0a192f;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    border-top: 2px solid #1e90ff;
+    color: #bbb;
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    main {
+        width: 95%;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    nav a {
+        padding: 0.6rem 1rem;
+    }
+}
