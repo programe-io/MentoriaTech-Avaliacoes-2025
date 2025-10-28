@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Boneco Colorido</title>
+  <link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <div class="card" role="application">
+
+    <!-- Cabeçalho -->
+    <header>
+      <div class="header-content">
+        <!-- TAG IMG adicionada -->
+        <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Ícone de boneco colorido" width="80" height="80" />
+
+        <div>
+          <h1>Boneco Colorido</h1>
+          <h3>Um projeto divertido com HTML, CSS e JavaScript</h3>
+          <p>Este exemplo mostra como criar e animar um boneco simples e interativo com código web.</p>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#controls">Ir para os controles</a>
+      </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+      <article class="stage" aria-label="Palco do boneco">
+        <h3>Boneco Interativo</h3>
+        <p>O boneco abaixo pode mudar de cor, sorrir e até “pular” quando você clicar nele.</p>
+
+        <!-- Boneco SVG -->
+        <svg id="boneco" width="260" height="320" viewBox="0 0 260 320" role="img" aria-labelledby="title desc">
+          <title id="title">Boneco colorido</title>
+          <desc id="desc">Boneco com cabeça, corpo, olhos, mãos e distintivo coloridos.</desc>
+
+          <ellipse cx="130" cy="300" rx="85" ry="12" fill="rgba(20,20,30,0.06)"/>
+          <rect id="body" x="60" y="130" rx="28" ry="28" width="140" height="140" fill="#6c5ce7"/>
+          <circle id="leftHand" cx="42" cy="170" r="16" fill="#ff7675"/>
+          <circle id="rightHand" cx="218" cy="170" r="16" fill="#ff7675"/>
+          <circle id="head" cx="130" cy="70" r="56" fill="#ffeaa7"/>
+          <circle cx="112" cy="64" r="8" fill="#2d3436"/>
+          <circle cx="148" cy="64" r="8" fill="#2d3436"/>
+          <path id="mouth" d="M115 96 q15 -6 30 0" stroke="#2d3436" stroke-width="4" fill="transparent" stroke-linecap="round"/>
+          <circle id="badge" cx="140" cy="190" r="10" fill="#00cec9" stroke="#fff" stroke-width="2"/>
+        </svg>
+
+        <p>Clique no boneco ou pressione <b>Enter</b> para alternar a expressão facial.</p>
+      </article>
+    </main>
+
+    <!-- Painel lateral -->
+    <aside id="controls" aria-label="Controles">
+      <h3>Personalize o Boneco</h3>
+      <p>Use os controles abaixo para escolher novas cores para cada parte do boneco.</p>
+
+      <div class="controls">
+        <div>
+          <label for="colorBody">Cor do corpo:</label><br>
+          <input id="colorBody" type="color" value="#6c5ce7">
+        </div>
+
+        <div>
+          <label for="colorHead">Cor da cabeça:</label><br>
+          <input id="colorHead" type="color" value="#ffeaa7">
+        </div>
+
+        <div>
+          <label for="colorHands">Cor das mãos:</label><br>
+          <input id="colorHands" type="color" value="#ff7675">
+        </div>
+
+        <div>
+          <label for="colorBadge">Cor do distintivo:</label><br>
+          <input id="colorBadge" type="color" value="#00cec9">
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:6px">
+          <button id="random">Aleatório</button>
+          <button id="reset">Resetar</button>
+        </div>
+      </div>
+
+      <p>Dica: experimente gerar cores aleatórias e criar novas combinações divertidas!</p>
+    </aside>
+
+    <!-- Rodapé -->
+    <footer>
+      <h3>Informações do Projeto</h3>
+      <p>Tags usadas: &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;aside&gt;, &lt;footer&gt;, &lt;h1&gt;, &lt;h3&gt;, &lt;p&gt; e &lt;img&gt;.</p>
+      <p style="color:#999;">Desenvolvido com ❤️ usando HTML • CSS • JavaScript</p>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript externo -->
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
