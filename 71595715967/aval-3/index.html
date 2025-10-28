@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ejemplo de una página HTML completa.">
+    <title>Mi Página Web</title>
+    <style>
+        /* ===== Estilos CSS básicos ===== */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #004aad;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #00337f;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #004aad;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        button {
+            background-color: #004aad;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00337f;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header>
+        <h1>Bienvenido a Mi Página Web</h1>
+    </header>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#acerca">Acerca de</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <main>
+        <section id="inicio" class="card">
+            <h2>Inicio</h2>
+            <p>Esta es una página de ejemplo escrita completamente en HTML y CSS.</p>
+            <button onclick="saludar()">Haz clic aquí</button>
+        </section>
+
+        <section id="acerca" class="card">
+            <h2>Acerca de</h2>
+            <p>Somos un equipo apasionado por el desarrollo web y la tecnología.</p>
+        </section>
+
+        <section id="contacto" class="card">
+            <h2>Contacto</h2>
+            <form onsubmit="enviarFormulario(event)">
+                <label>Nombre:</label><br>
+                <input type="text" id="nombre" required><br><br>
+
+                <label>Correo electrónico:</label><br>
+                <input type="email" id="email" required><br><br>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mi Página Web. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // ===== Script JavaScript simple =====
+        function saludar() {
+            alert("¡Hola! Gracias por visitar mi página 😊");
+        }
+
+        function enviarFormulario(event) {
+            event.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            alert(`Gracias por contactarnos, ${nombre}!`);
+        }
+    </script>
+<script src="script.js"></script></body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de DIV</title>
+    <style>
+        .contenedor {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border: 2px solid #004aad;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+
+        .seccion {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #004aad;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenedor principal -->
+    <div class="contenedor">
+        <h1>Ejemplo de uso del &lt;div&gt;</h1>
+
+        <!-- Sección 1 -->
+        <div class="seccion">
+            <h2>Sección 1</h2>
+            <p>Este es un bloque de contenido dentro de un div.</p>
+        </div>
+
+        <!-- Sección 2 -->
+        <div class="seccion">
+            <h2>Sección 2</h2>
+            <p>Otro div separado con su propio contenido.</p>
+        </div>
+
+        <!-- Sección 3 -->
+        <div class="seccion">
+            <h2>Sección 3</h2>
+            <p>Puedes usar divs para organizar texto, imágenes, botones o cualquier otro elemento.</p>
+        </div>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Imagen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        .contenedor {
+            margin-top: 50px;
+        }
+
+        img {
+            width: 300px;           /* Ancho fijo */
+            border-radius: 10px;    /* Bordes redondeados */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra */
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05); /* Efecto zoom */
+        }
+
+        p {
+            color: #333;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>Ejemplo del uso de &lt;img&gt;</h1>
+
+        <!-- Imagen desde internet -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" 
+             alt="Logo de React" 
+             title="Logo de React (ejemplo desde Wikipedia)">
+        
+        <p>Esta imagen se carga desde internet y tiene texto alternativo y un título.</p>
+
+        <!-- Imagen local (guardada en tu carpeta del proyecto) -->
+        <!-- <img src="imagenes/foto.jpg" alt="Foto local"> -->
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Imagen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        .contenedor {
+            margin-top: 50px;
+        }
+
+        img {
+            width: 300px;           /* Ancho fijo */
+            border-radius: 10px;    /* Bordes redondeados */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra */
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05); /* Efecto zoom */
+        }
+
+        p {
+            color: #333;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>Ejemplo del uso de &lt;img&gt;</h1>
+
+        <!-- Imagen desde internet -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" 
+             alt="Logo de React" 
+             title="Logo de React (ejemplo desde Wikipedia)">
+        
+        <p>Esta imagen se carga desde internet y tiene texto alternativo y un título.</p>
+
+        <!-- Imagen local (guardada en tu carpeta del proyecto) -->
+        <!-- <img src="imagenes/foto.jpg" alt="Foto local"> -->
+    </div>
+
+</body>
+</html>
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Span</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Estilo aplicado al span */
+        .resaltado {
+            color: #004aad;
+            font-weight: bold;
+        }
+
+        .importante {
+            background-color: yellow;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ejemplo del uso de &lt;span&gt;</h1>
+
+    <p>
+        Hola, mi nombre es <span class="resaltado">Carlos</span> y me encanta el 
+        <span class="importante">desarrollo web</span>.
+    </p>
+
+</body>
+</html>
+
