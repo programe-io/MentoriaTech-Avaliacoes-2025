@@ -1,0 +1,138 @@
+* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Fundo canvas cobre toda a tela */
+canvas#speedCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Corpo e cores */
+body {
+    background-color: #0a0a0a;
+    color: #eee;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #6a00ff, #00d4ff);
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* Navegação */
+nav {
+    background-color: #1b1b1b;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    border-bottom: 2px solid #00d4ff;
+}
+
+/* Conteúdo principal vertical */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section, aside {
+    background: linear-gradient(135deg, #1f1f2f, #2a2a3f);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,212,255,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover, aside:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(0,212,255,0.7);
+}
+
+h2 {
+    color: #00d4ff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px #000;
+}
+
+ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+ul li::before {
+    content: "🏍️";
+    position: absolute;
+    left: 0;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1b1b1b;
+    color: #00d4ff;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+    main {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
