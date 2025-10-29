@@ -1,0 +1,200 @@
+/* ================================
+   ESTILOS GERAIS
+================================== */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    background-color: #ffffff; /* fundo branco */
+    color: #333;
+    line-height: 1.6em;
+}
+
+/* ================================
+   CABEÇALHO
+================================== */
+header {
+    background-color: #eaf7ef; /* verde bem claro */
+    color: #2d6a4f; /* verde escuro */
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #b7e4c7;
+}
+
+header h1 {
+    font-size: 1.8em;
+    margin: 0;
+    font-weight: 700;
+}
+
+nav a {
+    color: #2d6a4f;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #40916c;
+}
+
+/* ================================
+   CONTEÚDO PRINCIPAL
+================================== */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 40px;
+    gap: 30px;
+    background-color: #f9fcfa;
+}
+
+/* ================================
+   REPORTAGEM
+================================== */
+article {
+    flex: 3;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #d8f3dc;
+}
+
+article img {
+    width: 100%;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+article h2 {
+    color: #2d6a4f;
+    font-size: 1.8em;
+    margin-top: 0;
+}
+
+article h3 {
+    color: #40916c;
+    margin-top: 25px;
+}
+
+article p {
+    margin: 15px 0;
+}
+
+/* ================================
+   BARRA LATERAL
+================================== */
+aside {
+    flex: 1;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #d8f3dc;
+}
+
+aside h3 {
+    color: #2d6a4f;
+    border-bottom: 2px solid #95d5b2;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #b7e4c7;
+    outline: none;
+    background-color: #f0fdf4;
+}
+
+.search-box input:focus {
+    border-color: #52b788;
+}
+
+.categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+.categories li {
+    margin: 8px 0;
+}
+
+.categories a {
+    text-decoration: none;
+    color: #2d6a4f;
+    transition: color 0.3s ease;
+}
+
+.categories a:hover {
+    color: #40916c;
+}
+
+.newsletter input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #b7e4c7;
+    background-color: #f0fdf4;
+    outline: none;
+}
+
+.newsletter input[type="email"]:focus {
+    border-color: #52b788;
+}
+
+.newsletter button {
+    background: #40916c;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.newsletter button:hover {
+    background: #2e431b;
+}
+
+/* ================================
+   RODAPÉ
+================================== */
+footer {
+    background-color: #eaf7ef;
+    color: #2d6a4f;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    border-top: 2px solid #b7e4c7;
+}
+
+/* ================================
+   RESPONSIVIDADE
+================================== */
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    article, aside {
+        width: 100%;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 8px;
+    }
+}
