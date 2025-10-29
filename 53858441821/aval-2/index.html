@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="imagens/icone.ico" type="image/x-icon">
+  <title>Dimev</title>
+  <meta name="description" content="Dimev — Protótipo do app para monitoramento de diabetes e endometriose." />
+  <link rel="stylesheet" href="css/style.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#inicio">
+        <img src="imagens/logo.png" class="logo">
+        <div>
+          <h1>Dimev</h1>
+          <p>Cuidados e informações sobre saúde</p>
+        </div>
+      </a>
+
+      <nav aria-label="menu principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#conteudos">Conteúdos</a>
+        <a href="#seguranca">Segurança</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <!-- <a class="cta" href="https://www.figma.com/make/V5OsHjbgPkRTF0m9lbmWhl/Melhorar-Design-do-Dimev?node-id=0-1&p=f&fullscreen=1">Baixar App</a> -->
+      <div class="header-buttons">
+        <a class="login" href="auth.html">Login</a>
+        <a class="cta" href="#baixar">Baixar App</a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main id="inicio">
+      <div class="hero">
+        <div class="card hero-left">
+          <span class="badge">Novo Conteúdo</span>
+          <h2>Cuide melhor da sua saúde com Dimev</h2>
+          <p class="muted">Monitoramento criado especialmente para quem convive com diabetes e endometriose.</p>
+
+          <div class="features">
+            <div class="pill">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#2f855a" stroke-width="1.2"/><path d="M9.2 12.5l1.8 2.2 4.2-5.6" stroke="#2f855a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div>
+                <div style="font-weight:700">Conteúdo confiável</div>
+                <div class="small-muted">Artigos e dicas verificadas</div>
+              </div>
+            </div>
+
+            <div class="pill">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l5 3v4c0 5-3 9-5 11-2-2-5-6-5-11V5l5-3z" stroke="#2f6f85" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div>
+                <div style="font-weight:700">Privacidade</div>
+                <div class="small-muted">Dados criptografados e LGPD</div>
+              </div>
+            </div>
+
+            <div class="pill">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#6b7280" stroke-width="1.2"/><path d="M7 8h10M7 12h10" stroke="#6b7280" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <div>
+                <div style="font-weight:700">Interface amigável</div>
+                <div class="small-muted">Fácil de usar</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-buttons">
+            <a class="cta" href="#download">Baixar App</a>
+            <a class="small-muted" href="conteudos.html">Ver conteúdos →</a>
+          </div>
+        </div>
+
+        <aside class="card download-box">
+          <div class="big">
+            <div>
+              <strong>Baixe o Dimev</strong>
+              <div class="small-muted">Disponível para Android e iOS</div>
+            </div>
+
+            <div class="platforms">
+              <a class="btn-store" href="#" onclick="evtDownload('android')">Play Store</a>
+              <a class="btn-store" href="#" onclick="evtDownload('ios')">App Store</a>
+            </div>
+          </div>
+
+          <div class="small-muted">Ou envie seu e-mail para receber o link:</div>
+          <div class="download-form">
+            <input type="email" placeholder="Seu e-mail" />
+            <button class="cta" onclick="sendDownloadLink()">Enviar</button>
+          </div>
+        </aside>
+      </div>
+
+      <!-- SOBRE -->
+      <section class="card">
+        <h3>Sobre o Dimev</h3>
+        <p class="muted">O Dimev é um protótipo de aplicativo que reúne ferramentas de acompanhamento, educação e suporte para pessoas com diabetes e endometriose.</p>
+      </section>
+
+      <!-- CONTEÚDOS -->
+      <section class="card">
+        <h3>Conteúdos e Artigos</h3>
+        <div class="card-list">
+          <article class="article">
+            <h4>Diabetes: Como medir a glicemia</h4>
+            <p class="small-muted">Passo a passo para aferir a glicemia em casa e quando procurar atendimento médico.</p>
+          </article>
+
+          <article class="article">
+            <h4>Endometriose: Sintomas e tratamentos</h4>
+            <p class="small-muted">Entenda os sintomas, diagnósticos e novas abordagens terapêuticas.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- SEGURANÇA -->
+      <section class="card">
+        <h3>Privacidade e Segurança</h3>
+        <p class="muted">Os dados são armazenados de forma criptografada e acessados apenas pelo próprio usuário. Seguimos as normas da LGPD.</p>
+      </section>
+
+      <!-- CONTATO -->
+      <section class="card">
+        <h3>Fale Conosco</h3>
+        <form onsubmit="evtContato(event)">
+          <input type="text" placeholder="Seu nome" required />
+          <input type="email" placeholder="Seu e-mail" required />
+          <textarea placeholder="Sua mensagem"></textarea>
+          <button type="submit" class="cta">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <ul class="container">
+        <li><a href="#download">Download</a></li>
+        <li><a href="conteudos.html">Conteúdos</a></li>
+      </ul>
+      <p class="small-muted">© 2025 Dimev — Protótipo de site</p>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+<script src="script.js"></script></body>
+</html>
