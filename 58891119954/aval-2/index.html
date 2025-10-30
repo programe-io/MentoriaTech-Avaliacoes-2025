@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DNA ESPORTE</title>
+  <style>
+    /* ======== ESTILO GERAL ======== */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #e0f7fa, #e3f2fd);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* ======== CABEÇALHO E MENU ======== */
+    header {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 1.8em;
+    }
+
+    nav {
+      margin-top: 5px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00c3ff;
+      text-decoration: underline;
+    }
+
+    main {
+      margin-top: 160px;
+      padding: 20px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #004aad;
+    }
+
+    img {
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* ======== BOTÕES ======== */
+    .btn {
+      display: inline-block;
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #0066cc;
+      transform: scale(1.05);
+    }
+
+    /* ======== SEÇÕES ======== */
+    section {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+
+    .banner {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 30px 0;
+      font-style: italic;
+    }
+
+    .info {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #eaf2f8;
+      border-radius: 8px;
+    }
+
+    /* ======== RODAPÉ ======== */
+    footer {
+      text-align: center;
+      background-color: #004aad;
+      color: white;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    /* ======== RESPONSIVIDADE ======== */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.4em;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px;
+        font-size: 0.9em;
+      }
+
+      img {
+        width: 95%;
+      }
+
+      .btn {
+        display: block;
+        margin: 10px auto;
+      }
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <h1>DNA ESPORTE</h1>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#volei">Vôlei</a>
+      <a href="#basquete">Basquete</a>
+      <a href="#futebol">Futebol</a>
+      <a href="#outros">Outros Esportes</a>
+      <a href="#marcas">Marcas</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <aside></aside>
+    <p>Aqui, a paixão pelo esporte ganha vida! Seja futebol, basquete, vôlei, corrida ou qualquer outro — se tem emoção, está aqui. Nosso objetivo é te manter por dentro de tudo: notícias atualizadas, análises, curiosidades, resultados e histórias inspiradoras que mostram que o esporte é muito mais do que competição — é superação, trabalho em equipe e energia!
+Prepare-se para mergulhar no universo esportivo com quem vive cada lance, cada ponto e cada vitória. Porque aqui, o esporte nunca para!</p>
+    </aside>
+    <!-- VÔLEI -->
+    
+      <h2>VÔLEI</h2>
+      <article>
+      <img src="Darlan.jpg" alt="volei">
+      <p>O vôlei é um dos esportes mais populares do mundo, conhecido por sua agilidade e trabalho em equipe. Criado em 1895, conquistou milhões de fãs, especialmente no Brasil, destaque mundial no vôlei de quadra e de praia.</p>
+      <a href="#" class="btn" onclick="toggleInfo('voleiInfo')">Saiba mais</a>
+      <div id="voleiInfo" class="info">
+        <p>Voleibol (chamado frequentemente no Brasil de Vôlei e em Portugal de Vólei) é um esporte praticado numa quadra dividida em duas partes por uma rede, possuindo duas equipes de seis jogadores em cada lado. O voleibol foi originalmente chamado de Mintonette, devido à sua semelhança com o Badminton. Ele também tem alguns elementos de tênis e handebol e até beisebol porque no conjunto de regras original havia 9 entradas com três saídas (saques).[1] O objetivo da modalidade é fazer a bola passar sobre a rede de modo a que a bola toque no chão dentro da quadra adversária, ao mesmo tempo que se evita que os adversários consigam fazer o mesmo. O voleibol é um desporto olímpico, regulado pela Fédération Internationale de Volleyball (FIVB).</p>  
+      </div>
+      </article>
+    </section>
+
+    <div class="banner">
+      <h3>"A vitória começa com a disciplina!"</h3>
+    </div>
+
+    <!-- BASQUETE -->
+    <section id="basquete">
+      <h2>BASQUETE</h2>
+      <img src="bola de basquete.jpg" alt="Basquete">
+      <p>O basquete é marcado pela velocidade e habilidade. Criado em 1891, o esporte é famoso por grandes nomes como Michael Jordan e LeBron James.</p>
+      <a href="#" class="btn" onclick="toggleInfo('basqueteInfo')">Saiba mais</a>
+      <div id="basqueteInfo" class="info">
+        <p>O basquetebol, popularmente conhecido como basquete (português brasileiro) ou básquete (português europeu)[nota 1], é um esporte coletivo inventado em 1891 pelo professor de educação física canadense James Naismith, na Associação Cristã de Moços de Springfield, em Massachusetts, nos Estados Unidos.[1] É disputado por duas equipes de 12 jogadores (cinco em quadra e sete reservas) que têm como objetivo passar a bola por dentro de uma cesta (ou aro) e evitar que a bola entre na sua cesta colocada nas extremidades da quadra, seja num ginásio ou ao ar livre. Os jogadores podem caminhar na quadra, desde que driblem (batam a bola contra o chão) a cada passo dado. Também é possível executar um passe, ou seja, passar a bola em direção a um companheiro de equipe.</p>
+      </div>
+    </section>
+
+    <div class="banner">
+      <h3>"Jogue com o coração, vença com a mente."</h3>
+    </div>
+
+    <!-- FUTEBOL -->
+    <section id="futebol">
+      <h2>FUTEBOL</h2>
+      <img src="Neymar.jpg" alt="Futebol">
+      <p>O futebol é o esporte mais popular do planeta, conhecido pela emoção a cada gol. O Brasil é pentacampeão mundial e referência no talento com a bola.</p>
+      <a href="#" class="btn" onclick="toggleInfo('futebolInfo')">Saiba mais</a>
+      <div id="futebolInfo" class="info">
+        <p>O futebol (em inglês: football, soccer) - originalmente futebol associado[nota 1][4][5][6][7] (em inglês: association football),[8] e também referido como futebol de campo[9][10] ou futebol de onze[11][12] - é um esporte de equipe jogado entre dois times de 11 jogadores cada um e um árbitro que se ocupa da correta aplicação das normas. É considerado o desporto mais popular do mundo, pois cerca de 270 milhões de pessoas participam das suas várias competições.[13] É jogado num campo retangular gramado, com uma baliza em cada lado do campo. O objetivo do jogo é deslocar uma bola através do campo para colocá-la dentro da baliza adversária, ação que se denomina gol(pt-BR) ou golo(pt-PT?). A equipe que marca mais gols ao término da partida é a vencedora.[14]</p>
+      </div>
+    </section>
+
+    <div class="banner">
+      <h3>"Cada treino é uma chance de ser melhor que ontem!"</h3>
+    </div>
+
+    <!-- OUTROS ESPORTES -->
+    <section id="outros">
+      <h2>OUTROS ESPORTES</h2>
+      <p>O mundo do esporte vai muito além dos mais conhecidos. Conheça algumas modalidades incríveis e cheias de história.</p>
+
+      <h3>🏓 Tênis de Mesa</h3>
+      <img src="Higo.jpg" alt="Tênis">
+      <p>Um esporte que exige destreza, coordenação motora, reflexo e saúde fisíca</p>
+      <a href="#" class="btn" onclick="toggleInfo('tenisInfo')">Saiba mais</a>
+      <div id="tenisInfo" class="info">
+        <p>O ténis de mesa (português europeu) ou tênis de mesa (português brasileiro), também conhecido como ping-pong (modo abrasileirado: pingue-pongue), é um esporte inventado no Reino Unido, mais precisamente na Inglaterra no século XIX (onde era conhecido como ping-pong).</p>
+      </div>
+
+      <h3>🥋 Judô</h3>
+      <img src="Sarah.jpg" alt="Judô">
+      <p>Arte marcial japonesa que valoriza respeito, equilíbrio e disciplina.</p>
+      <a href="#" class="btn" onclick="toggleInfo('judoInfo')">Saiba mais</a>
+      <div id="judoInfo" class="info">
+        <p>Judô(pt-BR) ou judo(pt-PT?) (柔道, Jūdō; caminho suave, ou caminho da suavidade) é uma arte marcial japonesa,[1] praticada como esporte de combate e fundada por Jigoro Kano em 1882. Os seus principais objetivos são fortalecer o físico, a mente e o espírito de forma integrada, além de desenvolver técnicas de defesa pessoal.[2]
+          Parte da série sobre
+          Artes marciais
+          Chinesas
+          Japonesas
+          Coreanas
+          Tailandesas
+          Vietnamitas
+          Outras orientais
+          Brasileiras
+          Outras ocidentais
+          Relacionados
+          vde
+          O Judô teve uma grande aceitação em todo o mundo, pois Kano conseguiu reunir a essência dos principais estilos e escolas de jujitsu, arte marcial praticada pelos "bushi", ou cavaleiros durante o período Kamakura (1185–1333), a outras artes de luta praticadas no Oriente e fundi-las numa única e básica. O Judô foi considerado desporto oficial no Japão nos finais do século XIX e a polícia nipônica introduziu-o nos seus treinos. O primeiro clube judoca na Europa foi o londrino Budokway (1918)</p>
+      </div>
+
+      <h3>🚴 Ciclismo</h3>
+      <img src="Henrique.jpg" alt="Ciclismo">
+      <p>Um dos esportes mais desafiadores, que combina resistência, estratégia e superação em longos percursos.</p>
+      <a href="#" class="btn" onclick="toggleInfo('ciclismoInfo')">Saiba mais</a>
+      <div id="ciclismoInfo" class="info">
+        <p>Na modalidade de Mountain Bike existem várias categorias que são divididas em mais ou menos radicais, e são elas: cross country, em todo o tipo de terreno, de preferência no monte, seja a subir, plano ou a descer; o Freeride, com um andamento mais extremo em que se dá preferência a saltos e descidas; o Downhill, que é a versão mais extrema e perigosa do MTB que consiste somente em descer, normalmente a velocidades altas, sendo este praticado tanto no monte ou em cidade (o chamado downhill urbano ou DHU). Em termos de saúde, o ciclismo é uma atividade rítmica e cíclica, ideal para desenvolvimento dos sistemas de energia aeróbico e anaeróbico, dependendo do tipo de treinamento aplicado. Desenvolve o sistema cardiovascular dos praticantes, sendo ainda indicado por médicos especialistas como ótimo exercício para queima de gordura corporal e desenvolvimento de resistência de força muscular de pernas, em treinamentos.
+          O mundo moderno inventou também o ciclismo estático, ou seja, a prática do ciclismo em bicicletas ergométricas e em locais fechados, casa, academia, clube, etc., um exercício aeróbico alternativo e seguro ideal para indivíduos que desejam maior segurança, sustentação e facilidade de manejo do que o ciclismo de estrada ou de pista, e é indicado para pessoas que apresentam determinados tipos de lesões de joelhos, quadris, coluna e que não podem caminhar.</p>
+      </div>
+    </section>
+
+    <div class="banner">
+      <h3>"O esforço de hoje é o sucesso de amanhã!"</h3>
+    </div>
+
+    <!-- MARCAS FAMOSAS -->
+    <section id="marcas">
+      <h2>MARCAS FAMOSAS</h2>
+      <ul>
+        <img src="Nike.png">
+        <a href="https://www.nike.com.br/?aw_affid=141629&awc=17652_1761058275_50ded66615d0086de85dfad37d6bcfba&utm_source=Zanox&utm_medium=141629&utm_campaign=Opera+Software+AS&utm_content=gx-br-awin-nike-ssd-ryvs&utm_term=Direct+Traffic&af_channel=141629">Nike</a>
+        
+        <li><strong>Nike:</strong>  A Nike é uma empresa americana de calçados, roupas e acessórios esportivos, fundada em 1964 como Blue Ribbon Sports por Bill Bowerman e Phil Knight. Renomeada para Nike, Inc. em 1971, a marca é inspirada na deusa grega da vitória e é famosa por produtos como o logotipo "Swoosh", o slogan "Just Do It" e o tênis Air Jordan. A empresa se tornou a maior fornecedora de roupas esportivas do mundo, com forte atuação em inovação tecnológica, marketing e patrocínios a atletas de ponta. </li>
+        <img src="Adidas.png">
+        <a href="https://www.adidas.com.br/?cm_mmc=AdieSEM_Google-_-adidas-LAM-BR-Trademark-adidas-General-B-Exact-LF-SEM-BR-_-Trademark-adidas-X-General-_-adidas-_-&-_-ds_kid=11643361-_-&-_-ds_agid=99734496717-_-&-_-dv:eCom&cm_mmca1=BR&cm_mmc2=&gclsrc=aw.ds&gad_source=1&gad_campaignid=9769361722&gclid=CjwKCAjw3tzHBhBREiwAlMJoUjgGJ66JlGm_tukdrtX8rjMx-Pm81zC5GoMLcjEbCIhO-9_xDE_luhoCxKwQAvD_BwE">Adidas</a>
+        <li><strong>Adidas:</strong> A Adidas é uma marca alemã de artigos esportivos fundada em 1949 por Adi Dassler, focada em inovação e desempenho, mas também com forte presença na cultura e moda. A marca oferece uma vasta gama de produtos para diversos esportes e estilos de vida, com tecnologia voltada para o aprimoramento do conforto e da performance. 
+        <img src="Puma.png">
+        <a href="https://br.puma.com/?utm_source=GGL&utm_medium=BS&gad_source=1&gad_campaignid=9989074513&gclid=CjwKCAjw3tzHBhBREiwAlMJoUjjkeuoSZxNqmbvxyBm5ikhTrV1-Mhhu-dQ4ZbBcyunEaLAnPesMZxoCtRoQAvD_BwE">Puma</a>
+        <li><strong>Puma:</strong> A Puma é uma marca alemã de artigos esportivos conhecida por combinar tecnologia, design e desempenho em calçados, vestuário e acessórios. Fundada em 1948, ela se tornou um ícone global, associada à inovação, estilo e cultura pop, com parcerias com celebridades e atletas de alto nível. </li>
+        <img src="Under Armor.png">
+        <a href="https://www.underarmour.com.br/?utm_source=google&utm_medium=cpc&utm_campaign=searchbrand&gad_source=1&gad_campaignid=877470852&gclid=CjwKCAjw3tzHBhBREiwAlMJoUq2mHXg3hzFBJAjgUtBd9hOUUSP3McT-puNg_ZhMOuy7gUsTFA1ZERoCntAQAvD_BwE">Under Armour</a> 
+        <li><strong>Under Armour:</strong> A Under Armour é uma marca de roupas, calçados e acessórios esportivos com foco em performance, inovação e desempenho para atletas. Fundada nos Estados Unidos, a empresa é conhecida por criar produtos que ajudam atletas a atingir seu melhor, utilizando tecnologias como o amortecimento Charged e materiais que absorvem suor para manter o corpo seco e confortável durante as atividades.  </li>
+        
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 DNA Esporte | Feito com paixão pelo esporte ⚽🏀🏐</p>
+  </footer>
+
+  <script>
+    function toggleInfo(id) {
+      const info = document.getElementById(id);
+      info.style.display = info.style.display === "block" ? "none" : "block";
+    }
+  </script>
+<script src="script.js"></script></body>
+</html>
