@@ -1,0 +1,179 @@
+/* ===== CONFIGURAÇÃO GERAL ===== */
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   background: rgb(250, 247, 247);
+   color: #361b1b;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),   
+            rgba(0, 0, 0, 0.5)
+        ),
+        url(blue.jpg) center/cover no-repeat;
+    background-position: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 65vh;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    padding: 40px 20px;
+
+    /* Alinhamento central com Flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centraliza verticalmente */
+    align-items: center; /* centraliza horizontalmente */
+    text-align: center;
+}
+
+header h1 {
+   font-size: 2.5rem
+}
+
+.btn {
+    padding-top: 25px;
+    text-decoration: none;
+    width: 170px;height: 50px; background-color: rgb(218, 84, 84); border: none; border-radius: 14px; color: rgb(243, 243, 220); font-size: 16px; font-weight: bold;}
+
+/* ===== NAVEGAÇÃO ===== */
+nav {
+   display: flex;
+   background-color: #333;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+nav a {
+   color: white;
+   padding: 10px 20px;
+   text-decoration: none;
+   font-weight: bold;
+   text-align: center;
+}
+
+nav a:hover {
+   background-color: #555;
+   color: #fff;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+#row {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 20px;
+   gap: 20px;
+}
+
+aside {
+   flex: 30%;
+   background-color: #f9f9f9;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 2px 2px 5px #ccc;
+   text-align: center;
+}
+
+aside img .perfil-img {
+   width: 10%;
+   height: 10%;
+   border-radius: 15px;
+   margin-bottom: 15px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   object-fit: cover;
+}
+
+/* ===== ARTIGO PRINCIPAL ===== */
+main article {
+   flex: 70%;
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 2px 2px 5px #ccc;
+}
+
+article h2 {
+   text-align: center;
+   color: #e60000;
+   margin-bottom: 20px;
+}
+
+/* ===== SEÇÕES DAS VERSÕES ===== */
+.versoes {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 30px 20px;
+   text-align: center;
+   border-bottom: 1px solid #ddd;
+}
+
+.versoes img {
+   width: auto;
+   height: auto;
+   width: 20%;
+   border-radius: 15px;
+   margin-bottom: 15px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+   transition: transform 0.3s ease;
+   object-fit: cover;
+}
+
+.versoes img:hover {
+   transform: scale(1.05);
+}
+
+.versoes p {
+   max-width: 700px;
+   line-height: 1.5;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+   background-color: #444;
+   padding: 40px;
+   color: #fff;
+   text-align: center;
+   font-size: 12px;
+   margin-top: 30px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media screen and (max-width: 900px) {
+   #row {
+      flex-direction: column;
+   }
+
+   aside, main article {
+      flex: 100%;
+   }
+
+   .versoes img {
+      width: 80%;
+   }
+}
+
+@media screen and (max-width: 400px) {
+   nav {
+      flex-direction: column;
+   }
+
+   header h1 {
+      font-size: 1.8rem;
+   }
+
+   .versoes img {
+      width: 90%;
+   }
+}
