@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História e Cultura do Piauí</title>
+    <link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>História e Cultura do Piauí</h1>
+        <p>Descubra as riquezas, cultura e belezas naturais do Piauí</p>
+    </header>
+
+    <!-- MENU -->
+    <nav>
+        <a href="#historia">História</a>
+        <a href="#cultura">Cultura</a>
+        <a href="#curiosidades">Curiosidades</a>
+        <a href="#turismo">Turismo</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- SEÇÃO HISTÓRIA -->
+        <section id="historia" class="reveal">
+            <article>
+                <h2>História do Piauí</h2>
+                <p>
+                    O Piauí foi oficialmente fundado em 1719, mas sua ocupação começou antes,
+                    com indígenas que habitavam a região e exploradores portugueses. O estado se destacou
+                    na produção de gado e algodão durante o período colonial.
+                </p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Mapa_do_Piau%C3%AD.png/800px-Mapa_do_Piau%C3%AD.png" 
+                     alt="Mapa do Piauí" class="imagem-secao">
+                <aside>
+                    <h3>Fato Interessante</h3>
+                    <p>O nome Piauí vem de um peixe chamado "piau", muito comum nos rios da região.</p>
+                </aside>
+                <button class="btn">Saiba Mais</button>
+            </article>
+        </section>
+
+        <!-- SEÇÃO CULTURA -->
+        <section id="cultura" class="reveal">
+            <article>
+                <h2>Cultura do Piauí</h2>
+                <p>
+                    A cultura piauiense é rica e diversificada, com influências indígenas, africanas e portuguesas.
+                    Destaque para o Bumba-meu-boi, festas populares como o São João e a música típica como o forró e o coco.
+                </p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Parque_Nacional_de_Sete_Cidades_-_Piau%C3%AD.jpg"
+                     alt="Cultura do Piauí" class="imagem-secao">
+                <aside>
+                    <h3>Evento Cultural</h3>
+                    <p>O Festival de Música e Dança Folclórica de Teresina é um dos maiores do Nordeste.</p>
+                </aside>
+                <button class="btn">Eventos Culturais</button>
+            </article>
+        </section>
+
+        <!-- SEÇÃO CURIOSIDADES -->
+        <section id="curiosidades" class="reveal">
+            <article>
+                <h2>Curiosidades sobre o Piauí</h2>
+                <ul>
+                    <li>O Piauí possui o menor litoral do Brasil, com apenas 66 km.</li>
+                    <li>O Parque Nacional da Serra da Capivara possui pinturas rupestres com mais de 12 mil anos.</li>
+                    <li>A capital, Teresina, é conhecida como "Cidade Verde" devido à grande quantidade de áreas verdes.</li>
+                </ul>
+                <aside>
+                    <h3>Dica Curiosa</h3>
+                    <p>O Parque Nacional Serra da Capivara é Patrimônio Mundial da UNESCO desde 1991.</p>
+                </aside>
+                <button class="btn">Mais Curiosidades</button>
+            </article>
+        </section>
+
+        <!-- SEÇÃO TURISMO -->
+        <section id="turismo" class="reveal">
+            <article>
+                <h2>Turismo no Piauí</h2>
+                <p>
+                    O Piauí oferece diversas opções de turismo natural e histórico:
+                    o Delta do Parnaíba, o Parque Nacional da Serra da Capivara e belas praias.
+                </p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/ChicoRasta_Melancieiras_DeltaDoParnaiba_Parnaiba_PI.jpg/800px-ChicoRasta_Melancieiras_DeltaDoParnaiba_Parnaiba_PI.jpg" 
+                     alt="Delta do Parnaíba" class="imagem-secao">
+                <aside>
+                    <h3>Ponto Turístico</h3>
+                    <p>O Delta do Parnaíba é o único delta em mar aberto das Américas.</p>
+                </aside>
+                <button class="btn">Explore o Turismo</button>
+            </article>
+        </section>
+
+        <!-- SEÇÃO CONTATO -->
+        <section id="contato" class="reveal">
+            <article>
+                <h2>Contato</h2>
+                <p>
+                    Entre em contato para saber mais sobre a história, cultura e turismo do Piauí.
+                </p>
+                <aside>
+                    <h3>Informações</h3>
+                    <p>Email: contato@piauiexemplo.com.br</p>
+                    <p>Telefone: (86) 99999-9999</p>
+                </aside>
+                <button class="btn">Enviar Mensagem</button>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2025 - Todos os direitos reservados - Guilherme</p>
+    </footer>
+
+    <!-- JS PARA ANIMAÇÃO DE SCROLL -->
+    <script>
+        const elementos = document.querySelectorAll("section, article, aside");
+        const revelar = () => {
+            const alturaTela = window.innerHeight * 0.85;
+            elementos.forEach(el => {
+                const topo = el.getBoundingClientRect().top;
+                if(topo < alturaTela){
+                    el.classList.add("reveal");
+                }
+            });
+        };
+        window.addEventListener("scroll", revelar);
+        revelar();
+    </script>
+
+</body>
+</html>
