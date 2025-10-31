@@ -1,0 +1,221 @@
+/* =============================
+   CSS — Cristiano Ronaldo Fan Site
+   ============================= */
+
+:root {
+  --bg: #071229;
+  --card: #0b1a2b;
+  --muted: #b6c2cf;
+  --accent: #ffd166;
+  --accent-dark: #ffb703;
+  --radius: 12px;
+  --max-w: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #eaf2ff;
+  background: linear-gradient(180deg, #051428 0%, #071827 100%);
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.site {
+  width: 100%;
+  max-width: var(--max-w);
+}
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #07202b;
+}
+
+nav {
+  display: flex;
+  gap: 14px;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.cta {
+  background: var(--accent);
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #07202b;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.cta:hover {
+  background: var(--accent-dark);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+  padding: 22px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 28px rgba(2, 6, 23, 0.6);
+}
+
+.hero h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.hero .lead {
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.stats {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.stat {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1;
+}
+
+/* ===== Sections ===== */
+section {
+  margin-top: 18px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  padding: 16px;
+  border-radius: var(--radius);
+}
+
+.timeline {
+  border-left: 3px solid rgba(255, 255, 255, 0.04);
+  padding-left: 14px;
+}
+
+.timeline-item {
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+/* ===== Gallery ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Form ===== */
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+}
+
+form button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  font-weight: 800;
+  color: #07202b;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+form button:hover {
+  background: var(--accent-dark);
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    order: 1;
+  }
+  .card.aside {
+    order: 2;
+  }
+}
