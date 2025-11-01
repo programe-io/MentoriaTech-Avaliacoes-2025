@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a2e0b3c6d8.js" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link href="style.css" rel="stylesheet"></head>
+<body id="top">
+  <!-- HEADER -->
+  <header>
+    <h1><i class="fas fa-feather-alt"></i> Meu Blog</h1>
+    <nav>
+      <input type="text" id="searchInput" placeholder="Buscar posts..." aria-label="Busca de posts">
+      <button id="themeToggle" title="Alternar tema"><i class="fas fa-moon"></i></button>
+      <button id="newPostBtn" title="Criar novo post"><i class="fas fa-plus"></i> Novo Post</button>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <!-- Post inicial -->
+    <article class="post">
+      <h2>🌅 Bem-vindo ao Blog</h2>
+      <small>01/11/2025</small>
+      <img src="https://via.placeholder.com/600x250" alt="Imagem de exemplo">
+      <p>Este é o primeiro post de exemplo. Você pode adicionar novos posts usando o botão "Novo Post".</p>
+      <button class="delete-post" onclick="alert('Este post inicial não pode ser apagado')">🗑️ Apagar Post</button>
+      <div class="comment-box">
+        <input type="text" placeholder="Escreva um comentário..." disabled>
+        <button disabled>Comentar</button>
+        <div class="comments"></div>
+      </div>
+    </article>
+
+    <!-- Posts dinâmicos -->
+    <section id="posts" aria-live="polite"></section>
+
+    <!-- Sidebar -->
+    <aside>
+      <h3>📌 Posts recentes</h3>
+      <ul id="recentPosts"></ul>
+    </aside>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>💬 Compartilhe suas ideias.</p>
+    <a href="#top">Voltar ao topo</a>
+  </footer>
+
+  <!-- MODAL CRIAR POST -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>Criar Novo Post</h2>
+      <input type="text" id="titleInput" placeholder="Título do post">
+      <input type="text" id="imageInput" placeholder="URL da imagem (opcional)">
+      <textarea id="contentInput" placeholder="Escreva seu conteúdo..."></textarea>
+      <button id="savePost">Publicar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
