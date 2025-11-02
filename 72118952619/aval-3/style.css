@@ -1,0 +1,115 @@
+/* ====== RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background: linear-gradient(to bottom, #1e3a8a, #172554);
+}
+
+/* ====== HEADER ====== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+header .logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+header nav {
+  display: flex;
+  gap: 1rem;
+}
+
+header nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #3b82f6; /* azul-claro */
+}
+
+/* ====== MAIN ====== */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Responsivo: coloca os cards lado a lado em telas grandes */
+@media (min-width: 768px) {
+  main {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* ====== POST CARD ====== */
+.post-card {
+  background-color: #1f2937; /* cinza-800 */
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  max-width: 24rem;
+  padding: 1rem 0;
+  margin: 0 0.5rem;
+}
+
+/* ====== CARD HEADER ====== */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1rem 1rem;
+}
+
+.card-header img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  border: 2px solid #3b82f6;
+}
+
+.card-header h2 {
+  font-size: 1.5rem;
+}
+
+/* ====== CARD IMAGE ====== */
+.card-image {
+  width: 100%;
+  display: block;
+}
+
+/* ====== CARD CONTENT ====== */
+.card-content {
+  padding: 1rem;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  text-align: justify;
+  line-height: 1.4;
+}
+
+.card-content span {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: #d1d5db;
+  text-align: right;
+}
