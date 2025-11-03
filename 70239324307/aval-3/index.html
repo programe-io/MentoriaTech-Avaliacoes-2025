@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBO Max Clone - Séries Populares</title>
+    <style>
+        body {
+            background-color: #0b0b0b;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #fbfafc;
+            font-size: 1.8em;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #8b5cf6;
+        }
+
+        main {
+            padding: 30px;
+        }
+
+        .series-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .serie {
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .serie:hover {
+            transform: scale(1.05);
+        }
+
+        .serie img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .serie span {
+            display: block;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .serie p {
+            font-size: 0.9em;
+            padding: 0 10px 10px;
+            color: #d4d4d4;
+        }
+
+        form {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 40px auto;
+        }
+
+        form h2 {
+            text-align: center;
+            color: #f3f1f8;
+        }
+
+        form p {
+            text-align: center;
+            color: #cfcfcf;
+            font-size: 0.9em;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #8b5cf6;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #a78bfa;
+        }
+
+        .episodios {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .episodios h3 {
+            margin-bottom: 10px;
+        }
+
+        .episodios p {
+            color: #cfcfcf;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .episodios a {
+            display: block;
+            padding: 8px 0;
+            color: #faf9fc;
+            text-decoration: none;
+        }
+
+        .episodios a:hover {
+            text-decoration: underline;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header>
+        <h1>HBO Max Clone</h1>
+        <nav>
+            <a href="#series">Séries</a>
+            <a href="#cadastro">Cadastro</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="series">
+            <h2>🎬 Séries Mais Populares</h2>
+            <p>Explore as séries mais assistidas e aclamadas da HBO. Clique em “Ver episódios” para descobrir mais sobre cada produção.</p>
+            
+            <div class="series-grid">
+                <div class="serie">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/d/dc/Game_of_Thrones_title_card.jpg" alt="Game of Thrones">
+                    <span>Game of Thrones</span>
+                    <p>Famílias poderosas lutam pelo controle dos Sete Reinos em uma saga épica de poder, traição e dragões.</p>
+                    <a href="#got">Ver episódios</a>
+                </div>
+
+                <div class="serie">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/House_of_the_Dragon_logo.png" alt="House of the Dragon">
+                    <span>House of the Dragon</span>
+                    <p>Prequela de Game of Thrones, mostrando a ascensão e queda da Casa Targaryen.</p>
+                    <a href="#hotd">Ver episódios</a>
+                </div>
+
+                <div class="serie">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b6/The_Last_of_Us_2023_logo.png" alt="The Last of Us">
+                    <span>The Last of Us</span>
+                    <p>Um homem e uma jovem cruzam os EUA devastados por um fungo mortal em busca de esperança.</p>
+                    <a href="#tlou">Ver episódios</a>
+                </div>
+
+                <div class="serie">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/2/2b/Euphoria_%28TV_series%29_logo.png" alt="Euphoria">
+                    <span>Euphoria</span>
+                    <p>Um olhar cru e emocional sobre os desafios da juventude moderna, vícios e autodescoberta.</p>
+                    <a href="#euphoria">Ver episódios</a>
+                </div>
+
+                <div class="serie">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/6/6e/Succession_logo.png" alt="Succession">
+                    <span>Succession</span>
+                    <p>Uma família bilionária luta pelo poder dentro de um império midiático em crise.</p>
+                    <a href="#succession">Ver episódios</a>
+                </div>
+
+                <div class="serie">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/1/12/Chernobyl_2019_miniseries_logo.png" alt="Chernobyl">
+                    <span>Chernobyl</span>
+                    <p>Uma dramatização realista do desastre nuclear que chocou o mundo em 1986.</p>
+                    <a href="#chernobyl">Ver episódios</a>
+                </div>
+
+                <div class="serie">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Westworld.png" alt="Westworld">
+                    <span>Westworld</span>
+                    <p>Um parque futurista de robôs revela os limites entre consciência e humanidade.</p>
+                    <a href="#westworld">Ver episódios</a>
+                </div>
+
+                <div class="serie">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/76/Barry_%28TV_series%29_logo.png" alt="Barry">
+                    <span>Barry</span>
+                    <p>Um assassino de aluguel tenta mudar de vida e virar ator, mas o passado não o deixa em paz.</p>
+                    <a href="#barry">Ver episódios</a>
+                </div>
+
+                <div class="serie">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/d/d0/True_Detective_logo.png" alt="True Detective">
+                    <span>True Detective</span>
+                    <p>Cada temporada traz uma nova investigação criminal complexa e sombria.</p>
+                    <a href="#true">Ver episódios</a>
+                </div>
+
+                <div class="serie">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Watchmen_%28TV_series%29_logo.png" alt="Watchmen">
+                    <span>Watchmen</span>
+                    <p>Uma continuação ousada do clássico dos quadrinhos, explorando justiça e identidade.</p>
+                    <a href="#watchmen">Ver episódios</a>
+                </div>
+
+                <div class="serie">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/4/4c/The_Wire_title_logo.png" alt="The Wire">
+                    <span>The Wire</span>
+                    <p>O retrato brutal e realista da guerra contra o tráfico nas ruas de Baltimore.</p>
+                    <a href="#wire">Ver episódios</a>
+                </div>
+
+                <div class="serie">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/3/31/Sex_and_the_City_logo.png" alt="Sex and the City">
+                    <span>Sex and the City</span>
+                    <p>Quatro mulheres exploram amor, amizade e carreira na vibrante Nova York.</p>
+                    <a href="#satc">Ver episódios</a>
+                </div>
+
+                <div class="serie">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/e/e3/Peacemaker_%28TV_series%29_logo.png" alt="Peacemaker">
+                    <span>Peacemaker</span>
+                    <p>O anti-herói mais excêntrico da DC ganha sua própria série cheia de humor e ação.</p>
+                    <a href="#peacemaker">Ver episódios</a>
+                </div>
+
+                <div class="serie">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/2/2e/Boardwalk_Empire_logo.png" alt="Boardwalk Empire">
+                    <span>Boardwalk Empire</span>
+                    <p>Durante a Lei Seca, um político domina o crime organizado em Atlantic City.</p>
+                    <a href="#boardwalk">Ver episódios</a>
+                </div>
+
+                <div class="serie">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/4/4f/Sopranos_logo.png" alt="The Sopranos">
+                    <span>The Sopranos</span>
+                    <p>Um mafioso tenta equilibrar a vida familiar e o império criminoso em Nova Jersey.</p>
+                    <a href="#sopranos">Ver episódios</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="cadastro">
+            <form>
+                <h2>Cadastre-se</h2>
+                <p>Crie sua conta para receber novidades e salvar suas séries favoritas.</p>
+                <input type="text" placeholder="Nome completo" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Senha" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+
+        <section class="episodios" id="got">
+            <h3>📺 Game of Thrones - Episódios</h3>
+            <p>Primeira temporada da série épica que redefiniu a TV mundial.</p>
+            <a href="#">Temporada 1 - Episódio 1: Winter Is Coming</a>
+            <a href="#">Temporada 1 - Episódio 2: The Kingsroad</a>
+            <a href="#">Temporada 1 - Episódio 3: Lord Snow</a>
+        </section>
+
+        <section class="episodios" id="tlou">
+            <h3>📺 The Last of Us - Episódios</h3>
+            <p>Uma jornada emocionante de sobrevivência e amor em meio ao caos.</p>
+            <a href="#">Temporada 1 - Episódio 1: When You’re Lost in the Darkness</a>
+            <a href="#">Temporada 1 - Episódio 2: Infected</a>
+            <a href="#">Temporada 1 - Episódio 3: Long Long Time</a>
+        </section>
+    </main>
+</body>
+</html>
