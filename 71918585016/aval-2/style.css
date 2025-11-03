@@ -1,0 +1,181 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* CORPO DA PÁGINA */
+body {
+    background-color: #fdf6f0; /* bege suave */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* CABEÇALHO */
+header {
+    background-color: #ff6f61; /* coral moderno */
+    color: white;
+    padding: 25px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-family: 'Georgia', serif;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 18px;
+    font-weight: bold;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffd2c2;
+    text-decoration: underline;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+    flex: 3;
+    margin-right: 25px;
+}
+
+/* POSTS */
+article {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+article h2 {
+    color: #ff6f61;
+    margin-bottom: 15px;
+    font-family: 'Georgia', serif;
+}
+
+article img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+article img:hover {
+    transform: scale(1.05);
+}
+
+article p {
+    margin-bottom: 15px;
+    font-size: 1.05em;
+}
+
+/* BARRA LATERAL */
+aside {
+    flex: 1;
+    background-color: #fff1f0;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+aside h3 {
+    margin-bottom: 15px;
+    color: #ff6f61;
+    border-bottom: 2px solid #ff6f61;
+    padding-bottom: 5px;
+}
+
+aside ul {
+    list-style-type: none;
+}
+
+aside ul li {
+    margin-bottom: 12px;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+aside ul li a:hover {
+    color: #ff6f61;
+}
+
+/* BOTÕES (SE HOUVER) */
+button, .btn {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover, .btn:hover {
+    background-color: #ff8576;
+    transform: translateY(-3px);
+}
+
+/* RODAPÉ */
+footer {
+    background-color: #ff6f61;
+    color: white;
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 40px;
+    font-size: 0.95em;
+}
+
+/* RESPONSIVO */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    main {
+        margin-right: 0;
+    }
+    
+    aside {
+        margin-top: 25px;
+    }
+}
+
+/* LINKS EM POSTS */
+article a {
+    color: #ff6f61;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+article a:hover {
+    text-decoration: underline;
+    color: #ff8576;
+}
