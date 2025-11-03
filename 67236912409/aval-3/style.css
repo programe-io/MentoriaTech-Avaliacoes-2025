@@ -1,0 +1,119 @@
+/* Configurações Básicas e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --bg-color: #1a2542; /* Azul escuro de fundo */
+    --card-bg-color: #2b395d; /* Fundo do card (um pouco mais claro) */
+    --text-color: #f0f0f0; /* Texto claro */
+    --link-color: #b0c4de; /* Cor dos links */
+    --logo-color: #ffffff; /* Cor do Logo */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh; /* Ocupa a altura total da tela */
+}
+
+/* --- CABEÇALHO --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    color: var(--logo-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav a {
+    color: var(--link-color);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--text-color);
+}
+
+/* --- CONTEÚDO PRINCIPAL (CONTAINER DE CARDS) --- */
+.container {
+    padding: 40px;
+    display: flex;
+    /* Alinha os cards na horizontal */
+    gap: 30px; /* Espaçamento entre os cards */
+    flex-wrap: wrap; /* Quebra para a próxima linha em telas menores */
+}
+
+/* --- ESTILO DO CARD INDIVIDUAL --- */
+.card {
+    background-color: var(--card-bg-color);
+    width: 300px; /* Largura base do card */
+    border-radius: 8px;
+    overflow: hidden; /* Garante que a imagem se ajuste */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Organiza os elementos internos verticalmente */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    font-weight: bold;
+    color: var(--link-color);
+}
+
+.card-header i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.card-image {
+    width: 100%;
+    height: 180px; /* Altura da área da imagem */
+    /* Configuração para a imagem de fundo (usada no HTML de exemplo) */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante */
+    justify-content: space-between; /* Empurra o tempo para baixo */
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.card-time {
+    color: #99a9c3; /* Cor mais suave para o texto de tempo */
+    text-align: right;
+    display: block;
+    margin-top: 10px;
+    font-size: 0.8rem;
+}
+
+/* --- RESPONSIVIDADE (Ajuste para telas menores) --- */
+@media (max-width: 1024px) {
