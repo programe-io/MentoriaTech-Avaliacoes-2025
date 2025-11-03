@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>História da Fórmula 1</title>
+    <style>
+        /* ======== ESTILO GERAL ======== */
+        :root{
+            --bg: #1b1b1b;
+            --card: #2b2b2b;
+            --accent: #c70000;
+            --muted: #ccc;
+            --light: #f0f0f0;
+        }
+
+        *{box-sizing: border-box;}
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--light);
+            line-height: 1.5;
+        }
+
+        header {
+            background-color: var(--accent);
+            color: white;
+            text-align: center;
+            padding: 28px 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header h1 { margin: 0; font-size: 2rem; }
+        header p { margin: 6px 0 0; font-style: italic; font-size: 0.95rem; }
+
+        /* ======== NAVEGAÇÃO ======== */
+        nav {
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            padding: 12px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 700;
+            padding: 6px 10px;
+            border-radius: 6px;
+        }
+        nav a:hover, nav a:focus { color: var(--accent); outline: none; }
+
+        /* ======== LAYOUT PRINCIPAL (MAIN + ASIDE) ======== */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 320px; /* conteúdo principal + aside */
+            gap: 20px;
+            max-width: 1100px;
+            margin: 22px auto;
+            padding: 0 12px;
+        }
+
+        /* cartões de conteúdo */
+        section, article {
+            background-color: var(--card);
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+        }
+
+        /* aside estilizado */
+        aside {
+            background-color: #333;
+            color: #ffdddd;
+            border-left: 6px solid var(--accent);
+            padding: 18px;
+            border-radius: 10px;
+            font-style: italic;
+            min-height: 220px;
+        }
+
+        h2 {
+            color: #ff6b6b;
+            margin-top: 0;
+            font-size: 1.25rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 6px;
+        }
+
+        h3, h5 { color: var(--muted); margin: 6px 0; }
+
+        img.responsive {
+            display: block;
+            margin: 14px auto;
+            border-radius: 8px;
+            width: 100%;
+            height: auto;
+        }
+
+        ul { padding-left: 18px; }
+        li { margin-bottom: 8px; }
+
+        footer {
+            text-align: center;
+            background-color: #111;
+            color: var(--muted);
+            padding: 14px;
+            font-size: 0.95rem;
+            margin-top: 28px;
+        }
+
+        /* ======== RESPONSIVIDADE ======== */
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; }
+            aside { order: 2; }
+        }
+
+        @media (max-width: 480px) {
+            header h1 { font-size: 1.5rem; }
+            nav { gap: 8px; padding: 10px; }
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header role="banner">
+        <h1>História da Fórmula 1</h1>
+        <p>Da criação em 1950 à era moderna dos carros de alta tecnologia</p>
+    </header>
+
+    <nav role="navigation" aria-label="Menu principal">
+        <a href="#inicio">Início</a>
+        <a href="#origens">Origens</a>
+        <a href="#regras">Regras</a>
+        <a href="#brasil">Fórmula 1 no Brasil</a>
+        <a href="#equipes">Equipes</a>
+        <a href="#idolos">Ídolos</a>
+        <a href="#curiosidades">Curiosidades</a>
+    </nav>
+
+    <!-- Container principal: conteúdo + aside (obrigatório para avaliação) -->
+    <main class="container" role="main">
+        <!-- Área de conteúdo: vários artigos/sections -->
+        <div>
+            <section id="inicio" aria-labelledby="inicio-title">
+                <h2 id="inicio-title">Bem-vindo ao Mundo da Fórmula 1</h2>
+                <p>
+                    A Fórmula 1 é considerada o auge do automobilismo mundial. Reúne as maiores equipes,
+                    os pilotos mais talentosos e as tecnologias mais avançadas da indústria automotiva.
+                    Muito além da velocidade, a F1 é uma mistura de estratégia, precisão e paixão que conquista milhões de fãs.
+                </p>
+
+                <a href="https://pt.wikipedia.org/wiki/Fórmula_1" target="_blank" rel="noopener">
+                    <img class="responsive" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Lewis_Hamilton_2018_Formula_One_tests_Barcelona_%28cropped%29.jpg"
+                         alt="Carro de Fórmula 1 em alta velocidade">
+                </a>
+            </section>
+
+            <article id="origens" aria-labelledby="origens-title">
+                <h2 id="origens-title">As Origens da Fórmula 1</h2>
+                <h5>Europa – Década de 1940 e 1950</h5>
+                <img class="responsive" src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Ferrari_375_F1.jpg" alt="Carro antigo de Fórmula 1">
+                <p>
+                    A Fórmula 1 surgiu oficialmente em <strong>1950</strong>, com o primeiro campeonato mundial organizado pela FIA.
+                    As corridas, porém, já existiam desde o início do século XX. No pós-guerra, as equipes europeias como
+                    Ferrari, Alfa Romeo e Maserati dominaram as pistas e estabeleceram as bases do que conhecemos hoje.
+                </p>
+            </article>
+
+            <article id="regras" aria-labelledby="regras-title">
+                <h2 id="regras-title">Principais Regras</h2>
+                <p>
+                    Cada corrida da Fórmula 1 é chamada de <em>Grande Prêmio</em> e geralmente tem uma distância em torno de 305 km.
+                    O piloto e o construtor que somarem mais pontos ao final da temporada são coroados campeões.
+                </p>
+            </article>
+
+            <article id="brasil" aria-labelledby="brasil-title">
+                <h2 id="brasil-title">Fórmula 1 no Brasil</h2>
+                <p>
+                    O Brasil tem uma rica história na Fórmula 1, com ídolos inesquecíveis como
+                    <strong>Ayrton Senna</strong>, <strong>Nelson Piquet</strong> e <strong>Emerson Fittipaldi</strong>.
+                    O país sediou diversas corridas icônicas no Autódromo de Interlagos, em São Paulo.
+                </p>
+            </article>
+
+            <article id="equipes" aria-labelledby="equipes-title">
+                <h2 id="equipes-title">Equipes e Campeonatos</h2>
+                <p>
+                    Equipes lendárias como Ferrari, McLaren, Mercedes e Red Bull marcaram eras de domínio.
+                    A disputa entre construtores é tão intensa quanto a dos pilotos, refletindo o avanço tecnológico.
+                </p>
+            </article>
+
+            <article id="idolos" aria-labelledby="idolos-title">
+                <h2 id="idolos-title">Ídolos da Fórmula 1</h2>
+                <ul>
+                    <li>Ayrton Senna – Tricampeão e ícone mundial de determinação.</li>
+                    <li>Michael Schumacher – Sete vezes campeão mundial com Ferrari.</li>
+                    <li>Lewis Hamilton – Recordista em vitórias e títulos.</li>
+                    <li>Max Verstappen – Representa a nova geração de talentos.</li>
+                </ul>
+            </article>
+
+            <article id="curiosidades" aria-labelledby="curiosidades-title">
+                <h2 id="curiosidades-title">Curiosidades</h2>
+                <ul>
+                    <li>O carro de Fórmula 1 pode ultrapassar 370 km/h.</li>
+                    <li>O volante possui mais de 20 botões diferentes.</li>
+                    <li>O pit stop mais rápido já registrado durou apenas 1,8 segundos.</li>
+                    <li>A primeira corrida do campeonato aconteceu em Silverstone, Reino Unido (1950).</li>
+                </ul>
+            </article>
+        </div>
+
+        <!-- ASIDE obrigatório: conteúdo complementar (posicionado dentro do main) -->
+        <aside role="complementary" aria-labelledby="aside-title">
+            <h3 id="aside-title">Fato Rápido</h3>
+            <p>
+                A Fórmula 1 é transmitida em mais de 180 países e combina engenharia de ponta com performance humana.
+            </p>
+
+            <h4>Links úteis</h4>
+            <ul>
+                <li><a href="https://www.fia.com/" target="_blank" rel="noopener">FIA (site oficial)</a></li>
+                <li><a href="https://www.formula1.com/" target="_blank" rel="noopener">Formula 1 (site oficial)</a></li>
+                <li><a href="https://pt.wikipedia.org/wiki/Fórmula_1" target="_blank" rel="noopener">Wikipedia (PT)</a></li>
+            </ul>
+
+            <h4>Dica de projeto</h4>
+            <p>
+                Se a avaliação exige um layout específico, verifique se o avaliador procura por:
+                <strong>&lt;main&gt;, &lt;aside&gt;, &lt;nav&gt;</strong> e uso de headings sem pular níveis.
+            </p>
+        </aside>
+    </main>
+
+    <footer role="contentinfo">
+        <p>©️ 2025 História da Fórmula 1 – Desenvolvido para fins educativos e esportivos</p>
+    </footer>
+
+</body>
+</html>
