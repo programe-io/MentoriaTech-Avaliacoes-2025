@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academia PowerFit</title>
+  <style>
+    /* Fonte Arial e fundo preto */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: #eee;
+    }
+
+    /* Cabeçalho */
+    header {
+      background-color: #000;
+      padding: 30px;
+      text-align: center;
+      border-bottom: 2px solid #444;
+    }
+
+    header h1 {
+      font-size: 3em;
+      color: #f39c12;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #ccc;
+    }
+
+    /* Seção de treinos */
+    section {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      color: #f39c12;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #222;
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(243, 156, 18, 0.5);
+    }
+
+    .card h3 {
+      color: #f39c12;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      color: #ccc;
+      font-size: 0.95em;
+      line-height: 1.4;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #f39c12;
+      color: #111;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #e67e22;
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 20px;
+      border-top: 2px solid #444;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <h1>PowerFit Academia</h1>
+    <p>Transforme seu corpo, fortaleça sua mente.</p>
+  </header>
+
+  <section>
+    <h2>Nossos Treinos</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Musculação</h3>
+        <p>Treinos completos para hipertrofia, força e resistência muscular.</p>
+        <a href="#" class="btn">Saiba Mais</a>
+      </div>
+      <div class="card">
+        <h3>Cardio</h3>
+        <p>Exercícios aeróbicos para queimar gordura e melhorar a saúde do coração.</p>
+        <a href="#" class="btn">Saiba Mais</a>
+      </div>
+      <div class="card">
+        <h3>Yoga & Flexibilidade</h3>
+        <p>Aumente sua flexibilidade, relaxamento e equilíbrio mental.</p>
+        <a href="#" class="btn">Saiba Mais</a>
+      </div>
+      <div class="card">
+        <h3>Treino Funcional</h3>
+        <p>Movimentos naturais que melhoram força, coordenação e resistência.</p>
+        <a href="#" class="btn">Saiba Mais</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 PowerFit Academia. Todos os direitos reservados.
+  </footer>
+<script src="script.js"></script></body>
+</html>
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">PowerFit</div>
+  <ul class="nav-links">
+    <li><a href="#home">Início</a></li>
+    <li><a href="#treinos">Treinos</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+</nav>
+
+<style>
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 15px 20px;
+    border-bottom: 2px solid #444;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .navbar .logo {
+    font-family: Arial, sans-serif;
+    color: #f39c12;
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+
+  .nav-links li a {
+    text-decoration: none;
+    color: #eee;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  .nav-links li a:hover {
+    color: #f39c12;
+  }
+
+  /* Menu responsivo */
+  .menu-toggle {
+    display: none;
+    font-size: 2em;
+    color: #f39c12;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #111;
+      flex-direction: column;
+      width: 200px;
+      border-left: 2px solid #444;
+      border-bottom: 2px solid #444;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+      transform: translateX(0);
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  // Função para abrir/fechar menu no mobile
+  function toggleMenu() {
+    const nav = document.querySelector('.nav-links');
+    nav.classList.toggle('active');
+  }
+</script>
+<!-- Aside -->
+<aside class="sidebar">
+  <h3>Dicas Rápidas</h3>
+  <ul>
+    <li><a href="#musculacao">Musculação</a></li>
+    <li><a href="#cardio">Cardio</a></li>
+    <li><a href="#yoga">Yoga & Flexibilidade</a></li>
+    <li><a href="#funcional">Treino Funcional</a></li>
+  </ul>
+
+  <h3>Promoções</h3>
+  <p>Assine nosso plano anual e ganhe 2 meses grátis!</p>
+
+  <button class="btn">Saiba Mais</button>
+</aside>
+
+<style>
+  /* Estilo do Aside */
+  .sidebar {
+    background-color: #111;
+    color: #eee;
+    padding: 20px;
+    border: 2px solid #444;
+    border-radius: 10px;
+    width: 250px;
+    font-family: Arial, sans-serif;
+    position: sticky;
+    top: 20px;
+  }
+
+  .sidebar h3 {
+    color: #f39c12;
+    margin-bottom: 15px;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .sidebar ul li {
+    margin-bottom: 10px;
+  }
+
+  .sidebar ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .sidebar ul li a:hover {
+    color: #f39c12;
+  }
+
+  .sidebar p {
+    font-size: 0.95em;
+    margin-bottom: 15px;
+  }
+
+  .sidebar .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: #111;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .sidebar .btn:hover {
+    background-color: #e67e22;
+  }
+
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      margin-bottom: 20px;
+      position: relative;
+      top: 0;
+    }
+  }
+</style>
+<!-- Main -->
+<main class="main-content">
+  <!-- Seção de destaque -->
+  <section id="home" class="hero">
+    <h2>Bem-vindo à PowerFit Academia</h2>
+    <p>Transforme seu corpo, fortaleça sua mente e alcance seus objetivos!</p>
+    <button class="btn" onclick="alert('Vamos treinar!')">Comece Agora</button>
+  </section>
+
+  <!-- Seção de Treinos -->
+  <section id="treinos" class="treinos">
+    <h2>Nossos Treinos</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Musculação</h3>
+        <p>Treinos completos para força, resistência e hipertrofia muscular.</p>
+        <button class="btn" onclick="cardClick('Musculação')">Saiba Mais</button>
+      </div>
+      <div class="card">
+        <h3>Cardio</h3>
+        <p>Exercícios aeróbicos para queimar gordura e melhorar a saúde cardiovascular.</p>
+        <button class="btn" onclick="cardClick('Cardio')">Saiba Mais</button>
+      </div>
+      <div class="card">
+        <h3>Yoga & Flexibilidade</h3>
+        <p>Aumente sua flexibilidade, equilíbrio e relaxamento mental.</p>
+        <button class="btn" onclick="cardClick('Yoga & Flexibilidade')">Saiba Mais</button>
+      </div>
+      <div class="card">
+        <h3>Treino Funcional</h3>
+        <p>Movimentos naturais que melhoram força, coordenação e resistência.</p>
+        <button class="btn" onclick="cardClick('Treino Funcional')">Saiba Mais</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Sobre -->
+  <section id="sobre" class="sobre">
+    <h2>Sobre Nós</h2>
+    <p>A PowerFit Academia é especializada em treinos personalizados, ajudando cada aluno a atingir seu máximo potencial. Com profissionais experientes e ambiente moderno, oferecemos segurança e resultados.</p>
+  </section>
+
+  <!-- Seção Contato -->
+  <section id="contato" class="contato">
+    <h2>Contato</h2>
+    <form onsubmit="alert('Mensagem enviada!'); return false;">
+      <input type="text" placeholder="Seu Nome" required>
+      <input type="email" placeholder="Seu Email" required>
+      <textarea placeholder="Sua Mensagem" required></textarea>
+      <button class="btn" type="submit">Enviar</button>
+    </form>
+  </section>
+</main>
+
+<style>
+  .main-content {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+
+  section {
+    margin-bottom: 80px;
+  }
+
+  section h2 {
+    color: #f39c12;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+
+  section p {
+    color: #ccc;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    font-size: 1.1em;
+  }
+
+  /* Hero */
+  .hero {
+    background-color: #111;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #444;
+  }
+
+  .hero .btn {
+    margin-top: 20px;
+  }
+
+  /* Cards */
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .card {
+    background-color: #222;
+    border: 1px solid #444;
+    border-radius: 12px;
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(243, 156, 18, 0.5);
+  }
+
+  .card h3 {
+    color: #f39c12;
+    margin-bottom: 15px;
+  }
+
+  .card p {
+    color: #ccc;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+  }
+
+  /* Form Contato */
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+    gap: 15px;
+  }
+
+  form input, form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #eee;
+    font-size: 1em;
+    resize: none;
+  }
+
+  form input:focus, form textarea:focus {
+    outline: 2px solid #f39c12;
+  }
+
+  form button {
+    align-self: center;
+  }
+
+  @media (max-width: 768px) {
+    .cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
+<script>
+  function cardClick(nomeTreino) {
+    alert("Você clicou em: " + nomeTreino);
+  }
+</script>
+<!-- Article -->
+<article class="blog-article">
+  <h2>Dica da Semana: Aumente sua Força com Treinos Compostos</h2>
+  <p>Treinos compostos envolvem múltiplos grupos musculares ao mesmo tempo, como agachamento, levantamento terra e supino. Eles ajudam a desenvolver força, queimar mais calorias e melhorar a coordenação. Inclua pelo menos 3 exercícios compostos em sua rotina semanal para resultados rápidos e seguros.</p>
+  
+  <p>Não se esqueça de alongar antes e depois do treino, manter a postura correta e ajustar os pesos de acordo com sua capacidade. Consultar um instrutor profissional é sempre recomendado para prevenir lesões.</p>
+  
+  <button class="btn" onclick="alert('Confira mais dicas em nosso blog!')">Leia Mais</button>
+</article>
+
+<style>
+  .blog-article {
+    background-color: #111;
+    border: 2px solid #444;
+    border-radius: 10px;
+    padding: 30px 20px;
+    margin: 40px auto;
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+    color: #ccc;
+  }
+
+  .blog-article h2 {
+    color: #f39c12;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .blog-article p {
+    font-size: 1.05em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+  .blog-article .btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: #111;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .blog-article .btn:hover {
+    background-color: #e67e22;
+  }
+
+  @media (max-width: 768px) {
+    .blog-article {
+      padding: 20px 15px;
+      margin: 20px auto;
+    }
+
+    .blog-article h2 {
+      font-size: 1.6em;
+    }
+  }
+</style>
+<!-- Imagem de destaque -->
+<div class="image-container">
+  <img src="https://via.placeholder.com/600x400.png?text=Academia+PowerFit" alt="Treino na academia" class="styled-img">
+  <p class="caption">Treine com foco e intensidade na PowerFit Academia</p>
+</div>
+
+<style>
+  .image-container {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 700px;
+    font-family: Arial, sans-serif;
+  }
+
+  .styled-img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: 4px solid #f39c12;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .styled-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(243, 156, 18, 0.6);
+  }
+
+  .caption {
+    color: #ccc;
+    margin-top: 10px;
+    font-size: 1em;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .image-container {
+      margin: 20px auto;
+    }
+
+    .caption {
+      font-size: 0.9em;
+    }
+  }
+</style>
