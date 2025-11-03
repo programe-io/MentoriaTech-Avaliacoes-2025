@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loja Atleta — Equipamentos & Acessórios para Performance</title>
+  <meta name="description" content="Loja online especializada em itens para atletas: roupas técnicas, calçados, equipamentos de treino, suplementação e acessórios." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#1f8ef1;
+      --dark:#0f1724;
+      --muted:#9aa4b2;
+      --card:#ffffff;
+      --bg:#f6f8fa;
+      --glass: rgba(255,255,255,0.6);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--dark);line-height:1.45}
+    header{background:linear-gradient(90deg,var(--accent),#c70101);color:white;padding:18px 20px;position:sticky;top:0;z-index:40}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .logo{font-weight:800;letter-spacing:0.3px}
+    nav a{color:white;margin:0 10px;text-decoration:none;font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr 460px;gap:28px;padding:44px 0;align-items:center}
+    .hero h1{font-size: clamp(28px,4vw,44px);margin:0 0 12px}
+    .hero p{color:rgba(255,255,255,0.95);margin:0 0 18px}
+    .cta{background:white;color:var(--accent);padding:12px 18px;border-radius:9px;font-weight:700;border:none;cursor:pointer}
+
+    .searchbar{display:flex;margin-top:14px}
+    .searchbar input{flex:1;padding:10px;border-radius:8px 0 0 8px;border:none}
+    .searchbar button{padding:10px 14px;border:none;border-radius:0 8px 8px 0;background:rgba(0,0,0,0.08);cursor:pointer}
+
+    main{padding:28px 0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+
+    .card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(16,24,40,0.06);overflow:hidden}
+    .product-img{width:100%;height:200px;background:#eee;border-radius:10px;object-fit:cover}
+    .price{font-weight:800;color:var(--accent);margin-top:8px}
+    .small{font-size:14px;color:var(--muted)}
+
+    .filters{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+    .pill{background:white;padding:8px 10px;border-radius:999px;box-shadow:0 4px 10px rgba(16,24,40,0.04);cursor:pointer}
+
+    .section{margin:36px 0}
+    .two-col{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
+
+    footer{padding:28px 0;border-top:1px solid #e6eef7;margin-top:34px}
+
+    /* product modal / cart */
+    .modal{position:fixed;inset:0;background:rgba(4,8,14,0.45);display:none;align-items:center;justify-content:center;padding:20px}
+    .modal.open{display:flex}
+    .modal-card{background:white;border-radius:12px;padding:18px;max-width:900px;width:100%;display:grid;grid-template-columns:360px 1fr;gap:18px}
+
+    .btn{background:var(--accent);color:white;padding:10px 12px;border-radius:8px;border:none;cursor:pointer}
+
+    /* responsive */
+    @media (max-width:880px){.hero{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.modal-card{grid-template-columns:1fr}}
+
+    /* quick product badges */
+    .badge{display:inline-block;padding:6px 8px;border-radius:8px;font-weight:700;font-size:13px}
+
+    /* small components */
+    .row{display:flex;gap:10px;align-items:center}
+    .muted{color:var(--muted)}
+    .chip{padding:6px 9px;border-radius:8px;background:#f3f7fb;font-weight:600}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="left row">
+        <div class="logo">Loja <span style="color:rgba(255,255,255,0.95)">Atleta</span></div>
+        <nav style="margin-left:18px">
+          <a href="#produtos">Produtos</a>
+          <a href="#categorias">Categorias</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </div>
+      <div class="right row">
+        <div class="small">Atendimento 24/7</div>
+        <button class="pill" onclick="openCart()">Carrinho (<span id="cart-count">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container hero">
+    <div>
+      <h1>Equipamentos e acessórios para atletas. Performance, durabilidade e ciência.</h1>
+      <p>Roupas técnicas, calçados, equipamentos de treino e acessórios testados por atletas. Descrições detalhadas, guias de tamanho e avaliações para você escolher com segurança.</p>
+      <div class="row">
+        <button class="cta" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">Ver produtos</button>
+        <a class="small" style="margin-left:14px;color:rgba(255,255,255,0.95);text-decoration:underline;cursor:pointer" href="#sobre">Saiba mais</a>
+      </div>
+
+      <div style="margin-top:18px" class="searchbar">
+        <input id="search" placeholder="Buscar: tênis, bandagem, whey, garrafa térmica..." />
+        <button onclick="applySearch()">🔍</button>
+      </div>
+
+      <div style="margin-top:12px" class="row small muted">
+        <div class="chip">Frete grátis acima de R$250</div>
+        <div class="chip">30 dias para troca</div>
+      </div>
+    </div>
+    <div>
+      <img src="https://www.mktesportivo.com/wp-content/uploads/2025/08/clark_Easy-Resize.com-1-1024x644.jpg" alt="atleta" style="width:100%;border-radius:12px;object-fit:cover;height:360px" />
+    </div>
+  </div>
+
+  <main class="container">
+    <section id="produtos" class="section">
+      <div class="row" style="justify-content:space-between;align-items:end">
+        <div>
+          <h2>Produtos em destaque</h2>
+          <div class="small muted">Escolha por categoria, objetivo ou tecnologia.</div>
+        </div>
+        <div class="filters">
+          <div class="pill" onclick="filter('all')">Todos</div>
+          <div class="pill" onclick="filter('tenis')">Tênis</div>
+          <div class="pill" onclick="filter('roupas')">Roupas</div>
+          <div class="pill" onclick="filter('acessorios')">Acessórios</div>
+          <div class="pill" onclick="filter('equipamentos')">Equipamentos</div>
+        </div>
+      </div>
+
+      <div id="products-grid" class="grid" style="margin-top:18px">
+        <!-- product cards generated by JS -->
+      </div>
+    </section>
+
+    <section id="categorias" class="section two-col">
+      <div>
+        <h3>Guia de categorias</h3>
+        <p class="muted">Dicas rápidas para escolher o material certo baseado no seu esporte e objetivo.</p>
+
+        <div style="margin-top:12px" class="card">
+          <h4>Tênis — corrida e pista</h4>
+          <p class="small">Escolha entre amortecimento (treinos longos) e resposta (provas/velocidade). Veja drop, peso e tecnologia da sola.</p>
+          <ul>
+            <li><strong>Drop:</strong> 0–4mm para velocidade; 6–10mm para conforto.</li>
+            <li><strong>Uso:</strong> treino vs competição.</li>
+            <li><strong>Material:</strong> malha respirável, reforços nas áreas de impacto.</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:12px" class="card">
+          <h4>Roupas técnicas</h4>
+          <p class="small">Procurar tecidos com propriedades de afastamento de suor, compressão quando útil e costuras planas para reduzir atrito.</p>
+        </div>
+
+        <div style="margin-top:12px" class="card">
+          <h4>Suplementação (Básico)</h4>
+          <p class="small">Whey protein, creatina monohidratada, vitaminas e BCAAs são os mais estudados. Consulte um nutricionista esportivo para doses individualizadas.</p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h4>Guia de tamanhos</h4>
+          <p class="small">Use sua medida real do pé e consulte a tabela. As tabelas abaixo ajudam a comparar com marcas internacionais.</p>
+          <table style="width:100%;border-collapse:collapse;margin-top:8px">
+            <tr><td class="small muted">BR</td><td class="small muted">CM</td></tr>
+            <tr><td>38</td><td>24.5</td></tr>
+            <tr><td>39</td><td>25.0</td></tr>
+            <tr><td>40</td><td>25.5</td></tr>
+            <tr><td>41</td><td>26.0</td></tr>
+            <tr><td>42</td><td>26.5</td></tr>
+          </table>
+        </div>
+
+        <div style="margin-top:12px" class="card">
+          <h4>Entrega & Devolução</h4>
+          <p class="small">Enviamos para todo o Brasil com seguro opcional. Troca grátis em 30 dias para itens com defeito.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="conteudo" class="section">
+      <h3>Artigos técnicos e avaliações</h3>
+      <div class="grid" style="margin-top:12px">
+        <div class="card">
+          <img src="https://cdnv2.moovin.com.br/margilcalcados/imagens/produtos/det/-66eb130e93a73.jpeg" class="product-img" alt="artigo 1" />
+          <h4>A escolha do tênis de competição</h4>
+          <p class="small muted">Comparativo entre tecnologias de entressola, peso e impacto em sprints e provas de meia distância.</p>
+          <a class="small" href="#">Leia mais →</a>
+        </div>
+        <div class="card">
+          <img src="https://www.dominusfitness.com.br/cdn/shop/files/Camisa_de_compress_o_masculina_maxdry_vibe1.webp?v=1757880934" class="product-img" alt="artigo 2" />
+          <h4>Roupas compressivas: quando usar</h4>
+          <p class="small muted">Quando a compressão ajuda na recuperação e quando é apenas marketing.</p>
+          <a class="small" href="#">Leia mais →</a>
+        </div>
+        <div class="card">
+          <img src="https://images.tcdn.com.br/img/img_prod/698210/kit_whey_blend_900g_bcaa_100_caps_creatina_100g_coqueteleira_max_titanium_2583_1_ff1911dc595e157c2a8ef3b46b504986.jpg" class="product-img" alt="artigo 3" />
+          <h4>Suplementos: evidências e mitos</h4>
+          <p class="small muted">Sumário das evidências científicas para creatina, cafeína e whey.</p>
+          <a class="small" href="#">Leia mais →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="card">
+        <h3>Sobre a Loja</h3>
+        <p class="small">Somos uma equipe de ex-atletas, fisiologistas do exercício e designers de produto — nosso objetivo é oferecer equipamentos que realmente funcionem em treino e competição.</p>
+        <p class="small">Cada produto passa por análise técnica; as páginas de produto incluem especificações, vídeos e avaliações de atletas reais.</p>
+      </div>
+    </section>
+
+    <section id="contato" class="section two-col">
+      <div class="card">
+        <h3>Fale conosco</h3>
+        <p class="small muted">Suporte via chat, e-mail e telefone. Preencha o formulário para orçamentos e parcerias com clubes.</p>
+        <form onsubmit="event.preventDefault();alert('Obrigado! Entraremos em contato.')">
+          <label class="small">Nome</label>
+          <input required style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #e6eef7" />
+          <label class="small">E-mail</label>
+          <input type="email" required style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #e6eef7" />
+          <label class="small">Mensagem</label>
+          <textarea required style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #e6eef7" rows="4"></textarea>
+          <div style="margin-top:8px"><button class="btn">Enviar mensagem</button></div>
+        </form>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h4>Newsletter</h4>
+          <p class="small muted">Receba lançamentos e cupons exclusivos.</p>
+          <div style="margin-top:8px">
+            <input placeholder="seu@email.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef7" />
+            <button class="btn" style="width:100%;margin-top:8px">Assinar</button>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="card">
+          <h4>Localização</h4>
+          <p class="small muted">Matriz: Fortaleza, CE — Enviamos para todo o Brasil.</p>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <div class="container row" style="justify-content:space-between;align-items:center">
+        <div class="small muted">© 2025 Loja Atleta — Todos os direitos reservados</div>
+        <div class="row small muted">Política de Privacidade • Termos • Atendimento</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- modal product preview / cart -->
+  <div id="modal" class="modal" onclick="closeModal(event)">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <div style="padding-right:6px">
+        <img id="modal-img" src="" style="width:100%;height:320px;object-fit:cover;border-radius:8px" />
+      </div>
+      <div>
+        <h3 id="modal-title">Título do produto</h3>
+        <div class="small muted" id="modal-desc">Descrição técnica breve do produto com materiais e uso recomendado.</div>
+        <div class="price" id="modal-price">R$ 0,00</div>
+        <div style="margin-top:12px">
+          <label class="small">Quantidade</label>
+          <input id="qty" type="number" value="1" min="1" style="width:80px;padding:8px;margin-top:6px;border-radius:8px;border:1px solid #e6eef7" />
+        </div>
+        <div style="margin-top:16px" class="row">
+          <button class="btn" onclick="addToCart()">Adicionar ao carrinho</button>
+          <button class="pill" onclick="closeModal()">Fechar</button>
+        </div>
+        <div style="margin-top:18px" class="small muted">Informações técnicas:</div>
+        <ul class="small muted" id="modal-tech">
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // amostra de produtos (pode ser substituído por chamadas API)
+    const products = [
+      {id:1,name:'Tênis Puma Dagger',category:'tenis',price:499.9,img:'https://m.media-amazon.com/images/I/71WR+cqTKVL.jpg',desc:'Leve e responsivo, ideal para provas',tech:['Peso: 210g','Drop: 6mm','Material: malha respirável']},
+      {id:2,name:'Calça térmica NIKE pro',category:'roupas',price:129.9,img:'https://sportness.com.br/cdn/shop/files/sizesw_29.webp?v=1739989608&width=2048',desc:'Compressão localizada para suporte muscular',tech:['Composição: 78% poliamida','Compressão graduada']},
+      {id:3,name:'Nike zoom maxfly 2',category:'acessorios',price:999.90,img:'https://i.ytimg.com/vi/cGHyg5rp6PQ/maxresdefault.jpg',desc:'Mantém a temperatura por horas',tech:['Capacidade: 1L','Material: inox 304']},
+      {id:4,name:'Bandagem Elástica 5m',category:'acessorios',price:29.9,img:'https://images.tcdn.com.br/img/img_prod/1041855/bandagem_elastica_adesiva_kinesio_5cm_x_5m_4_unidades_457_2_28e8427727b44b62e32bcf6135bd4b70.jpg',desc:'Suporte e compressão para lesões leves',tech:['Largura: 5cm','Material: elástico resistente']},
+      {id:5,name:'Kettlebell 12kg',category:'equipamentos',price:199.9,img:'https://pulsefitness.com/wp-content/uploads/2019/10/38-545-12kg-Black-Rubber-Covered-Kettlebell-Functional-Accessories.jpg',desc:'Ideal para força e potência',tech:['Peso: 12kg','Revestimento: pó de vinil']}
+    ];
+
+    const grid = document.getElementById('products-grid');
+    const cart = [];
+
+    function formatPrice(v){return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+
+    function render(productsList){
+      grid.innerHTML='';
+      productsList.forEach(p=>{
+        const div = document.createElement('div'); div.className='card';
+        div.innerHTML = `
+          <img src="${p.img}" class="product-img" alt="${p.name}" />
+          <h4>${p.name}</h4>
+          <div class="small muted">${p.desc}</div>
+          <div class="price">${formatPrice(p.price)}</div>
+          <div style="margin-top:10px" class="row">
+            <button class="btn" onclick="openModal(${p.id})">Ver</button>
+            <button class="pill" onclick="quickAdd(${p.id})">Comprar</button>
+          </div>
+        `;
+        grid.appendChild(div);
+      })
+    }
+
+    function filter(cat){
+      if(cat==='all') render(products);
+      else render(products.filter(p=>p.category===cat));
+    }
+
+    function applySearch(){
+      const q = document.getElementById('search').value.trim().toLowerCase();
+      if(!q) return render(products);
+      render(products.filter(p=> (p.name+p.desc+(p.tech||[]).join(' ')).toLowerCase().includes(q)));
+    }
+
+    // modal
+    let currentProduct=null;
+    function openModal(id){
+      const p = products.find(x=>x.id===id);
+      if(!p) return;
+      currentProduct = p;
+      document.getElementById('modal-img').src=p.img;
+      document.getElementById('modal-title').innerText=p.name;
+      document.getElementById('modal-desc').innerText=p.desc;
+      document.getElementById('modal-price').innerText=formatPrice(p.price);
+      const tech = document.getElementById('modal-tech'); tech.innerHTML=''; p.tech.forEach(t=>{const li=document.createElement('li');li.innerText=t;tech.appendChild(li)});
+      document.getElementById('qty').value=1;
+      document.getElementById('modal').classList.add('open');
+    }
+    function closeModal(e){
+      if(e && e.target && e.target.id==='modal'){
+        document.getElementById('modal').classList.remove('open');
+      } else if(!e) document.getElementById('modal').classList.remove('open');
+    }
+
+    function quickAdd(id){
+      const p = products.find(x=>x.id===id);
+      cart.push({id:p.id, name:p.name, price:p.price, qty:1});
+      updateCartCount();
+      alert(p.name + ' adicionado ao carrinho');
+    }
+
+    function addToCart(){
+      const qty = parseInt(document.getElementById('qty').value||1,10);
+      cart.push({id:currentProduct.id,name:currentProduct.name,price:currentProduct.price,qty});
+      updateCartCount();
+      closeModal();
+      alert(currentProduct.name + ' adicionado ao carrinho');
+    }
+
+    function updateCartCount(){
+      const count = cart.reduce((s,i)=>s+i.qty,0);
+      document.getElementById('cart-count').innerText = count;
+    }
+
+    function openCart(){
+      if(cart.length===0){alert('Carrinho vazio');return}
+      let summary = 'Carrinho:\n'; let total=0;
+      cart.forEach((it,i)=>{summary+=`${i+1}. ${it.name} x${it.qty} - ${formatPrice(it.price*it.qty)}\n`; total+=it.price*it.qty});
+      summary += `Total: ${formatPrice(total)}\n\nFinalizar compra? (sim/no)`;
+      const ok = confirm(summary);
+      if(ok) alert('Simulação finalizada — redirecionando para checkout (placeholder)');
+    }
+
+    // initial
+    render(products);
+  </script>
+<script src="script.js"></script></body>
+</html>
