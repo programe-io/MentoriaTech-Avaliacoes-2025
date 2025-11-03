@@ -1,113 +1,105 @@
-/* Reset básico */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
+/* Fundo */
 body {
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-  background: linear-gradient(to bottom, #1e3a8a, #0f172a);
+  background: linear-gradient(to bottom, #0a2a66, #1a2a64);
   color: #fff;
 }
 
-/* Header */
-header {
+/* Navbar */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  padding: 15px 50px;
+  background-color: #0d1b52;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-header nav a {
-  margin-left: 1rem;
+.logo {
+  font-size: 20px;
   font-weight: bold;
-  text-decoration: none;
-  color: #fff;
+  letter-spacing: 1px;
 }
 
-header div {
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-/* Main container */
-main {
+.navbar ul {
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #6ea8ff;
+}
+
+/* Container de Cards */
+.container {
+  display: flex;
   justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 40px 20px;
 }
 
 /* Card */
 .card {
-  background-color: #1f2937;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
-  max-width: 300px;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  background-color: #1e2a48;
+  border-radius: 10px;
+  width: 300px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
 }
 
-/* Card header */
-.card-header {
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Usuário */
+.user-info {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-.card-header img {
-  width: 48px;
-  height: 48px;
+.avatar {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  border: 2px solid #3b82f6;
-  object-fit: cover;
 }
 
-.card-header h2 {
-  font-size: 1.5rem;
-}
-
-/* Card image */
-.card img.card-image {
+/* Imagem do post */
+.post-img {
   width: 100%;
-  display: block;
-  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-/* Card content */
-.card-content {
-  padding: 1rem;
-  flex-grow: 1;
+/* Texto */
+.card p {
+  font-size: 14px;
+  color: #ddd;
+  margin-bottom: 10px;
 }
 
-.card-content p {
-  font-size: 0.875rem;
-  text-align: justify;
-}
-
-.card-content span {
-  display: block;
-  margin-top: 1rem;
-  text-align: right;
-  font-size: 0.75rem;
-  color: #d1d5db;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  main {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    max-width: 90%;
-  }
+.time {
+  font-size: 12px;
+  color: #aaa;
 }
