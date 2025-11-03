@@ -1,164 +1,147 @@
-:root {
-  --cor-acento: #16a34a; /* verde musculação */
-  --texto: #111;
-  --bg: #ffffff;
-  --bg-suave: #f3f4f6;
-  --borda: #e5e7eb;
-  --rodape-bg: #0f172a;
-  --rodape-texto: #e5e7eb;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Academia Fitness Pro — Saúde, Força e Bem-Estar</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="limite topo">
+      <div>
+        <h1>Academia Fitness Pro</h1>
+        <p class="sub">Treine, evolua e transforme sua saúde todos os dias.</p>
+      </div>
+      <div class="util" aria-label="Ferramentas do site">
+        <button class="btn" id="btnTema">🌓 Tema</button>
+        <button class="btn" id="btnFonte">🔤 Fonte</button>
+        <button class="btn" id="btnTopo">⤴️ Topo</button>
+      </div>
+    </div>
 
-/* Tema escuro */
-html.escuro {
-  --texto: #f3f4f6;
-  --bg: #0b1020;
-  --bg-suave: #121a33;
-  --borda: #233055;
-  --rodape-bg: #070b18;
-  --rodape-texto: #cbd5e1;
-}
+    <nav class="limite" aria-label="Menu principal">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#treinos">Treinos</a></li>
+        <li><a href="#nutricao">Nutrição</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-* { box-sizing: border-box; }
+  <div class="limite" id="inicio">
+    <main>
+      <section aria-label="Artigos">
+        <!-- Artigo 1 -->
+        <article class="cartao" id="post1">
+          <h2>Treino da Semana: Full Body Power</h2>
+          <div class="meta">Publicado em 10/10/2025 · <span class="tag">Treino</span><span class="tag">Força</span></div>
+          <img src="https://images.unsplash.com/photo-1594737625785-5a5f1f0fa2f2?auto=format&fit=crop&w=800&q=60" alt="Pessoa fazendo treino de corpo inteiro" style="width:100%; border-radius:10px; margin-bottom:10px;">
+          <p>Um circuito completo que trabalha todos os grupos musculares com intensidade e eficiência. Ideal para quem busca resultados rápidos e melhora no condicionamento físico.</p>
+          <ul>
+            <li>Tempo total: 45 minutos;</li>
+            <li>Equipamentos: halteres, barra e peso corporal;</li>
+            <li>Nível: intermediário.</li>
+          </ul>
+        </article>
 
-body {
-  margin: 0;
-  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: var(--texto);
-  background: var(--bg);
-}
+        <!-- Artigo 2 -->
+        <article class="cartao" id="post2">
+          <h2>Dicas de Nutrição Pré-Treino</h2>
+          <div class="meta">Publicado em 08/10/2025 · <span class="tag">Nutrição</span><span class="tag">Saúde</span></div>
+          <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&q=60" alt="Alimentos saudáveis para pré-treino" style="width:100%; border-radius:10px; margin-bottom:10px;">
+          <p>Saiba o que comer antes de treinar para garantir energia e evitar fadiga. Entenda a importância dos macronutrientes e o papel da hidratação.</p>
+        </article>
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: linear-gradient(0deg, var(--bg), var(--bg-suave));
-  border-bottom: 1px solid var(--borda);
-  backdrop-filter: saturate(1.2) blur(6px);
-}
+        <!-- Artigo 3 (Destaque) -->
+        <article class="cartao destaque" id="post3">
+          <h2>Guia: Montando seu Plano de Treino</h2>
+          <div class="meta">Publicado em 06/10/2025 · <span class="tag">Guia</span><span class="tag">Treino Personalizado</span></div>
+          <img src="https://share.google/2EKSaW4K3L1E6pq0p" alt="Pessoa planejando treino com planilha" style="width:100%; border-radius:10px; margin-bottom:10px;">
+          <p>Como escolher os melhores exercícios para o seu objetivo — hipertrofia, emagrecimento ou resistência. Inclui planilha semanal e dicas de progressão.</p>
+        </article>
 
-.limite { max-width: 1100px; margin: auto; padding: 12px 16px; }
+        <!-- Artigo 4 -->
+        <article class="cartao" id="post4">
+          <h2>Benefícios do Descanso Muscular</h2>
+          <div class="meta">Publicado em 01/10/2025 · <span class="tag">Recuperação</span><span class="tag">Saúde</span></div>
+          <img src="https://share.google/2EKSaW4K3L1E6pq0p" alt="Pessoa descansando após treino" style="width:100%; border-radius:10px; margin-bottom:10px;">
+          <p>O descanso é parte essencial dos resultados. Veja como o sono, alongamento e alimentação auxiliam na regeneração muscular e evitam lesões.</p>
+        </article>
+      </section>
 
-.topo {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: space-between;
-}
+      <!-- Aside -->
+      <aside aria-label="Conteúdo extra">
+        <div class="bloco">
+          <h3>Dicas Extras</h3>
+          <img src="https://share.google/2EKSaW4K3L1E6pq0p" alt="Exercícios extras" style="width:100%; border-radius:10px; margin-bottom:10px;">
+          <ul>
+            <li>Top 5 exercícios para pernas</li>
+            <li>Melhores alongamentos pós-treino</li>
+            <li>Playlist motivacional da semana</li>
+          </ul>
+        </div>
 
-h1 {
-  margin: 6px 0 0 0;
-  font-size: clamp(22px, 4vw, 32px);
-  color: var(--cor-acento);
-  letter-spacing: .3px;
-}
+        <div class="bloco ajuda" id="ajuda">
+          <h3>Ajuda</h3>
+          <p>• Use <strong>🌓 Tema</strong> para alternar claro/escuro.</p>
+          <p>• Use <strong>🔤 Fonte</strong> para aumentar o texto.</p>
+          <p>• Use <strong>⤴️ Topo</strong> para voltar rapidamente.</p>
+        </div>
 
-.sub { margin: 0; opacity: .8; font-size: .95rem; }
+        <div class="bloco" id="contato">
+          <h3>Contato</h3>
+          <p>Fale conosco: <a href="#" onclick="alert('Exemplo: contato@fitnesspro.example')">contato@fitnesspro.example</a></p>
+        </div>
+      </aside>
+    </main>
+  </div>
 
-nav ul {
-  display: flex;
-  gap: 10px;
-  list-style: none;
-  padding: 8px 0 0;
-  margin: 8px 0 0;
-  flex-wrap: wrap;
-}
+  <footer>
+    <div class="limite">
+      <strong>Academia Fitness Pro</strong> — Transformando vidas com saúde e movimento.
+      <div class="menu-inline" style="margin-top:10px">
+        <a href="#inicio">Início</a> ·
+        <a href="#treinos">Treinos</a> ·
+        <a href="#nutricao">Nutrição</a> ·
+        <a href="#planos">Planos</a> ·
+        <a href="#ajuda">Ajuda</a>
+      </div>
+      <p style="opacity:.7; margin-top:10px">© 2025 Academia Fitness Pro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
-nav a {
-  display: inline-block;
-  padding: 8px 12px;
-  border: 1px solid var(--borda);
-  text-decoration: none;
-  color: inherit;
-  border-radius: 10px;
-  background: var(--bg);
-}
+  <script>
+    document.getElementById('btnTema').addEventListener('click', ()=>{
+      document.documentElement.classList.toggle('escuro');
+      const msg = document.documentElement.classList.contains('escuro')
+        ? 'Tema escuro ativo' : 'Tema claro ativo';
+      console.log(msg);
+    });
 
-nav a:hover { border-color: var(--cor-acento); }
+    const cicloFontes = ['', 'fonte-grande', 'fonte-gigante'];
+    let idxFonte = 0;
+    document.getElementById('btnFonte').addEventListener('click', ()=>{
+      document.documentElement.classList.remove('fonte-grande', 'fonte-gigante');
+      idxFonte = (idxFonte + 1) % cicloFontes.length;
+      if(cicloFontes[idxFonte]) document.documentElement.classList.add(cicloFontes[idxFonte]);
+    });
 
-.util {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
-}
+    document.getElementById('btnTopo').addEventListener('click', ()=>{
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
 
-.btn {
-  border: 1px solid var(--borda);
-  background: var(--bg);
-  padding: 8px 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform .02s ease;
-}
-
-.btn:active { transform: translateY(1px); }
-
-main {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 18px;
-}
-
-@media (max-width: 960px) {
-  main { grid-template-columns: 1fr; }
-}
-
-.cartao {
-  background: var(--bg);
-  border: 1px solid var(--borda);
-  border-radius: 14px;
-  padding: 16px;
-  margin-bottom: 14px;
-}
-
-.cartao h2 { margin: 0 0 4px; font-size: 1.25rem; }
-
-.meta { font-size: .9rem; opacity: .8; margin-bottom: 8px; }
-
-.tag {
-  display: inline-block;
-  font-size: .78rem;
-  padding: 2px 8px;
-  border-radius: 999px;
-  border: 1px solid var(--borda);
-  margin-right: 6px;
-}
-
-.destaque { outline: 2px solid var(--cor-acento); outline-offset: 2px; }
-
-aside .bloco {
-  background: var(--bg-suave);
-  border: 1px solid var(--borda);
-  border-radius: 14px;
-  padding: 14px;
-  margin-bottom: 14px;
-}
-
-aside h3 { margin: 0 0 8px; }
-
-.ajuda p { margin: .4rem 0; }
-
-footer {
-  margin-top: 24px;
-  background: var(--rodape-bg);
-  color: var(--rodape-texto);
-  padding: 28px 16px;
-}
-
-.menu-inline {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.menu-inline a {
-  color: var(--rodape-texto);
-  opacity: .85;
-  text-decoration: none;
-}
-
-.menu-inline a:hover { opacity: 1; text-decoration: underline; }
-
-/* Acessibilidade */
-html.fonte-grande { font-size: 18px; }
-html.fonte-gigante { font-size: 20px; }
+    const alvo = document.getElementById('post3');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ alvo.classList.add('destaque'); }
+        else{ alvo.classList.remove('destaque'); }
+      });
+    }, {threshold:.3});
+    obs.observe(alvo);
+  </script>
+</body>
+</html>
