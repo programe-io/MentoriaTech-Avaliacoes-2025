@@ -1,0 +1,111 @@
+@import url('https://i.pinimg.com/originals/41/83/a6/4183a63c201f06c498d92cce9b1dde61.gif');
+
+body {
+  margin: 0;
+  font-family: 'Bangers', cursive;
+  background: radial-gradient(circle at top, #111 0%, #000 100%);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+header {
+  background: linear-gradient(90deg, #ff0000, #ff6600);
+  padding: 30px;
+  text-align: center;
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 0 0 20px #ff4500;
+  letter-spacing: 3px;
+  animation: fireGlow 1.5s infinite alternate;
+}
+
+@keyframes fireGlow {
+  from { text-shadow: 0 0 10px #ff6600; }
+  to { text-shadow: 0 0 25px #ff2200, 0 0 50px #ff8800; }
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(30, 30, 30, 0.85);
+  border: 2px solid #ff4500;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #ff2200;
+}
+
+.post {
+  margin-bottom: 40px;
+}
+
+.post img {
+  width: 100%;
+  border-radius: 10px;
+  border: 3px solid #ff3300;
+  box-shadow: 0 0 20px #ff0000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #ff6600;
+}
+
+.post h2 {
+  font-size: 2em;
+  color: #ff6600;
+  text-shadow: 0 0 10px #ff2200;
+  margin-top: 20px;
+}
+
+.post p {
+  font-size: 1.3em;
+  line-height: 1.6em;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
+  background: #111;
+  border-top: 2px solid #ff3300;
+}
+
+/* 🔥 Efeito de fogo animado no fundo */
+.flames {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  pointer-events: none;
+  background: url('https://img1.picmix.com/output/stamp/normal/8/6/3/2/2262368_e1589.gif') repeat-x;
+  background-size: cover;
+  animation: moveFlames 3s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes moveFlames {
+  from { background-position: 0 -200px; }
+  to { background-position: -1000px -200px; }
+}
+
+/* Botão animado */
+.fire-button {
+  display: inline-block;
+  background: linear-gradient(45deg, #ff0000, #ff9900);
+  padding: 15px 30px;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff3300;
+  transition: all 0.3s;
+}
+
+.fire-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 70px #ff6600;
+}
