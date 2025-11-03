@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospital PetVet Mouraa</title>
+
+<style>
+  body {
+    font-family: "Poppins", Arial, sans-serif;
+    margin: 0;
+    background: #f0f9f0;
+    color: #333;
+    scroll-behavior: smooth;
+  }
+
+  header {
+    background: linear-gradient(135deg, #43a047, #2e7d32);
+    color: #fff;
+    text-align: center;
+    padding: 2em 1em;
+  }
+  header h1 {
+    font-size: 2.5em;
+    margin: 0;
+  }
+  header p {
+    font-size: 1.2em;
+  }
+
+  nav {
+    background: #388E3C;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 10px 0;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: 0.3s;
+  }
+  nav a:hover {
+    color: #c8e6c9;
+  }
+
+  section {
+    background: #fff;
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 900px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    animation: fadeIn 1s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  h2 {
+    color: #2e7d32;
+    border-left: 5px solid #81c784;
+    padding-left: 10px;
+  }
+
+  /* --- Formulário --- */
+  input, select, textarea, button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+  }
+  button {
+    background: #43a047;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  button:hover {
+    background: #388E3C;
+    transform: scale(1.02);
+  }
+
+  #msg {
+    display: none;
+    background: #dff2bf;
+    color: #4f8a10;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  /* --- Imagens --- */
+  .img-section {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .img-section img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+
+  footer {
+    text-align: center;
+    background: #2e7d32;
+    color: #fff;
+    padding: 15px;
+    font-size: 0.9em;
+  }
+
+  /* Responsivo */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+
+<body>
+<header>
+  <h1>🐾 Hospital PetVet Moura</h1>
+  <p>Amor,carinho e cuidado com seu pet!</p>
+</header>
+
+<nav>
+  <a href="#sobre">Sobre</a>
+  <a href="#consulta">Consulta</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+<section id="sobre">
+  <h2>Sobre Nós</h2>
+  <div class="img-section">
+    <img src="https://static.vecteezy.com/ti/fotos-gratis/t2/71613700-uma-grupo-do-cachorros-e-uma-gatos-sentado-juntos-em-branco-superficie-foto.JPG" alt="Veterinário cuidando de um cachorro">
+  </div>
+  <p>
+    Somos um hospital veterinário online que oferece atendimento para cães, gatos e outros animais.
+    Nossos veterinários estão sempre disponíveis para consultas por chat e vídeo via Whatsapp, garantindo o melhor cuidado
+    para o seu amigo de quatro patas sem que você precise sair de casa.
+  </p>
+</section>
+
+<section id="consulta">
+  <h2>Agende sua Consulta</h2>
+  <div id="msg">Consulta enviada com sucesso! 🐶💚</div>
+  <form id="form">
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <input type="Numero para Contato" name="Numero para Contato" placeholder="Numero para Contato" required>
+    <input type="text" name="pet" placeholder="Nome do pet" required>
+    <select name="tipo" required>
+      <option value="">Tipo de animal</option>
+      <option value="cachorro">Cachorro</option>
+      <option value="gato">Gato</option>
+      <option value="outro">Outro</option>
+    </select>
+    <textarea name="descricao" rows="3" placeholder="Descreva o problema" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+<section id="contato">
+  <h2>Contato</h2>
+  <div class="img-section">
+    <img src="https://www.gp1.com.br/media/image_bank/2023/9/imagem-do-projeto-do-hospital-divulgada-pela-vereadora-thananone.jpg.950x0_q95_crop.webp" alt="Veterinária em atendimento">
+  </div>
+  <p style="text-align:center;">
+    📧 <a href="mailto:HospitalPetVet@gmail.com.br">HospitalPetVet@gmail.com.br</a><br>
+    ☎️ (86) 98839-5555<br>
+    ⏰ Atendimento das 8:00 horas as 19:00 horas,de segunda a sexta!
+  </p>
+</section>
+
+<footer>© 2025 Hospital PetVet Moura | Feito com ❤️ para você e seu pet</footer>
+
+<script>
+  const form = document.getElementById('form');
+  const msg = document.getElementById('msg');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    msg.style.display = 'block';
+    form.reset();
+    setTimeout(() => {
+      msg.style.display = 'none';
+    }, 3000);
+  });
+</script>
+<main>
+<span>
+</body>
+</html>
