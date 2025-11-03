@@ -1,0 +1,155 @@
+/* ====== ESTILO GERAL ====== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #fdfdfd, #f5f9f8);
+  color: #333;
+}
+
+/* ====== CABEÇALHO ====== */
+header {
+  background: linear-gradient(90deg, #0d9488, #0f766e);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+header h1 {
+  letter-spacing: 1px;
+}
+
+header nav a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #facc15;
+  transition: width 0.3s ease;
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+/* ====== HERO ====== */
+section.bg-teal-500 {
+  background: radial-gradient(circle at center, #14b8a6 0%, #0f766e 100%);
+  animation: fadeInHero 1s ease-out;
+}
+
+@keyframes fadeInHero {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== BOTÕES ====== */
+button,
+a.bg-yellow-300 {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+button::before,
+a.bg-yellow-300::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: skewX(-25deg);
+  transition: left 0.5s ease;
+}
+
+button:hover::before,
+a.bg-yellow-300:hover::before {
+  left: 125%;
+}
+
+button:hover,
+a.bg-yellow-300:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ====== CARDS ====== */
+#produtos .bg-white {
+  border: 2px solid transparent;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+#produtos .bg-white:hover {
+  border-color: #0d9488;
+  box-shadow: 0 8px 20px rgba(13, 148, 136, 0.3);
+  transform: translateY(-5px);
+}
+
+#produtos img {
+  transition: transform 0.4s ease;
+}
+
+#produtos .bg-white:hover img {
+  transform: scale(1.05);
+}
+
+/* ====== SEÇÃO SOBRE ====== */
+#sobre {
+  background: url('https://www.transparenttextures.com/patterns/handmade-paper.png');
+  border-top: 4px solid #14b8a6;
+  border-bottom: 4px solid #14b8a6;
+}
+
+/* ====== FORMULÁRIO DE CONTATO ====== */
+form input,
+form textarea {
+  background-color: #fff;
+  border: 2px solid #d1d5db;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #0d9488;
+  box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.2);
+}
+
+/* ====== RODAPÉ ====== */
+footer {
+  background: linear-gradient(90deg, #0f766e, #0d9488);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ====== SCROLLBAR PERSONALIZADA ====== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0d9488;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0f766e;
+}
+
+/* ====== ANIMAÇÃO SUAVE AO ROLAR ====== */
+html {
+  scroll-behavior: smooth;
+}
