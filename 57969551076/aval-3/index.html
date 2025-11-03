@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sweet Harmony 🍓 | Receitas Japonesas e Sanrio</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body class="theme-mymelody min-h-screen overflow-x-hidden">
+
+  <!-- 🌸 TELA INICIAL -->
+  <section id="intro" class="fixed inset-0 flex flex-col justify-center items-center text-center bg-cover bg-center z-50">
+    <div class="intro-container p-8 rounded-3xl shadow-lg relative">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/My_Melody.png" alt="My Melody" class="w-32 mx-auto mb-4 animate-bounce">
+      <h1 class="text-4xl font-bold mb-2">🍰 Sweet Harmony 🍓</h1>
+      <p class="text-lg italic mb-6">Doces japoneses e Sanrio em um só lugar!</p>
+
+      <button id="entrarBtn" class="botao-rosa text-lg font-semibold">Entrar no site</button>
+
+      <div class="mt-8">
+        <button id="toggleTheme" class="px-4 py-2 bg-white rounded-full shadow hover:scale-105 transition">
+          🌸 Trocar Tema
+        </button>
+      </div>
+    </div>
+
+    <!-- Flores caindo -->
+    <div id="flowers-container"></div>
+
+    <footer class="mt-10 text-sm opacity-70 absolute bottom-6">
+      Feito com amor e confeitos — Sweet Harmony © 2025
+    </footer>
+  </section>
+
+  <!-- 🌸 SITE PRINCIPAL -->
+  <div id="mainSite" class="hidden">
+
+    <!-- NAV -->
+    <nav class="bg-white/60 backdrop-blur-md shadow-sm sticky top-0 z-40">
+      <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
+        <div class="flex items-center gap-2">
+          <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/My_Melody.png" alt="Logo My Melody" class="w-10 h-10">
+          <span class="font-bold text-lg">Sweet Harmony</span>
+        </div>
+        <ul class="flex gap-6 font-medium text-pink-700">
+          <li><a href="#inicio" class="hover:underline">Início</a></li>
+          <li><a href="#receitas" class="hover:underline">Receitas</a></li>
+          <li><a href="#contato" class="hover:underline">Contato</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- CABEÇALHO -->
+    <header id="inicio" class="text-center py-8">
+      <h1 class="text-4xl font-bold mb-2">🍓 Sweet Harmony 🍰</h1>
+      <p class="text-lg italic">Receitas japonesas com o encanto de My Melody e Kuromi</p>
+    </header>
+
+    <!-- SEÇÃO DE RECEITAS -->
+    <main id="receitas" class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-8 pb-12">
+
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/2a/89/0b/2a890ba31cf69f7efdd9b179a25cf3e9.jpg" alt="Dorayaki" class="rounded-xl mb-3">
+        <h2 class="titulo">🍡 Dorayaki de Morango</h2>
+        <p class="descricao">Panquecas fofinhas recheadas com creme de morango e anko.</p>
+        <button class="botao-rosa" data-receita="dorayaki">Ver Receita</button>
+      </div>
+
+      <div class="card">
+        <img src="https://i.pinimg.com/564x/31/0b/fb/310bfb183d5edac495d8b48ee2721b06.jpg" alt="Mochi" class="rounded-xl mb-3">
+        <h2 class="titulo">🍓 Mochi de Sakura</h2>
+        <p class="descricao">Bolinho de arroz doce com recheio floral e aroma de cerejeira.</p>
+        <button class="botao-rosa" data-receita="mochi">Ver Receita</button>
+      </div>
+
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/4a/7f/63/4a7f63ce6c3474f3e6158895a5f730a8.jpg" alt="Cupcake Kuromi" class="rounded-xl mb-3">
+        <h2 class="titulo">🖤 Cupcake Kuromi</h2>
+        <p class="descricao">Cupcakes de chocolate com cobertura roxa e orelhinhas da Kuromi!</p>
+        <button class="botao-roxa" data-receita="kuromi">Ver Receita</button>
+      </div>
+
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/6e/1c/5a/6e1c5ab9e844c1cfb7c8d40e66bb6014.jpg" alt="Bolo My Melody" class="rounded-xl mb-3">
+        <h2 class="titulo">🎀 Bolo Fofinho da My Melody</h2>
+        <p class="descricao">Bolo de baunilha com chantilly e morangos frescos — o preferido da My Melody!</p>
+        <button class="botao-rosa" data-receita="mymelody">Ver Receita</button>
+      </div>
+    </main>
+
+    <!-- Modal de Receitas -->
+    <div id="modal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center p-4 z-50">
+      <div class="bg-white rounded-2xl p-6 max-w-md w-full relative shadow-lg">
+        <button id="closeModal" class="absolute top-2 right-3 text-lg font-bold">✖</button>
+        <h3 id="modalTitle" class="text-2xl font-bold mb-4"></h3>
+        <ul id="modalSteps" class="list-disc list-inside space-y-2"></ul>
+      </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer id="contato" class="text-center py-6 text-sm opacity-80">
+      🌸 Feito com amor e confeitos — Sweet Harmony © 2025
+    </footer>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>

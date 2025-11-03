@@ -1,0 +1,76 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-image: url('https://www.transparenttextures.com/patterns/flower-dots.png');
+  transition: all 0.5s ease;
+}
+
+.theme-mymelody {
+  background-color: #ffe4ec;
+  color: #831843;
+}
+
+.theme-kuromi {
+  background-color: #f3e8ff;
+  color: #3b0764;
+}
+
+/* Intro */
+#intro {
+  background-color: #ffe4ec;
+  overflow: hidden;
+}
+
+.intro-container {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 3px solid #fbcfe8;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.botao-rosa {
+  background-color: #f9a8d4;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  transition: 0.3s;
+}
+.botao-rosa:hover {
+  background-color: #f472b6;
+  transform: scale(1.05);
+}
+
+/* Cartões */
+.card {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Modal */
+#modal {
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* 🌸 Flores caindo */
+.flower {
+  position: absolute;
+  top: -10%;
+  font-size: 1.5rem;
+  opacity: 0.8;
+  animation: fall linear forwards;
+}
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.3;
+  }
+}
