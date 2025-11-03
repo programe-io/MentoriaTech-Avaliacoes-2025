@@ -1,5 +1,202 @@
-/* Estilo para quando o mouse passa sobre o link de navegação */
-nav a:hover {
-    color: #ff6347; /* Cor do link muda para Laranja-avermelhado */
-    text-decoration: underline;
+:root {
+    --primary: #4A90E2;
+    --secondary: #1E3A8A;
+    --light: #E3F2FD;
+    --dark: #0D47A1;
+    /* Cores Anemo para o Wanderer */
+    --anemo-color: #63b38c; 
+    --anemo-dark: #2f825d;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+    background-image: url('https://assetsio.gnwcdn.com/Genshin-Impact-3.3-release-date-and-time-in-UK%2C-GMT%2C-CET%2C-EST-and-PST.jpg?width=690&quality=85&format=jpg&auto=webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(0.7);
+    /* Ajuste o tamanho da fonte para ser menor */
+    font-size: 0.95rem; 
+}
+
+/* Ajuste do tamanho da fonte para caixas específicas */
+.character-card p, .skill-card p, .accordion-body p, aside p {
+    font-size: 0.9rem; /* Torna o texto das caixas menor */
+}
+
+/* O Header agora contém o Nav e a seção Hero */
+header {
+    min-height: 100vh; /* O header cobre toda a viewport inicial */
+    position: relative;
+}
+
+.hero-section {
+    background: rgba(13, 71, 161, 0.7); 
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 2rem;
+    filter: none;
+    margin-top: -80px; /* Compensa o espaço da nav fixa */
+}
+
+/* Estilos de Card e Título mantidos */
+.character-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(74, 144, 226, 0.3);
+}
+
+.stat-card {
+    background: rgba(99, 179, 140, 0.15); 
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Estilo para a tag ASIDE */
+aside {
+    background: rgba(99, 179, 140, 0.2); /* Cor de fundo Anemo mais clara */
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 5px solid var(--anemo-color);
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: var(--anemo-color); 
+    border-radius: 2px;
+}
+
+.lore-section {
+    background: rgba(13, 71, 161, 0.5); 
+    position: relative;
+    z-index: 1;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin: 1rem 0;
+    border-left: 3px solid var(--anemo-color); 
+}
+
+.btn-custom {
+    background: linear-gradient(45deg, var(--anemo-color), var(--secondary));
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(99, 179, 140, 0.5); 
+}
+
+.highlight {
+    color: var(--anemo-color); 
+    font-weight: bold;
+}
+
+.quote {
+    font-style: italic;
+    border-left: 3px solid var(--anemo-color); 
+    padding-left: 1.2rem;
+    margin: 1.2rem 0;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 1.2rem;
+    border-radius: 0 12px 12px 0;
+    font-size: 0.9rem; /* Deixa a citação menor */
+}
+
+.bg-blur {
+    background: rgba(13, 71, 161, 0.6);
+}
+
+.section-padding {
+    padding: 5rem 0;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo para os botões de Collapse/Accordion para interatividade */
+.accordion-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 10px !important;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+.accordion-button:not(.collapsed) {
+    background-color: var(--anemo-dark); /* Cor escura quando ativo */
+    color: #fff;
+    box-shadow: none;
+}
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(99, 179, 140, 0.5); /* Sombra de foco Anemo */
+}
+.accordion-body {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0 0 10px 10px;
+    padding: 1.5rem;
+}
+
+.build-stat-table {
+    color: #fff;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.build-stat-table th, .build-stat-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+}
+.build-stat-table th {
+    background-color: var(--anemo-dark);
+}
+.build-stat-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
 }

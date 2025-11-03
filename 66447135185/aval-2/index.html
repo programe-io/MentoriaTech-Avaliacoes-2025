@@ -1,133 +1,373 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Site com Todas as Tags Essenciais</title>
+    <title>Wanderer (Scaramouche) - Genshin Impact Fan Site</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJb1rBnP3fF9I4CEN1y5vR5K6J5z3l6gq5zG6d3rP+gW5t3t3V5V3A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="style.css">
 
-    <style>
-        /* Estilos base */
-        body {
-            background-color: #f0f8ff; 
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column; 
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            align-items: center; 
-        }
-        .content-container {
-            display: flex;
-            gap: 40px; 
-            max-width: 1200px;
-            width: 100%;
-            margin-top: 30px;
-            align-items: flex-start;
-            flex-grow: 1;
-        }
-
-        /* Estilos Semânticos */
-        header { 
-            width: 95%; max-width: 1200px; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center;
-        }
-        hgroup h1 { margin-bottom: 5px; }
-        hgroup h3 { color: #666; margin-top: 0; font-weight: normal; }
-        section { padding: 20px; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 20px; text-align: left; }
-        figure { margin: 20px 0; padding: 10px; border: 1px solid #ccc; background-color: #f9f9f9; text-align: center; }
-        figcaption { font-style: italic; color: #555; font-size: 0.9em; margin-top: 5px; }
-        strong { color: darkred; }
-        em { font-style: normal; color: darkgreen; }
-        mark { background-color: yellow; padding: 2px 4px; border-radius: 3px; }
-        footer { width: 100%; max-width: 1200px; margin-top: 40px; padding: 15px 0; border-top: 1px solid #ccc; text-align: center; color: #666; font-size: 0.9em; }
-        nav ul { list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px; margin-bottom: 0; }
-        nav a { text-decoration: none; color: #007bff; font-weight: bold; transition: color 0.2s; }
-
-        /* PSEUDO-CLASSE CSS: O NOVO CÓDIGO */
-        nav a:hover {
-            color: #ff6347; /* Muda a cor ao passar o mouse */
-            text-decoration: underline;
-        }
-        /* FIM DO NOVO CÓDIGO */
-
-        main { flex-grow: 3; }
-        aside { flex-grow: 1; padding: 20px; background-color: #e6e6fa; border-radius: 8px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); }
-        article { background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); flex-grow: 3; text-align: center; }
-        #mensagem { color: #333333; font-size: 3em; padding: 20px; border: 2px solid #333333; border-radius: 10px; margin-bottom: 20px; display: block; }
-        button { padding: 10px 20px; font-size: 1.2em; background-color: #333333; color: white; border: none; border-radius: 5px; cursor: pointer; }
-        button:hover { background-color: #555555; }
-        .highlight-span { color: #008080; font-weight: bold; }
-    </style>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet"></head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link href="style.css" rel="stylesheet"></head>
 <body>
-    
+
     <header>
-        <hgroup>
-            <h1>Meu Super Site Interativo</h1>
-            <h3>Onde a Semântica HTML Encontra o JavaScript</h3>
-        </hgroup>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-50 fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold nav-brand" href="#">
+                    <i class="fas fa-wind me-2"></i>Genshin-Impact
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <button class="nav-link active" onclick="scrollToSection('hero')">Início</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" onclick="scrollToSection('lore-article')">Lore</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" onclick="scrollToSection('skills-article')">Habilidades</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" onclick="scrollToSection('builds-article')">Builds</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" onclick="scrollToSection('teams-article')">Times</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" onclick="scrollToSection('playstyle-article')">Jogabilidade</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-    </header>
-    
-    <div class="content-container">
 
-        <main>
-            <section>
-                <h2>Área de Interação e Testes</h2>
-                <article>
-                    <h3>Artigo Principal</h3>
+        <section id="hero" class="hero-section d-flex align-items-center">
+            <div class="bg-overlay"></div>
+            <div class="container">
+                <div class="row align-items-center">
                     
-                    <figure>
-                        <img src="placeholder.png" alt="Descrição de um ícone de interatividade" style="width: 50px; height: 50px; background-color: lightblue; border-radius: 5px;">
-                        <figcaption>Exemplo de mídia e legenda.</figcaption>
-                    </figure>
-
-                    <p>
-                        Esta frase usa a tag <strong>&lt;strong&gt;</strong> para **grande importância**, 
-                        a tag <em>&lt;em&gt;</em> para dar <em>ênfase</em>, 
-                        e a tag <mark>&lt;mark&gt;</mark> para <mark>destacar</mark> uma informação.
-                    </p>
+                    <div class="col-lg-7">
+                        <div class="hero-content">
+                            <h1 class="display-4 fw-bold mb-4">Wanderer (Scaramouche)</h1>
+                            <p class="lead mb-4">O personagem mais complexo e transformador de Genshin Impact.</p>
+                            <p class="mb-4">Descubra o verdadeiro potencial do seu Andarilho e sua incrível história!</p>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                                <button class="btn btn-custom btn-lg" onclick="scrollToSection('lore-article')">
+                                    <i class="fas fa-book-open me-2"></i>Conheça a História
+                                </button>
+                                <button class="btn btn-outline-light btn-lg" onclick="scrollToSection('builds-article')">
+                                    <i class="fas fa-hammer me-2"></i>Monte sua Build
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <p id="mensagem">Olá, mundo!</p>
-                    <button onclick="mudarTexto()">Mudar Mensagem</button>
-
-                    <div style="margin-top: 15px;">
-                        <label for="campo-teste">Digite algo:</label>
-                        <input type="text" id="campo-teste" name="campo-teste">
+                    <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+                        <img 
+                            src="https://static.wikia.nocookie.net/gensin-impact/images/f/f8/Wanderer_Icon.png/revision/latest/scale-to-width-down/185?cb=20221207034209" 
+                            alt="Arte oficial de corpo inteiro do personagem Wanderer (Scaramouche) de Genshin Impact." 
+                            class="img-fluid character-hero-img"
+                        >
                     </div>
 
-                </article>
-            </section>
-            
-        </main>
+                </div>
+            </div>
+        </section>
+    </header>
 
-        <aside>
-            <h3>Informação Relacionada</h3>
-            <p>Este é o conteúdo lateral, que usa a tag &lt;aside&gt;.</p>
-        </aside>
+    <main>
+        <div class="container py-5">
+            <div class="row">
+
+                <div class="col-lg-8">
+                    
+                    <article id="lore-article" class="lore-section section-padding">
+                        <h2 class="section-title fade-in">A História de Scaramouche</h2>
+                        <p class="quote fade-in">"Aquele que se esconde entre as sombras, ainda assim se revela."</p>
+                        
+                        <div class="accordion accordion-flush" id="loreAccordion">
+                            <div class="accordion-item fade-in character-card">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLore1">
+                                        <i class="fas fa-crosshairs me-2"></i> Origem e Identidade
+                                    </button>
+                                </h2>
+                                <div id="collapseLore1" class="accordion-collapse collapse" data-bs-parent="#loreAccordion">
+                                    <div class="accordion-body">
+                                        <p class="lead">Scaramouche, agora conhecido como <span class="highlight">O Wanderer (Andarilho)</span>, é um boneco criado pela Arconte Electro que se tornou o Sexto dos Onze Executores dos Fatui (Balladeer), antes de buscar a verdade sobre sua origem e destino.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item fade-in character-card">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLore2">
+                                        <i class="fas fa-mask me-2"></i> O Conflito Interno e a Redenção
+                                    </button>
+                                </h2>
+                                <div id="collapseLore2" class="accordion-collapse collapse" data-bs-parent="#loreAccordion">
+                                    <div class="accordion-body">
+                                        <p>Sua jornada é uma saga de abandono, traição, e a busca por uma nova identidade. Sua luta é contra a dor do seu passado e a necessidade de um novo propósito, livre das amarras de Inazuma e dos Fatui.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article id="skills-article" class="py-5 bg-blur section-padding">
+                        <h2 class="section-title fade-in">Habilidades</h2>
+                        <div class="accordion accordion-flush" id="skillsAccordion">
+                            <div class="accordion-item fade-in skill-card">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSkill1" aria-expanded="false" aria-controls="collapseSkill1">
+                                        <i class="fas fa-feather-alt me-2"></i> Elemento: Anemo
+                                    </button>
+                                </h2>
+                                <div id="collapseSkill1" class="accordion-collapse collapse" data-bs-parent="#skillsAccordion">
+                                    <div class="accordion-body">
+                                        <h4 class="text-primary">Visão: <span class="highlight">Anemo (Vento)</span></h4>
+                                        <p>O Wanderer manipula o poder do vento, voando pelo campo de batalha e aplicando dano Anemo em ataques aéreos e Redemoinho (Swirl).</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item fade-in skill-card">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSkill2" aria-expanded="false" aria-controls="collapseSkill2">
+                                        <i class="fas fa-cloud me-2"></i> Habilidade Elemental: Hanega
+                                    </button>
+                                </h2>
+                                <div id="collapseSkill2" class="accordion-collapse collapse" data-bs-parent="#skillsAccordion">
+                                    <div class="accordion-body">
+                                        <h4 class="text-primary">Habilidade Elemental: <span class="highlight">Hanega: Canto do Vento da Dança</span></h4>
+                                        <p>Ele salta no ar, entrando no estado **"Vento Dourado"**, onde pode levitar e consumir vigor especial para atacar do alto. Ele ganha bônus ao entrar em contato com outros elementos (Hydro, Pyro, Cryo, Electro).</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item fade-in skill-card">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSkill3" aria-expanded="false" aria-controls="collapseSkill3">
+                                        <i class="fas fa-meteor me-2"></i> Supremo: Kyougen
+                                    </button>
+                                </h2>
+                                <div id="collapseSkill3" class="accordion-collapse collapse" data-bs-parent="#skillsAccordion">
+                                    <div class="accordion-body">
+                                        <h4 class="text-primary">Supremo: <span class="highlight">Kyougen: Cinco Atos da Dança do Deserto</span></h4>
+                                        <p>Um ataque de área (AoE) massivo que comprime o ar, causando grande dano Anemo e permitindo que ele desça rapidamente para o chão.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="builds-article" class="py-5 section-padding">
+                        <h2 class="section-title fade-in">⚔️ Builds e Artefatos</h2>
+                        <div class="accordion accordion-flush" id="buildsAccordion">
+                            <div class="accordion-item fade-in character-card">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBuild1" aria-expanded="false" aria-controls="collapseBuild1">
+                                        <i class="fas fa-gem me-2"></i> Artefatos Ideais (DPS de Campo)
+                                    </button>
+                                </h2>
+                                <div id="collapseBuild1" class="accordion-collapse collapse" data-bs-parent="#buildsAccordion">
+                                    <div class="accordion-body">
+                                        <h4 class="highlight">Opção Principal (BiS - Best in Slot):</h4>
+                                        <p>4 Peças de **Crônicas do Pavilhão do Deserto**:</p>
+                                        <ul>
+                                            <li>**2 Peças:** +15% de Bônus de Dano Anemo.</li>
+                                            <li>**4 Peças:** Após um Ataque Carregado, a Vel. de ATK Normal aumenta em 10% e o Dano de ATK Normal/Carregado/Imersivo aumenta em 40% por 15s. *Perfeito para seu gameplay aéreo.*</li>
+                                        </ul>
+
+                                        <h4 class="highlight mt-3">Opções Alternativas Fortes:</h4>
+                                        <ul>
+                                            <li>**4 Peças de Reminiscência Nostálgica:** Ótimo dano em Ataques Normais e Carregados, mas consome Energia.</li>
+                                            <li>**2 Peças Crônicas do Pavilhão do Deserto + 2 Peças de Ataque (Gladiador/Reminiscência):** Um bom set para transição que foca no ATK e Dano Anemo.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item fade-in character-card">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBuild2" aria-expanded="false" aria-controls="collapseBuild2">
+                                        <i class="fas fa-chart-bar me-2"></i> Atributos Principais e Substats
+                                    </button>
+                                </h2>
+                                <div id="collapseBuild2" class="accordion-collapse collapse" data-bs-parent="#buildsAccordion">
+                                    <div class="accordion-body">
+                                        <table class="build-stat-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Peça</th>
+                                                    <th>Atributo Principal</th>
+                                                    <th>Prioridade de Substats</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>**Areia do Tempo**</td>
+                                                    <td>ATK%</td>
+                                                    <td>Taxa CRIT / Dano CRIT > ATK% > Recarga de Energia</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>**Cálice de Eonothem**</td>
+                                                    <td>Bônus de Dano Anemo</td>
+                                                    <td>Taxa CRIT / Dano CRIT > ATK% > Recarga de Energia</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>**Tiara de Logos**</td>
+                                                    <td>Taxa CRIT ou Dano CRIT (depende do equilíbrio)</td>
+                                                    <td>O Stat CRIT que não estiver no Principal > ATK%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p class="mt-3">**Meta de Stats:** Busque uma proporção de CRIT de aproximadamente **1:2** (ex: 70% Taxa CRIT e 140% Dano CRIT). ATK total ideal: **~1800 - 2200+**.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item fade-in character-card">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBuild3" aria-expanded="false" aria-controls="collapseBuild3">
+                                        <i class="fas fa-hat-wizard me-2"></i> Melhores Armas (Catalisadores)
+                                    </button>
+                                </h2>
+                                <div id="collapseBuild3" class="accordion-collapse collapse" data-bs-parent="#buildsAccordion">
+                                    <div class="accordion-body">
+                                        <h4 class="highlight">5 Estrelas (Melhores):</h4>
+                                        <ul>
+                                            <li>**Reminiscência de Tulaytullah (Assinatura):** Aumenta o dano de ATK Normal, perfeito para seu estilo de jogo.</li>
+                                            <li>**Oração Perdida aos Ventos Sagrados:** Ótimo status de Taxa CRIT.</li>
+                                            <li>**Atlas Celestial:** Alto ATK Base e Dano Elemental.</li>
+                                        </ul>
+                                        <h4 class="highlight mt-3">4 Estrelas (F2P/Alternativas):</h4>
+                                        <ul>
+                                            <li>**Sinfonia dos Indolentes:** Dano CRIT como substat e um buff aleatório que pode ser incrivelmente forte.</li>
+                                            <li>**Pérola Solar (Passe de Batalha):** Taxa CRIT e bônus de dano para ATKs Normais.</li>
+                                            <li>**Ágata do Penhasco Obscuro:** Dano CRIT, bom para alto dano em área.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="teams-article" class="py-5 section-padding">
+                        <h2 class="section-title fade-in">🤝 Composição de Times</h2>
+                        <div class="character-card fade-in">
+                            <p class="lead">O Wanderer brilha em times que se beneficiam da reação de Redemoinho (Swirl) e que fornecem buffs de ATK e CRIT.</p>
+
+                            <h3 class="highlight mt-4">Time de Vaporize Rápido (Pyro e Hydro)</h3>
+                            <p>Focado em buffar os ataques Anemo e absorver Pyro/Hydro para causar dano de Reação:</p>
+                            <ul>
+                                <li>**Wanderer (DPS):** Dano Anemo principal.</li>
+                                <li>**Bennett (Suporte/Buffer):** ATK bônus e ressonância Pyro para mais ATK.</li>
+                                <li>**Xingqiu/Yelan (Sub-DPS/Aplicador Hydro):** Aplica Hydro fora de campo para Reações.</li>
+                                <li>**Faruzan (Buffer Anemo):** Redução de Resistência Anemo e Bônus de Dano Anemo.</li>
+                            </ul>
+
+                            <h3 class="highlight mt-4">Time de Congelamento (Permafreeze)</h3>
+                            <p>Usa a mobilidade do Wanderer e a aplicação Cryo e Hydro para manter os inimigos congelados e seguros:</p>
+                            <ul>
+                                <li>**Wanderer (DPS):** Dano Anemo e espalhamento Cryo.</li>
+                                <li>**Layla/Diona (Shielder/Cryo):** Aplica Cryo e fornece escudo/cura.</li>
+                                <li>**Furina/Mona (Sub-DPS/Aplicador Hydro):** Dano Hydro e aplicações rápidas.</li>
+                                <li>**Faruzan/Jean (Buffer/Healer):** Bônus Anemo ou Controle de Grupo e Cura.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article id="playstyle-article" class="py-5 bg-blur section-padding">
+                        <h2 class="section-title fade-in">Jogabilidade</h2>
+                        <div class="character-card fade-in">
+                            <h3>Estilo de Combate</h3>
+                            <p>O Wanderer é um **DPS de Campo** (On-Field) focado em **dano Anemo Sustentado** enquanto está no ar:</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-4">
+                                    <div class="stat-card fade-in">
+                                        <i class="fas fa-wind fa-2x mb-3" style="color: var(--anemo-color);"></i>
+                                        <h5>Dano</h5>
+                                        <p>Alto dano Anemo em ataques normais</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="stat-card fade-in">
+                                        <i class="fas fa-shoe-prints fa-2x mb-3" style="color: var(--anemo-color);"></i>
+                                        <h5>Mobilidade</h5>
+                                        <p>Levitação para reposicionamento</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="stat-card fade-in">
+                                        <i class="fas fa-star-and-crescent fa-2x mb-3" style="color: var(--anemo-color);"></i>
+                                        <h5>Sinergia</h5>
+                                        <p>Absorção Elemental e Redução de Resistência</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h4 class="mt-4 fade-in">Estratégias de Batalha</h4>
+                            <ul class="fade-in">
+                                <li>Priorize o uso da Habilidade Elemental para entrar no estado de Levitação e iniciar seu ciclo de dano.</li>
+                                <li>Use sua Levitação para evitar ataques e posicionar-se para o Redemoinho (Swirl).</li>
+                                <li>Combine com Suportes que podem aplicar elementos (Pyro, Hydro, Cryo, Electro) para maximizar o dano de **Redemoinho**.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                
+                <aside class="col-lg-4 d-none d-lg-block pt-5">
+                    <h4 class="section-title fade-in mt-5">Curiosidades Rápidas</h4>
+                    <div class="fade-in">
+                        <div class="stat-card mb-3">
+                            <i class="fas fa-birthday-cake fa-2x mb-2" style="color: var(--anemo-color);"></i>
+                            <h6>Aniversário</h6>
+                            <p>3 de Janeiro</p>
+                        </div>
+                        <div class="stat-card mb-3">
+                            <i class="fas fa-gavel fa-2x mb-2" style="color: var(--anemo-color);"></i>
+                            <h6>Constelação</h6>
+                            <p>Peregrinus</p>
+                        </div>
+                        <div class="stat-card mb-3">
+                            <i class="fas fa-flag fa-2x mb-2" style="color: var(--anemo-color);"></i>
+                            <h6>Nação de Origem</h6>
+                            <p>Inazuma (Boneco), Atua em Sumeru</p>
+                        </div>
+                    </div>
+                </aside>
+                
+            </div>
+        </div>
         
-    </div>
+        <section class="py-5 text-center bg-blur section-padding">
+            <div class="container">
+                <div class="character-card fade-in">
+                    <h2 class="mb-4">O Verdadeiro Propósito do Wanderer</h2>
+                    <p>O Wanderer representa a busca por identidade e aceitação, algo que ressoa com a jornada de muitos jogadores. </p>
+                    <button class="btn btn-custom mt-4" onclick="scrollToSection('hero')">
+                        <i class="fas fa-arrow-up me-2"></i>Voltar ao Início
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer>
-        <p>&copy; 2025 Seu Nome. Todos os direitos reservados. Feito com a máxima semântica <span class="highlight-span">HTML</span>, CSS e JavaScript!</p>
+        <div class="container text-center py-3 bg-dark bg-opacity-75">
+            <p class="mb-0"> Feito em 2025 - Genshin Impact Fan Site da Carol </p>
+        </div>
     </footer>
 
-    <script>
-        function mudarTexto() {
-            var paragrafo = document.getElementById('mensagem');
-            paragrafo.innerHTML = 'JavaScript está funcionando!';
-            paragrafo.style.color = '#ff4500'; 
-            paragrafo.style.borderColor = '#ff4500';
-        }
-    </script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
 <script src="script.js"></script></body>
 </html>
