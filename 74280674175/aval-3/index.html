@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Comidas Deliciosas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffaf0;
+            color: #333;
+            padding: 20px;
+        }
+
+        article {
+            background-color: #fff1e6;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        article h2 {
+            color: #ff6f61;
+            margin-bottom: 10px;
+        }
+
+        article h3 {
+            color: #ff3b2e;
+            margin-top: 15px;
+        }
+
+        article img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        article p {
+            margin-bottom: 10px;
+        }
+
+        .author {
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <h1>Blog de Comidas Deliciosas</h1>
+
+    <article>
+        <h2>Bolo de Chocolate Fofinho</h2>
+        <img src="https://images.unsplash.com/photo-1617196037741-9f64f5472f99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VlfHx8fHx8fHwxNjk5MjE4NzA1&ixlib=rb-4.0.3&q=80&w=1080" alt="Bolo de Chocolate">
+        <h3>Ingredientes</h3>
+        <p>Farinha de trigo, açúcar, ovos, chocolate em pó, leite, manteiga.</p>
+        <h3>Modo de Preparo</h3>
+        <p>Misture os ingredientes secos, acrescente ovos e leite, bata bem e leve ao forno pré-aquecido por 40 minutos.</p>
+        <p class="author">Escrito por: Chef Amorzinho</p>
+    </article>
+
+    <article>
+        <h2>Salada Colorida e Saudável</h2>
+        <img src="https://images.unsplash.com/photo-1556911268-5f1013d9916b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VlfHx8fHx8fHwxNjk5MjE4NzQ2&ixlib=rb-4.0.3&q=80&w=1080" alt="Salada Colorida">
+        <h3>Ingredientes</h3>
+        <p>Alface, rúcula, tomate, cenoura ralada, pepino, azeite e limão.</p>
+        <h3>Modo de Preparo</h3>
+        <p>Lave todos os vegetais, corte e misture em uma tigela. Tempere com azeite, limão, sal e pimenta.</p>
+        <p class="author">Escrito por: Chef Amorzinho</p>
+    </article>
+
+<script src="script.js"></script></body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Comidas Deliciosas</title>
+    <style>
+        /* Estilo do header */
+        header {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-image: url('https://images.unsplash.com/photo-1551218808-94e220e084d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        /* Overlay para escurecer a imagem */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            z-index: 0;
+        }
+
+        header h1, header p {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                height: 200px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Blog de Comidas Deliciosas</h1>
+        <p>Receitas, dicas e sabores incríveis para você</p>
+    </header>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Comidas - Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffaf0;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .recipe-card {
+            background-color: #fff1e6;
+            width: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .recipe-content {
+            padding: 15px;
+        }
+
+        .recipe-content h3 {
+            color: #ff6f61;
+            margin-bottom: 10px;
+        }
+
+        .recipe-content p {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .recipe-content .author {
+            font-style: italic;
+            color: #888;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="recipe-card">
+        <img src="https://images.unsplash.com/photo-1617196037741-9f64f5472f99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Bolo de Chocolate">
+        <div class="recipe-content">
+            <h3>Bolo de Chocolate Fofinho</h3>
+            <p>Um bolo de chocolate super fofinho e delicioso para qualquer ocasião.</p>
+            <p class="author">Escrito por: Chef Amorzinho</p>
+        </div>
+    </div>
+
+    <div class="recipe-card">
+        <img src="https://images.unsplash.com/photo-1556911268-5f1013d9916b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Salada Colorida">
+        <div class="recipe-content">
+            <h3>Salada Colorida e Saudável</h3>
+            <p>Uma salada prática e cheia de cores, perfeita para o dia a dia.</p>
+            <p class="author">Escrito por: Chef Amorzinho</p>
+        </div>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Comidas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fffaf0;
+        }
+
+        nav {
+            background-color: #ff6f61;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav-logo img {
+            height: 50px;
+            border-radius: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffe5e0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100" alt="Logo do Blog de Comidas">
+        </div>
+        <div class="nav-links">
+            <a href="#">Início</a>
+            <a href="#">Receitas</a>
+            <a href="#">Dicas</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+        </div>
+    </nav>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Comidas - Main</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffaf0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        article {
+            background-color: #fff1e6;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        article img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        article h2 {
+            color: #ff6f61;
+            margin-bottom: 10px;
+        }
+
+        article h3 {
+            color: #ff3b2e;
+            margin-top: 15px;
+        }
+
+        article p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .author {
+            font-style: italic;
+            color: #888;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <article>
+            <h2>Bolo de Chocolate Fofinho</h2>
+            <img src="https://images.unsplash.com/photo-1617196037741-9f64f5472f99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Bolo de Chocolate">
+            <h3>Ingredientes</h3>
+            <p>Farinha de trigo, açúcar, ovos, chocolate em pó, leite, manteiga.</p>
+            <h3>Modo de Preparo</h3>
+            <p>Misture os ingredientes secos, acrescente ovos e leite, bata bem e leve ao forno pré-aquecido por 40 minutos.</p>
+            <p class="author">Escrito por: Chef Amorzinho</p>
+        </article>
+
+        <article>
+            <h2>Salada Colorida e Saudável</h2>
+            <img src="https://images.unsplash.com/photo-1556911268-5f1013d9916b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Salada Colorida">
+            <h3>Ingredientes</h3>
+            <p>Alface, rúcula, tomate, cenoura ralada, pepino, azeite e limão.</p>
+            <h3>Modo de Preparo</h3>
+            <p>Lave todos os vegetais, corte e misture em uma tigela. Tempere com azeite, limão, sal e pimenta.</p>
+            <p class="author">Escrito por: Chef Amorzinho</p>
+        </article>
+    </main>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Comidas - Span</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffaf0;
+            color: #333;
+            padding: 20px;
+        }
+
+        .recipe-card {
+            background-color: #fff1e6;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 500px;
+            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .recipe-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .recipe-card h2 {
+            color: #ff6f61;
+            margin-bottom: 10px;
+        }
+
+        .recipe-card p {
+            margin-bottom: 10px;
+        }
+
+        /* Estilo do span */
+        .highlight {
+            background-color: #ffdab9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #d14b3a;
+        }
+
+        .author {
+            font-style: italic;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="recipe-card">
+        <img src="https://images.unsplash.com/photo-1617196037741-9f64f5472f99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Bolo de Chocolate">
+        <h2>Bolo de Chocolate Fofinho</h2>
+        <p>Este bolo é <span class="highlight">super fofinho</span> e delicioso para qualquer ocasião.</p>
+        <p>Ingredientes: Farinha, açúcar, ovos, chocolate em pó, leite, manteiga.</p>
+        <p class="author">Escrito por: Chef Amorzinho</p>
+    </div>
+
+    <div class="recipe-card">
+        <img src="https://images.unsplash.com/photo-1556911268-5f1013d9916b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Salada Colorida">
+        <h2>Salada Colorida e Saudável</h2>
+        <p>Uma salada <span class="highlight">super colorida</span> e prática para o dia a dia.</p>
+        <p>Ingredientes: Alface, rúcula, tomate, cenoura ralada, pepino, azeite e limão.</p>
+        <p class="author">Escrito por: Chef Amorzinho</p>
+    </div>
+
+</body>
+</html>
