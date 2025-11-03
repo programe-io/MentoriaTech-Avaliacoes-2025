@@ -1,0 +1,155 @@
+/* ==============================
+   Estilo principal - História do Futsal (mobile)
+   Tema: Azul escuro e azul bebê
+   ============================== */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cores principais */
+:root {
+    --azul-escuro: #001F3F;
+    --azul-bebe: #A9D6F5;
+    --branco: #ffffff;
+    --dourado: #FFD700;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to bottom, var(--azul-escuro), #004E92);
+    color: var(--branco);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--azul-escuro);
+    text-align: center;
+    padding: 50px 20px;
+    border-bottom: 3px solid var(--azul-bebe);
+}
+
+header h1 {
+    font-size: 2em;
+    color: var(--azul-bebe);
+}
+
+header p {
+    color: #e0f0ff;
+    margin-top: 10px;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #003366;
+}
+
+nav a {
+    color: var(--branco);
+    padding: 12px 18px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+    border-radius: 6px;
+}
+
+nav a:hover {
+    background-color: var(--azul-bebe);
+    color: var(--azul-escuro);
+}
+
+/* Seções principais */
+section, article {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+section h2, article h2 {
+    color: var(--dourado);
+    margin-bottom: 15px;
+}
+
+article h5 {
+    color: var(--azul-bebe);
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+/* Imagens */
+img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Botões e links especiais */
+a.button, button {
+    display: inline-block;
+    background-color: var(--azul-bebe);
+    color: var(--azul-escuro);
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: all 0.3s;
+}
+
+a.button:hover, button:hover {
+    background-color: var(--branco);
+    color: var(--azul-escuro);
+}
+
+/* Rodapé */
+footer {
+    background-color: #00264d;
+    text-align: center;
+    padding: 15px;
+    color: var(--azul-bebe);
+    font-size: 0.9em;
+    border-top: 2px solid var(--azul-bebe);
+}
+
+/* Responsividade (celular e tablet) */
+@media (max-width: 768px) {
+    header {
+        padding: 40px 10px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    section, article {
+        padding: 20px 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    img {
+        border-radius: 8px;
+    }
+}
+
+/* Efeito suave ao rolar a página */
+html {
+    scroll-behavior: smooth;
+}
