@@ -1,0 +1,96 @@
+/* --- Layout Principal (NOVO) --- */
+.content-wrapper {
+    display: flex; /* Cria o layout de colunas */
+    flex-wrap: wrap; /* Permite quebrar a linha em telas pequenas */
+    gap: 20px; /* Espaço entre o conteúdo principal e a sidebar */
+}
+
+.main-content {
+    flex: 3; /* O conteúdo principal ocupa 3/4 do espaço */
+    min-width: 300px; /* Garante que o conteúdo não seja esmagado */
+}
+
+/* Estilos do <aside> (Sidebar - NOVO) */
+.sidebar {
+    flex: 1; /* A sidebar ocupa 1/4 do espaço */
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e7e7e7;
+    min-width: 250px;
+}
+
+/* "Widgets" são os blocos dentro da sidebar */
+.sidebar .widget {
+    margin-bottom: 20px;
+}
+
+.sidebar h3 {
+    color: #0056b3;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+
+.sidebar .links-uteis {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar .links-uteis li {
+    margin-bottom: 8px;
+}
+
+.sidebar .links-uteis a {
+    text-decoration: none;
+    color: #007BFF;
+}
+.sidebar .links-uteis a:hover {
+    text-decoration: underline;
+}
+
+.sidebar p {
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+/* --- Responsividade --- */
+
+/* Em telas com 768px de largura ou menos (ex: tablets e celulares) */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column; /* Faz a sidebar ficar embaixo do conteúdo */
+    }
+}
+/* --- (NOVO) Estilos para a Seção de Avisos (Article) --- */
+#avisos {
+    margin-top: 20px;
+}
+
+/* Estilo de cada "aviso" individual (o <article>) */
+.aviso-item {
+    background-color: #fffbef; /* Um amarelo-claro, como um post-it */
+    border: 1px solid #f0e6c2;
+    border-left: 5px solid #ffc107; /* Uma borda de destaque amarela */
+    border-radius: 5px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.aviso-item h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.aviso-item p {
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+.aviso-item footer {
+    font-size: 0.85em;
+    color: #777;
+    text-align: right;
+    border-top: 1px dashed #ddd;
+    padding-top: 8px;
+    margin-top: 10px;
+}
