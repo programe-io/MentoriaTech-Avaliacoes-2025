@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo das Motos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #222;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff0000;
+        }
+
+        main {
+            display: flex;
+            margin: 20px;
+            gap: 20px;
+        }
+
+        aside {
+            background-color: #fff;
+            padding: 15px;
+            width: 25%;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+
+        aside ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        section {
+            width: 75%;
+        }
+
+        article {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+
+        article h2 {
+            color: #ff0000;
+        }
+
+        article h3 {
+            color: #555;
+            font-style: italic;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        span {
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #cc0000;
+        }
+
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        .detalhes {
+            margin-top: 10px;
+            font-style: italic;
+            color: #333;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header>
+        <h1>Mundo das <span>Motos</span></h1>
+        <p>Explore as <span>motocicletas</span> mais potentes e estilosas do mundo!</p>
+
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#yamaha">Yamaha</a></li>
+                <li><a href="#ducati">Ducati</a></li>
+                <li><a href="#harley">Harley-Davidson</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <aside>
+            <h2>Marcas Populares</h2>
+            <ul>
+                <li><span>Yamaha</span></li>
+                <li><span>Ducati</span></li>
+                <li><span>Harley-Davidson</span></li>
+                <li>Honda</li>
+                <li>Kawasaki</li>
+            </ul>
+        </aside>
+
+        <section>
+            <article id="yamaha">
+                <h2>Yamaha YZF-R1</h2>
+                <h3>Desempenho <span>esportivo</span> e tecnologia de ponta</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Yamaha_YZF-R1M.jpg" alt="Yamaha YZF-R1" width="100%">
+                <p>A <span>Yamaha YZF-R1</span> é uma superbike inspirada nas motos de MotoGP, com motor de 998 cc e 200 cv de potência.</p>
+                <button onclick="mostrarDetalhes('yamaha')">Ver Detalhes</button>
+                <div id="detalhes-yamaha" class="detalhes"></div>
+            </article>
+
+            <article id="ducati">
+                <h2>Ducati Panigale V4</h2>
+                <h3>O som e a <span>velocidade</span> da Itália</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Ducati_Panigale_V4_S_2018.jpg" alt="Ducati Panigale V4" width="100%">
+                <p>A <span>Ducati Panigale V4</span> é uma máquina impressionante com motor V4 de 1.103 cc e 214 cv, pura adrenalina italiana.</p>
+                <button onclick="mostrarDetalhes('ducati')">Ver Detalhes</button>
+                <div id="detalhes-ducati" class="detalhes"></div>
+            </article>
+
+            <article id="harley">
+                <h2>Harley-Davidson Fat Boy</h2>
+                <h3>Clássica, <span>poderosa</span> e cheia de estilo</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Harley-Davidson_Fat_Boy_114_2018.jpg" alt="Harley-Davidson Fat Boy" width="100%">
+                <p>A <span>Harley-Davidson Fat Boy</span> é um ícone das estradas, com motor Milwaukee-Eight 114 e um design marcante.</p>
+                <button onclick="mostrarDetalhes('harley')">Ver Detalhes</button>
+                <div id="detalhes-harley" class="detalhes"></div>
+            </article>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <p>&copy; 2025 Mundo das <span>Motos</span>. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function mostrarDetalhes(modelo) {
+            const detalhes = {
+                yamaha: "A Yamaha YZF-R1 chega a 299 km/h e possui controle eletrônico de tração, modos de pilotagem e quickshifter.",
+                ducati: "A Ducati Panigale V4 alcança 305 km/h e traz tecnologia derivada da MotoGP, com aerodinâmica ativa.",
+                harley: "A Harley-Davidson Fat Boy é perfeita para longas viagens, com torque alto e estilo retrô inconfundível."
+            };
+
+            const elementoId = `detalhes-${modelo}`;
+            document.getElementById(elementoId).textContent = detalhes[modelo];
+        }
+    </script>
+<script src="script.js"></script></body>
+</html>
