@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modelo completo de site HTML5 responsivo e moderno.">
+    <meta name="author" content="Seu Nome">
+    <meta name="keywords" content="HTML5, CSS, JavaScript, site completo, modelo">
+    <title>Meu Site Completo</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css"> <!-- CSS externo -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body>
+    <header>
+        <h1>Bem-vindo ao Meu Site Completo</h1>
+        <p>Um modelo HTML5 moderno e responsivo</p>
+    </header>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <main>
+        <section id="inicio">
+            <h2>Início</h2>
+            <p>Este é um modelo básico de site HTML totalmente funcional. Ele inclui estrutura semântica, responsividade, estilo moderno e um pequeno script para melhorar a experiência do usuário.</p>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre</h2>
+            <p>Este site foi criado com HTML5, CSS3 e JavaScript puro. É uma excelente base para começar qualquer projeto web.</p>
+            <p>Você pode personalizar cores, fontes, imagens e muito mais para adaptá-lo ao seu estilo.</p>
+        </section>
+
+        <section id="servicos">
+            <h2>Serviços</h2>
+            <ul>
+                <li>Desenvolvimento Web</li>
+                <li>Design Responsivo</li>
+                <li>Otimização SEO</li>
+                <li>Consultoria Técnica</li>
+            </ul>
+
+            <div class="card destaque-servico">
+                <h3>Serviço em Destaque</h3>
+                <p>Conheça nosso serviço mais popular! Criamos sites personalizados, otimizados para SEO e 100% responsivos, que se adaptam a qualquer dispositivo.</p>
+                <button class="btn">Saiba Mais</button>
+            </div>
+
+            <!-- 🟦 NOVA DIV COM IMG E SPAN -->
+            <div class="bloco-destaque">
+                <img src="https://via.placeholder.com/150" alt="Ícone de destaque" class="icone-servico">
+                <span class="texto-destaque">Mais de <strong>500 projetos</strong> entregues com sucesso!</span>
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <form onsubmit="enviarFormulario(event)">
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" name="nome" required><br><br>
+
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="mensagem">Mensagem:</label><br>
+                <textarea id="mensagem" name="mensagem" rows="5" required></textarea><br><br>
+
+                <button type="submit">Enviar</button>
+            </form>
+            <p id="resposta-formulario" style="margin-top:10px; color:green;"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Meu Site Completo. Todos os direitos reservados.</p>
+    </footer>
+
+    <button id="btnTopo" onclick="voltarAoTopo()">↑</button>
+
+    <script>
+        // Mostrar botão de voltar ao topo
+        window.onscroll = function() {
+            const btn = document.getElementById("btnTopo");
+            btn.style.display = (document.documentElement.scrollTop > 300) ? "block" : "none";
+        };
+
+        // Função para voltar ao topo
+        function voltarAoTopo() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Função de envio de formulário
+        function enviarFormulario(event) {
+            event.preventDefault();
+            document.getElementById("resposta-formulario").textContent = "Mensagem enviada com sucesso!";
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
