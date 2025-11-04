@@ -1,0 +1,82 @@
+/* style.css — estilos personalizados para o template da loja
+   Compatível com o template melhorado (improved_store.html) e com o template original.
+   Inclui estilos para a seção "Sobre", cards de produto, botões, badge do carrinho e utilitários de acessibilidade.
+*/
+:root{
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --muted: #6b7280; /* gray-500 */
+  --accent: #0ea5a4; /* teal-500 */
+  --accent-600: #0f766e;
+  --accent-700: #0e6b66;
+  --danger: #ef4444;
+  --radius-lg: 1rem;
+  --shadow-sm: 0 6px 18px rgba(16,24,40,0.06);
+  --shadow-md: 0 10px 30px rgba(2,6,23,0.12);
+}
+
+/* Reset/boas práticas */
+html,body{height:100%;background:var(--bg);font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;color:#0f172a;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img{max-width:100%;display:block}
+
+/* Utilitários de acessibilidade */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Header / navbar overrides (quando houver CSS global) */
+header a{color:inherit;text-decoration:none}
+
+/* Seção SOBRE ("sobre") */
+#sobre{background:linear-gradient(180deg,rgba(14,165,164,0.06),transparent);border-radius:calc(var(--radius-lg) - 4px);box-shadow:var(--shadow-sm);margin-top:1rem}
+#sobre h1{color:var(--accent-700)}
+#sobre p{color:var(--muted);max-width:70ch;margin-left:auto;margin-right:auto}
+
+/* Grid de produtos (adicional a classes do framework) */
+.produto{background:var(--card);border-radius:var(--radius-lg);padding:1.25rem;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:.75rem;transition:transform .18s ease, box-shadow .18s ease}
+.produto:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.produto .preco{color:#0f172a;font-weight:700}
+.produto .meta{display:flex;align-items:center;justify-content:space-between}
+.produto picture,.produto img{border-radius:.5rem;overflow:hidden}
+
+/* Botão comprar */
+.botao-comprar, .botao-comprar:focus{display:inline-flex;align-items:center;gap:.5rem;border:none;cursor:pointer;background:var(--accent);color:white;padding:.5rem .9rem;border-radius:.6rem;box-shadow:0 6px 18px rgba(14,165,164,0.12);transition:background .15s ease, transform .08s ease}
+.botao-comprar:hover{background:var(--accent-600);transform:translateY(-1px)}
+.botao-comprar:active{transform:translateY(0)}
+.botao-comprar[aria-pressed="true"]{opacity:.8}
+
+/* Versões alternativas por seletor data-buy (compatibilidade) */
+[data-buy].botao-comprar{display:inline-flex}
+
+/* Badge do mini carrinho */
+#mini-count{display:inline-block;background:#f1fdfa;color:var(--accent);padding:.15rem .45rem;border-radius:999px;font-weight:600;border:1px solid rgba(14,165,164,0.08)}
+
+/* Toast simples (opcional) */
+.toast{position:fixed;right:1rem;bottom:1rem;background:rgba(2,6,23,0.9);color:white;padding:.75rem 1rem;border-radius:.6rem;box-shadow:var(--shadow-md);z-index:60}
+
+/* Cart drawer lightweight styles (se quiser usar) */
+.cart{position:fixed;right:-420px;top:0;width:380px;height:100%;background:var(--card);box-shadow:-12px 0 30px rgba(2,6,23,0.12);transition:right .25s ease;display:flex;flex-direction:column;z-index:60}
+.cart.open{right:0}
+.cart .cart-header{display:flex;justify-content:space-between;align-items:center;padding:1rem;border-bottom:1px solid #f3f4f6}
+.cart .cart-items{padding:1rem;overflow:auto;flex:1}
+.cart .cart-item{display:flex;gap:.75rem;align-items:center;padding:.6rem 0;border-bottom:1px dashed #f3f4f6}
+.cart .thumb{width:56px;height:56px;border-radius:.5rem;display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+.cart .cart-footer{padding:1rem;border-top:1px solid #f3f4f6}
+
+/* Responsividade adicional */
+@media (max-width:900px){
+  .produto{padding:1rem}
+}
+@media (max-width:600px){
+  #sobre{padding:1rem}
+  .produto{padding:.9rem}
+  .grid{grid-template-columns:1fr}
+}
+
+/* Pequenas melhorias de legibilidade */
+p, li{line-height:1.45}
+code{background:#f3f4f6;padding:.1rem .3rem;border-radius:.35rem}
+
+/* preferência de impressão */
+@media print{
+  .botao-comprar, #open-cart, .toast, .cart, header nav{display:none !important}
+  body{background:white;color:#000}
+}
