@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imagem Academia</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .academia-container {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  }
+
+  .academia-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%) contrast(110%);
+    transition: transform 0.6s ease, filter 0.6s ease;
+  }
+
+  .academia-container:hover img {
+    transform: scale(1.1);
+    filter: brightness(90%) contrast(120%);
+  }
+
+  .academia-texto {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    transition: background 0.3s ease;
+  }
+
+  .academia-container:hover .academia-texto {
+    background: #ff6600;
+  }
+</style>
+</head>
+<body>
+
+<div class="academia-container">
+  <img src="https://images.unsplash.com/photo-1579758629934-095f6d0d7f8b?auto=format&fit=crop&w=800&q=80" alt="Academia">
+  <div class="academia-texto">Treine Forte 💪</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Fitness</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            color: #0077b6;
+        }
+        img {
+            width: 60%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        p {
+            font-size: 18px;
+            margin-top: 15px;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <h1>Bem-vindo à Academia Fitness!</h1>
+    <p>Cuide do seu corpo e da sua mente — treine conosco todos os dias!</p>
+
+    <!-- Exemplo de imagem sobre academia -->
+    <img src="https://cdn.pixabay.com/photo/2016/03/27/19/31/fitness-1284612_1280.jpg" alt="Pessoa treinando na academia">
+
+    <p>Horário de funcionamento: Segunda a Sábado, das 6h às 22h.</p>
+<script src="script.js"></script></body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academia PowerFit</title>
+<style>
+  /* ======= ESTILOS GERAIS ======= */
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #111;
+    color: #fff;
+  }
+
+  /* ======= HEADER COM IMAGEM ======= */
+  header {
+    background-image: url('https://images.unsplash.com/photo-1576675784511-611e0ad3d1a3?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ocupa toda a tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+
+  /* Sobreposição escura para dar contraste no texto */
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  /* ======= TEXTO PRINCIPAL ======= */
+  .header-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    padding: 20px;
+  }
+
+  .header-content h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+    color: #ff6600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  .header-content p {
+    font-size: 1.2em;
+    color: #f1f1f1;
+    margin-bottom: 25px;
+  }
+
+  /* ======= BOTÃO ======= */
+  .btn {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #ff8533;
+    transform: scale(1.05);
+  }
+
+  /* ======= MENU SUPERIOR OPCIONAL ======= */
+  nav {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+    z-index: 2;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #ff6600;
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Planos</a>
+      <a href="#">Treinos</a>
+      <a href="#">Contato</a>
+    </nav>
+
+    <div class="header-content">
+      <h1>PowerFit Academia</h1>
+      <p>Transforme seu corpo e sua mente. Seu novo estilo de vida começa aqui 💪</p>
+      <button class="btn">Matricule-se agora</button>
+    </div>
+  </header>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academia PowerFit - Treinos</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+  }
+
+  header {
+    background-color: #111;
+    color: #ff6600;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+
+  /* ====== SEÇÃO PRINCIPAL ====== */
+  main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+    transition: transform 0.4s ease;
+  }
+
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+    transition: transform 0.5s ease, filter 0.5s ease;
+  }
+
+  .card:hover img {
+    transform: scale(1.1);
+    filter: brightness(90%);
+  }
+
+  .card .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: center;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+  }
+
+  .card .info span {
+    color: #ff6600;
+    font-weight: bold;
+  }
+
+  footer {
+    background-color: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+  }
+</style>
+</head>
+<body>
+
+<header>🏋️ PowerFit Academia</header>
+
+<main>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Musculação">
+    <div class="info">Treino de <span>Musculação</span></div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1579758629934-095f6d0d7f8b?auto=format&fit=crop&w=800&q=80" alt="Treino Funcional">
+    <div class="info">Aulas de <span>Treino Funcional</span></div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07d?auto=format&fit=crop&w=800&q=80" alt="Crossfit">
+    <div class="info">Força e resistência com <span>Crossfit</span></div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=800&q=80" alt="Yoga e Alongamento">
+    <div class="info">Equilíbrio com <span>Yoga & Alongamento</span></div>
+  </div>
+</main>
+
+<footer>
+  © 2025 PowerFit Academia — Todos os direitos reservados.
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academia PowerFit</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+  }
+
+  /* ====== SEÇÃO COM TÍTULO H2 ====== */
+  section {
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  h2 {
+    color: #ff6600;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  p {
+    color: #ccc;
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto 40px;
+  }
+
+  /* ====== GALERIA DE IMAGENS ====== */
+  .galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .galeria img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: brightness(75%);
+  }
+
+  .galeria img:hover {
+    transform: scale(1.08);
+    filter: brightness(95%);
+  }
+</style>
+</head>
+<body>
+
+<section>
+  <h2>Nossos Treinos</h2>
+  <p>Explore diferentes modalidades e descubra o treino ideal para o seu corpo e seus objetivos.  
+  Aqui na <strong>PowerFit Academia</strong>, cada dia é uma nova chance de evoluir!</p>
+
+  <div class="galeria">
+    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Treino de Musculação">
+    <img src="https://images.unsplash.com/photo-1579758629934-095f6d0d7f8b?auto=format&fit=crop&w=800&q=80" alt="Treino Funcional">
+    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07d?auto=format&fit=crop&w=800&q=80" alt="Crossfit">
+  </div>
+</section>
+
+</body>
+</html>
