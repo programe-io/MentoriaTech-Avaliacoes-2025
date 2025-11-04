@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimeFlix</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #141414;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background: #000;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      margin: 0;
+      color: #e50914;
+    }
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+    section {
+      padding: 30px;
+    }
+    h2 {
+      margin-bottom: 15px;
+    }
+    .anime-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+      gap: 15px;
+    }
+    .anime-card {
+      position: relative;
+      cursor: pointer;
+    }
+    .anime-card img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .favorite-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(0,0,0,0.6);
+      border: none;
+      color: gold;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    #animeModal {
+      display: none;
+      position: fixed;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    #animeModal .modal-content {
+      background: #222;
+      padding: 20px;
+      max-width: 700px;
+      width: 100%;
+      border-radius: 10px;
+      text-align: center;
+      color: #fff;
+    }
+    #animeModal .modal-content img {
+      width: 200px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    #animeModal .modal-content button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #e50914;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .stars {
+      margin-top: 10px;
+    }
+    .stars span {
+      font-size: 24px;
+      color: gray;
+      cursor: pointer;
+      margin: 0 2px;
+    }
+    .stars span.active {
+      color: gold;
+    }
+    #favorites {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+      gap: 15px;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<header>
+  <h1><span>AnimeFlix</span></h1>
+  <nav>
+    <a href="#destaques"><span>Destaques</span></a>
+    <a href="#populares"><span>Populares</span></a>
+    <a href="#favoritos"><span>Favoritos</span></a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="destaques">
+    <h2><span>Destaques da Semana</span></h2>
+    <div class="anime-grid" id="destaquesContainer"></div>
+  </section>
+
+  <section id="populares">
+    <h2><span>Top 20 Animes Populares</span></h2>
+    <div class="anime-grid" id="popularesContainer"></div>
+  </section>
+
+  <section id="favoritos">
+    <h2><span>Seus Favoritos ❤️</span></h2>
+    <div id="favorites"></div>
+  </section>
+
+  <!-- Modal de detalhes -->
+  <div id="animeModal">
+    <div class="modal-content">
+      <h2 id="animeTitle"><span></span></h2>
+      <img id="animeImage" src="" alt="Imagem do Anime">
+      <p id="animeDescription"><span></span></p>
+      <div class="stars" id="starRating"></div>
+      <button id="watchButton"><span>▶️ Assistir Trailer</span></button>
+      <br><br>
+      <button onclick="closeModal()"><span>Fechar</span></button>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  const animes = [
+    { title: "Attack on Titan", img: "https://i.pinimg.com/1200x/0c/25/be/0c25be614595a6066e18fc72fe1669ab.jpg", desc: "A humanidade luta contra titãs em uma batalha épica pela sobrevivência.", trailer: "https://youtu.be/LV-nazLVmgo" },
+    { title: "Demon Slayer", img: "https://i.pinimg.com/736x/bf/68/4e/bf684e3bff2e90e8be7330f9ab0a58bb.jpg", desc: "Tanjiro busca vingar sua família e curar sua irmã transformada em demônio.", trailer: "https://youtu.be/VQGCKyvzIM4" },
+    { title: "Jujutsu Kaisen", img: "https://i.pinimg.com/736x/1c/51/78/1c5178d7185c8530fe216f28711f286f.jpg", desc: "Um estudante ganha poderes amaldiçoados ao engolir um artefato perigoso.", trailer: "https://youtu.be/9O_cbb-WhBY" },
+    { title: "One Piece", img: "https://i.pinimg.com/736x/86/5b/bc/865bbcb037b84d01f1be694a570e6ad0.jpg", desc: "Luffy e sua tripulação buscam o lendário tesouro One Piece.", trailer: "https://youtu.be/MCb13lbVGE0" },
+    { title: "Naruto Shippuden", img: "https://i.pinimg.com/736x/05/20/95/05209578d20ec18d4aba21d2508c2a9e.jpg", desc: "Naruto busca se tornar o maior ninja de todos os tempos.", trailer: "https://youtu.be/22R0j8UKRzY" },
+    { title: "Death Note", img: "https://i.pinimg.com/736x/d6/98/44/d69844a16a178e34d99c6247a6aad23a.jpg", desc: "Um estudante encontra um caderno capaz de matar qualquer pessoa.", trailer: "https://youtu.be/NlJZ-YgAt-c" },
+    { title: "My Hero Academia", img: "https://i.pinimg.com/736x/54/7c/91/547c91bf3ef3203245625234187bb4ad.jpg", desc: "Em um mundo de heróis, Izuku sonha em se tornar o maior deles.", trailer: "https://youtu.be/zz37nGym3OQ" },
+    { title: "Tokyo Ghoul", img: "https://i.pinimg.com/736x/53/8f/2e/538f2ee740bf0d1edd008c13f0fb0078.jpg", desc: "Ken Kaneki se transforma em meio-ghoul e luta por sua humanidade.", trailer: "https://youtu.be/vGuQeQsoRgU" },
+    { title: "Fullmetal Alchemist: Brotherhood", img: "https://i.pinimg.com/736x/11/39/04/113904955b3b97b236cd3a82a498321d.jpg", desc: "Dois irmãos alquimistas buscam a pedra filosofal para restaurar seus corpos.", trailer: "https://youtu.be/kx0nBaS_q50" },
+    { title: "Chainsaw Man", img: "https://i.pinimg.com/736x/84/23/ee/8423ee65a32d85ddd11120770ee53369.jpg", desc: "Denji faz um pacto demoníaco e se torna o brutal Chainsaw Man.", trailer: "https://youtu.be/4CP8zxNVID8" },
+    { title: "Bleach", img: "https://i.pinimg.com/736x/9e/1b/94/9e1b945f1da608cb7d3eb8408fd82d73.jpg", desc: "Ichigo se torna Soul Reaper para salvar os vivos dos hollows.", trailer: "https://youtu.be/_bqfnh1gaKU" },
+    { title: "Hunter x Hunter", img: "https://i.pinimg.com/736x/f2/e4/b8/f2e4b8b7eb8ca18a025c735dd81f9c79.jpg", desc: "Gon busca seu pai abandonado e entra em uma aventura perigosa.", trailer: "https://youtu.be/KeeY2W7phbM" },
+    { title: "Sword Art Online", img: "https://i.pinimg.com/736x/d5/50/49/d550497c1198927e5cc8fab96d795e33.jpg", desc: "Jogadores ficam presos em um MMORPG de realidade virtual mortal.", trailer: "https://youtu.be/6ohYYtxfDCg" },
+    { title: "Attack on Titan Final Season", img: "https://i.pinimg.com/736x/8d/69/02/8d6902c2bd9194ad6a1f8e63d032360b.jpg", desc: "A batalha final entre a humanidade e os titãs se aproxima.", trailer: "https://youtu.be/M_OauHnAFc8" },
+    { title: "Vinland Saga", img: "https://i.pinimg.com/736x/36/2c/68/362c68d1f0201143a769aa276d71a8d2.jpg", desc: "Um jovem viking busca vingança e encontra seu destino.", trailer: "https://youtu.be/f8JrZ7Q_p-8" },
+    { title: "Black Clover", img: "https://i.pinimg.com/736x/27/dd/a6/27dda6bb9b3f27ebf2ee9bd5dd9ac6cd.jpg", desc: "Asta luta para se tornar o Rei Mago em um mundo de magia.", trailer: "https://youtu.be/Ln_imebEmAQ" },
+    { title: "Tokyo Revengers", img: "https://i.pinimg.com/736x/32/88/63/328863b0fa3f51cef839434fce62f6d0.jpg", desc: "Takemichi volta no tempo para salvar sua ex-namorada e mudar gangues.", trailer: "https://youtu.be/2Ny3YIZWQM0" },
+    { title: "Mob Psycho 100", img: "https://i.pinimg.com/736x/8c/b2/18/8cb2189a7280ee340e67aacfc593fbec.jpg", desc: "Um esper com poderes incríveis faz de tudo para levar uma vida normal.", trailer: "https://youtu.be/nTze7vAdRpM" },
+    { title: "Spy x Family", img: "https://i.pinimg.com/736x/55/a2/c7/55a2c723d9c1b038c109eb2777bbfe99.jpg", desc: "Um espião, uma assassina e uma telepata formam uma família falsa para missão.", trailer: "https://youtu.be/0CJr6AfE2rY" }
+  ];
+
+  const destaques = animes.slice(0,5);
+  const populares = animes;
+
+  const destaquesContainer = document.getElementById("destaquesContainer");
+  const popularesContainer = document.getElementById("popularesContainer");
+  const favContainer = document.getElementById("favorites");
+
+  function renderAnimes(container, list) {
+    container.innerHTML = "";
+    list.forEach((anime, idx) => {
+      const card = document.createElement("div");
+      card.className = "anime-card";
+      card.innerHTML = `
+        <img src="${anime.img}" alt="${anime.title}">
+        <button class="favorite-btn" onclick="toggleFavorite(${idx}); event.stopPropagation();"><span>★</span></button>
+      `;
+      card.addEventListener("click", () => openModal(anime));
+      container.appendChild(card);
+    });
+  }
+
+  function renderFavorites() {
+    const favs = getFavorites();
+    favContainer.innerHTML = "";
+    favs.forEach(anime => {
+      const card = document.createElement("div");
+      card.className = "anime-card";
+      card.innerHTML = `<img src="${anime.img}" alt="${anime.title}">`;
+      card.addEventListener("click", () => openModal(anime));
+      favContainer.appendChild(card);
+    });
+  }
+
+  function getFavorites() {
+    return JSON.parse(localStorage.getItem("favoritos")) || [];
+  }
+
+  function toggleFavorite(idx) {
+    const anime = animes[idx];
+    let favs = getFavorites();
+    const found = favs.find(a => a.title === anime.title);
+    if (found) {
+      favs = favs.filter(a => a.title !== anime.title);
+    } else {
+      favs.push(anime);
+    }
+    localStorage.setItem("favoritos", JSON.stringify(favs));
+    renderFavorites();
+  }
+
+  const modal = document.getElementById("animeModal");
+  const modalTitle = document.querySelector("#animeTitle span");
+  const modalImage = document.getElementById("animeImage");
+  const modalDesc = document.querySelector("#animeDescription span");
+  const watchButton = document.getElementById("watchButton");
+  const starRating = document.getElementById("starRating");
+
+  function openModal(anime) {
+    modal.style.display = "flex";
+    modalTitle.textContent = anime.title;
+    modalImage.src = anime.img;
+    modalDesc.textContent = anime.desc;
+    watchButton.onclick = () => window.open(anime.trailer, "_blank");
+    renderStars(anime.title);
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+  }
+
+  function renderStars(animeTitle) {
+    starRating.innerHTML = "";
+    const saved = localStorage.getItem("rating_" + animeTitle) || 0;
+    for (let i = 1; i <= 5; i++) {
+      const span = document.createElement("span");
+      span.textContent = "★";
+      if (i <= saved) span.classList.add("active");
+      span.addEventListener("click", () => {
+        localStorage.setItem("rating_" + animeTitle, i);
+        renderStars(animeTitle);
+      });
+      starRating.appendChild(span);
+    }
+  }
+
+  renderAnimes(destaquesContainer, destaques);
+  renderAnimes(popularesContainer, populares);
+  renderFavorites();
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+</script>
+
+</body>
+</html>
