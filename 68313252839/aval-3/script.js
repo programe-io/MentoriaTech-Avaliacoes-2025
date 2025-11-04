@@ -1,30 +1,30 @@
-// O catálogo de dados não é mais necessário aqui, pois a informação está no HTML.
+// Galeria: Ampliar imagem ao clicar
+const imagens = document.querySelectorAll('.vestido img');
+const modal = document.getElementById('modal');
+const imgAmpliada = document.getElementById('img-ampliada');
+const close = document.querySelector('.close');
 
-const verCatalogoBtn = document.getElementById('ver-catalogo-btn');
-const catalogoSection = document.getElementById('catalogo');
+imagens.forEach(img => {
+    img.addEventListener('click', () => {
+        modal.style.display = 'block';
+        imgAmpliada.src = img.src;
+    });
+});
 
-/**
- * Função para rolagem suave ao clicar no botão "Explorar Vestidos"
- */
-function rolarParaCatalogo() {
-    catalogoSection.scrollIntoView({ behavior: 'smooth' });
-}
+close.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
 
-// --- Inicialização e Event Listeners ---
-
-// 1. Evento de clique no botão principal
-verCatalogoBtn.addEventListener('click', rolarParaCatalogo);
-
-// 2. Placeholder de funcionalidade para os botões "Ver Detalhes"
-// Usamos a seção do catálogo, pois os botões estão lá
-catalogoSection.addEventListener('click', (event) => {
-    if (event.target.classList.contains('detalhes-btn')) {
-        const card = event.target.closest('.vestido-card');
-        const vestidoId = card.getAttribute('data-id');
-        
-        // Pega o título do vestido no card para usar no alerta
-        const vestidoNome = card.querySelector('h4').textContent;
-        
-        alert(`Detalhes do Vestido ID ${vestidoId}: ${vestidoNome}. Implementar navegação para a página de detalhes.`);
+modal.addEventListener('click', (e) => {
+    if (e.target !== imgAmpliada) {
+        modal.style.display = 'none';
     }
+});
+
+// Formulário: Validação simples e alerta de envio
+const form = document.getElementById('form-contato');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Formulário enviado com sucesso! Entraremos em contato em breve.');
+    form.reset();
 });
