@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Meu Site</title>
+    <style>
+        
+        .collapsible {
+            cursor: pointer;
+            background-color: #444;
+            color: white;
+            padding: 10px;
+            margin-bottom: 5px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.1em;
+        }
+
+        .collapsible:hover {
+            background-color: #555;
+        }
+
+        .collapsible::after {
+            content: '\25BC';
+            float: right;
+            transition: transform 0.3s;
+        }
+
+        .collapsible.active::after {
+            transform: rotate(-180deg);
+        }
+
+        .collapsible-content {
+            display: none;
+            padding: 0 10px 10px 10px;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <h1>Brawl Stars</h1>
+    </header>
+
+    <nav>
+        <a href="">Inicio</a>
+        <a href="">Pagina 2</a>
+        <a href="">Pagina 3</a>
+        <a href="">Pagina 4</a>
+    </nav>
+
+    <section id="row">
+
+     <aside>
+
+         
+         <button class="collapsible">Sobre o Jogo</button>
+         <div class="collapsible-content">
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Quos nulla reiciendis quia modi nostrum doloribus sapiente fugiat? Quidem sapiente, voluptatum accusamus ipsum animi id qui dolorem
+                  exercitationem fuga! Ut, velit.</p>
+         </div>
+
+       
+         <button class="collapsible">História</button>
+         <div class="collapsible-content">
+             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                 Alias beatae, id in ipsam veniam, harum modi eaque reiciendis illum ipsa error omnis odio
+                  ipsum ea nam at eos quis ducimus.</p>
+         </div>
+
+     </aside>
+
+     <main>
+
+         <article>
+
+            <h2>Meu Blog</h2>
+            <h3>...
+            </h3>
+            <h5>Andre Luis, 19 Outubro , 2025</h5>
+           <img src="https://imgs.search.brave.com/FIN0sZtRzFd4KbelDtvb8tfMcwzCBEDHSRfvPX5dB8Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS12ZWN0b3Iv/b3JnYW5pYy1mbGF0/LWJsb2ctcG9zdC1p/bGx1c3RyYXRpb24t/d2l0aC1wZW9wbGVf/MjMtMjE0ODk1NTI2/MC5qcGc_c2VtdD1h/aXNfaHlicmlkJnc9/NzQwJnE9ODA" alt="Meu blog">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Fuga, incidunt facere, labore eaque, corporis doloribus blanditiis
+                 error nemo voluptas ipsum perspiciatis maxime at sunt tempora hic culpa ex non inventore.</p>
+
+         </article>
+
+     </main>
+
+    </section>
+
+    <footer>
+        <p>CopyRight - Todos os Direitos Reservados - 2025</p>
+    </footer>
+
+    <script>
+        const coll = document.querySelectorAll(".collapsible");
+        coll.forEach(button => {
+            button.addEventListener("click", () => {
+                button.classList.toggle("active");
+                const content = button.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
