@@ -1,0 +1,254 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  /* Fonte elegante e legível, sem ser moderna demais */
+  font-family: "Georgia", "Times New Roman", Times, serif; 
+  margin: 0;
+  padding: 0;
+}
+
+/* Corpo */
+body {
+  background-color: #f7f3f0; /* Bege muito claro, suave e quente */
+  color: #3e3e3e; /* Marrom escuro/cinza chumbo, elegante */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+/* Descrição principal (primeiro parágrafo) */
+p:first-of-type {
+  font-weight: 300;
+  font-size: 1.15rem;
+  color: #5d4a3e; /* Tom de marrom mais quente e profundo */
+  max-width: 750px;
+  margin: 1.5em auto 2em;
+  letter-spacing: 0.01em;
+  line-height: 1.8;
+  padding: 0 1.5rem;
+}
+
+header p {
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #92705e; /* Marrom suave e acolhedor */
+    max-width: 720px;
+    margin: 20px auto 0;
+    padding: 0 1.5rem;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 700; 
+    /* Fonte serifada para um toque clássico */
+    font-family: "Playfair Display", "Georgia", serif; 
+    color: #4a2c1b; /* Marrom escuro rico e sofisticado */
+    /* Sombra suave e discreta */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); 
+    letter-spacing: 0.08em; 
+    text-transform: uppercase;
+}
+
+
+/* Menu de navegação */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #5d4a3e; /* Marrom escuro do cabeçalho */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+  color: #f7f3f0; /* Cor de fundo principal, em contraste */
+  padding: 16px 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  /* Sem cantos muito arredondados para um visual mais formal */
+  border-radius: 4px; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  letter-spacing: 0.03em;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #92705e; /* Marrom mais claro ao passar o mouse */
+  color: #fff;
+  /* Remove o scale para manter a elegância */
+  transform: none; 
+  box-shadow: none;
+}
+
+/* Layout principal */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Barra lateral */
+aside {
+  flex: 1 1 300px;
+  background-color: #fff; 
+  padding: 25px;
+  border-radius: 12px;
+  /* Sombra suave para profundidade */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); 
+  /* Borda sutil */
+  border: 1px solid #e0e0e0; 
+  color: #3e3e3e;
+  transition: box-shadow 0.3s ease;
+}
+
+aside:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Conteúdo principal */
+main {
+  flex: 3 1 700px;
+  background-color: #fff;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  color: #3e3e3e;
+}
+
+/* Imagens "fakeimage" (exemplo) */
+.fakeimage {
+  width: 100%;
+  max-width: 60%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 24px;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #92705e;
+  transition: opacity 0.3s ease;
+}
+
+.fakeimage:hover {
+  opacity: 0.95; /* Efeito mais sutil */
+  transform: none;
+}
+
+/* Imagem da postagem */
+.post-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dcdcdc;
+  object-fit: cover;
+  transition: box-shadow 0.3s ease;
+}
+
+.post-image:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Foto Sobre Mim quadrada */
+.about-me img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%; /* Foto de perfil redonda para um toque pessoal */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto 30px auto;
+  border: 4px solid #92705e;
+  transition: box-shadow 0.3s ease;
+}
+
+.about-me img:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Galeria - fotos quadradas lado a lado */
+.gallery {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+
+.gallery img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Rodapé */
+footer {
+  background-color: #4a2c1b; /* Marrom escuro do H1 */
+  color: #f7f3f0; 
+  text-align: center;
+  padding: 25px;
+  font-weight: 400;
+  font-size: 0.95rem;
+  border-top: 5px solid #92705e; 
+  user-select: none;
+  letter-spacing: 0.02em;
+  font-family: "Georgia", "Times New Roman", Times, serif;
+}
+
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  aside,
+  main {
+    flex: 1 1 100%;
+    padding: 20px;
+  }
+
+  header h1 {
+      font-size: 2.5rem;
+  }
+
+  .fakeimage {
+    max-width: 100%;
+  }
+
+  .about-me img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+
+  .gallery img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+}
