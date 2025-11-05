@@ -1,0 +1,250 @@
+/* ========= GERAL ========= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #ffe0f0, #fff0f6);
+    color: #3e1440;
+    overflow-x: hidden;
+}
+
+h1, h3, h4 {
+    font-weight: 600;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* ========= CABEÇALHO ========= */
+header {
+    background: linear-gradient(90deg, #e75480, #ff8fa3);
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 span {
+    font-size: 1.5em;
+    animation: piscar 2s infinite alternate;
+}
+
+@keyframes piscar {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
+}
+
+/* ========= NAVEGAÇÃO ========= */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 0;
+    margin-top: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    transform: scale(1.1);
+}
+
+/* ========= SEÇÕES ========= */
+main {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.pagina {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    display: none;
+}
+
+.pagina.ativa {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========= ANIMAÇÕES ========= */
+.imagem-animada {
+    width: 80%;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    margin-top: 20px;
+    transition: transform 1s ease, box-shadow 0.5s ease;
+}
+
+.imagem-animada:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Efeito flutuar */
+.flutuar {
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Efeito aparecer */
+.aparecer {
+    animation: aparecer 1.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes aparecer {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========= GALERIA ========= */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.cartao {
+    background: white;
+    border-radius: 12px;
+    width: 230px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.cartao:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.cartao img {
+    width: 100%;
+    border-bottom: 3px solid #ffb6c1;
+    transition: transform 0.6s ease;
+}
+
+.cartao:hover img {
+    transform: scale(1.1);
+}
+
+.cartao span {
+    color: #e75480;
+    font-weight: bold;
+}
+
+/* ========= ASIDE ========= */
+aside {
+    background: #ffe0ed;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    animation: deslizar 1s ease;
+}
+
+@keyframes deslizar {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* ========= RODAPÉ ========= */
+footer {
+    text-align: center;
+    background: linear-gradient(90deg, #e75480, #ff8fa3);
+    color: white;
+    padding: 15px;
+    font-size: 0.9em;
+    box-shadow: 0 -3px 15px rgba(0,0,0,0.1);
+    letter-spacing: 0.5px;
+}
+/* ====== TÍTULO H2 ANIMADO ====== */
+.titulo-secao {
+    font-size: 2.2em;
+    text-align: center;
+    margin: 50px 0 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    animation: aparecerTitulo 1.2s ease forwards;
+}
+
+/* Efeito de gradiente animado */
+.brilho-gradiente {
+    background: linear-gradient(90deg, #ff6fae, #ffc3e0, #ff6fae);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradienteMover 6s linear infinite, brilhar 2s ease-in-out infinite alternate;
+}
+
+/* Linha decorativa abaixo do h2 */
+.titulo-secao::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 4px;
+    background: linear-gradient(90deg, #e75480, #ff8fa3);
+    margin: 12px auto 0;
+    border-radius: 2px;
+    animation: expandirLinha 1s ease forwards;
+}
+
+/* Animações */
+@keyframes gradienteMover {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes brilhar {
+    0% { text-shadow: 0 0 8px rgba(255, 192, 203, 0.4); }
+    100% { text-shadow: 0 0 20px rgba(255, 182, 193, 0.9); }
+}
+
+@keyframes aparecerTitulo {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes expandirLinha {
+    from { width: 0; opacity: 0; }
+    to { width: 90px; opacity: 1; }
+}
