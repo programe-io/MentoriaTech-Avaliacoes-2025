@@ -1,0 +1,140 @@
+/* === ESTILO GERAL === */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #fff8f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* === NAV (MENU DE NAVEGAÇÃO) === */
+nav {
+  background-color: #d2691e;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffe4b5;
+}
+
+/* === MAIN (CONTEÚDO PRINCIPAL) === */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* === SEÇÕES DO CARDÁPIO === */
+section {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+section h2 {
+  border-bottom: 3px solid #d2691e;
+  padding-bottom: 8px;
+  color: #d2691e;
+  font-size: 1.6em;
+  margin-bottom: 20px;
+}
+
+/* === ITENS DO CARDÁPIO === */
+.item {
+  display: flex;
+  align-items: center;
+  background: #fff7f1;
+  border-radius: 8px;
+  margin: 15px 0;
+  padding: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* === IMAGENS DOS ITENS === */
+.item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+/* === TEXTO DOS ITENS === */
+.item p {
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #333;
+}
+
+/* === RODAPÉ === */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #d2691e;
+  color: white;
+  margin-top: 40px;
+  font-size: 0.9em;
+}
+
+/* === RESPONSIVIDADE (CELULAR) === */
+@media (max-width: 750px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .item p {
+    text-align: left;
+  }
+}
