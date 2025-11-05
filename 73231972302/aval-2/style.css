@@ -1,0 +1,203 @@
+/* === ESTILO "NEYMAR JR x APPLE DESIGN" === */
+/* Minimalista, elegante e com toques modernos */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Fundo branco com contraste suave */
+body {
+  background-color: #f8f8f8;
+  color: #1d1d1f;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==== CABEÇALHO ==== */
+header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f4f4 100%);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: -1px;
+}
+
+header p {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==== NAVEGAÇÃO ==== */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1d1d1f;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #0071e3; /* azul elegante estilo Apple */
+}
+
+/* ==== LAYOUT PRINCIPAL ==== */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+/* ==== SIDEBAR ==== */
+aside {
+  flex: 30%;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+aside:hover {
+  transform: translateY(-4px);
+}
+
+aside h2 {
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+aside h5 {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.about-me img {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+}
+
+/* ==== GALERIA ==== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ==== CONTEÚDO PRINCIPAL ==== */
+main {
+  flex: 65%;
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.06);
+}
+
+article h3 {
+  font-size: 1.8rem;
+  color: #000;
+  margin-bottom: 0.8rem;
+}
+
+article h5 {
+  color: #777;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.post-image {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.post-image:hover {
+  transform: scale(1.02);
+}
+
+article p {
+  font-size: 1.05rem;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* ==== RODAPÉ ==== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #777;
+  border-top: 1px solid #e0e0e0;
+  background-color: #fff;
+  margin-top: 3rem;
+}
+
+/* ==== RESPONSIVIDADE ==== */
+@media (max-width: 900px) {
+  .row {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  aside, main {
+    flex: 100%;
+  }
+
+  header h1 {
+    font-size: 2.3rem;
+  }
+}
+
+/* ==== TOQUE “NEYMAR” DE LUXO ==== */
+header h1::after {
+  content: " Jr";
+  color: #0071e3;
+}
+
+aside h2::before {
+  content: "⚽ ";
+  color: #0071e3;
+}
