@@ -1,0 +1,229 @@
+/* ============================================================
+   🌐 CSS COMPLETO — Base moderna para qualquer projeto
+   Autor: Seu Nome
+   Versão: 1.0
+   Data: 2025
+   ============================================================ */
+
+/* ========== RESET UNIVERSAL ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== VARIÁVEIS DE TEMA ========== */
+:root {
+    --cor-primaria: #0078d7;
+    --cor-secundaria: #00bfa6;
+    --cor-fundo: #f9f9f9;
+    --cor-texto: #333;
+    --cor-clara: #fff;
+    --sombra: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --fonte-base: "Poppins", "Segoe UI", sans-serif;
+}
+
+/* 🌙 MODO ESCURO AUTOMÁTICO */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --cor-fundo: #121212;
+        --cor-texto: #eaeaea;
+        --cor-primaria: #3ea6ff;
+        --sombra: 0 4px 15px rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* ========== ESTILO GLOBAL ========== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-base);
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* LINKS */
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* ========== CABEÇALHO ========== */
+header {
+    background: var(--cor-primaria);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: var(--sombra);
+}
+header h1 {
+    font-size: 2.2rem;
+}
+header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* ========== NAVEGAÇÃO ========== */
+nav {
+    background: #005fa3;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a {
+    color: white;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+nav a:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ========== SEÇÕES E CONTEÚDO ========== */
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+section {
+    margin-bottom: 3rem;
+}
+section h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 1rem;
+    border-left: 5px solid var(--cor-primaria);
+    padding-left: 10px;
+}
+
+/* ========== CARDS ========== */
+.card {
+    background: var(--cor-clara);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* ========== BOTÕES ========== */
+button,
+.btn {
+    background: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+button:hover,
+.btn:hover {
+    background: var(--cor-secundaria);
+    transform: scale(1.05);
+}
+button:active {
+    transform: scale(0.98);
+}
+
+/* ========== FORMULÁRIOS ========== */
+form {
+    background: var(--cor-clara);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+input, textarea, select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+input:focus, textarea:focus, select:focus {
+    border-color: var(--cor-primaria);
+    outline: none;
+}
+
+/* ========== IMAGENS ========== */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* ========== RODAPÉ ========== */
+footer {
+    background: var(--cor-primaria);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+}
+footer a {
+    color: white;
+    text-decoration: underline;
+}
+footer a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* ========== ANIMAÇÕES ========== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* ========== LAYOUT RESPONSIVO ========== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    nav a {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1.5rem 0.5rem;
+    }
+    button {
+        width: 100%;
+    }
+}
+
+/* ========== SCROLLBAR PERSONALIZADA ========== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--cor-fundo);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--cor-primaria);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--cor-secundaria);
+}
