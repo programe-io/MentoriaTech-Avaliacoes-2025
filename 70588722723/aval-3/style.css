@@ -1,121 +1,211 @@
-/* CSS principal da Doceria do Amor */
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doceria do Amor</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffeef2;
+      color: #5a2a4a;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #ffeef2;
-  color: #5a2a4a;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-}
+    header {
+      background-color: #f8b6c1;
+      padding: 1rem;
+      text-align: center;
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
 
-header {
-  background-color: #f8b6c1;
-  padding: 1rem;
-  text-align: center;
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
+    header span {
+      color: #ff69b4;
+    }
 
-header span {
-  color: #ff69b4;
-}
+    main {
+      padding: 2rem;
+      text-align: center;
+    }
 
-main {
-  padding: 2rem;
-}
+    .card {
+      border-radius: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 250px;
+      height: 250px;
+      margin: 1rem;
+      display: inline-block;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
 
-/* Card padrão */
-.card {
-  background-color: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 250px;
-  margin: 1rem;
-}
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
+    .card-content {
+      background: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 1rem;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
 
-.card-content {
-  padding: 1rem;
-}
+    .card-content h3 {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+    }
 
-.card-content h3 {
-  margin: 0.5rem 0;
-  font-size: 1.2rem;
-}
+    .card-content span {
+      font-weight: bold;
+      color: #ffb6c1;
+    }
 
-.card-content span {
-  font-weight: bold;
-  color: #e75480;
-}
+    /* Imagens dos cards via CSS */
+    .card-brigadeiro {
+      background-image: url('https://www.sabornamesa.com.br/media/k2/items/cache/937f929d420ab20a5c9d96a1ab9e2021_XL.jpg');
+    }
 
-/* Card específico do Brigadeiro */
-.card-brigadeiro {
-  background-image: url('https://images.unsplash.com/photo-1606755962773-3b36a962f6b4');
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-  position: relative;
-}
+    .card-bolo-chocolate {
+      background-image: url('https://tse3.mm.bing.net/th/id/OIP.0JVzkEnu8OOwK52SYOgM_gHaE7?rs=1&pid=ImgDetMain&o=7&rm=3');
+    }
 
-.card-brigadeiro .card-content {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 1rem;
-  border-radius: 1rem;
-}
+    .card-brownie {
+      background-image: url('https://tse3.mm.bing.net/th/id/OIP.JtII_mfDl5QNkng8BPz-7AHaJd?rs=1&pid=ImgDetMain&o=7&rm=3');
+    }
 
-.card-brigadeiro:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-}
+    .card-bombom {
+      background-image: url('https://tse4.mm.bing.net/th/id/OIP.R5UZn7FYtxMY_6HQ0boSegHaD4?rs=1&pid=ImgDetMain&o=7&rm=3');
+    }
 
-/* Seções adicionais */
-section {
-  margin-bottom: 3rem;
-}
+    .card-morango-amor {
+      background-image: url('https://tse4.mm.bing.net/th/id/OIP.xMJ7VRA1YcMJQ6ejMDy_6AHaEf?rs=1&pid=ImgDetMain&o=7&rm=3');
+    }
 
-h2 {
-  text-align: center;
-  color: #c71585;
-}
+    .card-sorvete {
+      background-image: url('https://tse4.mm.bing.net/th/id/OIP.wwPsY3QfIiHaD2JyH75_ewHaE8?rs=1&pid=ImgDetMain&o=7&rm=3');
+    }
 
-/* Rodapé */
-footer {
-  background-color: #f8b6c1;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  font-size: 1rem;
-}
+    .card-torta-morango {
+      background-image: url('https://guiadacozinha.com.br/wp-content/uploads/2020/06/torta-morango-chocolate-branco.jpg');
+    }
 
-/* Botão do WhatsApp */
-.whatsapp-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  color: white;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  text-decoration: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-}
+    footer {
+      background-color: #f8b6c1;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1rem;
+    }
 
-.whatsapp-btn:hover {
-  transform: scale(1.1);
-}
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Doceria do <span>Amor</span>
+  </header>
+
+  <main>
+    <section>
+      <h2>Cardápio de Delícias</h2>
+
+      <div class="card card-brigadeiro">
+        <div class="card-content">
+          <h3>Brigadeiro Gourmet</h3>
+          <p>Tradicional e irresistível, feito com leite condensado e chocolate.</p>
+          <span>R$ 2,50</span>
+        </div>
+      </div>
+
+      <div class="card card-bolo-chocolate">
+        <div class="card-content">
+          <h3>Bolo de Chocolate</h3>
+          <p>Bolo macio e molhadinho com cobertura cremosa de chocolate.</p>
+          <span>R$ 35,00</span>
+        </div>
+      </div>
+
+      <div class="card card-brownie">
+        <div class="card-content">
+          <h3>Brownie</h3>
+          <p>Brownie com casquinha crocante e interior macio e chocolatudo.</p>
+          <span>R$ 5,00</span>
+        </div>
+      </div>
+
+      <div class="card card-bombom">
+        <div class="card-content">
+          <h3>Bombom de Morango</h3>
+          <p>Morango coberto com brigadeiro e banhado no chocolate ao leite.</p>
+          <span>R$ 4,50</span>
+        </div>
+      </div>
+
+      <div class="card card-morango-amor">
+        <div class="card-content">
+          <h3>Morango do Amor</h3>
+          <p>Morango espetado e coberto com calda crocante de açúcar caramelizado.</p>
+          <span>R$ 3,50</span>
+        </div>
+      </div>
+
+      <div class="card card-sorvete">
+        <div class="card-content">
+          <h3>Sorvete</h3>
+          <p>Sorvetes cremosos e refrescantes em diversos sabores irresistíveis.</p>
+          <span>R$ 7,00</span>
+        </div>
+      </div>
+
+      <div class="card card-torta-morango">
+        <div class="card-content">
+          <h3>Torta de Morango</h3>
+          <p>Torta com base amanteigada, recheio cremoso e cobertura de morangos frescos.</p>
+          <span>R$ 30,00</span>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Contato: (86) 99557-1629 | doceriadoamor@gmail.com</p>
+  </footer>
+
+  <a href="https://wa.me/5586995571629" target="_blank" class="whatsapp-btn">💬</a>
+</body>
+</html>
