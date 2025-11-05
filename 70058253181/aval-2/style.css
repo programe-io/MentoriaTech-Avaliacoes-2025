@@ -1,0 +1,167 @@
+/* ---------------------------------- */
+/* 1. RESET BÁSICO E CONFIGURAÇÃO GERAL */
+/* ---------------------------------- */
+* {
+    /* Remove margens e preenchimentos padrão e garante que padding/border não aumentem o tamanho do elemento */
+        margin: 0;
+            padding: 0;
+                box-sizing: border-box;
+                }
+
+                body {
+                    font-family: Arial, sans-serif; /* Define uma fonte básica */
+                        background-color: #1a1a2e; /* Fundo escuro, típico de temas de jogos */
+                            color: #e4e4e4; /* Cor de texto clara */
+                                line-height: 1.6;
+                                }
+
+                                a {
+                                    color: #e94560; /* Cor de destaque para links (vermelho/rosa) */
+                                        text-decoration: none; /* Remove o sublinhado padrão dos links */
+                                        }
+
+                                        a:hover {
+                                            color: #ff7895;
+                                                text-decoration: underline;
+                                                }
+
+                                                /* ---------------------------------- */
+                                                /* 2. ESTILOS DO CABEÇALHO (HEADER) */
+                                                /* ---------------------------------- */
+                                                header {
+                                                    background-color: #0f3460; /* Fundo azul escuro */
+                                                        padding: 20px 0;
+                                                            border-bottom: 4px solid #e94560; /* Linha de destaque */
+                                                            }
+
+                                                            header h1 {
+                                                                text-align: center;
+                                                                    color: #ffffff;
+                                                                        font-size: 2.5em;
+                                                                            margin-bottom: 10px;
+                                                                            }
+
+                                                                            /* Estilização da Navegação */
+                                                                            header nav ul {
+                                                                                list-style: none;
+                                                                                    text-align: center;
+                                                                                    }
+
+                                                                                    header nav ul li {
+                                                                                        display: inline;
+                                                                                            margin: 0 15px;
+                                                                                            }
+
+                                                                                            header nav ul li a {
+                                                                                                color: #ffffff;
+                                                                                                    font-weight: bold;
+                                                                                                        transition: color 0.3s;
+                                                                                                        }
+
+                                                                                                        header nav ul li a:hover {
+                                                                                                            color: #e94560;
+                                                                                                            }
+
+                                                                                                            /* ---------------------------------- */
+                                                                                                            /* 3. ESTILOS DO CONTEÚDO PRINCIPAL (MAIN) */
+                                                                                                            /* ---------------------------------- */
+                                                                                                            main {
+                                                                                                                padding: 40px 20px;
+                                                                                                                    max-width: 1200px; /* Limita a largura máxima do conteúdo */
+                                                                                                                        margin: 0 auto; /* **GARANTE QUE O CONTEÚDO PRINCIPAL ESTEJA CENTRALIZADO** */
+                                                                                                                        }
+
+                                                                                                                        /* Layout para os cards de jogos (usando Flexbox) */
+                                                                                                                        #recomendacoes {
+                                                                                                                            display: flex;
+                                                                                                                                flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha em telas menores */
+                                                                                                                                    gap: 30px; /* Espaço entre os cards */
+                                                                                                                                        justify-content: center; /* **GARANTE QUE OS CARDS ESTEJAM CENTRALIZADOS HORIZONTALMENTE** */
+                                                                                                                                            align-items: flex-start; /* Alinha o conteúdo ao topo, se necessário */
+                                                                                                                                            }
+
+                                                                                                                                            #recomendacoes h2 {
+                                                                                                                                                font-size: 2em;
+                                                                                                                                                    margin-bottom: 30px;
+                                                                                                                                                        text-align: center; 
+                                                                                                                                                            color: #e94560;
+                                                                                                                                                                width: 100%; /* GARANTE QUE O H2 OCUPE 100% DA LARGURA E FIQUE CENTRALIZADO */
+                                                                                                                                                                }
+
+                                                                                                                                                                /* ---------------------------------- */
+                                                                                                                                                                /* 4. ESTILOS DOS CARDS DE JOGOS (ARTICLE/H3) */
+                                                                                                                                                                /* ---------------------------------- */
+                                                                                                                                                                .jogo-card {
+                                                                                                                                                                    background-color: #16213e; /* Fundo mais escuro para o card */
+                                                                                                                                                                        padding: 20px;
+                                                                                                                                                                            border-radius: 10px;
+                                                                                                                                                                                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Sombra para destacar o card */
+                                                                                                                                                                                    width: 100%; /* Largura padrão em telas pequenas */
+                                                                                                                                                                                        max-width: 350px; /* Limite de largura para desktop */
+                                                                                                                                                                                            transition: transform 0.3s, box-shadow 0.3s;
+                                                                                                                                                                                                text-align: center; /* Centraliza o texto e imagem dentro do card */
+                                                                                                                                                                                                }
+
+                                                                                                                                                                                                /* Efeito de hover para dar a sensação de destaque */
+                                                                                                                                                                                                .jogo-card:hover {
+                                                                                                                                                                                                    transform: translateY(-5px); /* Move levemente para cima */
+                                                                                                                                                                                                        box-shadow: 0 10px 20px rgba(233, 69, 96, 0.5); /* Sombra colorida mais intensa */
+                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                        .jogo-card h3 {
+                                                                                                                                                                                                            font-size: 1.5em; /* Estiliza a tag H3 */
+                                                                                                                                                                                                                color: #4CAF50; /* Cor de destaque para o nome do jogo (verde) */
+                                                                                                                                                                                                                    margin-bottom: 10px;
+                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                    .jogo-card img {
+                                                                                                                                                                                                                        width: 100%;
+                                                                                                                                                                                                                            height: auto;
+                                                                                                                                                                                                                                border-radius: 8px;
+                                                                                                                                                                                                                                    margin-bottom: 15px;
+                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                    .jogo-card ul {
+                                                                                                                                                                                                                                        list-style: none;
+                                                                                                                                                                                                                                            margin-top: 10px;
+                                                                                                                                                                                                                                                padding-left: 0;
+                                                                                                                                                                                                                                                    font-size: 0.9em;
+                                                                                                                                                                                                                                                        text-align: left; /* Garante que a lista fique alinhada à esquerda dentro do card */
+                                                                                                                                                                                                                                                            display: inline-block; /* Permite centralizar o bloco <ul> dentro do card */
+                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                            .jogo-card p {
+                                                                                                                                                                                                                                                                margin-bottom: 15px;
+                                                                                                                                                                                                                                                                    font-size: 0.95em;
+                                                                                                                                                                                                                                                                        text-align: justify; /* Alinha o texto do parágrafo */
+                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                        /* Estiliza o botão/link "Ver detalhes" */
+                                                                                                                                                                                                                                                                        .jogo-card a {
+                                                                                                                                                                                                                                                                            display: block; /* Ocupa a largura total do card */
+                                                                                                                                                                                                                                                                                background-color: #e94560;
+                                                                                                                                                                                                                                                                                    color: #ffffff;
+                                                                                                                                                                                                                                                                                        padding: 10px;
+                                                                                                                                                                                                                                                                                            text-align: center;
+                                                                                                                                                                                                                                                                                                border-radius: 5px;
+                                                                                                                                                                                                                                                                                                    margin-top: 15px;
+                                                                                                                                                                                                                                                                                                        font-weight: bold;
+                                                                                                                                                                                                                                                                                                            transition: background-color 0.3s;
+                                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                                            .jogo-card a:hover {
+                                                                                                                                                                                                                                                                                                                background-color: #ff7895;
+                                                                                                                                                                                                                                                                                                                    text-decoration: none; 
+                                                                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                                                                    /* ---------------------------------- */
+                                                                                                                                                                                                                                                                                                                    /* 5. ESTILOS DO RODAPÉ (FOOTER) */
+                                                                                                                                                                                                                                                                                                                    /* ---------------------------------- */
+                                                                                                                                                                                                                                                                                                                    footer {
+                                                                                                                                                                                                                                                                                                                        background-color: #0f3460;
+                                                                                                                                                                                                                                                                                                                            color: #cccccc;
+                                                                                                                                                                                                                                                                                                                                text-align: center;
+                                                                                                                                                                                                                                                                                                                                    padding: 15px 0;
+                                                                                                                                                                                                                                                                                                                                        font-size: 0.8em;
+                                                                                                                                                                                                                                                                                                                                            margin-top: 40px;
+                                                                                                                                                                                                                                                                                                                                            }
