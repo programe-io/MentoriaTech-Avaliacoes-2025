@@ -1,0 +1,106 @@
+/* CSS para Beleza Estelar */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #ffeaf4, #fff);
+}
+header {
+  background: linear-gradient(90deg, #ff70a6, #ff9eaf);
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background: #ffd1e8;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav a {
+  text-decoration: none;
+  color: #b30055;
+  padding: 5px 15px;
+  border-radius: 20px;
+  transition: 0.3s;
+  font-weight: 600;
+}
+nav a:hover {
+  background: #ff9fce;
+  color: #fff;
+}
+main {
+  display: flex;
+  padding: 30px;
+  gap: 20px;
+}
+article {
+  flex: 3;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+  0% { transform: translateY(0);} 
+  50% { transform: translateY(-8px);} 
+  100% { transform: translateY(0);} 
+}
+aside {
+  flex: 1;
+  background: #fff3fb;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+h2, h3 {
+  color: #b30055;
+}
+span {
+  color: #ff4d88;
+  font-weight: bold;
+}
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+.galeria img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform .3s, box-shadow .3s;
+}
+.galeria img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  color: #fff;
+  background: linear-gradient(90deg, #ff70a6, #ff9eaf);
+}
+.btn-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #ff4d88;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.btn-top.show { display: flex; }
