@@ -1,0 +1,159 @@
+/* Variáveis de tema */
+:root {
+    --cor-fundo: #ffe6f0;
+    --cor-primaria: #ff99cc;
+    --cor-acento: #ff66b2;
+    --cor-texto: #333333;
+    --cor-branco: #ffffff;
+    --radius-card: 12px;
+    --transition-speed: 0.3s;
+    --font-base: 16px;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-size: var(--font-base);
+    line-height: 1.6;
+}
+
+.site-header {
+    background-color: var(--cor-primaria);
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--cor-branco);
+}
+
+.site-header h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+.site-header p {
+    font-size: 1.2em;
+}
+
+.site-nav {
+    background-color: #ffb3d9;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.site-nav a {
+    color: var(--cor-branco);
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    transition: color var(--transition-speed);
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+    color: var(--cor-fundo);
+}
+
+main {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: var(--cor-branco);
+    border-radius: var(--radius-card);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.card:hover,
+.card:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 30px;
+    width: 60%;
+}
+
+.card-content h2 {
+    color: var(--cor-acento);
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.card-content p {
+    font-size: 1.1em;
+}
+
+/* Estilo para o aside dentro do card */
+.card-aside {
+    background-color: #fff4fa; /* tom clarinho de rosa para destacar */
+    border-left: 4px solid var(--cor-acento);
+    margin-top: 20px;
+    padding: 15px 20px;
+    border-radius: var(--radius-card);
+    font-style: italic;
+}
+
+.card-aside h3 {
+    color: var(--cor-acento);
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.site-footer {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+    }
+    .card img,
+    .card-content {
+        width: 100%;
+    }
+    .card img {
+        max-height: 300px;
+    }
+    .card-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-nav a {
+        display: block;
+        margin: 10px 0;
+    }
+    .site-header h1 {
+        font-size: 2.2em;
+    }
+    .site-header p {
+        font-size: 1em;
+    }
+}
