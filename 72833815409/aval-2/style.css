@@ -1,66 +1,131 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+:root{
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --radius: 12px;
+  --max-width: 1100px;
 }
 
-header {
-    background-color: #007b33;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-main {
-    width: 80%;
-    margin: 20px auto;
-    max-width: 800px;
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:20px;
 }
 
-#posts, #new-post {
-    background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+/* Header */
+.site-header{
+  background:linear-gradient(90deg,#fff 0, #f8fafc 100%);
+  border-bottom:1px solid #e6e9ee;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.site-header .container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.logo{margin:0;font-size:1.25rem;letter-spacing:0.2px}
+.btn{
+  border:0;
+  background:transparent;
+  padding:8px 12px;
+  cursor:pointer;
+  border-radius:8px;
+  transition:all .15s ease;
+}
+.btn:hover{background:#f1f5f9}
+.btn.primary{
+  background:var(--accent);
+  color:white;
+}
+.btn.primary:hover{filter:brightness(.95)}
+
+/* Layout main */
+main.container{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:24px;
+  padding-top:28px;
 }
 
-#postForm input, #postForm textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+/* Posts */
+.posts{display:flex;flex-direction:column;gap:18px}
+.post{
+  background:var(--card);
+  padding:18px;
+  border-radius:var(--radius);
+  box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+  border:1px solid rgba(15,23,42,0.03);
+}
+.post h2{margin:0 0 8px;font-size:1.1rem}
+.post .meta{font-size:0.85rem;color:var(--muted);display:flex;gap:8px;align-items:center}
+.post .excerpt{margin-top:12px;color:#374151;line-height:1.45}
+.post .actions{margin-top:12px;display:flex;gap:8px}
+
+/* Sidebar */
+.sidebar{position:relative}
+.widget{background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(15,23,42,0.03);box-shadow:0 6px 18px rgba(16,24,40,0.03);margin-bottom:16px}
+.widget h3{margin:0 0 8px}
+
+/* Modal */
+.modal{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(2,6,23,0.45);
+  padding:24px;
+}
+.hidden{display:none}
+.modal-content{
+  width:100%;
+  max-width:720px;
+  background:var(--card);
+  padding:20px;
+  border-radius:12px;
+  position:relative;
+  box-shadow: 0 20px 60px rgba(2,6,23,0.3);
+}
+.close{
+  position:absolute;
+  top:10px;
+  right:10px;
+  border-radius:8px;
+  background:transparent;
+  font-size:20px;
+  padding:6px 8px;
+}
+label{display:block;margin-bottom:10px;font-size:0.95rem}
+input[type="text"], textarea{
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid #e6e9ee;
+  background:#fff;
+  font-size:0.95rem;
+  resize:vertical;
 }
 
-#postForm button {
-    background-color: #007b33;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+/* Footer */
+.site-footer{padding:20px 0;margin-top:24px;border-top:1px solid #e6e9ee;background:transparent}
+.site-footer p{margin:0;color:var(--muted);text-align:center}
 
-#postForm button:hover {
-    background-color: #005f27;
-}
-
-.post {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-
-.post h3 {
-    color: #007b33;
-    margin-bottom: 5px;
-}
-
-footer {
-    text-align: center;
-    background-color: #222;
-    color: white;
-    padding: 15px 0;
+/* Responsivo */
+@media (max-width:920px){
+  main.container{grid-template-columns:1fr}
+  .sidebar{order:2}
 }

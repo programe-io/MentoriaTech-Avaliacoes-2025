@@ -1,44 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog do Futebol</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meu Blog Simples</title>
+  <link rel="stylesheet" href="styles.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
 <body>
-    <header>
-        <h1>Blog do Futebol</h1>
-        <p>Notícias, curiosidades e opiniões sobre o mundo da bola ⚽</p>
-    </header>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Meu Blog</h1>
+      <button id="new-post-btn" class="btn">Novo Post</button>
+    </div>
+  </header>
 
-    <main>
-        <section id="posts">
-            <h2>Últimos Posts</h2>
-            <!-- Posts serão adicionados aqui via JavaScript -->
-        </section>
+  <main class="container">
+    <section class="posts" id="posts"></section>
 
-        <section id="new-post">
-            <h2>Escreva um novo post</h2>
-            <form id="postForm">
-                <input type="text" id="titulo" placeholder="Título do post" required>
-                <textarea id="conteudo" placeholder="Escreva aqui seu texto..." required></textarea>
-                <button type="submit">Publicar</button>
-            </form>
-        </section>
-    </main>
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>Sobre</h3>
+        <p>Blog simples feito com HTML, CSS e JavaScript. Posts salvos no localStorage.</p>
+      </div>
+      <div class="widget">
+        <h3>Categorias</h3>
+        <ul>
+          <li>Tecnologia</li>
+          <li>Design</li>
+          <li>Pessoal</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
 
-    <footer>
-        <p>© 2025 Blog do Futebol | Criado com ❤️ e JavaScript</p>
-    </footer>
+  <!-- Modal de criação/edição de post -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="close-modal" class="close">×</button>
+      <h2 id="modal-title">Novo Post</h2>
+      <form id="post-form">
+        <label>
+          Título
+          <input type="text" id="title" required maxlength="100" />
+        </label>
+        <label>
+          Categoria
+          <input type="text" id="category" maxlength="50" />
+        </label>
+        <label>
+          Conteúdo
+          <textarea id="content" rows="8" required></textarea>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Salvar</button>
+          <button type="button" id="cancel" class="btn">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
-    <script src="script.js"></script>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Meu Blog — Feito com ♥</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 <script src="script.js"></script></body>
 </html>
-
 <nav>
     <a>
-        <aside>
-            <h3>
-                <article>
-                    <img>
+        <article>
+            <img>
