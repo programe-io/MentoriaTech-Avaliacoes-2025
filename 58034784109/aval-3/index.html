@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Template Responsivo — Exemplo</title>
+  <meta name="description" content="Um exemplo simples de página HTML + CSS responsiva e acessível." />
+
+  <style>
+    /* Reset simples */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color: #111; background: #f7f7fb; line-height: 1.4; }
+
+    /* Layout principal */
+    header { background: linear-gradient(90deg,#4f46e5,#06b6d4); color: white; padding: 1.25rem; position: sticky; top: 0; z-index: 10; box-shadow: 0 2px 6px rgba(2,6,23,0.08); }
+    .container { width: min(1100px, 94%); margin: 0 auto; }
+
+    /* Nav */
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .brand { display:flex; gap:.75rem; align-items:center; font-weight:700; }
+    .brand .logo { width:40px; height:40px; border-radius:8px; background:rgba(255,255,255,0.12); display:grid; place-items:center; font-weight:800; }
+
+    nav ul { list-style:none; display:flex; gap:0.75rem; margin:0; padding:0; }
+    nav a { color: rgba(255,255,255,0.95); text-decoration:none; padding:.4rem .6rem; border-radius:6px; font-weight:600; }
+    nav a:hover, nav a:focus { background: rgba(255,255,255,0.08); outline: 2px dashed rgba(255,255,255,0.18); outline-offset:3px; }
+
+    /* Hero */
+    .hero { padding: 3.5rem 0; display:grid; grid-template-columns: 1fr; gap:1.5rem; align-items:center; }
+    .hero-inner { display:flex; flex-direction:column; gap:1rem; }
+    .eyebrow { text-transform:uppercase; font-size:.8rem; letter-spacing:.08em; color:#eef2ff; font-weight:700; }
+    h1 { margin:0; font-size:clamp(1.6rem, 3.6vw, 2.4rem); line-height:1.05; color:#fff; text-shadow: 0 2px 12px rgba(2,6,23,0.25); }
+    p.lead { margin:0; color: rgba(255,255,255,0.9); max-width: 60ch; }
+
+    .hero-cta { display:flex; gap:.75rem; margin-top:.5rem; }
+    .btn { padding:.7rem 1rem; border-radius:10px; background:white; color:#111; font-weight:700; border:none; cursor:pointer; box-shadow: 0 6px 18px rgba(2,6,23,0.12); }
+    .btn.secondary { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.14); }
+
+    /* Cards section */
+    .cards { display:grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap:1rem; margin-top:2rem; }
+    .card { background:white; border-radius:12px; padding:1rem; box-shadow: 0 6px 20px rgba(2,6,23,0.06); }
+    .card h3 { margin:.25rem 0; font-size:1.05rem; }
+    .card p { margin:0; color:#444; font-size:.95rem; }
+
+    /* Footer */
+    footer { padding:1.5rem 0; margin-top:2.5rem; color:#334155; font-size:.95rem; }
+
+    /* Responsividade */
+    @media(min-width:900px) {
+      .hero { grid-template-columns: 1fr 420px; gap:2.5rem; align-items:center; }
+      .hero-card { background: white; border-radius: 12px; padding:1rem; box-shadow: 0 10px 30px rgba(2,6,23,0.08); }
+      .hero-illustration { width:100%; height:100%; border-radius:8px; object-fit:cover; }
+    }
+
+    /* Acessibilidade: foco visível */
+    :focus { outline: 3px solid #ffd54a; outline-offset: 3px; }
+    /* Pequenos estilos para formulário */
+    input[type="text"], input[type="email"], textarea { width:100%; padding:.6rem; border-radius:8px; border:1px solid #e6e9ef; font-size:.95rem; }
+    label { font-weight:600; font-size:.9rem; display:block; margin-bottom:.35rem; color:#0f172a; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header role="banner">
+    <div class="container nav" >
+      <div class="brand" aria-label="Marca">
+        <div class="logo" aria-hidden="true">T</div>
+        <div>
+          <div style="font-size:0.95rem">Template</div>
+          <div style="font-size:0.78rem; opacity:.9">Responsivo • Acessível</div>
+        </div>
+      </div>
+
+      <nav role="navigation" aria-label="Menu principal">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#recursos">Recursos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="eyebrow">Exemplo pronto</div>
+        <h1 id="hero-title">Página simples, bonita e responsiva — comece aqui</h1>
+        <p class="lead">Este modelo contém navegação, hero, cartões de conteúdo e um formulário de contato. Foi pensado para ser fácil de editar e acessível por teclado e leitores de tela.</p>
+
+        <div class="hero-cta">
+          <button class="btn" onclick="scrollToSection('recursos')">Ver recursos</button>
+          <a class="btn secondary" href="#contato">Fale conosco</a>
+        </div>
+
+        <div class="cards" aria-hidden="false" style="margin-top:1.5rem;">
+          <article class="card" tabindex="0">
+            <h3>Design responsivo</h3>
+            <p>Grade fluida que se adapta do celular à tela grande, sem dependência de frameworks externos.</p>
+          </article>
+
+          <article class="card" tabindex="0">
+            <h3>Acessibilidade</h3>
+            <p>Foco visível, contraste adequado e uso de elementos semânticos para leitores de tela.</p>
+          </article>
+
+          <article class="card" tabindex="0">
+            <h3>Fácil de personalizar</h3>
+            <p>Cores, textos e imagens são rapidamente substituíveis para alinhar à sua marca ou projeto.</p>
+          </article>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Demonstração">
+        <img class="hero-illustration" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Ilustração de exemplo (pode trocar pela sua imagem)" />
+      </aside>
+    </section>
+
+    <section id="recursos" class="container" style="margin-top:2.25rem;">
+      <h2 style="margin:0 0 .75rem 0;">Recursos</h2>
+      <p style="margin-top:0; color:#334155; max-width:70ch;">Pequena lista de coisas prontas para você usar e adaptar: grid responsivo, cabeçalho fixo, cards com sombra, formulário, e boas práticas mínimas de acessibilidade.</p>
+
+      <div style="display:grid; gap:1rem; margin-top:1rem;">
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <div class="card" style="flex:1 1 320px;">
+            <h3>Formulário de contato</h3>
+            <p>Inclui validação simples com JavaScript e estilos amigáveis.</p>
+          </div>
+          <div class="card" style="flex:1 1 320px;">
+            <h3>Imagens responsivas</h3>
+            <p>Use imagens otimizadas, ou substitua pelo seu conteúdo em /assets.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="container" style="margin-top:2rem; margin-bottom:2rem;">
+      <h2>Contato</h2>
+      <form onsubmit="handleSubmit(event)" aria-label="Formulário de contato" style="max-width:760px; margin-top:1rem; display:grid; gap:.75rem;">
+        <div>
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" required placeholder="Seu nome completo" />
+        </div>
+        <div>
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" required placeholder="email@exemplo.com" />
+        </div>
+        <div>
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+        </div>
+        <div>
+          <button class="btn" type="submit">Enviar mensagem</button>
+        </div>
+        <div id="formStatus" role="status" aria-live="polite" style="color:#064e3b; font-weight:600;"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
+      <div>© <span id="ano"></span> — Exemplo de template</div>
+      <div style="opacity:.8">Feito com ♥ — personalize à vontade</div>
+    </div>
+  </footer>
+
+  <script>
+    // JS mínimo para interatividade
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      const form = e.target;
+      // Validação simples
+      const nome = form.nome.value.trim();
+      const email = form.email.value.trim();
+      const msg = form.mensagem.value.trim();
+      if (!nome || !email || !msg) {
+        status.textContent = 'Preencha todos os campos antes de enviar.';
+        status.style.color = '#b91c1c';
+        return;
+      }
+      // Simula envio
+      status.style.color = '#064e3b';
+      status.textContent = 'Enviando...';
+      setTimeout(() => {
+        status.textContent = 'Mensagem enviada com sucesso! (simulação)';
+        form.reset();
+      }, 900);
+    }
+  </script>
+</body>
+</html>
