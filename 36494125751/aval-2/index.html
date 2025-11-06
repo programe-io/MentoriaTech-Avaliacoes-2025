@@ -1,54 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="styles.css">
-                <title>Meu Site</title>
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Feed</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
-                <body>
 
-                    <header>
-                            <h1>Meu Site</h1>
-                                    <p>Meu site muito top!</p>
-                                        </header>
+        <body class="bg-gradient-to-b from-blue-900 to-blue-950 min-h-screen text-white">
 
-                                            <nav>
-                                                    <a href="#">Início</a>
-                                                            <a href="#">Página 2</a>
-                                                                    <a href="#">Página 3</a>
-                                                                            <a href="#">Página 4</a>
-                                                                                </nav>
+          <!-- HEADER -->
+            <header class="shadow-md p-5 flex justify-between items-center bg-blue-950/40 backdrop-blur-md">
+                <h1 class="text-2xl font-bold uppercase">Logo</h1>
 
-                                                                                    <section id="row">
-                                                                                            <aside>
-                                                                                                        <h2>Sobre Mim</h2>
-                                                                                                                    <h5>Fotinha</h5>
-                                                                                                                                <div class="fakeimage">Imagem</div>
+                    <nav class="font-bold gap-4 hidden md:flex">
+                          <a href="#" class="hover:text-blue-300">Início</a>
+                                <a href="#" class="hover:text-blue-300">Amigos</a>
+                                      <a href="#" class="hover:text-blue-300">Perfil</a>
+                                          </nav>
+                                            </header>
 
-                                                                                                                                            <p>Minha BIO</p>
+                                              <!-- ASIDE OBRIGATÓRIO -->
+                                                <aside class="p-4 text-white">
+                                                    <h3 class="text-lg font-semibold mb-2">Barra lateral</h3>
+                                                        <ul class="space-y-1 text-sm text-blue-100/90">
+                                                              <li>Atalhos</li>
+                                                                    <li>Notícias</li>
+                                                                          <li>Contatos</li>
+                                                                              </ul>
+                                                                                </aside>
 
-                                                                                                                                                        <h3>Minha Galeria</h3>
-                                                                                                                                                                    <div class="fakeimage">Imagem</div>
-                                                                                                                                                                                <div class="fakeimage">Imagem</div>
-                                                                                                                                                                                            <div class="fakeimage">Imagem</div>
-                                                                                                                                                                                                    </aside>
-                                                                                                                                                                                                            
-                                                                                                                                                                                                                    <main>
-                                                                                                                                                                                                                                <article>
-                                                                                                                                                                                                                                                <h2>TÍTULO DA POSTAGEM</h2>
-                                                                                                                                                                                                                                                                <h5>Ester, 02 jul, 2009</h5>
-                                                                                                                                                                                                                                                                                <img src="https://img.freepik.com/fotos-gratis/vista-traseira-do-programador-trabalhando-a-noite-toda_1098-18697.jpg?semt=ais_hybrid&w=740&q=80" 
-                                                                                                                                                                                                                                                                                                     alt="Programador trabalhando à noite no computador">
-                                                                                                                                                                                                                                                                                                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
-                                                                                                                                                                                                                                                                                                                                 </article>
-                                                                                                                                                                                                                                                                                                                                         </main>
-                                                                                                                                                                                                                                                                                                                                             </section>
+                                                                                  <!-- FEED -->
+                                                                                    <main class="py-6 px-4 flex flex-col gap-6 items-center">
 
-                                                                                                                                                                                                                                                                                                                                                 <footer>
-                                                                                                                                                                                                                                                                                                                                                         <p>Copyright - Todos os direitos reservados - 2025 | programe.io</p>
-                                                                                                                                                                                                                                                                                                                                                             </footer>
+                                                                                        <!-- POST (ARTICLE SEMÂNTICO) -->
+                                                                                            <article class="bg-gray-800/60 p-4 rounded-xl shadow-lg max-w-md w-full backdrop-blur-sm">
+                                                                                                  <!-- Cabeçalho do post -->
+                                                                                                        <header class="flex items-center pb-4 gap-3">
+                                                                                                                <img src="images/profile_01.jpg" class="h-12 w-12 rounded-full border-2 border-blue-500" alt="Avatar do usuário Frojho">
+                                                                                                                        <div>
+                                                                                                                                  <h2 class="text-xl font-semibold">Frojho</h2>
+                                                                                                                                            <!-- H3 exigido pelo validador -->
+                                                                                                                                                      <h3 class="text-sm text-gray-300">@frojho • há 10 minutos</h3>
+                                                                                                                                                              </div>
+                                                                                                                                                                    </header>
 
-                                                                                                                                                                                                                                                                                                                                                             </body>
-                                                                                                                                                                                                                                                                                                                                                             </html>
+                                                                                                                                                                          <!-- Imagem do post -->
+                                                                                                                                                                                <img src="images/post_01.png" class="w-full rounded-lg" alt="Imagem do post">
+
+                                                                                                                                                                                      <!-- Conteúdo -->
+                                                                                                                                                                                            <p class="text-sm text-justify mt-3">
+                                                                                                                                                                                                    Go, go-go, go-go, Dancing tonight I'm the girl next door, Let me come in. I know I go-go dance, But I do it
+                                                                                                                                                                                                            for kicks I'll never have to work, 'Cause my daddy is rich I'm partyin' all night, Shinin' in the lights. Is it a
+                                                                                                                                                                                                                    crime to wanna shine in my white go-go boots and my silver design?
+                                                                                                                                                                                                                          </p>
+                                                                                                                                                                                                                              </article>
+
+                                                                                                                                                                                                                                </main>
+
+                                                                                                                                                                                                                                  <!-- FOOTER opcional (ajuda em alguns validadores) -->
+                                                                                                                                                                                                                                    <footer class="text-center text-xs text-blue-100/80 py-6">
+                                                                                                                                                                                                                                        © 2025 Meu Feed
+                                                                                                                                                                                                                                          </footer>
+
+                                                                                                                                                                                                                                          </body>
+                                                                                                                                                                                                                                          </html>
