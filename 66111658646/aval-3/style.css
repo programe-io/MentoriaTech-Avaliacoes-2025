@@ -1,0 +1,218 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f0f2f5;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  background-color: #1877f2;
+  color: white;
+  text-align: center;
+  padding-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  margin: 0;
+  padding: 15px 0 5px 0;
+  font-size: 1.6em;
+}
+
+nav {
+  background-color: #145db2;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding: 10px 0;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav a span {
+  margin-right: 5px;
+}
+
+nav a:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+nav a.active {
+  background-color: white;
+  color: #1877f2;
+}
+
+main {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 0 10px;
+}
+
+.page {
+  display: block;
+}
+
+/* NOVO POST */
+.new-post {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.new-post textarea {
+  width: 100%;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.image-upload label span {
+  margin-right: 5px;
+}
+
+.image-upload label {
+  display: inline-block;
+  background-color: #1877f2;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.new-post button {
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.new-post button:hover {
+  background-color: #145db2;
+}
+
+/* POST */
+.post {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.delete-post {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.delete-post:hover {
+  color: red;
+}
+
+.author span {
+  font-weight: bold;
+  color: #1877f2;
+}
+
+.time span {
+  color: #777;
+  font-size: 0.85em;
+}
+
+.content span {
+  color: #333;
+}
+
+.actions button span {
+  margin-right: 4px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.comments {
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.comment span {
+  color: #555;
+}
+
+.delete-comment {
+  color: #999;
+  cursor: pointer;
+  font-size: 0.9em;
+  float: right;
+}
+
+.delete-comment:hover {
+  color: red;
+}
+
+/* MODO ESCURO */
+.dark-mode {
+  background-color: #18191a;
+  color: #e4e6eb;
+}
+
+.dark-mode .post,
+.dark-mode .new-post,
+.dark-mode .notifications li {
+  background-color: #242526;
+  color: #e4e6eb;
+}
+
+.dark-mode nav {
+  background-color: #333;
+}
+
+.dark-mode header {
+  background-color: #242526;
+  color: #e4e6eb;
+}
+
+footer {
+  text-align: center;
+  color: #555;
+  margin: 30px 0;
+}
+
+footer span {
+  color: #1877f2;
+}
