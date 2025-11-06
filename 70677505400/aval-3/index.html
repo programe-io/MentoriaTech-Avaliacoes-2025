@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ateliê Moda — Coleção</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset leve */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height: 100%; font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color: #222; background: #f7f7fa; }
+
+    /* Layout */
+    header {
+      background: linear-gradient(90deg,#111827 0%, #1f2937 100%);
+      color: #fff; padding: 22px 18px;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      box-shadow: 0 4px 18px rgba(16,24,40,0.15);
+    }
+    .brand { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
+    .brand .logo {
+      width:48px; height:48px; border-radius:8px; background: #fff; display:flex; align-items:center; justify-content:center; color:#111827; font-weight:700;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    nav { display:flex; gap:14px; align-items:center; }
+    nav a { color: rgba(255,255,255,0.9); text-decoration:none; padding:8px 12px; border-radius:8px; font-weight:600; font-size:14px; }
+    nav a:hover { background: rgba(255,255,255,0.06); }
+
+    .search {
+      display:flex; gap:8px; align-items:center;
+    }
+    .search input {
+      padding:8px 12px; border-radius:10px; border: none; outline:none; width:220px;
+    }
+
+    /* Hero */
+    .hero {
+      padding:36px 18px; display:flex; gap:28px; align-items:center; justify-content:space-between;
+    }
+    .hero .text {
+      max-width:720px;
+    }
+    .hero h1 { font-size:34px; color:#0f172a; margin-bottom:10px; }
+    .hero p { color:#475569; font-size:16px; margin-bottom:14px; }
+    .hero .cta { display:inline-block; padding:12px 18px; border-radius:10px; background:#111827; color:#fff; text-decoration:none; font-weight:600; }
+
+    .hero .showcase {
+      width:320px; height:220px; border-radius:14px; overflow:hidden; position:relative; box-shadow: 0 10px 30px rgba(15,23,42,0.12);
+    }
+    .hero .showcase img { width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* Main grid */
+    main { padding: 18px; max-width:1200px; margin: 0 auto 48px; }
+    .filters { display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap; }
+    .filters button {
+      background:#fff; border:1px solid #e6e9ee; padding:8px 12px; border-radius:10px; cursor:pointer; font-weight:600;
+    }
+    .grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+      gap:18px;
+    }
+
+    .card {
+      background:#fff; border-radius:12px; overflow:hidden; box-shadow: 0 6px 20px rgba(15,23,42,0.06);
+      display:flex; flex-direction:column;
+    }
+    .card .thumb { width:100%; height:260px; overflow:hidden; background:#f3f4f6; display:flex; align-items:center; justify-content:center; position:relative; }
+    .card img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .45s ease; }
+    .card .thumb:hover img { transform: scale(1.05); }
+
+    .badge {
+      position:absolute; top:12px; left:12px; background:linear-gradient(90deg,#ef4444,#f97316); color:white; padding:6px 10px; border-radius:999px; font-weight:700; font-size:12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .card .info { padding:12px 14px; display:flex; flex-direction:column; gap:8px; flex:1; }
+    .card .info h3 { font-size:16px; color:#0f172a; }
+    .card .info p { color:#64748b; font-size:13px; }
+    .card .price-row { margin-top:auto; display:flex; justify-content:space-between; align-items:center; gap:10px; }
+    .price { font-weight:700; color:#0f172a; }
+    .old-price { color:#94a3b8; text-decoration:line-through; font-weight:600; font-size:13px; }
+
+    .card .actions { display:flex; gap:8px; margin-top:10px; }
+    .btn { padding:8px 10px; border-radius:10px; border:none; cursor:pointer; font-weight:700; }
+    .btn.secondary { background:#eef2ff; color:#3730a3; }
+    .btn.primary { background:#111827; color:white; }
+
+    /* Footer */
+    footer { background:#0b1220; color:#cbd5e1; padding:26px 18px; margin-top:28px; }
+    footer .foot-grid { max-width:1200px; margin:0 auto; display:flex; gap:18px; flex-wrap:wrap; justify-content:space-between; align-items:center; }
+    footer small { color:#94a3b8; }
+
+    /* Responsiveness */
+    @media (max-width:720px){
+      .hero { flex-direction:column; align-items:flex-start; gap:16px; }
+      .hero .showcase { width:100%; height:180px; }
+      .card .thumb { height:200px; }
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <a class="brand" href="#">
+      <div class="logo">AM</div>
+      <div>
+        <div style="font-weight:800;">Ateliê Moda</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.8); margin-top:2px;">Moda contemporânea • Qualidade</div>
+      </div>
+    </a>
+
+    <nav aria-label="Navegação principal">
+      <a href="#colecao">Coleção</a>
+      <a href="#promo">Promoções</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="search" role="search" aria-label="Busca">
+      <input type="search" placeholder="Buscar peças, ex: camiseta" aria-label="Buscar produtos" />
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="text">
+      <h1 id="hero-title">Novidades da estação — Conforto & estilo</h1>
+      <p>Peças selecionadas com atenção ao corte, tecido e versatilidade. Encontre desde camisetas básicas até jaquetas premium.</p>
+      <a class="cta" href="#colecao">Ver coleção</a>
+    </div>
+    <div class="showcase" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1520975910377-4d8ec5f90b1b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=7d85f2f4f647cc0b2f2f0c8c8b3b6f2d" alt="Destaque coleção Ateliê Moda">
+    </div>
+  </section>
+
+  <main>
+    <!-- Filtros simples -->
+    <div class="filters" role="toolbar" aria-label="Filtros">
+      <button type="button">Todos</button>
+      <button type="button">Novidades</button>
+      <button type="button">Masculino</button>
+      <button type="button">Feminino</button>
+      <button type="button">Promoção</button>
+      <button type="button">Acessórios</button>
+    </div>
+
+    <!-- Grid de produtos -->
+    <section id="colecao" class="grid" aria-label="Lista de produtos">
+      <!-- Card 1 -->
+      <article class="card" aria-labelledby="p1-title">
+        <div class="thumb">
+          <img src="https://images.unsplash.com/photo-1520975910377-4d8ec5f90b1b?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=7d85f2f4f647cc0b2f2f0c8c8b3b6f2d" alt="Jaqueta bomber preta">
+          <span class="badge">Novo</span>
+        </div>
+        <div class="info">
+          <h3 id="p1-title">Jaqueta Bomber Urbana</h3>
+          <p>Bomber leve com forro suave, ideal para transição de estações.</p>
+          <div class="price-row">
+            <div>
+              <div class="price">R$ 349,00</div>
+            </div>
+            <div class="actions" aria-hidden="true">
+              <button class="btn secondary">Ver</button>
+              <button class="btn primary">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 (com span promo) -->
+      <article class="card" aria-labelledby="p2-title">
+        <div class="thumb">
+          <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=3e0b5c6b2b6e9f1f5c4c5a9f8d3c2b1a" alt="Camiseta branca básica">
+          <span class="badge" style="background:linear-gradient(90deg,#06b6d4,#3b82f6);">Básico</span>
+        </div>
+        <div class="info">
+          <h3 id="p2-title">Camiseta Algodão Premium</h3>
+          <p>Toque macio, corte tradicional. Disponível em várias cores.</p>
+          <div class="price-row">
+            <div>
+              <div class="price">R$ 89,00</div>
+              <div class="old-price">R$ 109,00</div>
+            </div>
+            <div class="actions" aria-hidden="true">
+              <button class="btn secondary">Ver</button>
+              <button class="btn primary">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card" aria-labelledby="p3-title">
+        <div class="thumb">
+          <img src="https://images.unsplash.com/photo-1520975908638-3a3f5a1b2a1b?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcd1234abcd1234abcd1234abcd1234" alt="Calça jeans masculina">
+        </div>
+        <div class="info">
+          <h3 id="p3-title">Calça Jeans Slim</h3>
+          <p>Modelagem slim, elastano para conforto. Lavagem escura.</p>
+          <div class="price-row">
+            <div>
+              <div class="price">R$ 199,00</div>
+            </div>
+            <div class="actions" aria-hidden="true">
+              <button class="btn secondary">Ver</button>
+              <button class="btn primary">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card" aria-labelledby="p4-title">
+        <div class="thumb">
+          <img src="https://images.unsplash.com/photo-1541534401786-ff0cb9d9a8de?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=11112222333344445555666677778888" alt="Vestido floral">
+          <span class="badge" style="background:linear-gradient(90deg,#10b981,#06b6d4);">Destaque</span>
+        </div>
+        <div class="info">
+          <h3 id="p4-title">Vestido Mid Floral</h3>
+          <p>Vestido midi com caimento leve e estampa exclusiva.</p>
+          <div class="price-row">
+            <div>
+              <div class="price">R$ 259,00</div>
+            </div>
+            <div class="actions" aria-hidden="true">
+              <button class="btn secondary">Ver</button>
+              <button class="btn primary">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="card" aria-labelledby="p5-title">
+        <div class="thumb">
+          <img src="https://picsum.photos/seed/bolsa/1600/1200" alt="Bolsa tiracolo">
+          <span class="badge" style="background:linear-gradient(90deg,#8b5cf6,#ec4899);">Novo</span>
+        </div>
+        <div class="info">
+          <h3 id="p5-title">Bolsa Tiracolo Compacta</h3>
+          <p>Couro sintético, alça ajustável e compartimentos internos.</p>
+          <div class="price-row">
+            <div>
+              <div class="price">R$ 149,00</div>
+            </div>
+            <div class="actions" aria-hidden="true">
+              <button class="btn secondary">Ver</button>
+              <button class="btn primary">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 (promoção) -->
+      <article class="card" aria-labelledby="p6-title">
+        <div class="thumb">
+          <img src="https://images.unsplash.com/photo-1520975908638-9b8a4d2c3e5f?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6" alt="Moletom com capuz">
+          <span class="badge" style="background:linear-gradient(90deg,#ef4444,#f97316);">-20%</span>
+        </div>
+        <div class="info">
+          <h3 id="p6-title">Moletom com Capuz Unissex</h3>
+          <p>Confortável, felpa interna e costuras reforçadas.</p>
+          <div class="price-row">
+            <div>
+              <div class="price">R$ 127,20</div>
+              <div class="old-price">R$ 159,00</div>
+            </div>
+            <div class="actions" aria-hidden="true">
+              <button class="btn secondary">Ver</button>
+              <button class="btn primary">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Seção promo / info -->
+    <section id="promo" style="margin-top:28px; background:linear-gradient(90deg,#fff,#f8fafc); padding:18px; border-radius:12px;">
+      <h2 style="font-size:18px; margin-bottom:8px;">Promoções importantes</h2>
+      <p style="color:#475569;">Frete grátis para compras acima de R$300 • Troca grátis em até 14 dias • Pagamento parcelado sem juros (algumas condições).</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-grid">
+      <div>
+        <div style="font-weight:800; color:white; margin-bottom:6px;">Ateliê Moda</div>
+        <small>Rua Exemplo, 123 — Centro • Cidade, Estado</small>
+      </div>
+      <div style="display:flex; gap:18px; align-items:center;">
+        <nav aria-label="Links do rodapé">
+          <a href="#sobre" style="color:#cbd5e1; text-decoration:none;">Sobre</a> |
+          <a href="#contato" style="color:#cbd5e1; text-decoration:none;">Contato</a> |
+          <a href="#" style="color:#cbd5e1; text-decoration:none;">Política de Troca</a>
+        </nav>
+        <small>© <span id="year"></span> Ateliê Moda</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Inserir ano atual no footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Observação: pequenos comportamentos interativos (ex.: filtros, abrir produto) podem ser adicionados.
+    // Aqui mantemos HTML/CSS puros, mas se quiser eu já adiciono JavaScript para:
+    // - abrir modal de produto
+    // - filtro dinâmico por categoria
+    // - carrinho simples em localStorage
+  </script>
+</body>
+</html>
