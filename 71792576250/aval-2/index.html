@@ -1,527 +1,425 @@
-<<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
-  <title>Página Exemplo</title>
-  <style>
-    /* Estilo da barra de navegação */
-    nav {
-      background-color: #333;
-      padding: 10px;
-      text-align: center;
-    \}
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      font-family: Arial, sans-serif;
-    \}
-
-    nav a:hover {
-      text-decoration: underline;
-    \}
-
-    /* Estilo geral da página */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f4f4f4;
-    \}
-
-    h1 {
-      text-align: center;
-    \}
-
-    /* Estilo da calculadora */
-    .calculadora {
-      max-width: 300px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    \}
-
-    .calculadora input {
-      width: 100%;
-      padding: 8px;
-      margin: 5px 0;
-      box-sizing: border-box;
-    \}
-
-    .calculadora button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      background-color: #333;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-    \}
-
-    .calculadora button:hover {
-      background-color: #555;
-    \}
-
-    #resultado {
-      margin-top: 15px;
-      text-align: center;
-      font-size: 1.2em;
-    \}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafios & Saber — Matemática e Português</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #333;
+        \}
+        header {
+            background-color: #1e90ff;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+        \}
+        nav {
+            background-color: #0c6cd4;
+            text-align: center;
+            padding: 0.5rem;
+        \}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        \}
+        nav a:hover {
+            text-decoration: underline;
+        \}
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        \}
+        article {
+            margin-bottom: 2rem;
+        \}
+        article h2 {
+            color: #1e90ff;
+        \}
+        .categoria {
+            font-size: 0.9rem;
+            color: #777;
+            text-transform: uppercase;
+        \}
+        footer {
+            text-align: center;
+            background-color: #1e90ff;
+            color: white;
+            padding: 1rem 0;
+            margin-top: 3rem;
+        \}
+        .desafio {
+            background-color: #eef6ff;
+            border-left: 4px solid #1e90ff;
+            padding: 1rem;
+            margin-top: 1rem;
+        \}
+        .botao-resposta {
+            display: inline-block;
+            background-color: #1e90ff;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+        \}
+        .botao-resposta:hover {
+            background-color: #0c6cd4;
+        \}
+    </style>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="style.css" rel="stylesheet"></head>
 <body>
 
-  <!-- Barra de navegação -->
-  <nav>
-    <a href="#inicio">Início</a>
-    <a href="#calculadora">Calculadora</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#contato">Contato</a>
-  </nav>
+    <header>
+        <h1>Desafios & Saber</h1>
+        <p>Blog de desafios de Matemática e Português</p>
+    </header>
 
-  <h1 id="inicio">Bem-vindo à Página Exemplo</h1>
+    <nav>
+        <a href="#matematica">Matemática</a>
+        <a href="#portugues">Português</a>
+        <a href="#sobre">Sobre</a>
+    </nav>
 
-  <!-- Calculadora -->
-  <div class="calculadora" id="calculadora">
-    <h2>Calculadora de Soma</h2>
-    <input type="number" id="num1" placeholder="Digite o primeiro número">
-    <input type="number" id="num2" placeholder="Digite o segundo número">
-    <button id="somar">Somar</button>
-    <div id="resultado"></div>
-  </div>
+    <main>
+        <article id="matematica">
+            <span class="categoria">Desafio de Matemática</span>
+            <h2>O enigma dos números mágicos</h2>
+            <p>Um número é dito “mágico” se for igual à soma dos quadrados dos seus dígitos. Exemplo: 13 → 1² + 3² = 10. 
+            Mas o número 1 é especial: ele é o único que permanece igual após várias transformações. Qual é o próximo número “mágico” depois de 1?</p>
+            
+            <div class="desafio">
+                <p>Tenta resolver e depois clica abaixo para ver a resposta!</p>
+                <a href="#" class="botao-resposta">Ver resposta</a>
+            </div>
+        </article>
 
-  <script>
-    // Código JavaScript da calculadora
-    const botao = document.getElementById("somar");
-    const resultado = document.getElementById("resultado");
+        <article id="portugues">
+            <span class="categoria">Desafio de Português</span>
+            <h2>Caça ao erro</h2>
+            <p>Encontra o erro na frase abaixo:</p>
+            <blockquote>
+                “Houveram muitas pessoas no evento.”
+            </blockquote>
+            <div class="desafio">
+                <p>Sabes o que está errado? Dica: o verbo “haver” é especial!</p>
+                <a href="#" class="botao-resposta">Ver explicação</a>
+            </div>
+        </article>
 
-    botao.addEventListener("click", function() {
-      const n1 = parseFloat(document.getElementById("num1").value);
-      const n2 = parseFloat(document.getElementById("num2").value);
+        <article id="sobre">
+            <span class="categoria">Sobre o Blog</span>
+            <h2>Bem-vindo ao Desafios & Saber!</h2>
+            <p>Este é um espaço para quem gosta de aprender de forma divertida. Toda semana, postamos desafios de Matemática e Português com dicas e explicações detalhadas.</p>
+        </article>
+    </main>
 
-      if (isNaN(n1) || isNaN(n2)) {
-        resultado.textContent = "Por favor, digite dois números válidos.";
-        return;
-      \}
-
-      const soma = n1 + n2;
-      resultado.textContent = `O resultado é: \${soma\}`;
-    \});
-  </script>
+    <footer>
+        <p>© 2025 Desafios & Saber — Feito com curiosidade e paixão pelo conhecimento.</p>
+    </footer>
 
 <script src="script.js"></script></body>
-</html>$0<!-- Barra de navegação -->
-<nav>
-  <a href="#inicio">Início</a>
-  <a href="#sobre">Sobre</a>
-  <a href="#servicos">Serviços</a>
-  <a href="#contato">Contato</a>
-</nav>$0<link rel="stylesheet" href="style.css">$0<!DOCTYPE html>
-<html lang="pt-BR">
+</html>
+<!DOCTYPE html>
+<html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
-  <title>Exemplo Header</title>
-  <style>
-    /* Estilo geral do header */
-    header {
-      background-color: #333;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    \}
-
-    /* Título dentro do header */
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-      font-family: Arial, sans-serif;
-    \}
-
-    /* Subtítulo */
-    header p {
-      margin: 5px 0 0 0;
-      font-size: 1.2em;
-      font-family: Arial, sans-serif;
-      color: #ccc;
-    \}
-
-    /* Barra de navegação dentro do header */
-    nav {
-      margin-top: 15px;
-    \}
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s;
-    \}
-
-    nav a:hover {
-      color: #ff9800;
-    \}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafios & Saber — Matemática e Português</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header da página -->
-  <header>
-    <h1>Meu Site</h1>
-    <p>Bem-vindo ao meu site incrível!</p>
-    
-    <!-- Navegação dentro do header -->
+    <header>
+        <h1>Desafios & Saber</h1>
+        <p>Blog de desafios de Matemática e Português</p>
+    </header>
+
     <nav>
-      <a href="#inicio">Início</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#contato">Contato</a>
+        <a href="#matematica">Matemática</a>
+        <a href="#portugues">Português</a>
+        <a href="#sobre">Sobre</a>
     </nav>
-  </header>
 
-  <!-- Conteúdo da página -->
-  <section id="inicio">
-    <h2>Início</h2>
-    <p>Conteúdo da seção inicial...</p>
-  </section>
+    <main>
+        <article id="matematica">
+            <span class="categoria">Desafio de Matemática</span>
+            <h2>O enigma dos números mágicos</h2>
+            <p>Um número é dito “mágico” se for igual à soma dos quadrados dos seus dígitos. Exemplo: 13 → 1² + 3² = 10. 
+            Mas o número 1 é especial: ele é o único que permanece igual após várias transformações. Qual é o próximo número “mágico” depois de 1?</p>
+            
+            <div class="desafio">
+                <p>Tenta resolver e depois clica abaixo para ver a resposta!</p>
+                <a href="#" class="botao-resposta">Ver resposta</a>
+            </div>
+        </article>
 
-  <section id="sobre">
-    <h2>Sobre</h2>
-    <p>Informações sobre o site...</p>
-  </section>
+        <article id="portugues">
+            <span class="categoria">Desafio de Português</span>
+            <h2>Caça ao erro</h2>
+            <p>Encontra o erro na frase abaixo:</p>
+            <blockquote>
+                “Houveram muitas pessoas no evento.”
+            </blockquote>
+            <div class="desafio">
+                <p>Sabes o que está errado? Dica: o verbo “haver” é especial!</p>
+                <a href="#" class="botao-resposta">Ver explicação</a>
+            </div>
+        </article>
 
-  <section id="servicos">
-    <h2>Serviços</h2>
-    <p>Descrição dos serviços oferecidos...</p>
-  </section>
+        <article id="sobre">
+            <span class="categoria">Sobre o Blog</span>
+            <h2>Bem-vindo ao Desafios & Saber!</h2>
+            <p>Este é um espaço para quem gosta de aprender de forma divertida. Toda semana, postamos desafios de Matemática e Português com dicas e explicações detalhadas.</p>
+        </article>
+    </main>
 
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Formas de entrar em contato...</p>
-  </section>
+    <footer>
+        <p>© 2025 Desafios & Saber — Feito com curiosidade e paixão pelo conhecimento.</p>
+    </footer>
 
 </body>
-</html>$0<!DOCTYPE html>
-<html lang="pt-BR">
+</html><div class="desafio">
+    <p>Tenta resolver e depois clica abaixo para ver a resposta!</p>
+    <div class="resposta" style="display:none;">
+        <p>Resposta: O próximo número mágico depois de 1 é 7.</p>
+    </div>
+    <button class="botao-resposta" data-target=".resposta">Ver resposta</button>
+</div><script src="script.js"></script>$0<main>
+    <div class="conteudo-principal">
+        <!-- Artigos existentes -->
+        <article id="matematica">
+            <span class="categoria">Desafio de Matemática</span>
+            <h2>O enigma dos números mágicos</h2>
+            <p>Um número é dito “mágico” se for igual à soma dos quadrados dos seus dígitos...</p>
+            <div class="desafio">
+                <div class="resposta" style="display:none;">
+                    <p>Resposta: O próximo número mágico depois de 1 é 7.</p>
+                </div>
+                <button class="botao-resposta" data-target=".resposta">Ver resposta</button>
+            </div>
+        </article>
+
+        <article id="portugues">
+            <span class="categoria">Desafio de Português</span>
+            <h2>Caça ao erro</h2>
+            <p>Encontra o erro na frase abaixo:</p>
+            <blockquote>“Houveram muitas pessoas no evento.”</blockquote>
+            <div class="desafio">
+                <div class="resposta" style="display:none;">
+                    <p>Explicação: O verbo “haver” é impessoal. A frase correta é “Houve muitas pessoas no evento.”</p>
+                </div>
+                <button class="botao-resposta" data-target=".resposta">Ver explicação</button>
+            </div>
+        </article>
+    </div>
+
+    <aside>
+        <h3>Dicas e Curiosidades</h3>
+        <ul>
+            <li>Desafios curtos ajudam na concentração.</li>
+            <li>Experimente criar seus próprios enigmas!</li>
+            <li>Revise sempre conceitos básicos antes de desafios avançados.</li>
+            <li>Links úteis: 
+                <a href="https://www.khanacademy.org/math" target="_blank">Khan Academy</a>, 
+                <a href="https://www.portugues.com.br/" target="_blank">Português Online</a>
+            </li>
+        </ul>
+    </aside>
+</main><main>
+    <div class="conteudo-principal">
+
+        <article id="matematica">
+            <span class="categoria">Desafio de Matemática</span>
+            <h2>O enigma dos números mágicos</h2>
+            <img src="matematica.jpg" alt="Desafios de Matemática" class="imagem-artigo">
+            <p>Um número é dito “mágico” se for igual à soma dos quadrados dos seus dígitos. Exemplo: 13 → 1² + 3² = 10. 
+            Mas o número 1 é especial: ele é o único que permanece igual após várias transformações. Qual é o próximo número “mágico” depois de 1?</p>
+            
+            <div class="desafio">
+                <div class="resposta" style="display:none;">
+                    <p>Resposta: O próximo número mágico depois de 1 é 7.</p>
+                </div>
+                <button class="botao-resposta" data-target=".resposta">Ver resposta</button>
+            </div>
+
+            <div class="desafio">
+                <p>Resolva: 12 + 15 = ?</p>
+                <div class="resposta" style="display:none;">
+                    <p>Resposta: 27</p>
+                </div>
+                <button class="botao-resposta" data-target=".resposta">Ver resposta</button>
+            </div>
+
+            <div class="desafio">
+                <p>Resolva: 8 × 7 = ?</p>
+                <div class="resposta" style="display:none;">
+                    <p>Resposta: 56</p>
+                </div>
+                <button class="botao-resposta" data-target=".resposta">Ver resposta</button>
+            </div>
+        </article>
+
+        <article id="portugues">
+            <span class="categoria">Desafio de Português</span>
+            <h2>Caça ao erro</h2>
+            <img src="portugues.jpg" alt="Desafios de Português" class="imagem-artigo">
+            <p>Encontra o erro na frase abaixo:</p>
+            <blockquote>“Houveram muitas pessoas no evento.”</blockquote>
+            <div class="desafio">
+                <div class="resposta" style="display:none;">
+                    <p>Explicação: O verbo “haver” é impessoal. A frase correta é “Houve muitas pessoas no evento.”</p>
+                </div>
+                <button class="botao-resposta" data-target=".resposta">Ver explicação</button>
+            </div>
+
+            <div class="desafio">
+                <p>Transforme para plural: "O livro está na mesa."</p>
+                <div class="resposta" style="display:none;">
+                    <p>Resposta: "Os livros estão nas mesas."</p>
+                </div>
+                <button class="botao-resposta" data-target=".resposta">Ver resposta</button>
+            </div>
+
+        </article>
+    </div>
+
+    <aside>
+        <h3>Dicas e Curiosidades</h3>
+        <ul>
+            <li>Desafios curtos ajudam na concentração.</li>
+            <li>Experimente criar seus próprios enigmas!</li>
+            <li>Revise sempre conceitos básicos antes de desafios avançados.</li>
+            <li>Links úteis: 
+                <a href="https://www.khanacademy.org/math" target="_blank">Khan Academy</a>, 
+                <a href="https://www.portugues.com.br/" target="_blank">Português Online</a>
+            </li>
+        </ul>
+    </aside>
+</main><!DOCTYPE html>
+<html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <title>Exemplo Aside</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      min-height: 100vh;
-    \}
-
-    /* Estilo do conteúdo principal */
-    main {
-      flex: 1;
-      padding: 20px;
-      background-color: #f4f4f4;
-    \}
-
-    /* Estilo do aside (barra lateral) */
-    aside {
-      width: 250px;
-      padding: 20px;
-      background-color: #333;
-      color: white;
-      box-sizing: border-box;
-    \}
-
-    aside h2 {
-      margin-top: 0;
-      font-size: 1.5em;
-    \}
-
-    aside ul {
-      list-style: none;
-      padding: 0;
-    \}
-
-    aside li {
-      margin: 10px 0;
-    \}
-
-    aside a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s;
-    \}
-
-    aside a:hover {
-      color: #ff9800;
-    \}
-
-    /* Responsividade: em telas pequenas, o aside fica acima do conteúdo */
-    @media screen and (max-width: 768px) {
-      body {
-        flex-direction: column;
-      \}
-
-      aside {
-        width: 100%;
-      \}
-    \}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolver Desafios - Blog</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Resolva os Desafios!</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="resolucao.html">Resolver</a>
+            <a href="gabarito.html">Gabarito</a>
+        </nav>
+    </header>
 
-  <!-- Aside (barra lateral) -->
-  <aside>
-    <h2>Menu Lateral</h2>
-    <ul>
-      <li><a href="#inicio">Início</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </aside>
+    <main>
+        <div class="conteudo-principal">
 
-  <!-- Conteúdo principal -->
-  <main>
-    <h1 id="inicio">Bem-vindo!</h1>
-    <p>Este é o conteúdo principal da página. Aqui você pode colocar textos, imagens, vídeos ou qualquer outro conteúdo.</p>
+            <article>
+                <h2>Desafio de Matemática 1</h2>
+                <p>12 + 15 = ?</p>
+                <input type="number" id="resposta1" placeholder="Digite sua resposta">
+                <button onclick="verificarResposta(1, 27)">Enviar</button>
+                <p id="feedback1"></p>
+            </article>
 
-    <h2 id="sobre">Sobre</h2>
-    <p>Informações sobre o site ou a empresa.</p>
+            <article>
+                <h2>Desafio de Matemática 2</h2>
+                <p>8 × 7 = ?</p>
+                <input type="number" id="resposta2" placeholder="Digite sua resposta">
+                <button onclick="verificarResposta(2, 56)">Enviar</button>
+                <p id="feedback2"></p>
+            </article>
 
-    <h2 id="servicos">Serviços</h2>
-    <p>Descrição dos serviços oferecidos.</p>
+            <article>
+                <h2>Desafio de Português</h2>
+                <p>Transforme para plural: "O livro está na mesa."</p>
+                <input type="text" id="resposta3" placeholder="Digite sua resposta">
+                <button onclick="verificarRespostaTexto(3, 'Os livros estão nas mesas.')">Enviar</button>
+                <p id="feedback3"></p>
+            </article>
 
-    <h2 id="contato">Contato</h2>
-    <p>Formas de entrar em contato.</p>
-  </main>
+        </div>
+    </main>
 
+    <footer>
+        <p>Blog de Desafios &copy; 2025</p>
+    </footer>
+
+    <script>
+        function verificarResposta(id, respostaCorreta) {
+            const input = document.getElementById(`resposta\${id\}`);
+            const feedback = document.getElementById(`feedback\${id\}`);
+            if (parseInt(input.value) === respostaCorreta) {
+                feedback.textContent = "Correto! 🎉";
+                feedback.style.color = "green";
+            \} else {
+                feedback.textContent = "Incorreto. Tente novamente.";
+                feedback.style.color = "red";
+            \}
+        \}
+
+        function verificarRespostaTexto(id, respostaCorreta) {
+            const input = document.getElementById(`resposta\${id\}`);
+            const feedback = document.getElementById(`feedback\${id\}`);
+            if (input.value.trim().toLowerCase() === respostaCorreta.toLowerCase()) {
+                feedback.textContent = "Correto! 🎉";
+                feedback.style.color = "green";
+            \} else {
+                feedback.textContent = "Incorreto. Tente novamente.";
+                feedback.style.color = "red";
+            \}
+        \}
+    </script>
 </body>
-</html>$0<!DOCTYPE html>
-<html lang="pt-BR">
+</html><!DOCTYPE html>
+<html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <title>Exemplo de Aside</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      margin: 0;
-    \}
-
-    /* Conteúdo principal */
-    main {
-      flex: 1;
-      padding: 20px;
-      background-color: #f4f4f4;
-    \}
-
-    /* Estilo do aside */
-    aside {
-      width: 250px;
-      padding: 20px;
-      background-color: #333;
-      color: white;
-      box-sizing: border-box;
-    \}
-
-    aside h2 {
-      margin-top: 0;
-    \}
-
-    aside ul {
-      list-style: none;
-      padding: 0;
-    \}
-
-    aside li {
-      margin: 10px 0;
-    \}
-
-    aside a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s;
-    \}
-
-    aside a:hover {
-      color: #ff9800;
-    \}
-
-    /* Responsividade */
-    @media screen and (max-width: 768px) {
-      body {
-        flex-direction: column;
-      \}
-      
-      aside {
-        width: 100%;
-      \}
-    \}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabarito - Blog de Desafios</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Gabarito dos Desafios</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="resolucao.html">Resolver</a>
+            <a href="gabarito.html">Gabarito</a>
+        </nav>
+    </header>
 
-  <!-- Aside (barra lateral) -->
-  <aside>
-    <h2>Menu Lateral</h2>
-    <ul>
-      <li><a href="#inicio">Início</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </aside>
+    <main>
+        <div class="conteudo-principal">
+            <article>
+                <h2>Matemática</h2>
+                <p>12 + 15 = <strong>27</strong></p>
+                <p>8 × 7 = <strong>56</strong></p>
+            </article>
 
-  <!-- Conteúdo principal -->
-  <main>
-    <h1 id="inicio">Bem-vindo!</h1>
-    <p>Este é o conteúdo principal da página. Aqui você pode adicionar textos, imagens ou vídeos.</p>
+            <article>
+                <h2>Português</h2>
+                <p>Transforme para plural: "O livro está na mesa." → <strong>Os livros estão nas mesas.</strong></p>
+            </article>
+        </div>
+    </main>
 
-    <h2 id="sobre">Sobre</h2>
-    <p>Informações sobre o site ou empresa.</p>
-
-    <h2 id="servicos">Serviços</h2>
-    <p>Descrição dos serviços oferecidos.</p>
-
-    <h2 id="contato">Contato</h2>
-    <p>Formas de entrar em contato.</p>
-  </main>
-
+    <footer>
+        <p>Blog de Desafios &copy; 2025</p>
+    </footer>
 </body>
-</html>$0<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Exemplo de H3</title>
-  <style>
-    /* Estilo geral do h3 */
-    h3 {
-      font-family: Arial, sans-serif;
-      color: #333;
-      font-size: 1.5em;
-      margin-top: 20px;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #ff9800;
-      padding-bottom: 5px;
-    \}
-
-    /* Parágrafo abaixo do h3 */
-    p {
-      font-family: Arial, sans-serif;
-      color: #555;
-      line-height: 1.5;
-      margin-bottom: 20px;
-    \}
-  </style>
-</head>
-<body>
-
-  <h3>Seção Importante</h3>
-  <p>Este é um parágrafo explicativo relacionado ao título h3 acima. Você pode usar h3 para subtítulos dentro de uma página HTML.</p>
-
-  <h3>Outra Seção</h3>
-  <p>Mais conteúdo detalhado pode ser colocado aqui. O h3 ajuda a organizar a hierarquia do conteúdo, abaixo de h1 e h2.</p>
-
-</body>
-</html>$0<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Exemplo de Article</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f4f4f4;
-    \}
-
-    /* Estilo do article */
-    article {
-      background-color: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    \}
-
-    article h2 {
-      margin-top: 0;
-      color: #333;
-    \}
-
-    article p {
-      line-height: 1.6;
-      color: #555;
-    \}
-
-    article footer {
-      margin-top: 15px;
-      font-size: 0.9em;
-      color: #999;
-    \}
-  </style>
-</head>
-<body>
-
-  <!-- Primeiro artigo -->
-  <article>
-    <h2>Aprendendo HTML5</h2>
-    <p>O elemento <code>&lt;article&gt;</code> é usado para representar um conteúdo independente, como uma postagem de blog, uma notícia ou uma seção de um site.</p>
-    <p>Ele ajuda a organizar a página de forma semântica e facilita a leitura tanto para humanos quanto para máquinas, como buscadores.</p>
-    <footer>Publicado em 03/11/2025 por João Silva</footer>
-  </article>
-
-  <!-- Segundo artigo -->
-  <article>
-    <h2>Benefícios do CSS</h2>
-    <p>O CSS permite estilizar páginas HTML de forma eficiente, controlando cores, fontes, layout e responsividade do conteúdo.</p>
-    <p>Usando CSS junto com HTML, você pode criar sites modernos, bonitos e funcionais, garantindo boa experiência para os usuários.</p>
-    <footer>Publicado em 03/11/2025 por Maria Souza</footer>
-  </article>
-
-</body>
-</html>$0<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Exemplo de Imagem</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
-      background-color: #f4f4f4;
-    \}
-
-    /* Estilo da imagem */
-    img {
-      width: 300px; /* Largura da imagem */
-      height: auto; /* Mantém proporção */
-      border-radius: 10px; /* Cantos arredondados */
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra */
-      transition: transform 0.3s; /* Efeito ao passar o mouse */
-    \}
-
-    img:hover {
-      transform: scale(1.05); /* Aumenta levemente a imagem ao passar o mouse */
-    \}
-
-    h2 {
-      color: #333;
-    \}
-  </style>
-</head>
-<body>
-
-  <h2>Minha Imagem Bonita</h2>
-  <img src="https://via.placeholder.com/300" alt="Exemplo de imagem">
-
-</body>
-</html>$0
+</html>
