@@ -1,0 +1,157 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navegação */
+nav {
+    background-color: #1a1a1a;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+nav .logo {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f2a900;
+}
+
+/* Conteúdo principal */
+main {
+    padding: 40px 20px;
+}
+
+/* Cabeçalho principal dentro do main */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+    background: linear-gradient(135deg, #ffcc33, #f2a900);
+    padding: 60px 20px;
+    border-radius: 10px;
+    color: #111;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1em;
+}
+
+/* Seção de cardápio */
+.cardapio {
+    text-align: center;
+    background-color: #fff;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cardapio h2 {
+    font-size: 2em;
+    color: #222;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Cada card de hambúrguer */
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.card h3 {
+    margin: 15px 0 5px;
+    color: #333;
+}
+
+.card p {
+    font-size: 0.95em;
+    color: #555;
+    margin: 0 10px 10px;
+}
+
+.card span {
+    display: block;
+    font-weight: bold;
+    color: #f2a900;
+    margin-bottom: 15px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* Responsividade para celular */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
