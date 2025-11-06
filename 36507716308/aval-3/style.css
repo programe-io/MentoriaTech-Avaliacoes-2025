@@ -1,0 +1,145 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #121212;  /* fundo escuro para vibe “música” */
+  color: #e0e0e0;             /* texto claro para contraste */
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  padding: 40px 20px;
+}
+header h1 {
+  font-size: 3rem;
+  color: #ffcc00;            /* amarelo-ouro para destaque */
+}
+header p {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+/* Navegação */
+nav {
+  text-align: center;
+  margin-bottom: 30px;
+}
+nav a {
+  color: #e0e0e0;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #ffcc00;
+}
+
+/* Container principal */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Postagens */
+.post {
+  background-color: #1f1f1f;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+.post:hover {
+  transform: translateY(-5px);
+}
+.post img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 2px solid #ffcc00;
+}
+.post-content {
+  padding: 20px;
+}
+.post-content h2 {
+  font-size: 2rem;
+  margin-top: 0;
+  color: #ffcc00;
+}
+.post-meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+.post-content p {
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* Player de áudio (se houver) */
+.audio-wrapper {
+  margin-top: 20px;
+}
+.audio-wrapper audio {
+  width: 100%;
+  outline: none;
+  background-color: #000;
+  border: none;
+}
+
+/* Aside / barra lateral (se usar) */
+aside.sidebar {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+aside.sidebar h3 {
+  color: #ffcc00;
+  margin-bottom: 15px;
+}
+aside.sidebar img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+aside.sidebar p, aside.sidebar a {
+  color: #ccc;
+}
+aside.sidebar a {
+  text-decoration: none;
+  color: #ffcc00;
+}
+aside.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
+  color: #777;
+}
+footer p {
+  font-size: 0.9rem;
+}
+
+/* Responsividade simples */
+@media (max-width: 640px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+  .post-content h2 {
+    font-size: 1.6rem;
+  }
+}
