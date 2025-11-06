@@ -1,51 +1,143 @@
-/* reset */
-*{box-sizing:border-box;margin:0;padding:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
-
-:root{
-  --bg:#f5f7fb; --card:#ffffff; --accent:#0b63ff; --muted:#6b7280; --dark:#111827;
-  --radius:12px; --shadow:0 6px 18px rgba(17,24,39,0.06);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-body{background:var(--bg);color:var(--dark);-webkit-font-smoothing:antialiased;}
-.container{max-width:960px;margin:0 auto;padding:1rem;}
+body {
+  background: #fff8f2;
+  color: #333;
+}
 
-/* header/nav */
-header{background:#0f1724;color:#fff;}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem;gap:1rem;}
-.logo{font-size:1.2rem;font-weight:700;}
-.logo-first{color:var(--accent);}
-.logo-last{opacity:0.9;}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-nav .nav-list{display:flex;gap:0.75rem;list-style:none;}
-nav a{display:inline-block;padding:0.45rem 0.7rem;color:#cfe1ff;text-decoration:none;border-radius:8px;font-weight:600;}
-nav a:hover{background:rgba(255,255,255,0.04);transform:translateY(-2px);}
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
 
-/* main */
-.main-wrap{margin-top:1.25rem;margin-bottom:1.25rem;}
-.card{background:var(--card);border-radius:var(--radius);padding:1.25rem;box-shadow:var(--shadow);margin-bottom:1rem;}
-.section-title{color:var(--accent);font-weight:700;}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-.perfil{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
-.perfil img{width:140px;height:140px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(2,6,23,0.08);}
-.bio h3{margin-bottom:0.25rem;}
-.bio h4{color:var(--muted);margin-bottom:0.5rem;}
-.bio-text{display:block;color:#333;}
+.logo-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  object-fit: cover;
+}
 
-/* listas e skills */
-.skills{display:flex;flex-wrap:wrap;gap:0.5rem;list-style:none;padding-left:0;margin-top:0.5rem;}
-.skills li{background:#f1f5f9;padding:0.4rem 0.7rem;border-radius:8px;font-weight:600;}
+.brand-text h1 {
+  font-size: 18px;
+}
 
-/* links */
-.links a{margin-right:0.75rem;color:var(--accent);text-decoration:none;font-weight:700;}
-.links a:hover{text-decoration:underline;}
+.brand-name {
+  font-weight: 800;
+  color: #111;
+}
 
-/* footer */
-footer{background:#0f1724;color:#cbd5e1;padding:0.8rem 0;text-align:center;margin-top:1rem;}
+.tagline {
+  display: block;
+  font-size: 12px;
+  color: #777;
+}
 
-/* responsivo */
-@media (max-width:720px){
-  .header-inner{flex-direction:column;align-items:flex-start;}
-  nav .nav-list{flex-wrap:wrap;}
-  .perfil{justify-content:center;text-align:center;}
-  .bio{max-width:460px;}
+/* Nav */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+nav a span:hover {
+  color: #ff7a59;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* Produtos */
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.produto {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+  padding: 15px;
+}
+
+.produto img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.prod-name {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.price {
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.price-value {
+  font-weight: 800;
+  color: #111;
+}
+
+.produto button {
+  background: #ff7a59;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.produto button span:hover {
+  filter: brightness(0.95);
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 15px 0;
+  color: #666;
+  font-size: 14px;
 }
