@@ -1,0 +1,90 @@
+/* -------------------------------------------------
+   style.css – Cardápio da Doceria
+   ------------------------------------------------- */
+
+/* ==== Reset básico ==== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==== Corpo da página ==== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff8f0;               /* fundo pastel */
+    color: #4a2c2a;                    /* texto escuro, fácil de ler */
+    line-height: 1.6;
+}
+
+/* ==== Título principal ==== */
+h1 {
+    text-align: center;
+    margin: 2rem 0 1rem;
+    font-size: 2.5rem;
+    color: #b33a3a;                    /* tom de vermelho doce */
+}
+
+/* ==== Container geral do menu ==== */
+.menu {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;                   /* permite quebra em linhas */
+    gap: 1.5rem;                       /* espaçamento entre as categorias */
+    justify-content: center;
+}
+
+/* ==== Cada categoria (Bolos, Doces, etc.) ==== */
+.category {
+    flex: 1 1 280px;                   /* ocupa no mínimo 280px e cresce */
+    background: #fff;                 /* fundo branco para contraste */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    overflow: hidden;
+    transition: transform .2s ease;
+}
+.category:hover {
+    transform: translateY(-4px);       /* efeito “levanta” ao passar o mouse */
+}
+
+/* ==== Cabeçalho da categoria ==== */
+.category-header {
+    background: #f5c6a5;              /* cor pastel de pêssego */
+    color: #fff;
+    padding: .8rem 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ==== Itens individuais (nome + preço) ==== */
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .9rem 1rem;
+    border-bottom: 1px solid #eee;
+}
+.item:last-child { border-bottom:none; }
+
+.item-name {
+    font-weight: 500;
+}
+.item-price {
+    font-weight: bold;
+    color: #b33a3a;                    /* mesmo vermelho do título */
+}
+
+/* Hover nos nomes dos itens (sublinhado) */
+.item:hover .item-name {
+    text-decoration: underline;
+}
+
+/* ==== Responsividade extra (tela pequena) ==== */
+@media (max-width:600px) {
+    h1 { font-size: 2rem; }
+}
