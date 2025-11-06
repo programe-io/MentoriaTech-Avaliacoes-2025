@@ -1,0 +1,140 @@
+/* Reset e estilo geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #ff6b35;
+  text-align: center;
+  padding: 25px 10px;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* ======== NAV ======== */
+nav {
+  background-color: #1e1e1e;
+  padding: 15px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ff6b35;
+  font-weight: bold;
+  font-size: 1em;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* Conteúdo principal */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.categoria h2 {
+  color: #ff6b35;
+  border-bottom: 2px solid #ff6b35;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+/* Itens do cardápio */
+.item {
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255,107,53,0.3);
+}
+
+.item img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+.info h3 {
+  color: #fff;
+  font-size: 1.3em;
+  margin-bottom: 5px;
+}
+
+.info p {
+  color: #ccc;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.preco {
+  display: inline-block;
+  margin-top: 5px;
+  font-weight: bold;
+  color: #ff6b35;
+  font-size: 1em;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  background-color: #1e1e1e;
+  color: #aaa;
+  padding: 20px 0;
+  font-size: 0.9em;
+  border-top: 1px solid #2a2a2a;
+  margin-top: 40px;
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+  .item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .item img {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 160px;
+  }
+
+  nav li {
+    display: block;
+    margin: 10px 0;
+  }
+}
