@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Aysla Leal - Orações e Vida dos Santos</title>
+    <style>
+        /* === ESTILO GERAL === */
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #ffe6f0;
+            color: #4d004d;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* === CABEÇALHO === */
+        header {
+            background-color: #ff99cc;
+            color: white;
+            text-align: center;
+            padding: 40px 10px;
+            box-shadow: 0 2px 8px rgba(255, 105, 180, 0.3);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* === MENU === */
+        nav {
+            background-color: #ffb3d9;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            border-bottom: 2px solid #ff99cc;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* === CONTEÚDO PRINCIPAL === */
+        main {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 153, 204, 0.4);
+        }
+
+        #feed {
+            text-align: center;
+        }
+
+        #feed h2 {
+            color: #cc0066;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #ffb3d9;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .feed-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .post {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(255, 153, 204, 0.4);
+            width: 220px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .post:hover {
+            transform: scale(1.03);
+        }
+
+        .post img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .legenda {
+            padding: 10px;
+            color: #4d004d;
+            font-size: 0.95em;
+        }
+
+        /* === DESTAQUES COM SPAN === */
+        .destaque {
+            color: #cc0066;
+            font-weight: bold;
+        }
+
+        .santo {
+            color: #ff3399;
+            font-style: italic;
+        }
+
+        .curtir {
+            background-color: #ffb3d9;
+            color: #4d004d;
+            border: none;
+            border-radius: 0 0 12px 12px;
+            padding: 8px;
+            font-weight: bold;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .curtir:hover {
+            background-color: #ff66b2;
+            color: white;
+        }
+
+        /* === RODAPÉ === */
+        footer {
+            background-color: #ff99cc;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <!-- ===== CABEÇALHO ===== -->
+    <header>
+        <h1>Blog de Aysla Leal</h1>
+        <p>Orações Católicas e Vida dos Santos 🌸</p>
+    </header>
+
+    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+    <nav>
+        <a href="#feed">Feed</a>
+        <a href="#oracoes">Orações</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+        <section id="feed">
+            <h2>✨ Inspirações do Dia ✨</h2>
+            <div class="feed-container">
+
+                <div class="post">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/01/22/02/mother-mary-2035283_1280.jpg" alt="Nossa Senhora">
+                    <div class="legenda">
+                        <p><span class="destaque">Maria,</span> Mãe de ternura e amor, ensina-nos a confiar mesmo nas horas difíceis. 💗</p>
+                    </div>
+                    <button class="curtir">❤️ Curtir</button>
+                </div>
+
+                <div class="post">
+                    <img src="https://cdn.pixabay.com/photo/2016/04/08/14/12/saint-1310958_1280.jpg" alt="Santa Terezinha do Menino Jesus">
+                    <div class="legenda">
+                        <p>“Quero passar o meu Céu fazendo o bem sobre a Terra.” — 
+                        <span class="santo">Santa Terezinha</span> 🌹</p>
+                    </div>
+                    <button class="curtir">❤️ Curtir</button>
+                </div>
+
+                <div class="post">
+                    <img src="https://cdn.pixabay.com/photo/2014/03/24/13/42/jesus-295129_1280.png" alt="Jesus Cristo">
+                    <div class="legenda">
+                        <p><span class="destaque">Jesus</span> é o caminho, a verdade e a vida. 
+                        Que Ele guie cada passo do nosso dia. ✝️</p>
+                    </div>
+                    <button class="curtir">❤️ Curtir</button>
+                </div>
+
+                <div class="post">
+                    <img src="https://cdn.pixabay.com/photo/2016/02/19/10/00/saint-francis-1209748_1280.jpg" alt="São Francisco de Assis">
+                    <div class="legenda">
+                        <p>“Senhor, fazei de mim um instrumento da vossa paz.” — 
+                        <span class="santo">São Francisco de Assis</span> 🕊️</p>
+                    </div>
+                    <button class="curtir">❤️ Curtir</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer id="contato">
+        <p>Contato: <a href="mailto:ayslaleal@gmail.com">ayslaleal@gmail.com</a></p>
+        <p>© 2025 Blog de Aysla Leal - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- ===== SCRIPT ===== -->
+    <script>
+        // Efeito do botão Curtir
+        const botoes = document.querySelectorAll(".curtir");
+        botoes.forEach(botao => {
+            botao.addEventListener("click", () => {
+                if (botao.classList.contains("ativo")) {
+                    botao.classList.remove("ativo");
+                    botao.textContent = "❤️ Curtir";
+                } else {
+                    botao.classList.add("ativo");
+                    botao.textContent = "💖 Curtido!";
+                }
+            });
+        });
+    </script>
+<script src="script.js"></script></body>
+</html>
