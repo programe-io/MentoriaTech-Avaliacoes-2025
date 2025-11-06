@@ -1,0 +1,128 @@
+/* ---------- ESTILOS GERAIS ---------- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- CABEÇALHO ---------- */
+header {
+    background-color: #b22222;
+    color: white;
+    text-align: center;
+    padding: 20px 0 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* ---------- MENU DE NAVEGAÇÃO ---------- */
+nav {
+    background-color: #8b0000;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* ---------- CONTEÚDO PRINCIPAL ---------- */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.secao {
+    margin-bottom: 40px;
+}
+
+.secao h2 {
+    border-bottom: 3px solid #b22222;
+    padding-bottom: 5px;
+    color: #b22222;
+}
+
+/* ---------- ITENS DO CARDÁPIO ---------- */
+.cardapio-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.cardapio-item img {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.cardapio-item .info h3 {
+    margin: 0;
+    color: #333;
+}
+
+.cardapio-item .info p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.preco {
+    font-weight: bold;
+    color: #b22222;
+}
+
+/* ---------- RODAPÉ ---------- */
+footer {
+    background-color: #b22222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 600px) {
+    .cardapio-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cardapio-item img {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+}
