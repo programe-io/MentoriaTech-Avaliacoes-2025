@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CETI Prime – Filmes</title>
+  <style>
+    :root {
+      --bg: #0a0f1c;
+      --card: #101826;
+      --accent: #e50914;
+      --muted: #9aa6b2;
+      --radius: 10px;
+      --maxw: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: #fff;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 14px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* ===== BANNER ===== */
+    .banner {
+      position: relative;
+      height: 75vh;
+      background: url("https://uploads.jovemnerd.com.br/wp-content/uploads/2023/05/elementos_cartaz__42jw357gm.jpeg") no-repeat center/cover;
+      display: flex;
+      align-items: flex-end;
+      padding: 60px;
+    }
+
+    .banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, #0a0f1c 100%);
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .banner h1 {
+      font-size: 42px;
+      margin: 0 0 10px;
+    }
+
+    .banner p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .banner button {
+      background: var(--accent);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: var(--maxw);
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      margin: 30px 0 20px;
+      font-size: 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+    }
+
+    .movie {
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .movie:hover {
+      transform: scale(1.07);
+    }
+
+    .movie img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .movie-title {
+      padding: 10px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .banner {
+        height: 55vh;
+        padding: 30px;
+      }
+
+      .banner h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body>
+  <header>
+    <div class="logo">CETI Prime</div>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Filmes</a>
+      <a href="#">Séries</a>
+      <a href="#">Minha Lista</a>
+    </nav>
+  </header>
+
+  <!-- BANNER principal -->
+  <section class="banner">
+    <div class="banner-content">
+      <h1>Elementos</h1>
+      <p>
+        Em uma cidade onde fogo, água, terra e ar vivem juntos, uma jovem
+        flamejante e um cara tranquilo descobrem o quanto têm em comum.
+      </p>
+      <button>Assistir Agora</button>
+    </div>
+  </section>
+
+  <main>
+    <h2>Filmes em Alta</h2>
+
+    <div class="grid">
+      <div class="movie">
+        <img src="https://br.web.img3.acsta.net/pictures/22/11/17/20/58/0132283.jpg" alt="Elementos" />
+        <div class="movie-title">Elementos</div>
+      </div>
+
+      <div class="movie">
+        <img
+          src="https://m.media-amazon.com/images/M/MV5BNzk5MTE4YTUtNGU2My00MTYxLWE5NGItODk4YWFkOWYyMjA5XkEyXkFqcGc@._V1_.jpg"
+          alt="Duna: Parte Dois" />
+        <div class="movie-title">Duna: Parte Dois</div>
+      </div>
+
+      <div class="movie">
+        <img src="https://movienonsense.com/wp-content/uploads/2023/12/oppenheimer.jpg" alt="Oppenheimer" />
+        <div class="movie-title">Oppenheimer</div>
+      </div>
+
+      <div class="movie">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcMgh_yvY5zdiNk-Ochu7RyzEVE-jJ40Q77Q&s"
+          alt="Venom 3: A Última Dança" />
+        <div class="movie-title">Venom 3: A Última Dança</div>
+      </div>
+
+      <div class="movie">
+        <img
+          src="https://m.media-amazon.com/images/S/pv-target-images/aa61ae8fb015160d802c4d5cb4fe6858058ea76485c3498ed9ff431eee4fc83f.jpg"
+          alt="Divertida Mente 2" />
+        <div class="movie-title">Divertida Mente 2</div>
+      </div>
+
+      <div class="movie">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/2/2a/Deadpool_%26_Wolverine_cartaz.jpg"
+          alt="Deadpool & Wolverine" />
+        <div class="movie-title">Deadpool & Wolverine</div>
+      </div>
+
+      <div class="movie">
+        <img src="https://i.pinimg.com/1200x/ff/71/22/ff712221876fc5367914d15626f6cd36.jpg"
+          alt="Homem-Aranha: Através do Aranhaverso" />
+        <div class="movie-title">Homem-Aranha: Sem Volta para Casa
+        </div>
+      </div>
+
+      <div class="movie">
+        <img src="https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg" alt="Top Gun: Maverick" />
+        <div class="movie-title">Top Gun: Maverick</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>© 2025 CETI Prime – Inspirado em Netflix 🎬</footer>
+<script src="script.js"></script></body>
+
+</html>
+<!doctype html>
+<html lang="pt-BR">
+    <aside>
+        <h3>
+            <article>
+                <span>
