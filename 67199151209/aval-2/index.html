@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="style.css" />
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Tic_tac_toe.svg" alt="Logo do Jogo da Velha" class="logo" />
+    <h1>🎮 Jogo da Velha</h1>
+
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Regras</a></li>
+        <li><a href="#">Créditos</a></li>
+      </ul>
+    </nav>
+
+    <p>Desafie um amigo e veja quem é o campeão!</p>
+  </header>
+
+  <main>
+    <!-- ARTICLE representa o conteúdo principal do jogo -->
+    <article class="game-area">
+      <h2>Tabuleiro</h2>
+      <h3>Jogadores: X e O</h3>
+
+      <div class="board" id="board">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+      </div>
+
+      <div id="status">Vez do jogador: X</div>
+      <button id="restart">Reiniciar</button>
+    </article>
+
+    <!-- ASIDE contém informações extras -->
+    <aside>
+      <h2>📘 Informações do Jogo</h2>
+      <img src="https://cdn-icons-png.flaticon.com/512/616/616490.png" alt="Ícone do jogo da velha" class="icon-info" />
+
+      <h3>Regras</h3>
+      <ul>
+        <li>O jogo é entre dois jogadores: X e O.</li>
+        <li>Os jogadores jogam alternadamente.</li>
+        <li>Vence quem fizer três símbolos em linha, coluna ou diagonal.</li>
+        <li>Se todas as casas forem preenchidas e ninguém vencer, dá empate.</li>
+      </ul>
+
+      <h3>🏆 Placar</h3>
+      <div id="scoreboard">
+        <p><strong>Vitórias de X:</strong> <span id="scoreX">0</span></p>
+        <p><strong>Vitórias de O:</strong> <span id="scoreO">0</span></p>
+        <p><strong>Empates:</strong> <span id="scoreDraw">0</span></p>
+      </div>
+      <button id="resetScore">Zerar Placar</button>
+    </aside>
+  </main>
+
+  <footer>
+    <p>Feito com ❤️ em HTML, CSS e JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
+
