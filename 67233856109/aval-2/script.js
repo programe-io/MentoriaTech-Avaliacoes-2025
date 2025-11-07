@@ -1,0 +1,169 @@
+// Cria uma tag <style>
+const style = document.createElement('style');
+style.textContent = `
+:root {
+  --bg: #0a0f1c;
+  --card: #101826;
+  --accent: #e50914;
+  --muted: #9aa6b2;
+  --radius: 10px;
+  --maxw: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 14px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.banner {
+  position: relative;
+  height: 75vh;
+  background: url("https://uploads.jovemnerd.com.br/wp-content/uploads/2023/05/elementos_cartaz__42jw357gm.jpeg") no-repeat center/cover;
+  display: flex;
+  align-items: flex-end;
+  padding: 60px;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, #0a0f1c 100%);
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.banner h1 {
+  font-size: 42px;
+  margin: 0 0 10px;
+}
+
+.banner p {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.banner button {
+  background: var(--accent);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.banner button:hover {
+  background: #b0060e;
+  transform: scale(1.05);
+}
+
+main {
+  max-width: var(--maxw);
+  margin: 40px auto;
+  padding: 20px;
+}
+
+h2 {
+  margin: 30px 0 20px;
+  font-size: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.movie {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.movie:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.movie img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.movie-title {
+  padding: 10px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+  .banner {
+    height: 55vh;
+    padding: 30px;
+  }
+
+  .banner h1 {
+    font-size: 28px;
+  }
+}
+`;
+
+// Adiciona o estilo ao <head>
+document.head.appendChild(style);
