@@ -1,0 +1,183 @@
+/* Reset Básico e Tipografia */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Paleta Rubro-Negra */
+  --cor-principal: #DC143C; /* Vermelho Flamengo (Crimson vibrante) */
+  --cor-secundaria: #000000; /* Preto (Para Navegação, Rodapé e Destaques) */
+  --cor-fundo: #fcfcfc; /* Fundo Muito Claro (Quase Branco) */
+  --cor-texto: #333; /* Cinza Escuro para texto (leitura fácil) */
+  --cor-contraste: #FFFFFF; /* Branco puro */
+  --cor-borda: #ccc; /* Cinza Claro para bordas suaves */
+  --cor-detalhe: #FFD700; /* Dourado/Amarelo para o detalhe da estrela/taça */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  padding-top: 50px; /* Espaço para o cabeçalho fixo */
+}
+
+/* --- Layout Principal --- */
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+article, section, aside {
+  background-color: var(--cor-contraste);
+  padding: 25px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* --- Cabeçalho (Vermelho Principal) --- */
+header {
+  background-color: var(--cor-principal); /* Vermelho */
+  color: var(--cor-contraste); /* Branco */
+  padding: 15px 0;
+  text-align: center;
+  position: fixed; 
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 2em;
+  text-shadow: 1px 1px 2px var(--cor-secundaria); /* Sombra preta no título */
+}
+
+h2 {
+  color: var(--cor-secundaria); /* Preto */
+  border-bottom: 2px solid var(--cor-principal); /* Linha Vermelha */
+  padding-bottom: 5px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.6em;
+}
+
+h3 {
+    color: var(--cor-principal); /* Vermelho */
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+/* --- Navegação (Preto com Destaques Vermelhos) --- */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: var(--cor-secundaria); /* Preto */
+  position: sticky; 
+  top: 50px; 
+  z-index: 90;
+}
+
+nav a {
+  color: var(--cor-contraste); /* Branco */
+  text-decoration: none;
+  padding: 12px 20px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+nav a:hover, nav a.active {
+  background-color: var(--cor-principal); /* Vermelho no hover */ 
+}
+
+/* --- Imagens e Listas --- */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 15px 0;
+  display: block;
+  border: 3px solid var(--cor-principal); /* Borda Vermelha */
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  padding: 10px 0;
+  border-bottom: 1px dotted var(--cor-borda);
+}
+
+ul li:before {
+    content: "★ "; /* Estrela para list items */
+    color: var(--cor-detalhe); /* Dourado */
+    font-weight: bold;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+strong {
+    color: var(--cor-principal); /* Vermelho para destaque de texto */
+    font-weight: 700;
+}
+
+/* --- Aside (Área de Destaque - Não utilizada no HTML Flamengo, mas mantida) --- */
+aside {
+  background-color: #ffeaea; /* Vermelho muito claro */
+  border-left: 5px solid var(--cor-principal); /* Destaque lateral Vermelho */
+  padding: 20px;
+}
+
+/* --- Rodapé (Preto) --- */
+footer {
+  background-color: var(--cor-secundaria); /* Preto */
+  color: var(--cor-contraste); /* Branco */
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  font-size: 0.85em;
+}
+
+/* --- Links de Contato --- */
+#proximo a {
+    color: var(--cor-principal); /* Link na cor Vermelha */
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid var(--cor-principal);
+}
+
+#proximo a:hover {
+    color: var(--cor-secundaria); /* Preto ao passar o mouse */
+    border-bottom-color: var(--cor-secundaria);
+}
+
+
+/* --- Responsividade Básica --- */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+  nav a {
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  body {
+      padding-top: 100px; 
+  }
+  nav {
+      top: 50px; 
+  }
+}
