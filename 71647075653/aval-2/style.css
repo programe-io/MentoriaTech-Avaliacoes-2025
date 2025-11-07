@@ -1,0 +1,144 @@
+/* Importação de fonte básica, se necessário */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --cor-primaria: #ff9900; /* Laranja do cabeçalho */
+    --cor-secundaria: #333; /* Cinza escuro do menu */
+    --cor-fundo: #f4f4f4; /* Fundo claro */
+    --cor-texto: #333;
+    --cor-bloco-cinza: #ccc;
+    --largura-sidebar: 250px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* --- Cabeçalho --- */
+.cabecalho-principal {
+    background-color: var(--cor-primaria);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.titulo-site {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.subtitulo-site {
+    font-size: 1em;
+}
+
+/* --- Menu de Navegação --- */
+.menu-principal {
+    background-color: var(--cor-secundaria);
+}
+
+.lista-menu {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start; /* Alinha à esquerda */
+    padding-left: 10px;
+}
+
+.lista-menu li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.lista-menu li a:hover {
+    background-color: #555;
+}
+
+/* --- Layout Principal (Barra Lateral + Conteúdo) --- */
+.container-principal {
+    display: flex; /* Habilita o Flexbox para o layout de duas colunas */
+    width: 90%;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+/* --- Barra Lateral --- */
+.barra-lateral {
+    width: var(--largura-sidebar);
+    padding: 20px 15px;
+    background-color: white; /* Fundo branco para contrastar com o conteúdo principal, se o fundo for cinza */
+    border-right: 1px solid #ddd;
+    flex-shrink: 0; /* Impede que a barra lateral diminua */
+}
+
+.secao-lateral {
+    margin-bottom: 25px;
+}
+
+.titulo-lateral {
+    font-size: 1.5em;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.bloco-imagem {
+    background-color: var(--cor-bloco-cinza);
+    color: var(--cor-bloco-cinza); /* Esconde o texto "Imagem" */
+    height: 100px; /* Altura padrão para os blocos cinzas */
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Conteúdo Principal --- */
+.conteudo-principal {
+    flex-grow: 1; /* Faz o conteúdo principal ocupar o espaço restante */
+    padding: 20px;
+    background-color: white;
+}
+
+.postagem {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.titulo-postagem {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.meta-postagem {
+    color: #777;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.imagem-postagem {
+    /* Simula a área da imagem da postagem */
+    background: url('https://i.imgur.com/example.jpg') center center / cover no-repeat; /* Use o URL da imagem real */
+    background-color: #f0f0f0; /* Cor de fundo caso a imagem não carregue */
+    height: 300px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent; /* O texto da tag de imagem não aparecerá, mas é bom tê-la por acessibilidade */
+}
+
+.texto-postagem {
+    line-height: 1.6;
+    text-align: justify;
+}
