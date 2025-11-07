@@ -1,0 +1,149 @@
+ body {
+      font-family: Arial, sans-serif;
+      background-color: #111827;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1f2937;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #ff9900;
+      font-weight: bold !important;
+    }
+
+    header p {
+      color: #ccc;
+    }
+
+    nav {
+      background-color: #2d3748;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #f0f0f0;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    nav a:hover {
+      color: #ff9900;
+    }
+
+    #row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    aside {
+      flex: 30%;
+      background-color: #1f2937;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    main {
+      flex: 70%;
+      background-color: #1f2937;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      color: #ff9900;
+      font-weight: bold !important;
+    }
+
+    h3 {
+      color: #ffcc66;
+      font-weight: bold !important;
+    }
+
+    /* FOTO DE PERFIL */
+    .perfil {
+      width: 275px;
+      height: 183px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto 15px auto;
+    }
+
+    /* GALERIA */
+    .galeria {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      justify-items: center;
+    }
+
+    .galeria img {
+      width: 275px;
+      height: 183px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+
+    /* PRODUTOS */
+    .produto {
+      display: flex;
+      align-items: center;
+      background-color: #2d3748;
+      padding: 10px;
+      border-radius: 8px;
+      margin: 10px 0;
+      gap: 10px;
+    }
+
+    .produto img {
+      width: 275px;
+      height: 183px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #1f2937;
+      color: #aaa;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    strong,
+    b {
+      font-weight: bold !important;
+      color: #ffcc66;
+    }
+
+    @media (max-width: 768px) {
+      #row {
+        flex-direction: column;
+      }
+
+      aside,
+      main {
+        flex: 100%;
+      }
+
+      .galeria {
+        grid-template-columns: 1fr;
+      }
+
+      .galeria img,
+      .produto img,
+      .perfil {
+        width: 100%;
+        height: auto;
+      }
+    }
