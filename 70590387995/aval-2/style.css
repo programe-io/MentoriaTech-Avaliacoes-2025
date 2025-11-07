@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(0,0,0,0.85);
+  padding: 1rem 2rem;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.6rem;
+  color: #ff007f;
+  text-decoration: none;
+  font-weight: 700;
+}
+.logo span {
+  color: #00f7ff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #00f7ff;
+}
+
+.menu-toggle {
+  display: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* ===== Hero ===== */
+.hero {
+  height: 100vh;
+  background: linear-gradient(45deg, rgba(255,0,127,0.6), rgba(0,247,255,0.6)),
+    url('https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&fit=crop&w=1200&q=80') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #fff;
+  text-transform: uppercase;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f; }
+  to { text-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff; }
+}
+
+.hero-content p {
+  margin: 1rem 0 2rem;
+  max-width: 700px;
+  font-size: 1.2rem;
+  color: #f2f2f2;
+}
+
+.hero-btn {
+  background: #ff007f;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.2s;
+}
+.hero-btn:hover {
+  background: #00f7ff;
+  transform: scale(1.05);
+}
+
+.hero-btn.secondary {
+  border: 2px solid #fff;
+  background: transparent;
+}
+
+/* ===== Articles ===== */
+main {
+  max-width: 1000px;
+  margin: 120px auto 60px;
+  padding: 0 1rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #00f7ff;
+  text-shadow: 0 0 10px #00f7ff;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+article {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+article:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(255,0,127,0.6);
+}
+
+.article-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.article-content {
+  padding: 1rem;
+}
+
+.article-title a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.read-more {
+  color: #00f7ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ===== Sidebar ===== */
+aside {
+  position: fixed;
+  top: 120px;
+  right: 2rem;
+  width: 250px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(0,247,255,0.4);
+}
+
+.widget-title {
+  color: #ff007f;
+  margin-bottom: 1rem;
+}
+
+.author-img img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: rgba(0,0,0,0.9);
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #ccc;
+}
+footer h3 {
+  color: #00f7ff;
+}
+footer a {
+  color: #ff007f;
+  text-decoration: none;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 900px) {
+  aside {
+    position: static;
+    width: 100%;
+    margin: 2rem auto;
+  }
+}
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0;
+    top: 70px;
+    background: rgba(0,0,0,0.95);
+    flex-direction: column;
+    width: 200px;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+  }
+  .nav-links.active {
+    transform: translateX(0);
+  }
+}
