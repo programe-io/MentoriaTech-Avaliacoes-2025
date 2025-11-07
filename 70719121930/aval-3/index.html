@@ -1,64 +1,80 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ComidaJá — Delivery & Takeaway</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>ModaJá — Loja de Roupas</title>
+  <link rel="stylesheet" href="styles.css"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
 <body>
-  <div class="container">
-    <header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="https://via.placeholder.com/64x64.png?text=MJ" alt="Logotipo ModaJá" class="logo">
       <div class="brand">
-        <img src="https://via.placeholder.com/52x52.png?text=CJ" alt="Logo ComidaJá" class="logo-img" />
-        <div class="brand-text">
-          <h1><span class="brand-name">ComidaJá</span></h1>
-          <span class="tagline">Entrega rápida — qualidade top</span>
-        </div>
+        <h1><span class="brand-name">ModaJá</span></h1>
+        <span class="brand-tag">Style rápido, entrega certa</span>
       </div>
-
-      <nav>
+      <nav class="main-nav" aria-label="menu principal">
         <ul>
-          <li><a href="#"><span>Início</span></a></li>
-          <li><a href="#"><span>Cardápio</span></a></li>
-          <li><a href="#"><span>Contato</span></a></li>
+          <li><a href="#"><span>Home</span></a></li>
+          <li><a href="#"><span>Masculino</span></a></li>
+          <li><a href="#"><span>Feminino</span></a></li>
+          <li><a href="#"><span>Promo</span></a></li>
         </ul>
       </nav>
-    </header>
+      <button id="cartBtn" class="cart-btn" aria-label="abrir carrinho"><span>Carrinho (<span id="cartCount">0</span>)</span></button>
+    </div>
+  </header>
 
+  <main class="container">
     <section class="hero">
-      <img src="https://via.placeholder.com/800x250.png?text=Comidas+Deliciosas" alt="Comidas" class="hero-img">
-      <h2><span>Peça comida boa e receba rápido!</span></h2>
-      <p><span>Escolha seus pratos favoritos e aproveite ofertas exclusivas.</span></p>
+      <img src="https://via.placeholder.com/1200x300.png?text=Nova+Colecao" alt="Nova Coleção" class="hero-img">
+      <div class="hero-text">
+        <h2><span>Nova coleção — pegue seu look</span></h2>
+        <p><span>Roupas confortáveis e estilosas. Frete rápido.</span></p>
+      </div>
     </section>
 
-    <main class="produtos" aria-label="Lista de produtos">
-      <div class="produto" role="article">
-        <img src="https://via.placeholder.com/200x150.png?text=Pizza" alt="Pizza">
-        <h3><span class="prod-name">Pizza Margherita</span></h3>
-        <p><span class="price">R$ <span class="price-value">28,00</span></span></p>
-        <button><span>Comprar</span></button>
+    <section class="filters">
+      <label><span>Buscar:</span>
+        <input id="searchInput" type="search" placeholder="buscar peça, ex: vestido, camiseta">
+      </label>
+      <div class="tags">
+        <button onclick="filterCategory('Todos')"><span>Todos</span></button>
+        <button onclick="filterCategory('Camiseta')"><span>Camisetas</span></button>
+        <button onclick="filterCategory('Calça')"><span>Calças</span></button>
+        <button onclick="filterCategory('Vestido')"><span>Vestidos</span></button>
       </div>
+    </section>
 
-      <div class="produto" role="article">
-        <img src="https://via.placeholder.com/200x150.png?text=Burger" alt="Hambúrguer">
-        <h3><span class="prod-name">Cheese Burger</span></h3>
-        <p><span class="price">R$ <span class="price-value">22,50</span></span></p>
-        <button><span>Comprar</span></button>
+    <section id="productsGrid" class="products" aria-label="lista de produtos">
+      <!-- produtos gerados por app.js -->
+    </section>
+  </main>
+
+  <aside id="cartPanel" class="cart-panel" aria-hidden="true">
+    <div class="cart-inner">
+      <h3><span>Seu Carrinho</span></h3>
+      <div id="cartList" class="cart-list">
+        <p class="empty"><span>Vazio — adiciona algo</span></p>
       </div>
-
-      <div class="produto" role="article">
-        <img src="https://via.placeholder.com/200x150.png?text=Sushi" alt="Sushi">
-        <h3><span class="prod-name">Combo Sushi</span></h3>
-        <p><span class="price">R$ <span class="price-value">35,00</span></span></p>
-        <button><span>Comprar</span></button>
+      <div class="cart-footer">
+        <div><strong>Total:</strong> R$ <span id="cartTotal">0.00</span></div>
+        <div class="cart-actions">
+          <button onclick="checkout()" class="btn-primary"><span>Finalizar</span></button>
+          <button onclick="closeCart()" class="btn-ghost"><span>Fechar</span></button>
+        </div>
       </div>
-    </main>
+    </div>
+  </aside>
 
-    <footer>
-      <p><span>© 2025 ComidaJá — Feito com ❤️ no Brasil</span></p>
-    </footer>
-  </div>
+  <footer class="site-footer">
+    <div class="container">
+      <p><span>© 2025 ModaJá — Feito rápido</span></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
