@@ -1,0 +1,188 @@
+/*
+* CSS: Tema Meio Ambiente - Paleta Verde Natural
+*/
+
+/* --- 1. Reset Básico e Variáveis --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Paleta de Cores de Natureza */
+    --verde-principal: #1e8449; /* Verde Floresta Intenso */
+    --verde-secundario: #38761d; /* Verde Musgo Escuro */
+    --marrom-terra: #a0522d; /* Marrom Terroso para acentos */
+    --fundo-claro: #fafff5; /* Fundo Creme/Verde Muito Claro */
+    --texto-escuro: #333333; /* Texto Padrão */
+    --borda-suave: #d6e9d6; /* Verde Suave para Bordas */
+
+    --sombra-secao: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --transicao-rapida: all 0.3s ease-in-out;
+}
+
+/* --- 2. Estilos Globais e Corpo --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fundo-claro);
+    color: var(--texto-escuro);
+    line-height: 1.6;
+    padding-top: 130px; /* Espaço para cabeçalho e nav fixos */
+    transition: var(--transicao-rapida);
+}
+
+/* --- 3. Layout Principal e Seções --- */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 25px;
+}
+
+section {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: var(--sombra-secao);
+    border-left: 6px solid var(--verde-principal); /* Destaque lateral verde */
+    transition: var(--transicao-rapida);
+}
+
+p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* --- 4. Cabeçalho e Títulos --- */
+header {
+    background-color: var(--verde-principal);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+h2 {
+    color: var(--verde-secundario);
+    border-bottom: 3px solid var(--borda-suave);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+strong {
+    color: var(--verde-principal);
+    font-weight: 700;
+}
+
+/* --- 5. Navegação Sticky --- */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--verde-secundario);
+    position: fixed; /* Fixado para funcionar com o cabeçalho */
+    top: 70px; /* Ajustado logo abaixo do cabeçalho */
+    width: 100%;
+    z-index: 90;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    transition: var(--transicao-rapida);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    background-color: var(--verde-principal);
+}
+
+/* --- 6. Imagens e Listas --- */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 25px auto;
+    display: block;
+    border: 3px solid var(--borda-suave);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--borda-suave);
+    padding-left: 20px;
+    position: relative;
+}
+
+ul li::before {
+    content: "🌳"; /* Ícone de folha ou árvore */
+    color: var(--marrom-terra);
+    font-size: 1.1em;
+    position: absolute;
+    left: 0;
+}
+
+/* --- 7. Rodapé e Links --- */
+#contato a {
+    color: var(--verde-principal);
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid var(--marrom-terra);
+    transition: var(--transicao-rapida);
+}
+
+#contato a:hover {
+    color: var(--marrom-terra);
+    border-bottom-color: var(--verde-principal);
+}
+
+footer {
+    background-color: var(--verde-secundario);
+    color: var(--fundo-claro);
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+/* --- 8. Responsividade --- */
+@media (max-width: 768px) {
+    body {
+        padding-top: 180px;
+    }
+    nav {
+        flex-wrap: wrap;
+        top: 70px;
+    }
+    nav a {
+        flex-basis: 50%; /* 2 links por linha em telas menores */
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    header h1 {
+        font-size: 1.8em;
+    }
+    section {
+        padding: 25px;
+    }
+}
