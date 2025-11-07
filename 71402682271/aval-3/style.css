@@ -1,144 +1,155 @@
-{
+ <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-}
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+      line-height: 1.6;
+    }
 
-body {
-  background: #fff8f2;
-  color: #333;
-}
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
 
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-}
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #ff6b00;
+      padding-bottom: 15px;
+      flex-wrap: wrap;
+    }
 
-/* Cabeçalho */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+    }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+    .logo-img {
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      margin-right: 12px;
+    }
 
-.logo-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  object-fit: cover;
-}
+    .brand-name {
+      font-size: 2em;
+      color: #ff6b00;
+      font-weight: bold;
+    }
 
-.brand-text h1 {
-  font-size: 18px;
-}
+    .tagline {
+      font-size: 0.9em;
+      color: #777;
+    }
 
-.brand-name {
-  font-weight: 800;
-  color: #111;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
 
-.tagline {
-  display: block;
-  font-size: 12px;
-  color: #777;
-}
+    nav a {
+      text-decoration: none;
+      color: #ff6b00;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
 
-/* Nav */
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 15px;
-}
+    nav a:hover {
+      color: #e65c00;
+    }
 
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-}
+    .hero {
+      text-align: center;
+      margin: 40px 0;
+    }
 
-nav a span:hover {
-  color: #ff7a59;
-}
+    .hero-img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
-/* Hero */
-.hero {
-  text-align: center;
-  margin: 30px 0;
-}
+    .hero h2 {
+      font-size: 2em;
+      margin-top: 20px;
+    }
 
-.hero-img {
-  width: 100%;
-  max-width: 900px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-}
+    .hero p {
+      font-size: 1.1em;
+      color: #555;
+      margin-top: 10px;
+    }
 
-/* Produtos */
-.produtos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
 
-.produto {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  text-align: center;
-  padding: 15px;
-}
+    .produto {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
 
-.produto img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
+    .produto:hover {
+      transform: translateY(-5px);
+    }
 
-.prod-name {
-  display: block;
-  font-size: 18px;
-  margin-bottom: 6px;
-}
+    .produto img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
 
-.price {
-  color: #777;
-  margin-bottom: 10px;
-}
+    .produto h3 {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
 
-.price-value {
-  font-weight: 800;
-  color: #111;
-}
+    .price {
+      font-size: 1.2em;
+      color: #ff6b00;
+      margin-bottom: 15px;
+    }
 
-.produto button {
-  background: #ff7a59;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-}
+    button {
+      background-color: #ff6b00;
+      color: #fff;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-.produto button span:hover {
-  filter: brightness(0.95);
-}
+    button:hover {
+      background-color: #e65c00;
+    }
 
-/* Rodapé */
-footer {
-  text-align: center;
-  margin-top: 40px;
-  padding: 15px 0;
-  color: #666;
-  font-size: 14px;
-}
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px 0;
+      font-size: 0.9em;
+      color: #999;
+      border-top: 1px solid #eee;
+    }
+  </style>
