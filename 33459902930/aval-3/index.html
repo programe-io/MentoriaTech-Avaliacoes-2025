@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Básico Estático</title>
+    <!-- Carrega o Tailwind CSS CDN para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+    <script>
+        // Configuração de cores personalizadas do Tailwind
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#3b82f6', // Azul principal
+                        'secondary': '#10b981', // Verde de destaque
+                        'background-dark': '#1f2937', // Fundo escuro
+                        'card-light': '#374151', // Fundo de card
+                    }
+                }
+            }
+        }
+    </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body class="bg-background-dark text-gray-100 min-h-screen">
+
+    <!-- CABEÇALHO (Header) -->
+    <header id="header" class="bg-card-light shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-primary">Template Estático</h1>
+            
+            <!-- NAVEGAÇÃO Principal (Botões puramente estáticos, sem JS) -->
+            <nav class="flex space-x-6 text-sm font-medium">
+                <a href="#" class="hover:text-secondary transition duration-300">Página 1</a>
+                <a href="#" class="hover:text-secondary transition duration-300">Página 2</a>
+                <a href="#" class="hover:text-secondary transition duration-300">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SEÇÃO HERO (DESTAQUE PRINCIPAL) -->
+    <section class="text-center py-20 md:py-24 px-4 max-w-4xl mx-auto">
+        <h1 class="text-5xl sm:text-6xl font-extrabold mb-4 leading-tight text-white">
+            Nosso <span class="text-primary">Conteúdo</span> e <span class="text-secondary">Estrutura</span>
+        </h1>
+        <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+            Este layout básico oferece a fundação perfeita para qualquer tipo de site moderno e responsivo.
+        </p>
+        <a href="#main-content" class="inline-block px-8 py-3 bg-secondary text-white font-bold text-lg rounded-full shadow-lg hover:bg-green-700 transition duration-300 transform hover:scale-105">
+            Ver Estrutura
+        </a>
+    </section>
+
+    <!-- CONTAINER PRINCIPAL (BODY) -->
+    <main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+        <h2 id="main-content" class="text-3xl font-bold mb-6 text-center text-secondary">Área de Conteúdo e Colunas</h2>
+        
+        <!-- GRID PRINCIPAL (Responsivo: 1 coluna no mobile, 3 colunas no desktop) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <!-- COLUNA PRINCIPAL (lg:col-span-2) -->
+            <div class="lg:col-span-2 space-y-4">
+                
+                <!-- Artigo Principal -->
+                <article class="bg-card-light p-6 rounded-xl border-l-4 border-primary shadow-xl">
+                    <h3 class="text-2xl mb-3 font-bold text-primary">O Layout em Detalhes</h3>
+                    <p class="text-gray-400 mb-4">
+                        Esta é a área do conteúdo principal. Em um layout básico, ela ocupa a maior parte da tela.
+                        Ela foi definida com a classe `lg:col-span-2` dentro do grid de 3 colunas, garantindo que ocupe dois terços do espaço em desktops.
+                    </p>
+                    <p class="text-gray-400">
+                        No mobile, o layout se adapta automaticamente para uma única coluna (`grid-cols-1`), onde o Conteúdo Principal aparece primeiro, seguido pela Barra Lateral.
+                    </p>
+                </article>
+
+                <!-- Destaque Secundário -->
+                <div class="bg-card-light p-6 rounded-xl border-l-4 border-secondary shadow-xl">
+                    <h4 class="text-xl mb-2 font-bold text-secondary">Elemento de Bloco</h4>
+                    <p class="text-sm font-normal text-gray-400">
+                        Um elemento secundário comum, como uma lista de posts recentes ou um carrossel de produtos.
+                    </p>
+                </div>
+            </div>
+
+            <!-- BARRA LATERAL (lg:col-span-1) -->
+            <aside id="sidebar" class="lg:col-span-1">
+                <div class="bg-card-light p-6 rounded-xl border-l-4 border-gray-500 shadow-xl flex flex-col items-center">
+                    <h3 class="text-xl mb-4 font-bold text-gray-300">BARRA LATERAL (ASIDE)</h3>
+                    <p class="text-sm font-normal text-gray-400 mb-6 text-center">
+                        Esta seção ocupa o terço restante do layout em telas grandes. É ideal para navegação, anúncios ou widgets.
+                    </p>
+                    <a href="#" class="mt-2 px-6 py-2 bg-primary hover:bg-blue-600 rounded-lg transition duration-300 font-bold shadow-md">
+                        Link de Exemplo
+                    </a>
+                </div>
+            </aside>
+            
+        </div>
+    </main>
+
+    <!-- SEÇÃO DE GALERIA/PORTFÓLIO -->
+    <section class="py-16 bg-card-light/50 border-t border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-10 text-primary">Galeria de Destaques</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-card-light rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.03] transition duration-300">
+                    <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Projeto+A" alt="Placeholder para Projeto A" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2 text-primary">Web Design Moderno</h4>
+                        <p class="text-gray-400 text-sm">Design limpo e focado na experiência do usuário.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-card-light rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.03] transition duration-300">
+                    <img src="https://placehold.co/600x400/10b981/ffffff?text=Projeto+B" alt="Placeholder para Projeto B" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2 text-secondary">Identidade Visual</h4>
+                        <p class="text-gray-400 text-sm">Criação de marca e logotipo coerente.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-card-light rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.03] transition duration-300">
+                    <img src="https://placehold.co/600x400/9ca3af/ffffff?text=Projeto+C" alt="Placeholder para Projeto C" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2 text-gray-300">E-commerce Otimizado</h4>
+                        <p class="text-gray-400 text-sm">Plataforma de vendas robusta e rápida.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ (Footer) -->
+    <footer id="footer" class="bg-card-light border-t border-gray-700 mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+            <h3 class="text-lg font-bold mb-2 text-primary">Estrutura Finalizada</h3>
+            <p class="text-gray-400 text-sm">Rodapé. Contém links de navegação secundária e informações legais.</p>
+        </div>
+    </footer>
+
+<script src="script.js"></script></body>
+</html>

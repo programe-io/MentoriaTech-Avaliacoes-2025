@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Completo em CSS</title>
+    <!-- Carrega o Tailwind CSS CDN para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+    <script>
+        // Configuração de cores personalizadas do Tailwind
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#3b82f6', // Azul principal
+                        'secondary': '#10b981', // Verde de destaque
+                        'background-dark': '#1f2937', // Fundo escuro
+                        'card-light': '#374151', // Fundo de card
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background-dark text-gray-100 min-h-screen">
+
+    <!-- CABEÇALHO (Header) - Fundo mais escuro para destaque -->
+    <header id="header" class="bg-gray-900 shadow-xl sticky top-0 z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold text-primary tracking-wider">Design <span class="text-secondary">Puro</span></h1>
+            
+            <!-- NAVEGAÇÃO Principal -->
+            <nav class="flex space-x-6 text-sm font-medium">
+                <a href="#main-content" class="text-gray-300 hover:text-secondary transition duration-300 transform hover:-translate-y-0.5">Estrutura</a>
+                <a href="#portfolio" class="text-gray-300 hover:text-secondary transition duration-300 transform hover:-translate-y-0.5">Galeria</a>
+                <a href="#footer" class="text-gray-300 hover:text-secondary transition duration-300 transform hover:-translate-y-0.5">Rodapé</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SEÇÃO HERO (DESTAQUE PRINCIPAL) - Fundo com gradiente e padding maior -->
+    <section class="bg-gradient-to-br from-background-dark to-gray-800 text-center py-24 md:py-32 px-4 border-b-4 border-primary/50">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl sm:text-6xl font-extrabold mb-4 leading-tight text-white drop-shadow-lg">
+                Layout <span class="text-primary">Responsivo</span> em <span class="text-secondary">CSS</span>
+            </h1>
+            <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+                Uma demonstração completa de como utilizar classes de utilidade para construir layouts modernos, rápidos e adaptáveis.
+            </p>
+            <a href="#main-content" class="inline-block px-10 py-4 bg-secondary text-white font-bold text-lg rounded-full shadow-2xl hover:bg-green-700 transition duration-300 transform hover:scale-105 ring-2 ring-secondary/50">
+                Explorar a Estrutura
+            </a>
+        </div>
+    </section>
+
+    <!-- CONTAINER PRINCIPAL (BODY) -->
+    <main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 mt-8">
+        <h2 id="main-content" class="text-3xl font-bold mb-8 text-center text-secondary border-b-2 border-secondary/30 pb-2">Área de Conteúdo e Colunas</h2>
+        
+        <!-- GRID PRINCIPAL (Responsivo: 1 coluna no mobile, 3 colunas no desktop) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <!-- COLUNA PRINCIPAL (lg:col-span-2) -->
+            <div class="lg:col-span-2 space-y-6">
+                
+                <!-- Artigo Principal Aprimorado -->
+                <article class="bg-card-light p-8 rounded-xl border-l-8 border-primary shadow-2xl hover:shadow-primary/40 transition duration-300">
+                    <h3 class="text-2xl mb-3 font-extrabold text-primary">Conteúdo Central</h3>
+                    <p class="text-gray-400 mb-4">
+                        Esta é a área principal (coluna 2/3), destinada a artigos longos ou informações cruciais.
+                        A responsividade é garantida pelas classes `grid-cols-1` (mobile) e `lg:grid-cols-3` (desktop).
+                    </p>
+                    <a href="#" class="text-sm font-semibold text-primary hover:text-blue-400">Leia Mais &rarr;</a>
+                </article>
+
+                <!-- Destaque Secundário Aprimorado -->
+                <div class="bg-card-light p-8 rounded-xl border-t-4 border-secondary shadow-xl">
+                    <h4 class="text-xl mb-2 font-bold text-secondary">Secção de Destaque</h4>
+                    <p class="text-sm font-normal text-gray-400">
+                        Bloco de conteúdo adicional, estilizado com uma borda superior para separação visual clara.
+                    </p>
+                </div>
+            </div>
+
+            <!-- BARRA LATERAL (lg:col-span-1) -->
+            <aside id="sidebar" class="lg:col-span-1">
+                <div class="bg-card-light p-8 rounded-xl border-r-8 border-gray-500 shadow-2xl flex flex-col items-center sticky top-20">
+                    <h3 class="text-xl mb-4 font-extrabold text-gray-300">Barra Lateral</h3>
+                    <p class="text-sm font-normal text-gray-400 mb-6 text-center">
+                        Contém links, anúncios ou widgets. Está configurada como `sticky` para acompanhar a rolagem do conteúdo.
+                    </p>
+                    <a href="#" class="mt-2 px-6 py-2 bg-primary hover:bg-blue-600 rounded-lg transition duration-300 font-bold shadow-md transform hover:shadow-lg">
+                        Widget de Ação
+                    </a>
+                </div>
+            </aside>
+            
+        </div>
+    </main>
+
+    <!-- SEÇÃO DE GALERIA/PORTFÓLIO APRIMORADA -->
+    <section id="portfolio" class="py-16 bg-card-light/50 border-y border-gray-700 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-10 text-primary border-b border-primary/30 pb-2">Galeria de Destaques Visuais</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-gray-900 rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.03] transition duration-500 ring-4 ring-transparent hover:ring-primary/50">
+                    <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Web+Design" alt="Placeholder para Web Design" class="w-full h-48 object-cover opacity-80 hover:opacity-100 transition duration-500">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2 text-primary">Card com Hover</h4>
+                        <p class="text-gray-400 text-sm">O efeito de escala e o anel azul são puramente CSS/Tailwind.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-gray-900 rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.03] transition duration-500 ring-4 ring-transparent hover:ring-secondary/50">
+                    <img src="https://placehold.co/600x400/10b981/ffffff?text=Branding" alt="Placeholder para Branding" class="w-full h-48 object-cover opacity-80 hover:opacity-100 transition duration-500">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2 text-secondary">Estilo e Transição</h4>
+                        <p class="text-gray-400 text-sm">Mostra transições suaves aplicadas a múltiplas propriedades.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-gray-900 rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.03] transition duration-500 ring-4 ring-transparent hover:ring-gray-500/50">
+                    <img src="https://placehold.co/600x400/9ca3af/ffffff?text=UX" alt="Placeholder para UX" class="w-full h-48 object-cover opacity-80 hover:opacity-100 transition duration-500">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2 text-gray-300">Layout Adaptável</h4>
+                        <p class="text-gray-400 text-sm">O grid de 3 colunas vira 1 coluna no celular.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ (Footer) - Mais escuro e com borda dupla -->
+    <footer id="footer" class="bg-gray-900 border-t-4 border-primary mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+            <h3 class="text-lg font-bold mb-2 text-primary">Fim do Layout</h3>
+            <p class="text-gray-500 text-sm">Todo o estilo acima é alcançado usando apenas HTML e o framework Tailwind CSS.</p>
+            <p class="text-gray-600 text-xs mt-4">Direitos Reservados - Demo de CSS.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
