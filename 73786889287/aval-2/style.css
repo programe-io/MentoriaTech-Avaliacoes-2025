@@ -1,85 +1,130 @@
-*{
-margin: 0;
-pading: 0;
-box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 \}
 
-body {do not use empty rulesets
-    font-family: arial, helvetica, sans-serif;
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #f6d365, #fda085);
+    color: #333;
 \}
 
-hearder {
- background-color: orange;
-padding:60px;
-text-align: center;
-color: #fff;
-font-weight: bold;
+/* Header colorido */
+header {
+    background: linear-gradient(90deg, #ff6ec4, #7873f5);
+    padding: 60px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
 \}
 
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+\}
+
+header p {
+    font-size: 1.5em;
+\}
+
+/* Navegação */
 nav { 
-display: flex;
-flex-direction: row;
-background-color: #333;
-\} 
+    display: flex;
+    justify-content: center;
+    background-color: #ff3cac;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+\}
 
-nav a { do not use empty rulesets
-color: #fff;
-padding:10px;
-text-decoration: none;
-text-align:center;
+nav a {
+    color: #fff;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 \}
 
 nav a:hover {
-background-color: #ddd;
-color: #000;
+    background-color: #fff;
+    color: #ff3cac;
+    border-radius: 10px;
 \}
 
+/* Layout principal */
 #row {
-display: flex;
-flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    gap: 20px;
 \}
 
-
-.fakeimage {
-background-color: #aaa;
-width: 100%;
-padding: 20px;
-margin-bottom: 10px;
-
+/* Aside colorido */
 aside {
-flex: 30%;
-background-color: #f1f1f1;
-padding: 20px;\}
-}
+    flex: 30%;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+\}
+
+/* Main colorido */
 main {
-flex: 70%;
-  background-color: white;
-padding: 20px;
-}
+    flex: 70%;
+\}
 
+/* Artigo */
 article {
-box-shadow: 0px 0px 10px #aaa;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+\}
 
-border-radius: 10px;}
-}
-article img {
-width: 100%;
-margin-top: 10px;
-margin-bottom: 10px;
-border-radius: 5px;
-}
+/* Imagens */
+img.perfil {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 10px;
+\}
 
+img.post {
+    width: 100%;
+    border-radius: 10px;
+    margin: 15px 0;
+\}
 
+/* Fake images coloridas */
+.fakeimage {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+\}
 
-footer{
-background-color: #444;
-padding: 40px;
-color: #f1f1f1
-text-align: center;
-font-size: 12px;
-}
-@midea screen and (max-width: 400px){
-nav{
-  flex-direction: column;
-}
-}
+/* Footer colorido */
+footer {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    padding: 40px;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0px -4px 10px rgba(0,0,0,0.2);
+\}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    #row {
+        flex-direction: column;
+    \}
+
+    aside {
+        margin-right: 0;
+        margin-bottom: 20px;
+    \}
+\}$0
