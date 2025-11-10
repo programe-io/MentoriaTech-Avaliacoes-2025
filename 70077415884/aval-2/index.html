@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Catálogo de Motos — app-moto</title>
+  <meta name="description" content="Catálogo interativo de motos com busca, filtros e favoritos.">
+  <style>
+    /* CSS mínimo e agradável */
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#ff6b35; --muted:#94a3b8; --text:#e6eef8;
+      --glass: rgba(255,255,255,0.03);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#071028);color:var(--text);min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:28px}
+    .container{width:100%;max-width:1100px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;box-shadow:0 12px 30px rgba(2,6,23,0.6)}
+    header{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ff8f5a);display:flex;align-items:center;justify-content:center;font-weight:800;color:#07121a}
+    h1{margin:0;font-size:20px}
+    .controls{display:flex;gap:8px;align-items:center;margin-left:auto}
+    input[type="search"], select{padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    button.btn{padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;cursor:pointer}
+    button.primary{background:linear-gradient(90deg,var(--accent),#ff8f5a);border:none;color:#07121a;font-weight:700}
+
+    /* grid de cards */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:12px}
+    .card{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;display:flex;flex-direction:column;gap:8px;transition:transform .12s ease,box-shadow .12s ease}
+    .card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,6,23,0.5)}
+    .thumb{width:100%;height:130px;border-radius:8px;object-fit:cover;background:linear-gradient(135deg,var(--accent),#ffb86b);display:flex;align-items:center;justify-content:center;color:#07121a;font-weight:700;font-size:24px}
+    .meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+    .muted{color:var(--muted);font-size:13px}
+    .tags{display:flex;gap:6px;flex-wrap:wrap}
+    .tag{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:999px;font-size:12px;color:var(--muted)}
+
+    /* modal simples */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.6);display:none;align-items:center;justify-content:center;z-index:60}
+    .modal{background:var(--card);padding:18px;border-radius:12px;max-width:720px;width:92%;box-shadow:0 18px 60px rgba(2,6,23,0.7)}
+    .modal-header{display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .modal-body{display:flex;gap:12px;margin-top:12px}
+    .modal-body .left{min-width:260px}
+    .specs{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+    .spec{display:flex;justify-content:space-between;color:var(--muted);padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.02)}
+
+    /* responsivo */
+    @media (max-width:720px){
+      .modal-body{flex-direction:column}
+      .controls{flex-direction:column;align-items:flex-end;gap:6px}
+    }
+
+    footer{margin-top:14px;text-align:center;color:var(--muted);font-size:13px}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <div class="container" role="main" aria-label="Catálogo de Motos">
+    <header>
+      <div class="logo">M</div>
+      <div>
+        <h1>Catálogo de Motos</h1>
+        <div class="muted">Explore modelos, filtros e salve favoritos</div>
+      </div>
+
+      <div class="controls" role="region" aria-label="Controles">
+        <input id="search" type="search" placeholder="Buscar por modelo ou marca" aria-label="Pesquisar motos">
+        <select id="filterType" aria-label="Filtrar por tipo">
+          <option value="">Todos os tipos</option>
+          <option value="Esportiva">Esportiva</option>
+          <option value="Naked">Naked</option>
+          <option value="Trail">Trail</option>
+          <option value="Touring">Touring</option>
+          <option value="Custom">Custom</option>
+        </select>
+        <button class="btn" id="clearFilters">Limpar</button>
+        <button class="primary" id="loadMore">Carregar mais</button>
+      </div>
+    </header>
+
+    <section id="catalog" class="grid" aria-live="polite">
+      <!-- cards serão inseridos aqui via JS -->
+    </section>
+
+    <div class="modal-backdrop" id="modal" role="dialog" aria-hidden="true">
+      <div class="modal" role="document">
+        <div class="modal-header">
+          <strong id="modalTitle">Título</strong>
+          <div>
+            <button class="btn" id="favToggle">❤️ Favoritar</button>
+            <button class="btn" id="closeModal">Fechar</button>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="left">
+            <div class="thumb" id="modalThumb">IMG</div>
+            <div class="specs" id="modalSpecs"></div>
+          </div>
+          <div class="right">
+            <p id="modalDesc" class="muted"></p>
+            <div style="margin-top:12px">
+              <strong>Preço estimado:</strong>
+              <div id="modalPrice" style="margin-top:6px;font-size:18px;color:var(--accent)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>Dados simulados • Projeto demo — app-moto</footer>
+  </div>
+
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
+<aside> <a> <footer> <h3> <img> <nav> <main> <article> 
