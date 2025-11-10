@@ -1,0 +1,89 @@
+/* --- CSS: style_mystery.css --- */
+
+/* 1. Reset e Fundo Atmosférico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0d0d; /* Quase preto */
+    color: #e0e0e0; /* Cinza claro para o texto */
+    font-family: 'Courier New', monospace; /* Fonte que remete a terminais/investigação */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 2. Contêiner Principal do Jogo */
+#game-container {
+    width: 900px;
+    height: 550px;
+    border: 3px solid #3a3a3a;
+    background-color: #1c1c1c; /* Cor de fundo da cena */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* 3. Elemento do Jogador (Detetive/Protagonista) */
+#player {
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    background-color: #007bff; /* Azul escuro para o herói */
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    transition: left 0.2s ease, top 0.2s ease; /* Transição suave para movimento */
+}
+
+/* 4. Elementos Interativos (Pistas, Objetos) */
+.interactable {
+    position: absolute;
+    padding: 5px;
+    background-color: #4a148c; /* Roxo escuro para pistas */
+    color: #fff;
+    cursor: pointer;
+    border: 1px dashed #e65100;
+    font-size: 0.8em;
+    z-index: 5;
+}
+
+.interactable:hover {
+    background-color: #6a1b9a;
+    box-shadow: 0 0 10px #ffeb3b; /* Brilho amarelo/dourado ao passar o mouse */
+}
+
+/* 5. Interface de Informação e Pistas */
+#inventory-log {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 250px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #ffcc00; /* Borda amarela */
+    max-height: 530px;
+    overflow-y: auto;
+}
+
+#log-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#log-list li {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    border-bottom: 1px dotted #333;
+    padding-bottom: 3px;
+}
+
+.clue {
+    color: #00ff00; /* Verde néon para pistas importantes */
+}
