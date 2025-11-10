@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Futebol — Paixão Mundial</title>
+  <style>
+    :root{
+      --green:#0b6b3a;
+      --dark:#0b1720;
+      --muted:#6b7280;
+      --card:#f8fafc;
+      --accent:#ffd166;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#ffffff 0%, #f1f5f9 100%);color:var(--dark);line-height:1.5}
+    header{background:var(--green);color:white;padding:18px 20px;position:sticky;top:0;z-index:10;box-shadow:0 2px 6px rgba(11,23,32,0.12)}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:46px;height:46px;border-radius:8px;background:white;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--green)}
+    nav{display:flex;gap:18px;margin-left:auto;align-items:center}
+    nav a{color:white;text-decoration:none;font-weight:600}
+    .menu-toggle{display:none;background:transparent;border:none;color:white;font-size:20px}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:36px 0}
+    .hero h1{font-size:38px;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(11,23,32,0.06)}
+    .badges{display:flex;gap:8px;flex-wrap:wrap}
+    .badge{background:#e6f6ea;color:var(--green);padding:6px 10px;border-radius:999px;font-weight:600}
+
+    section{padding:26px 0}
+    h2{margin:0 0 12px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .feature{background:white;padding:16px;border-radius:10px;box-shadow:0 4px 12px rgba(11,23,32,0.04)}
+    .feature p{color:var(--muted);margin:8px 0 0}
+
+    .players{display:flex;gap:10px;flex-wrap:wrap}
+    .player{background:white;padding:12px;border-radius:10px;min-width:140px;flex:1 1 140px}
+    .player h3{margin:10px 0 6px}
+
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+
+    footer{padding:20px 0;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width:640px){
+      nav{display:none}
+      .menu-toggle{display:block;margin-left:auto}
+      .grid{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+
+    /* small modal for image */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6)}
+    .modal img{max-width:90%;max-height:80%;border-radius:8px}
+    .close-btn{position:absolute;right:20px;top:18px;background:#111;color:white;border:none;padding:8px 10px;border-radius:6px}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center">
+      <div class="brand">
+        <div class="logo">⚽</div>
+        <div>
+          <div style="font-weight:800">Futebol — Paixão Mundial</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.85)">História, regras e grandes momentos</div>
+        </div>
+      </div>
+      <button class="menu-toggle" aria-label="Abrir menu" onclick="toggleMenu()">☰</button>
+      <nav id="nav">
+        <a href="#inicio">Início</a>
+        <a href="#historia">História</a>
+        <a href="#regras">Regras</a>
+        <a href="#jogadores">Jogadores</a>
+        <a href="#galeria">Galeria</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="inicio" class="hero">
+      <div>
+        <h1>Futebol: muito mais que um esporte</h1>
+        <p>Do campinho da esquina aos grandes estádios do mundo — descubra origem, regras básicas, táticas e os protagonistas que marcaram gerações.</p>
+        <div style="display:flex;gap:12px;align-items:center">
+          <a href="#galeria" style="text-decoration:none"><button class="card">Ver galeria</button></a>
+          <a href="#historia" style="text-decoration:none"><button style="background:var(--dark);color:white;border:none;padding:10px 14px;border-radius:8px">Ler história</button></a>
+        </div>
+
+        <div style="margin-top:18px" class="card">
+          <div class="badges">
+            <div class="badge">Origem: século XIX</div>
+            <div class="badge">FIFA</div>
+            <div class="badge">11 por lado</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card" aria-label="destaque">
+        <h3>Como começar?</h3>
+        <p style="color:var(--muted)">Bola, espaço e vontade. Pratique passes curtos, chute a gol e jogue em equipe. Veja também exercícios simples para treinar drible e finalização.</p>
+        <hr style="margin:12px 0;border:none;border-top:1px solid #e6e9ee">
+        <h4 style="margin:0 0 6px">Dica rápida</h4>
+        <p style="margin:0;color:var(--muted)">Trabalhe a condução de bola com a parte interna do pé — controle é mais importante que força.</p>
+      </aside>
+    </section>
+
+    <section id="historia">
+      <h2>Breve história do futebol</h2>
+      <div class="grid">
+        <div class="feature">
+          <strong>Origens</strong>
+          <p>Formas de jogos com bola existem há séculos — o futebol moderno surgiu na Inglaterra do século XIX e se espalhou rapidamente pelo mundo.</p>
+        </div>
+        <div class="feature">
+          <strong>Profissionalização</strong>
+          <p>Clubes, ligas e a criação da FIFA em 1904 consolidaram o esporte profissional e as competições internacionais.</p>
+        </div>
+        <div class="feature">
+          <strong>Copa do Mundo</strong>
+          <p>Desde 1930 a Copa do Mundo reúne seleções de todo o planeta e se tornou o evento esportivo mais assistido.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="regras">
+      <h2>Regras básicas</h2>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <div style="flex:2 1 360px" class="card">
+          <h3>Objetivo</h3>
+          <p style="color:var(--muted)">Marcar mais gols que o adversário dentro do tempo regulamentar (normalmente 2 tempos de 45 minutos no futebol profissional).</p>
+          <h3>Posições</h3>
+          <ul style="color:var(--muted)">
+            <li>Goleiro — defende a baliza</li>
+            <li>Defesas — protegem a área</li>
+            <li>Meio-campistas — distribuem o jogo</li>
+            <li>Atacantes — finalizam as jogadas</li>
+          </ul>
+        </div>
+        <div style="flex:1 1 200px" class="card">
+          <h3>Infrações comuns</h3>
+          <p style="color:var(--muted)">Faltas, mão na bola (exceto goleiro na área), impedimento, jogo perigoso.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="jogadores">
+      <h2>Grandes nomes</h2>
+      <div class="players">
+        <div class="player">
+          <h3>Pele</h3>
+          <p style="color:var(--muted)">Ícone do futebol brasileiro — velocidade, técnica e faro de gol.</p>
+        </div>
+        <div class="player">
+          <h3>Diego Maradona</h3>
+          <p style="color:var(--muted)">Hábil e polêmico, deixou marcas indeléveis nos anos 80.</p>
+        </div>
+        <div class="player">
+          <h3>Cristiano Ronaldo</h3>
+          <p style="color:var(--muted)">Atleta completo e máquina de gols na era moderna.</p>
+        </div>
+        <div class="player">
+          <h3>Lionel Messi</h3>
+          <p style="color:var(--muted)">Drible curto, visão de jogo e precisão nas finalizações.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <h2>Galeria</h2>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1509221965-7b6b2d8d3f7b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1" alt="Estádio cheio" onclick="openModal(this.src)" />
+        <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" alt="Bola de futebol" onclick="openModal(this.src)" />
+        <img src="https://images.unsplash.com/photo-1517927033932-b3d4a8b02f6d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3" alt="Jogador correndo" onclick="openModal(this.src)" />
+        <img src="https://images.unsplash.com/photo-1520975917768-43f9ecb65b58?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=4" alt="Chute a gol" onclick="openModal(this.src)" />
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=5" alt="Torcida" onclick="openModal(this.src)" />
+        <img src="https://images.unsplash.com/photo-1549989479-4b1e8a8f7a2b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=6" alt="Treino" onclick="openModal(this.src)" />
+        <img src="https://images.unsplash.com/photo-1503725469907-9b7f4d5f3f2e?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=7" alt="Bandeira" onclick="openModal(this.src)" />
+        <img src="https://images.unsplash.com/photo-1530549387789-cbd7f6a402f0?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=8" alt="Copa" onclick="openModal(this.src)" />
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Quer personalizar o site?</h2>
+      <p style="color:var(--muted)">Se quiser, eu posso alterar cores, textos, adicionar partidas e estatísticas interativas, ou gerar um arquivo pronto para download.</p>
+      <form onsubmit="event.preventDefault();alert('Obrigado! (formulário de exemplo — sem envio real)')" class="card" style="display:flex;gap:10px;flex-wrap:wrap">
+        <input type="text" placeholder="Seu nome" style="padding:10px;border-radius:8px;border:1px solid #e6e9ee;flex:1 1 200px" />
+        <input type="email" placeholder="Email" style="padding:10px;border-radius:8px;border:1px solid #e6e9ee;flex:1 1 200px" />
+        <button style="padding:10px 14px;border-radius:8px;border:none;background:var(--green);color:white">Enviar</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>
+        <strong>Futebol — Paixão Mundial</strong>
+        <div style="font-size:13px;color:var(--muted)">Criado para fins educativos</div>
+      </div>
+      <div style="font-size:13px;color:var(--muted)">© <span id="ano"></span> — Todos os direitos reservados</div>
+    </div>
+  </footer>
+
+  <div id="modal" class="modal" onclick="closeModal()">
+    <button class="close-btn" onclick="closeModal();event.stopPropagation()">Fechar</button>
+    <img id="modalImg" src="" alt="" />
+  </div>
+
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+    function toggleMenu(){
+      const nav = document.getElementById('nav');
+      if(nav.style.display === 'flex') nav.style.display='none';
+      else nav.style.display='flex';
+    }
+    function openModal(src){
+      const m = document.getElementById('modal');
+      const i = document.getElementById('modalImg');
+      i.src = src;
+      m.style.display = 'flex';
+    }
+    function closeModal(){
+      const m = document.getElementById('modal');
+      m.style.display = 'none';
+      document.getElementById('modalImg').src = '';
+    }
+  </script>
+</body>
+</html>
+<article id="historia">
+  <h2>Breve história do futebol</h2>
+  <div class="grid">
+    <div class="feature">
+      <strong>Origens</strong>
+      <p>Formas de jogos com bola existem há séculos — o futebol moderno surgiu na Inglaterra do século XIX e se espalhou rapidamente pelo mundo.</p>
+    </div>
+    <div class="feature">
+      <strong>Profissionalização</strong>
+      <p>Clubes, ligas e a criação da FIFA em 1904 consolidaram o esporte profissional e as competições internacionais.</p>
+    </div>
+    <div class="feature">
+      <strong>Copa do Mundo</strong>
+      <p>Desde 1930 a Copa do Mundo reúne seleções de todo o planeta e se tornou o evento esportivo mais assistido.</p>
+    </div>
+  </div>
+</article>
