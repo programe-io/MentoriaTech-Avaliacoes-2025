@@ -1,0 +1,141 @@
+/* Estilos principais do site Capoeira */
+:root{
+  --bg:#fffaf0;
+  --accent:#d97706;
+  --dark:#0b1720;
+  --muted:#6b7280;
+  --card:#fff;
+  --green:#0b8a5f;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--dark);
+  line-height:1.5;
+}
+header{
+  background:linear-gradient(90deg,var(--green),#0b6b3a);
+  color:white;
+  padding:18px 20px;
+  position:sticky;
+  top:0;
+  z-index:20;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:20px;
+}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{
+  width:46px;
+  height:46px;
+  border-radius:8px;
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  color:var(--green);
+}
+nav{display:flex;gap:14px;margin-left:auto;align-items:center}
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  transition:opacity .2s;
+}
+nav a:hover{opacity:0.8}
+.hero{
+  display:grid;
+  grid-template-columns:1fr 380px;
+  gap:24px;
+  align-items:center;
+  padding:34px 0;
+}
+.hero h1{font-size:34px;margin-bottom:8px}
+.hero p{color:var(--muted);margin-bottom:14px}
+.card{
+  background:var(--card);
+  padding:16px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(11,23,32,0.06);
+}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.badge{
+  background:#fff6e6;
+  color:var(--accent);
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:700;
+}
+article{padding:22px 0}
+h2{margin-bottom:12px;color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.feature{
+  background:white;
+  padding:14px;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(11,23,32,0.04);
+}
+.feature p{color:var(--muted);margin-top:8px}
+.instruments{display:flex;gap:10px;flex-wrap:wrap}
+.instrument{
+  flex:1 1 180px;
+  background:white;
+  padding:12px;
+  border-radius:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+.mestre{
+  background:white;
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+}
+.gallery img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:8px;
+  transition:transform .3s;
+}
+.gallery img:hover{transform:scale(1.05)}
+footer{
+  padding:20px 0;
+  color:var(--muted);
+  border-top:1px solid #eee;
+  text-align:center;
+  margin-top:20px;
+}
+.cta{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:8px;
+  background:var(--accent);
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+  transition:background .2s;
+}
+.cta:hover{background:#b45309}
+
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:640px){
+  nav{display:none}
+  .grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .hero h1{font-size:26px}
+}
