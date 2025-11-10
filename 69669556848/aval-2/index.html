@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Enciclopédia dos Animais</title>
+  <style>
+    :root{--accent:#2b8a9f;--muted:#f3f6f7;--card:#ffffff;--radius:12px}
+    *{box-sizing:border-box;font-family:Inter, system-ui, -apple-system, Roboto, 'Segoe UI', Arial}
+    body{margin:0;background:linear-gradient(180deg,var(--muted),#ffffff);color:#123}
+    header{background:var(--accent);color:#fff;padding:28px 20px;border-bottom-left-radius:20px;border-bottom-right-radius:20px}
+    header h1{margin:0;font-size:clamp(1.2rem,2.5vw,2rem)}
+    nav{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap}
+    nav a{color:rgba(255,255,255,0.9);text-decoration:none;padding:6px 10px;background:rgba(255,255,255,0.06);border-radius:8px;font-size:0.95rem}
+    .container{max-width:1000px;margin:22px auto;padding:0 18px;display:grid;grid-template-columns:1fr 320px;gap:20px}
+    main{min-width:0}
+    .card{background:var(--card);padding:14px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(18,34,44,0.06);margin-bottom:16px}
+    .animal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .animal{display:flex;gap:12px;align-items:center}
+    .animal img{width:96px;height:72px;object-fit:cover;border-radius:10px}
+    h2{margin:0 0 8px 0}
+    aside{position:relative}
+    .fact-list{list-style:none;padding:0;margin:0}
+    .fact-list li{padding:8px 0;border-bottom:1px dashed #eee}
+    footer{text-align:center;padding:18px 8px;color:#555;font-size:0.9rem}
+    @media (max-width:900px){.container{grid-template-columns:1fr} .animal-grid{grid-template-columns:1fr} aside{order:2}}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <h1>Enciclopédia dos Animais</h1>
+    <nav>
+      <a href="#domesticos">Domésticos</a>
+      <a href="#selvagens">Selvagens</a>
+      <a href="#em-risco">Em risco</a>
+      <a href="#curiosidades">Curiosidades</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main>
+      <section id="domesticos" class="card">
+        <h2>Animais Domésticos</h2>
+        <p>Os animais domésticos convivem com pessoas há milhares de anos. Eles incluem cães, gatos, coelhos e outros que foram domesticados e vivem como companhia ou apoio ao ser humano.</p>
+        <div class="animal-grid">
+          <article class="animal">
+            <img src="https://picsum.photos/seed/cao/400/300" alt="Cachorro">
+            <div>
+              <strong>Cão</strong>
+              <p>Tutores devem oferecer vacinas, alimentação balanceada e atenção.</p>
+            </div>
+          </article>
+
+          <article class="animal">
+            <img src="https://picsum.photos/seed/gato/400/300" alt="Gato">
+            <div>
+              <strong>Gato</strong>
+              <p>Felinos são independentes, mas precisam de enriquecimento ambiental para se manterem saudáveis.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="selvagens" class="card">
+        <h2>Animais Selvagens</h2>
+        <p>Animais selvagens vivem em ambientes naturais e desempenham papéis importantes nos ecossistemas. Exemplo: araras, micos, onças e tamanduás.</p>
+        <div class="animal-grid">
+          <article class="animal">
+            <img src="https://picsum.photos/seed/tucano/400/300" alt="Tucano">
+            <div>
+              <strong>Tucano</strong>
+              <p>Encontrado em florestas tropicais — é importante na dispersão de sementes.</p>
+            </div>
+          </article>
+
+          <article class="animal">
+            <img src="https://picsum.photos/seed/mico/400/300" alt="Mico-leão-dourado">
+            <div>
+              <strong>Mico-leão-dourado</strong>
+              <p>Espécie símbolo de conservação — vive na Mata Atlântica e precisa de áreas protegidas.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="em-risco" class="card">
+        <h2>Espécies em Risco</h2>
+        <p>Muitas espécies estão ameaçadas por desmatamento, caça e poluição. Ações de proteção e unidades de conservação ajudam a manter populações vivas.</p>
+      </section>
+
+      <section id="curiosidades" class="card">
+        <h2>Curiosidades</h2>
+        <ul>
+          <li>Os pinguins podem beber água salgada porque possuem glândulas especiais que filtram o excesso de sal.</li>
+          <li>O feneco (raposa-do-deserto) tem orelhas grandes que ajudam na termorregulação.</li>
+          <li>Algumas aves migram milhares de quilômetros para se reproduzir em locais seguros.</li>
+        </ul>
+      </section>
+    </main>
+
+    <aside class="card">
+      <h3>Informações rápidas</h3>
+      <p>Use o menu acima para navegar. Este site é um modelo educacional — adicione mais animais e imagens conforme desejar.</p>
+
+      <h4>Boas práticas</h4>
+      <ul class="fact-list">
+        <li>Não capture animais selvagens — é crime e perigoso.</li>
+        <li>Adoção responsável reduz abandono.</li>
+        <li>Denuncie maus-tratos às autoridades locais.</li>
+      </ul>
+
+      <h4>Recursos</h4>
+      <p>IBAMA, ONGs de conservação e clínicas veterinárias oferecem informações e apoio.</p>
+    </aside>
+  </div>
+
+  <footer class="card" style="max-width:1000px;margin:0 auto 30px;">
+    <p>Feito por você — personalize este site para torná-lo seu. &mdash; 2025</p>
+  </footer>
+</body>
+</html>

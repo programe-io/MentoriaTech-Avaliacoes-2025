@@ -1,0 +1,137 @@
+:root {
+  --accent: #2b8a9f;
+  --muted: #f3f6f7;
+  --card: #ffffff;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, Roboto, 'Segoe UI', Arial;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--muted), #ffffff);
+  color: #123;
+}
+
+/* ====== CABEÇALHO ====== */
+header {
+  background: var(--accent);
+  color: #fff;
+  padding: 28px 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+}
+
+nav {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ====== CONTEÚDO ====== */
+.container {
+  max-width: 1000px;
+  margin: 22px auto;
+  padding: 0 18px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+}
+
+main {
+  min-width: 0;
+}
+
+.card {
+  background: var(--card);
+  padding: 14px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(18, 34, 44, 0.06);
+  margin-bottom: 16px;
+}
+
+/* ====== ANIMAIS ====== */
+.animal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.animal {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.animal img {
+  width: 96px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+h2 {
+  margin: 0 0 8px 0;
+}
+
+/* ====== ASIDE ====== */
+aside {
+  position: relative;
+}
+
+.fact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fact-list li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #eee;
+}
+
+/* ====== RODAPÉ ====== */
+footer {
+  text-align: center;
+  padding: 18px 8px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* ====== RESPONSIVIDADE ====== */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .animal-grid {
+    grid-template-columns: 1fr;
+  }
+  aside {
+    order: 2;
+  }
+}
