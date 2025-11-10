@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futebol Total - Site Completo com CSS Avançado</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ======================
+           RESET E CONFIGURAÇÕES GLOBAIS
+        ====================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1B5E20;
+            --secondary: #2E7D32;
+            --accent: #FFCA28;
+            --dark: #1B1B1B;
+            --light: #F5F5F5;
+            --gray: #757575;
+            --success: #4CAF50;
+            --danger: #F44336;
+            --warning: #FFC107;
+            --info: #2196F3;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ======================
+           TIPOGRAFIA
+        ====================== */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.8rem; }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* ======================
+           HEADER & HERO
+        ====================== */
+        header {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1518098268026-4e266f444f6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 15px rgba(255,202,40,0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #ffb300;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255,202,40,0.5);
+        }
+
+        /* ======================
+           NAVEGAÇÃO
+        ====================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(27, 27, 27, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        /* ======================
+           SEÇÕES
+        ====================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 80px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* ======================
+           HISTÓRIA DO FUTEBOL
+        ====================== */
+        #historia {
+            background: white;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--accent);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            padding: 1rem 2rem;
+            position: relative;
+            width: 50%;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+            padding-right: 4rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 4rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border: 4px solid var(--accent);
+            border-radius: 50%;
+            top: 25px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* ======================
+           REGRAS DO FUTEBOL
+        ====================== */
+        #regras {
+            background: #f9f9f9;
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .rule-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--accent);
+        }
+
+        .rule-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .rule-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .rule-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        /* ======================
+           JOGADORES FAMOSOS
+        ====================== */
+        #jogadores {
+            background: white;
+        }
+
+        .players-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .player-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .player-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .player-img {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .player-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+        }
+
+        .player-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .player-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .player-info .country {
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .player-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* ======================
+           COPAS DO MUNDO
+        ====================== */
+        #copas {
+            background: #f9f9f9;
+        }
+
+        .world-cup-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .world-cup-header h2 {
+            margin-bottom: 1rem;
+        }
+
+        .champions-count {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+        }
+
+        .champions-count i {
+            font-size: 1.5rem;
+        }
+
+        .cups-table {
+            overflow-x: auto;
+            margin-top: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background: #f1f8e9;
+        }
+
+        .flag {
+            width: 30px;
+            height: 20px;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-right: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* ======================
+           FOOTER
+        ====================== */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* ======================
+           ANIMAÇÕES
+        ====================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* ======================
+           RESPONSIVO
+        ====================== */
+        @media (max-width: 992px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 20px;
+            }
+
+            .timeline-item:nth-child(odd) {
+                left: 0;
+                text-align: left;
+                padding-right: 20px;
+                padding-left: 70px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::before {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd)::before {
+                left: 20px;
+            }
+
+            h1 { font-size: 3rem; }
+            .hero-content h1 { font-size: 3.5rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 100%;
+                left: -100%;
+                width: 100%;
+                background: var(--dark);
+                flex-direction: column;
+                padding: 2rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .player-stats {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* ======================
+           SCROLL ANIMATION
+        ====================== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGAÇÃO -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-futbol"></i>
+                <span>Futebol Total</span>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-menu">
+                <a href="#inicio">Início</a>
+                <a href="#historia">História</a>
+                <a href="#regras">Regras</a>
+                <a href="#jogadores">Jogadores</a>
+                <a href="#copas">Copas</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER HERO -->
+    <header id="inicio">
+        <div class="hero-content">
+            <h1 class="floating">Futebol Total</h1>
+            <p>O esporte que move o mundo. Paixão, história e emoção em cada partida.</p>
+            <a href="#historia" class="btn">Explorar Agora</a>
+        </div>
+    </header>
+
+    <!-- HISTÓRIA -->
+    <section id="historia" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">História do Futebol</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Antiguidade</h3>
+                        <p>Jogos com bola existiam na China (Cuju, 200 a.C.), Grécia e Roma. Eram rituais e treinamentos militares.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1863 - Inglaterra</h3>
+                        <p>Fundação da Football Association. Primeiras regras oficiais do futebol moderno em Londres.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1904 - FIFA</h3>
+                        <p>Criação da Fédération Internationale de Football Association em Paris.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1930 - Uruguai</h3>
+                        <p>Primeira Copa do Mundo. Uruguai campeão ao derrotar a Argentina por 4 a 2.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1950 - Maracanazo</h3>
+                        <p>Uruguai vence o Brasil no Maracanã. Um dos maiores zebras da história.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2022 - Catar</h3>
+                        <p>Argentina conquista seu terceiro título mundial com Messi como capitão.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGRAS -->
+    <section id="regras" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">Regras Básicas</h2>
+            
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <i class="fas fa-users"></i>
+                    <h3>11 Jogadores</h3>
+                    <p>Cada time tem 11 jogadores em campo, incluindo o goleiro. Substituições variam por competição.</p>
+                </div>
+                
+                <div class="rule-card">
+                    <i class="fas fa-futbol"></i>
+                    <h3>Objetivo</h3>
+                    <p>Marcar mais gols que o adversário. Gol válido quando a bola ultrapassa completamente a linha.</p>
+                </div>
+                
+                <div class="rule-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Duração</h3>
+                    <p>90 minutos divididos em dois tempos de 45 minutos, mais acréscimos determinados pelo árbitro.</p>
+                </div>
+                
+                <div class="rule-card">
+                    <i class="fas fa-flag"></i>
+                    <h3>Impedimento</h3>
+                    <p>Jogador não pode estar à frente da bola e do penúltimo adversário ao receber passe.</p>
+                </div>
+                
+                <div class="rule-card">
+                    <i class="fas fa-card-yellow"></i>
+                    <h3>Cartões</h3>
+                    <p>Amarelo: advertência. Vermelho: expulsão. Dois amarelos = vermelho.</p>
+                </div>
+                
+                <div class="rule-card">
+                    <i class="fas fa-hand-paper"></i>
+                    <h3>Faltas</h3>
+                    <p>Contato físico intencional, empurrões, carrinhos perigosos resultam em falta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOGADORES -->
+    <section id="jogadores" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">Lendas do Futebol</h2>
+            
+            <div class="players-grid">
+                <div class="player-card">
+                    <div class="player-img">
+                        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pelé">
+                    </div>
+                    <div class="player-info">
+                        <h3>Pelé</h3>
+                        <div class="country"><img src="https://flagcdn.com/br.svg" class="flag" alt="Brasil"> Brasil</div>
+                        <div class="player-stats">
+                            <div class="stat">
+                                <strong>3</strong>
+                                <span>Copas</span>
+                            </div>
+                            <div class="stat">
+                                <strong>1283</strong>
+                                <span>Gols</span>
+                            </div>
+                            <div class="stat">
+                                <strong>77</strong>
+                                <span>Anos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-img">
+                        <img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Messi">
+                    </div>
+                    <div class="player-info">
+                        <h3>Lionel Messi</h3>
+                        <div class="country"><img src="https://flagcdn.com/ar.svg" class="flag" alt="Argentina"> Argentina</div>
+                        <div class="player-stats">
+                            <div class="stat">
+                                <strong>8</strong>
+                                <span>Ballon d'Or</span>
+                            </div>
+                            <div class="stat">
+                                <strong>1</strong>
+                                <span>Copa</span>
+                            </div>
+                            <div class="stat">
+                                <strong>800+</strong>
+                                <span>Gols</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-img">
+                        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ronaldo">
+                    </div>
+                    <div class="player-info">
+                        <h3>Cristiano Ronaldo</h3>
+                        <div class="country"><img src="https://flagcdn.com/pt.svg" class="flag" alt="Portugal"> Portugal</div>
+                        <div class="player-stats">
+                            <div class="stat">
+                                <strong>5</strong>
+                                <span>Ballon d'Or</span>
+                            </div>
+                            <div class="stat">
+                                <strong>900+</strong>
+                                <span>Gols</span>
+                            </div>
+                            <div class="stat">
+                                <strong>5</strong>
+                                <span>UCL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-img">
+                        <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Maradona">
+                    </div>
+                    <div class="player-info">
+                        <h3>Diego Maradona</h3>
+                        <div class="country"><img src="https://flagcdn.com/ar.svg" class="flag" alt="Argentina"> Argentina</div>
+                        <div class="player-stats">
+                            <div class="stat">
+                                <strong>1</strong>
+                                <span>Copa</span>
+                            </div>
+                            <div class="stat">
+                                <strong>1986</strong>
+                                <span>Melhor</span>
+                            </div>
+                            <div class="stat">
+                                <strong>34</strong>
+                                <span>Gols Seleção</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COPAS DO MUNDO -->
+    <section id="copas" class="fade-in">
+        <div class="container">
+            <div class="world-cup-header">
+                <h2 class="section-title">Copas do Mundo</h2>
+                <div class="champions-count">
+                    <i class="fas fa-trophy"></i>
+                    <span>Brasil: 5 títulos (Recorde)</span>
+                </div>
+            </div>
+
+            <div class="cups-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ano</th>
+                            <th>Sede</th>
+                            <th>Campeão</th>
+                            <th>Vice</th>
+                            <th>Placar Final</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1930</td>
+                            <td><img src="https://flagcdn.com/uy.svg" class="flag" alt="Uruguai"> Uruguai</td>
+                            <td><img src="https://flagcdn.com/uy.svg" class="flag" alt="Uruguai"> Uruguai</td>
+                            <td><img src="https://flagcdn.com/ar.svg" class="flag" alt="Argentina"> Argentina</td>
+                            <td>4-2</td>
+                        </tr>
+                        <tr>
+                            <td>1950</td>
+                            <td><img src="https://flagcdn.com/br.svg" class="flag" alt="Brasil"> Brasil</td>
+                            <td><img src="https://flagcdn.com/uy.svg" class="flag" alt="Uruguai"> Uruguai</td>
+                            <td><img src="https://flagcdn.com/br.svg" class="flag" alt="Brasil"> Brasil</td>
+                            <td>2-1</td>
+                        </tr>
+                        <tr>
+                            <td>1958</td>
+                            <td><img src="https://flagcdn.com/se.svg" class="flag" alt="Suécia"> Suécia</td>
+                            <td><img src="https://flagcdn.com/br.svg" class="flag" alt="Brasil"> Brasil</td>
+                            <td><img src="https://flagcdn.com/se.svg" class="flag" alt="Suécia"> Suécia</td>
+                            <td>5-2</td>
+                        </tr>
+                        <tr>
+                            <td>1970</td>
+                            <td><img src="https://flagcdn.com/mx.svg" class="flag" alt="México"> México</td>
+                            <td><img src="https://flagcdn.com/br.svg" class="flag" alt="Brasil"> Brasil</td>
+                            <td><img src="https://flagcdn.com/it.svg" class="flag" alt="Itália"> Itália</td>
+                            <td>4-1</td>
+                        </tr>
+                        <tr>
+                            <td>1986</td>
+                            <td><img src="https://flagcdn.com/mx.svg" class="flag" alt="México"> México</td>
+                            <td><img src="https://flagcdn.com/ar.svg" class="flag" alt="Argentina"> Argentina</td>
+                            <td><img src="https://flagcdn.com/de.svg" class="flag" alt="Alemanha"> Alemanha</td>
+                            <td>3-2</td>
+                        </tr>
+                        <tr>
+                            <td>1994</td>
+                            <td><img src="https://flagcdn.com/us.svg" class="flag" alt="EUA"> EUA</td>
+                            <td><img src="https://flagcdn.com/br.svg" class="flag" alt="Brasil"> Brasil</td>
+                            <td><img src="https://flagcdn.com/it.svg" class="flag" alt="Itália"> Itália</td>
+                            <td>0-0 (3-2 pên.)</td>
+                        </tr>
+                        <tr>
+                            <td>2002</td>
+                            <td><img src="https://flagcdn.com/kr.svg" class="flag" alt="Coreia/Japão"> Coreia/Japão</td>
+                            <td><img src="https://flagcdn.com/br.svg" class="flag" alt="Brasil"> Brasil</td>
+                            <td><img src="https://flagcdn.com/de.svg" class="flag" alt="Alemanha"> Alemanha</td>
+                            <td>2-0</td>
+                        </tr>
+                        <tr>
+                            <td>2014</td>
+                            <td><img src="https://flagcdn.com/br.svg" class="flag" alt="Brasil"> Brasil</td>
+                            <td><img src="https://flagcdn.com/de.svg" class="flag" alt="Alemanha"> Alemanha</td>
+                            <td><img src="https://flagcdn.com/ar.svg" class="flag" alt="Argentina"> Argentina</td>
+                            <td>1-0 (prorr.)</td>
+                        </tr>
+                        <tr>
+                            <td>2018</td>
+                            <td><img src="https://flagcdn.com/ru.svg" class="flag" alt="Rússia"> Rússia</td>
+                            <td><img src="https://flagcdn.com/fr.svg" class="flag" alt="França"> França</td>
+                            <td><img src="https://flagcdn.com/hr.svg" class="flag" alt="Croácia"> Croácia</td>
+                            <td>4-2</td>
+                        </tr>
+                        <tr>
+                            <td>2022</td>
+                            <td><img src="https://flagcdn.com/qa.svg" class="flag" alt="Catar"> Catar</td>
+                            <td><img src="https://flagcdn.com/ar.svg" class="flag" alt="Argentina"> Argentina</td>
+                            <td><img src="https://flagcdn.com/fr.svg" class="flag" alt="França"> França</td>
+                            <td>3-3 (4-2 pên.)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-futbol"></i> Futebol Total</h3>
+                    <p>O maior site sobre futebol do Brasil. História, regras, jogadores e muito mais.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#historia">História</a></li>
+                        <li><a href="#regras">Regras</a></li>
+                        <li><a href="#jogadores">Jogadores</a></li>
+                        <li><a href="#copas">Copas do Mundo</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Campeões</h3>
+                    <ul>
+                        <li><img src="https://flagcdn.com/br.svg" class="flag" alt="Brasil"> Brasil - 5</li>
+                        <li><img src="https://flagcdn.com/it.svg" class="flag" alt="Itália"> Itália - 4</li>
+                        <li><img src="https://flagcdn.com/de.svg" class="flag" alt="Alemanha"> Alemanha - 4</li>
+                        <li><img src="https://flagcdn.com/ar.svg" class="flag" alt="Argentina"> Argentina - 3</li>
+                        <li><img src="https://flagcdn.com/fr.svg" class="flag" alt="França"> França - 2</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Futebol Total. Todos os direitos reservados. | Desenvolvido com ❤️ para os amantes do futebol</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Animação ao rolar
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animação da timeline
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const items = entry.target.querySelectorAll('.timeline-item');
+                    items.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, index * 300);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.timeline').forEach(timeline => {
+            timelineObserver.observe(timeline);
+        });
+
+        // Contador de títulos do Brasil
+        window.addEventListener('load', () => {
+            const countElement = document.querySelector('.champions-count span');
+            if (countElement) {
+                const text = countElement.textContent;
+                countElement.textContent = '';
+                let i = 0;
+                const interval = setInterval(() => {
+                    if (i <= 5) {
+                        countElement.textContent = `Brasil: ${i} títulos (Recorde)`;
+                        i++;
+                    } else {
+                        countElement.textContent = text;
+                        clearInterval(interval);
+                    }
+                }, 400);
+            }
+        });
+    </script>
+</body>
+</html>
