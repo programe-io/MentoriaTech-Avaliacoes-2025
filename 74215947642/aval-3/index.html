@@ -1,106 +1,88 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Modelo completo de site HTML5 responsivo e moderno.">
-    <meta name="author" content="Seu Nome">
-    <meta name="keywords" content="HTML5, CSS, JavaScript, site completo, modelo">
-    <title>Meu Site Completo</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css"> <!-- CSS externo -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Feed</title>
+
+  <!-- Tailwind + Bootstrap -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Seu CSS -->
+  <link href="style.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
 
-<body>
-    <header>
-        <h1>Bem-vindo ao Meu Site Completo</h1>
-        <p>Um modelo HTML5 moderno e responsivo</p>
-    </header>
+<body class="bg-gradient-to-b from-blue-900 to-blue-950 h-screen text-white">
 
-    <nav>
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#contato">Contato</a>
+  <header class="shadow-md p-5 flex header-custom">
+    <div class="flex-1 uppercase font-bold text-center md:text-left">
+      Logo
+    </div>
+
+    <nav class="font-bold gap-3 hidden md:flex">
+      <a href="">Início</a>
+      <a href="">Amigos</a>
+      <a href="">Perfil</a>
     </nav>
+  </header>
 
-    <main>
-        <section id="inicio">
-            <h2>Início</h2>
-            <p>Este é um modelo básico de site HTML totalmente funcional. Ele inclui estrutura semântica, responsividade, estilo moderno e um pequeno script para melhorar a experiência do usuário.</p>
-        </section>
+  <!-- POST LISTS -->
+  <main class="py-4 px-2 flex flex-col gap-3 md:flex-row items-center">
 
-        <section id="sobre">
-            <h2>Sobre</h2>
-            <p>Este site foi criado com HTML5, CSS3 e JavaScript puro. É uma excelente base para começar qualquer projeto web.</p>
-            <p>Você pode personalizar cores, fontes, imagens e muito mais para adaptá-lo ao seu estilo.</p>
-        </section>
+    <!-- POST CARD -->
+    <div class="post-card">
+      <div class="flex items-center pb-4 px-4 gap-3">
+        <img class="avatar" src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/874.png" alt="">
+        <h2 class="text-2xl">Corinthians</h2>
+      </div>
 
-        <section id="servicos">
-            <h2>Serviços</h2>
-            <ul>
-                <li>Desenvolvimento Web</li>
-                <li>Design Responsivo</li>
-                <li>Otimização SEO</li>
-                <li>Consultoria Técnica</li>
-            </ul>
+      <img class="post-img" src="https://static.corinthians.com.br/uploads/1746024997d85b63ef0ccb114d0a3bb7b7d808028f.png" alt="corinthians">
 
-            <div class="card destaque-servico">
-                <h3>Serviço em Destaque</h3>
-                <p>Conheça nosso serviço mais popular! Criamos sites personalizados, otimizados para SEO e 100% responsivos, que se adaptam a qualquer dispositivo.</p>
-                <button class="btn">Saiba Mais</button>
-            </div>
+      <div class="pt-4 px-4">
+        <p class="text-sm text-justify">
+          Hugo de Souza Nogueira é um futebolista brasileiro que atua como goleiro no Corinthians.
+        </p>
+        <span class="time">há 2h</span>
+      </div>
+    </div>
 
-            <!-- 🟦 NOVA DIV COM IMG E SPAN -->
-            <div class="bloco-destaque">
-                <img src="https://via.placeholder.com/150" alt="Ícone de destaque" class="icone-servico">
-                <span class="texto-destaque">Mais de <strong>500 projetos</strong> entregues com sucesso!</span>
-            </div>
-        </section>
+    <!-- POST CARD 2 -->
+    <div class="post-card">
+      <div class="flex items-center pb-4 px-4 gap-3">
+        <img class="avatar" src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/874.png" alt="">
+        <h2 class="text-2xl">Corinthians</h2>
+      </div>
 
-        <section id="contato">
-            <h2>Contato</h2>
-            <form onsubmit="enviarFormulario(event)">
-                <label for="nome">Nome:</label><br>
-                <input type="text" id="nome" name="nome" required><br><br>
+      <img class="post-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHPOASPtLIvLoOOwbXYYeNzwqEQJt0Dlsxkw&s" alt="Escola">
 
-                <label for="email">E-mail:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
+      <div class="pt-4 px-4">
+        <p class="text-sm text-justify">
+          Memphis Depay é um futebolista neerlandês que atua como atacante. Joga pelo Corinthians...
+        </p>
+        <span class="time">há 3h</span>
+      </div>
+    </div>
 
-                <label for="mensagem">Mensagem:</label><br>
-                <textarea id="mensagem" name="mensagem" rows="5" required></textarea><br><br>
+    <!-- POST CARD 3 -->
+    <div class="post-card">
+      <div class="flex items-center pb-4 px-4 gap-3">
+        <img class="avatar" src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/874.png" alt="">
+        <h2 class="text-2xl">Corinthians</h2>
+      </div>
 
-                <button type="submit">Enviar</button>
-            </form>
-            <p id="resposta-formulario" style="margin-top:10px; color:green;"></p>
-        </section>
-    </main>
+      <img class="post-img" src="https://cdn.meutimao.com.br/_upload/forum/2025/08/07/contratacao_corinthians_fecha_contratacao_do_atacante_y.jpeg" alt="Vitinho">
 
-    <footer>
-        <p>&copy; 2025 - Meu Site Completo. Todos os direitos reservados.</p>
-    </footer>
+      <div class="pt-4 px-4">
+        <p class="text-sm text-justify">
+          Victor Vinícius Coelho dos Santos, mais conhecido como Vitinho, é um futebolista brasileiro que atua como atacante. Joga pelo Corinthians.
+        </p>
+        <span class="time">há 20 minutos</span>
+      </div>
+    </div>
 
-    <button id="btnTopo" onclick="voltarAoTopo()">↑</button>
-
-    <script>
-        // Mostrar botão de voltar ao topo
-        window.onscroll = function() {
-            const btn = document.getElementById("btnTopo");
-            btn.style.display = (document.documentElement.scrollTop > 300) ? "block" : "none";
-        };
-
-        // Função para voltar ao topo
-        function voltarAoTopo() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Função de envio de formulário
-        function enviarFormulario(event) {
-            event.preventDefault();
-            document.getElementById("resposta-formulario").textContent = "Mensagem enviada com sucesso!";
-            event.target.reset();
-        }
-    </script>
+  </main>
 </body>
 </html>
