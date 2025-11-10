@@ -1,0 +1,109 @@
+body {
+  background: linear-gradient(to bottom, #0a2342, #020d1f);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  animation: fadeDown 1s ease-in-out;
+}
+
+/* ======== Cards ======== */
+.post-card {
+  background-color:#EE82EE(31, 41, 55, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(255, 255, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 540px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.post-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+}
+
+/* ======== Imagem ======== */
+.card-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 3px solid gold;
+  transition: transform 0.5s ease;
+}
+
+.post-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+/* ======== Conteúdo ======== */
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card-content h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.card-content p {
+  color: #cfd8dc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+/* ======== Autor ======== */
+.author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.author img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid gold;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.author img:hover {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.author span {
+  font-weight: 700;
+  color: gold;
+}
+
+/* ======== Animações ======== */
+@keyframes fadeDown {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
