@@ -1,0 +1,72 @@
+/* ======================================= */
+/* 1. ESTILIZAÇÃO GERAL E BACKGROUND (CAMPO) */
+/* ======================================= */
+
+:root {
+    --cor-gramado: #2c934f;
+    --cor-borda-tabela: #ddd;
+    --cor-texto-escuro: #333;
+    --cor-texto-claro: #fff;
+    --cor-destaque: #ffc107; /* Amarelo */
+}
+
+body {
+    background-color: var(--cor-gramado);
+    color: var(--cor-texto-claro);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Centralização e Sombra para o Conteúdo Principal */
+main, aside {
+    background-color: rgba(255, 255, 255, 0.95); /* Quase branco transparente */
+    color: var(--cor-texto-escuro);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+/* ======================================= */
+/* 2. LAYOUT (HEADER, NAV, MAIN, ASIDE)    */
+/* ======================================= */
+
+header {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: var(--cor-texto-claro);
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+nav a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s;
+}
+
+nav a:hover {
+    border-bottom: 2px solid var(--cor-destaque);
+}
+
+/* Layout usando Flexbox para Main e Aside em telas maiores */
+.container {
+    display: flex
