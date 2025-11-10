@@ -1,0 +1,175 @@
+/* ==============================
+   ESTILO DO SITE - HISTÓRIA DO FUTEBOL
+   ============================== */
+
+:root {
+  --cor-primaria: #007bff;
+  --cor-secundaria: #00c853;
+  --cor-fundo: #0d1117;
+  --cor-card: #161b22;
+  --cor-texto: #f5f5f5;
+  --cor-detalhe: #ffcc00;
+  --cor-hover: #1e90ff;
+  --transicao: 0.3s ease;
+}
+
+/* ========= GERAL ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+/* ========= CABEÇALHO ========= */
+header {
+  text-align: center;
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  padding: 2rem 1rem;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* ========= MENU ========= */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: var(--cor-card);
+  padding: 1rem;
+  border-bottom: 2px solid var(--cor-primaria);
+}
+
+nav a {
+  color: var(--cor-texto);
+  text-decoration: none;
+  margin: 0.5rem 1rem;
+  font-weight: 600;
+  transition: var(--transicao);
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: var(--cor-detalhe);
+  transition: var(--transicao);
+  margin-top: 4px;
+}
+
+nav a:hover {
+  color: var(--cor-detalhe);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ========= CONTAINER ========= */
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* ========= SEÇÕES ========= */
+section, article, aside {
+  background: var(--cor-card);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transicao);
+}
+
+section:hover, article:hover, aside:hover {
+  transform: translateY(-5px);
+}
+
+/* ========= TÍTULOS ========= */
+h2 {
+  color: var(--cor-detalhe);
+  margin-bottom: 0.5rem;
+}
+
+h5 {
+  color: #aaa;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+/* ========= BOTÕES ========= */
+.btn {
+  display: inline-block;
+  background: var(--cor-primaria);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: var(--transicao);
+}
+
+.btn:hover {
+  background: var(--cor-hover);
+  transform: scale(1.05);
+}
+
+/* ========= IMAGENS ========= */
+img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+/* ========= SPAN (DESTAQUE) ========= */
+span {
+  color: var(--cor-detalhe);
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+
+/* ========= RODAPÉ ========= */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--cor-card);
+  border-top: 2px solid var(--cor-primaria);
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* ========= RESPONSIVIDADE ========= */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 0.3rem 0;
+  }
+}
