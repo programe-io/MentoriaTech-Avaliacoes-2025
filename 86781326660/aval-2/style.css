@@ -1,0 +1,114 @@
+/* -------------------------------------- */
+/* 1. RESET BÁSICO E VARIÁVEIS CSS (Tokens) */
+/* -------------------------------------- */
+:root {
+    /* Cores */
+    --cor-principal: #4a6fa5; /* Azul Sereno */
+    --cor-secundaria: #a3b1c6; /* Azul Claro */
+    --cor-fundo: #f8f9fa; /* Branco Sujo / Off-White */
+    --cor-texto: #343a40; /* Cinza Escuro */
+    --cor-destaque: #e0f7fa; /* Azul Quase Branco para Cards */
+    
+    /* Sombras */
+    --sombra-leve: 0 2px 5px rgba(0, 0, 0, 0.08);
+    --sombra-media: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Fonte moderna e legível */
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* -------------------------------------- */
+/* 2. ESTILO DO CABEÇALHO (HEADER) */
+/* -------------------------------------- */
+header {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--sombra-media);
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* -------------------------------------- */
+/* 3. LAYOUT PRINCIPAL E SEÇÕES */
+/* -------------------------------------- */
+main {
+    max-width: 1000px;
+    margin: 0 auto 80px; /* Margem extra no fim para o footer fixo */
+    padding: 0 20px;
+}
+
+section {
+    padding: 20px 0;
+}
+
+/* Títulos das Seções */
+section > h2 {
+    font-size: 2em;
+    color: var(--cor-principal);
+    border-bottom: 3px solid var(--cor-secundaria);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+/* -------------------------------------- */
+/* 4. ESTILO DOS CARDS DE RECEITA */
+/* -------------------------------------- */
+.receita-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-leve);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.receita-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-media);
+}
+
+.receita-card h3 {
+    color: var(--cor-principal);
+    margin: 15px 0 10px;
+    font-size: 1.4em;
+}
+
+.receita-card p {
+    margin-bottom: 15px;
+}
+
+.receita-card ul {
+    list-style-type: none; /* Remove o marcador padrão */
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.receita-card ul li {
+    padding: 5px 0 5px 25px;
+    position: relative;
+}
+
+/* Criando um marcador personalizado (ícone) */
+.receita-card ul li::before {
+    content: "🥄"; /* Ícone de colher */
