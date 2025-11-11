@@ -1,0 +1,167 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog da Mariana</title>
+  <style>
+    :root{
+      --roxo-escuro: #2b0a3a;
+      --roxo-claro: #b78fe0;
+      --texto-claro: #ffffff;
+      --card-bg: rgba(255,255,255,0.05);
+      --max-width: 900px;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      height:100%;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, var(--roxo-escuro), #1f0530);
+      color: var(--texto-claro);
+      padding: 2rem;
+    }
+
+    .container{
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    header.banner{
+      background: var(--roxo-claro);
+      color: #1b0120;
+      padding: 1.25rem 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      display:flex;
+      align-items:center;
+      gap: 1rem;
+    }
+
+    /* Agora avatar é imagem */
+    .avatar{
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      object-fit: cover;
+      border: 2px solid #fff;
+    }
+
+    nav{
+      background: rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 0.6rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    nav a{
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 600;
+    }
+
+    nav a:hover{ text-decoration: underline; }
+
+    .layout{
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1rem;
+    }
+
+    @media(max-width:700px){
+      .layout{ grid-template-columns: 1fr; }
+    }
+
+    article.card{
+      background: var(--card-bg);
+      padding:1rem;
+      border-radius:12px;
+      backdrop-filter: blur(4px);
+    }
+
+    article h2{
+      margin-bottom:0.5rem;
+      color:#ffd6ff;
+    }
+
+    aside{
+      background: rgba(255,255,255,0.12);
+      border-radius:12px;
+      padding:1rem;
+      backdrop-filter: blur(4px);
+    }
+
+    aside h3{
+      margin-bottom:0.5rem;
+      color:#ffd6ff;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:1.5rem;
+      opacity:0.8;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <div class="container">
+    <header class="banner">
+      <!-- TROQUE ESTE LINK QUANDO QUISER SUA FOTO -->
+      <img class="avatar" src="https://via.placeholder.com/60" alt="Foto da Mariana">
+
+      <div>
+        <h1>Mariana</h1>
+        <p class="subtitle">Bem-vinda ao meu blog pessoal 💜</p>
+      </div>
+    </header>
+
+    <nav>
+      <a href="#sobre">Sobre Mim</a>
+      <a href="#comida">Comida Preferida</a>
+      <a href="#hobby">O que Eu Gosto</a>
+    </nav>
+
+    <div class="layout">
+      <main>
+
+        <article class="card" id="sobre">
+          <h2>Sobre mim</h2>
+          <p>Minha comida preferida é macarrão, minha cor preferida é roxo e o que eu gosto de fazer é dormir.</p>
+        </article>
+
+        <article class="card" id="comida">
+          <h2>Comida Preferida</h2>
+          <p>Adoro macarrão porque é saboroso e combina com vários tipos de molho.</p>
+        </article>
+
+        <article class="card" id="hobby">
+          <h2>O que eu gosto de fazer</h2>
+          <p>Eu gosto de dormir porque me relaxa e me deixa feliz.</p>
+        </article>
+
+      </main>
+
+      <aside>
+        <h3>Curiosidades sobre mim</h3>
+        <ul>
+          <li>Tenho um bom humor quando acordo descansada.</li>
+          <li>Amo ouvir música quietinha.</li>
+          <li>Adoro cores suaves e roxos diferentes.</li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer>
+      <p>Feito por Mariana</p>
+    </footer>
+  </div>
+
+<script src="script.js"></script></body>
+</html>
