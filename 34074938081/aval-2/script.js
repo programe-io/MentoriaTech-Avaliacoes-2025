@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Avaliação 1 - Completa</title>
+        <style>
+            body {
+                  font-family: Arial, sans-serif;
+                        background-color: #f4f4f4;
+                              margin: 0;
+                                    padding: 0;
+                                        }
+
+                                            header {
+                                                  background-color: #007BFF;
+                                                        color: white;
+                                                              text-align: center;
+                                                                    padding: 15px 0;
+                                                                        }
+
+                                                                            nav a {
+                                                                                  color: white;
+                                                                                        text-decoration: none;
+                                                                                              margin: 0 10px;
+                                                                                                    font-weight: bold;
+                                                                                                        }
+
+                                                                                                            nav a:hover {
+                                                                                                                  text-decoration: underline;
+                                                                                                                      }
+
+                                                                                                                          main {
+                                                                                                                                padding: 20px;
+                                                                                                                                      text-align: center;
+                                                                                                                                          }
+
+                                                                                                                                              section, article, aside {
+                                                                                                                                                    background-color: white;
+                                                                                                                                                          margin: 20px auto;
+                                                                                                                                                                padding: 15px;
+                                                                                                                                                                      border-radius: 10px;
+                                                                                                                                                                            width: 80%;
+                                                                                                                                                                                  max-width: 600px;
+                                                                                                                                                                                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                                                                                                                                                                                            }
+
+                                                                                                                                                                                                button {
+                                                                                                                                                                                                      margin-top: 10px;
+                                                                                                                                                                                                            padding: 10px 15px;
+                                                                                                                                                                                                                  background-color: #007BFF;
+                                                                                                                                                                                                                        color: white;
+                                                                                                                                                                                                                              border: none;
+                                                                                                                                                                                                                                    border-radius: 8px;
+                                                                                                                                                                                                                                          cursor: pointer;
+                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                  button:hover {
+                                                                                                                                                                                                                                                        background-color: #0056b3;
+                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                footer {
+                                                                                                                                                                                                                                                                      background-color: #222;
+                                                                                                                                                                                                                                                                            color: white;
+                                                                                                                                                                                                                                                                                  text-align: center;
+                                                                                                                                                                                                                                                                                        padding: 10px;
+                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                                img {
+                                                                                                                                                                                                                                                                                                      width: 100%;
+                                                                                                                                                                                                                                                                                                            border-radius: 8px;
+                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                  </style>
+                                                                                                                                                                                                                                                                                                                  </head>
+                                                                                                                                                                                                                                                                                                                  <body>
+
+                                                                                                                                                                                                                                                                                                                    <header>
+                                                                                                                                                                                                                                                                                                                        <h1>Meu Site Completo</h1>
+                                                                                                                                                                                                                                                                                                                            <nav>
+                                                                                                                                                                                                                                                                                                                                  <a href="#">Início</a> |
+                                                                                                                                                                                                                                                                                                                                        <a href="#">Sobre</a> |
+                                                                                                                                                                                                                                                                                                                                              <a href="#">Contato</a>
+                                                                                                                                                                                                                                                                                                                                                  </nav>
+                                                                                                                                                                                                                                                                                                                                                    </header>
+
+                                                                                                                                                                                                                                                                                                                                                      <main>
+                                                                                                                                                                                                                                                                                                                                                          <section>
+                                                                                                                                                                                                                                                                                                                                                                <h2>Bem-vindo!</h2>
+                                                                                                                                                                                                                                                                                                                                                                      <p>Essa é uma página completa com HTML, CSS e JavaScript.</p>
+                                                                                                                                                                                                                                                                                                                                                                            <img src="https://via.placeholder.com/300x150" alt="Imagem ilustrativa">
+                                                                                                                                                                                                                                                                                                                                                                                  <button onclick="mudarCor()">Mudar cor da seção</button>
+                                                                                                                                                                                                                                                                                                                                                                                      </section>
+
+                                                                                                                                                                                                                                                                                                                                                                                          <article>
+                                                                                                                                                                                                                                                                                                                                                                                                <h3>Artigo de Demonstração</h3>
+                                                                                                                                                                                                                                                                                                                                                                                                      <p>Exemplo de artigo independente dentro do site.</p>
+                                                                                                                                                                                                                                                                                                                                                                                                          </article>
+
+                                                                                                                                                                                                                                                                                                                                                                                                              <aside>
+                                                                                                                                                                                                                                                                                                                                                                                                                    <h4>Links úteis</h4>
+                                                                                                                                                                                                                                                                                                                                                                                                                          <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                  <li
