@@ -1,0 +1,135 @@
+:root{
+  --roxo-escuro: #ff8aba; /* fundo rosa */
+  --roxo-claro: #8b5cf6; /* faixa do nome */
+  --texto: #f6f3ff;
+  --card-bg: rgba(255,255,255,0.03);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Inter, system-ui, Arial;
+}
+
+html, body{
+  height:100%;
+}
+
+body{
+  background:var(--roxo-escuro);
+  color:var(--texto);
+  line-height:1.5;
+  padding:2rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* CAIXA PRINCIPAL DO SITE */
+.site{
+  width:min(920px,96%);
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 8px 30px rgba(0,0,0,0.45);
+}
+
+/* CABEÇALHO (HEADER) */
+.hero{
+  background:var(--roxo-claro);
+  padding:2.2rem 1.6rem;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+
+.hero img{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid white;
+}
+
+/* TÍTULO PRINCIPAL */
+.nome{
+  font-size:clamp(1.6rem, 3vw, 2.4rem);
+  font-weight:700;
+  color:#fff;
+}
+
+/* TEXTO DO SUBTÍTULO */
+.subtitulo{
+  color:rgba(255,255,255,0.9);
+  font-weight:500;
+  font-size:0.95rem;
+}
+
+/* MENU */
+nav{
+  background: rgba(255,255,255,0.1);
+  padding: 0.8rem 1.2rem;
+  display:flex;
+  gap:1rem;
+  font-size:12px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+}
+
+/* ORGANIZAÇÃO DA PÁGINA */
+main{
+  padding:2rem;
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:1.2rem;
+}
+
+/* CAIXA DE CONTEÚDO PRINCIPAL */
+.conteudo{
+  background:var(--card-bg);
+  padding:1.4rem;
+  border-radius:12px;
+  min-height:220px;
+}
+
+/* CARDS LATERAIS */
+aside .card{
+  background:rgba(255,255,255,0.03);
+  padding:1rem;
+  border-radius:12px;
+  margin-bottom:1rem;
+}
+
+/* LISTA DE FAVORITOS */
+.favorito{
+  display:flex;
+  flex-direction:column;
+  gap:0.6rem;
+}
+
+/* TAG ROXINHA */
+.tag{
+  display:inline-block;
+  padding:0.25rem 0.6rem;
+  border-radius:999px;
+  font-size:0.85rem;
+  background:rgba(255,255,255,0.04);
+}
+
+/* RODAPÉ */
+footer{
+  padding:1rem 2rem;
+  text-align:center;
+  font-size:0.9rem;
+  color:rgba(255,255,255,0.75);
+}
+
+/* RESPONSIVO (CELULAR) */
+@media (max-width:880px){
+  main{grid-template-columns:1fr;}
+  aside{order:2;}
+}
