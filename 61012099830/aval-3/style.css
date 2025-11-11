@@ -1,0 +1,70 @@
+/* ===============================
+   ESTILO PERSONALIZADO DO FEED
+   =============================== */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #0a1931, #020617);
+  color: #fff;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header a {
+  transition: color 0.3s ease;
+}
+
+header a:hover {
+  color: #facc15; /* amarelo Tailwind */
+}
+
+/* ===== POST CARDS ===== */
+.post-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.post-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
+}
+
+.post-card img {
+  transition: transform 0.4s ease;
+}
+
+.post-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== AVATAR ===== */
+.post-avatar {
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.post-avatar:hover {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* ===== TITULOS ===== */
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  header {
+    text-align: center;
+  }
+
+  nav {
+    display: none;
+  }
+}
