@@ -1,0 +1,170 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1a1a1a; /* fundo escuro moderno */
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(90deg, #ff0055, #ff6600);
+    padding: 2rem;
+    text-align: center;
+    color: #fff;
+    border-bottom: 4px solid #ff6600;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 8px #000;
+}
+
+header p {
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #111;
+    padding: 1rem 0;
+    gap: 2rem;
+    border-bottom: 2px solid #ff0055;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: #ff6600;
+    transform: scale(1.1);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+aside {
+    flex: 1;
+    min-width: 280px;
+    background-color: #222;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+aside h2, aside h3 {
+    color: #ff6600;
+    margin-bottom: 1rem;
+}
+
+aside h5 {
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.about-me img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+
+.about-me img:hover {
+    transform: scale(1.05);
+}
+
+.gallery {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: calc(33% - 0.5rem);
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+main {
+    flex: 2;
+    min-width: 300px;
+}
+
+article {
+    background-color: #222;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    margin-bottom: 2rem;
+}
+
+article h3 {
+    color: #ff0055;
+    margin-bottom: 0.5rem;
+}
+
+article h5 {
+    color: #ccc;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+article img.post-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+
+article img.post-image:hover {
+    transform: scale(1.02);
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #111;
+    color: #888;
+    border-top: 2px solid #ff0055;
+}
+
+/* Responsividade */
+@media screen and (max-width: 900px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .gallery img {
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .gallery img {
+        width: 100%;
+    }
+}
