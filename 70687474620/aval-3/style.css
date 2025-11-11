@@ -1,0 +1,409 @@
+<header>
+  <h1>La Shake Gourmet</h1>
+  <p>Milkshakes artesanais feitos com amor e ingredientes premium</p>
+
+  <!-- NAVIGAÇÃO -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#cardapio">Cardápio</a></li>
+      <li><a href="#sobre">Sobre Nós</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+/* ======= NAV ======= */
+nav {
+  margin-top: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.nav-links li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Lany Milkshake Gourmet</title>
+
+<!-- Fonte e estilo -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cor-primaria: #ff6f61;
+  --cor-secundaria: #ffe8e1;
+  --cor-fundo: #fffdfc;
+  --texto: #333;
+  --destaque: #ff9f80;
+  --radius: 16px;
+  --sombra: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+/* ======= CABEÇALHO ======= */
+header {
+  background: linear-gradient(90deg, var(--cor-primaria), var(--destaque));
+  color: white;
+  padding: 20px 0;
+  box-shadow: var(--sombra);
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ======= SEÇÃO HERO ======= */
+.hero {
+  background: url('https://images.unsplash.com/photo-1587574293340-ea9b6943f6b4?auto=format&fit=crop&w=1200&q=60') center/cover no-repeat;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero-content h2 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.hero-content a {
+  background: var(--cor-primaria);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 26px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.hero-content a:hover {
+  background: var(--destaque);
+}
+
+/* ======= CARDÁPIO ======= */
+section#cardapio {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+section#cardapio h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: var(--cor-primaria);
+}
+
+section#cardapio p {
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+/* GRID DE ITENS */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ======= CARD ======= */
+.card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+  text-align: left;
+}
+
+.card-body h3 {
+  color: var(--cor-primaria);
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.card-body .preco {
+  font-weight: 700;
+  color: var(--destaque);
+  font-size: 1.1rem;
+}
+
+.card-body button {
+  background: var(--cor-primaria);
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.card-body button:hover {
+  background: var(--destaque);
+}
+
+/* ======= SOBRE ======= */
+#sobre {
+  background: var(--cor-secundaria);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#sobre h2 {
+  font-size: 2rem;
+  color: var(--cor-primaria);
+  margin-bottom: 20px;
+}
+
+#sobre p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ======= CONTATO ======= */
+#contato {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#contato h2 {
+  font-size: 2rem;
+  color: var(--cor-primaria);
+  margin-bottom: 20px;
+}
+
+#contato form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 25px;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+}
+
+#contato input, #contato textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+#contato button {
+  background: var(--cor-primaria);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#contato button:hover {
+  background: var(--destaque);
+}
+
+/* ======= RODAPÉ ======= */
+footer {
+  background: var(--cor-primaria);
+  color: white;
+  text-align: center;
+  padding: 16px 10px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>La Shake Gourmet</h1>
+  <p>Milkshakes artesanais feitos com amor e ingredientes premium</p>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2>Descubra o sabor do verdadeiro Lany Milkshake Gourmet 🍓</h2>
+    <p>Sabores únicos, ingredientes frescos e um toque de criatividade em cada copo.</p>
+    <a href="#cardapio">Ver Cardápio</a>
+  </div>
+</section>
+
+<main id="main">
+  <section id="cardapio">
+    <h2>Nosso Cardápio</h2>
+    <p>Escolha entre nossas deliciosas criações gourmet — feitas na hora, com produtos selecionados e aquele toque artesanal!</p>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <img src=https://i.pinimg.com/736x/87/17/4a/87174a7f303abed8af3f85a138dc4176.jpg alt="Milkshake de Chocolate Belga">
+        <div class="card-body">
+          <h3>Chocolate Belga</h3>
+          <p>Leite cremoso, cacau 70%, cobertura de chocolate e raspas finas.</p>
+          <span class="preco">R$ 18,90</span><br>
+          <button>Pedir Agora</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src=https://i.pinimg.com/736x/ca/dc/c0/cadcc039f7e8e58e8c27dd1f90aac995.jpg alt="Milkshake de Morango com Chantilly">
+        <div class="card-body">
+          <h3>Morango Real</h3>
+          <p>Feito com morangos frescos e chantilly artesanal.</p>
+          <span class="preco">R$ 17,50</span><br>
+          <button>Pedir Agora</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src=https://i.pinimg.com/736x/31/6d/68/316d6876b495fc4d79f32da445b63e61.jpg alt="Milkshake de Caramelo Salgado">
+        <div class="card-body">
+          <h3>Caramelo Salgado</h3>
+          <p>Equilíbrio perfeito entre doce e salgado, com flor de sal e calda dourada.</p>
+          <span class="preco">R$ 19,90</span><br>
+          <button>Pedir Agora</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src=https://i.pinimg.com/736x/6f/9d/37/6f9d372dde2ca468a263f4a78f35f7e5.jpg alt="Milkshake de Oreo">
+        <div class="card-body">
+          <h3>Oreo Supreme</h3>
+          <p>Cookies triturados, calda de chocolate e chantilly cremoso.</p>
+          <span class="preco">R$ 21,00</span><br>
+          <button>Pedir Agora</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src= https://i.pinimg.com/736x/f6/88/b6/f688b67d9bad47026a33b486652b7878.jpg alt="Milkshake Vegano de Cacau e Amêndoas">
+        <div class="card-body">
+          <h3>Cacau</h3>
+          <p>Feito com leite de amêndoas, cacau puro e açúcar mascavo.</p>
+          <span class="preco">R$ 20,50</span><br>
+          <button>Pedir Agora</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>
+      A <strong>Lany Shake Gourmet</strong> nasceu da paixão por criar experiências únicas no sabor. 
+      Utilizamos ingredientes selecionados e receitas artesanais que transformam um simples milkshake em uma explosão de prazer. 
+      Nosso compromisso é oferecer produtos de alta qualidade, com opções para todos os gostos — inclusive veganas.
+    </p>
+  </section>
+
+  <section id="contato">
+    <h2>Entre em Contato</h2>
+    <form>
+      <input type="text" placeholder="Seu nome" required>
+      <input type="email" placeholder="Seu e-mail" required>
+      <textarea rows="4" placeholder="Sua mensagem"></textarea>
+      <button type="submit">Enviar Mensagem</button>
+    </form>
+  </section>
+</main>
+
+<footer>🥤
+  <p>© 2025 La Shake Gourmet — Todos os direitos reservados feitos com todo carinho </p>
+</footer>
+
+</body>
+</html>
