@@ -1,1 +1,1 @@
-console.log("Site FroJho carregado com sucesso!");
+console.log("Página FroJho carregada com sucesso!");
