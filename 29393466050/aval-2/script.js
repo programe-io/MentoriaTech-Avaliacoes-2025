@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog da Jeissiane</title>
+  <style>
+    :root{
+      --roxo-escuro: #ff8aba; /* fundo rosa */; /* fundo */
+      --roxo-claro: #8b5cf6; /* faixa do nome */
+      --texto: #f6f3ff;
+      --card-bg: rgba(255,255,255,0.03);
+    }
+
+    /* reset simples */
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+    html,body{height:100%}
+    body{
+      background:var(--roxo-escuro);
+      color:var(--texto);
+      -webkit-font-smoothing:antialiased;
+      line-height:1.5;
+      padding:2rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* container do blog */
+    .site{
+      width:min(920px,96%);
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 8px 30px rgba(0,0,0,0.45);
+    }
+
+    /* faixa onde fica o nome */
+    .hero{
+      background:var(--roxo-claro);
+      padding:2.2rem 1.6rem;
+      display:flex;
+      align-items:center;
+      gap:1rem;
+    }
+
+    .nome{
+      font-size:clamp(1.6rem, 3vw, 2.4rem);
+      font-weight:700;
+      color:#fff;
+      text-shadow:0 2px 12px rgba(139,92,246,0.25);
+    }
+
+    .subtitulo{
+      color:rgba(255,255,255,0.9);
+      font-weight:500;
+      opacity:0.95;
+      font-size:0.95rem;
+    }
+
+    main{
+      padding:2rem;
+      display:grid;
+      grid-template-columns:1fr 320px;
+      gap:1.2rem;
+    }
+
+    /* conteudo principal */
+    .conteudo{
+      background:var(--card-bg);
+      padding:1.4rem;
+      border-radius:12px;
+      min-height:220px;
+    }
+
+    h2{margin-bottom:0.6rem}
+    p{margin-bottom:0.8rem}
+
+    /* barra lateral */
+    aside{
+      background:transparent;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.03);
+      padding:1rem;
+      border-radius:12px;
+      margin-bottom:1rem;
+    }
+
+    .favorito{
+      display:flex;flex-direction:column;gap:0.6rem;
+    }
+
+    .tag{
+      display:inline-block;padding:0.25rem 0.6rem;border-radius:999px;font-size:0.85rem;background:rgba(255,255,255,0.04)
+    }
+
+    footer{
+      padding:1rem 2rem;
+      text-align:center;
+      font-size:0.9rem;
+      color:rgba(255,255,255,0.75);
+      background:linear-gradient(180deg, transparent, rgba(0,0,0,0.12));
+    }
+
+    /* responsivo */
+    @media (max-width:880px){
+      main{grid-template-columns:1fr;}
+      aside{order:2}
+    }
+  </style>
+</head>
+<body>
+  <div class="site" role="main">
+    <header class="hero">
+      <div>
+        <div class="nome">Jeissiane</div>
+        <div class="subtitulo">Olá! Bem-vindo(a) ao meu cantinho pessoal.</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="conteudo">
+        <h2>Sobre mim</h2>
+        <p>Oi — eu sou a Jeissiane. Neste blog eu compartilho pequenas coisas sobre mim e o que eu gosto.</p>
+
+        <h2>O que eu gosto de fazer</h2>
+        <p>Eu gosto de dormir — descansar é sagrado! 😴</p>
+
+        <h2>Receita favorita</h2>
+        <p>Minha comida preferida é <strong>macarrão</strong>. É simples, gostoso e tem várias formas de preparar.</p>
+
+        <h2>Meu estilo</h2>
+        <p>Minha cor favorita é <span class="tag">roxo</span>, então decidi que esse será o tema do meu blog.</p>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3>Favoritos</h3>
+          <div class="favorito">
+            <div><strong>Comida:</strong> Macarrão</div>
+            <div><strong>Cor:</strong> Roxo</div>
+            <div><strong>Passatempo:</strong> Dormir</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Contato</h3>
+          <p>Este é um exemplo de blog estático — você pode adicionar links para redes sociais ou um formulário aqui.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © <span id="ano"></span> Jeissiane — Feito com carinho.
+    </footer>
+  </div>
+
+  <script>
+  // preenche automaticamente o ano no rodapé
+  document.getElementById('ano').textContent = new Date().getFullYear();
+
+  // define o tamanho da letra para 10px
+  document.body.style.fontSize = '10px';
+</script>
+</body>
+</html>
