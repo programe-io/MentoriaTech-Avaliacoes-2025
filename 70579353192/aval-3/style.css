@@ -1,0 +1,157 @@
+/* === Reset Básico === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: #fff8fc;
+  color: #3b2450;
+  line-height: 1.6;
+}
+
+/* === Cabeçalho === */
+header {
+  background: #6b2b8f;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 8%;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #ffdf6b;
+}
+
+/* === Hero (início) === */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 8%;
+  background: linear-gradient(135deg, #f7e8ff, #fff);
+  flex-wrap: wrap;
+}
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+.hero-text h2 {
+  color: #4a176e;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.hero-text p {
+  color: #5c4a6d;
+  margin-bottom: 20px;
+}
+.btn {
+  background: #6b2b8f;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #8c41b1;
+}
+.hero-img img {
+  width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* === Cardápio === */
+.menu {
+  padding: 60px 8%;
+  background-color: #fff;
+  text-align: center;
+}
+.menu h2 {
+  color: #4a176e;
+  margin-bottom: 30px;
+}
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: #fdf9ff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(107, 43, 143, 0.1);
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: scale(1.03);
+}
+.card h3 {
+  color: #6b2b8f;
+  margin: 10px 0 5px;
+}
+.card p {
+  color: #6b6b6b;
+  font-size: 0.9rem;
+}
+.price {
+  display: block;
+  margin-top: 8px;
+  font-weight: bold;
+  color: #4a176e;
+}
+
+/* === Sobre === */
+.about {
+  padding: 60px 8%;
+  background-color: #f7e8ff;
+  text-align: center;
+}
+.about h2 {
+  color: #4a176e;
+  margin-bottom: 15px;
+}
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #5c4a6d;
+}
+
+/* === Rodapé === */
+footer {
+  background: #6b2b8f;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* === Responsivo === */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-img img {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
