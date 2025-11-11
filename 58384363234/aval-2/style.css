@@ -1,0 +1,138 @@
+:root {
+  /* Definição de Cores em Variáveis */
+  --color-primary: #4897ff; /* Amarelo principal */
+  --color-secondary: #000000;  /* Cinza escuro para texto e fundo de nav */
+  --color-text-light: rgb(65, 206, 231);
+  --color-background-body: #14dcff;
+  --color-background-aside: #e4e4e4;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', Arial, sans-serif; /* Fonte mais moderna */
+  background-color: var(--color-background-body);
+}
+
+/* --- CABEÇALHO --- */
+header {
+  background-color: var(--color-primary);
+  /* Texto mais legível contra o amarelo */
+  color: var(--color-secondary); 
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900; /* Mais espesso */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* --- NAVEGAÇÃO --- */
+nav {
+  background-color: var(--color-secondary);
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px solid #ccc; /* Linha sutil */
+}
+
+nav a {
+  color: var(--color-text-light);
+  padding: 1rem 1.5rem; /* Mais espaçamento */
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+}
+
+nav a:hover {
+  background-color: #555;
+  color: var(--color-primary); /* Amarelo no hover */
+}
+
+/* --- LAYOUT PRINCIPAL --- */
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  gap: 2rem;
+  padding: 0 1rem; /* Adicionado padding para telas pequenas */
+}
+
+/* --- SIDEBAR (ASIDE) --- */
+aside {
+  width: 25%;
+  min-width: 200px; /* Garante um tamanho mínimo */
+  background-color: var(--color-background-aside);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+aside h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--color-secondary);
+  border-bottom: 2px solid var(--color-primary); /* Sublinhado amarelo */
+  padding-bottom: 0.5rem;
+}
+
+aside .box {
+  background-color: var(--color-text-light);
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+aside .box:hover {
+  transform: translateX(5px); /* Efeito de deslizar levemente */
+  background-color: #f9f9f9;
+}
+
+/* --- CONTEÚDO PRINCIPAL (MAIN) --- */
+main {
+  width: 75%;
+}
+
+.post {
+  background-color: var(--color-text-light);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.post h1 {
+  font-size: 2.2rem;
+  margin-top: 0;
+  color: #1a1a1a;
+}
+
+.post .meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.post img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  object-fit: cover; /* Garante que a imagem se ajuste bem */
+}
+
+.post p {
+  line-height: 1.7;
+  color: #444;
+}
+
+/* --- RODAPÉ --- */
+footer {
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  border-top: 5px solid var(--color-primary); /* Destaque amarelo */
+}
