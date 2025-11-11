@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger House 🍔</title>
+
+    <!-- Fonte do Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lobster&display=swap" rel="stylesheet">
+
+    <style>
+        /* ---------- ESTILO GERAL ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1b1b1b;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Lobster', cursive;
+            letter-spacing: 1px;
+        }
+
+        /* ---------- NAV ---------- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #111;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .logo {
+            font-family: 'Lobster', cursive;
+            font-size: 2em;
+            color: #f5a623;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f5a623;
+        }
+
+        /* ---------- BOTÃO MENU MOBILE ---------- */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8em;
+            cursor: pointer;
+        }
+
+        /* ---------- HEADER ---------- */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 4em;
+            color: #f5a623;
+            text-shadow: 3px 3px 10px #000;
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ---------- SEÇÕES ---------- */
+        section {
+            padding: 100px 60px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.8em;
+            color: #f5a623;
+            margin-bottom: 40px;
+        }
+
+        /* ---------- CARDÁPIO ---------- */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: #2a2a2a;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            font-size: 1.8em;
+            color: #f5a623;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            font-size: 0.95em;
+            color: #ccc;
+            margin-bottom: 15px;
+            line-height: 1.5em;
+        }
+
+        .price {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .btn {
+            background: #f5a623;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: #111;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #111;
+        }
+
+        /* ---------- SOBRE ---------- */
+        .sobre {
+            background-color: #111;
+            text-align: center;
+            line-height: 1.8em;
+            border-top: 2px solid #f5a623;
+            border-bottom: 2px solid #f5a623;
+        }
+
+        .sobre p {
+            max-width: 800px;
+            margin: auto;
+            color: #ccc;
+        }
+
+        /* ---------- CONTATO ---------- */
+        .contato {
+            text-align: center;
+        }
+
+        .contato p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .social {
+            margin-top: 20px;
+        }
+
+        .social a {
+            margin: 0 10px;
+            font-size: 1.5em;
+            color: #f5a623;
+            transition: color 0.3s;
+        }
+
+        .social a:hover {
+            color: #fff;
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 0.9em;
+            border-top: 1px solid #333;
+        }
+
+        /* ---------- RESPONSIVIDADE ---------- */
+        @media (max-width: 900px) {
+            nav {
+                padding: 15px 25px;
+            }
+
+            .menu-toggle {
+                display: block;
+                color: #f5a623;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #111;
+                width: 100%;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 15px 0;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+                padding: 0 15px;
+            }
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <!-- ---------- NAV ---------- -->
+    <nav>
+        <div class="logo">Burger House</div>
+        <div class="menu-toggle">☰</div>
+        <div class="nav-links">
+            <a href="#home">Início</a>
+            <a href="#menu">Cardápio</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </nav>
+
+    <!-- ---------- HEADER ---------- -->
+    <header id="home">
+        <h1>O Melhor Hambúrguer da Cidade </h1>
+    </header>
+
+    <!-- ---------- CONTEÚDO PRINCIPAL ---------- -->
+    <main>
+        <!-- ---------- CARDÁPIO ---------- -->
+        <section id="menu">
+            <h2>Nosso Cardápio</h2>
+            <div class="menu-grid">
+                <div class="card">
+                    <img src="https://i.pinimg.com/1200x/11/c4/1b/11c41bee8a8ade2a3513ad8f02d0aee2.jpg" alt="Classic Burger">
+                    <div class="card-content">
+                        <h3>Classic Burger</h3>
+                        <p>Pão artesanal, carne 180g, queijo cheddar, alface, tomate e molho especial da casa.</p>
+                        <span class="price">R$ 24,90</span><br><br>
+                        <button class="btn">Adicionar ao Pedido</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Bacon Lover">
+                    <div class="card-content">
+                        <h3>Bacon Lover</h3>
+                        <p>Carne dupla, bacon crocante, cheddar derretido e maionese defumada.</p>
+                        <span class="price">R$ 29,90</span><br><br>
+                        <button class="btn">Adicionar ao Pedido</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://i.pinimg.com/1200x/fb/6b/7f/fb6b7f9e607ca78a21b3c21ffe591452.jpg" alt="Veggie Burger">
+                    <div class="card-content">
+                        <h3>Veggie Burger</h3>
+                        <p>Hambúrguer de grão-de-bico, queijo minas, rúcula e maionese verde artesanal.</p>
+                        <span class="price">R$ 26,90</span><br><br>
+                        <button class="btn">Adicionar ao Pedido</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90" alt="Duplo Smash">
+                    <div class="card-content">
+                        <h3>Duplo Smash</h3>
+                        <p>Dois smash burgers suculentos, cheddar, picles e molho especial no pão brioche.</p>
+                        <span class="price">R$ 32,90</span><br><br>
+                        <button class="btn">Adicionar ao Pedido</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------- SOBRE ---------- -->
+        <section id="sobre" class="sobre">
+            <h2>Sobre Nós</h2>
+            <p>
+                Fundada em 2020, a <strong>Burger House</strong> nasceu da paixão por hambúrgueres artesanais.  
+                Trabalhamos com ingredientes frescos, pães artesanais e carnes selecionadas para proporcionar uma experiência única.  
+                Nosso compromisso é entregar sabor, qualidade e um ambiente acolhedor para todos os amantes de um bom burger 🍔.
+            </p>
+        </section>
+
+        <!-- ---------- CONTATO ---------- -->
+        <section id="contato" class="contato">
+            <h2>Contato</h2>
+            <p>📍 Rua Pedro Freitas, Centro, José de Freitas/PI</p>
+            <p>📞 (86) 99480-8975</p>
+            <p>📧 contato@burgerhouse.com</p>
+            <div class="social">
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ---------- FOOTER ---------- -->
+    <footer>
+        <p>© 2025 Burger House - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- ---------- JAVASCRIPT ---------- -->
+    <script>
+        const toggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        const sections = document.querySelectorAll("section");
+        const links = document.querySelectorAll(".nav-links a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 90;
+                if (pageYOffset >= sectionTop) current = section.getAttribute("id");
+            });
+            links.forEach(link => {
+                link.style.color = (link.getAttribute("href").includes(current)) ? "#f5a623" : "#fff";
+            });
+        });
+    </script>
+</body>
+</html>
