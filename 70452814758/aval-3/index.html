@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Loja de Roupas - Moda & Estilo</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#">Moda&Co</a>
+
+      <nav class="nav-menu">
+        <a href="#novidades">Novidades</a>
+        <a href="#masculino">Masculino</a>
+        <a href="#feminino">Feminino</a>
+        <a href="#acessorios">Acessórios</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-btn" aria-label="Pesquisar">🔍</button>
+        <button class="cart-btn" aria-label="Carrinho">🛒 <span class="cart-count">0</span></button>
+        <button class="cta">Entrar</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h2>Nova coleção primavera — leveza e estilo</h2>
+        <p>Peças selecionadas com descontos especiais. Envio rápido para todo o Brasil.</p>
+        <div class="hero-cta">
+          <a href="#novidades" class="btn primary">Ver Novidades</a>
+          <a href="#colecao" class="btn outline">Coleção Completa</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1520975919219-2a2a9b78e66b?q=80&w=1200&auto=format&fit=crop" alt="Modelos de roupas">
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="novidades" class="products-grid">
+      <!-- Camiseta -->
+      <article class="product-card">
+        <div class="product-media">
+          <span class="badge sale">-20%</span>
+          <img src="https://www.lavibora.com.br/imagens/produtos/camiseta-basica-corte-a-fio-100-algodao-cinza.png" alt="Camiseta básica cinza">
+        </div>
+        <div class="product-body">
+          <h2 class="product-title">Camiseta Básica Cinza</h2>
+          <p class="product-meta">Masculino • Algodão</p>
+          <div class="product-prices">
+            <span class="price-old">R$ 59,90</span>
+            <span class="price">R$ 47,90</span>
+          </div>
+          <div class="product-actions">
+            <button class="btn add-cart">Adicionar ao carrinho</button>
+            <button class="icon-btn" title="Ver detalhes">👁️</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Vestido -->
+      <article class="product-card">
+        <div class="product-media">
+          <img src="https://images.unsplash.com/photo-1520975919219-2a2a9b78e66b?q=80&w=800&auto=format&fit=crop" alt="Vestido floral">
+        </div>
+        <div class="product-body">
+          <h2 class="product-title">Vestido Floral Midi</h2>
+          <p class="product-meta">Feminino • Leve</p>
+          <div class="product-prices">
+            <span class="price">R$ 129,90</span>
+          </div>
+          <div class="product-actions">
+            <button class="btn add-cart">Adicionar ao carrinho</button>
+            <button class="icon-btn" title="Ver detalhes">👁️</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Jaqueta -->
+      <article class="product-card">
+        <div class="product-media">
+          <span class="badge new">Novo</span>
+          <img src="https://images.unsplash.com/photo-1542060745-0b2b09f4a3f9?q=80&w=800&auto=format&fit=crop" alt="Jaqueta Jeans Oversized">
+        </div>
+        <div class="product-body">
+          <h2 class="product-title">Jaqueta Jeans Oversized</h2>
+          <p class="product-meta">Unissex • Jeans</p>
+          <div class="product-prices">
+            <span class="price">R$ 199,90</span>
+          </div>
+          <div class="product-actions">
+            <button class="btn add-cart">Adicionar ao carrinho</button>
+            <button class="icon-btn" title="Ver detalhes">👁️</button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h2>Moda&Co</h2>
+        <p>Endereço fictício • Atendimento: contato@modaeco.com</p>
+      </div>
+
+      <div class="footer-col">
+        <h2>Links</h2>
+        <ul>
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Entrega</a></li>
+          <li><a href="#">Trocas e Devoluções</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h2>Siga-nos</h2>
+        <p>Instagram • Facebook • TikTok</p>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <small>© <span id="year"></span> Moda&Co — Todos os direitos reservados</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const cartCount = document.querySelector('.cart-count');
+    document.querySelectorAll('.add-cart').forEach(btn => {
+      btn.addEventListener('click', () => {
+        cartCount.textContent = Number(cartCount.textContent) + 1;
+        btn.textContent = '✓ Adicionado';
+        setTimeout(() => btn.textContent = 'Adicionar ao carrinho', 1200);
+      });
+    });
+  </script>
+</body>
+</html>
