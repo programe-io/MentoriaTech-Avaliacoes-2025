@@ -1,104 +1,112 @@
-/*Reiniciar *** {
-  margem: 0;
-    preenchimento: 0;
-      box-sized: caixa com borda;
-        família de fontes: "Poppins", sem serifa;
+/* Reset */
+* {
+  margin: 0;
+    padding: 0;
+      box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
         }
 
         /* Fundo */
-        corpo {
-          fundo: gradiente-linear(para baixo, #0a2a66, #1a2a64);
-            cor: #fff;
+        body {
+          background: linear-gradient(to bottom, #0a2a66, #1a2a64);
+            color: #fff;
             }
 
-            /* Barra de navegação */
+            /* Navbar */
             .navbar {
-              Exibir: flexível;
-                justify-content: espaço-entre;
-                  alinhamento-itens: centro;
-                    preenchimento: 15px 50px;
-                      cor de fundo: #0d1b52;
-                        posição: pegajosa;
-                          topo: 0;
-                            Índice z: 100;
+              display: flex;
+                justify-content: space-between;
+                  align-items: center;
+                    padding: 15px 50px;
+                      background-color: #0d1b52;
+                        position: sticky;
+                          top: 0;
+                            z-index: 100;
                             }
 
                             .logo {
-                              tamanho da fonte: 20px;
-                                peso da fonte: negrito;
-                                  espaçamento entre letras: 1px;
+                              font-size: 22px;
+                                font-weight: bold;
+                                  letter-spacing: 1px;
                                   }
 
                                   .navbar ul {
-                                    estilo de lista: nenhum;
-                                      Exibir: flexível;
-                                        espaço: 20px;
+                                    list-style: none;
+                                      display: flex;
+                                        gap: 25px;
                                         }
 
                                         .navbar a {
-                                          cor: #fff;
-                                            decoração de texto: nenhuma;
-                                              peso da fonte: 500;
-                                                Transição: 0,3s;
+                                          color: #fff;
+                                            text-decoration: none;
+                                              font-weight: 500;
+                                                transition: 0.3s;
                                                 }
 
                                                 .navbar a:hover {
-                                                  cor: #6ea8ff;
+                                                  color: #6ea8ff;
                                                   }
 
-                                                  /* Contêiner de Cartões */
+                                                  /* Container de Cards */
                                                   .container {
-                                                    Exibir: flexível;
-                                                      justificar-conteúdo: centralizado;
-                                                        alinhamento-itens: início-flexível;
-                                                          flex-wrap: envolver;
-                                                            espaçamento: 25px;
-                                                              preenchimento: 40px 20px;
+                                                    display: flex;
+                                                      justify-content: center;
+                                                        align-items: flex-start;
+                                                          flex-wrap: wrap;
+                                                            gap: 30px;
+                                                              padding: 40px 20px;
                                                               }
 
-                                                              /* Cartão */
+                                                              /* Card */
                                                               .card {
-                                                                cor de fundo: #1e2a48;
-                                                                  raio da borda: 10px;
-                                                                    largura: 300px;
-                                                                      preenchimento: 15px;
-                                                                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-                                                                          transição: transformar 0,3s;
+                                                                background-color: #1e2a48;
+                                                                  border-radius: 12px;
+                                                                    width: 320px;
+                                                                      padding: 18px;
+                                                                        box-shadow: 0 5px 14px rgba(0, 0, 0, 0.4);
+                                                                          transition: transform 0.3s, box-shadow 0.3s;
                                                                           }
 
                                                                           .card:hover {
-                                                                            transformar: translateY(-5px);
-                                                                            }
+                                                                            transform: translateY(-6px);
+                                                                              box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+                                                                              }
 
-                                                                            /* Usuário */
-                                                                            .user-info {
-                                                                              Exibir: flexível;
-                                                                                alinhamento-itens: centro;
-                                                                                  espaçamento: 10px;
-                                                                                    margem-inferior: 10px;
-                                                                                    }
+                                                                              /* Usuário */
+                                                                              .user-info {
+                                                                                display: flex;
+                                                                                  align-items: center;
+                                                                                    gap: 12px;
+                                                                                      margin-bottom: 12px;
+                                                                                      }
 
-                                                                                    .avatar {
-                                                                                      largura: 40px;
-                                                                                        altura: 40px;
-                                                                                          raio-da-borda: 50%;
-                                                                                          }
+                                                                                      .avatar {
+                                                                                        width: 50px;
+                                                                                          height: 50px;
+                                                                                            border-radius: 50%;
+                                                                                              border: 2px solid #6ea8ff;
+                                                                                              }
 
-                                                                                          /* Imagem do post */
-                                                                                          .post-img {
-                                                                                            largura: 100%;
-                                                                                              raio da borda: 8px;
-                                                                                                margem-inferior: 10px;
-                                                                                                }
+                                                                                              /* Imagem do post */
+                                                                                              .post-img {
+                                                                                                width: 100%;
+                                                                                                  height: 200px;
+                                                                                                    object-fit: cover;
+                                                                                                      border-radius: 10px;
+                                                                                                        margin-bottom: 12px;
+                                                                                                        }
 
-                                                                                                /* Texto */
-                                                                                                .card p {
-                                                                                                  tamanho da fonte: 14px;
-                                                                                                    cor: #ddd;
-                                                                                                      margem-inferior: 10px;
-                                                                                                      }
+                                                                                                        /* Texto */
+                                                                                                        .card p {
+                                                                                                          font-size: 15px;
+                                                                                                            color: #ddd;
+                                                                                                              margin-bottom: 10px;
+                                                                                                                line-height: 1.5;
+                                                                                                                }
 
-                                                                                                      .tempo {
-                                                                                                        tamanho da fonte: 12px;
-                                                                                                          cor: #aaa;
-                                                                                                          }
+                                                                                                                .time {
+                                                                                                                  font-size: 13px;
+                                                                                                                    color: #aaa;
+                                                                                                                      text-align: right;
+                                                                                                                        display: block;
+                                                                                                                        }
