@@ -1,0 +1,129 @@
+/* ====== RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #1e3a8a, #172554);
+  color: white;
+  min-height: 100vh;
+}
+
+/* ====== HEADER E NAV ====== */
+.header {
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  transition: color 0.2s;
+}
+
+.menu-icon:hover {
+  color: #3b82f6;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #dbeafe;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #3b82f6;
+}
+
+/* ====== MAIN ====== */
+.main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ====== POST CARD ====== */
+.post-card {
+  background-color: #1f2937;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.post-card:hover {
+  transform: scale(1.02);
+}
+
+/* ====== HEADER DO POST ====== */
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #3b82f6;
+  object-fit: cover;
+}
+
+/* ====== IMAGEM DO POST ====== */
+.post-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ====== TEXTO ====== */
+.post-content {
+  padding-top: 12px;
+  color: #d1d5db;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* ====== RESPONSIVIDADE ====== */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #1f2937;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
