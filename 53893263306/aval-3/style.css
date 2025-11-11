@@ -1,147 +1,154 @@
-{
+:root {
+  --cor-primaria: #ff6f61;
+  --cor-fundo: #fff8f2;
+  --cor-texto: #333;
+  --cor-clara: #fff;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  background: #fff8f2;
-  color: #333;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
 }
 
 /* Cabeçalho */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
+  text-align: center;
+  padding: 20px;
+  background: var(--cor-primaria);
+  color: var(--cor-clara);
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+header h1 {
+  font-size: 28px;
 }
 
-.logo-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  object-fit: cover;
+.slogan {
+  font-size: 14px;
+  margin-top: 5px;
 }
 
-.brand-text h1 {
-  font-size: 18px;
-}
-
-.brand-name {
-  font-weight: 800;
-  color: #111;
-}
-
-.tagline {
-  display: block;
-  font-size: 12px;
-  color: #777;
-}
-
-/* Nav */
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 15px;
+nav {
+  margin-top: 15px;
 }
 
 nav a {
+  margin: 0 12px;
+  color: var(--cor-clara);
   text-decoration: none;
-  color: #333;
-  font-weight: 600;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-nav a span:hover {
-  color: #ff7a59;
+nav a:hover {
+  color: #ffece6;
 }
 
-/* Hero */
+/* Seção Hero */
 .hero {
   text-align: center;
-  margin: 30px 0;
+  padding: 40px 20px;
+  background: #ffece6;
 }
 
-.hero-img {
-  width: 100%;
-  max-width: 900px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-}
-
-/* Produtos */
-.produtos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.produto {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  text-align: center;
-  padding: 15px;
-}
-
-.produto img {
-  width: 100%;
-  border-radius: 10px;
+.hero h2 {
+  font-size: 24px;
   margin-bottom: 10px;
 }
 
-.prod-name {
-  display: block;
+.hero p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Cardápio */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.item {
+  background: var(--cor-clara);
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  width: 220px;
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.item h3 {
   font-size: 18px;
   margin-bottom: 6px;
 }
 
-.price {
+.item p {
+  font-size: 16px;
   color: #777;
   margin-bottom: 10px;
 }
 
-.price-value {
-  font-weight: 800;
-  color: #111;
-}
-
-.produto button {
-  background: #ff7a59;
+button {
+  background: var(--cor-primaria);
+  color: var(--cor-clara);
   border: none;
   padding: 10px 15px;
-  border-radius: 8px;
-  color: #fff;
-  font-weight: bold;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
 
-.produto button span:hover {
-  filter: brightness(0.95);
+button:hover {
+  background: #e85c4f;
 }
 
 /* Rodapé */
 footer {
   text-align: center;
-  margin-top: 40px;
-  padding: 15px 0;
-  color: #666;
+  padding: 20px;
   font-size: 14px;
+  color: #777;
+  background: #fbeae4;
+  margin-top: 40px;
 }
 
+/* Responsivo */
+@media (max-width: 600px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
 
-Em sex., 7 de nov. de 2025 às 08:03, Maria Hellen Rodrigues Ferreira <maria.ferreira.hellen@aluno.edu.pi.gov.br> escreveu:
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    margin: 5px 0;
+  }
+}
