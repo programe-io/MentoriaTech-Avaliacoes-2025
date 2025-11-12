@@ -1,0 +1,218 @@
+/* --- Variáveis e Configurações Globais --- */
+:root {
+    --apple-dark: #1d1d1f; /* Cinza espacial profundo para texto/fundo escuro */
+    --apple-light: #f5f5f7; /* Branco quase puro para fundo principal (Apple) */
+    --apple-gray: #86868b; /* Cinza sutil para texto secundário */
+    --apple-blue: #007aff; /* Azul de destaque (links/botões) */
+    --apple-green-accent: #3b8e72; /* Verde Metálico/Sierra Blue para destaque */
+    --border-radius-m: 10px; /* Arredondamento médio */
+    --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* --- Base e Tipografia --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--apple-light); /* Fundo branco/claro */
+    color: var(--apple-dark);
+}
+
+h1, h2, h3, h5 {
+    color: var(--apple-dark);
+    font-weight: 600; /* Apple usa peso da fonte médio a semi-bold */
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--apple-blue); /* Links em azul padrão da Apple */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--apple-green-accent); /* Destaque ao passar o mouse */
+}
+
+/* --- Layout Principal --- */
+.row {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+aside {
+    flex: 30%; /* Barra lateral um pouco mais fina, 30% */
+    padding-right: 20px;
+}
+
+main {
+    flex: 70%; /* Conteúdo principal, 70% */
+    padding-left: 20px;
+    border-left: 1px solid #e0e0e6; /* Linha divisória sutil */
+}
+
+/* --- Cabeçalho (Header) --- */
+header {
+    background-color: #ffffff; /* Fundo branco puro */
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e6;
+    box-shadow: var(--shadow-subtle);
+}
+
+header h1 {
+    font-weight: 700;
+    color: var(--apple-dark);
+    letter-spacing: -0.05em; /* Ajuste sutil de espaçamento */
+}
+
+header p {
+    max-width: 800px;
+    margin: 10px auto 0;
+    color: var(--apple-gray);
+}
+
+/* --- Navegação (Nav) --- */
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: var(--apple-dark); /* Fundo escuro para a barra de navegação */
+}
+
+nav a {
+    color: #ffffff;
+    padding: 8px 15px;
+    margin: 0 10px;
+    font-weight: 500;
+    border-radius: var(--border-radius-m);
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Destaque sutil ao passar o mouse */
+    color: #ffffff;
+}
+
+/* --- Conteúdo (Aside & Main) --- */
+/* Estilo para cartões de conteúdo (Sections/Articles) */
+aside > *, main article {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius-m);
+    box-shadow: var(--shadow-subtle);
+}
+
+/* Imagens */
+aside img, main img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-m);
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Imagem da Cristina */
+.about-me img {
+    max-width: 150px;
+    border-radius: 50%; /* Imagem redonda */
+    margin: 10px auto 15px;
+    border: 3px solid #e0e0e6; /* Borda fina */
+}
+
+/* Galeria de imagens */
+.gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.gallery img {
+    flex: 1;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.gallery img:hover {
+    opacity: 1;
+}
+
+/* Artigo Principal (Main) */
+main article h3 {
+    font-size: 1.8em;
+}
+
+main article h5 {
+    color: var(--apple-gray);
+    font-size: 0.9em;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.post-image {
+    max-height: 400px; /* Limita a altura das imagens grandes */
+    object-fit: cover;
+}
+
+/* --- Rodapé (Footer) --- */
+footer {
+    background-color: var(--apple-dark);
+    color: var(--apple-gray);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8em;
+    margin-top: 20px;
+}
+
+/* --- Responsividade (Para telas menores) --- */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    aside {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    main {
+        padding-left: 0;
+        border-left: none;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+    
+    .gallery {
+        flex-direction: column;
+    }
+
+    .gallery img {
+        height: auto;
+    }
+}
