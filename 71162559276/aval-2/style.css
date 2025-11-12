@@ -1,0 +1,54 @@
+/* Estilos Gerais */
+body {
+    margin: 0;
+    overflow: hidden; /* Esconde a barra de rolagem */
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* O Container principal do jogo (o mapa) */
+#game-container {
+    width: 800px; /* Largura do jogo */
+    height: 600px; /* Altura do jogo */
+    background-color: #2c3e50; /* Fundo escuro de aventura */
+    border: 5px solid #e67e22; /* Borda laranja/marrom */
+    position: relative; /* Importante para posicionar o jogador e as balas */
+}
+
+/* O Jogador (um quadrado verde) */
+#player {
+    width: 30px;
+    height: 30px;
+    background-color: #2ecc71; /* Cor do herói */
+    position: absolute;
+    bottom: 20px; /* Posição inicial */
+    left: 385px; /* Posição inicial */
+    border-radius: 5px;
+    transition: background-color 0.1s; /* Transição suave */
+}
+
+/* A Bala/Projétil (um círculo vermelho) */
+.bullet {
+    width: 8px;
+    height: 8px;
+    background-color: #e74c3c; /* Cor da bala */
+    position: absolute;
+    border-radius: 50%; /* Torna-o um círculo */
+    z-index: 10; /* Garante que fique acima de outros elementos */
+}
+
+/* Heads-Up Display (HUD) */
+#hud {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    font-family: sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
