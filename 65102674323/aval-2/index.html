@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Esporte</title> <style>
+        /* --- Configurações Gerais --- */
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
+            margin: 0;
+            background-color: #000000; 
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Cabeçalho e Navegação --- */
+        header {
+            background-color: #2a2a3a; /* Verde similar ao do GE */
+            color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        } 
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 20px;
+        }
+
+        nav a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* --- Layout Principal (Grid) --- */
+        .main-content {
+            display: grid;
+            grid-template-columns: 3fr 1fr; /* 75% notícias, 25% sidebar */
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        main {
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        aside {
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* --- Estilos das Notícias --- */
+        .featured-story {
+            border-bottom: 2px solid #000000;
+            padding-bottom: 20px;
+        }
+
+        .featured-story img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .featured-story h2 {
+            font-size: 28px;
+            color: hwb(0 0% 100%); /* Cor de destaque */
+            margin-top: 10px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Duas colunas */
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .news-article {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden; 
+        }
+
+        .news-article img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover; 
+        }
+
+        .news-article h3 {
+            font-size: 18px;
+            padding: 0 15px;
+        }
+         .news-article p {
+            font-size: 14px;
+            padding: 0 15px 15px;
+        }
+
+        /* --- Barra Lateral --- */
+        aside h3 {
+            border-bottom: 2px solid #000000;
+            padding-bottom: 5px;
+        }
+        
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        aside li {
+            padding: 8px 0;
+            border-bottom: 1px solid #000000;
+        }
+
+        /* --- Rodapé --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #333;
+            color: #ffffff;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <h1>Seu Esporte</h1> <nav>
+            <ul>
+                <li><a href="#">Futebol</a></li>
+                <li><a href="#">Basquete</a></li>
+                <li><a href="#">Atletismo</a></li>
+                <li><a href="#">Vôlei</a></li>
+                <li><a href="#">Futebol Americano</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            
+            <main>
+                <section class="featured-story">
+                    <img src="https://www.f1mania.net/wp-content/uploads/2025/11/XPB_1385464_HiRes-crop-1762720316-1600x547.jpg" alt="Jogador comemorando gol">
+                    <h2>F1: Lando Norris vence GP do Brasil</h2>
+                    <p>Antonelli e Verstappen completaram pódio; Bortoleto bate na primeira volta e abandona corrida</p>
+                </section>
+
+                <section class="news-grid">
+                    <article class="news-article">
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.qwuX73BPkCvWz9Sl8YqIdAHaEK?cb=ucfimg2&pid=ImgDet&ucfimg=1&w=203&h=114&c=7&o=7&rm=3" alt="Notícia 2">
+                        <h3>Paulistão 2026 terá clássicos na primeira fase e adota modelo Champions League</h3>
+                        <p>Torneio tem 11 datas definidas, com oito rodadas na primeira fase e mata-mata em jogo único</p>
+                    </article>
+
+                    <article class="news-article">
+                        <img src="https://th.bing.com/th/id/OIP.lCkXUnIajIcXT-WnoclXSQHaEK?w=326&h=183&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Notícia 3">
+                        <h3>Cruzeiro vence Minas e assume liderança da Superliga masculina de vôlei de forma provisória</h3>
+                        <p>Raposa bate rival por 3 sets a 1 e chega a 13 pontos na tabela. Time de Belo Horizonte segue sem vencer</p>
+                    </article>
+
+                    <article class="news-article">
+                        <img src="https://th.bing.com/th/id/OIP.pzpdYVoz4Mo9IDrN0HK9ZgHaEK?w=360&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Notícia 4">
+                        <h3>LeBron James volta a ser o jogador mais bem pago da NBA depois de 11 anos</h3>
+                        <p>Jogador vai receber quase R$ 800 milhões de salários e contratos publicitários nesta temporada</p>
+                    </article>
+
+                    <article class="news-article">
+                        <img src="https://th.bing.com/th/id/OIP.GPFEJfd_t0woetiJqHl5BwHaEK?w=319&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Notícia 5">
+                        <h3>NFL: Dolphins surpreendem os Bills e conquistam terceira vitória na temporada</h3>
+                        <p>Equipe de Miami venceu Buffalo por 30 a 13, mas ainda segue com sete derrotas no ano e em terceiro lugar no grupo AFC Leste</p>
+                    </article>
+                </section>
+            </main>
+
+            <aside>
+                <h3>Tabela Brasileirão</h3>
+                <ol>
+                    <li>1. Palmeiras</li>
+                    <li>2. Flamengo</li>
+                    <li>3. Cruzeiro</li>
+                    <li>4. Mirassol</li>
+                    <li>5. Bahia</li>
+                </ol>
+
+                <h3>Mais Lidas</h3>
+                <ul>
+                    <li><a href="#">Polêmica na arbitragem do jogo X</a></li>
+                    <li><a href="#">Vai e vem do mercado da bola</a></li>
+                    <li><a href="#">Agenda de jogos da semana</a></li>
+                </ul>
+            </aside>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Seu Esporte. Todos os direitos reservados.</p> </footer>
+
+<script src="script.js"></script></body>
+</html>
