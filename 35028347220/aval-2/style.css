@@ -1,192 +1,102 @@
-/* --- Variáveis de Cor para Fácil Customização --- */
-:root {
-    --cor-primaria: #c298b1; /* Laranja do cabeçalho */
-    --cor-secundaria: #333333; /* Preto/Cinza Escuro da navegação */
-    --cor-fundo-geral: #f0f0f0; /* Fundo levemente cinza */
-    --cor-texto-principal: #444444; /* Texto geral */
-    --cor-sidebar-fundo: #ffffff; /* Fundo branco da sidebar */
-    --cor-post-fundo: #ffffff; /* Fundo branco do post */
-    --cor-borda-cinza: #cccccc;
-    --largura-sidebar: 250px;
-}
-
-/* --- Reset Básico e Estilos Gerais --- */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--cor-fundo-geral);
-    color: var(--cor-texto-principal);
-    line-height: 1.6;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background-color: #fff5f7;
+  color: #4a2c2a;
 }
 
-/* --- Container Principal --- */
-.container {
-    max-width: 1000px; /* Largura ajustada para o exemplo */
-    margin: 0 auto;
-    background-color: var(--cor-fundo-geral); /* Fundo cinza claro */
+header {
+  background-color: #ff7b93;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  border-bottom: 4px solid #ffb3c6;
+  background-image: linear-gradient(to right, #ff7b93, #ffb6c1);
 }
 
-/* --- Cabeçalho (Header) --- */
-.header {
-    background-color: var(--cor-primaria);
-    color: white;
-    padding: 30px 0; /* Padding maior para a altura */
-    text-align: center;
+header h1 {
+  font-size: 2.5em;
+  margin: 0;
 }
 
-.header h1 {
-    font-size: 2.5em;
-    margin-bottom: 5px;
+nav {
+  background-color: #ffe1e8;
+  text-align: center;
+  padding: 12px;
 }
 
-.header p {
-    font-size: 1em;
+nav a {
+  color: #c44569;
+  text-decoration: none;
+  margin: 0 18px;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
-/* --- Navegação (Menu) --- */
-.nav-menu {
-    background-color: var(--cor-secundaria);
+nav a:hover {
+  text-decoration: underline;
+  color: #a83f5f;
 }
 
-.nav-menu ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-start;
-    max-width: 1000px; 
-    margin: 0 auto;
+main {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
 }
 
-.nav-menu ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 12px 20px; /* Ajuste o padding para a altura do menu */
-    display: block;
-    transition: background-color 0.3s;
+aside {
+  width: 25%;
+  background-color: #fff0f3;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px rgba(255, 155, 170, 0.3);
 }
 
-/* --- Layout Principal (Grid) --- */
-.content-area {
-    display: grid;
-    /* Sidebar à esquerda com largura fixa, Conteúdo à direita */
-    grid-template-columns: var(--largura-sidebar) 1fr;
-    gap: 0; /* Remove o gap para que o fundo da sidebar e do conteúdo se encontrem */
-    min-height: 700px; /* Altura mínima para visualização */
+aside img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
 }
 
-/* --- Sidebar (Barra Lateral) --- */
-.sidebar {
-    background-color: var(--cor-sidebar-fundo); /* Fundo branco para a sidebar */
-    padding: 20px 20px 20px 20px;
-    border-right: 1px solid var(--cor-fundo-geral); /* Linha divisória sutil */
+.galeria img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
 }
 
-.sidebar-section {
-    margin-bottom: 25px;
+.galeria img:hover {
+  transform: scale(1.05);
 }
 
-.sidebar h3 {
-    font-size: 1.2em; /* Um pouco menor */
-    color: var(--cor-secundaria);
-    margin-top: 0;
-    margin-bottom: 5px;
-    padding: 5px 0;
-    /* Remove a borda inferior, mas mantém o estilo de texto da imagem */
+section.postagem {
+  width: 75%;
 }
 
-.sidebar p {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 5px;
+.card {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(255, 140, 160, 0.2);
 }
 
-/* Estilo para as caixas de Imagem da Sidebar */
-.imagem-placeholder {
-    width: 100%;
-    height: 80px; /* Altura ajustada */
-    background-color: var(--cor-borda-cinza); 
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #444;
-    font-size: 0.9em;
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 15px 0;
 }
 
-.foto-perfil {
-    height: 120px; /* Altura maior para a foto de perfil */
+.autor {
+  font-style: italic;
+  color: #d16a7c;
 }
 
-/* --- Conteúdo Principal (Postagem) --- */
-.main-content {
-    background-color: var(--cor-fundo-geral); /* Fundo cinza claro */
-    padding: 20px;
+.conteudo {
+  font-size: 1.1em;
+  line-height: 1.6;
 }
 
-.post-card {
-    background-color: var(--cor-post-fundo); /* Fundo branco para o card */
-    padding: 25px;
-    margin-bottom: 20px;
-    /* Borda sutil para definir o card, como na imagem */
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.post-card h2 {
-    font-size: 1.6em;
-    color: var(--cor-secundaria);
-    margin-top: 0;
-    margin-bottom: 5px;
-}
-
-.post-info {
-    font-size: 0.85em;
-    color: #888888;
-    margin-bottom: 20px;
-}
-
-/* Imagem da Postagem */
-.post-image {
-    width: 100%;
-    /* Altura fixa proporcional ao exemplo */
-    height: 250px; 
-    background-color: #555555; 
-    margin-bottom: 20px;
-    overflow: hidden;
-}
-
-.post-image img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover; /* Garante que a imagem cubra a área */
-}
-
-.post-text {
-    font-size: 1em;
-    color: var(--cor-texto-principal);
-}
-
-
-/* --- Responsividade Básica --- */
-@media (max-width: 768px) {
-    .content-area {
-        /* Em telas menores, a sidebar fica acima e ocupa toda a largura */
-        grid-template-columns: 1fr;
-    }
-
-    .sidebar {
-        padding-right: 20px;
-        border-right: none;
-        border-bottom: 1px solid var(--cor-borda-cinza);
-    }
-
-    .nav-menu ul {
-        flex-direction: column;
-        align-items: stretch;
-    }
-}
+footer {
+  background-color: #ff7b93;
+  color: white;
+  text
