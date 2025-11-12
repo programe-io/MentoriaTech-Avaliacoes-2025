@@ -1,0 +1,228 @@
+/*
+ * ----------------------------------------------------
+ * ESTILOS GERAIS E TIPOGRAFIA
+ * ----------------------------------------------------
+ */
+body {
+    /* Fundo de madeira escura ou pedra de masmorra */
+    background-color: #3f352b; 
+    font-family: 'Georgia', serif; /* Fonte clássica, como em livros de regras */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #f0e6c2; /* Cor de pergaminho para o texto */
+}
+
+/* Links */
+a {
+    color: #aed581; /* Verde musgo/cura para links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ffeb3b; /* Dourado ao passar o mouse */
+}
+
+/* Destaques (Texto em Negrito) */
+strong {
+    color: #ffeb3b; 
+    font-weight: bold;
+}
+
+/*
+ * ----------------------------------------------------
+ * LAYOUT PRINCIPAL (O Pergaminho ou o Tabuleiro)
+ * ----------------------------------------------------
+ */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #5b4636; /* Marrom claro, como um pergaminho desenrolado */
+    border-radius: 8px;
+    /* Sombra para dar profundidade e textura */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.05); 
+    border: 3px solid #8d6e63; /* Borda de "madeira rústica" */
+    
+    /* Flexbox para o conteúdo principal e barra lateral */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main-content {
+    width: 70%;
+}
+
+/*
+ * ----------------------------------------------------
+ * CABEÇALHO (O Início da Crônica)
+ * ----------------------------------------------------
+ */
+header {
+    background-color: #2c1a0f; /* Marrom muito escuro */
+    color: #ffeb3b; 
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 5px double #aed581; /* Linha de distinção verde */
+    margin-bottom: 0;
+}
+
+header h1 {
+    font-size: 3em;
+    font-family: 'Times New Roman', serif;
+    text-shadow: 3px 3px 5px #000;
+}
+
+.header-icon {
+    border: 3px solid #ffeb3b;
+    box-shadow: 0 0 10px #ffeb3b;
+}
+
+/*
+ * ----------------------------------------------------
+ * BARRA DE NAVEGAÇÃO (NAV)
+ * ----------------------------------------------------
+ */
+nav {
+    background-color: #1a1a1a; /* Preto/Masmorra */
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #f0e6c2;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #38761d; /* Destaque verde escuro */
+    color: white;
+}
+
+/*
+ * ----------------------------------------------------
+ * ARTIGOS (ARTICLE) E TÍTULOS
+ * ----------------------------------------------------
+ */
+article {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #8d6e63;
+}
+
+h2 {
+    color: #ffeb3b;
+    border-bottom: 3px solid #ffeb3b;
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-size: 2.2em;
+}
+
+h3 {
+    color: #aed581;
+    font-size: 1.5em;
+    margin-top: 25px;
+}
+
+/* Estilo para lista de itens/habilidades */
+ul li {
+    list-style-type: none; 
+    padding-left: 1.5em;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+ul li::before {
+    content: '⚔️'; /* Marcador de espada */
+    position: absolute;
+    left: 0;
+    color: #aed581;
+}
+
+/*
+ * ----------------------------------------------------
+ * IMAGEM (IMG) E ASIDE
+ * ----------------------------------------------------
+ */
+.article-image {
+    border: 5px solid #aed581;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+}
+
+/* Barra Lateral (ASIDE) */
+aside {
+    width: 25%;
+    padding: 20px;
+    background-color: #2c1a0f; /* Contraste escuro */
+    border: 3px solid #ffeb3b;
+    border-radius: 10px;
+    margin-left: 20px;
+    height: fit-content;
+    /* Efeito de runas ou mapa antigo */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 15px 15px;
+}
+
+aside h3 {
+    color: #ffeb3b;
+    border-bottom: 2px dashed #ffeb3b;
+}
+
+/*
+ * ----------------------------------------------------
+ * RODAPÉ (Os Créditos da Aventura)
+ * ----------------------------------------------------
+ */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #1a1a1a;
+    color: #ffeb3b;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+/*
+ * ----------------------------------------------------
+ * RESPONSIVIDADE
+ * ----------------------------------------------------
+ */
+@media (max-width: 900px) {
+    main {
+        padding: 15px;
+    }
+    
+    .main-content, aside {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+    }
+    
+    header h1 {
+        font-size: 2.2em;
+    }
+}

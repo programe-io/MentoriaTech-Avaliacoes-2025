@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Mundo da Fantasia: Role-Playing Game (RPG)</title>
+    <style>
+        /* --- 1. Estilos Base e Temáticos --- */
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #3f352b; 
+            color: #f0e6c2; 
+        }
+
+        /* Destaques (Texto em Negrito) */
+        strong {
+            color: #ffeb3b; 
+            font-weight: bold;
+        }
+
+        /* --- ESTILO PARA TAG SPAN --- */
+        .highlight {
+            color: #ffc107; /* Dourado mais brilhante para a sigla RPG */
+            font-weight: 900;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+        
+        .dado {
+            color: #aed581; /* Verde musgo para o D20 */
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        /* --- 2. Cabeçalho --- */
+        header {
+            background-color: #795548; 
+            color: #ffeb3b; 
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 5px double #ffeb3b;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .header-icon {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+            vertical-align: middle;
+            border: 3px solid #ffeb3b;
+            box-shadow: 0 0 10px #ffeb3b;
+        }
+
+        /* --- 3. Barra de Navegação (NAV) --- */
+        nav {
+            background-color: #1a1a1a;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: #f0e6c2;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #38761d;
+            color: white;
+        }
+
+        /* --- 4. MAIN e Layout Flexível --- */
+        main {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #5b4636;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.05); 
+            border: 3px solid #8d6e63;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .main-content {
+            width: 70%;
+        }
+
+        /* --- 5. Artigos (ARTICLE) e Títulos --- */
+        article {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #8d6e63;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #ffeb3b;
+            border-bottom: 3px solid #ffeb3b;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 2.2em;
+        }
+
+        /* --- 6. Imagem (IMG) e Aside --- */
+        .article-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 80%;
+            height: auto;
+            border: 4px solid #aed581;
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        aside {
+            width: 25%;
+            padding: 15px;
+            background-color: #2c1a0f;
+            border: 2px solid #ffeb3b;
+            border-radius: 8px;
+            margin-left: 20px;
+            height: fit-content;
+        }
+
+        aside h3 {
+            color: #aed581;
+            border-bottom: 1px solid #aed581;
+            padding-bottom: 5px;
+        }
+
+        /* --- 7. Rodapé --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #212121;
+            color: #ffeb3b;
+            margin-top: 30px;
+        }
+        
+        /* --- 8. Responsividade --- */
+        @media (max-width: 900px) {
+            .main-content, aside {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <img class="header-icon" 
+             src="https://http2.mlstatic.com/D_NQ_NP_787137-MLU70650761099_072023-O.webp" 
+             alt="Ícone de um dado de 20 faces."
+             title="Dado D20 RPG">
+        <h1>Mundo do <span class="highlight">RPG</span>: Role-Playing Game</h1>
+        <p>A arte de contar histórias colaborativas em mundos fantásticos.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#o-que-e">O Conceito</a></li>
+            <li><a href="#como-funciona">Regras e Dados</a></li>
+            <li><a href="#beneficios">A Experiência</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        
+        <div class="main-content">
+            
+            <article id="o-que-e">
+                <h2>O Que É <span class="highlight">RPG</span>?</h2>
+                <p><span class="highlight">RPG</span>, ou *Role-Playing Game* (Jogo de Interpretação de Papéis), é uma atividade social onde os participantes assumem o papel de personagens fictícios em um cenário imaginário. É essencialmente uma forma de narrativa colaborativa e interativa.</p>
+                <p>Diferente de jogos de tabuleiro tradicionais, o RPG de mesa foca menos na competição e mais na imersão e desenvolvimento de histórias. O limite é apenas a imaginação dos jogadores e do Mestre de Jogo (GM).</p>
+            </article>
+
+            <hr>
+
+            <article id="como-funciona">
+                <h2>Como Funciona: Regras e Dados</h2>
+                <p>O coração de um RPG de mesa é o seu **Sistema de Regras**. Este sistema (como *Dungeons & Dragons*, *Tormenta* ou *Call of Cthulhu*) define como as ações dos personagens são resolvidas em momentos de incerteza, como combate, persuasão ou detecção de armadilhas.</p>
+                
+                <img class="article-image" 
+                     src="https://a-static.mlcdn.com.br/420x420/conjunto-de-dados-poliedricos-7-pecas-d4-d6-d8-d10-d12-d20-para-rpg/aliexpress/201510213/d49a6788e7844b30942b868868ee7e5c.jpeg" 
+                     alt="Conjunto de dados poliedrais (D4, D6, D8, D10, D12, D20) usados em RPG."
+                     title="Dados Poliedrais">
+
+                <p>A resolução de conflitos é feita através de **testes de habilidade**, nos quais o jogador rola um ou mais dados (frequentemente o <span class="dado">D20</span>) e adiciona o modificador da habilidade do seu personagem. Se o resultado for igual ou maior que a dificuldade definida pelo Mestre, a ação é bem-sucedida.</p>
+            </article>
+
+            <hr>
+
+            <article id="beneficios">
+                <h2>A Experiência do Role-Playing</h2>
+                <p>Jogar <span class="highlight">RPG</span> é uma excelente maneira de desenvolver habilidades sociais, como comunicação e empatia, ao se colocar no lugar de um personagem com uma vida e problemas diferentes. É também um poderoso exercício de criatividade e solução de problemas de forma colaborativa.</p>
+                <p>Seja você um guerreiro destemido, um mago misterioso ou um bardo charmoso, o RPG oferece um refúgio da realidade onde você pode viver a aventura que sempre sonhou.</p>
+            </article>
+        
+        </div>
+        
+        <aside>
+            <h3>🎲 Sistemas Populares</h3>
+            <p>Alguns sistemas de RPG que você pode explorar:</p>
+            <ul>
+                <li>Dungeons & Dragons (Fantasia Medieval)</li>
+                <li>Call of Cthulhu (Horror Cósmico)</li>
+                <li>GURPS (Genérico/Universal)</li>
+                <li>Vampiro: A Máscara (Horror Gótico Moderno)</li>
+            </ul>
+            
+            <hr>
+            
+            <h3>📖 Dica do Mestre</h3>
+            <p style="font-size: 0.9em; font-style: italic;">"A melhor regra é se divertir. Não se preocupe em decorar todos os livros; o Mestre está lá para guiar o jogo!"</p>
+        </aside>
+        
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Explorando o Role-Playing Game. Que suas rolagens sejam altas!</p>
+    </footer>
+
+<script src="script.js"></script></body>
+</html>
