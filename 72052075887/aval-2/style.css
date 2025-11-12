@@ -1,0 +1,212 @@
+/* --- 1. CONFIGURAÇÕES GLOBAIS E RESET --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tipografia limpa e profissional */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff; /* Fundo Branco (Clean) */
+    color: #333333; /* Texto escuro e legível */
+}
+
+/* Links em geral */
+a {
+    color: #007bff; /* Cor de destaque: Azul Institucional */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* --- 2. LAYOUT PRINCIPAL (HEADER, NAV, FOOTER, CONTENT) --- */
+.row {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 30px; /* Espaço entre as colunas */
+}
+
+main {
+    flex: 70%;
+    min-width: 0; /* Garante que o conteúdo não ultrapasse o container */
+}
+
+aside {
+    flex: 30%;
+    padding: 20px;
+    border-left: 1px solid #eeeeee; /* Separador sutil */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8; /* Fundo cinza claro */
+    color: #888888;
+    font-size: 0.85em;
+    border-top: 1px solid #eeeeee;
+}
+
+/* --- 3. HEADER (CABEÇALHO) --- */
+header {
+    background-color: #ffffff;
+    padding: 60px 20px 20px; /* Mais espaço no topo */
+    text-align: center;
+    border-bottom: 5px solid #007bff; /* Linha de destaque azul */
+}
+
+header h1 {
+    font-family: 'Georgia', serif; /* Fonte serifada para um toque clássico e moderno */
+    font-size: 3.2em;
+    color: #333333;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+header p {
+    font-style: italic;
+    color: #666666;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1em;
+}
+
+/* --- 4. NAV (MENU DE NAVEGAÇÃO) --- */
+nav {
+    background-color: #ffffff;
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 1px solid #dddddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+nav a {
+    color: #333333;
+    padding: 10px 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: #007bff;
+    border-bottom: 3px solid #007bff;
+}
+
+/* --- 5. ESTILIZAÇÃO DO CONTEÚDO (MAIN) --- */
+h2, h3 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333333;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+h5 {
+    color: #999999;
+    font-weight: 400;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+article {
+    background-color: #ffffff;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #dddddd; /* Separador clean entre artigos */
+}
+
+article h3 {
+    font-size: 1.8em;
+    color: #007bff;
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+    margin: 15px 0;
+    border-radius: 4px; /* Cantos levemente arredondados */
+}
+
+/* --- 6. ESTILIZAÇÃO DA ASIDE (BARRA LATERAL) --- */
+
+aside h2, aside h3 {
+    border-bottom: 2px solid #dddddd;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    color: #333333;
+    font-size: 1.4em;
+}
+
+/* Imagem de Perfil */
+.about-me img {
+    width: 100%;
+    max-width: 120px;
+    height: 120px;
+    display: block;
+    margin: 10px auto 20px;
+    border-radius: 50%;
+    border: 4px solid #f8f8f8; /* Borda bem sutil */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+    object-fit: cover;
+}
+
+aside p {
+    text-align: justify;
+    font-size: 0.95em;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+/* Galeria */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    justify-between: space-between;
+}
+
+.gallery img {
+    width: calc(33.33% - 7px); /* 3 imagens por linha com espaço */
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.gallery img:hover {
+    opacity: 1;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* --- 7. RESPONSIVIDADE --- */
+@media screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    main {
+        order: 2; /* Coloca o conteúdo principal depois da sidebar em mobile */
+        margin-bottom: 0;
+    }
+
+    aside {
+        order: 1; /* Coloca a sidebar (Sobre Mim) no topo em mobile */
+        border-left: none;
+        border-bottom: 1px solid #eeeeee;
+        padding-bottom: 30px;
+        margin-bottom: 20px;
+    }
+}
