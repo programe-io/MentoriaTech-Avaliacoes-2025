@@ -1,0 +1,163 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* CORES */
+:root {
+  --azul: #1e3a8a;
+  --fundo: #f2f5f9;
+  --texto: #333;
+  --amarelo: #ffbb00;
+}
+
+/* TEMA ESCURO */
+.dark {
+  --azul: #0a0a23;
+  --fundo: #121212;
+  --texto: #f1f1f1;
+}
+
+/* BODY */
+body {
+  background-color: var(--fundo);
+  color: var(--texto);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  background-color: var(--azul);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* NAV */
+nav {
+  background-color: var(--azul);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav button {
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background: white;
+  color: var(--azul);
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+  flex: 1;
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.dark main {
+  background-color: #1f1f1f;
+}
+
+/* PERFIL */
+section.profile {
+  background-color: var(--azul);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 15px;
+}
+
+section.profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+section.profile h2 {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* ARTIGO */
+article {
+  padding: 20px;
+  text-align: center;
+}
+
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.image-gallery img {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.dark .description {
+  color: #ddd;
+}
+
+/* SPAN */
+span.highlight {
+  color: var(--amarelo);
+  font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--azul);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9rem;
+}
