@@ -1,110 +1,65 @@
-/* ======== Estilo Geral ======== */
+/* Estilo base */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
+  background-color: #fffaf6;
+  font-family: 'Inter', sans-serif;
+  color: #333;
 }
 
-/* ======== Cabeçalho ======== */
-header {
-  background-color: #333;
-  color: white;
+/* Cartões de produtos */
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.card-content p {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.price-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
 }
 
-header .logo {
+.price-row span {
+  color: #ea580c;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 1.125rem;
 }
 
-header nav a {
+.price-row button {
+  background-color: #f97316;
   color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  transition: background 0.2s;
 }
 
-header nav a:hover {
-  text-decoration: underline;
-}
-
-/* ======== Seção de Cards ======== */
-main {
-  padding: 40px;
-}
-
-.cards {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.cards h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-/* ======== Card Individual ======== */
-.card {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  margin-bottom: 30px;
-  overflow: hidden;
-}
-
-/* Cabeçalho do Card */
-.card-header {
-  display: flex;
-  align-items: center;
-  padding: 10px 15px;
-  border-bottom: 1px solid #ddd;
-}
-
-.card-header .avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.username {
-  font-weight: bold;
-}
-
-/* Imagem principal do post */
-.card-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Corpo do Card */
-.card-body {
-  padding: 15px;
-}
-
-.card-body p {
-  margin-bottom: 10px;
-  line-height: 1.4;
-}
-
-.timestamp {
-  font-size: 0.9em;
-  color: gray;
-}
-
-/* ======== Responsividade ======== */
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  header nav {
-    margin-top: 10px;
-  }
+.price-row button:hover {
+  background-color: #ea580c;
 }
