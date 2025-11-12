@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>A Evolução das Indústrias</title>
+  <meta name="description" content="Linha do tempo interativa sobre a evolução das indústrias com animações e gráficos visuais." />
+  <link rel="stylesheet" href="style.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <!-- Simples logo com SVG -->
+        <svg width="48" height="48" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2"/>
+          <g transform="translate(8,8)" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="6" y="6" width="28" height="28" rx="4"/>
+            <path d="M6 18h28" />
+          </g>
+        </svg>
+        <span class="site-title">A Evolução das Indústrias</span>
+      </div>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#hero">Início</a>
+        <a href="#timeline">Linha do Tempo</a>
+        <a href="#impact">Impacto</a>
+        <a href="#about">Sobre</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Da máquina a vapor aos algoritmos — <span>a evolução das indústrias</span></h1>
+          <p class="lead">Uma jornada visual e responsiva pelas fases da industrialização: do século XVIII até a era digital.</p>
+          <p><a class="cta" href="#timeline">Ver Linha do Tempo</a></p>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <!-- Engrenagens SVG animadas por CSS/JS -->
+          <div class="gears">
+            <svg class="gear gear-lg" viewBox="0 0 100 100" role="img" aria-label="Engrenagem grande">
+              <g transform="translate(50,50)">
+                <circle r="18"></circle>
+                <g id="teeth">
+                  <!-- dentes simplificados -->
+                  <g id="t">
+                    <rect x="-3" y="-36" width="6" height="10" />
+                  </g>
+                  <!-- repita 12 vezes rotacionando -->
+                  <!-- gerado manualmente para evitar scripts externos -->
+                  <g transform="rotate(0)"><use href="#t" /></g>
+                  <g transform="rotate(30)"><use href="#t" /></g>
+                  <g transform="rotate(60)"><use href="#t" /></g>
+                  <g transform="rotate(90)"><use href="#t" /></g>
+                  <g transform="rotate(120)"><use href="#t" /></g>
+                  <g transform="rotate(150)"><use href="#t" /></g>
+                  <g transform="rotate(180)"><use href="#t" /></g>
+                  <g transform="rotate(210)"><use href="#t" /></g>
+                  <g transform="rotate(240)"><use href="#t" /></g>
+                  <g transform="rotate(270)"><use href="#t" /></g>
+                  <g transform="rotate(300)"><use href="#t" /></g>
+                  <g transform="rotate(330)"><use href="#t" /></g>
+                </g>
+              </g>
+            </svg>
+
+            <svg class="gear gear-sm" viewBox="0 0 100 100" role="img" aria-label="Engrenagem pequena">
+              <g transform="translate(50,50)">
+                <circle r="12"></circle>
+                <g id="t2">
+                  <rect x="-2" y="-28" width="4" height="7" />
+                </g>
+                <g transform="rotate(0)"><use href="#t2" /></g>
+                <g transform="rotate(45)"><use href="#t2" /></g>
+                <g transform="rotate(90)"><use href="#t2" /></g>
+                <g transform="rotate(135)"><use href="#t2" /></g>
+                <g transform="rotate(180)"><use href="#t2" /></g>
+                <g transform="rotate(225)"><use href="#t2" /></g>
+                <g transform="rotate(270)"><use href="#t2" /></g>
+                <g transform="rotate(315)"><use href="#t2" /></g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" class="timeline container">
+      <h2 class="section-title">Linha do Tempo</h2>
+      <p class="section-sub">Principais marcos da industrialização</p>
+
+      <div class="timeline-list">
+        <!-- cada item tem data, título, descrição e animação -->
+        <article class="timeline-item reveal" data-year="c.1760">
+          <div class="timeline-card">
+            <div class="timeline-left">
+              <span class="year">Século XVIII</span>
+              <h3>1ª Revolução Industrial</h3>
+              <p>Máquina a vapor, mecanização têxtil e início das fábricas — transformação da produção manual para industrial.</p>
+            </div>
+            <div class="timeline-right">
+              <img alt="Fábrica a vapor estilizada" src="" data-placeholder="vapor" />
+            </div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal" data-year="c.1870">
+          <div class="timeline-card">
+            <div class="timeline-left">
+              <span class="year">Final do século XIX</span>
+              <h3>2ª Revolução Industrial</h3>
+              <p>Eletricidade, linhas de montagem e produção em massa. Expansão das indústrias química e siderúrgica.</p>
+            </div>
+            <div class="timeline-right">
+              <img alt="Linha de montagem estilizada" src="" data-placeholder="assembly" />
+            </div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal" data-year="c.1969">
+          <div class="timeline-card">
+            <div class="timeline-left">
+              <span class="year">Século XX</span>
+              <h3>3ª Revolução Industrial</h3>
+              <p>Automação, eletrônica e computadores. Maior integração entre máquinas e controle digital.</p>
+            </div>
+            <div class="timeline-right">
+              <img alt="Computadores e automação" src="" data-placeholder="automation" />
+            </div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal" data-year="c.2000">
+          <div class="timeline-card">
+            <div class="timeline-left">
+              <span class="year">Século XXI</span>
+              <h3>4ª Revolução Industrial / Indústria 4.0</h3>
+              <p>IoT, big data, inteligência artificial e fabricação inteligente — convergência do digital com o físico.</p>
+            </div>
+            <div class="timeline-right">
+              <img alt="Robôs colaborativos e IA" src="" data-placeholder="ai" />
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="impact" class="impact container">
+      <h2 class="section-title">Impacto na Sociedade</h2>
+      <div class="impact-grid">
+        <div class="impact-card reveal">
+          <h3>Economia</h3>
+          <p>Maior produtividade e novas cadeias de valor, com mudanças nos empregos e na distribuição de renda.</p>
+        </div>
+        <div class="impact-card reveal">
+          <h3>Tecnologia</h3>
+          <p>Aceleração de inovação, microeletrônica, conectividade e automação.</p>
+        </div>
+        <div class="impact-card reveal">
+          <h3>Sustentabilidade</h3>
+          <p>Desafios ambientais e oportunidades de indústrias mais limpas e eficientes.</p>
+        </div>
+        <div class="impact-card reveal">
+          <h3>Cultura</h3>
+          <p>Urbanização, mudança de estilo de vida e transformação das relações de trabalho.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about container">
+      <h2 class="section-title">Sobre este projeto</h2>
+      <p>Este site é um protótipo educativo que explica, de forma visual e interativa, as diferentes fases da industrialização. Pode ser facilmente adaptado para conteúdo acadêmico, apresentação ou portfólio.</p>
+
+      <div class="credits">
+        <p>Construído com HTML, CSS e JavaScript puro — sem bibliotecas externas.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> A Evolução das Indústrias • Feito com ♥</small>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+<script src="script.js"></script></body>
+</html>
