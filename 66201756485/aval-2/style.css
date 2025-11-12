@@ -1,0 +1,156 @@
+/* --- Estilos Globais e Reset --- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #141414; /* Cor de fundo principal da Netflix */
+    color: #e5e5e5; /* Cor de texto principal */
+}
+
+a {
+    color: #e5e5e5;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #b3b3b3; /* Cor de texto mais suave no hover */
+}
+
+/* --- 1. HEADER (Barra de Navegação) --- */
+header {
+    background-color: #111; /* Fundo da barra de navegação */
+    padding: 10px 40px;
+    
+    /* Fixa o header no topo */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    /* Organiza o logo e a navegação */
+    display: flex;
+    justify-content: space-between; /* Logo na esquerda, nav na direita */
+    align-items: center;
+    
+    z-index: 100; /* Garante que o header fique por cima de tudo */
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+/* --- 1a. IMG (Logo) --- */
+header .logo img {
+    height: 35px; /* Tamanho do logo */
+}
+
+/* --- 1b. Navegação (Menu) --- */
+header nav ul {
+    list-style: none;
+    display: flex; /* Coloca os itens do menu em linha */
+    margin: 0;
+    padding: 0;
+}
+
+header nav li {
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* --- Conteúdo Principal (Abaixo do Header) --- */
+main {
+    display: flex; /* Divide a página em Aside e Section */
+    padding: 80px 40px 20px 40px; /* Padding (80px no topo para não ficar atrás do header) */
+}
+
+/* --- 2. ASIDE (Barra Lateral de Gêneros) --- */
+aside {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    flex-basis: 220px; /* Largura fixa da barra lateral */
+    flex-shrink: 0; /* Impede que a barra lateral encolha */
+    margin-right: 30px;
+    height: fit-content; /* A altura se ajusta ao conteúdo */
+}
+
+aside h3, aside h4 {
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* --- Seção do Catálogo (Onde ficam os filmes) --- */
+.catalogo {
+    flex-grow: 1; /* Faz esta seção ocupar todo o espaço restante */
+}
+
+.catalogo h2 {
+    font-size: 1.7rem;
+    margin-top: 0;
+}
+
+/* O carrossel horizontal de filmes */
+.lista-filmes {
+    display: flex; /* A mágica para a lista horizontal */
+    overflow-x: auto; /* Permite rolar horizontalmente */
+    overflow-y: hidden; /* Esconde a rolagem vertical */
+    gap: 15px; /* Espaço entre os filmes */
+    padding-bottom: 15px; /* Espaço para a barra de rolagem não ficar colada */
+}
+
+/* --- 3. ARTICLE (Cada item de filme) --- */
+.item-filme {
+    background-color: #282828;
+    border-radius: 5px;
+    overflow: hidden; /* Garante que a imagem se ajuste aos cantos arredondados */
+    
+    /* Define um tamanho mínimo para os cartões */
+    flex-basis: 220px; /* Largura de cada "card" */
+    flex-shrink: 0; /* Impede que os cards encolham */
+
+    /* Efeito de transição */
+    transition: transform 0.3s ease-out;
+}
+
+/* --- 4. IMG (Pôster do Filme) --- */
+.item-filme img {
+    width: 100%;
+    display: block; /* Remove espaço extra abaixo da imagem */
+}
+
+/* --- Efeito de Hover (Estilo Netflix) --- */
+.item-filme:hover {
+    /* Aumenta o item e o traz para frente */
+    transform: scale(1.08);
+    z-index: 10;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* Adiciona sombra */
+}
+
+
+/* Textos dentro do card */
+.item-filme h3 {
+    font-size: 1rem;
+    margin: 10px 15px 5px;
+}
+
+.item-filme p {
+    font-size: 0.8rem;
+    color: #b3b3b3;
+    margin: 0 15px 15px;
+}
+
+/* --- Footer (Rodapé) --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    color: #808080;
+    border-top: 1px solid #333;
+}
