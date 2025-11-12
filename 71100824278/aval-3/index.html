@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IA — Laboratório Criativo</title>
+  <meta name="description" content="Site demonstrativo sobre Inteligência Artificial: recursos, demonstrações interativas e contato." />
+  <style>
+    /* Reset simples */
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#7c5cff;
+      --glass: rgba(255,255,255,0.03);
+      --glass-2: rgba(255,255,255,0.02);
+      --radius:14px;
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#071028 0%, #081426 40%, #041021 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:24px;
+    }
+    .container{max-width:1100px;margin:0 auto}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#3dd9c6);display:flex;align-items:center;justify-content:center;font-weight:700;color:#071021}
+    h1{font-size:1.25rem;margin:0}
+    p.lead{margin:0;color:var(--muted);font-size:0.95rem}
+
+    main{margin-top:28px}
+    .grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:20px}
+    .card{background:linear-gradient(180deg,var(--glass),var(--glass-2));padding:18px;border-radius:var(--radius);box-shadow:0 6px 24px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+
+    /* Hero */
+    .hero{display:flex;flex-direction:column;gap:12px}
+    .hero .eyebrow{color:var(--muted);font-size:0.85rem}
+    .hero h2{margin:0;font-size:1.6rem}
+    .hero p{margin:0;color:var(--muted)}
+
+    /* Demo (simples) */
+    .demo{display:flex;flex-direction:column;gap:12px}
+    textarea{width:100%;min-height:120px;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;resize:vertical;font-size:0.95rem}
+    button{background:var(--accent);border:none;padding:10px 14px;border-radius:10px;color:#071021;font-weight:600;cursor:pointer}
+    .controls{display:flex;gap:8px;align-items:center}
+
+    .output{background:rgba(0,0,0,0.15);padding:12px;border-radius:10px;min-height:80px}
+    .meta{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:0.9rem}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+    .feature{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+    .feature h4{margin:0 0 6px 0}
+    .feature p{margin:0;color:var(--muted);font-size:0.9rem}
+
+    /* Sidebar */
+    .sidebar .small{font-size:0.9rem;color:var(--muted)}
+    .list{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+    .item{padding:10px;border-radius:10px;background:rgba(255,255,255,0.02)}
+
+    footer{margin-top:22px;color:var(--muted);font-size:0.9rem;text-align:center}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden>AI</div>
+        <div>
+          <h1>Laboratório IA</h1>
+          <p class="lead">Explorando ideias — demos, conceitos e ferramentas.</p>
+        </div>
+      </div>
+      <nav aria-label="menu">
+        <button id="themeToggle" title="Alternar tema">Alternar tema</button>
+      </nav>
+    </header>
+
+    <main>
+      <div class="grid">
+        <section class="card">
+          <div class="hero">
+            <div class="eyebrow">Demonstração</div>
+            <h2>Chat com uma IA simulada</h2>
+            <p>Digite uma pergunta ou tema — o demo responde com uma resposta gerada localmente (exemplo não faz chamadas externas).</p>
+          </div>
+
+          <div class="demo" style="margin-top:12px">
+            <label for="prompt">Sua pergunta</label>
+            <textarea id="prompt" placeholder="Ex: Explique aprendizado de máquina em poucas linhas..."></textarea>
+            <div class="controls">
+              <button id="generate">Gerar resposta</button>
+              <div class="meta">Tempo estimado: <strong id="timeEst">—</strong></div>
+            </div>
+
+            <div class="output" id="output" aria-live="polite">Aguardando entrada...</div>
+
+            <div class="features">
+              <div class="feature">
+                <h4>Rápido</h4>
+                <p>Resposta instantânea gerada no navegador.</p>
+              </div>
+              <div class="feature">
+                <h4>Seguro</h4>
+                <p>Nenhuma informação é enviada para servidores externos neste demo.</p>
+              </div>
+              <div class="feature">
+                <h4>Educacional</h4>
+                <p>Ótimo para entender conceitos antes de usar APIs reais.</p>
+              </div>
+              <div class="feature">
+                <h4>Customizável</h4>
+                <p>Veja o código JS e ajuste como quiser.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <aside class="card sidebar" aria-label="bar lateral">
+          <div class="small">Sobre este site</div>
+          <p class="small" style="margin-top:8px">Protótipo feito para demonstração — contém HTML, CSS e JavaScript puros. Pode ser usado como base para integrar APIs de IA reais.</p>
+
+          <div class="list">
+            <div class="item">
+              <strong>Recursos</strong>
+              <div class="small">Documentação, tutoriais e exemplos de integração.</div>
+            </div>
+            <div class="item">
+              <strong>Contato</strong>
+              <div class="small">email@exemplo.com</div>
+            </div>
+            <div class="item">
+              <strong>Licença</strong>
+              <div class="small">Uso livre para aprendizado.</div>
+            </div>
+          </div>
+
+          <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+          <div>
+            <strong>Tópicos rápidos</strong>
+            <ul style="margin:8px 0 0 18px;color:var(--muted)">
+              <li>Processamento de linguagem natural</li>
+              <li>Visão computacional</li>
+              <li>Modelos generativos</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <footer>
+        Feito com ♥ — Experimente e personalize. Código simples, funcional e pronto para extensões.
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // JS simples para simular respostas de "IA" e alternar tema
+    const promptEl = document.getElementById('prompt');
+    const genBtn = document.getElementById('generate');
+    const out = document.getElementById('output');
+    const timeEst = document.getElementById('timeEst');
+    const themeToggle = document.getElementById('themeToggle');
+
+    // Pequeno conjunto de respostas genéricas para demonstração
+    const respostas = [
+      (q) => `Resumo: ${q.slice(0,120)}...\n\nExplicação breve: IA usa dados para aprender padrões e gerar previsões ou conteúdo.`,
+      (q) => `Ideias para ${q}: 1) Coletar dados limpos. 2) Treinar modelos. 3) Avaliar e iterar.`,
+      (q) => `Um passo-a-passo simples para ${q}: entender o problema → preparar dados → escolher modelo → treinar → avaliar.`,
+      (q) => `Pergunta interessante sobre ${q}! Em termos gerais, considere dividir o problema em subtarefas e aplicar validação cruzada.`
+    ];
+
+    function fakeThinking(prompt){
+      // calcula um "tempo" proporcional ao tamanho do prompt (simulado)
+      const base = Math.min(2500, 300 + prompt.length * 30);
+      return base;
+    }
+
+    function chooseResponse(prompt){
+      // escolhe uma resposta e a adapta
+      const idx = Math.floor(Math.random() * respostas.length);
+      return respostas[idx](prompt);
+    }
+
+    genBtn.addEventListener('click', ()=>{
+      const q = promptEl.value.trim();
+      if(!q){
+        out.textContent = 'Por favor escreva uma pergunta ou tema no campo acima.';
+        return;
+      }
+      const ms = fakeThinking(q);
+      timeEst.textContent = `${Math.round(ms/1000)}s`;
+      out.textContent = 'Pensando...';
+      genBtn.disabled = true;
+      setTimeout(()=>{
+        out.textContent = chooseResponse(q);
+        genBtn.disabled = false;
+      }, ms);
+    });
+
+    // Alternar cores (modo claro simples)
+    themeToggle.addEventListener('click', ()=>{
+      const root = document.documentElement;
+      if(root.style.getPropertyValue('--bg') === ''){
+        // inicial: vamos alternar para uma versão clara
+        root.style.setProperty('--bg','#f6f8fb');
+        root.style.setProperty('--card','#ffffff');
+        root.style.setProperty('--muted','#475569');
+        root.style.setProperty('--accent','#7c5cff');
+        document.body.style.color = '#061428';
+        document.body.style.background = 'linear-gradient(180deg,#f7fafc,#eef2ff)';
+      } else {
+        // voltar ao escuro
+        root.style.removeProperty('--bg');
+        root.style.removeProperty('--card');
+        root.style.removeProperty('--muted');
+        document.body.style.color = '';
+        document.body.style.background = '';
+      }
+    });
+
+    // Atalho: cmd/ctrl+enter para gerar
+    window.addEventListener('keydown', (e)=>{
+      if((e.ctrlKey || e.metaKey) && e.key === 'Enter'){
+        genBtn.click();
+      }
+    });
+  </script>
+<script src="script.js"></script></body>
+</html>
+<aside class="card sidebar" aria-label="bar lateral">
+  <h3>Sobre o Projeto</h3>
+  <span>Explorando o poder da Inteligência Artificial</span>
+
+  <div class="small" style="margin-top:8px">
+    Protótipo feito para demonstração — contém HTML, CSS e JavaScript puros. Pode ser usado como base para integrar APIs de IA reais.
+  </div>
+
+  <div class="list">
+    <div class="item">
+      <strong>Recursos</strong>
+      <div class="small">Documentação, tutoriais e exemplos de integração.</div>
+    </div>
+    <div class="item">
+      <strong>Contato</strong>
+      <div class="small">email@exemplo.com</div>
+    </div>
+  </div>
+</aside>
+<a href="https://exemplo.com">Texto do link</a>
+<img src="caminho-da-imagem.jpg" alt="descrição da imagem">
