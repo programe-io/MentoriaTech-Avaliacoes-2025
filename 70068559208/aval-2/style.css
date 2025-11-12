@@ -1,0 +1,68 @@
+/* styles.css */
+:root{
+  --bg: #0d0d0d;
+  --panel: #121212;
+  --accent: #00bfff;
+  --muted: #bfc7d2;
+  --card-shadow: rgba(0,0,0,0.6);
+  --radius: 10px;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:#eee}
+
+/* Topbar */
+.topbar{
+  position:sticky;top:0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 22px;background:linear-gradient(180deg,#0b0b0b,#121212);
+  border-bottom:2px solid rgba(0,191,255,0.08);
+}
+.brand{font-weight:700;font-size:18px;display:flex;gap:8px;align-items:center}
+.brand span{color:var(--accent);font-weight:800}
+.menu{display:flex;gap:14px}
+.menu a{color:#ddd;text-decoration:none;padding:8px 10px;border-radius:8px}
+.menu a.active, .menu a:hover{background:rgba(0,191,255,0.06);color:var(--accent)}
+
+/* Banner */
+.banner{background:linear-gradient(90deg, rgba(0,191,255,0.06), transparent);padding:48px 20px;text-align:center}
+.banner-inner h1{margin:0;font-size:28px;color:var(--accent)}
+.banner-inner p{margin:8px 0 0;color:var(--muted)}
+
+/* Container / posts */
+.container{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding:28px;max-width:1200px;margin:0 auto}
+.post{background:var(--panel);border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 30px var(--card-shadow);cursor:pointer;transition:transform .18s,box-shadow .18s}
+.post:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.7)}
+.post img{width:100%;height:160px;object-fit:cover;display:block}
+.post-content{padding:14px}
+.post-content h2{margin:0 0 8px;color:var(--accent);font-size:18px}
+.post-content p{margin:0 0 10px;color:var(--muted);font-size:14px}
+.meta{font-size:12px;color:#95a0ab;margin-top:6px}
+
+/* Contato */
+.contato{padding:30px 20px;background:transparent}
+.contato-inner{max-width:900px;margin:0 auto;background:var(--panel);padding:20px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+.contato-inner h2{margin-top:0;color:var(--accent)}
+form{display:grid;gap:10px}
+input[type="text"],input[type="email"],textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:#0b0b0b;color:#eee}
+button{background:var(--accent);color:#02111a;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:700}
+button:hover{opacity:0.95}
+
+/* Post detalhe */
+.post-detalhe{max-width:900px;margin:40px auto;background:var(--panel);padding:26px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+.post-detalhe h1{margin-top:0;color:var(--accent)}
+.post-detalhe img{width:100%;height:auto;border-radius:8px;margin:16px 0}
+.post-detalhe p{color:var(--muted);line-height:1.6}
+.post-detalhe ul, .post-detalhe ol{color:var(--muted)}
+
+/* Footer */
+footer{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:18px 24px;background:linear-gradient(180deg,#0b0b0b,#121212);border-top:2px solid rgba(0,191,255,0.06);color:#9aa6b2;position:relative}
+.credit{font-weight:700;color:#cfdfff}
+
+/* Responsive tweaks */
+@media (max-width:700px){
+  .topbar{padding:10px}
+  .banner-inner h1{font-size:20px}
+  .post img{height:140px}
+  footer{flex-direction:column;gap:6px}
+}
