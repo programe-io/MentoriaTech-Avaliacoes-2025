@@ -1,130 +1,132 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
 \}
 
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(120deg, #f6d365, #fda085);
-    color: #333;
-\}
-
-/* Header colorido */
+/* Cabeçalho */
 header {
-    background: linear-gradient(90deg, #ff6ec4, #7873f5);
-    padding: 60px;
-    text-align: center;
+    background: linear-gradient(135deg, #ff6ec4, #7873f5);
     color: #fff;
-    font-weight: bold;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    text-align: center;
+    padding: 40px 20px;
 \}
 
 header h1 {
     font-size: 3em;
     margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 \}
 
 header p {
-    font-size: 1.5em;
+    font-size: 1.2em;
+    opacity: 0.95;
 \}
 
-/* Navegação */
-nav { 
+/* Imagem do cabeçalho */
+header img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 0 0 12px 12px;
+\}
+
+/* Menu de navegação */
+nav {
+    background-color: #ff4b5c;
     display: flex;
     justify-content: center;
-    background-color: #ff3cac;
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+    flex-wrap: wrap;
+    padding: 15px;
 \}
 
 nav a {
     color: #fff;
-    padding: 15px 25px;
     text-decoration: none;
+    margin: 10px 15px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 \}
 
 nav a:hover {
-    background-color: #fff;
-    color: #ff3cac;
-    border-radius: 10px;
+    color: #ffe066;
 \}
 
 /* Layout principal */
 #row {
     display: flex;
     flex-wrap: wrap;
-    margin: 20px;
+    margin: 30px;
     gap: 20px;
 \}
 
-/* Aside colorido */
+/* Barra lateral */
 aside {
-    flex: 30%;
-    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    flex: 1 1 300px;
+    background-color: #fff0f5;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 \}
 
-/* Main colorido */
+aside h2, aside h3 {
+    margin-bottom: 10px;
+    color: #ff4b5c;
+\}
+
+aside p {
+    margin-bottom: 15px;
+    color: #333;
+\}
+
+aside img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+\}
+
+/* Conteúdo principal */
 main {
-    flex: 70%;
+    flex: 2 1 600px;
+    padding: 20px;
 \}
 
-/* Artigo */
 article {
-    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+\}
+
+article h2 {
+    color: #7873f5;
+    margin-bottom: 10px;
+\}
+
+article h5 {
+    color: #666;
+    font-size: 0.9em;
     margin-bottom: 20px;
 \}
 
-/* Imagens */
-img.perfil {
+article img {
     width: 100%;
-    border-radius: 15px;
-    margin-bottom: 10px;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 \}
 
-img.post {
-    width: 100%;
-    border-radius: 10px;
-    margin: 15px 0;
-\}
-
-/* Fake images coloridas */
-.fakeimage {
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    width: 100%;
-    padding: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-    color: white;
-    font-weight: bold;
-    border-radius: 10px;
-\}
-
-/* Footer colorido */
+/* Rodapé */
 footer {
-    background: linear-gradient(90deg, #667eea, #764ba2);
-    padding: 40px;
+    background: linear-gradient(135deg, #7873f5, #ff6ec4);
     color: #fff;
     text-align: center;
-    font-size: 14px;
-    box-shadow: 0px -4px 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 0.9em;
+    opacity: 0.95;
 \}
-
-/* Responsividade */
-@media screen and (max-width: 768px) {
-    #row {
-        flex-direction: column;
-    \}
-
-    aside {
-        margin-right: 0;
-        margin-bottom: 20px;
-    \}
-\}$0
+$0
