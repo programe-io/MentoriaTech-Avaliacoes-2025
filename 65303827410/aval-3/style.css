@@ -1,0 +1,177 @@
+/* --- Configurações Globais --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Um cinza bem claro para o fundo */
+    color: #333;
+    line-height: 1.6;
+}
+
+main {
+    max-width: 1000px; /* Limita a largura do conteúdo */
+    margin: 20px auto; /* Centraliza o conteúdo principal */
+    padding: 0 15px;
+}
+
+h1, h2, h3 {
+    color: #1a1a1a;
+}
+
+/* --- 1. Cabeçalho Global (Header) --- */
+header[role="banner"] { /* Adicionado 'role' para clareza, mas selecionando 'header' global */
+    background-color: #0a2540; /* Azul escuro corporativo */
+    color: white;
+    padding: 15px 30px;
+    display: flex; /* Alinha o logo e a navegação */
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #007bff; /* Detalhe em azul vivo */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+header nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+header nav li a:hover {
+    background-color: #007bff;
+}
+
+/* --- 2. Anúncio do Carro (Article) --- */
+.car-listing {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    padding: 20px;
+    overflow: hidden; /* MUITO IMPORTANTE: Contém os elementos flutuantes (img e aside) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 3. Cabeçalho do Anúncio (Article Header) --- */
+.car-listing header {
+    border-bottom: 2px solid #f0f2f5;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.car-listing h3 {
+    margin: 0;
+    font-size: 1.6em;
+    color: #007bff;
+}
+
+.car-listing .price {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #28a745; /* Verde para o preço */
+    margin: 5px 0 0 0;
+}
+
+/* --- 4. Imagem do Carro (img) --- */
+.car-listing img {
+    width: 60%; /* Imagem ocupa 60% da largura do <article> */
+    max-width: 100%; /* Garantia de responsividade */
+    float: left; /* Flutua para a esquerda */
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+/* --- 5. Ficha Técnica (Aside) --- */
+.car-specs {
+    width: 35%; /* Ocupa 35% (deixando 5% de espaço) */
+    float: right; /* Flutua para a direita */
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.car-specs h4 {
+    margin-top: 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.car-specs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.car-specs li {
+    padding: 4px 0;
+}
+
+.btn-financiamento {
+    display: block;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-financiamento:hover {
+    background-color: #0056b3;
+}
+
+/* --- 6. Descrição (Restante do conteúdo) --- */
+.description {
+    /* Esta div não precisa flutuar, mas podemos limpar o float */
+    /* do <img> se o <aside> for menor que ele. */
+    /* No entanto, como o <article> tem 'overflow: hidden', */
+    /* o layout se ajustará. */
+    padding-top: 15px;
+    clear: both; /* Garante que a descrição comece abaixo do <img> e <aside> */
+}
+
+/* --- Rodapé --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40;
+    color: #aaa;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+/* --- Ajuste Rápido para Telas Pequenas (Responsivo) --- */
+@media (max-width: 768px) {
+    /* Faz o <img> e o <aside> ocuparem 100% da largura e */
+    /* remove a flutuação, empilhando-os. */
+    .car-listing img,
+    .car-specs {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
