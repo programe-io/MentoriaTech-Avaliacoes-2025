@@ -1,68 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Página de Posts</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kimonos Carvalho – Loja Oficial</title>
+  <link rel="stylesheet" href="style.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
 <body>
+  <!-- Cabeçalho -->
   <header>
-    <div class="logo">LOGO</div>
-    <nav>
-      <a href="#">Início</a>
-      <a href="#">Amigos</a>
-      <a href="#">Perfil</a>
+    <div class="logo" aria-label="Kimonos Carvalho">🥋 Kimonos Carvalho</div>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
     </nav>
   </header>
 
-  <main>
-    <section class="cards">
-      <h2>Postagens Recentes</h2>
-
-      <div class="card">
-        <div class="card-header">
-          <img src="eltin.jpg" class="avatar" alt="Avatar">
-          <span class="username">FroJho</span>
-        </div>
-        <div class="card-image">
-          <img src="ELTINho.jpg" alt="Imagem do Post">
-        </div>
-        <div class="card-body">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos beatae quas nihil sed fugiat voluptatibus repellat delectus ut tempora adipisci eos et dolorem eum.</p>
-          <span class="timestamp">há 20 minutos</span>
-        </div>
+  <!-- Conteúdo principal -->
+  <main role="main">
+    <!-- Banner -->
+    <section class="banner" aria-labelledby="banner-title">
+      <div class="banner-inner">
+        <h1 id="banner-title">Força, Técnica e Tradição</h1>
+        <p>Encontre o kimono perfeito para o seu estilo de jiu-jitsu.</p>
+        <a href="#produtos" class="btn">Ver Produtos</a>
       </div>
+    </section>
 
-      <div class="card">
-        <div class="card-header">
-          <img src="eltin.jpg" class="avatar" alt="Avatar">
-          <span class="username">FroJho</span>
-        </div>
-        <div class="card-image">
-          <img src="ELTINho.jpg" alt="Imagem do Post">
-        </div>
-        <div class="card-body">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos beatae quas nihil sed fugiat voluptatibus repellat delectus ut tempora adipisci eos et dolorem eum.</p>
-          <span class="timestamp">há 10 minutos</span>
-        </div>
-      </div>
+    <!-- Produtos -->
+    <section id="produtos" class="produtos" aria-labelledby="produtos-title">
+      <h2 id="produtos-title">Nossos Kimonos</h2>
+      <div class="grade-produtos">
 
-      <div class="card">
-        <div class="card-header">
-          <img src="eltin.jpg" class="avatar" alt="Avatar">
-          <span class="username">FroJho</span>
-        </div>
-        <div class="card-image">
-          <img src="ELTINho.jpg" alt="Imagem do Post">
-        </div>
-        <div class="card-body">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos beatae quas nihil sed fugiat voluptatibus repellat delectus ut tempora adipisci eos et dolorem eum.</p>
-          <span class="timestamp">há 30 minutos</span>
-        </div>
+        <article class="card" aria-labelledby="p1-title">
+          <img src="kimono.png" alt="Kimono Branco" loading="lazy">
+          <h3 id="p1-title">Kimono Branco Pro</h3>
+          <p>Leve e resistente — ideal para treinos diários.</p>
+          <span class="preco">R$ 349,90</span>
+          <button type="button">Comprar</button>
+        </article>
+
+        <article class="card" aria-labelledby="p2-title">
+          <img src="kimonoazul.png" alt="Kimono Azul" loading="lazy">
+          <h3 id="p2-title">Kimono Azul Competidor</h3>
+          <p>Modelo aprovado para competições oficiais.</p>
+          <span class="preco">R$ 399,90</span>
+          <button type="button">Comprar</button>
+        </article>
+
+        <article class="card" aria-labelledby="p3-title">
+          <img src="kimonopreto.png" alt="Kimono Preto" loading="lazy">
+          <h3 id="p3-title">Kimono Preto Elite</h3>
+          <p>Design elegante e tecido premium para alto desempenho.</p>
+          <span class="preco">R$ 449,90</span>
+          <button type="button">Comprar</button>
+        </article>
+
       </div>
     </section>
   </main>
+
+  <!-- Rodapé -->
+  <footer id="contato" role="contentinfo">
+    <p>&copy; 2025 Kimonos Carvalho — Todos os direitos reservados.</p>
+    <p>Email: contato@Eltonhenriquekimonos.com.br</p>
+  </footer>
 </body>
 </html>
