@@ -1,0 +1,89 @@
+/* styles.css — Estilos externos para o site do São Paulo FC
+   Coloque este arquivo ao lado de site-sao-paulo-fc.html e
+   substitua o bloco <style> no HTML por:
+   <link rel="stylesheet" href="styles.css">
+*/
+:root{
+  --accent:#d40000;
+  --dark:#0b0b0b;
+  --muted:#6b6b6b;
+  --bg:#ffffff;
+  --card-bg:#ffffff;
+  --border: #eee;
+  --max-width:1100px;
+  --radius:12px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--dark);
+  margin:0;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{max-width:var(--max-width);margin:0 auto;padding:0 18px}
+
+/* Header / Nav */
+header{
+  background:linear-gradient(180deg,#fff 0,#f7f7f7 100%);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:40;
+}
+
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:56px;width:56px;object-fit:contain;border-radius:8px}
+nav a{margin-left:18px;text-decoration:none;color:var(--dark);font-weight:600}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;padding:48px 0;align-items:center}
+.hero h1{font-size:clamp(28px,4vw,44px);margin:0}
+.hero p{color:var(--muted);margin-top:12px}
+
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:0 6px 18px rgba(12,12,12,0.04)}
+
+.stadium img{width:100%;height:220px;object-fit:cover;border-radius:8px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+
+section{padding:42px 0;border-top:1px solid #f0f0f0}
+h2{margin:0 0 12px 0}
+
+.history p{color:var(--muted)}
+
+/* Elenco */
+.squad{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+.player{background:var(--card-bg);border-radius:10px;padding:12px;display:flex;gap:10px;align-items:center;border:1px solid #f0f0f0}
+.player img{width:56px;height:56px;object-fit:cover;border-radius:8px}
+
+.footer{background:var(--dark);color:#fff;padding:28px 0;margin-top:28px}
+
+/* Form e inputs */
+input[type="text"],input[type="email"],textarea{width:100%;padding:8px;border-radius:6px;border:1px solid #e6e6e6;margin-top:6px;font-family:inherit}
+button{cursor:pointer}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;padding:28px 0}
+  .nav a{display:none}
+  .brand{gap:8px}
+  .brand img{height:48px}
+  .grid{grid-template-columns:1fr}
+}
+
+/* Utility classes */
+.text-muted{color:var(--muted)}
+.text-accent{color:var(--accent);font-weight:700}
+
+/* Small visual polish */
+a{color:inherit}
+a:hover{opacity:0.88}
+
+/* Accessibility helpers */
+:focus{outline:2px dashed rgba(0,0,0,0.08);outline-offset:3px}
+
+/* End of styles.css */
