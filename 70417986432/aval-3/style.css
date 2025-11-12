@@ -1,30 +1,203 @@
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
+/* ===== Estilo Geral ===== */
 body {
-font-family: Arial, Helvetica, sans-serif;
-}
-header {
-background-color: rgb(207, 174, 230);
-padding: 60px;
-text-align: center;
-color: #fff;
-font-weight: bold;
-}
-nav {
-display: flex;
-background-color: #a183af;
-}
-nav a {
-color: #fff;
-padding: 10px;
-text-decoration: none;
-text-align: center;
-}
-nav a:hover {
-background-color: #ddd;
-color: #000;
+  background-color: #fffaf6; /* tom creme suave */
+  font-family: "Poppins", sans-serif;
+  color: #4a3f35;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
+/* ===== Cabeçalho ===== */
+header {
+  background-color: #fff9f9;
+  box-shadow: 0 3px 8px rgba(236, 72, 153, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid #fde2e4;
+}
+
+header h1 {
+  font-size: 1.9rem;
+  color: #e879f9; /* rosa pastel */
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+header h1:hover {
+  transform: scale(1.05);
+  color: #f472b6;
+}
+
+#cartButton {
+  background-color: #f9a8d4;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  box-shadow: 0 3px 8px rgba(249, 168, 212, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#cartButton:hover {
+  background-color: #f472b6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(244, 114, 182, 0.5);
+}
+
+/* ===== Cards de Bolos ===== */
+main {
+  padding: 2.5rem 2rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  background: linear-gradient(180deg, #fffaf6, #fff5f8);
+}
+
+main div {
+  background-color: #fffdfc;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 5px 12px rgba(255, 182, 193, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+main div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.25);
+}
+
+main img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  border-bottom: 2px solid #fde2e4;
+}
+
+main div:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== Texto e Botões ===== */
+h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #4a3f35;
+  margin: 12px 0 5px;
+}
+
+p {
+  font-size: 0.95rem;
+  color: #6b5b52;
+  margin-bottom: 12px;
+  padding: 0 14px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button.bg-pink-500 {
+  background-color: #f9a8d4;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 9px 15px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 8px rgba(249, 168, 212, 0.3);
+  transition: all 0.3s ease;
+}
+
+button.bg-pink-500:hover {
+  background-color: #f472b6;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(244, 114, 182, 0.45);
+}
+
+/* ===== Modal do Carrinho ===== */
+#cartModal {
+  backdrop-filter: blur(5px);
+}
+
+#cartModal .bg-white {
+  border-radius: 22px;
+  box-shadow: 0 8px 25px rgba(249, 168, 212, 0.3);
+  animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Rodapé ===== */
+footer {
+  background-color: #fff9f9;
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.9rem;
+  color: #826a63;
+  margin-top: 3rem;
+  border-top: 2px solid #fde2e4;
+}
+
+footer a {
+  color: #f472b6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: #ec4899;
+  text-decoration: underline;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 640px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  #cartButton {
+    padding: 7px 13px;
+    font-size: 0.9rem;
+  }
+
+  main {
+    padding: 1.5rem 1rem;
+  }
+
+  main img {
+    height: 190px;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+}

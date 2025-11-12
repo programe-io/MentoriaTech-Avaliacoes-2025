@@ -1,73 +1,220 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Página de Posts</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Delícias da Duda - Bolos Artesanais</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
-<body>
-  <header>
-    <div class="logo">LOGO</div>
-    <nav>
-      <a href="#">Início</a>
-      <a href="#">Amigos</a>
-      <a href="#">Perfil</a>
-    </nav>
+<body class="bg-[#fffaf6] font-sans text-gray-800">
+
+  <!-- Cabeçalho -->
+  <header class="bg-white shadow-md sticky top-0 z-10">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+      <!-- Marca -->
+      <div class="flex items-center gap-4">
+        <h1 class="text-2xl font-bold text-pink-600">🍰 Delícias da Duda</h1>
+        <!-- NAV: tag obrigatória adicionada -->
+        <nav aria-label="Menu principal" class="hidden sm:block">
+          <ul class="flex gap-4 ml-6">
+            <li><a href="#inicio" class="text-sm font-medium text-gray-600 hover:text-pink-600">Início</a></li>
+            <li><a href="#cardapio" class="text-sm font-medium text-gray-600 hover:text-pink-600">Cardápio</a></li>
+            <li><a href="#sobre" class="text-sm font-medium text-gray-600 hover:text-pink-600">Sobre</a></li>
+            <li><a href="#contato" class="text-sm font-medium text-gray-600 hover:text-pink-600">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Botão Carrinho -->
+      <div class="flex items-center gap-3">
+        <button id="cartButton" class="relative bg-pink-500 text-white px-4 py-2 rounded-xl font-semibold">
+          🛒 Carrinho
+          <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-xs text-white rounded-full px-2">0</span>
+        </button>
+
+        <!-- botão para abrir o menu em telas pequenas -->
+        <button id="mobileMenuButton" class="sm:hidden p-2 rounded-lg bg-gray-100" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu móvel (visível em sm:hidden quando clicado) -->
+    <div id="mobileMenu" class="sm:hidden hidden bg-white border-t border-gray-100">
+      <ul class="flex flex-col gap-2 p-4">
+        <li><a href="#inicio" class="text-base font-medium text-gray-700">Início</a></li>
+        <li><a href="#cardapio" class="text-base font-medium text-gray-700">Cardápio</a></li>
+        <li><a href="#sobre" class="text-base font-medium text-gray-700">Sobre</a></li>
+        <li><a href="#contato" class="text-base font-medium text-gray-700">Contato</a></li>
+      </ul>
+    </div>
   </header>
 
-
-  <main>
-    <section class="cards">
-      <h2>Postagens Recentes</h2>
-
-
-      <div class="card">
-        <div class="card-header">
-          <img src="duarda.jfif" class="avatar" alt="Avatar">
-          <span class="username">FroJho</span>
-        </div>
-        <div class="card-image">
-          <img src="duarda.jfif" alt="Imagem do Post">
-        </div>
-        <div class="card-body">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos beatae quas nihil sed fugiat voluptatibus repellat delectus ut tempora adipisci eos et dolorem eum.</p>
-          <span class="timestamp">há 20 minutos</span>
+  <!-- Lista de Bolos -->
+  <main id="cardapio" class="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <!-- Bolo 1 -->
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+      <img src="bolodechocolate.jpg" 
+           class="h-48 w-full object-cover" alt="Bolo de Chocolate">
+      <div class="p-4">
+        <h2 class="text-lg font-semibold">Bolo de Chocolate</h2>
+        <p class="text-sm text-gray-500 mb-2">Camadas ricas de chocolate e cobertura cremosa.</p>
+        <div class="flex justify-between items-center">
+          <span class="font-bold text-pink-600 text-lg">R$ 35,00</span>
+          <button onclick="addToCart('Bolo de Chocolate', 35)" class="bg-pink-500 hover:bg-pink-600 text-white px-3 py-1 rounded-lg text-sm">Adicionar</button>
         </div>
       </div>
+    </div>
 
-
-      <div class="card">
-        <div class="card-header">
-          <img src="duarda.jfif" class="avatar" alt="Avatar">
-          <span class="username">FroJho</span>
-        </div>
-        <div class="card-image">
-          <img src="duarda.jfif" alt="Imagem do Post">
-        </div>
-        <div class="card-body">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos beatae quas nihil sed fugiat voluptatibus repellat delectus ut tempora adipisci eos et dolorem eum.</p>
-          <span class="timestamp">há 10 minutos</span>
+    <!-- Bolo 2 -->
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+      <img src="bolodemorango.jpg" 
+           class="h-48 w-full object-cover" alt="Bolo de Morango">
+      <div class="p-4">
+        <h2 class="text-lg font-semibold">Bolo de Morango</h2>
+        <p class="text-sm text-gray-500 mb-2">Recheado com chantilly e morangos frescos.</p>
+        <div class="flex justify-between items-center">
+          <span class="font-bold text-pink-600 text-lg">R$ 40,00</span>
+          <button onclick="addToCart('Bolo de Morango', 40)" class="bg-pink-500 hover:bg-pink-600 text-white px-3 py-1 rounded-lg text-sm">Adicionar</button>
         </div>
       </div>
+    </div>
 
-
-      <div class="card">
-        <div class="card-header">
-          <img src="duarda.jfif" class="avatar" alt="Avatar">
-          <span class="username">FroJho</span>
-        </div>
-        <div class="card-image">
-          <img src="duarda.jfif" alt="Imagem do Post">
-        </div>
-        <div class="card-body">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos beatae quas nihil sed fugiat voluptatibus repellat delectus ut tempora adipisci eos et dolorem eum.</p>
-          <span class="timestamp">há 30 minutos</span>
+    <!-- Bolo 3 -->
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+      <img src="bolodecenoura.webp" 
+           class="h-48 w-full object-cover" alt="Bolo de Cenoura">
+      <div class="p-4">
+        <h2 class="text-lg font-semibold">Bolo de Cenoura</h2>
+        <p class="text-sm text-gray-500 mb-2">Tradicional com cobertura de chocolate caseiro.</p>
+        <div class="flex justify-between items-center">
+          <span class="font-bold text-pink-600 text-lg">R$ 30,00</span>
+          <button onclick="addToCart('Bolo de Cenoura', 30)" class="bg-pink-500 hover:bg-pink-600 text-white px-3 py-1 rounded-lg text-sm">Adicionar</button>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- Bolo 4 -->
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+      <img src="boloredvelvet.jpg" 
+           class="h-48 w-full object-cover" alt="Bolo Red Velvet">
+      <div class="p-4">
+        <h2 class="text-lg font-semibold">Bolo Red Velvet</h2>
+        <p class="text-sm text-gray-500 mb-2">Clássico americano com cobertura de cream cheese.</p>
+        <div class="flex justify-between items-center">
+          <span class="font-bold text-pink-600 text-lg">R$ 45,00</span>
+          <button onclick="addToCart('Bolo Red Velvet', 45)" class="bg-pink-500 hover:bg-pink-600 text-white px-3 py-1 rounded-lg text-sm">Adicionar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bolo 5 -->
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+      <img src="bolodelimao.jpg" 
+           class="h-48 w-full object-cover" alt="Bolo de Limão">
+      <div class="p-4">
+        <h2 class="text-lg font-semibold">Bolo de Limão</h2>
+        <p class="text-sm text-gray-500 mb-2">Fofinho, cítrico e com cobertura de merengue.</p>
+        <div class="flex justify-between items-center">
+          <span class="font-bold text-pink-600 text-lg">R$ 38,00</span>
+          <button onclick="addToCart('Bolo de Limão', 38)" class="bg-pink-500 hover:bg-pink-600 text-white px-3 py-1 rounded-lg text-sm">Adicionar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bolo 6 -->
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+      <img src="bolodecoco.jpg" 
+           class="h-48 w-full object-cover" alt="Bolo de Coco">
+      <div class="p-4">
+        <h2 class="text-lg font-semibold">Bolo de Coco</h2>
+        <p class="text-sm text-gray-500 mb-2">Bolo gelado e molhadinho com coco ralado.</p>
+        <div class="flex justify-between items-center">
+          <span class="font-bold text-pink-600 text-lg">R$ 32,00</span>
+          <button onclick="addToCart('Bolo de Coco', 32)" class="bg-pink-500 hover:bg-pink-600 text-white px-3 py-1 rounded-lg text-sm">Adicionar</button>
+        </div>
+      </div>
+    </div>
   </main>
+
+  <!-- Seções fictícias para âncoras (Início / Sobre / Contato) -->
+  <section id="sobre" class="max-w-6xl mx-auto p-6 mt-10">
+    <h2 class="text-xl font-semibold mb-2">Sobre</h2>
+    <p class="text-gray-600">Delícias da Duda — bolos artesanais feitos com carinho e ingredientes selecionados.</p>
+  </section>
+
+  <section id="contato" class="max-w-6xl mx-auto p-6 mt-6">
+    <h2 class="text-xl font-semibold mb-2">Contato</h2>
+    <p class="text-gray-600">Telefone: (86) 98829-0593 • Instagram: @deliciasdaduda</p>
+  </section>
+
+  <!-- Carrinho Modal -->
+  <div id="cartModal" class="hidden fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center">
+    <div class="bg-white rounded-2xl p-6 w-80 relative">
+      <h3 class="text-xl font-semibold mb-4">🛍️ Seu Carrinho</h3>
+      <ul id="cartItems" class="space-y-2 mb-4"></ul>
+      <p class="text-lg font-bold text-right text-pink-600 mb-4">Total: R$ <span id="cartTotal">0</span></p>
+      <button onclick="checkout()" class="bg-green-500 hover:bg-green-600 text-white w-full py-2 rounded-xl mb-2">Finalizar Pedido</button>
+      <button onclick="toggleCart()" class="bg-gray-300 hover:bg-gray-400 w-full py-2 rounded-xl">Fechar</button>
+    </div>
+  </div>
+
+  <script>
+    let cart = [];
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      document.getElementById('cartCount').textContent = cart.length;
+      alert(`${name} adicionado ao carrinho!`);
+    }
+
+    document.getElementById('cartButton').addEventListener('click', toggleCart);
+
+    function toggleCart() {
+      const modal = document.getElementById('cartModal');
+      modal.classList.toggle('hidden');
+      updateCart();
+    }
+
+    function updateCart() {
+      const list = document.getElementById('cartItems');
+      const total = document.getElementById('cartTotal');
+      list.innerHTML = '';
+      let sum = 0;
+      cart.forEach(item => {
+        sum += item.price;
+        const li = document.createElement('li');
+        li.classList.add('flex', 'justify-between');
+        li.innerHTML = `<span>${item.name}</span><span>R$ ${item.price}</span>`;
+        list.appendChild(li);
+      });
+      total.textContent = sum;
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+      }
+      alert("Pedido finalizado com sucesso! 🎂");
+      cart = [];
+      updateCart();
+      document.getElementById('cartCount').textContent = 0;
+      toggleCart();
+    }
+
+    // Toggle menu móvel
+    const mobileBtn = document.getElementById('mobileMenuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn && mobileBtn.addEventListener('click', () => {
+      const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+      mobileBtn.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
