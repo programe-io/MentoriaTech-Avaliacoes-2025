@@ -1,0 +1,152 @@
+/* Reset e Base */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Header e NAV - Cores Temáticas de Jogo */
+header {
+    background-color: #4a148c; /* Roxo Escuro (Realeza/Estratégia) */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+/* ------------------- MAIN, ARTICLE, ASIDE, e IMG ------------------- */
+.main-content-wrapper {
+    /* MAIN é o container que define o layout de duas colunas */
+    display: flex; 
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    gap: 30px; 
+}
+
+/* Estilo do ARTICLE */
+.game-review {
+    flex: 3; /* Ocupa a maior parte do espaço */
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da Imagem Principal (IMG) */
+.featured-image {
+    width: 100%; 
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+/* Estilo do ASIDE */
+.sidebar-info {
+    flex: 1; 
+    background-color: #ffcc80; /* Laranja Suave (Destaque) */
+    padding: 20px;
+    border-radius: 10px;
+    height: fit-content; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-info h3 {
+    color: #4a148c;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+/* Estilo da Imagem do Designer (IMG) na barra lateral */
+.designer-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin: 10px auto;
+    display: block;
+    border: 3px solid #4a148c;
+}
+
+.rating-box {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ff9800; /* Laranja Forte */
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Estilo do Botão do JavaScript */
+#toggle-button {
+    background-color: #00bcd4; /* Azul Turquesa */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#toggle-button:hover {
+    background-color: #0097a7;
+}
+
+footer {
+    background-color: #263238;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}// Função para mostrar/esconder as regras avançadas no ARTICLE
+function toggleRegras() {
+    const regras = document.getElementById('regras-extras');
+    const botao = document.getElementById('toggle-button');
+    
+    // Altera o estado de visualização
+    if (regras.style.display === 'none' || regras.style.display === '') {
+        regras.style.display = 'block';
+        botao.textContent = 'Esconder Regras Avançadas';
+    } else {
+        regras.style.display = 'none';
+        botao.textContent = 'Mostrar Regras Avançadas';
+    }
+}
+
+// Função para injetar o ano atual no rodapé
+document.addEventListener('DOMContentLoaded', () => {
+    const anoElement = document.getElementById('ano-atual');
+    const hoje = new Date();
+    
+    // Define o ano atual no elemento <footer>
+    if (anoElement) {
+        anoElement.textContent = hoje.getFullYear();
+    }
+});
