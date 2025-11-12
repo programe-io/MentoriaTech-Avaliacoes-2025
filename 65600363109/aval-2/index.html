@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Completa com Header, Nav, Article, Aside, Img e H3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #004aad;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Navegação */
+        nav {
+            background-color: #00357a;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Layout principal */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        /* Artigo principal */
+        article {
+            flex: 3;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        article h3 {
+            color: #004aad;
+        }
+
+        article img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        /* Barra lateral */
+        aside {
+            flex: 1;
+            background-color: #e9eefc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-left: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        aside h3 {
+            color: #00357a;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            background-color: #00357a;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+
+            aside {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Meu Site Completo</h1>
+        <p>Usando Header, Nav, Article, Aside, Img e H3</p>
+    </header>
+
+    <!-- Navegação -->
+    <nav>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Notícias</a></li>
+            <li><a href="#">Tutoriais</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <article>
+            <h3>Artigo Principal</h3>
+            <p>
+                Este é o conteúdo principal do site. Aqui você pode colocar textos, imagens,
+                notícias ou qualquer tipo de informação principal que o visitante deve ver primeiro.
+            </p>
+
+            <!-- Imagem dentro do artigo -->
+            <img src="https://placekitten.com/800/400" alt="Imagem ilustrativa de um gatinho fofo">
+
+            <p>
+                A imagem acima foi adicionada usando a tag <strong>&lt;img&gt;</strong>. Ela é usada para exibir
+                imagens na web, e o atributo <em>alt</em> serve para descrever a imagem caso ela não carregue.
+            </p>
+        </article>
+
+        <aside>
+            <h3>Informações Extras</h3>
+            <p>
+                O elemento <strong>&lt;aside&gt;</strong> serve para colocar conteúdo complementar, como:
+            </p>
+            <ul>
+                <li>Links relacionados</li>
+                <li>Publicidade</li>
+                <li>Postagens populares</li>
+                <li>Perfis de redes sociais</li>
+            </ul>
+        </aside>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 - Desenvolvido por Você</p>
+    </footer>
+<script src="script.js"></script></body>
+</html>
