@@ -1,0 +1,60 @@
+/* === ASIDE (barra lateral) === */
+.sidebar {
+    background: linear-gradient(180deg, #ffffff, #f0f0f0);
+    border-left: 5px solid #00a86b;
+    padding: 1.2em;
+    border-radius: 10px;
+    max-width: 300px;
+    margin: 2em auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    color: #0057b7;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.sidebar li:last-child {
+    border-bottom: none;
+}
+
+.sidebar .extra {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.sidebar a {
+    color: #00a86b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+/* Em telas grandes, exibe o aside ao lado do conteúdo */
+@media (min-width: 900px) {
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2em;
+        align-items: start;
+    }
+    .sidebar {
+        margin: 0;
+        position: sticky;
+        top: 2em;
+    }
+}
