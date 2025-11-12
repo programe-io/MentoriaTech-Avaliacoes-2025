@@ -1,0 +1,123 @@
+/* ======= ESTILO GERAL ======= */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background: linear-gradient(to bottom, #0a2a78, #1e3a8a);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ======= CABEÇALHO ======= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 25px;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* ======= CARDS ======= */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px;
+}
+
+/* CARD INDIVIDUAL */
+.card {
+  background-color: #111827;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* IMAGEM */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* CONTEÚDO */
+.info {
+  padding: 16px;
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.icon {
+  background-color: #1f2937;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.nome {
+  font-weight: bold;
+}
+
+.info p {
+  color: #d1d5db;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 10px 0;
+}
+
+.tempo {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header nav {
+    margin-top: 10px;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+}
