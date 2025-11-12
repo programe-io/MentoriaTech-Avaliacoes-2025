@@ -1,0 +1,107 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ======= HEADER ======= */
+header {
+  background: linear-gradient(90deg, #0f172a, #1e3a8a);
+  border-bottom: 2px solid #facc15;
+  transition: all 0.3s ease;
+}
+
+header:hover {
+  box-shadow: 0 4px 20px rgba(250, 204, 21, 0.3);
+}
+
+/* ======= LINKS DO MENU ======= */
+nav a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #facc15;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #facc15;
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ======= POSTS ======= */
+.post-card {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.post-card:hover {
+  transform: translateY(-6px);
+  border-color: #facc15;
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.3);
+}
+
+.post-card img {
+  transition: transform 0.4s ease;
+}
+
+.post-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ======= AVATAR ======= */
+.post-avatar {
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.4);
+}
+
+/* ======= TITULOS ======= */
+h2 {
+  color: #f9fafb;
+}
+
+h2:hover {
+  color: #facc15;
+  transition: color 0.3s ease;
+}
+
+/* ======= SCROLLBAR PERSONALIZADO ======= */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e3a8a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #facc15;
+  border-radius: 10px;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  .post-card {
+    max-width: 90%;
+  }
+}
