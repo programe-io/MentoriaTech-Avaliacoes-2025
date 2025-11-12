@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f7f9fc;
+  color: #222;
+  scroll-behavior: smooth;
+}
+
+/* ===== NAVBAR ===== */
+header {
+  background: linear-gradient(90deg, #007c2b, #00b84f);
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+
+.logo {
+  font-family: 'Russo One', sans-serif;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.logo span {
+  color: #ffd700;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: url('https://i.imgur.com/8djfAvU.jpeg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  background: #00b84f;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.hero-btn.secondary {
+  background: transparent;
+  border: 2px solid #fff;
+}
+
+.hero-btn:hover {
+  background: #ffd700;
+  color: #000;
+}
+
+/* ===== SEÇÕES ===== */
+.section-title {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 2rem;
+  color: #007c2b;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 3rem;
+}
+
+.article-img img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.article-img img:hover {
+  transform: scale(1.05);
+}
+
+.article-content {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== GALERIA ===== */
+.dreamhouse-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.dreamhouse-gallery img {
+  width: 30%;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.dreamhouse-gallery img:hover {
+  transform: scale(1.08);
+}
+
+/* ===== AUTOR ===== */
+.about-author {
+  background: #e9ffe9;
+  padding: 2rem;
+  text-align: center;
+  border-top: 3px solid #00b84f;
+}
+
+.author-img img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+  background: #007c2b;
+  color: white;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  max-width: 300px;
+  margin: 1rem;
+}
+
+.footer-links li {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #ffd700;
+}
+
+/* ===== ANIMAÇÕES ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
