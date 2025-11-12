@@ -1,0 +1,175 @@
+/* --- 1. Estilos Globais e Reset --- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9; /* Fundo cinza claro/off-white */
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* --- 2. HEADER (Topo e Navegação) --- */
+header {
+    background-color: #007bff; /* Azul primário */
+    color: #fff;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Deixa o menu fixo ao rolar */
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header img.logo {
+    height: 40px; /* Tamanho do logo */
+}
+
+/* Navegação */
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav li {
+    margin-left: 25px;
+}
+
+header nav a {
+    color: #fff;
+    font-weight: 600;
+}
+
+header nav a:hover {
+    color: #cce0ff;
+}
+
+/* --- 3. MAIN (Layout Principal Flex) --- */
+main {
+    /* Define o layout principal (conteúdo + aside) */
+    display: flex;
+    padding: 20px 50px;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- 4. H1 (Título Principal da Página) --- */
+h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+    text-align: center;
+    padding: 40px 0 20px;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+/* --- 5. ASIDE (Barra Lateral) --- */
+aside {
+    flex: 1; /* Ocupa 1 parte do espaço */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    height: fit-content; /* Ajusta a altura ao conteúdo */
+}
+
+aside h3 {
+    color: #007bff;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+aside ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/* --- 6. ARTICLE (Cards de Destino) --- */
+.destinos-populares {
+    flex: 3; /* Ocupa 3 partes do espaço (o conteúdo principal) */
+    
+    /* Configuração do Grid para os cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.destinos-populares h2 {
+    /* Ocupa a largura total na área do grid */
+    grid-column: 1 / -1; 
+    font-size: 1.8rem;
+    color: #007bff;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.card-destino {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-destino:hover {
+    transform: translateY(-5px); /* Efeito de elevação */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* IMG dentro do Article */
+.card-destino img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+}
+
+.info-destino {
+    padding: 15px;
+}
+
+.info-destino h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* --- 7. SPAN (Estilização de Destaques) --- */
+.info-destino .preco {
+    font-weight: bold;
+    color: #28a745; /* Verde para preço */
+    font-size: 1.1em;
+}
+
+.info-destino .tag-promo {
+    background-color: #ffc107; /* Amarelo para promoção */
+    color: #333;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* --- 8. FOOTER --- */
+footer {
+    background-color: #333;
+    color: #bbb;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
