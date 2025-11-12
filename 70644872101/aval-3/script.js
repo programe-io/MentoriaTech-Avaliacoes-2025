@@ -1,86 +1,140 @@
-* {
-        margin: 0;
-            padding: 0;
-                box-sizing: border-box;
-                }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cards Layout</title>
+  <style>
+    /* Fundo geral */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0033a0; /* Azul mais forte */
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-                body {
-                    font-family: Arial, Helvetica, sans-serif ;
-                    }
+    /* Cabeçalho com LOGO centralizado */
+    header {
+      width: 100%;
+      text-align: center;
+      padding: 30px 0;
+      font-weight: bold;
+      font-size: 2rem;
+      letter-spacing: 2px;
+    }
 
-                    header {
-                        background-color: green ;
-                            padding: 60px;
-                                text-align: center;
-                                    color: black;
-                                        font-weight: bold;
-                                        }
+    /* Container dos cards */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 20px;
+      max-width: 1200px;
+    }
 
-                                        nav {
-                                            display: flex;
-                                                background-color: #333;
-                                                }
+    /* Estilo dos cards */
+    .card {
+      background-color: #1d2535;
+      width: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
+    }
 
-                                                nav a {
-                                                    color: #fff;
-                                                        padding: 10px;
-                                                            text-decoration: none;
-                                                                text-align: center;
-                                                                }
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-                                                                nav a:hover {
-                                                                    background-color: #ddd;
-                                                                        color: #000;
-                                                                        }
+    /* Cabeçalho do card */
+    .card-header {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      gap: 10px;
+    }
 
-                                                                        #row {
-                                                                            display: flex;
-                                                                                flex-wrap: wrap;
-                                                                                }
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-image: url('https://via.placeholder.com/40');
+      background-size: cover;
+      background-position: center;
+    }
 
-                                                                                .fakeimage {
-                                                                                   background-color: #aaa; 
-                                                                                      width: 100%;
-                                                                                         padding: 20px;
-                                                                                            margin-bottom: 10px;
-                                                                                            }
+    .username {
+      font-weight: 600;
+      color: white;
+    }
 
-                                                                                            aside {
-                                                                                                flex: 30%;
-                                                                                                    background-color: #f1f1f1;
-                                                                                                        padding: 20px;
-                                                                                                        }
+    /* Imagem principal */
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
 
-                                                                                                        main {
-                                                                                                            flex: 70%;
-                                                                                                                background-color: white;
-                                                                                                                    padding: 20px;
-                                                                                                                    }
+    /* Conteúdo e rodapé */
+    .card-content {
+      padding: 15px;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
 
-                                                                                                                    article {
-                                                                                                                        box-shadow: 0px 0px 10px #aaa;
-                                                                                                                            padding: 5px;
-                                                                                                                                border-radius: 10px;
-                                                                                                                                }
+    .card-footer {
+      padding: 0 15px 15px 15px;
+      font-size: 0.8rem;
+      color: #aaa;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <header>LOGO</header>
 
-                                                                                                                                article img {
-                                                                                                                                    width: 100%;
-                                                                                                                                        margin-top: 10px;
-                                                                                                                                            margin-bottom: 10px;
-                                                                                                                                                border-radius: 5px;
-                                                                                                                                                }
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <div class="avatar"></div>
+        <div class="username">FroJho</div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=60" alt="Imagem 1">
+      <div class="card-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod beatae quas nihil sed fugit voluptatibus repellat delectus ut tempora debitis est dolorum deserunt.
+      </div>
+      <div class="card-footer">há 10 minutos</div>
+    </div>
 
-                                                                                                                                                footer {
-                                                                                                                                                    background-color: #444;
-                                                                                                                                                        padding: 40px;
-                                                                                                                                                            color: #fff;
-                                                                                                                                                                text-align: center;
-                                                                                                                                                                    font-size: 12px;
-                                                                                                                                                                    }
+    <div class="card">
+      <div class="card-header">
+        <div class="avatar"></div>
+        <div class="username">FroJho</div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=600&q=60" alt="Imagem 2">
+      <div class="card-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod beatae quas nihil sed fugit voluptatibus repellat delectus ut tempora debitis est dolorum deserunt.
+      </div>
+      <div class="card-footer">há 10 minutos</div>
+    </div>
 
-                                                                                                                                                                    @media screen and (max-width: 400px){
-                                                                                                                                                                        nav {
-                                                                                                                                                                                flex-direction: column;
-                                                                                                                                                                                    } 
-                                                                                                                                                                                    }
-}
+    <div class="card">
+      <div class="card-header">
+        <div class="avatar"></div>
+        <div class="username">FroJho</div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600&q=60" alt="Imagem 3">
+      <div class="card-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod beatae quas nihil sed fugit voluptatibus repellat delectus ut tempora debitis est dolorum deserunt.
+      </div>
+      <div class="card-footer">há 10 minutos</div>
+    </div>
+  </div>
+</body>
+</html>
