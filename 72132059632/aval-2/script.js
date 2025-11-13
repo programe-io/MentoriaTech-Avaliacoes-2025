@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fã Completo do Corinthians</title>
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+            background-color: #111;
+            color: #eee;
+            line-height: 1.6;
+        }
+
+        /* ===== CABEÇALHO ===== */
+        header {
+            background-color: #000;
+            padding: 20px 10px;
+            text-align: center;
+            border-bottom: 4px solid #fff;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 90px;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            color: #fff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 5px 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #c0c0c0;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: url("https://upload.wikimedia.org/wikipedia/commons/3/3f/Corinthians_Torcida_2012.jpg") center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-text {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        .hero h2 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: #fff;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #c0c0c0;
+        }
+
+        /* ===== CONTEÚDO PRINCIPAL ===== */
+        main {
+            display: block;
+            width: 100%;
+            margin: auto;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        section h2 {
+            color: #fff;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #fff;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .historia p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        /* ===== ASIDE ===== */
+        aside {
+            background-color: #1a1a1a;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 800px;
+            border-left: 5px solid #fff;
+            border-radius: 8px;
+        }
+
+        aside h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        aside ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        aside li {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        /* ===== GALERIA ===== */
+        .galeria .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .galeria img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.05);
+        }
+
+        /* ===== NOTÍCIAS ===== */
+        .noticias article {
+            background: #222;
+            border-left: 5px solid #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .noticias h3 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        /* ===== CONTATO ===== */
+        .contato form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .contato input,
+        .contato textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            background-color: #111;
+            color: #fff;
+        }
+
+        .contato button {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contato button:hover {
+            background: #c0c0c0;
+        }
+
+        /* ===== RODAPÉ ===== */
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+            border-top: 3px solid #fff;
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 700px) {
+            .hero-text {
+                padding: 20px;
+            }
+
+            .hero h2 {
+                font-size: 1.6em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav li {
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/5/53/Corinthians_simbolo.png" alt="Escudo do Corinthians">
+            <h1>Fã Completo do Corinthians</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#historia">História</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#noticias">Notícias</a></li>
+                <li><a href="#contato">Seja Fiel</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-text">
+                <h2>Bem-vindo, Fiel Torcedor!</h2>
+                <p>O Corinthians é mais que um time, é um sentimento! Viva a paixão alvinegra com o Fã Completo.</p>
+                <a href="#contato" class="btn">Junte-se à Fiel</a>
+            </div>
+        </section>
+
+        <section id="historia" class="historia">
+            <h2>Um Pouco da Nossa História</h2>
+            <p>
+                Fundado em <strong>1º de setembro de 1910</strong>, o <strong>Sport Club Corinthians Paulista</strong> nasceu da vontade de operários
+                paulistanos de terem um time do povo. Desde então, o Timão conquistou o Brasil e o mundo, com
+                títulos históricos e uma torcida que nunca abandona.
+            </p>
+            <p>
+                São <strong>mais de 100 anos de glórias</strong>, com conquistas como o <em>Mundial de Clubes da FIFA (2000 e 2012)</em>,
+                <em>Libertadores da América (2012)</em>, além de <em>Campeonatos Brasileiros</em> e <em>Paulistas</em> que marcaram gerações.
+            </p>
+        </section>
+
+        <!-- ===== ASIDE ===== -->
+        <aside>
+            <h3>Curiosidades da Fiel</h3>
+            <ul>
+                <li>🏆 Único time brasileiro bicampeão mundial invicto (2000 e 2012).</li>
+                <li>⚽ O nome “Corinthians” foi inspirado em um time inglês: Corinthian FC.</li>
+                <li>🔥 A torcida Fiel é considerada uma das maiores e mais apaixonadas do mundo.</li>
+                <li>🏟️ A Neo Química Arena foi palco da abertura da Copa do Mundo de 2014.</li>
+                <li>💪 O lema do clube é: “Aqui é Corinthians!”</li>
+            </ul>
+        </aside>
+
+        <section id="galeria" class="galeria">
+            <h2>Galeria da Fiel</h2>
+            <div class="grid">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Torcida_Corinthians_Arena_2015.jpg" alt="Torcida Corinthians">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Arena_Corinthians_2014.jpg" alt="Arena Corinthians">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Cassio_Corinthians.jpg" alt="Cássio, ídolo corinthiano">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Fiel_Torcida_Corinthians_2022.jpg" alt="Fiel Torcida">
+            </div>
+        </section>
+
+        <section id="noticias" class="noticias">
+            <h2>Notícias do Timão</h2>
+
+            <article>
+                <h3>Corinthians Anuncia Novo Reforço!</h3>
+                <p>O Timão fechou com um novo atacante para reforçar o elenco em 2025. A Fiel já está empolgada!</p>
+            </article>
+
+            <article>
+                <h3>Fiel Bate Recorde de Público na Neo Química Arena</h3>
+                <p>Mais de 47 mil torcedores empurraram o Corinthians em uma noite inesquecível!</p>
+            </article>
+        </section>
+
+        <section id="contato" class="contato">
+            <h2>Seja um Fã Completo da Fiel!</h2>
+            <form>
+                <input type="text" placeholder="Seu nome completo" required>
+                <input type="email" placeholder="Seu e-mail" required>
+                <input type="text" placeholder="Cidade / Estado" required>
+                <textarea placeholder="Por que você ama o Corinthians?" rows="5" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Fã Completo do Corinthians — Orgulho da Fiel! ⚫⚪</p>
+    </footer>
+
+</body>
+</html>
