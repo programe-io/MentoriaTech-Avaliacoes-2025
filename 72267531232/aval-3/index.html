@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beleza & Maquiagem — Loja</title>
+  <meta name="description" content="Landing page de maquiagem: produtos, looks e contato. Feito com Tailwind CSS (CDN)." />
+  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body class="antialiased bg-slate-50 text-slate-800">
+  <!-- Cabeçalho -->
+  <header class="bg-white shadow-sm">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold">B</div>
+        <div>
+          <h1 class="text-lg font-semibold">Belleza</h1>
+          <p class="text-xs text-slate-500">Maquiagem artesanal</p>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#produtos" class="hover:text-pink-500">Produtos</a>
+        <a href="#looks" class="hover:text-pink-500">Looks</a>
+        <a href="#sobre" class="hover:text-pink-500">Sobre</a>
+        <a href="#contato" class="px-3 py-2 bg-pink-500 text-white rounded-md">Contato</a>
+      </nav>
+
+      <div class="md:hidden">
+        <button id="menu-btn" aria-label="Abrir menu" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="#produtos" class="block">Produtos</a>
+        <a href="#looks" class="block">Looks</a>
+        <a href="#sobre" class="block">Sobre</a>
+        <a href="#contato" class="block px-3 py-2 bg-pink-500 text-white rounded-md text-center">Contato</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="container mx-auto px-6 py-12">
+    <!-- HERO -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold">Transforme seu look com produtos que celebram sua beleza</h2>
+        <p class="mt-4 text-slate-600">Cosméticos cruelty-free, pigmentação intensa e acabamento profissional. Descubra batons, paletas e primers escolhidos por especialistas.</p>
+
+        <div class="mt-6 flex gap-3">
+          <a href="#produtos" class="px-5 py-3 bg-pink-500 text-white rounded-md">Ver produtos</a>
+          <a href="#looks" class="px-5 py-3 border rounded-md">Inspiração</a>
+        </div>
+
+        <ul class="mt-6 text-sm text-slate-500 space-y-2">
+          <li>✔ Entrega rápida</li>
+          <li>✔ Produtos testados por makeup artists</li>
+          <li>✔ Política de devolução em 30 dias</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg border">
+          <img src="https://images.unsplash.com/photo-1543168256-418811576070?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Maquiagem" class="rounded-lg w-full h-72 object-cover" />
+          <div class="mt-4 grid grid-cols-3 gap-3">
+            <div class="p-3 bg-pink-50 rounded-lg text-center">
+              <div class="text-xs text-slate-500">Batons</div>
+              <div class="font-semibold">+50 tons</div>
+            </div>
+            <div class="p-3 bg-pink-50 rounded-lg text-center">
+              <div class="text-xs text-slate-500">Paletas</div>
+              <div class="font-semibold">Matte & Glow</div>
+            </div>
+            <div class="p-3 bg-pink-50 rounded-lg text-center">
+              <div class="text-xs text-slate-500">Primer</div>
+              <div class="font-semibold">Acabamento perfeito</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section id="produtos" class="mt-12">
+      <h3 class="text-2xl font-bold">Produtos em destaque</h3>
+      <p class="mt-2 text-slate-600">Selecionamos nossos best-sellers para você experimentar.</p>
+
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card produto repetível -->
+        <article class="bg-white rounded-xl p-4 border shadow-sm">
+          <img src="https://images.unsplash.com/photo-1543353071-087092ec393c?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Batom" class="w-full h-36 object-cover rounded-md" />
+          <h4 class="mt-3 font-semibold">Batom Líquido Velvet</h4>
+          <p class="text-sm text-slate-500 mt-1">Longa duração e acabamento acetinado.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="font-bold">R$49</div>
+            <button class="px-3 py-1 bg-pink-500 text-white rounded-md text-sm">Comprar</button>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-xl p-4 border shadow-sm">
+          <img src="https://images.unsplash.com/photo-1556228453-15f22de6c1f8?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Paleta" class="w-full h-36 object-cover rounded-md" />
+          <h4 class="mt-3 font-semibold">Paleta Essentials</h4>
+          <p class="text-sm text-slate-500 mt-1">Cores versáteis para dia e noite.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="font-bold">R$129</div>
+            <button class="px-3 py-1 bg-pink-500 text-white rounded-md text-sm">Comprar</button>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-xl p-4 border shadow-sm">
+          <img src="https://images.unsplash.com/photo-1580222103882-3b5b3b7c1f5d?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Primer" class="w-full h-36 object-cover rounded-md" />
+          <h4 class="mt-3 font-semibold">Primer Blur</h4>
+          <p class="text-sm text-slate-500 mt-1">Suaviza poros e aumenta a fixação.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="font-bold">R$79</div>
+            <button class="px-3 py-1 bg-pink-500 text-white rounded-md text-sm">Comprar</button>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-xl p-4 border shadow-sm">
+          <img src="https://images.unsplash.com/photo-1592878817126-07c6a1b3f0b2?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Iluminador" class="w-full h-36 object-cover rounded-md" />
+          <h4 class="mt-3 font-semibold">Iluminador Glow</h4>
+          <p class="text-sm text-slate-500 mt-1">Brilho natural e construtível.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="font-bold">R$69</div>
+            <button class="px-3 py-1 bg-pink-500 text-white rounded-md text-sm">Comprar</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- LOOKS / GALERIA -->
+    <section id="looks" class="mt-12">
+      <h3 class="text-2xl font-bold">Inspiração de looks</h3>
+      <p class="mt-2 text-slate-600">Veja combinações criativas feitas pelos nossos artistas.</p>
+
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <figure class="bg-white rounded-lg overflow-hidden shadow-sm border">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Look 1" class="w-full h-56 object-cover" />
+          <figcaption class="p-4 text-sm">Olho esfumado + batom nude.</figcaption>
+        </figure>
+        <figure class="bg-white rounded-lg overflow-hidden shadow-sm border">
+          <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Look 2" class="w-full h-56 object-cover" />
+          <figcaption class="p-4 text-sm">Glow intenso para festas.</figcaption>
+        </figure>
+        <figure class="bg-white rounded-lg overflow-hidden shadow-sm border">
+          <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Look 3" class="w-full h-56 object-cover" />
+          <figcaption class="p-4 text-sm">Maquiagem natural do dia a dia.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="mt-12 bg-white rounded-xl p-6 border shadow-sm">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+        <div class="md:col-span-2">
+          <h3 class="text-2xl font-bold">Sobre a Belleza</h3>
+          <p class="mt-2 text-slate-600">Somos uma marca independente focada em qualidade, sustentabilidade e inclusão. Nossos produtos são formulados para todos os tons de pele.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-sm text-slate-500">Atendimento</div>
+          <div class="font-semibold mt-1">Seg — Sex, 9h — 18h</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="mt-12">
+      <h3 class="text-2xl font-bold">Fale conosco</h3>
+      <p class="mt-2 text-slate-600">Dúvidas sobre produtos, pedidos ou parcerias? Envie uma mensagem.</p>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form class="bg-white rounded-xl p-6 border shadow-sm" onsubmit="event.preventDefault(); alert('Mensagem enviada (demo)');">
+          <label class="block">
+            <span class="text-sm text-slate-600">Nome</span>
+            <input required class="mt-1 block w-full rounded-md border px-3 py-2" />
+          </label>
+          <label class="block mt-4">
+            <span class="text-sm text-slate-600">E-mail</span>
+            <input type="email" required class="mt-1 block w-full rounded-md border px-3 py-2" />
+          </label>
+          <label class="block mt-4">
+            <span class="text-sm text-slate-600">Mensagem</span>
+            <textarea required class="mt-1 block w-full rounded-md border px-3 py-2" rows="4"></textarea>
+          </label>
+          <div class="mt-4">
+            <button type="submit" class="px-4 py-2 bg-pink-500 text-white rounded-md">Enviar</button>
+          </div>
+        </form>
+
+        <div class="bg-white rounded-xl p-6 border shadow-sm">
+          <h4 class="font-semibold">Onde estamos</h4>
+          <p class="mt-2 text-sm text-slate-600">Rua Exemplo, 123 — Sala 4 — São Paulo, SP</p>
+          <p class="mt-2 text-sm text-slate-600">Email: contato@belleza.com.br</p>
+          <div class="mt-4">
+            <a href="#" class="inline-block px-4 py-2 bg-pink-500 text-white rounded-md">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="bg-white border-t">
+    <div class="container mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="text-sm text-slate-600">© <span id="year"></span> Belleza. Todos os direitos reservados.</div>
+      <div class="flex gap-4">
+        <a href="#" class="text-sm text-slate-500 hover:text-pink-500">Política de Privacidade</a>
+        <a href="#" class="text-sm text-slate-500 hover:text-pink-500">Termos</a>
+        <a href="#" class="text-sm text-slate-500 hover:text-pink-500">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ano dinâmico
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn && menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+<script src="script.js"></script></body>
+</html>
