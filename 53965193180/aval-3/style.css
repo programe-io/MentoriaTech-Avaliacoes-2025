@@ -1,0 +1,127 @@
+/* ======= RESET ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ======= BODY ======= */
+body {
+  background: linear-gradient(to bottom, #0f2167, #0b1450);
+  min-height: 100vh;
+  color: white;
+}
+
+/* ======= HEADER ======= */
+header {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+header nav a:hover {
+  color: #7ab8ff;
+}
+
+header .logo {
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* ======= MAIN LAYOUT ======= */
+main {
+  padding: 20px;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-items: center;
+}
+
+/* ======= POST CARD ======= */
+.card {
+  width: 100%;
+  max-width: 380px;
+  background: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+}
+
+/* ======= CARD HEADER ======= */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+}
+
+.card-header img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #3da9ff;
+  object-fit: cover;
+}
+
+.card-header h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* ======= CARD IMAGE ======= */
+.card img.post-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* ======= CARD CONTENT ======= */
+.card-content {
+  padding: 20px;
+}
+
+.card-content p {
+  font-size: 14px;
+  line-height: 1.4rem;
+  text-align: justify;
+}
+
+.card-content .time {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #d0d0d0;
+}
+
+/* ======= RESPONSIVO ======= */
+@media (min-width: 768px) {
+  header nav {
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  header nav {
+    display: none;
+  }
+}
