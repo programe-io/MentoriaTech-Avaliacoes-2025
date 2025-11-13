@@ -1,0 +1,270 @@
+/* --- Configurações Básicas --- */
+body {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    background-color: #f8f8f8; /* Fundo suave */
+    color: #1a1a1a; /* Texto Preto */
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Cores de Destaque AZUL */
+.primary-color { color: #1a1a1a; }
+.accent-color { color: #007bff; } /* Azul Vibrante para Ação */
+.cta-bg { background-color: #007bff; }
+.cta-bg:hover { background-color: #0056b3; } /* Azul mais escuro no hover */
+
+/* --- BARRA SUPERIOR (Preta) --- */
+.top-info-bar {
+    background-color: #1a1a1a; /* Fundo Preto */
+    color: #ccc;
+    font-size: 12px;
+    padding: 8px 0;
+    text-align: center;
+}
+
+/* --- CABEÇALHO PRINCIPAL (Branco e Preto) --- */
+header {
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.search-bar {
+    flex-grow: 1;
+    margin: 0 30px;
+}
+
+.search-bar input {
+    padding: 12px 20px;
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.search-bar input:focus {
+    border-color: #007bff; /* Borda Azul no foco */
+    outline: none;
+}
+
+.user-actions a {
+    margin-left: 20px;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.user-actions a:hover {
+    color: #007bff; /* Hover Azul */
+}
+
+/* --- NAVEGAÇÃO DE CATEGORIAS --- */
+nav {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li a {
+    display: block;
+    padding: 15px 25px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav li a:hover {
+    background-color: #007bff; /* Fundo Azul no hover */
+    color: white;
+}
+
+/* --- LAYOUT PRINCIPAL: Sidebar e Conteúdo --- */
+.main-content-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* --- SIDEBAR DE CATEGORIAS --- */
+.sidebar {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar h3 {
+    color: #007bff; /* Título Azul */
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.sidebar li a {
+    display: block;
+    padding: 8px 0;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s, font-weight 0.2s;
+}
+
+.sidebar li a:hover {
+    color: #007bff; /* Hover Azul */
+    font-weight: bold;
+}
+
+/* --- BANNER DE DESTAQUE (Fundo Azul) --- */
+.hero-banner {
+    height: 400px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Usando a Imagem de Placeholder para simular o banner */
+    background: url('https://static.netshoes.com.br/bnn/l_netshoes/2025-11-11/1426_mk_vulca_desk_full1.gif') no-repeat center center;
+    background-size: cover;
+    color: rgba(240, 240, 240, 0);
+}
+
+.hero-text h2 {
+    font-size: 48px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0); /* Sombra para destaque no banner */
+}
+
+.hero-text p {
+    font-size: 20px;
+}
+
+/* --- CATÁLOGO DE PRODUTOS (GRID) --- */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    /* Efeito Dinâmico: Levantamento no hover */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-name {
+    font-weight: 600;
+    font-size: 17px;
+    margin-bottom: 5px;
+    height: 40px; 
+}
+
+.old-price {
+    color: #777;
+    text-decoration: line-through;
+    font-size: 15px;
+}
+
+.current-price {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 5px 0 10px 0;
+    display: block;
+    color: #007bff; /* Preço em Azul */
+}
+
+.cta-button {
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* --- RODAPÉ ELABORADO (Fundo Preto) --- */
+footer {
+    background-color: #1a1a1a; /* Fundo Preto */
+    color: #5f5f5f;
+    padding: 40px 0;
+    margin-top: 50px;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.footer-links h4 {
+    color: white;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #007bff; /* Hover Azul no rodapé */
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    text-align: center;
+    font-size: 12px;
+}
