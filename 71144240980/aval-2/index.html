@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelvy | Portfólio de Desenvolvimento e Habilidades</title>
+    <style>
+        /* =======================================================
+         * CSS: Centralização Total (Flexbox) e Letras em Branco
+         * ======================================================= */
+        
+        /* Estilos Globais e Centralização */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117; 
+            color: #ffffff; /* Letras em branco puro */
+            
+            /* COMANDOS DE CENTRALIZAÇÃO TOTAL (Horizontal e Vertical) */
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            min-height: 100vh; /* Garante que o body ocupe a altura total da tela */
+            flex-direction: column; /* Coloca os elementos (header, nav, main, footer) um abaixo do outro */
+        }
+        
+        /* Cabeçalho */
+        header {
+            text-align: center;
+            padding: 50px 20px 30px; 
+            background-color: #161b22; 
+            color: white; 
+            border-bottom: 2px solid #2f343a;
+            width: 100%; 
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 2.5em; 
+            color: #58a6ff; 
+            margin-bottom: 5px;
+        }
+        header p {
+            font-size: 1.1em;
+            color: #ffffff;
+        }
+
+        /* CSS para NAV */
+        nav {
+            width: 100%;
+            background-color: #1f242b;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #58a6ff;
+        }
+        
+        /* Container Principal (Organização Central) - Tag MAIN */
+        main {
+            max-width: 900px;
+            width: 90%; 
+            margin: 40px auto; 
+            background: #161b22;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); 
+        }
+
+        /* Seções/Artigos (estilo aplicado à nova tag ARTICLE) */
+        article { /* Alterado de 'section' para 'article' */
+            margin-bottom: 35px;
+            padding: 25px;
+            border-left: 4px solid #58a6ff; 
+            background-color: #0d1117; 
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            text-align: left; /* Alinha o texto dentro do artigo para melhor leitura */
+        }
+        article:hover { /* Alterado de 'section:hover' para 'article:hover' */
+            transform: translateY(-4px); 
+            box-shadow: 0 5px 15px rgba(88, 166, 255, 0.15); 
+        }
+        
+        /* Títulos de Artigo */
+        h2 {
+            font-size: 1.8em;
+            color: #58a6ff; 
+            border-bottom: 1px solid #2f343a;
+            padding-bottom: 10px;
+            margin-top: 0;
+            text-align: center; /* Títulos centralizados */
+        }
+        
+        /* CSS para ASIDE */
+        aside {
+            background-color: #1f242b; /* Cor de fundo escura */
+            padding: 20px;
+            margin: 35px 0;
+            border-radius: 8px;
+            border-right: 4px solid #58a6ff; /* Destaque lateral */
+            text-align: center; /* Centraliza o texto interno */
+        }
+        aside h3 {
+            color: #ffffff; /* Título em branco (como h3, segue o requisito) */
+            font-size: 1.4em;
+            margin-top: 0;
+        }
+        aside p {
+            color: #ccc;
+            font-style: italic;
+        }
+
+        /* Listas gerais */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 12px; 
+            color: #ffffff;
+        }
+        ul li::before {
+            content: "✨"; 
+            color: #58a6ff;
+            font-weight: bold;
+            display: inline-block;
+            width: 1.2em;
+            margin-left: -1.2em;
+        }
+        
+        /* Negrito e Italico */
+        b, i {
+            color: #ffffff; 
+        }
+
+        /* Imagem de Perfil */
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 25px;
+            border: 4px solid #58a6ff; 
+            box-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+        }
+
+        /* Rodapé */
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+            font-size: 0.9em;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <h1>KELVY | ESTUDANTE DE DESENVOLVIMENTO DE SISTEMAS</h1>
+        <p>Tecnologia & Lógica | Corredor | Gamer Competitivo</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR07w2T2Z2w7W4kP6o-mI7Z7F2F1tF1v5F4xQ&s" alt="Letra K estilizada em azul" class="profile-pic">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#introducao">Sobre Mim</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        
+        <article id="introducao"> <h2>👋 Sobre Mim</h2>
+            <p>Oi, sou <b>Kelvy</b>! Atualmente, <b>estou estudando Desenvolvimento de Sistemas</b> e aplicando o <b>foco e o raciocínio rápido</b> que aprendi na <b>corrida, luta</b> e em <b>jogos eletrônicos</b> na minha formação. Gosto de jogar no celular, computador, PS3 e também de praticar <b>futebol</b>.</p>
+        </article>
+
+        ---
+
+        <article id="habilidades"> <h2>🛠️ Habilidades Técnicas & Pessoais</h2>
+            <ul>
+                <li><b>Habilidade Pessoal (Corrida & Luta):</b> <b>Resistência, Disciplina</b> e Habilidade de manter o <b>foco</b> em metas de longo prazo.</li>
+                <li><b>Habilidade Pessoal (Jogos):</b> <b>Raciocínio Lógico Acelerado</b> e <b>Coordenação Olho-Mão</b> (excelente para codificação e solução de <i>bugs</i>).</li>
+                <li><b>Em Foco (Estudo):</b> Desenvolvimento <b>Front-end</b> e conceitos de <b>Lógica de Programação</b>.</li>
+            </ul>
+        </article>
+
+        ---
+        
+        <aside>
+            <h3>💡 Foco de Estudo Atual</h3>
+            <p>Meu foco principal agora é o **Desenvolvimento de Sistemas**.</p>
+        </aside>
+
+        ---
+
+        <article id="contato"> <h2>📞 Contato</h2>
+            <p>Atualmente, <b>não possuo contatos de redes sociais ou profissionais.</b></p>
+        </article>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Kelvy. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
