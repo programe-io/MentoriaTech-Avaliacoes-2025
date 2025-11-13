@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futebol Total</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2936/2936757.png">
+
+  <!-- ====== ESTILOS PERSONALIZADOS ====== -->
+  <style>
+    :root {
+      --verde-primario: #16a34a;
+      --verde-escuro: #14532d;
+      --amarelo: #facc15;
+      --cinza-fundo: #f9fafb;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--cinza-fundo);
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    /* ====== CABEÇALHO ====== */
+    header {
+      background: linear-gradient(90deg, var(--verde-primario), var(--verde-escuro));
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    header nav a {
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: var(--amarelo);
+    }
+
+    /* ====== BOTÕES ====== */
+    .btn {
+      display: inline-block;
+      background-color: var(--verde-primario);
+      color: #fff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn:hover {
+      background-color: var(--verde-escuro);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ====== CARDS ====== */
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      transition: transform 0.3s ease;
+    }
+
+    .card img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ====== RODAPÉ ====== */
+    footer {
+      background-color: var(--verde-escuro);
+      color: #e2e8f0;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--amarelo);
+      text-decoration: underline;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    /* ====== MENU MOBILE ====== */
+    #menu-mobile {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      #menu-mobile {
+        display: block;
+      }
+
+      #menu-links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--verde-escuro);
+        text-align: center;
+        padding: 1rem;
+      }
+
+      #menu-links a {
+        display: block;
+        padding: 0.5rem 0;
+        color: white;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      #menu-links a:hover {
+        color: var(--amarelo);
+      }
+
+      #menu-links.show {
+        display: flex;
+      }
+    }
+
+    /* ====== ANIMAÇÕES ====== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    /* ====== SPAN DE DESTAQUE ====== */
+    .highlight {
+      color: var(--amarelo);
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+  <!-- ====== CABEÇALHO ====== -->
+  <header class="py-4">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold tracking-wide">
+        ⚽ Futebol <span class="highlight">Total</span>
+      </h1>
+
+      <!-- Menu desktop -->
+      <nav class="space-x-6">
+        <a href="#noticias">Notícias</a>
+        <a href="#times">Times</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <!-- Ícone menu mobile -->
+      <div id="menu-mobile" class="text-3xl cursor-pointer select-none">☰</div>
+    </div>
+
+    <!-- Links do menu mobile -->
+    <div id="menu-links" class="md:hidden">
+      <a href="#noticias">Notícias</a>
+      <a href="#times">Times</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </header>
+
+  <!-- ====== CONTEÚDO PRINCIPAL ====== -->
+  <main class="flex-1 container mx-auto px-6 py-10">
+
+    <!-- SEÇÃO DESTAQUE -->
+    <section class="flex flex-col md:flex-row items-center gap-6 bg-white rounded-xl shadow-lg p-6 mb-10">
+      <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=80" 
+           alt="Jogo de futebol" class="rounded-lg w-full md:w-1/2">
+      <div class="md:w-1/2">
+        <h2 class="text-3xl text-green-700 mb-3 font-bold">
+          A paixão pelo <span class="highlight">futebol</span> nunca para!
+        </h2>
+        <p class="text-gray-700 mb-4">
+          O futebol é mais do que um esporte — é emoção, união e tradição.  
+          Acompanhe as últimas <span class="highlight">notícias e curiosidades</span> sobre o mundo da bola.
+        </p>
+        <a href="#noticias" class="btn">Ler mais</a>
+      </div>
+    </section>
+
+    <!-- SEÇÃO NOTÍCIAS -->
+    <section id="noticias">
+      <h3 class="text-2xl font-bold text-green-700 mb-6">Últimas Notícias</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="card p-5">
+          <img src="https://images.unsplash.com/photo-1602220533239-8e3e1c7b6c6e?auto=format&fit=crop&w=600&q=80" class="mb-4" alt="Notícia">
+          <h4 class="font-semibold text-lg mb-2">Clássico termina em empate emocionante</h4>
+          <p class="text-sm text-gray-600 mb-3">Em um jogo disputado até o fim, os rivais empataram em 2x2.</p>
+          <a href="#" class="text-green-700 font-semibold hover:underline">Ler notícia →</a>
+        </article>
+
+        <article class="card p-5">
+          <img src="https://images.unsplash.com/photo-1595977003213-9f90f1c7b6b5?auto=format&fit=crop&w=600&q=80" class="mb-4" alt="Treino">
+          <h4 class="font-semibold text-lg mb-2">Novo técnico promete revolução tática</h4>
+          <p class="text-sm text-gray-600 mb-3">O treinador chega com novas ideias e muita motivação.</p>
+          <a href="#" class="text-green-700 font-semibold hover:underline">Ler notícia →</a>
+        </article>
+
+        <article class="card p-5">
+          <img src="https://images.unsplash.com/photo-1592179907898-3d26efbadb56?auto=format&fit=crop&w=600&q=80" class="mb-4" alt="Torcida">
+          <h4 class="font-semibold text-lg mb-2">Torcida volta aos estádios</h4>
+          <p class="text-sm text-gray-600 mb-3">Com novas medidas de segurança, os torcedores podem vibrar novamente nas arquibancadas.</p>
+          <a href="#" class="text-green-700 font-semibold hover:underline">Ler notícia →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEÇÃO TIMES -->
+    <section id="times" class="mt-16">
+      <h3 class="text-2xl font-bold text-green-700 mb-6">Times em Destaque</h3>
+      <div class="flex flex-wrap justify-center gap-6">
+        <div class="card text-center w-60 p-5">
+          <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" class="w-16 mx-auto mb-3" alt="Time 1">
+          <h4 class="font-semibold text-lg">Leões FC</h4>
+          <p class="text-sm text-gray-600">Campeão estadual 2025</p>
+        </div>
+        <div class="card text-center w-60 p-5">
+          <img src="https://cdn-icons-png.flaticon.com/512/300/300231.png" class="w-16 mx-auto mb-3" alt="Time 2">
+          <h4 class="font-semibold text-lg">Águias da Serra</h4>
+          <p class="text-sm text-gray-600">Maior ataque do campeonato</p>
+        </div>
+        <div class="card text-center w-60 p-5">
+          <img src="https://cdn-icons-png.flaticon.com/512/300/300214.png" class="w-16 mx-auto mb-3" alt="Time 3">
+          <h4 class="font-semibold text-lg">Tigres Urbanos</h4>
+          <p class="text-sm text-gray-600">Time revelação do ano</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== RODAPÉ ====== -->
+  <footer id="contato" class="py-6 mt-10 text-center">
+    <p class="mb-2">Entre em contato: <a href="mailto:contato@futeboltotal.com">contato@futeboltotal.com</a></p>
+    <p>&copy; 2025 <span class="highlight">Futebol Total</span> — Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- ====== SCRIPT MENU MOBILE ====== -->
+  <script>
+    const menuBtn = document.getElementById("menu-mobile");
+    const menuLinks = document.getElementById("menu-links");
+
+    menuBtn.addEventListener("click", () => {
+      menuLinks.classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>
