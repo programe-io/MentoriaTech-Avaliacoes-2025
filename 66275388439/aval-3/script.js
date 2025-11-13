@@ -1,0 +1,55 @@
+/* Reset */
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+\}
+
+/* Fundo */
+body {
+  background: linear-gradient(to bottom, #0a2a66, #1a2a64);
+  color: #fff;
+\}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #0d1b52;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+\}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+\}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+\}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+\}
+
+.navbar a:hover {
+  color: #6ea8ff;
+\}
+
+/* Container de Cards */
+.container {
+  display: flex;
+  justify-content: center;
+  align-i…Ler mais
+$0
