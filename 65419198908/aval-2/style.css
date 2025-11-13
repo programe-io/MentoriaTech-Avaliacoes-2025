@@ -1,69 +1,140 @@
-/* Estilos Gerais */
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+/* -------------------------------------- */
+/* ... (Manter as Variáveis CSS do código anterior) ... */
+/* -------------------------------------- */
+
+:root {
+    /* ... Variáveis de Tema Claro ... */
+    --cor-alerta: #e74c3c; /* Cor para "Em Jogo" */
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    background: #fff;
-    padding: 20px;
+body.dark-mode {
+    /* ... Variáveis de Tema Escuro ... */
+    --cor-alerta: #e74c3c; 
 }
 
-/* HEADER: Estilização do Cabeçalho */
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
+/* ... (Manter Reset e Estilos Globais anteriores) ... */
+
+
+/* -------------------------------------- */
+/* NOVAS SEÇÕES (Placar e Newsletter)     */
+/* -------------------------------------- */
+
+/* Placar ao Vivo */
+.placar-ao-vivo {
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.placar-ao-vivo h2 {
     text-align: center;
-    border-bottom: #007bff 3px solid;
+    color: var(--cor-principal);
+    margin-bottom: 15px;
 }
 
-header h1 {
-    margin: 0;
+.placar-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    flex-wrap: wrap; /* Para quebrar a linha em telas pequenas */
 }
 
-/* ARTICLE: Estilização do Conteúdo Principal */
-article {
-    float: left;
-    width: 70%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* ASIDE: Estilização da Barra Lateral */
-aside {
-    float: right;
-    width: 30%;
-    background: #e6e6e6;
+.jogo-card {
+    background: var(--fundo-principal);
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
     padding: 15px;
-    box-sizing: border-box;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    min-width: 250px;
+    flex-grow: 1;
 }
 
-aside h3 {
-    margin-top: 0;
-    color: #007bff;
-}
-
-/* IMG: Estilização das Imagens */
-img {
-    max-width: 100%;
-    height: auto;
+.jogo-card .time {
+    font-weight: bold;
+    font-size: 1.1em;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-/* FOOTER: Estilização do Rodapé */
-footer {
-    clear: both; /* Garante que o footer fique abaixo dos elementos flutuantes (article e aside) */
-    text-align: center;
+.jogo-card .resultado {
+    font-size: 1.8em;
+    color: var(--cor-secundaria);
+    font-weight: 900;
+    display: block;
+    margin: 5px 0;
+}
+
+.jogo-card .status {
+    font-size: 0.85em;
+    color: #6c757d;
+}
+
+.jogo-card.ao-vivo {
+    border-left: 5px solid var(--cor-alerta);
+    animation: pulse 2s infinite; /* Efeito visual para "Ao Vivo" */
+}
+
+.jogo-card.ao-vivo .status {
+    color: var(--cor-alerta);
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+}
+
+/* Newsletter no Footer */
+.newsletter {
+    padding: 15px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.newsletter h4 {
+    margin-bottom: 10px;
+    color: #ffffff; /* Texto claro no fundo escuro do footer */
+    font-size: 1.1em;
+}
+
+#newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#newsletter-form input[type="email"] {
     padding: 10px;
-    background: #333;
-    color: #fff;
-    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+.btn-newsletter {
+    padding: 10px 15px;
+    background-color: var(--cor-principal);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color var(--transicao-rapida);
+}
+
+.btn-newsletter:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 600px) {
+    #newsletter-form {
+        flex-direction: column;
+    }
+    .jogo-card {
+        min-width: 100%;
+    }
 }

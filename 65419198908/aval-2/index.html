@@ -3,85 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Esportivo | Notícias, Ligas e Destaques</title>
+    <title>🏆 Arena Global: Notícias Esportivas de Alto Nível</title>
+    
     <link rel="stylesheet" href="estilo.css">
-    <style>
-        /* Estilos adicionais apenas para a nova tag NAV e o layout principal */
-        nav {
-            background: #007bff;
-            color: #fff;
-            padding: 10px 0;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        /* Ajuste para acomodar a NAV */
-        header {
-            padding-bottom: 0; /* Remove padding inferior para juntar com a NAV */
-        }
-    </style>
-<script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
 <body>
 
     <div class="container">
         
-        <header>
-            <h1>MUNDO ESPORTIVO 🌍</h1>
+        <header class="main-header">
+            <h1 class="logo">ARENA GLOBAL</h1>
+            <button id="theme-toggle-btn" aria-label="Alternar entre modo claro e escuro">
+                Mudar Tema
+            </button>
         </header>
         
-        <nav>
+        <nav class="main-nav" aria-label="Navegação Principal do Site">
             <ul>
-                <li><a href="#futebol">Futebol</a></li>
-                <li><a href="#basquete">Basquete</a></li>
-                <li><a href="#formula1">Fórmula 1</a></li>
-                <li><a href="#mais">Mais Notícias</a></li>
+                <li><a href="#futebol">⚽ Futebol (Destaque)</a></li>
+                <li><a href="#placar">🔴 Ao Vivo</a></li>
+                <li><a href="#formula1">🏎️ F1 & Motor</a></li>
+                <li><a href="#esportes-radicais">🏄 Radicais</a></li>
             </ul>
         </nav>
 
-        <main>
-            <article>
-                <h2 id="futebol">🏆 Destaque: A Emoção da Grande Final</h2>
+        <main class="main-content">
+            
+            <section id="placar" class="placar-ao-vivo">
+                <h2>🔴 Placares e Jogos de Hoje</h2>
+                <div class="placar-grid">
+                    <div class="jogo-card">
+                        <span class="time">PSG</span>
+                        <span class="resultado">3 - 1</span>
+                        <span class="time">Lyon</span>
+                        <span class="status">Finalizado</span>
+                    </div>
+                    <div class="jogo-card ao-vivo">
+                        <span class="time">Lakers</span>
+                        <span class="resultado">98 - 95</span>
+                        <span class="time">Celtics</span>
+                        <span class="status">Em Jogo (4Q)</span>
+                    </div>
+                    <div class="jogo-card">
+                        <span class="time">Vasco</span>
+                        <span class="resultado">Adiado</span>
+                        <span class="time">Flamengo</span>
+                        <span class="status">Amanhã</span>
+                    </div>
+                </div>
+            </section>
+            
+            <article id="futebol" class="destaque-principal">
+                <header>
+                    <h2>O Clássico que Decidiu o Título: Análise Pós-Jogo</h2>
+                    <p class="meta-info">Publicado em <time datetime="2025-11-13">13 de Novembro, 2025</time></p>
+                </header>
                 
-                <img src="https://via.placeholder.com/600x350?text=Estádio+Loterias+Esportivas" alt="Estádio de futebol iluminado em dia de final.">
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1549476711-d0061e888496?w=800&auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         alt="Imagem aérea de um estádio de futebol iluminado durante a final, com foco no gramado.">
+                    <figcaption>A emoção da torcida fez a diferença no último minuto.</figcaption>
+                </figure>
                 
-                <p>O time da casa garantiu a vitória de virada em um jogo histórico que será lembrado por gerações. A atuação do meio-campo foi decisiva, neutralizando os ataques adversários e criando as jogadas de gol nos momentos cruciais. A festa se estendeu pela cidade toda a noite.</p>
-
-                <p>O técnico, emocionado, dedicou o título à torcida. A próxima temporada promete novos recordes e rivalidades ainda maiores.</p>
-
-                <h3>Análise Tática</h3>
-                <p>O 4-4-2 reativo surpreendeu a todos, demonstrando a capacidade de adaptação da equipe. **Leia a análise completa:**</p>
+                <p>O <strong>Campeonato Nacional</strong> chegou ao fim de forma espetacular. O gol de bicicleta no apagar das luzes garantiu a taça e consolidou o time como a grande força da temporada. A posse de bola foi equilibrada, mas a eficiência nos contra-ataques provou ser a estratégia vencedora.</p>
+                
+                <section class="sub-secao">
+                    <h3>Estatísticas Chave</h3>
+                    <ul>
+                        <li>Posse de Bola: 48% vs 52%</li>
+                        <li>Chutes a Gol: 10 vs 5</li>
+                        <li>Defesas: 4 vs 9</li>
+                    </ul>
+                </section>
             </article>
 
-            <aside>
-                <h3 id="mais">🎾 Outros Esportes em Foco</h3>
+            <aside class="sidebar">
+                <h3 class="sidebar-titulo" id="esportes-radicais">🔥 Esportes em Ascensão</h3>
                 
-                <p><strong>Vôlei:</strong> A seleção feminina garantiu sua vaga nas Olimpíadas com uma performance impecável, vencendo todos os jogos do pré-olímpico por 3 sets a 0.</p>
-                
-                <img src="https://via.placeholder.com/280x150?text=Voleibol+em+Quadra" alt="Jogadoras de vôlei comemorando um ponto.">
-                
+                <article class="mini-artigo">
+                    <h4 id="formula1">🏎️ F1: Próximo Grande Prêmio</h4>
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1520610360677-7435f2c5a088?w=300&auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                             alt="Carro de Fórmula 1 em alta velocidade na pista.">
+                    </figure>
+                    <p>O circuito de Singapura será o palco da próxima corrida, com alta chance de Safety Car e disputas acirradas pelo título mundial.</p>
+                </article>
+
                 <hr>
-                
-                <h3 id="formula1">🏎️ Fórmula 1: Próxima Etapa</h3>
-                <p>O circuito de Singapura será o palco da próxima corrida, com condições climáticas desafiadoras e alta chance de Safety Car. O líder do campeonato busca consolidar sua vantagem.</p>
+
+                <article class="mini-artigo">
+                    <h4 id="basquete">🏀 NBA: Troca de Estrelas na Conferência Oeste</h4>
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1546519638-68e109498cb0?w=300&auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                             alt="Jogador de basquete saltando para enterrar.">
+                    </figure>
+                    <p>Rumores indicam uma mega troca que pode redefinir o equilíbrio de poder na liga. O anúncio oficial é aguardado nas próximas 24 horas.</p>
+                </article>
             </aside>
+            
         </main>
 
-        <footer>
-            &copy; 2025 Mundo Esportivo | Desenvolvido com HTML, CSS e JS.
+        <footer class="main-footer">
+            
+            <section class="newsletter">
+                <h4>Inscreva-se na Nossa Newsletter Diária!</h4>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Seu melhor e-mail" required aria-label="Endereço de e-mail para newsletter">
+                    <button type="submit" class="btn-newsletter">Quero Receber!</button>
+                </form>
+            </section>
+            
+            <p>&copy; <span id="ano-atual">2025</span> Arena Global. Todos os direitos reservados. | <a href="#">Política de Privacidade</a></p>
         </footer>
     </div>
 

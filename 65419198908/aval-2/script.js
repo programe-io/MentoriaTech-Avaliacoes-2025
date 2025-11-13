@@ -1,34 +1,83 @@
-// Obtém o elemento <body> para aplicar as classes de tema
-const body = document.body;
-
-// Cria um novo botão para alternar o tema
-const themeButton = document.createElement('button');
-themeButton.textContent = 'Mudar Tema';
-themeButton.id = 'theme-toggle-btn';
-
-// Seleciona o elemento <header> para inserir o botão
-const header = document.querySelector('header');
-
-// Verifica se o header existe antes de adicionar o botão
-if (header) {
-    header.appendChild(themeButton);
-}
-
-// Função que será chamada ao clicar no botão
-function toggleTheme() {
-    // A função 'toggle' adiciona a classe se ela não estiver presente,
-    // e remove se estiver presente. Isso alterna o tema.
-    body.classList.toggle('dark-mode');
-
-    // Altera o texto do botão para refletir a nova ação
-    if (body.classList.contains('dark-mode')) {
-        themeButton.textContent = 'Mudar para Tema Claro';
-    } else {
-        themeButton.textContent = 'Mudar para Tema Escuro';
+document.addEventListener('DOMContentLoaded', () => {
+    // ... (Manter as Funções de Tema do código anterior) ...
+    
+    const body = document.body;
+    const themeToggleButton = document.getElementById('theme-toggle-btn');
+    const anoAtualSpan = document.getElementById('ano-atual');
+    const newsletterForm = document.getElementById('newsletter-form'); // Novo
+    
+    // 1. Atualiza dinamicamente o ano no rodapé
+    if (anoAtualSpan) {
+        anoAtualSpan.textContent = new Date().getFullYear();
     }
-}
 
-// Adiciona um "ouvinte de evento" (event listener) ao botão
-themeButton.addEventListener('click', toggleTheme);
+    // Chave de armazenamento para o tema
+    const THEME_STORAGE_KEY = 'user-theme-preference';
 
-console.log('Script JavaScript de interatividade carregado.');
+    // 2. Função para aplicar o tema (dark ou light)
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggleButton.textContent = 'Mudar para Tema Claro';
+            themeToggleButton.setAttribute('aria-pressed', 'true');
+        } else {
+            body.classList.remove('dark-mode');
+            themeToggleButton.textContent = 'Mudar para Tema Escuro';
+            themeToggleButton.setAttribute('aria-pressed', 'false');
+        }
+    }
+
+    // 3. Função para inicializar o tema ao carregar a página
+    function initializeTheme() {
+        const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+        
+        if (storedTheme) {
+            applyTheme(storedTheme);
+            return;
+        }
+
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            applyTheme('dark');
+        } else {
+            applyTheme('light');
+        }
+    }
+
+    // 4. Função para alternar o tema ao clicar
+    function toggleTheme() {
+        const isDarkMode = body.classList.contains('dark-mode');
+        const newTheme = isDarkMode ? 'light' : 'dark';
+
+        applyTheme(newTheme);
+        localStorage.setItem(THEME_STORAGE_KEY, newTheme);
+    }
+
+    // 5. Novo: Gerenciamento da Submissão do Formulário
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o recarregamento da página
+
+            const emailInput = this.querySelector('input[type="email"]');
+            const email = emailInput.value;
+
+            // Simulação de envio de dados
+            console.log(`E-mail submetido: ${email}`);
+            
+            // Feedback visual para o usuário
+            alert(`Obrigado por se inscrever, ${email}! Você receberá notícias em breve.`);
+            
+            // Limpa o campo
+            emailInput.value = '';
+        });
+    }
+
+
+    // Inicializa o tema e os listeners
+    initializeTheme();
+
+    if (themeToggleButton) {
+        themeToggleButton.addEventListener('click', toggleTheme);
+    }
+    
+    console.log('Sistema de Tema e Newsletter Carregados e Prontos.');
+});
