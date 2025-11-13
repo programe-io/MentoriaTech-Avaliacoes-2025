@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe: O Desafio do Velho</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Oswald:wght@400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <div class="game-container">
+        
+        <header>
+            <h1>
+                <img src="data:image/png;base64,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" alt="Ícone de Jogo da Velha" class="game-icon" width="30" height="30" style="vertical-align: middle; margin-right: 10px;">
+                <a href="#" style="text-decoration: none; color: inherit;">Jogo da Velha: O Desafio</a>
+            </h1>
+            <h2 id="status-message">Vez do Jogador X</h2>
+        </header>
+
+        <div class="scoreboard">
+            <div class="player-score player-x-score">
+                <span class="symbol">X</span>
+                <span id="score-x" class="count">0</span>
+            </div>
+            <div class="separator">
+                <span class="divider"></span>
+                <p>PLACAR</p>
+                <span class="divider"></span>
+            </div>
+            <div class="player-score player-o-score">
+                <span class="symbol">O</span>
+                <span id="score-o" class="count">0</span>
+            </div>
+        </div>
+
+        <main class="board" id="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </main>
+        
+        <nav class="controls">
+            <button id="restart-button" class="btn">Reiniciar Partida</button>
+            <button id="reset-score-button" class="btn secondary">Zerar Placar</button>
+        </nav>
+
+    </div>
+    
+    <div class="winning-line" id="winning-line"></div>
+
+    <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>

@@ -1,0 +1,223 @@
+/* --- Configurações Globais --- */
+:root {
+    --bg-color: #1a1a2e; /* Fundo escuro */
+    --accent-color-x: #e94560; /* Vermelho/Rosa para X */
+    --accent-color-o: #0f3460; /* Azul escuro para O */
+    --grid-line-color: #3b3a5d; /* Cor da linha do tabuleiro */
+    --text-color: #ffffff;
+    --win-line-color: #ffcc00; /* Dourado para linha de vitória */
+    --shadow-light: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.game-container {
+    background: #232946; /* Fundo do container ligeiramente mais claro */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 50px var(--shadow-light) inset;
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+}
+
+/* --- Cabeçalho e Mensagem de Status --- */
+header h1 {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+#status-message {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding: 5px;
+    border-radius: 5px;
+    min-height: 20px; /* Garante que o layout não mude */
+}
+
+/* --- Placar --- */
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 10px;
+    background: var(--grid-line-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.player-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-score .symbol {
+    font-size: 2.5em;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.player-x-score .symbol { color: var(--accent-color-x); }
+.player-o-score .symbol { color: var(--accent-color-o); }
+
+.player-score .count {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.separator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.6;
+}
+
+.separator p {
+    font-size: 0.7em;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+}
+
+.divider {
+    width: 2px;
+    height: 15px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+}
+
+/* --- Tabuleiro (Grid) --- */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 100%;
+    height: 400px;
+    max-height: 400px;
+    margin: 0 auto;
+    background-color: var(--grid-line-color);
+    border-radius: 10px;
+    position: relative; /* Para a linha de vitória */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.cell {
+    border: 5px solid var(--bg-color); /* Usar a cor do fundo para simular as linhas da grade */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5em;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+/* Estilo para as bordas do tabuleiro para criar o efeito de "jogo da velha" */
+.cell[data-index="0"], .cell[data-index="1"], .cell[data-index="3"], .cell[data-index="4"] {
+    border-right-color: var(--grid-line-color);
+    border-bottom-color: var(--grid-line-color);
+}
+.cell[data-index="2"], .cell[data-index="5"] {
+    border-bottom-color: var(--grid-line-color);
+}
+.cell[data-index="6"], .cell[data-index="7"] {
+    border-right-color: var(--grid-line-color);
+}
+
+/* Efeito de HOVER */
+.cell:not(.x):not(.o):hover {
+    background-color: #3b3a5d77;
+    transform: scale(0.98);
+}
+
+/* --- Símbolos (X e O) --- */
+.cell.x {
+    color: var(--accent-color-x);
+    /* Sombra elegante para o X */
+    text-shadow: 0 0 15px var(--accent-color-x), 0 0 20px rgba(233, 69, 96, 0.5);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.cell.o {
+    color: var(--accent-color-o);
+    /* Sombra elegante para o O */
+    text-shadow: 0 0 15px var(--accent-color-o), 0 0 20px rgba(15, 52, 96, 0.5);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Linha de Vitória Criativa --- */
+.winning-line {
+    position: absolute;
+    background-color: var(--win-line-color);
+    box-shadow: 0 0 20px var(--win-line-color);
+    z-index: 10;
+    transition: all 0.5s ease-out;
+    opacity: 0;
+}
+
+/* --- Controles (Botões) --- */
+.controls {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    text-transform: uppercase;
+}
+
+#restart-button {
+    background-color: var(--accent-color-x);
+    color: var(--text-color);
+}
+
+#restart-button:hover {
+    background-color: #c43c52;
+    transform: translateY(-2px);
+}
+
+.btn.secondary {
+    background-color: #4e4e7d;
+    color: var(--text-color);
+}
+
+.btn.secondary:hover {
+    background-color: #3b3a5d;
+    transform: translateY(-2px);
+}
+
+/* Classe de animação para quando a linha de vitória é ativada pelo JS */
+.winning-line.active {
+    opacity: 1;
+}
