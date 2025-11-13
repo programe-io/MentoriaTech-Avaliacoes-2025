@@ -1,0 +1,189 @@
+/* --- 1. Paleta de Cores Refinada e Variáveis --- */
+:root {
+    --cor-primaria: #e07a5f;         /* Laranja Terracota Rico (Principal) */
+    --cor-secundaria: #2d3a4c;       /* Azul Escuro/Carvão (Títulos e Fundo de Botão) */
+    --cor-fundo-claro: #fcfcfc;       /* Fundo Branco Suave */
+    --cor-fundo-bege: #f4f1de;        /* Fundo do Body/Container Externo */
+    --cor-texto-principal: #333333;
+    --sombra-suave: 0 8px 15px rgba(0, 0, 0, 0.08); /* Sombra difusa e elegante */
+    --transicao-lenta: all 0.4s ease-in-out;
+}
+
+/* --- 2. Configurações Base --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', 'Open Sans', system-ui, sans-serif; /* Fonte limpa e moderna */
+    background-color: var(--cor-fundo-bege);
+    color: var(--cor-texto-principal);
+    line-height: 1.65;
+    padding: 40px 15px;
+}
+
+/* --- 3. Layout Principal (O Cartão Elegante) --- */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--cor-fundo-claro);
+    padding: 60px 50px;
+    border-radius: 18px; /* Cantos suavemente arredondados */
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicao-lenta);
+    border-top: 5px solid var(--cor-primaria); /* Detalhe na parte superior */
+}
+
+.container:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Sombra aprofunda no hover */
+}
+
+/* --- 4. Tipografia e Títulos --- */
+h1 {
+    color: var(--cor-secundaria);
+    font-size: 3.2rem;
+    text-align: center;
+    letter-spacing: -1px; /* Espaçamento mais apertado para elegância */
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    color: var(--cor-primaria);
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 40px;
+    font-style: italic;
+    font-weight: 300;
+}
+
+h2 {
+    color: var(--cor-secundaria);
+    font-size: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--cor-fundo-bege); /* Linha divisória sutil */
+    padding-bottom: 8px;
+}
+
+/* --- 5. Imagens e Mídia --- */
+img.foto-destaque {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 5px solid var(--cor-fundo-claro);
+}
+
+/* --- 6. Listas (Ingredientes e Preparo) --- */
+ul, ol {
+    padding-left: 0;
+    list-style: none;
+}
+
+li {
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-left: 4px solid var(--cor-fundo-bege);
+    transition: background-color 0.2s;
+}
+
+li:hover {
+    background-color: #f7f3e8; /* Fundo suave no hover */
+}
+
+/* Marcadores Personalizados (Detalhe Elegante) */
+li::before {
+    content: '•'; /* Ponto simples e limpo */
+    color: var(--cor-primaria);
+    font-weight: 900;
+    margin-right: 12px;
+}
+
+/* Caixa de Ingredientes (Estilo de Cartão) */
+.box-ingredientes {
+    background-color: var(--cor-fundo-bege); 
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra interna para profundidade */
+}
+
+/* --- 7. Dicas de Mestre (O Destaque Refinado) --- */
+.dica-mestre {
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-secundaria);
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 3rem;
+    border-left: 5px solid var(--cor-secundaria);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+}
+
+.dica-mestre p {
+    margin: 0;
+}
+
+/* --- 8. Botões e Formulários --- */
+.btn {
+    padding: 14px 40px;
+    background-color: var(--cor-secundaria);
+    color: white;
+    border-radius: 30px; /* Botão pilular para toque moderno */
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: var(--transicao-lenta);
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+    box-shadow: 0 6px 15px rgba(224, 122, 95, 0.5); /* Sombra colorida no hover */
+    transform: translateY(-2px);
+}
+
+/* Estilo para o input de porções */
+#porcoes-input {
+    border: 2px solid var(--cor-primaria);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+    width: 80px;
+    transition: var(--transicao-lenta);
+}
+#porcoes-input:focus {
+    border-color: var(--cor-secundaria);
+    outline: none;
+}
+
+/* --- 9. Rodapé --- */
+footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem;
+    color: var(--cor-secundaria);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--cor-fundo-bege);
+}
+
+/* --- 10. Responsividade --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    img.foto-destaque {
+        height: 300px;
+    }
+}
