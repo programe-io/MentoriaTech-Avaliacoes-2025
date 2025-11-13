@@ -1,65 +1,115 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Meu Site</title>
+    <title>Meu Site Top - Reginaldo</title>
+    <!-- Carregamento do Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração do Tailwind para usar a fonte Inter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
-<body>
-
-    <header>
-
-        <h1>Meu Site</h1>
-        <p>Meu site muito top!</p>
-
+<body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-gray-800 text-white p-6 shadow-xl rounded-b-xl mx-auto w-full max-w-7xl">
+        <h1 class="text-4xl font-extrabold tracking-tight text-center sm:text-left">Viagem do Meu Sonho</h1>
+        <p class="text-gray-400 mt-1 text-center sm:text-left">Minha Viagem</p>
     </header>
 
-    <nav>
-
-        <a href="">Inicio</a>
-        <a href="">Pagina 2</a>        
-        <a href="">Pagina 3</a>        
-        <a href="">Pagina 4</a>        
-
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-10 mx-auto w-full max-w-7xl rounded-t-xl sm:rounded-none">
+        <div class="flex flex-wrap justify-center sm:justify-start gap-4 p-4 text-sm font-medium">
+            <a href="#" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition-colors pb-1">Início</a>
+            <a href="#" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition-colors pb-1">Página 2</a>
+            <a href="#" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition-colors pb-1">Página 3</a>
+            <a href="#" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition-colors pb-1">Página 4</a>
+        </div>
     </nav>
 
-    <section id="row">
+    <!-- Main Content and Sidebar Section -->
+    <section id="row" class="flex-grow p-4 sm:p-8 mx-auto w-full max-w-7xl">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Aside (Sidebar) -->
+            <aside class="lg:col-span-1 bg-white p-6 rounded-xl shadow-lg h-fit">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Sobre Mim</h2>
+                <div class="mb-6">
+                    <h5 class="text-lg font-medium text-gray-700 mb-2">Fotinha</h5>
+                    <!-- Placeholder de Imagem -->
+                    <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500 font-bold text-xl rounded-lg shadow-inner">
+                        Imagem de Perfil
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-6">Minha Bio: Desenvolvedora apaixonada por tecnologia e criando sites incríveis como este!</p>
+                
+                <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Minha Galeria</h3>
+                <div class="grid grid-cols-3 gap-3">
+                    <!-- Três Imagens da Galeria -->
+                    <div class="w-full aspect-square bg-gray-300 flex items-center justify-center text-xs text-gray-600 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">Imagem 1</div>
+                    <div class="w-full aspect-square bg-gray-300 flex items-center justify-center text-xs text-gray-600 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">Imagem 2</div>
+                    <div class="w-full aspect-square bg-gray-300 flex items-center justify-center text-xs text-gray-600 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">Imagem 3</div>
+                </div>
+            </aside>
 
-        <aside>
+            <!-- Main Content Area -->
+            <main class="lg:col-span-2 space-y-8">
+                <article class="bg-white p-8 rounded-xl shadow-2xl">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Meu Sonho</h2>
+                    <h5 class="text-sm text-gray-500 mb-6 border-b pb-4">Por Ana Celeste, 13 de Nov, 2025</h5>
+                    
+                    <!-- Imagem da Postagem (com fallback e estilo responsivo) -->
+                    <div class="mb-6 overflow-hidden rounded-lg shadow-xl">
+                        <img 
+                            src="https://viajoteca.com/wp-content/uploads/2020/01/sakura-em-paris.jpg"
+                            alt="França,Paris - Imagem de Destaque" 
+                            class="w-full h-auto object-cover"
+                            onerror="this.onerror=null; this.src='https://placehold.co/1280x720/4a5568/ffffff?text=Falha+ao+Carregar+Imagem';"
+                        >
+                    </div>
 
-            <h2>Sobre Mim</h2>
-            <h5>Fotinha</h5>
-            <div class="fakeimage">Imagem</div>
-
-            <p>Minha Bio</p>
-            <h3>Minha Galeria</h3>
-
-            <div class="fakeimage">Imagem</div>            
-            <div class="fakeimage">Imagem</div>            
-            <div class="fakeimage">Imagem</div>
-
-        </aside>
-
-        <main>
-            <article>
-                <h2>TITULO DA POSTAGEM</h2>
-                <h5> ana celeste, 10 de nov, 2025</h5>
-                <img src="" alt="">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing 
-                    elit. Ex, minus aliquam nostrum, id veniam, 
-                    repellat distinctio libero molestiae dicta labore 
-                    veritatis dolore recusandae unde! Ipsum suscipit ducimus 
-                    quo magni rerum.</p>
-            </article>
-        </main>
-
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        Ah, a França! Paris! Imagina só, eu, passeando pelas ruas charmosas,
+                         sentindo o cheirinho de croissant fresco saindo das boulangeries,
+                         vendo a Torre Eiffel iluminada à noite... Meu coração acelera só de pensar! 
+                         Desde pequena, quando via filmes e lia livros sobre a Cidade Luz, esse sonho se plantou em mim e não sai mais.
+                         Queria tanto conhecer o Louvre, me perder pelos jardins de Versalhes e, quem sabe, 
+                         até arriscar um "bonjour" com sotaque francês! Seria uma experiência inesquecível,
+                         uma aventura que mudaria a minha vida.
+                        
+                        
+                    </p>
+                    <p class="mt-4 text-gray-700 leading-relaxed text-justify">
+                        Eu me vejo sentada em um café parisiense, com uma xícara de café com leite e um livro na mão, observando o movimento,
+                         absorvendo cada detalhe daquela cultura tão rica e elegante. Imagino as conversas em francês, a arte em cada esquina,
+                         a moda que inspira o mundo. Paris não é só um destino, é um estado de espírito,
+                         um lugar onde a beleza e a história se encontram de uma forma mágica. Um dia, eu sei,
+                         esse sonho vai se tornar realidade e eu vou poder contar para todo mundo sobre a minha jornada inesquecível pela França!
+                        
+                        
+                    </p>
+                </article>                                                                                                                                                    
+            </main>
+        </div>
     </section>
 
-    <footer>
-        <p>CopyRight - Todos os Direitos Reservados - 2025 | programe.io</p>
-    </footer>
-
+    <!-- Footer -->
+    <footer class="mt-auto bg-gray-800 text-white p-4 text-center text-sm rounded-t-xl mx-auto w-full max-w-7xl shadow-2xl">
+        <p>CopyRight - Todos os Direitos Reservados - 2024 | Programe.io</p>
+    </footer>    
 </body>
 </html>
+
+
+
