@@ -1,0 +1,207 @@
+/* Variáveis de Cores */
+:root {
+    --color-primary: #a0522d; /* Marrom-claro (Sienna) - Links e Botões */
+    --color-secondary: #6b4c3e; /* Marrom-escuro (Caffè Latte) - Textos e Títulos */
+    --color-background-header: #f5e6d3; /* Creme/Bege (Papaya Whip Light) */
+    --color-background-sobre: #fcf8f2; /* Creme muito claro */
+    --color-background-footer: #6b4c3e;
+    --color-border: #ccc;
+    --color-text-light: white;
+    --color-text-dark: black;
+}
+
+/* 1. Estilos Gerais/Body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--color-text-dark);
+}
+
+/* 2. Estilos do Cabeçalho (Header) */
+.header {
+    background-color: var(--color-background-header);
+    padding: 40px;
+    text-align: center;
+}
+
+.header-logo {
+    max-width: 100px;
+}
+
+.header-title, .header-subtitle {
+    color: var(--color-secondary);
+}
+
+.header-subtitle {
+    font-style: italic;
+}
+
+.header-nav {
+    margin-top: 20px;
+}
+
+.nav-link {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* 3. Estilos da Seção de Receitas */
+.section-receitas {
+    padding: 20px;
+    text-align: center;
+}
+
+.section-title {
+    color: var(--color-secondary);
+    border-bottom: 2px solid var(--color-secondary);
+    display: inline-block;
+    padding-bottom: 5px; /* Para separar a linha do texto */
+}
+
+.receitas-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.receita-card {
+    width: 30%;
+    min-width: 250px;
+    margin: 10px;
+    border: 1px solid var(--color-border);
+    padding: 15px;
+    text-align: left;
+    /* Adicionando um leve efeito para destacar os cards */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.receita-card:hover {
+    transform: translateY(-5px);
+}
+
+.receita-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer (se a altura fosse fixa) */
+}
+
+.receita-card h3 {
+    color: var(--color-secondary);
+    margin-top: 10px;
+}
+
+.receita-button {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 8px 15px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.receita-button:hover {
+    background-color: #8b4513; /* Um tom mais escuro */
+}
+
+/* 4. Estilos do Separador */
+.separator {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--color-primary), rgba(0, 0, 0, 0));
+    margin: 40px 0;
+}
+
+/* 5. Estilos da Seção Sobre */
+.section-sobre {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    background-color: var(--color-background-sobre);
+    gap: 30px; /* Adiciona espaço entre as colunas */
+}
+
+.sobre-chef-area {
+    width: 40%;
+    text-align: center;
+    padding: 10px;
+}
+
+.chef-photo {
+    width: 80%;
+    max-width: 250px; /* Limita o tamanho para telas maiores */
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid var(--color-primary);
+    /* Garante que o elemento seja visualizado como um bloco em alguns contextos */
+    display: block; 
+    margin: 0 auto;
+}
+
+.chef-name {
+    color: var(--color-secondary);
+    margin-top: 15px;
+}
+
+.sobre-content {
+    width: 60%;
+    padding: 10px;
+}
+
+.image-gallery {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gallery-img {
+    width: 30%;
+    height: auto;
+    border: 2px solid var(--color-border);
+    border-radius: 4px;
+}
+
+/* 6. Estilos do Rodapé (Footer) */
+.footer {
+    background-color: var(--color-background-footer);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 15px;
+}
+
+/* 7. Responsividade básica (para telas menores) */
+@media (max-width: 768px) {
+    .section-sobre {
+        flex-direction: column; /* Empilha as colunas na seção 'Sobre' */
+        padding: 20px;
+    }
+
+    .sobre-chef-area, .sobre-content {
+        width: 100%; /* Ocupa toda a largura */
+        padding: 0;
+    }
+
+    .receita-card {
+        width: 100%; /* Cards de receitas ocupam toda a largura */
+        min-width: 0;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .gallery-img {
+        width: 100%;
+        margin-right: 0;
+    }
+}
