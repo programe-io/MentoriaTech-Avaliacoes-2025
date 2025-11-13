@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema Solar CSS</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at center, #000010, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* Sistema Solar container */
+  .sistema-solar {
+    position: relative;
+    width: 500px;
+    height: 500px;
+  }
+
+  /* Sol */
+  .sistema-solar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffcc00, #ff6600);
+    box-shadow: 0 0 30px 15px rgba(255, 200, 0, 0.5);
+  }
+
+  /* Órbitas */
+  .sistema-solar::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    margin-left: -75px;
+    margin-top: -75px;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+  }
+
+  /* Planetas com órbitas CSS */
+  .planeta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: -75px center; /* distância da órbita */
+    border-radius: 50%;
+  }
+
+  .terra {
+    width: 16px;
+    height: 16px;
+    background: #1e90ff;
+    margin-top: -8px;
+    animation: orbitaTerra 10s linear infinite;
+  }
+
+  .mercurio {
+    width: 8px;
+    height: 8px;
+    background: #aaa;
+    margin-top: -4px;
+    transform-origin: -40px center; /* distância menor para Mercúrio */
+    animation: orbitaMercurio 4s linear infinite;
+  }
+
+  /* Animações de órbita */
+  @keyframes orbitaTerra {
+    from { transform: rotate(0deg) translateX(75px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(75px) rotate(-360deg); }
+  }
+
+  @keyframes orbitaMercurio {
+    from { transform: rotate(0deg) translateX(40px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
+  }
+
+</style>
+</head>
+<body>
+  <div class="sistema-solar">
+    <div class="planeta terra"></div>
+    <div class="planeta mercurio"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Solar Animado com Imagens</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at center, #000010, #000);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    nav {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+      margin-bottom: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #1e90ff;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 20px 0 10px;
+      font-size: 20px;
+      color: #1e90ff;
+    }
+
+    p {
+      text-align: center;
+      margin: 0 20px 30px;
+      font-size: 16px;
+      color: #ccc;
+      max-width: 500px;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .sistema-solar {
+      position: relative;
+      width: 500px;
+      height: 500px;
+    }
+
+    /* Sol */
+    .sistema-solar::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      margin-left: -30px;
+      margin-top: -30px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffcc00, #ff6600);
+      box-shadow: 0 0 30px 15px rgba(255, 200, 0, 0.5);
+    }
+
+    /* Órbitas */
+    .sistema-solar::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 150px;
+      height: 150px;
+      margin-left: -75px;
+      margin-top: -75px;
+      border: 1px dashed rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+    }
+
+    .planeta {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: -75px center;
+      border-radius: 50%;
+    }
+
+    .terra {
+      animation: orbitaTerra 10s linear infinite;
+      width: 40px;
+      height: 40px;
+    }
+
+    .mercurio {
+      animation: orbitaMercurio 4s linear infinite;
+      width: 25px;
+      height: 25px;
+      transform-origin: -40px center;
+    }
+
+    @keyframes orbitaTerra {
+      from { transform: rotate(0deg) translateX(75px) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(75px) rotate(-360deg); }
+    }
+
+    @keyframes orbitaMercurio {
+      from { transform: rotate(0deg) translateX(40px) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>Sistema Solar Animado com Imagens</header>
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">Planetas</a>
+    <a href="#">Sobre</a>
+  </nav>
+  <main>
+    <h2>Veja a Terra e Mercúrio orbitando o Sol</h2>
+    <p>Observe como os planetas se movem em suas órbitas ao redor do Sol. Esta animação representa de forma simplificada o movimento orbital de Mercúrio e da Terra no nosso sistema solar.</p>
+    <div class="sistema-solar">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg" alt="Mercúrio" class="planeta mercurio">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" alt="Terra" class="planeta terra">
+    </div>
+  </main>
+<script src="script.js"></script></body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Solar Animado com Imagens</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at center, #000010, #000);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    nav {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+      margin-bottom: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #1e90ff;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 20px 0 10px;
+      font-size: 20px;
+      color: #1e90ff;
+    }
+
+    p {
+      text-align: center;
+      margin: 0 20px 30px;
+      font-size: 16px;
+      color: #ccc;
+      max-width: 500px;
+    }
+
+    span.planeta-nome {
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .sistema-solar {
+      position: relative;
+      width: 500px;
+      height: 500px;
+    }
+
+    /* Sol */
+    .sistema-solar::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      margin-left: -30px;
+      margin-top: -30px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffcc00, #ff6600);
+      box-shadow: 0 0 30px 15px rgba(255, 200, 0, 0.5);
+    }
+
+    /* Órbitas */
+    .sistema-solar::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 150px;
+      height: 150px;
+      margin-left: -75px;
+      margin-top: -75px;
+      border: 1px dashed rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+    }
+
+    .planeta {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: -75px center;
+      border-radius: 50%;
+    }
+
+    .terra {
+      animation: orbitaTerra 10s linear infinite;
+      width: 40px;
+      height: 40px;
+    }
+
+    .mercurio {
+      animation: orbitaMercurio 4s linear infinite;
+      width: 25px;
+      height: 25px;
+      transform-origin: -40px center;
+    }
+
+    @keyframes orbitaTerra {
+      from { transform: rotate(0deg) translateX(75px) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(75px) rotate(-360deg); }
+    }
+
+    @keyframes orbitaMercurio {
+      from { transform: rotate(0deg) translateX(40px) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
+    }
+  </style>
+</head>
+<body>
+  <header>Sistema Solar Animado com Imagens</header>
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">Planetas</a>
+    <a href="#">Sobre</a>
+  </nav>
+  <main>
+    <h2>Veja a Terra e Mercúrio orbitando o Sol</h2>
+    <p>Observe como os planetas <span class="planeta-nome">Mercúrio</span> e <span class="planeta-nome">Terra</span> se movem em suas órbitas ao redor do Sol. Esta animação representa de forma simplificada o movimento orbital deles no nosso sistema solar.</p>
+    <div class="sistema-solar">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg" alt="Mercúrio" class="planeta mercurio">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" alt="Terra" class="planeta terra">
+    </div>
+  </main>
+</body>
+</html>
