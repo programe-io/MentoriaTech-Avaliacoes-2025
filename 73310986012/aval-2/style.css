@@ -1,0 +1,141 @@
+/* Estilos gerais */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #004aad;
+    color: white;
+    text-align: center;
+    padding: 40px 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2em;
+}
+
+/* Navegação */
+nav {
+    background-color: #003580;
+    padding: 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Layout principal: conteúdo + aside */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px;
+}
+
+/* Artigos */
+article {
+    background: white;
+    flex: 1 1 600px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+article img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+/* 🔹 Aside */
+aside {
+    background-color: #eaf0ff;
+    color: #111;
+    flex: 0 1 250px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+aside h3 {
+    color: #003580;
+    border-bottom: 2px solid #004aad;
+    padding-bottom: 5px;
+}
+
+aside ul {
+    padding-left: 20px;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+aside a {
+    color: #004aad;
+    text-decoration: none;
+}
+
+aside a:hover {
+    text-decoration: underline;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 4px solid #004aad;
+    padding-left: 10px;
+    color: #555;
+}
+
+/* Rodapé */
+footer {
+    background-color: #003580;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+footer a {
+    color: #ffeb3b;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 800px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    aside {
+        width: 90%;
+    }
+
+    article {
+        width: 90%;
+    }
+}
