@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Geladinhos da Vila</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1>Geladinhos da Vila</h1>
+      <nav>
+        <a href="#sabores">Sabores</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato" class="btn order">Pedir</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Refrescância natural em cada mordida</h2>
+        <p>Geladinhos artesanais, feitos com frutas frescas e muito amor 💙.</p>
+        <a href="#sabores" class="btn">Ver Sabores</a>
+      </div>
+      <img class="hero-img" src="https://static.ndmais.com.br/2024/01/receita-de-geladinho-1-800x480.jpg" alt="Geladinhos coloridos">
+    </section>
+
+    <section id="sabores" class="cards">
+      <h3>Nossos Sabores</h3>
+      <div class="card-grid">
+        <article class="card">
+          <img src="https://receitatodahora.com.br/wp-content/uploads/2024/10/geladinho-gourmet-0410.jpg" alt="Geladinho de morango">
+          <div class="card-body">
+            <h4>Morango Cremoso</h4>
+            <p>Feito com morangos frescos e leite condensado — sucesso garantido.</p>
+            <button class="btn small">Pedir</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdIpWrxn3k3q7AB3d5h30y2nEnmfn8szg6bw&s" alt="Geladinho de manga">
+          <div class="card-body">
+            <h4>Manga Tropical</h4>
+            <p>Doçura perfeita e toque tropical — 100% fruta.</p>
+            <button class="btn small">Pedir</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://i.pinimg.com/736x/39/06/7f/39067f7620ae9a43a54c812f7c9f9659.jpg" alt="Geladinho de chocolate">
+          <div class="card-body">
+            <h4>Chocolate Gelado</h4>
+            <p>Para os chocólatras — intenso e cremoso.</p>
+            <button class="btn small">Pedir</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="sobre" class="about">
+      <h3>Sobre nós</h3>
+      <p>Produzimos geladinhos artesanais, com ingredientes selecionados e processos que prezam pela qualidade e frescor. Ideal para festas, vendedores ambulantes e pequenos comércios.</p>
+    </section>
+
+    <section id="contato" class="contact">
+      <h3>Contato & Pedido</h3>
+      <form class="contact-form" onsubmit="alert('Formulário simulado — implemente backend para envio.'); return false;">
+        <input type="text" placeholder="João Evengelista" required />
+        <input type="tel" placeholder="(86)99467932" required />
+        <select required>
+          <option value="">Escolha um sabor</option>
+          <option>Morango Cremoso</option>
+          <option>Manga Tropical</option>
+          <option>Chocolate Gelado</option>
+        </select>
+        <textarea placeholder="Endereço ou observações" rows="3"></textarea>
+        <button class="btn" type="submit">Enviar Pedido</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="ano"></span> Geladinhos do João — João Evangelista</p>
+    </div>
+  </footer>
+
+  <script>
+    // atualiza ano no rodapé
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
