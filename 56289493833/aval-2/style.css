@@ -1,0 +1,173 @@
+/* ======== ESTILOS GERAIS ======== */
+body {
+    color: white;
+    background: black;
+    margin: 0;
+    font-family: "Chakra Petch", sans-serif;
+    transition: background 0.5s, color 0.5s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 2px rgb(42, 122, 228);
+    padding: 15px 30px;
+    background: #0d0d0d;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    color: rgb(42, 122, 228);
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: rgb(42, 122, 228);
+}
+
+/* ======== BOTÃO DE MODO ======== */
+#modo-btn {
+    background: rgb(42, 122, 228);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#modo-btn:hover {
+    background: rgb(30, 90, 180);
+}
+
+/* ======== SEÇÕES ======== */
+.chamada {
+    background: rgb(184, 156, 213);
+    color: black;
+    padding: 80px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.chamada-texto {
+    max-width: 400px;
+}
+
+.chamada h2 {
+    margin-bottom: 10px;
+}
+
+.chamada h3 {
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 0;
+}
+
+/* ======== CATEGORIAS ======== */
+.categoria {
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.categoria h2,
+aside h2 {
+    color: rgb(42, 122, 228);
+}
+
+.categoria h3 {
+    font-weight: 400;
+    margin-top: -10px;
+    color: #b0b0b0;
+}
+
+.categoria-videos {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.categoria-videos img {
+    opacity: 0.5;
+    height: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.categoria-videos img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    border: 3px solid green;
+}
+
+/* ======== ASIDE ======== */
+aside {
+    background: #1a1a1a;
+    margin: 50px 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* ======== FOOTER ======== */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 2px solid rgb(42, 122, 228);
+    color: gray;
+}
+
+/* ======== ANIMAÇÕES ======== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ======== MODO CLARO ======== */
+body.claro {
+    background: white;
+    color: black;
+}
+
+body.claro header {
+    background: #f0f0f0;
+    border-bottom-color: rgb(100, 160, 255);
+}
+
+body.claro nav a {
+    color: black;
+}
+
+body.claro #modo-btn {
+    background: rgb(100, 160, 255);
+    color: black;
+}
+
+body.claro aside {
+    background: #f7f7f7;
+}
