@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beleza & Glamour - Site de Maquiagem</title>
+
+  <!-- Importando Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Estilos personalizados -->
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #fff5f8, #ffe6ef);
+      font-family: "Poppins", sans-serif;
+    }
+
+    a, button {
+      transition: all 0.3s ease;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .caixa {
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    .botao-principal {
+      background-color: #ec407a;
+      color: white;
+      border-radius: 30px;
+      padding: 10px 25px;
+      font-weight: 600;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+
+    .botao-principal:hover {
+      background-color: #d81b60;
+      transform: scale(1.05);
+    }
+
+    .produto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    footer a:hover {
+      color: #ffd5e3;
+      text-decoration: underline;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      animation: aparecer 0.8s ease;
+    }
+  </style>
+</head>
+
+<body class="text-gray-800">
+
+  <!-- CABEÇALHO -->
+  <header class="bg-pink-600 text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">
+        💄 Beleza & <span class="text-yellow-200">Glamour</span>
+      </h1>
+      <nav>
+        <ul class="flex space-x-6 text-lg">
+          <li><a href="#inicio" class="hover:text-pink-200">Início</a></li>
+          <li><a href="#produtos" class="hover:text-pink-200">Produtos</a></li>
+          <li><a href="#dicas" class="hover:text-pink-200">Dicas</a></li>
+          <li><a href="#contato" class="hover:text-pink-200">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="max-w-7xl mx-auto px-6 py-10">
+
+    <!-- SEÇÃO INÍCIO -->
+    <section id="inicio" class="text-center py-16 bg-pink-200 caixa mb-10">
+      <h2 class="text-4xl font-bold text-pink-700 mb-4">
+        Realce sua <span class="text-pink-800 italic">Beleza Natural</span> 💋
+      </h2>
+      <p class="text-lg mb-6 text-gray-700">
+        Descubra produtos, <span class="font-semibold text-pink-700">dicas incríveis</span> e tendências para valorizar sua beleza.
+      </p>
+      <a href="#produtos" class="botao-principal">Ver Produtos</a>
+    </section>
+
+    <!-- SEÇÃO PRODUTOS -->
+    <section id="produtos" class="my-16">
+      <h2 class="text-3xl font-bold text-pink-700 mb-8 text-center">🌸 Nossos Produtos</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="bg-white p-5 rounded-lg produto caixa text-center">
+          <img src="https://i.imgur.com/FdL1d1a.jpg" alt="Base Líquida" class="rounded-lg mb-3 mx-auto">
+          <h3 class="text-xl font-semibold text-pink-700">Base Líquida HD</h3>
+          <p class="text-gray-600 mt-2">Cobertura leve e <span class="text-pink-700">acabamento natural</span>.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-lg produto caixa text-center">
+          <img src="https://i.imgur.com/vxny2mK.jpg" alt="Paleta de Sombras" class="rounded-lg mb-3 mx-auto">
+          <h3 class="text-xl font-semibold text-pink-700">Paleta de Sombras</h3>
+          <p class="text-gray-600 mt-2">Cores vibrantes e <span class="underline text-pink-600">alta pigmentação</span>.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-lg produto caixa text-center">
+          <img src="https://i.imgur.com/Z2oZ92m.jpg" alt="Batom Matte" class="rounded-lg mb-3 mx-auto">
+          <h3 class="text-xl font-semibold text-pink-700">Batom Matte</h3>
+          <p class="text-gray-600 mt-2">Textura suave e <span class="font-bold text-pink-700">longa duração</span>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DICAS -->
+    <section id="dicas" class="my-20 bg-white p-10 rounded-lg caixa">
+      <h2 class="text-3xl font-bold text-pink-700 mb-6 text-center">💡 Dicas de Maquiagem</h2>
+      <ul class="max-w-2xl mx-auto text-lg list-disc list-inside text-gray-700 space-y-3">
+        <li>🧴 <span class="text-pink-700">Hidrate</span> a pele antes da maquiagem.</li>
+        <li>🎨 Use primer para <span class="italic text-pink-600">melhor fixação</span> da make.</li>
+        <li>💋 Escolha tons que combinem com o seu <span class="font-semibold text-pink-700">tom de pele</span>.</li>
+        <li>🌙 Sempre <span class="underline text-pink-600">retire a maquiagem</span> antes de dormir.</li>
+      </ul>
+    </section>
+
+    <!-- SEÇÃO CONTATO -->
+    <section id="contato" class="mt-20 text-center">
+      <h2 class="text-3xl font-bold text-pink-700 mb-8">📞 Fale Conosco</h2>
+      <form class="max-w-md mx-auto bg-white p-6 caixa">
+        <label class="block mb-2 font-semibold text-left">Nome:</label>
+        <input type="text" class="w-full p-2 border border-pink-300 rounded mb-4 focus:outline-pink-500" placeholder="Digite seu nome" required>
+
+        <label class="block mb-2 font-semibold text-left">Email:</label>
+        <input type="email" class="w-full p-2 border border-pink-300 rounded mb-4 focus:outline-pink-500" placeholder="Digite seu e-mail" required>
+
+        <label class="block mb-2 font-semibold text-left">Mensagem:</label>
+        <textarea rows="4" class="w-full p-2 border border-pink-300 rounded mb-4 focus:outline-pink-500" placeholder="Digite sua mensagem..." required></textarea>
+
+        <button type="submit" class="botao-principal w-full">Enviar</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="bg-pink-700 text-white mt-20 py-8">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+      <p>
+        © <span class="text-yellow-300 font-semibold">2025</span> Beleza & 
+        <span class="italic text-yellow-200">Glamour</span> | Todos os direitos reservados.
+      </p>
+      <div class="flex space-x-4 mt-4 md:mt-0">
+        <a href="#inicio">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#dicas">Dicas</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
