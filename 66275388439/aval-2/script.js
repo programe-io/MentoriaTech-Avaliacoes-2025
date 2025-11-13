@@ -1,4 +1,4 @@
-import java.util.Scanner;
+ import java.util.Scanner;
 public class Prova_01 {
     public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
@@ -39,7 +39,9 @@ public class Prova_01 {
             scanner.close();
         }
     }
-    [13/11, 09:
+
+    import java.util.Scanner;
+public class Prova_02 {
 
 
 
