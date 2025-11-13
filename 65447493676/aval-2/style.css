@@ -1,0 +1,147 @@
+/* Importação de Fonte: Como a série tem um ar antigo/sobrenatural, vamos usar uma fonte serifada para os títulos */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap');
+
+/* --- Reset Básico e Cores do Tema --- */
+
+:root {
+    /* Cores inspiradas no tema SPN: Preto/Escuro, Vermelho Sanguíneo e Cinza */
+    --cor-fundo: #121212;
+    --cor-texto-principal: #e0e0e0;
+    --cor-destaque: #b70000; /* Vermelho forte */
+    --cor-fundo-card: #282828;
+    --cor-borda-nav: #3a3a3a;
+    --fonte-titulo: 'Playfair Display', serif;
+    --fonte-corpo: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--cor-texto-principal);
+}
+
+/* --- Estrutura e Cabeçalho (Header) --- */
+
+header {
+    background-color: #0d0d0d;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 3px solid var(--cor-destaque);
+}
+
+header h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 2.5em;
+    color: var(--cor-destaque);
+    letter-spacing: 2px;
+}
+
+header p {
+    margin-top: 5px;
+    font-style: italic;
+    color: #aaaaaa;
+}
+
+/* --- Navegação (NAV) --- */
+
+nav {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid var(--cor-borda-nav);
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Alinha os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens no meio */
+    gap: 30px; /* Espaço entre os links */
+}
+
+nav a {
+    color: var(--cor-texto-principal);
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    color: var(--cor-destaque);
+}
+
+/* --- Conteúdo Principal (Main, Section, Article) --- */
+
+main {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+/* Conteúdo Principal (Posts) */
+#ultimos-posts {
+    flex: 3; /* Ocupa mais espaço */
+}
+
+/* Barra Lateral */
+aside {
+    flex: 1; /* Ocupa menos espaço */
+    background-color: var(--cor-fundo-card);
+    padding: 20px;
+    border-radius: 5px;
+    height: fit-content; /* Ajusta a altura ao conteúdo */
+}
+
+aside h3 {
+    border-bottom: 1px solid var(--cor-destaque);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-family: var(--fonte-titulo);
+    color: var(--cor-destaque);
+}
+
+article {
+    background-color: var(--cor-fundo-card);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--cor-destaque); /* Detalhe temático */
+    border-radius: 5px;
+}
+
+article h3 {
+    font-family: var(--fonte-titulo);
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-size: 0.8em;
+    color: #999;
+    margin-top: 10px;
+}
+
+/* --- Rodapé (Footer) --- */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0d0d0d;
+    margin-top: 30px;
+    font-size: 0.9em;
+    border-top: 1px solid var(--cor-destaque);
+}
