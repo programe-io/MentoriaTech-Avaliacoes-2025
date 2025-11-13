@@ -1,0 +1,313 @@
+/* -------------------------------------- */
+/* 1. VARIÁVEIS CSS (TEMA)                */
+/* -------------------------------------- */
+:root {
+    /* Cores do Tema Claro (Padrão) */
+    --cor-principal: #27ae60; /* Verde Saúde */
+    --cor-secundaria: #2ecc71;
+    --fundo-principal: #f8f8f8;
+    --fundo-cartao: #ffffff;
+    --cor-texto: #34495e;
+    --cor-borda: #ecf0f1;
+    --cor-nav-fundo: #3498db; /* Azul Cognitivo */
+    --cor-nav-texto: #ffffff;
+    
+    /* Sombras e Transições */
+    --sombra-leve: 0 4px 10px rgba(0, 0, 0, 0.05);
+    --transicao-rapida: 0.3s ease-in-out;
+}
+
+/* Cores do Tema Escuro */
+body.dark-mode {
+    --fundo-principal: #1f1f1f;
+    --fundo-cartao: #333333;
+    --cor-texto: #e0e0e0;
+    --cor-borda: #555555;
+    --cor-nav-fundo: #111111;
+    --cor-nav-texto: #2ecc71;
+    --cor-principal: #1abc9c;
+}
+
+/* -------------------------------------- */
+/* 2. RESET E ESTILOS GLOBAIS             */
+/* -------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: background-color var(--transicao-rapida), color var(--transicao-rapida), border-color var(--transicao-rapida);
+}
+
+body {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    background-color: var(--fundo-principal);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 30px auto;
+    padding: 20px;
+    background: var(--fundo-cartao);
+    box-shadow: var(--sombra-leve);
+    border-radius: 12px;
+}
+
+/* -------------------------------------- */
+/* 3. HEADER e NAV                        */
+/* -------------------------------------- */
+.main-header {
+    background: var(--cor-nav-fundo);
+    color: var(--cor-nav-texto);
+    padding: 20px 30px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo {
+    font-size: 2.2em;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--cor-secundaria);
+}
+
+/* Botão de Tema */
+#theme-toggle-btn {
+    padding: 10px 20px;
+    background-color: var(--cor-principal);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.main-nav {
+    background: var(--cor-nav-fundo);
+    padding: 10px 0;
+    border-bottom: 3px solid var(--cor-principal);
+    box-shadow: var(--sombra-leve);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex; 
+    justify-content: center;
+}
+
+.main-nav ul li a {
+    color: var(--cor-nav-texto);
+    text-decoration: none;
+    padding: 10px 25px;
+    display: block;
+    font-weight: 700;
+}
+
+.main-nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--cor-principal);
+}
+
+/* -------------------------------------- */
+/* 4. LAYOUT PRINCIPAL (Grid/Flexbox)     */
+/* -------------------------------------- */
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2/3 para conteúdo, 1/3 para sidebar */
+    gap: 30px;
+    padding: 30px 0;
+}
+
+/* Artigos (Conteúdo Principal) */
+.destaque-principal, .destaque-secundario {
+    padding: 25px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: var(--sombra-leve);
+}
+
+.destaque-principal {
+    grid-column: 1 / 2;
+}
+
+.destaque-secundario {
+    grid-column: 1 / 2;
+}
+
+.destaque-principal h2, .destaque-secundario h2 {
+    color: var(--cor-principal);
+    border-bottom: 2px solid var(--cor-borda);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+figure {
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+figure img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover; /* Garante que a imagem cubra o espaço */
+    display: block;
+}
+
+figcaption {
+    padding: 12px;
+    background: var(--cor-borda);
+    font-size: 0.9em;
+    color: var(--cor-texto);
+    text-align: center;
+}
+
+.sub-secao {
+    padding: 20px;
+    background: var(--fundo-principal);
+    border-radius: 6px;
+    margin-top: 20px;
+    border-left: 5px solid var(--cor-secundaria);
+}
+
+.sub-secao h3 {
+    color: var(--cor-secundaria);
+    margin-bottom: 10px;
+}
+
+.sub-secao ul {
+    list-style-type: '👉 ';
+    padding-left: 20px;
+}
+
+/* ASIDE (Barra Lateral) */
+.sidebar {
+    grid-column: 2 / 3;
+    padding: 20px;
+    background: var(--fundo-principal);
+    border-radius: 8px;
+    height: fit-content; /* Ajusta a altura ao conteúdo */
+}
+
+.sidebar-titulo {
+    color: var(--cor-nav-fundo);
+    border-bottom: 2px dashed var(--cor-borda);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.mini-artigo {
+    padding: 15px 0;
+}
+
+.mini-artigo h4 {
+    color: var(--cor-principal);
+    margin-bottom: 8px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--cor-borda);
+    margin: 15px 0;
+}
+
+
+/* -------------------------------------- */
+/* 5. FOOTER e NEWSLETTER                 */
+/* -------------------------------------- */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--cor-nav-fundo);
+    color: #bdc3c7;
+    font-size: 0.9em;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    margin-top: 30px;
+}
+
+/* Estilos de Newsletter (Manter os estilos do código anterior) */
+.newsletter {
+    padding: 15px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.newsletter h4 {
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+#newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#newsletter-form input[type="email"] {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    flex-grow: 1;
+}
+
+.btn-newsletter {
+    padding: 12px 20px;
+    background-color: var(--cor-principal);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* -------------------------------------- */
+/* 6. RESPONSIVIDADE (Celulares)          */
+/* -------------------------------------- */
+@media (max-width: 900px) {
+    .container {
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .main-header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .main-header .logo {
+        margin-bottom: 15px;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap; 
+    }
+    
+    .main-nav ul li {
+        margin: 5px;
+    }
+    
+    /* Layout de coluna única em telas pequenas */
+    .main-content {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+
+    .destaque-principal, .destaque-secundario, .sidebar {
+        grid-column: 1 / 2; /* Todos ocupam a coluna inteira */
+    }
+
+    #newsletter-form {
+        flex-direction: column;
+    }
+}
