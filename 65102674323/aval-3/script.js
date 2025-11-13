@@ -1,243 +1,420 @@
-// =======================================================
-// DADOS DO SITE (Simulação de uma API ou Banco de Dados)
-// =======================================================
-
-const siteData = {
-    topBarMessage: "FRETE GRÁTIS nas compras acima de R$ 199,90 | Parcele em até 10x sem juros!",
-    mainNavLinks: [
-        { name: "Tênis", url: "#" },
-        { name: "Roupas", url: "#" },
-        { name: "Futebol", url: "#" },
-        { name: "Academia", url: "#" },
-        { name: "Suplementos", url: "#" },
-        { name: "Outros Esportes", url: "#" },
-        { name: "Outlet", url: "#", class: "accent-color" },
-    ],
-    sidebarCategories: [
-        { title: "Categorias", links: ["Lançamentos", "Corrida", "Caminhada", "Casual", "Chuteiras", "Meias e Acessórios"] },
-        { title: "Filtrar por Marca", links: ["Nike (150)", "Adidas (120)", "Olympikus (85)", "Puma (50)"] }
-    ],
-    products: [
-        {
-            name: "Camisa Nike Brasil I 2024/25 Torcedor Pro Masculina",
-            img: "https://imgnike-a.akamaihd.net/1920x1920/0285640LA15.jpg",
-            oldPrice: "R$ 399,99",
-            currentPrice: "R$ 379,99 no Pix"
-        },
-        {
-            name: "Camisa Santos I 25/26 Neymar N° 10 Torcedor Umbro Masculina",
-            img: "https://static.netshoes.com.br/produtos/camisa-santos-i-2526-neymar-n-10-torcedor-umbro-masculina/58/2IB-1669-158/2IB-1669-158_zoom1.jpg?ts=1763004227&ims=1088x",
-            oldPrice: "R$ 399,99",
-            currentPrice: "R$ 142,49 no Pix"
-        },
-        {
-            name: "Bicicleta Caloi Explorer Comp Sl 2025 Freio Hidráulico 9vel- Azul",
-            img: "https://caloi.com/wp-content/uploads/2023/11/Explorer-Comp_Angulada_Azul-scaled.jpg",
-            oldPrice: "R$ 4.290,00",
-            currentPrice: "R$ 3.359,00"
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportStore Pro - Esportes e Lazer</title> <style>
+        /* --- Configurações Básicas --- */
+        body {
+            font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            background-color: #f8f8f8; /* Fundo suave */
+            color: #1a1a1a; /* Texto Preto */
         }
-    ],
-    footerLinks: {
-        Institucional: ["Quem Somos", "Trabalhe Conosco", "Sustentabilidade"],
-        Atendimento: ["Central de Ajuda", "Status do Pedido", "Trocas e Devoluções", "Política de Privacidade"]
-    }
-};
 
-// =======================================================
-// FUNÇÕES DE RENDERIZAÇÃO
-// =======================================================
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
-// 1. Renderiza a barra de informações superior
-function renderTopBar() {
-    const topBarElement = document.getElementById('top-info-bar');
-    if (!topBarElement) return;
+        /* Cores de Destaque AZUL */
+        .primary-color { color: #1a1a1a; }
+        .accent-color { color: #007bff; } /* Azul Vibrante para Ação */
+        .cta-bg { background-color: #007bff; }
+        .cta-bg:hover { background-color: #0056b3; } /* Azul mais escuro no hover */
 
-    topBarElement.classList.add('top-info-bar');
-    topBarElement.innerHTML = `
+        /* --- BARRA SUPERIOR (Preta) --- */
+        .top-info-bar {
+            background-color: #1a1a1a; /* Fundo Preto */
+            color: #ccc;
+            font-size: 12px;
+            padding: 8px 0;
+            text-align: center;
+        }
+
+        /* --- CABEÇALHO PRINCIPAL (Branco e Preto) --- */
+        header {
+            background-color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .main-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .search-bar {
+            flex-grow: 1;
+            margin: 0 30px;
+        }
+
+        .search-bar input {
+            padding: 12px 20px;
+            width: 100%;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        .search-bar input:focus {
+            border-color: #007bff; /* Borda Azul no foco */
+            outline: none;
+        }
+
+        .user-actions a {
+            margin-left: 20px;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .user-actions a:hover {
+            color: #007bff; /* Hover Azul */
+        }
+
+        /* --- NAVEGAÇÃO DE CATEGORIAS --- */
+        nav {
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav li a {
+            display: block;
+            padding: 15px 25px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav li a:hover {
+            background-color: #007bff; /* Fundo Azul no hover */
+            color: white;
+        }
+
+        /* --- LAYOUT PRINCIPAL: Sidebar e Conteúdo --- */
+        .main-content-grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        /* --- SIDEBAR DE CATEGORIAS --- */
+        .sidebar {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar h3 {
+            color: #007bff; /* Título Azul */
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .sidebar li a {
+            display: block;
+            padding: 8px 0;
+            color: #555;
+            text-decoration: none;
+            transition: color 0.2s, font-weight 0.2s;
+        }
+
+        .sidebar li a:hover {
+            color: #007bff; /* Hover Azul */
+            font-weight: bold;
+        }
+
+        /* --- BANNER DE DESTAQUE (Fundo Azul) --- */
+        .hero-banner {
+            height: 400px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* Usando a Imagem de Placeholder para simular o banner */
+            background: url('https://static.netshoes.com.br/bnn/l_netshoes/2025-11-11/1426_mk_vulca_desk_full1.gif') no-repeat center center;
+            background-size: cover;
+            color: rgba(240, 240, 240, 0);
+        }
+        
+        .hero-text h2 {
+            font-size: 48px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0); /* Sombra para destaque no banner */
+        }
+        
+        .hero-text p {
+            font-size: 20px;
+        }
+
+        /* --- CATÁLOGO DE PRODUTOS (GRID) --- */
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            /* Efeito Dinâmico: Levantamento no hover */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-name {
+            font-weight: 600;
+            font-size: 17px;
+            margin-bottom: 5px;
+            height: 40px; 
+        }
+
+        .old-price {
+            color: #777;
+            text-decoration: line-through;
+            font-size: 15px;
+        }
+
+        .current-price {
+            font-size: 26px;
+            font-weight: bold;
+            margin: 5px 0 10px 0;
+            display: block;
+            color: #007bff; /* Preço em Azul */
+        }
+        
+        .cta-button {
+            width: 90%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        /* --- RODAPÉ ELABORADO (Fundo Preto) --- */
+        footer {
+            background-color: #1a1a1a; /* Fundo Preto */
+            color: #5f5f5f;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .footer-links h4 {
+            color: white;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #007bff; /* Hover Azul no rodapé */
+        }
+        
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-info-bar">
         <div class="container">
-            ${siteData.topBarMessage}
+            FRETE GRÁTIS nas compras acima de R$ 199,90 | Parcele em até 10x sem juros!
         </div>
-    `;
-}
+    </div>
 
-// 2. Renderiza o cabeçalho principal
-function renderHeader() {
-    const headerElement = document.getElementById('main-header');
-    if (!headerElement) return;
-
-    headerElement.innerHTML = `
+    <header>
         <div class="container main-header-content">
-            <a href="#" class="logo primary-color"><span class="accent-color">SPORT</span>STORE</a>
-            <div class="search-bar">
+            <a href="#" class="logo primary-color"><span class="accent-color">SPORT</span>STORE</a> <div class="search-bar">
                 <input type="text" placeholder="Busque seu produto, marca ou esporte...">
             </div>
+
             <div class="user-actions">
                 <a href="#">❤️ Favoritos</a>
                 <a href="#">👤 Minha Conta</a>
                 <a href="#">🛒 Carrinho</a>
             </div>
         </div>
-    `;
-}
+    </header>
 
-// 3. Renderiza a navegação de categorias principal
-function renderNavBar() {
-    const navElement = document.getElementById('main-nav');
-    if (!navElement) return;
-
-    const navLinksHTML = siteData.mainNavLinks.map(link => 
-        `<li><a href="${link.url}" class="${link.class || ''}">${link.name}</a></li>`
-    ).join('');
-
-    navElement.innerHTML = `
+    <nav>
         <div class="container">
-            <ul>${navLinksHTML}</ul>
+            <ul>
+                <li><a href="#">Tênis</a></li>
+                <li><a href="#">Roupas</a></li>
+                <li><a href="#">Futebol</a></li>
+                <li><a href="#">Academia</a></li>
+                <li><a href="#">Suplementos</a></li>
+                <li><a href="#">Outros Esportes</a></li>
+                <li><a href="#" class="accent-color">Outlet</a></li>
+            </ul>
         </div>
-    `;
-}
+    </nav>
 
-// 4. Renderiza o Banner Principal
-function renderHeroBanner() {
-    const heroElement = document.getElementById('hero-banner-section');
-    if (!heroElement) return;
+    <section class="hero-banner container">
+        <div class="hero-text">
+            <h2>A NOVA COLEÇÃO CHEGOU!</h2>
+            <p>Os melhores artigos esportivos com 30% OFF.</p>
+        </div>
+    </section>
 
-    heroElement.innerHTML = `
-        <section class="hero-banner container">
-            <div class="hero-text">
-                <h2>A NOVA COLEÇÃO CHEGOU!</h2>
-                <p>Os melhores artigos esportivos com 30% OFF.</p>
-            </div>
-        </section>
-    `;
-}
-
-// 5. Renderiza a Sidebar de Categorias/Filtros
-function renderSidebar() {
-    const sidebarElement = document.getElementById('sidebar-content');
-    if (!sidebarElement) return;
-
-    let sidebarHTML = '';
-
-    siteData.sidebarCategories.forEach(section => {
-        const linksHTML = section.links.map(linkName => 
-            `<li><a href="#">${linkName}</a></li>`
-        ).join('');
+    <div class="container main-content-grid">
         
-        sidebarHTML += `
-            <h3>${section.title}</h3>
-            <ul>${linksHTML}</ul>
-        `;
-    });
+        <aside class="sidebar">
+            <h3>Categorias</h3>
+            <ul>
+                <li><a href="#">Lançamentos</a></li>
+                <li><a href="#">Corrida</a></li>
+                <li><a href="#">Caminhada</a></li>
+                <li><a href="#">Casual</a></li>
+                <li><a href="#">Chuteiras</a></li>
+                <li><a href="#">Meias e Acessórios</a></li>
+            </ul>
 
-    sidebarElement.classList.add('sidebar');
-    sidebarElement.innerHTML = sidebarHTML;
-}
+            <h3>Filtrar por Marca</h3>
+            <ul>
+                <li><a href="#">Nike (150)</a></li>
+                <li><a href="#">Adidas (120)</a></li>
+                <li><a href="#">Olympikus (85)</a></li>
+                <li><a href="#">Puma (50)</a></li>
+            </ul>
+        </aside>
 
-// 6. Renderiza os Cards de Produtos
-function renderProductList() {
-    const mainElement = document.getElementById('main-catalog-content');
-    if (!mainElement) return;
-
-    // Constrói o HTML dos cards de produtos
-    const productsHTML = siteData.products.map(product => `
-        <article class="product-card">
-            <img src="${product.img}" alt="${product.name}" class="product-image">
-            <div class="product-info">
-                <p class="product-name">${product.name}</p>
-                <span class="old-price">${product.oldPrice}</span>
-                <span class="current-price">${product.currentPrice}</span>
-                <button class="cta-button cta-bg">Adicionar ao Carrinho</button>
+        <main>
+            <div class="catalog-header">
+                <h2>Lançamentos Imperdíveis</h2>
             </div>
-        </article>
-    `).join('');
+            
+            <div class="product-list">
+                
+                <article class="product-card">
+                    <img src="https://imgnike-a.akamaihd.net/1920x1920/0285640LA15.jpg" alt="Camisa do Brasil" class="product-image">
+                    <div class="product-info">
+                        <p class="product-name">Camisa Nike Brasil I 2024/25 Torcedor Pro Masculina</p>
+                        <span class="old-price">R$ 399,99</span>
+                        <span class="current-price">R$ 379,99 no Pix</span>
+                        <button class="cta-button cta-bg">Adicionar ao Carrinho</button>
+                    </div>
+                </article>
 
-    // Injeta o cabeçalho do catálogo e a lista de produtos
-    mainElement.innerHTML = `
-        <div class="catalog-header">
-            <h2>Lançamentos Imperdíveis</h2>
-        </div>
-        <div class="product-list">
-            ${productsHTML}
-        </div>
-    `;
-    
-    // Adiciona interatividade aos botões (Ação de Clique)
-    addCartButtonListeners();
-}
-
-// 7. Renderiza o Rodapé
-function renderFooter() {
-    const footerElement = document.getElementById('main-footer');
-    if (!footerElement) return;
-    
-    let linksHTML = '';
-
-    // Constrói as colunas de links
-    for (const title in siteData.footerLinks) {
-        const linkList = siteData.footerLinks[title].map(linkName => 
-            `<li><a href="#">${linkName}</a></li>`
-        ).join('');
-
-        linksHTML += `
-            <div>
-                <h4>${title}</h4>
-                <ul>${linkList}</ul>
+                <article class="product-card">
+                    <img src="https://static.netshoes.com.br/produtos/camisa-santos-i-2526-neymar-n-10-torcedor-umbro-masculina/58/2IB-1669-158/2IB-1669-158_zoom1.jpg?ts=1763004227&ims=1088x" alt="Tênis de Corrida" class="product-image">
+                    <div class="product-info">
+                        <p class="product-name">Camisa Santos I 25/26 Neymar N° 10 Torcedor Umbro Masculina</p>
+                        <span class="old-price">R$ 399,99</span>
+                        <span class="current-price">R$ 142,49 no Pix</span>
+                        <button class="cta-button cta-bg">Adicionar ao Carrinho</button>
+                    </div>
+                </article>
+                
+                <article class="product-card">
+                    <img src="https://caloi.com/wp-content/uploads/2023/11/Explorer-Comp_Angulada_Azul-scaled.jpg" alt="Chuteira de Campo" class="product-image">
+                    <div class="product-info">
+                        <p class="product-name">Bicicleta Caloi Explorer Comp Sl 2025 Freio Hidráulico 9vel- Azul</p>
+                        <span class="old-price">R$ 4,290.00</span>
+                        <span class="current-price">R$ 3,359.00</span>
+                        <button class="cta-button cta-bg">Adicionar ao Carrinho</button>
+                    </div>
+                </article>
             </div>
-        `;
-    }
+        </main>
+    </div>
 
-    // Colunas extras (Pagamento e Assinatura)
-    linksHTML += `
-        <div>
-            <h4>Formas de Pagamento</h4>
-            <p style="font-size: 14px;">.........</p>
-            <img src="https://cdn.awsli.com.br/1000x5000/1312/1312825/arquivos/Forma%20de%20Pagamento.png" alt="Formas de pagamento">
-        </div>
-        <div>
-            <h4>Fique por Dentro</h4>
-            <p>Receba ofertas exclusivas por e-mail:</p>
-            <input type="email" placeholder="Seu e-mail" style="padding: 8px; width: 100%; border-radius: 4px; border: none; margin-bottom: 10px;">
-            <button class="cta-button cta-bg" style="width: 100%;">Assinar</button>
-        </div>
-    `;
-    
-    footerElement.innerHTML = `
+    <footer>
         <div class="container footer-links">
-            ${linksHTML}
+            <div>
+                <h4>Institucional</h4>
+                <ul>
+                    <li><a href="#">Quem Somos</a></li>
+                    <li><a href="#">Trabalhe Conosco</a></li>
+                    <li><a href="#">Sustentabilidade</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Atendimento</h4>
+                <ul>
+                    <li><a href="#">Central de Ajuda</a></li>
+                    <li><a href="#">Status do Pedido</a></li>
+                    <li><a href="#">Trocas e Devoluções</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Formas de Pagamento</h4>
+                <p style="font-size: 14px;">.........</p>
+                <img src="https://cdn.awsli.com.br/1000x5000/1312/1312825/arquivos/Forma%20de%20Pagamento.png" alt="Formas de pagamento">
+            </div>
+            <div>
+                <h4>Fique por Dentro</h4>
+                <p>Receba ofertas exclusivas por e-mail:</p>
+                <input type="email" placeholder="Seu e-mail" style="padding: 8px; width: 100%; border-radius: 4px; border: none; margin-bottom: 10px;">
+                <button class="cta-button cta-bg" style="width: 100%;">Assinar</button>
+            </div>
         </div>
         <div class="footer-bottom container">
-            <p>&copy; 2025 SportStore Pro. Todos os direitos reservados. CNPJ: XX.XXX.XXX/0001-XX.</p>
-        </div>
-    `;
-}
+            <p>&copy; 2025 SportStore Pro. Todos os direitos reservados. CNPJ: XX.XXX.XXX/0001-XX.</p> </div>
+    </footer>
 
-// 8. Adiciona a interatividade dos botões de 'Adicionar ao Carrinho'
-function addCartButtonListeners() {
-    const ctaButtons = document.querySelectorAll('.cta-button');
-
-    ctaButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.preventDefault(); 
-            
-            const card = button.closest('.product-card');
-            const productName = card ? card.querySelector('.product-name').textContent : 'Item';
-
-            alert(`"${productName}" adicionado ao carrinho!`);
-        });
-    });
-}
-
-
-// =======================================================
-// INICIALIZAÇÃO DA PÁGINA
-// =======================================================
-document.addEventListener('DOMContentLoaded', () => {
-    // Renderiza todas as seções dinamicamente
-    renderTopBar();
-    renderHeader();
-    renderNavBar();
-    renderHeroBanner();
-    renderSidebar();
-    renderProductList();
-    renderFooter();
-});
+</body>
+</html> 
