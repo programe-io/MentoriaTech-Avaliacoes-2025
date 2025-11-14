@@ -1,0 +1,68 @@
+/*
+  styles.css
+  Estilos personalizados para o App de Maquiagem (Beauty Express App)
+  Complementa as classes utilitárias do Tailwind CSS.
+*/
+
+/* 1. Base - Importa uma fonte que combina com a estética */
+/* Nota: Se não houver necessidade de uma fonte específica, pode omitir este bloco. */
+/* Exemplo de fonte Google Fonts (não será carregada automaticamente, requer <link> no HTML) */
+/*
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+}
+*/
+
+/* 2. Cores e Sombras Personalizadas (Apenas se o Tailwind não for suficiente) */
+/* Usamos classes Tailwind como 'text-pink-600' e 'shadow-lg', então este bloco é opcional */
+.bg-red-600 { /* Classe antiga de pizza, se usada em algum lugar sem ser sobrescrita */
+    background-color: #ec4899; /* Pink 500 */
+}
+
+/* 3. Estilos Específicos do Rastreamento (Tracker) */
+
+/* Contêiner do Mapa - Adiciona um efeito de profundidade sutil */
+#map-container {
+    background: linear-gradient(to right, #f4f4f5, #e5e7eb); /* Gradiente suave de cinza */
+    border: 1px solid #e0e0e0;
+    overflow: hidden; /* Garante que o marcador permaneça dentro */
+}
+
+/* Marcador de Entrega (Pacote 📦) */
+#delivery-marker {
+    /* Adiciona uma transição suave para simular o movimento no JS */
+    transition: left 2s ease-in-out, top 2s ease-in-out;
+    /* Faz o ícone "flutuar" um pouco para parecer mais dinâmico */
+    animation: pulse-marker 1.5s infinite alternate;
+}
+
+@keyframes pulse-marker {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Animação para o modal de confirmação */
+#confirmation-modal .bg-white {
+    animation: slide-down 0.3s ease-out;
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para botões de adicionar produto ao hover */
+button:hover {
+    cursor: pointer;
+}
