@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nataly Roupa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+<style>
+    /* Estilos adicionais para seguir uma estrutura mais personalizada */
+
+    /* Estilo geral da página */
+    body {
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Cabeçalho estilizado */
+    header {
+        border-bottom: 3px solid #e5e7eb;
+    }
+
+    nav a {
+        transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    nav a:hover {
+        color: #1d4ed8;
+        transform: scale(1.05);
+    }
+
+    /* Cards dos produtos */
+    .produto-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .produto-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Rodapé estilizado */
+    footer p {
+        opacity: 0.9;
+        transition: opacity 0.3s ease;
+    }
+
+    footer p:hover {
+        opacity: 1;
+    }
+</style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Cabeçalho -->
+    <header class="bg-white shadow-md py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <h1 class="text-2xl font-bold"><span class="text-pink-600">Nataly</span> <span class="text-gray-800">Roupa</span></h1>
+            <nav class="space-x-4">
+                <a href="#" class="hover:text-blue-500">Home</a>
+                <a href="#colecao" class="hover:text-blue-500">Coleção</a>
+                <a href="#contato" class="hover:text-blue-500">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mx-auto px-6 py-10">
+        <section class="text-center mb-10">
+            <h2 class="text-4xl font-bold mb-4">Nova Coleção 2025</h2>
+            <p class="text-lg text-gray-600">Moda moderna, confortável e acessível para todos os estilos.</p>
+        </section>
+
+        <section id="colecao" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="bg-white shadow rounded-lg overflow-hidden">
+                <img src="https://via.placeholder.com/300x200" class="w-full" alt="Roupa 1" />
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold"><span class="badge inline-block mr-2 px-2 py-0.5 text-xs rounded bg-pink-100 text-pink-700">Novo</span> Casaco Elegante</h3>
+                    <p class="text-gray-600">R$ 199,90</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow rounded-lg overflow-hidden">
+                <img src="https://via.placeholder.com/300x200" class="w-full" alt="Roupa 2" />
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold"><span class="badge inline-block mr-2 px-2 py-0.5 text-xs rounded bg-pink-100 text-pink-700">Novo</span> Vestido Floral</h3>
+                    <p class="text-gray-600">R$ 149,90</p>
+                </div>
+            </div>
+
+            <div class="bg-white shadow rounded-lg overflow-hidden">
+                <img src="https://via.placeholder.com/300x200" class="w-full" alt="Roupa 3" />
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold"><span class="badge inline-block mr-2 px-2 py-0.5 text-xs rounded bg-pink-100 text-pink-700">Novo</span> Camisa Casual</h3>
+                    <p class="text-gray-600">R$ 89,90</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="contato" class="bg-gray-900 text-white py-6 mt-10">
+        <div class="container mx-auto text-center px-6">
+            <p class="mb-2">© 2025 Nataly Roupa. Todos os direitos reservados.</p>
+            <p>Email: <span class="underline">contato@lojaderoupas.com.br</span></p>
+        </div>
+    </footer>
+</body>
+</html>
