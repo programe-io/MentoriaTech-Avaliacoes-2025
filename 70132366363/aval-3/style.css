@@ -1,0 +1,55 @@
+/* ==================================== */
+/* styles.css (Tema Bolo do Potte) */
+/* ==================================== */
+
+/* Definição de Cores do Tema (para referência, usamos Tailwind no HTML) */
+:root {
+    --doce-principal: #D97706; /* Laranja Escuro/Caramelo */
+    --doce-claro: #FCD34D;     /* Amarelo Doce */
+    --fundo-doce: #FEF3C7;     /* Amarelo Claro */
+}
+
+/* 1. Fonte Suave */
+/* Aplica uma fonte mais agradável e arredondada, como a 'Quicksand' ou 'Nunito', 
+   se disponíveis no sistema, caindo para 'sans-serif' como padrão. */
+body {
+    font-family: 'Nunito', 'Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Estilo para o Marcador de Entrega no Mapa (Melhorando a Transição) */
+#delivery-marker {
+    transition: left 2s ease-in-out;
+}
+
+/* 3. Estilização de Foco para Acessibilidade e Estética */
+/* Garante que o foco em botões e links use a cor principal. */
+a:focus, button:focus {
+    outline: 2px solid var(--doce-principal);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+/* 4. Estilo da Barra de Rolagem (Webkit - Chrome, Safari) */
+/* Um toque visual para deixar a barra de rolagem com a cor do tema. */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--fundo-doce);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--doce-principal);
+    border-radius: 10px;
+    border: 2px solid var(--fundo-doce);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a86105; /* Um tom um pouco mais escuro ao passar o mouse */
+}
+
+/* 5. Efeito de Sombra nos Cards do Menu */
+/* Aumenta ligeiramente a profundidade da sombra ao passar o mouse sobre os bolos. */
+.bg-white.p-4.rounded-xl.shadow-md:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* P
