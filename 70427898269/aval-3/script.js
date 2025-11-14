@@ -1,124 +1,139 @@
-// ===============================
-//  ABRIR E FECHAR OVERLAY DE BUSCA
-// ===============================
-const overlay = document.querySelector('.overlay');
-const searchBar = document.querySelector('.searchbar input');
-
-searchBar.addEventListener('focus', () => {
-  overlay.classList.add('show');
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === "Escape") overlay.classList.remove('show');
-});
-
-// Fechar ao clicar fora do painel
-overlay.addEventListener('click', (e) => {
-  if (e.target.classList.contains("overlay")) {
-    overlay.classList.remove("show");
-  }
-});
-
-
-// ===============================
-//  ABRIR E FECHAR PAINEL LATERAL DO PRODUTO
-// ===============================
-const productDetail = document.querySelector('.product-detail');
-
-function openProductDetail(data) {
-  productDetail.classList.add('show');
-  
-  // Exemplo de preenchimento automático (personalizar se quiser)
-  productDetail.querySelector("h2").textContent = data.title ?? "Produto";
-  productDetail.querySelector("p").textContent = data.desc ?? "Descrição do produto.";
-  productDetail.querySelectorAll(".pd-gallery img").forEach((img, i) => {
-    if (data.images && data.images[i]) {
-      img.src = data.images[i];
-    }
-  });
-}
-
-function closeProductDetail() {
-  productDetail.classList.remove('show');
-}
-
-// Fechar painel se clicar fora dele
-document.addEventListener('click', (e) => {
-  if (productDetail.classList.contains('show') &&
-      !productDetail.contains(e.target) &&
-      !e.target.closest('.result-card') &&
-      !e.target.closest('.product-card')) {
-    closeProductDetail();
-  }
-});
-
-
-// ===============================
-//  CLICAR EM PRODUTOS (CARD → ABRE PAINEL)
-// ===============================
-document.querySelectorAll(".product-card, .result-card").forEach(card => {
-  card.addEventListener("click", () => {
-    openProductDetail({
-      title: card.querySelector("h4")?.textContent ?? "Produto",
-      desc: card.querySelector(".tag")?.textContent ?? "Descrição",
-      images: [
-        card.querySelector("img")?.src,
-        card.querySelector("img")?.src,
-        card.querySelector("img")?.src
-      ]
-    });
-  });
-});
-
-
-// ===============================
-//  CARROSSEL SIMPLES (TROCA DE IMAGEM AUTOMÁTICA)
-// ===============================
-const carouselImages = [
-  "https://i.imgur.com/zQZSWrt.jpeg",
-  "https://i.imgur.com/7Q2Q5BO.jpeg",
-  "https://i.imgur.com/8gA2H2h.jpeg",
+/** Variáveis de Estado */
+let selectedItem = null;
+const DELIVERY_FEE = 12.00;
+let trackingStatusIndex = 0;
+const TRACKING_STATUSES = [
+    "Aguardando envio...",
+    "Embalando o item 📦",
+    "Produto enviado. Em trânsito!",
+    "Chegando em sua cidade...",
+    "Produto saiu para entrega! 🚚",
+    "Entregue com sucesso! 🎉"
 ];
 
-let carouselIndex = 0;
-const carousel = document.querySelector(".carousel img");
+/** Elementos do DOM */
+const itemNameElement = document.getElementById('item-name');
+const itemPriceElement = document.getElementById('item-price');
+const subtotalElement = document.getElementById('subtotal');
+const totalAmountElement = document.getElementById('total-amount');
+const orderDetailsBlock = document.getElementById('order-details-block');
+const trackerSectionBlock = document.getElementById('tracker-section-block');
+const confirmationModal = document.getElementById('confirmation-modal');
+const statusDisplay = document.getElementById('status-display');
+const deliveryMarker = document.getElementById('delivery-marker');
+const messageBox = document.getElementById('message-box');
 
-if (carousel) {
-  setInterval(() => {
-    carouselIndex = (carouselIndex + 1) % carouselImages.length;
-    carousel.style.opacity = "0";
+// Inicializa o Total com a taxa de Frete (R$ 12,00)
+totalAmountElement.textContent = `R$ ${DELIVERY_FEE.toFixed(2).replace('.', ',')}`;
 
-    setTimeout(() => {
-      carousel.src = carouselImages[carouselIndex];
-      carousel.style.opacity = "1";
-    }, 300);
+// --- FUNÇÕES PRINCIPAIS ---
 
-  }, 3000);
+/**
+ * 1. Seleciona o item e atualiza o carrinho.
+ * (Corrigindo o nome da função que estava 'selecionarPizza' para 'selecionarProduto',
+ * mantendo compatibilidade com o HTML)
+ * @param {string} name Nome do produto
+ * @param {number} price Preço do produto
+ */
+function selecionarPizza(name, price) {
+    selectedItem = { name, price };
+    
+    // Calcula os valores
+    const subtotal = selectedItem.price;
+    const total = subtotal + DELIVERY_FEE;
+    
+    // Atualiza a exibição do carrinho
+    itemNameElement.textContent = `${selectedItem.name}`;
+    itemPriceElement.textContent = `Preço: R$ ${selectedItem.price.toFixed(2).replace('.', ',')}`;
+    subtotalElement.textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+    totalAmountElement.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+    
+    console.log(`Produto selecionado: ${name} (R$ ${price.toFixed(2)})`);
 }
 
-
-// ===============================
-//  FILTROS SIMBÓLICOS (APENAS VISUAL)
-// ===============================
-document.querySelectorAll(".filter").forEach(f => {
-  f.addEventListener("click", () => {
-    f.classList.toggle("active");
-    if (f.classList.contains("active")) {
-      f.style.background = "#ffeef2";
-      f.style.borderColor = "#ffb3c7";
-    } else {
-      f.style.background = "#fff";
-      f.style.borderColor = "#eef2f7";
+/**
+ * 2. Simula a finalização da compra.
+ */
+function simulateOrder() {
+    if (!selectedItem) {
+        alert("Por favor, selecione um produto antes de finalizar a compra.");
+        return;
     }
-  });
-});
 
+    // Esconde o bloco do carrinho/pedido
+    orderDetailsBlock.classList.add('hidden');
+    // Exibe o bloco de rastreamento
+    trackerSectionBlock.classList.remove('hidden');
+    // Exibe o modal de confirmação
+    confirmationModal.classList.remove('hidden');
+    confirmationModal.classList.add('flex');
+    
+    // Reseta o rastreamento
+    trackingStatusIndex = 0;
+    updateTrackingStatus(true); // Atualiza para o primeiro status
+    
+    console.log("Compra finalizada e modal exibido.");
+}
 
-// ===============================
-//  SISTEMA DE NAVEGAÇÃO SIMPLES
-// ===============================
-document.querySelectorAll("a[href]").forEach(link => {
-  link.addEventListener("click", (e) => {
-    if (link.getAttribute("href") === "#") e.preventDefault();
-  });
-})
+/**
+ * 3. Fecha o modal de confirmação e leva o usuário à seção de rastreamento.
+ */
+function closeModal() {
+    confirmationModal.classList.add('hidden');
+    confirmationModal.classList.remove('flex');
+    
+    // Scrolla para a seção de rastreamento
+    trackerSectionBlock.scrollIntoView({ behavior: 'smooth' });
+    
+    console.log("Modal fechado. Foco no rastreamento.");
+}
+
+/**
+ * 4. Atualiza o status de rastreamento e o marcador no mapa simulado.
+ * @param {boolean} reset Se deve forçar o status inicial.
+ */
+function updateTrackingStatus(reset = false) {
+    if (reset) {
+        trackingStatusIndex = 0;
+        messageBox.classList.add('hidden');
+    }
+
+    if (trackingStatusIndex >= TRACKING_STATUSES.length) {
+        // Se já entregue, não faz nada mais
+        return;
+    }
+
+    // Atualiza o texto de status
+    statusDisplay.textContent = TRACKING_STATUSES[trackingStatusIndex];
+
+    // Calcula a nova posição do marcador (caixa) - Simulação de progresso
+    // 10% (início) a 80% (fim, antes da casa)
+    const startPos = 10;
+    const endPos = 80;
+    const maxSteps = TRACKING_STATUSES.length - 1; // 5 passos de movimento
+    const stepSize = (endPos - startPos) / maxSteps;
+    
+    const currentPos = startPos + (trackingStatusIndex * stepSize);
+
+    // Ajusta o marcador na tela
+    deliveryMarker.style.left = `${currentPos}%`;
+    deliveryMarker.style.top = `${30 - (trackingStatusIndex * 5)}%`; // Pequeno movimento vertical
+
+    if (trackingStatusIndex === TRACKING_STATUSES.length - 1) {
+        // Último status: Entregue
+        messageBox.classList.remove('hidden');
+        statusDisplay.textContent = "ENTREGUE COM SUCESSO! ✅";
+        statusDisplay.classList.remove('text-blue-800');
+        statusDisplay.classList.add('text-green-600');
+        deliveryMarker.style.left = '85%'; // Perto da casa
+        deliveryMarker.style.top = '10%'; 
+    } else {
+        statusDisplay.classList.remove('text-green-600');
+        statusDisplay.classList.add('text-blue-800');
+    }
+
+    // Avança para o próximo status
+    trackingStatusIndex++;
+}
+
+console.log("app.js carregado. Funções de compra e rastreamento definidas.");
