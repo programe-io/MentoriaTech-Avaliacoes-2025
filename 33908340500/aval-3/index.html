@@ -4,182 +4,408 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal de Estudos Gerais - Conhecimento Abrangente</title>
-    <!-- Carregando Tailwind CSS para um design responsivo e moderno -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        'primary-blue': '#007bff',
-                        'bg-light': '#f4f4ff',
-                        'text-dark': '#333333',
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Configuração de estilo geral -->
+
     <style>
-        /* Ajuste para navegação e foco */
-        :target {
-            scroll-margin-top: 5rem; /* Garante que a seção não fique sob o menu */
-        }
+/* Linha 1: Estilos Globais e Reset Básico */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Fundo suave */
+    color: #333; /* Cor do texto principal */
+    line-height: 1.6;
+}
+
+/* Linha 10: Estilização do Header (Cabeçalho) */
+header {
+    background-color: #007bff; /* Azul primário */
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin-top: 5px;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Linha 29: Estilização da Navegação (Menu) */
+nav {
+    background-color: #0056b3; /* Azul mais escuro */
+    padding: 10px 0;
+    text-align: center;
+    position: sticky; /* Menu fixo ao rolar */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.1s;
+    font-weight: 600;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #004085; /* Cor ao passar o mouse */
+    transform: translateY(-2px);
+}
+
+/* Linha 57: Estilização do Container Principal - Tag MAIN */
+main {
+    width: 90%;
+    max-width: 1200px; /* Largura máxima para desktops */
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+}
+
+/* Linha 69: Estilização das Seções de Conteúdo */
+section {
+    margin-bottom: 50px;
+    padding: 30px;
+    border-left: 5px solid #007bff; /* Detalhe lateral azul */
+    background-color: #ffffff;
+    border-radius: 8px;
+    transition: box-shadow 0.3s;
+}
+
+section:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #007bff;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 15px;
+    margin-top: 0;
+    font-size: 2em;
+}
+
+h3 {
+    color: #212529;
+    margin-top: 25px;
+    border-left: 3px solid #ffc107; /* Detalhe amarelo */
+    padding-left: 10px;
+}
+
+h4 {
+    color: #495057;
+    margin-top: 15px;
+}
+
+/* Linha 104: Estilização de Listas */
+ul, ol {
+    padding-left: 25px;
+    margin-bottom: 25px;
+}
+
+ul li, ol li {
+    margin-bottom: 10px;
+}
+
+/* Linha 113: Estilização de Blockquote (Citação) */
+blockquote {
+    background-color: #e9f2ff; /* Fundo azul claro para a citação */
+    border-left: 5px solid #007bff;
+    margin: 20px 0;
+    padding: 15px 20px;
+    font-style: italic;
+    color: #0056b3;
+}
+
+blockquote::before {
+    content: "“";
+    font-size: 2em;
+    color: #007bff;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* Linha 131: Estilização de Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.95em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    overflow: hidden; /* Para garantir que os cantos arredondados funcionem */
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa; /* Listras leves para legibilidade */
+}
+
+tr:hover {
+    background-color: #e2f0ff; /* Destaque ao passar o mouse na linha */
+}
+
+/* Linha 164: Estilização do Footer (Rodapé) */
+footer {
+    background-color: #212529; /* Cinza escuro */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* --- ESTILOS para DIV, IMG e SPAN --- */
+
+/* Estilo para a tag SPAN para destacar texto inline */
+.destaque-inline {
+    background-color: #ffc107; /* Amarelo para destaque */
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-weight: 700;
+    color: #333;
+    white-space: nowrap; /* Impede quebras de linha em palavras importantes */
+}
+
+/* Estilização para a tag DIV (geral, a menos que tenha classes específicas) */
+div {
+    margin: 15px 0; /* Espaço vertical padrão para divs */
+    padding: 10px;
+}
+
+/* Estilização para a tag IMG (Imagens) */
+img {
+    max-width: 100%; /* Garante que a imagem seja responsiva */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove o espaço extra abaixo de imagens inline */
+    margin: 20px auto; /* Centraliza a imagem e adiciona margem vertical */
+    border-radius: 8px; /* Cantos arredondados para um visual moderno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Linha 177: Estilos para Responsividade (Mobile First) */
+@media (max-width: 768px) {
+    /* Aplicando o estilo de responsividade à tag main */
+    main {
+        width: 95%; /* Aumenta a largura em telas menores */
+        margin: 15px auto;
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav a {
+        display: block; /* Links de navegação em blocos para telas pequenas */
+        margin: 5px 10px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block; /* Transforma a tabela em um formato de lista */
+    }
+
+    /* Oculta o cabeçalho da tabela em telas pequenas */
+    thead {
+        display: none;
+    }
+
+    /* Faz com que os dados apareçam como rótulos em telas pequenas */
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%; /* Espaço para o rótulo */
+        text-align: right;
+    }
+
+    td::before {
+        /* O uso de data-label é o ideal aqui */
+        content: attr(data-label);
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #007bff;
+    }
+}
+/* Fim do CSS */
     </style>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
-<body class="bg-bg-light text-text-dark font-sans antialiased">
+<body>
 
-    <!-- DIV principal para envolver todo o conteúdo da página -->
-    <div id="page-wrapper" class="min-h-screen flex flex-col">
+    <header>
+        <h1>Portal do Conhecimento Abrangente</h1>
+        <p>Seu recurso central para explorar Ciências, Humanidades e Tecnologia</p>
+    </header>
 
-        <!-- Cabeçalho -->
-        <header class="bg-primary-blue text-white py-8 text-center shadow-lg">
-            <h1 class="text-4xl font-extrabold mb-1">📚 Portal do Conhecimento Abrangente</h1>
-            <p class="text-lg">Seu recurso central para explorar Ciências, Humanidades e Tecnologia</p>
-        </header>
+    <nav>
+        <a href="#ciencias">Ciências</a>
+        <a href="#humanas">Humanas</a>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#tabela">Referências</a>
+        <a href="contato.html">Contato</a>
+    </nav>
 
-        <!-- Navegação Principal -->
-        <nav class="bg-white shadow-md sticky top-0 z-10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-center space-x-6">
-                <a href="#ciencias" class="text-gray-700 hover:text-primary-blue font-medium transition duration-150 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-100">Ciências</a>
-                <a href="#humanas" class="text-gray-700 hover:text-primary-blue font-medium transition duration-150 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-100">Humanas</a>
-                <a href="#tecnologia" class="text-gray-700 hover:text-primary-blue font-medium transition duration-150 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-100">Tecnologia</a>
-                <a href="#tabela" class="text-gray-700 hover:text-primary-blue font-medium transition duration-150 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-100">Referências</a>
-                <a href="contato.html" class="text-white bg-primary-blue hover:bg-blue-600 font-medium transition duration-150 ease-in-out px-4 py-2 rounded-full shadow-md">Contato</a>
-            </div>
-        </nav>
-
-        <!-- Conteúdo Principal -->
-        <main class="container max-w-7xl mx-auto p-4 md:p-8 mt-6 mb-10 bg-white shadow-xl rounded-2xl flex-grow">
-        
-            <!-- Imagem em Destaque Adicionada com Tag <img> -->
+    <main>
+    
+        <div class="destaque">
+            <h3>Navegue pelo Universo do Saber</h3>
             <img 
-                src="https://placehold.co/1200x400/007bff/ffffff?text=CONHECIMENTO+ABRANGENTE" 
-                alt="Banner ilustrativo de Conhecimento Abrangente com ícones de ciência, livros e tecnologia."
-                class="w-full h-auto rounded-xl shadow-lg mb-8"
-                onerror="this.onerror=null; this.src='https://placehold.co/1200x400/888888/ffffff?text=Imagem+Nao+Disponivel';"
+                src="https://placehold.co/1000x300/007bff/ffffff?text=CONHECIMENTO+ABRANGENTE" 
+                alt="Gráfico visual representando ciência, humanidades e tecnologia"
+                onerror="this.onerror=null; this.src='https://placehold.co/1000x300/6c757d/ffffff?text=Falha+ao+carregar+imagem';"
             >
-            <!-- Fim Imagem em Destaque -->
+        </div>
 
-            <section id="ciencias" class="mb-10 p-6 border-b border-primary-blue/20">
-                <h2 class="text-3xl font-bold text-primary-blue mb-4">⚛️ Ciências Naturais e Exatas</h2>
-                <p class="mb-4 text-gray-600">
-                    As ciências fornecem o quadro sistemático para a compreensão do universo físico e da vida.
-                    Elas se baseiam na observação, experimentação e formulação de teorias verificáveis.
-                </p>
+        <section id="ciencias">
+            <h2>Ciências Naturais e Exatas</h2>
+            <p>
+                As ciências fornecem o quadro sistemático para a compreensão do universo físico e da vida.
+                Elas se baseiam na observação, experimentação e formulação de teorias verificáveis.
+            </p>
 
-                <h3 class="text-2xl font-semibold text-text-dark mt-6 mb-3">Física e Química Básica</h3>
-                <p class="mb-4">
-                    A <strong class="text-primary-blue">Física</strong> estuda a matéria, seu movimento e comportamento através do espaço e tempo,
-                    juntamente com conceitos como energia e força. A <strong class="text-primary-blue">Química</strong> lida com a composição,
+            <h3>Física e Química Básica</h3>
+            <div>
+                <p>
+                    A **Física** estuda a matéria, seu movimento e comportamento através do espaço e tempo,
+                    juntamente com conceitos como energia e força. A **Química** lida com a composição,
                     estrutura e propriedades da matéria e as transformações que ela sofre.
                 </p>
-                <h4 class="text-xl font-medium text-gray-700 mt-4">Conceitos Fundamentais de Física:</h4>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li class="hover:text-primary-blue transition">Leis de Newton (Inércia, Dinâmica, Ação e Reação)</li>
-                    <li class="hover:text-primary-blue transition">Conceitos de Energia (Potencial e Cinética)</li>
-                    <li class="hover:text-primary-blue transition">Termodinâmica e suas Leis</li>
-                    <li class="hover:text-primary-blue transition">Eletromagnetismo</li>
+                <h4>Conceitos Fundamentais de Física:</h4>
+                <ul>
+                    <li>Leis de Newton (Inércia, Dinâmica, Ação e Reação)</li>
+                    <li>Conceitos de Energia (Potencial e Cinética)</li>
+                    <li>Termodinâmica e suas Leis</li>
+                    <li>Eletromagnetismo</li>
                 </ul>
 
-                <h4 class="text-xl font-medium text-gray-700 mt-6">Elementos Químicos Essenciais:</h4>
-                <ol class="list-decimal list-inside ml-4 space-y-1">
-                    <li class="hover:text-primary-blue transition">Hidrogênio (H) - Mais abundante no universo.</li>
-                    <li class="hover:text-primary-blue transition">Oxigênio (O) - Essencial para a respiração e combustão.</li>
-                    <li class="hover:text-primary-blue transition">Carbono (C) - Base de toda a química orgânica.</li>
-                    <li class="hover:text-primary-blue transition">Nitrogênio (N) - Componente chave de proteínas e ácidos nucleicos.</li>
+                <h4>Elementos Químicos Essenciais:</h4>
+                <ol>
+                    <li>Hidrogênio (H) - Mais abundante no universo.</li>
+                    <li>Oxigênio (O) - Essencial para a respiração e combustão.</li>
+                    <li>Carbono (C) - Base de toda a química orgânica.</li>
+                    <li>Nitrogênio (N) - Componente chave de proteínas e ácidos nucleicos.</li>
                 </ol>
-            </section>
+            </div>
+        </section>
 
-            <section id="humanas" class="mb-10 p-6 border-b border-primary-blue/20">
-                <h2 class="text-3xl font-bold text-primary-blue mb-4">🌍 Ciências Humanas e Sociais</h2>
-                <p class="mb-4 text-gray-600">
-                    Esta área explora as sociedades humanas e as relações sociais, analisando a cultura,
-                    a política, a história e o comportamento individual e coletivo.
-                </p>
+        <section id="humanas">
+            <h2>Ciências Humanas e Sociais</h2>
+            <p>
+                Esta área explora as sociedades humanas e as relações sociais, analisando a cultura,
+                a política, a história e o comportamento individual e coletivo.
+            </p>
 
-                <h3 class="text-2xl font-semibold text-text-dark mt-6 mb-3">História e Filosofia</h3>
-                <p class="mb-4">
-                    A <strong class="text-primary-blue">História</strong> nos permite entender a trajetória da humanidade através do tempo,
-                    aprendendo com os eventos passados. A <strong class="text-primary-blue">Filosofia</strong> busca responder às questões
+            <h3>História e Filosofia</h3>
+            <div>
+                <p>
+                    A **História** nos permite entender a trajetória da humanidade através do tempo,
+                    aprendendo com os eventos passados. A **Filosofia** busca responder às questões
                     fundamentais sobre a existência, o conhecimento, os valores e a razão.
                 </p>
-                <blockquote cite="Platão" class="italic border-l-4 border-primary-blue pl-4 py-2 my-6 bg-gray-50 rounded-lg">
+                <blockquote cite="Platão">
                     "O preço que as pessoas boas pagam pela indiferença aos assuntos públicos é o de serem
                     governadas por pessoas más."
                 </blockquote>
                 <p>
-                    Estudar as humanidades é crucial para desenvolver o <strong class="text-primary-blue">pensamento crítico</strong> e a <strong class="text-primary-blue">empatia</strong>.
+                    Estudar as humanidades é crucial para desenvolver o <span class="destaque-inline">pensamento crítico</span> e a **empatia**.
                 </p>
-            </section>
+            </div>
+        </section>
 
-            <section id="tecnologia" class="mb-10 p-6 border-b border-primary-blue/20">
-                <h2 class="text-3xl font-bold text-primary-blue mb-4">💻 Tecnologia da Informação (TI)</h2>
-                <p class="mb-4 text-gray-600">
-                    A Tecnologia da Informação abrange o uso de computadores, software e sistemas de telecomunicações
-                    para armazenar, recuperar, transmitir e manipular dados.
-                </p>
-                <h3 class="text-2xl font-semibold text-text-dark mt-6 mb-3">Linguagens de Programação Base:</h3>
-                <p class="mb-4">
-                    Conhecer as linguagens fundamentais é o primeiro passo para o desenvolvimento web:
-                </p>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li class="font-bold">HTML (HyperText Markup Language): <span class="font-normal">Estrutura o conteúdo de uma página web.</span></li>
-                    <li class="font-bold">CSS (Cascading Style Sheets): <span class="font-normal">Define a apresentação visual e o estilo.</span></li>
-                    <li class="font-bold">JavaScript: <span class="font-normal">Adiciona interatividade e lógica à página.</span></li>
-                </ul>
-            </section>
+        <section id="tecnologia">
+            <h2>Tecnologia da Informação (TI)</h2>
+            <p>
+                A Tecnologia da Informação abrange o uso de computadores, software e sistemas de telecomunicações
+                para armazenar, recuperar, transmitir e manipular dados.
+            </p>
+            <h3>Linguagens de Programação Base:</h3>
+            <p>
+                Conhecer as linguagens fundamentais é o primeiro passo para o desenvolvimento web:
+            </p>
+            <ul>
+                <li>**HTML (HyperText Markup Language)**: Estrutura o conteúdo de uma página web.</li>
+                <li>**CSS (Cascading Style Sheets)**: Define a apresentação visual e o estilo.</li>
+                <li>**JavaScript**: Adiciona interatividade e lógica à página.</li>
+            </ul>
+        </section>
 
-            <section id="tabela" class="p-6">
-                <h2 class="text-3xl font-bold text-primary-blue mb-4">📊 Tabela de Referência Rápida</h2>
-                <div class="overflow-x-auto rounded-lg shadow-lg">
-                    <table class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-primary-blue/90 text-white">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider rounded-tl-lg">Área</th>
-                                <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider">Tópico Chave</th>
-                                <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider rounded-tr-lg">Aplicação</th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white divide-y divide-gray-200">
-                            <tr class="hover:bg-gray-50 transition duration-150">
-                                <td class="px-6 py-4 whitespace-nowrap">Matemática</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Cálculo</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Engenharia, Física</td>
-                            </tr>
-                            <tr class="hover:bg-gray-50 transition duration-150">
-                                <td class="px-6 py-4 whitespace-nowrap">Biologia</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Genética</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Medicina, Biotecnologia</td>
-                            </tr>
-                            <tr class="hover:bg-gray-50 transition duration-150">
-                                <td class="px-6 py-4 whitespace-nowrap">Sociologia</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Estrutura Social</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Ciências Políticas, Marketing</td>
-                            </tr>
-                            <tr class="hover:bg-gray-50 transition duration-150">
-                                <td class="px-6 py-4 whitespace-nowrap">TI</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Banco de Dados</td>
-                                <td class="px-6 py-4 whitespace-nowrap">Desenvolvimento de Software</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-            
-        </main>
+        <section id="tabela">
+            <h2>Tabela de Referência Rápida</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Área</th>
+                        <th data-label="Tópico">Tópico Chave</th>
+                        <th data-label="Aplicação">Aplicação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Área">Matemática</td>
+                        <td data-label="Tópico Chave">Cálculo</td>
+                        <td data-label="Aplicação">Engenharia, Física</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Área">Biologia</td>
+                        <td data-label="Tópico Chave">Genética</td>
+                        <td data-label="Aplicação">Medicina, Biotecnologia</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Área">Sociologia</td>
+                        <td data-label="Tópico Chave">Estrutura Social</td>
+                        <td data-label="Aplicação">Ciências Políticas, Marketing</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Área">TI</td>
+                        <td data-label="Tópico Chave">Banco de Dados</td>
+                        <td data-label="Aplicação">Desenvolvimento de Software</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
         
-        <!-- Fim da div principal que envolve o conteúdo -->
-    </div>
-
-    <!-- Rodapé -->
-    <footer class="bg-gray-800 text-white text-center p-4 mt-auto">
-        <p class="text-sm">&copy; 2025 Portal de Estudos Gerais. Todos os direitos reservados. Design moderno com Tailwind CSS.</p>
+    </main>
+    <footer>
+        <p>&copy; 2025 Portal de Estudos Gerais. Todos os direitos reservados. Feito com HTML e CSS básico.</p>
     </footer>
 
 </body>
