@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FC Barcelona Fan Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Estilos adicionais personalizados */
+    body {
+      scroll-behavior: smooth;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      transition: 0.3s ease;
+    }
+    .titulo-gradient {
+      background: linear-gradient(90deg, #004D98, #A50044);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+    .shadow-strong {
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+    .borda-barca {
+      border-width: 3px;
+      border-color: #A50044;
+    }
+      /* Tipografia personalizada */
+    h1, h2, h3 {
+      letter-spacing: 1px;
+    }
+    p {
+      line-height: 1.7;
+    }
+
+    /* Layout responsivo avançado */
+    @media (max-width: 1024px) {
+      .hero-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-desktop {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .card-custom {
+        margin-bottom: 20px;
+      }
+    }
+
+    /* Animações personalizadas */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes brilhoBarca {
+      0% { box-shadow: 0 0 5px #A50044; }
+      50% { box-shadow: 0 0 15px #FDB913; }
+      100% { box-shadow: 0 0 5px #004D98; }
+    }
+    .efeito-brilho {
+      animation: brilhoBarca 3s infinite;
+    }
+
+    /* Botões personalizados */
+    .btn-barca {
+      background: linear-gradient(90deg, #A50044, #004D98);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn-barca:hover {
+      opacity: 0.85;
+      transform: scale(1.05);
+    }
+
+    /* Containers personalizados */
+    .box-info {
+      border-left: 5px solid #004D98;
+      padding: 12px 16px;
+      background: #f8fafc;
+      border-radius: 8px;
+    }
+
+    /* Cards temáticos aprofundados */
+    .card-custom {
+      border: 2px solid rgba(0,0,0,0.1);
+      border-radius: 14px;
+      padding: 20px;
+      background: white;
+      transition: 0.4s;
+    }
+    .card-custom:hover {
+      border-color: #A50044;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transform: translateY(-6px);
+    }
+
+    /* Efeito de banner do Barça */
+    .banner-barca {
+      background: linear-gradient(120deg, #A50044, #004D98, #FDB913);
+      color: white;
+      padding: 40px;
+      border-radius: 18px;
+      text-align: center;
+      margin-top: 30px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+
+    /* Rodapé aprofundado */
+    footer {
+      background: #111827;
+      color: #e5e7eb;
+      padding: 40px 20px;
+      margin-top: 60px;
+      border-top: 4px solid #A50044;
+    }
+    footer a {
+      color: #FDB913;
+      transition: 0.3s;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+  <!-- Cabeçalho -->
+  <header class="bg-blue-900 text-yellow-400 shadow-xl p-6 flex items-center justify-between">
+    <h1 class="text-3xl font-extrabold tracking-wide">FC Barcelona Fan Club</h1>
+    <nav class="flex gap-6 text-lg font-semibold">
+      <a href="#home" class="hover:text-white transition">Início</a>
+      <a href="#historia" class="hover:text-white transition">História</a>
+      <a href="#idol" class="hover:text-white transition">Ídolos</a>
+      <a href="#contato" class="hover:text-white transition">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="p-8 max-w-5xl mx-auto space-y-16" id="home">
+
+    <!-- Seção Hero -->
+    <section class="bg-gradient-to-r from-blue-900 to-red-700 text-white p-10 rounded-2xl shadow-2xl text-center">
+      <h2 class="text-4xl font-bold mb-4"> <span class="text-yellow-300 font-extrabold">Fã Barça</span> -Mais que um Clube</h2>
+      <p class="text-lg max-w-2xl mx-auto">Bem-vindo à melhor página feita para os fãs do gigante espanhol: o glorioso FC Barcelona! Aqui você encontra história, curiosidades e muito mais.</p>
+    </section>
+
+    <!-- História -->
+    <section id="historia" class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-blue-900">
+      <h3 class="text-3xl font-bold text-blue-900 mb-4">História</h3>
+      <p class="leading-relaxed text-gray-700">Fundado em 1899, o Barcelona é um dos clubes mais icônicos do mundo. Com um estilo de jogo baseado na posse de bola e toque refinado, o Barça conquistou milhões de fãs ao redor do planeta.</p>
+    </section>
+
+    <!-- Ídolos -->
+    <section id="idol" class="bg-yellow-100 p-8 rounded-xl shadow-lg border-l-4 border-yellow-500">
+      <h3 class="text-3xl font-bold text-red-700 mb-6">Ídolos do Clube</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+          <h4 class="text-xl font-bold text-blue-900 mb-2">Lionel Messi</h4>
+          <p>Maior jogador da história do clube e dono de diversos recordes.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+          <h4 class="text-xl font-bold text-blue-900 mb-2">Xavi Hernández</h4>
+          <p>Maestro do meio-campo e símbolo do tiki-taka.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+          <h4 class="text-xl font-bold text-blue-900 mb-2">Ronaldinho Gaúcho</h4>
+          <p>O craque que devolveu a magia ao Camp Nou.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-red-700">
+      <h3 class="text-3xl font-bold text-blue-900 mb-4">Contato</h3>
+      <form class="space-y-4">
+        <div>
+          <label class="block font-semibold mb-1">Nome</label>
+          <input type="text" class="w-full p-3 rounded-lg border shadow" placeholder="Seu nome" />
+        </div>
+        <div>
+          <label class="block font-semibold mb-1">E-mail</label>
+          <input type="email" class="w-full p-3 rounded-lg border shadow" placeholder="Seu e-mail" />
+        </div>
+        <div>
+          <label class="block font-semibold mb-1">Mensagem</label>
+          <textarea class="w-full p-3 rounded-lg border shadow h-32" placeholder="Sua mensagem..."></textarea>
+        </div>
+        <button class="bg-blue-900 text-yellow-400 px-6 py-3 rounded-xl font-bold shadow hover:bg-blue-800 transition">Enviar</button>
+      </form>
+    </section>
+
+    <!-- Imagem obrigatória do Barcelona -->
+  <section class="max-w-6xl mx-auto p-6">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" alt="Escudo do Barcelona" class="w-48 mx-auto drop-shadow-xl">
+  </section>
+</main>
+
+  <!-- Rodapé -->
+  <footer class="bg-blue-900 text-center text-white py-6 mt-16">
+    <p class="font-semibold">© 2025 FC Barcelona Fan Page — Criado com Tailwind CSS</p>
+  </footer>
+</body>
+</html>
