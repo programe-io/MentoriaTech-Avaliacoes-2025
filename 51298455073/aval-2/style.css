@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #ffccf2, #ffe6ff);
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    color: #ff0099;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #fff;
+}
+
+.balao {
+    position: absolute;
+    bottom: -150px;
+    width: 60px;
+    height: 80px;
+    background-color: red;
+    border-radius: 50% 50% 45% 45%;
+    opacity: 0.8;
+    box-shadow: inset -5px -10px 20px rgba(0,0,0,0.2);
+    animation: subir linear infinite;
+}
+
+.corda {
+    width: 2px;
+    height: 40px;
+    background: #555;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -40px;
+}
+
+@keyframes subir {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-110vh); }
+}
