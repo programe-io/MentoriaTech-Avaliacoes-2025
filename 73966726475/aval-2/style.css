@@ -1,0 +1,177 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+/* ===== ESTILO GERAL ===== */
+body {
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* ===== MENU DE NAVEGAÇÃO ===== */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #023e8a;
+    padding: 0.75rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+    background-color: #0077b6;
+    transform: scale(1.05);
+}
+
+/* ===== SEÇÃO PRINCIPAL ===== */
+section#sobre {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+/* ===== ASIDE (SOBRE MIM) ===== */
+aside {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+aside h2 {
+    color: #0077b6;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #00b4d8;
+    display: inline-block;
+}
+
+aside img {
+    display: block;
+    margin: 1rem auto;
+    border-radius: 10px;
+}
+
+/* ===== GALERIA ===== */
+.galeria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.galeria figure {
+    text-align: center;
+}
+
+.galeria img {
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+.galeria figcaption {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #555;
+}
+
+/* ===== MAIN (CONTEÚDO PRINCIPAL) ===== */
+main {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    max-width: 600px;
+}
+
+main h2 {
+    color: #0077b6;
+    margin-bottom: 0.5rem;
+}
+
+main h4 {
+    color: #03045e;
+    margin-bottom: 1rem;
+}
+
+main img {
+    display: block;
+    margin: 1rem auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+main p {
+    text-align: justify;
+    margin-top: 1rem;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    background-color: #023e8a;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    section#sobre {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    aside, main {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    nav {
+        gap: 0.75rem;
+    }
+}
