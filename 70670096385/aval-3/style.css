@@ -1,0 +1,128 @@
+/* -------- RESET -------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to bottom, #0a2a63, #061a40);
+  color: white;
+  min-height: 100vh;
+}
+
+/* -------- HEADER -------- */
+header {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+nav {
+  display: none;
+}
+
+nav a {
+  margin-left: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #4da3ff;
+  text-shadow: 0 0 5px #4da3ff;
+}
+
+/* Mostrar menu em telas maiores */
+@media (min-width: 768px) {
+  nav {
+    display: flex;
+  }
+}
+
+/* -------- MAIN FEED -------- */
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+
+  /* Desktop */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* -------- POST CARD -------- */
+.post-card {
+  background: #1f1f1f;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 12px;
+  padding: 15px 0 20px 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.4s;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 18px rgba(0,0,0,0.6);
+}
+
+/* -------- CARD HEADER -------- */
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px 15px 20px;
+}
+
+.post-header img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 3px solid #3182ce;
+}
+
+.post-header h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* -------- CARD IMAGE -------- */
+.post-card img.post-img {
+  width: 100%;
+  display: block;
+  border-radius: 0;
+}
+
+/* -------- CARD CONTENT -------- */
+.post-content {
+  padding: 20px;
+}
+
+.post-content p {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  text-align: justify;
+}
+
+.post-time {
+  margin-top: 15px;
+  font-size: 0.75rem;
+  color: #c7c7c7;
+  text-align: right;
+  display: block;
+}
