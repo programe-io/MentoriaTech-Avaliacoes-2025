@@ -1,0 +1,54 @@
+/* Define a fonte Inter (padrão) e um fundo suave */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f7f7;
+    min-height: 100vh;
+}
+/* Efeito de hover nos cartões de pizza */
+.pizza-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+/* Estilos para o contêiner do mapa (Simulação) */
+#map-container {
+    height: 300px;
+    background-color: #d1e7c5; 
+    background-image: url('https://placehold.co/600x300/d1e7c5/3b5327?text=Simula%C3%A7%C3%A3o+de+Mapa+Urbano');
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #3b5327;
+}
+/* Ponto do Entregador */
+.delivery-marker {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-color: #ef4444; /* Vermelho vibrante */
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: left 15s linear, top 15s linear; /* Suaviza o movimento */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: white;
+    z-index: 10;
+}
+/* Ponto do Cliente */
+.client-marker {
+    position: absolute;
+    top: 75%;
+    right: 15%;
+    width: 24px;
+    height: 24px;
+    background-color: #3b82f6; /* Azul */
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
