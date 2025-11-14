@@ -1,0 +1,125 @@
+/* ----- CONFIG BÁSICA ----- */
+body {
+  background: linear-gradient(to bottom, #1e3a8a, #0f172a); /* from-blue-900 to-blue-950 */
+  height: 100vh;
+  color: white;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* ----- HEADER ----- */
+header {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  flex: 1;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  header .logo {
+    text-align: left;
+  }
+}
+
+header nav {
+  font-weight: bold;
+  gap: 12px;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  header nav {
+    display: flex;
+  }
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* ----- MAIN / POSTS ----- */
+main {
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ----- CARD ----- */
+.card {
+  background: #1f2937; /* bg-gray-800 */
+  padding: 16px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  width: 100%;
+  max-width: 380px;
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+}
+
+/* CARD HEADER */
+.card-header {
+  display: flex;
+  align-items: center;
+  padding: 0 16px 16px 16px;
+  gap: 12px;
+}
+
+.card-header img {
+  height: 48px;
+  width: 48px;
+  border-radius: 9999px;
+  border: 2px solid #3b82f6; /* blue-500 */
+}
+
+.card-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* CARD IMAGE */
+.card img.card-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* CARD CONTENT */
+.card-content {
+  padding: 16px;
+}
+
+.card-content p {
+  font-size: 14px;
+  text-align: justify;
+}
+
+.card-content span {
+  font-size: 12px;
+  opacity: 0.7;
+  display: block;
+  margin-top: 16px;
+  text-align: right;
+}
