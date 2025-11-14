@@ -1,0 +1,136 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+  background: linear-gradient(to bottom, #0a1d4a, #050b24);
+  color: white;
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+}
+
+header div {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+header nav {
+  display: flex;
+  gap: 20px;
+  font-weight: bold;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+header nav a:hover {
+  color: #66aaff;
+}
+
+/* ===== MAIN / FEED ===== */
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  /* Desktop */
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* ===== POST CARD ===== */
+.post-card,
+main > div {
+  background: #1f2937;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 12px;
+  padding-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+  transition: transform .2s, box-shadow .2s;
+}
+
+main > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+}
+
+/* ===== CARD HEADER ===== */
+.card-header,
+main > div > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 20px 15px 20px;
+}
+
+.card-header img,
+main > div img:first-child {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #3b82f6;
+  object-fit: cover;
+}
+
+.card-header h2,
+main > div h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* ===== CARD IMAGE ===== */
+main > div img {
+  width: 100%;
+  display: block;
+  border-radius: 0;
+}
+
+/* ===== CARD CONTENT ===== */
+.card-content,
+main > div > div:nth-child(3) {
+  padding: 20px;
+}
+
+.card-content p,
+main > div p {
+  font-size: 0.9rem;
+  text-align: justify;
+  line-height: 1.4rem;
+}
+
+.card-content span,
+main > div span {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.75rem;
+  color: #c7c7c7;
+  text-align: right;
+}
