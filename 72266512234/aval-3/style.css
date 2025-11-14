@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Explorer</title>
+
+    <!-- TAILWIND CSS VIA CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- TIPOGRAFIA GOOGLE -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- ===================== CABEÇALHO ===================== -->
+    <header class="bg-blue-600 text-white shadow-lg">
+        <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl font-bold">
+                Travel <span class="text-yellow-300">Explorer</span> <!-- SPAN OBRIGATÓRIO -->
+            </h1>
+
+            <nav class="hidden md:flex gap-6">
+                <a href="#" class="hover:text-yellow-300">Início</a>
+                <a href="#" class="hover:text-yellow-300">Destinos</a>
+                <a href="#" class="hover:text-yellow-300">Promoções</a>
+                <a href="#" class="hover:text-yellow-300">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===================== CONTEÚDO PRINCIPAL ===================== -->
+    <main class="max-w-6xl mx-auto mt-8 px-6">
+
+        <!-- Hero -->
+        <section class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+            <img src="https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg"
+                class="w-full md:w-1/2 object-cover" alt="Paisagem de viagem">
+
+            <div class="p-8 flex flex-col justify-center">
+                <h2 class="text-3xl font-bold mb-4 text-blue-600">
+                    Descubra o <span class="text-yellow-500">mundo</span> <!-- SPAN -->
+                </h2>
+
+                <p class="text-gray-700 mb-6">
+                    Explore destinos incríveis, encontre promoções especiais
+                    e viva experiências que vão marcar sua vida.
+                </p>
+
+                <button class="px-6 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
+                    Começar Agora
+                </button>
+            </div>
+        </section>
+
+        <!-- Destinos -->
+        <h2 class="text-2xl font-bold mt-12 mb-6 text-gray-800">
+            Destinos <span class="text-blue-600">Populares</span> <!-- SPAN -->
+        </h2>
+
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+                <img src="https://images.pexels.com/photos/356844/pexels-photo-356844.jpeg"
+                     class="h-48 w-full object-cover" alt="Paris">
+
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Paris, França</h3>
+                    <p class="text-gray-600">A cidade do amor e dos monumentos históricos.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+                <img src="https://images.pexels.com/photos/2087391/pexels-photo-2087391.jpeg"
+                     class="h-48 w-full object-cover" alt="Kyoto">
+
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Kyoto, Japão</h3>
+                    <p class="text-gray-600">Natureza e cultura tradicional japonesa.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+                <img src="https://images.pexels.com/photos/259447/pexels-photo-259447.jpeg"
+                     class="h-48 w-full object-cover" alt="Nova York">
+
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Nova York, EUA</h3>
+                    <p class="text-gray-600">A cidade que nunca dorme, cheia de atrações.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- ===================== RODAPÉ ===================== -->
+    <footer class="bg-blue-600 text-white mt-12 py-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-lg">
+                © 2024 <span class="text-yellow-300 font-bold">Travel Explorer</span> <!-- SPAN -->
+            </p>
+            <p class="text-sm opacity-80">Criado para fins educacionais</p>
+        </div>
+    </footer>
+
+</body>
+</html>
