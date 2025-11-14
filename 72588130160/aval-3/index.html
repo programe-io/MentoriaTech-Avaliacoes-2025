@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Visão Econômica Global — Futurista | Por Aécio Emanoel</title>
+
+    <style>
+        :root {
+            --bg-primary: #050510;
+            --bg-secondary: #0A0A20;
+            --neon-blue: #3BA9FF;
+            --neon-purple: #A45CFF;
+            --text-light: #E8F7FF;
+        }
+
+        /* reset básico */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html,body { height: 100%; }
+
+        body {
+            background: radial-gradient(circle at top, #0a0a2a, #000010 70%);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 0.2px;
+            -webkit-font-smoothing:antialiased;
+            line-height: 1.6;
+        }
+
+        /* HEADER + NAV */
+        header {
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.4));
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(59,169,255,0.12);
+            box-shadow: 0 6px 30px rgba(0,0,0,0.45);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap: 20px;
+            padding: 14px 20px;
+        }
+
+        .brand {
+            display:flex;
+            align-items:baseline;
+            gap:10px;
+        }
+
+        .brand h1 {
+            font-size: 1.25rem;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px rgba(59,169,255,0.6);
+            letter-spacing: 1.5px;
+        }
+
+        .brand h1 span {
+            font-size: 0.85rem;
+            color: var(--neon-purple);
+            margin-left: 8px;
+            opacity: 0.95;
+            text-shadow: 0 0 8px rgba(164,92,255,0.55);
+        }
+
+        nav ul {
+            list-style:none;
+            display:flex;
+            gap:18px;
+            align-items:center;
+        }
+
+        nav ul li a {
+            color: rgba(230,240,255,0.92);
+            text-decoration:none;
+            padding:8px 12px;
+            border-radius:8px;
+            transition: all .18s ease;
+            font-weight:600;
+            font-size:0.95rem;
+        }
+
+        nav ul li a:hover {
+            color: #fff;
+            background: linear-gradient(90deg, rgba(59,169,255,0.08), rgba(164,92,255,0.06));
+            box-shadow: 0 6px 20px rgba(59,169,255,0.08);
+            transform: translateY(-3px);
+        }
+
+        /* mobile menu button */
+        .menu-btn {
+            display:none;
+            background:transparent;
+            border:0;
+            color:var(--neon-blue);
+            font-size:1.6rem;
+            cursor:pointer;
+        }
+
+        /* MAIN */
+        main {
+            max-width: 1100px;
+            margin: 36px auto;
+            padding: 24px;
+        }
+
+        section {
+            background: linear-gradient(135deg, rgba(59,169,255,0.03), rgba(164,92,255,0.02));
+            border: 1px solid rgba(59,169,255,0.08);
+            border-radius: 14px;
+            padding: 28px;
+            margin-bottom: 28px;
+            box-shadow: 0 8px 30px rgba(2,6,23,0.6), inset 0 0 12px rgba(59,169,255,0.02);
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #dfe9ff;
+            margin-bottom:10px;
+            text-shadow: 0 0 8px rgba(59,169,255,0.18);
+        }
+
+        p, li { color: #e6eefc; font-size: 1rem; }
+
+        ul { margin-left: 18px; margin-top: 10px; }
+
+        ul li { margin-bottom:8px; list-style: disc; }
+
+        ul li::marker { color: var(--neon-blue); }
+
+        /* image box */
+        .hero {
+            display:flex;
+            gap:24px;
+            align-items:center;
+            flex-wrap:wrap;
+        }
+
+        .hero .hero-text {
+            flex: 1 1 360px;
+        }
+
+        .hero .hero-img {
+            flex: 1 1 360px;
+            max-width: 520px;
+        }
+
+        .hero-img img {
+            width:100%;
+            border-radius:12px;
+            border: 1px solid rgba(59,169,255,0.14);
+            box-shadow: 0 10px 40px rgba(59,169,255,0.08), 0 0 40px rgba(164,92,255,0.05);
+            transition: transform .35s ease, box-shadow .35s ease;
+        }
+
+        .hero-img img:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(59,169,255,0.18), 0 0 60px rgba(164,92,255,0.12);
+        }
+
+        /* cards */
+        .card-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:18px; margin-top:16px; }
+        .card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            border-radius:12px;
+            padding:16px;
+            border: 1px solid rgba(59,169,255,0.06);
+            transition: transform .28s ease, box-shadow .28s ease;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(59,169,255,0.08);
+        }
+        .card h3 { margin-bottom:8px; color:#f0f7ff; }
+
+        /* quiz styles */
+        .quiz { margin-top:12px; }
+        .quiz .option {
+            background: rgba(255,255,255,0.02);
+            border:1px solid rgba(255,255,255,0.03);
+            padding:10px;
+            border-radius:8px;
+            cursor:pointer;
+            margin-bottom:8px;
+            transition: background .18s ease, transform .12s ease;
+        }
+        .quiz .option:hover { background: rgba(59,169,255,0.06); transform: translateX(6px); }
+        .quiz .option.correct { background: linear-gradient(90deg,#064e3b,#06b6a4); color: #fff; border-color: rgba(6,182,161,0.6); }
+        .quiz .option.incorrect { background: linear-gradient(90deg,#7f1d1d,#ef4444); color:#fff; border-color: rgba(239,68,68,0.6); }
+
+        /* back to top */
+        #btn-topo {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            background: linear-gradient(90deg,var(--neon-blue),var(--neon-purple));
+            color:#021026;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(59,169,255,0.12);
+            cursor:pointer;
+            display:none;
+            font-weight:700;
+        }
+
+        /* footer */
+        footer {
+            margin-top: 28px;
+            padding: 18px;
+            text-align:center;
+            color: rgba(220,230,255,0.85);
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+
+        /* responsive */
+        @media (max-width:900px) {
+            .hero { flex-direction:column-reverse; align-items:stretch; }
+            .hero-img, .hero-text { width:100%; max-width:100%; }
+        }
+
+        @media (max-width:720px) {
+            nav ul { display:none; }
+            .menu-btn { display:inline-block; }
+            .nav-inner { gap:12px; }
+            .brand h1 { font-size:1rem; }
+        }
+
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <div class="nav-inner">
+            <div class="brand">
+                <h1>Economia Futurista <span>— por Aécio Emanoel</span></h1>
+            </div>
+
+            <nav>
+                <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+                <ul id="navList" role="menubar">
+                    <li role="none"><a role="menuitem" href="#inicio">Início</a></li>
+                    <li role="none"><a role="menuitem" href="#conceitos">Conceitos</a></li>
+                    <li role="none"><a role="menuitem" href="#crescimento">Crescimento</a></li>
+                    <li role="none"><a role="menuitem" href="#inflacao">Inflação</a></li>
+                    <li role="none"><a role="menuitem" href="#tecnologia">Tecnologia</a></li>
+                    <li role="none"><a role="menuitem" href="#instituicoes">Instituições</a></li>
+                    <li role="none"><a role="menuitem" href="#interativo">Interativo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="inicio">
+
+        <!-- HERO / Visão Geral -->
+        <section aria-labelledby="hero-title" class="hero">
+            <div class="hero-text">
+                <h2 id="hero-title">O Futuro da Economia — visão prática e acessível</h2>
+                <p>Essa página reúne conceitos fundamentais, instituições, tendências tecnológicas e quizzes interativos para estudantes e curiosos entenderem as forças que moldam a economia global.</p>
+
+                <div class="card-grid" style="margin-top:14px;">
+                    <div class="card" onclick="toggleText(this)">
+                        <h3>PIB (Produto Interno Bruto)</h3>
+                        <p class="more" style="display:none;">Mede a soma de bens e serviços produzidos num país em determinado período. Utilizado para comparar tamanho e crescimento econômico.</p>
+                    </div>
+
+                    <div class="card" onclick="toggleText(this)">
+                        <h3>Inflação</h3>
+                        <p class="more" style="display:none;">Aumento generalizado de preços que reduz o poder de compra. Controlada por política monetária e fiscal.</p>
+                    </div>
+
+                    <div class="card" onclick="toggleText(this)">
+                        <h3>Câmbio</h3>
+                        <p class="more" style="display:none;">Valor relativo entre moedas. Afeta importações, exportações e preço de ativos internacionais.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-img" aria-hidden="false">
+                <img src="https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&fit=crop&w=1200&q=80"
+                     alt="Representação futurista da economia e tecnologia" />
+            </div>
+        </section>
+
+        <!-- CONCEITOS -->
+        <section id="conceitos" aria-labelledby="conceitos-h">
+            <h2 id="conceitos-h">Conceitos Essenciais</h2>
+            <p>A economia global é um sistema interligado que envolve produção, consumo, comércio, fluxos de capital e políticas públicas. Conhecer os conceitos abaixo ajuda a interpretar notícias e decisões políticas.</p>
+
+            <div class="card-grid" style="margin-top:12px;">
+                <div class="card">
+                    <h3>Oferta & Demanda</h3>
+                    <p>Determinantes imediatos de preço e quantidade no mercado. Mudanças em preferência, oferta e custos alteram o equilíbrio.</p>
+                </div>
+                <div class="card">
+                    <h3>Política Monetária</h3>
+                    <p>Controle de juros e oferta de moeda para estabilizar preços e crescimento (Banco Central).</p>
+                </div>
+                <div class="card">
+                    <h3>Política Fiscal</h3>
+                    <p>Decisões do governo sobre impostos e gastos que influenciam demanda agregada e distribuição de renda.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CRESCIMENTO -->
+        <section id="crescimento" aria-labelledby="crescimento-h">
+            <h2 id="crescimento-h">Crescimento Econômico</h2>
+            <p>O crescimento econômico refere-se ao aumento sustentado da capacidade produtiva e do padrão de vida. É medido pelo PIB real e per capita.</p>
+
+            <ul>
+                <li><strong>Fatores:</strong> investimento, acumulação de capital humano, capital físico, tecnologia.</li>
+                <li><strong>Produtividade:</strong> principal motor de longo prazo do crescimento.</li>
+                <li><strong>Distribuição:</strong> crescimento inclusivo depende de políticas de educação e saúde.</li>
+            </ul>
+        </section>
+
+        <!-- INFLACAO -->
+        <section id="inflacao" aria-labelledby="inflacao-h">
+            <h2 id="inflacao-h">Inflação & Preços</h2>
+            <p>A inflação afeta contratos, salários reais e decisões de investimento. Entender suas causas permite avaliar políticas públicas.</p>
+
+            <div class="card-grid" style="margin-top:12px;">
+                <div class="card">
+                    <h3>Inflação por Demanda</h3>
+                    <p>Alta demanda pressiona preços quando a oferta não acompanha.</p>
+                </div>
+                <div class="card">
+                    <h3>Inflação por Custos</h3>
+                    <p>Aumento nos custos de produção (salários, energia) repassado aos preços.</p>
+                </div>
+                <div class="card">
+                    <h3>Inflação Inercial</h3>
+                    <p>Expectativas e indexação fazem inflação persistir mesmo sem choque novo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECNOLOGIA -->
+        <section id="tecnologia" aria-labelledby="tecnologia-h">
+            <h2 id="tecnologia-h">Tecnologia e o Motor do Século XXI</h2>
+            <p>Tecnologia (IA, Big Data, IoT, blockchain) está transformando produtividade, serviços financeiros e mercados de trabalho.</p>
+
+            <ul>
+                <li><strong>IA:</strong> previsões, automação, finanças algorítmicas.</li>
+                <li><strong>Big Data:</strong> decisões baseadas em dados em tempo real.</li>
+                <li><strong>Cripto e Blockchain:</strong> infraestrutura para contratos e pagamentos descentralizados.</li>
+                <li><strong>Indústria 4.0:</strong> produção inteligente, manutenção preditiva e cadeias resilientes.</li>
+            </ul>
+        </section>
+
+        <!-- INSTITUICOES -->
+        <section id="instituicoes" aria-labelledby="instituicoes-h">
+            <h2 id="instituicoes-h">Instituições Financeiras Globais</h2>
+            <p>Organizações multilaterais e bancos centrais afetam fluxos de capital, estabilidade financeira e desenvolvimento.</p>
+
+            <ul>
+                <li><strong>FMI:</strong> assistência a países em crise; coordenação de políticas macro.</li>
+                <li><strong>Banco Mundial:</strong> projetos de infraestrutura e redução da pobreza.</li>
+                <li><strong>OMC:</strong> regulações e resolução de disputas comerciais.</li>
+                <li><strong>BCs (Bancos Centrais):</strong> estabelecem juros e políticas monetárias.</li>
+            </ul>
+        </section>
+
+        <!-- COMERCIO E GEOPOLITICA -->
+        <section id="comercio" aria-labelledby="comercio-h">
+            <h2 id="comercio-h">Comércio, Geopolítica e Riscos</h2>
+            <p>Fluxos comerciais, sanções, tarifas e guerras tecnológicas moldam cadeias de valor globais. Riscos incluem choques de oferta, crises bancárias e tensões geopolíticas.</p>
+
+            <div class="card-grid" style="margin-top:12px;">
+                <div class="card">
+                    <h3>Balança Comercial</h3>
+                    <p>Exportações menos importações — afeta reservas e câmbio.</p>
+                </div>
+                <div class="card">
+                    <h3>Tarifas & Barreiras</h3>
+                    <p>Aumentam preços e realocam produção entre países.</p>
+                </div>
+                <div class="card">
+                    <h3>Riscos Sistêmicos</h3>
+                    <p>Cadeias de suprimento concentradas e exposição a choques externos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MERCADO DE TRABALHO -->
+        <section id="trabalho" aria-labelledby="trabalho-h">
+            <h2 id="trabalho-h">Mercado de Trabalho e Futuro das Profissões</h2>
+            <p>A automação e IA impactam ocupações: algumas somem, outras surgem. Educação contínua e requalificação são centrais para enfrentar a transição.</p>
+
+            <ul>
+                <li>Habilidades digitais e pensamento crítico serão cada vez mais valiosas.</li>
+                <li>Setores como saúde, tecnologia e energia limpa tendem a crescer.</li>
+                <li>Políticas públicas precisam apoiar a transição e a proteção social.</li>
+            </ul>
+        </section>
+
+        <!-- SEÇÃO INTERATIVA: QUIZ -->
+        <section id="interativo" aria-labelledby="interativo-h">
+            <h2 id="interativo-h">Seção Interativa</h2>
+            <p>Responda ao quiz rápido abaixo:</p>
+
+            <div class="card">
+                <p><strong>1) Qual destas medidas o Banco Central usa para segurar a inflação?</strong></p>
+                <div class="quiz" id="quiz1">
+                    <div class="option" data-answer="0" onclick="answerQuiz(this, 'quiz1')">A) Aumentar gastos públicos</div>
+                    <div class="option" data-answer="1" onclick="answerQuiz(this, 'quiz1')">B) Aumentar a taxa de juros</div>
+                    <div class="option" data-answer="0" onclick="answerQuiz(this, 'quiz1')">C) Reduzir exportações</div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top:12px;">
+                <p><strong>2) Qual é a principal vantagem do comércio internacional?</strong></p>
+                <div class="quiz" id="quiz2">
+                    <div class="option" data-answer="1" onclick="answerQuiz(this, 'quiz2')">A) Elimina concorrência</div>
+                    <div class="option" data-answer="1" onclick="answerQuiz(this, 'quiz2')">B) Permite especialização e ganho de eficiência</div>
+                    <div class="option" data-answer="0" onclick="answerQuiz(this, 'quiz2')">C) Controla totalmente preços internos</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFORMAÇÕES AVANÇADAS -->
+        <section id="avancadas" aria-labelledby="avancadas-h">
+            <h2 id="avancadas-h">Tópicos Avançados e Leituras Recomendadas</h2>
+            <p>Abaixo, temas para aprofundamento — ótimos como repertório para ENEM e estudos:</p>
+
+            <ul>
+                <li><strong>Ciclos Económicos:</strong> expansão, pico, recessão, recuperação.</li>
+                <li><strong>Política Fiscal contra cíclica:</strong> usar gasto público para suavizar choques.</li>
+                <li><strong>Crises Bancárias:</strong> contagio financeiro, liquidez e confiança.</li>
+                <li><strong>Economia Comportamental:</strong> como vieses humanos afetam decisões econômicas.</li>
+                <li><strong>Sustentabilidade Econômica:</strong> preço do carbono, economia circular e investimento verde.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <button id="btn-topo" title="Voltar ao topo" aria-label="Voltar ao topo">↑</button>
+
+    <footer>
+        <div>© 2025 — Desenvolvido por <strong>Aécio Emanoel</strong>. Conteúdo educativo e analítico.</div>
+    </footer>
+
+    <script>
+        // Menu responsivo: alterna nav em telas pequenas
+        const menuBtn = document.getElementById('menuBtn');
+        const navList = document.getElementById('navList');
+
+        menuBtn && menuBtn.addEventListener('click', () => {
+            if (!navList) return;
+            const sh = navList.style.display === 'flex' ? 'none' : 'flex';
+            navList.style.display = sh;
+            navList.style.flexDirection = 'column';
+            navList.style.background = 'linear-gradient(180deg, rgba(2,6,23,0.9), rgba(2,6,23,0.95))';
+            navList.style.position = 'absolute';
+            navList.style.right = '16px';
+            navList.style.top = '64px';
+            navList.style.padding = '12px';
+            navList.style.borderRadius = '10px';
+            navList.style.gap = '8px';
+            navList.style.zIndex = 9999;
+        });
+
+        // Toggle text inside cards (cards defined with .card and a hidden .more paragraph)
+        function toggleText(card) {
+            const more = card.querySelector('.more');
+            if (!more) return;
+            more.style.display = more.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Quiz logic
+        function answerQuiz(el, quizId) {
+            const container = document.getElementById(quizId);
+            if (!container) return;
+            // ignore further clicks if already answered
+            if (container.dataset.answered === 'true') return;
+
+            const isCorrect = el.getAttribute('data-answer') === '1';
+            el.classList.add(isCorrect ? 'correct' : 'incorrect');
+
+            // mark other options accordingly
+            Array.from(container.children).forEach(opt => {
+                opt.style.pointerEvents = 'none';
+                if (opt !== el && opt.getAttribute('data-answer') === '1') {
+                    opt.classList.add('correct');
+                }
+            });
+
+            // show a short message
+            const msg = document.createElement('div');
+            msg.style.marginTop = '12px';
+            msg.style.fontWeight = '700';
+            msg.style.color = isCorrect ? '#34d399' : '#fb7185';
+            msg.textContent = isCorrect ? '✅ Correto — boa!' : '❌ Incorreto — revise a seção correspondente.';
+            container.parentElement.appendChild(msg);
+
+            container.dataset.answered = 'true';
+        }
+
+        // Back to top button
+        const btnTopo = document.getElementById('btn-topo');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) btnTopo.style.display = 'block';
+            else btnTopo.style.display = 'none';
+        });
+
+        btnTopo.addEventListener('click', () => {
+            window.scrollTo({top:0, behavior:'smooth'});
+        });
+
+        // Accessibility: close nav when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (!navList) return;
+            if (window.innerWidth <= 720 && navList.style.display === 'flex') {
+                const withinNav = e.composedPath().includes(navList) || e.composedPath().includes(menuBtn);
+                if (!withinNav) navList.style.display = 'none';
+            }
+        });
+
+        // Small enhancement: smooth reveal for sections (light)
+        const sections = document.querySelectorAll('main section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(en => {
+                if (en.isIntersecting) {
+                    en.target.style.transform = 'translateY(0)';
+                    en.target.style.opacity = '1';
+                    observer.unobserve(en.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        sections.forEach(s => {
+            s.style.transform = 'translateY(14px)';
+            s.style.opacity = '0';
+            s.style.transition = 'all .6s cubic-bezier(.2,.9,.3,1)';
+            observer.observe(s);
+        });
+    </script>
+</body>
+</html>
