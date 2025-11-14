@@ -1,85 +1,152 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shadow Quest</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mundo Minecraft – por Geziel</title>
   <link rel="stylesheet" href="style.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
 <body>
-  <header>
-    <h1>Shadow Quest</h1>
-    <nav>
-      <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#produtos">Loja</a></li>
-        <li><a href="#contato">Contato</a></li>
-        <li><a href="#login">Login</a></li>
+
+  <header role="banner">
+    <nav class="nav" aria-label="Navegação principal">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1 class="title">Mundo Minecraft</h1>
+          <p class="subtitle">Site feito por Geziel</p>
+        </div>
+      </div>
+      <ul class="menu" role="menubar">
+        <li role="none"><a role="menuitem" href="#galeria">Galeria</a></li>
+        <li role="none"><a role="menuitem" href="#sobre">Sobre</a></li>
+        <li role="none"><a role="menuitem" href="#agradecimento">Agradecimento</a></li>
+        <li role="none"><a role="menuitem" href="https://www.google.com" target="_blank" rel="noopener">Google</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section id="sobre">
-      <h2>Sobre o Jogo</h2>
-      <p>Shadow Quest é um RPG de aventura onde você enfrenta criaturas sombrias e explora mundos mágicos.</p>
+  <main id="conteudo-principal">
+    <section class="hero" aria-labelledby="titulo-hero">
+      <article class="hero-article">
+        <h2 id="titulo-hero">Bem-vindo ao Mundo Minecraft</h2>
+        <p>Explore imagens, personagens e a criatividade infinita do universo Minecraft.</p>
+        <div class="cta" role="group" aria-label="Ações principais">
+          <a class="btn primary" href="#galeria">Ver galeria</a>
+          <a class="btn" href="#sobre">Sobre o projeto</a>
+          <a class="btn" href="https://www.google.com" target="_blank" rel="noopener">Abrir no Google</a>
+        </div>
+        <p class="credit">Programador responsável: <strong>Geziel</strong></p>
+      </article>
+
+      <aside class="hero-aside" aria-label="Imagem destaque">
+        <img src="https://wallpapers.com/images/hd/minecraft-landscape-steve-in-galaxy-21tomtahinquiavs.jpg"
+             alt="Steve observando uma paisagem cósmica de Minecraft" />
+      </aside>
     </section>
 
-    <section id="galeria">
-      <h2>Galeria</h2>
-      <div class="galeria">
-        <img src="https://via.placeholder.com/200x120?text=Gameplay+1" alt="Gameplay 1" />
-        <img src="https://via.placeholder.com/200x120?text=Gameplay+2" alt="Gameplay 2" />
+    <section id="galeria" aria-labelledby="titulo-galeria">
+      <h2 id="titulo-galeria">Galeria</h2>
+
+      <div class="grid">
+        <article class="card">
+          <img src="https://cienciahoje.org.br/wp-content/uploads/2020/11/C_C-POP_0fe20042_0bb8_4781_82f4_7130f928b021.jpg"
+               alt="Arte em estilo pop inspirada em Minecraft" />
+          <div class="body">
+            <h3>Estilo Pop</h3>
+            <p>Uma releitura artística inspirada no universo Minecraft.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/store/software/switch/70010000000964/a28a81253e919298beab2295e39a56b7a5140ef15abdb56135655e5c221b2a3a"
+               alt="Imagem promocional do Minecraft Bedrock Edition no Nintendo Switch" />
+          <div class="body">
+            <h3>Bedrock Edition</h3>
+            <p>Versão multiplataforma do Minecraft para consoles e dispositivos móveis.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://esportslatest.net/wp-content/uploads/2023/10/Minecraft-Bedrock-Edition-1024x576.jpg"
+               alt="Cena comparativa usada para explicar diferenças de edições do Minecraft" />
+          <div class="body">
+            <h3>Minecraft Java Edition</h3>
+            <p>Edição clássica de PC com suporte forte a mods e servidores personalizados.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://cdnb.artstation.com/p/assets/images/images/054/603/171/large/cubix-2022-07-05-14-26-47.jpg?1664914369"
+               alt="Arte futurista com estética de blocos e iluminação estilizada" />
+          <div class="body">
+            <h3>Arte Futurista</h3>
+            <p>Uma visão criativa e moderna do mundo em blocos.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://s2-techtudo.glbimg.com/bHMRA2LUdnRhY7eLQDSiIb38kwQ=/0x0:695x390/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2019/x/B/xA2e6zTWGowum5RoAMHQ/minecraft-classic-10-anos-navegador.jpg"
+               alt="Minecraft Classic rodando no navegador com blocos básicos" />
+          <div class="body">
+            <h3>Primeira versão: Minecraft Classic</h3>
+            <p>Versão inicial celebrada no navegador anos depois do lançamento.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://play-lh.googleusercontent.com/tK8CXSz7Wg2uv3MFz8ybLTl1EaKE57X5WjmpitOmqxcZls27w3-zwzPqpXHftKW___lj=w526-h296-rw"
+               alt="Banner da versão mais recente de Minecraft na loja com gráficos atuais" />
+          <div class="body">
+            <h3>Última versão</h3>
+            <p>Lançamentos recentes com recursos atualizados e melhorias contínuas.</p>
+          </div>
+        </article>
       </div>
+
+      <aside class="gallery-aside" aria-label="Notas e legendas">
+        <ul>
+          <li><strong>Curadoria:</strong> Geziel</li>
+          <li><strong>Edições:</strong> Bedrock e Java destacadas</li>
+          <li><strong>Observação:</strong> Imagens pertencem aos respectivos autores</li>
+        </ul>
+      </aside>
     </section>
 
-    <section id="produtos">
-      <h2>Loja de Itens</h2>
-
-      <article class="produto">
-        <h3>Espada Sombria</h3>
-        <p>Uma arma lendária para derrotar os chefes mais difíceis.</p>
+    <section id="sobre" aria-labelledby="titulo-sobre">
+      <h2 id="titulo-sobre">Sobre o projeto</h2>
+      <article>
+        <p>Este site é apenas um projeto para trabalhos e estudos, sem caráter oficial. Desenvolvido por
+          <strong>Geziel</strong> com HTML5, CSS e JavaScript, contando com ajudas de
+          <strong>vídeos e mini cursos do YouTube</strong>.</p>
       </article>
+      <aside aria-label="Avisos legais">
+        <p>Este é um site de fã, não oficial. Todos os direitos sobre marcas e imagens são dos seus respectivos titulares.</p>
+      </aside>
+    </section>
 
-      <article class="produto">
-        <h3>Armadura Fantasma</h3>
-        <p>Proteção máxima contra ataques mágicos.</p>
+    <section id="agradecimento" aria-labelledby="titulo-agradecimento">
+      <h2 id="titulo-agradecimento">Agradecimento</h2>
+      <article>
+        <p>Meu agradecimento especial ao criador do vídeo que me ajudou a aprender programação e inspirou este projeto:</p>
+        <p>
+          <a href="https://youtu.be/A1BaZr82XJI?si=rExspkPphgqdIQJu" target="_blank" rel="noopener">
+            Assista ao vídeo no YouTube
+          </a>
+        </p>
+        <p><strong>Obrigado pela ajuda!</strong></p>
       </article>
-    </section>
-
-    <section id="contato">
-      <h2>Contato</h2>
-      <form>
-        <input type="text" placeholder="Seu nome" required />
-        <input type="email" placeholder="Seu e-mail" required />
-        <textarea placeholder="Sua mensagem"></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-
-    <section id="login">
-      <h2>Login</h2>
-      <form onsubmit="return login()">
-        <input type="text" id="usuario" placeholder="Usuário" required />
-        <input type="password" id="senha" placeholder="Senha" required />
-        <button type="submit">Entrar</button>
-      </form>
-      <p id="mensagem-login"></p>
+      <aside aria-label="Créditos adicionais">
+        <p>Conteúdos de apoio: tutoriais e mini cursos do YouTube.</p>
+      </aside>
     </section>
   </main>
 
-  <aside>
-    <h2>Dicas de Jogo</h2>
-    <ul>
-      <li>Explore cada canto do mapa para encontrar itens raros.</li>
-      <li>Use magias contra inimigos sombrios.</li>
-      <li>Economize moedas para comprar equipamentos lendários.</li>
-    </ul>
-  </aside>
-
-  <footer>
-    <p>&copy; 2025 Shadow Quest</p>
+  <footer role="contentinfo">
+    <p>© 2025 Mundo Minecraft — Projeto e programação por <strong>Geziel</strong>.</p>
+    <p>Este site é apenas para fins de trabalho/estudo. Todos os direitos reservados (Copyright).</p>
+    <p><a href="https://www.google.com" target="_blank" rel="noopener">Abrir no Google</a></p>
   </footer>
 
   <script src="script.js"></script>

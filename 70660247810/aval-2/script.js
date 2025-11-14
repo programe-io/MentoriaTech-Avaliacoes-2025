@@ -1,15 +1,11 @@
-function login() {
-  const usuario = document.getElementById("usuario").value;
-  const senha = document.getElementById("senha").value;
-  const mensagem = document.getElementById("mensagem-login");
+// Exemplo simples de interação
+window.onload = function() {
+  console.log("Site Mundo Minecraft carregado com sucesso!");
+};
 
-  if (usuario === "jogador" && senha === "1234") {
-    mensagem.textContent = "Login bem-sucedido!";
-    mensagem.style.color = "lime";
-  } else {
-    mensagem.textContent = "Usuário ou senha incorretos.";
-    mensagem.style.color = "red";
-  }
-
-  return false;
-}
+// Botão para mostrar alerta quando clicar em 'Ver galeria'
+document.addEventListener("DOMContentLoaded", function() {
+  const btnGaleria = document.querySelector(".btn.primary");
+  if (btnGaleria) {
+    btnGaleria.addEventListener("click", function() {
+      alert("Você está entrando na galeria do Mundo Minecraft!");
