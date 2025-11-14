@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AsiaCollect — Produtos vistos em doramas</title>
+<style>
+  :root{
+    --accent:#FF5A87;
+    --dark:#0f1721;
+    --muted:#6b7280;
+    --card:#ffffff;
+    --glass: rgba(255,255,255,0.06);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:linear-gradient(180deg,#fafafa 0%, #f2f6fb 100%);
+    color:#111827;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{
+    position:sticky;
+    top:0;
+    backdrop-filter: blur(6px);
+    background: rgba(255,255,255,0.6);
+    border-bottom:1px solid rgba(17,24,39,0.05);
+    z-index:40;
+  }
+  .container{max-width:1100px;margin:0 auto;padding:20px;}
+  .nav{display:flex;align-items:center;gap:16px;justify-content:space-between;}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px;color:var(--dark)}
+  .brand .logo{width:42px;height:42px;border-radius:8px;background:linear-gradient(90deg,var(--accent),#ffb199);display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
+  nav .links{display:flex;gap:12px;align-items:center}
+  a.btn{padding:8px 14px;border-radius:10px;text-decoration:none;display:inline-block}
+  a.primary{background:var(--accent);color:#fff}
+  a.ghost{background:transparent;color:var(--dark)}
+  .searchbar{flex:1;max-width:520px;display:flex;align-items:center;gap:8px;background:white;padding:8px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+  .searchbar input{border:0;outline:none;flex:1;font-size:14px;padding:8px}
+  /* HERO */
+  .hero{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:center;padding:40px 0}
+  .hero-left{padding:28px;background:linear-gradient(180deg,#fff 0%, #fffefc 100%);border-radius:16px;box-shadow:0 10px 30px rgba(16,24,40,0.06)}
+  .hero h1{margin:0;font-size:28px}
+  .hero p{color:var(--muted);margin:12px 0 18px}
+  .hero .cta{display:flex;gap:12px}
+  .hero .cta a{padding:12px 18px;border-radius:10px;text-decoration:none}
+  .hero-right{position:relative}
+  .carousel{height:260px;border-radius:12px;overflow:hidden;position:relative;background:#111}
+  .carousel img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.95)}
+  .carousel .slide-meta{position:absolute;left:16px;bottom:16px;background:rgba(0,0,0,0.45);color:white;padding:8px 12px;border-radius:8px;font-size:14px}
+  /* Categories */
+  .categories{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+  .cat{flex:1 1 150px;background:linear-gradient(180deg,#fff,#fff);border-radius:12px;padding:12px;display:flex;gap:12px;align-items:center;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+  .cat img{width:56px;height:56px;border-radius:8px;object-fit:cover}
+  .cat h4{margin:0;font-size:15px}
+  /* Recomendados carousel */
+  .reco{margin-top:28px}
+  .cards{display:flex;gap:12px;overflow:auto;padding-bottom:6px}
+  .product-card{min-width:220px;background:white;border-radius:12px;padding:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+  .product-card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+  .product-card .tag{display:inline-block;margin-top:8px;padding:4px 8px;border-radius:999px;font-size:12px;background:#f3f4f6;color:#374151}
+  /* Search overlay & results */
+  .overlay{position:fixed;inset:0;background:rgba(3,7,18,0.5);display:none;align-items:center;justify-content:center;z-index:60}
+  .overlay.show{display:flex}
+  .search-panel{width:92%;max-width:980px;background:white;border-radius:12px;padding:18px;box-shadow:0 20px 60px rgba(2,6,23,0.5)}
+  .sr-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .filters{display:flex;gap:12px;margin-top:12px}
+  .filter{background:#fff;border:1px solid #eef2f7;padding:8px;border-radius:8px;font-size:13px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:14px}
+  .result-card{background:white;border-radius:12px;padding:10px;box-shadow:0 6px 18px rgba(16,24,40,0.04);cursor:pointer}
+  .result-card img{width:100%;height:150px;object-fit:cover;border-radius:8px}
+  .badge{display:inline-block;padding:6px 8px;background:linear-gradient(90deg,#fff3f5,#fff6f2);font-size:12px;border-radius:999px;margin-top:8px}
+  /* Product detail modal */
+  .product-detail{position:fixed;right:20px;top:60px;width:420px;background:white;border-radius:12px;padding:16px;box-shadow:0 30px 80px rgba(2,6,23,0.4);z-index:70;display:none}
+  .product-detail.show{display:block}
+  .pd-gallery{display:flex;gap:8px}
+  .pd-gallery img{width:120px;height:120px;object-fit:cover;border-radius:8px}
+  .pd-info h3{margin:6px 0}
+  .pd-actions{display:flex;gap:8px;margin-top:10px}
+  .ghost-btn{border:1px solid #e6e9ef;padding:8px 12px;border-radius:10px;background:white}
+  /* Dorama list */
+  .dorama-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:18px}
+  .dorama-card{background:linear-gradient(180deg,#fff,#fff);padding:10px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.04);text-align:center}
+  .dorama-card img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+  /* Dorama detail */
+  .dorama-banner{height:220px;border-radius:12px;overflow:hidden;margin-top:12px}
+  .icon{font-weight:700;color:var(--accent)}
+  /* Responsive */
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;gap:14px}
+    .product-detail{position:fixed;left:8px;right:8px;top:80px;width:auto}
+  }
+  footer{margin-top:40px;padding:28px 0;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div style="display:flex;align-items:center;gap:14px">
+      <div class="brand">
+        <div class="logo">AC</div>
+        AsiaCollect
+      </div>
+
+      <nav class="links" aria-label="main navigation">
+        <a href="#" class="ghost" onclick="showSection('home');return false">Home</a>
+        <a href="#" class="ghost" onclick="scrollToList('categorias');return false">Categorias</a>
+        <a href="#" class="ghost" onclick="scrollToList('doramas');return false">Doramas</a>
+        <a href="#" class="ghost" onclick="showSection('vender');return false">Vender</a>
+      </nav>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:12px;flex:1;justify-content:flex-end">
+      <div class="searchbar" role="search" aria-label="Busca">
+        <input id="globalSearch" placeholder='Ex: "colar de True Beauty"' aria-label="Buscar produto, dorama ou personagem" />
+        <button onclick="openSearch()" title="Buscar" style="border:0;background:transparent;font-weight:700;cursor:pointer">🔎</button>
+      </div>
+      <a href="#" class="btn ghost" onclick="showSection('minhaConta');return false">Minha Conta</a>
+      <a href="#" class="btn primary" onclick="showSection('carrinho');return false">Carrinho (0)</a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="home">
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-left">
+      <h1 id="hero-heading">Conecte-se aos produtos que você ama dos seus doramas favoritos</h1>
+      <p>Descubra o item que apareceu numa cena, veja em qual episódio, e compre com segurança — roupa, acessórios, colecionáveis e K-beauty.</p>
+      <div class="cta">
+        <a href="#" class="primary" onclick="scrollToList('doramas');return false">Referências de Doramas</a>
+        <a href="#" class="ghost" onclick="showSection('vender');return false">Vender</a>
+      </div>
+
+      <div class="categories" style="margin-top:20px">
+        <div class="cat">
+          <img src="https://img.kwcdn.com/product/fancy/2b15273e-3368-48b4-8703-5e5af3ffd0b0.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp" alt="Acessórios" />
+          <div>
+            <h4>Acessórios Asiáticos</h4>
+            <div style="color:var(--muted);font-size:13px">Brincos, colares e mais</div>
+          </div>
+        </div>
+        <div class="cat">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0lcc0Mz1yshfRm6TrzZKbmq3ErvTOzjeSWw&s" alt="Roupas" />
+          <div>
+            <h4>Roupas Inspiradas em Doramas</h4>
+            <div style="color:var(--muted);font-size:13px">Looks icônicos</div>
+          </div>
+        </div>
+
+        <div class="cat">
+          <img src="https://s3.us-east-1.amazonaws.com/vnda-cockpit/www-sunsetcosmeticos-com-br/2024/06/25/667adb3c7b3a8k-beauty-linha-hidra-young.jpg" alt="K-Beauty" />
+          <div>
+            <h4>K-Beauty</h4>
+            <div style="color:var(--muted);font-size:13px">Cuidados de pele</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reco">
+        <h3 style="margin-bottom:8px">Recomendados para você</h3>
+        <div class="cards" id="recommended">
+          <!-- JS will populate sample cards -->
+        </div>
+      </div>
+    </div>
+
+    <aside class="hero-right">
+      <div class="carousel" id="heroCarousel" aria-hidden="false">
+        <img id="heroImg" src="https://miro.medium.com/v2/resize:fit:1400/1*OnoXhaw-DzFFrOQzQm4PjA.png" alt="Dorama destaque" />
+        <div class="slide-meta" id="heroMeta">Goblin — Cena icônica</div>
+      </div>
+
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <img src="https://1.vikiplatform.com/c/37374c/5159c0e759.jpg?x=b&a=0x0" style="border-radius:8px;object-fit:cover" alt="True Beauty" />
+        <img src="https://occ-0-8407-2218.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABRJaoY3PlYTejc06TYiN3vwJ4VZbZSk1wrWevgGRuy7a4fgNPn4HgH4MhEKYeCQjBJafNlOcefIdzX399Vh9hBV1kEJzNMdIsUxx.jpg?r=cbd" style="border-radius:8px;object-fit:cover" alt="Crash Landing" />
+      </div>
+    </aside>
+  </section>
+
+  <!-- DORAMAS LIST -->
+  <section id="doramas" style="margin-top:26px">
+    <h2>Lista de Doramas</h2>
+    <div class="dorama-list" id="doramaList">
+      <!-- JS will populate -->
+    </div>
+  </section>
+
+  <!-- SAMPLE: footer -->
+  <footer>
+    © <span id="year"></span> AsiaCollect. Plataforma de referência para fans de doramas.
+  </footer>
+</main>
+
+<!-- SEARCH OVERLAY -->
+<div class="overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Resultados da busca">
+    <div class="sr-header">
+      <input id="srInput" style="flex:1;padding:12px;border-radius:10px;border:1px solid #eef2f7;font-size:15px" placeholder='Pesquise: "colar de True Beauty" — pressione Enter' />
+      <button onclick="closeSearch()" class="ghost-btn">Fechar</button>
+    </div>
+
+    <div style="display:flex;gap:12px;align-items:center">
+      <div class="filter">Categoria: <select id="fCat"><option value="">Todas</option><option>Roupas</option><option>Acessórios</option></select></div>
+      <div class="filter">Dorama: <select id="fDorama"><option value="">Qualquer</option></select></div>
+      <div class="filter">Episódio: <input id="fEpisodio" placeholder="Ex: 3" style="width:70px;border:0;outline:none" /></div>
+      <div style="margin-left:auto;color:var(--muted)">Exemplo: <span class="icon">“colar de True Beauty”</span></div>
+    </div>
+
+    <div id="resultsArea">
+      <h3 id="resultsTitle" style="margin-top:12px">Resultados para: <span id="resultsQuery">-</span></h3>
+      <div class="grid" id="resultsGrid">
+        <!-- JS: result cards -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT DETAIL SIDEPANEL -->
+<aside class="product-detail" id="productPanel" aria-hidden="true">
+  <div style="display:flex;gap:12px">
+    <div class="pd-gallery" id="pdGallery">
+      <!-- thumbs -->
+    </div>
+    <div class="pd-info">
+      <h3 id="pdName">Produto</h3>
+      <div style="color:var(--muted)" id="pdPrice">R$ 0</div>
+      <div style="margin-top:8px" id="pdSeen">🎬 Visto em: <strong>—</strong></div>
+      <p style="margin-top:8px;color:var(--muted);font-size:14px" id="pdCurio">Curiosidade: —</p>
+      <div class="pd-actions">
+        <button class="primary" style="border:0;padding:10px 12px;border-radius:10px" onclick="addToCart()">Comprar</button>
+        <button class="ghost-btn" onclick="addToCart(true)">Adicionar ao carrinho</button>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- DORAMA DETAIL PANEL (simple modal) -->
+<div id="doramaDetail" style="display:none;position:fixed;inset:0;background:rgba(3,7,18,0.5);z-index:80;align-items:center;justify-content:center">
+  <div style="width:92%;max-width:980px;background:white;border-radius:12px;padding:16px;max-height:86vh;overflow:auto">
+    <button style="float:right" onclick="closeDorama()">Fechar</button>
+    <div id="doramaContent"></div>
+  </div>
+</div>
+
+<script>
+  // --- Sample data
+  const doramas = [
+    {id:'goblin',title:'Goblin',banner:'https://via.placeholder.com/1200x400?text=Goblin',theme:'dark',items:[
+      {id:'umbrella-goblin',name:'Guarda-Chuva Preto Clássico',price:149,seen:'Goblin — Ep. 1',img:'https://via.placeholder.com/400x400?text=Guarda-chuva',curio:'O guarda-chuva representa destino e proteção.'},
+      {id:'coat-goblin',name:'Casaco Longo de Lã (Cinza)',price:349,seen:'Goblin — várias cenas',img:'https://via.placeholder.com/400x400?text=Casaco',curio:'Usado em cenas icônicas.'},
+      {id:'book-goblin',name:'Poetry of the Fall (Livro)',price:59,seen:'Goblin — Ep. 3',img:'https://via.placeholder.com/400x400?text=Livro',curio:'Livro presente na cena da biblioteca.'},
+      {id:'leafneck-goblin',name:'Colar de Folha de Ouro',price:199,seen:'Goblin — Ep. 5',img:'https://via.placeholder.com/400x400?text=Colar',curio:'Símbolo do relacionamento e destino.'}
+    ]},
+    {id:'truebeauty',title:'True Beauty',banner:'https://via.placeholder.com/1200x400?text=True+Beauty',theme:'bright',items:[
+      {id:'neck-true',name:'Colar de Coração',price:79,seen:'True Beauty — Ep. 3',img:'https://via.placeholder.com/400x400?text=Colar+de+coracao',curio:'Visto quando personagem X aparece.'},
+      {id:'jacket-true',name:'Jaqueta Casual',price:199,seen:'True Beauty — Ep. 5',img:'https://via.placeholder.com/400x400?text=Jaqueta',curio:'Look do personagem principal.'}
+    ]},
+    {id:'crash',title:'Crash Landing on You',banner:'https://via.placeholder.com/1200x400?text=Crash+Landing',theme:'warm',items:[]}
+  ];
+
+  const recommended = [
+    {id:'leafneck-goblin',title:'Colar de Folha de Ouro',price:199,img:'https://via.placeholder.com/400x240?text=Colar',seen:'Visto em Goblin – Ep.5'},
+    {id:'umbrella-goblin',title:'Guarda-Chuva Preto Clássico',price:149,img:'https://via.placeholder.com/400x240?text=Guarda-chuva',seen:'Visto em Goblin – Ep.1'},
+    {id:'neck-true',title:'Colar de Coração',price:79,img:'https://via.placeholder.com/400x240?text=Colar',seen:'Visto em True Beauty – Ep.3'}
+  ];
+
+  // --- Init
+  document.getElementById('year').innerText = new Date().getFullYear();
+  const recContainer = document.getElementById('recommended');
+  recommended.forEach(r=>{
+    const el = document.createElement('div');
+    el.className = 'product-card';
+    el.innerHTML = `
+      <img src="${r.img}" alt="${r.title}" />
+      <h4 style="margin:8px 0 0">${r.title}</h4>
+      <div style="color:var(--muted);font-size:14px">R$ ${r.price}</div>
+      <div class="tag">${r.seen}</div>
+    `;
+    el.onclick = ()=>openProduct(r.id);
+    recContainer.appendChild(el);
+  });
+
+  // populate dorama list
+  const dl = document.getElementById('doramaList');
+  doramas.forEach(d=>{
+    const card = document.createElement('div');
+    card.className = 'dorama-card';
+    card.innerHTML = `
+      <img src="${d.banner}" alt="${d.title}">
+      <h4 style="margin:10px 0 6px">${d.title}</h4>
+      <div style="color:var(--muted);font-size:13px">Veja objetos e cenas</div>
+      <button style="margin-top:10px;padding:8px 10px;border-radius:8px" onclick="openDorama('${d.id}');event.stopPropagation()">Abrir</button>
+    `;
+    dl.appendChild(card);
+  });
+
+  // populate dorama filter select in search
+  const drSelect = document.getElementById('fDorama');
+  doramas.forEach(d=>{ const o = document.createElement('option'); o.value=d.title; o.textContent=d.title; drSelect.appendChild(o); });
+
+  // HERO carousel rotation
+  const heroImgs = [
+    {src:'https://via.placeholder.com/1200x480?text=Goblin',meta:'Goblin — Cena icônica'},
+    {src:'https://via.placeholder.com/1200x480?text=True+Beauty',meta:'True Beauty — Look famoso'},
+    {src:'https://via.placeholder.com/1200x480?text=Crash+Landing',meta:'Crash Landing on You — Momentos'}
+  ];
+  let hIndex = 0;
+  function rotateHero(){
+    hIndex = (hIndex+1) % heroImgs.length;
+    document.getElementById('heroImg').src = heroImgs[hIndex].src;
+    document.getElementById('heroMeta').innerText = heroImgs[hIndex].meta;
+  }
+  setInterval(rotateHero,4000);
+
+  // --- Search overlay logic
+  function openSearch(){
+    document.getElementById('srInput').value = document.getElementById('globalSearch').value;
+    document.getElementById('resultsQuery').innerText = document.getElementById('srInput').value || '-';
+    document.getElementById('searchOverlay').classList.add('show');
+    document.getElementById('searchOverlay').setAttribute('aria-hidden','false');
+    document.getElementById('srInput').focus();
+    renderResults();
+  }
+  function closeSearch(){
+    document.getElementById('searchOverlay').classList.remove('show');
+    document.getElementById('searchOverlay').setAttribute('aria-hidden','true');
+  }
+  document.getElementById('srInput').addEventListener('keydown',function(e){
+    if(e.key === 'Enter') renderResults();
+    if(e.key === 'Escape') closeSearch();
+  });
+
+  function renderResults(){
+    const q = (document.getElementById('srInput').value || '').toLowerCase();
+    document.getElementById('resultsQuery').innerText = q || '-';
+    const grid = document.getElementById('resultsGrid');
+    grid.innerHTML = '';
+    // search across doramas items
+    const matches = [];
+    doramas.forEach(d=>{
+      d.items.forEach(it=>{
+        if(!q || it.name.toLowerCase().includes(q) || it.seen.toLowerCase().includes(q) || d.title.toLowerCase().includes(q)){
+          matches.push(Object.assign({},it,{dorama:d.title}));
+        }
+      })
+    });
+    if(matches.length === 0){
+      grid.innerHTML = <div style="grid-column:1/-1;color:var(--muted);padding:20px;background:#fff;border-radius:10px">Nenhum resultado encontrado. Tente "colar de True Beauty".</div>;
+      return;
+    }
+    matches.forEach(m=>{
+      const rc = document.createElement('div');
+      rc.className = 'result-card';
+      rc.innerHTML = `
+        <img src="${m.img}" alt="${m.name}">
+        <h4 style="margin:8px 0 0">${m.name}</h4>
+        <div style="color:var(--muted);font-size:13px">R$ ${m.price} • ${m.dorama}</div>
+        <div class="badge">${m.seen}</div>
+      `;
+      rc.onclick = ()=>openProduct(m.id);
+      grid.appendChild(rc);
+    });
+  }
+
+  // --- Product panel
+  function openProduct(productId){
+    // find product data
+    let product = null;
+    doramas.forEach(d=>{
+      d.items.forEach(it=>{
+        if(it.id === productId) product = Object.assign({}, it, {dorama:d.title});
+      })
+    });
+    // fallback to recommended map
+    if(!product){
+      const r = recommended.find(x=>x.id===productId);
+      if(r){
+        product = {id:r.id,name:r.title,price:r.price,img:r.img,seen:r.seen,curio:'Visto nesse dorama.'};
+      }
+    }
+    if(!product){
+      alert('Produto não encontrado (amostra).');
+      return;
+    }
+    // populate panel
+    const gallery = document.getElementById('pdGallery'); gallery.innerHTML = <img src="${product.img}" alt="${product.name}">;
+    document.getElementById('pdName').innerText = product.name;
+    document.getElementById('pdPrice').innerText = 'R$ ' + product.price;
+    document.getElementById('pdSeen').innerHTML = '🎬 Visto em: <strong>' + (product.seen || product.dorama || '-') + '</strong>';
+    document.getElementById('pdCurio').innerText = 'Curiosidade: ' + (product.curio || '—');
+    const panel = document.getElementById('productPanel');
+    panel.classList.add('show');
+    panel.setAttribute('aria-hidden','false');
+  }
+  function addToCart(onlyAdd){
+    // simple mock
+    alert(onlyAdd ? 'Adicionado ao carrinho.' : 'Compra iniciada — (simulação).');
+  }
+
+  // close product panel when clicking outside
+  document.addEventListener('click', function(e){
+    const panel =
+  <script src="script.js"></script>
+  
+</body>
+</html>
