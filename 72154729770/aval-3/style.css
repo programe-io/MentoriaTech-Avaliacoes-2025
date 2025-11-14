@@ -1,114 +1,88 @@
-/* ======== ESTILO GERAL ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-        background-color: #fdf6f0;
-            margin: 0;
-                padding: 0;
-                }
+    background-color: #111;
+    color: #fff;
+}
 
-                /* ======== CABEÇALHO ======== */
-                header {
-                    background-color: #f4a261;
-                        color: white;
-                            display: flex;
-                                justify-content: space-between;
-                                    align-items: center;
-                                        padding: 15px 40px;
-                                        }
+/* HEADER */
+header {
+    background-color: #000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-                                        header h1 {
-                                            font-size: 1.8em;
-                                                letter-spacing: 2px;
-                                                    font-family: 'Chakra Petch', sans-serif;
-                                                    }
+header h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 28px;
+    color: #e50914;
+}
 
-                                                    /* Nome visual: ManelFlix */
-                                                    header h1::after {
-                                                        content: "";
-                                                        }
+header nav a {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
 
-                                                        header span {
-                                                            margin-right: 10px;
-                                                            }
+header nav a:hover {
+    color: #e50914;
+}
 
-                                                            nav a {
-                                                                color: white;
-                                                                    text-decoration: none;
-                                                                        margin-left: 20px;
-                                                                            font-weight: bold;
-                                                                                transition: 0.3s;
-                                                                                }
+/* CHAMADA */
+.chamada {
+    padding: 40px;
+    text-align: center;
+}
 
-                                                                                nav a:hover {
-                                                                                    text-decoration: underline;
-                                                                                    }
+.chamada h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
 
-                                                                                    /* ======== SEÇÃO CHAMADA ======== */
-                                                                                    .chamada {
-                                                                                        text-align: center;
-                                                                                            padding: 40px 20px;
-                                                                                                background-color: #f1faee;
-                                                                                                }
+.video-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
 
-                                                                                                .chamada-texto h2 {
-                                                                                                    color: #e76f51;
-                                                                                                        font-size: 1.8em;
-                                                                                                            font-family: 'Chakra Petch', sans-serif;
-                                                                                                            }
+/* CATEGORIAS */
+.categoria {
+    padding: 30px;
+}
 
-                                                                                                            .chamada-texto p {
-                                                                                                                color: #264653;
-                                                                                                                    font-style: italic;
-                                                                                                                        font-size: 1.1em;
-                                                                                                                        }
+.categoria h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+}
 
-                                                                                                                        .video-container {
-                                                                                                                            margin-top: 20px;
-                                                                                                                            }
+.categoria-videos {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+}
 
-                                                                                                                            .video-container iframe {
-                                                                                                                                border-radius: 10px;
-                                                                                                                                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-                                                                                                                                    }
+.categoria-videos img {
+    width: 250px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
 
-                                                                                                                                    /* ======== CATEGORIAS ======== */
-                                                                                                                                    .categoria {
-                                                                                                                                        padding: 40px 20px;
-                                                                                                                                        }
+.categoria-videos img:hover {
+    transform: scale(1.05);
+}
 
-                                                                                                                                        .categoria h2 {
-                                                                                                                                            color: #e76f51;
-                                                                                                                                                text-align: center;
-                                                                                                                                                    margin-bottom: 20px;
-                                                                                                                                                        font-family: 'Chakra Petch', sans-serif;
-                                                                                                                                                        }
-
-                                                                                                                                                        .categoria-videos {
-                                                                                                                                                            display: flex;
-                                                                                                                                                                flex-wrap: wrap;
-                                                                                                                                                                    justify-content: center;
-                                                                                                                                                                        gap: 20px;
-                                                                                                                                                                        }
-
-                                                                                                                                                                        .categoria-videos img {
-                                                                                                                                                                            width: 300px;
-                                                                                                                                                                                border-radius: 10px;
-                                                                                                                                                                                    transition: transform 0.3s;
-                                                                                                                                                                                    }
-
-                                                                                                                                                                                    .categoria-videos img:hover {
-                                                                                                                                                                                        transform: scale(1.05);
-                                                                                                                                                                                        }
-
-                                                                                                                                                                                        /* ======== RODAPÉ ======== */
-                                                                                                                                                                                        footer {
-                                                                                                                                                                                            background-color: #f4a261;
-                                                                                                                                                                                                color: white;
-                                                                                                                                                                                                    text-align: center;
-                                                                                                                                                                                                        padding: 15px 0;
-                                                                                                                                                                                                            font-size: 0.9em;
-                                                                                                                                                                                                            }
-
-                                                                                                                                                                                                            footer strong {
-                                                                                                                                                                                                                color: #fff;
-                                                                                                                                                                                                                }
+/* RODAPÉ */
+footer {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
