@@ -1,0 +1,348 @@
+<!--
+ARQUIVO: index.html
+Site temático Stranger Things
+Inclui: animações, efeitos, cores e imagens
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stranger Things — Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<header class="header">
+  <h1 class="logo">STRANGER THINGS</h1>
+</header>
+
+<section class="hero fade-in">
+  <h2>Bem-vindo ao Mundo Invertido</h2>
+  <p>A porta está aberta... você tem certeza que quer entrar?</p>
+</section>
+
+<section class="gallery fade-in">
+  <h2>Galeria</h2>
+  <div class="grid">
+    <img src="https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=700&q=60" alt="Floresta Sombria">
+    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=700&q=60" alt="Bicicletas à Noite">
+    <img src="https://images.unsplash.com/photo-1520975918318-3f5b6bfac6d6?auto=format&fit=crop&w=700&q=60" alt="Luzes Vermelhas">
+  </div>
+</section>
+
+<section class="cards fade-in">
+  <article class="card">
+    <h3>Efeito Upside Down</h3>
+    <p>O clima sombrio e misterioso do Mundo Invertido está presente em todo o site.</p>
+  </article>
+  <article class="card">
+    <h3>Visual Retrô</h3>
+    <p>Cores vibrantes em vermelho neon e tipografia clássica dos anos 80.</p>
+  </article>
+  <article class="card">
+    <h3>Animações Dinâmicas</h3>
+    <p>Elementos flutuando, fade-in e brilho pulsante para dar o clima perfeito.</p>
+  </article>
+</section>
+
+<footer class="footer">
+  <p>Fan-site inspirado em Stranger Things. Criado apenas para fins educacionais.</p>
+</footer>
+
+<script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
+
+
+<!-- ============================= -->
+<!--           style.css           -->
+<!-- ============================= -->
+
+/* Salve como style.css */
+
+body{
+  margin:0;
+  background:#000;
+  font-family:'Roboto', sans-serif;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+.header{
+  padding:20px;
+  text-align:center;
+  background:#07070a;
+}
+
+.logo{
+  font-family:'Bebas Neue', sans-serif;
+  font-size:60px;
+  color:#ff1a1a;
+  letter-spacing:3px;
+  text-shadow:0 0 10px #ff0000;
+  animation:glow 3s infinite;
+}
+
+@keyframes glow{
+  0%,100%{text-shadow:0 0 10px #ff0000,0 0 30px #ff0000}
+  50%{text-shadow:0 0 20px #ff4d4d,0 0 60px #ff1a1a}
+}
+
+.hero{
+  text-align:center;
+  padding:80px 20px;
+  background:url('https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=1600&q=60') center/cover;
+  background-attachment:fixed;
+  box-shadow:inset 0 0 120px rgba(0,0,0,0.9);
+}
+
+.gallery{
+  padding:60px 20px;
+  text-align:center;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+  margin-top:20px;
+}
+
+.grid img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+  animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+  padding:40px 20px;
+}
+
+.card{
+  background:#111;
+  padding:20px;
+  border-radius:10px;
+  border:1px solid #ff1a1a55;
+  box-shadow:0 0 20px rgba(255,0,0,0.2);
+  transition:transform .3s;
+}
+.card:hover{transform:translateY(-10px)}
+
+.fade-in{opacity:0;transform:translateY(40px);transition:1.2s}
+.fade-in.show{opacity:1;transform:translateY(0)}
+
+.footer{
+  text-align:center;
+  padding:25px;
+  background:#090909;
+  margin-top:40px;
+}
+
+
+/* ============================= */
+/*           script.js           */
+/* ============================= */
+
+// Salve como script.js
+
+document.addEventListener('DOMContentLoaded', () =>{
+
+  // Efeito de fade-in
+  const items = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver(entries =>{
+    entries.forEach(entry =>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+      }
+    });
+  },{threshold:0.3});
+
+  items.forEach(el => observer.observe(el));
+});
+<NAV>
+<a>   
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stranger Things - Mundo Invertido</title>
+
+    <style>
+        /* ====== Estilos Gerais ====== */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle, #000000, #1b0b17, #000000);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* ====== Header ====== */
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid red;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: red;
+            text-shadow: 0 0 10px red;
+        }
+
+        /* ====== Seção Principal ====== */
+        section {
+            padding: 40px;
+            text-align: center;
+            animation: fadeUp 1.5s ease-in-out;
+        }
+
+        section h2 {
+            color: red;
+            font-size: 2.2rem;
+            text-shadow: 0 0 10px red;
+        }
+
+        section p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ====== Imagem animada ====== */
+        .image-box img {
+            width: 350px;
+            border-radius: 10px;
+            border: 2px solid red;
+            box-shadow: 0 0 20px red;
+            animation: float 4s infinite ease-in-out;
+        }
+
+        /* ===== Botão ===== */
+        button {
+            padding: 12px 26px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: darkred;
+            transform: scale(1.1);
+        }
+
+        /* ====== Animações ====== */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95);}
+            to   { opacity: 1; transform: scale(1);}
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px);}
+            to   { opacity: 1; transform: translateY(0);}
+        }
+
+        /* ====== Rodapé ====== */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            border-top: 2px solid red;
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- ========== CABEÇALHO ========== -->
+    <header>
+        <h1>Stranger Things</h1>
+    </header>
+
+    <!-- ========== CONTEÚDO PRINCIPAL ========== -->
+    <section>
+        <h2>Bem-vindo ao Mundo Invertido</h2>
+        <p>
+            Explore os mistérios, criaturas e segredos que assombram Hawkins.  
+            Cuidado... algumas portas, uma vez abertas, não podem ser fechadas.
+        </p>
+
+        <div class="image-box">
+            <img src="https://i.imgur.com/5ZQb4Yg.jpeg" alt="Stranger Things">
+        </div>
+
+        <button onclick="inverter()">Entrar no Mundo Invertido</button>
+    </section>
+
+    <!-- ========== RODAPÉ ========== -->
+    <footer>
+        <p>Site criado por fã — Stranger Things © Netflix</p>
+    </footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // Animação: texto piscando
+        const title = document.querySelector("header h1");
+
+        setInterval(() => {
+            title.style.textShadow = 
+                title.style.textShadow === "0 0 25px red"
+                ? "0 0 5px red"
+                : "0 0 25px red";
+        }, 700);
+
+        // Função para inverter imagem
+        function inverter() {
+            const img = document.querySelector(".image-box img");
+
+            if (!img.classList.contains("invertido")) {
+                img.style.filter = "invert(100%) hue-rotate(180deg)";
+                img.classList.add("invertido");
+                alert("Você entrou no Mundo Invertido!");
+            } else {
+                img.style.filter = "invert(0%)";
+                img.classList.remove("invertido");
+                alert("Você voltou ao mundo normal!");
+            }
+        }
+    </script>
+
+</body>
+</html>
+<main>
+  <span>
+    <h3>
+        <aside>
+            <img>  
