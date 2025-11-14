@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>BeautyStore — Venda de Maquiagem</title>
+    <link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<header class="site-header">
+    <div class="topbar">
+        <div class="brand">BeautyStore</div>
+
+        <form id="search-form" class="search" role="search">
+            <input id="search-input" type="search" placeholder="Pesquisar produtos..." />
+            <button type="submit">Pesquisar</button>
+        </form>
+
+        <div class="cart" id="cart" aria-live="polite">
+            <button id="cart-btn">
+                🛒 <span id="cart-count">0</span>
+            </button>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <a href="#" class="active">Início</a>
+        <a href="#">Rosto</a>
+        <a href="#">Olhos</a>
+        <a href="#">Lábios</a>
+        <a href="#">Acessórios</a>
+        <a href="#">Promoções</a>
+    </nav>
+</header>
+
+<div class="layout">
+    <!-- ASIDE OBRIGATÓRIO -->
+    <aside class="sidebar">
+        <h2>Filtros</h2>
+
+        <div class="aside-section">
+            <h3>Faixa de preço</h3>
+            <label><input type="radio" name="price" value="all" checked> Todos</label><br>
+            <label><input type="radio" name="price" value="0-30"> Até R$30</label><br>
+            <label><input type="radio" name="price" value="30-70"> R$30 — R$70</label><br>
+            <label><input type="radio" name="price" value="70+"> Acima de R$70</label>
+        </div>
+
+        <div class="aside-section">
+            <h3>Categorias</h3>
+            <label><input type="checkbox" value="face" checked> Rosto</label><br>
+            <label><input type="checkbox" value="eyes" checked> Olhos</label><br>
+            <label><input type="checkbox" value="lips" checked> Lábios</label><br>
+            <label><input type="checkbox" value="tools" checked> Acessórios</label>
+        </div>
+
+        <div class="aside-section">
+            <h3>Marcas</h3>
+            <select id="brand-filter">
+                <option value="all">Todas</option>
+                <option value="bella">BellaCos</option>
+                <option value="glow">GlowUp</option>
+                <option value="pure">PureLook</option>
+            </select>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main>
+        <section class="hero">
+            <h1>BeautyStore</h1>
+            <h2>As melhores maquiagens da internet</h2>
+            <p>Escolha entre produtos de alta qualidade com preços incríveis!</p>
+        </section>
+
+        <section class="products-section">
+            <h2>Produtos em Destaque</h2>
+
+            <div class="products-grid" id="products-grid">
+                <article class="product-card" data-price="25" data-category="lips" data-brand="bella">
+                    <img src="https://via.placeholder.com/300x200?text=Batom+Vermelho">
+                    <h3>Batom Vermelho</h3>
+                    <p class="brand">BellaCos</p>
+                    <p class="price">R$ 25,00</p>
+                    <button class="add-btn">Adicionar ao carrinho</button>
+                </article>
+
+                <article class="product-card" data-price="55" data-category="face" data-brand="glow">
+                    <img src="https://via.placeholder.com/300x200?text=Base+Líquida">
+                    <h3>Base Líquida 30ml</h3>
+                    <p class="brand">GlowUp</p>
+                    <p class="price">R$ 55,00</p>
+                    <button class="add-btn">Adicionar ao carrinho</button>
+                </article>
+
+                <article class="product-card" data-price="40" data-category="eyes" data-brand="pure">
+                    <img src="https://via.placeholder.com/300x200?text=Paleta+de+Sombras">
+                    <h3>Paleta 12 Cores</h3>
+                    <p class="brand">PureLook</p>
+                    <p class="price">R$ 40,00</p>
+                    <button class="add-btn">Adicionar ao carrinho</button>
+                </article>
+            </div>
+        </section>
+    </main>
+</div>
+
+<footer class="site-footer">
+    <p>© BeautyStore • Todos os direitos reservados</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
