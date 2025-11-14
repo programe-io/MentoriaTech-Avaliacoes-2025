@@ -1,11 +1,21 @@
-// Exemplo simples de interação
-window.onload = function() {
-  console.log("Site Mundo Minecraft carregado com sucesso!");
-};
+// Acessibilidade: foco visível ao navegar por teclado
+(function addFocusStyle() {
+  const style = document.createElement('style');
+  style.textContent = `
+    a:focus, button:focus { outline: 2px solid #6fdc8c; outline-offset: 2px; }
+  `;
+  document.head.appendChild(style);
+})();
 
-// Botão para mostrar alerta quando clicar em 'Ver galeria'
-document.addEventListener("DOMContentLoaded", function() {
-  const btnGaleria = document.querySelector(".btn.primary");
-  if (btnGaleria) {
-    btnGaleria.addEventListener("click", function() {
-      alert("Você está entrando na galeria do Mundo Minecraft!");
+// Mensagem de carregamento no console
+window.addEventListener('DOMContentLoaded', () => {
+  console.log('Site Mundo Minecraft carregado com sucesso.');
+});
+
+// Interação simples: aviso ao abrir a galeria
+document.addEventListener('click', (e) => {
+  const target = e.target;
+  if (target.matches('.btn.primary[href="#galeria"]')) {
+    alert('Você está entrando na galeria do Mundo Minecraft!');
+  }
+});
