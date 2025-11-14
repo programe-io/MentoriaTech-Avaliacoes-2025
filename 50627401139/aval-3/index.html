@@ -1,237 +1,464 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog de Aysla Leal - Orações e Vida dos Santos</title>
-    <style>
-        /* === ESTILO GERAL === */
-        body {
-            font-family: 'Georgia', serif;
-            background-color: #ffe6f0;
-            color: #4d004d;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Neon Runner — Jogo HTML (Single File)</title>
+  <style>
+    :root{
+      --bg:#0b0f1a; --neon1:#00e5ff; --neon2:#ff2d95; --accent:#9b59ff;
+      --hud-bg: rgba(10,12,20,0.5);
+      --glass: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    html,body{height:100%;margin:0;background:radial-gradient(1200px 600px at 10% 10%, rgba(155,89,255,0.06), transparent), radial-gradient(1000px 400px at 90% 90%, rgba(0,229,255,0.04), transparent), var(--bg); color:#e6eef8}
+    .container{display:grid;grid-template-rows:auto 1fr;min-height:100vh;padding:18px;gap:12px}
+    header{display:flex;align-items:center;justify-content:space-between}
+    header h1{margin:0;font-weight:600;letter-spacing:0.4px}
+    header .meta{display:flex;gap:8px;align-items:center}
+    .card{backdrop-filter: blur(6px); background:var(--hud-bg); border:1px solid rgba(255,255,255,0.04); padding:10px;border-radius:14px}
 
-        /* === CABEÇALHO === */
-        header {
-            background-color: #ff99cc;
-            color: white;
-            text-align: center;
-            padding: 40px 10px;
-            box-shadow: 0 2px 8px rgba(255, 105, 180, 0.3);
-        }
+    /* Canvas area */
+    .game-wrap{display:flex;justify-content:center;align-items:center}
+    canvas{border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.02); width:100%; max-width:1100px; height:auto}
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
+    /* HUD */
+    .hud{position:absolute;left:36px;top:36px;display:flex;gap:8px;align-items:center}
+    .hud .panel{padding:8px 12px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.03);display:flex;gap:10px;align-items:center}
+    .hud .panel .big{font-weight:700;font-size:14px}
 
-        header p {
-            font-style: italic;
-            margin-top: 10px;
-        }
+    /* Right controls */
+    .controls{position:absolute;right:36px;top:36px;display:flex;gap:8px}
+    .btn{cursor:pointer;padding:8px 10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent}
 
-        /* === MENU === */
-        nav {
-            background-color: #ffb3d9;
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-            border-bottom: 2px solid #ff99cc;
-        }
+    /* Center menu */
+    .overlay{position:fixed;inset:0;display:grid;place-items:center;pointer-events:none}
+    .menu{pointer-events:auto;width:92%;max-width:700px;padding:22px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);box-shadow:0 30px 80px rgba(11,15,26,0.6)}
+    .menu h2{margin:0 0 6px 0}
+    .menu p{margin:0 0 14px 0;opacity:0.85}
+    .menu .row{display:flex;gap:8px}
+    .slider{appearance:none;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--neon1),var(--neon2));outline:none}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 15px;
-        }
+    footer{display:flex;justify-content:space-between;align-items:center;font-size:13px;opacity:0.8}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    /* small screens */
+    @media (max-width:700px){header{flex-direction:column;gap:8px} .hud{left:16px;top:16px} .controls{right:16px;top:16px}}
 
-        /* === CONTEÚDO PRINCIPAL === */
-        main {
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(255, 153, 204, 0.4);
-        }
-
-        #feed {
-            text-align: center;
-        }
-
-        #feed h2 {
-            color: #cc0066;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #ffb3d9;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        .feed-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .post {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(255, 153, 204, 0.4);
-            width: 220px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .post:hover {
-            transform: scale(1.03);
-        }
-
-        .post img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .legenda {
-            padding: 10px;
-            color: #4d004d;
-            font-size: 0.95em;
-        }
-
-        /* === DESTAQUES COM SPAN === */
-        .destaque {
-            color: #cc0066;
-            font-weight: bold;
-        }
-
-        .santo {
-            color: #ff3399;
-            font-style: italic;
-        }
-
-        .curtir {
-            background-color: #ffb3d9;
-            color: #4d004d;
-            border: none;
-            border-radius: 0 0 12px 12px;
-            padding: 8px;
-            font-weight: bold;
-            width: 100%;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .curtir:hover {
-            background-color: #ff66b2;
-            color: white;
-        }
-
-        /* === RODAPÉ === */
-        footer {
-            background-color: #ff99cc;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: underline;
-        }
-    </style>
+  </style>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
 <body>
-    <!-- ===== CABEÇALHO ===== -->
+  <div class="container">
     <header>
-        <h1>Blog de Aysla Leal</h1>
-        <p>Orações Católicas e Vida dos Santos 🌸</p>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="card" style="display:flex;flex-direction:column;padding:8px 12px">
+          <strong>Neon Runner</strong>
+          <small style="opacity:0.8">Runner / Platformer híbrido — desenvolvido em HTML5 + JS</small>
+        </div>
+      </div>
+      <div class="meta">
+        <div class="card">Teclas: ← → pular Espaço / Toque</div>
+        <div class="card">Ação: Colete moedas, desvie de inimigos, suba de nível</div>
+      </div>
     </header>
 
-    <!-- ===== MENU DE NAVEGAÇÃO ===== -->
-    <nav>
-        <a href="#feed">Feed</a>
-        <a href="#oracoes">Orações</a>
-        <a href="#contato">Contato</a>
-    </nav>
+    <div style="position:relative;display:flex;justify-content:center;align-items:center">
+      <div class="hud">
+        <div class="panel card"><div class="big">Score: <span id="score">0</span></div></div>
+        <div class="panel card"><div class="big">Vidas: <span id="lives">3</span></div></div>
+        <div class="panel card"><div class="big">Nível: <span id="level">1</span></div></div>
+      </div>
 
-    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
-    <main>
-        <section id="feed">
-            <h2>✨ Inspirações do Dia ✨</h2>
-            <div class="feed-container">
+      <div class="controls">
+        <button class="btn card" id="btn-sound">🔊 Música: <span id="musicState">On</span></button>
+        <button class="btn card" id="btn-pause">⏸️ Pausar</button>
+        <button class="btn card" id="btn-reset">🔁 Reiniciar</button>
+      </div>
 
-                <div class="post">
-                    <img src="https://cdn.pixabay.com/photo/2017/02/01/22/02/mother-mary-2035283_1280.jpg" alt="Nossa Senhora">
-                    <div class="legenda">
-                        <p><span class="destaque">Maria,</span> Mãe de ternura e amor, ensina-nos a confiar mesmo nas horas difíceis. 💗</p>
-                    </div>
-                    <button class="curtir">❤️ Curtir</button>
-                </div>
+      <div class="game-wrap">
+        <canvas id="game" width="1100" height="620"></canvas>
+      </div>
 
-                <div class="post">
-                    <img src="https://cdn.pixabay.com/photo/2016/04/08/14/12/saint-1310958_1280.jpg" alt="Santa Terezinha do Menino Jesus">
-                    <div class="legenda">
-                        <p>“Quero passar o meu Céu fazendo o bem sobre a Terra.” — 
-                        <span class="santo">Santa Terezinha</span> 🌹</p>
-                    </div>
-                    <button class="curtir">❤️ Curtir</button>
-                </div>
+    </div>
 
-                <div class="post">
-                    <img src="https://cdn.pixabay.com/photo/2014/03/24/13/42/jesus-295129_1280.png" alt="Jesus Cristo">
-                    <div class="legenda">
-                        <p><span class="destaque">Jesus</span> é o caminho, a verdade e a vida. 
-                        Que Ele guie cada passo do nosso dia. ✝️</p>
-                    </div>
-                    <button class="curtir">❤️ Curtir</button>
-                </div>
+    <div class="overlay">
+      <div class="menu card" id="menu">
+        <h2>Neon Runner</h2>
+        <p>Bem-vindo! Controle o personagem com as setas ou toque na tela. Colete moedas, suba de nível e desbloqueie desafios.</p>
+        <div style="display:flex;gap:10px;align-items:center">
+          <button class="btn" id="startBtn">▶ Jogar</button>
+          <button class="btn" id="howBtn">❔ Como jogar</button>
+          <div style="flex:1"></div>
+          <label style="display:flex;gap:6px;align-items:center">Volume <input id="volume" class="slider" type="range" min="0" max="1" step="0.01" value="0.6" style="width:160px"></label>
+        </div>
+        <div id="how" style="margin-top:12px;display:none;opacity:0.95">
+          <ul style="margin:0;padding-left:18px">
+            <li>Setas ← → — mover</li>
+            <li>Espaço / ↑ — pular</li>
+            <li>Toque — pular / interagir</li>
+            <li>Objetivo: coletar 20 moedas para avançar de nível</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-                <div class="post">
-                    <img src="https://cdn.pixabay.com/photo/2016/02/19/10/00/saint-francis-1209748_1280.jpg" alt="São Francisco de Assis">
-                    <div class="legenda">
-                        <p>“Senhor, fazei de mim um instrumento da vossa paz.” — 
-                        <span class="santo">São Francisco de Assis</span> 🕊️</p>
-                    </div>
-                    <button class="curtir">❤️ Curtir</button>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <!-- ===== RODAPÉ ===== -->
-    <footer id="contato">
-        <p>Contato: <a href="mailto:ayslaleal@gmail.com">ayslaleal@gmail.com</a></p>
-        <p>© 2025 Blog de Aysla Leal - Todos os direitos reservados.</p>
+    <footer>
+      <div style="opacity:0.8">Desenvolvido com ❤️ — pronto para GitHub Pages</div>
+      <div style="opacity:0.7">Dica: copie o arquivo HTML para um repositório e ative Pages</div>
     </footer>
+  </div>
 
-    <!-- ===== SCRIPT ===== -->
-    <script>
-        // Efeito do botão Curtir
-        const botoes = document.querySelectorAll(".curtir");
-        botoes.forEach(botao => {
-            botao.addEventListener("click", () => {
-                if (botao.classList.contains("ativo")) {
-                    botao.classList.remove("ativo");
-                    botao.textContent = "❤️ Curtir";
-                } else {
-                    botao.classList.add("ativo");
-                    botao.textContent = "💖 Curtido!";
-                }
-            });
-        });
-    </script>
+  <script>
+  // Neon Runner - single-file HTML5 game
+  // Author: Gerado por ChatGPT
+
+  const canvas = document.getElementById('game');
+  const ctx = canvas.getContext('2d');
+  let W = canvas.width, H = canvas.height;
+
+  // UI elements
+  const scoreEl = document.getElementById('score');
+  const livesEl = document.getElementById('lives');
+  const levelEl = document.getElementById('level');
+  const startBtn = document.getElementById('startBtn');
+  const howBtn = document.getElementById('howBtn');
+  const howBox = document.getElementById('how');
+  const menu = document.getElementById('menu');
+  const btnPause = document.getElementById('btn-pause');
+  const btnSound = document.getElementById('btn-sound');
+  const musicState = document.getElementById('musicState');
+  const volSlider = document.getElementById('volume');
+  const btnReset = document.getElementById('btn-reset');
+
+  // game state
+  let gameRunning = false;
+  let paused = false;
+  let lastTime = 0;
+  let score = 0, lives = 3, level = 1;
+
+  // player
+  const player = {x:120,y:420,w:46,h:62,vy:0,onGround:false,spd:4,jump:14,color:'#00e5ff'};
+
+  // world entities
+  let platforms = [];
+  let coins = [];
+  let enemies = [];
+  let cameraX = 0;
+
+  // input
+  const keys = {};
+  window.addEventListener('keydown', e=>{keys[e.key]=true;if(e.key===' '||e.key==='ArrowUp') e.preventDefault();});
+  window.addEventListener('keyup', e=>{keys[e.key]=false});
+
+  // touch controls (tap to jump)
+  canvas.addEventListener('touchstart', e=>{e.preventDefault(); if(!gameRunning) startGame(); else playerJump();});
+  canvas.addEventListener('mousedown', e=>{ if(!gameRunning){ startGame(); } else { playerJump(); } });
+
+  // responsive canvas
+  function fitCanvas(){
+    const maxW = Math.min(window.innerWidth - 80, 1100);
+    const scale = maxW / 1100;
+    canvas.style.width = Math.round(1100*scale) + 'px';
+    canvas.style.height = Math.round(620*scale) + 'px';
+  }
+  window.addEventListener('resize', fitCanvas); fitCanvas();
+
+  // procedural audio (WebAudio)
+  const AudioCtx = window.AudioContext || window.webkitAudioContext;
+  const audioCtx = AudioCtx ? new AudioCtx() : null;
+  let masterGain = null; let musicOn = true; 
+  if(audioCtx){ masterGain = audioCtx.createGain(); masterGain.gain.value = parseFloat(volSlider.value); masterGain.connect(audioCtx.destination); }
+
+  volSlider.addEventListener('input', ()=>{ if(masterGain) masterGain.gain.value = parseFloat(volSlider.value); });
+  btnSound.addEventListener('click', ()=>{ musicOn = !musicOn; musicState.textContent = musicOn ? 'On':'Off'; if(!musicOn) stopMusic(); else startMusic(); });
+
+  function beep(freq, time=0.08, type='sine'){ if(!audioCtx || !musicOn) return; const o = audioCtx.createOscillator(); const g = audioCtx.createGain(); o.type=type; o.frequency.value=freq; g.gain.value=0.0001; o.connect(g); g.connect(masterGain); o.start(); g.gain.exponentialRampToValueAtTime(0.12, audioCtx.currentTime+0.01); g.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime+time); o.stop(audioCtx.currentTime+time+0.02); }
+
+  // simple looped background music (chill neon arpeggio)
+  let musicInterval = null;
+  function startMusic(){ if(!audioCtx) return; if(!musicOn) return; if(audioCtx.state==='suspended') audioCtx.resume(); if(musicInterval) return;
+    const pattern = [220,277.18,329.63,369.99];
+    let idx=0; musicInterval = setInterval(()=>{ if(!musicOn) return; const f = pattern[idx%pattern.length]* (1 + 0.02*Math.sin(Date.now()/200)); beep(f,0.18,'sine'); idx++; }, 220);
+  }
+  function stopMusic(){ if(musicInterval){ clearInterval(musicInterval); musicInterval=null; } }
+
+  // world generation
+  function resetWorld(){
+    platforms = [];
+    coins = [];
+    enemies = [];
+    cameraX = 0;
+    // ground
+    platforms.push({x:-200,y:520,w:1600,h:100});
+    // random platforms
+    for(let i=0;i<18;i++){
+      const px = 300 + i*260 + Math.random()*120;
+      const py = 360 + Math.sin(i*0.6)*80 + (Math.random()*120-60);
+      platforms.push({x:px,y:py,w:160 + Math.random()*120,h:18});
+      // coins above some
+      if(Math.random()>0.35){
+        for(let c=0;c<3;c++) coins.push({x:px+30 + c*30,y:py-40, collected:false});
+      }
+      if(Math.random()>0.7){ enemies.push({x:px+40,y:py-48,w:36,h:36,dir: Math.random()>0.5?1:-1,spd:0.9+Math.random()*0.8}); }
+    }
+  }
+
+  function startGame(){ menu.style.display='none'; gameRunning=true; paused=false; score=0; lives=3; level=1; updateUI(); resetWorld(); player.x=120; player.y=420; player.vy=0; if(audioCtx) audioCtx.resume(); startMusic(); lastTime = performance.now(); requestAnimationFrame(loop);
+  }
+
+  startBtn.addEventListener('click', ()=>startGame());
+  howBtn.addEventListener('click', ()=>{ howBox.style.display = howBox.style.display==='none' ? 'block':'none'; });
+  btnPause.addEventListener('click', ()=>{ paused = !paused; btnPause.textContent = paused ? '▶ Retomar' : '⏸️ Pausar'; if(!paused) lastTime = performance.now(); if(paused) stopMusic(); else startMusic(); });
+  btnReset.addEventListener('click', ()=>{ startGame(); });
+
+  function updateUI(){ scoreEl.textContent = score; livesEl.textContent = lives; levelEl.textContent = level; }
+
+  function playerJump(){ if(player.onGround){ player.vy = -player.jump; player.onGround=false; beep(880,0.06,'square'); } }
+
+  function collideRects(a,b){ return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y; }
+
+  function physics(dt){
+    // horizontal movement
+    let dx = 0;
+    if(keys['ArrowLeft'] || keys['a']) dx = -player.spd;
+    if(keys['ArrowRight'] || keys['d']) dx = player.spd;
+    player.x += dx;
+    // gravity
+    player.vy += 36 * dt; player.y += player.vy;
+    player.onGround = false;
+    // collisions with platforms
+    for(const p of platforms){
+      const plat = {x:p.x,y:p.y,w:p.w,h:p.h};
+      const next = {x:player.x,y:player.y,w:player.w,h:player.h};
+      if(collideRects(next,plat)){
+        // simple resolution: place on top if falling
+        if(player.vy>0 && (player.y + player.h) - plat.y < 60){ player.y = plat.y - player.h; player.vy = 0; player.onGround = true; }
+        else if(player.vy<0){ player.vy = 0; player.y = plat.y + plat.h + 1; }
+      }
+    }
+    // bounds
+    if(player.y > 900){ // fell
+      lives--; beep(120,0.2,'sawtooth'); if(lives<=0){ endGame(); } else { player.x = cameraX + 120; player.y = 380; player.vy=0; }
+    }
+
+    // coins collection
+    coins.forEach(c=>{ if(!c.collected && collideRects({x:player.x+8,y:player.y+8,w:player.w-16,h:player.h-16},{x:c.x,y:c.y,w:18,h:18})){ c.collected=true; score+=10; beep(1320,0.08,'triangle'); } });
+
+    // enemy collisions
+    enemies.forEach(e=>{
+      e.x += e.dir * e.spd;
+      // reverse on platform edges
+      if(Math.random()<0.002) e.dir *= -1;
+      if(collideRects({x:player.x+8,y:player.y+8,w:player.w-16,h:player.h-16},e)){
+        // if player falling onto enemy -> bounce
+        if(player.vy>0){ score+=25; e.dead=true; player.vy = -8; beep(1100,0.08,'square'); }
+        else { lives--; beep(120,0.2,'sawtooth'); if(lives<=0) endGame(); else { player.x = cameraX + 120; player.y = 380; player.vy=0; } }
+      }
+    });
+    // cleanup dead
+    enemies = enemies.filter(e=>!e.dead);
+
+    // camera follows
+    const targetCam = Math.max(0, player.x - 120);
+    cameraX += (targetCam - cameraX) * Math.min(1, 5*dt);
+  }
+
+  function endGame(){ gameRunning=false; stopMusic(); menu.style.display='block'; menu.querySelector('h2').textContent = 'Game Over'; startBtn.textContent = '▶ Jogar Novamente'; }
+
+  function checkLevelProgress(){ const total = coins.length; const collected = coins.filter(c=>c.collected).length; if(collected >= 20){ level++; score += 200; beep(1760,0.18,'sine'); resetWorld(); player.x=120; player.y=420; }
+  }
+
+  // rendering
+  function draw(dt){
+    // background gradient + parallax stars
+    ctx.clearRect(0,0,W,H);
+    // background neon grid
+    const g = ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0,'#071126'); g.addColorStop(1,'#08121b'); ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+
+    // parallax layers
+    drawParallax();
+
+    // platforms
+    ctx.save(); ctx.translate(-cameraX,0);
+    for(const p of platforms){ drawPlatform(p); }
+
+    // coins
+    for(const c of coins){ if(!c.collected) drawCoin(c); }
+
+    // enemies
+    for(const e of enemies) drawEnemy(e);
+
+    // player
+    drawPlayer(player);
+
+    ctx.restore();
+
+    // HUD glow bars
+    drawHUD();
+  }
+
+  function drawParallax(){
+    // moving gradient shapes
+    for(let i=0;i<6;i++){
+      const px = ((Date.now()/50) * (0.02*(i+1)) + i*200) % (W*1.2) - 200;
+      ctx.fillStyle = `rgba(155,89,255,${0.03 + i*0.01})`;
+      ctx.beginPath(); ctx.ellipse(px, 80 + i*40, 240, 60, 0,0,Math.PI*2); ctx.fill();
+    }
+    // subtle grid
+    ctx.strokeStyle='rgba(255,255,255,0.02)'; ctx.lineWidth=1;
+    for(let x=0;x<W;x+=60){ ctx.beginPath(); ctx.moveTo(x+ (cameraX*0.06%60),0); ctx.lineTo(x+ (cameraX*0.06%60),H); ctx.stroke(); }
+  }
+
+  function drawPlatform(p){ const r=10; ctx.fillStyle = '#0f2433'; ctx.fillRect(p.x,p.y,p.w,p.h);
+    // neon edge
+    const edge = ctx.createLinearGradient(p.x,p.y,p.x+p.w,p.y);
+    edge.addColorStop(0,'rgba(0,229,255,0.18)'); edge.addColorStop(1,'rgba(255,45,149,0.18)');
+    ctx.fillStyle = edge; ctx.fillRect(p.x, p.y-6, p.w, 6);
+  }
+
+  function drawCoin(c){ ctx.save(); ctx.translate(c.x, c.y); const t = Date.now()/200; const s = 1 + Math.sin(t)/6; ctx.scale(s,s);
+    ctx.beginPath(); ctx.arc(0,0,10,0,Math.PI*2); const g = ctx.createRadialGradient(-4,-4,2,0,0,12); g.addColorStop(0,'#fff'); g.addColorStop(0.6,'#ffd166'); g.addColorStop(1,'#ff9b00'); ctx.fillStyle=g; ctx.fill(); ctx.restore(); }
+
+  function drawEnemy(e){ ctx.fillStyle = '#ff3d7a'; ctx.fillRect(e.x, e.y, e.w, e.h); ctx.strokeStyle='rgba(0,0,0,0.2)'; ctx.strokeRect(e.x,e.y,e.w,e.h); }
+
+  function drawPlayer(p){ ctx.save(); ctx.translate(p.x, p.y);
+    // body
+    ctx.fillStyle = p.color; roundRect(ctx,0,0,p.w,p.h,8); ctx.fill();
+    // face neon visor
+    ctx.fillStyle='rgba(255,255,255,0.12)'; ctx.fillRect(8,12,p.w-16,14);
+    // glow
+    ctx.shadowColor = 'rgba(0,229,255,0.18)'; ctx.shadowBlur=18; ctx.fillStyle='rgba(0,229,255,0.03)'; ctx.fillRect(-6,-6,p.w+12,p.h+12);
+    ctx.restore(); }
+
+  function drawHUD(){ // already updated by DOM — add glow
+    ctx.save(); ctx.fillStyle='rgba(0,0,0,0)'; ctx.shadowColor='rgba(155,89,255,0.08)'; ctx.shadowBlur=30; ctx.fillRect(0,0,1,1); ctx.restore(); }
+
+  function roundRect(ctx,x,y,w,h,r){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
+
+  function loop(ts){ if(!gameRunning) return; if(paused){ lastTime = ts; requestAnimationFrame(loop); return; }
+    const dt = Math.min(1/30,(ts - lastTime)/1000); lastTime = ts;
+    // update
+    physics(dt);
+    checkLevelProgress();
+    updateUI();
+    draw(dt);
+    requestAnimationFrame(loop);
+  }
+
+  // initial menu state
+  menu.style.display='block';
+
+  // helpful dev: seed world on load
+  resetWorld();
+
+  // expose for debugging
+  window._NR = {startGame, resetWorld};
+
+  // auto start audio on first user gesture
+  document.addEventListener('click', function initAudioOnce(){ if(audioCtx && audioCtx.state==='suspended') audioCtx.resume(); document.removeEventListener('click', initAudioOnce); });
+
+  </script>
 <script src="script.js"></script></body>
 </html>
+<header>
+
+  <!-- NOVA NAV FUTURISTA -->
+  <nav style="
+    display:flex;
+    gap:18px;
+    padding:10px 14px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.05);
+    backdrop-filter:blur(6px);
+  ">
+    <a href="#" style="color:var(--neon1); text-decoration:none; font-weight:600;">Início</a>
+    <a href="#" style="color:#e6eef8; text-decoration:none;">Ranking</a>
+    <a href="#" style="color:#e6eef8; text-decoration:none;">Skins</a>
+    <a href="#" style="color:#e6eef8; text-decoration:none;">Configurações</a>
+  </nav>
+  <!-- FIM DA NAV -->
+
+  <div style="display:flex;gap:12px;align-items:center">
+    <div class="card" style="display:flex;flex-direction:column;padding:8px 12px">
+      <strong>Neon Runner</strong>
+      <small style="opacity:0.8">Runner / Platformer híbrido — desenvolvido em HTML5 + JS</small>
+    </div>
+  </div>
+
+  <div class="meta">
+    <div class="card">Teclas: ← → pular Espaço / Toque</div>
+    <div class="card">Ação: Colete moedas, desvie de inimigos, suba de nível</div>
+  </div>
+
+</header>
+<header>
+
+  <!-- NOVA NAV FUTURISTA -->
+  <nav style="
+    display:flex;
+    gap:18px;
+    padding:10px 14px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.05);
+    backdrop-filter:blur(6px);
+  ">
+    <a href="#" style="color:var(--neon1); text-decoration:none; font-weight:600;">Início</a>
+    <a href="#" style="color:#e6eef8; text-decoration:none;">Ranking</a>
+    <a href="#" style="color:#e6eef8; text-decoration:none;">Skins</a>
+    <a href="#" style="color:#e6eef8; text-decoration:none;">Configurações</a>
+  </nav>
+  <!-- FIM DA NAV -->
+
+  <div style="display:flex;gap:12px;align-items:center">
+    <div class="card" style="display:flex;flex-direction:column;padding:8px 12px">
+      <strong>Neon Runner</strong>
+      <small style="opacity:0.8">Runner / Platformer híbrido — desenvolvido em HTML5 + JS</small>
+    </div>
+  </div>
+
+  <div class="meta">
+    <div class="card">Teclas: ← → pular Espaço / Toque</div>
+    <div class="card">Ação: Colete moedas, desvie de inimigos, suba de nível</div>
+  </div>
+
+</header>
+
+<!-- ========================= -->
+<!--        MAIN ADICIONADO     -->
+<!-- ========================= -->
+
+<main style="
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+">
+
+  <!-- Aqui ficará seu canvas do jogo -->
+  <canvas id="gameCanvas" width="900" height="420"></canvas>
+
+</main>
+<main style="
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+">
+
+  <!-- Canvas do jogo -->
+  <canvas id="gameCanvas" width="900" height="420"></canvas>
+
+  <!-- IMAGEM ADICIONADA -->
+  <img 
+    src="assets/player.png" 
+    alt="Personagem Neon Runner"
+    style="margin-top:20px; width:180px; filter:drop-shadow(0 0 12px var(--neon1));"
+  >
+
+</main>
+

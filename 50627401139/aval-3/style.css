@@ -1,80 +1,16 @@
-/* =============================== */
-/* ESTILO DO FEED DE INSPIRAÇÕES   */
-/* =============================== */
-#feed {
-    max-width: 1000px;
-    margin: 50px auto;
-    text-align: center;
+/* CSS externo para Neon Runner */
+:root{
+  --bg:#0b0f1a; --neon1:#00e5ff; --neon2:#ff2d95; --accent:#9b59ff;
+  --hud-bg: rgba(10,12,20,0.5);
+  --glass: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto;
 }
-
-#feed h2 {
-    color: #cc0066;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #ffb3d9;
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-.feed-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.post {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(255, 153, 204, 0.4);
-    width: 220px;
-    overflow: hidden;
-    transition: transform 0.3s;
-}
-
-.post:hover {
-    transform: scale(1.03);
-}
-
-.post img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.legenda {
-    padding: 10px;
-    color: #4d004d;
-    font-size: 0.95em;
-}
-
-.curtir {
-    background-color: #ffb3d9;
-    color: #4d004d;
-    border: none;
-    border-radius: 0 0 12px 12px;
-    padding: 8px;
-    font-weight: bold;
-    width: 100%;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.curtir:hover {
-    background-color: #ff66b2;
-    color: white;
-}
-
-/* Feed no modo escuro */
-.dark-mode .post {
-    background-color: #3d3d3d;
-    color: #ffe6f0;
-}
-
-.dark-mode .curtir {
-    background-color: #993366;
-    color: #ffe6f0;
-}
-
-.dark-mode .curtir:hover {
-    background-color: #cc6699;
-}
+html,body{height:100%;margin:0;background:var(--bg);color:#e6eef8}
+.container{display:grid;grid-template-rows:auto 1fr;min-height:100vh;padding:18px;gap:12px}
+header{display:flex;align-items:center;justify-content:space-between}
+.card{backdrop-filter:blur(6px);background:var(--hud-bg);border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:14px}
+canvas{border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.7)}
+.hud{position:absolute;left:36px;top:36px;display:flex;gap:8px}
+.controls{position:absolute;right:36px;top:36px;display:flex;gap:8px}
+.btn{cursor:pointer;padding:8px 10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:white}
+.menu{pointer-events:auto;width:92%;max-width:700px;padding:22px;border-radius:14px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04)}
