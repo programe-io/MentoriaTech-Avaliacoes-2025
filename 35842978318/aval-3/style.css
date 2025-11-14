@@ -1,105 +1,140 @@
 /* Reiniciar */
 * {
-  margem: 0;
-  preenchimento: 0;
-  box-sized: caixa com borda;
-  família de fontes: "Poppins", sem serifa;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Fundo */
-corpo {
-  fundo: gradiente-linear(para baixo, #0a2a66, #1a2a64);
-  cor: #fff;
+body {
+  background: linear-gradient(to bottom, #0a2a66, #1a2a64);
+  color: #fff;
 }
 
 /* Barra de navegação */
 .navbar {
-  Exibir: flexível;
-  justify-content: espaço-entre;
-  alinhamento-itens: centro;
-  preenchimento: 15px 50px;
-  cor de fundo: #0d1b52;
-  posição: pegajosa;
-  topo: 0;
-  Índice z: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #0d1b52;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo {
-  tamanho da fonte: 20px;
-  peso da fonte: negrito;
-  espaçamento entre letras: 1px;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .navbar ul {
-  estilo de lista: nenhum;
-  Exibir: flexível;
-  espaço: 20px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
 .navbar a {
-  cor: #fff;
-  decoração de texto: nenhuma;
-  peso da fonte: 500;
-  Transição: 0,3s;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
 .navbar a:hover {
-  cor: #6ea8ff;
+  color: #6ea8ff;
 }
 
 /* Contêiner de Cartões */
 .container {
-  Exibir: flexível;
-  justificar-conteúdo: centralizado;
-  alinhamento-itens: início-flexível;
-  flex-wrap: envolver;
-  espaçamento: 25px;
-  preenchimento: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 40px 20px;
 }
 
 /* Cartão */
 .card {
-  cor de fundo: #1e2a48;
-  raio da borda: 10px;
-  largura: 300px;
-  preenchimento: 15px;
+  background-color: #1e2a48;
+  border-radius: 10px;
+  width: 300px;
+  padding: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transição: transformar 0,3s;
+  transition: transform 0.3s;
 }
 
 .card:hover {
-  transformar: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 /* Usuário */
 .user-info {
-  Exibir: flexível;
-  alinhamento-itens: centro;
-  espaçamento: 10px;
-  margem-inferior: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .avatar {
-  largura: 40px;
-  altura: 40px;
-  raio-da-borda: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #3b82f6; /* azul como no HTML */
 }
 
 /* Imagem do post */
 .post-img {
-  largura: 100%;
-  raio da borda: 8px;
-  margem-inferior: 10px;
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 /* Texto */
 .card p {
-  tamanho da fonte: 14px;
-  cor: #ddd;
-  margem-inferior: 10px;
+  font-size: 14px;
+  color: #ddd;
+  margin-bottom: 10px;
 }
 
-.tempo {
-  tamanho da fonte: 12px;
-  cor: #aaa;
+/* Tempo */
+.time {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Conteúdo dos posts (novos textos do HTML) */
+.post-1 p {
+  content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi beatae quae nihil fuga voluptatem, repellat delectus ut tempore debitis est dolorum deserunt.";
+}
+
+.post-2 p {
+  content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi beatae quae nihil fuga voluptatem, repellat delectus ut tempore debitis est dolorum deserunt.";
+}
+
+.post-3 p {
+  content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi beatae quae nihil fuga voluptatem, repellat delectus ut tempore debitis est dolorum deserunt.";
+}
+
+/* Imagens dos posts */
+.post-1 .post-img {
+  content: url("images/post_01.png");
+}
+
+.post-2 .post-img {
+  content: url("images/post_02.png");
+}
+
+.post-3 .post-img {
+  content: url("images/post_03.png");
+}
+
+/* Avatares */
+.post-1 .avatar,
+.post-2 .avatar,
+.post-3 .avatar {
+  content: url("images/profile_01.jpg");
 }
