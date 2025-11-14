@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>One Piece - Site Completo</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f0e6d2;
+        }
+
+        header {
+            background: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #ffe100;
+            margin: 0;
+            font-size: 35px;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        nav {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #ffe100;
+        }
+
+        main {
+            display: flex;
+            width: 90%;
+            margin: 20px auto;
+            gap: 20px;
+        }
+
+        section {
+            flex: 3;
+        }
+
+        aside {
+            flex: 1;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 5px solid #cc0000;
+            height: fit-content;
+            box-shadow: 0 0 10px #999;
+        }
+
+        article {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #cc0000;
+            box-shadow: 0 0 10px #999;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .banner-img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Páginas simuladas */
+        .page { display: none; }
+        .active { display: block; }
+    </style>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>One Piece - Mundo dos Piratas</h1>
+</header>
+
+<nav>
+    <a href="#" onclick="showPage('inicio')">Início</a>
+    <a href="#" onclick="showPage('sobre')">Sobre</a>
+    <a href="#" onclick="showPage('contato')">Contato</a>
+</nav>
+
+<main>
+
+    <!-- ASIDE OBRIGATÓRIO -->
+    <aside>
+        <h3>Curiosidades</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/en/6/6f/Luffy.png"
+             alt="Luffy" width="100%" style="border-radius:10px;">
+        <p>• Luffy nasceu em Foosha Village.</p>
+        <p>• Zoro foi o primeiro membro da tripulação.</p>
+        <p>• One Piece começou em 1997.</p>
+        <p>• O autor Oda quase nunca tira folga.</p>
+    </aside>
+
+    <section>
+
+        <!-- =================== PÁGINA INICIAL =================== -->
+        <div id="inicio" class="page active">
+
+            <article>
+                <h2>Bem-vindo ao Mundo de One Piece!</h2>
+
+                <!-- IMG OBRIGATÓRIA -->
+                <img class="banner-img"
+                     src="https://wallpapercave.com/wp/wp7440870.jpg"
+                     alt="Banner One Piece">
+
+                <p>
+                    One Piece acompanha Luffy em sua jornada para se tornar o Rei dos Piratas,
+                    enfrentando inimigos perigosos e descobrindo mistérios do mundo.
+                </p>
+            </article>
+
+            <article>
+                <h2>A Tripulação</h2>
+
+                <img class="banner-img"
+                     src="https://wallpapercave.com/wp/wp4691908.jpg"
+                     alt="Chapéus de Palha">
+
+                <p>Luffy, Zoro, Nami, Usopp, Sanji, Chopper, Robin, Franky, Brook e Jinbe.</p>
+            </article>
+
+        </div>
+
+        <!-- =================== PÁGINA SOBRE =================== -->
+        <div id="sobre" class="page">
+
+            <article>
+                <h2>Sobre One Piece</h2>
+
+                <img class="banner-img"
+                     src="https://wallpapercave.com/wp/wp4325443.jpg"
+                     alt="Logo One Piece">
+
+                <p>One Piece é um anime e mangá criado por Eiichiro Oda, e é uma das séries mais populares da história.</p>
+            </article>
+
+            <article>
+                <h2>Sobre o Autor</h2>
+
+                <img class="banner-img"
+                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Eiichiro_Oda.png/440px-Eiichiro_Oda.png"
+                     alt="Eiichiro Oda">
+
+                <p>Eiichiro Oda trabalha com dedicação extrema e é conhecido por sua criatividade sem limites.</p>
+            </article>
+
+        </div>
+
+        <!-- =================== PÁGINA CONTATO =================== -->
+        <div id="contato" class="page">
+
+            <article>
+                <h2>Contato</h2>
+
+                <img class="banner-img"
+                     src="https://wallpapercave.com/wp/wp1812467.jpg"
+                     alt="Mapa de One Piece">
+
+                <p>Envie sua mensagem para a tripulação dos Chapéus de Palha!</p>
+
+                <form>
+                    <label>Nome:</label>
+                    <input type="text">
+
+                    <label>Email:</label>
+                    <input type="email">
+
+                    <label>Mensagem:</label>
+                    <textarea rows="5"></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </article>
+
+        </div>
+
+    </section>
+</main>
+
+<footer>
+    © 2024 - Site Tema One Piece | Feito para fins educacionais
+</footer>
+
+</body>
+</html>
