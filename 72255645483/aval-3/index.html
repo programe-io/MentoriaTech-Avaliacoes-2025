@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Flamengo</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0d0d0d;
+            color: white;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(90deg, #d00000, #8b0000);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        header img {
+            width: 120px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        /* NAV */
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 14px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #000;
+        }
+
+        /* MAIN */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 30px;
+        }
+
+        /* CARDS */
+        .card {
+            background: #1a1a1a;
+            width: 300px;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #ff0000;
+            box-shadow: 0 4px 12px rgba(255,0,0,0.25);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(255,0,0,0.4);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #ff2b2b;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            color: #ccc;
+        }
+
+        footer span {
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        /* RESPONSIVO */
+        @media(max-width: 600px) {
+            .card {
+                width: 100%;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <div>
+            <!-- IMG OBRIGATÓRIA -->
+            <img src="https://via.placeholder.com/200x200/FF0000/000000?text=FLA" alt="Escudo do Flamengo">
+
+            <h1>
+                Clube de Regatas do Flamengo 
+                <span>🔥</span>  <!-- SPAN OBRIGATÓRIO -->
+            </h1>
+        </div>
+
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">História</a>
+            <a href="#">Títulos</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="card">
+            <h2>História</h2>
+            <p>
+                O Flamengo foi fundado em 1895 e se tornou um dos maiores clubes do mundo.
+                Sua torcida é conhecida como <span>Nação Rubro-Negra</span>.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Títulos</h2>
+            <ul>
+                <li>Libertadores: 1981, 2019, 2022</li>
+                <li>Mundial: 1981</li>
+                <li>Brasileirão: 7 títulos</li>
+                <li>Copa do Brasil: 4 títulos</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Maracanã</h2>
+            <p>
+                O Maracanã é o palco principal onde a torcida do Flamengo mostra sua força.
+            </p>
+        </div>
+
+    </main>
+
+    <footer>
+        <div>
+            <p>
+                <span>“Uma vez Flamengo, sempre Flamengo!”</span> © 2025
+            </p>
+        </div>
+    </footer>
+
+<script src="script.js"></script></body>
+</html>
