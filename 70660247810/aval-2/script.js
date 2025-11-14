@@ -1,21 +1,37 @@
-// Acessibilidade: foco visível ao navegar por teclado
-(function addFocusStyle() {
-  const style = document.createElement('style');
-  style.textContent = `
-    a:focus, button:focus { outline: 2px solid #6fdc8c; outline-offset: 2px; }
-  `;
-  document.head.appendChild(style);
-})();
+// Alternar tema claro/escuro com persistência
+const root = document.documentElement;
+const themeToggle = document.getElementById('themeToggle');
 
-// Mensagem de carregamento no console
-window.addEventListener('DOMContentLoaded', () => {
-  console.log('Site Mundo Minecraft carregado com sucesso.');
-});
-
-// Interação simples: aviso ao abrir a galeria
-document.addEventListener('click', (e) => {
-  const target = e.target;
-  if (target.matches('.btn.primary[href="#galeria"]')) {
-    alert('Você está entrando na galeria do Mundo Minecraft!');
+function setTheme(mode) {
+  if (mode === 'light') {
+    root.classList.add('light');
+    localStorage.setItem('theme', 'light');
+    themeToggle.textContent = 'Tema escuro';
+  } else {
+    root.classList.remove('light');
+    localStorage.setItem('theme', 'dark');
+    themeToggle.textContent = 'Tema claro';
   }
+}
+
+// Carregar tema salvo
+const saved = localStorage.getItem('theme');
+setTheme(saved === 'light' ? 'light' : 'dark');
+
+// Alternar ao clicar
+themeToggle.addEventListener('click', () => {
+  const isLight = root.classList.contains('light');
+  setTheme(isLight ? 'dark' : 'light');
 });
+
+// Modal da galeria
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modalImg');
+const modalCaption = document.getElementById('modalCaption');
+const modalClose = document.getElementById('modalClose');
+
+document.querySelectorAll('.gallery .tile img').forEach(img => {
+  img.addEventListener('click', () => {
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+    modalCaption.text

@@ -1,154 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mundo Minecraft – por Geziel</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Minecraft Fan Site</title>
+  <link rel="stylesheet" href="styles.css" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
 <body>
-
-  <header role="banner">
-    <nav class="nav" aria-label="Navegação principal">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <h1 class="title">Mundo Minecraft</h1>
-          <p class="subtitle">Site feito por Geziel</p>
-        </div>
-      </div>
-      <ul class="menu" role="menubar">
-        <li role="none"><a role="menuitem" href="#galeria">Galeria</a></li>
-        <li role="none"><a role="menuitem" href="#sobre">Sobre</a></li>
-        <li role="none"><a role="menuitem" href="#agradecimento">Agradecimento</a></li>
-        <li role="none"><a role="menuitem" href="https://www.google.com" target="_blank" rel="noopener">Google</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">⛏️</span>
+      <h1>Minecraft Fan Site</h1>
+    </div>
+    <button id="themeToggle" class="btn" aria-label="Alternar tema">Tema claro</button>
   </header>
 
-  <main id="conteudo-principal">
-    <section class="hero" aria-labelledby="titulo-hero">
-      <article class="hero-article">
-        <h2 id="titulo-hero">Bem-vindo ao Mundo Minecraft</h2>
-        <p>Explore imagens, personagens e a criatividade infinita do universo Minecraft.</p>
-        <div class="cta" role="group" aria-label="Ações principais">
-          <a class="btn primary" href="#galeria">Ver galeria</a>
-          <a class="btn" href="#sobre">Sobre o projeto</a>
-          <a class="btn" href="https://www.google.com" target="_blank" rel="noopener">Abrir no Google</a>
+  <nav class="site-nav" aria-label="Navegação principal">
+    <ul class="menu">
+      <li><a href="#home">Início</a></li>
+      <li><a href="#destaques">Destaques</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+    </ul>
+  </nav>
+
+  <div class="layout">
+    <main id="home">
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          src="https://www.minecraft.net/content/dam/minecraftnet/franchise/component-library/downloadHeroA/Minecraft_Fall_Drop_Campaign_Key_Art_DotNet_Launcher_1272x655.png"
+          alt="Arte oficial de campanha Minecraft com cenário vibrante"
+          class="hero-img"
+        />
+        <div class="hero-overlay">
+          <h2 id="hero-title">Explore, construa e sobreviva</h2>
+          <p>Seu portal para aventuras no mundo de blocos.</p>
+          <a href="#galeria" class="btn btn-primary">Ver galeria</a>
         </div>
-        <p class="credit">Programador responsável: <strong>Geziel</strong></p>
-      </article>
+      </section>
 
-      <aside class="hero-aside" aria-label="Imagem destaque">
-        <img src="https://wallpapers.com/images/hd/minecraft-landscape-steve-in-galaxy-21tomtahinquiavs.jpg"
-             alt="Steve observando uma paisagem cósmica de Minecraft" />
-      </aside>
-    </section>
+      <!-- Destaques -->
+      <section class="features" id="destaques" aria-labelledby="destaques-title">
+        <h3 id="destaques-title">Destaques</h3>
+        <div class="cards">
+          <article class="card">
+            <h4>Jogando com amigos</h4>
+            <p>Descubra como se conectar e se divertir em servidores ou via LAN.</p>
+          </article>
+          <article class="card">
+            <h4>Atualizações épicas</h4>
+            <p>Novas cavernas, montanhas e criaturas para explorar.</p>
+          </article>
+          <article class="card">
+            <h4>Comunidade gigante</h4>
+            <p>Mods, mapas e um universo de conteúdo criado por fãs.</p>
+          </article>
+        </div>
+      </section>
 
-    <section id="galeria" aria-labelledby="titulo-galeria">
-      <h2 id="titulo-galeria">Galeria</h2>
+      <!-- Galeria -->
+      <section class="gallery" id="galeria" aria-labelledby="galeria-title">
+        <h3 id="galeria-title">Galeria</h3>
+        <div class="grid">
+          <figure class="tile">
+            <img
+              src="https://files.tecnoblog.net/wp-content/uploads/2020/12/como-jogar-minecraft-via-hamachi-1060x596.jpg"
+              alt="Jogando Minecraft via Hamachi com amigos"
+              data-caption="Como jogar Minecraft via Hamachi"
+              loading="lazy"
+            />
+          </figure>
+          <figure class="tile">
+            <img
+              src="https://s2-techtudo.glbimg.com/fmXoF6M1np4ytDpJy_z4JnoFre8=/0x0:695x390/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/3/Z/lQzWfqR2GG4G30CWppVQ/minecaft-atualizacao-caves-cliffs-parte-2-o-que-esperar.jpg"
+              alt="Atualização Caves & Cliffs parte 2 com novas cavernas e montanhas"
+              data-caption="Atualização Caves & Cliffs parte 2"
+              loading="lazy"
+            />
+          </figure>
+          <figure class="tile">
+            <img
+              src="https://www.oficinadanet.com.br/imagens/post/39259/capa-minecraft-atinge-1-trilhhao-de-visualizacoes-no-youtube.jpg"
+              alt="Capa destacando o sucesso do Minecraft no YouTube"
+              data-caption="Minecraft alcança 1 milhão de acessos no YouTube"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </section>
 
-      <div class="grid">
-        <article class="card">
-          <img src="https://cienciahoje.org.br/wp-content/uploads/2020/11/C_C-POP_0fe20042_0bb8_4781_82f4_7130f928b021.jpg"
-               alt="Arte em estilo pop inspirada em Minecraft" />
-          <div class="body">
-            <h3>Estilo Pop</h3>
-            <p>Uma releitura artística inspirada no universo Minecraft.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/store/software/switch/70010000000964/a28a81253e919298beab2295e39a56b7a5140ef15abdb56135655e5c221b2a3a"
-               alt="Imagem promocional do Minecraft Bedrock Edition no Nintendo Switch" />
-          <div class="body">
-            <h3>Bedrock Edition</h3>
-            <p>Versão multiplataforma do Minecraft para consoles e dispositivos móveis.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="https://esportslatest.net/wp-content/uploads/2023/10/Minecraft-Bedrock-Edition-1024x576.jpg"
-               alt="Cena comparativa usada para explicar diferenças de edições do Minecraft" />
-          <div class="body">
-            <h3>Minecraft Java Edition</h3>
-            <p>Edição clássica de PC com suporte forte a mods e servidores personalizados.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="https://cdnb.artstation.com/p/assets/images/images/054/603/171/large/cubix-2022-07-05-14-26-47.jpg?1664914369"
-               alt="Arte futurista com estética de blocos e iluminação estilizada" />
-          <div class="body">
-            <h3>Arte Futurista</h3>
-            <p>Uma visão criativa e moderna do mundo em blocos.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="https://s2-techtudo.glbimg.com/bHMRA2LUdnRhY7eLQDSiIb38kwQ=/0x0:695x390/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2019/x/B/xA2e6zTWGowum5RoAMHQ/minecraft-classic-10-anos-navegador.jpg"
-               alt="Minecraft Classic rodando no navegador com blocos básicos" />
-          <div class="body">
-            <h3>Primeira versão: Minecraft Classic</h3>
-            <p>Versão inicial celebrada no navegador anos depois do lançamento.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="https://play-lh.googleusercontent.com/tK8CXSz7Wg2uv3MFz8ybLTl1EaKE57X5WjmpitOmqxcZls27w3-zwzPqpXHftKW___lj=w526-h296-rw"
-               alt="Banner da versão mais recente de Minecraft na loja com gráficos atuais" />
-          <div class="body">
-            <h3>Última versão</h3>
-            <p>Lançamentos recentes com recursos atualizados e melhorias contínuas.</p>
-          </div>
-        </article>
+      <!-- Modal -->
+      <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-label="Visualizador de imagem">
+        <button id="modalClose" class="modal-close" aria-label="Fechar visualização">✖</button>
+        <img id="modalImg" alt="" />
+        <p id="modalCaption" class="caption"></p>
       </div>
 
-      <aside class="gallery-aside" aria-label="Notas e legendas">
+      <!-- Sobre -->
+      <section class="about" id="sobre" aria-labelledby="sobre-title">
+        <h3 id="sobre-title">Sobre</h3>
+        <p>Site feito por fãs para celebrar o universo de Minecraft, com foco em estética simples, acessibilidade e desempenho.</p>
+      </section>
+    </main>
+
+    <aside class="sidebar" aria-label="Conteúdo complementar">
+      <section class="widget">
+        <h4>Links úteis</h4>
         <ul>
-          <li><strong>Curadoria:</strong> Geziel</li>
-          <li><strong>Edições:</strong> Bedrock e Java destacadas</li>
-          <li><strong>Observação:</strong> Imagens pertencem aos respectivos autores</li>
+          <li><a href="#galeria">Ver galeria</a></li>
+          <li><a href="#destaques">Ir para destaques</a></li>
+          <li><a href="#sobre">Sobre o projeto</a></li>
         </ul>
-      </aside>
-    </section>
+      </section>
+      <section class="widget">
+        <h4>Dicas rápidas</h4>
+        <ul>
+          <li>Organize inventário com atalhos.</li>
+          <li>Leve uma cama nas explorações.</li>
+          <li>Use marcações no mapa para não se perder.</li>
+        </ul>
+      </section>
+    </aside>
+  </div>
 
-    <section id="sobre" aria-labelledby="titulo-sobre">
-      <h2 id="titulo-sobre">Sobre o projeto</h2>
-      <article>
-        <p>Este site é apenas um projeto para trabalhos e estudos, sem caráter oficial. Desenvolvido por
-          <strong>Geziel</strong> com HTML5, CSS e JavaScript, contando com ajudas de
-          <strong>vídeos e mini cursos do YouTube</strong>.</p>
-      </article>
-      <aside aria-label="Avisos legais">
-        <p>Este é um site de fã, não oficial. Todos os direitos sobre marcas e imagens são dos seus respectivos titulares.</p>
-      </aside>
-    </section>
-
-    <section id="agradecimento" aria-labelledby="titulo-agradecimento">
-      <h2 id="titulo-agradecimento">Agradecimento</h2>
-      <article>
-        <p>Meu agradecimento especial ao criador do vídeo que me ajudou a aprender programação e inspirou este projeto:</p>
-        <p>
-          <a href="https://youtu.be/A1BaZr82XJI?si=rExspkPphgqdIQJu" target="_blank" rel="noopener">
-            Assista ao vídeo no YouTube
-          </a>
-        </p>
-        <p><strong>Obrigado pela ajuda!</strong></p>
-      </article>
-      <aside aria-label="Créditos adicionais">
-        <p>Conteúdos de apoio: tutoriais e mini cursos do YouTube.</p>
-      </aside>
-    </section>
-  </main>
-
-  <footer role="contentinfo">
-    <p>© 2025 Mundo Minecraft — Projeto e programação por <strong>Geziel</strong>.</p>
-    <p>Este site é apenas para fins de trabalho/estudo. Todos os direitos reservados (Copyright).</p>
-    <p><a href="https://www.google.com" target="_blank" rel="noopener">Abrir no Google</a></p>
+  <footer class="site-footer">
+    <p>Desenvolvido por <strong>Geziel</strong> com ajuda de vídeos do YouTube 🎥</p>
   </footer>
 
   <script src="script.js"></script>
 <script src="script.js"></script></body>
 </html>
+
