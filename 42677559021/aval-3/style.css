@@ -1,0 +1,128 @@
+/* -------------------- */
+/* CONFIGURAÇÕES GERAIS */
+/* -------------------- */
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background: linear-gradient(to bottom, #0c256a, #020617);
+  min-height: 100vh;
+}
+
+/* --------- HEADER --------- */
+
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+header div {
+  flex: 1;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  header div {
+    text-align: left;
+  }
+}
+
+header nav {
+  font-weight: bold;
+  display: none;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  header nav {
+    display: flex;
+  }
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  opacity: 0.7;
+}
+
+/* --------- AREA DE POSTS --------- */
+
+main {
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* --------- CARD DO POST --------- */
+
+.post-card {
+  background: #1f2937;
+  padding: 16px 0;
+  border-radius: 12px;
+  max-width: 380px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Cabeçalho */
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px 16px 16px;
+}
+
+.post-header img {
+  height: 48px;
+  width: 48px;
+  border-radius: 999px;
+  border: 2px solid #3b82f6;
+}
+
+.post-header h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Imagem do post */
+.post-card img.post-image {
+  width: 100%;
+  display: block;
+}
+
+/* Conteúdo */
+.post-content {
+  padding: 16px;
+}
+
+.post-content p {
+  font-size: 0.9rem;
+  text-align: justify;
+}
+
+.post-content span {
+  font-size: 0.75rem;
+  color: #d1d5db;
+  display: block;
+  text-align: right;
+  margin-top: 12px;
+}
