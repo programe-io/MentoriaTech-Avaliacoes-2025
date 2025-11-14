@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Confeitaria: Cardápio e Rastreador</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /*
+         * CSS customizado (substituindo styles.css)
+         * Adiciona transições e efeitos de hover para melhor UX.
+         */
+
+        /* 1. Efeito de Hover/Animação no Cardápio */
+        .grid > div {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .grid > div:hover {
+            transform: translateY(-4px); /* Levanta um pouco */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Sombra mais destacada */
+        }
+
+        /* 2. Estilo para o Marcador de Entrega no "Mapa" */
+        #delivery-marker {
+            transition: left 4s ease-in-out; /* Adiciona uma animação suave ao mover o ícone de entrega */
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Efeito para destacar o ícone sobre o fundo */
+            transform: translateX(-50%); /* Centraliza o ícone corretamente na posição 'left' */
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body class="bg-gray-100 font-sans">
+
+<div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+
+    <!-- HEADER -->
+    <header class="bg-white shadow-lg rounded-xl p-4 mb-8 sticky top-0 z-10">
+        <div class="flex items-center justify-between">
+            <h1 class="text-3xl font-extrabold text-pink-600 flex items-center space-x-2">
+                <span class="text-4xl">🍰</span>
+                <span>Doce Entrega App</span>
+            </h1>
+
+            <nav class="flex space-x-4 sm:space-x-6 items-center">
+                <a href="#menu-section" class="text-gray-600 hover:text-pink-600 font-medium transition hidden sm:block">Cardápio</a>
+                <a href="#order-details-block" class="text-gray-600 hover:text-pink-600 font-medium transition hidden sm:block">Meu Pedido</a>
+                <button class="text-white bg-pink-500 py-2 px-4 rounded-lg text-sm font-semibold hover:bg-pink-600 transition shadow-md">
+                    Login / Perfil
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        <!-- CARDÁPIO -->
+        <section class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg" id="menu-section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Bolos e Doces Especiais</h2>
+
+            <!-- Banner (Substituído por placeholder para garantir carregamento) -->
+            <img src="https://img.freepik.com/vetores-gratis/capa-do-facebook-de-padaria-de-sobremesas-deliciosas-em-aquarela_52683-137010.jpg?semt=ais_hybrid&w=740&q=80"
+                 class="w-full h-auto rounded-lg shadow mb-6">
+
+            <!-- LISTA DE PRODUTOS DE CONFEITARIA -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- BOLO RED VELVET -->
+                <div class="bg-white p-4 rounded-xl shadow-md">
+                    <img src="https://www.receitasnestle.com.br/sites/default/files/srh_recipes/4f012df686c9759da04453742d8f3360.jpg"
+                         alt="Bolo Red Velvet"
+                         class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-gray-800">Bolo Red Velvet</h3>
+                    <p class="text-pink-600 font-semibold mb-3">R$ 95,00</p>
+                    <button onclick="selecionarDoce('Bolo Red Velvet', 95.00)"
+                            class="w-full bg-pink-600 text-white py-2 rounded-lg font-bold hover:bg-pink-700 transition">
+                        Adicionar ao Pedido
+                    </button>
+                </div>
+
+                <!-- TORTA DE LIMÃO -->
+                <div class="bg-white p-4 rounded-xl shadow-md">
+                    <img src="https://www.receitasnestle.com.br/sites/default/files/srh_recipes/1d22d96039f98608bc9338debb1b4579.jpg"
+                         alt="Torta de Limão Merengada"
+                         class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-gray-800">Torta de Limão</h3>
+                    <p class="text-pink-600 font-semibold mb-3">R$ 78,00</p>
+                    <button onclick="selecionarDoce('Torta de Limão', 78.00)"
+                            class="w-full bg-pink-600 text-white py-2 rounded-lg font-bold hover:bg-pink-700 transition">
+                        Adicionar ao Pedido
+                    </button>
+                </div>
+
+                <!-- BROWNIE COM NOZES -->
+                <div class="bg-white p-4 rounded-xl shadow-md">
+                    <img src="https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_desktop_new/public/srh_recipes/cfbfedfd85d0260c6ee6df707b38be16.jpeg?itok=Pubji7qh"
+                         alt="Brownie com Nozes"
+                         class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-gray-800">Brownie com Nozes (Kit 6 und)</h3>
+                    <p class="text-pink-600 font-semibold mb-3">R$ 55,50</p>
+                    <button onclick="selecionarDoce('Brownie com Nozes', 55.50)"
+                            class="w-full bg-pink-600 text-white py-2 rounded-lg font-bold hover:bg-pink-700 transition">
+                        Adicionar ao Pedido
+                    </button>
+                </div>
+
+                <!-- MACARONS VARIADOS -->
+                <div class="bg-white p-4 rounded-xl shadow-md">
+                    <img src="https://maymacarons.com.br/wp-content/uploads/2022/04/caixa-may-scaled.jpg"
+                         alt="Caixa de Macarons Variados"
+                         class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-gray-800">Macarons Variados (Caixa 12)</h3>
+                    <p class="text-pink-600 font-semibold mb-3">R$ 62,00</p>
+                    <button onclick="selecionarDoce('Macarons Variados', 62.00)"
+                            class="w-full bg-pink-600 text-white py-2 rounded-lg font-bold hover:bg-pink-700 transition">
+                        Adicionar ao Pedido
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- LATERAL (PEDIDO + ENTREGA) -->
+        <aside class="lg:col-span-1 space-y-8">
+            
+            <!-- BLOCO DO PEDIDO -->
+            <div class="bg-white p-6 rounded-xl shadow-lg" id="order-details-block">
+                <h2 class="text-2xl font-bold mb-4 text-pink-600 border-b pb-2">Seu Pedido</h2>
+
+                <div id="selected-item-display" class="mb-4 p-3 bg-pink-50 rounded-lg">
+                    <p id="item-name" class="font-semibold">Nenhum item selecionado.</p>
+                    <p id="item-price"></p>
+                </div>
+
+                <div class="space-y-2 mb-6">
+                    <div class="flex justify-between text-gray-700 font-medium">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">R$ 0,00</span>
+                    </div>
+
+                    <div class="flex justify-between text-green-700 font-medium">
+                        <span>Taxa de Entrega:</span>
+                        <span id="delivery-fee">R$ 7,50</span>
+                    </div>
+
+                    <div class="flex justify-between text-xl font-extrabold text-gray-900 border-t pt-2">
+                        <span>Total:</span>
+                        <span id="total-amount">R$ 7,50</span>
+                    </div>
+                </div>
+
+                <button onclick="simulateOrder()"
+                        class="w-full bg-pink-600 text-white py-3 rounded-lg font-bold hover:bg-pink-700 transition shadow-md">
+                    Finalizar Pedido
+                </button>
+            </div>
+
+            <!-- RASTREAMENTO -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hidden" id="tracker-section-block">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800 border-b">Acompanhamento da Entrega</h2>
+
+                <div id="map-container" class="relative rounded-lg bg-gray-200 h-48 mb-6">
+                    <!-- Ícone de carro refrigerado -->
+                    <div id="delivery-marker" class="absolute text-3xl" style="left: 10%; top: 30%;">🚐</div> 
+                    <div class="absolute text-3xl" style="right: 10%; bottom: 10%;">🏡</div>
+                </div>
+
+                <div class="p-4 border border-purple-200 bg-purple-50 rounded-lg">
+                    <h3 class="text-xl font-bold text-purple-700 mb-1">Status do Pedido</h3>
+                    <div id="status-display" class="text-2xl font-semibold text-purple-800">
+                        Aguardando confirmação...
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">
+                        Previsão de entrega: <span id="eta">50-60 minutos</span>
+                    </p>
+                </div>
+
+                <button onclick="updateTrackingStatus()"
+                        class="mt-4 w-full bg-pink-600 text-white py-3 rounded-lg font-bold hover:bg-pink-700 transition shadow-md">
+                    Simular Próximo Passo da Entrega
+                </button>
+
+                <p id="message-box"
+                   class="mt-3 hidden text-green-600 text-center text-sm font-medium">
+                    Entrega de doces concluída! Hora da sobremesa 🍰
+                </p>
+            </div>
+
+        </aside>
+    </main>
+
+    <!-- MODAL -->
+    <div id="confirmation-modal"
+         class="fixed inset-0 bg-black bg-opacity-70 hidden justify-center items-center z-50">
+        <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full text-center">
+            <div class="text-green-500 text-6xl mb-4">✅</div>
+            <h3 class="text-xl font-bold mb-2">Doce Pedido Feito!</h3>
+            <p class="text-gray-600 mb-6">Seus doces estão sendo preparados com carinho. Acompanhe a entrega!</p>
+
+            <button onclick="closeModal()"
+                    class="w-full bg-green-600 text-white py-2 rounded-lg font-bold hover:bg-green-700 transition">
+                Ver Acompanhamento
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // LÓGICA JAVASCRIPT (substituindo app.js)
+
+    // Constantes e Variáveis de Estado
+    const DELIVERY_FEE = 7.50; // Taxa de entrega fixa para a confeitaria
+    let selectedItem = {
+        name: 'Nenhum item selecionado.',
+        price: 0.00
+    };
+    let currentTrackingStep = 0;
+    const trackingSteps = [
+        { status: "Aguardando confirmação...", position: '10%', eta: '50-60 minutos', marker: '🚐' }, // Carro refrigerado
+        { status: "Em preparo (Decoração e embalagem)...", position: '10%', eta: '40-50 minutos', marker: '📦' }, // Embalando
+        { status: "Saiu para entrega!", position: '35%', eta: '25-35 minutos', marker: '🚐' },
+        { status: "A caminho (Próximo ao seu endereço)...", position: '65%', eta: '10-15 minutos', marker: '🚐' },
+        { status: "Entregue!", position: '90%', eta: '0 minutos', marker: '✅' } // Entregue
+    ];
+
+
+    // Função para formatar o valor para Real Brasileiro
+    function formatCurrency(value) {
+        // Garante que o valor seja tratado como número e formatado com duas casas decimais
+        return `R$ ${parseFloat(value).toFixed(2).replace('.', ',')}`;
+    }
+
+    // ----------------------
+    // LÓGICA DO PEDIDO
+    // ----------------------
+
+    /**
+     * Função chamada ao clicar em "Adicionar ao Pedido" para um doce.
+     * @param {string} name - Nome do doce.
+     * @param {number} price - Preço do doce.
+     */
+    function selecionarDoce(name, price) {
+        selectedItem.name = name;
+        selectedItem.price = price;
+        updateOrderDetails();
+        console.log(`"${name}" selecionado. Preço: ${formatCurrency(price)}`);
+    }
+
+    /**
+     * Atualiza o bloco de detalhes do pedido (subtotal e total) na sidebar.
+     */
+    function updateOrderDetails() {
+        const subtotal = selectedItem.price;
+        const total = subtotal + DELIVERY_FEE;
+
+        // Atualiza o item selecionado
+        document.getElementById('item-name').textContent = selectedItem.name;
+        document.getElementById('item-price').textContent = (selectedItem.price > 0) ? formatCurrency(selectedItem.price) : '';
+        
+        // Atualiza os valores financeiros
+        document.getElementById('subtotal').textContent = formatCurrency(subtotal);
+        document.getElementById('delivery-fee').textContent = formatCurrency(DELIVERY_FEE);
+        document.getElementById('total-amount').textContent = formatCurrency(total);
+    }
+
+    // Inicializa os detalhes do pedido quando a página carregar
+    document.addEventListener('DOMContentLoaded', updateOrderDetails);
+
+
+    /**
+     * Função para simular a finalização do pedido.
+     */
+    function simulateOrder() {
+        if (selectedItem.price === 0) {
+            // Em vez de alert(), que bloqueia a UI, usamos um console log e ignoramos a ação.
+            // Para feedback real ao usuário, seria necessário um modal de erro customizado.
+            console.error("Por favor, selecione um item do cardápio antes de finalizar o pedido.");
+            return;
+        }
+
+        // 1. Mostrar Modal de Confirmação
+        document.getElementById('confirmation-modal').classList.remove('hidden');
+        document.getElementById('confirmation-modal').classList.add('flex');
+
+        // 2. Resetar e Mostrar Bloco de Rastreamento
+        currentTrackingStep = 0; // Inicia no primeiro passo
+        updateTrackingStatus(true); // Atualiza com o primeiro passo
+        document.getElementById('tracker-section-block').classList.remove('hidden');
+        document.getElementById('message-box').classList.add('hidden');
+    }
+
+    /**
+     * Função para fechar o Modal e rolar para a seção de rastreamento.
+     */
+    function closeModal() {
+        document.getElementById('confirmation-modal').classList.add('hidden');
+        document.getElementById('confirmation-modal').classList.remove('flex');
+
+        // Rola a página para a seção de rastreamento (melhor experiência)
+        document.getElementById('tracker-section-block').scrollIntoView({ behavior: 'smooth' });
+    }
+
+
+    // ----------------------
+    // LÓGICA DE RASTREAMENTO
+    // ----------------------
+
+    /**
+     * Função para atualizar o status de rastreamento e a posição do marcador.
+     * @param {boolean} isInitial - Indica se é o primeiro passo após a finalização do pedido.
+     */
+    function updateTrackingStatus(isInitial = false) {
+        // Incrementa o passo, mas não ultrapassa o último passo
+        if (!isInitial) {
+            currentTrackingStep = Math.min(currentTrackingStep + 1, trackingSteps.length - 1);
+        }
+        
+        const step = trackingSteps[currentTrackingStep];
+        
+        // Atualiza os elementos de texto e ETA (Tempo Estimado de Chegada)
+        document.getElementById('status-display').textContent = step.status;
+        document.getElementById('eta').textContent = step.eta;
+        
+        // Atualiza o marcador (posição e ícone)
+        const marker = document.getElementById('delivery-marker');
+        marker.style.left = step.position; // Move o ícone (animação definida no CSS)
+        marker.textContent = step.marker;  // Muda o ícone (van, caixa, checkmark)
+        
+        // Lógica de finalização
+        const updateButton = document.querySelector('#tracker-section-block button');
+        const messageBox = document.getElementById('message-box');
+        
+        if (currentTrackingStep === trackingSteps.length - 1) {
+            // Pedido Entregue: Oculta o botão de simulação e mostra a mensagem final
+            updateButton.classList.add('hidden');
+            messageBox.classList.remove('hidden');
+        } else {
+            // Entrega em andamento: Garante que o botão está visível e a mensagem final oculta
+            updateButton.classList.remove('hidden');
+            messageBox.classList.add('hidden');
+        }
+    }
+</script>
+
+<script src="script.js"></script></body>
+</html>

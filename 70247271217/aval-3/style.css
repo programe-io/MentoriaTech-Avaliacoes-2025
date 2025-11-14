@@ -1,0 +1,39 @@
+/*
+ * Arquivo CSS customizado para o App de Confeitaria
+ * Complementa o design baseado em Tailwind CSS (Pink/Roxo/Verde)
+ */
+
+/* 1. Cores e Fontes Customizadas (Opcional, se você não quiser a fonte padrão do sistema) */
+/* body {
+    font-family: 'Poppins', sans-serif; 
+    --color-primary: #ec4899; 
+    --color-secondary: #f472b6; 
+} */
+
+/* 2. Efeito de Hover/Animação no Cardápio */
+/* Adiciona uma transição suave e um leve lift nas caixas de doces */
+.grid > div {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid > div:hover {
+    transform: translateY(-4px); /* Levanta um pouco */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Sombra mais destacada */
+}
+
+/* 3. Estilo para o Marcador de Entrega no "Mapa" */
+#delivery-marker {
+    transition: left 4s ease-in-out; /* Adiciona uma animação suave ao mover o ícone de entrega */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Efeito para destacar o ícone sobre o fundo */
+    transform: translateX(-50%); /* Centraliza o ícone corretamente na posição 'left' */
+}
+
+/* 4. Estilo para o Bloco de Rastreamento (Para dar mais profundidade) */
+#tracker-section-block {
+    /* Adiciona uma sombra mais suave, dando um aspecto de "card" flutuante */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+}
+
+/* 5. Ajuste para o Banner (Para garantir que a imagem de placeholder se encaixe bem) */
+section img:first-child {
+    object-fit: cover
