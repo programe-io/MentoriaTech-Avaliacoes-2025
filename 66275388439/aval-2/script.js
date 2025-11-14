@@ -1,67 +1,41 @@
- import java.util.Scanner;
-public class Prova_01 {
-    public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-            double[] notas = new double[8];
-            double[] mediasBimestrais = new double[4];
-            double[] mediasSemestrais = new double[2];
-            double mediaFinal;
+// xbelinha.js
 
-            // Receber as 8 notas
-            System.out.println("Digite as 8 notas do aluno:");
-            for (int i = 0; i < 8; i++) {
-                System.out.print("Nota " + (i + 1) + ": ");
-                notas[i] = scanner.nextDouble();
-            }
+// Função para exibir uma mensagem de boas-vindas no console
+function boasVindasXbelinha() {
+  console.log("Bem-vindo(a) ao mundo de Xbelinha!");
+  }
 
-            // Calcular médias bimestrais
-            for (int i = 0; i < 4; i++) {
-                mediasBimestrais[i] = (notas[i * 2] + notas[i * 2 + 1]) / 2;
-            }
-
-            // Calcular médias semestrais
-            mediasSemestrais[0] = (mediasBimestrais[0] + mediasBimestrais[1]) / 2;
-            mediasSemestrais[1] = (mediasBimestrais[2] + mediasBimestrais[3]) / 2;
-
-            // Calcular média final
-            mediaFinal = (mediasSemestrais[0] + mediasSemestrais[1]) / 2;
-
-            // Apresentar os resultados
-            System.out.println("\n--- Resultados ---");
-            for (int i = 0; i < 4; i++) {
-                System.out.printf("Média do %dº bimestre: %.2f%n", i + 1, mediasBimestrais[i]);
-            }
-
-            System.out.printf("Média do 1º semestre: %.2f%n", mediasSemestrais[0]);
-            System.out.printf("Média do 2º semestre: %.2f%n", mediasSemestrais[1]);
-            System.out.printf("Média final: %.2f%n", mediaFinal);
-
-            scanner.close();
-        }
+  // Função para gerar um número aleatório entre 1 e 100
+  function gerarNumeroAleatorio() {
+    return Math.floor(Math.random() * 100) + 1;
     }
 
-    import java.util.Scanner;
-public class Prova_02 {
+    // Função para verificar se um número é par ou ímpar
+    function ehPar(numero) {
+      return numero % 2 === 0;
+      }
 
+      // Objeto com informações sobre Xbelinha
+      const xbelinha = {
+        nome: "Xbelinha",
+          idade: 17,
+            interesses: ["Free Fire", "Programação", "Música"],
+              apresentar: function() {
+                  console.log(`Olá, meu nome é ${this.nome}, tenho ${this.idade} anos e gosto de ${this.interesses.join(", ")}.`);
+                    }
+                    };
 
+                    // Chamar as funções e usar o objeto
+                    boasVindasXbelinha();
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+                    const numeroAleatorio = gerarNumeroAleatorio();
+                    console.log(`Número aleatório gerado: ${numeroAleatorio}`);
 
-        // Entrada de dados
-        System.out.print("Digite a temperatura em Celsius (°C): ");
-        double celsius = scanner.nextDouble();
+                    if (ehPar(numeroAleatorio)) {
+                      console.log(`${numeroAleatorio} é um número par.`);
+                      } else {
+                        console.log(`${numeroAleatorio} é um número ímpar.`);
+                        }
 
-        // Conversões
-        double fahrenheit = (celsius * 9 / 5) + 32;
-        double kelvin = celsius + 273.15;
-
-        // Saída formatada
-        System.out.println("\n--- Conversão de Temperatura ---");
-        System.out.printf("Temperatura em Celsius: %.2f °C\n", celsius);
-        System.out.printf("Temperatura em Fahrenheit: %.2f °F\n", fahrenheit);
-        System.out.printf("Temperatura em Kelvin: %.2f K\n", kelvin);
-
-        scanner.close();
-    }
-}
+                        xbelinha.apresentar();
+                        
