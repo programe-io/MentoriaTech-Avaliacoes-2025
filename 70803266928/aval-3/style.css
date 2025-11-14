@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog de Bolos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-pink-100 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-pink-400 text-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+
+      <h1 class="text-3xl font-bold">
+        🎂 Blog do Bolo
+      </h1>
+
+      <!-- Nav -->
+      <nav class="hidden md:flex gap-6 text-lg">
+        <a href="#home" class="hover:underline">Início</a>
+        <a href="#receitas" class="hover:underline">Receitas</a>
+        <a href="#dicas" class="hover:underline">Dicas</a>
+        <a href="#contato" class="hover:underline">Contato</a>
+      </nav>
+
+      <button class="md:hidden p-2 border rounded-lg" id="mobileBtn">
+        ☰
+      </button>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobileMenu" class="hidden bg-pink-300 px-6 py-4 md:hidden">
+      <a href="#home" class="block py-2">Início</a>
+      <a href="#receitas" class="block py-2">Receitas</a>
+      <a href="#dicas" class="block py-2">Dicas</a>
+      <a href="#contato" class="block py-2">Contato</a>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-6xl mx-auto p-6">
+
+    <!-- Seção destaque -->
+    <section id="home" class="bg-white p-8 shadow-md rounded-2xl mb-10">
+      <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484c2?auto=format&fit=crop&w=900&q=80" 
+           alt="Bolo decorado"
+           class="rounded-xl w-full h-80 object-cover mb-6">
+
+      <h2 class="text-3xl font-bold text-pink-600 mb-4">
+        O Bolo Perfeito Para Qualquer Ocasião!
+      </h2>
+
+      <p class="text-lg">
+        Descubra receitas incríveis de bolos caseiros, decorados, recheados e especiais para festas.
+      </p>
+
+      <span class="inline-block mt-4 bg-pink-300 text-pink-800 px-4 py-2 rounded-full text-sm font-semibold">
+        Destaque
+      </span>
+    </section>
+
+    <!-- Cards de receitas -->
+    <section id="receitas" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <article class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+        <img src="https://images.unsplash.com/photo-1542826438-74d79dd51d82?auto=format&fit=crop&w=800&q=80"
+             class="h-56 w-full object-cover rounded-lg mb-4">
+        <h3 class="text-xl font-semibold text-pink-600 mb-2">Bolo de Chocolate Cremoso</h3>
+        <p class="text-sm mb-3 text-gray-700">Clássico, fofinho e com cobertura brilhante. Perfeito para aniversários!</p>
+        <span class="bg-pink-200 text-pink-700 px-3 py-1 rounded-full text-xs">Chocolate</span>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+        <img src="https://images.unsplash.com/photo-1605475128023-9bbfdfb2f003?auto=format&fit=crop&w=800&q=80"
+             class="h-56 w-full object-cover rounded-lg mb-4">
+        <h3 class="text-xl font-semibold text-pink-600 mb-2">Bolo de Morango com Chantilly</h3>
+        <p class="text-sm mb-3 text-gray-700">Suave, leve e com um sabor irresistível de morango fresco.</p>
+        <span class="bg-pink-200 text-pink-700 px-3 py-1 rounded-full text-xs">Morango</span>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80"
+             class="h-56 w-full object-cover rounded-lg mb-4">
+        <h3 class="text-xl font-semibold text-pink-600 mb-2">Bolo de Baunilha com Glacê</h3>
+        <p class="text-sm mb-3 text-gray-700">Simples, elegante e perfeito para acompanhar um café.</p>
+        <span class="bg-pink-200 text-pink-700 px-3 py-1 rounded-full text-xs">Baunilha</span>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-pink-400 text-white text-center py-6 mt-10">
+    <p>&copy; 2025 Blog do Bolo 🎂 | Todos os direitos reservados</p>
+  </footer>
+
+  <!-- Script menu mobile -->
+  <script>
+    const btn = document.getElementById("mobileBtn");
+    const menu = document.getElementById("mobileMenu");
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  </script>
+
+</body>
+</html>
