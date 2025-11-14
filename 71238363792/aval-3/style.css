@@ -1,0 +1,311 @@
+/* =============================== */
+/* 1. RESET E ESTILOS GERAIS */
+/* =============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden; /* Evita barra de rolagem horizontal */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Utilitários */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: #DA291C;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* =============================== */
+/* 2. CABEÇALHO E NAVEGAÇÃO */
+/* =============================== */
+.header {
+    background-color: #DA291C; /* Vermelho vibrante */
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.logo-accent {
+    color: #FFC72C; /* Amarelo/Dourado */
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* =============================== */
+/* 3. SEÇÃO DE DESTAQUE (HERO) */
+/* =============================== */
+.hero {
+    /* Use uma imagem real e substitua o placeholder abaixo */
+    background: url('imagens/fundo-lanche.jpg') no-repeat center center/cover; 
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    height: 60vh; 
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay escuro */
+    z-index: 1;
+}
+
+.hero .container {
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: clamp(2em, 5vw, 3.5em); /* Tamanho de fonte responsivo */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: clamp(1em, 2vw, 1.2em);
+    margin-bottom: 30px;
+}
+
+.btn-cta {
+    background-color: #FFC72C;
+    color: #333;
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    border: none;
+    display: inline-block;
+}
+
+.btn-cta:hover {
+    background-color: #f7a800;
+    transform: scale(1.05);
+}
+
+/* =============================== */
+/* 4. SEÇÃO DE PRODUTOS/MENU */
+/* =============================== */
+.menu-section {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.menu-grid {
+    display: grid;
+    /* Layout responsivo: 1 coluna em telas pequenas, 3 colunas em telas grandes */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+}
+
+.menu-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ESTILO PARA A IMAGEM DO PRODUTO (NOVO) */
+.product-img {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; /* Recorta a imagem para cobrir a área sem distorcer */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+
+.menu-item h4 {
+    font-size: 1.6em;
+    color: #DA291C;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.menu-item .description {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 15px;
+    min-height: 40px; 
+}
+
+.menu-item .price {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.btn-add {
+    background-color: #FFC72C; /* Amarelo como botão de ação */
+    color: #333;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-add:hover {
+    background-color: #f7a800;
+}
+
+/* =============================== */
+/* 5. RODAPÉ */
+/* =============================== */
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    border-top: 5px solid #DA291C;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.social-links a {
+    color: #FFC72C;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: white;
+}
+
+
+/* =============================== */
+/* 6. RESPONSIVIDADE */
+/* =============================== */
+@media (max-width: 768px) {
+    /* Ajustes no Cabeçalho */
+    .header .container {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .nav ul {
+        margin-top: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav ul li a {
+        padding: 5px 8px;
+        font-size: 0.9em;
+    }
+
+    /* Ajustes no Hero */
+    .hero {
+        padding: 80px 20px;
+        height: 50vh;
+    }
+    
+    .hero h2 {
+        font-size: 2.2em;
+    }
+    
+    .hero p {
+        font-size: 1em;
+    }
+
+    /* Ajustes no Menu */
+    .menu-section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .menu-item {
+        padding: 15px;
+    }
+
+    /* Ajustes no Rodapé */
+    .footer {
+        padding: 20px 0;
+    }
+}
