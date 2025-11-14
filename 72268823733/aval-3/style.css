@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moda da Paty</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonte elegante -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body class="bg-pink-50 text-gray-800">
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-5">
+      <h1 class="text-3xl font-bold text-pink-600">Moda da Paty</h1>
+
+      <nav class="hidden md:flex gap-8 text-gray-700 font-medium">
+        <a href="#inicio" class="hover:text-pink-600 transition">Início</a>
+        <a href="#colecao" class="hover:text-pink-600 transition">Coleção</a>
+        <a href="#contato" class="hover:text-pink-600 transition">Contato</a>
+      </nav>
+
+      <button class="md:hidden p-2 rounded hover:bg-gray-200 transition">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== CONTEÚDO PRINCIPAL ===================== -->
+  <main id="inicio" class="max-w-7xl mx-auto p-6">
+
+    <!-- Seção Hero -->
+    <section class="flex flex-col md:flex-row items-center gap-10 py-16">
+      
+      <!-- Texto -->
+      <div class="flex-1 text-center md:text-left">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-pink-700">
+          Estilo, Elegância e Personalidade
+        </h2>
+        <p class="text-gray-600 text-lg mb-8">
+          Descubra os looks modernos e femininos inspirados no estilo da Paty.
+          Roupas leves, confortáveis e cheias de charme para qualquer ocasião.
+        </p>
+
+        <a 
+          href="#colecao"
+          class="inline-block bg-pink-600 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-pink-700 transition font-medium"
+        >
+          Ver Coleção
+        </a>
+      </div>
+
+      <!-- Imagem (coloque sua imagem depois, aqui um placeholder) -->
+      <div class="flex-1">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-pink-100">
+          <img 
+            src="https://via.placeholder.com/500x600.png?text=Foto+da+Paty+%7C+Moda"
+            alt="Modelo Paty"
+            class="w-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Coleção -->
+    <section id="colecao" class="mt-20">
+      <h3 class="text-3xl font-semibold text-center text-pink-700 mb-10">
+        Coleção Paty – Destaques
+      </h3>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl shadow-md border border-pink-100 overflow-hidden hover:shadow-xl transition">
+          <img src="https://via.placeholder.com/400x500.png?text=Look+1" class="w-full" />
+          <div class="p-5">
+            <h4 class="text-xl font-semibold text-pink-700 mb-1">Vestido Floral</h4>
+            <p class="text-gray-600 mb-3">Ideal para dias ensolarados com muito charme e feminilidade.</p>
+            <span class="text-pink-600 font-semibold">R$ 199,90</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-xl shadow-md border border-pink-100 overflow-hidden hover:shadow-xl transition">
+          <img src="https://via.placeholder.com/400x500.png?text=Look+2" class="w-full" />
+          <div class="p-5">
+            <h4 class="text-xl font-semibold text-pink-700 mb-1">Conjunto Casual</h4>
+            <p class="text-gray-600 mb-3">Perfeito para sair com estilo mantendo o conforto.</p>
+            <span class="text-pink-600 font-semibold">R$ 159,90</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-xl shadow-md border border-pink-100 overflow-hidden hover:shadow-xl transition">
+          <img src="https://via.placeholder.com/400x500.png?text=Look+3" class="w-full" />
+          <div class="p-5">
+            <h4 class="text-xl font-semibold text-pink-700 mb-1">Look Elegante</h4>
+            <p class="text-gray-600 mb-3">Combinação estilosa para eventos e ocasiões especiais.</p>
+            <span class="text-pink-600 font-semibold">R$ 249,90</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer id="contato" class="bg-pink-700 text-pink-100 mt-20 py-10">
+    <div class="max-w-7xl mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between gap-6">
+      
+      <div>
+        <h4 class="text-xl font-semibold mb-2">Moda da Paty</h4>
+        <p class="text-pink-200">Estilo e modernidade para mulheres incríveis.</p>
+      </div>
+
+      <div class="space-y-2">
+        <p class="font-medium text-pink-50">Contato:</p>
+        <p>Email: contato@modadapaty.com</p>
+        <p>Instagram: @modadapaty</p>
+      </div>
+
+    </div>
+
+    <p class="text-center text-pink-200 mt-8 text-sm">
+      © 2025 Moda da Paty — Todos os direitos reservados.
+    </p>
+  </footer>
+
+</body>
+</html>
