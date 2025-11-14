@@ -1,44 +1,96 @@
-// script.js — Interatividade básica para o template "Website Simples"
+/* script.js — JavaScript completo para site
+   Inclui:
+   - Menu mobile
+   - Animações simples
+   - Formulário com validação e mensagem de sucesso
+   - Scroll suave
+   - Tema claro/escuro
+   - Utilidades gerais
+*/
 
-// Seleciona o formulário e o botão CTA
-const form = document.getElementById('contactForm');
-const cta = document.getElementById('ctaDemo');
-const msgEl = document.getElementById('formResult');
+// ---------------------- MENU MOBILE ----------------------
+const navToggle = document.createElement('button');
+navToggle.textContent = "☰ Menu";
+avToggle.className = "nav-toggle";
+document.querySelector('header .container').prepend(navToggle);
 
-// Envio de formulário simulado
+navToggle.addEventListener('click', () => {
+  const nav = document.querySelector('nav.primary');
+  nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+});
+
+// ---------------------- SCROLL SUAVE ----------------------
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const destino = document.querySelector(link.getAttribute('href'));
+    if (destino) {
+      e.preventDefault();
+      destino.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// ---------------------- FORMULÁRIO ----------------------
+const form = document.getElementById('contact-form');
+const feedback = document.getElementById('contact-feedback');
+
 if (form) {
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', e => {
     e.preventDefault();
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
+    const dados = new FormData(form);
+    const nome = dados.get('name') || 'Visitante';
 
-    if (!name || !email) {
-      msgEl.textContent = 'Por favor, preencha nome e e-mail.';
-      msgEl.style.color = 'crimson';
-      return;
-    }
-
-    msgEl.textContent = 'Enviando...';
-    msgEl.style.color = '#6b7280';
-
-    // Simula requisição assíncrona
+    // Simulação de envio
     setTimeout(() => {
-      msgEl.textContent = `Obrigado, ${name}! Sua mensagem foi enviada.`;
-      msgEl.style.color = 'green';
+      feedback.textContent = `Mensagem enviada com sucesso! Obrigado, ${nome}.`;
+      feedback.style.color = "green";
       form.reset();
-    }, 900);
+    }, 500);
   });
 }
 
-// Alerta simples no botão de demonstração
-if (cta) {
-  cta.addEventListener('click', () => {
-    alert('Este é apenas um exemplo de interação!');
+// ---------------------- ANIMAÇÃO AO ROLAR ----------------------
+const elementosAnimar = document.querySelectorAll('.fade-in');
+
+function animarAoRolar() {
+  const trigger = window.innerHeight * 0.85;
+
+  elementosAnimar.forEach(el => {
+    const topo = el.getBoundingClientRect().top;
+    if (topo < trigger) el.classList.add('ativo');
   });
 }
 
-// Tema claro/escuro
-const toggle = document.createElement('button');
-toggle.textContent = 'Alternar tema';
-toggle.style.cssText = 'posit
+window.addEventListener('scroll', animarAoRolar);
+animarAoRolar();
+
+// ---------------------- TEMA CLARO/ESCURO ----------------------
+let temaClaro = true;
+
+const botaoTema = document.createElement('button');
+botaoTema.textContent = "Alternar Tema";
+botaoTema.style.marginLeft = "1rem";
+botaoTema.className = "secondary";
+document.querySelector('header .container').appendChild(botaoTema);
+
+botaoTema.addEventListener('click', () => {
+  temaClaro = !temaClaro;
+  if (!temaClaro) {
+    document.documentElement.style.setProperty('--bg', '#0b1220');
+    document.documentElement.style.setProperty('--text', '#e6eefc');
+    document.body.style.background = '#0b1220';
+    document.body.style.color = '#e6eefc';
+  } else {
+    document.documentElement.style.setProperty('--bg', '#f7f7fb');
+    document.documentElement.style.setProperty('--text', '#0f172a');
+    document.body.style.background = '#f7f7fb';
+    document.body.style.color = '#0f172a';
+  }
+});
+
+// ---------------------- UTILIDADES ----------------------
+function saudacao(nome) {
+  return `Olá, ${nome}!`; 
+}
+console.log(saudacao('Visitante'));
