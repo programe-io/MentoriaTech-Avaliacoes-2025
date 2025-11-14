@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeachVibes - Moda Praia</title>
+    <style>
+        /* Reset básico */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f7fafd; color: #333; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        /* Cabeçalho */
+        header { position: fixed; width: 100%; background-color: #00bfa5; color: white; display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 1000; }
+        header h1 { font-family: 'Georgia', serif; font-size: 32px; }
+        nav a { margin-left: 25px; font-weight: 600; transition: color 0.3s; }
+        nav a:hover { color: #ffe600; }
+
+        /* Hero */
+        .hero { background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80'); background-size: cover; background-position: center; height: 90vh; display: flex; justify-content: center; align-items: center; text-align: center; position: relative; }
+        .hero::after { content: ''; position: absolute; top:0; left:0; right:0; bottom:0; background-color: rgba(0,0,0,0.4); }
+        .hero-content { position: relative; color: white; max-width: 800px; padding: 0 20px; }
+        .hero h2 { font-family: 'Georgia', serif; font-size: 52px; margin-bottom: 20px; }
+        .hero p { font-size: 20px; margin-bottom: 30px; }
+        .hero button { padding: 12px 30px; font-size: 18px; font-weight: bold; border: none; background-color: #ffe600; color: #00bfa5; cursor: pointer; border-radius: 30px; transition: background 0.3s, transform 0.3s; }
+        .hero button:hover { background-color: #ffd500; transform: scale(1.05); }
+
+        main { padding-top: 100px; }
+
+        /* Coleções */
+        .colecoes { display: flex; flex-wrap: wrap; padding: 80px 50px; gap: 40px; }
+        .produtos { flex: 3; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+
+        article.produto { background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        article.produto:hover { transform: translateY(-10px); box-shadow: 0 12px 25px rgba(0,0,0,0.2); }
+        article.produto img { width: 100%; height: 320px; object-fit: cover; }
+        article.produto h3 { padding: 15px; font-size: 24px; color: #00bfa5; }
+        article.produto p { padding: 0 15px 20px; color: #555; font-size: 16px; }
+        article.produto button { margin: 0 15px 15px; padding: 10px 20px; font-weight: bold; border: none; background-color: #00bfa5; color: white; border-radius: 25px; cursor: pointer; transition: background 0.3s; }
+        article.produto button:hover { background-color: #009e8f; }
+
+        /* Destaque com span */
+        .highlight { color: #ffe600; font-weight: bold; }
+
+        /* Aside */
+        aside { flex: 1; background-color: white; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); height: fit-content; }
+        aside h3 { color: #00bfa5; font-family: 'Georgia', serif; margin-bottom: 15px; }
+        aside ul { list-style: none; }
+        aside li { margin-bottom: 12px; font-size: 16px; }
+        aside li a { color: #333; transition: color 0.3s; }
+        aside li a:hover { color: #00bfa5; }
+
+        /* Sobre */
+        .sobre { padding: 80px 50px; background-color: #e0f7f4; text-align: center; }
+        .sobre h2 { font-family: 'Georgia', serif; font-size: 42px; color: #00bfa5; margin-bottom: 30px; }
+        .sobre p { max-width: 900px; margin: 0 auto; font-size: 18px; color: #555; line-height: 1.8; }
+
+        /* Footer */
+        footer { background-color: #00bfa5; color: white; text-align: center; padding: 50px 20px; }
+        footer h3 { font-size: 24px; margin-bottom: 15px; }
+        footer p { font-size: 16px; }
+        footer a { color: white; font-weight: bold; transition: color 0.3s; }
+        footer a:hover { color: #ffe600; }
+
+        /* Responsividade */
+        @media (max-width: 1024px) { .colecoes { flex-direction: column; } aside { margin-left: 0; margin-top: 40px; } }
+        @media (max-width: 768px) { .hero h2 { font-size: 36px; } .hero p { font-size: 16px; } header { padding: 15px 20px; } .sobre h2 { font-size: 32px; } }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>BeachVibes</h1>
+        <nav>
+            <a href="#colecoes">Coleções</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Moda <span class="highlight">Praia</span> com Estilo</h2>
+            <p>Explore nossas coleções e aproveite o sol com <span class="highlight">elegância</span>.</p>
+            <button>Ver Coleções</button>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <main>
+
+        <!-- Coleções -->
+        <section class="colecoes" id="colecoes">
+            <div class="produtos">
+                <article class="produto">
+                    <img src="https://images.unsplash.com/photo-1561055657-07a912c8a3c7?auto=format&fit=crop&w=800&q=80" alt="Biquíni Tropical">
+                    <h3>Biquíni <span class="highlight">Tropical</span></h3>
+                    <p>Perfeito para dias de sol na praia ou piscina.</p>
+                    <button>Comprar</button>
+                </article>
+
+                <article class="produto">
+                    <img src="https://images.unsplash.com/photo-1556909211-1e1e7e39c124?auto=format&fit=crop&w=800&q=80" alt="Saída de Praia">
+                    <h3>Saída de <span class="highlight">Praia</span></h3>
+                    <p>Leve e estilosa, ideal para passeios à beira-mar.</p>
+                    <button>Comprar</button>
+                </article>
+
+                <article class="produto">
+                    <img src="https://images.unsplash.com/photo-1596558453451-13ff17315efb?auto=format&fit=crop&w=800&q=80" alt="Chapéu de Palha">
+                    <h3>Chapéu de <span class="highlight">Palha</span></h3>
+                    <p>Proteção do sol com muito estilo.</p>
+                    <button>Comprar</button>
+                </article>
+            </div>
+
+            <!-- Aside -->
+            <aside>
+                <h3>Promoções</h3>
+                <ul>
+                    <li><a href="#">Desconto de <span class="highlight">15%</span> em biquínis</a></li>
+                    <li><a href="#">Frete grátis acima de <span class="highlight">R$150</span></a></li>
+                    <li><a href="#">Novas coleções de <span class="highlight">verão 2025</span></a></li>
+                    <li><a href="#">Brindes exclusivos para clientes <span class="highlight">VIP</span></a></li>
+                </ul>
+            </aside>
+        </section>
+
+        <!-- Sobre -->
+        <section class="sobre" id="sobre">
+            <h2>Sobre a <span class="highlight">BeachVibes</span></h2>
+            <p>
+                A <span class="highlight">BeachVibes</span> é apaixonada pelo estilo de vida praiano. Cada peça é cuidadosamente criada para combinar conforto, qualidade e as últimas tendências de moda praia. Nosso objetivo é fazer com que cada cliente se sinta confiante, elegante e pronto para aproveitar o sol com muito estilo.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contato">
+        <h3>Entre em Contato</h3>
+        <p>Email: <a href="mailto:contato@beachvibes.com"><span class="highlight">contato@beachvibes.com</span></a></p>
+        <p>Telefone: <span class="highlight">(11) 99999-9999</span></p>
+        <p>&copy; 2025 <span class="highlight">BeachVibes</span>. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
