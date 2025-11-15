@@ -1,270 +1,140 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="https://lumi.new/lumi.ing/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Social Feed</title>
-    <meta name="description" content="Feed social moderno com posts sobre jogos">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      /* Animações e estilos customizados */
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      
-      .post-card {
-        animation: fadeIn 0.5s ease-out;
-      }
-      
-      .post-card:hover {
-        transform: translateY(-5px);
-        transition: transform 0.3s ease;
-      }
-      
-      .nav-link {
-        position: relative;
-        transition: color 0.3s ease;
-      }
-      
-      .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: #3b82f6;
-        transition: width 0.3s ease;
-      }
-      
-      .nav-link:hover::after {
-        width: 100%;
-      }
-      
-      .menu-toggle {
-        cursor: pointer;
-      }
-      
-      #mobile-menu {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-      }
-      
-      #mobile-menu.active {
-        max-height: 300px;
-      }
-    </style>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet"></head>
-  <body class="bg-gradient-to-b from-blue-900 to-blue-950 min-h-screen text-white">
-    
-    <!-- Header -->
-    <header class="shadow-lg p-5 sticky top-0 bg-blue-900/95 backdrop-blur-sm z-50">
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <!-- Logo -->
-        <div class="flex items-center space-x-2">
-          <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
-            </svg>
-          </div>
-          <span class="uppercase font-bold text-xl">Social Feed</span>
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Feed</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-b from-blue-900 to-blue-950 h-screen text-white">
+
+    <header class="shadow-md p-5 flex">
+
+        <div class="flex-l uppercase font-bold text-center md:text-left">
+            Logo
         </div>
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex font-bold space-x-6">
-          <a href="#" class="nav-link hover:text-blue-400">Início</a>
-          <a href="#" class="nav-link hover:text-blue-400">Amigos</a>
-          <a href="#" class="nav-link hover:text-blue-400">Perfil</a>
+        <nav class="font-bold flex gap-3 hidden md:flex">
+            <a href="">Início</a>
+            <a href="">Amigos</a>
+            <a href="">Perfil</a>
         </nav>
-
-        <!-- Mobile Menu Button -->
-        <button class="md:hidden menu-toggle" onclick="toggleMenu()">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="md:hidden">
-        <nav class="flex flex-col space-y-3 mt-4 font-bold">
-          <a href="#" class="hover:text-blue-400 py-2">Início</a>
-          <a href="#" class="hover:text-blue-400 py-2">Amigos</a>
-          <a href="#" class="hover:text-blue-400 py-2">Perfil</a>
-        </nav>
-      </div>
+    
     </header>
 
-    <!-- Main Feed -->
-    <main class="py-8 px-4 max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <!-- Post Card 1 - FIFA 20 -->
-        <article class="post-card bg-gray-800 rounded-lg shadow-xl overflow-hidden">
-          <!-- Card Header -->
-          <div class="flex items-center p-4 space-x-3">
-            <img class="h-12 w-12 rounded-full border-2 border-blue-500 object-cover" 
-                 src="https://i.pravatar.cc/150?img=12" 
-                 alt="Perfil">
-            <h2 class="text-2xl font-bold">FIFA 20</h2>
-          </div>
+    <!--POST LISTS-->
+    <main class="py-4 px-2 flex flex cal gap-3 md:flex-row items-center">
 
-          <!-- Card Image -->
-          <img class="w-full h-64 object-cover" 
-               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTADfGLMy5x_W0__rQtwoDMVagFAflRtFDQ_w&s" 
-               alt="FIFA 20">
+        <!--POST CARD-->
+        <div class="bg-gray-800 py-4 rounded-lg shadow-md max-w-96">
 
-          <!-- Card Content -->
-          <div class="p-4">
-            <p class="text-sm text-justify leading-relaxed text-gray-300">
-              FIFA 20 trouxe novidades empolgantes para os fãs de futebol, destacando-se pelo modo Volta, que permite jogar partidas de rua com times personalizados. A jogabilidade ficou mais realista, com dribles aprimorados e inteligência artificial mais avançada dos adversários.
-            </p>
-            <span class="text-gray-400 text-sm block text-right mt-4">há 10 minutos</span>
-          </div>
-        </article>
 
-        <!-- Post Card 2 - FIFA 21 -->
-        <article class="post-card bg-gray-800 rounded-lg shadow-xl overflow-hidden" style="animation-delay: 0.1s">
-          <!-- Card Header -->
-          <div class="flex items-center p-4 space-x-3">
-            <img class="h-12 w-12 rounded-full border-2 border-blue-500 object-cover" 
-                 src="https://i.pravatar.cc/150?img=33" 
-                 alt="Perfil">
-            <h2 class="text-2xl font-bold">FIFA 21</h2>
-          </div>
+            <!--CARD HEADER-->
+            <div class="flex items-center pb-4 px-4 gap-3">
 
-          <!-- Card Image -->
-          <img class="w-full h-64 object-cover" 
-               src="https://image.api.playstation.com/vulcan/ap/rnd/202009/3021/xJDN6QLRQ8pzmGP8HS0z3qQe.png" 
-               alt="FIFA 21">
+                <img class="h-12 w-12 rounded-full border-2 border-blue-500" src="images/profile_02.jpg" alt="">
+                <h2 class="text-2xl">FIFA 20</h2>
 
-          <!-- Card Content -->
-          <div class="p-4">
-            <p class="text-sm text-justify leading-relaxed text-gray-300">
-              FIFA 21 trouxe melhorias significativas na jogabilidade, especialmente nos dribles e no controle de bola, oferecendo partidas mais fluidas e estratégicas. O modo Volta foi expandido, permitindo ainda mais personalização e partidas intensas de futebol de rua.
-            </p>
-            <span class="text-gray-400 text-sm block text-right mt-4">há 25 minutos</span>
-          </div>
-        </article>
+            </div>
 
-        <!-- Post Card 3 - FIFA 22 -->
-        <article class="post-card bg-gray-800 rounded-lg shadow-xl overflow-hidden" style="animation-delay: 0.2s">
-          <!-- Card Header -->
-          <div class="flex items-center p-4 space-x-3">
-            <img class="h-12 w-12 rounded-full border-2 border-blue-500 object-cover" 
-                 src="https://i.pravatar.cc/150?img=68" 
-                 alt="Perfil">
-            <h2 class="text-2xl font-bold">FIFA 22</h2>
-          </div>
+            <!--CARD IMAGE-->
+            <img class="w-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTADfGLMy5x_W0__rQtwoDMVagFAflRtFDQ_w&s=" alt="">
 
-          <!-- Card Image -->
-          <img class="w-full h-64 object-cover" 
-               src="https://image.api.playstation.com/vulcan/ap/rnd/202104/3006/MJjKiLbvHOZO0Y2NbcHdCVmZ.png" 
-               alt="FIFA 22">
+            <!--CARD CONTENT-->
 
-          <!-- Card Content -->
-          <div class="p-4">
-            <p class="text-sm text-justify leading-relaxed text-gray-300">
-              FIFA 22 trouxe grandes inovações, destacando-se pela HyperMotion Technology, que utiliza captura de movimento real para criar mais de 4 mil novas animações, tornando os movimentos dos jogadores mais naturais. O Ultimate Team recebeu mudanças importantes.
-            </p>
-            <span class="text-gray-400 text-sm block text-right mt-4">há 1 hora</span>
-          </div>
-        </article>
+            <div class="pt-4 px-4">
 
-        <!-- Post Card 4 - FIFA 23 -->
-        <article class="post-card bg-gray-800 rounded-lg shadow-xl overflow-hidden" style="animation-delay: 0.3s">
-          <!-- Card Header -->
-          <div class="flex items-center p-4 space-x-3">
-            <img class="h-12 w-12 rounded-full border-2 border-blue-500 object-cover" 
-                 src="https://i.pravatar.cc/150?img=45" 
-                 alt="Perfil">
-            <h2 class="text-2xl font-bold">FIFA 23</h2>
-          </div>
+                <p class="text-sm text-justify">
+                    FIFA 20 trouxe novidades empolgantes para os fãs de futebol, destacando-se pelo modo Volta, que permite jogar partidas de rua com times personalizados. A jogabilidade ficou mais realista, com dribles aprimorados e inteligência artificial mais avançada dos adversários. Os gráficos impressionam, tornando estádios e jogadores extremamente detalhados. O modo carreira continua sendo uma escolha popular, oferecendo gestão de times e desenvolvimento de atletas. Além disso, o modo Ultimate Team mantém sua base fiel, com desafios e cartas especiais que engajam jogadores de todo o mundo.
 
-          <!-- Card Image -->
-          <img class="w-full h-64 object-cover" 
-               src="https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/wnW0FX1wMX0rbwWDrUqkk9VA.png" 
-               alt="FIFA 23">
+                </p>
 
-          <!-- Card Content -->
-          <div class="p-4">
-            <p class="text-sm text-justify leading-relaxed text-gray-300">
-              FIFA 23 marca a última edição da parceria entre EA Sports e FIFA. O jogo apresenta as Copas do Mundo masculina e feminina como conteúdo pós-lançamento, além de melhorias na física da bola e novas mecânicas de finalização.
-            </p>
-            <span class="text-gray-400 text-sm block text-right mt-4">há 2 horas</span>
-          </div>
-        </article>
+                <span class="text-gray-300 text-right block mt-4">
+                    há 10 minutos
+                </span>
+            
+            </div>
 
-        <!-- Post Card 5 - EA Sports FC 24 -->
-        <article class="post-card bg-gray-800 rounded-lg shadow-xl overflow-hidden" style="animation-delay: 0.4s">
-          <!-- Card Header -->
-          <div class="flex items-center p-4 space-x-3">
-            <img class="h-12 w-12 rounded-full border-2 border-blue-500 object-cover" 
-                 src="https://i.pravatar.cc/150?img=22" 
-                 alt="Perfil">
-            <h2 class="text-2xl font-bold">EA Sports FC 24</h2>
-          </div>
+        </div>
 
-          <!-- Card Image -->
-          <img class="w-full h-64 object-cover" 
-               src="https://image.api.playstation.com/vulcan/ap/rnd/202305/1219/XCJFhH1pNctL2sEqLYMKsvKz.png" 
-               alt="EA Sports FC 24">
+        <!--POST CARD-->
+        <div class="bg-gray-800 py-4 rounded-lg shadow-md max-w-96">
 
-          <!-- Card Content -->
-          <div class="p-4">
-            <p class="text-sm text-justify leading-relaxed text-gray-300">
-              EA Sports FC 24 é o primeiro título da nova franquia após o fim da parceria com a FIFA. O jogo mantém todas as ligas, times e jogadores, além de introduzir o novo modo PlayStyles que revoluciona a forma como os jogadores se comportam em campo.
-            </p>
-            <span class="text-gray-400 text-sm block text-right mt-4">há 3 horas</span>
-          </div>
-        </article>
 
-        <!-- Post Card 6 - Futuro do Futebol Virtual -->
-        <article class="post-card bg-gray-800 rounded-lg shadow-xl overflow-hidden" style="animation-delay: 0.5s">
-          <!-- Card Header -->
-          <div class="flex items-center p-4 space-x-3">
-            <img class="h-12 w-12 rounded-full border-2 border-blue-500 object-cover" 
-                 src="https://i.pravatar.cc/150?img=57" 
-                 alt="Perfil">
-            <h2 class="text-2xl font-bold">Futuro dos Games</h2>
-          </div>
+            <!--CARD HEADER-->
+            <div class="flex items-center pb-4 px-4 gap-3">
 
-          <!-- Card Image -->
-          <img class="w-full h-64 object-cover" 
-               src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800" 
-               alt="Controle de videogame">
+                <img class="h-12 w-12 rounded-full border-2 border-blue-500" src="images/profile_02.jpg" alt="">
+                <h2 class="text-2xl">FIFA 21</h2>
 
-          <!-- Card Content -->
-          <div class="p-4">
-            <p class="text-sm text-justify leading-relaxed text-gray-300">
-              O futuro dos jogos de futebol promete experiências ainda mais imersivas com a evolução da inteligência artificial, realidade virtual e tecnologias de captura de movimento. A competição entre EA Sports FC e o novo jogo da FIFA trará inovações emocionantes para os fãs.
-            </p>
-            <span class="text-gray-400 text-sm block text-right mt-4">há 5 horas</span>
-          </div>
-        </article>
+            </div>
 
-      </div>
+            <!--CARD IMAGE-->
+            <img class="w-full" src="data:image/jpeg;base64,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" alt="">
+
+            <!--CARD CONTENT-->
+
+            <div class="pt-4 px-4">
+
+                <p class="text-sm text-justify">
+                    FIFA 21 trouxe melhorias significativas na jogabilidade, especialmente nos dribles e no controle de bola, oferecendo partidas mais fluidas e estratégicas. O modo Volta foi expandido, permitindo ainda mais personalização e partidas intensas de futebol de rua. No modo carreira, foram introduzidas novas opções de gestão e simulação de partidas, tornando a experiência mais realista. O Ultimate Team continuou a evoluir, com novos desafios, eventos e cartas especiais que mantêm os jogadores engajados. Os gráficos e animações também foram aprimorados, proporcionando um visual mais imersivo dentro e fora dos estádios.
+
+                </p>
+
+                <span class="text-gray-300 text-right block mt-4">
+                    há 10 minutos
+                </span>
+            
+            </div>
+
+        </div>
+
+        <!--POST CARD-->
+        <div class="bg-gray-800 py-4 rounded-lg shadow-md max-w-96">
+
+
+            <!--CARD HEADER-->
+            <div class="flex items-center pb-4 px-4 gap-3">
+
+                <img class="h-12 w-12 rounded-full border-2 border-blue-500" src="images/profile_02.jpg" alt="">
+                <h2 class="text-2xl">FIFA 22</h2>
+
+            </div>
+
+            <!--CARD IMAGE-->
+            <img class="w-full" src="data:image/jpeg;base64,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" alt="">
+
+            <!--CARD CONTENT-->
+
+            <div class="pt-4 px-4">
+
+                <p class="text-sm text-justify">
+                    FIFA 22 trouxe grandes inovações, destacando-se pela HyperMotion Technology, que utiliza captura de movimento real para criar mais de 4 mil novas animações, tornando os movimentos dos jogadores mais naturais. No modo Carreira, os jogadores podem criar seu próprio clube, definindo escudo, estádio e uniforme, além de evoluir atletas com habilidades estilo RPG. A jogabilidade foi aprimorada com o algoritmo ML‑Flow, que ajusta cadência, postura e transições conforme o contexto da partida. O Ultimate Team recebeu mudanças em “Division Rivals” e mais opções de personalização para estádios, enquanto o modo Volta ganhou minigames com o “Volta Arcade” e o Pro Clubs melhorou a progressão dos jogadores virtuais. Os gráficos e animações mais realistas tornam a experiência de jogo ainda mais imersiva e dinâmica.
+
+                </p>
+
+                <span class="text-gray-300 text-right block mt-4">
+                    há 10 minutos
+                </span>
+            
+            </div>
+
+        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-blue-900 py-6 mt-12">
-      <div class="max-w-7xl mx-auto px-4 text-center">
-        <p class="text-gray-300">© 2024 Social Feed - Todos os direitos reservados</p>
-      </div>
-    </footer>
-
-    <!-- JavaScript para menu mobile -->
-    <script>
-      function toggleMenu() {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('active');
-      }
-    </script>
-
-  </body>
+</body>
+  
+  
+</body>
 </html>
