@@ -1,79 +1,68 @@
 
 css
-/* Global Styles /
+/* Global Styles */
 body {
-background: linear-gradient(to bottom, #1E3A8A, #1E40AF); / Gradiente do fundo /
-color: white; / Cor do texto /
-font-family: Arial, sans-serif; / Tipografia padrão */
+font-family: 'Arial', sans-serif;
 }
 /* Header Styles /
 header {
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); / Sombra no header /
-padding: 20px; / Espaçamento interno /
-display: flex; / Uso de flexbox para layout /
-justify-content: space-between; / Espaçamento entre elementos /
-align-items: center; / Centraliza verticalmente */
+background-color: rgba(0, 0, 0, 0.5); / Semi-transparent background */
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
-nav {
-font-weight: bold; /* Texto em negrito /
-display: flex; / Configurar flexbox para nav /
-gap: 15px; / Espaçamento entre links */
+/* Navigation Styles /
+nav a {
+color: white;
+text-decoration: none;
+margin: 0 10px;
+transition: color 0.3s ease;
 }
-/* Main Content Styles /
+nav a:hover {
+color: #1e90ff; / Hover effect color */
+}
+/* Main Content Styles */
 main {
-padding: 20px 10px; / Espaçamento interno /
-display: flex; / Flexbox para layout de postagens /
-flex-direction: column; / Direção das postagens /
-gap: 20px; / Espaçamento entre as postagens */
+padding: 20px;
+display: flex;
+flex-direction: column;
+gap: 20px;
 }
 /* Post Card Styles /
 .bg-gray-800 {
-background-color: #2D3748; / Cor de fundo do cartão /
-padding: 20px; / Espaçamento interno /
-border-radius: 10px; / Cantos arredondados /
-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); / Sombra do cartão /
-max-width: 400px; / Largura máxima do cartão /
-width: 100%; / Largura responsiva */
+background-color: #2f2f2f; / Dark gray background */
+border-radius: 8px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
-/* Card Header Styles /
-.card-header {
-display: flex; / Usando flexbox para alinhar imagem e título /
-align-items: center; / Alinhamento centralizado /
-padding-bottom: 10px; / Espaçamento inferior */
+/* Image Styles /
+img {
+max-width: 100%; / Responsive images /
+height: auto;
+border-radius: 8px; / Rounded corners */
 }
-.card-header img {
-height: 48px; /* Altura fixa da imagem /
-width: 48px; / Largura fixa da imagem /
-border-radius: 50%; / Imagem circular /
-border: 2px solid #3B82F6; / Borda da imagem */
+/* Text Styles */
+.text-2xl {
+font-size: 1.5rem;
+font-weight: bold;
 }
-/* Card Image Styles /
-.card-image {
-width: 100%; / Largura total /
-border-radius: 10px; / Cantos arredondados */
+.text-sm {
+font-size: 0.875rem;
 }
-/* Card Content Styles /
-.card-content {
-padding-top: 20px; / Espaçamento superior /
-padding-left: 10px; / Espaçamento à esquerda /
-padding-right: 10px; / Espaçamento à direita */
+.text-gray-300 {
+color: #d1d1d1; /* Light gray color for timestamps */
 }
-.card-content p {
-font-size: 14px; /* Tamanho da fonte /
-text-align: justify; / Justificar texto */
-}
-.card-content span {
-color: #A0AEC0; /* Cor do texto secundário /
-display: block; / Exibição em bloco /
-margin-top: 10px; / Margem superior */
-}
-/* Responsividade /
+/* Responsive Design /
 @media (min-width: 768px) {
 main {
-flex-direction: row; / Mudança para linha em telas maiores /
-justify-content: center; / Centraliza postagens horizontalmente */
+flex-direction: row; / Row layout on larger screens /
+flex-wrap: wrap;
+justify-content: center; / Center aligns columns */
 }
-.bg-gray-800 {
-margin: 10px; /* Margem entre cartões */
+.max-w-96 {
+max-width: 400px; /* Set max width for post cards /
+margin: 0 auto; / Center cards within main */
 }
+}
+h2 {
+margin: 0; /* Remove default margin */
 }
