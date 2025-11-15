@@ -1,0 +1,125 @@
+import React from "react"
+import {Menu} from 'lucide-react'
+
+interface Post {
+  id: number
+  author: string
+  title: string
+  content: string
+  image: string
+  timestamp: string
+  profileImage: string
+}
+
+const postsData: Post[] = [
+  {
+    id: 1,
+    author: "Gamer",
+    title: "FIFA 20",
+    content: "FIFA 20 trouxe novidades empolgantes para os fãs de futebol, destacando-se pelo modo Volta, que permite jogar partidas de rua com times personalizados. A jogabilidade ficou mais realista, com dribles aprimorados e inteligência artificial mais avançada dos adversários. Os gráficos impressionam, tornando estádios e jogadores extremamente detalhados. O modo carreira continua sendo uma escolha popular, oferecendo gestão de times e desenvolvimento de atletas. Além disso, o modo Ultimate Team mantém sua base fiel, com desafios e cartas especiais que engajam jogadores de todo o mundo.",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTADfGLMy5x_W0__rQtwoDMVagFAflRtFDQ_w&s",
+    timestamp: "há 10 minutos",
+    profileImage: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=100&h=100&fit=crop"
+  },
+  {
+    id: 2,
+    author: "Gamer",
+    title: "FIFA 21",
+    content: "FIFA 21 trouxe melhorias significativas na jogabilidade, especialmente nos dribles e no controle de bola, oferecendo partidas mais fluidas e estratégicas. O modo Volta foi expandido, permitindo ainda mais personalização e partidas intensas de futebol de rua. No modo carreira, foram introduzidas novas opções de gestão e simulação de partidas, tornando a experiência mais realista. O Ultimate Team continuou a evoluir, com novos desafios, eventos e cartas especiais que mantêm os jogadores engajados. Os gráficos e animações também foram aprimorados, proporcionando um visual mais imersivo dentro e fora dos estádios.",
+    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&fit=crop",
+    timestamp: "há 10 minutos",
+    profileImage: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=100&h=100&fit=crop"
+  },
+  {
+    id: 3,
+    author: "Gamer",
+    title: "FIFA 22",
+    content: "FIFA 22 trouxe grandes inovações, destacando-se pela HyperMotion Technology, que utiliza captura de movimento real para criar mais de 4 mil novas animações, tornando os movimentos dos jogadores mais naturais. No modo Carreira, os jogadores podem criar seu próprio clube, definindo escudo, estádio e uniforme, além de evoluir atletas com habilidades estilo RPG. A jogabilidade foi aprimorada com o algoritmo ML‑Flow, que ajusta cadência, postura e transições conforme o contexto da partida. O Ultimate Team recebeu mudanças em Division Rivals e mais opções de personalização para estádios, enquanto o modo Volta ganhou minigames com o Volta Arcade e o Pro Clubs melhorou a progressão dos jogadores virtuais. Os gráficos e animações mais realistas tornam a experiência de jogo ainda mais imersiva e dinâmica.",
+    image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&fit=crop",
+    timestamp: "há 10 minutos",
+    profileImage: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=100&h=100&fit=crop"
+  }
+]
+
+function PostCard({ post }: { post: Post }) {
+  return (
+    <div className="bg-gray-800 rounded-lg shadow-md max-w-96 w-full hover:shadow-xl transition-shadow duration-300">
+      {/* Card Header */}
+      <div className="flex items-center pb-4 px-4 pt-4 gap-3">
+        <img 
+          className="h-12 w-12 rounded-full border-2 border-blue-500 object-cover" 
+          src={post.profileImage} 
+          alt={post.author}
+        />
+        <h2 className="text-2xl font-semibold text-white">{post.title}</h2>
+      </div>
+
+      {/* Card Image */}
+      <img 
+        className="w-full h-64 object-cover" 
+        src={post.image} 
+        alt={post.title}
+      />
+
+      {/* Card Content */}
+      <div className="pt-4 px-4 pb-4">
+        <p className="text-sm text-justify text-gray-200 leading-relaxed">
+          {post.content}
+        </p>
+        <span className="text-gray-300 text-right block mt-4 text-sm">
+          {post.timestamp}
+        </span>
+      </div>
+    </div>
+  )
+}
+
+function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 text-white">
+      {/* Header */}
+      <header className="shadow-md p-5">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="uppercase font-bold text-xl">
+            Logo
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="font-bold hidden md:flex gap-6">
+            <a href="#" className="hover:text-blue-400 transition-colors">Início</a>
+            <a href="#" className="hover:text-blue-400 transition-colors">Amigos</a>
+            <a href="#" className="hover:text-blue-400 transition-colors">Perfil</a>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <Menu className="h-6 w-6" />
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <nav className="md:hidden mt-4 flex flex-col gap-3 font-bold">
+            <a href="#" className="hover:text-blue-400 transition-colors">Início</a>
+            <a href="#" className="hover:text-blue-400 transition-colors">Amigos</a>
+            <a href="#" className="hover:text-blue-400 transition-colors">Perfil</a>
+          </nav>
+        )}
+      </header>
+
+      {/* Post Lists */}
+      <main className="py-8 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-6 items-center md:items-start justify-center flex-wrap">
+          {postsData.map((post) => (
+            <PostCard key={post.id} post={post} />
+          ))}
+        </div>
+      </main>
+    </div>
+  )
+}

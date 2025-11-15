@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="https://lumi.new/lumi.ing/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Feed</title>
+    <meta name="description" content="Feed social moderno com posts sobre jogos">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Animações e estilos customizados */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .post-card {
+        animation: fadeIn 0.5s ease-out;
+      }
+      
+      .post-card:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+      }
+      
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #3b82f6;
+        transition: width 0.3s ease;
+      }
+      
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      
+      .menu-toggle {
+        cursor: pointer;
+      }
+      
+      #mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      
+      #mobile-menu.active {
+        max-height: 300px;
+      }
+    </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+  <body class="bg-gradient-to-b from-blue-900 to-blue-950 min-h-screen text-white">
+    
+    <!-- Header -->
+    <header class="shadow-lg p-5 sticky top-0 bg-blue-900/95 backdrop-blur-sm z-50">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+            </svg>
+          </div>
+          <span class="uppercase font-bold text-xl">Social Feed</span>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex font-bold space-x-6">
+          <a href="#" class="nav-link hover:text-blue-400">Início</a>
+          <a href="#" class="nav-link hover:text-blue-400">Amigos</a>
+          <a href="#" class="nav-link hover:text-blue-400">Perfil</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden menu-toggle" onclick="toggleMenu()">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden">
+        <nav class="flex flex-col space-y-3 mt-4 font-bold">
+          <a href="#" class="hover:text-blue-400 py-2">Início</a>
+          <a href="#" class="hover:text-blue-400 py-2">Amigos</a>
+          <a href="#" class="hover:text-blue-400 py-2">Perfil</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Feed -->
+    <main class="py-8 px-4 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Post Card 1 - FIFA 20 -->
+        <article class="post-card bg-gray-800 rounded-lg shadow-xl overflow-hidden">
+          <!-- Card Header -->
+          <div class="flex items-center p-4 space-x-3">
+            <img class="h-12 w-12 rounded-full border-2 border-blue-500 object-cover" 
+                 src="https://i.pravatar.cc/150?img=12" 
+                 alt="Perfil">
+            <h2 class="text-2xl font-bold">FIFA 20</h2>
+          </div>
+
+          <!-- Card Image -->
+          <img class="w-full h-64 object-cover" 
+               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTADfGLMy5x_W0__rQtwoDMVagFAflRtFDQ_w&s" 
+               alt="FIFA 20">
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <p class="text-sm text-justify leading-relaxed text-gray-300">
+              FIFA 20 trouxe novidades empolgantes para os fãs de futebol, destacando-se pelo modo Volta, que permite jogar partidas de rua com times personalizados. A jogabilidade ficou mais realista, com dribles aprimorados e inteligência artificial mais avançada dos adversários.
+            </p>
+            <span class="text-gray-400 text-sm block text-right mt-4">há 10 minutos</span>
+          </div>
+        </article>
+
+        <!-- Post Card 2 - FIFA 21 -->
+        <article class="post-card bg-gray-800 rounded-lg shadow-xl overflow-hidden" style="animation-delay: 0.1s">
+          <!-- Card Header -->
+          <div class="flex items-center p-4 space-x-3">
+            <img class="h-12 w-12 rounded-full border-2 border-blue-500 object-cover" 
+                 src="https://i.pravatar.cc/150?img=33" 
+                 alt="Perfil">
+            <h2 class="text-2xl font-bold">FIFA 21</h2>
+          </div>
+
+          <!-- Card Image -->
+          <img class="w-full h-64 object-cover" 
+               src="https://image.api.playstation.com/vulcan/ap/rnd/202009/3021/xJDN6QLRQ8pzmGP8HS0z3qQe.png" 
+               alt="FIFA 21">
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <p class="text-sm text-justify leading-relaxed text-gray-300">
+              FIFA 21 trouxe melhorias significativas na jogabilidade, especialmente nos dribles e no controle de bola, oferecendo partidas mais fluidas e estratégicas. O modo Volta foi expandido, permitindo ainda mais personalização e partidas intensas de futebol de rua.
+            </p>
+            <span class="text-gray-400 text-sm block text-right mt-4">há 25 minutos</span>
+          </div>
+        </article>
+
+        <!-- Post Card 3 - FIFA 22 -->
+        <article class="post-card bg-gray-800 rounded-lg shadow-xl overflow-hidden" style="animation-delay: 0.2s">
+          <!-- Card Header -->
+          <div class="flex items-center p-4 space-x-3">
+            <img class="h-12 w-12 rounded-full border-2 border-blue-500 object-cover" 
+                 src="https://i.pravatar.cc/150?img=68" 
+                 alt="Perfil">
+            <h2 class="text-2xl font-bold">FIFA 22</h2>
+          </div>
+
+          <!-- Card Image -->
+          <img class="w-full h-64 object-cover" 
+               src="https://image.api.playstation.com/vulcan/ap/rnd/202104/3006/MJjKiLbvHOZO0Y2NbcHdCVmZ.png" 
+               alt="FIFA 22">
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <p class="text-sm text-justify leading-relaxed text-gray-300">
+              FIFA 22 trouxe grandes inovações, destacando-se pela HyperMotion Technology, que utiliza captura de movimento real para criar mais de 4 mil novas animações, tornando os movimentos dos jogadores mais naturais. O Ultimate Team recebeu mudanças importantes.
+            </p>
+            <span class="text-gray-400 text-sm block text-right mt-4">há 1 hora</span>
+          </div>
+        </article>
+
+        <!-- Post Card 4 - FIFA 23 -->
+        <article class="post-card bg-gray-800 rounded-lg shadow-xl overflow-hidden" style="animation-delay: 0.3s">
+          <!-- Card Header -->
+          <div class="flex items-center p-4 space-x-3">
+            <img class="h-12 w-12 rounded-full border-2 border-blue-500 object-cover" 
+                 src="https://i.pravatar.cc/150?img=45" 
+                 alt="Perfil">
+            <h2 class="text-2xl font-bold">FIFA 23</h2>
+          </div>
+
+          <!-- Card Image -->
+          <img class="w-full h-64 object-cover" 
+               src="https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/wnW0FX1wMX0rbwWDrUqkk9VA.png" 
+               alt="FIFA 23">
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <p class="text-sm text-justify leading-relaxed text-gray-300">
+              FIFA 23 marca a última edição da parceria entre EA Sports e FIFA. O jogo apresenta as Copas do Mundo masculina e feminina como conteúdo pós-lançamento, além de melhorias na física da bola e novas mecânicas de finalização.
+            </p>
+            <span class="text-gray-400 text-sm block text-right mt-4">há 2 horas</span>
+          </div>
+        </article>
+
+        <!-- Post Card 5 - EA Sports FC 24 -->
+        <article class="post-card bg-gray-800 rounded-lg shadow-xl overflow-hidden" style="animation-delay: 0.4s">
+          <!-- Card Header -->
+          <div class="flex items-center p-4 space-x-3">
+            <img class="h-12 w-12 rounded-full border-2 border-blue-500 object-cover" 
+                 src="https://i.pravatar.cc/150?img=22" 
+                 alt="Perfil">
+            <h2 class="text-2xl font-bold">EA Sports FC 24</h2>
+          </div>
+
+          <!-- Card Image -->
+          <img class="w-full h-64 object-cover" 
+               src="https://image.api.playstation.com/vulcan/ap/rnd/202305/1219/XCJFhH1pNctL2sEqLYMKsvKz.png" 
+               alt="EA Sports FC 24">
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <p class="text-sm text-justify leading-relaxed text-gray-300">
+              EA Sports FC 24 é o primeiro título da nova franquia após o fim da parceria com a FIFA. O jogo mantém todas as ligas, times e jogadores, além de introduzir o novo modo PlayStyles que revoluciona a forma como os jogadores se comportam em campo.
+            </p>
+            <span class="text-gray-400 text-sm block text-right mt-4">há 3 horas</span>
+          </div>
+        </article>
+
+        <!-- Post Card 6 - Futuro do Futebol Virtual -->
+        <article class="post-card bg-gray-800 rounded-lg shadow-xl overflow-hidden" style="animation-delay: 0.5s">
+          <!-- Card Header -->
+          <div class="flex items-center p-4 space-x-3">
+            <img class="h-12 w-12 rounded-full border-2 border-blue-500 object-cover" 
+                 src="https://i.pravatar.cc/150?img=57" 
+                 alt="Perfil">
+            <h2 class="text-2xl font-bold">Futuro dos Games</h2>
+          </div>
+
+          <!-- Card Image -->
+          <img class="w-full h-64 object-cover" 
+               src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800" 
+               alt="Controle de videogame">
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <p class="text-sm text-justify leading-relaxed text-gray-300">
+              O futuro dos jogos de futebol promete experiências ainda mais imersivas com a evolução da inteligência artificial, realidade virtual e tecnologias de captura de movimento. A competição entre EA Sports FC e o novo jogo da FIFA trará inovações emocionantes para os fãs.
+            </p>
+            <span class="text-gray-400 text-sm block text-right mt-4">há 5 horas</span>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 py-6 mt-12">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-gray-300">© 2024 Social Feed - Todos os direitos reservados</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript para menu mobile -->
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('active');
+      }
+    </script>
+
+  </body>
+</html>
