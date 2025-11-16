@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -6,45 +5,64 @@
     font-family: Arial, sans-serif;
 }
 
-/* Corpo */
 body {
     background-color: #fff;
     color: #333;
+    transition: 0.3s;
+    line-height: 1.6;
 }
 
-/* Cabeçalho */
+/* Dark Mode */
+body.dark {
+    background-color: #121212;
+    color: #eaeaea;
+}
+body.dark header,
+body.dark nav,
+body.dark footer {
+    background-color: #111;
+}
+body.dark h2,
+body.dark h3 {
+    color: #ff7f50;
+}
+body.dark aside {
+    background-color: #1d1d1d;
+    border-color: #ff7f50;
+}
+
 header {
-    background-color: #ff7f50; /* Laranja */
+    background-color: #ff7f50;
     color: white;
     text-align: center;
     padding: 60px 20px;
 }
 
 header .perfil {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
-    border: 3px solid white;
+    border: 4px solid white;
     object-fit: cover;
     margin-bottom: 15px;
+    transition: transform 0.3s ease;
 }
 
-header h1 {
-    font-size: 2.5em;
+header .perfil:hover {
+    transform: scale(1.05);
 }
 
-header p {
-    font-size: 1.1em;
-}
-
-/* Menu de navegação */
 nav {
     background-color: #ff7f50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
 }
 
 nav ul {
     display: flex;
-    justify-content: center;
     list-style: none;
 }
 
@@ -58,73 +76,61 @@ nav ul li a {
     padding: 12px 0;
     display: block;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 nav ul li a:hover {
-    opacity: 0.8;
+    opacity: 0.7;
+    transform: scale(1.05);
 }
 
-/* Seções e artigos */
+#darkModeBtn {
+    background: white;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#darkModeBtn:hover {
+    transform: scale(1.1);
+}
+
 main {
-    max-width: 800px;
-    margin: 30px auto;
+    max-width: 900px;
+    margin: 40px auto;
     padding: 0 20px;
 }
 
-article, section, aside {
-    margin-bottom: 30px;
-}
-
-/* Títulos */
-section h2, aside h2, article h2 {
+section h2, article h2, aside h2 {
     color: #ff7f50;
     margin-bottom: 15px;
     text-align: center;
+    font-size: 1.8em;
 }
 
-/* Subtítulos h3 */
-h3 {
-    color: #ff7f50;
-    margin: 5px 0;
-    font-weight: bold;
+.info-list, .social-list, .hobby-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    font-size: 1.1em;
 }
 
-/* Lista de hobbies no aside */
 aside {
-    background-color: #fff3e6; /* fundo levemente laranja */
+    background-color: #fff3e6;
     border: 2px solid #ff7f50;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
 }
 
-.hobby-list {
-    list-style: none;
-    padding: 0;
-    font-size: 1.1em;
-}
-
-.hobby-list li {
-    margin: 10px 0;
-}
-
-/* Lista de redes sociais */
-.social-list {
-    list-style: none;
-    padding: 0;
-    font-size: 1.1em;
-    text-align: center;
-}
-
-.social-list li {
-    margin: 10px 0;
-}
-
-/* Rodapé */
 footer {
     background-color: #ff7f50;
     color: white;
     text-align: center;
     padding: 20px;
+    margin-top: 40px;
 }
-
