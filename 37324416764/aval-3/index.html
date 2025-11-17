@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoVeloz - Acelere sua Paixão</title>
+    <style>
+        /* Definições de cores e fontes OTIMIZADAS */
+        :root {
+            --cor-principal: #FF5722; /* Laranja/Vermelho Agressivo */
+            --cor-fundo: #1a1a1a;   /* Preto Sólido */
+            --cor-texto: #e0e0e0;   /* Cinza Claro */
+            --cor-clara: #ffffff;   /* Branco */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+        }
+
+        /* --- HEADER e NAVEGAÇÃO --- */
+        header {
+            background-color: #000;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--cor-principal);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: box-shadow 0.4s ease-in-out; /* Para a animação JS */
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container h1 {
+            margin: 0;
+            font-size: 2.2em;
+            letter-spacing: 3px;
+            font-weight: 900;
+            color: var(--cor-principal);
+        }
+
+        .logo-img {
+            width: 65px;
+            height: 65px;
+            margin-right: 15px;
+            border: 2px solid var(--cor-principal);
+            border-radius: 50%;
+            object-fit: cover;
+            animation: spinLogo 3s infinite linear;
+        }
+
+        nav a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: 600;
+            transition: color 0.3s, transform 0.2s;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        /* Efeito Sublinhado Moderno */
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: var(--cor-principal);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+            left: 0;
+            background: var(--cor-principal);
+        }
+
+        nav a:hover {
+            color: var(--cor-principal);
+            transform: translateY(-2px);
+        }
+
+        /* --- MAIN e SEÇÕES --- */
+
+        main {
+            padding: 20px 5%;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+
+        .hero p {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #bdbdbd;
+        }
+
+        /* --- TÍTULOS (H2) --- */
+
+        h2 {
+            color: var(--cor-principal);
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 50px;
+            padding-bottom: 10px;
+            display: block;
+            text-align: center;
+            position: relative;
+            /* Animação H2 removida daqui para ser controlada pelo JS */
+            opacity: 0; /* Começa invisível para o JS fazer o fade-in */
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--cor-principal);
+            border-radius: 2px;
+        }
+
+
+        /* --- GRID DE MOTOS --- */
+        .motos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .moto-card {
+            background-color: #2c2c2c;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s;
+            text-align: center;
+            border: 1px solid rgba(255, 87, 34, 0.2);
+            opacity: 0; /* Preparação para animação CSS */
+        }
+
+        .moto-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(255, 87, 34, 0.4);
+        }
+
+        .moto-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 5px solid var(--cor-principal);
+        }
+
+        .moto-info {
+            padding: 20px;
+        }
+
+        .moto-info h3 {
+            margin-top: 0;
+            color: var(--cor-clara);
+            font-size: 1.5em;
+            text-transform: uppercase;
+        }
+
+        .moto-info p {
+            font-size: 1em;
+            color: #a0a0a0;
+        }
+
+        /* --- ESTILOS PARA AS TAGS SPAN --- */
+        
+        /* Estilo para a <span> do nome da empresa */
+        .destaque-nome {
+            color: var(--cor-principal); /* Cor Laranja/Vermelha */
+            font-weight: bold;
+            font-style: italic;
+            text-transform: uppercase;
+        }
+
+        /* Estilo para a <span> do preço (com animação CSS) */
+        .destaque-preco {
+            color: #4CAF50; /* Um verde para destacar o valor */
+            font-size: 1.5em; /* Aumentado */
+            font-weight: 900;
+            margin-top: 10px;
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 8px;
+            background-color: rgba(76, 175, 80, 0.15);
+            /* Animação CSS para pulsação no preço */
+            animation: pulsePrice 1.5s infinite alternate; 
+        }
+
+        /* Keyframe de animação para o preço */
+        @keyframes pulsePrice {
+            from {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+            to {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+
+        /* --- ANIMAÇÕES KEYFRAMES (Mantidas) --- */
+
+        @keyframes spinLogo {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes cardSlideIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .moto-card:nth-child(1) { animation: cardSlideIn 0.6s ease-out forwards; }
+        .moto-card:nth-child(2) { animation: cardSlideIn 0.6s ease-out 0.2s forwards; }
+        .moto-card:nth-child(3) { animation: cardSlideIn 0.6s ease-out 0.4s forwards; }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://t4.ftcdn.net/jpg/04/36/95/77/360_F_436957783_2cXLNMOtiwXFefRbsZFdQ4YwQxtnJZ7B.jpg" alt="Logo MotoVeloz" class="logo-img">
+            <h1>MotoVeloz</h1>
+        </div>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Modelos</a>
+            <a href="#">Serviços</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <p>
+                <strong>Descrição da Empresa:</strong> Na <span class="destaque-nome">MotoVeloz</span>, não vendemos apenas motocicletas; vendemos a liberdade, a adrenalina e a emoção de conquistar o asfalto. Nascemos da paixão inabalável por duas rodas, com a missão de conectar pilotos a máquinas que transcendem o conceito de transporte!
+            </p>
+        </section>
+
+        <section class="modelos">
+            <h2>Nossos Modelos em Destaque</h2>
+
+            <div class="motos-grid">
+
+                <div class="moto-card">
+                    <img src="https://blog.usezapay.com.br/wp-content/uploads/2024/06/uma-das-melhores-motos-esportivas-do-mundo-Ducati-Panigale-V4-edited-scaled.jpg" alt="Moto Esportiva X" class="moto-img">
+                    <div class="moto-info">
+                        <h3>Esportiva X</h3>
+                        <p>Máxima velocidade e aerodinâmica para as pistas.</p>
+                        <p>Preço: <span class="destaque-preco">R$ 55.000</span></p>
+                    </div>
+                </div>
+
+                <div class="moto-card">
+                    <img src="https://www.motonline.com.br/noticia/wp-content/uploads/2025/09/2020-Kawasaki-Vulcan-900-Custom-Review-cruiser-motorcycle-5.webp" alt="Custom Cruiser" class="moto-img">
+                    <div class="moto-info">
+                        <h3>Custom Cruiser</h3>
+                        <p>Conforto e estilo para longas viagens na estrada.</p>
+                         <p>Preço: R$ 38.000</p>
+                    </div>
+                </div>
+
+                <div class="moto-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDW-YkHjcgvcNTWSHrrEisDEGXJz3xNVobDQ&s" alt="Trail Aventura" class="moto-img">
+                    <div class="moto-info">
+                        <h3>Trail Aventura</h3>
+                        <p>Pronta para qualquer terreno, do asfalto à terra.</p>
+                        <p>Preço: R$ 42.500</p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // 1. Efeito de Fade-in no Título H2
+        const titulo = document.querySelector('h2');
+        // O H2 já está invisível via CSS (opacity: 0)
+        
+        window.addEventListener('load', () => {
+            // Inicia o fade-in 500ms após a página carregar
+            setTimeout(() => {
+                titulo.style.transition = 'opacity 1.5s ease-in';
+                titulo.style.opacity = 1;
+            }, 500);
+        });
+
+
+        // 2. Animação na Barra de Navegação ao Rolar (Header)
+        const header = document.querySelector('header');
+        const scrollThreshold = 100;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > scrollThreshold) {
+                // Adiciona uma sombra de destaque na cor principal ao rolar
+                header.style.boxShadow = '0 5px 15px rgba(255, 87, 34, 0.5)'; 
+            } else {
+                // Remove a sombra ao voltar para o topo
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // 3. Animação na Tag <span> (Preço) usando JavaScript
+        const precoSpan = document.querySelector('.destaque-preco');
+
+        if (precoSpan) {
+            precoSpan.addEventListener('click', () => {
+                alert('Preço em Destaque! Clique para simular uma ação de compra.');
+                // Você pode adicionar outras animações de classe CSS aqui
+                precoSpan.style.backgroundColor = 'var(--cor-principal)';
+                precoSpan.style.color = 'white';
+                setTimeout(() => {
+                     // Volta ao normal após 1 segundo
+                    precoSpan.style.backgroundColor = 'rgba(76, 175, 80, 0.15)'; 
+                    precoSpan.style.color = '#4CAF50';
+                }, 1000);
+            });
+        }
+    </script>
+
+</body>
+</html>
