@@ -1,0 +1,169 @@
+/* Importação da Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* COR: Cor de fundo da página (Dark Gray / Preto Sutil) */
+    background-color: #e65a90; 
+    /* COR: Cor do texto principal */
+    color: #020304; 
+    line-height: 1.6;
+}
+
+/* HEADER (Cabeçalho azul escuro) */
+.header {
+    /* COR: Cor de fundo do cabeçalho (Azul Escuro Forte) */
+    background-color: #b21a70; 
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.header-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    /* COR: Cor do texto do logo */
+    color: white; 
+}
+
+.header-nav a {
+    text-decoration: none;
+    /* COR: Cor dos links de navegação */
+    color: white; 
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.header-nav a:hover {
+    /* COR: Cor dos links ao passar o mouse */
+    color: #f3097a; 
+}
+
+/* FEED CONTAINER (Layout dos Cards em 3 colunas) */
+.feed-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+    display: grid;
+    /* Configuração padrão: 3 colunas para desktop */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 20px;
+    justify-content: center;
+}
+
+/* POST CARD (O fundo cinza escuro de cada post) */
+.post-card {
+    /* COR: Cor de fundo do card (Dark Gray Médio) */
+    background-color: #d8257f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(210, 37, 120, 0.4);
+    overflow: hidden;
+    color: #f3f5f8; 
+    display: flex;
+    flex-direction: column;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    /* COR: Linha separadora no topo do card */
+    border-bottom: 1px solid #ffffff; 
+}
+
+/* ======================================= */
+/* ÁREAS DE EDIÇÃO ÚNICA DE DESIGN E AVATAR */
+/* ======================================= */
+
+/* 1. AVATAR DEFINIDO VIA CSS - Repete em todos os posts */
+.post-avatar {
+    /* ATENÇÃO: EDITAR TAMANHO DO AVATAR AQUI (Largura e Altura) */
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    
+    /* === ATENÇÃO: EDITAR LINK DA IMAGEM DE PERFIL AQUI (APENAS 1 VEZ) === */
+    background-image: url('data:image/webp;base64,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'); 
+    background-size: cover;
+    background-position: center;
+    
+    /* COR: Borda do avatar */
+    border: 2px solid #fdfeff; 
+}
+
+/* 2. NOME DE USUÁRIO - EDITADO UMA ÚNICA VEZ VIA CSS */
+.post-user {
+    /* Oculta o conteúdo da tag <span> no HTML */
+    font-size: 0; 
+    line-height: 0; 
+}
+
+/* Injeta o nome em todos os locais onde a classe post-user é usada */
+.post-user::before {
+    /* === ATENÇÃO: GABRIELA LIMA (APENAS 1 VEZ!) === */
+    content: 'GABRIELLA LIMA'; 
+    font-weight: 700;
+    font-size: 1rem; 
+    color: white; 
+}
+
+/* 3. IMAGEM PRINCIPAL DO FEED - Imagem grande do conteúdo */
+.post-image {
+    width: 100%;
+    /* ATENÇÃO: EDITAR O TAMANHO DA ALTURA DA IMAGEM AQUI (200px é o padrão) */
+    height: 200px; 
+    object-fit: cover;
+    display: block;
+}
+
+/* ======================================= */
+/* O restante do CSS de conteúdo e responsividade... */
+/* ======================================= */
+
+.post-content {
+    padding: 15px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+.post-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white; 
+    margin-bottom: 10px;
+}
+
+.post-description {
+    font-size: 0.95rem;
+    color: #fcfdff; 
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.post-time {
+    font-size: 0.8rem;
+    color: #fafbfd; 
+    align-self: flex-end;
+}
+
+/* Responsividade (Para telas menores/celulares) */
+@media (max-width: 768px) {
+    .feed-container {
+        grid-template-columns: 1fr; /* Muda para 1 coluna */
+        padding: 0 10px;
+    }
+}
