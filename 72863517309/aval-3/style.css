@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beleza & Make</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-pink-50 text-gray-800 font-sans">
+
+    <!-- CABEÇALHO -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl font-bold text-pink-600 tracking-wide">
+                Beleza & <span class="text-pink-800">Make</span>
+            </h1>
+            <nav class="hidden md:flex gap-6 text-gray-600 font-medium">
+                <a href="#" class="hover:text-pink-600 transition-colors">Início</a>
+                <a href="#" class="hover:text-pink-600 transition-colors">Produtos</a>
+                <a href="#" class="hover:text-pink-600 transition-colors">Tutoriais</a>
+                <a href="#" class="hover:text-pink-600 transition-colors">Contato</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="menu-button" class="text-pink-600 focus:outline-none">
+                    ☰
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+            <a href="#" class="block px-6 py-2 text-gray-600 hover:text-pink-600">Início</a>
+            <a href="#" class="block px-6 py-2 text-gray-600 hover:text-pink-600">Produtos</a>
+            <a href="#" class="block px-6 py-2 text-gray-600 hover:text-pink-600">Tutoriais</a>
+            <a href="#" class="block px-6 py-2 text-gray-600 hover:text-pink-600">Contato</a>
+        </div>
+    </header>
+
+    <!-- HERO / SEÇÃO PRINCIPAL -->
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        <section class="bg-white rounded-3xl shadow-lg p-8 flex flex-col md:flex-row items-center gap-10 transition-transform transform hover:scale-105 duration-300">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" 
+                 alt="Maquiagem destaque"
+                 class="w-full md:w-1/2 rounded-xl shadow-md object-cover">
+
+            <div class="flex-1 space-y-4">
+                <h2 class="text-4xl font-extrabold text-pink-700 leading-tight">
+                    Realce sua <span class="text-pink-800">Beleza Natural</span>
+                </h2>
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    Explore técnicas, produtos e tendências para elevar sua maquiagem
+                    a um novo nível. <span class="font-semibold text-pink-600">Tutoriais simples</span>, dicas de especialistas e muito estilo.
+                </p>
+                <button class="bg-pink-600 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-pink-700 hover:shadow-xl transition-all duration-300">
+                    Ver <span class="font-bold">Tutoriais</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE PRODUTOS -->
+        <section class="mt-16">
+            <h3 class="text-3xl font-bold text-pink-700 mb-8">
+                Produtos em <span class="text-pink-800">Destaque</span>
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <img class="rounded-lg mb-4 object-cover w-full h-48" 
+                         src="https://images.unsplash.com/photo-1556228578-adeb7f074cbc" 
+                         alt="Base líquida">
+                    <h4 class="text-xl font-semibold text-gray-700">Base <span class="text-pink-600">Hidratante</span></h4>
+                    <p class="text-gray-600 mt-2">Acabamento natural e cobertura leve.</p>
+                    <button class="mt-4 bg-pink-600 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-700 hover:shadow-md transition duration-300">
+                        Comprar
+                    </button>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <img class="rounded-lg mb-4 object-cover w-full h-48" 
+                         src="https://images.unsplash.com/photo-1585386959984-a4155228f2d1" 
+                         alt="Paleta de sombras">
+                    <h4 class="text-xl font-semibold text-gray-700">Paleta <span class="text-pink-600">de Sombras</span></h4>
+                    <p class="text-gray-600 mt-2">Cores vibrantes para qualquer ocasião.</p>
+                    <button class="mt-4 bg-pink-600 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-700 hover:shadow-md transition duration-300">
+                        Comprar
+                    </button>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <img class="rounded-lg mb-4 object-cover w-full h-48" 
+                         src="https://images.unsplash.com/photo-1600181953107-3fd037aa0a11" 
+                         alt="Batom matte">
+                    <h4 class="text-xl font-semibold text-gray-700">Batom <span class="text-pink-600">Matte</span></h4>
+                    <p class="text-gray-600 mt-2">Textura suave e longa duração.</p>
+                    <button class="mt-4 bg-pink-600 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-700 hover:shadow-md transition duration-300">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE TUTORIAIS -->
+        <section class="mt-16">
+            <h3 class="text-3xl font-bold text-pink-700 mb-8">
+                Tutoriais <span class="text-pink-800">Populares</span>
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                    <img class="w-full h-48 object-cover" 
+                         src="https://images.unsplash.com/photo-1596464716121-1f9b5c947f27" 
+                         alt="Tutorial Olhos">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold text-gray-700 mb-2">Olhos <span class="text-pink-600">Esfumados</span></h4>
+                        <p class="text-gray-600 text-sm">Aprenda a criar o clássico olhar esfumado passo a passo.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                    <img class="w-full h-48 object-cover" 
+                         src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" 
+                         alt="Tutorial Contorno">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold text-gray-700 mb-2">Contorno <span class="text-pink-600">Perfeito</span></h4>
+                        <p class="text-gray-600 text-sm">Dicas de contorno e iluminação para qualquer tipo de rosto.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                    <img class="w-full h-48 object-cover" 
+                         src="https://images.unsplash.com/photo-1592496001024-9c84aa6e77dc" 
+                         alt="Tutorial Batom">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold text-gray-700 mb-2">Batom <span class="text-pink-600">Matte Duradouro</span></h4>
+                        <p class="text-gray-600 text-sm">Técnicas para aplicar batom matte sem borrar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-white mt-16 py-8 shadow-inner">
+        <div class="max-w-6xl mx-auto text-center text-gray-600 space-y-2">
+            <p>&copy; 2025 <span class="text-pink-800 font-semibold">Beleza & Make</span> — Todos os direitos reservados.</p>
+            <p class="text-sm">Feito com ❤️ usando <span class="font-bold">HTML + Tailwind CSS</span></p>
+            <div class="flex justify-center gap-4 mt-4">
+                <a href="#" class="text-pink-600 hover:text-pink-800 transition">Facebook</a>
+                <a href="#" class="text-pink-600 hover:text-pink-800 transition">Instagram</a>
+                <a href="#" class="text-pink-600 hover:text-pink-800 transition">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
