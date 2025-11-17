@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria Bella Massa</title>
+
+    <style>
+        :root{
+            --red:#e63946;
+            --dark:#1d1d1d;
+            --yellow:#ffca3a;
+            --bg:#fff5e6;
+            --card:#ffffff;
+        }
+
+        *{box-sizing:border-box;}
+        body{
+            margin:0;
+            font-family: Arial, Helvetica, sans-serif;
+            background:var(--bg);
+            color:var(--dark);
+        }
+
+        /* HEADER */
+        header{
+            background:linear-gradient(90deg, #e63946, #ff5a5f);
+            padding:15px 20px 30px;
+            color:white;
+            position:sticky;
+            top:0;
+            z-index:50;
+            box-shadow:0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .header-inner{
+            max-width:1100px;
+            margin:0 auto;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+            gap:20px;
+        }
+
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .logo span{
+            background:white;
+            color:var(--red);
+            padding:10px 14px;
+            border-radius:8px;
+            font-weight:bold;
+            font-size:20px;
+            box-shadow:0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        nav{
+            display:flex;
+            gap:20px;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        nav a:hover{
+            text-decoration:underline;
+        }
+
+        /* HERO */
+        .hero{
+            margin-top:20px;
+            display:flex;
+            align-items:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .hero-text h2{
+            font-size:28px;
+            margin:0 0 8px;
+        }
+
+        .hero-text span{
+            color:var(--yellow);
+            font-weight:bold;
+        }
+
+        .hero img{
+            width:260px;
+            border-radius:12px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* MAIN */
+        main{
+            max-width:1100px;
+            margin:40px auto;
+            padding:0 15px;
+        }
+
+        h2.section-title{
+            text-align:center;
+            color:var(--red);
+            margin-bottom:20px;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:white;
+            border-radius:12px;
+            padding:15px;
+            text-align:center;
+            box-shadow:0 4px 12px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+            box-shadow:0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .card img{
+            width:100%;
+            height:150px;
+            object-fit:cover;
+            border-radius:10px;
+        }
+
+        .card h3{
+            margin:10px 0 5px;
+        }
+
+        .promo{
+            margin:35px auto;
+            background:white;
+            padding:15px;
+            border-radius:10px;
+            max-width:500px;
+            text-align:center;
+            box-shadow:0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .promo span{
+            color:var(--red);
+            font-weight:bold;
+            font-size:20px;
+        }
+
+        footer{
+            margin-top:40px;
+            background:var(--red);
+            padding:20px;
+            text-align:center;
+            color:white;
+        }
+
+        @media (max-width:600px){
+            .hero{
+                text-align:center;
+                justify-content:center;
+            }
+            .hero img{
+                width:180px;
+            }
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <span>🍕</span>
+                <h1>Pizzaria Bella Massa</h1>
+            </div>
+
+            <nav>
+                <a href="#"><span>Início</span></a>
+                <a href="#pizzas"><span>Pizzas</span></a>
+                <a href="#promo"><span>Promoção</span></a>
+                <a href="#contato"><span>Contato</span></a>
+            </nav>
+
+            <div class="hero">
+                <div class="hero-text">
+                    <h2>A melhor pizza com <span>massa artesanal</span></h2>
+                    <p><span>Sabor</span>, qualidade e tradição desde 1998.</p>
+                </div>
+                <img src="https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg" alt="Pizza deliciosa">
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <h2 class="section-title" id="pizzas">Nossas Pizzas</h2>
+
+        <div class="cards">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg" alt="Pizza Margherita">
+                <h3><span>Margherita</span></h3>
+                <p>Clássica, fresca e irresistível.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/708587/pexels-photo-708587.jpeg" alt="Pizza Calabresa">
+                <h3><span>Calabresa</span></h3>
+                <p>Calabresa artesanal com cebola roxa.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg" alt="Pizza Portuguesa">
+                <h3><span>Portuguesa</span></h3>
+                <p>Cremosa, completa e tradicional.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/4109084/pexels-photo-4109084.jpeg" alt="Pizza Pepperoni">
+                <h3><span>Pepperoni</span></h3>
+                <p>Pepperoni crocante e queijo derretido.</p>
+            </div>
+        </div>
+
+        <div class="promo" id="promo">
+            <p>Peça <span>2 pizzas</span> e ganhe <span>15% OFF</span> na próxima compra!</p>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contato">
+        © 2025 Pizzaria Bella Massa • <span>contato@bellamassa.com</span>
+    </footer>
+
+</body>
+</html>
