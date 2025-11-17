@@ -1,0 +1,207 @@
+/* style.css */
+
+/* --------- Reset & base --------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0f1217;
+  --card: #161a22;
+  --soft: #222735;
+  --primary: #4f8cff;
+  --accent: #00c2a8;
+  --text: #e8edf7;
+  --muted: #a7b0c2;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+}
+
+/* --------- Layout wrappers --------- */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header, nav, footer {
+  width: 100%;
+}
+
+#row {
+  width: 100%;
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+}
+
+/* --------- Header --------- */
+header {
+  background: linear-gradient(180deg, rgba(79,140,255,0.16), rgba(79,140,255,0.04));
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #2a3245;
+  padding: 28px 16px;
+}
+
+header h1 {
+  font-size: 2rem;
+  letter-spacing: 0.4px;
+}
+
+header p {
+  color: var(--muted);
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* --------- Nav --------- */
+nav {
+  display: flex;
+  gap: 12px;
+  padding: 12px 16px 16px;
+  border-bottom: 1px solid #252c3e;
+  background: rgba(22,26,34,0.6);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  padding: 8px 12px;
+  border: 1px solid #2a3245;
+  border-radius: 8px;
+  background: var(--card);
+  transition: all 0.18s ease;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79,140,255,0.18);
+  transform: translateY(-1px);
+}
+
+/* --------- Aside --------- */
+aside {
+  background: var(--card);
+  border: 1px solid #2a3245;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+aside h2 {
+  font-size: 1.4rem;
+}
+
+aside h5 {
+  color: var(--muted);
+  margin: 10px 0 8px;
+}
+
+aside p {
+  color: var(--muted);
+  margin: 10px 0 14px;
+}
+
+/* Fake image blocks (placeholders) */
+.fakeimage,
+.fakeimagem {
+  background: linear-gradient(135deg, #222a3a, #1a2030);
+  border: 1px dashed #3a4560;
+  border-radius: 12px;
+  color: #8fa0c2;
+  display: grid;
+  place-items: center;
+  height: 140px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+/* --------- Main & article --------- */
+main {
+  background: transparent;
+}
+
+article {
+  background: var(--card);
+  border: 1px solid #2a3245;
+  border-radius: 14px;
+  padding: 18px;
+}
+
+article h2 {
+  font-size: 1.6rem;
+}
+
+article h5 {
+  color: var(--muted);
+  margin: 6px 0 14px;
+}
+
+/* Image inside article (when you add src/alt) */
+article img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #2a3245;
+  background: #1a2030;
+  margin: 8px 0 14px;
+}
+
+/* --------- Footer --------- */
+footer {
+  margin-top: auto;
+  border-top: 1px solid #252c3e;
+  background: rgba(22,26,34,0.6);
+  padding: 18px 16px;
+  text-align: center;
+  color: var(--muted);
+}
+
+footer p {
+  font-size: 0.95rem;
+}
+
+/* --------- Helpers --------- */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* --------- Responsive --------- */
+@media (max-width: 920px) {
+  #row {
+    grid-template-columns: 1fr;
+  }
+  nav {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 520px) {
+  header h1 {
+    font-size: 1.7rem;
+  }
+  nav a {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  .fakeimage,
+  .fakeimagem {
+    height: 110px;
+  }
+}
