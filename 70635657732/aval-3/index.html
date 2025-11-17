@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homem-Aranha em Quadrinhos</title>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+  <style>
+    .font-spidey {
+      font-family: 'Bangers', cursive;
+      letter-spacing: 2px;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url("https://img.freepik.com/vetores-premium/teia-de-aranha-branca-sobre-fundo-vermelho-teia-de-aranha-vetor_350503-1179.jpg") repeat;
+      opacity: 0.08;
+      z-index: -1;
+      animation: webMove 30s linear infinite;
+    }
+
+    @keyframes webMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 2000px 2000px; }
+    }
+
+    .comic-border {
+      border: 4px solid black;
+      box-shadow: 5px 5px 0px #000;
+    }
+
+    .comic-bubble {
+      border: 3px solid black;
+      border-radius: 18px;
+      padding: 8px 12px;
+      box-shadow: 3px 3px 0px #000;
+      font-weight: bold;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .comic-bubble:hover {
+      transform: scale(1.05);
+      background: #ffe066;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 1; }
+      80% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(1); opacity: 0; }
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body class="bg-gradient-to-b from-red-500 to-white min-h-screen text-white">
+
+  <!-- HEADER -->
+  <header class="shadow-md p-6 flex flex-wrap justify-between items-center bg-red-700 border-b-4 border-black comic-border">
+    <div class="uppercase font-spidey text-6xl md:text-8xl tracking-wide flex items-center gap-4">
+      <h2>Homem</h2>
+      <img src="https://e7.pngegg.com/pngimages/811/750/png-clipart-spider-man-homecoming-captain-america-logo-marvel-comics-spider-man-comics-heroes-thumbnail.png"
+           alt="Logo" class="w-12 md:w-16 h-12 md:h-16 rounded-full border-4 border-black comic-border">
+      <h2>Aranha</h2>
+    </div>
+
+    <nav class="font-bold gap-6 hidden md:flex ml-10">
+      <a class="hover:text-yellow-300 transition">Início</a>
+      <a class="hover:text-yellow-300 transition">Amigos</a>
+      <a class="hover:text-yellow-300 transition">Perfil</a>
+    </nav>
+
+    <div class="md:hidden">
+      <button id="menuBtn" class="bg-black text-yellow-300 px-3 py-1 rounded">Menu</button>
+    </div>
+  </header>
+
+  <div id="mobileMenu" class="hidden flex-col bg-red-800 border-black border-4 comic-border absolute top-20 right-4 p-4 gap-3 z-50">
+    <a class="hover:text-yellow-300 transition">Início</a>
+    <a class="hover:text-yellow-300 transition">Amigos</a>
+    <a class="hover:text-yellow-300 transition">Perfil</a>
+  </div>
+
+  <!-- AQUI É A CORREÇÃO DO LAYOUT -->
+  <main class="py-10 px-6 grid grid-cols-1 md:grid-cols-[300px_1fr] gap-10">
+
+    <!-- PERFIL -->
+    <aside class="relative bg-red-700 comic-border text-white rounded-xl shadow-2xl p-6 w-full overflow-hidden">
+
+      <img src="https://pngimg.com/d/spider_web_PNG4.png"
+           class="absolute opacity-20 rotate-12 -top-6 -right-6 w-40 pointer-events-none">
+
+      <div class="flex flex-col items-center mb-4 relative">
+        <div class="relative">
+          <img src="https://turbologo.com/articles/wp-content/uploads/2019/10/spiderman.jpg"
+               class="h-24 w-24 rounded-full border-4 border-black comic-border object-cover bg-white">
+          <img src="https://pngimg.com/d/spider_web_PNG35.png"
+               class="absolute w-10 -top-6 left-1/2 transform -translate-x-1/2 opacity-80">
+        </div>
+
+        <h2 class="mt-4 text-2xl font-spidey tracking-widest text-yellow-300 drop-shadow-[3px_3px_0px_black]">
+          🕷️ Quadrinhos Aranha
+        </h2>
+
+        <p class="comic-bubble text-black bg-yellow-200 text-sm mt-3 text-center max-w-[90%]">
+          Com grandes poderes vêm grandes responsabilidades...
+        </p>
+      </div>
+
+      <hr class="border-2 border-black my-3">
+
+      <h3 class="font-spidey text-xl mb-3 text-white drop-shadow-[3px_3px_0px_black]">
+        Versões do Aranha
+      </h3>
+
+      <div class="grid grid-cols-4 gap-3">
+        <div class="comic-border bg-white p-1">
+          <img src="https://acdn-us.mitiendanube.com/stores/001/790/270/products/ddqwfyt-d319c780ece8c8621816625817425485-640-0.jpg" class="object-cover w-full h-14">
+        </div>
+        <div class="comic-border bg-white p-1">
+          <img src="https://d14d9vp3wdof84.cloudfront.net/image/589816272436/image_45p622k4512ebcp2jctuf0bk3m/-S897-FWEBP" class="object-cover w-full h-14">
+        </div>
+        <div class="comic-border bg-white p-1">
+          <img src="https://lh6.googleusercontent.com/proxy/KGwxsZgm6Wwsxvo-8WzPeyowc31_MkHan8I0bAy84NG7w2w6Klxmy440bEtAVWxnBbs51oCR5fVG5NwV8kqOXv1yHUkHUmVp8f5blNJ6ox4SjZlGPuqeKyg8AbCULErP8Jc_fcVxdA8ljUaK" class="object-cover w-full h-14">
+        </div>
+        <div class="comic-border bg-white p-1">
+          <img src="https://lumiere-a.akamaihd.net/v1/images/amazing_fantasy_spider-man_f724f882.jpeg" class="object-cover w-full h-14">
+        </div>
+      </div>
+    </aside>
+
+    <!-- POSTS -->
+    <section class="flex flex-wrap gap-10">
+
+      <!-- POST 1 -->
+      <div class="post-card relative bg-red-700 comic-border rounded-xl shadow-2xl overflow-hidden w-80 transform hover:scale-105 transition duration-300">
+
+        <img src="https://pngimg.com/d/spider_web_PNG4.png"
+             class="absolute opacity-30 -top-4 -right-4 w-28 pointer-events-none rotate-12">
+
+        <div class="flex items-center gap-3 p-4 border-b-4 border-black bg-red-900 comic-border">
+          <img class="h-12 w-12 rounded-full border-4 border-black comic-border"
+               src="https://turbologo.com/articles/wp-content/uploads/2019/10/spiderman.jpg">
+          <h2 class="text-xl font-spidey tracking-wider text-yellow-300">
+            🕷️ Quadrinhos Aranha
+          </h2>
+        </div>
+
+        <div class="comic-border bg-white aspect-[897/1346]">
+          <img class="w-full h-full object-cover"
+               src="https://d14d9vp3wdof84.cloudfront.net/image/589816272436/image_q3ppicpg1p2pvbkafkk9vqmo7v/-S897-FWEBP">
+        </div>
+
+        <div class="p-4">
+          <p class="comic-bubble bg-yellow-200 text-black">
+            O Amigão da Vizinhança em ação! Ação, Drama e Aventura espetacular do Homem-Aranha.
+          </p>
+          <span class="text-xs text-black font-bold block text-right mt-3">há 10 minutos</span>
+        </div>
+      </div>
+
+      <!-- POST 2 -->
+      <div class="post-card relative bg-red-700 comic-border rounded-xl shadow-2xl overflow-hidden w-80 transform hover:scale-105 transition duration-300">
+
+        <img src="https://pngimg.com/d/spider_web_PNG4.png"
+             class="absolute opacity-30 -top-4 -right-4 w-28 pointer-events-none rotate-12">
+
+        <div class="flex items-center gap-3 p-4 border-b-4 border-black bg-red-900 comic-border">
+          <img class="h-12 w-12 rounded-full border-4 border-black comic-border"
+               src="https://turbologo.com/articles/wp-content/uploads/2019/10/spiderman.jpg">
+          <h2 class="text-xl font-spidey tracking-wider text-yellow-300">
+            🕷️ Quadrinhos Aranha
+          </h2>
+        </div>
+
+        <div class="comic-border bg-white aspect-[897/1346]">
+          <img class="w-full h-full object-cover"
+               src="https://quadrinheiros.com/wp-content/uploads/2017/11/homem-aranha-wolverine-wendigo.jpg">
+        </div>
+
+        <div class="p-4">
+          <p class="comic-bubble bg-yellow-200 text-black">
+            Grandes poderes, grandes responsabilidades. Quadrinho icônico com participação do Wolverine.
+          </p>
+          <span class="text-xs text-black font-bold block text-right mt-3">há 1 dia</span>
+        </div>
+      </div>
+
+      <!-- POST 3 -->
+      <div class="post-card relative bg-red-700 comic-border rounded-xl shadow-2xl overflow-hidden w-80 transform hover:scale-105 transition duration-300">
+
+        <img src="https://pngimg.com/d/spider_web_PNG4.png"
+             class="absolute opacity-30 -top-4 -right-4 w-28 pointer-events-none rotate-12">
+
+        <div class="flex items-center gap-3 p-4 border-b-4 border-black bg-red-900 comic-border">
+          <img class="h-12 w-12 rounded-full border-4 border-black comic-border"
+               src="https://turbologo.com/articles/wp-content/uploads/2019/10/spiderman.jpg">
+          <h2 class="text-xl font-spidey tracking-wider text-yellow-300">
+            🕷️ Quadrinhos Aranha
+          </h2>
+        </div>
+
+        <div class="comic-border bg-white aspect-[897/1346]">
+          <img class="w-full h-full object-cover"
+               src="https://lh6.googleusercontent.com/proxy/9b5GwFrr-NWADTqO6fA2jUXSAhwCOvPH1Gd-plLsKmrVk1og_pZfWfr9mfTH747ZBoKUkTITT1qM0PRH-BpogLL9_dyKaZdzgkRE-QQTM61ovDlbfEzwHP5sec9RjDzmp7lbToFCg5XzkncVuLc">
+        </div>
+
+        <div class="p-4">
+          <p class="comic-bubble bg-yellow-200 text-black">
+            O multiverso Aranha nunca dorme! Descubra o Spider-Verse.
+          </p>
+          <span class="text-xs text-black font-bold block text-right mt-3">há 2 dias</span>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+<script>
+  const title = document.querySelector(".font-spidey");
+  let angle = 0;
+  setInterval(() => {
+    angle += 0.02;
+    title.style.transform = "rotate(" + Math.sin(angle) * 2 + "deg)";
+  }, 20);
+
+  document.querySelectorAll("img").forEach(img => {
+    img.addEventListener("mouseover", () => {
+      img.style.transform = "scale(1.05)";
+      img.style.transition = "0.2s";
+    });
+    img.addEventListener("mouseout", () => {
+      img.style.transform = "scale(1)";
+    });
+  });
+
+  const words = ["POW!", "BAM!", "THWIP!", "WHAM!", "SMASH!"];
+  document.querySelectorAll(".post-card").forEach(post => {
+    post.addEventListener("click", e => {
+      const boom = document.createElement("div");
+      boom.innerText = words[Math.floor(Math.random() * words.length)];
+      boom.style.position = "absolute";
+      boom.style.left = e.pageX - 40 + "px";
+      boom.style.top = e.pageY - 40 + "px";
+      boom.style.fontSize = `${1.5 + Math.random()}rem`;
+      boom.style.fontWeight = "bold";
+      boom.style.color = ["yellow","orange","red"][Math.floor(Math.random()*3)];
+      boom.style.textShadow = "2px 2px black";
+      boom.style.pointerEvents = "none";
+      boom.style.animation = "pop 0.6s ease-out forwards";
+      document.body.appendChild(boom);
+      setTimeout(() => boom.remove(), 600);
+    });
+  });
+
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
+
+</body>
+</html>
