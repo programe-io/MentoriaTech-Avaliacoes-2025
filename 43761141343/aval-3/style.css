@@ -1,0 +1,160 @@
+/* ======= CONFIGURAÇÃO GLOBAL ======= */
+.description p {
+    margin-top: 8px;
+    font-size: 15.8px;
+    color: #ddd;
+    line-height: 1.6;
+}
+.highlight {
+    color: #5e9cff;       /* cor de destaque */
+    font-weight: bold;    /* deixa em negrito */
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 35px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
+}
+main h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    color: #5e9cff;
+    margin-bottom: 25px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: #121212; /* fundo escuro */
+    color: #e0e0e0;       /* texto claro */
+    min-height: 100vh;
+    padding: 80px 25px 25px; /* espaço para header fixo */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+/* ======= BARRA SUPERIOR ======= */
+header {
+  position: fixed; /* fica no topo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Logo à esquerda, menu à direita */
+  align-items: center;
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 15px 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  z-index: 1000;
+}
+
+header .logo {
+  font-weight: bold;
+  font-size: 22px;
+  color: #5e9cff;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+header nav ul li:hover {
+  color: #5e9cff;
+}
+
+/* ======= CARD ======= */
+.card {
+    width: 330px;
+    background: #1e1e1e; /* fundo escuro */
+    border-radius: 22px;
+    padding: 25px 26px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 22px 65px rgba(0, 0, 0, 0.8);
+}
+
+/* ======= PERFIL ======= */
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+}
+
+.profile img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #5e9cff;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
+}
+
+.name {
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.time {
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 4px;
+}
+
+/* ======= DESCRIÇÃO ======= */
+.description {
+    font-size: 15.8px;
+    color: #ddd;
+    line-height: 1.6;
+    padding-left: 2px;
+    position: relative;
+    z-index: 2;
+}
+
+.description img {
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* ======= DETALHE DECORATIVO INFERIOR ======= */
+.card::after {
+    content: "";
+    display: block;
+    width: 55%;
+    height: 4px;
+    background: linear-gradient(90deg, #5e9cff, #9aa5ff);
+    border-radius: 10px;
+    margin-top: 22px;
+    opacity: 0.7;
+    position: relative;
+    z-index: 2;
+}
