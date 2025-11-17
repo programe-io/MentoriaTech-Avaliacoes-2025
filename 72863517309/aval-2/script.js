@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beleza Pura</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fff5f8;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #ff8fb1;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        header h1 {
+            margin: 0;
+            color: white;
+        }
+
+        nav a {
+            margin-left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            display: flex;
+        }
+
+        /* ASIDE */
+        aside {
+            flex: 1;
+            background-color: #ffe0ea;
+            padding: 20px;
+            min-width: 220px;
+        }
+
+        aside h3 {
+            text-align: center;
+        }
+
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        aside li {
+            background: #ff8fb1;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Conteúdo principal */
+        .conteudo {
+            flex: 3;
+        }
+
+        section {
+            padding: 40px 20px;
+        }
+
+        /* HERO */
+        #inicio {
+            text-align: center;
+            background-color: #ffe0ea;
+            padding-bottom: 60px;
+        }
+
+        #inicio img {
+            width: 70%;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        #inicio h2 {
+            font-size: 2.4rem;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #ff8fb1;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* CARDS */
+        .cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 260px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* ARTICLE */
+        article {
+            background: white;
+            padding: 25px;
+            max-width: 800px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        /* FORM */
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ff8fb1;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #ff8fb1;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #ff8fb1;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 900px) {
+            main {
+                flex-direction: column;
+            }
+
+            #inicio img {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Beleza Pura</h1>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ASIDE OBRIGATÓRIO -->
+        <aside>
+            <h3>Promoções</h3>
+            <ul>
+                <li>✨ Limpeza de Pele</li>
+                <li>✨ Spa Relaxante</li>
+                <li>✨ Maquiagem Festiva</li>
+                <li>✨ Massagem Premium</li>
+            </ul>
+        </aside>
+
+        <div class="conteudo">
+
+            <!-- INÍCIO -->
+            <section id="inicio">
+                <!-- IMG OBRIGATÓRIA -->
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" alt="Cuidados de beleza">
+
+                <h2>Realce sua beleza natural</h2>
+                <p>Cuidado, estética e bem-estar para você se sentir ainda melhor.</p>
+                <a href="#sobre" class="btn">Saiba Mais</a>
+            </section>
+
+            <!-- SERVIÇOS -->
+            <section id="servicos">
+                <h2 style="text-align:center;">Nossos Serviços</h2>
+
+                <div class="cards">
+
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1590156302370-43d8f2b8f2f4" alt="Tratamento facial">
+                        <h3>Cuidados Faciais</h3>
+                        <p>Tratamentos que revitalizam e renovam sua pele.</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1526045431048-e56f0643f7e3" alt="Maquiagem profissional">
+                        <h3>Maquiagem</h3>
+                        <p>Make profissional para todas as ocasiões.</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1612157777902-4f1dfca03f77" alt="Massagem relaxante">
+                        <h3>Massagens</h3>
+                        <p>Relaxamento total e bem-estar garantido.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SOBRE com ARTICLE -->
+            <section id="sobre">
+                <h2 style="text-align:center;">Sobre Nós</h2>
+
+                <article>
+                    <h3>Nossa História</h3>
+
+                    <img src="https://images.unsplash.com/photo-1522337660859-ea87c42343fd" 
+                         alt="Estúdio de beleza" 
+                         style="width:100%; border-radius:10px; margin-bottom:15px;">
+
+                    <p>
+                        A Beleza Pura foi criada com o objetivo de oferecer o melhor em estética e bem-estar. 
+                        Com profissionais experientes, garantimos serviços de qualidade e atendimento acolhedor.
+                    </p>
+
+                    <p>
+                        Trabalhamos sempre com equipamentos modernos e técnicas seguras para promover 
+                        autoestima, cuidado e transformação.
+                    </p>
+                </article>
+            </section>
+
+            <!-- CONTATO -->
+            <section id="contato">
+                <h2 style="text-align:center;">Fale Conosco</h2>
+
+                <article>
+                    <h3>Entre em Contato</h3>
+
+                    <form>
+                        <label>Nome:</label>
+                        <input type="text" required>
+
+                        <label>Email:</label>
+                        <input type="email" required>
+
+                        <label>Mensagem:</label>
+                        <textarea rows="5" required></textarea>
+
+                        <button type="submit">Enviar</button>
+                    </form>
+                </article>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Beleza Pura - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
