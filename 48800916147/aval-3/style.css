@@ -1,0 +1,118 @@
+/* === BODY === */
+body {
+  height: 100vh;
+  background: linear-gradient(to bottom, #1e3a8a, #0f172a); /* from-blue-900 to-blue-950 */
+  color: white;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* === HEADER === */
+header {
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  flex: 1;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  header .logo {
+    text-align: left;
+  }
+}
+
+header nav {
+  font-weight: bold;
+  gap: 12px;
+  display: none;
+}
+
+header nav a {
+  text-decoration: none;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  header nav {
+    display: flex;
+  }
+}
+
+/* === MAIN WRAPPER === */
+main {
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* === POST CARD === */
+.post {
+  background: #1f2937; /* gray-800 */
+  padding: 16px 0;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* HEADER DO CARD */
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 0 16px 16px 16px;
+  gap: 12px;
+}
+
+.post-header img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #3b82f6; /* blue-500 */
+}
+
+.post-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* IMAGEM DO CARD */
+.post img.main-image {
+  width: 100%;
+  display: block;
+}
+
+/* CONTEÚDO DO POST */
+.post-content {
+  padding: 16px;
+}
+
+.post-content p {
+  font-size: 0.875rem;
+  text-align: justify;
+}
+
+.post-content span {
+  display: block;
+  margin-top: 16px;
+  text-align: right;
+  color: #d1d5db; /* gray-300 */
+  font-size: 0.75rem;
+}
