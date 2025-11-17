@@ -1,0 +1,95 @@
+/* ============================
+   ESTILO COMPLEMENTAR — TAILWIND + CSS
+   ============================ */
+
+:root{
+  --pink-400:#fb7185;
+  --pink-300:#fda4af;
+  --bg:#0f1724;
+}
+
+/* Fundo geral da página */
+html, body {
+  background: var(--bg);
+  color: #e6edf3;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header com blur */
+.nav-blur {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: #0b1220;
+}
+
+/* Hover de cards */
+.card-hover {
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(15,23,42,0.6);
+}
+
+/* Texto sutil */
+.muted {
+  color: #9ca3af;
+}
+
+/* Botão principal */
+.btn-main {
+  background: linear-gradient(90deg, var(--pink-400), #fda4af);
+  color: #071124;
+  transition: 0.2s ease-in-out;
+}
+.btn-main:hover {
+  filter: brightness(.95);
+  transform: translateY(-2px);
+}
+
+/* Animação geral */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeInUp .5s ease both;
+}
+
+/* Garantir que imagens base64 maiores mantenham cobertura */
+.cover-img {
+  object-fit: cover;
+}
+
+/* Links do footer */
+.footer-link {
+  transition: 0.15s ease;
+}
+
+/* Ajuste da navegação interna */
+.nav-link {
+  transition: 0.15s ease;
+}
+.nav-link:hover {
+  color: var(--pink-300);
+}
