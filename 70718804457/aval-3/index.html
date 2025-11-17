@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorveteria Delícia</title>
+    <style>
+        :root{
+            --pink:#ff80b3;
+            --accent:#ff4d88;
+            --bg:#fff7f7;
+            --card:#ffffff;
+            --muted:#6b6b6b;
+        }
+
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family: "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+            background:var(--bg);
+            color:#222;
+            -webkit-font-smoothing:antialiased;
+        }
+
+        /* HEADER (semântica) */
+        header{
+            background: linear-gradient(180deg, rgba(255,128,179,0.98), rgba(255,153,185,0.9));
+            padding: 12px 20px 30px;
+            color:#fff;
+            position:sticky;
+            top:0;
+            z-index:50;
+            box-shadow:0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        .header-inner{
+            max-width:1100px;
+            margin:0 auto;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .brand{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+        .brand .logo{
+            width:48px;
+            height:48px;
+            border-radius:12px;
+            background: radial-gradient(circle at 30% 30%, #fff7, #ffffff20);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-weight:700;
+            font-size:20px;
+            color:#ff2b88;
+            box-shadow:0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        .brand h1{
+            margin:0;
+            font-size:20px;
+            letter-spacing:0.2px;
+            color:white;
+        }
+
+        /* span destaque */
+        .brand h1 .brand-accent{
+            color: #fff9;
+            display:inline-block;
+            font-weight:800;
+        }
+
+        nav{
+            display:flex;
+            gap:18px;
+            align-items:center;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-weight:600;
+        }
+
+        nav a:hover{ text-decoration:underline; }
+
+        /* Hero/banner dentro do header */
+        .hero{
+            margin-top:16px;
+            display:flex;
+            align-items:center;
+            gap:18px;
+            flex-wrap:wrap;
+            width:100%;
+        }
+
+        .hero .hero-text{
+            color:white;
+            min-width:220px;
+            text-align:left;
+        }
+
+        .hero h2{
+            margin:0 0 8px 0;
+            font-size:28px;
+            color: #fff;
+        }
+
+        .hero p{
+            margin:0;
+            color:#ffe6f0;
+        }
+
+        .hero img{
+            width:240px;
+            max-width:40%;
+            border-radius:14px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.12);
+            object-fit:cover;
+        }
+
+        /* MAIN */
+        main{
+            max-width:1100px;
+            margin: 30px auto;
+            padding: 0 18px 60px;
+        }
+
+        h2.section-title{
+            color:var(--accent);
+            margin:6px 0 18px;
+            text-align:center;
+            font-size:24px;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:var(--card);
+            border-radius:12px;
+            padding:12px;
+            box-shadow:0 6px 18px rgba(0,0,0,0.06);
+            text-align:center;
+            transition:transform .22s, box-shadow .22s;
+        }
+
+        .card:hover{
+            transform:translateY(-6px);
+            box-shadow:0 14px 36px rgba(0,0,0,0.12);
+        }
+
+        .card img{
+            width:100%;
+            border-radius:10px;
+            height:150px;
+            object-fit:cover;
+        }
+
+        .card h3{ margin:10px 0 6px; }
+        .card p{ margin:0; color:var(--muted); font-size:14px; }
+
+        /* PROMO com span */
+        .promo{
+            background:linear-gradient(90deg,#fff 0%, #fff0 60%);
+            padding:18px;
+            border-radius:12px;
+            margin-top:18px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:12px;
+        }
+        .promo .percent{
+            font-size:22px;
+            font-weight:800;
+            color:var(--accent);
+        }
+
+        /* FOOTER */
+        footer{
+            background:var(--pink);
+            color:white;
+            padding:20px;
+            text-align:center;
+            margin-top:40px;
+        }
+
+        footer a{ color:inherit; text-decoration:underline; }
+
+        /* Responsividade */
+        @media (max-width:600px){
+            .hero img{ width:160px; max-width:100%; }
+            .header-inner{ padding-bottom:6px; }
+            header{ padding-bottom:18px; }
+            .hero .hero-text{text-align:center}
+        }
+
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <!-- HEADER com NAV e HERO -->
+    <header>
+        <div class="header-inner">
+            <div class="brand" aria-label="Marca Sorveteria Delícia">
+                <div class="logo" aria-hidden="true">SD</div>
+                <div>
+                    <!-- span usada para destacar parte do nome -->
+                    <h1><span class="brand-accent">Sorveteria</span> <span>Delícia</span></h1>
+                    <div style="font-size:12px; color:#ffe6f0; margin-top:3px;">
+                        <span>O melhor sorvete da cidade</span> <span aria-hidden="true">🍦</span>
+                    </div>
+                </div>
+            </div>
+
+            <nav aria-label="Navegação principal">
+                <!-- cada link contém um span para permitir estilos/ícones futuros -->
+                <a href="#"><span>Início</span></a>
+                <a href="#sabores"><span>Sabores</span></a>
+                <a href="#promo"><span>Promoções</span></a>
+                <a href="#contato"><span>Contato</span></a>
+            </nav>
+
+            <!-- Hero dentro do header (opcional) -->
+            <div class="hero" aria-hidden="false">
+                <div class="hero-text">
+                    <h2><span>Gelato artesanal</span> <span>todos os dias</span></h2>
+                    <p><span>Sabores frescos, ingredientes naturais e amor em cada colherada.</span></p>
+                </div>
+                <img src="https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg" alt="Taça de sorvete">
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <h2 class="section-title" id="sabores">Nossos Sabores</h2>
+
+        <div class="cards">
+            <article class="card" role="article">
+                <img src="https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg" alt="Sorvete de morango">
+                <h3><span>Morango</span> <span>Silvestre</span></h3>
+                <p><span>Cremoso, com pedacinhos de morango natural.</span></p>
+            </article>
+
+            <article class="card" role="article">
+                <img src="https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg" alt="Sorvete de chocolate">
+                <h3><span>Chocolate</span> <span>Belga</span></h3>
+                <p><span>Intenso e aveludado, feito com cacau puro.</span></p>
+            </article>
+
+            <article class="card" role="article">
+                <img src="data:image/jpeg;base64,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">
+                <h3><span>Baunilha</span> <span>Clássica</span></h3>
+                <p><span>Leve, perfumada e perfeita para combinações.</span></p>
+            </article>
+
+            <article class="card" role="article">
+                <img src="https://images.pexels.com/photos/3026807/pexels-photo-3026807.jpeg" alt="Sorvete pistache">
+                <h3><span>Pistache</span> <span>Crocante</span></h3>
+                <p><span>Enquanto você saboreia, encontra pedacinhos crocantes.</span></p>
+            </article>
+        </div>
+
+        <section id="promo" style="margin-top:28px; text-align:center;">
+            <h2 class="section-title">Promoção da Semana</h2>
+
+            <!-- aqui usamos span para destacar o percentual -->
+            <div class="promo" role="note" aria-live="polite">
+                <div><span>Leve</span> <strong><span>2 sabores</span></strong> <span>e ganhe</span></div>
+                <div class="percent" aria-hidden="false"><span>10%</span></div>
+                <div><span>na próxima compra. Válido até o fim da semana!</span></div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <!-- span no contato para facilitar seleção/estilo -->
+        © <span>2025</span> <span>Sorveteria Delícia</span> — Endereço fictício •
+        <a href="mailto:contato@sorveteriadelicia.com"><span>contato@sorveteriadelicia.com</span></a>
+    </footer>
+
+</body>
+</html>
