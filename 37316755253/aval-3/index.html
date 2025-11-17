@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>J.N Veículos</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="topo">
+    <span class="marca-topo"></span> <!-- SPAN ADICIONADO AQUI -->
+
+    <div class="header-content">
+        
+        <!-- LOGO -->
+        <div class="header-logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/744/744465.png" alt="carro vermelho">
+            <h2><strong>J.N VEÍCULOS</strong></h2>
+        </div>
+
+        <!-- MENU -->
+        <nav class="menu">
+            <a href="#">Home</a>
+            <a href="#">Estoque</a>
+            <a href="#">Contato</a>
+        </nav>
+    </div>
+</header>
+
+
+<!-- ===== MAIN ADICIONADO AQUI ===== -->
+<main>
+
+<div class="container">
+
+    <!-- CELULAR 1 - COROLLA -->
+    <div class="celular">
+        <div class="tela">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202511/20251111/toyota-corolla-1.8-vvti-hybrid-flex-altis-premium-cvt-wmimagem15284965226.jpg?s=fill&w=552&h=414&q=60" alt="Corolla 2020">
+        </div>
+        <div class="descricao">
+            <p><strong>Corolla 2020 - Altis Hybrid</strong></p>
+            <p>Preço: <strong>R$ 118.900</strong></p>
+            <p>Carro bom, bem conservado</p>
+            <p>Postado há 2 dias</p>
+
+            <button class="btn" onclick="enviarWhatsApp('Toyota Corolla 2020','118.900')">Chamar no WhatsApp</button>
+
+            <button class="btn-ghost" onclick="abrirDetalhes(
+                'Toyota Corolla 2020 Altis Hybrid',
+                'Carro extremamente conservado, híbrido, econômico, revisões em dia e pneus novos.'
+            )">Mais detalhes</button>
+        </div>
+    </div>
+
+
+    <!-- CELULAR 2 - CIVIC -->
+    <div class="celular">
+        <div class="tela">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202511/20251113/honda-civic-1-8-lxs-16v-flex-4p-automatico-wmimagem20531987034.webp?s=fill&w=552&h=414&q=60" alt="Honda Civic 2008">
+        </div>
+        <div class="descricao">
+            <p><strong>Honda Civic LXS 2008</strong></p>
+            <p>Preço: <strong>R$ 38.500</strong></p>
+            <p>Carro bom, bem conservado</p>
+            <p>Postado há 5 horas</p>
+
+            <button class="btn" onclick="enviarWhatsApp('Honda Civic 2008','38.500')">Chamar no WhatsApp</button>
+
+            <button class="btn-ghost" onclick="abrirDetalhes(
+                'Honda Civic LXS 2008',
+                'Veículo muito conservado, interior impecável, automático, motor confiável e econômico.'
+            )">Mais detalhes</button>
+        </div>
+    </div>
+
+
+    <!-- CELULAR 3 - SAVEIRO -->
+    <div class="celular">
+        <div class="tela">
+            <img src="https://cdn.carrosp.com.br/img/23//volkswagen-saveiro-1-7415692-68478141.webp" alt="Saveiro">
+        </div>
+        <div class="descricao">
+            <p><strong>Volkswagen Saveiro</strong></p>
+            <p>Preço: <strong>R$ 64.900</strong></p>
+            <p>Carro bom, bem conservado</p>
+            <p>Postado há 1 dia</p>
+
+            <button class="btn" onclick="enviarWhatsApp('Volkswagen Saveiro','64.900')">Chamar no WhatsApp</button>
+
+            <button class="btn-ghost" onclick="abrirDetalhes(
+                'Volkswagen Saveiro',
+                'Saveiro muito nova, ideal para trabalho, baixa quilometragem e motor impecável.'
+            )">Mais detalhes</button>
+        </div>
+    </div>
+
+</div>
+
+</main>
+<!-- ===== FIM DO MAIN ===== -->
+
+
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+// Animação suave ao carregar cada celular
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".celular");
+    cards.forEach((card, i) => {
+        setTimeout(() => {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+        }, i * 150);
+    });
+});
+
+// Função para abrir WhatsApp
+function enviarWhatsApp(nomeCarro, preco){
+    const numero = "5599999999999"; 
+    const msg = `Olá, tenho interesse no ${nomeCarro} anunciado por R$ ${preco}. Ainda está disponível?`;
+    const link = `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
+    window.open(link, "_blank");
+}
+
+// Pop-up de detalhes
+function abrirDetalhes(carName, descricao){
+    const popup = document.createElement("div");
+    popup.className = "popup-detalhes";
+
+    popup.innerHTML = `
+        <div class="popup-conteudo">
+            <h2>${carName}</h2>
+            <p>${descricao}</p>
+            <button class="btn" onclick="this.parentElement.parentElement.remove()">Fechar</button>
+        </div>
+    `;
+    document.body.appendChild(popup);
+}
+</script>
+
+</body>
+</html>
