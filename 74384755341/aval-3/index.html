@@ -1,80 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Social Feed</title>
-        <link href="./output.css" rel="stylesheet">
-        <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cinderela - Página Especial</title>
+  <link href="./output.css" rel="stylesheet" />
+
+  <style>
+    /* estilo das imagens */
+    img {
+      width: 30%;
+      border-radius: 12px;
+      margin-top: 15px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.4);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    \}
+
+    /* classe para esconder qualquer conteúdo de "código" que por ventura seja inserido */
+    .hide-code {
+      display: none !important;
+    \}
+
+    /* ajustes leves para nav/links (sem depender de output.css) */
+    nav a {
+      color: inherit;
+      text-decoration: none;
+      font-size: 0.95rem;
+      opacity: 0.85;
+      transition: opacity .15s, text-decoration .15s;
+    \}
+    nav a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    \}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
 <link href="style.css" rel="stylesheet"></head>
 
-        <body class="bg-gradient-to-b from-blue-900 to-blue-950 min-h-screen text-white">
+<body class="bg-gradient-to-b from-blue-900 to-blue-950 min-h-screen text-white">
 
-          <!-- HEADER -->
-            <header class="shadow-md p-5 flex items-center">
-                <div class="flex-1 text-center md:text-left uppercase font-bold tracking-wider">
-                      LOGO
-                          </div>
-                              <nav class="font-bold gap-6 hidden md:flex">
-                                    <a href="#" class="hover:text-blue-400">Início</a>
-                                          <a href="#" class="hover:text-blue-400">Amigos</a>
-                                                <a href="#" class="hover:text-blue-400">Perfil</a>
-                                                    </nav>
-                                                      </header>
+  <!-- NAV (com <a> e um <span> oculto que evita exibição de código) -->
+  <nav class="bg-blue-800 bg-opacity-60 p-3 text-center shadow-md border-b border-blue-600">
+    <a href="#" class="text-sm opacity-80 hover:opacity-100 hover:underline">Página Especial da Disney</a>
 
-                                                        <!-- POSTS -->
-                                                          <main class="p-8 flex flex-col md:flex-row justify-center gap-6">
+    <!-- Esse span está oculto; caso alguém tente injetar "código" aqui, ele não será mostrado -->
+    <span class="hide-code" aria-hidden="true"></span>
+  </nav>
 
-                                                              <!-- POST CARD 1 -->
-                                                                  <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-xs">
-                                                                        <!-- CARD HEADER -->
-                                                                              <div class="flex items-center gap-3 p-4">
-                                                                                      <img class="h-12 w-12 rounded-full border-2 border-blue-500" src="images/profile_01.jpg" alt="">
-                                                                                              <h2 class="text-lg font-semibold">FroJho</h2>
-                                                                                                    </div>
-                                                                                                          <!-- CARD IMAGE -->
-                                                                                                                <img class="w-full h-48 object-cover" src="images/post_01.png" alt="">
-                                                                                                                      <!-- CARD CONTENT -->
-                                                                                                                            <div class="p-4">
-                                                                                                                                    <p class="text-sm text-justify">
-                                                                                                                                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi beatae quae nihil fuga voluptatem, repellat delectus ut tempore debitis est dolorum deserunt.
-                                                                                                                                                      </p>
-                                                                                                                                                              <span class="text-xs text-gray-400 block text-right mt-3">há 10 minutos</span>
-                                                                                                                                                                    </div>
-                                                                                                                                                                        </div>
+  <!-- HEADER -->
+  <header class="shadow-md p-4 text-center bg-blue-800">
+    <h1 class="text-2xl font-bold">Princesa Cinderela</h1>
+    <p class="opacity-80">A magia começa aqui ✨</p>
+  </header>
 
-                                                                                                                                                                            <!-- POST CARD 2 -->
-                                                                                                                                                                                <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-xs">
-                                                                                                                                                                                      <div class="flex items-center gap-3 p-4">
-                                                                                                                                                                                              <img class="h-12 w-12 rounded-full border-2 border-blue-500" src="images/profile_01.jpg" alt="">
-                                                                                                                                                                                                      <h2 class="text-lg font-semibold">FroJho</h2>
-                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                  <img class="w-full h-48 object-cover" src="images/post_02.png" alt="">
-                                                                                                                                                                                                                        <div class="p-4">
-                                                                                                                                                                                                                                <p class="text-sm text-justify">
-                                                                                                                                                                                                                                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi beatae quae nihil fuga voluptatem, repellat delectus ut tempore debitis est dolorum deserunt.
-                                                                                                                                                                                                                                                  </p>
-                                                                                                                                                                                                                                                          <span class="text-xs text-gray-400 block text-right mt-3">há 10 minutos</span>
-                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                    </div>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="p-4 space-y-6 max-w-xl mx-auto">
 
-                                                                                                                                                                                                                                                                        <!-- POST CARD 3 -->
-                                                                                                                                                                                                                                                                            <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-xs">
-                                                                                                                                                                                                                                                                                  <div class="flex items-center gap-3 p-4">
-                                                                                                                                                                                                                                                                                          <img class="h-12 w-12 rounded-full border-2 border-blue-500" src="images/profile_01.jpg" alt="">
-                                                                                                                                                                                                                                                                                                  <h2 class="text-lg font-semibold">FroJho</h2>
-                                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                                              <img class="w-full h-48 object-cover" src="images/post_03.png" alt="">
-                                                                                                                                                                                                                                                                                                                    <div class="p-4">
-                                                                                                                                                                                                                                                                                                                            <p class="text-sm text-justify">
-                                                                                                                                                                                                                                                                                                                                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi beatae quae nihil fuga voluptatem, repellat delectus ut tempore debitis est dolorum deserunt.
-                                                                                                                                                                                                                                                                                                                                              </p>
-                                                                                                                                                                                                                                                                                                                                                      <span class="text-xs text-gray-400 block text-right mt-3">há 10 minutos</span>
-                                                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                                                </div>
+    <!-- CARTÃO SOBRE A HISTÓRIA -->
+    <div class="bg-blue-800 bg-opacity-40 p-4 rounded-xl shadow-md border border-blue-600">
+      <h2 class="text-xl font-semibold mb-2">Quem é Cinderela?</h2>
+      <p>
+        Cinderela é uma das princesas mais famosas da Disney. Ela vive uma vida difícil com sua madrasta e irmãs,
+        até que um encontro mágico muda seu destino. Com a ajuda da Fada Madrinha, ela vai ao baile e conquista o
+        coração do príncipe.
+      </p>
+    </div>
 
-                                                                                                                                                                                                                                                                                                                                                                  </main>
+    <!-- IMAGENS -->
+    <img src="https://s2.glbimg.com/cCxUS8035wvNOjDy77Yv6YhsfIk=/s.glbimg.com/jo/g1/f/original/2015/03/26/cinderelaposter.jpg" alt="Cinderela 1" />
+    <img src="https://recreio.com.br/wp-content/uploads/2024/01/cinderela-2015_capa.jpg" alt="Cinderela 2" />
+    <img src="https://cinemaemcena.com.br/uploads/artigos/635641174410719566.jpg" alt="Cinderela 3" />
 
-                                                                                                                                                                                                                                                                                                                                                                  </body>
-                                                                                                                                                                                                                                                                                                                                                                  </html>
+    <!-- DESCRIÇÃO ADICIONAL -->
+    <div class="bg-blue-800 bg-opacity-40 p-4 rounded-xl shadow-md border border-blue-600">
+      <h2 class="text-xl font-semibold mb-2">Mensagem Mágica</h2>
+      <p>
+        "Mesmo nos momentos mais difíceis, a bondade sempre brilha. E quando você menos espera, algo incrível
+        pode acontecer." — Cinderela
+      </p>
+    </div>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="text-center p-4 mt-6 opacity-70 text-sm">Feito com carinho ✨</footer>
+
+</body>
+</html>$0
