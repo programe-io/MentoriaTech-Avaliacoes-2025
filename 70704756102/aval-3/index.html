@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorveteria Delícia</title>
+    <style>
+        :root{
+            --pink:#ff80b3;
+            --accent:#ff4d88;
+            --bg:#fff7f7;
+            --card:#ffffff;
+            --muted:#6b6b6b;
+        }
+
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family: "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+            background:var(--bg);
+            color:#222;
+            -webkit-font-smoothing:antialiased;
+        }
+
+        /* HEADER (semântica) */
+        header{
+            background: linear-gradient(180deg, rgba(255,128,179,0.98), rgba(255,153,185,0.9));
+            padding: 12px 20px 30px;
+            color:#fff;
+            position:sticky;
+            top:0;
+            z-index:50;
+            box-shadow:0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        .header-inner{
+            max-width:1100px;
+            margin:0 auto;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .brand{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+        .brand .logo{
+            width:48px;
+            height:48px;
+            border-radius:12px;
+            background: radial-gradient(circle at 30% 30%, #fff7, #ffffff20);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-weight:700;
+            font-size:20px;
+            color:#ff2b88;
+            box-shadow:0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        .brand h1{
+            margin:0;
+            font-size:20px;
+            letter-spacing:0.2px;
+            color:white;
+        }
+
+        /* span destaque */
+        .brand h1 .brand-accent{
+            color: #fff9;
+            display:inline-block;
+            font-weight:800;
+        }
+
+        nav{
+            display:flex;
+            gap:18px;
+            align-items:center;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-weight:600;
+        }
+
+        nav a:hover{ text-decoration:underline; }
+
+        /* Hero/banner dentro do header */
+        .hero{
+            margin-top:16px;
+            display:flex;
+            align-items:center;
+            gap:18px;
+            flex-wrap:wrap;
+            width:100%;
+        }
+
+        .hero .hero-text{
+            color:white;
+            min-width:220px;
+            text-align:left;
+        }
+
+        .hero h2{
+            margin:0 0 8px 0;
+            font-size:28px;
+            color: #fff;
+        }
+
+        .hero p{
+            margin:0;
+            color:#ffe6f0;
+        }
+
+        .hero img{
+            width:240px;
+            max-width:40%;
+            border-radius:14px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.12);
+            object-fit:cover;
+        }
+
+        /* MAIN */
+        main{
+            max-width:1100px;
+            margin: 30px auto;
+            padding: 0 18px 60px;
+        }
+
+        h2.section-title{
+            color:var(--accent);
+            margin:6px 0 18px;
+            text-align:center;
+            font-size:24px;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:var(--card);
+            border-radius:12px;
+            padding:12px;
+            box-shadow:0 6px 18px rgba(0,0,0,0.06);
+            text-align:center;
+            transition:transform .22s, box-shadow .22s;
+        }
+
+        .card:hover{
+            transform:translateY(-6px);
+            box-shadow:0 14px 36px rgba(0,0,0,0.12);
+        }
+
+        .card img{
+            width:100%;
+            border-radius:10px;
+            height:150px;
+            object-fit:cover;
+        }
+
+        .card h3{ margin:10px 0 6px; }
+        .card p{ margin:0; color:var(--muted); font-size:14px; }
+
+        /* PROMO com span */
+        .promo{
+            background:linear-gradient(90deg,#fff 0%, #fff0 60%);
+            padding:18px;
+            border-radius:12px;
+            margin-top:18px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:12px;
+        }
+        .promo .percent{
+            font-size:22px;
+            font-weight:800;
+            color:var(--accent);
+        }
+
+        /* FOOTER */
+        footer{
+            background:var(--pink);
+            color:white;
+            padding:20px;
+            text-align:center;
+            margin-top:40px;
+        }
+
+        footer a{ color:inherit; text-decoration:underline; }
+
+        /* Responsividade */
+        @media (max-width:600px){
+            .hero img{ width:160px; max-width:100%; }
+            .header-inner{ padding-bottom:6px; }
+            header{ padding-bottom:18px; }
+            .hero .hero-text{text-align:center}
+        }
+
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <!-- HEADER com NAV e HERO -->
+    <header>
+        <div class="header-inner">
+            <div class="brand" aria-label="Marca Sorveteria Delícia">
+                <div class="logo" aria-hidden="true">SD</div>
+                <div>
+                    <!-- span usada para destacar parte do nome -->
+                    <h1><span class="brand-accent">Sorveteria</span> <span>Delícia</span></h1>
+                    <div style="font-size:12px; color:#ffe6f0; margin-top:3px;">
+                        <span>O melhor sorvete da cidade</span> <span aria-hidden="true">🍦</span>
+                    </div>
+                </div>
+            </div>
+
+            <nav aria-label="Navegação principal">
+                <!-- cada link contém um span para permitir estilos/ícones futuros -->
+                <a href="#"><span>Início</span></a>
+                <a href="#sabores"><span>Sabores</span></a>
+                <a href="#promo"><span>Promoções</span></a>
+                <a href="#contato"><span>Contato</span></a>
+            </nav>
+
+            <!-- Hero dentro do header (opcional) -->
+            <div class="hero" aria-hidden="false">
+                <div class="hero-text">
+                    <h2><span>Gelato artesanal</span> <span>todos os dias</span></h2>
+                    <p><span>Sabores frescos, ingredientes naturais e amor em cada colherada.</span></p>
+                </div>
+                <img src="https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg" alt="Taça de sorvete">
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <h2 class="section-title" id="sabores">Nossos Sabores</h2>
+
+        <div class="cards">
+            <article class="card" role="article">
+                <img src="https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg" alt="Sorvete de morango">
+                <h3><span>Morango</span> <span>Silvestre</span></h3>
+                <p><span>Cremoso, com pedacinhos de morango natural.</span></p>
+            </article>
+
+            <article class="card" role="article">
+                <img src="https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg" alt="Sorvete de chocolate">
+                <h3><span>Chocolate</span> <span>Belga</span></h3>
+                <p><span>Intenso e aveludado, feito com cacau puro.</span></p>
+            </article>
+
+            <article class="card" role="article">
+                <img src="https://images.ctfassets.net/qfxflpv0atz9/1dAoPUZU56LR2T0iEkAEkv/a8b30cf60030a67394c25631afc5365a/sorvete-de-baunilha-destaque.jpg">
+                <h3><span>Baunilha</span> <span>Clássica</span></h3>
+                <p><span>Leve, perfumada e perfeita para combinações.</span></p>
+            </article>
+
+            <article class="card" role="article">
+                <img src="https://images.pexels.com/photos/3026807/pexels-photo-3026807.jpeg" alt="Sorvete pistache">
+                <h3><span>Pistache</span> <span>Crocante</span></h3>
+                <p><span>Enquanto você saboreia, encontra pedacinhos crocantes.</span></p>
+            </article>
+        </div>
+
+        <section id="promo" style="margin-top:28px; text-align:center;">
+            <h2 class="section-title">Promoção da Semana</h2>
+
+            <!-- aqui usamos span para destacar o percentual -->
+            <div class="promo" role="note" aria-live="polite">
+                <div><span>Leve</span> <strong><span>2 sabores</span></strong> <span>e ganhe</span></div>
+                <div class="percent" aria-hidden="false"><span>10%</span></div>
+                <div><span>na próxima compra. Válido até o fim da semana!</span></div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <!-- span no contato para facilitar seleção/estilo -->
+        © <span>2025</span> <span>Sorveteria Delícia</span> — Endereço fictício •
+        <a href="mailto:contato@sorveteriadelicia.com"><span>contato@sorveteriadelicia.com</span></a>
+    </footer>
+
+</body>
+</html>
