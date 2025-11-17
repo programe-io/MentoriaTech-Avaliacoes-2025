@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Damas Interativo</title>
+    <style>
+        /* ======================== */
+        /* CSS             */
+        /* ======================== */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            margin-top: 20px;
+            background-color: #f4f4f9;
+        }
+
+        #tabuleiro {
+            display: grid;
+            grid-template-columns: repeat(8, 60px);
+            grid-template-rows: repeat(8, 60px);
+            border: 5px solid #333;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .casa {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .casa.preta {
+            background-color: #383838; /* Casas jogáveis */
+        }
+
+        .casa.branca {
+            background-color: #f0d9b5; /* Casas não jogáveis */
+        }
+
+        /* Destaque para seleção e movimentos */
+        .casa.selecionada {
+            border: 3px solid #ff0000;
+            box-sizing: border-box; /* Garante que o border não altere o tamanho */
+        }
+
+        .casa.movimento-valido {
+            background-color: #4caf50 !important; /* Destaque de movimento */
+        }
+
+        /* Estilo das Peças */
+        .peca {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+            cursor: grab;
+            transition: transform 0.1s;
+            position: relative; /* Para a dama */
+        }
+
+        .peca.vermelha {
+            background-color: #d32f2f;
+        }
+
+        .peca.preta {
+            background-color: #000;
+        }
+        
+        /* Estilo da Dama */
+        .peca.dama::after {
+            content: '👑'; /* Ícone de coroa ou estrela */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            color: gold;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        #info {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <h1>👑 Jogo de Damas Interativo</h1>
+
+    <div id="info">Vez do Jogador: <span id="jogador-atual">VERMELHO</span></div>
+
+    <div id="tabuleiro">
+        </div>
+
+    <button onclick="reiniciarJogo()" style="margin-top: 20px; padding: 10px 20px; font-size: 1em;">Reiniciar Jogo</button>
+
+    <script>
+        // ========================
+        //        JAVASCRIPT
+        // ========================
+
+        const tabuleiroElement = document.getElementById('tabuleiro');
+        const infoElement = document.getElementById('jogador-atual');
+        
+        let tabuleiro = []; // Representação do tabuleiro (matriz 8x8)
+        let jogadorAtual = 'vermelha'; // 'vermelha' ou 'preta'
+        let casaSelecionada = null; // [linha, coluna] da casa com a peça selecionada
+
+        /**
+         * Inicializa o estado do tabuleiro e desenha no HTML
+         */
+        function inicializarTabuleiro() {
+            tabuleiro = []; // Limpa o estado
+            tabuleiroElement.innerHTML = ''; // Limpa o HTML
+
+            for (let r = 0; r < 8; r++) { // r de row (linha)
+                tabuleiro[r] = [];
+                for (let c = 0; c < 8; c++) { // c de column (coluna)
+                    const casa = document.createElement('div');
+                    casa.classList.add('casa');
+                    casa.dataset.linha = r;
+                    casa.dataset.coluna = c;
+                    casa.id = `c-${r}-${c}`; // ID para fácil acesso
+
+                    const isBlack = (r + c) % 2 !== 0; // Casas pretas são jogáveis
+                    casa.classList.add(isBlack ? 'preta' : 'branca');
+                    
+                    casa.onclick = () => clicarCasa(r, c);
+
+                    let peca = null;
+                    if (isBlack) {
+                        if (r < 3) { // Peças Pretas nas 3 primeiras linhas
+                            peca = { cor: 'preta', dama: false };
+                        } else if (r > 4) { // Peças Vermelhas nas 3 últimas linhas
+                            peca = { cor: 'vermelha', dama: false };
+                        }
+                    }
+                    
+                    tabuleiro[r][c] = peca;
+                    if (peca) {
+                        renderizarPeca(casa, peca);
+                    }
+                    
+                    tabuleiroElement.appendChild(casa);
+                }
+            }
+            infoElement.textContent = 'VERMELHO';
+        }
+
+        /**
+         * Cria e anexa o elemento da peça à casa
+         */
+        function renderizarPeca(casaElement, pecaObj) {
+            const pecaElement = document.createElement('div');
+            pecaElement.classList.add('peca', pecaObj.cor);
+            if (pecaObj.dama) {
+                pecaElement.classList.add('dama');
+            }
+            casaElement.appendChild(pecaElement);
+        }
+
+        /**
+         * Lógica ao clicar em uma casa do tabuleiro
+         */
+        function clicarCasa(r, c) {
+            const casaAtual = document.getElementById(`c-${r}-${c}`);
+            const pecaNaCasa = tabuleiro[r][c];
+
+            // 1. Limpar seleção anterior e movimentos válidos
+            document.querySelectorAll('.selecionada').forEach(e => e.classList.remove('selecionada'));
+            document.querySelectorAll('.movimento-valido').forEach(e => e.classList.remove('movimento-valido'));
+
+            // 2. Se a casa tiver uma peça do jogador atual -> Selecionar a peça
+            if (pecaNaCasa && pecaNaCasa.cor === jogadorAtual) {
+                casaSelecionada = [r, c];
+                casaAtual.classList.add('selecionada');
+                // **Aqui entraria a função para calcular e destacar movimentos válidos**
+                // Ex: mostrarMovimentosValidos(r, c);
+
+            // 3. Se houver uma peça selecionada e a casa clicada for um destino de movimento
+            } else if (casaSelecionada) {
+                const [selR, selC] = casaSelecionada;
+                const casaOrigem = document.getElementById(`c-${selR}-${selC}`);
+
+                // **Aqui entraria a verificação da lógica de movimento**
+                // Por simplicidade, vamos permitir um movimento 'simples' para demonstração da interatividade:
+                if (!pecaNaCasa && casaAtual.classList.contains('preta')) { // Exemplo: se a casa estiver vazia e for preta
+                    
+                    // Lógica de Movimento e Captura MUITO SIMPLIFICADA (A Lógica Real é complexa!)
+                    // Apenas move a peça e troca o turno
+                    
+                    // 1. Mover a peça
+                    tabuleiro[r][c] = tabuleiro[selR][selC];
+                    tabuleiro[selR][selC] = null;
+
+                    // 2. Atualizar o DOM (Visual)
+                    casaAtual.appendChild(casaOrigem.firstChild); // Move o elemento DOM da peça
+                    
+                    // 3. Verificar coroação (A Dama)
+                    if ((jogadorAtual === 'vermelha' && r === 0) || (jogadorAtual === 'preta' && r === 7)) {
+                        tabuleiro[r][c].dama = true;
+                        casaAtual.firstChild.classList.add('dama');
+                    }
+
+                    // 4. Trocar o turno
+                    jogadorAtual = jogadorAtual === 'vermelha' ? 'preta' : 'vermelha';
+                    infoElement.textContent = jogadorAtual.toUpperCase();
+
+                    // 5. Limpar a seleção
+                    casaSelecionada = null;
+                }
+            }
+        }
+        
+        /**
+         * Reinicia o jogo
+         */
+        function reiniciarJogo() {
+            jogadorAtual = 'vermelha';
+            casaSelecionada = null;
+            inicializarTabuleiro();
+        }
+
+        // Inicia o jogo ao carregar a página
+        inicializarTabuleiro();
+    </script>
+
+<script src="script.js"></script></body>
+</html> <aside> <p> <article> <a> <main> <nav> <img> <footer> <div> <header> <h2>
