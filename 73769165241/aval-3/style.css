@@ -1,4 +1,4 @@
-/* 🔹 RESET GLOBAL */
+/* RESET GERAL */
 {
   margin: 0;
   padding: 0;
@@ -6,42 +6,35 @@
   font-family: "Poppins", sans-serif;
 \}
 
-/* 🔹 CORPO */
+/* FUNDO */
 body {
-  background: linear-gradient(to bottom, #0a2a66, #1a2a64);
+  background: linear-gradient(to bottom, #0a2a66, #14407a);
   color: #fff;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 \}
 
-/* 🔹 NAVBAR */
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 50px;
-  background-color: #0d1b52;
+  background-color: rgba(0, 20, 60, 0.9);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
 \}
 
-/* Logo */
 .logo {
   font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #fff;
-  transition: color 0.3s;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #6db8ff;
+  text-transform: uppercase;
 \}
 
-.logo:hover {
-  color: #6ea8ff;
-\}
-
-/* Links da Navbar */
 .navbar ul {
   list-style: none;
   display: flex;
@@ -52,41 +45,42 @@ body {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s, transform 0.2s;
+  transition: 0.3s;
 \}
 
 .navbar a:hover {
-  color: #6ea8ff;
-  transform: scale(1.1);
+  color: #70c2ff;
+  text-shadow: 0 0 8px #70c2ff;
 \}
 
-/* 🔹 CONTAINER DE CARDS */
+/* CONTAINER DE POSTS */
 .container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 25px;
-  padding: 60px 20px;
+  gap: 30px;
+  padding: 40px 20px;
 \}
 
-/* 🔹 CARD */
+/* CARD */
 .card {
-  background-color: #1e2a48;
+  background-color: #1b2e4d;
   border-radius: 12px;
-  width: 320px;
-  padding: 18px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
+  width: 300px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+  transition: 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
 \}
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+  border-color: #70c2ff;
 \}
 
-/* 🔹 INFORMAÇÕES DO USUÁRIO */
+/* ÁREA DO USUÁRIO */
 .user-info {
   display: flex;
   align-items: center;
@@ -98,102 +92,36 @@ body {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 2px solid #6ea8ff;
-  object-fit: cover;
+  border: 2px solid #6db8ff;
 \}
 
-/* 🔹 IMAGEM DO POST */
+/* IMAGEM DO POST */
 .post-img {
   width: 100%;
-  border-radius: 8px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
   margin-bottom: 12px;
-  transition: transform 0.3s ease;
+  transition: 0.3s;
 \}
 
-.card:hover .post-img {
-  transform: scale(1.05);
+.post-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(0, 153, 255, 0.4);
 \}
 
-/* 🔹 TEXTO */
-.card h3 {
-  font-size: 18px;
-  color: #fff;
-  margin-bottom: 8px;
-\}
-
+/* TEXTO DO POST */
 .card p {
-  font-size: 14px;
-  color: #ddd;
-  line-height: 1.5;
+  font-size: 15px;
+  color: #e4e4e4;
   margin-bottom: 10px;
+  line-height: 1.4em;
 \}
 
+/* TEMPO */
 .time {
   font-size: 12px;
-  color: #aaa;
-\}
-
-/* 🔹 BOTÃO DE AÇÃO (opcional) */
-.btn {
-  display: inline-block;
-  background-color: #6ea8ff;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 14px;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s;
-\}
-
-.btn:hover {
-  background-color: #4e8fff;
-  transform: translateY(-2px);
-\}
-
-/* 🔹 RODAPÉ */
-footer {
-  background-color: #0d1b52;
-  text-align: center;
-  padding: 25px;
-  color: #ccc;
-  font-size: 14px;
-  margin-top: auto;
-  border-top: 1px solid #23306a;
-\}
-
-/* 🔹 RESPONSIVIDADE */
-@media screen and (max-width: 900px) {
-  .navbar {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-  \}
-
-  .container {
-    padding: 30px 10px;
-  \}
-
-  .card {
-    width: 90%;
-  \}
-\}
-
-@media screen and (max-width: 500px) {
-  .navbar ul {
-    flex-direction: column;
-    align-items: center;
-  \}
-
-  .navbar a {
-    padding: 8px;
-    font-size: 14px;
-  \}
-
-  .card {
-    width: 100%;
-  \}
-
-  .logo {
-    font-size: 18px;
-  \}
+  color: #a8c0e0;
+  display: block;
+  text-align: right;
 \}$0
