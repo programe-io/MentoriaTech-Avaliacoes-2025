@@ -1,127 +1,142 @@
 /* Reset básico */
-* {
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 \}
 
-/* Estilo do corpo */
+/* Fundo geral */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
-    line-height: 1.6;
+    background: linear-gradient(to bottom, #ffb6d9, #ffe6f2);
+    color: #333;
 \}
 
 /* Cabeçalho */
 header {
-    background-color: orange;
-    padding: 60px 20px;
-    text-align: center;
+    background: linear-gradient(135deg, #ff4d88, #ff99bb);
     color: #fff;
-    font-weight: bold;
-    font-size: 2em;
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 4px solid #ff1a75;
 \}
 
-/* Menu de navegação */
+header h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+\}
+
+header p {
+    font-size: 1.2rem;
+\}
+
+/* Navbar */
 nav {
+    background: #ff99c8;
+    padding: 12px;
     display: flex;
-    flex-direction: row;
-    background-color: #333;
+    justify-content: center;
+    gap: 20px;
+    border-bottom: 3px solid #ff4d88;
 \}
 
 nav a {
-    color: #fff;
-    padding: 15px 20px;
     text-decoration: none;
-    text-align: center;
+    color: #fff;
+    background: #ff4d88;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: 600;
     transition: 0.3s;
 \}
 
 nav a:hover {
-    background-color: #ddd;
-    color: #000;
+    background: #ff1a75;
+    transform: scale(1.07);
 \}
 
-/* Container principal com duas colunas */
+/* Estrutura geral */
 #row {
     display: flex;
-    flex-wrap: wrap;
-    margin: 20px;
-\}
-
-/* Coluna principal */
-main {
-    flex: 70%;
-    background-color: #fff;
     padding: 20px;
-    margin-right: 10px;
+    gap: 20px;
 \}
 
-/* Barra lateral */
+/* Lateral (aside) */
 aside {
-    flex: 30%;
-    background-color: #f5f5f5;
+    width: 30%;
+    background: #ffe6f2;
     padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #ff99c8;
 \}
 
-/* Artigos dentro do main */
+aside h2 {
+    color: #ff1a75;
+    margin-bottom: 10px;
+\}
+
+aside h5 {
+    margin: 10px 0;
+    color: #cc0066;
+\}
+
+aside img {
+    margin-top: 10px;
+    border-radius: 12px;
+    border: 2px solid #ff99c8;
+\}
+
+/* Área principal */
+main {
+    width: 70%;
+\}
+
 article {
-    background-color: #fff;
-    box-shadow: 0px 0px 10px #aaa;
-    border-radius: 10px;
+    background: #ffffff;
     padding: 20px;
-    margin-bottom: 20px;
+    border-radius: 15px;
+    border: 2px solid #ff99c8;
+\}
+
+article h2 {
+    color: #ff1a75;
+\}
+
+article h5 {
+    margin: 10px 0 15px;
+    color: #cc0066;
 \}
 
 article img {
-    width: 100%;
-    margin: 10px 0;
-    border-radius: 5px;
-\}
-
-/* Fake image placeholder */
-.fakeimage {
-    background-color: #aaa;
-    width: 100%;
-    padding: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-    color: #fff;
-    font-size: 1.2em;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #ff99c8;
 \}
 
 /* Rodapé */
 footer {
-    background-color: #444;
-    padding: 40px 20px;
-    color: #f1f1f1;
+    background: #ff4d88;
+    color: #fff;
     text-align: center;
-    font-size: 12px;
+    padding: 15px;
+    margin-top: 20px;
+    border-top: 4px solid #ff1a75;
+    font-weight: 500;
 \}
 
-/* Responsividade */
-@media screen and (max-width: 768px) {
+/* Ajuste para celular */
+@media (max-width: 800px) {
     #row {
         flex-direction: column;
     \}
 
+    aside, main {
+        width: 100%;
+    \}
+
     nav {
-        flex-direction: column;
-    \}
-
-    main, aside {
-        margin: 0;
-    \}
-\}
-
-@media screen and (max-width: 400px) {
-    nav a {
-        padding: 10px;
-        font-size: 14px;
-    \}
-
-    header {
-        font-size: 1.5em;
-        padding: 40px 10px;
+        flex-wrap: wrap;
     \}
 \}$0
