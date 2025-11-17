@@ -1,0 +1,157 @@
+/* 1. RESET BÁSICO (MANTIDO) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Arial', sans-serif;
+}
+
+/* 2. ESTILO GERAL DO CORPO */
+body {
+    background-color: #ffffff; /* Fundo branco para contrastar com o arco-íris */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 3. LAYOUT PRINCIPAL (MANTIDO) */
+main {
+    max-width: 1200px; 
+    margin: 20px auto; 
+    padding: 20px;
+    display: flex; 
+    gap: 30px; 
+}
+
+/* 4. CABEÇALHO: ONDE APLICAMOS O ARCO-ÍRIS */
+header {
+    /* O gradiente arco-íris: Sete cores do espectro */
+    background: linear-gradient(
+        to right,
+        #ff0000, /* Vermelho */
+        #ff7f00, /* Laranja */
+        #ffff00, /* Amarelo */
+        #00ff00, /* Verde */
+        #0000ff, /* Azul */
+        #4b0082, /* Anil */
+        #9400d3  /* Violeta */
+    );
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* EFEITO ANIMADO ARCO-ÍRIS NO H1 */
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    
+    /* Configura o texto para ter a cor do gradiente */
+    background: linear-gradient(
+        45deg,
+        #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3
+    );
+    
+    /* Permite que o fundo do gradiente seja visto através do texto */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Torna o texto transparente */
+    
+    /* Configurações para a animação */
+    background-size: 400% 400%; /* Aumenta o tamanho do background */
+    animation: gradientShift 8s ease infinite; /* Aplica a animação */
+}
+
+/* 5. ANIMAÇÃO ARCO-ÍRIS */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%; /* Posição inicial do gradiente */
+    }
+    50% {
+        background-position: 100% 50%; /* Posição intermediária (desloca para a direita) */
+    }
+    100% {
+        background-position: 0% 50%; /* Volta para o início */
+    }
+}
+
+
+/* 6. CORES DE DESTAQUE PARA O RESTANTE DO SITE */
+nav {
+    background-color: #333; /* Fundo escuro para a navegação */
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: #ffff00; /* Links em Amarelo para destacar */
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #9400d3; /* Roxo no hover */
+}
+
+h2 {
+    color: #ff0000; /* Títulos em Vermelho */
+    border-bottom: 2px solid #9400d3; /* Linha roxa */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #4b0082; /* Títulos menores em Anil */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Seções de Conteúdo */
+article, section, aside {
+    background-color: #f9f9f9; /* Branco suave para o conteúdo */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+aside {
+    flex: 1; 
+    background-color: #fff0f5; /* Rosa claro para o destaque lateral */
+}
+
+li {
+    background-color: #f7f7f7;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-left: 5px solid #ff7f00; /* Borda lateral em Laranja */
+}
+
+/* 7. RODAPÉ */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+/* 8. MEDIA QUERIES (RESPONSIVIDADE - MANTIDO) */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; 
+        gap: 20px;
+    }
+    
+    article, section, aside {
+        flex: auto;
+    }
+
+    nav a {
+        display: block; 
+        margin: 5px auto;
+    }
+}
