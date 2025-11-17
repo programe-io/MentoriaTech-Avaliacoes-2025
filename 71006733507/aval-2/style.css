@@ -1,0 +1,162 @@
+/* CSS peba */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Fundo gradiente */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #667eea;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section, aside { /* Adicionado 'aside' para aplicar o estilo de card */
+    background: #fff;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+section h2, aside h2 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+section p, aside p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.meme-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.meme-container img {
+    max-width: 300px;
+    height: 300px; /* Definido para o SVG */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    /* Imagem do Troll Face embutida via SVG/CSS */
+    background: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 300%22><circle cx=%22150%22 cy=%22150%22 r=%22140%22 fill=%22%23f0f0f0%22 stroke=%22%23000%22 stroke-width=%223%22/><ellipse cx=%22120%22 cy=%22130%22 rx=%2220%22 ry=%2230%22 fill=%22%23000%22/><ellipse cx=%22180%22 cy=%22130%22 rx=%2220%22 ry=%2230%22 fill=%22%23000%22/><path d=%22M 100 180 Q 150 220 200 180%22 stroke=%22%23000%22 stroke-width=%225%22 fill=%22none%22 stroke-linecap=%22round%22/><path d=%22M 80 180 L 220 180%22 stroke=%22%23000%22 stroke-width=%223%22/><path d=%22M 100 170 L 200 170%22 stroke=%22%23000%22 stroke-width=%223%22/></svg>' ) center/contain no-repeat;
+}
+
+.meme-container img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+form {
+    margin-top: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+textarea, input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #667eea;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+input[type="submit"] {
+    background: #667eea;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: #764ba2;
+}
+
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.brainrot-text {
+    color: #764ba2;
+    font-weight: bold;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 0.9em;
+    }
+
+    section, aside {
+        padding: 20px;
+    }
+
+    .meme-container img {
+        max-width: 200px;
+        height: 200px;
+    }
+}
