@@ -1,0 +1,187 @@
+/* ================== RESET E BASE ================== */
+:root {
+  --neon: #00ffff;
+  --neon-glow: 0 0 10px var(--neon), 0 0 20px var(--neon);
+  --bg-dark: rgba(0, 0, 0, 0.45); /*  Fundo mais claro para melhor leitura */
+  --bg-header: rgba(0, 0, 0, 0.45); /*  Clareado */
+  --transition: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #f5faff; /*  Texto mais forte e claro */
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* ================== HEADER ================== */
+header {
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  background: var(--bg-header);
+  border-bottom: 2px solid var(--neon);
+  position: relative;
+  color: #f8faff; /*  Títulos mais fortes */
+}
+
+.foto-perfil {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 3px solid var(--neon);
+  object-fit: cover;
+  box-shadow: 0 0 15px var(--neon);
+}
+
+h1, h2 {
+  color: var(--neon);
+  text-shadow: var(--neon-glow);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.5rem; margin-bottom: 1rem; text-align: center; }
+.tagline { font-size: 1.1rem; color: var(--neon); margin-bottom: 1.2rem; }
+
+/* ================== MENU ================== */
+.menu { display: flex; justify-content: center; list-style: none; gap: 2rem; }
+
+.menu li a {
+  color: var(--neon);
+  text-decoration: none;
+  font-weight: bold;
+  transition: var(--transition);
+}
+.menu li a:hover { transform: scale(1.1); text-shadow: var(--neon-glow); }
+
+/* Menu Mobile */
+.menu-toggle { display: none; flex-direction: column; cursor: pointer; margin: 1rem auto 0; }
+.menu-toggle span {
+  background-color: var(--neon);
+  height: 3px;
+  width: 28px;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+.menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; }
+  #navbar {
+    display: none;
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    background: rgba(10, 20, 25, 0.95);
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+    gap: 2rem;
+  }
+  #navbar.active { display: flex; }
+  .menu { flex-direction: column; gap: 2rem; }
+  .menu li a { font-size: 1.6rem; }
+}
+
+/* ================== CONTEÚDO ================== */
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.section-card {
+  background: var(--bg-dark);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 20px var(--neon);
+  color: #f8faff; /*  Conteúdo mais visível */
+}
+
+.card {
+  background: var(--bg-header);
+  border: 1px solid var(--neon);
+  border-radius: 10px;
+  padding: 1rem;
+  flex: 1 1 250px;
+  min-width: 250px;
+  box-shadow: 0 0 10px var(--neon);
+  transition: var(--transition);
+  color: #f8faff; /*  Texto brilhante */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px var(--neon);
+}
+
+/* ================== FOOTER ================== */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: rgba(0, 0, 0, 0.75);
+  border-top: 2px solid var(--neon);
+  color: #f5faff; /*  Mais forte */
+}
+
+footer a { color: var(--neon); text-decoration: none; }
+footer a:hover { text-shadow: var(--neon-glow); }
+.footer-frase { margin-top: 1rem; font-style: italic; color: var(--neon); }
+
+/* ================== BOTÃO VOLTAR AO TOPO ================== */
+#topButton {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--neon);
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 0 10px var(--neon);
+  transition: var(--transition);
+  z-index: 1000;
+}
+#topButton:hover { background-color: #00cccc; }
+
+/* ================== ANIMAÇÃO ================== */
+.fade-in { opacity: 0; transform: translateY(30px); transition: 1s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ================== BOTÃO PROJETO ================== */
+.btn-projeto {
+  color: WhiteSmoke;
+  background-color: transparent;
+  border: 2px solid WhiteSmoke;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+.btn-projeto:hover {
+  color: Yellow;
+  background-color: rgba(255, 255, 0, 0.2);
+  text-shadow: 0 0 10px Yellow;
+  border-color: Yellow;
+}
