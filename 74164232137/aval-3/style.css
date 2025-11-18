@@ -1,0 +1,121 @@
+<style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            /* Fundo gradiente mais suave */
+            background: linear-gradient(to bottom, #1e3a8a, #1e40af);
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: rgba(0, 0, 0, 0.3); /* Um pouco mais escuro */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra mais destacada */
+        }
+
+        header .logo {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.5em; /* Aumenta o logo */
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+            transition: color 0.3s ease; /* Adiciona transição para o hover */
+        }
+
+        header nav a:hover {
+            color: #93c5fd; /* Cor mais clara no hover */
+            text-decoration: none; /* Remove underline para dar lugar à cor */
+        }
+
+        /* ===== MAIN ===== */
+        main {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px; /* Aumenta o espaçamento */
+        }
+
+        @media (min-width: 768px) {
+            main {
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 40px; /* Aumenta o espaçamento entre cards */
+            }
+        }
+
+        /* ===== POST CARD ===== */
+        .post-card {
+            background: #1f2937;
+            padding: 0; /* Remove padding vertical aqui */
+            border-radius: 12px; /* Cantos mais arredondados */
+            max-width: 380px; /* Aumenta a largura máxima */
+            width: 100%;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+            /* Efeito de HOVER */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .post-card:hover {
+            transform: scale(1.02); /* Leve aumento no hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .post-card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 20px 15px 20px; /* Ajusta o padding */
+        }
+
+        .post-card-header img {
+            width: 50px; /* Aumenta um pouco */
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid #3b82f6; /* Borda mais espessa */
+            object-fit: cover; /* Garante que a imagem preencha o círculo */
+        }
+
+        .post-img {
+            width: 100%;
+            height: auto; /* Mantém a proporção */
+            display: block;
+            border-top: 1px solid #334155;
+            border-bottom: 1px solid #334155;
+        }
+
+        .post-content {
+            padding: 15px 20px 20px 20px; /* Ajusta o padding */
+            font-size: 15px;
+            text-align: left; /* Alinhamento mais comum em feeds */
+        }
+
+        .post-content p {
+            line-height: 1.5; /* Melhora a leitura do texto */
+        }
+
+        .post-time {
+            font-size: 11px; /* Um pouco menor */
+            color: #9ca3af; /* Cor mais sutil */
+            margin-top: 15px;
+            text-align: right;
+            display: block;
+        }
+    </style>
