@@ -1,335 +1,257 @@
-/* ======= RESET ======= */
+/* Variáveis de Cores */
+:root {
+  --primary-color: #00b5e2; /* Azul Claro */
+  --accent-color: #ff8c00;  /* Laranja */
+  --background-color: #121212; /* Fundo escuro */
+  --text-color: #fff; /* Texto branco */
+  --gray-color: #f1f1f1; /* Cinza claro para textos secundários */
+  --link-hover-color: #ff007f; /* Cor para o hover nos links */
+}
+
+/* Resetando margens e paddings */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+/* BODY E GERAL */
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #0a0a0a;
-  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
   line-height: 1.6;
+  font-size: 1.1rem;
 }
 
-/* ======= CORES ======= */
-:root {
-  --vermelho: #d40000;
-  --preto: #0a0a0a;
-  --cinza: #222;
-  --branco: #fff;
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
 }
 
-/* ======= CABEÇALHO ======= */
+a:hover {
+  color: var(--link-hover-color);
+}
+
+/* HEADER */
 header {
-  background-color: var(--preto);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  border-bottom: 3px solid var(--vermelho);
+  background: var(--primary-color);
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-nav {
+header .container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 1.2rem 5%;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.logo {
-  font-family: 'Russo One', sans-serif;
-  font-size: 1.8rem;
-  color: var(--branco);
-  text-decoration: none;
-  letter-spacing: 1px;
+header .logo {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
-.logo span {
-  color: var(--vermelho);
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-}
-
-.nav-links a {
-  color: var(--branco);
-  text-decoration: none;
+header .nav a {
+  margin: 0 15px;
+  font-size: 1.1rem;
+  color: #fff;
   font-weight: 500;
-  transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  color: var(--vermelho);
+header .nav a:hover {
+  color: var(--accent-color);
 }
 
-/* ======= MENU MOBILE ======= */
-.menu-toggle {
-  display: none;
-  color: var(--branco);
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: var(--preto);
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    border-top: 2px solid var(--vermelho);
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-/* ======= HERO ======= */
+/* HERO */
 .hero {
-  background: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/Torcida_do_Flamengo_Maracan%C3%A3_2019.jpg') center/cover no-repeat;
-  color: var(--branco);
+  position: relative;
+  background-image: url('https://i.imgur.com/4Qumy8Y.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  color: #fff;
   text-align: center;
-  height: 90vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  position: relative;
+  align-items: center;
+  flex-direction: column;
 }
 
-.hero::before {
-  content: "";
+.hero .overlay {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
-.hero-content {
+.hero .hero-content {
   position: relative;
-  z-index: 1;
-  padding: 0 10%;
+  z-index: 2;
 }
 
 .hero h1 {
-  font-family: 'Russo One', sans-serif;
   font-size: 3rem;
-  color: var(--vermelho);
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 1.5rem auto;
-}
-
-.hero-btns {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.hero-btn {
-  background: var(--vermelho);
-  color: var(--branco);
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s;
-}
-
-.hero-btn.secondary {
-  background: transparent;
-  border: 2px solid var(--vermelho);
-}
-
-.hero-btn:hover {
-  background: var(--branco);
-  color: var(--preto);
-}
-
-.scroll-indicator {
-  position: absolute;
-  bottom: 15px;
-  width: 100%;
-  text-align: center;
-  color: var(--branco);
-  font-size: 1.5rem;
-}
-
-/* ======= SEÇÕES ======= */
-.section-title {
-  font-family: 'Russo One', sans-serif;
-  color: var(--vermelho);
-  text-align: center;
-  font-size: 2rem;
-  margin-top: 3rem;
-  margin-bottom: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
   text-transform: uppercase;
 }
 
-/* ======= ARTIGOS ======= */
-.articles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 0 5%;
-}
-
-.article-img img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.article-img img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 15px rgba(212, 0, 0, 0.4);
-}
-
-.article-content {
-  padding: 1rem 0;
-}
-
-.article-meta {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
-  color: #ccc;
-  margin-bottom: 0.5rem;
-}
-
-.article-title a {
-  color: var(--branco);
-  text-decoration: none;
+.hero p {
   font-size: 1.2rem;
-  font-weight: 600;
-  transition: color 0.3s;
+  margin-bottom: 20px;
 }
 
-.article-title a:hover {
-  color: var(--vermelho);
+.hero .btn {
+  padding: 12px 30px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-.article-excerpt {
-  color: #ddd;
-  margin-top: 0.5rem;
+.hero .btn:hover {
+  background-color: var(--accent-color);
 }
 
-/* ======= GALERIA DE GLÓRIAS ======= */
-.dreamhouse {
-  padding: 3rem 5%;
-  background-color: #111;
+/* POST SECTION */
+.posts {
+  padding: 40px 0;
 }
 
-.dreamhouse-text {
+.posts .section-title h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
   text-align: center;
-  margin-bottom: 2rem;
-  color: #ccc;
+  margin-bottom: 40px;
 }
 
-.dreamhouse-gallery {
+.posts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.dreamhouse-gallery img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+.post {
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.dreamhouse-gallery img:hover {
-  transform: scale(1.03);
+.post .post-img {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
 }
 
-/* ======= SIDEBAR / AUTOR ======= */
-aside {
-  background-color: var(--cinza);
-  padding: 3rem 5%;
-  text-align: center;
+.post .post-content {
+  padding: 20px;
 }
 
-.author-img img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  border: 3px solid var(--vermelho);
+.post .post-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: var(--primary-color);
 }
 
-.author-name {
-  font-family: 'Russo One', sans-serif;
-  color: var(--vermelho);
-  margin-bottom: 0.5rem;
+.post .post-excerpt {
+  font-size: 1rem;
+  color: var(--gray-color);
 }
 
-.author-bio {
-  font-size: 0.95rem;
-  color: #eee;
-  margin-bottom: 1rem;
+/* ASIDE - Barra Lateral */
+.aside {
+  background-color: #1c1c1c;
+  padding: 30px;
+  border-radius: 10px;
+  color: #fff;
+  margin-top: 40px;
 }
 
-/* ======= RODAPÉ ======= */
-footer {
-  background-color: #111;
-  padding: 2.5rem 5%;
-  color: #ccc;
+.aside .about-author {
+  margin-bottom: 20px;
 }
 
-.footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
+.aside .about-author h3 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
 }
 
-.footer-column h3 {
-  color: var(--vermelho);
-  margin-bottom: 1rem;
-  font-family: 'Russo One', sans-serif;
+.aside .about-author p {
+  font-size: 1.1rem;
+  color: var(--gray-color);
+  line-height: 1.6;
 }
 
-.footer-links {
+.aside .related-links h3 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.aside .related-links ul {
   list-style: none;
+  padding: 0;
 }
 
-.footer-links a {
-  color: #ccc;
-  text-decoration: none;
-  transition: color 0.3s;
+.aside .related-links ul li {
+  margin: 10px 0;
 }
 
-.footer-links a:hover {
-  color: var(--vermelho);
+.aside .related-links ul li a {
+  font-size: 1.1rem;
+  color: #fff;
+  transition: color 0.3s ease;
 }
 
-.copyright {
+.aside .related-links ul li a:hover {
+  color: var(--accent-color);
+}
+
+/* FOOTER */
+footer {
+  background-color: #121212;
+  padding: 40px 20px;
   text-align: center;
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
-  border-top: 1px solid #333;
-  padding-top: 1rem;
+  color: #fff;
+  margin-top: 40px;
+}
+
+footer .footer-content h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+footer .footer-content p {
+  font-size: 1.1rem;
+  color: var(--gray-color);
+}
+
+footer .footer-content a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+footer .footer-content a:hover {
+  color: var(--accent-color);
 }
