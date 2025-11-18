@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futsal - Site Completo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Futsal</h1>
+        <p>O esporte de quadra mais rápido e técnico do Brasil</p>
+        <img src="https://cdn.pixabay.com/photo/2016/11/18/15/23/indoor-soccer-1836840_1280.jpg" alt="Quadra de futsal" class="header-img">
+    </header>
+
+    <!-- NAV -->
+    <nav>
+        <ul>
+            <li><a href="#historia">História</a></li>
+            <li><a href="#regras">Regras</a></li>
+            <li><a href="#posicoes">Posições</a></li>
+            <li><a href="#curiosidades">Curiosidades</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- HISTÓRIA -->
+        <section id="historia">
+            <h2>História do Futsal</h2>
+            <article>
+                <h3>Origem do Futsal</h3>
+                <img src="https://cdn.pixabay.com/photo/2017/07/01/10/55/soccer-2468024_1280.jpg" alt="Jogadores de futsal" class="section-img">
+                <p>O futsal nasceu no Uruguai na década de 1930, com o objetivo de adaptar o futebol para quadras menores. Rapidamente, se espalhou pelo mundo e tornou-se popular no Brasil.</p>
+            </article>
+            <aside>
+                <h3>Curiosidade</h3>
+                <p>O Brasil é referência mundial em futsal, conquistando diversos títulos internacionais.</p>
+            </aside>
+        </section>
+
+        <!-- REGRAS -->
+        <section id="regras">
+            <h2>Regras do Futsal</h2>
+            <article>
+                <h3>Principais Regras</h3>
+                <img src="https://cdn.pixabay.com/photo/2018/08/10/09/53/football-3596035_1280.jpg" alt="Bola de futsal" class="section-img">
+                <ul>
+                    <li>5 jogadores por equipe</li>
+                    <li>Dois tempos de 20 minutos</li>
+                    <li>Substituições ilimitadas</li>
+                    <li>Bola menor e mais pesada que a do futebol de campo</li>
+                    <li>Quadra menor que a de futebol tradicional</li>
+                </ul>
+            </article>
+            <aside>
+                <h3>Dica Importante</h3>
+                <p>O goleiro pode tocar a bola com as mãos dentro da área, mas apenas por 4 segundos.</p>
+            </aside>
+        </section>
+
+        <!-- POSIÇÕES -->
+        <section id="posicoes">
+            <h2>Posições no Futsal</h2>
+            <article>
+                <h3>Funções de cada posição</h3>
+                <img src="https://cdn.pixabay.com/photo/2016/03/27/21/48/football-1284201_1280.jpg" alt="Posições de futsal" class="section-img">
+                <ul>
+                    <li>Goleiro</li>
+                    <li>Fixo (defensor central)</li>
+                    <li>Ala (lateral)</li>
+                    <li>Pivô (atacante)</li>
+                </ul>
+            </article>
+            <aside>
+                <h3>Importância</h3>
+                <p>Cada posição tem funções específicas e exige habilidades técnicas diferentes.</p>
+            </aside>
+
+            <div class="grid">
+                <div class="box">Goleiro</div>
+                <div class="box">Fixo</div>
+                <div class="box">Ala</div>
+                <div class="box">Pivô</div>
+            </div>
+        </section>
+
+        <!-- CURIOSIDADES -->
+        <section id="curiosidades">
+            <h2>Curiosidades sobre o Futsal</h2>
+            <article>
+                <h3>Fatos Interessantes</h3>
+                <img src="https://cdn.pixabay.com/photo/2017/09/04/12/25/futsal-2715854_1280.jpg" alt="Jogo de futsal" class="section-img">
+                <ul>
+                    <li>Ronaldinho Gaúcho começou sua carreira jogando futsal.</li>
+                    <li>Neymar também iniciou sua infância no futsal.</li>
+                    <li>O futsal desenvolve reflexos rápidos e excelente controle de bola.</li>
+                    <li>É um dos esportes mais praticados em escolas brasileiras.</li>
+                </ul>
+            </article>
+            <aside>
+                <h3>Extra</h3>
+                <p>Muitos clubes profissionais usam o futsal como base para treinar jovens talentos.</p>
+            </aside>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Site desenvolvido para avaliação de HTML e CSS - 2025</p>
+    </footer>
+
+</body>
+</html>
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ================= VARIÁVEIS DE CORES ================= */
+:root {
+    --vermelho: #c1121f;
+    --laranja: #f3722c;
+    --amarelo: #ffba08;
+    --cinza-escuro: #1d1d1d;
+    --cinza-claro: #f5f5f5;
+    --branco: #ffffff;
+}
+
+/* ================= BODY ================= */
+body {
+    background-color: var(--cinza-claro);
+    color: var(--cinza-escuro);
+    line-height: 1.6;
+}
+
+/* ================= HEADER ================= */
+header {
+    background-color: var(--vermelho);
+    color: var(--branco);
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 8px solid var(--amarelo);
+}
+
+header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+header img.header-img {
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* ================= NAV ================= */
+nav {
+    background-color: var(--cinza-escuro);
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--amarelo);
+    color: var(--cinza-escuro);
+}
+
+/* ================= MAIN ================= */
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* ================= SECTION ================= */
+section {
+    background-color: var(--branco);
+    padding: 30px;
+    margin-bottom: 50px;
+    border-left: 8px solid var(--vermelho);
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    color: var(--vermelho);
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+section h3 {
+    color: var(--laranja);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* ================= ARTICLE ================= */
+article {
+    margin-bottom: 20px;
+}
+
+article ul {
+    list-style: inside disc;
+    margin-left: 15px;
+}
+
+article img.section-img {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ================= ASIDE ================= */
+aside {
+    background-color: var(--amarelo);
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* ================= GRID DE POSIÇÕES ================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.box {
+    background-color: var(--laranja);
+    color: var(--branco);
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    background-color: var(--vermelho);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background-color: var(--cinza-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+/* ================= RESPONSIVIDADE ================= */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
