@@ -1,0 +1,229 @@
+/* Importação de Fonte e Reset Básico */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --cor-primaria: #007bff; /* Azul vibrante */
+    --cor-secundaria: #333; /* Cinza escuro */
+    --cor-fundo: #f4f4f9; /* Fundo cinza claro */
+    --cor-aside: #e9ecef; /* Fundo da barra lateral */
+    --cor-clara: #fff; /* Branco */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-secundaria);
+    line-height: 1.6;
+}
+
+/* --- Estilos do Cabeçalho e Navegação --- */
+
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-clara);
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav {
+    background-color: var(--cor-secundaria);
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--cor-clara);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--cor-primaria);
+    text-decoration: underline;
+}
+
+/* --- Layout Principal (Container Flexbox) --- */
+
+#container-principal {
+    max-width: 1200px; 
+    margin: 40px auto;
+    padding: 0 20px; /* Adiciona padding nas laterais para telas menores */
+    display: flex; 
+    gap: 30px; 
+}
+
+/* --- Estilos da Barra Lateral (<aside>) --- */
+aside {
+    flex: 1; /* Ocupa cerca de 25% */
+    background-color: var(--cor-aside);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    height: fit-content; 
+}
+
+aside h3, aside h4 {
+    color: #0056b3; 
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+aside ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+aside ul li a {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+}
+
+/* Estilos da Imagem de Perfil */
+.profile-img {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    display: block; 
+    margin: 0 auto 20px auto; 
+    border: 3px solid var(--cor-primaria); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* --- Estilos do Conteúdo Principal (<main>) --- */
+main {
+    flex: 3; /* Ocupa cerca de 75% */
+    padding: 20px;
+    background-color: var(--cor-clara);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    min-width: 0; /* Correção para flexbox */
+}
+
+/* --- Estilos do Artigo e Seções --- */
+article {
+    border: 1px solid #dcdcdc; 
+    padding: 15px;
+    margin-bottom: 20px; 
+    border-radius: 6px;
+    background-color: #fafafa; 
+}
+
+section h2 {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-primaria);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+article section {
+    border-bottom: 1px dashed #e0e0e0; 
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+article section:last-child {
+    border-bottom: none;
+}
+
+/* Estilo das Listas (Habilidades/Contato) */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#habilidades ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+#habilidades ul li::before {
+    content: "✅"; 
+    position: absolute;
+    left: 0;
+}
+
+#contato ul li::before {
+    content: "📧"; 
+    position: absolute;
+    left: 0;
+}
+
+/* Estilo dos Links */
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Rodapé --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+/* ======================================= */
+/* --- MEDIA QUERIES (Responsividade) --- */
+/* ======================================= */
+
+@media (max-width: 768px) {
+    /* Em telas menores que 768px (tablets e celulares), empilha os elementos */
+    #container-principal {
+        flex-direction: column; /* Coloca main e aside um abaixo do outro */
+        margin: 20px auto;
+    }
+    
+    /* Faz com que main e aside ocupem a largura total */
+    main, aside {
+        flex: auto;
+        margin-bottom: 20px;
+    }
+
+    /* Ajusta o padding do header */
+    header {
+        padding: 20px 10px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    /* Centraliza os itens de navegação em telas pequenas */
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
