@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Completo</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eef2f3;
+        }
+
+        header {
+            background: #0057d9;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        header span {
+            color: #ffeb3b;
+        }
+
+        nav {
+            background: #003f9e;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .layout {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        aside {
+            width: 25%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        aside h2 span {
+            color: #d90000;
+        }
+
+        main {
+            width: 75%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        main span {
+            background: #ff0;
+            padding: 3px 6px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background: #003f9e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 18px;
+        }
+
+        @media (max-width: 800px) {
+            .layout {
+                flex-direction: column;
+            }
+
+            aside, main {
+                width: 100%;
+            }
+        }
+    </style>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        Meu Site <span>Completo</span>
+    </header>
+
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Galeria</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+    </nav>
+
+    <div class="layout">
+        <aside>
+            <h2><span>Menu</span> Lateral</h2>
+            <p>Aqui você pode colocar <span>informações extras</span> para o usuário.</p>
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Montanha">
+        </aside>
+
+        <main>
+            <h1>Galeria de Imagens com <span>Destaques</span></h1>
+            <p>Algumas imagens adicionadas ao layout:</p>
+
+            <img src="https://images.unsplash.com/photo-1503264116251-35a269479413" alt="Paisagem 1">
+            <img src="https://images.unsplash.com/photo-1493244040629-496f6d136cc3" alt="Paisagem 2">
+            <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2" alt="Paisagem 3">
+
+            <p>Você pode trocar as imagens quando quiser. O texto destacado com <span>span</span> agora aparece no site.</p>
+        </main>
+    </div>
+
+    <footer>
+        © 2025 - Site Completo com Span.
+    </footer>
+
+<script src="script.js"></script></body>
+</html>
