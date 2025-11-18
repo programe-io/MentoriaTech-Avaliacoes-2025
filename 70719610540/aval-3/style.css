@@ -1,0 +1,230 @@
+/* style.css - Estilos para Hamburgueria (nav + main + imagens) */
+
+/* ===== VARIÁVEIS ===== */
+:root{
+  --bg: #f3f3f3;
+    --surface: #ffffff;
+      --muted: #6d6d6d;
+        --text: #1f1f1f;
+          --accent: #ff7a2d;
+            --accent-2: #ffb066;
+              --shadow: 0 8px 24px rgba(31,31,31,0.08);
+                --radius-lg: 12px;
+                  --radius-md: 10px;
+                    --max-width: 1100px;
+                    }
+
+                    /* ===== RESET BÁSICO ===== */
+                    *{box-sizing:border-box}
+                    html,body{height:100%}
+                    body{
+                      margin:0;
+                        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+                          background: linear-gradient(180deg, var(--bg), #fff);
+                            color:var(--text);
+                              -webkit-font-smoothing:antialiased;
+                                -moz-osx-font-smoothing:grayscale;
+                                  padding:28px;
+                                    display:flex;
+                                      justify-content:center;
+                                      }
+
+                                      /* ===== LAYOUT PRINCIPAL ===== */
+                                      .site{
+                                        width:100%;
+                                          max-width:var(--max-width);
+                                            display:grid;
+                                              grid-template-columns: 1fr; /* HTML original usa nav no topo - manter flexível */
+                                                gap:20px;
+                                                }
+
+                                                /* ===== NAV ===== */
+                                                nav{
+                                                  background: linear-gradient(90deg, #111, #222);
+                                                    color:#fff;
+                                                      padding:14px 20px;
+                                                        border-radius:var(--radius-lg);
+                                                          display:flex;
+                                                            align-items:center;
+                                                              justify-content:space-between;
+                                                                gap:16px;
+                                                                  box-shadow:var(--shadow);
+                                                                  }
+                                                                  nav h1{
+                                                                    font-size:20px;
+                                                                      letter-spacing:0.2px;
+                                                                        margin:0;
+                                                                        }
+                                                                        nav ul{
+                                                                          list-style:none;
+                                                                            display:flex;
+                                                                              gap:18px;
+                                                                                margin:0;
+                                                                                  padding:0;
+                                                                                    align-items:center;
+                                                                                    }
+                                                                                    nav a{
+                                                                                      color:#fff;
+                                                                                        text-decoration:none;
+                                                                                          font-weight:600;
+                                                                                            font-size:15px;
+                                                                                              padding:8px 10px;
+                                                                                                border-radius:8px;
+                                                                                                  transition:all .18s ease;
+                                                                                                  }
+                                                                                                  nav a:hover,
+                                                                                                  nav a:focus{
+                                                                                                    background: rgba(255,255,255,0.06);
+                                                                                                      outline: none;
+                                                                                                        transform: translateY(-2px);
+                                                                                                        }
+
+                                                                                                        /* foco acessível */
+                                                                                                        nav a:focus{
+                                                                                                          box-shadow: 0 0 0 3px rgba(255,122,45,0.14);
+                                                                                                          }
+
+                                                                                                          /* ===== MAIN ===== */
+                                                                                                          main{
+                                                                                                            width:100%;
+                                                                                                              max-width:var(--max-width);
+                                                                                                                margin:0 auto;
+                                                                                                                }
+
+                                                                                                                /* HERO */
+                                                                                                                .hero{
+                                                                                                                  background:var(--surface);
+                                                                                                                    border-radius:var(--radius-lg);
+                                                                                                                      padding:22px;
+                                                                                                                        box-shadow:var(--shadow);
+                                                                                                                          display:flex;
+                                                                                                                            gap:22px;
+                                                                                                                              align-items:center;
+                                                                                                                                flex-wrap:wrap;
+                                                                                                                                  text-align:left;
+                                                                                                                                  }
+                                                                                                                                  .hero .hero-text{
+                                                                                                                                    flex:1 1 420px;
+                                                                                                                                    }
+                                                                                                                                    .hero h2{
+                                                                                                                                      margin:0 0 8px 0;
+                                                                                                                                        font-size:26px;
+                                                                                                                                        }
+                                                                                                                                        .hero p{
+                                                                                                                                          margin:0;
+                                                                                                                                            color:var(--muted);
+                                                                                                                                              font-size:15px;
+                                                                                                                                                line-height:1.5;
+                                                                                                                                                }
+                                                                                                                                                .hero .hero-img{
+                                                                                                                                                  flex:0 0 260px;
+                                                                                                                                                    max-width:260px;
+                                                                                                                                                    }
+                                                                                                                                                    .hero .hero-img img{
+                                                                                                                                                      width:100%;
+                                                                                                                                                        height:160px;
+                                                                                                                                                          object-fit:cover;
+                                                                                                                                                            border-radius:10px;
+                                                                                                                                                              display:block;
+                                                                                                                                                                box-shadow:0 10px 28px rgba(0,0,0,0.08);
+                                                                                                                                                                }
+
+                                                                                                                                                                /* BOTÕES no hero */
+                                                                                                                                                                .hero .actions{
+                                                                                                                                                                  margin-top:14px;
+                                                                                                                                                                    display:flex;
+                                                                                                                                                                      gap:10px;
+                                                                                                                                                                        flex-wrap:wrap;
+                                                                                                                                                                        }
+                                                                                                                                                                        .btn{
+                                                                                                                                                                          display:inline-block;
+                                                                                                                                                                            padding:10px 14px;
+                                                                                                                                                                              border-radius:10px;
+                                                                                                                                                                                text-decoration:none;
+                                                                                                                                                                                  font-weight:700;
+                                                                                                                                                                                    cursor:pointer;
+                                                                                                                                                                                      border:0;
+                                                                                                                                                                                      }
+                                                                                                                                                                                      .btn-primary{
+                                                                                                                                                                                        background:linear-gradient(90deg,var(--accent),var(--accent-2));
+                                                                                                                                                                                          color:white;
+                                                                                                                                                                                            box-shadow: 0 6px 18px rgba(255,122,45,0.14);
+                                                                                                                                                                                            }
+                                                                                                                                                                                            .btn-outline{
+                                                                                                                                                                                              background:transparent;
+                                                                                                                                                                                                color:var(--accent);
+                                                                                                                                                                                                  border:2px solid var(--accent);
+                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                  /* ===== CARDAPIO / CARDS ===== */
+                                                                                                                                                                                                  .card-container{
+                                                                                                                                                                                                    margin-top:22px;
+                                                                                                                                                                                                      display:grid;
+                                                                                                                                                                                                        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                                                                                                                                                                                                          gap:18px;
+                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                          .card{
+                                                                                                                                                                                                            background:var(--surface);
+                                                                                                                                                                                                              padding:14px;
+                                                                                                                                                                                                                border-radius:var(--radius-md);
+                                                                                                                                                                                                                  box-shadow:0 6px 18px rgba(31,31,31,0.06);
+                                                                                                                                                                                                                    border:1px solid rgba(16,16,16,0.03);
+                                                                                                                                                                                                                      display:flex;
+                                                                                                                                                                                                                        flex-direction:column;
+                                                                                                                                                                                                                          gap:12px;
+                                                                                                                                                                                                                            transition: transform .16s ease, box-shadow .16s ease;
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                            .card:hover{
+                                                                                                                                                                                                                              transform: translateY(-6px);
+                                                                                                                                                                                                                                box-shadow:0 16px 36px rgba(31,31,31,0.12);
+                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                .card img{
+                                                                                                                                                                                                                                  width:100%;
+                                                                                                                                                                                                                                    height:160px;
+                                                                                                                                                                                                                                      object-fit:cover;
+                                                                                                                                                                                                                                        border-radius:8px;
+                                                                                                                                                                                                                                          display:block;
+                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                          .card h3{
+                                                                                                                                                                                                                                            margin:0;
+                                                                                                                                                                                                                                              font-size:18px;
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                              .card p{
+                                                                                                                                                                                                                                                margin:0;
+                                                                                                                                                                                                                                                  color:var(--muted);
+                                                                                                                                                                                                                                                    font-size:14px;
+                                                                                                                                                                                                                                                      line-height:1.4;
+                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                      /* ===== RODAPÉ SIMPLES ===== */
+                                                                                                                                                                                                                                                      .footer{
+                                                                                                                                                                                                                                                        margin-top:20px;
+                                                                                                                                                                                                                                                          text-align:center;
+                                                                                                                                                                                                                                                            color:var(--muted);
+                                                                                                                                                                                                                                                              font-size:13px;
+                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                              /* ===== RESPONSIVIDADE ===== */
+                                                                                                                                                                                                                                                              @media (min-width:900px){
+                                                                                                                                                                                                                                                                /* em telas largas podemos colocar nav no topo e content centralizado */
+                                                                                                                                                                                                                                                                  .site{grid-template-columns:1fr}
+                                                                                                                                                                                                                                                                    .hero{align-items:center}
+                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                    @media (max-width:720px){
+                                                                                                                                                                                                                                                                      body{padding:16px}
+                                                                                                                                                                                                                                                                        .hero .hero-img{flex-basis:100%;max-width:100%}
+                                                                                                                                                                                                                                                                          .hero .hero-img img{height:200px}
+                                                                                                                                                                                                                                                                            .hero{text-align:center}
+                                                                                                                                                                                                                                                                              .hero .hero-text{flex-basis:100%}
+                                                                                                                                                                                                                                                                                nav ul{gap:12px}
+                                                                                                                                                                                                                                                                                  nav a{font-size:14px}
+                                                                                                                                                                                                                                                                                    .card img{height:140px}
+                                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                                    /* ===== AJUSTES DE IMPRESSÃO ===== */
+                                                                                                                                                                                                                                                                                    @media print{
+                                                                                                                                                                                                                                                                                      nav, .btn { display: none; }
+                                                                                                                                                                                                                                                                                        body{background:white}
+                                                                                                                                                                                                                                                                                        }
