@@ -14,7 +14,7 @@ body {
 
 /* Dark Mode */
 body.dark {
-    background-color: #121212;
+    background-color: #111;
     color: #eaeaea;
 }
 body.dark header,
@@ -133,4 +133,62 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+}
+/* Seção de Jogos e Animes */
+#jogos-animes {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#jogos-animes h2 {
+    color: #ff7f50;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Container dos cards */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+/* Estilo dos cards */
+.card-item {
+    background: #fff3e6;
+    border: 2px solid #ff7f50;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card-item:hover {
+    transform: scale(1.05);
+}
+
+/* Imagem do card */
+.card-item img {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+/* Texto do card */
+.card-item h3 {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Dark Mode para os cards */
+body.dark .card-item {
+    background-color: #1d1d1d;
+    border-color: #ff7f50;
+}
+
+body.dark .card-item h3 {
+    color: #eaeaea;
 }
