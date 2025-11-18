@@ -1,25 +1,16 @@
-.particles {
-  position: absolute;
-  pointer-events: none;
-  z-index: 9999;
-}
+// Menu Responsivo
+document.getElementById('menuToggle').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
 
-.particle {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: var(--primary-color);
-  border-radius: 50%;
-  animation: particleAnimation 0.5s ease-out;
-}
+// Efeito de Scroll para Desaparecer a Hero Section
+window.addEventListener('scroll', function() {
+  var heroSection = document.querySelector('.hero');
+  var scrollPosition = window.scrollY;
 
-@keyframes particleAnimation {
-  0% {
-    transform: scale(1);
-    opacity: 1;
+  if (scrollPosition > 200) {
+    heroSection.style.opacity = 1 - scrollPosition / 600;
+  } else {
+    heroSection.style.opacity = 1;
   }
-  100% {
-    transform: scale(0);
-    opacity: 0;
-  }
-}
+});

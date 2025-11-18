@@ -1,257 +1,194 @@
-/* Variáveis de Cores */
-:root {
-  --primary-color: #00b5e2; /* Azul Claro */
-  --accent-color: #ff8c00;  /* Laranja */
-  --background-color: #121212; /* Fundo escuro */
-  --text-color: #fff; /* Texto branco */
-  --gray-color: #f1f1f1; /* Cinza claro para textos secundários */
-  --link-hover-color: #ff007f; /* Cor para o hover nos links */
-}
-
-/* Resetando margens e paddings */
+/* Estilos básicos */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY E GERAL */
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  background-color: #101010;
+  color: #fff;
   line-height: 1.6;
-  font-size: 1.1rem;
 }
 
-a {
-  text-decoration: none;
-  color: var(--primary-color);
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--link-hover-color);
-}
-
-/* HEADER */
 header {
-  background: var(--primary-color);
+  background-color: #232323;
   padding: 15px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  text-align: center;
 }
 
 header .logo {
-  font-size: 2rem;
-  color: #fff;
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-size: 30px;
+  color: #00ff00;
+  font-family: 'Russo One', sans-serif;
+  text-decoration: none;
 }
 
-header .nav a {
+header .logo span {
+  color: #FFD700; /* Dourado para o "10" */
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #fff;
   margin: 0 15px;
-  font-size: 1.1rem;
-  color: #fff;
-  font-weight: 500;
+  text-decoration: none;
+  font-size: 18px;
 }
 
-header .nav a:hover {
-  color: var(--accent-color);
+nav a:hover {
+  text-decoration: underline;
 }
 
-/* HERO */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
 .hero {
-  position: relative;
   background-image: url('https://i.imgur.com/4Qumy8Y.jpeg');
   background-size: cover;
   background-position: center;
-  height: 500px;
-  color: #fff;
+  padding: 100px 0;
   text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 22px;
+}
+
+.hero-btns a {
+  background-color: #00ff00;
+  color: #101010;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 10px;
+}
+
+.hero-btns a:hover {
+  background-color: #007700;
+}
+
+.scroll-indicator {
+  font-size: 30px;
+  margin-top: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+main {
+  padding: 50px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.articles-grid {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
-.hero .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.hero .hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-.hero .btn {
-  padding: 12px 30px;
-  background-color: var(--primary-color);
-  color: #fff;
-  font-size: 1.2rem;
-  border-radius: 50px;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.hero .btn:hover {
-  background-color: var(--accent-color);
-}
-
-/* POST SECTION */
-.posts {
-  padding: 40px 0;
-}
-
-.posts .section-title h2 {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.post {
-  background-color: #1c1c1c;
+article {
+  background-color: #333;
   border-radius: 10px;
+  width: 30%;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.post .post-img {
+.article-img img {
+  width: 100%;
   height: 200px;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 
-.post .post-content {
+.article-content {
   padding: 20px;
 }
 
-.post .post-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: var(--primary-color);
-}
-
-.post .post-excerpt {
-  font-size: 1rem;
-  color: var(--gray-color);
-}
-
-/* ASIDE - Barra Lateral */
-.aside {
-  background-color: #1c1c1c;
-  padding: 30px;
-  border-radius: 10px;
-  color: #fff;
-  margin-top: 40px;
-}
-
-.aside .about-author {
-  margin-bottom: 20px;
-}
-
-.aside .about-author h3 {
-  font-size: 1.8rem;
-  color: var(--primary-color);
+.article-meta {
   margin-bottom: 10px;
 }
 
-.aside .about-author p {
-  font-size: 1.1rem;
-  color: var(--gray-color);
-  line-height: 1.6;
+.article-category {
+  background-color: #00ff00;
+  color: #101010;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
-.aside .related-links h3 {
-  font-size: 1.8rem;
-  color: var(--primary-color);
-  margin-bottom: 15px;
+.dreamhouse-gallery img {
+  width: 30%;
+  margin: 5px;
 }
 
-.aside .related-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.aside .related-links ul li {
-  margin: 10px 0;
-}
-
-.aside .related-links ul li a {
-  font-size: 1.1rem;
-  color: #fff;
-  transition: color 0.3s ease;
-}
-
-.aside .related-links ul li a:hover {
-  color: var(--accent-color);
-}
-
-/* FOOTER */
 footer {
-  background-color: #121212;
-  padding: 40px 20px;
-  text-align: center;
+  background-color: #232323;
+  padding: 20px;
   color: #fff;
-  margin-top: 40px;
+  text-align: center;
 }
 
-footer .footer-content h3 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: var(--primary-color);
+footer .footer-content {
+  display: flex;
+  justify-content: space-between;
 }
 
-footer .footer-content p {
-  font-size: 1.1rem;
-  color: var(--gray-color);
+footer .footer-column h3 {
+  margin-bottom: 10px;
 }
 
-footer .footer-content a {
-  color: var(--primary-color);
+footer .footer-links a {
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  color: #00ff00;
+  display: block;
 }
 
-footer .footer-content a:hover {
-  color: var(--accent-color);
+footer .footer-links a:hover {
+  color: #FFD700;
+}
+
+footer .copyright p {
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  .articles-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dreamhouse-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
 }
