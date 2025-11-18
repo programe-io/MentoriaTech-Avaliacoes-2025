@@ -1,0 +1,93 @@
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+header {
+    background-color: rgb(101, 28, 175);
+    padding: 60px;         /* removed space in '60 px' */
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    background-color: #333;
+}
+
+nav a {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* hover must NOT have a space before ':' */
+nav a:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+/* LAYOUT ROW */
+#row {
+    display: flex;         /* fixed 'fle' */
+    flex-wrap: wrap;
+}
+
+.fakeimage {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+/* SIDEBAR */
+aside {
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/* MAIN CONTENT */
+main {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+/* ARTICLE CARD */
+article {
+    box-shadow: 0px 0px 10px #aaa;  /* removed spaces */
+    padding: 5px;                  /* fixed '5 px' */
+    border-radius: 10px;
+}
+
+article img {
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #444;
+    padding: 40px;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 400px) {
+    nav {
+        flex-direction: column;
+    }
+}
