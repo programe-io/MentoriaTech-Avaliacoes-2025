@@ -1,0 +1,106 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+  line-height: 1.6;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0077cc;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #ffcc00;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+  border: 2px solid #0077cc;
+}
+
+.post-img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 10px 0;
+  object-fit: cover;
+}
+
+.time {
+  color: #999;
+  font-size: 0.85em;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .navbar ul li {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+}
