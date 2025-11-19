@@ -1,0 +1,320 @@
+/* ------------------------------------------------------------------- */
+/* 1. VARIÁVEIS CSS E RESET BÁSICO                                     */
+/* ------------------------------------------------------------------- */
+:root {
+    --cor-primaria: #007BFF;        /* Azul Vívido */
+    --cor-secundaria: #343a40;      /* Preto Quase-Escuro */
+    --cor-texto: #333;
+    --cor-fundo-claro: #f8f9fa;
+    --cor-aside: #e9ecef;           /* Cinza Claro para o Aside */
+    --largura-maxima: 1200px;
+    --sombra-leve: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset básico (box-sizing e margens/paddings) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: white;
+}
+
+/* Links */
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* ------------------------------------------------------------------- */
+/* 2. CLASSES DE UTILDADE (Container e Botões)                         */
+/* ------------------------------------------------------------------- */
+
+.container {
+    max-width: var(--largura-maxima);
+    margin: 0 auto;
+    padding: 0 25px; 
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px; /* Botão arredondado */
+    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-cta:hover {
+    background-color: #0056b3; 
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------------------- */
+/* 3. ESTILOS DO CABEÇALHO E NAVEGAÇÃO                                 */
+/* ------------------------------------------------------------------- */
+
+.cabecalho {
+    background-color: white;
+    box-shadow: var(--sombra-leve);
+    padding: 10px 0;
+    position: sticky; /* Fixa o cabeçalho no topo ao rolar */
+    top: 0;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+.cabecalho .container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.cabecalho h1 {
+    font-size: 1.6em;
+    color: var(--cor-secundaria);
+}
+
+.menu-principal ul {
+    list-style: none;
+    display: flex; 
+}
+
+.menu-principal li a {
+    color: var(--cor-texto);
+    padding: 10px 18px;
+    font-weight: 500;
+}
+
+/* ------------------------------------------------------------------- */
+/* 4. ESTILOS DAS SEÇÕES (Main)                                        */
+/* ------------------------------------------------------------------- */
+
+/* Estilo geral */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: var(--cor-primaria);
+    background-image: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+    color: white;
+    padding: 150px 0;
+}
+
+.hero-section h2 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+}
+
+/* Estilo para a Section com Aside (Flexbox) */
+.sobre-section {
+    background-color: var(--cor-fundo-claro);
+    text-align: left;
+}
+
+.sobre-section h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: var(--cor-secundaria);
+}
+
+.conteudo-principal-aside {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start; /* Alinha o conteúdo no topo */
+}
+
+.conteudo-principal-aside article {
+    flex: 3; /* O artigo ocupa 3 partes */
+}
+
+/* Estilizando o ASIDE (Barra Lateral) */
+.informacoes-extras {
+    flex: 1; /* O aside ocupa 1 parte */
+    background-color: var(--cor-aside); 
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.informacoes-extras h4 {
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-bottom: 5px;
+}
+
+.informacoes-extras ul {
+    list-style: none;
+}
+
+.informacoes-extras li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #ccc;
+}
+
+.aside-nota {
+    font-size: 0.9em;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+
+/* Grid de Serviços */
+.servicos-section {
+    background-color: white;
+}
+
+.grid-servicos {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; 
+    margin-top: 50px;
+    flex-wrap: wrap; 
+}
+
+.card-servico {
+    flex: 1; /* Distribui o espaço igualmente */
+    min-width: 250px;
+    background-color: var(--cor-fundo-claro);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--sombra-leve);
+    transition: transform 0.3s ease;
+}
+
+.card-servico:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Formulário de Contato */
+.contato-section {
+    background-color: var(--cor-secundaria);
+    color: white;
+}
+
+.formulario-contato {
+    max-width: 500px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.formulario-contato label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.formulario-contato input[type="text"], 
+.formulario-contato input[type="email"], 
+.formulario-contato textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.formulario-contato textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* ------------------------------------------------------------------- */
+/* 5. ESTILOS DO RODAPÉ                                                */
+/* ------------------------------------------------------------------- */
+
+.rodape {
+    background-color: var(--cor-secundaria);
+    padding: 20px 0;
+    font-size: 0.85em;
+    border-top: 1px solid #444;
+}
+
+.rodape .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rodape p {
+    color: #bbb;
+}
+
+.links-sociais a {
+    color: white;
+    margin-left: 15px;
+    opacity: 0.8;
+}
+
+.links-sociais a:hover {
+    opacity: 1;
+}
+
+/* ------------------------------------------------------------------- */
+/* 6. MEDIA QUERIES (Responsividade)                                   */
+/* ------------------------------------------------------------------- */
+
+/* Dispositivos menores (Tablets e Celulares - max-width: 992px) */
+@media (max-width: 992px) {
+    
+    /* Layout do Aside */
+    .conteudo-principal-aside {
+        flex-direction: column; /* Empilha o artigo e o aside */
+    }
+
+    .conteudo-principal-aside article,
+    .informacoes-extras {
+        flex: auto; /* Deixa ocupar a largura total */
+    }
+
+    /* Navegação */
+    .cabecalho .container {
+        flex-direction: column; 
+    }
+
+    .menu-principal ul {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu-principal li a {
+        padding: 5px 10px;
+    }
+
+    /* Seções */
+    .hero-section {
+        padding: 100px 0;
+    }
+
+    .hero-section h2 {
+        font-size: 2.5em;
+    }
+
+    .grid-servicos {
+        justify-content: center;
+    }
+}
