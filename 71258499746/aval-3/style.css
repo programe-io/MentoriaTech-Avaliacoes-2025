@@ -1,0 +1,421 @@
+/* ------------------------------------------------------------------- */
+/* 1. VARIÁVEIS CSS E RESET BÁSICO (Cores e Fontes de Impacto)         */
+/* ------------------------------------------------------------------- */
+:root {
+    --cor-vermelho: #E74C3C;        /* Vermelho Vibrante (Fast Food) */
+    --cor-amarelo: #F1C40F;         /* Amarelo Energético (Destaque) */
+    --cor-escuro: #2C3E50;          /* Azul Escuro (Textos e Fundo) */
+    --cor-clara: #ECF0F1;           /* Cinza Quase Branco */
+    --sombra-card: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --sombra-forte: 0 8px 15px rgba(231, 76, 60, 0.4); /* Sombra vermelha para CTA */
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--cor-escuro);
+    background-color: white;
+}
+
+/* Estilos de Tipografia */
+h2, h3 {
+    font-family: 'Impact', sans-serif; /* Fonte de impacto (simulado, use uma font-family real se for importar) */
+    text-transform: uppercase;
+    color: var(--cor-vermelho);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 2.2em;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-escuro);
+}
+
+/* ------------------------------------------------------------------- */
+/* 2. CLASSES DE UTILDADE (Container e Botões)                         */
+/* ------------------------------------------------------------------- */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Botão de Chamada para Ação (CTA) */
+.btn-cta, .btn-adicionar {
+    display: inline-block;
+    background-color: var(--cor-amarelo);
+    color: var(--cor-escuro);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--cor-escuro);
+    box-shadow: 0 5px 0 0 var(--cor-escuro); /* Efeito 3D */
+    margin-top: 15px;
+}
+
+.btn-cta:hover, .btn-adicionar:hover {
+    background-color: #f39c12; /* Amarelo mais escuro */
+    box-shadow: 0 2px 0 0 var(--cor-escuro); /* Reduz o efeito 3D no hover */
+    transform: translateY(3px);
+}
+
+.btn-adicionar.pequeno {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    box-shadow: 0 3px 0 0 var(--cor-escuro);
+}
+
+
+/* ------------------------------------------------------------------- */
+/* 3. ESTILOS DO CABEÇALHO E NAVEGAÇÃO                                 */
+/* ------------------------------------------------------------------- */
+
+.cabecalho {
+    background-color: white;
+    box-shadow: var(--sombra-card);
+    padding: 10px 0;
+    position: sticky; 
+    top: 0;
+    z-index: 1000; 
+}
+
+.cabecalho .container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.logo {
+    font-size: 2.5em;
+    color: var(--cor-vermelho);
+    text-shadow: 2px 2px 0 var(--cor-amarelo); /* Efeito Pop */
+}
+
+.menu-principal ul {
+    list-style: none;
+    display: flex; 
+}
+
+.menu-principal li a {
+    padding: 15px 20px;
+    display: block;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.menu-principal li a:hover {
+    color: var(--cor-vermelho);
+}
+
+.carrinho {
+    font-size: 1.5em;
+    color: var(--cor-vermelho);
+    position: relative;
+    cursor: pointer;
+}
+
+.contador-carrinho {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: var(--cor-amarelo);
+    color: var(--cor-escuro);
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.6em;
+    font-weight: bold;
+}
+
+/* ------------------------------------------------------------------- */
+/* 4. SEÇÃO HERO (Grande Impacto Visual)                               */
+/* ------------------------------------------------------------------- */
+
+.hero-section {
+    background-color: var(--cor-vermelho);
+    background-image: linear-gradient(135deg, var(--cor-vermelho) 0%, #a7392e 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-conteudo {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-section h2 {
+    color: white;
+    font-size: 4em;
+    text-shadow: 3px 3px 0 var(--cor-escuro);
+    line-height: 1.1;
+    margin-bottom: 5px;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+/* Imagem do Produto em Destaque (Flutuante) */
+.imagem-destaque {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%) rotate(5deg);
+    width: 450px; /* Ajuste o tamanho da imagem */
+    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5));
+    transition: transform 0.5s ease;
+}
+
+.imagem-destaque:hover {
+    transform: translateY(-50%) rotate(0deg) scale(1.05);
+}
+
+/* ------------------------------------------------------------------- */
+/* 5. SEÇÃO PROMOÇÕES (Grid de Cards)                                  */
+/* ------------------------------------------------------------------- */
+
+.secao-promocao {
+    padding: 60px 0;
+    background-color: var(--cor-clara);
+}
+
+.grid-promocoes {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.card-promocao {
+    flex-basis: 400px; /* Largura base para cada card */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--sombra-card);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 3px solid var(--cor-amarelo);
+}
+
+.card-promocao:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.img-produto {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-promocao h4 {
+    color: var(--cor-escuro);
+    margin: 15px 0 5px;
+    font-size: 1.5em;
+}
+
+.card-promocao p {
+    padding: 0 20px;
+    font-size: 1.1em;
+}
+
+.card-promocao .preco {
+    display: block;
+    font-size: 2.2em;
+    color: var(--cor-vermelho);
+    font-weight: bold;
+    margin: 10px 0 20px;
+}
+
+/* ------------------------------------------------------------------- */
+/* 6. SEÇÃO CARDÁPIO PRINCIPAL (Layout Grid)                           */
+/* ------------------------------------------------------------------- */
+
+.secao-menu {
+    padding: 60px 0;
+}
+
+.grid-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 4 colunas em telas grandes */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.item-menu {
+    text-align: center;
+    border: 1px dashed var(--cor-vermelho);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.item-menu img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 3px solid var(--cor-escuro);
+}
+
+.item-menu h4 {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+.item-menu p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.preco-menu {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--cor-vermelho);
+    margin-bottom: 10px;
+}
+
+/* ------------------------------------------------------------------- */
+/* 7. SEÇÃO CONTATO (Chamada Forte)                                    */
+/* ------------------------------------------------------------------- */
+
+.secao-contato {
+    background-color: var(--cor-escuro);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.secao-contato h3 {
+    color: var(--cor-amarelo);
+}
+
+.secao-contato p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn-contato {
+    display: inline-block;
+    background-color: var(--cor-vermelho);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-contato.whatsapp {
+    background-color: #25D366; /* Verde WhatsApp */
+}
+
+.btn-contato.whatsapp:hover {
+    background-color: #128C7E;
+}
+
+/* ------------------------------------------------------------------- */
+/* 8. RODAPÉ                                                           */
+/* ------------------------------------------------------------------- */
+
+.rodape {
+    background-color: var(--cor-escuro);
+    padding: 20px 0;
+    color: var(--cor-clara);
+    font-size: 0.9em;
+}
+
+.rodape .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.redes-sociais i {
+    font-size: 1.5em;
+    margin-left: 15px;
+    color: var(--cor-amarelo);
+    cursor: pointer;
+}
+
+/* ------------------------------------------------------------------- */
+/* 9. MEDIA QUERIES (Responsividade)                                   */
+/* ------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+    
+    .hero-section h2 {
+        font-size: 3em;
+    }
+
+    .imagem-destaque {
+        width: 300px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cabecalho .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu-principal ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        font-size: 2em;
+    }
+
+    .carrinho {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    .hero-section {
+        padding: 50px 0 250px; /* Aumenta o padding inferior para caber o lanche embaixo */
+        text-align: center;
+    }
+
+    .hero-conteudo {
+        align-items: center;
+    }
+
+    .imagem-destaque {
+        position: static;
+        transform: none;
+        width: 80%;
+        max-width: 350px;
+        margin-top: 30px;
+    }
+
+    .grid-promocoes, .grid-menu {
+        grid-template-columns: 1fr;
+    }
+}
