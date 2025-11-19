@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Organizado</title>
+    <link href="./output.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body class="bg-gradient-to-b from-blue-950 to-blue-800 min-h-screen text-white">
+
+    <header class="shadow-md p-5 flex items-center">
+        <div class="flex-1 uppercase font-bold text-center md:text-left">
+            Logo
+        </div>
+        <nav class="font-bold gap-3 hidden md:flex">
+            <a href="#">Início</a>
+            <a href="#">Amigos</a>
+            <a href="#">Postagens</a>
+        </nav>
+    </header>
+
+    <!-- LISTA DE POSTS -->
+    <main class="py-4 px-4 flex flex-col gap-5 md:flex-row md:flex-wrap">
+
+        <!-- ====== CARD MODELO ====== -->
+        <!-- (TROCAR APENAS AS IMAGENS MARCADAS ABAIXO) -->
+
+        <div class="bg-gray-800 py-4 px-4 rounded-lg shadow-md max-w-96 w-full">
+            <!-- HEADER DO CARD -->
+            <div class="flex items-center gap-4 mb-3">
+                <!-- TROCAR ESTA IMAGEM DE PERFIL -->
+                <img class="h-12 w-12 rounded-full" src="data:image/jpeg;base64,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" alt="">
+                <h2 class="font-bold text-lg">Base do vinicios junior</h2>
+            </div>
+
+            <!-- IMAGEM DO POST -->
+            <!-- TROCAR ESTA IMAGEM DO POST -->
+            <img class="rounded-md w-full mb-3" src="https://s2-ge.glbimg.com/4laomwcXGNAEjsYb-n5XQAjeG0M=/0x161:720x865/600x0/smart/filters:gifv():strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2017/z/f/6gJOMTQg6ETiZ5xqlSyA/img-0966.jpg" alt="">
+
+            <!-- TEXTO DO POST -->
+            <p class="text-sm leading-relaxed">
+                Base
+Vinícius foi federado pelo Fla aos 10 anos,[13] e desde então foi tratado com o status de "futuro craque", sendo o principal destaque da base desde o time Sub-13.[14]
+
+Como morava a setenta quilômetros do Ninho do Urubu, o centro de treinamentos do Flamengo, a família passou por um período de provação para conseguir dar suporte financeiro ao jovem jogador. O pai de Vinícius Júnior chegou a trabalhar em São Paulo para garantir o sustento necessário. Logo, uma van passou a dar o transporte para o atleta poder treinar. Vinícius ainda chegou a morar com um primo para que pudesse ficar próximo do centro de treinamentos.[10]
+
+Segundo Eduardo Júnior, responsável pela aprovação de Vinícius Júnior na peneira do Flamengo, o garoto "parecia com o ex-meia Adílio, fisicamente e também na capacidade de driblar". Foi por isso que, já no primeiro campeonato disputado pelo Vinicius pelo Flamengo (a Copa Rio Bonito de 2010) ele ganhou a camisa 8, uma espécie de homenagem ao Adílio.Aos 13 anos, veio a primeira convocação para a Seleção Sub-15, com o técnico Cláudio Caçapa. Mesmo um ano abaixo, ele já era titular e principal jogador dos infantis do Flamengo. Era o protagonista da chamada "Geração 2000 Rubro-Negra",[16] que chegou a ficar mais de 90 jogos invicta entre o mirim e o infantil.[13] Em 2015, sagrou-se campeão da Copa Votorantim, torneio equivalente ao campeonato nacional da categoria.Em entrevista ao Yahoo Esportes, Fábio Barrozo, ex-gerente das categorias de base do Corinthians, revelou que em 2013, o Timão tentou tirá-lo da Gávea, mas não conseguiu. Mesmo assim, dois anos depois, após uma exibição de gala contra o próprio Corinthians, o Alvinegro tentou contratá-lo novamente, fazendo uma oferta muito boa, completamente fora da realidade para um menino de sua idade, mas sem sucesso.[17]
+
+Em 2016, Vinícius subiu aos juvenis, e a história se repetiu. Mesmo um ano mais novo do que limite da categoria determina, ele se tornou protagonista do time. Marcou dez gols, foi o grande assistente da competição formando parte de um ataque que marcou mais de 52 gols, e ajudou o Flamengo a sagrar-se campeão do Campeonato Carioca Sub-17.
+            </p>
+        </div>
+
+        <!-- ====== COPIE ESTE CARD PARA FAZER NOVOS ====== -->
+
+        <div class="bg-gray-800 py-4 px-4 rounded-lg shadow-md max-w-96 w-full">
+            <div class="flex items-center gap-4 mb-3">
+                <img class="h-12 w-12 rounded-full" src="https://ogimg.infoglobo.com.br/esportes/23366363-916-131/FT1086A/80280126_Soccer-FootballChampions-LeagueGroup-StageGroup-GReal-Madrid-v-CSKA-Moscow.jpg" alt="">
+                <h2 class="font-bold text-lg">Real madri 2018-19</h2>
+            </div>
+
+            <img class="rounded-md w-full mb-3" src="https://conteudo.imguol.com.br/c/esporte/4c/2020/11/04/vinicius-junior-durante-partida-entre-real-madrid-e-inter-de-milao-1604491256159_v2_3x4.jpg" alt="">
+
+            <p class="text-sm leading-relaxed">
+                No dia 7 de novembro, Vinícius tornou-se o terceiro jogador mais jovem da história do Real Madrid a jogar uma partida da Liga dos Campeões.[69][70] O adversário em questão foi o Viktoria Plzeň, pela quarta rodada da fase de grupos; o brasileiro saiu do banco para substituir Karim Benzema, e apenas cinco minutos depois deu a assistência para Toni Kroos marcar o quinto gol do time merengue na goleada por 5–0.[71]
+
+Em 12 de dezembro, contra o CSKA Moscou, Vinícius tornou-se o terceiro jogador mais jovem da história do Real Madrid a iniciar como titular uma partida da Liga dos Campeões, apenas atrás de Iker Casillas e Raúl.[72][73]
+
+Na partida contra o Ajax, no dia 13 de fevereiro, Vinícius estabeleceu um recorde no clube ao se tornar o jogador mais jovem da história do Real Madrid a atuar como titular durante 12 partidas consecutivas. Na partida em questão contra o Ajax, Vinícius também tornou-se o jogador mais jovem do clube a atuar como titular em um mata-mata de Champions League. Neste jogo, Vinícius deu a assistência para Benzema abrir o placar na vitória por 2–1.[74] Graças a essa assistência, ele tornou-se o jogador mais novo da Liga dos Campeões a criar uma jogada de gol desde Raphaël Varane.[75]
+
+O bom desempenho em fevereiro o fez ser eleito o melhor jogador do Real Madrid neste mês.Sua rápida ascensão no Real Madrid o rendeu a primeira convocação para a Seleção Brasileira principal, para os amistosos contra o Panamá e a República Tcheca.[77][78] Porém, na partida de volta das oitavas de final contra o Ajax, Vinícius viria a se machucar ainda no primeiro tempo e teve que ser cortado dos dois amistosos
+            </p>
+        </div>
+
+        <div class="bg-gray-800 py-4 px-4 rounded-lg shadow-md max-w-96 w-full">
+            <div class="flex items-center gap-4 mb-3">
+                <img class="h-12 w-12 rounded-full" src="https://cdn.britannica.com/47/273347-050-A593DB05/Vinicius-Junior-Real-Madrid-football-soccer-player-UEFA-league-champion-trophy-wembly-stadium-london-2024.jpg" alt="">
+                <h2 class="font-bold text-lg">Real madri 2024-25</h2>
+            </div>
+
+            <img class="rounded-md w-full mb-3" src="https://s2-oglobo.glbimg.com/_wl8JREiyRLwer7XNN1m3oHA_2Q=/0x0:6000x4000/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2024/K/k/y8zbSlQaGd4Zp1OUm2LA/105545948-real-madrids-brazilian-forward-07-vinicius-junior-celebrates-after-scoring-his-second-go.jpg" alt="">
+
+            <p class="text-sm leading-relaxed">
+                Na primeira partida oficial da temporada, realizada no dia 14 de agosto, pela Supercopa da UEFA, Vinícius teve boa atuação e deu a assistência para Federico Valverde marcar o primeiro da vitória merengue por 2–0 contra a Atalanta, chegando a marca de 12 participações em gols em 11 finais pelo Real. Com esse troféu, Vinícius chegou a 10 títulos conquistados com a camisa do clube espanhol.[176]
+
+Já no dia 22 de outubro, pela terceira rodada da primeira fase da Liga dos Campeões, Vinícius teve mais uma atuação histórica contra o Borussia Dortmund. O atacante brasileiro marcou um hat-trick no segundo tempo, ajudando assim o Real a virar a partida para 5–2, sendo que o time havia perdido o primeiro tempo por 2–0.[177] Com os três gols, Vini Jr. chegou a 24 gols em 59 partidas de Champions, se tornando o sétimo maior goleador da história do Real Madrid na competição.[178]
+
+Atuando pela La Liga, Vinícius anotou mais um hat-trick no dia 9 de novembro, na goleada merengue por 4–0 contra o Osasuna. A partida que foi realizada no Santiago Bernabéu, válida pela 13ª rodada, marcou a primeira vez na carreira que o brasileiro conseguiu realizar dois hat-tricks em uma mesma temporada.[179]No dia 17 de dezembro, Vini Jr. foi eleito pela FIFA como o Melhor Jogador do Mundo (The Best),[180] se juntando assim, ao seleto grupo de brasileiros (composto por Ronaldo, Ronaldinho, Rivaldo, Romário e Kaká), que haviam vencido o prêmio antes dele. Vinícius também se tornou o segundo brasileiro mais jovem da história a receber o prêmio de melhor jogador do mundo.[181]
+
+Em 18 de dezembro, Vini ganhou o prêmio de melhor jogador da Copa Intercontinental de 2024, com uma assistência e um gol na final contra o Pachuca.[182] A partida, que foi realizada no Estádio Nacional de Lusail, terminou com o placar de 3–0 para o Real Madrid.[183]
+
+Numa partida contra o Valencia no dia 3 de janeiro de 2025, Vini foi expulso após agredir o goleiro Stole Dimitrievski e punido com dois jogos de suspensão pela federação espanhola. O jornalista Elías Israel, do jornal Marca, criticou: "É uma pena que o enorme crescimento de Vinícius como jogador de futebol desde sua chegada à Espanha não tenha sido acompanhado por um crescimento em seu comportamento dentro de campo.".[184]
+            </p>
+        </div>
+
+    </main>
+    <span>
+        Há 10 minutos <span>
+</body>
+</html>
