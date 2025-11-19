@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notícias Hoje</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="#">Notícias Hoje</a>
+      <nav class="nav">
+        <button class="nav__link active" data-category="todas">Todas</button>
+        <button class="nav__link" data-category="brasil">Brasil</button>
+        <button class="nav__link" data-category="mundo">Mundo</button>
+        <button class="nav__link" data-category="tecnologia">Tecnologia</button>
+        <button class="nav__link" data-category="esportes">Esportes</button>
+        <button class="nav__link" data-category="entretenimento">Entretenimento</button>
+      </nav>
+      <div class="actions">
+        <input id="search" type="search" placeholder="Buscar notícias..." aria-label="Buscar" />
+        <button id="themeToggle" class="btn" aria-label="Alternar tema">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="highlight">
+      <article class="highlight__card" id="highlightCard">
+        <img src="data:image/jpeg;base64,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" alt="Destaque" />
+        <div class="highlight__content">
+          <span class="badge">Destaque</span>
+          <h1 id="highlightTitle">Tecnologia impulsiona novas soluções no Brasil</h1>
+          <p id="highlightExcerpt">
+            Startups e grandes empresas aceleram projetos de IA e sustentabilidade, mudando o cenário econômico e social.
+          </p>
+          <a id="highlightLink" href="#" class="btn btn--primary">Ler mais</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="grid" id="newsGrid" aria-live="polite">
+      <!-- Cards gerados via JS -->
+    </section>
+  </main>
+
+  <footer class="footer">
+    <aside></aside>
+    <h3></h3>
+  <script src="script.js"></script>
+  
+</body>
+</html>
