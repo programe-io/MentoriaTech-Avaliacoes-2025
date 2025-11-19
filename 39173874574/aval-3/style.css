@@ -1,0 +1,96 @@
+/* ----- GERAL ----- */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom, #0f1b50, #071033);
+    color: white;
+}
+
+/* ----- HEADER ----- */
+
+.topo {
+    background: #0d1a6b;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.topo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.topo nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.topo nav a:hover {
+    opacity: 0.7;
+}
+
+/* ----- LISTA DE POSTS ----- */
+
+.post-lista {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Cards no desktop lado a lado */
+@media (min-width: 768px) {
+    .post-lista {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* ----- CARD ----- */
+
+.post-card {
+    background: #2e2e2e;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    max-width: 480px;
+    width: 100%;
+}
+
+/* Cabeçalho do post */
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.post-card h2 {
+    margin: 0;
+}
+
+/* Imagem do post */
+.post-img {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+/* Texto */
+.post-card p {
+    margin-top: 15px;
+    line-height: 1.5;
+    color: #d6d6d6;
+}
