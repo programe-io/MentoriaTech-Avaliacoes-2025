@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    transition: 0.3s;
+}
+
+body.dark {
+    background: #121212;
+    color: #e3e3e3;
+}
+
+/* NAV */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #005bea;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 22px;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.dark-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Menu mobile */
+.menu-btn {
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* HEADER */
+.hero {
+    padding-top: 100px;
+    height: 60vh;
+    background: url("img/hero.jpg") center/cover no-repeat;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 5px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* CARDS */
+.content {
+    padding: 40px;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.card {
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* IMPACTOS */
+.impactos {
+    text-align: center;
+    padding: 40px;
+}
+
+.impact-box {
+    width: 300px;
+    margin: 20px auto;
+}
+
+/* CURIOSIDADES */
+.btn-area {
+    text-align: center;
+    padding: 40px;
+}
+
+#infoText {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #005bea;
+}
+
+/* BOTÃO TOP */
+#topBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 25px;
+    padding: 12px;
+    background: #005bea;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: none;
+    cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: -100%;
+        top: 60px;
+        flex-direction: column;
+        background: #005bea;
+        padding: 20px;
+        width: 180px;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .nav-links.active {
+        right: 10px;
+    }
+}
