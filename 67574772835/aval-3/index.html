@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minha Galeria • Juran Coelho Rodrigues</title>
+  <meta name="description" content="Galeria, informações e localização. Programado por Juran Coelho Rodrigues.">
+  <style>
+    :root {
+      --bg: #0f1115;
+      --surface: #171a22;
+      --text: #e8eaf0;
+      --muted: #9aa3b2;
+      --accent: #4f8cff;
+      --border: #262b38;
+    }
+    * { box-sizing: border-box }
+    html, body { margin: 0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height: 1.5 }
+    a { color: var(--accent); text-decoration: none }
+    img { max-width: 100%; display: block }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px }
+
+    /* Header + Nav */
+    header { background: var(--surface); border-bottom: 1px solid var(--border) }
+    .brandbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0 }
+    .brand { display: flex; flex-direction: column }
+    .site-title { font-weight: 600; font-size: 20px }
+    .site-sub { color: var(--muted); font-size: 13px }
+    nav { background: transparent }
+    .navlist { display: flex; gap: 14px; padding: 10px 0; list-style: none; margin: 0 }
+    .navlist a { padding: 8px 10px; border-radius: 8px; border: 1px solid transparent; display: inline-flex; align-items: center; gap: 8px }
+    .navlist a .tag { font-size: 12px; color: var(--muted); border: 1px solid var(--border); border-radius: 8px; padding: 2px 6px }
+    .navlist a:focus, .navlist a:hover { border-color: var(--accent) }
+
+    /* Sections */
+    section { padding: 26px 0; border-bottom: 1px dashed var(--border) }
+    section:last-of-type { border-bottom: none }
+    h2 { margin: 0 0 10px; font-size: 22px }
+    p { margin: 8px 0; color: var(--text) }
+    .muted { color: var(--muted) }
+
+    /* Gallery */
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px }
+    @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr) } }
+    @media (max-width: 560px) { .grid { grid-template-columns: 1fr } }
+    .card { background: #12151c; border: 1px solid var(--border); border-radius: 12px; overflow: hidden }
+    .thumb { aspect-ratio: 4/3; background: #0d0f14; position: relative }
+    .label { position: absolute; bottom: 8px; left: 8px; right: 8px; display: flex; justify-content: space-between; gap: 8px; background: rgba(0,0,0,0.45); backdrop-filter: blur(6px); padding: 6px 8px; border-radius: 8px; font-size: 12px }
+    .label span { color: #fff }
+    .chip { color: var(--muted) }
+    .info { padding: 10px 12px }
+    .info h3 { margin: 0 0 6px; font-size: 16px }
+    .info p { margin: 0; font-size: 14px; color: var(--muted) }
+
+    /* Buttons */
+    .actions { margin-top:12px; display:flex; gap:10px; flex-wrap:wrap }
+    .btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 8px 12px; border-radius: 10px; font-size: 14px; cursor: pointer; display:inline-flex; align-items:center; gap:8px }
+    .btn:hover { border-color: var(--accent) }
+    .btn .icon { font-weight: 600 }
+
+    /* Lightbox */
+    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; z-index: 50; padding: 20px }
+    .lightbox.open { display: flex }
+    .lightbox img { max-width: 92vw; max-height: 86vh; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.6) }
+    .lb-toolbar { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px }
+
+    /* Footer */
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 18px 0; font-size: 13px; color: var(--muted); text-align: center }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <div class="container brandbar">
+      <div class="brand">
+        <span class="site-title" id="siteTitle">Minha Galeria</span>
+        <span class="site-sub">Programado por Juran Coelho Rodrigues</span>
+      </div>
+      <span class="muted" id="yearNow">2025</span>
+    </div>
+    <nav aria-label="Navegação principal">
+      <div class="container">
+        <ul class="navlist">
+          <li><a href="#sobre"><span>Sobre</span><span class="tag">Intro</span></a></li>
+          <li><a href="#galeria"><span>Galeria</span><span class="tag">4 imgs</span></a></li>
+          <li><a href="#localizacao"><span>Localização</span><span class="tag">Endereço</span></a></li>
+          <li><a href="#creditos"><span>Créditos</span><span class="tag">Autor</span></a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo" class="container">
+    <section id="sobre">
+      <h2>Sobre este site</h2>
+      <p>
+        Este projeto reúne imagens e informações em um layout simples e responsivo.
+        A estrutura segue boas práticas semânticas (header, nav, main, sections e footer) para facilitar avaliação e acessibilidade.
+      </p>
+      <p class="muted">Use a navegação acima para ir direto às seções.</p>
+    </section>
+
+    <section id="galeria">
+      <h2>Galeria</h2>
+      <div class="grid" id="grid"></div>
+      <div class="muted" id="emptyState" hidden>Nenhuma foto carregada.</div>
+      <div class="actions">
+        <button class="btn" id="shuffleBtn"><span class="icon">⤳</span><span>Embaralhar</span></button>
+        <button class="btn" id="downloadBtn"><span class="icon">⤴</span><span>Abrir todas</span></button>
+      </div>
+    </section>
+
+    <section id="localizacao">
+      <h2>Localização da empresa</h2>
+      <p>
+        A sede do iFood fica na <strong>Av. dos Autonomistas, 1496 – Vila Yara, Osasco/SP</strong>, na região metropolitana de São Paulo.
+        Esse endereço concentra a base administrativa principal da empresa.
+      </p>
+    </section>
+
+    <section id="creditos">
+      <h2>Créditos</h2>
+      <p>
+        <span>© <span id="yearSpan"></span> • Todos os direitos reservados • Programado por <strong>Juran Coelho Rodrigues</strong>.</span>
+      </p>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de imagem">
+    <img id="lbImage" alt="">
+    <div class="lb-toolbar">
+      <button class="btn" id="prevBtn" aria-label="Anterior"><span class="icon">‹</span><span>Anterior</span></button>
+      <button class="btn" id="nextBtn" aria-label="Próximo"><span class="icon">›</span><span>Próximo</span></button>
+      <button class="btn" id="closeBtn" aria-label="Fechar"><span class="icon">✕</span><span>Fechar</span></button>
+      <a class="btn" id="openOriginal" target="_blank" rel="noopener" aria-label="Abrir original"><span class="icon">⤴</span><span>Original</span></a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <span>© <span id="footerYear"></span> • Todos os direitos reservados • Programado por Juran Coelho Rodrigues</span>
+    </div>
+  </footer>
+
+  <script>
+    // Atualiza anos com span
+    const now = new Date().getFullYear();
+    document.getElementById("yearNow").textContent = now;
+    document.getElementById("yearSpan").textContent = now;
+    document.getElementById("footerYear").textContent = now;
+
+    // Links fornecidos
+    const PHOTOS = [
+      "https://d1x4bjge7r9nas.cloudfront.net/wp-content/uploads/2024/10/21140858/iFood.png",
+      "https://f.i.uol.com.br/fotografia/2025/04/25/1745623324680c191cbc40d_1745623324_3x2_md.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeKVDQ0p7dj868xt4_ygV2HyzVjWFONEPqEQ&s",
+      "https://55content.com.br/wp-content/uploads/2024/09/unnamed-8.png"
+    ];
+
+    const grid = document.getElementById("grid");
+    const emptyState = document.getElementById("emptyState");
+    const lightbox = document.getElementById("lightbox");
+    const lbImage = document.getElementById("lbImage");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const closeBtn = document.getElementById("closeBtn");
+    const openOriginal = document.getElementById("openOriginal");
+    const shuffleBtn = document.getElementById("shuffleBtn");
+    const downloadBtn = document.getElementById("downloadBtn");
+
+    let currentIndex = 0;
+
+    function render() {
+      grid.innerHTML = "";
+      if (!PHOTOS.length) {
+        emptyState.hidden = false;
+        return;
+      }
+      emptyState.hidden = true;
+
+      PHOTOS.forEach((src, i) => {
+        const article = document.createElement("article");
+        article.className = "card";
+
+        const thumb = document.createElement("div");
+        thumb.className = "thumb";
+
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = "Imagem " + (i + 1);
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.referrerPolicy = "no-referrer";
+        img.addEventListener("click", () => openLightbox(i));
+
+        const label = document.createElement("div");
+        label.className = "label";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = labelFor(src, i);
+        const chipSpan = document.createElement("span");
+        chipSpan.className = "chip";
+        chipSpan.textContent = (i + 1) + " / " + PHOTOS.length;
+
+        label.appendChild(nameSpan);
+        label.appendChild(chipSpan);
+
+        thumb.appendChild(img);
+        thumb.appendChild(label);
+
+        const info = document.createElement("div");
+        info.className = "info";
+        const h3 = document.createElement("h3");
+        h3.textContent = labelFor(src, i);
+        const desc = document.createElement("p");
+        desc.textContent = descriptionFor(src);
+
+        info.appendChild(h3);
+        info.appendChild(desc);
+
+        article.appendChild(thumb);
+        article.appendChild(info);
+        grid.appendChild(article);
+      });
+    }
+
+    function labelFor(src, i) {
+      if (src.includes("iFood.png")) return "Logo iFood";
+      if (src.includes("uol.com.br")) return "Imagem de reportagem";
+      if (src.includes("encrypted-tbn0")) return "Logo genérica";
+      if (src.includes("55content.com.br")) return "Logo 55Content";
+      return "Imagem " + (i + 1);
+    }
+
+    function descriptionFor(src) {
+      if (src.includes("iFood.png")) {
+        return "Fundado em 2011 por um grupo de empreendedores; hoje líder em delivery na América Latina.";
+      }
+      if (src.includes("uol.com.br")) {
+        return "Foto publicada em portal de notícias com contexto atual.";
+      }
+      if (src.includes("encrypted-tbn0")) {
+        return "Exemplo de identidade visual simples, usada em contextos digitais.";
+      }
+      if (src.includes("55content.com.br")) {
+        return "Marca voltada para marketing digital e conteúdo criativo.";
+      }
+      return "Imagem da coleção.";
+    }
+
+    function openLightbox(i) {
+      currentIndex = i;
+      lbImage.src = PHOTOS[currentIndex];
+      lbImage.alt = "Imagem " + (currentIndex + 1);
+      openOriginal.href = PHOTOS[currentIndex];
+      lightbox.classList.add("open");
+    }
+    function closeLightbox() { lightbox.classList.remove("open"); }
+    function next() { currentIndex = (currentIndex + 1) % PHOTOS.length; openLightbox(currentIndex); }
+    function prev() { currentIndex = (currentIndex - 1 + PHOTOS.length) % PHOTOS.length; openLightbox(currentIndex); }
+
+    // Controles
+    shuffleBtn.addEventListener("click", () => {
+      for (let i = PHOTOS.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [PHOTOS[i], PHOTOS[j]] = [PHOTOS[j], PHOTOS[i]];
+      }
+      render();
+    });
+
+    downloadBtn.addEventListener("click", () => {
+      if (!PHOTOS.length) return;
+      PHOTOS.forEach(src => {
+        const a = document.createElement("a");
+        a.href = src; a.target = "_blank"; a.rel = "noopener";
+        document.body.appendChild(a); a.click(); a.remove();
+      });
+    });
+
+    // Navegação do lightbox e acessibilidade básica
+    closeBtn.addEventListener("click", closeLightbox);
+    nextBtn.addEventListener("click", next);
+    prevBtn.addEventListener("click", prev);
+    lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
+    window.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("open")) return;
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "Escape") closeLightbox();
+    });
+
+    // Inicialização
+    render();
+  </script>
+<script src="script.js"></script></body>
+</html>
