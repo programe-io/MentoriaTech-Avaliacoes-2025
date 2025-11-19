@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Música</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body class="bg-gray-100">
+
+<!-- ===================== TELA 1 ===================== -->
+<div id="tela1" class="tela ativa">
+
+    <header>
+        <nav class="p-5 bg-white shadow-md sticky top-0 flex justify-between items-center">
+            <h1 class="text-xl font-bold">🎵 <span>Música Brasil</span></h1>
+            <a href="https://www.spotify.com/br/" target="_blank" class="text-blue-600 font-semibold">Abrir Spotify</a>
+        </nav>
+    </header>
+
+    <main class="max-w-5xl mx-auto p-4">
+        <h2 class="font-semibold text-lg mb-3 text-gray-800">Explore estilos</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+            <!-- MPB -->
+            <div onclick="abrirTela('mpb')" class="card">
+                <img src="https://images.unsplash.com/photo-1507878866276-a947ef722fee" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a href="https://pt.wikipedia.org/wiki/Música_popular_brasileira" target="_blank">
+                            <span>MPB</span>
+                        </a>
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Sertanejo -->
+            <div onclick="abrirTela('sertanejo')" class="card hidden md:block">
+                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a href="https://pt.wikipedia.org/wiki/Sertanejo" target="_blank">
+                            <span>Sertanejo</span>
+                        </a>
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Funk -->
+            <div onclick="abrirTela('funk')" class="card hidden md:block">
+                <img src="https://images.unsplash.com/photo-1518972559570-7cc1309f3229" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a href="https://pt.wikipedia.org/wiki/Funk_(música)" target="_blank">
+                            <span>Funk</span>
+                        </a>
+                    </h3>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<!-- ===================== TELA 2 ===================== -->
+<div id="tela2" class="tela">
+
+    <header>
+        <nav class="p-4 bg-white shadow flex items-center">
+            <button onclick="voltarTela1()" class="text-xl font-bold">←</button>
+            <h1 id="titulo-estilo" class="ml-4 text-lg font-semibold">
+                <span>Detalhes do estilo</span>
+            </h1>
+        </nav>
+    </header>
+
+    <main>
+        <img id="img-estilo" class="w-full h-64 object-cover">
+
+        <section class="detalhes-section">
+            <h2 id="nome-estilo" class="text-2xl font-bold mb-3"><span></span></h2>
+            <p id="descricao-estilo" class="descricao"><span></span></p>
+
+            <h3 class="font-semibold mb-2">Artistas populares:</h3>
+            <ul id="lista-artistas" class="artistas-list"></ul>
+
+            <button onclick="abrirMapa()" class="btn">Ver locais de shows</button>
+        </section>
+    </main>
+</div>
+
+<!-- ===================== TELA 3 ===================== -->
+<div id="tela3" class="tela">
+
+    <header>
+        <nav class="p-4 bg-white shadow-md flex items-center">
+            <button onclick="voltarTela2()" class="text-xl font-bold">←</button>
+            <h1 class="ml-4 text-lg font-semibold">
+                <span>Locais de Shows</span>
+            </h1>
+        </nav>
+    </header>
+
+    <main>
+        <div class="mapa-img-container">
+            <img src="https://images.unsplash.com/photo-1502920917128-1aa500764b3a" class="mapa-img">
+        </div>
+
+        <div class="info-mapa">
+            <div class="info-flex">
+                <img id="img-estilo-mini" class="img-mini">
+                <div>
+                    <h2 id="local-nome" class="font-bold text-lg"><span></span></h2>
+                    <p class="text-gray-600 text-sm">
+                        <a href="https://www.google.com/maps" target="_blank"><span>Shows ao vivo • Brasil</span></a>
+                    </p>
+                </div>
+            </div>
+            <button class="btn">Comprar ingresso</button>
+        </div>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
