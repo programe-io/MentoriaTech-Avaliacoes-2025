@@ -1,0 +1,34 @@
+/* ====== ESTILOS GERAIS ====== */
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Container com rolagem tipo app mobile */
+.snap-container {
+  scroll-snap-type: y mandatory;
+}
+
+.page {
+  scroll-snap-align: start;
+  min-height: calc(100vh - 4rem);
+}
+
+/* Somente no mobile: ativa rolagem vertical como "páginas" */
+@media (min-width: 1024px) {
+  .snap-container {
+    scroll-snap-type: none;
+  }
+  .page {
+    min-height: auto;
+  }
+}
+
+/* Botões do quiz */
+.answer-btn {
+  transition: 0.2s ease;
+}
+
+.answer-btn:hover {
+  transform: scale(1.02);
+}
