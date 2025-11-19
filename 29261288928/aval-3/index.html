@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projeto Avaliação</title>
+
+  <style>
+    :root{
+      --nav:#0a1b3a;
+      --white:#ffffff;
+      --card-light:#f8f8f8;
+      --accent:#2b6cb0;
+      --muted:#6b7280;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background-image:url('https://img.freepik.com/vetores-gratis/glifo-de-grade-de-globo-com-cursor-do-mouse_78370-4904.jpg?semt=ais_incoming&w=740&q=80');
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+      color:white;
+    }
+
+    header{
+      background:var(--nav);
+      padding:14px 24px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      box-shadow:0 3px 8px rgba(0,0,0,0.4);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .brand img{
+      width:48px;
+      height:48px;
+      object-fit:cover;
+      border-radius:8px;
+      background:white;
+    }
+
+    nav{
+      display:flex;
+      gap:15px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+      padding:8px 10px;
+      border-radius:6px;
+    }
+
+    nav a:hover{
+      background:rgba(255,255,255,0.1);
+    }
+
+    main{
+      max-width:1100px;
+      margin:30px auto;
+      padding:20px;
+    }
+
+    h2{
+      font-size:26px;
+      margin-bottom:15px;
+      color:white;
+      text-shadow:1px 1px 3px black;
+    }
+
+    .intro-text{
+      margin-bottom:20px;
+      font-size:18px;
+      max-width:700px;
+      line-height:1.4;
+      text-shadow:1px 1px 3px black;
+    }
+
+    .cards-wrap{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      gap:22px;
+    }
+
+    .card{
+      background:var(--card-light);
+      color:black;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 6px 18px rgba(0,0,0,0.4);
+      transition:.2s;
+    }
+
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 26px rgba(0,0,0,0.5);
+    }
+
+    .card-header{
+      background:var(--accent);
+      color:white;
+      padding:12px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .card-header img{
+      width:45px;
+      height:45px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    .card-media img{
+      width:100%;
+      display:block;
+    }
+
+    .card-body{
+      padding:12px;
+      font-size:14px;
+      color:#333;
+      line-height:1.4;
+    }
+
+    .card-footer{
+      background:#eee;
+      padding:12px;
+      font-size:13px;
+      color:#555;
+      border-top:1px solid #ddd;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <!-- HEADER OBRIGATÓRIO -->
+  <header>
+    <div class="brand">
+      <img src="https://i.imgur.com/8Km9tLL.png" alt="Logo do site">
+      <h1 style="font-size:20px;">Meu Projeto</h1>
+    </div>
+
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Amigos</a>
+      <a href="#">Perfil</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- H2 OBRIGATÓRIO -->
+    <h2>Últimos Posts</h2>
+
+    <!-- P OBRIGATÓRIO -->
+    <p class="intro-text">
+      Aqui você encontra as atualizações mais recentes realizadas pelos usuários da plataforma.
+      Esta área mostra publicações com foto, texto, horário e informações do autor.
+    </p>
+
+    <section class="cards-wrap">
+
+      <!-- CARD 1 -->
+      <article class="card">
+        <div class="card-header">
+          <img src="https://i.pravatar.cc/100?img=32" alt="Avatar de FroJho">
+          <div>
+            <strong>FroJho</strong><br>
+            <span>Administrador</span>
+          </div>
+        </div>
+
+        <div class="card-media">
+          <img src="https://i.imgur.com/6Iej2cO.png" alt="Imagem do post de FroJho">
+        </div>
+
+        <div class="card-body">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+
+        <div class="card-footer">
+          há 10 minutos
+        </div>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="card">
+        <div class="card-header">
+          <img src="https://i.pravatar.cc/100?img=12" alt="Avatar de Marina">
+          <div>
+            <strong>Marina</strong><br>
+            <span>Editor</span>
+          </div>
+        </div>
+
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200" alt="Imagem do post de Marina">
+        </div>
+
+        <div class="card-body">
+          <p>Exemplo de post para demonstrar a estrutura com imagem e texto.</p>
+        </div>
+
+        <div class="card-footer">
+          há 1 hora
+        </div>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="card">
+        <div class="card-header">
+          <img src="https://i.pravatar.cc/100?img=44" alt="Avatar de Carlos">
+          <div>
+            <strong>Carlos</strong><br>
+            <span>Gerente</span>
+          </div>
+        </div>
+
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=1200" alt="Imagem do post de Carlos">
+        </div>
+
+        <div class="card-body">
+          <p>Post de demonstração para completar a galeria do projeto.</p>
+        </div>
+
+        <div class="card-footer">
+          ontem
+        </div>
+      </article>
+
+    </section>
+  </main>
+</body>
+</html>

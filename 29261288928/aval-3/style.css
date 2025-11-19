@@ -1,0 +1,106 @@
+:root{
+  --nav:#0a1b3a;
+  --white:#ffffff;
+  --card-light:#f8f8f8;
+  --accent:#2b6cb0;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* 🔥 Imagem de fundo */
+  background-image: url('https://img.freepik.com/vetores-gratis/glifo-de-grade-de-globo-com-cursor-do-mouse_78370-4904.jpg?semt=ais_incoming&w=740&q=80');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  color: var(--white);
+}
+
+/* Navbar */
+.navbar{
+  background: var(--nav);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  color: var(--white);
+}
+
+.navbar a{
+  color: var(--white);
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+/* Container dos cards */
+.cards-wrap{
+  max-width:1200px;
+  margin:30px auto;
+  padding:20px;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:20px;
+}
+
+/* CARD */
+.card{
+  background:var(--card-light);
+  color:#222;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 5px 20px rgba(0,0,0,0.4);
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 28px rgba(0,0,0,0.5);
+}
+
+/* Header do card */
+.card-header{
+  background:var(--accent);
+  padding:12px 16px;
+  color:var(--white);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.card-header img{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+}
+
+/* Imagem */
+.card-media img{
+  width:100%;
+  display:block;
+}
+
+/* Texto */
+.card-body{
+  padding:15px;
+  font-size:14px;
+  line-height:1.4;
+}
+
+/* Rodapé */
+.card-footer{
+  padding:12px 15px;
+  border-top:1px solid #ddd;
+  font-size:13px;
+  color:#555;
+  background:#eee;
+}
