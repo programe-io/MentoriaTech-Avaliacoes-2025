@@ -1,66 +1,140 @@
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f2f2f2;
+:root {
+    --bg-main: #0A2A66;
+    --bg-topbar: #133E91;
+    --bg-card: #162E55;
+    --bg-card-header: #1B355F;
+
+    --text-light: #ffffff;
+    --text-muted: #dcdcdc;
+    --text-time: #a8b0c9;
 }
 
-.topo {
-    background: #333;
-    color: white;
-    padding: 15px;
+/* ====== Geral ====== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg-main);
+    color: var(--text-light);
+}
+
+img {
+    display: block;
+}
+
+/* ====== Topbar ====== */
+.topbar {
+    background: var(--bg-topbar);
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.logo {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
 .menu a {
-    color: white;
-    margin-left: 15px;
+    margin-left: 25px;
     text-decoration: none;
+    color: var(--text-light);
+    font-weight: 600;
 }
 
-.container-geral {
-    width: 100%;
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-}
-
+/* ====== Feed ====== */
 .container {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 30px;
 }
 
+/* ====== Card ====== */
 .card {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #0002;
+    width: 350px;
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-.card-top {
+/* Cabeçalho do card */
+.card-header {
+    background: var(--bg-card-header);
+    padding: 15px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
-.card-top img {
-    width: 50px;
+.avatar {
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
 }
 
-.mobile-img {
+.username {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Imagens do card */
+.card-images {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: white;
+}
+
+/* Wrapper para imagem + legenda */
+.image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 32%;
+}
+
+.image-wrapper img {
     width: 100%;
-    margin-top: 10px;
-    border-radius: 10px;
+    border-radius: 6px;
 }
 
-.card-text {
-    margin: 10px 0;
-}
-
-.card-time {
+.caption {
     font-size: 12px;
-    color: #555;
+    color: #a8b0c9; /* mantém o tema */
+    text-align: center;
+    margin-top: 4px;
+}
+
+/* Texto do post */
+.card-text {
+    padding: 15px;
+    font-size: 14px;
+    color: var(--text-muted);
+    flex-grow: 1;
+}
+
+/* Tempo */
+.time {
+    padding: 0 15px 15px;
+    font-size: 13px;
+    color: var(--text-time);
+}
+
+/* Responsividade */
+@media (max-width: 1100px) {
+    .card {
+        width: 300px;
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
