@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MiniSite — Portfólio</title>
+  <meta name="description" content="Mini site simples, rápido e responsivo. Ideal para portfólio, apresentação ou página de evento." />
+  <style>
+    :root{--bg:#ffffff;--fg:#0b1020;--muted:#556070;--accent:#0077ff;--card:#f6f8fb;--radius:12px}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, Roboto, 'Segoe UI', Arial;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased}
+    .container{max-width:980px;margin:36px auto;padding:20px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#00b2ff);display:grid;place-items:center;color:white;font-weight:700}
+    nav a{margin-left:14px;text-decoration:none;color:var(--muted)}
+
+    .hero{display:flex;gap:24px;align-items:center;margin-top:28px}
+    .hero .left{flex:1}
+    .hero h1{margin:0;font-size:30px}
+    .hero p{color:var(--muted);margin-top:10px}
+    .cta{margin-top:14px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-ghost{background:transparent;border:1px solid #e6eef8;color:var(--fg)}
+
+    .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+    .card{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(15,16,32,0.04)}
+    .card h3{margin:0 0 8px 0}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+
+    .about{display:flex;gap:18px;align-items:center;margin-top:28px}
+    .about img{width:200px;height:140px;object-fit:cover;border-radius:10px}
+
+    footer{margin-top:36px;padding-top:18px;border-top:1px solid #eef4ff;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap}
+
+    /* responsive */
+    @media (max-width:900px){.card-grid{grid-template-columns:repeat(2,1fr)}.hero{flex-direction:column;align-items:flex-start}.about{flex-direction:column}.logo{width:48px;height:48px}}
+    @media (max-width:520px){.card-grid{grid-template-columns:1fr}nav{display:none}.container{padding:12px}}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">MS</div>
+        <div>
+          <strong>MiniSite</strong>
+          <div style="font-size:12px;color:var(--muted)">Portfólio • Apresentação</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="left">
+        <h1>Olá — eu sou Laura. Bem-vindo ao meu mini site.💕</h1>
+        <p>Um layout limpo e responsivo para mostrar seu trabalho, serviços e formas de contato em uma única página.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contato">Entrar em contato</a>
+          <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+        </div>
+      </div>
+      <div class="right">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop&s=placeholder" alt="Imagem" style="width:260px;height:160px;object-fit:cover;border-radius:10px;box-shadow:0 8px 26px rgba(2,6,23,0.06)">
+      </div>
+    </section>
+
+    <section id="servicos" class="card-grid" aria-label="Serviços">
+      <div class="card">
+        <h3>Design Visual</h3>
+        <p>Identidade visual, materiais para web e impressão, e layouts para apresentações.</p>
+      </div>
+      <div class="card">
+        <h3>Desenvolvimento</h3>
+        <p>Sites estáticos, landing pages e microsites otimizados para desempenho.</p>
+      </div>
+      <div class="card">
+        <h3>Consultoria</h3>
+        <p>Estratégia digital, otimização de conteúdo e recomendações para SEO e UX.</p>
+      </div>
+    </section>
+
+    <section id="sobre" class="about">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop&s=placeholder" alt="Sobre" />
+      <div>
+        <h2>Sobre mim</h2>
+        <p style="color:var(--muted)">Sou profissional criativa com experiência em design e desenvolvimento web. Gosto de criar soluções simples e eficientes que comuniquem bem e funcionem em qualquer dispositivo.</p>
+      </div>
+    </section>
+
+    <section id="contato" style="margin-top:20px">
+      <h2>Contato</h2>
+      <p style="color:var(--muted)">Preencha o formulário ou envie um e-mail para <strong>seu@email.com</strong>.</p>
+      <form onsubmit="event.preventDefault();alert('Mensagem enviada (simulação)');" style="display:grid;gap:8px;max-width:560px;margin-top:12px">
+        <input placeholder="Nome" required style="padding:10px;border-radius:8px;border:1px solid #eef4ff" />
+        <input placeholder="E-mail" type="email" required style="padding:10px;border-radius:8px;border:1px solid #eef4ff" />
+        <textarea placeholder="Mensagem" rows="4" style="padding:10px;border-radius:8px;border:1px solid #eef4ff"></textarea>
+        <button type="submit" class="btn btn-primary" style="width:160px">Enviar</button>
+      </form>
+    </section>
+
+    <footer>
+      <div>© MiniSite — 2025</div>
+      <div style="color:var(--muted)">Feito com <span style="color:var(--accent)">♥</span> • Layout único</div>
+    </footer>
+  </div>
+</body>
+</html>
+<aside></aside>
+<main></main>
+<article></article>
