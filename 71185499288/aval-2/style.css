@@ -1,0 +1,106 @@
+/* styles.css - Estilos separados para o site da Imobiliária Premium */
+
+:root{
+  --primary:#1e3d59;
+  --accent:#f5a623;
+  --bg:#f3f3f3;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --radius:12px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--bg);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Header */
+header.site-header{
+  background:linear-gradient(90deg,var(--primary) 0%, #163047 100%);
+  color:#fff;
+  padding:18px 24px;
+  display:flex;
+  gap:16px;
+  align-items:center;
+  justify-content:space-between;
+}
+header.site-header .brand{
+  display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.25rem;
+}
+header.site-header nav a{color:rgba(255,255,255,0.9);text-decoration:none;margin-left:18px;font-weight:600}
+header.site-header nav a:hover{color:var(--accent)}
+
+/* Mobile menu button */
+.header-actions{display:flex;align-items:center;gap:12px}
+.menu-btn{display:none;background:transparent;border:0;color:white;font-size:1.25rem}
+
+/* Banner */
+.hero{
+  background-image:url('https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=1600&q=80');
+  background-size:cover;background-position:center;
+  height:420px;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;
+}
+.hero .inner{background:rgba(0,0,0,0.28);padding:28px;border-radius:10px;color:white;max-width:900px}
+.hero h1{font-size:2rem;margin-bottom:8px;text-shadow:0 6px 16px rgba(0,0,0,0.45)}
+.hero p{opacity:0.95}
+
+/* Container */
+.container{max-width:1120px;margin:30px auto;padding:0 20px}
+.secao h2{color:var(--primary);font-size:1.6rem;margin-bottom:12px}
+.secao p{color:var(--muted);line-height:1.5}
+
+/* Grid de imóveis */
+.imoveis-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{
+  background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 24px rgba(16,24,40,0.06);transition:transform .25s ease, box-shadow .25s ease;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(16,24,40,0.12)}
+.card img{width:100%;height:200px;object-fit:cover;display:block}
+.card-body{padding:16px}
+.card-title{font-weight:700;margin-bottom:6px}
+.card-meta{color:var(--muted);font-size:0.95rem;margin-bottom:12px}
+.card-actions{display:flex;gap:8px}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;border:0;cursor:pointer}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-ghost{background:transparent;border:1px solid rgba(30,61,89,0.08);color:var(--primary)}
+.btn-primary:hover{background:var(--accent);color:#111}
+
+/* Filtros */
+.filters{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px}
+.select, .search-input{padding:10px 12px;border-radius:10px;border:1px solid #e6e9ee;background:white}
+.search-input{min-width:220px}
+
+/* Modal de detalhe */
+.modal-overlay{position:fixed;inset:0;background:rgba(2,6,23,0.5);display:none;align-items:center;justify-content:center;padding:20px;z-index:60}
+.modal{background:white;border-radius:12px;max-width:880px;width:100%;overflow:hidden;box-shadow:0 30px 80px rgba(2,6,23,0.5)}
+.modal .modal-grid{display:grid;grid-template-columns:1fr 360px;gap:0}
+.modal img{width:100%;height:420px;object-fit:cover}
+.modal .modal-body{padding:20px}
+.modal .close-btn{background:transparent;border:0;font-size:1.2rem;cursor:pointer}
+
+/* Contato */
+.contact-card{background:linear-gradient(180deg,#fff,#fbfbfd);padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(16,24,40,0.04)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.form-row.full{grid-template-columns:1fr}
+.input, textarea{padding:12px;border-radius:10px;border:1px solid #e6e9ee}
+textarea{min-height:120px;resize:vertical}
+.form-actions{text-align:right}
+
+/* Footer */
+.site-footer{background:linear-gradient(90deg,#0f2a3a,#163047);color:#fff;padding:20px;text-align:center;margin-top:36px}
+
+/* Responsivo */
+@media (max-width:900px){
+  .modal .modal-grid{grid-template-columns:1fr}
+  .hero{height:320px}
+}
+@media (max-width:700px){
+  header.site-header nav{display:none}
+  .menu-btn{display:inline-block}
+  .form-row{grid-template-columns:1fr}
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imobiliária Premium</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f3f3f3;
+      color: #333;
+    }
+
+    header {
+      background: #1e3d59;
+      padding: 20px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #f5a623;
+    }
+
+    .banner {
+      background: url('https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=1350&q=80') center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      font-size: 36px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .secao {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .secao h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #1e3d59;
+    }
+
+    .imoveis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-info {
+      padding: 20px;
+    }
+
+    .card-info h3 {
+      margin-bottom: 10px;
+    }
+
+    .card-info p {
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #1e3d59;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #f5a623;
+    }
+
+    footer {
+      background: #1e3d59;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<header>
+  <h1>Imobiliária Premium</h1>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#imoveis">Imóveis</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<div class="banner">Seu novo lar está aqui</div>
+
+<section class="secao" id="sobre">
+  <h2>Sobre Nós</h2>
+  <p>Somos uma imobiliária especializada em conectar pessoas aos melhores imóveis da região. Trabalhamos com compromisso, seriedade e atendimento personalizado.</p>
+</section>
+
+<section class="secao" id="imoveis">
+  <h2>Imóveis Disponíveis</h2>
+  <div class="imoveis">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1500&q=80" />
+      <div class="card-info">
+        <h3>Casa Moderna</h3>
+        <p>3 quartos · 2 suítes · 250m²</p>
+        <a class="btn" href="#" onclick="mostrarMensagem()">Saiba Mais</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1500&q=80" />
+      <div class="card-info">
+        <h3>Apartamento Luxo</h3>
+        <p>2 quartos · 1 suíte · 120m²</p>
+        <a class="btn" href="#" onclick="mostrarMensagem()">Saiba Mais</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=1500&q=80" />
+      <div class="card-info">
+        <h3>Casa de Campo</h3>
+        <p>4 quartos · 3 suítes · 350m²</p>
+        <a class="btn" href="#" onclick="mostrarMensagem()">Saiba Mais</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="secao" id="contato">
+  <h2>Contato</h2>
+  <p>Email: atendimento@imobiliariapremium.com</p>
+  <p>Telefone: (11) 99999-0000</p>
+</section>
+
+<footer>
+  © 2025 Imobiliária Premium — Todos os direitos reservados.
+</footer>
+
+<script>
+  function mostrarMensagem() {
+    alert("Em breve mais detalhes sobre este imóvel!");
+  }
+</script>
+
+<script src="script.js"></script></body>
+</html>
+<h3>
+    <span>
+        <niv>
+            <main>
+                <div>
+     <aside>
+        <article>               
