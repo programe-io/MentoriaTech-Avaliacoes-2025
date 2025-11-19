@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galeria Responsiva — Animes Completa</title>
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ====== NAV BAR – estilização básica ====== */
+    nav {
+      background: #111;
+      color: #fff;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f0ad00;
+    }
+
+    /* Menu responsivo (hambúrguer) */
+    .menu-btn {
+      display: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    @media(max-width: 700px) {
+      nav ul {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #111;
+        flex-direction: column;
+        padding: 15px 0;
+        display: none;
+      }
+
+      nav ul.open {
+        display: block;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+    }
+  </style>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body>
+
+  <header>
+    <h1>Galeria de Animes — Completa e Responsiva</h1>
+    <p>Com imagens, descrição, tags e comportamento responsivo igual ao primeiro modelo.</p>
+  </header>
+
+  <!-- ===== Navegação adicionada ===== -->
+  <nav>
+    <div class="logo">AnimeGallery</div>
+
+    <div class="menu-btn" id="menuBtn">☰</div>
+
+    <ul id="menuList">
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Animes</a></li>
+      <li><a href="#">Favoritos</a></li>
+      <li><a href="#">Sobre</a></li>
+    </ul>
+  </nav>
+  <!-- ===== Fim da navegação ===== -->
+
+  <main class="shell">
+    <section class="viewport" id="viewport">
+
+      <div class="controls" id="controls">
+        <button class="btn" id="prev">◀</button>
+        <button class="btn" id="next">▶</button>
+      </div>
+
+      <div class="pages" id="pages">
+
+        <article class="page">
+          <div class="thumb"><img src="https://tm.ibxk.com.br/2021/10/05/05091846887061.jpg"></div>
+          <div class="meta">
+            <h2>Naruto</h2>
+            <p>Um jovem ninja com o sonho de tornar-se Hokage.</p>
+            <div class="tags"><span class="tag">Ação</span><span class="tag">Shounen</span><span class="tag">Clássico</span></div>
+          </div>
+        </article>
+
+        <article class="page">
+          <div class="thumb"><img src="https://m.media-amazon.com/images/S/pv-target-images/a0cb3885c44b8305ac89ba7ce98e8cd978bf3ebba6a151a00dbf2d528e98bf3b.jpg"></div>
+          <div class="meta">
+            <h2>One Piece</h2>
+            <p>Luffy busca o maior tesouro do mundo para se tornar o Rei dos Piratas.</p>
+            <div class="tags"><span class="tag">Aventura</span><span class="tag">Pirata</span><span class="tag">Longa</span></div>
+          </div>
+        </article>
+
+        <article class="page">
+          <div class="thumb"><img src="https://br.web.img3.acsta.net/pictures/19/09/18/13/46/0198270.jpg"></div>
+          <div class="meta">
+            <h2>Demon Slayer</h2>
+            <p>Tanjiro enfrenta demônios para curar sua irmã.</p>
+            <div class="tags"><span class="tag">Ação</span><span class="tag">Fantasia</span></div>
+          </div>
+        </article>
+
+        <article class="page">
+          <div class="thumb"><img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=cover,format=auto,quality=85,width=1920/keyart/GR751KNZY-backdrop_wide"></div>
+          <div class="meta">
+            <h2>Attack on Titan</h2>
+            <p>A humanidade luta por sobrevivência contra titãs gigantes.</p>
+            <div class="tags"><span class="tag">Drama</span><span class="tag">Sombrio</span></div>
+          </div>
+        </article>
+
+        <article class="page">
+          <div class="thumb"><img src="https://upload.wikimedia.org/wikipedia/pt/5/5a/Boku_no_Hero_Academia_Volume_1.png"></div>
+          <div class="meta">
+            <h2>My Hero Academia</h2>
+            <p>Jovens heróis treinam para dominar seus poderes.</p>
+            <div class="tags"><span class="tag">Herói</span><span class="tag">Shounen</span></div>
+          </div>
+        </article>
+
+        <article class="page">
+          <div class="thumb"><img src="https://i0.wp.com/studioghibli.com.br/wp-content/uploads/2008/07/Studio-Ghibli-Logo.jpg?fit=1920%2C1040&ssl=1"></div>
+          <div class="meta">
+            <h2>Clássicos Ghibli</h2>
+            <p>Filmes mágicos que encantam todas as idades.</p>
+            <div class="tags"><span class="tag">Fantasia</span><span class="tag">Filme</span></div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="dots" id="dots"></div>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+      const pagesEl=document.getElementById('pages');
+      const viewport=document.getElementById('viewport');
+      const prevBtn=document.getElementById('prev');
+      const nextBtn=document.getElementById('next');
+      const dotsEl=document.getElementById('dots');
+      const controlWrap=document.getElementById('controls');
+
+      let current=0;
+      const pages=[...pagesEl.children];
+
+      const isWide=()=>window.matchMedia('(min-width:900px)').matches;
+
+      function renderDots(){
+        dotsEl.innerHTML='';
+        pages.forEach((p,i)=>{
+          const d=document.createElement('div');
+          d.className='dot'+(i===current?' active':'');
+
+          d.onclick=()=>{current=i;update();};
+          dotsEl.appendChild(d);
+        });
+      }
+
+      function update(){
+        if(isWide()){
+          pagesEl.style.transform='';
+          controlWrap.style.display='none';
+          dotsEl.style.display='none';
+        }else{
+          const w=viewport.clientWidth;
+          pagesEl.style.transform=`translateX(${-current*w}px)`;
+          controlWrap.style.display='';
+          dotsEl.style.display='';
+          [...dotsEl.children].forEach((d,i)=>d.classList.toggle('active',i===current));
+        }
+      }
+
+      prevBtn.onclick=()=>{current=Math.max(0,current-1);update();};
+      nextBtn.onclick=()=>{current=Math.min(pages.length-1,current+1);update();};
+
+      window.onresize=update;
+
+      renderDots();update();
+    })();
+
+    /* ===== Evento do menu hambúrguer ===== */
+    const menuBtn = document.getElementById("menuBtn");
+    const menuList = document.getElementById("menuList");
+
+    menuBtn.onclick = () => {
+      menuList.classList.toggle("open");
+    };
+  </script>
+</body>
+</html>

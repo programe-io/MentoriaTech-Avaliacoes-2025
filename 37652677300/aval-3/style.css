@@ -1,0 +1,160 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#ff6b6b;
+  --muted: #9aa4b2;
+  --gap:16px;
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+  margin:0;
+  font-family:Arial;
+  color:#e6eef6;
+  background:#0a0f1c;
+}
+
+header{
+  padding:20px;
+  text-align:center;
+}
+header h1{
+  margin:0;
+  font-size:24px;
+}
+header p{
+  margin:0;
+  color:var(--muted);
+}
+
+.shell{
+  max-width:1200px;
+  margin:0 auto;
+  padding:16px;
+}
+
+.viewport{
+  position:relative;
+  overflow:hidden;
+}
+
+.pages{
+  display:flex;
+  gap:var(--gap);
+  transition:transform .35s ease;
+  padding:8px;
+}
+
+.page{
+  min-width:100%;
+  background:#101829;
+  border-radius:12px;
+  padding:18px;
+  box-shadow:0 6px 20px rgba(2,6,23,0.6);
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+}
+
+.thumb{
+  width:160px;
+  height:120px;
+  border-radius:8px;
+  overflow:hidden;
+  flex-shrink:0;
+}
+.thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.meta{flex:1}
+.meta h2{
+  margin:0 0 6px 0;
+  font-size:18px;
+}
+.meta p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.tags{
+  margin-top:8px;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.tag{
+  background:rgba(255,255,255,0.08);
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+.controls{
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+  display:flex;
+  gap:8px;
+  z-index:10;
+}
+.btn{
+  background:rgba(0,0,0,0.4);
+  padding:8px;
+  border-radius:8px;
+  color:white;
+  cursor:pointer;
+}
+
+.dots{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:12px;
+  display:flex;
+  gap:8px;
+}
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.25);
+  cursor:pointer;
+}
+.dot.active{
+  background:var(--accent);
+}
+
+@media (min-width:900px){
+  .viewport{
+    overflow:visible;
+  }
+  .pages{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:var(--gap);
+    padding:0;
+  }
+  .page{
+    min-width:unset;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  .thumb{
+    width:100%;
+    height:200px;
+    margin-bottom:12px;
+  }
+  .controls,
+  .dots{
+    display:none;
+  }
+}
