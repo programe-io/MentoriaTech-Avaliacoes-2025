@@ -1,0 +1,48 @@
+/* -------- Scroll customizado -------- */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #111;
+}
+::-webkit-scrollbar-thumb {
+    background: #c71f1f;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #e02424;
+}
+
+/* -------- Avatar com animação pulsante -------- */
+.avatar-img {
+    animation: pulseRed 2s infinite;
+    transition: transform 0.3s ease;
+}
+
+.avatar-img:hover {
+    transform: scale(1.15);
+}
+
+@keyframes pulseRed {
+    0% {
+        box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 14px rgba(255, 0, 0, 0.9);
+    }
+    100% {
+        box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+    }
+}
+
+/* -------- Fade-in geral nas seções -------- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
