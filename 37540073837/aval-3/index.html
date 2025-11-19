@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Feed</title>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CSS customizado -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JS custom -->
+  <script defer src="app.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">LOGO</h1>
+      <ul class="menu">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Amigos</a></li>
+        <li><a href="#">Perfil</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h2>Stories</h2>
+      <div class="story">
+        <img src="https://i.pravatar.cc/50" alt="User Story">
+        <span class="story-name">FroJho</span>
+      </div>
+      <div class="story">
+        <img src="https://i.pravatar.cc/51" alt="User Story">
+        <span class="story-name">Ana</span>
+      </div>
+      <div class="story">
+        <img src="https://i.pravatar.cc/52" alt="User Story">
+        <span class="story-name">Lucas</span>
+      </div>
+    </aside>
+
+    <!-- FEED -->
+    <section class="feed">
+
+      <!-- CARD 1 -->
+      <div class="card">
+        <div class="card-header">
+          <img class="avatar" src="https://i.pravatar.cc/50" alt="Avatar">
+          <span class="username">FroJho</span>
+        </div>
+        <img class="card-img" src="https://preview.redd.it/the-original-image-of-the-monkey-thinking-meme-v0-ea1hkdjnx9af1.jpeg?width=640&crop=smart&auto=webp&s=a2441b38e0de398d58f2fea15cf7c8e14f9d93b2" alt="Post">
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="card-time">há 10 minutos</p>
+        <div class="card-actions">
+          <button class="action-btn like-btn">Curtir</button>
+          <button class="action-btn comment-btn">Comentar</button>
+          <button class="action-btn share-btn">Compartilhar</button>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card">
+        <div class="card-header">
+          <img class="avatar" src="https://i.pravatar.cc/51" alt="Avatar">
+          <span class="username">Ana</span>
+        </div>
+        <img class="card-img" src="https://i.pinimg.com/236x/7c/21/4a/7c214a60169cfea157950ce17f285854.jpg" alt="Post">
+        <p class="card-text">Esse é um post de exemplo com imagem.</p>
+        <p class="card-time">há 20 minutos</p>
+        <div class="card-actions">
+          <button class="action-btn like-btn">Curtir</button>
+          <button class="action-btn comment-btn">Comentar</button>
+          <button class="action-btn share-btn">Compartilhar</button>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="card">
+        <div class="card-header">
+          <img class="avatar" src="https://i.pravatar.cc/52" alt="Avatar">
+          <span class="username">Lucas</span>
+        </div>
+        <img class="card-img" src="https://play-lh.googleusercontent.com/srBGmdfe7qUY3WdOE0mj9Jcw6ORC6I0iadfDS8mTnvzdF-8Whm-UGHOmH7E9zrRe1sf9=w240-h480-rw" alt="Post">
+        <p class="card-text">Mais um post de exemplo.</p>
+        <p class="card-time">há 30 minutos</p>
+        <div class="card-actions">
+          <button class="action-btn like-btn">Curtir</button>
+          <button class="action-btn comment-btn">Comentar</button>
+          <button class="action-btn share-btn">Compartilhar</button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    const likeButtons = document.querySelectorAll('.like-btn');
+    likeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        alert('Você curtiu este post!');
+      });
+    });
+  </script>
+
+</body>
+</html>
