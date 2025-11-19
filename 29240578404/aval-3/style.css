@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    background: #0f1d4d;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+/* Navbar */
+header {
+    background: #123b8b;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+/* MAIN */
+main {
+    padding: 0;
+    margin: 0;
+}
+
+/* Feed */
+.feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 25px;
+}
+
+/* Card */
+.card {
+    background: #102e63;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Cabeçalho */
+.card-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 12px;
+}
+
+.avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 3px solid #58a6ff;
+    object-fit: cover;
+}
+
+.username {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Imagem */
+.phone-images {
+    width: 100%;
+    display: block;
+}
+
+/* Texto */
+.card p {
+    padding: 15px;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.time {
+    padding-left: 15px;
+    color: #CCCCCC;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    header nav {
+        justify-content: center;
+    }
+
+    .username {
+        font-size: 20px;
+    }
+
+    .card-header {
+        padding: 10px;
+    }
+}
