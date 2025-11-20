@@ -1,0 +1,99 @@
+:root {
+  --neon: #8e44ad;
+  --neon-glow: 0 0 10px var(--neon), 0 0 20px var(--neon);
+  --bg-dark: rgba(0, 0, 0, 0.45);
+  --bg-header: rgba(0, 0, 0, 0.55);
+  --transition: 0.3s ease;
+  --font: 'Poppins', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font); }
+html { scroll-behavior: smooth; }
+body { background: linear-gradient(135deg,#1b0a2a,#3d1c4d,#5c2e70); color: #f5f5ff; line-height:1.6; text-align:justify; }
+
+/* ================== HEADER ================== */
+header {
+  text-align:center; padding:2rem 1rem 3rem; background:var(--bg-header);
+  border-bottom:2px solid var(--neon); color:#fff;
+}
+
+.titulo-principal { color:var(--neon); font-size:2.6rem; text-shadow:var(--neon-glow); margin-bottom:1rem; }
+.subtitulo { color:var(--neon); text-shadow:var(--neon-glow); margin-top:0.5rem; }
+.foto-wrapper { margin:1rem auto; text-align:center; }
+.foto-perfil { width:160px; height:160px; border-radius:50%; border:3px solid var(--neon); object-fit:cover; box-shadow:var(--neon-glow); display:block; margin:0 auto; }
+
+/* ================== MENU ================== */
+.menu { display:flex; justify-content:center; list-style:none; gap:2rem; margin-top:1rem; }
+.menu li a { color:var(--neon); font-weight:bold; text-decoration:none; transition:var(--transition); }
+.menu li a:hover { transform:scale(1.1); text-shadow:var(--neon-glow); }
+
+.menu-toggle { display:none; flex-direction:column; cursor:pointer; margin:1rem auto 0; }
+.menu-toggle span { height:3px; width:28px; margin:4px 0; border-radius:2px; background:var(--neon); transition:var(--transition); }
+.menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.menu-toggle.active span:nth-child(2){opacity:0;}
+.menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+
+/* Mobile */
+@media(max-width:768px){
+  .menu-toggle{display:flex;}
+  #navbar{display:none;position:fixed;inset:0;flex-direction:column;background:rgba(16,10,25,0.95);backdrop-filter:blur(10px);justify-content:center;align-items:center;gap:2rem;z-index:1100;}
+  #navbar.active{display:flex;}
+  .menu{flex-direction:column; gap:2rem;}
+  .menu li a{font-size:1.6rem;}
+}
+
+/* ================== CONTEÚDO ================== */
+main { max-width:1000px; margin:2rem auto; padding:0 1rem; }
+
+.section-card { background:var(--bg-dark); border-radius:15px; padding:2rem; margin-bottom:2rem; box-shadow:0 0 20px var(--neon); color:#f5f5ff; }
+
+.section-card h2{text-align:center; color:var(--neon); text-shadow:var(--neon-glow); margin-bottom:1.2rem;}
+.section-card h3{color:var(--neon); margin-top:1rem;}
+
+ul li{margin:0.5rem 0;}
+
+/* ================== INFORMAÇÕES ================== */
+.aside-info {
+  max-width:800px;
+  margin:2rem auto;
+  text-align:center; /* centralizado */
+  background:var(--bg-dark);
+  padding:2rem;
+  border-radius:15px;
+  border:1px solid var(--neon);
+  box-shadow:0 0 15px var(--neon);
+}
+
+/* ================== GRID DE PROJETOS ================== */
+.grid-cards { display:grid; gap:1.5rem; }
+@media(min-width:720px){ .grid-cards{grid-template-columns:repeat(3,1fr);} }
+
+.card {
+  background:var(--bg-header); 
+  border:1px solid var(--neon); 
+  border-radius:12px; 
+  padding:1rem; 
+  box-shadow:0 0 15px var(--neon); 
+  transition:var(--transition);
+  color:#f5f5ff; /* letras mais visíveis */
+}
+
+/* Removido o botão do projeto */
+.card a.btn-projeto { display:none; }
+
+.card:hover{transform:translateY(-6px); box-shadow:0 0 25px var(--neon); }
+
+/* ================== FOOTER ================== */
+footer { text-align:center; padding:2rem 1rem; background:rgba(0,0,0,0.75); border-top:2px solid var(--neon); }
+footer a{color:var(--neon); text-decoration:none;}
+footer a:hover{text-shadow:var(--neon-glow);}
+.footer-frase{margin-top:1rem; font-style:italic; color:var(--neon);}
+
+/* ================== BOTÃO VOLTAR AO TOPO ================== */
+#topButton{display:none;position:fixed;bottom:30px;right:30px;background:var(--neon);color:#000;border:none;padding:10px 15px;border-radius:50%;cursor:pointer;font-size:20px;box-shadow:var(--neon-glow);transition:var(--transition); z-index:1000;}
+#topButton:hover{background-color:#d166ff;color:#fff;}
+
+/* ================== ANIMAÇÃO ================== */
+.fade-in { opacity:0; transform:translateY(30px); transition:1s ease; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+
