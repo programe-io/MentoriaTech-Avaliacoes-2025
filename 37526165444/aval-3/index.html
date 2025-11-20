@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dexter — Fanpage</title>
+
+  <!-- Tailwind CDN + config inline -->
+  <script>
+    tailwind = {
+      config: {
+        theme: {
+          extend: {
+            colors: {
+              dexbg: '#070707',
+              dexcard: '#0f1112',
+              dexaccent: '#b71c1c',   /* sangue / vermelho */
+              dexwarn: '#ff8a00'      /* laranja de destaque */
+            },
+            fontFamily: {
+              display: ['Inter', 'ui-sans-serif', 'system-ui']
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="style.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body class="bg-dexbg text-gray-200 antialiased font-display">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-black/50 backdrop-blur-sm border-b border-black/20">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-dexaccent to-dexwarn flex items-center justify-center text-black font-bold">D</div>
+        <div>
+          <h1 class="text-lg font-semibold"><span>Dexter</span></h1>
+          <span class="text-xs text-gray-400">Dark · Thriller · Anti-herói</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex gap-4 items-center text-sm">
+        <a href="#about" class="hover:text-white">Sobre</a>
+        <a href="#episodes" class="hover:text-white">Imagens</a>
+        <a href="#contact" class="hover:text-white">Contato</a>
+      </nav>
+
+      <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-white/5" aria-label="Abrir menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobileNav" class="hidden md:hidden border-t border-black/20">
+      <div class="px-4 py-3 flex flex-col gap-2">
+        <a href="#about">Sobre</a>
+        <a href="#episodes">Imagens</a>
+        <a href="#contact">Contato</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-6xl mx-auto px-4 py-10">
+
+    <!-- HERO -->
+    <section class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight"><span>Dexter Morgan</span> — vigilante nas sombras</h2>
+        <p class="mt-4 text-gray-300 leading-relaxed">
+          Dexter é um thriller sobre um analista forense especializado em sangue que vive uma vida dupla — por fora, dedicado e frio; por dentro, um caçador metódico.
+          Aqui estão imagens e destaques visuais da série.
+        </p>
+
+        <div class="mt-6 flex gap-3">
+          <a href="#episodes" class="inline-flex items-center gap-2 rounded-md px-4 py-2 bg-dexaccent text-black font-medium shadow">Ver imagens</a>
+          <a href="#about" class="inline-flex items-center gap-2 rounded-md px-4 py-2 border border-white/10 text-sm">Sobre a série</a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="rounded-xl overflow-hidden shadow-lg border border-black/10">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlkQr3tJ-sSMO6w9Rm7GwhYBuCUEKogxZjLg&s" alt="Dexter - destaque" class="w-full h-64 object-cover sm:h-80"/>
+        </div>
+        <span class="mt-2 text-xs text-gray-400 block">Foto promocional / cena</span>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="mt-12 bg-gradient-to-b from-black/10 to-transparent p-6 rounded-xl border border-black/20">
+      <h3 class="text-2xl font-semibold"><span>Sobre a série</span></h3>
+      <p class="mt-3 text-gray-300">
+        Criada a partir do livro "Darkly Dreaming Dexter", a série acompanha Dexter Morgan, um especialista em padrões de sangue que caça criminosos que escaparam da justiça.
+        A atmosfera é sombria, com estética que mistura sangue e contrastes fortes — por isso o tema e as cores escolhidas.
+      </p>
+    </section>
+
+    <!-- IMAGENS / CARDS -->
+    <section id="episodes" class="mt-10">
+      <h3 class="text-2xl font-semibold mb-4"><span>Imagens & Cenas</span></h3>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <article class="card bg-dexcard rounded-xl overflow-hidden border border-black/25 shadow-lg">
+          <button class="card-btn w-full text-left" data-title="Dexter - Cena 1" data-desc="Dexter em ação." data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlkQr3tJ-sSMO6w9Rm7GwhYBuCUEKogxZjLg&s">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlkQr3tJ-sSMO6w9Rm7GwhYBuCUEKogxZjLg&s" alt="Dexter cena 1" class="w-full h-56 object-cover"/>
+            <div class="p-4">
+              <h4 class="font-semibold"><span>Dexter - Cena 1</span></h4>
+              <span class="text-sm text-gray-400">Momento tenso da série.</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card bg-dexcard rounded-xl overflow-hidden border border-black/25 shadow-lg">
+          <button class="card-btn w-full text-left" data-title="Dexter - Foto 2" data-desc="Retrato sombrio." data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUFM74SpL-QpvgyGsEFyhvO0efwg5w_X-N3A&s">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUFM74SpL-QpvgyGsEFyhvO0efwg5w_X-N3A&s" alt="Dexter foto 2" class="w-full h-56 object-cover"/>
+            <div class="p-4">
+              <h4 class="font-semibold"><span>Foto 2</span></h4>
+              <span class="text-sm text-gray-400">Retrato / close-up.</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card bg-dexcard rounded-xl overflow-hidden border border-black/25 shadow-lg">
+          <button class="card-btn w-full text-left" data-title="Dexter - Cena 3" data-desc="Cena icônica." data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSJf5SRtLpCX2eQentMAbLRDnkzVLr-lgL3w&s">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSJf5SRtLpCX2eQentMAbLRDnkzVLr-lgL3w&s" alt="Dexter cena 3" class="w-full h-56 object-cover"/>
+            <div class="p-4">
+              <h4 class="font-semibold"><span>Cena 3</span></h4>
+              <span class="text-sm text-gray-400">Tom sombrio e frio.</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card bg-dexcard rounded-xl overflow-hidden border border-black/25 shadow-lg">
+          <button class="card-btn w-full text-left" data-title="Dexter - Imagem 4" data-desc="Atmosfera sinistra." data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIiSQp1KeOQLXgM7n4tM3fhJbW83eMLd7R-Q&s">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIiSQp1KeOQLXgM7n4tM3fhJbW83eMLd7R-Q&s" alt="Dexter imagem 4" class="w-full h-56 object-cover"/>
+            <div class="p-4">
+              <h4 class="font-semibold"><span>Imagem 4</span></h4>
+              <span class="text-sm text-gray-400">Visual cinematográfico.</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card bg-dexcard rounded-xl overflow-hidden border border-black/25 shadow-lg">
+          <button class="card-btn w-full text-left" data-title="Dexter - Imagem 5" data-desc="Promo / still." data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeMB8b7GT00Jer_LemVz6n1aPd4AXIwld2Ew&s">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeMB8b7GT00Jer_LemVz6n1aPd4AXIwld2Ew&s" alt="Dexter imagem 5" class="w-full h-56 object-cover"/>
+            <div class="p-4">
+              <h4 class="font-semibold"><span>Imagem 5</span></h4>
+              <span class="text-sm text-gray-400">Cenas promocionais.</span>
+            </div>
+          </button>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- MODAL -->
+    <div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+      <div id="modalOverlay" class="absolute inset-0 bg-black/75"></div>
+      <div class="relative max-w-3xl w-full bg-dexcard rounded-xl overflow-hidden border border-black/30 shadow-xl z-10">
+        <button id="modalClose" class="absolute right-3 top-3 p-2 rounded-md hover:bg-white/5 z-20" aria-label="Fechar modal">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <div class="md:flex">
+          <div class="md:w-1/2">
+            <img id="modalImage" src="" alt="Ampliação" class="w-full h-72 object-cover"/>
+          </div>
+          <div class="p-5 md:w-1/2">
+            <h4 id="modalTitle" class="text-xl font-semibold">Título</h4>
+            <p id="modalDesc" class="mt-3 text-gray-300 text-sm">Descrição</p>
+            <div class="mt-6 flex gap-3">
+              <a id="modalMore" href="#" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-dexwarn text-black font-medium">Buscar mais</a>
+              <button id="modalCloseBtn" class="px-4 py-2 rounded-md border border-white/10">Fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="mt-12 text-center text-sm text-gray-400">
+      <p>Página fictícia feita para demonstração — imagens usadas como referência.</p>
+      <span class="block mt-2">Feito com TailwindCSS e ❤️</span>
+    </footer>
+
+  </main>
+
+  <script src="script.js" defer></script>
+<script src="script.js"></script></body>
+</html>
