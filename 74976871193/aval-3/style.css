@@ -1,0 +1,244 @@
+/* =========================================
+   VARIÁVEIS DE CORES E RESET
+   ========================================= */
+:root {
+    --primary-color: #0056b3; /* Azul Institucional */
+    --secondary-color: #00c4cc; /* Ciano para destaque */
+    --accent-color: #ff6b6b; /* Vermelho para alertas */
+    --bg-light: #f4f7f6; /* Fundo cinza muito claro */
+    --text-dark: #333;
+    --text-light: #fff;
+}
+
+/* Reset básico para remover margens padrão dos navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Rolagem suave ao clicar nos links do menu */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================================
+   LAYOUT GERAL (Estrutura Flexbox)
+   ========================================= */
+body {
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    /* Configuração para o Rodapé fixo (Sticky Footer) */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+/* O segredo do layout: A tag main cresce para ocupar o espaço vazio */
+main {
+    flex: 1;
+}
+
+/* =========================================
+   NAVEGAÇÃO
+   ========================================= */
+nav {
+    background: var(--primary-color);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Menu fica fixo no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav .logo {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* =========================================
+   CAPA (HERO SECTION)
+   ========================================= */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), #002a55);
+    color: var(--text-light);
+    padding: 100px 20px;
+    min-height: 80vh; /* Ocupa 80% da altura da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+/* Botão de Ação (CTA) */
+.btn {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background 0.3s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: #fff;
+}
+
+/* =========================================
+   SEÇÕES E GRID SYSTEM
+   ========================================= */
+section {
+    padding: 60px 10%; /* Espaçamento interno das seções */
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+/* Container de Grade Responsiva (Mágica do CSS Grid) */
+.grid-container {
+    display: grid;
+    /* Cria colunas automáticas que nunca ficam menores que 250px */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Estilo dos Cards */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Efeito de flutuar ao passar o mouse */
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* =========================================
+   ESTILOS ESPECÍFICOS: DESAFIOS
+   ========================================= */
+#desafios {
+    background-color: white;
+}
+
+.challenge-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--accent-color); /* Linha vermelha lateral */
+    padding-left: 20px;
+    height: 100%; /* Garante altura igual no grid */
+}
+
+.challenge-text h3 {
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+/* Caixa de Estatística */
+.stat-box {
+    background: var(--primary-color);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.stat-number {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+/* =========================================
+   RODAPÉ
+   ========================================= */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Segurança extra para o footer ficar embaixo */
+}
+
+/* =========================================
+   RESPONSIVIDADE (CELULAR)
+   ========================================= */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    nav ul {
+        display: none; /* Esconde o menu no celular para simplificar */
+    }
+    
+    section {
+        padding: 40px 5%;
+    }
+}
