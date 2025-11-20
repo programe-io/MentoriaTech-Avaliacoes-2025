@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita de Cuscuz Simples e Delicioso 🌽</title>
+    
+    <link rel="stylesheet" href="estilo.css"> 
+    
+    <style>
+        /* Estilos da navegação (mantidos para o menu funcionar) */
+        nav {
+            background-color: #e67e22; 
+            padding: 10px 0;
+            text-align: center;
+            border-radius: 4px;
+            margin-bottom: 20px; 
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; 
+            justify-content: center; 
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff; 
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+            border-radius: 4px;
+        }
+        nav ul li a:hover {
+            background-color: #f39c12; 
+        }
+
+        /* ESTILOS PARA ASIDE */
+        aside {
+            float: right; 
+            width: 30%; 
+            margin-left: 20px;
+            padding: 15px;
+            background-color: #fffbe6; 
+            border: 1px solid #ffd700; 
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+            font-size: 0.9em;
+        }
+
+        aside h3 {
+            color: #e67e22; 
+            margin-top: 0;
+            border-bottom: 1px dashed #ffd700;
+            padding-bottom: 5px;
+        }
+
+        /* Limpa o float após a aside */
+        .container::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Ajuste para telas pequenas */
+        @media (max-width: 768px) {
+            aside {
+                width: 100%; 
+                float: none; 
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#ingredientes">Ingredientes</a></li>
+            <li><a href="#acompanhamentos">Acompanhamentos</a></li>
+            <li><a href="#preparo">Modo de Preparo</a></li>
+            <li><a href="#calculadora">Calculadora</a></li>
+        </ul>
+    </nav>
+    <header id="inicio"> 
+        <h1>Cuscuz Simples e Delicioso 🌽</h1>
+        <p>Um clássico nordestino fácil de preparar!</p>
+    </header>
+    
+    <main>
+        <div class="container">
+
+            
+            <img src="https://receitasdepesos.com.br/wp-content/uploads/2024/06/51-1.jpg.webp" alt="Foto de um prato de cuscuz cozido, servido com manteiga ou ovo." class="imagem-cuscuz">
+
+            <aside id="acompanhamentos">
+                <h3>🍴 Acompanhamentos Clássicos</h3>
+                <p>O cuscuz é versátil e fica ótimo com:</p>
+                <ul>
+                    <li>Ovo frito ou cozido</li>
+                    <li>Manteiga (manteiga de garrafa, se possível!)</li>
+                    <li>Carne de sol desfiada</li>
+                    <li>Queijo coalho grelhado</li>
+                    <li>Leite (para o cuscuz doce)</li>
+                </ul>
+            </aside>
+            <article>
+                <h2 id="ingredientes">🥣 Ingredientes</h2> 
+                <ul>
+                    <li>**1 xícara** (chá) de flocão de milho (farinha de milho flocada)</li>
+                    <li>**1/2 xícara** (chá) de água</li>
+                    <li>**1 colher** (chá) rasa de sal (ou a gosto)</li>
+                </ul>
+
+                <h2 id="preparo">⚙️ Modo de Preparo</h2> 
+                <ol>
+                    <li>Em uma tigela, misture o **flocão de milho** e o **sal**.</li>
+                    <li>Adicione a **água** aos poucos e misture bem. A massa deve ficar úmida, mas não encharcada.</li>
+                    <li>Deixe a massa **hidratar** por cerca de **10 a 15 minutos**. Os flocos irão absorver a água e inchar.</li>
+                    <li>Coloque a massa fofa na **cuscuzeira**, sem apertar.</li>
+                    <li>Leve ao fogo para cozinhar no vapor por cerca de **8 a 10 minutos** após a água começar a ferver.</li>
+                    <li>Retire do fogo, desenforme e sirva ainda quente com manteiga, ovo, queijo ou o acompanhamento de sua preferência!</li>
+                </ol>
+                
+                <h2 id="dica">💡 Dica do Chef</h2> 
+                <blockquote cite="Dica culinária">
+                    Se for usar a cuscuzeira individual, a massa deve preencher o recipiente sem estar compactada. Isso garante que o vapor circule bem e o cuscuz fique soltinho.
+                </blockquote>
+            </article>
+            <hr>
+            <h2 id="calculadora">🔢 Calcular Proporções</h2> 
+            <p>Quer fazer mais ou menos cuscuz? Insira o número de porções desejado:</p>
+            
+            <input type="number" id="inputPorcoes" value="2" min="1" style="padding: 10px; margin-right: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            
+            <button onclick="calcularIngredientes()" style="background-color: #e67e22; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+                Calcular!
+            </button>
+
+            <div id="resultadoCalculo" style="margin-top: 20px; padding: 15px; border: 1px dashed #ffd700; background-color: #fffbe6; border-radius: 4px;">
+                Insira o número de porções e clique em Calcular.
+            </div>
+            </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Receitas Culinárias. Feito com sabor nordestino! ✨</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+<script src="script.js"></script></body>
+</html>
