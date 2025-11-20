@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sade — Página Única</title>
+
+  <!-- Tailwind CDN + Config -->
+  <script>
+    tailwind = {
+      config: {
+        theme: {
+          extend: {
+            colors: {
+              sadebg: "#0b0f12",
+              sadecard: "#0f1720",
+              sadeaccent: "#7cc6c3",
+              sadegold: "#c9a66b"
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="style.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body class="bg-sadebg text-gray-200 antialiased font-sans">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-black/40 backdrop-blur-md border-b border-black/30">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-sadeaccent/70 to-sadegold/40 flex items-center justify-center text-black font-semibold">
+          <span>S</span>
+        </div>
+        <div>
+          <h1 class="text-lg font-semibold">
+            <span>Sade</span>
+          </h1>
+          <span class="text-xs text-gray-400 -mt-0.5">Soul · Smooth · Elegância</span>
+        </div>
+      </a>
+
+      <!-- NAV PRINCIPAL -->
+      <nav class="hidden md:flex gap-4 items-center text-sm">
+        <a href="#about" class="hover:text-white">Sobre</a>
+        <a href="#cards" class="hover:text-white">Músicas & Álbuns</a>
+        <a href="#extra-nav" class="hover:text-white">Navegação Extra</a>
+      </nav>
+
+      <!-- Mobile Button -->
+      <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-white/5" aria-label="Abrir menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- MENU MOBILE -->
+    <div id="mobileNav" class="hidden md:hidden border-t border-black/20">
+      <div class="px-4 py-3 flex flex-col gap-2">
+        <a href="#about">Sobre</a>
+        <a href="#cards">Músicas & Álbuns</a>
+        <a href="#extra-nav">Navegação Extra</a>
+      </div>
+    </div>
+  </header>
+
+  
+  <!-- MAIN -->
+  <main class="max-w-6xl mx-auto px-4 py-10">
+
+    <!-- EXTRA NAV (solicitação do usuário) -->
+    <nav id="extra-nav" class="bg-sadecard p-4 rounded-lg border border-black/40 mb-10">
+      <h2 class="text-xl font-semibold mb-2">Navegação da Página</h2>
+      <ul class="flex flex-wrap gap-3 text-sm text-gray-300">
+        <li><a class="hover:text-white underline" href="#about">Ir para Sobre</a></li>
+        <li><a class="hover:text-white underline" href="#cards">Ir para Álbuns</a></li>
+        <li><a class="hover:text-white underline" href="#contact">Ir para Contato</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <span>Sade</span> — elegância, soul e suavidade
+        </h2>
+
+        <p class="mt-4 text-gray-300 leading-relaxed">
+          Sade é conhecida por sua sonoridade sofisticada — uma mistura de soul, jazz e pop que atravessa décadas.
+          Seu estilo suave, minimalista e emocional marcou gerações.
+        </p>
+
+        <div class="mt-6 flex gap-3">
+          <a href="#cards" class="inline-flex items-center gap-2 rounded-md px-4 py-2 bg-sadeaccent/90 text-black font-medium shadow">
+            <span>Ver álbuns</span>
+          </a>
+
+          <a href="#about" class="inline-flex items-center gap-2 rounded-md px-4 py-2 border border-white/10 text-sm">
+            <span>Sobre Sade</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Foto -->
+      <div class="relative">
+        <div class="rounded-xl overflow-hidden shadow-lg border border-white/5">
+          <img src="https://marginal.fm/images/2_noticias_fotos/sade-2024.jpg" class="w-full h-64 object-cover sm:h-80"/>
+        </div>
+        <span class="mt-2 text-xs text-gray-400 block">Foto promocional</span>
+      </div>
+    </section>
+
+
+    <!-- SOBRE -->
+    <section id="about" class="mt-12 bg-gradient-to-b from-black/20 to-transparent p-6 rounded-xl border border-black/20">
+      <h3 class="text-2xl font-semibold"><span>Sobre Sade</span></h3>
+      <p class="mt-3 text-gray-300">
+        A banda Sade ganhou fama mundial com faixas como 
+        <span class="text-sadeaccent">Smooth Operator</span>, 
+        <span class="text-sadeaccent">No Ordinary Love</span> 
+        e outras músicas profundas, melancólicas e elegantes.
+      </p>
+    </section>
+
+
+    <!-- CARDS -->
+    <section id="cards" class="mt-10">
+      <h3 class="text-2xl font-semibold mb-4"><span>Álbuns & Imagens</span></h3>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1 -->
+        <article class="card bg-sadecard rounded-xl overflow-hidden border border-black/25 shadow-lg">
+          <button class="card-btn w-full text-left"
+            data-title="Diamond Life"
+            data-desc="Álbum de estreia da banda (1984)."
+            data-image="https://m.media-amazon.com/images/I/81VQ2Qr3MgL.jpg">
+
+            <img src="https://m.media-amazon.com/images/I/81VQ2Qr3MgL.jpg" class="w-full h-56 object-cover"/>
+            <div class="p-4">
+              <h4 class="font-semibold"><span>Diamond Life</span></h4>
+              <span class="text-sm text-gray-400">Álbum clássico com soul e jazz.</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card bg-sadecard rounded-xl overflow-hidden border border-black/25 shadow-lg">
+          <button class="card-btn w-full text-left"
+            data-title="Love Deluxe"
+            data-desc="Álbum intenso e atmosférico."
+            data-image="https://imusic.b-cdn.net/images/item/original/316/0196587848316.jpg?sade-2024-love-deluxe-lp&class=scaled&v=1712999955">
+
+            <img src="https://imusic.b-cdn.net/images/item/original/316/0196587848316.jpg?sade-2024-love-deluxe-lp&class=scaled&v=1712999955" class="w-full h-56 object-cover"/>
+            <div class="p-4">
+              <h4 class="font-semibold"><span>Love Deluxe</span></h4>
+              <span class="text-sm text-gray-400">Som emocional e profundo.</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card bg-sadecard rounded-xl overflow-hidden border border-black/25 shadow-lg">
+          <button class="card-btn w-full text-left"
+            data-title="Capa 3"
+            data-desc="Imagem representativa da artista."
+            data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6kWADdhlWM_MI7r3wIa7lmTDpSdvL5DDrfg&s">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6kWADdhlWM_MI7r3wIa7lmTDpSdvL5DDrfg&s" class="w-full h-56 object-cover"/>
+            <div class="p-4">
+              <h4 class="font-semibold"><span>Capa 3</span></h4>
+              <span class="text-sm text-gray-400">Arte promocional.</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card bg-sadecard rounded-xl overflow-hidden border border-black/25 shadow-lg">
+          <button class="card-btn w-full text-left"
+            data-title="Capa 4"
+            data-desc="Imagem alternativa / single."
+            data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgOX1VZtAYj9Ba8U5el8BNEz5vJpMr2i3WNA&s">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgOX1VZtAYj9Ba8U5el8BNEz5vJpMr2i3WNA&s" class="w-full h-56 object-cover"/>
+            <div class="p-4">
+              <h4 class="font-semibold"><span>Capa 4</span></h4>
+              <span class="text-sm text-gray-400">Arte de divulgação.</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card bg-sadecard rounded-xl overflow-hidden border border-black/25 shadow-lg">
+          <button class="card-btn w-full text-left"
+            data-title="Capa 5"
+            data-desc="Capa de disco / edição."
+            data-image="https://cdn-images.dzcdn.net/images/cover/e2fd836cedf9336dc5c725dc3c4df5e0/0x1900-000000-80-0-0.jpg">
+
+            <img src="https://cdn-images.dzcdn.net/images/cover/e2fd836cedf9336dc5c725dc3c4df5e0/0x1900-000000-80-0-0.jpg" class="w-full h-56 object-cover"/>
+            <div class="p-4">
+              <h4 class="font-semibold"><span>Capa 5</span></h4>
+              <span class="text-sm text-gray-400">Capa digital.</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card bg-sadecard rounded-xl overflow-hidden border border-black/25 shadow-lg">
+          <button class="card-btn w-full text-left"
+            data-title="Imagem Recente"
+            data-desc="Imagem promocional recente."
+            data-image="https://marginal.fm/images/2_noticias_fotos/sade-2024.jpg">
+
+            <img src="https://marginal.fm/images/2_noticias_fotos/sade-2024.jpg" class="w-full h-56 object-cover"/>
+            <div class="p-4">
+              <h4 class="font-semibold"><span>Foto 6</span></h4>
+              <span class="text-sm text-gray-400">Promo 2024.</span>
+            </div>
+          </button>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer id="contact" class="mt-12 text-center text-sm text-gray-400">
+      <p>Site de fã — feito apenas para fins demonstrativos.</p>
+      <span class="block mt-2">Criado com TailwindCSS.</span>
+    </footer>
+
+  </main>
+
+  <script src="script.js" defer></script>
+<script src="script.js"></script></body>
+</html>

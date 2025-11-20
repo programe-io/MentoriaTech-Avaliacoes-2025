@@ -1,0 +1,43 @@
+/* style.css - pequenas customizações além do Tailwind */
+
+/* Body fallback background gradient for subtle texture */
+body {
+  background-image: radial-gradient(circle at 10% 10%, rgba(255,255,255,0.01), transparent 20%),
+                    radial-gradient(circle at 90% 90%, rgba(255,255,255,0.01), transparent 20%);
+}
+
+/* Card hover glow */
+.card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* Modal show/hide handled by JS, transitions here */
+#modal {
+  display: none; /* JS toggles */
+}
+#modal.show {
+  display: flex;
+  animation: modalIn 220ms ease-out;
+}
+@keyframes modalIn {
+  from { transform: translateY(12px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* Image smoothing for remote images */
+img {
+  image-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improve focus outline for accessibility */
+button:focus, a:focus {
+  outline: 3px solid rgba(124,198,195,0.18);
+  outline-offset: 3px;
+}
+
+/* Mobile tweaks */
+@media (max-width: 640px) {
+  .card img { height: 44vw; } /* make card images taller on narrow screens */
+}
