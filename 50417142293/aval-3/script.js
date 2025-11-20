@@ -1,7 +1,4 @@
-console.log("JS carregado: Blog Gummy Bear");
-
-document.querySelectorAll("nav a").forEach(link => {
-    link.addEventListener("click", () => {
-        console.log("Navegando para:", link.getAttribute("href"));
-    });
-});
+// Abre a imagem em nova aba ao clicar
+document.querySelectorAll(".galeria img").forEach(img => {
+    img.onclick = () => window.open(img.src, "_blank");
+};
