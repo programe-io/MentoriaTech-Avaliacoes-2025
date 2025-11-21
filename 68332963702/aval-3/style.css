@@ -1,0 +1,144 @@
+/*
+ * ----------------------------------------
+ * 1. CORES E VARIÁVEIS DO TEMA NATALINO (EXPANDIDO)
+ * ----------------------------------------
+ */
+:root {
+    /* Paleta Principal de Natal */
+    --color-primary: #C0392B;         /* Vermelho Natal (Principal) */
+    --color-primary-dark: #922B21;    /* Vinho/Vermelho Escuro (Hover) */
+    --color-secondary: #27AE60;       /* Verde Pinheiro Escuro (Secundário) */
+    --color-subtle-accent: #FCF3CF;   /* Dourado Claro/Bege (Neve/Papel) */
+    
+    /* Cores de Ação e Status */
+    --color-action: #F1C40F;          /* Amarelo Ouro/Estrela (Checkout) */
+    --color-alert: #D35400;           /* Laranja/Cobre (Alertas/Badge) */
+    
+    /* Fundos e Textos */
+    --color-background: #EAF2F8;      /* Azul Claro/Gelo (Fundo) */
+    --color-text: #1F2937;            /* Cinza Escuro do Texto */
+    --color-footer: #374151;          /* Cinza Escuro do Rodapé */
+}
+
+/* Aplicação das variáveis nas classes utilitárias do Tailwind customizadas */
+/* O VERMELHO substitui o amarelo/mostarda */
+.text-yellow-700 { color: var(--color-primary); }
+.hover\:text-yellow-800:hover { color: var(--color-primary-dark); }
+.bg-yellow-700 { background-color: var(--color-primary); }
+.hover\:bg-yellow-800:hover { background-color: var(--color-primary-dark); }
+
+/* Fundo Geral e Papel */
+body { background-color: var(--color-background); } /* Fundo mais claro/gelado */
+.bg-gray-800 { background-color: var(--color-footer); }
+.bg-light-paper { background-color: var(--color-subtle-accent) !important; }
+
+/*
+ * ----------------------------------------
+ * 2. TIPOGRAFIA (MANTIDA)
+ * ----------------------------------------
+ */
+
+body {
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+}
+
+h1, h2, h3 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: 0.05em;
+    font-weight: 800;
+}
+
+h2.text-3xl {
+    font-size: 2.25rem !important;
+    border-bottom: 3px solid var(--color-primary-dark); /* Borda em Vermelho Escuro */
+    padding-bottom: 5px;
+    margin-bottom: 1.5rem !important;
+}
+
+
+/*
+ * ----------------------------------------
+ * 3. EFEITO DE PROFUNDIDADE E NATAL
+ * ----------------------------------------
+ */
+
+/* Sombra mais pronunciada na barra de navegação */
+header.shadow-md {
+    box-shadow: 0 8px 10px -7px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid var(--color-secondary); /* Borda em Verde Pinheiro */
+}
+
+/* Cartões de produto com sombra mais "grossa" */
+.grid > div.shadow {
+    transition: all 0.3s ease;
+    box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.25);
+}
+
+.grid > div.shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -10px rgba(0, 0, 0, 0.35);
+}
+
+/*
+ * ----------------------------------------
+ * 4. BOTÕES E COMPONENTES NATALINOS
+ * ----------------------------------------
+ */
+
+/* Estilo do botão de compra (Vermelho Principal) */
+.add-to-cart-btn {
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid var(--color-primary-dark);
+}
+
+/* Botão principal de Checkout (Amarelo Ouro/Estrela) */
+#checkout-button {
+    background-color: var(--color-action) !important;
+    color: var(--color-text); /* Texto escuro no botão Dourado */
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    padding: 0.8rem 1.5rem;
+}
+
+/* Estilo do badge de contagem do carrinho (Laranja/Cobre) */
+#cart-count-badge {
+    background-color: var(--color-alert) !important;
+    border: 1px solid white;
+}
+
+/* Links de navegação */
+nav a {
+    color: var(--color-text);
+}
+
+nav a:hover {
+    color: var(--color-primary); /* Vermelho no hover */
+    border-bottom: 3px solid var(--color-secondary); /* Borda Verde Pinheiro */
+}
+
+
+/*
+ * ----------------------------------------
+ * 5. ANIMAÇÃO DE PISCA-PISCA (MANTIDA)
+ * ----------------------------------------
+ */
+
+/* 5.1 Definição da Animação */
+@keyframes blink-animation {
+    0%, 100% {
+        opacity: 1;
+        /* Brilho DOURADO/Amarelo */
+        box-shadow: 0 0 10px var(--color-action);
+    }
+    50% {
+        opacity: 0.5;
+        box-shadow: none;
+    }
+}
+
+/* 5.2 Classe para Aplicar a Animação */
+.blink {
+    animation: blink-animation 1s steps(5, start) infinite;
+}

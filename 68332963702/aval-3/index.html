@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groove Records - Vinis e Equipamentos Retrô</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Cores personalizadas para o tema vintage (simulação de verde-oliva/mostarda) */
+        .text-yellow-700 { color: #8A6D3B; }
+        .hover\:text-yellow-800:hover { color: #6B5731; }
+        .bg-yellow-700 { background-color: #8A6D3B; }
+        .hover\:bg-yellow-800:hover { background-color: #6B5731; }
+        .bg-gray-800 { background-color: #374151; } /* Footer mais escuro, mas não preto total */
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body class="bg-gray-100 text-gray-900">
+
+    <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+        <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
+            <h1 class="text-xl font-bold">Groove Records 🎵</h1>
+            <ul class="flex gap-6 font-semibold">
+                <li><a href="#home" class="hover:text-yellow-700">Início</a></li>
+                <li><a href="#produtos" class="hover:text-yellow-700">Discos & Áudio</a></li>
+                <li>
+                    <a href="#carrinho" class="hover:text-yellow-700 relative flex items-center">
+                        Coleção
+                        <span id="cart-count-badge" class="ml-1 px-2 py-0.5 text-xs font-bold text-white bg-red-500 rounded-full hidden">
+                            0
+                        </span>
+                    </a>
+                </li>
+                <li><a href="#contato" class="hover:text-yellow-700">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-24">
+
+        <section id="home" class="max-w-6xl mx-auto p-6">
+            <div class="bg-white p-6 rounded-xl shadow-md">
+                <h2 class="text-3xl font-bold mb-4">Bem-vindo à Groove Records</h2>
+                <p class="text-lg">
+                    Sua loja de **vinis raros**, **toca-discos clássicos** e tudo para reviver o som analógico.
+                    A verdadeira experiência musical vintage.
+                </p>
+                <img src="https://i.pinimg.com/736x/6b/0a/ae/6b0aae507cf00da4e6559b25af98a037.jpg" class="rounded-xl mt-4 shadow-lg" alt="Pilha de discos de vinil e uma vitrola vintage.">
+            </div>
+        </section>
+
+        <section id="produtos" class="max-w-6xl mx-auto p-6">
+            <h2 class="text-3xl font-bold mb-4">Discos e Equipamentos Clássicos</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <div class="bg-white p-4 rounded-xl shadow">
+                    <img src="https://i.pinimg.com/736x/73/ff/0c/73ff0cba01369e91b628980e0ce20386.jpg" class="rounded-lg mb-3 h-56 w-full object-cover" alt="Disco de vinil em uma capa colorida.">
+                    <h3 class="text-xl font-semibold">Vinil Clássico - Jazz Vol. 1</h3>
+                    <p class="text-gray-700">Edição original de 1968, em excelente estado (VG+).</p>
+                    <span class="product-price block text-2xl font-bold text-gray-800 my-2" data-price-id="0"></span>
+                    <a href="#" class="add-to-cart-btn block mt-3 bg-yellow-700 text-white text-center py-2 rounded-lg hover:bg-yellow-800" data-product-id="0">
+                        Adicionar à Coleção
+                    </a>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow">
+                    <img src="https://i.pinimg.com/736x/6e/d1/60/6ed160aec2c5984899813a13f2b0160c.jpg" class="rounded-lg mb-3 h-56 w-full object-cover" alt="Toca-discos vintage de madeira com braço metálico.">
+                    <h3 class="text-xl font-semibold">Toca-Discos Retrô 3 Velocidades</h3>
+                    <p class="text-gray-700">Modelo anos 70, revisado e pronto para tocar.</p>
+                    <span class="product-price block text-2xl font-bold text-gray-800 my-2" data-price-id="1"></span>
+                    <a href="#" class="add-to-cart-btn block mt-3 bg-yellow-700 text-white text-center py-2 rounded-lg hover:bg-yellow-800" data-product-id="1">
+                        Adicionar à Coleção
+                    </a>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow">
+                    <img src="https://i.pinimg.com/1200x/f4/92/43/f49243fae972b30b51d7297048dfd754.jpg" class="rounded-lg mb-3 h-56 w-full object-cover" alt="Fita cassete antiga sendo reproduzida em um toca-fitas.">
+                    <h3 class="text-xl font-semibold">Pacote Fitas Cassete Mix '80</h3>
+                    <p class="text-gray-700">Conjunto com 5 fitas originais, diversos artistas Pop/Rock.</p>
+                    <span class="product-price block text-2xl font-bold text-gray-800 my-2" data-price-id="2"></span>
+                    <a href="#" class="add-to-cart-btn block mt-3 bg-yellow-700 text-white text-center py-2 rounded-lg hover:bg-yellow-800" data-product-id="2">
+                        Adicionar à Coleção
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="carrinho" class="max-w-6xl mx-auto p-6 pt-10">
+            <h2 class="text-3xl font-bold mb-4">Sua Coleção em Progresso</h2>
+            <div class="bg-white p-6 rounded-xl shadow">
+                <div id="cart-items" class="min-h-[100px]">
+                    <p class="text-gray-500 italic">Sua coleção está vazia.</p>
+                </div>
+                <hr class="my-4">
+                <h3 class="text-2xl font-bold text-right">Total da Nota: R$ <span id="cart-total">0,00</span></h3>
+                <button id="checkout-button" class="mt-4 w-full bg-green-600 text-white py-3 rounded-lg text-lg hover:bg-green-700" disabled>
+                    Finalizar o Groove
+                </button>
+            </div>
+        </section>
+        
+        <section id="contato" class="max-w-6xl mx-auto p-6">
+            <h2 class="text-3xl font-bold mb-4">Fale Conosco 📞</h2>
+
+            <div class="bg-white p-6 rounded-xl shadow">
+
+                <p class="text-lg mb-4">
+                    Dúvidas sobre o estado de conservação dos vinis, compatibilidade de equipamentos ou rastreio?
+                </p>
+
+                <a href="https://wa.me/5599999999999" target="_blank"
+                   class="bg-green-600 text-white py-3 px-6 rounded-lg text-lg hover:bg-green-700">
+                    Chamar no WhatsApp
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-4 mt-10">
+        © 2025 Groove Records - A trilha sonora da sua vida.
+    </footer>
+
+    <script>
+        // Mapeamento de produtos atualizado para o tema Música Vintage
+        const productMap = [
+            { id: 0, name: 'Vinil Clássico - Jazz Vol. 1', price: 149.90 },
+            { id: 1, name: 'Toca-Discos Retrô 3 Velocidades', price: 899.90 },
+            { id: 2, name: 'Pacote Fitas Cassete Mix \'80', price: 79.90 }
+        ];
+
+        const buyButtons = document.querySelectorAll('.add-to-cart-btn');
+        const priceElements = document.querySelectorAll('.product-price'); 
+        const navLinks = document.querySelectorAll('nav a[href^="#"]'); 
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalElement = document.getElementById('cart-total');
+        const checkoutButton = document.getElementById('checkout-button');
+        const cartCountBadge = document.getElementById('cart-count-badge');
+        let cart = [];
+
+        function formatPrice(price) {
+            return 'R$ ' + price.toFixed(2).replace('.', ',');
+        }
+
+        function updateCartCountBadge() {
+            let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountBadge.textContent = totalItems;
+             
+            if (totalItems > 0) {
+                cartCountBadge.classList.remove('hidden');
+            } else {
+                cartCountBadge.classList.add('hidden');
+            }
+        }
+         
+        // Função para scroll suave (mantida)
+        function setupSmoothScroll() {
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                     
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                     
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+         
+        function displayPrices() {
+            priceElements.forEach(span => {
+                const productId = parseInt(span.getAttribute('data-price-id'));
+                const product = productMap.find(p => p.id === productId);
+                if (product) {
+                    span.textContent = formatPrice(product.price);
+                }
+            });
+        }
+         
+        function updateCartDisplay() {
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-gray-500 italic">Sua coleção está vazia.</p>';
+                checkoutButton.disabled = true;
+            } else {
+                cart.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'flex justify-between py-2 border-b border-gray-200';
+                    itemDiv.innerHTML = `
+                        <span>${item.name} (${item.quantity}x)</span>
+                        <span class="font-semibold">${formatPrice(item.price * item.quantity)}</span>
+                    `;
+                    cartItemsContainer.appendChild(itemDiv);
+                    total += item.price * item.quantity;
+                });
+                checkoutButton.disabled = false;
+            }
+
+            cartTotalElement.textContent = total.toFixed(2).replace('.', ',');
+            updateCartCountBadge();
+        }
+
+        buyButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); 
+
+                const productId = parseInt(button.getAttribute('data-product-id'));
+                const product = productMap.find(p => p.id === productId);
+
+                if (!product) return;
+
+                const existingItem = cart.find(item => item.id === productId);
+                 
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({ ...product, quantity: 1 });
+                }
+
+                updateCartDisplay();
+                 
+                // Feedback visual rápido
+                const originalText = button.textContent;
+                button.textContent = 'Adicionado!';
+                button.classList.add('bg-green-500');
+                button.classList.remove('bg-yellow-700', 'hover:bg-yellow-800');
+                 
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.add('bg-yellow-700', 'hover:bg-yellow-800');
+                    button.classList.remove('bg-green-500');
+                }, 1000);
+            });
+        });
+
+        checkoutButton.addEventListener('click', () => {
+            alert('Parabéns, seu Groove foi finalizado! Total: R$ ' + cartTotalElement.textContent);
+            cart = [];
+            updateCartDisplay();
+        });
+
+        // Inicializa as funcionalidades
+        setupSmoothScroll(); 
+        displayPrices(); 
+        updateCartDisplay();
+    </script>
+
+<script src="script.js"></script></body>
+</html>
