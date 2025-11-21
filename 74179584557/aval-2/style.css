@@ -1,0 +1,86 @@
+/* Background da seção */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: url('https://images.unsplash.com/photo-1503264116251-35a269479413') 
+                center/cover no-repeat;
+}
+
+/* Camada escura sobre a imagem */
+.hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+}
+
+/* Conteúdo central */
+.hero .content {
+    position: relative;
+    text-align: center;
+    z-index: 10;
+    animation: fadeIn 2s ease forwards;
+}
+
+/* Título */
+.titulo-hero {
+    font-size: 70px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    animation: slideDown 1.2s ease-out;
+}
+
+/* Subtítulo */
+.subtitulo {
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: #eaeaea;
+}
+
+/* Botão */
+.btn {
+    padding: 15px 35px;
+    background: linear-gradient(90deg, #ff0077, #7700ff);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px #ff00c3;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .titulo-hero {
+        font-size: 45px;
+    }
+    .subtitulo {
+        font-size: 18px;
+    }
+}
