@@ -1,0 +1,153 @@
+/* GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f2f2f2;
+}
+
+/* HEADER */
+header {
+    background: #1f1f1f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#imglogo {
+    width: 100px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.textotitulo {
+    font-size: 22px;
+}
+
+/* MENU */
+.menu {
+    background: #ffb300;
+    padding: 12px 0;
+}
+
+.menu .itens {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #1f1f1f;
+    font-size: 18px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: white;
+}
+
+/* LAYOUT GERAL */
+.container-geral {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/* ASIDE */
+.promo {
+    background: white;
+    width: 25%;
+    min-width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #ccc;
+}
+
+.promo h2 {
+    margin-bottom: 12px;
+}
+
+/* SOBRE */
+.sobre {
+    background: white;
+    width: 70%;
+    min-width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #ccc;
+}
+
+/* PRODUTOS */
+.produtos {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.container-sabores {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    width: 200px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #ccc;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.imgprod {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 30px;
+    height: 60px;
+    background: #1f1f1f;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .container-geral {
+        flex-direction: column;
+    }
+
+    .promo,
+    .sobre {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .textotitulo {
+        font-size: 18px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    #imglogo {
+        width: 80px;
+    }
+}
