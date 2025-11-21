@@ -1,0 +1,425 @@
+/* turbomotors.css - Estilo PREMIUM, Responsivo e com suporte a SPANs e JS Active Link */
+
+/* ========================= 1. RESET BÁSICO E TIPOGRAFIA ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #f7f9fc; /* Fundo muito claro e suave */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Variáveis de Cor (Tema Luxo) --- */
+:root {
+    --cor-principal: #0a1931; /* Azul Marinho Profundo */
+    --cor-destaque: #daa520; /* Dourado/Goldenrod (Para preços e botões de destaque) */
+    --cor-secundaria: #3a506b;
+    --cor-fundo-claro: #ffffff;
+    --cor-texto-escuro: #111111;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--cor-texto-escuro);
+}
+
+/* --- Estilo para SPANs no HTML (Mantido) --- */
+.logo-motors, .destaque-hero {
+    color: var(--cor-destaque);
+}
+
+.titulo-destaque {
+    color: var(--cor-destaque);
+    font-weight: 900;
+}
+
+.preco-carro .moeda {
+    font-size: 0.7em; 
+    font-weight: 700;
+}
+.tipo-combustivel {
+    font-weight: 700;
+    color: var(--cor-principal);
+}
+
+/* --- Correção para Rolagem de Âncora (Mantido) --- */
+/* Esta regra ainda é útil como fallback e ajuda no espaçamento */
+:target {
+    padding-top: 100px; 
+    margin-top: -100px;
+    display: block; 
+}
+
+
+/* ========================= 2. CABEÇALHO (HEADER) E NAVEGAÇÃO (AJUSTADO PARA JS) ========================= */
+header {
+    background-color: var(--cor-fundo-claro);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+}
+
+.logo-turbo {
+    font-size: 2.4em;
+    font-weight: 900;
+    color: var(--cor-principal);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.nav-turbo a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    margin-left: 35px;
+    font-weight: 600;
+    transition: color 0.3s, border-bottom 0.3s, background-color 0.3s;
+    padding: 5px 0; /* Adiciona padding vertical para o efeito active */
+}
+
+/* NOVO ESTILO PARA A ABA ATIVA (MELHORES ALBA) */
+.nav-turbo a.active {
+    color: var(--cor-principal);
+    border-bottom: 3px solid var(--cor-destaque);
+    font-weight: 700;
+}
+
+.nav-turbo a:hover {
+    color: var(--cor-principal);
+    border-bottom: 2px solid var(--cor-destaque);
+}
+
+
+/* ========================= 3. HERO BANNER E BUSCA ========================= */
+.hero-turbo {
+    background-image: url('http://googleusercontent.com/image_collection/image_retrieval/some_id_string');
+    background-size: cover;
+    background-position: center 25%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+    position: relative;
+}
+
+.hero-turbo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.55); 
+}
+
+.hero-conteudo {
+    position: relative;
+    z-index: 1;
+    color: white;
+    max-width: 700px;
+}
+
+.hero-conteudo h1 {
+    color: white;
+    font-size: 4em;
+    font-weight: 900;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-conteudo p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+}
+
+/* Estilo da barra de busca */
+.busca-rapida {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.busca-rapida input, .busca-rapida select {
+    padding: 15px;
+    border: 1px solid #ddd;
+    font-size: 1.1em;
+    margin-right: 15px;
+    border-radius: 8px;
+    background-color: white;
+    appearance: none; 
+    -webkit-appearance: none;
+}
+
+.busca-rapida input {
+    flex-grow: 1;
+}
+
+.botao-busca {
+    padding: 15px 30px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-principal);
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.botao-busca:hover {
+    background-color: #c09015;
+    transform: scale(1.05);
+}
+
+
+/* ========================= 4. GRID DE CARROS (CATÁLOGO) ========================= */
+.container-turbo {
+    max-width: 1280px;
+    margin: 80px auto;
+    padding: 0 30px;
+}
+
+.destaques h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 3em;
+    color: var(--cor-principal);
+    border-bottom: 3px solid var(--cor-destaque);
+    padding-bottom: 5px;
+    width: fit-content;
+    margin: 0 auto 50px auto;
+}
+
+.carros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 40px;
+}
+
+.carro-card {
+    background-color: var(--cor-fundo-claro);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s;
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.carro-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.tag-destaque {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-principal);
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-weight: 700;
+    z-index: 5;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.carro-imagem {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+.carro-card:hover .carro-imagem {
+    transform: scale(1.03);
+}
+
+.carro-info {
+    padding: 25px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.carro-info h3 {
+    font-size: 1.6em;
+    margin-bottom: 5px;
+    color: var(--cor-principal);
+}
+
+.detalhes-carro {
+    color: var(--cor-secundaria);
+    font-size: 0.95em;
+    margin-bottom: 15px;
+}
+
+.preco-carro {
+    font-size: 2em;
+    font-weight: 900;
+    color: var(--cor-destaque);
+    margin-bottom: 25px;
+}
+
+.botao-ver-detalhes {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--cor-principal);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.botao-ver-detalhes:hover {
+    background-color: #1a307e;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ========================= 5. SEÇÃO DE AÇÃO (CTA VENDA E FINANCIAMENTO) ========================= */
+.cta-venda {
+    text-align: center;
+    background-color: var(--cor-principal);
+    padding: 60px;
+    border-radius: 12px;
+    margin-top: 80px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cta-venda h2 {
+    color: var(--cor-destaque);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+.cta-venda .texto-venda {
+    color: #fff;
+    border-bottom: 3px solid var(--cor-destaque);
+}
+
+.cta-venda p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.botao-vender {
+    display: inline-block;
+    padding: 18px 50px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-principal);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.botao-vender:hover {
+    background-color: #c09015;
+    transform: scale(1.05);
+}
+
+
+/* ========================= 6. RODAPÉ (FOOTER E CONTATO) ========================= */
+footer {
+    background-color: #111;
+    color: #999;
+    padding: 40px 50px;
+    margin-top: 50px;
+}
+
+.footer-conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 15px;
+}
+
+.redes-sociais [class^="Icone"] {
+    color: var(--cor-destaque);
+    font-size: 1.8em;
+    margin-left: 20px;
+}
+
+
+/* ========================= 7. RESPONSIVIDADE (MEDIA QUERIES) ========================= */
+@media (max-width: 900px) {
+    header {
+        padding: 15px 30px;
+    }
+    .hero-turbo {
+        padding: 30px 20px;
+        background-position: right;
+        height: 400px;
+    }
+    .hero-conteudo h1 {
+        font-size: 3em;
+    }
+    .busca-rapida {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .busca-rapida input, .busca-rapida select, .botao-busca {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .carros-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+        gap: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    .logo-turbo {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+    .nav-turbo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-turbo a {
+        margin: 5px 15px;
+        font-size: 0.9em;
+    }
+    .hero-conteudo h1 {
+        font-size: 2.5em;
+    }
+    .footer-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+    .redes-sociais {
+        margin-top: 15px;
+    }
+    .destaques h2 {
+        font-size: 2em;
+    }
+}
