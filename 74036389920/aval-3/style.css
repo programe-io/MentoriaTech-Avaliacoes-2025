@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perfil • Ravenna</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#12071f; --card:#1c0f2e; --red:#b400ff; --blue:#7f2dff; --muted:#c9addb; --radius:14px}
+    *{box-sizing:border-box}
+    body{font-family:Roboto,system-ui; background:linear-gradient(180deg,#0f001d,#1a0033); color:#f4eaff; margin:0; padding:36px; display:flex; justify-content:center}
+    .wrap{width:980px; max-width:96%;}
+
+    .profile-card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border-radius:var(--radius); padding:24px; display:flex; gap:20px; align-items:center; box-shadow:0 10px 30px rgba(3,7,18,0.7); border:1px solid rgba(255,255,255,0.05)}
+    .avatar{width:150px; height:150px; border-radius:50%; overflow:hidden; flex:0 0 150px; border:4px solid rgba(255,255,255,0.08); background:linear-gradient(135deg,#1c0036,#2b0054)}
+    .avatar img{width:100%; height:100%; object-fit:cover; display:block}
+
+    .meta{flex:1}
+    .meta-top{display:flex; align-items:center; gap:16px}
+    .username{font-size:24px; font-weight:700}
+    .handle{color:var(--muted); font-size:13px}
+    .actions{margin-left:auto; display:flex; gap:10px; align-items:center}
+    .btn{padding:8px 14px; border-radius:10px; font-weight:700; cursor:pointer; border:1px solid transparent; background:transparent; color:var(--muted)}
+    .btn-follow{background:linear-gradient(90deg,var(--red),var(--blue)); color:#fff; border:none}
+
+    .stats{display:flex; gap:28px; margin-top:12px}
+    .stat{font-weight:700}
+    .bio{margin-top:14px; color:var(--muted); line-height:1.4}
+    .highlight-strip{display:flex; gap:10px; margin-top:14px; flex-wrap:wrap}
+    .highlight{padding:8px 12px; border-radius:999px; background:rgba(255,255,255,0.05); color:var(--muted); font-size:13px}
+
+    .tabs{margin-top:18px; display:flex; gap:16px; border-top:1px solid rgba(255,255,255,0.05); padding-top:14px}
+    .tab{padding:8px 12px; border-radius:8px; cursor:pointer; background:transparent; color:var(--muted)}
+    .tab.active{background:rgba(255,255,255,0.05); color:#fff}
+
+    .grid{margin-top:16px; display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
+    .post{background:#16002c; aspect-ratio:1/1; border-radius:8px; overflow:hidden; position:relative; border:1px solid rgba(255,255,255,0.05)}
+    .post img{width:100%; height:100%; object-fit:cover; display:block}
+    .overlay{position:absolute; left:8px; bottom:8px; background:rgba(0,0,0,0.5); color:#fff; padding:6px 8px; border-radius:6px; font-size:13px}
+
+    .spider-badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; background:linear-gradient(90deg,var(--red),var(--blue)); border-radius:999px; color:#fff; font-weight:700}
+
+    footer{margin-top:18px; color:var(--muted); font-size:13px; text-align:center}
+
+    @media (max-width:720px){
+      .profile-card{flex-direction:column; align-items:flex-start}
+      .avatar{width:110px;height:110px}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="profile-card">
+      <div class="avatar">
+        <img src="https://picsum.photos/seed/ravennaProfile/600/600" alt="Avatar Ravenna" />
+      </div>
+
+      <div class="meta">
+        <div class="meta-top">
+          <div>
+            <div class="username"><a href="#" style="color:inherit; text-decoration:none;">Ravenna</a></div>
+            <div class="handle">@ravenna • Paisagens • Universo Roxo</div>
+            <h2>Bem-vinda ao Universo Roxo</h2>
+          </div>
+
+          <div class="actions">
+            <span class="spider-badge">💜 Purple Aesthetic</span>
+            <button class="btn btn-follow">Seguir</button>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div><div class="stat">392</div><div style="font-size:13px;color:var(--muted)">Publicações</div></div>
+          <div><div class="stat">128k</div><div style="font-size:13px;color:var(--muted)">Seguidores</div></div>
+          <div><div class="stat">214</div><div style="font-size:13px;color:var(--muted)">Seguindo</div></div>
+        </div>
+
+        <p class="bio">Amante do céu, da noite e das paisagens que parecem saídas de sonhos. 🌙💜<br><span style="color:var(--muted); font-size:13px">#Aesthetic #Roxo #DreamScape</span></p>
+
+        <div class="highlight-strip">
+          <div class="highlight">Céus</div>
+          <div class="highlight">Paisagens</div>
+          <div class="highlight">Noite</div>
+          <div class="highlight">Estética</div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="tabs">
+      <div class="tab active">Publicações</div>
+      <div class="tab">Reels</div>
+      <div class="tab">Marcados</div>
+    </nav>
+
+    <main class="grid" aria-live="polite">
+      <article class="post"><img src="https://picsum.photos/seed/purpleSky1/800/800" alt="post"></article>
+      <article class="post"><img src="https://picsum.photos/seed/mountainPurple/800/800" alt="post"><div class="overlay">12.4k ❤</div></article>
+      <article class="post"><img src="https://picsum.photos/seed/forestViolet/800/800" alt="post"></article>
+      <article class="post"><img src="https://picsum.photos/seed/dreamHorizon/800/800" alt="post"></article>
+      <article class="post"><img src="https://picsum.photos/seed/moonLake/800/800" alt="post"><div class="overlay">4.9k comentários</div></article>
+      <article class="post"><img src="https://picsum.photos/seed/mistPurple/800/800" alt="post"></article>
+      <article class="post"><img src="https://picsum.photos/seed/violetBeach/800/800" alt="post"></article>
+      <article class="post"><img src="httpsum.photos/seed/galaxyShade/800/800" alt="post"></article>
+      <article class="post"><img src="https://picsum.photos/seed/fantasyPeak/800/800" alt="post"></article>
+    </main>
+
+    <footer>Perfil artístico fictício • Tema roxo • Ravenna</footer>
+  </div>
+</body>
+</html>
