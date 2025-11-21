@@ -1,0 +1,199 @@
+/* Reset Básico e Fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    color: #3b5998; /* Azul Social */
+}
+
+.header a, .header button {
+    text-decoration: none;
+    color: #3b5998;
+    margin-left: 20px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.header button {
+    background-color: #4CAF50; /* Verde de Vendas/Ação */
+    color: white;
+}
+
+.header button:hover {
+    background-color: #45a049;
+}
+
+/* Feed Container */
+.feed-container {
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.feed-title {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5em;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Post Individual */
+.post {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.post-header {
+    padding: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+
+.username {
+    color: #3b5998;
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 450px;
+    object-fit: cover;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.like-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.like-btn i {
+    margin-right: 5px;
+    transition: color 0.3s;
+}
+
+.like-btn.liked i {
+    color: #ff3838; /* Cor de like */
+    font-weight: bold;
+}
+
+.price {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.post-description {
+    padding: 15px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.buy-link {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #3b5998;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.buy-link:hover {
+    background-color: #2d4373;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Fundo escuro */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content form input,
+.modal-content form textarea,
+.modal-content form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
