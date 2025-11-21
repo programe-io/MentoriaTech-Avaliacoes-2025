@@ -1,0 +1,237 @@
+/* Variáveis de Cor */
+:root {
+    --cor-principal: #e91e63; /* Rosa/Pink dos esmaltes */
+    --cor-secundaria: #ffebf1; /* Rosa claro/Fundo */
+    --cor-texto: #333;
+    --cor-clara: #ffffff;
+    --cor-botao: #ff5722; /* Laranja para CTA */
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos Globais */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-clara);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* --- 💄 Cabeçalho --- */
+header {
+    background-color: var(--cor-principal);
+    color: var(--cor-clara);
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* --- 💖 Seção Hero (Destaque Principal) --- */
+.hero {
+    background-color: var(--cor-secundaria);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    color: var(--cor-principal);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--cor-botao);
+    color: var(--cor-clara);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e64a19; /* Tom mais escuro */
+}
+
+/* --- 🛍️ Seção de Produtos --- */
+.produtos {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.produtos h3 {
+    font-size: 2.2rem;
+    color: var(--cor-principal);
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.lista-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.produto-card {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.produto-card:hover {
+    transform: translateY(-5px);
+}
+
+.produto-card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.produto-card h4 {
+    color: var(--cor-principal);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.produto-card p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.preco {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-botao);
+    margin-bottom: 15px;
+}
+
+/* --- ⭐ Seção de Depoimentos --- */
+.depoimentos {
+    background-color: var(--cor-secundaria);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.depoimentos h3 {
+    font-size: 2.2rem;
+    color: var(--cor-principal);
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.depoimento-card {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: var(--cor-clara);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+}
+
+.depoimento-card span {
+    display: block;
+    margin-top: 15px;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--cor-principal);
+}
+
+/* --- 🛒 Formulário de Compra/Contato --- */
+.compra-contato {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.compra-contato h3 {
+    font-size: 2.2rem;
+    color: var(--cor-principal);
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.form-compra {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-compra button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* --- 📝 Rodapé --- */
+footer {
+    background-color: var(--cor-texto);
+    color: var(--cor-clara);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+/* --- 📱 Responsividade Básica --- */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+    .lista-produtos {
+        /* Muda para uma coluna em telas menores */
+        grid-template-columns: 1fr;
+    }
+}

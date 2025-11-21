@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coleção de Esmaltes Glamour - Cores que Transformam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos CSS */
+        :root {
+            --cor-principal: #e91e63; /* Rosa/Pink dos esmaltes */
+            --cor-secundaria: #ffebf1; /* Rosa claro/Fundo */
+            --cor-texto: #333;
+            --cor-clara: #ffffff;
+            --cor-botao: #ff5722; /* Laranja para CTA */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--cor-texto);
+            background-color: var(--cor-clara);
+            /* Adiciona um padding no topo para compensar o nav fixo */
+            padding-top: 50px; 
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* --- Estilos do NAV --- */
+        nav {
+            background-color: var(--cor-principal);
+            color: var(--cor-clara);
+            padding: 10px 0;
+            text-align: center;
+            /* Torna a navegação fixa no topo */
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000; /* Garante que fique sobre outros elementos */
+            border-bottom: 3px solid var(--cor-botao);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--cor-clara);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--cor-botao); /* Destaque ao passar o mouse */
+        }
+        /* --------------------------- */
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--cor-principal);
+            color: var(--cor-clara);
+            padding: 10px 0;
+            text-align: center;
+            /* Ajustado para ficar abaixo do nav fixo */
+            margin-top: -50px; 
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        /* Seção Hero (Destaque Principal) */
+        .hero {
+            background-color: var(--cor-secundaria);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            color: var(--cor-principal);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--cor-botao);
+            color: var(--cor-clara);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e64a19;
+        }
+
+        /* Seção de Produtos */
+        .produtos {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .produtos h3 {
+            font-size: 2.2rem;
+            color: var(--cor-principal);
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .lista-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .produto-card {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .produto-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .produto-card img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .produto-card h4 {
+            color: var(--cor-principal);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .produto-card p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .preco {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cor-botao);
+            margin-bottom: 15px;
+        }
+
+        /* Seção de Depoimentos */
+        .depoimentos {
+            background-color: var(--cor-secundaria);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .depoimentos h3 {
+            font-size: 2.2rem;
+            color: var(--cor-principal);
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .depoimento-card {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: var(--cor-clara);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-style: italic;
+        }
+
+        .depoimento-card span {
+            display: block;
+            margin-top: 15px;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--cor-principal);
+        }
+
+        /* Formulário de Compra/Contato */
+        .compra-contato {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .compra-contato h3 {
+            font-size: 2.2rem;
+            color: var(--cor-principal);
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .form-compra {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-compra button {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--cor-texto);
+            color: var(--cor-clara);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade Básica */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            .lista-produtos {
+                grid-template-columns: 1fr;
+            }
+            nav ul li {
+                margin: 0 8px;
+            }
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#compra">Comprar Agora</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <div class="container">
+            <h1>Esmaltes Glamour: Venda Exclusiva</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>A Coleção que Vai Fazer suas Unhas Brilharem! ✨</h2>
+                <p>Descubra as cores da estação. Esmaltes de alta duração, secagem rápida e brilho intenso.</p>
+                <a href="#produtos" class="cta-button">VER CORES E COMPRAR AGORA!</a>
+            </div>
+        </section>
+
+        <section id="produtos" class="produtos">
+            <div class="container">
+                <h3>Nossos Esmaltes de Destaque</h3>
+                <div class="lista-produtos">
+
+                    <div class="produto-card">
+                        <img src="https://lojacoty.vteximg.com.br/arquivos/ids/178667-1000-1000/8759-4-1.jpg?v=638700723204300000" alt="Esmalte Vermelho Paixão">
+                        <h4>Vermelho Paixão</h4>
+                        <p>O clássico que nunca sai de moda. Cobertura perfeita em uma única camada.</p>
+                        <div class="preco">R$ 15,90</div>
+                        <a href="#compra" class="cta-button">Comprar</a>
+                    </div>
+
+                    <div class="produto-card">
+                        <img src="https://i.pinimg.com/564x/56/9a/a9/569aa961ead1b0d267a450a500c41b56.jpg" alt="Esmalte Nude Elegante">
+                        <h4>Nude Elegante</h4>
+                        <p>Sofisticação e delicadeza para qualquer ocasião. Acabamento matte aveludado.</p>
+                        <div class="preco">R$ 18,50</div>
+                        <a href="#compra" class="cta-button">Comprar</a>
+                    </div>
+
+                    <div class="produto-card">
+                        <img src="https://images.tcdn.com.br/img/img_prod/696801/esmalte_risque_glitter_granulado_rose_4797_1_20190828220214.jpg" alt="Esmalte Glitter Festa">
+                        <h4>Glitter Festa</h4>
+                        <p>Brilho holográfico que transforma qualquer look. Ideal para noites de festa.</p>
+                        <div class="preco">R$ 22,00</div>
+                        <a href="#compra" class="cta-button">Comprar</a>
+                    </div>
+
+                </div>
+                <p style="margin-top: 40px; font-size: 1.1rem;">**Leve o Kit Completo e Ganhe 20% de Desconto!**</p>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="depoimentos">
+            <div class="container">
+                <h3>O que as clientes estão dizendo</h3>
+
+                <div class="depoimento-card">
+                    <p>"Simplesmente amei! A cor 'Vermelho Paixão' é vibrante e durou a semana toda sem lascar. A melhor compra que fiz!"</p>
+                    <span>— Ana C., Manicure Profissional</span>
+                </div>
+
+                <div class="depoimento-card">
+                    <p>"A coleção é maravilhosa! O 'Nude Elegante' é a cor perfeita para o dia a dia. Chegou super rápido. Recomendo!"</p>
+                    <span>— Beatriz L., Blogueira de Beleza</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="compra" class="compra-contato">
+            <div class="container">
+                <h3>Garanta o Seu Kit Exclusivo</h3>
+                <p>Preencha o formulário abaixo para finalizar sua compra ou solicitar um contato.</p>
+
+                <form class="form-compra" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="produto">Produto/Kit de Interesse:</label>
+                        <select id="produto" name="produto" required>
+                            <option value="">Selecione...</option>
+                            <option value="vermelho">Vermelho Paixão</option>
+                            <option value="nude">Nude Elegante</option>
+                            <option value="glitter">Glitter Festa</option>
+                            <option value="kit">Kit Completo (Recomendado!)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantidade">Quantidade:</label>
+                        <input type="number" id="quantidade" name="quantidade" min="1" value="1" required>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">FINALIZAR COMPRA</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Esmaltes Glamour. Todos os direitos reservados. | Política de Privacidade</p>
+        </div>
+    </footer>
+
+<script src="script.js"></script></body>
+</html>
