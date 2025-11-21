@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PokeFeed</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+    .post-font {
+      font-family: "Poppins", sans-serif;
+    }
+
+    .glitch {
+      font-family: 'Orbitron', sans-serif;
+      position: relative;
+      color: #fff;
+      letter-spacing: 3px;
+    }
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: transparent;
+      overflow: hidden;
+    }
+    .glitch::before {
+      color: #ff00ff;
+      animation: t 1.5s infinite alternate-reverse;
+    }
+    .glitch::after {
+      color: #00eaff;
+      animation: b 1.4s infinite alternate-reverse;
+    }
+    @keyframes t {
+      0% {clip-path: inset(0 0 90% 0);}
+      50% {clip-path: inset(0 0 30% 0); transform: translate(-2px,-1px);}
+      100% {clip-path: inset(0 0 80% 0);}
+    }
+    @keyframes b {
+      0% {clip-path: inset(80% 0 0 0);}
+      50% {clip-path: inset(20% 0 0 0); transform: translate(2px,1px);}
+      100% {clip-path: inset(50% 0 0 0);}
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body class="bg-purple-900 min-h-screen text-white">
+
+  <header class="w-full bg-purple-800 py-4 shadow-lg">
+    <nav class="max-w-4xl mx-auto flex items-center justify-between px-4">
+      <h1 class="glitch text-3xl font-bold" data-text="PokeFeed">PokeFeed</h1>
+      <div class="flex gap-6 text-lg post-font">
+        <a href="#" class="hover:text-purple-200 transition">Início</a>
+        <a href="#" class="hover:text-purple-200 transition">Pokémons</a>
+        <a href="#" class="hover:text-purple-200 transition">Perfil</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- FEED: AQUI eu mudei UMA ÚNICA COISA: flex-col com gap -->
+  <main class="max-w-5xl mx-auto mt-10 px-4 flex flex-row gap-10">
+
+    <!-- METAGROSS -->
+    <!-- AQUI: só coloquei flex-row -->
+    <article class="bg-purple-800 rounded-2xl p-5 shadow-xl post-font flex flex-row gap-6">
+
+      <div class="w-32 flex flex-col items-center">
+        <img src="https://img.pokemondb.net/sprites/bank/normal/metagross.png"
+             class="w-20" style="image-rendering: pixelated;">
+        <span class="text-sm text-purple-300">@steel_4brains</span>
+        <span class="text-sm text-purple-300">há 12 minutos</span>
+      </div>
+
+      <div class="flex-1">
+        <h2 class="text-xl font-semibold mb-2">Metagross</h2>
+
+        <img src="https://wallpapers.com/images/high/metagross-mega-with-steven-dbi05slcdrrzmov7.webp"
+             class="rounded-xl w-full mb-4">
+
+        <p class="leading-relaxed text-purple-100">
+          Metagross é uma máquina psíquica de destruição absoluta. Resultado da fusão de quatro Beldum, 
+          ele raciocina como um supercomputador e calcula cada movimento com precisão impossível para um ser vivo. 
+          Sua mente é fria, lógica e implacável — ele não ataca por impulso, apenas por eficiência.
+        </p>
+      </div>
+    </article>
+
+    <!-- MEWTWO -->
+    <article class="bg-purple-800 rounded-2xl p-5 shadow-xl post-font flex flex-row gap-6">
+
+      <div class="w-32 flex flex-col items-center">
+        <img src="https://img.pokemondb.net/sprites/bank/normal/mewtwo.png"
+             class="w-20" style="image-rendering: pixelated;">
+        <span class="text-sm text-purple-300">@project_X0</span>
+        <span class="text-sm text-purple-300">há 27 minutos</span>
+      </div>
+
+      <div class="flex-1">
+        <h2 class="text-xl font-semibold mb-2">Mewtwo</h2>
+
+        <img src="https://wallpapers.com/images/high/mewtwo-background-h9vwrwga9s8x7jud.webp"
+             class="rounded-xl w-full mb-4">
+
+        <p class="leading-relaxed text-purple-100">
+          Criado artificialmente a partir do DNA do lendário Mew, Mewtwo é a representação máxima 
+          do poder psíquico bruto. Sua força mental é tão intensa que ele consegue distorcer o ambiente, 
+          projetar barreiras impenetráveis e derrubar adversários sem tocar neles.  
+          É um Pokémon que nasceu para ser uma arma — e luta para não ser apenas isso.
+        </p>
+      </div>
+    </article>
+
+    <!-- ALAKAZAM -->
+    <article class="bg-purple-800 rounded-2xl p-5 shadow-xl post-font flex flex-row gap-6">
+
+      <div class="w-32 flex flex-col items-center">
+        <img src="https://img.pokemondb.net/sprites/bank/normal/alakazam.png"
+             class="w-20" style="image-rendering: pixelated;">
+        <span class="text-sm text-purple-300">@mind_bender</span>
+        <span class="text-sm text-purple-300">há 1 hora</span>
+      </div>
+
+      <div class="flex-1">
+        <h2 class="text-xl font-semibold mb-2">Alakazam</h2>
+
+        <img src="https://wallpapers.com/images/high/alakazam-floating-spoons-pentagram-glpv7hywentvkxza.webp"
+             class="rounded-xl w-full mb-4">
+
+        <p class="leading-relaxed text-purple-100">
+          Com um QI que ultrapassa qualquer ser humano, Alakazam enxerga padrões, 
+          calcula probabilidades e prevê ações antes mesmo de acontecerem.  
+          Seus talheres flutuantes não são só estilo: são extensões da sua telecinese finíssima.  
+          Ele vence batalhas antes delas começarem — e raramente erra um cálculo.
+        </p>
+      </div>
+    </article>
+
+  </main>
+
+</body>
+</html>

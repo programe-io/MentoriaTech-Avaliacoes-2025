@@ -1,0 +1,40 @@
+/* ======== Estilos básicos extras ======== */
+
+/* Ajuste global de fonte e suavização */
+body {
+    font-family: 'Inter', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Um toque de sombra leve nos cards (reforça o shadow do Tailwind) */
+.post-card {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.25);
+}
+
+/* Aumenta suavemente o brilho das imagens no hover */
+.post-card img {
+    transition: filter 0.15s ease;
+}
+
+.post-card:hover img {
+    filter: brightness(1.12);
+}
+
+/* Estilinho extra pro título principal (sem alterar Tailwind) */
+.pokefeed-title {
+    letter-spacing: 2px;
+    text-shadow: 0 0 12px rgba(255, 180, 255, 0.6);
+}
+
+/* Estilinho pra tag <span> que você pediu */
+.psychic-tag {
+    color: #e07cff;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(224, 124, 255, 0.7);
+}
