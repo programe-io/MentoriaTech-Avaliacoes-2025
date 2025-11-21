@@ -1,0 +1,51 @@
+/* Reset básico */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background:#fafafa;
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* NAV */
+nav{
+  background:#ff4f70;
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 18px;
+}
+nav .logo{font-weight:700}
+nav .brand{font-weight:900}
+nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+nav a{color:#fff;text-decoration:none;font-weight:600}
+
+/* HEADER */
+header{padding:28px 18px;text-align:center;background:#fff}
+header h1{margin:0;font-size:1.6rem}
+header .credit{color:#666;margin-top:6px}
+
+/* MAIN / SECTIONS */
+main{max-width:980px;margin:18px auto;padding:0 16px}
+.section{margin-bottom:28px}
+.section h2{color:#ff4f70;margin-bottom:10px}
+
+/* GALERIA */
+.galeria{display:flex;flex-direction:column;gap:22px}
+figure{
+  background:#fff;border:2px solid #ff4f70;border-radius:10px;padding:12px;margin:0;
+  box-shadow:0 6px 18px rgba(0,0,0,0.04);
+}
+figure img{width:100%;height:auto;border-radius:8px;display:block;object-fit:cover}
+figcaption{margin-top:10px;text-align:center;font-weight:700;color:#333}
+
+/* FOOTER */
+footer{background:#222;color:#fff;text-align:center;padding:14px;margin-top:18px}
+
+/* RESPONSIVO */
+@media(min-width:720px){
+  .galeria{flex-direction:row}
+  figure{width:calc(33.333% - 14px)}
+}
