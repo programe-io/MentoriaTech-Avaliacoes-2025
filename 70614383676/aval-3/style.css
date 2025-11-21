@@ -1,0 +1,136 @@
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cabecalho h1 {
+    font-size: 1.5em;
+}
+
+.cabecalho nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* Feed Principal */
+.feed {
+    max-width: 600px;
+    margin: 20px auto; /* Centraliza o feed na tela */
+    padding: 0 10px;
+}
+
+/* Estilo do Post */
+.post {
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd; /* Borda sutil para parecer um card */
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.nome-vendedor {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Limita a altura da imagem */
+    object-fit: cover;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.btn-like, .btn-comprar {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-like {
+    background-color: #f1f1f1;
+    color: #cc0000;
+}
+
+.btn-like:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-comprar {
+    background-color: #28a745; /* Verde para ação de compra */
+    color: white;
+}
+
+.btn-comprar:hover {
+    background-color: #218838;
+}
+
+.post-descricao {
+    padding: 0 10px 10px;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.hashtag {
+    color: #007bff;
+    font-weight: 500;
+}
+
+/* Responsividade (opcional, mas recomendado) */
+@media (max-width: 620px) {
+    .feed {
+        margin: 10px 0;
+    }
+    .cabecalho {
+        flex-direction: column;
+        text-align: center;
+    }
+    .cabecalho nav {
+        margin-top: 10px;
+    }
+    .cabecalho nav a {
+        margin: 0 10px;
+    }
+}
