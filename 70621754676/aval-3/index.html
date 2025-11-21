@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfume Elegance: Catálogo e Carrinho</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pink-elegant': '#F06292', // Um rosa mais sofisticado
+                        'purple-lavender': '#9575CD', // Um roxo suave
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50">
+
+<div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+
+    <header class="bg-white shadow-xl rounded-xl p-4 mb-8 sticky top-0 z-10">
+        <div class="flex items-center justify-between">
+            <h1 class="text-3xl font-extrabold text-pink-elegant flex items-center space-x-2">
+                <span class="text-4xl">🧴</span>
+                <span>Perfume Elegance</span>
+            </h1>
+
+            <nav class="flex space-x-4 sm:space-x-6 items-center">
+                <a href="#catalog-section" class="text-gray-600 hover:text-pink-elegant font-medium transition hidden sm:block">Catálogo</a>
+                <a href="#cart-details-block" class="text-gray-600 hover:text-pink-elegant font-medium transition hidden sm:block">Meu Carrinho</a>
+                <button class="text-white bg-purple-lavender py-2 px-4 rounded-lg text-sm font-semibold hover:bg-purple-700 transition shadow-md">
+                    Login / Perfil
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        <section class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg" id="catalog-section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Fragrâncias Femininas Exclusivas</h2>
+
+            <img src="https://i.pinimg.com/736x/d5/3e/56/d53e564fc70cd971c921861b123d56b3.jpg"
+                alt="Banner de Novidades e Promoção"
+                class="w-full h-auto rounded-lg shadow mb-6">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <div class="bg-white p-4 rounded-xl shadow-md border border-pink-100">
+                    <img src="https://selecoes.ig.com.br/media/_versions/2023/12/capa-1_xlm05pth_widemd.jpg"
+                        alt="Perfume Floral Romântico"
+                        class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-gray-800">Essência de Rosas</h3>
+                    <p class="text-pink-elegant font-semibold mb-3">R$ 199,90</p>
+                    <p class="text-gray-500 text-sm mb-3">Notas: Rosa, Peônia, Sândalo. Ideal para o dia.</p>
+                    <button onclick="selecionarPerfume('Essência de Rosas', 199.90)"
+                             class="w-full bg-pink-elegant text-white py-2 rounded-lg font-bold hover:bg-pink-600 transition">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-md border border-pink-100">
+                    <img src="https://images.tcdn.com.br/img/img_prod/548128/perfume_eudora_velvet_sensual_colonia_feminina_100ml_818_1_99a597c4b3e05fddcf8ad26ca3dcf694.jpg"
+                        alt="Perfume Oriental Sensual"
+                        class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-gray-800">Âmbar da Noite</h3>
+                    <p class="text-pink-elegant font-semibold mb-3">R$ 249,90</p>
+                    <p class="text-gray-500 text-sm mb-3">Notas: Baunilha, Patchouli, Especiarias. Para eventos noturnos.</p>
+                    <button onclick="selecionarPerfume('Âmbar da Noite', 249.90)"
+                             class="w-full bg-pink-elegant text-white py-2 rounded-lg font-bold hover:bg-pink-600 transition">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-md border border-pink-100">
+                    <img src="https://www.essenciadopoder.com.br/wp-content/uploads/2024/10/3.-Marc-Jacobs-Daisy-Eau-So-Fresh.jpg"
+                        alt="Perfume Cítrico Refrescante"
+                        class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-gray-800">Brisa de Verão</h3>
+                    <p class="text-pink-elegant font-semibold mb-3">R$ 179,90</p>
+                    <p class="text-gray-500 text-sm mb-3">Notas: Limão, Bergamota, Chá Verde. Perfeito para o verão.</p>
+                    <button onclick="selecionarPerfume('Brisa de Verão', 179.90)"
+                             class="w-full bg-pink-elegant text-white py-2 rounded-lg font-bold hover:bg-pink-600 transition">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-md border border-pink-100">
+                    <img src="https://images.tcdn.com.br/img/img_prod/769621/perfume_misuric_aromas_feminina_15ml_doce_tentacao_212_sexy_carolina_herrera_14889_5_c39d119dfe25ddf9aabb4c3e55b11dfc.jpg"
+                        alt="Perfume Gourmand Adocicado"
+                        class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-gray-800">Doce Tentação</h3>
+                    <p class="text-pink-elegant font-semibold mb-3">R$ 219,90</p>
+                    <p class="text-gray-500 text-sm mb-3">Notas: Caramelo, Pralinê, Frutas Vermelhas. Intenso e doce.</p>
+                    <button onclick="selecionarPerfume('Doce Tentação', 219.90)"
+                             class="w-full bg-pink-elegant text-white py-2 rounded-lg font-bold hover:bg-pink-600 transition">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <aside class="lg:col-span-1 space-y-8">
+            
+            <div class="bg-white p-6 rounded-xl shadow-lg" id="cart-details-block">
+                <h2 class="text-2xl font-bold mb-4 text-purple-lavender border-b pb-2">Seu Carrinho 🛍️</h2>
+
+                <div id="selected-item-display" class="mb-4 p-3 bg-purple-50 rounded-lg">
+                    <p id="item-name" class="font-semibold text-gray-700">Nenhum perfume adicionado.</p>
+                    <p id="item-price" class="text-sm text-gray-500"></p>
+                </div>
+
+                <div id="cart-items-list" class="space-y-2 mb-4">
+                    </div>
+
+                <div class="space-y-2 mb-6">
+                    <div class="flex justify-between text-gray-700 font-medium">
+                        <span>Subtotal (1 item):</span>
+                        <span id="subtotal">R$ 0,00</span>
+                    </div>
+
+                    <div class="flex justify-between text-pink-elegant font-medium">
+                        <span>Frete:</span>
+                        <span id="delivery-fee">R$ 15,00</span>
+                    </div>
+
+                    <div class="flex justify-between text-xl font-extrabold text-gray-900 border-t pt-2">
+                        <span>Total:</span>
+                        <span id="total-amount">R$ 15,00</span>
+  <script src="script.js"></script>
+  
+</body>
+</html>
