@@ -1,0 +1,156 @@
+/* Estilos Globais */
+:root {
+    --primary-color: #ff69b4; /* Rosa Choque */
+    --secondary-color: #4caf50; /* Verde */
+    --background-color: #f0f2f5; /* Cinza claro */
+    --card-background: #ffffff;
+    --text-color: #1c1e21;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Cabeçalho */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: var(--card-background);
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header h1 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+}
+
+.user-profile i {
+    font-size: 1.5em;
+    color: var(--text-color);
+}
+
+/* Contêiner do Feed */
+.feed-container {
+    max-width: 600px; /* Largura típica de feed social */
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+/* Card de Postagem (Brinquedo) */
+.post-card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    overflow: hidden;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.vendor-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.vendor-name {
+    font-weight: bold;
+}
+
+.post-image-container {
+    width: 100%;
+    /* Mantém a proporção de imagem típica de feed (ex: 1:1) */
+    aspect-ratio: 1 / 1; 
+    overflow: hidden;
+    background-color: #eee;
+}
+
+.post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ações (Botões) */
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0;
+    border-top: 1px solid #eee;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: #606770;
+    padding: 5px 10px;
+    transition: color 0.2s;
+}
+
+.like-btn:hover {
+    color: var(--primary-color);
+}
+
+.buy-btn {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.buy-btn:hover {
+    color: darkgreen;
+}
+
+.post-details {
+    padding: 0 15px 10px;
+}
+
+.product-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.product-caption {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.vendor-name-caption {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Responsividade básica */
+@media (max-width: 650px) {
+    .feed-container {
+        margin: 0;
+        padding: 0;
+    }
+    .post-card {
+        border-radius: 0;
+        box-shadow: none;
+        border-bottom: 1px solid #ddd;
+    }
+}
