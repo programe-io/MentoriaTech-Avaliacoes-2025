@@ -1,0 +1,136 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #fafafa; /* Fundo leve como em redes sociais */
+}
+
+/* Estilo do Cabeçalho */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: white;
+    border-bottom: 1px solid #dbdbdb;
+    position: sticky; /* Fica fixo no topo */
+    top: 0;
+    z-index: 10;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    color: #e91e63; /* Cor vibrante para o tema */
+}
+
+.nav-icons i {
+    font-size: 1.5rem;
+    margin-left: 15px;
+    color: #262626;
+    cursor: pointer;
+}
+
+/* Estilo do Feed Container */
+.feed-container {
+    max-width: 600px; /* Largura típica de feed de celular/app */
+    margin: 20px auto; /* Centraliza na página */
+}
+
+/* Estilo do Post Individual */
+.post {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+
+/* Cabeçalho do Post */
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.post-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #e91e63; /* Borda de destaque */
+}
+
+.post-username {
+    font-weight: bold;
+    color: #262626;
+}
+
+.post-date {
+    color: #8e8e8e;
+    font-size: 0.8rem;
+}
+
+/* Imagem do Post */
+.post-image {
+    width: 100%;
+    /* Altura será ajustada automaticamente pela imagem */
+    display: block;
+}
+
+/* Ações (Curtir, Comentar, Comprar) */
+.post-actions {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.action-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: #262626;
+    cursor: pointer;
+}
+
+.fa-heart:hover {
+    color: #e91e63;
+}
+
+.buy-button {
+    margin-left: auto; /* Empurra o botão para a direita */
+    background-color: #4CAF50; /* Cor de venda */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #45a049;
+}
+
+/* Legenda e Comentários */
+.post-caption, .post-comments {
+    padding: 0 15px 10px;
+    font-size: 0.9rem;
+}
+
+.post-caption-text {
+    word-wrap: break-word; /* Quebra texto longo */
+}
+
+.post-caption .see-more {
+    color: #8e8e8e;
+    text-decoration: none;
+}
+
+.post-comments p {
+    color: #8e8e8e;
+    cursor: pointer;
+}
