@@ -1,0 +1,108 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: #A00000; /* Vermelho Pizza */
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#btnCarrinho {
+    padding: 10px 15px;
+    background-color: #ff9900; /* Laranja/Amarelo */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Feed Principal */
+.feed-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.feed-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Card de Pizza - Simulação de Postagem */
+.pizza-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-left: 5px solid #ff9900;
+}
+
+.pizza-card img {
+    width: 200px; /* Tamanho da imagem no feed */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.pizza-info {
+    flex-grow: 1;
+}
+
+.pizza-info h3 {
+    color: #A00000;
+    margin-bottom: 5px;
+}
+
+.pizza-info p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.preco {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #1a7a3b; /* Cor de preço */
+}
+
+.btn-comprar {
+    background-color: #A00000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Media Query para Responsividade */
+@media (max-width: 600px) {
+    .pizza-card {
+        flex-direction: column; /* Empilha o conteúdo em telas menores */
+        text-align: center;
+    }
+    .pizza-card img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+}
