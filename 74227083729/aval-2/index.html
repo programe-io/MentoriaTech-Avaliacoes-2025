@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modelo Completo com Header, Nav, Aside, Main, Article, H3, Img e Footer</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #eef1f5;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    /* HEADER PRINCIPAL */
+    header.principal {
+        background: #3b7ddd;
+        color: white;
+        padding: 20px 0 15px 0;
+        text-align: center;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.18);
+    }
+
+    header.principal h1 {
+        margin: 0;
+        font-size: 34px;
+        font-weight: bold;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 10px 0 0 0;
+        gap: 25px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+        opacity: 0.7;
+    }
+
+    /* LAYOUT PRINCIPAL */
+    .layout {
+        display: flex;
+        max-width: 1200px;
+        margin: 35px auto;
+        padding: 0 25px;
+        gap: 25px;
+        flex: 1;
+    }
+
+    /* ASIDE */
+    aside {
+        width: 260px;
+        background: #fff;
+        border: 2px solid #3b7ddd;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        height: fit-content;
+    }
+
+    aside h3 {
+        margin-top: 0;
+        color: #3b7ddd;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    aside img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+
+    /* MAIN */
+    main {
+        flex: 1;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        border: 2px solid #3b7ddd;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        position: relative;
+    }
+
+    main h3 {
+        color: #3b7ddd;
+        font-size: 22px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .titulo-bloco {
+        position: absolute;
+        top: -16px;
+        left: 20px;
+        background: #3b7ddd;
+        color: white;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-weight: bold;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+
+    /* HEADER SECUNDÁRIO DENTRO DO MAIN */
+    header.secundario {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #3b7ddd;
+    }
+
+    header.secundario h3 {
+        margin: 0;
+        color: #3b7ddd;
+    }
+
+    /* ARTICLE */
+    article {
+        background: #f9fafc;
+        border: 1px solid #d3d8e0;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 25px;
+    }
+
+    article h3 {
+        margin-top: 0;
+        color: #3b7ddd;
+        font-weight: bold;
+    }
+
+    article img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+        background: #3b7ddd;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: auto;
+    }
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<header class="principal">
+    <h1>Título Principal do Site</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Artigos</a></li>
+            <li><a href="#">Projetos</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="layout">
+
+    <aside>
+        <h3>Menu Lateral</h3>
+        <ul>
+            <li><a href="#">Categoria 1</a></li>
+            <li><a href="#">Categoria 2</a></li>
+            <li><a href="#">Categoria 3</a></li>
+        </ul>
+        <!-- IMAGEM OBRIGATÓRIA NO ASIDE -->
+        <img src="https://via.placeholder.com/250x150" alt="Imagem Lateral">
+    </aside>
+
+    <main>
+        <div class="titulo-bloco">Conteúdo Principal</div>
+
+        <!-- HEADER SECUNDÁRIO DENTRO DO MAIN -->
+        <header class="secundario">
+            <h3>Subtítulo do Conteúdo</h3>
+        </header>
+
+        <p>Esta é a área principal dentro da tag &lt;main&gt;. Aqui você pode colocar textos, imagens e artigos.</p>
+
+        <article>
+            <h3>Título do Artigo (H3 Obrigatório)</h3>
+            <p>Conteúdo do artigo. A tag &lt;article&gt; separa blocos de conteúdo autônomos.</p>
+            <!-- IMAGEM OBRIGATÓRIA NO ARTICLE -->
+            <img src="https://via.placeholder.com/600x300" alt="Imagem do Artigo">
+        </article>
+
+    </main>
+
+</div>
+
+<footer>
+    <p>© 2025 Meu Site. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
