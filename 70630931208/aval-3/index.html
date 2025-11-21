@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed de Vendas de Jogos - Final</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header class="header">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwxErGurbuLDYz_3BVmuntPbLNc3sHV0lrdA&s" alt="Logotipo do Game Deals Feed" class="header-logo">
+        
+        <h1>🎮 Game Deals Feed 
+            <span class="status-indicator">AO VIVO</span> 
+        </h1>
+        
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#feedContainer">Ofertas</a></li>
+                <li><a href="#">Populares</a></li>
+                <li><a href="#">Lançamentos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div id="appWrapper"> 
+        <main class="feed-container">
+            
+            <h2 class="section-title">🔥 Ofertas Especiais do Dia</h2>
+            
+            <p class="feed-introduction">Confira as melhores promoções e descontos exclusivos nos jogos mais recentes para todas as plataformas. Não perca!</p>
+
+            <div class="search-filter-area">
+                <input type="text" id="searchInput" placeholder="Buscar jogos por nome..." onkeyup="filterPosts()">
+                <select id="publisherFilter" onchange="filterPosts()">
+                    <option value="">Todos os Publishers</option>
+                </select>
+            </div>
+            
+            <div class="feed-container-posts" id="feedContainer">
+                </div>
+
+            <button id="loadMoreButton" class="buy-button" style="margin: 20px auto; display: block; width: 50%;">Carregar Mais Jogos</button>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
