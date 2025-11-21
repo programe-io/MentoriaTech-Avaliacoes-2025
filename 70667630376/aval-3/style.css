@@ -1,0 +1,102 @@
+/*
+  styles.css
+
+  Este arquivo CSS é para adicionar estilos personalizados
+  e overrides que complementam o framework Tailwind CSS.
+*/
+
+/* --- 1. CONFIGURAÇÕES GERAIS --- */
+
+/* Garante que o corpo da página use uma fonte limpa e o box model moderno */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    /* Adiciona uma transição suave para mudanças de fundo ou cor se necessário */
+    transition: background-color 0.3s ease;
+}
+
+/* Garante que todos os elementos respeitem o padding/border no tamanho total */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* --- 2. ESTILOS DO RASTREADOR DE ENTREGA --- */
+
+/* Estiliza o container do mapa de rastreamento */
+#map-container {
+    /* Adiciona uma borda sutil ao redor do mapa */
+    border: 1px solid #e5e7eb; /* gray-200 */
+    /* Garante que a moto e a casa fiquem visíveis no container */
+    overflow: hidden;
+}
+
+/* Estiliza o marcador da moto (delivery-marker) */
+#delivery-marker {
+    /* Garante que o marcador esteja em cima de outros elementos */
+    z-index: 20;
+    /* Transição para suavizar o movimento do rastreador */
+    transition: left 5s ease-in-out, transform 0.3s ease;
+    /* Adiciona uma leve sombra para destacá-lo */
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
+
+/* Estiliza o ícone da casa (destino) */
+#map-container > div:last-child {
+    z-index: 10;
+    /* Adiciona um fundo semi-transparente para destacá-lo no mapa */
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 2px;
+    border-radius: 50%;
+}
+
+
+/* --- 3. ESTILOS DO CARDÁPIO (HOVER EFFECTS) --- */
+
+/* Efeito de destaque ao passar o mouse sobre um item do cardápio */
+.md\:grid-cols-2 > div {
+    /* Adiciona um efeito de sombra e escala para dar profundidade */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent; /* Adiciona uma borda transparente para evitar "pulo" no hover */
+}
+
+/* Efeito ao passar o mouse sobre o item */
+.md\:grid-cols-2 > div:hover {
+    /* Aumenta a escala levemente */
+    transform: translateY(-4px);
+    /* Sombra mais pronunciada e levemente colorida */
+    box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.1), 0 4px 6px -2px rgba(239, 68, 68, 0.05); /* Sombra do tema vermelho */
+    border-color: #fca5a5; /* Red-300 */
+}
+
+/* Efeito de zoom na imagem da pizza no hover */
+.md\:grid-cols-2 > div:hover img {
+    transform: scale(1.02);
+}
+
+.md\:grid-cols-2 img {
+    transition: transform 0.5s ease;
+}
+
+/* --- 4. ESTILOS DO BOTÃO DE CONFIRMAÇÃO (MODAL) --- */
+
+/* Adiciona um leve pulso ao botão Finalizar Pedido, incentivando o clique */
+@keyframes pulse-red {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.01);
+        box-shadow: 0 0 0 5px rgba(239, 68, 68, 0.2); /* Sombra pulsante vermelha */
+    }
+}
+
+.max-w-7xl button:last-child {
+    animation: pulse-red 2s infinite ease-in-out;
+}
+
+/* Estilo para a caixa do item selecionado ficar mais chamativa */
+#selected-item-display.bg-red-200 {
+    border-left: 5px solid #ef4444; /* Borda vermelha sólida */
+    background-color: #fee2e2; /* red-100 */
+    transition: all 0.5s ease;
+}
