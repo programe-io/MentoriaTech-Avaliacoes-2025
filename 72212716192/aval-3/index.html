@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil - Thauanny</title>
+  <style>
+    :root{
+      --bg: #ffeef6;
+      --card: #ffcee8;
+      --accent: #ff6fa6;
+      --text: #3b0b1f;
+      --muted: rgba(59,11,31,0.7);
+    }
+    *{box-sizing: border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#fff 0%, var(--bg) 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .wrap{max-width:980px;margin:24px auto;padding:20px}
+
+    .profile-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.25));
+      border-radius:18px;padding:22px;box-shadow:0 8px 30px rgba(197,40,120,0.12);
+    }
+
+    .header{display:flex;gap:18px;align-items:center}
+
+    .avatar{
+      width:120px;height:120px;border-radius:50%;overflow:hidden;flex:0 0 120px;border:4px solid #fff;box-shadow:0 6px 18px rgba(255,111,166,0.15);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .user-info{flex:1}
+    .user-top{display:flex;align-items:center;gap:12px}
+    .name{font-size:26px;font-weight:700}
+    .follow-btn{margin-left:auto;padding:10px 16px;border-radius:999px;background:var(--accent);color:#fff;border:none;font-weight:600;cursor:pointer}
+
+    .meta{margin-top:8px;color:var(--muted);font-size:14px}
+    .counts{display:flex;gap:18px;margin-top:14px;font-weight:600}
+    .counts div{font-size:15px}
+
+    .bio{margin-top:14px;font-size:15px;line-height:1.4}
+
+    /* gallery */
+    .tabs{margin-top:22px;display:flex;gap:18px;color:var(--muted)}
+
+    .gallery{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .post{height:160px;border-radius:10px;overflow:hidden;background:#eee}
+    .post img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* small responsive */
+    @media (max-width:700px){
+      .wrap{padding:12px}
+      .header{flex-direction:column;align-items:flex-start}
+      .avatar{width:96px;height:96px}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .post{height:140px}
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <header style="width:100%;padding:16px 0;text-align:center;font-size:20px;font-weight:600;color:#ff4f91;">
+    Meu Perfil Instagram — Thauanny
+  </header>
+
+  <nav style="width:100%;display:flex;justify-content:center;gap:24px;padding:10px 0;font-size:16px;color:#b03060;">
+    <a href="#" style="text-decoration:none;color:#ff4f91">Home</a>
+    <a href="#" style="text-decoration:none;color:#ff4f91">Pesquisar</a>
+    <a href="#" style="text-decoration:none;color:#ff4f91">Perfil</a>
+  </nav>
+  <h2 style="text-align:center;margin-top:20px;color:#ff4f91;font-size:24px;font-weight:700;">Bem-vinda ao perfil da Thauanny</h2>
+
+<p style="text-align:center;color:#b03060;font-size:16px;margin-bottom:20px;">Aqui você encontra as postagens, fotos e detalhes do perfil.</p>
+
+  <main>
+    <div class="wrap">
+    <div class="profile-card">
+      <div class="header">
+        <div class="avatar">
+          <!-- Imagem de perfil: mar (sea) -->
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Foto do mar">
+        </div>
+
+        <div class="user-info">
+          <div class="user-top">
+            <div>
+              <div class="name">Thauanny</div>
+              <div style="color:var(--muted);font-size:14px;margin-top:6px">@thauanny • Perfil artístico • Tema rosa</div>
+            </div>
+            <button class="follow-btn">Seguir</button>
+          </div>
+
+          <div class="counts">
+            <div><span style="color:var(--text)">392</span><div style="font-weight:400;color:var(--muted);font-size:13px">Publicações</div></div>
+            <div><span style="color:var(--text)">128k</span><div style="font-weight:400;color:var(--muted);font-size:13px">Seguidores</div></div>
+            <div><span style="color:var(--text)">214</span><div style="font-weight:400;color:var(--muted);font-size:13px">Seguindo</div></div>
+          </div>
+
+          <div class="bio">Seja feliz. Você nunca sabe quanto tempo resta. 💗</div>
+        </div>
+      </div>
+
+      <div class="tabs">Publicações &nbsp; &nbsp; Reels &nbsp; &nbsp; Marcados</div>
+
+      <div class="gallery">
+        <!-- Fotos aleatórias de carro, gato e cidade. Imagens do Unsplash para carregar direitinho -->
+        <div class="post"><img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80" alt="Carro"></div>
+        <div class="post"><img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80" alt="Gato"></div>
+        <div class="post"><img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=800&q=80" alt="Cidade"></div>
+
+        <div class="post"><img src="https://images.unsplash.com/photo-1511919884226-8f2ce17efb39?auto=format&fit=crop&w=800&q=80" alt="Carro 2"></div>
+        <div class="post"><img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=800&q=80" alt="Gato 2"></div>
+        <div class="post"><img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=800&q=80" alt="Cidade 2"></div>
+
+        <div class="post"><img src="https://images.unsplash.com/photo-1505765050631-8f6b8b0f8c6c?auto=format&fit=crop&w=800&q=80" alt="Carro 3"></div>
+        <div class="post"><img src="https://images.unsplash.com/photo-1601758123927-47e9a9d9b3b4?auto=format&fit=crop&w=800&q=80" alt="Gato 3"></div>
+        <div class="post"><img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=80" alt="Cidade 3"></div>
+      </div>
+    </div>
+  </div>
+  </main>
+</body>
+</html>

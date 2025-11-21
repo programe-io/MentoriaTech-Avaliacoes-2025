@@ -1,0 +1,58 @@
+:root{
+  --bg: #ffeef6;
+  --card: #ffcee8;
+  --accent: #ff6fa6;
+  --text: #3b0b1f;
+  --muted: rgba(59,11,31,0.7);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#fff 0%, var(--bg) 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.wrap{max-width:980px;margin:24px auto;padding:20px}
+
+.profile-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.25));
+  border-radius:18px;padding:22px;box-shadow:0 8px 30px rgba(197,40,120,0.12);
+}
+
+.header{display:flex;gap:18px;align-items:center}
+
+.avatar{
+  width:120px;height:120px;border-radius:50%;overflow:hidden;flex:0 0 120px;border:4px solid #fff;box-shadow:0 6px 18px rgba(255,111,166,0.15);
+}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+.user-info{flex:1}
+.user-top{display:flex;align-items:center;gap:12px}
+.name{font-size:26px;font-weight:700}
+.handle{color:var(--muted);font-size:14px;margin-top:6px}
+.follow-btn{margin-left:auto;padding:10px 16px;border-radius:999px;background:var(--accent);color:#fff;border:none;font-weight:600;cursor:pointer}
+
+.counts{display:flex;gap:18px;margin-top:14px;font-weight:600}
+.counts .big{color:var(--text);display:block;font-size:16px}
+.counts .small{font-weight:400;color:var(--muted);font-size:13px}
+
+.bio{margin-top:14px;font-size:15px;line-height:1.4}
+
+/* gallery */
+.tabs{margin-top:22px;display:flex;gap:18px;color:var(--muted)}
+
+.gallery{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.post{height:160px;border-radius:10px;overflow:hidden;background:#eee}
+.post img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* responsive */
+@media (max-width:700px){
+  .wrap{padding:12px}
+  .header{flex-direction:column;align-items:flex-start}
+  .avatar{width:96px;height:96px}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .post{height:140px}
+}
