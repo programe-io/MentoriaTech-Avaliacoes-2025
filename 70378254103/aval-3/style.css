@@ -1,0 +1,86 @@
+/* Suavidade geral do site */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fonte mais elegante pro site inteiro */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Efeito suave nos cards */
+.product-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Botões com toque mais profissional */
+button,
+.add-to-cart-btn {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Badge do carrinho mais bonito */
+#cart-count-badge {
+    background: #ef4444; /* tailwind red-500 */
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 7px;
+    border-radius: 50%;
+    font-weight: bold;
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+}
+
+/* Transição suave do cabeçalho ao rolar */
+header {
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+header.scrolled {
+    background: rgba(17, 17, 17, 0.75);
+    backdrop-filter: blur(10px);
+}
+
+/* Carrinho mais moderno */
+#cart-items div {
+    transition: background 0.2s ease;
+}
+
+#cart-items div:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* Botão de checkout */
+#checkout-button {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#checkout-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* Imagens com fade suave */
+.product-image {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
