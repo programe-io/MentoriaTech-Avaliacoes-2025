@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim - Neto</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #005fa3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #003d66;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            display: flex;
+            max-width: 1100px;
+            margin: 30px auto;
+            gap: 20px;
+        }
+
+        section {
+            flex: 3;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        article {
+            background: #eef6ff;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #005fa3;
+        }
+
+        aside {
+            flex: 1;
+            background: #e6f2ff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        }
+
+        aside img {
+            width: 100%;
+            max-width: 180px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #005fa3;
+        }
+
+        h3 {
+            color: #003d66;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            background: #ddd;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Olá! Eu sou o Neto</h1>
+        <p>Bem-vindo ao meu site pessoal</p>
+    </header>
+
+    <!-- Menu de navegação -->
+    <nav>
+        <a href="#sobre">Sobre Mim</a>
+        <a href="#gostos">Atividades</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main>
+
+        <!-- Seção Sobre Mim -->
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+
+            <article>
+                <h3>Minha História</h3>
+                <p>
+                    Meu nome é <strong>Neto</strong>. Sou apaixonado por esportes e gosto de manter uma rotina
+                    ativa e saudável. No meu tempo livre, estou sempre buscando atividades que me façam evoluir.
+                </p>
+            </article>
+        </section>
+
+        <!-- Seção Atividades -->
+        <section id="gostos">
+            <h2>O que eu gosto de fazer</h2>
+            <ul>
+                <li>Jogar bola</li>
+                <li>Praticar atividade física</li>
+                <li>Correr nas horas vagas</li>
+            </ul>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Quer saber mais sobre mim ou conversar? Estou sempre aberto a novas amizades!</p>
+        </section>
+
+        <!-- Barra lateral -->
+        <aside>
+            <!-- IMAGEM OBRIGATÓRIA -->
+            <img src="https://via.placeholder.com/180" alt="Foto de Neto">
+            
+            <h3>Curiosidades</h3>
+            <p>• Adoro esportes, especialmente futebol.</p>
+            <p>• Gosto de desafios físicos e de evoluir sempre.</p>
+            <p>• Correr me ajuda a relaxar e manter o foco.</p>
+        </aside>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>Site criado por Neto © 2025</p>
+    </footer>
+
+</body>
+</html>
