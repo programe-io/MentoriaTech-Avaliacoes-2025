@@ -1,0 +1,144 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+header {
+    background-color: #fff;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    animation: fadeDown 1s ease forwards;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+
+nav {
+    background-color: #e9e9e9;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: black;
+    transform: scale(1.05);
+}
+
+
+#row {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+
+aside {
+    width: 25%;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    animation: fadeIn 1.3s ease forwards;
+}
+
+.fakeimage {
+    width: 100%;
+    height: 100px;
+    background-color: #ccc;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .3s;
+}
+
+.fakeimage:hover {
+    transform: scale(1.03);
+}
+
+
+main {
+    flex: 1;
+    background-color: #e3a3c1;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #cc5454;
+    animation: fadeIn 1.6s ease forwards;
+}
+
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+@media (max-width: 800px) {
+    #row {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+    }
+}
+.fakeimage {
+  margin-bottom: 15px;
+}
+
+.news-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.news-card img {
+  width: 70px;
+  border-radius: 6px;
+}
+
+.news-card p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
