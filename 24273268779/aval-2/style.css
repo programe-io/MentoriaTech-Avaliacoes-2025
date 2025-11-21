@@ -1,0 +1,203 @@
+/* =====================
+   RESET & PADRÕES
+   ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: auto;
+    max-width: 1140px;
+}
+
+/* =====================
+   HEADER
+   ===================== */
+header {
+    background-color: #d62828;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+#imglogo {
+    width: 90px;
+    border-radius: 50%;
+}
+
+.textotitulo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* =====================
+   MENU
+   ===================== */
+.menu {
+    background: #f8f9fa;
+    padding: 12px 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.menu .container {
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.menu ul li a:hover {
+    background-color: #d62828;
+    color: white;
+    box-shadow: 0 0 12px rgba(214, 40, 40, 0.5);
+    transform: translateY(-2px);
+}
+
+/* =====================
+   LAYOUT PRINCIPAL
+   ===================== */
+.container-geral {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* =====================
+   ASIDE (PROMOÇÕES)
+   ===================== */
+.promo {
+    background: linear-gradient(135deg, #ffe8d6, #ffddd2);
+    padding: 20px;
+    border-radius: 12px;
+    width: 270px;
+    height: fit-content;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: slideIn 0.8s ease forwards;
+}
+
+.promo h2 {
+    text-align: center;
+    color: #d62828;
+    margin-bottom: 15px;
+}
+
+.promo ul {
+    padding: 0;
+    list-style: none;
+}
+
+.promo li {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Animação aside */
+@keyframes slideIn {
+    from {
+        transform: translateX(-40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* =====================
+   ARTICLE – SOBRE A LOJA
+   ===================== */
+.sobre {
+    flex: 1;
+    background: #fffdf3;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #ffcc4d;
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.sobre h2 {
+    font-size: 22px;
+    color: #d88b00;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sobre p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+/* =====================
+   CARDS (PRODUTOS)
+   ===================== */
+.container-sabores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    transform-origin: center;
+}
+
+.card:hover {
+    transform: scale(1.07) rotate(1deg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin-top: 10px;
+    color: #d62828;
+}
+
+.card span {
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* =====================
+   FOOTER
+   ===================== */
+footer {
+    height: 80px;
+    background: #d62828;
+    margin-top: 30px;
+}
