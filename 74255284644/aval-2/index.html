@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Notícias da Escola — Mini Site</title>
+  <style>
+    :root{
+      --accent:#2b6cb0;
+      --muted:#6b7280;
+      --card-bg: #ffffffcc;
+      --page-bg: url('https://img.odcdn.com.br/wp-content/uploads/2021/05/ceu-Alpes.jpg'); /* substitua por sua imagem de fundo */
+      --max-width:1100px;
+      --radius:12px;
+      --gap:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background-color:#f3f4f6;
+      background-image: var(--page-bg);
+      background-size:cover;
+      background-position:center;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      color:#111827;
+      padding:28px 16px;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+    }
+    .wrap{
+      width:100%;
+      max-width:var(--max-width);
+      background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.92));
+      border-radius:16px;
+      padding:20px;
+      box-shadow:0 8px 30px rgba(16,24,40,0.08);
+      backdrop-filter: blur(6px);
+    }
+    header{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+    }
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;box-shadow:0 6px 18px rgba(43,108,176,0.18)
+    }
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px}
+    nav a:hover{background:#eef2ff;color:var(--accent)}
+    .search{
+      display:flex;align-items:center;gap:8px;border-radius:12px;padding:6px 8px;background:#fff;border:1px solid #e6e9ef
+    }
+    .search input{border:0;outline:none;padding:6px 6px;background:transparent}
+
+    main{display:grid;grid-template-columns:1fr 320px;gap:var(--gap);align-items:start}
+
+    /* cards */
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
+    .card{background:var(--card-bg);border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 18px rgba(15,23,42,0.05)}
+    .card img{width:100%;height:170px;object-fit:cover;display:block}
+    .card .content{padding:14px}
+    .card h3{margin:0 0 6px 0;font-size:18px}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
+    .excerpt{font-size:14px;color:#374151}
+
+    /* sidebar */
+    aside{position:relative}
+    .widget{background:#fff;border-radius:12px;padding:14px;margin-bottom:var(--gap);box-shadow:0 6px 18px rgba(15,23,42,0.03)}
+    .widget h4{margin:0 0 8px 0}
+    .event{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+    .event .date{min-width:56px;background:#f1f5f9;border-radius:8px;padding:8px;text-align:center;font-weight:600}
+
+    /* hero */
+    .hero{display:flex;gap:18px;align-items:center;padding:18px;border-radius:12px;margin-bottom:14px;background:linear-gradient(90deg, rgba(43,108,176,0.12), rgba(59,130,246,0.06));}
+    .hero h1{margin:0;font-size:22px}
+    .hero p{margin:0;color:var(--muted)}
+
+    footer{margin-top:18px;padding-top:12px;border-top:1px solid #eef2f6;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media (max-width:900px){
+      main{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      nav{display:none}
+      .menu-btn{display:inline-flex}
+    }
+
+    /* small devices */
+    .menu-btn{display:none;background:transparent;border:0;font-size:20px}
+    .mobile-nav{display:none}
+    .show-mobile{display:block}
+
+    /* simple article page helper */
+    .read-more{display:inline-block;margin-top:10px;color:var(--accent);text-decoration:none;font-weight:600}
+
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">NE</div>
+        <div>
+          <div style="font-weight:700">Notícias da Escola</div>
+          <div style="font-size:13px;color:var(--muted)">Atualizado em 21 de novembro de 2025</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;align-items:center">
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">Turmas</a>
+          <a href="#">Eventos</a>
+          <a href="#">Contato</a>
+        </nav>
+
+        <button class="menu-btn" aria-label="Abrir menu" onclick="toggleMenu()">☰</button>
+
+        <div class="search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="opacity:.7"><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6"></circle></svg>
+          <input type="search" placeholder="Pesquisar notícias..." aria-label="Pesquisar">
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav" style="display:none;margin-bottom:12px">
+      <a href="#" style="display:block;padding:10px 8px;border-radius:8px">Home</a>
+      <a href="#" style="display:block;padding:10px 8px;border-radius:8px">Turmas</a>
+      <a href="#" style="display:block;padding:10px 8px;border-radius:8px">Eventos</a>
+    </div>
+
+    <main>
+      <section>
+        <div class="hero">
+          <div style="flex:1">
+            <h1>Boletim escolar: últimas notícias e eventos</h1>
+            <p>Fique por dentro das atividades, projetos, conquistas dos estudantes e avisos importantes.</p>
+          </div>
+          <div style="text-align:right">
+            <div style="font-weight:700">21 Nov, 2025</div>
+            <div style="font-size:13px;color:var(--muted)">Edição semanal</div>
+          </div>
+        </div>
+
+        <div class="grid">
+
+          <article class="card">
+            <img src="https://www.pi.gov.br/wp-content/uploads/2025/05/Inauguracao-da-Reforma-e-Modernizacao-do-Centro-Estadual-de-Tempo-Integral-%E2%80%93-CETI-Modestina-Bezerra15.jpg" alt="Feira de Ciências">
+            <div class="content">
+              <div class="meta">Turma: 1º ano • Jogos Digitais</div>
+              <h3>Estudantes da rede estadual apresentam inovação, cinema e literatura no Cajuína Geek.</h3>
+              <p class="excerpt">Alunos do 2º ano ganham destaque na Arena Tech, onde está sendo apresentado o game educativo “Polyglot”, desenvolvido por alunos do Centro de Ensino de Tempo Integral (Ceti) Maria Modestina Bezerra (Teresina).</p>
+              <a class="read-more" href="#">Ler mais →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://www.gp1.com.br/media/image_bank/2025/5/governador-rafael-fonteles-entrega-reforma-do-ceti-maria-modnone.jpeg.1200x0_q85_upscale.webp" alt="Campeonato de futebol">
+            <div class="content">
+              <div class="meta">Reforma e modernização • 21 de Julho</div>
+              <h3>Reforma de mais uma Escola de Tempo Integral em Teresina Piauí.</h3>
+              <p class="excerpt">Reforma dos espaços foi da ordem de R$ 2,8 milhões, garantindo ambientes amplos, climatizados e planejados para proporcionar condições adequadas ao ensino, ao cuidado com a saúde e à inclusão educacional.</p>
+              <a class="read-more" href="#">Ler mais →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://www.gp1.com.br/media/image_bank/2025/5/laboratorio-de-informatica-561184.jpg.1500x1000_q85_crop.webp" alt="Projeto de leitura">
+            <div class="content">
+              <div class="meta">Literatura • 10 Nov</div>
+              <h3>Projeto de leitura estimula leitura entre os anos iniciais</h3>
+              <p class="excerpt">A biblioteca escolar lançou um clube de leitores com atividades Entre as novidades, está a nova plataforma do Canal Educação, que oferece suporte de Inteligência Artificial (IA), monitorias, Laboratório de Redação, Pré-Enem Seduc e preparação voltada para olimpíadas de conhecimento</p>
+              <a class="read-more" href="#">Ler mais →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://storage.stwonline.com.br/180graus/media/image_bank/2025/5/16_1513003901333826998.jpeg" alt="Oficina de arte">
+            <div class="content">
+              <div class="meta">Arte • 8 Nov</div>
+              <h3>Rafael Fonteles reforça compromisso com educação integral na entrega do Ceti Maria Modestina Bezerra</h3>
+              <p class="excerpt">“Mais um passo na direção de universalizar as escolas com estrutura para o tempo integral e cursos profissionais, garantindo uma aprendizagem muito melhor para nossos alunos”, afirmou o governador.</p>
+              <a class="read-more" href="#">Ler mais →</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <aside>
+        <div class="widget">
+          <h4>Próximos eventos</h4>
+          <div class="event">
+            <div class="date">21<br><small style="font-size:12px;color:var(--muted)">Nov</small></div>
+            <div>
+              <div style="font-weight:700">Interclasse de Times</div>
+              <div style="font-size:13px;color:var(--muted)">Quadra Esportiva — 09:00</div>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="date">12<br><small style="font-size:12px;color:var(--muted)">Dez</small></div>
+            <div>
+              <div style="font-weight:700">Apresentação de Fim de Ano</div>
+              <div style="font-size:13px;color:var(--muted)">Ginásio — 15:50</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h4>Contatos úteis</h4>
+          <div style="font-size:14px">Secretaria:  (86) 3216-1956<br>Endereço: R. Jaime Fortes, 3364 - Novo Horizonte, Teresina - PI, 64080-110</div>
+        </div>
+
+        <div class="widget">
+          <h4>Assine por e-mail</h4>
+          <form onsubmit="event.preventDefault();alert('Inscrito! (exemplo)')">
+            <input type="email" placeholder="seu@exemplo.com" style="width:100%;padding:8px;margin-bottom:8px;border:1px solid #eef2f6;border-radius:8px">
+            <button style="width:100%;padding:10px;border-radius:8px;background:var(--accent);color:#fff;border:0">Inscrever</button>
+          </form>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Notícias da Escola — Desenvolvido por alunos
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function toggleMenu(){
+      const el = document.getElementById('mobileNav');
+      if(!el) return;
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+  <!--
+    Instruções rápidas:
+    - Para usar uma imagem de fundo, coloque o arquivo "background.jpg" no mesmo diretório ou altere a variável --page-bg no :root para uma URL.
+    - Substitua textos, imagens e links pelos seus conteúdos reais.
+    - Para páginas internas (artigo único), crie arquivos separados e mantenha o mesmo estilo.
+    - Quer que eu gere também uma página de artigo (HTML) separada? Peça que eu crie.
+  -->
+</body>
+</html>
