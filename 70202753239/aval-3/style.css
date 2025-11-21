@@ -1,0 +1,122 @@
+:root {
+    --bg-color: #1a1a2e; /* Fundo escuro */
+    --card-color: #2c2c47; /* Fundo do card mais claro */
+    --text-color: #f0f0f0;
+    --accent-color: #00ff00; /* Neon Green */
+    --secondary-accent: #ff00ff; /* Neon Pink/Roxo */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+header h1 {
+    color: var(--accent-color);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* --- Feed Container --- */
+#feed-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Postagem (Card) --- */
+.post {
+    background-color: var(--card-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2); /* Sombra neon */
+    transition: transform 0.3s ease;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 255, 0, 0.4);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.post-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid var(--secondary-accent);
+}
+
+.post-username {
+    font-weight: bold;
+    color: var(--secondary-accent);
+}
+
+.post-title {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin: 15px 0;
+    border: 1px solid var(--accent-color);
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.post-price {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.buy-button {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.buy-button:hover {
+    background-color: #33ff33;
+}
