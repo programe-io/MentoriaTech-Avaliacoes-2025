@@ -1,0 +1,211 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body {
+  background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+  background-size: 800% 800%;
+  color: #262626;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  animation: gradientBG 20s ease infinite;
+  transition: background 0.5s;
+}
+
+/* Animação do fundo */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Navegação */
+nav.page-header {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  background-color: rgba(255,255,255,0.9);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.instagram-logo {
+  height: 30px;
+  object-fit: contain;
+}
+
+/* Título do feed */
+h2 {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #262626;
+  text-align: left;
+}
+
+/* Post */
+.post {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Cabeçalho do post */
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 1px solid #dbdbdb;
+}
+
+.post-header a strong {
+  font-weight: 600;
+  color: #262626;
+  text-decoration: none;
+}
+
+/* Imagem da publicação */
+.post-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Legenda */
+.post-caption {
+  padding: 0 10px 10px;
+  font-size: 14px;
+  color: #262626;
+}
+
+/* Ações */
+.post-actions {
+  display: flex;
+  padding: 10px;
+  font-size: 22px;
+  gap: 15px;
+}
+
+.like-heart {
+  cursor: pointer;
+  color: #262626;
+  transition: color 0.3s, transform 0.3s;
+  display: inline-block;
+}
+
+.liked {
+  color: #ed4956;
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+/* Estatísticas */
+.post-stats {
+  padding: 0 10px 10px;
+  font-size: 14px;
+  color: #8e8e8e;
+}
+
+/* Comentários */
+.comments-section {
+  padding: 0 10px 10px;
+}
+
+.comment {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #262626;
+}
+
+.comment-profile-pic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Adicionar comentário */
+.add-comment {
+  border-top: 1px solid #dbdbdb;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.add-comment form {
+  display: flex;
+  gap: 10px;
+}
+
+.add-comment input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fafafa;
+  color: #262626;
+}
+
+.add-comment button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #3897f0;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Responsividade */
+@media (max-width: 650px) {
+  .post {
+    margin: 10px;
+  }
+
+  .instagram-logo {
+    height: 25px;
+  }
+
+  .post-actions {
+    font-size: 20px;
+  }
+
+  .profile-pic {
+    width: 35px;
+    height: 35px;
+  }
+
+  .comment-profile-pic {
+    width: 28px;
+    height: 28px;
+  }
+}
