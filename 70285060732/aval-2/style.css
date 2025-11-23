@@ -1,528 +1,153 @@
-/* ============================================
-   ESTILOS GERAIS
-   ============================================ */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f5f5f5;
+  margin: 0;
+  font-family: 'Press Start 2P', monospace;
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.5;
+  background: linear-gradient(135deg, #1f1f2e, #2e2e3f);
+  animation: muda-cor 30s infinite alternate;
+  transition: background 5s ease;
 }
 
-html {
-    scroll-behavior: smooth;
+@keyframes muda-cor {
+  0% { background: linear-gradient(135deg, #1f1f2e, #2e2e3f); }
+  20% { background: linear-gradient(135deg, #2e003f, #003f3f); }
+  40% { background: linear-gradient(135deg, #1f2f3f, #3f1f2f); }
+  60% { background: linear-gradient(135deg, #003f2f, #1f003f); }
+  80% { background: linear-gradient(135deg, #2f2f3f, #3f003f); }
+  100% { background: linear-gradient(135deg, #1f1f2e, #2e2e3f); }
 }
 
-/* ============================================
-   HEADER
-   ============================================ */
-
-header {
-    background: linear-gradient(135deg, #FF9500 0%, #FFB800 100%);
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* Navegação */
+nav {
+  background-color: rgba(0,0,0,0.85);
+  padding: 8px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+nav a {
+  color: #39ff14;
+  text-decoration: none;
+  margin: 0 12px;
+  font-size: 11px;
+  transition: 0.3s;
 }
 
-header p {
-    font-size: 1.1em;
-    opacity: 0.95;
+nav a:hover {
+  color: #00ffff;
 }
 
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
+section {
+  padding: 30px 15px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-/* ============================================
-   NAVEGAÇÃO
-   ============================================ */
-
-.navbar {
-    background-color: #333;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* Cards com neon suave */
+.jogo-card {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(0,0,0,0.25);
+  border: 2px solid #39ff14;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  box-shadow: 0 0 8px #39ff14, 0 0 15px #00ffff inset;
 }
 
-.nav-list {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0;
+.jogo-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 12px #39ff14, 0 0 20px #00ffff inset;
+  border-color: #00ffff;
 }
 
-.nav-list li {
-    margin: 0;
+.jogo-card .imagem-capa {
+  flex: 1 1 160px;
+  margin-right: 18px;
 }
 
-.nav-list a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 15px 20px;
-    transition: all 0.3s ease;
-    font-weight: 500;
+.jogo-card .imagem-capa img {
+  width: 160px;
+  height: auto;
+  border: 2px solid #39ff14;
+  border-radius: 5px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 6px #39ff14;
 }
 
-.nav-list a:hover {
-    background-color: #FF9500;
-    color: white;
+.jogo-card .imagem-capa img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00ffff;
 }
 
-.nav-list a.active {
-    background-color: #FF9500;
-    color: white;
-    border-bottom: 3px solid #FFB800;
+.jogo-card .info-jogo {
+  flex: 3 1 380px;
 }
 
-/* ============================================
-   SEÇÃO HERO (Destaque Principal)
-   ============================================ */
-
-.hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-    margin: 30px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
+.info-jogo h2 {
+  color: #00ffff;
+  font-size: 13px;
+  margin-bottom: 6px;
+  text-shadow: 0 0 3px #00ffff;
 }
 
-.hero-content {
-    flex: 1;
-    text-align: left;
+.info-jogo h3 {
+  color: #ff00ff;
+  font-size: 11px;
+  margin-top: 6px;
+  margin-bottom: 4px;
+  text-shadow: 0 0 3px #ff00ff;
 }
 
-.hero-image {
-    flex: 1;
-    text-align: center;
+aside {
+  flex: 1 1 180px;
+  background-color: rgba(0,0,0,0.25);
+  border: 2px solid #ff00ff;
+  border-radius: 10px;
+  padding: 8px;
+  margin-left: 15px;
+  height: fit-content;
+  font-size: 10px;
+  color: #ff99ff;
+  box-shadow: 0 0 6px #ff00ff inset;
 }
 
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    object-fit: cover;
+.footer {
+  background-color: rgba(0,0,0,0.85);
+  text-align: center;
+  padding: 12px;
+  margin-top: 30px;
+  font-size: 9px;
+  color: #ccc;
 }
 
-.hero-content h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+a {
+  color: #39ff14;
 }
 
-.hero-content p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+a:hover {
+  color: #00ffff;
 }
-
-/* ============================================
-   BOTÕES
-   ============================================ */
-
-.btn-primary,
-.btn-secondary {
-    padding: 12px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: all 0.3s ease;
-    font-weight: bold;
-}
-
-.btn-primary {
-    background-color: #FF9500;
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #FFB800;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.btn-secondary {
-    background-color: #667eea;
-    color: white;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.btn-secondary:hover {
-    background-color: #764ba2;
-    transform: translateY(-2px);
-}
-
-/* ============================================
-   CONTEÚDO PRINCIPAL
-   ============================================ */
-
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.page-content {
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-}
-
-.page-content h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 15px;
-    border-bottom: 3px solid #FF9500;
-    padding-bottom: 10px;
-}
-
-.page-content > p {
-    font-size: 1.1em;
-    color: #666;
-    margin-bottom: 30px;
-    line-height: 1.8;
-}
-
-/* ============================================
-   SEÇÃO SOBRE
-   ============================================ */
-
-.about {
-    background: white;
-    padding: 50px 20px;
-    margin: 30px 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.about h2 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 40px;
-    color: #333;
-    border-bottom: 3px solid #FF9500;
-    padding-bottom: 15px;
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.about-card {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.about-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.about-card h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-}
-
-.about-card p {
-    line-height: 1.6;
-}
-
-/* ============================================
-   GALERIA
-   ============================================ */
-
-.gallery {
-    background: white;
-    padding: 50px 20px;
-    margin: 30px 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.gallery h2 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 40px;
-    color: #333;
-    border-bottom: 3px solid #FF9500;
-    padding-bottom: 15px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* ============================================
-   CARDS DA GALERIA
-   ============================================ */
-
-.gallery-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border: 1px solid #eee;
-}
-
-.gallery-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.image-container {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    background-color: #ddd;
-    position: relative;
-}
-
-.image-container img,
-.image-container picture {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.gallery-card:hover .image-container img {
-    transform: scale(1.05);
-}
-
-.gallery-card h3 {
-    padding: 20px 20px 10px;
-    font-size: 1.3em;
-    color: #333;
-}
-
-.gallery-card p {
-    padding: 0 20px;
-    color: #666;
-    font-size: 0.95em;
-    margin-bottom: 10px;
-}
-
-.gallery-card p:first-of-type {
-    color: #FF9500;
-    font-weight: bold;
-    font-size: 0.9em;
-}
-
-.gallery-card p:last-of-type {
-    padding-bottom: 20px;
-    line-height: 1.5;
-}
-
-/* ============================================
-   FOOTER
-   ============================================ */
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 50px;
-    border-top: 3px solid #FF9500;
-}
-
-footer p {
-    margin: 8px 0;
-    font-size: 0.95em;
-}
-
-footer p:first-child {
-    font-weight: bold;
-}
-
-/* ============================================
-   RESPONSIVIDADE (Mobile)
-   ============================================ */
 
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8em;
-    }
+  .jogo-card {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    header p {
-        font-size: 0.95em;
-    }
+  .jogo-card .imagem-capa {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
 
-    .nav-list {
-        flex-direction: column;
-    }
-
-    .nav-list a {
-        text-align: center;
-        padding: 12px 15px;
-    }
-
-    .hero {
-        padding: 50px 15px;
-        margin: 20px 15px;
-    }
-
-    .hero-content h2 {
-        font-size: 1.5em;
-    }
-
-    .hero-content p {
-        font-size: 1em;
-    }
-
-    .page-content {
-        padding: 20px;
-    }
-
-    .page-content h2 {
-        font-size: 1.5em;
-    }
-
-    .about,
-    .gallery {
-        padding: 30px 15px;
-    }
-
-    .about h2,
-    .gallery h2 {
-        font-size: 1.5em;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .image-container {
-        height: 250px;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5em;
-    }
-
-    .nav-list a {
-        padding: 10px 12px;
-        font-size: 0.9em;
-    }
-
-    .hero {
-        padding: 40px 10px;
-        margin: 15px 10px;
-    }
-
-    .hero-content h2 {
-        font-size: 1.3em;
-    }
-
-    .hero-content p {
-        font-size: 0.9em;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-
-    .page-content {
-        padding: 15px;
-    }
-
-    .page-content h2 {
-        font-size: 1.3em;
-    }
-
-    main {
-        padding: 10px;
-    }
-}
-
-/* ============================================
-   ANIMAÇÕES
-   ============================================ */
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.gallery-card {
-    animation: fadeIn 0.5s ease-out;
-}
-
-/* ============================================
-   EFEITO DE BRILHO NOS CARDS
-   ============================================ */
-
-.gallery-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s;
-}
-
-.gallery-card:hover::before {
-    left: 100%;
+  aside {
+    margin-left: 0;
+    margin-top: 8px;
+  }
 }
