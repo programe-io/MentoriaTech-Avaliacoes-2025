@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cardápio</title>
+
+    <style>
+        body {
+            background: #f3f3f3;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        /* ----- HEADER ----- */
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0 10px 0;
+            background: #fff6ce;
+            border-bottom: 4px solid #d5b23a;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+
+        header h1 {
+            font-size: 40px;
+            color: #6b5300;
+            margin: 0 0 15px 0;
+        }
+
+        /* ----- NAV MENU ----- */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav ul li {
+            font-size: 18px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #6b5300;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #b8860b;
+        }
+
+        /* ----- TÍTULOS ----- */
+        h2 {
+            color: #6b5300;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* ----- CARDS/Pastas ----- */
+        .pasta {
+            width: 260px;
+            background: #fff6ce;
+            border: 3px solid #d5b23a;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            padding: 15px;
+        }
+
+        .pasta:hover {
+            transform: scale(1.12);
+        }
+
+        .img-box {
+            width: 100%;
+            height: 180px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .preco {
+            font-size: 20px;
+            font-weight: bold;
+            color: #b8860b;
+            text-align: center;
+            margin: 5px 0;
+            display: block;
+        }
+
+        p {
+            font-size: 15px;
+            text-align: center;
+            color: #444;
+            margin: 5px 0 0 0;
+        }
+
+        /* Ajuste do container das pastas */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+    </style>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <!-- HEADER + NAV -->
+    <header>
+        <h1>🍽️ Nosso Cardápio</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Cardápio</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- MAIN: conteúdo principal -->
+    <main>
+        <h2>Delícias que Preparamos para Você</h2>
+
+        <div class="container">
+
+            <!-- PASTA 1 -->
+            <div class="pasta">
+                <h2>X-Burger</h2>
+                <div class="img-box">
+                    <img src="https://img.cdndsgni.com/preview/10019726.jpg">
+                </div>
+                <p><span class="preco">R$ 18,00</span></p>
+                <p>Hambúrguer simples com queijo, alface, tomate e molho especial.</p>
+            </div>
+
+            <!-- PASTA 2 -->
+            <div class="pasta">
+                <h2>X-Bacon</h2>
+                <div class="img-box">
+                    <img src="https://img.cdndsgni.com/preview/10004905.jpg">
+                </div>
+                <p><span class="preco">R$ 24,00</span></p>
+                <p>Hambúrguer com bacon crocante, queijo cheddar e molho da casa.</p>
+            </div>
+
+            <!-- PASTA 3 -->
+            <div class="pasta">
+                <h2>Pizza Margherita</h2>
+                <div class="img-box">
+                    <img src="https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_desktop_new/public/srh_recipes/494feec171f5683665eba434d22e52f5.jpg?itok=n3xpYgtR">
+                </div>
+                <p><span class="preco">R$ 36,00</span></p>
+                <p>Pizza tradicional com molho de tomate, muçarela e manjericão fresco.</p>
+            </div>
+
+            <!-- PASTA 4 -->
+            <div class="pasta">
+                <h2>Batata Frita</h2>
+                <div class="img-box">
+                    <img src="https://cdn.casaeculinaria.com/wp-content/uploads/2023/03/13101208/Batata-frita.jpg">
+                </div>
+                <p><span class="preco">R$ 14,00</span></p>
+                <p>Porção de batatas fritas crocantes com sal temperado.</p>
+            </div>
+
+            <!-- PASTA 5 -->
+            <div class="pasta">
+                <h2>Milkshake de Morango</h2>
+                <div class="img-box">
+                    <img src="https://i.ytimg.com/vi/lF3F36ORaQM/hq720.jpg">
+                </div>
+                <p><span class="preco">R$ 16,00</span></p>
+                <p>Milkshake cremoso feito com sorvete artesanal de morango.</p>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
