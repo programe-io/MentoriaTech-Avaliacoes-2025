@@ -1,0 +1,38 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class EstiloCSSJavaFX extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        Label titulo = new Label("Bem-vindo ao JavaFX com CSS!");
+        titulo.getStyleClass().add("titulo");
+
+        Button botao1 = new Button("Clique aqui");
+        botao1.getStyleClass().add("botao-principal");
+
+        Button botao2 = new Button("Cancelar");
+        botao2.getStyleClass().add("botao-secundario");
+
+        VBox layout = new VBox(20);
+        layout.getChildren().addAll(titulo, botao1, botao2);
+        layout.getStyleClass().add("container");
+
+        Scene cena = new Scene(layout, 400, 300);
+
+        // Carregando o CSS externo
+        cena.getStylesheets().add(getClass().getResource("estilo.css").toExternalForm());
+
+        primaryStage.setTitle("Exemplo CSS em Java");
+        primaryStage.setScene(cena);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
