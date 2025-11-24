@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Feed de Notícias — Neymar</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#ffde59;--muted:#9aa4b2}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#061126 0%,#071427 60%);color:#e6eef8}
+    .container{max-width:980px;margin:36px auto;padding:20px}
+    header.site-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    header.site-header h1{font-size:1.5rem;margin:0}
+    nav.site-nav a{color:var(--accent);text-decoration:none;margin-left:14px;font-weight:600}
+
+    .feed{display:grid;grid-template-columns:1fr;gap:18px}
+    /* card */
+    .post{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.08));border-radius:12px;padding:14px;display:flex;gap:14px;align-items:flex-start;border:1px solid rgba(255,255,255,0.03)}
+    .post img{width:180px;height:120px;object-fit:cover;border-radius:10px;flex:0 0 180px}
+    .post .content{flex:1}
+    .meta{display:flex;gap:10px;align-items:center;font-size:0.85rem;color:var(--muted);margin-bottom:6px}
+    .title{margin:0 0 6px 0;font-size:1.05rem}
+    .excerpt{margin:0;color:#dbeafc}
+    .tags{margin-top:10px}
+    .tags span{background:rgba(255,222,89,0.1);color:var(--accent);padding:6px 8px;border-radius:999px;font-size:0.8rem;margin-right:8px}
+
+    /* responsive */
+    @media (max-width:720px){
+      .post{flex-direction:column}
+      .post img{width:100%;height:200px}
+    }
+
+    /* small site footer */
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:0.9rem}
+
+    /* decorative */
+    .logo{display:flex;gap:10px;align-items:center}
+    .logo .dot{width:34px;height:34px;border-radius:8px;background:var(--accent);display:inline-block}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <div class="logo">
+        <span class="dot" aria-hidden="true"></span>
+        <h1>Notícias — Neymar</h1>
+      </div>
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="#">Últimas</a>
+        <a href="#">Partidas</a>
+        <a href="#">Entrevistas</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="feed" aria-label="Feed de notícias">
+
+        <div class="post" id="post-1">
+          <img src="https://images.unsplash.com/photo-1608544165664-452f0c4f7b8b?auto=format&fit=crop&w=900&q=60" alt="Neymar comemorando gol">
+          <div class="content">
+            <div class="meta"><time datetime="2025-11-20">20 nov 2025</time><span>·</span><span>Esporte</span></div>
+            <h2 class="title">Neymar brilha e garante vitória no clássico</h2>
+            <p class="excerpt">Em uma atuação decisiva, Neymar marcou o gol da vitória e foi eleito o melhor em campo. Treinador elogia seu desempenho e liderança dentro do jogo.</p>
+            <div class="tags"><span>#Neymar</span><span>#Clássico</span></div>
+          </div>
+        </div>
+
+        <div class="post" id="post-2">
+          <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=900&q=60" alt="Neymar treinando no campo">
+          <div class="content">
+            <div class="meta"><time datetime="2025-11-18">18 nov 2025</time><span>·</span><span>Treino</span></div>
+            <h2 class="title">Sessão intensa: Neymar volta ao ritmo antes da próxima partida</h2>
+            <p class="excerpt">Depois de um breve período de descanso, Neymar intensificou os treinos com foco na preparação física e tática para o calendário apertado.</p>
+            <div class="tags"><span>#Preparação</span><span>#Treino</span></div>
+          </div>
+        </div>
+
+        <div class="post" id="post-3">
+          <img src="https://images.unsplash.com/photo-1517927033932-b3d0f0e5f0d9?auto=format&fit=crop&w=900&q=60" alt="Neymar em coletiva de imprensa">
+          <div class="content">
+            <div class="meta"><time datetime="2025-11-15">15 nov 2025</time><span>·</span><span>Entrevista</span></div>
+            <h2 class="title">Neymar comenta sobre expectativas na coletiva pré-competição</h2>
+            <p class="excerpt">O atacante falou sobre metas pessoais e do time, ressaltando a importância do próximo torneio internacional para sua carreira.</p>
+            <div class="tags"><span>#Coletiva</span><span>#Seleção</span></div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <footer>
+      <small>Feito com ♥ — Feed de exemplo sobre Neymar. Imagens: Unsplash (placeholders).</small>
+    </footer>
+  </div>
+</body>
+</html>
