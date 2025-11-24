@@ -1,3 +1,3 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Blog sobre os riscos das queimadas carregado com sucesso!");
+    console.log("Blog sobre queimadas carregado corretamente.");
 });
