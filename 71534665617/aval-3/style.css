@@ -1,0 +1,93 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #e8f5e9; /* Fundo verde claro de jardim */
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 450px;
+}
+
+h1 {
+    color: #d32f2f; /* Vermelho vibrante */
+}
+
+.tulip-display {
+    margin: 30px auto;
+    height: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* Base da tulipa */
+.tulip {
+    position: absolute;
+    bottom: 0;
+    transition: color 0.5s ease; /* Transição para a cor base */
+    /* Cores padrão: Vermelho e Verde */
+    --tulip-color: #e53935; 
+    --stem-color: #4caf50;
+}
+
+.petal {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    background-color: var(--tulip-color);
+    border-radius: 0 0 50% 50%;
+    transition: background-color 0.5s ease;
+}
+
+.petal1 {
+    transform: translateX(-30px) rotate(-15deg);
+}
+
+.petal2 {
+    /* Pétala central, mais reta */
+    width: 50px;
+    height: 85px;
+    transform: translateY(-5px);
+}
+
+.petal3 {
+    transform: translateX(30px) rotate(15deg);
+}
+
+.stem {
+    width: 10px;
+    height: 100px;
+    background-color: var(--stem-color);
+    margin: 0 auto;
+    border-radius: 0 0 5px 5px;
+    transition: background-color 0.5s ease;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #ffb74d; /* Botão Laranja suave */
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffa726;
+}
