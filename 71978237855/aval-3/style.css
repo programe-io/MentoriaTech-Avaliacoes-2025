@@ -1,0 +1,169 @@
+/* styles.css — CSS separado */
+:root{
+  --bg:#f4f6f8; --card:#ffffff; --accent:#0b74de; --muted:#6b7280;
+  --max-w:900px;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+body{
+  background:var(--bg);
+  color:#0b1220;
+  margin:0;
+  display:flex;
+  justify-content:center;
+}
+
+.container{
+  max-width:var(--max-w);
+  width:100%;
+  padding:24px;
+}
+
+/* HEADER */
+header.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:18px;
+  border-radius:12px;
+  background:linear-gradient(90deg,#ffffff,#f8fbff);
+  box-shadow:0 6px 20px rgba(11,18,32,0.05);
+}
+
+header .brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+header .brand img{
+  width:48px;
+  height:48px;
+  border-radius:8px;
+  object-fit:cover;
+}
+
+header h1{
+  font-size:1.1rem;
+  margin:0;
+}
+
+/* NAV */
+nav.main-nav{
+  margin-top:12px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+nav.main-nav a{
+  background:transparent;
+  padding:8px 12px;
+  border-radius:8px;
+  text-decoration:none;
+  color:var(--accent);
+  border:1px solid rgba(11,116,222,0.12);
+  font-weight:600;
+}
+
+/* FEED */
+.feed{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+  margin-top:18px;
+}
+
+.post{
+  background:var(--card);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 8px 30px rgba(12,20,35,0.06);
+  display:flex;
+  flex-direction:column;
+}
+
+.post .media{
+  width:100%;
+  height:220px;
+  overflow:hidden;
+}
+
+.post .media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.post .content{
+  padding:16px;
+}
+
+.post .meta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:0.85rem;
+  color:var(--muted);
+  margin-bottom:8px;
+}
+
+.post h2{
+  margin:0 0 8px 0;
+  font-size:1.05rem;
+}
+
+.post p{
+  margin:0;
+  color:#222e3a;
+  line-height:1.45;
+}
+
+/* BOTÕES */
+.post .actions{
+  display:flex;
+  gap:12px;
+  margin-top:12px;
+}
+
+.btn{
+  padding:8px 12px;
+  border-radius:8px;
+  border:none;
+  background:var(--accent);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.btn.secondary{
+  background:transparent;
+  color:var(--accent);
+  border:1px solid rgba(11,116,222,0.12);
+}
+
+/* FOOTER */
+footer.site-footer{
+  margin-top:22px;
+  padding:14px;
+  text-align:center;
+  color:var(--muted);
+  font-size:0.9rem;
+}
+
+/* RESPONSIVIDADE */
+@media(min-width:800px){
+  .feed{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .post.large{
+    grid-column:span 2;
+    height:100%;
+  }
+  .post .media{
+    height:320px;
+  }
+}
+
