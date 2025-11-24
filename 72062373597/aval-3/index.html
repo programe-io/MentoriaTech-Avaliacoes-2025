@@ -1,0 +1,181 @@
+<!-- Arquivos incluídos neste documento: index.html e styles.css
+     Salve o conteúdo de cada bloco em arquivos separados: index.html e styles.css
+-->
+
+<!-- ===== index.html ===== -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Feed de Notícias — 3 Postagens</title>
+  <link rel="stylesheet" href="styles.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Jornal da Escola</h1>
+      <nav class="main-nav" aria-label="Menu principal">
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Política</a></li>
+          <li><a href="#">Meio Ambiente</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <!-- Feed de notícias -->
+    <section class="feed">
+
+      <article class="post" aria-labelledby="post-1-title">
+        <div class="post-media">
+          <!-- tag img obrigatória -->
+          <img src="images/noticia1.jpg" alt="Alunos plantando árvores" />
+        </div>
+        <div class="post-content">
+          <header>
+            <h2 id="post-1-title">Estudantes organizam mutirão de plantio na cidade</h2>
+            <span class="post-meta">24 de novembro de 2025 • Meio Ambiente</span>
+          </header>
+          <p>Mais de 200 alunos se reuniram no sábado para plantar mudas em praças e áreas públicas — uma ação para melhorar o ar e a qualidade de vida local.</p>
+          <nav class="post-actions">
+            <a href="#">Ler mais</a>
+            <a href="#">Compartilhar</a>
+          </nav>
+        </div>
+      </article>
+
+      <article class="post" aria-labelledby="post-2-title">
+        <div class="post-media">
+          <img src="images/noticia2.jpg" alt="Feira de ciências com robôs e estudantes" />
+        </div>
+        <div class="post-content">
+          <header>
+            <h2 id="post-2-title">Feira de Ciências apresenta projetos de robótica</h2>
+            <span class="post-meta">22 de novembro de 2025 • Educação</span>
+          </header>
+          <p>Alunos do ensino médio exibiram protótipos robóticos e explicaram soluções para problemas urbanos — destaque para um robô que coleta lixo automaticamente.</p>
+          <nav class="post-actions">
+            <a href="#">Ler mais</a>
+            <a href="#">Compartilhar</a>
+          </nav>
+        </div>
+      </article>
+
+      <article class="post" aria-labelledby="post-3-title">
+        <div class="post-media">
+          <img src="images/noticia3.jpg" alt="Voluntários distribuindo alimentos" />
+        </div>
+        <div class="post-content">
+          <header>
+            <h2 id="post-3-title">Campanha arrecada alimentos para famílias locais</h2>
+            <span class="post-meta">20 de novembro de 2025 • Sociedade</span>
+          </header>
+          <p>Uma campanha coordenada por estudantes e professores já distribuiu mais de 1 tonelada de alimentos a famílias em situação de vulnerabilidade.</p>
+          <nav class="post-actions">
+            <a href="#">Ler mais</a>
+            <a href="#">Compartilhar</a>
+          </nav>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Jornal da Escola — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
+<!-- ===== styles.css ===== -->
+/* Salve este bloco como styles.css */
+
+/* Reset simples */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --bg: #f7f7f9;
+  --card: #ffffff;
+  --accent: #0b6efd;
+  --muted: #6b7280;
+  --container-w: 900px;
+}
+
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: #111827;
+  line-height: 1.4;
+}
+
+.container{
+  width: 90%;
+  max-width: var(--container-w);
+  margin: 0 auto;
+}
+
+.site-header{
+  background: var(--card);
+  border-bottom: 1px solid #e6e6e9;
+  padding: 18px 0;
+  margin-bottom: 20px;
+}
+
+.site-header .logo{
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.main-nav ul{ list-style: none; display: flex; gap: 16px; }
+.main-nav a{ text-decoration: none; color: var(--muted); font-weight: 600; }
+
+.feed{ display: grid; gap: 18px; }
+.post{
+  display: flex;
+  gap: 18px;
+  background: var(--card);
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+}
+.post-media img{
+  width: 220px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.post-content{
+  flex: 1;
+}
+.post-content header h2{
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+.post-meta{ display: block; color: var(--muted); font-size: 0.85rem; margin-bottom: 10px; }
+.post-content p{ margin-bottom: 12px; color: #374151; }
+.post-actions a{ margin-right: 12px; text-decoration: none; font-weight: 600; color: var(--accent); }
+
+.site-footer{
+  text-align: center;
+  padding: 24px 0;
+  color: var(--muted);
+  margin-top: 26px;
+}
+
+/* Responsivo simples */
+@media (max-width: 720px){
+  .post{ flex-direction: column; }
+  .post-media img{ width: 100%; height: 220px; }
+  .main-nav ul{ gap: 10px; font-size: 0.95rem; }
+}
