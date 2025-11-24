@@ -1,0 +1,141 @@
+/* ---------- CONFIGURAÇÃO BASE ---------- */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f3f3f3;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ---------- MODO ESCURO ---------- */
+body.dark {
+    background: #1a1a1a;
+    color: #eee;
+}
+
+body.dark article {
+    background: #262626;
+}
+
+body.dark footer {
+    background: #000;
+}
+
+body.dark .highlight {
+    background: #3a1c23;
+    border-left-color: #ff4d6d;
+}
+
+/* ---------- CABEÇALHO ---------- */
+
+header {
+    background: url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1400&q=60') 
+    center/cover no-repeat;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+/* ---------- ARTIGO ---------- */
+
+article {
+    max-width: 900px;
+    background: white;
+    padding: 40px;
+    margin: -80px auto 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+}
+
+/* ---------- ELEMENTOS ---------- */
+
+h2 {
+    color: #d11f45;
+}
+
+.highlight {
+    background: #ffe6eb;
+    padding: 20px;
+    border-left: 6px solid #d11f45;
+    border-radius: 8px;
+}
+
+.quote {
+    background: #f0f0f0;
+    padding: 20px;
+    border-left: 5px solid #666;
+    border-radius: 8px;
+    font-style: italic;
+}
+
+/* ---------- GALERIA ---------- */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+/* ---------- BOTÃO MODO ESCURO ---------- */
+
+#themeToggle {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    padding: 12px 18px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #d11f45;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+#themeToggle:hover {
+    background: #b9163a;
+}
+
+/* ---------- BOTÃO VOLTAR AO TOPO ---------- */
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 16px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+}
+
+/* ---------- ANIMAÇÕES ---------- */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* ---------- RODAPÉ ---------- */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+}
