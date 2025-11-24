@@ -1,0 +1,70 @@
+/*
+  styles.css
+  Tema: App de Carros / Concessionária
+*/
+
+/* 1. Reset Básico (Melhora a consistência em diferentes navegadores) */
+body {
+    font-family: 'Inter', sans-serif; /* Adicione uma fonte moderna, se estiver usando */
+    /* Não é estritamente necessário se você usar Tailwind, mas é uma boa prática */
+}
+
+/* 2. Estilo do Carro (Antiga Pizza) e Botão Principal */
+
+/* Define a cor principal para o hover e foco, usando a cor 'primary' do Tailwind (#1d4ed8) */
+.text-primary,
+.bg-primary {
+    --tw-bg-opacity: 1;
+    background-color: #dae0f0;
+}
+
+.hover\:bg-primary-dark:hover {
+    --tw-bg-opacity: 1;
+    background-color: #ffffffa5; /* black-800 */
+}
+
+.text-primary {
+    color: #fdfdfe;
+}
+
+/* 3. Animação de Rastreamento (O CORAÇÃO DO RASTREADOR) */
+
+/* Define a animação para o marcador do veículo (🚘) */
+#delivery-marker {
+    animation: moveCar 10s linear infinite alternate; /* 10s de duração, linear, infinito, alternando direção */
+}
+
+/* Keyframes para simular o movimento do carro da concessionária para o destino */
+@keyframes moveCar {
+    0% {
+        /* Posição inicial: Perto do lado esquerdo (Concessionária) */
+        left: 10%;
+        top: 30%;
+        transform: rotate(0deg); /* Carro apontado para a frente */
+    }
+    50% {
+        /* Meio do caminho */
+        left: 50%;
+        top: 50%;
+        transform: rotate(0deg);
+    }
+    100% {
+        /* Posição final: Perto do lado direito (Casa do Cliente) */
+        left: 80%;
+        top: 80%;
+        transform: rotate(0deg);
+    }
+}
+
+/* 4. Estilos de Foco e Interação */
+/* Pequenos ajustes para acessibilidade e melhor UX */
+
+button:focus {
+    outline: 2px solid #facc15; /* Usando 'accent' (amarelo) para indicar foco */
+    outline-offset: 2px;
+}
+
+a:focus {
+    outline: 2px solid #facc15;
+    outline-offset: 2px;
+}
