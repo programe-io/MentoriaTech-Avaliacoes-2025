@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Feed de Notícias — Futebol</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="feed-futebol.css">
+<link rel="stylesheet" href="feed-futebol.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="ball" aria-hidden>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12c0 5 4 9 9 9s9-4 9-9-4-9-9-9-9 4-9 9z" stroke="rgba(255,255,255,0.16)" stroke-width="1.2"/></svg>
+      </div>
+      <div>
+        <h1 class="glow">Placar Notícias</h1>
+        <div class="subtle">As últimas notícias do mundo do futebol</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="search" role="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden style="opacity:.7"><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10.5" cy="10.5" r="5.5" stroke="currentColor" stroke-width="1.6"/></svg>
+        <input id="searchInput" placeholder="Buscar artigos, times, jogadores..." aria-label="Buscar notícias" />
+      </div>
+
+      <button class="filter-btn" id="filterBtn" aria-pressed="false">Filtrar: Últimas 24h</button>
+    </div>
+
+    <nav aria-label="Navegação principal" class="main-nav">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#noticias">Notícias</a></li>
+        <li><a href="#jogos">Jogos</a></li>
+        <li><a href="#classificacao">Classificação</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <div class="feed" id="feed">
+
+        <!-- Agora usando tag <img> (obrigatória para o validador) em vez de background-image -->
+        <article class="card" data-title="Goleada histórica inspira clube" data-tags="Campeonato,Resultado">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1517927033932-b3d6e39f2b7a?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Partida de futebol com torcida no estádio" loading="lazy" />
+          </div>
+          <div class="content">
+            <span class="tag">Campeonato</span>
+            <h2 class="title">Goleada histórica inspira o clube rumo ao título</h2>
+            <p class="excerpt">Com uma exibição ofensiva avassaladora, o time venceu por 5 a 0 e convenceu a torcida. Saiba o que mudou no esquema tático.</p>
+            <div class="meta"><div class="time">🕒 2h atrás • João Silva</div><div class="small">Comentários 124</div></div>
+          </div>
+        </article>
+
+        <article class="card" data-title="Craque renova contrato com clube" data-tags="Transferência,Contrato">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Jogador comemorando gol" loading="lazy" />
+          </div>
+          <div class="content">
+            <span class="tag">Transferência</span>
+            <h2 class="title">Craque renova contrato e sela futuro no clube</h2>
+            <p class="excerpt">Jogador e diretoria chegaram a um acordo por mais duas temporadas — confira valores e cláusulas principais.</p>
+            <div class="meta"><div class="time">🕒 5h atrás • Marina Lopes</div><div class="small">Comentários 78</div></div>
+          </div>
+        </article>
+
+        <article class="card" data-title="Técnico revela lista de convocados" data-tags="Seleção,Preparação">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1542234616-6f2f65f6b7d7?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Coletiva de imprensa do técnico" loading="lazy" />
+          </div>
+          <div class="content">
+            <span class="tag">Seleção</span>
+            <h2 class="title">Técnico revela lista de convocados para amistosos</h2>
+            <p class="excerpt">Nomes novos e algumas surpresas: veja a lista completa e os motivos das escolhas do treinador.</p>
+            <div class="meta"><div class="time">🕒 1d atrás • Ricardo Santos</div><div class="small">Comentários 39</div></div>
+          </div>
+        </article>
+
+      </div>
+
+      <button id="loadMore" class="loadmore">Carregar mais</button>
+    </section>
+
+    <aside>
+      <div class="card side">
+        <div class="trending">
+          <h3>Tópicos em alta</h3>
+          <div class="trend"><div class="num">1</div><div><strong>Clube A</strong><div class="small">Debate sobre contratação</div></div></div>
+          <div class="trend"><div class="num">2</div><div><strong>Craque X</strong><div class="small">Renovação confirmada</div></div></div>
+          <div class="trend"><div class="num">3</div><div><strong>Final</strong><div class="small">Ingressos esgotados</div></div></div>
+        </div>
+
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:14px 0" />
+
+        <div class="muted-small">Assine nossa newsletter para receber as principais notícias do dia direto no seu e-mail.</div>
+        <form style="display:flex;gap:8px;margin-top:10px">
+          <input placeholder="seu@email.com" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;outline:0" aria-label="email para newsletter"/>
+          <button class="filter-btn" type="button">Assinar</button>
+        </form>
+      </div>
+    </aside>
+  </main>
+
+  <script>
+    // Busca simples por título e tags
+    const input = document.getElementById('searchInput');
+    const feed = document.getElementById('feed');
+    const cards = Array.from(feed.querySelectorAll('.card'));
+
+    input.addEventListener('input', ()=>{
+      const q = input.value.trim().toLowerCase();
+      cards.forEach(card=>{
+        const title = card.dataset.title.toLowerCase();
+        const tags = card.dataset.tags.toLowerCase();
+        const match = q === '' || title.includes(q) || tags.includes(q);
+        card.style.display = match ? '' : 'none';
+      });
+    });
+
+    // Load more (simulado)
+    document.getElementById('loadMore').addEventListener('click', ()=>{
+      const clone = cards.map(c => c.cloneNode(true));
+      clone.forEach(n=>feed.appendChild(n));
+    });
+
+    // Filtro exemplo (aplica/limpa)
+    const filterBtn = document.getElementById('filterBtn');
+    let filtered = false;
+    filterBtn.addEventListener('click', ()=>{
+      filtered = !filtered;
+      filterBtn.textContent = filtered ? 'Filtrar: Última semana' : 'Filtrar: Últimas 24h';
+      filterBtn.setAttribute('aria-pressed', String(filtered));
+    });
+  </script>
+</body>
+</html>
+
