@@ -1,0 +1,71 @@
+/* Neon suave para títulos */
+h1, h2, h3 {
+  text-shadow: 0 0 5px #d8b4fe, 0 0 10px #c084fc, 0 0 20px #a855f7, 0 0 30px #9333ea;
+}
+
+/* Fundo animado gradiente roxo */
+body {
+  background: linear-gradient(120deg, #4c1d95, #6b21a8, #7e22ce);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Efeito hover nos cards */
+div[class*="bg-gray-900"] {
+  transition: all 0.3s ease-in-out;
+}
+div[class*="bg-gray-900"]:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
+}
+
+/* Estilo nav links */
+nav a {
+  color: #e0d7f7;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 0 3px #c084fc, 0 0 6px #a855f7;
+  transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transform: translateY(-2px);
+  padding: 4px 8px;
+}
+
+/* Rodapé */
+footer {
+  text-shadow: 0 0 5px #c084fc, 0 0 10px #a855f7;
+}
+
+/* Cards texto centralizado */
+div[class*="p-6"] p {
+  text-align: center;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Header topo */
+header {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .flex[class*="flex-col"] {
+    flex-direction: column;
+  }
+  div[class*="gap-14"] {
+    gap: 8rem;
+  }
+}
