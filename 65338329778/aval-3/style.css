@@ -1,0 +1,74 @@
+/* Definindo as variáveis CSS baseadas nas cores do Tailwind para fácil manutenção */
+:root {
+    --color-primary: #DC2626; /* Vermelho do Molho/Forno */
+    --color-primary-dark: #B91C1C;
+    --color-accent: #FBBF24; /* Âmbar do Queijo/Massa */
+    --color-secondary: #10B981; /* Esmeralda do Manjericão */
+}
+
+/* 1. Estilos Globais e Tipografia */
+body {
+    /* Usando uma fonte convidativa e amigável */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333; 
+}
+
+/* 2. Efeitos para Itens do Cardápio */
+
+/* Efeito de destaque ao passar o mouse sobre os cards de pizza */
+.bg-white.p-4.rounded-xl.shadow-md:hover {
+    transform: translateY(-5px) scale(1.02); /* Eleva e aumenta o card */
+    box-shadow: 0 12px 20px rgba(220, 38, 38, 0.25); /* Sombra vermelha que atrai o olhar */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Estilo para os títulos das Pizzas */
+.text-xl.font-bold.text-gray-800 {
+    color: var(--color-primary-dark);
+    border-bottom: 2px dashed var(--color-accent); /* Linha tracejada amarela como queijo derretido */
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+}
+
+/* 3. Estilos Específicos para o Rastreamento (Tracker) */
+
+/* Estilo para o ícone do entregador (motinha) */
+#delivery-marker {
+    /* Garante que a transição de movimento seja suave (definida no JS) */
+    transition: left 1.5s ease-out; 
+    
+    /* Adiciona um efeito de "balanço" sutil ao entregador */
+    animation: pulse-shadow 1.5s infinite alternate;
+}
+
+/* Efeito de sombra que simula o calor do pedido (usado no marcador) */
+@keyframes pulse-shadow {
+    0% { 
+        text-shadow: 0 0 5px var(--color-accent);
+        transform: scale(1);
+    }
+    100% { 
+        text-shadow: 0 0 10px var(--color-primary);
+        transform: scale(1.05);
+    }
+}
+
+/* Destaque para o status de entrega */
+#status-display {
+    /* Dá um efeito de profundidade ao status */
+    text-shadow: 1px 1px 0 var(--color-accent);
+}
+
+/* 4. Estilo para o modal de confirmação */
+#confirmation-modal .bg-white {
+    /* Borda secundária (verde esmeralda) para confirmação de sucesso */
+    border: 3px solid var(--color-secondary); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para o valor do preço */
+.text-primary.font-semibold.mb-3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    font-weight: 700;
+}

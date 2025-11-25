@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Pizzaria: Catálogo e Status da Entrega</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    // Mudança de Tema: Cores da Pizza (Vermelho/Laranja e Verde)
+                    colors: {
+                        'primary': '#DC2626', // Red-600 (Cor do Molho/Forno)
+                        'primary-dark': '#B91C1C', // Red-700
+                        'accent': '#FBBF24', // Amber-400 (Cor do Queijo/Massa)
+                        'secondary': '#10B981', // Emerald-500 (Cor do Manjericão)
+                    }
+                }
+            }
+        }
+    </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body class="bg-gray-100">
+
+<div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+
+    <header class="bg-white shadow-lg rounded-xl p-4 mb-8 sticky top-0 z-10">
+        <div class="flex items-center justify-between">
+            <h1 class="text-3xl font-extrabold text-primary flex items-center space-x-2">
+                <span class="text-4xl">🍕</span>
+                <span>Pizzaria Express</span>
+            </h1>
+
+            <nav class="flex space-x-4 sm:space-x-6 items-center">
+                <a href="#menu-section" class="text-gray-600 hover:text-primary font-medium transition hidden sm:block">Menu</a>
+                <a href="#order-details-block" class="text-gray-600 hover:text-primary font-medium transition hidden sm:block">Meu Pedido</a>
+                <button class="text-white bg-primary py-2 px-4 rounded-lg text-sm font-semibold hover:bg-primary-dark transition shadow-md">
+                    Login / Perfil
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        <section class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg" id="menu-section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Nosso Cardápio de Pizzas</h2>
+
+            <img src="https://placehold.co/1200x250/DC2626/ffffff?text=OFERTA+DE+HOJE%3A+PIZZA+FAM%C3%8DLIA+COM+REFRI+GR%C3%81TIS"
+                class="w-full h-auto rounded-lg shadow mb-6">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <div class="bg-white p-4 rounded-xl shadow-md">
+                    <img src="https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_desktop_new/public/srh_recipes/494feec171f5683665eba434d22e52f5.jpg?itok=n3xpYgtR"
+                        alt="Pizza Margherita"
+                        class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-gray-800">Pizza Margherita Clássica</h3>
+                    <p class="text-primary font-semibold mb-3">R$ 59,00</p>
+                    <button onclick="selecionarPizza('Margherita Clássica', 59.00)"
+                            class="w-full bg-primary text-white py-2 rounded-lg font-bold hover:bg-primary-dark transition">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-md">
+                    <img src="https://thumbs.dreamstime.com/b/pizza-de-pepperoni-com-mel-picante-fotografia-limpeza-quente-sendo-derramado-sobre-uma-destacando-tend%C3%AAncia-emparelhamento-377778267.jpg"
+                        alt="Pizza Pepperoni"
+                        class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-gray-800">Pizza Pepperoni Apimentada</h3>
+                    <p class="text-primary font-semibold mb-3">R$ 64,50</p>
+                    <button onclick="selecionarPizza('Pepperoni Apimentada', 64.50)"
+                            class="w-full bg-primary text-white py-2 rounded-lg font-bold hover:bg-primary-dark transition">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-md">
+                    <img src="https://www.ogastronomo.com.br/upload/1908864693-conheca-a-origem-da-pizza-frango-com-catupiry.jpg"
+                        alt="Pizza de Frango com Catupiry"
+                        class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-gray-800">Frango com Catupiry</h3>
+                    <p class="text-primary font-semibold mb-3">R$ 55,20</p>
+                    <button onclick="selecionarPizza('Frango com Catupiry', 55.20)"
+                            class="w-full bg-primary text-white py-2 rounded-lg font-bold hover:bg-primary-dark transition">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-md">
+                    <img src="https://www.receitasnestle.com.br/sites/default/files/srh_recipes/f17e749ba2ed468f5dfc2569c2e75dde.jpg"
+                        alt="Pizza Doce de Chocolate"
+                        class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-gray-800">Pizza Doce de Chocolate</h3>
+                    <p class="text-primary font-semibold mb-3">R$ 45,00</p>
+                    <button onclick="selecionarPizza('Pizza Doce de Chocolate', 45.00)"
+                            class="w-full bg-primary text-white py-2 rounded-lg font-bold hover:bg-primary-dark transition">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <aside class="lg:col-span-1 space-y-8">
+            
+            <div class="bg-white p-6 rounded-xl shadow-lg" id="order-details-block">
+                <h2 class="text-2xl font-bold mb-4 text-primary border-b pb-2">Detalhes do Pedido</h2>
+
+                <div id="selected-item-display" class="mb-4 p-3 bg-red-50 rounded-lg">
+                    <p id="item-name" class="font-semibold">Nenhuma pizza selecionada.</p>
+                    <p id="item-price"></p>
+                </div>
+
+                <div class="space-y-2 mb-6">
+                    <div class="flex justify-between text-gray-700 font-medium">
+                        <span>Valor das Pizzas:</span>
+                        <span id="subtotal">R$ 0,00</span>
+                    </div>
+
+                    <div class="flex justify-between text-secondary font-medium">
+                        <span>Taxa de Entrega:</span>
+                        <span id="delivery-fee">R$ 10,00</span>
+                    </div>
+
+                    <div class="flex justify-between text-xl font-extrabold text-gray-900 border-t pt-2">
+                        <span>Total do Pedido:</span>
+                        <span id="total-amount">R$ 10,00</span>
+                    </div>
+                </div>
+
+                <button onclick="simulateOrder()"
+                        class="w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-primary-dark transition shadow-md">
+                    Finalizar Pedido
+                </button>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg hidden" id="tracker-section-block">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800 border-b">Status da Entrega</h2>
+
+                <div id="map-container" class="relative rounded-lg bg-yellow-100 h-48 mb-6 border border-accent">
+                    <div class="absolute text-3xl" style="left: 10%; bottom: 10%;">🔥</div>
+                    <div id="delivery-marker" class="absolute text-3xl" style="left: 10%; top: 30%;">🛵</div>
+                    <div class="absolute text-3xl" style="right: 10%; top: 30%;">🏠</div>
+                </div>
+
+                <div class="p-4 border border-primary bg-red-100 rounded-lg">
+                    <h3 class="text-xl font-bold text-primary-dark mb-1">Status da Pizza</h3>
+                    <div id="status-display" class="text-2xl font-semibold text-primary">
+                        Aguardando Confirmação...
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">
+                        Previsão de Entrega: <span id="eta">30-45 Minutos</span>
+                    </p>
+                </div>
+
+                <button onclick="updateTrackingStatus()"
+                        class="mt-4 w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-primary-dark transition shadow-md">
+                    Simular Próximo Passo do Pedido
+                </button>
+
+                <p id="message-box"
+                   class="mt-3 hidden text-secondary text-center text-sm font-medium">
+                    Bom apetite! A pizza foi entregue! 🍕
+                </p>
+            </div>
+
+        </aside>
+    </main>
+
+    <div id="confirmation-modal"
+         class="fixed inset-0 bg-black bg-opacity-70 hidden justify-center items-center z-50">
+        <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full text-center">
+            <div class="text-green-500 text-6xl mb-4">&#10004;</div>
+            <h3 class="text-xl font-bold mb-2">Pedido Recebido!</h3>
+            <p class="text-gray-600 mb-6">Sua pizza está sendo preparada e logo estará no forno. Acompanhe o status!</p>
+
+            <button onclick="closeModal()"
+                    class="w-full bg-primary text-white py-2 rounded-lg font-bold hover:bg-primary-dark transition">
+                Ver Status da Entrega
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+<script src="script.js"></script></body>
+</html>
