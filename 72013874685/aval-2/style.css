@@ -1,0 +1,196 @@
+/* --- Variáveis de Cores --- */
+:root {
+    --cor-fundo: #1a1a1a; /* Cinza chumbo escuro, quase preto */
+    --cor-texto-principal: #ffffff; /* Branco puro */
+    --cor-destaque: #e4002b; /* Vermelho vibrante - LED de potência */
+    --cor-secundaria: #333333; /* Cinza escuro para boxes e fundos */
+    --cor-link: #cccccc; /* Cinza claro para links */
+    --cor-borda: #444444; /* Borda sutil */
+}
+
+/* --- Estilos Gerais --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Fonte legível e moderna */
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    line-height: 1.6;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* --- Estilo do Cabeçalho (Header) --- */
+header {
+    background-color: var(--cor-secundaria);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--cor-destaque);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--cor-destaque);
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+header p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    color: var(--cor-link);
+}
+
+/* --- Estilo da Navegação (Nav) --- */
+nav {
+    background-color: #000000; /* Preto absoluto para contraste */
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+nav a {
+    color: var(--cor-texto-principal);
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    color: var(--cor-fundo);
+    background-color: var(--cor-destaque);
+}
+
+/* --- Conteúdo Principal (Main) --- */
+main {
+    flex: 70%; /* Ocupa 70% do espaço */
+    padding: 20px;
+    background-color: var(--cor-fundo);
+}
+
+article {
+    background-color: var(--cor-secundaria);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+article h3 {
+    color: var(--cor-destaque);
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+article h5 {
+    color: var(--cor-link);
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 3px solid var(--cor-destaque);
+}
+
+/* --- Conteúdo Lateral (Aside) --- */
+aside {
+    flex: 30%; /* Ocupa 30% do espaço */
+    padding: 20px;
+    background-color: var(--cor-secundaria);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+aside h2, aside h3 {
+    color: var(--cor-destaque);
+    border-bottom: 2px solid var(--cor-borda);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+aside h5 {
+    color: var(--cor-link);
+    margin-bottom: 10px;
+}
+
+.about-me img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 50%; /* Foto de perfil redonda */
+    border: 5px solid var(--cor-destaque);
+    display: block;
+    margin: 15px auto;
+}
+
+/* Galeria Lateral */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.gallery img {
+    width: calc(33.33% - 7px); /* 3 imagens por linha */
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid var(--cor-borda);
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    border-color: var(--cor-destaque);
+}
+
+/* --- Rodapé (Footer) --- */
+footer {
+    background-color: #000000;
+    color: var(--cor-link);
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 5px solid var(--cor-destaque);
+}
+
+/* --- Responsividade (Para dispositivos menores) --- */
+@media (max-width: 800px) {
+    .row {
+        flex-direction: column;
+    }
+
+    main, aside {
+        flex: 100%; /* Ocupa a largura total em telas menores */
+    }
+
+    aside {
+        order: -1; /* Coloca a barra lateral acima do conteúdo principal no mobile */
+        margin-bottom: 20px;
+    }
+}
