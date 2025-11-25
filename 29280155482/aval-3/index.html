@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Confeitaria: Catálogo de Bolos e Status da Encomenda</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    // Mudança de Tema: Cores mais quentes/doces
+                    colors: {
+                        'primary': '#842D15', // Marrom do Chocolate
+                        'primary-dark': '#6C240E', 
+                        'accent': '#FFD700', // Dourado
+                        'secondary-light': '#F5E6E0', // Rosa claro/Creme
+                    }
+                }
+            }
+        }
+    </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body class="bg-secondary-light">
+
+<div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+
+    <header class="bg-white shadow-lg rounded-xl p-4 mb-8 sticky top-0 z-10">
+        <div class="flex items-center justify-between">
+            <h1 class="text-3xl font-extrabold text-primary flex items-center space-x-2">
+                <span class="text-4xl">🍰</span>
+                <span>Doce Prazer App</span>
+            </h1>
+
+            <nav class="flex space-x-4 sm:space-x-6 items-center">
+                <a href="#menu-section" class="text-gray-600 hover:text-primary font-medium transition hidden sm:block">Catálogo</a>
+                <a href="#order-details-block" class="text-gray-600 hover:text-primary font-medium transition hidden sm:block">Minha Encomenda</a>
+                <button class="text-white bg-primary py-2 px-4 rounded-lg text-sm font-semibold hover:bg-primary-dark transition shadow-md">
+                    Login / Perfil
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        <section class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg" id="menu-section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Catálogo de Bolos de Chocolate</h2>
+
+            <img src="https://placehold.co/1200x250/842D15/ffffff?text=OFERTA+DA+SEMANA:+BOLO+TRUFADO"
+                class="w-full h-auto rounded-lg shadow mb-6">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <div class="bg-white p-4 rounded-xl shadow-md">
+                    <img src="https://www.mamacida.com.br/image/cache/data/produtos/bolos/chocolate-trufado/img-6491-fotor-20240609221652-650x650.jpg"
+                        alt="Bolo Trufado de Chocolate Clássico"
+                        class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-gray-800">Bolo Trufado Clássico</h3>
+                    <p class="text-primary font-semibold mb-3">R$ 159,00</p>
+                    <button onclick="selecionarPizza('Bolo Trufado Clássico', 159)"
+                            class="w-full bg-primary text-white py-2 rounded-lg font-bold hover:bg-primary-dark transition">
+                        Encomendar Agora
+                    </button>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-md">
+                    <img src="https://delicious.com.br/wp-content/uploads/2020/10/bolo-mousse-de-chocolate-com-morango-2020.png"
+                        alt="Bolo de Chocolate com Morangos"
+                        class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-gray-800">Bolo Chocolate e Morango</h3>
+                    <p class="text-primary font-semibold mb-3">R$ 89,50</p>
+                    <button onclick="selecionarPizza('Bolo Chocolate e Morango', 89.50)"
+                            class="w-full bg-primary text-white py-2 rounded-lg font-bold hover:bg-primary-dark transition">
+                        Encomendar Agora
+                    </button>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-md">
+                    <img src="https://paarman.co.za/cdn/shop/articles/Choc_Cakes_Truffles_Main_2073d612-875f-4212-8c21-11446459f0cc.jpg?v=1738920437"
+                        alt="Mini Naked Cake de Chocolate"
+                        class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-gray-800">Naked Cake Mini</h3>
+                    <p class="text-primary font-semibold mb-3">R$ 75,20</p>
+                    <button onclick="selecionarPizza('Naked Cake Mini', 75.20)"
+                            class="w-full bg-primary text-white py-2 rounded-lg font-bold hover:bg-primary-dark transition">
+                        Encomendar Agora
+                    </button>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-md">
+                    <img src="https://lejour.com.br/wp-content/uploads/2023/08/bolo-de-casamento-civil1.jpg"
+                        alt="Bolo de Casamento/Aniversário de Chocolate"
+                        class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-gray-800">Bolo Festa Super Chocolate</h3>
+                    <p class="text-primary font-semibold mb-3">R$ 135,00</p>
+                    <button onclick="selecionarPizza('Bolo Festa Super Chocolate', 135)"
+                            class="w-full bg-primary text-white py-2 rounded-lg font-bold hover:bg-primary-dark transition">
+                        Encomendar Agora
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <aside class="lg:col-span-1 space-y-8">
+            
+            <div class="bg-white p-6 rounded-xl shadow-lg" id="order-details-block">
+                <h2 class="text-2xl font-bold mb-4 text-primary border-b pb-2">Detalhes da Encomenda</h2>
+
+                <div id="selected-item-display" class="mb-4 p-3 bg-secondary-light rounded-lg">
+                    <p id="item-name" class="font-semibold">Nenhum bolo selecionado.</p>
+                    <p id="item-price"></p>
+                </div>
+
+                <div class="space-y-2 mb-6">
+                    <div class="flex justify-between text-gray-700 font-medium">
+                        <span>Valor do Bolo:</span>
+                        <span id="subtotal">R$ 0,00</span>
+                    </div>
+
+                    <div class="flex justify-between text-green-700 font-medium">
+                        <span>Taxa de Entrega:</span>
+                        <span id="delivery-fee">R$ 15,00</span>
+                    </div>
+
+                    <div class="flex justify-between text-xl font-extrabold text-gray-900 border-t pt-2">
+                        <span>Total (Encomenda):</span>
+                        <span id="total-amount">R$ 15,00</span>
+                    </div>
+                </div>
+
+                <button onclick="simulateOrder()"
+                        class="w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-primary-dark transition shadow-md">
+                    Finalizar Encomenda
+                </button>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg hidden" id="tracker-section-block">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800 border-b">Status da Entrega do Bolo</h2>
+
+                <div id="map-container" class="relative rounded-lg bg-yellow-100 h-48 mb-6 border border-primary">
+                    <div id="delivery-marker" class="absolute text-3xl transition-all duration-1000" style="left: 10%; top: 30%;">🛵</div>
+                    <div class="absolute text-3xl" style="right: 10%; bottom: 10%;">🏠</div>
+                </div>
+
+                <div class="p-4 border border-primary bg-secondary-light rounded-lg">
+                    <h3 class="text-xl font-bold text-primary mb-1">Status da Encomenda</h3>
+                    <div id="status-display" class="text-2xl font-semibold text-primary-dark">
+                        Aguardando Confirmação...
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">
+                        Previsão de Entrega: <span id="eta">60-90 Minutos</span>
+                    </p>
+                </div>
+
+                <button onclick="updateTrackingStatus()"
+                        class="mt-4 w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-primary-dark transition shadow-md">
+                    Simular Próximo Passo do Processo
+                </button>
+
+                <p id="message-box"
+                   class="mt-3 hidden text-green-600 text-center text-sm font-medium">
+                    Seu bolo chegou! Saboreie este momento 🍰
+                </p>
+            </div>
+
+        </aside>
+    </main>
+
+    <div id="confirmation-modal"
+         class="fixed inset-0 bg-black bg-opacity-70 hidden justify-center items-center z-50">
+        <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full text-center">
+            <div class="text-green-500 text-6xl mb-4">&#10004;</div>
+            <h3 class="text-xl font-bold mb-2">Encomenda Confirmada!</h3>
+            <p class="text-gray-600 mb-6">Seu bolo está sendo preparado. Acompanhe o status de entrega!</p>
+
+            <button onclick="closeModal()"
+                    class="w-full bg-primary text-white py-2 rounded-lg font-bold hover:bg-primary-dark transition">
+                Ver Status de Entrega
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+<script src="script.js"></script></body>
+</html>

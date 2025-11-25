@@ -1,0 +1,78 @@
+/* Definindo as variáveis CSS baseadas nas cores do Tailwind para fácil manutenção */
+:root {
+    --color-primary: #842D15; /* Marrom do Chocolate */
+    --color-primary-dark: #6C240E;
+    --color-accent: #FFD700; /* Dourado */
+    --color-secondary-light: #F5E6E0; /* Creme/Rosa claro */
+}
+
+/* 1. Estilos Globais e Tipografia (Melhorando a legibilidade) */
+body {
+    /* Usando uma fonte de estilo mais "doce" ou "convidativa" */
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333; /* Cor de texto mais escura para contraste */
+}
+
+/* 2. Efeitos para Elementos Interativos */
+
+/* Efeito de destaque ao passar o mouse sobre os itens do catálogo (bolinhos) */
+.bg-white.p-4.rounded-xl.shadow-md:hover {
+    transform: translateY(-5px); /* Eleva o card sutilmente */
+    box-shadow: 0 10px 15px rgba(132, 45, 21, 0.2); /* Sombra marrom mais pronunciada */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilo para os botões de Ação (Confirmar Encomenda) */
+.w-full.bg-primary.text-white {
+    /* Adicionando um pequeno gradiente sutil para profundidade */
+    background: linear-gradient(180deg, var(--color-primary), var(--color-primary-dark));
+    border: 1px solid var(--color-primary-dark);
+}
+
+.w-full.bg-primary.text-white:hover {
+    /* Efeito de 'pressionar' o botão */
+    transform: scale(0.99);
+    opacity: 0.9;
+}
+
+/* 3. Estilos Específicos para o Rastreamento/Status */
+
+/* Estilo para o marcador do entregador (motinho) */
+#delivery-marker {
+    /* Faz o ícone do entregador "pulsar" */
+    animation: moveAndPulse 3s infinite alternate; 
+}
+
+@keyframes moveAndPulse {
+    0% { 
+        left: 10%;
+        transform: scale(1);
+    }
+    50% { 
+        left: 50%; /* Posição intermediária no mapa */
+        transform: scale(1.1); /* Um pequeno pulso */
+    }
+    100% { 
+        left: 80%; /* Quase chegando ao destino */
+        transform: scale(1);
+    }
+}
+
+/* Destaque para o status (fazendo a cor acentuada brilhar) */
+#status-display {
+    text-shadow: 1px 1px 1px var(--color-secondary-light);
+}
+
+/* 4. Estilo para o modal de confirmação */
+#confirmation-modal .bg-white {
+    /* Borda dourada sutil para o toque final */
+    border: 3px solid var(--color-accent); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para o texto do preço */
+.text-primary.font-semibold.mb-3 {
+    font-size: 1.15rem;
+    color: var(--color-primary);
+    font-weight: 700;
+}
