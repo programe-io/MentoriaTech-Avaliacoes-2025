@@ -1,0 +1,170 @@
+/* Importação de fonte básica, se necessário. Usei uma fonte padrão sans-serif */
+
+/* --- Estilos Gerais/Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Cor de fundo leve para o corpo da página */
+}
+
+/* --- Cabeçalho Principal (Topo Laranja) --- */
+.main-header {
+    background-color: #ff9900; /* Cor Laranja */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.main-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.main-header p {
+    font-size: 1.2em;
+}
+
+/* --- Barra de Navegação (Menu Preto) --- */
+.main-nav {
+    background-color: #333; /* Cor Preta/Cinza Escuro */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex; /* Alinha os itens na horizontal */
+    justify-content: flex-start; /* Alinha ao início */
+    max-width: 1200px; /* Limite de largura para o conteúdo */
+    margin: 0 auto;
+}
+
+.main-nav li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.main-nav li a:hover {
+    background-color: #555; /* Efeito hover sutil */
+}
+
+/* --- Layout Principal (Container) --- */
+.container {
+    display: flex;
+    max-width: 1200px; /* Largura máxima para centralizar o conteúdo */
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* --- Sidebar (Coluna Esquerda) --- */
+.sidebar {
+    width: 25%; /* Aproximadamente 1/4 da largura */
+    padding-right: 20px;
+}
+
+.about-me, .bio-gallery {
+    margin-bottom: 20px;
+    /* Estilo para simular o fundo branco da sidebar, se o container não tiver */
+    /* background-color: white; 
+    padding: 15px; 
+    border: 1px solid #ddd; */
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.sidebar h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* Estilo para os placeholders de Imagem na Sidebar */
+.image-placeholder {
+    background-color: #ccc; /* Cor cinza para o placeholder */
+    color: #666;
+    height: 80px; /* Altura fixa, ajuste conforme necessário */
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+}
+
+/* --- Conteúdo da Postagem (Coluna Direita) --- */
+.post-content {
+    width: 75%; /* Aproximadamente 3/4 da largura */
+    background-color: white; /* Fundo branco para a área de postagem */
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra suave para destacar */
+}
+
+.post h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.post .post-meta {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.post-image {
+    background-color: #f00; /* Cor de fundo da imagem (Laranja/Vermelho, como no original) */
+    padding: 10px 0; /* Espaçamento interno em cima e embaixo */
+    text-align: center;
+    margin-bottom: 20px;
+    
+    /* Estilo para o banner da imagem com o logo FORTNITE */
+    background-image: url('https://via.placeholder.com/600x150/d24c00/ffffff?text=FORTNITE'); /* Simula o banner alaranjado com o texto FORTNITE */
+    background-size: cover;
+    background-position: center;
+    height: 150px; /* Altura do banner, ajuste se necessário */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Para a imagem real dentro do container .post-image */
+.post-image img {
+    /* Você pode ajustar a imagem real para caber dentro, se for usar uma imagem diferente */
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove o espaço extra abaixo da imagem */
+}
+
+/* Estilo para o texto (Lorem Ipsum) */
+.post p:last-child {
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Para o celular (Mobile-first, mas focado no desktop neste layout) */
+/* Se quiser que a sidebar fique em cima da postagem em telas menores: */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Empilha os elementos verticalmente */
+    }
+
+    .sidebar, .post-content {
+        width: 100%; /* Ocupa toda a largura */
+        padding: 15px;
+    }
+
+    .post-content {
+        margin-top: 20px;
+    }
+}
