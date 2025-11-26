@@ -1,0 +1,116 @@
+/* Este é um CSS PURE SIMULADO. Use apenas se você remover o Tailwind CDN do HTML. */
+
+/* Estilos Globais (body, main) */
+body {
+    background-color: #111827; /* bg-gray-900 */
+    min-height: 100vh;
+    color: #ffffff; /* text-white */
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+main {
+    padding-top: 2.5rem; /* py-10 */
+    padding-bottom: 2.5rem; /* py-10 */
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem; /* gap-8 */
+    flex-wrap: wrap;
+}
+
+/* Header e Navegação */
+header {
+    background-color: #1f2937; /* bg-gray-800 */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+    padding: 1.25rem; /* p-5 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Para o menu mobile se posicionar corretamente */
+}
+
+header > div {
+    text-transform: uppercase; /* uppercase */
+    font-weight: 800; /* font-extrabold */
+    font-size: 1.25rem; /* text-xl */
+    letter-spacing: 0.05em; /* tracking-wider */
+    color: #60a5fa; /* text-blue-400 */
+}
+
+/* Menu de navegação */
+#menu-nav {
+    font-weight: 600; /* font-semibold */
+    gap: 1.5rem; /* gap-6 */
+    display: none; /* hidden (padrão mobile) */
+}
+
+/* Menu Mobile Overlay */
+#menu-nav.hidden {
+    display: none;
+}
+
+#menu-nav:not(.hidden) {
+    display: flex;
+    flex-direction: column; /* flex-col */
+    position: absolute;
+    top: 4rem; /* top-16 (ajustar conforme altura do header) */
+    right: 0;
+    width: 100%; /* w-full */
+    background-color: #1f2937; /* bg-gray-800 */
+    padding: 1rem; /* p-4 */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* shadow-lg */
+    z-index: 10;
+}
+
+#menu-nav a {
+    color: #ffffff;
+    transition-property: color; /* transition duration-300 */
+    transition-duration: 300ms;
+    padding-top: 0.5rem; /* py-2 */
+    padding-bottom: 0.5rem; /* py-2 */
+}
+
+#menu-nav a:hover {
+    color: #60a5fa; /* hover:text-blue-400 */
+}
+
+/* Media Query para Tablet/Desktop (md: e maior) */
+@media (min-width: 768px) {
+    #menu-nav {
+        display: flex; /* md:flex */
+        flex-direction: row; /* md:flex-row */
+        position: static; /* md:static */
+        background-color: transparent; /* md:bg-transparent */
+        padding: 0; /* md:p-0 */
+        box-shadow: none; /* md:shadow-none */
+    }
+
+    #menu-button {
+        display: none; /* md:hidden */
+    }
+}
+
+/* Cartões de Console (Card) */
+.bg-gray-800 {
+    background-color: #1f2937;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.rounded-xl {
+    border-radius: 0.75rem;
+}
+
+.shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.hover\:shadow-blue-500\/50:hover {
+    box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.5); /* Exemplo de shadow-blue-500/50 */
+}
+
+/* ... Estilos adicionais para imagens, textos e footer ... */
