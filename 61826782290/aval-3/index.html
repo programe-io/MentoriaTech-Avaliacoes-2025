@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Port Cards com NAV</title>
+  <style>
+    :root{--bg:#f3f4f6;--card:#ffffff;--accent:#0066ff;--muted:#6b7280;--radius:12px}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:#111827; margin:24px}
+    .site{max-width:1100px;margin:0 auto}
+
+    /* NAV */
+    nav.site-nav{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#0f1724;color:#fff;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.12);margin-bottom:20px}
+    nav .brand{font-weight:700;font-size:18px}
+    nav .menu{display:flex;gap:12px}
+    nav .menu a{color:rgba(255,255,255,0.9);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
+    nav .menu a:hover{background:rgba(255,255,255,0.06)}
+    nav .actions{display:flex;gap:8px}
+    .btn{background:linear-gradient(180deg,#fff,#f3f6ff);border-radius:10px;padding:8px 12px;border:1px solid rgba(2,6,23,0.06);cursor:pointer;font-weight:700}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#fff}
+
+    header{margin:18px 0}
+    header h1{margin:0;font-size:26px}
+    header p{margin:6px 0 0;color:var(--muted)}
+
+    /* GRID CARDS */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+    .card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 30px rgba(2,6,23,0.06);transition:transform .22s ease,box-shadow .22s ease}
+    .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(2,6,23,0.08)}
+    .card-media{height:170px;overflow:hidden}
+    .card-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.9,.2,1)}
+    .card:hover .card-media img{transform:scale(1.05)}
+    .card-body{padding:16px}
+    .kicker{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:rgba(0,102,255,0.06);padding:6px 10px;border-radius:999px;margin-bottom:10px}
+    h3{margin:0 0 8px;font-size:18px}
+    p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+    .card-footer{display:flex;align-items:center;justify-content:space-between;padding:12px 16px 18px}
+    .meta{font-size:13px;color:var(--muted)}
+
+    @media (max-width:480px){body{margin:14px}.card-media{height:140px};nav.site-nav{padding:10px}}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+<READER>
+  <div class="site">
+
+    <!-- NAV -->
+    <header class="site-header">
+  <h1 style="margin:0;font-size:24px;color:#0f1724">Meu Portfólio</h1>
+</header>
+
+<h2 style="font-size:20px;margin:16px 0;color:#374151">Seção Principal</h2>
+
+<nav class="site-nav" aria-label="Navegação principal">
+      <div style="display:flex;align-items:center;gap:14px">
+        <div class="brand">MeuPortfólio</div>
+        <div class="menu" role="navigation" aria-label="Links principais">
+          <a href="#">Início</a>
+          <a href="#">Sobre</a>
+          <a href="#">Projetos</a>
+          <a href="#">Contato</a>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn">Entrar</button>
+        <button class="btn ghost">Cadastrar</button>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
+    <r2>
+$1
+      <h1>Três Port Cards</h1>
+      <p>Exemplo de cartões responsivos com imagens, título, descrição e ações — agora integrado com a tag &lt;nav&gt;.</p>
+    </header>
+
+    <!-- GRID DE CARDS -->
+    <main class="grid" role="list">
+
+      <!-- CARD 1 -->
+      <article class="card" role="listitem" aria-labelledby="card1-title">
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1508921340878-0f1a6b6d6b4a?q=80&w=1600&auto=format&fit=crop" alt="Paisagem com montanhas e lago">
+        </div>
+        <div class="card-body">
+          <span class="kicker">Fotografia</span>
+          <h3 id="card1-title">Lago das Montanhas</h3>
+          <p>Projeto de fotografia de paisagens. Mostra composição, cor e tratamento de imagem para portfólio.</p>
+        </div>
+        <div class="card-footer">
+          <div class="meta">1.2k visualizações • 3 dias</div>
+          <div>
+            <button class="btn">Ver</button>
+            <button class="btn ghost">Compartilhar</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="card" role="listitem" aria-labelledby="card2-title">
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1600&auto=format&fit=crop" alt="Close-up de um teclado e mãos digitando">
+        </div>
+        <div class="card-body">
+          <span class="kicker">UI/UX</span>
+          <h3 id="card2-title">TaskFlow — App</h3>
+          <p>Design de interface para gerenciamento de tarefas com foco em usabilidade e clareza das ações.</p>
+        </div>
+        <div class="card-footer">
+          <div class="meta">980 visualizações • 1 semana</div>
+          <div>
+            <button class="btn">Demo</button>
+            <button class="btn ghost">Código</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="card" role="listitem" aria-labelledby="card3-title">
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop" alt="Mesa de trabalho com notebook e café">
+        </div>
+        <div class="card-body">
+          <span class="kicker">Branding</span>
+          <h3 id="card3-title">Café & Código</h3>
+          <p>Campanha de branding pensada para criadores e desenvolvedores — imagens para redes e materiais promocionais.</p>
+        </div>
+        <div class="card-footer">
+          <div class="meta">2.4k visualizações • 2 meses</div>
+          <div>
+            <button class="btn">Abrir</button>
+            <button class="btn ghost">Download</button>
+          </div>
+        </div>
+      </article>
+
+    </main>
+</r2>
+
+    <footer style="margin-top:20px;color:var(--muted);font-size:13px">Imagens: Unsplash (exemplo). Substitua os URLs por suas próprias imagens ou caminhos locais.</footer>
+  </div>
+</READER>
+</body>
+</html>
