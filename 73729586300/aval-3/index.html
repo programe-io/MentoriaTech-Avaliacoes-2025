@@ -1,63 +1,81 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Página Simples</title>
-        <link rel="stylesheet" href="style.css">
-        <link href="style.css" rel="stylesheet"></head>
-        <body>
-          <header>
-              <div class="logo">PD</div>
-                  <nav>
-                        <a href="#inicio">Início</a>
-                              <a href="#sobre">Sobre</a>
-                                    <a href="#contato">Contato</a>
-                                        </nav>
-                                          </header>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Feed</title>
+  <link href="./output.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
 
-                                            <main>
-                                                <article class="hero" id="inicio">
-                                                      <h1>Bem-vindo ao <span>Project Demo</span></h1>
-                                                            <img src="https://via.placeholder.com/600x250" alt="Imagem de exemplo do site">
-                                                                  <p>Um exemplo simples de página com HTML e CSS separados.</p>
-                                                                        <a href="#contato" class="botao">Saiba mais</a>
-                                                                            </article>
+<body>
 
-                                                                                <aside class="info-lateral">
-                                                                                      <h3>Dica do Dia</h3>
-                                                                                            <p>Você sabia que pode personalizar esta página apenas editando o CSS?</p>
-                                                                                                </aside>
+  <!-- HEADER -->
+  <header class="shadow-md p-5 flex items-center">
+    <div class="flex-1 text-center md:text-left uppercase font-bold tracking-wider">
+      Henrique
+    </div>
+    <nav class="font-bold gap-6 hidden md:flex">
+      <a href="#" class="hover:text-blue-400">Início</a>
+      <a href="#" class="hover:text-blue-400">Amigos</a>
+      <a href="#" class="hover:text-blue-400">Perfil</a>
+    </nav>
+  </header>
 
-                                                                                                    <article class="features" id="sobre">
-                                                                                                          <h2>Nossos Recursos</h2>
-                                                                                                                <div class="feature">
-                                                                                                                        <h3>Responsivo</h3>
-                                                                                                                                <p>Funciona em qualquer dispositivo.</p>
-                                                                                                                                      </div>
-                                                                                                                                            <div class="feature">
-                                                                                                                                                    <h3>Leve</h3>
-                                                                                                                                                            <p>Feito apenas com HTML e CSS puro.</p>
-                                                                                                                                                                  </div>
-                                                                                                                                                                        <div class="feature">
-                                                                                                                                                                                <h3>Fácil</h3>
-                                                                                                                                                                                        <p>Simples de editar e personalizar.</p>
-                                                                                                                                                                                              </div>
-                                                                                                                                                                                                  </article>
+  <!-- POSTS -->
+  <main class="p-8 flex flex-col md:flex-row justify-center gap-6">
 
-                                                                                                                                                                                                      <article class="contato" id="contato">
-                                                                                                                                                                                                            <h2>Fale Conosco</h2>
-                                                                                                                                                                                                                  <form>
-                                                                                                                                                                                                                          <input type="text" placeholder="Seu nome" required>
-                                                                                                                                                                                                                                  <input type="email" placeholder="Seu e-mail" required>
-                                                                                                                                                                                                                                          <textarea placeholder="Mensagem" required></textarea>
-                                                                                                                                                                                                                                                  <button type="submit">Enviar</button>
-                                                                                                                                                                                                                                                        </form>
-                                                                                                                                                                                                                                                            </article>
-                                                                                                                                                                                                                                                              </main>
+    <!-- POST CARD 1 -->
+    <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-xs">
+      <!-- CARD HEADER -->
+      <div class="flex items-center gap-3 p-4">
+        <img class="h-12 w-12 rounded-full border-2 border-blue-500" src="https://tse3.mm.bing.net/th/id/OIP.j5cv3EXZrlLFprrdBUYJPgHaEK?w=2560&h=1440&rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+        <h2 class="text-lg font-semibold">Filme de Ação</h2>
+      </div>
+      <!-- CARD IMAGE -->
+      <img class="w-full h-48 object-cover" src="https://tse3.mm.bing.net/th/id/OIP.pyQYQ_n3eJ0wV7YhD-uHPwHaEo?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+      <!-- CARD CONTENT -->
+      <div class="p-4">
+        <p class="text-sm text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi beatae quae nihil fuga voluptatem, repellat delectus ut tempore debitis est dolorum deserunt.
+        </p>
+        <span class="text-xs text-gray-400 block text-right mt-3">há 10 minutos</span>
+      </div>
+    </div>
 
-                                                                                                                                                                                                                                                                <footer>
-                                                                                                                                                                                                                                                                    <p>© 2025 <span>Project Demo</span> — Todos os direitos reservados.</p>
-                                                                                                                                                                                                                                                                      </footer>
-                                                                                                                                                                                                                                                                      </body>
-                                                                                                                                                                                                                                                                      </html>
+    <!-- POST CARD 2 -->
+    <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-xs">
+      <div class="flex items-center gap-3 p-4">
+        <img class="h-12 w-12 rounded-full border-2 border-blue-500" src="https://tse4.mm.bing.net/th/id/OIP.aQUMdQ32CIEFwv1PkJyYfAHaGl?w=800&h=711&rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+        <h2 class="text-lg font-semibold">Vingadores</h2>
+      </div>
+      <img class="w-full h-48 object-cover" src="https://tse3.mm.bing.net/th/id/OIP.ag_zwPxYxGXWMXIYHZDw_QHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+      <div class="p-4">
+        <p class="text-sm text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi beatae quae nihil fuga voluptatem, repellat delectus ut tempore debitis est dolorum deserunt.
+        </p>
+        <span class="text-xs text-gray-400 block text-right mt-3">há 10 minutos</span>
+      </div>
+    </div>
+
+    <!-- POST CARD 3 -->
+    <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-xs">
+      <div class="flex items-center gap-3 p-4">
+        <img class="h-12 w-12 rounded-full border-2 border-blue-500" src="https://tse4.mm.bing.net/th/id/OIP.iPRCHuShcTPlV2gVZuaesAHaFk?w=1436&h=1080&rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+        <h2 class="text-lg font-semibold">Thunderbolts</h2>
+      </div>
+      <img class="w-full h-48 object-cover" src="https://4kwallpapers.com/images/walls/thumbs/21282.jpg" alt="">
+      <div class="p-4">
+        <p class="text-sm text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi beatae quae nihil fuga voluptatem, repellat delectus ut tempore debitis est dolorum deserunt.
+        </p>
+        <span class="text-xs text-gray-400 block text-right mt-3">há 10 minutos</span>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>
+

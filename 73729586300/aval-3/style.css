@@ -1,148 +1,105 @@
-/* === Reset e variáveis === */
+/* Reset */
 * {
   margin: 0;
-    padding: 0;
-      box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-        }
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 
-        :root {
-          --bg: #0f1724;
-            --card: #182338;
-              --text: #e8eef6;
-                --muted: #9aa6b2;
-                  --accent: #7c5cff;
-                  }
+/* Fundo */
+body {
+  background: linear-gradient(to bottom, #ff0000, #8e0b0b);
+  color: #fff;
+}
 
-                  /* === Estrutura geral === */
-                  body {
-                    background: var(--bg);
-                      color: var(--text);
-                        line-height: 1.6;
-                        }
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #0d1b52;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-                        header {
-                          display: flex;
-                            justify-content: space-between;
-                              align-items: center;
-                                padding: 20px 8%;
-                                  background: #0b1220;
-                                  }
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 
-                                  .logo {
-                                    background: linear-gradient(135deg, var(--accent), #4ad6ff);
-                                      color: #0b1220;
-                                        font-weight: 700;
-                                          font-size: 1.4rem;
-                                            padding: 10px 14px;
-                                              border-radius: 8px;
-                                              }
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
 
-                                              nav a {
-                                                color: var(--text);
-                                                  margin-left: 20px;
-                                                    text-decoration: none;
-                                                      font-weight: 500;
-                                                        transition: color 0.3s;
-                                                        }
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
 
-                                                        nav a:hover {
-                                                          color: var(--accent);
-                                                          }
+.navbar a:hover {
+  color: #6ea8ff;
+}
 
-                                                          /* === Seção principal === */
-                                                          .hero {
-                                                            text-align: center;
-                                                              padding: 80px 10%;
-                                                              }
+/* Container de Cards */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 40px 20px;
+}
 
-                                                              .hero h1 {
-                                                                font-size: 2.2rem;
-                                                                  margin-bottom: 10px;
-                                                                  }
+/* Card */
+.card {
+  background-color: #1e2a48;
+  border-radius: 10px;
+  width: 300px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
 
-                                                                  .hero p {
-                                                                    color: var(--muted);
-                                                                      margin-bottom: 20px;
-                                                                      }
+.card:hover {
+  transform: translateY(-5px);
+}
 
-                                                                      .botao {
-                                                                        background: var(--accent);
-                                                                          color: #0b1220;
-                                                                            padding: 10px 20px;
-                                                                              border-radius: 6px;
-                                                                                text-decoration: none;
-                                                                                  font-weight: 600;
-                                                                                  }
+/* Usuário */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
 
-                                                                                  /* === Recursos === */
-                                                                                  .features {
-                                                                                    display: flex;
-                                                                                      flex-wrap: wrap;
-                                                                                        justify-content: center;
-                                                                                          gap: 20px;
-                                                                                            padding: 40px 10%;
-                                                                                            }
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
 
-                                                                                            .feature {
-                                                                                              background: var(--card);
-                                                                                                padding: 20px;
-                                                                                                  border-radius: 10px;
-                                                                                                    flex: 1 1 250px;
-                                                                                                      text-align: center;
-                                                                                                      }
+/* Imagem do post */
+.post-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
 
-                                                                                                      .feature h2 {
-                                                                                                        color: var(--accent);
-                                                                                                          margin-bottom: 8px;
-                                                                                                          }
+/* Texto */
+.card p {
+  font-size: 14px;
+  color: #ddd;
+  margin-bottom: 10px;
+}
 
-                                                                                                          /* === Contato === */
-                                                                                                          .contato {
-                                                                                                            padding: 60px 10%;
-                                                                                                              background: #0b1220;
-                                                                                                                text-align: center;
-                                                                                                                }
-
-                                                                                                                .contato form {
-                                                                                                                  display: grid;
-                                                                                                                    gap: 12px;
-                                                                                                                      max-width: 400px;
-                                                                                                                        margin: 0 auto;
-                                                                                                                        }
-
-                                                                                                                        input, textarea {
-                                                                                                                          background: var(--card);
-                                                                                                                            border: none;
-                                                                                                                              padding: 10px;
-                                                                                                                                border-radius: 6px;
-                                                                                                                                  color: var(--text);
-                                                                                                                                  }
-
-                                                                                                                                  button {
-                                                                                                                                    background: var(--accent);
-                                                                                                                                      color: #0b1220;
-                                                                                                                                        border: none;
-                                                                                                                                          padding: 10px;
-                                                                                                                                            font-weight: 700;
-                                                                                                                                              border-radius: 6px;
-                                                                                                                                                cursor: pointer;
-                                                                                                                                                }
-
-                                                                                                                                                /* === Rodapé === */
-                                                                                                                                                footer {
-                                                                                                                                                  text-align: center;
-                                                                                                                                                    padding: 20px;
-                                                                                                                                                      font-size: 0.9rem;
-                                                                                                                                                        color: var(--muted);
-                                                                                                                                                        }
-
-                                                                                                                                                        /* === Responsivo === */
-                                                                                                                                                        @media (max-width: 600px) {
-                                                                                                                                                          header {
-                                                                                                                                                              flex-direction: column;
-                                                                                                                                                                }
-                                                                                                                                                                  nav a {
-                                                                                                                                                                      margin: 10px;
-                                                                                                                                                                        }
-                                                                                                                                                                        }
+.time {
+  font-size: 12px;
+  color: #aaa;
+}
