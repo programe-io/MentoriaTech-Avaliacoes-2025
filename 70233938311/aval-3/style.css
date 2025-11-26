@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Moranguinho 2009</title>
+    <link href="./output.css" rel="stylesheet">
+
+    <style>
+        .fade-in {
+            animation: fade 1.2s ease-in-out;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(255, 120, 145, 0.3);
+        }
+
+        nav a {
+            position: relative;
+        }
+        nav a::after {
+            content: "";
+            width: 0%;
+            height: 3px;
+            background: #ff4d7a;
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        hr {
+            animation: grow 1.5s ease-out;
+        }
+        @keyframes grow {
+            from { width: 0; opacity: 0; }
+            to { width: 100%; opacity: 1; }
+        }
+
+        footer {
+            box-shadow: 0 -5px 15px rgba(255, 180, 200, 0.4);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-pink-200 via-pink-300 to-green-200 min-h-screen text-pink-900">
+
+    <header class="shadow-lg p-5 flex justify-between items-center bg-pink-100/80 backdrop-blur-md border-b border-pink-300 fade-in">
+        <h1 class="text-4xl font-extrabold text-rose-700 drop-shadow-md">
+            🍓 Moranguinho 2009
+        </h1>
+    </header>
+
+    <section class="text-center py-10 fade-in">
+        <h2 class="text-5xl font-extrabold text-rose-800 mb-6 drop-shadow-lg">
+            Bem-vinda ao Mundo da Moranguinho!
+        </h2>
+
+        <div class="w-full max-w-4xl mx-auto">
+            <hr class="border-t-4 border-green-400 opacity-80 rounded-full">
+        </div>
+    </section>
+
+    <nav class="flex justify-center gap-10 py-4 text-pink-900 font-semibold text-lg fade-in">
+        <a class="hover:text-red-500 transition" href="#origem">Origem</a>
+        <a class="hover:text-red-500 transition" href="#amigas">Amigas</a>
+        <a class="hover:text-red-500 transition" href="#vila">Vila</a>
+    </nav>
+
+    <main class="py-6 px-4 flex flex-col gap-6 md:flex-row md:justify-center md:flex-wrap fade-in">
+
+        <section id="origem">
+            <div class="card bg-pink-100/70 backdrop-blur-sm py-4 rounded-2xl shadow-xl w-full md:w-80 border border-pink-300">
+                <div class="flex items-center pb-4 px-4 gap-3">
+                    <img class="h-14 w-14 rounded-full border-2 border-green-500" src="https://i.pinimg.com/564x/84/7f/e1/847fe193b7ff92abf4df6179fc9c834f.jpg" alt="Moranguinho ícone">
+                    <h2 class="text-2xl font-bold text-rose-800">Origem da Série</h2>
+                </div>
+                <div class="pt-2 px-4 text-rose-900">
+                    <p class="text-sm text-justify">
+                        A versão de 2009 trouxe um visual renovado, com cores vibrantes e um clima doce e amigável.
+                        Moranguinho e suas amigas vivem aventuras cheias de fantasia, aroma de frutas e muita fofura!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="amigas">
+            <div class="card bg-pink-100/70 backdrop-blur-sm py-4 rounded-2xl shadow-xl w-full md:w-80 border border-pink-300">
+                <div class="flex items-center pb-4 px-4 gap-3">
+                    <img class="h-14 w-14 rounded-full border-2 border-green-500" src="https://altoastral.joaobidu.com.br/media/uploads/legacy/2016/07/Moranguinho_Aventura_em_tutti_frutti.png" alt="Moranguinho ícone">
+                    <h2 class="text-2xl font-bold text-rose-800">Amigas da Moranguinho</h2>
+                </div>
+                <div class="pt-2 px-4 text-rose-900">
+                    <p class="text-sm text-justify">
+                        Na Vila das Frutinhas, Moranguinho vive ao lado de Limãozinha, Laranjinha, Ameixinha e tantas outras.
+                        Cada amiga tem um estilo único, sempre com detalhes rosa e verde em seus looks e cenários.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="vila">
+            <div class="card bg-pink-100/70 backdrop-blur-sm py-4 rounded-2xl shadow-xl w-full md:w-80 border border-pink-300">
+                <div class="flex items-center pb-4 px-4 gap-3">
+                    <img class="h-14 w-14 rounded-full border-2 border-green-500" src="https://static.wikia.nocookie.net/moranguinho/images/b/b4/Cafe.png/revision/latest?cb=20180130133707&path-prefix=pt-br" alt="Moranguinho ícone">
+                    <h2 class="text-2xl font-bold text-rose-800">A Vila das Frutinhas</h2>
+                </div>
+                <div class="pt-2 px-4 text-rose-900">
+                    <p class="text-sm text-justify">
+                        A Vila das Frutinhas é um lugar mágico feito de jardins verde-menta, casas rosa doce e sobremesas
+                        encantadas. Tudo traz o contraste perfeito entre tons de rosa e verde pastel.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-10 py-6 bg-pink-200 text-center text-pink-900 font-semibold border-t border-pink-300 fade-in">
+        Feito por <span class="text-rose-700 font-bold">Larissa Emanuele</span> —
+        <span class="text-green-700 font-bold">CETI Candido Borges Castelo Branco</span>
+        <p class="text-sm mt-1 text-rose-700">Novembro de 2025</p>
+    </footer>
+
+</body>
+</html>
