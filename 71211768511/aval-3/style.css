@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teen Wolf — Cards Informativos</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#ff5c5c;
+      --muted:#98a1b3;
+      --glass: rgba(255,92,92,0.08);
+      color-scheme: dark;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{margin:0; background:linear-gradient(180deg,#071022 0%, #0f1724 100%); color:#e6eef8; -webkit-font-smoothing:antialiased; line-height:1.5}
+    .wrap{max-width:1100px;margin:28px auto;padding:18px}
+
+    /* header / nav */
+    header{display:flex;flex-direction:column;gap:12px;margin-bottom:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ff9a9a);display:flex;align-items:center;justify-content:center;font-weight:800;color:#111}
+    header h1{margin:0;font-size:1.4rem}
+    nav ul{display:flex;gap:10px;padding:0;margin:0;list-style:none;flex-wrap:wrap}
+    nav a{color:var(--muted);text-decoration:none;padding:.35rem .6rem;border-radius:8px;font-weight:700}
+    nav a:hover{background:var(--glass);color:var(--accent)}
+
+    /* intro */
+    .intro{background:linear-gradient(180deg, rgba(255,92,92,0.04), rgba(255,92,92,0.01));padding:12px;border-radius:10px;border:1px solid rgba(255,92,92,0.05);color:var(--muted)}
+    .intro .highlight{color:var(--accent);font-weight:800;padding:2px 8px;border-radius:6px;background:rgba(255,92,92,0.04)}
+
+    /* cards grid */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    @media (max-width:960px){.cards{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.cards{grid-template-columns:1fr}}
+
+    /* card */
+    article.card{background:var(--card);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 24px rgba(2,6,23,0.6);display:flex;flex-direction:column;gap:10px;transition:transform .22s ease, box-shadow .22s ease}
+    article.card:hover{transform:translateY(-8px);box-shadow:0 18px 48px rgba(0,0,0,0.6)}
+    article.card header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .badge{background:var(--glass);color:var(--accent);padding:.25rem .6rem;border-radius:999px;font-weight:800;font-size:.85rem}
+    .meta{color:var(--muted);font-size:.9rem}
+
+    figure.media{width:100%;height:160px;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.02)}
+    figure.media img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .card h2{margin:0;color:#fff;font-size:1.05rem}
+    .card p{margin:0;color:var(--muted)}
+    .card ul{margin:8px 0 0 18px;color:var(--muted)}
+    .tags{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+    .tag{background:rgba(255,92,92,0.08);color:var(--accent);padding:.2rem .5rem;border-radius:999px;font-weight:700;font-size:.82rem}
+
+    .card footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+    .actions{display:flex;gap:8px}
+    .btn{border:0;padding:.5rem .75rem;border-radius:8px;font-weight:800;cursor:pointer}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(255,92,92,0.06)}
+    .btn.primary{background:var(--accent);color:#111;box-shadow:0 8px 24px rgba(255,92,92,0.12)}
+
+    footer.page{margin-top:22px;text-align:center;color:var(--muted);font-size:.9rem;padding:14px}
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">TW</div>
+        <div>
+          <h1>The Vampire Diaries — Cards</h1>
+          <div class="small" style="color:var(--muted)">Resumo rápido: série, personagens e legado</div>
+        </div>
+      </div>
+
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="#card1">Resumo</a></li>
+          <li><a href="#card2">Personagens</a></li>
+          <li><a href="#card3">Legado</a></li>
+        </ul>
+      </nav>
+
+      <div class="intro" role="region" aria-label="Introdução">
+        <p><span class="highlight">Teen Wolf / The Vampire Diaries</span> — aqui temos três posts rápidos que explicam a série, apresentam personagens centrais e comentam o impacto cultural.</p>
+      </div>
+    </header>
+
+    <section class="cards" aria-label="Três cards informativos">
+
+      <!-- Card 1: Resumo -->
+      <article class="card" id="card1" aria-labelledby="t1">
+        <header>
+          <span class="badge">Resumo</span>
+          <div class="meta"><time datetime="2025-11-26">26 nov 2025</time></div>
+        </header>
+
+        <figure class="media" role="img" aria-label="Imagem resumo">
+          <img src="https://picsum.photos/seed/tvd1/800/450" alt="Cena dramática - Teen Wolf / TVD">
+          <figcaption style="display:none">Cena temática</figcaption>
+        </figure>
+
+        <h2 id="t1"><span>O que é Teen Wolf / The Vampire Diaries?</span></h2>
+        <p class="excerpt">Série de drama sobrenatural (no caso de Teen Wolf) que explora temas de identidade, amizade e perigo sobrenatural em comunidades pequenas. (Obs.: *Teen Wolf* e *The Vampire Diaries* são séries distintas — ajuste o foco conforme preferir.)</p>
+
+        <ul>
+          <li>Gênero: drama adolescente / sobrenatural.</li>
+          <li>Temas: transformação, lealdade, amor e conflito moral.</li>
+          <li>Formato: temporadas seriadas com arcos longos de personagens.</li>
+        </ul>
+
+        <div class="tags" aria-hidden="false">
+          <span class="tag">#sobrenatural</span>
+          <span class="tag">#teen</span>
+          <span class="tag">#drama</span>
+        </div>
+
+        <footer>
+          <div class="small">Leitura: 2 min</div>
+          <div class="actions">
+            <button class="btn ghost" aria-label="Compartilhar resumo">Compartilhar</button>
+            <button class="btn primary" aria-label="Ler mais resumo">Ler mais</button>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Card 2: Personagens -->
+      <article class="card" id="card2" aria-labelledby="t2">
+        <header>
+          <span class="badge">Personagens</span>
+          <div class="meta"><time datetime="2025-11-26">26 nov 2025</time></div>
+        </header>
+
+        <figure class="media" role="img" aria-label="Imagem personagens">
+          <img src="https://picsum.photos/seed/tvd2/800/450" alt="Personagens principais">
+          <figcaption style="display:none">Elenco</figcaption>
+        </figure>
+
+        <h2 id="t2"><span>Personagens Centrais</span></h2>
+        <p class="excerpt">Personagens centrais costumam incluir o protagonista (humano), amigos leais e a figura sobrenatural que transforma a dinâmica (ex.: lobisomens, vampiros, bruxas).</p>
+
+        <ul>
+          <li><strong>Protagonista</strong> — jovem que enfrenta a nova realidade.</li>
+          <li><strong>Melhores amigos</strong> — aliados e suporte emocional.</li>
+          <li><strong>Antagonista sobrenatural</strong> — cria tensão e arco de ameaça.</li>
+        </ul>
+
+        <div class="tags">
+          <span class="tag">#herói</span>
+          <span class="tag">#amizade</span>
+          <span class="tag">#misterio</span>
+        </div>
+
+        <footer>
+          <div class="small">Leitura: 3 min</div>
+          <div class="actions">
+            <button class="btn ghost" aria-label="Salvar personagens">Salvar</button>
+            <button class="btn primary" aria-label="Perfis">Perfis</button>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Card 3: Legado -->
+      <article class="card" id="card3" aria-labelledby="t3">
+        <header>
+          <span class="badge">Legado</span>
+          <div class="meta"><time datetime="2025-11-26">26 nov 2025</time></div>
+        </header>
+
+        <figure class="media" role="img" aria-label="Imagem legado">
+          <img src="https://picsum.photos/seed/tvd3/800/450" alt="Fandom e legado">
+          <figcaption style="display:none">Fandom</figcaption>
+        </figure>
+
+        <h2 id="t3"><span>Impacto Cultural</span></h2>
+        <p class="excerpt">Séries do gênero teen-sobrenatural geraram fandoms dedicados, convenções, fanarts e spin-offs; também ajudaram a moldar a estética pop jovem da década em que foram exibidas.</p>
+
+        <ul>
+          <li>Spin-offs e universos expandidos (em séries relacionadas).</li>
+          <li>Comunidades de fãs ativas em redes e convenções.</li>
+          <li>Influência em outras produções jovens-adultas.</li>
+        </ul>
+
+        <div class="tags">
+          <span class="tag">#fandom</span>
+          <span class="tag">#spinoff</span>
+          <span class="tag">#culturaPop</span>
+        </div>
+
+        <footer>
+          <div class="small">Leitura: 2 min</div>
+          <div class="actions">
+            <button class="btn ghost" aria-label="Comentar legado">Comentar</button>
+            <button class="btn primary" aria-label="Explorar legado">Explorar</button>
+          </div>
+        </footer>
+      </article>
+
+    </section>
+
+    <footer class="page" role="contentinfo">© Conteúdo informativo — resumo rápido</footer>
+  </main>
+</body>
+</html>
