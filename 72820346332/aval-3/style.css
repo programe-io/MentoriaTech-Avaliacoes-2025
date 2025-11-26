@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre Mim — Estilo com CSS Externo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+    <aside>
+        <article>
+            <h3>Sobre Mim</h3>
+            <a href="#" class="sobre-mim">Clique para saber mais</a>
+        </article>
+    </aside>
+</main>
+
+</body>
+</html>
+/* Estilo geral */
+main {
+    padding: 40px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ece9ff, #ffe7f3);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caixa lateral */
+aside {
+    width: 320px;
+    background: #ffffffcc;
+    backdrop-filter: blur(6px);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Artigo interno */
+article {
+    padding: 10px;
+}
+
+/* Título */
+h3 {
+    font-size: 22px;
+    margin-bottom: 18px;
+    color: #444;
+    text-align: center;
+}
+
+/* Botão com gradiente animado */
+a.sobre-mim {
+    display: block;
+    text-align: center;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #ff0080);
+    background-size: 400%;
+    animation: gradientFlow 6s ease infinite;
+    transition: transform 0.3s;
+}
+
+/* Efeito hover */
+a.sobre-mim:hover {
+    transform: scale(1.05);
+}
+
+/* Animação do gradiente */
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
