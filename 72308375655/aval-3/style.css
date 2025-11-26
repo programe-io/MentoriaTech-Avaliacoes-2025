@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        /* Estilo para o título */
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 40px;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-align: center;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .postcards-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1000px;
+        }
+
+        .postcard {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .postcard:hover {
+            transform: scale(1.05);
+        }
+
+        .postcard img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .postcard-content {
+            padding: 15px;
+        }
+
+        .postcard h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .postcard p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .postcards-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .postcard {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Postcards Collection</h1>
+    <div class="postcards-container">
+        <!-- Postcard 1 -->
+        <div class="postcard">
+            <img src="https://via.placeholder.com/280x180?text=Postcard+1" alt="Postcard 1">
+            <div class="postcard-content">
+                <h2>Paris</h2>
+                <p>Uma bela vista da Torre Eiffel ao entardecer. A cidade do amor!</p>
+            </div>
+        </div>
+
+        <!-- Postcard 2 -->
+        <div class="postcard">
+            <img src="https://via.placeholder.com/280x180?text=Postcard+2" alt="Postcard 2">
+            <div class="postcard-content">
+                <h2>Praia</h2>
+                <p>Sol, mar e areia. Um paraíso tropical para relaxar e descansar.</p>
+            </div>
+        </div>
+
+        <!-- Postcard 3 -->
+        <div class="postcard">
+            <img src="https://via.placeholder.com/280x180?text=Postcard+3" alt="Postcard 3">
+            <div class="postcard-content">
+                <h2>Montanhas</h2>
+                <p>Vista deslumbrante das montanhas nevadas. O lugar perfeito para aventuras!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
