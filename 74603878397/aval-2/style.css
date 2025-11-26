@@ -1,0 +1,233 @@
+/* ======================================= */
+/* 🕵️‍♀️ Cores Principais (Totally Spies!)   */
+/* ======================================= */
+:root {
+    --sam-green: #388e3c;    /* Verde da Sam (mais escuro para textos) */
+    --clover-yellow: #ffeb3b; /* Amarelo da Clover */
+    --alex-red: #ff5252;     /* Vermelho da Alex */
+    --woohp-blue: #1976d2;   /* Azul para detalhes (WOOHP) */
+    --background-color: #f7f7f7; /* Fundo claro, limpo */
+    --text-color: #333;
+    --gadget-color: #6200ea; /* Roxo vibrante para links/botões */
+}
+
+/* ======================================= */
+/* 📱 Estilos Globais e Responsividade     */
+/* ======================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Fonte moderna e limpa */
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Títulos com um toque de WOOHP */
+h1, h2, h3, h5 {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    color: var(--sam-green);
+    margin-bottom: 10px;
+}
+
+/* ======================================= */
+/* 💻 Header (Cabeçalho - Logo da Agência) */
+/* ======================================= */
+header {
+    background-color: var(--woohp-blue); /* Cor forte para destacar */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: var(--clover-yellow); /* Título amarelo vibrante */
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 10px auto 0;
+}
+
+/* ======================================= */
+/* 🗺️ Nav (Navegação - Menu de Missões)    */
+/* ======================================= */
+nav {
+    background-color: var(--gadget-color); /* Roxo ou roxo vibrante */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-bottom: 5px solid var(--alex-red); /* Detalhe vermelho */
+}
+
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    flex-grow: 1;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: var(--clover-yellow);
+    color: var(--text-color);
+}
+
+/* ======================================= */
+/* 🚀 Seção Principal (Layout de Base)     */
+/* ======================================= */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Artigos/Conteúdo da Missão */
+main {
+    flex: 70%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+/* Sidebar (Sobre Mim/Galeria) */
+aside {
+    flex: 30%;
+    padding: 20px;
+    background-color: #e3f2fd; /* Fundo azul claro para destaque */
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+aside h2, aside h5 {
+    color: var(--alex-red); /* Títulos da sidebar em vermelho */
+}
+
+/* --- Ajuste de Imagens para Visibilidade Total (object-fit: contain) --- */
+
+/* Imagem Principal da Postagem */
+.post-image {
+    width: 100%;
+    height: auto; 
+    max-height: 400px; /* Altura máxima razoável */
+    object-fit: contain; /* GARANTE QUE A IMAGEM INTEIRA SEJA VISÍVEL (SEM CORTES) */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 3px solid var(--alex-red); 
+    background-color: #eee; /* Cor de fundo para imagens com transparência */
+}
+
+/* ================================================= */
+/* ✨ NOVO: Estilos para Cards da Galeria Responsiva */
+/* ================================================= */
+
+/* Container Grid para o bloco de imagens (deve ter a classe 'gallery-container' no HTML) */
+.gallery-container {
+    display: grid;
+    /* Colunas auto-ajustáveis: mínimo de 100px, preenchendo o restante do espaço */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+    gap: 10px; /* Espaçamento entre os "cards" */
+    margin-top: 15px;
+}
+
+/* Estilo para cada item/card (opcional, se estiver envolvendo a imagem) */
+.gallery-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagens da Galeria (Aside) */
+aside img {
+    width: 100%; /* Preenche a largura do item do grid */
+    height: 100%; /* Preenche a altura do item do grid */
+    max-height: 120px; /* Altura máxima para as fotos da galeria */
+    object-fit: contain; /* GARANTE QUE A IMAGEM INTEIRA SEJA VISÍVEL (SEM CORTES) */
+    margin-bottom: 0; /* Removido para usar o gap do grid */
+    border-radius: 8px;
+    transition: transform 0.2s;
+    background-color: #fff; /* Fundo branco para imagens com transparência */
+}
+
+aside img:hover {
+    transform: scale(1.03); /* Efeito sutil ao passar o mouse */
+}
+
+/* ================================================= */
+
+/* Estilo para Título da Postagem e Info */
+main h5 {
+    color: var(--gadget-color);
+    margin-top: -10px;
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+/* ======================================= */
+/* 💡 Footer (Rodapé - Base Secreta)      */
+/* ======================================= */
+footer {
+    background-color: var(--sam-green); /* Verde da Sam, forte e confiável */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 0.9em;
+    border-top: 5px solid var(--clover-yellow); /* Detalhe amarelo */
+}
+
+/* ======================================= */
+/* 📺 Media Query (Responsividade)        */
+/* ======================================= */
+/* Adaptação para telas menores (celulares) */
+@media screen and (max-width: 800px) {
+    .row {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    main {
+        flex: 100%;
+        padding: 15px;
+    }
+
+    aside {
+        flex: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        flex: 50%; /* Dois links por linha em telas pequenas */
+    }
+}
+
+/* NOVO: Ajuste específico para a Galeria em telas extra pequenas */
+@media screen and (max-width: 500px) {
+    .gallery-container {
+        /* Garante que em celulares muito pequenos teremos 2 colunas para os cards */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
