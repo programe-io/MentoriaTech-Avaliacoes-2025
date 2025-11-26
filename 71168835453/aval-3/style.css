@@ -1,0 +1,129 @@
+/*
+Este CSS foi criado para emular os estilos do Tailwind CSS
+aplicados diretamente no seu HTML, além de adicionar a funcionalidade
+do menu responsivo.
+
+Se você decidir usar este CSS, remova a linha do CDN do Tailwind
+e a configuração de cores do seu <head> HTML:
+<script src="https://cdn.tailwindcss.com"></script>
+<script> (toda a configuração do tailwind.config) </script>
+*/
+
+/* 1. Variáveis de Cores (Emulando a configuração do Tailwind) */
+:root {
+    --primary-blue: #1e3a8a; /* bg-primary-blue */
+    --secondary-red: #dc2626; /* text-secondary-red, border-secondary-red, bg-secondary-red */
+    --gray-50: #f9fafb; /* bg-gray-50 */
+    --gray-900: #111827; /* text-gray-900 */
+    --gray-800: #1f2937; /* text-gray-800 */
+    --gray-600: #4b5563; /* text-gray-600 */
+    --gray-400: #9ca3af; /* text-gray-400 */
+    --gray-200: #e5e7eb; /* border-gray-200 */
+}
+
+/* 2. Estilos Globais e do Corpo (body) */
+body {
+    background-color: var(--gray-50); /* bg-gray-50 */
+    color: var(--gray-900); /* text-gray-900 */
+    min-height: 100vh; /* min-h-screen */
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+/* 3. Estilos do Cabeçalho (header) */
+.header {
+    background-color: var(--primary-blue); /* bg-primary-blue */
+    color: white; /* text-white */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+    padding: 1rem; /* p-4 */
+    position: sticky; /* sticky */
+    top: 0; /* top-0 */
+    z-index: 10; /* z-10 */
+}
+
+.header > div {
+    max-width: 80rem; /* max-w-7xl */
+    margin-left: auto; /* mx-auto */
+    margin-right: auto; /* mx-auto */
+    display: flex; /* flex */
+    justify-content: space-between; /* justify-between */
+    align-items: center; /* items-center */
+}
+
+.header .logo {
+    text-transform: uppercase; /* uppercase */
+    font-weight: 800; /* font-extrabold */
+    font-size: 1.5rem; /* text-2xl */
+    letter-spacing: 0.05em; /* tracking-widest */
+}
+
+/* 4. Estilos de Navegação (nav) */
+.header nav {
+    font-weight: 600; /* font-semibold */
+}
+
+/* Esconde o menu de desktop por padrão em telas pequenas */
+.header nav {
+    display: none;
+}
+
+/* Exibe o menu de desktop em telas médias (md) e maiores */
+@media (min-width: 768px) {
+    .header nav {
+        display: flex; /* md:flex */
+        gap: 1.5rem; /* space-x-6 (equivalente) */
+    }
+}
+
+.header nav a {
+    transition: color 0.3s ease; /* transition duration-300 */
+}
+
+.header nav a:hover {
+    color: var(--secondary-red); /* hover:text-secondary-red */
+}
+
+/* 5. Estilos da Área Principal (main) */
+.main {
+    max-width: 80rem; /* max-w-7xl */
+    margin-left: auto; /* mx-auto */
+    margin-right: auto; /* mx-auto */
+    padding: 2rem 1rem; /* py-8 px-4 */
+}
+
+.main h1 {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 700; /* font-bold */
+    color: var(--gray-800); /* text-gray-800 */
+    margin-bottom: 1.5rem; /* mb-6 */
+    border-bottom: 2px solid var(--secondary-red); /* border-b-2 border-secondary-red */
+    padding-bottom: 0.5rem; /* pb-2 */
+}
+
+/* Container dos Cards */
+.product-grid {
+    display: flex; /* flex */
+    flex-direction: column; /* flex-col */
+    gap: 1.5rem; /* gap-6 */
+}
+
+@media (min-width: 768px) {
+    .product-grid {
+        flex-direction: row; /* md:flex-row */
+        justify-content: space-around; /* md:justify-around */
+    }
+}
+
+@media (min-width: 1024px) {
+    .product-grid {
+        justify-content: flex-start; /* lg:justify-start */
+        gap: 2rem; /* lg:gap-8 */
+    }
+}
+
+/* 6. Estilos dos Cards de Produto */
+.product-card {
+    background-color: white; /* bg-white */
+    max-width: 24rem; /* max-w-sm */
+    width: 100%; /* w-full */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.
