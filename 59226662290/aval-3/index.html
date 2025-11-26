@@ -1,0 +1,150 @@
+# Feed de Notícias — arquivos
+
+Abaixo estão os dois arquivos: **`index.html`** e **`estilos.css`**. Salve cada bloco em um arquivo separado no mesmo diretório (index.html e estilos.css). O HTML já referencia o `estilos.css`.
+
+---
+
+### index.html
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feed de Notícias — Tecnologia</title>
+  <link rel="stylesheet" href="estilos.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <!-- HEADER OBRIGATÓRIO -->
+  <header class="header-obrigatorio">
+    <h1>Feed de Notícias</h1>
+  </header>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">TechHoje</h1>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Tecnologia</a></li>
+          <li><a href="#">Review</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="feed">
+
+      <article class="post">
+        <img src="https://via.placeholder.com/800x400?text=Smartphone+X" alt="Imagem do Smartphone X" />
+        <div class="post-content">
+          <h2 class="post-title">Lançamento: Smartphone X promete câmera revolucionária</h2>
+          <p class="meta"><span class="author">Por Ana Silva</span> • <span class="date">25 de novembro de 2025</span></p>
+          <p>O novo Smartphone X chega com sensor de imagem de última geração e recursos de inteligência artificial para fotografia noturna.</p>
+          <a class="read-more" href="#">Leia mais</a>
+        </div>
+      </article>
+
+      <article class="post">
+        <img src="https://via.placeholder.com/800x400?text=Atualiza%C3%A7%C3%A3o+de+Software" alt="Imagem sobre atualização de software" />
+        <div class="post-content">
+          <h2 class="post-title">Atualização de software traz modo econômico avançado</h2>
+          <p class="meta"><span class="author">Por Lucas Pereira</span> • <span class="date">24 de novembro de 2025</span></p>
+          <p>Fabricantes liberaram uma atualização que melhora a autonomia sem perder desempenho em tarefas do dia a dia.</p>
+          <a class="read-more" href="#">Leia mais</a>
+        </div>
+      </article>
+
+      <article class="post">
+        <img src="https://via.placeholder.com/800x400?text=Mercado+de+Fitness+Tech" alt="Imagem sobre fitness tech" />
+        <div class="post-content">
+          <h2 class="post-title">Gadgets wearables ganham mercado entre atletas amadores</h2>
+          <p class="meta"><span class="author">Por Marina Costa</span> • <span class="date">23 de novembro de 2025</span></p>
+          <p>Novos wearables oferecem métricas avançadas de recuperação e treinos personalizados a preços mais acessíveis.</p>
+          <a class="read-more" href="#">Leia mais</a>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 TechHoje — Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+```
+
+---
+
+### estilos.css
+
+```css
+/* estilos.css */
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --accent:#0b6cff;
+  --text:#222;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.5;
+}
+.container{
+  max-width:1000px;
+  margin:0 auto;
+  padding:1rem;
+}
+.site-header{
+  background:var(--card);
+  border-bottom:1px solid #e6e9ef;
+}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;padding:1rem}
+.logo{margin:0;font-size:1.4rem}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.main-nav a{text-decoration:none;color:var(--text);font-weight:600}
+
+.feed{
+  display:grid;
+  grid-template-columns:repeat(1,1fr);
+  gap:1.2rem;
+  margin-top:1rem;
+}
+.post{
+  background:var(--card);
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(20,30,50,0.06);
+}
+.post img{display:block;width:100%;height:auto}
+.post-content{padding:1rem}
+.post-title{margin:0 0 .25rem;font-size:1.2rem}
+.meta{color:#6b7280;font-size:.9rem;margin-bottom:.6rem}
+.read-more{display:inline-block;margin-top:.6rem;text-decoration:none;padding:.45rem .7rem;border-radius:6px;border:1px solid var(--accent);color:var(--accent);font-weight:600}
+
+.site-footer{padding:1rem 0;text-align:center;color:#6b7280}
+
+/* Responsividade */
+@media (min-width:700px){
+  .feed{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:1000px){
+  .feed{grid-template-columns:repeat(3,1fr)}
+}
+```
+
+---
+
+Se quiser, posso gerar versões com imagens locais, adicionar ícones, ou converter esse layout para um componente React. Basta me dizer o que prefere.
