@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ports Card - Referência de Portas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+        }
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        .port-card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .port-card h3 {
+            color: #007bff;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .port-card p {
+            margin: 5px 0;
+        }
+        .port-card strong {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ports Card - Referência Rápida de Portas TCP/UDP</h1>
+        <p>As portas mais comuns e seus serviços associados.</p>
+    </header>
+
+    <nav>
+        <a href="#comuns">Mais Comuns</a>
+        <a href="#web">Web/Email</a>
+        <a href="#seguranca">Segurança</a>
+        <a href="#redes">Redes/Outros</a>
+    </nav>
+
+    <div class="container">
+
+        <h2 id="comuns">Portas Mais Comuns (0-1023)</h2>
+        <div class="port-card">
+            <h3>Porta **20/21**</h3>
+            <p><strong>Serviço:</strong> FTP (File Transfer Protocol)</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> 20 (Dados), 21 (Controle) - Transferência de arquivos entre hosts.</p>
+        </div>
+
+        <div class="port-card">
+            <h3>Porta **22**</h3>
+            <p><strong>Serviço:</strong> SSH (Secure Shell)</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> Acesso remoto seguro, tunelamento e transferência segura (SFTP).</p>
+        </div>
+
+        <div class="port-card">
+            <h3>Porta **23**</h3>
+            <p><strong>Serviço:</strong> Telnet</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> Comunicação de texto bidirecional interativa. **(Inseguro)**</p>
+        </div>
+
+        <div class="port-card">
+            <h3>Porta **25**</h3>
+            <p><strong>Serviço:</strong> SMTP (Simple Mail Transfer Protocol)</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> Envio de e-mail entre servidores.</p>
+        </div>
+        
+        <div class="port-card">
+            <h3>Porta **53**</h3>
+            <p><strong>Serviço:</strong> DNS (Domain Name System)</p>
+            <p><strong>Protocolo:</strong> TCP/UDP</p>
+            <p><strong>Uso:</strong> Tradução de nomes de domínio em endereços IP.</p>
+        </div>
+
+        <div class="port-card">
+            <h3>Porta **80**</h3>
+            <p><strong>Serviço:</strong> HTTP (Hypertext Transfer Protocol)</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> Comunicação de dados para a World Wide Web.</p>
+        </div>
+
+        <div class="port-card">
+            <h3>Porta **110**</h3>
+            <p><strong>Serviço:</strong> POP3 (Post Office Protocol version 3)</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> Recebimento de e-mail, geralmente baixando e excluindo do servidor.</p>
+        </div>
+
+        <div class="port-card">
+            <h3>Porta **137-139**</h3>
+            <p><strong>Serviço:</strong> NetBIOS/SMB</p>
+            <p><strong>Protocolo:</strong> TCP/UDP</p>
+            <p><strong>Uso:</strong> Compartilhamento de arquivos e impressoras em redes Windows.</p>
+        </div>
+
+        <div class="port-card">
+            <h3>Porta **143**</h3>
+            <p><strong>Serviço:</strong> IMAP (Internet Message Access Protocol)</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> Recebimento de e-mail, mantendo-o no servidor para múltiplos acessos.</p>
+        </div>
+        
+        <div class="port-card">
+            <h3>Porta **161/162**</h3>
+            <p><strong>Serviço:</strong> SNMP (Simple Network Management Protocol)</p>
+            <p><strong>Protocolo:</strong> UDP</p>
+            <p><strong>Uso:</strong> Gerenciamento e monitoramento de dispositivos de rede.</p>
+        </div>
+
+        <hr>
+
+        <h2 id="web">Portas Web e de E-mail Seguras</h2>
+        
+        <div class="port-card">
+            <h3>Porta **443**</h3>
+            <p><strong>Serviço:</strong> HTTPS (HTTP Secure)</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> Comunicação segura na Web usando SSL/TLS.</p>
+        </div>
+
+        <div class="port-card">
+            <h3>Porta **465**</h3>
+            <p><strong>Serviço:</strong> SMTPS (SMTP Secure)</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> Envio de e-mail seguro (obsoleto, mas ainda em uso).</p>
+        </div>
+
+        <div class="port-card">
+            <h3>Porta **587**</h3>
+            <p><strong>Serviço:</strong> Submission/SMTP TLS</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> Envio de e-mail por usuários finais para o Mail Submission Agent (MSA).</p>
+        </div>
+
+        <div class="port-card">
+            <h3>Porta **993**</h3>
+            <p><strong>Serviço:</strong> IMAPS (IMAP Secure)</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> Recebimento de e-mail seguro via IMAP sobre SSL/TLS.</p>
+        </div>
+
+        <div class="port-card">
+            <h3>Porta **995**</h3>
+            <p><strong>Serviço:</strong> POP3S (POP3 Secure)</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> Recebimento de e-mail seguro via POP3 sobre SSL/TLS.</p>
+        </div>
+
+        <hr>
+        
+        <h2 id="seguranca">Portas de Segurança e Serviços de Rede</h2>
+        
+        <div class="port-card">
+            <h3>Porta **3389**</h3>
+            <p><strong>Serviço:</strong> RDP (Remote Desktop Protocol)</p>
+            <p><strong>Protocolo:</strong> TCP/UDP</p>
+            <p><strong>Uso:</strong> Acesso remoto a desktops Windows (Terminal Services).</p>
+        </div>
+        
+        <div class="port-card">
+            <h3>Porta **5432**</h3>
+            <p><strong>Serviço:</strong> PostgreSQL</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> Serviço de banco de dados PostgreSQL.</p>
+        </div>
+
+        <div class="port-card">
+            <h3>Porta **8080**</h3>
+            <p><strong>Serviço:</strong> HTTP Alternativo / Proxy</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> Servidores web alternativos ou proxies, frequentemente usado por Tomcat ou JBoss.</p>
+        </div>
+
+        <hr>
+
+        <h2 id="redes">Portas de Redes e Outros</h2>
+
+        <div class="port-card">
+            <h3>Porta **67/68**</h3>
+            <p><strong>Serviço:</strong> DHCP (Dynamic Host Configuration Protocol)</p>
+            <p><strong>Protocolo:</strong> UDP</p>
+            <p><strong>Uso:</strong> Atribuição automática de endereços IP em uma rede (67 - Servidor, 68 - Cliente).</p>
+        </div>
+
+        <div class="port-card">
+            <h3>Porta **123**</h3>
+            <p><strong>Serviço:</strong> NTP (Network Time Protocol)</p>
+            <p><strong>Protocolo:</strong> UDP</p>
+            <p><strong>Uso:</strong> Sincronização de relógios de computadores em uma rede.</p>
+        </div>
+        
+        <div class="port-card">
+            <h3>Porta **179**</h3>
+            <p><strong>Serviço:</strong> BGP (Border Gateway Protocol)</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> Protocolo de roteamento essencial da Internet.</p>
+        </div>
+
+        <div class="port-card">
+            <h3>Porta **1433**</h3>
+            <p><strong>Serviço:</strong> Microsoft SQL Server</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> Serviço de banco de dados da Microsoft.</p>
+        </div>
+        
+        <div class="port-card">
+            <h3>Porta **3306**</h3>
+            <p><strong>Serviço:</strong> MySQL/MariaDB</p>
+            <p><strong>Protocolo:</strong> TCP</p>
+            <p><strong>Uso:</strong> Serviço de banco de dados MySQL e MariaDB.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p style="text-align: center; padding: 10px; background-color: #333; color: white; margin-top: 20px;">
+            &copy; 2025 Ports Card - Referência de Portas
+        </p>
+    </footer>
+
+</body>
+</html>
