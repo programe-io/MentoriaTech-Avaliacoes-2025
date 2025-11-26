@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cards - Victor e Leo</title>
+  <style>
+    /* ====== ESTILO GERAL ====== */
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(135deg, #ededed, #dadada);
+      margin: 0;
+      padding: 25px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 25px;
+      color: #222;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    /* ====== GRID DE CARDS ====== */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      padding: 10px;
+    }
+
+    /* ====== CARDS ====== */
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 25px;
+      border: 2px solid #dcdcdc;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+      transition: 0.3s ease-in-out;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.7s forwards;
+    }
+
+    /* Hover mais completo */
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      border-color: #bfbfbf;
+    }
+
+    /* ====== TÍTULOS DOS CARDS ====== */
+    .card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      color: #333;
+      font-weight: 600;
+      text-transform: uppercase;
+      border-left: 5px solid #888;
+      padding-left: 10px;
+    }
+
+    /* ====== PARÁGRAFOS ====== */
+    .card p {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 12px;
+      color: #555;
+    }
+
+    /* ====== LISTAS ====== */
+    .card ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    .card ul li {
+      margin-bottom: 10px;
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    /* ====== SEPARADORES ====== */
+    .divider {
+      height: 3px;
+      width: 100%;
+      background: linear-gradient(to right, transparent, #999, transparent);
+      margin: 15px 0;
+      border-radius: 2px;
+    }
+
+    /* ====== BOTÕES (CASO USE FUTURAMENTE) ====== */
+    .btn {
+      display: inline-block;
+      background: #444;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background: #222;
+      transform: scale(1.05);
+    }
+
+    /* ====== ANIMAÇÃO ====== */
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ====== RESPONSIVO ====== */
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      .card h2 {
+        font-size: 1.3rem;
+      }
+
+      .card p {
+        font-size: 0.95rem;
+      }
+    }
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body>
+  <header>
+    <h1>Victor &amp; Leo - Informações e Cards</h1>
+    <nav>
+      <ul>
+        <li><a href="#cards">Cards</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Conteúdo principal começa aqui -->
+    <section id="destaque" class="intro">
+      <p>Dupla sertaneja famosa: <span class="highlight">Victor &amp; Leo</span> marcou a música brasileira com hits, prêmios e uma trajetória única.</p>
+    </section>
+  <h1>Victor & Leo - Cards Informativos</h1>
+
+  <div class="container">
+
+    <!-- Card 1: História da Dupla -->
+    <div class="card">
+      <img src="https://i.imgur.com/OHqEbyE.jpeg" alt="Premiações Victor e Leo" />
+      <h2>Conquistas e Prêmios</h2>
+      <p>A trajetória da dupla é marcada por inúmeras conquistas. Eles acumularam prêmios como:</p>
+      <ul>
+        <li>Várias indicações ao <strong>Grammy Latino</strong>.</li>
+        <li>Diversos discos de ouro, platina e diamante.</li>
+        <li>Shows com recordes de público por todo o país.</li>
+        <li>Prêmios de melhor dupla sertaneja em várias plataformas e eventos musicais.</li>
+      </ul>
+      <p>Além disso, Victor se destacou como compositor, sendo responsável por dezenas de hits gravados por outros artistas.</p>
+      <img src="https://i.imgur.com/0DFx1M9.jpeg" alt="Premiações e carreira" style="margin-top:10px; border-radius:10px; width:100%;" />
+    </div>
+      <img src="https://i.imgur.com/8hEk8M2.jpeg" alt="Show Victor e Leo" />
+      <h2>Principais Sucessos</h2>
+      <p>A dupla emplacou inúmeros hits ao longo da carreira. Entre os mais conhecidos estão:</p>
+      <ul>
+        <li><strong>Borboletas</strong> – Uma das músicas mais icônicas, com letra poética e melodia marcante.</li>
+        <li><strong>Deus e Eu no Sertão</strong> – Considerada um hino, exaltando a simplicidade da vida no campo.</li>
+        <li><strong>Fada</strong> – Sucesso nacional que consolidou o nome da dupla.</li>
+        <li><strong>Tem Que Ser Você</strong> – Trilha sonora de novelas e favorita dos fãs.</li>
+      </ul>
+      <img src="https://i.imgur.com/G2Gm4Lv.jpeg" alt="Victor e Leo em palco" style="margin-top:10px; border-radius:10px; width:100%;" />
+    </div>
+      <img src="https://i.imgur.com/zLGGexq.jpeg" alt="Victor e Leo" />
+      <h2>História da Dupla</h2>
+      <p>Victor & Leo iniciaram a carreira musical ainda na infância, influenciados pela música sertaneja raiz e pelos sons do interior de Minas Gerais. No início dos anos 2000, alcançaram projeção nacional com suas apresentações e composições marcadas pela sensibilidade poética.</p>
+      <p>A dupla ganhou destaque ao unir elementos do folk, pop e sertanejo moderno, criando um estilo único. Seus álbuns se tornaram referência e suas músicas marcaram gerações.</p>
+      <img src="https://i.imgur.com/3xhY1EP.jpeg" alt="Infância Victor e Leo" style="margin-top:10px; border-radius:10px; width:100%;" />
+    </div>
+
+    <!-- Card 2: Sucessos -->
+    <div class="card">
+      <img src="https://i.imgur.com/zLGGexq.jpeg" alt="Victor e Leo" />
+      <h2>História da Dupla</h2>
+      <p>Victor & Leo iniciaram a carreira musical ainda na infância, influenciados pela música sertaneja raiz e pelos sons do interior de Minas Gerais. No início dos anos 2000, alcançaram projeção nacional com suas apresentações e composições marcadas pela sensibilidade poética.</p>
+      <p>A dupla ganhou destaque ao unir elementos do folk, pop e sertanejo moderno, criando um estilo único. Seus álbuns se tornaram referência e suas músicas marcaram gerações.</p>
+      <img src="https://i.imgur.com/3xhY1EP.jpeg" alt="Infância Victor e Leo" style="margin-top:10px; border-radius:10px; width:100%;" />
+    </div>
+
+    <!-- Card 3: Conquistas -->
+    <div class="card">
+      <img src="https://i.imgur.com/zLGGexq.jpeg" alt="Victor e Leo" />
+      <h2>História da Dupla</h2>
+      <p>Victor & Leo iniciaram a carreira musical ainda na infância, influenciados pela música sertaneja raiz e pelos sons do interior de Minas Gerais. No início dos anos 2000, alcançaram projeção nacional com suas apresentações e composições marcadas pela sensibilidade poética.</p>
+      <p>A dupla ganhou destaque ao unir elementos do folk, pop e sertanejo moderno, criando um estilo único. Seus álbuns se tornaram referência e suas músicas marcaram gerações.</p>
+      <img src="https://i.imgur.com/3xhY1EP.jpeg" alt="Infância Victor e Leo" style="margin-top:10px; border-radius:10px; width:100%;" />
+    </div>
+
+  </div>
+</body>
+</html>
