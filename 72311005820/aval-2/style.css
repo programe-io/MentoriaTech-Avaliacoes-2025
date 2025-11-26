@@ -1,0 +1,41 @@
+.titulo-agua {
+    /* Define o tamanho da fonte e cor base */
+    font-size: 3em;
+    font-weight: bold;
+    font-family: sans-serif; /* Use a fonte que desejar */
+    color: #000; /* Cor de fallback caso o efeito não funcione */
+    text-align: center;
+    
+    /* Configuração do fundo de gradiente (Cores da água e céu) */
+    background: linear-gradient(
+        90deg, 
+        #0077b6, /* Azul do oceano/chuva */
+        #00b4d8, /* Azul claro/céu */
+        #90e0ef, /* Azul muito claro/nuvem */
+        #00b4d8,
+        #0077b6
+    );
+    
+    /* Aumenta o tamanho do gradiente para permitir a animação */
+    background-size: 300% 100%; 
+    
+    /* O mais importante: Recorta o fundo para que apareça apenas no texto */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Aplica a animação */
+    animation: flow 8s ease infinite;
+}
+
+/* Define a animação de fluxo */
+@keyframes flow {
+    0% {
+        background-position: 100% 0; /* Começa à direita */
+    }
+    50% {
+        background-position: 0% 0; /* Move para a esquerda */
+    }
+    100% {
+        background-position: 100% 0; /* Volta para a direita */
+    }
+}
