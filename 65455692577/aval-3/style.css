@@ -1,0 +1,66 @@
+/*
+ * styles.css
+ * Tema: App de Vestidos / E-commerce de Moda (Tema Preto)
+ */
+
+/* 1. Reset Básico */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* 2. Cores Personalizadas (Ajustadas para o tema PRETO) */
+/* Esquema de cores:
+ * 'primary': #1a1a1a (Preto Quase Total / Dark Gray)
+ * 'primary-dark': #000000 (Preto Sólido)
+ * 'accent': #e0e0e0 (Cinza Claro - Para Foco/Acessibilidade)
+ */
+.text-primary,
+.bg-primary {
+    --tw-bg-opacity: 1;
+    background-color: #1a1a1a;
+}
+
+.hover\:bg-primary-dark:hover {
+    --tw-bg-opacity: 1;
+    background-color: #000000;
+}
+
+.text-primary {
+    color: #1a1a1a;
+}
+
+/* 3. Animação de Rastreamento (Para um Pacote de Entrega 📦) */
+
+/* Define a animação para o marcador do pacote (📦) */
+#delivery-marker {
+    animation: movePackage 12s ease-in-out infinite alternate; 
+    transition: left 0.5s, top 0.5s;
+}
+
+/* Keyframes para simular o movimento do PACOTE */
+@keyframes movePackage {
+    0% {
+        left: 10%;
+        top: 30%;
+    }
+    50% {
+        left: 55%;
+        top: 30%;
+    }
+    100% {
+        left: 90%;
+        top: 10%;
+    }
+}
+
+/* 4. Estilos de Foco e Interação */
+
+button:focus {
+    outline: 2px solid #e0e0e0; /* Usando 'accent' (Cinza Claro) para indicar foco */
+    outline-offset: 2px;
+}
+
+a:focus {
+    outline: 2px solid #e0e0e0;
+    outline-offset: 2px;
+}
