@@ -1,0 +1,169 @@
+/* Importação da Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* COR: Cor de fundo da página (Dark Gray / Preto Sutil) */
+    background-color: #1a202c; 
+    /* COR: Cor do texto principal */
+    color: #e2e8f0; 
+    line-height: 1.6;
+}
+
+/* HEADER (Cabeçalho azul escuro) */
+.header {
+    /* COR: Cor de fundo do cabeçalho (Azul Escuro Forte) */
+    background-color: #2a4365; 
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.header-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    /* COR: Cor do texto do logo */
+    color: white; 
+}
+
+.header-nav a {
+    text-decoration: none;
+    /* COR: Cor dos links de navegação */
+    color: white; 
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.header-nav a:hover {
+    /* COR: Cor dos links ao passar o mouse */
+    color: #a0aec0; 
+}
+
+/* FEED CONTAINER (Layout dos Cards em 3 colunas) */
+.feed-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+    display: grid;
+    /* Configuração padrão: 3 colunas para desktop */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 20px;
+    justify-content: center;
+}
+
+/* POST CARD (O fundo cinza escuro de cada post) */
+.post-card {
+    /* COR: Cor de fundo do card (Dark Gray Médio) */
+    background-color: #2d3748; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    color: #cbd5e0; 
+    display: flex;
+    flex-direction: column;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    /* COR: Linha separadora no topo do card */
+    border-bottom: 1px solid #4a5568; 
+}
+
+/* ======================================= */
+/* ÁREAS DE EDIÇÃO ÚNICA DE DESIGN E AVATAR */
+/* ======================================= */
+
+/* 1. AVATAR DEFINIDO VIA CSS - Repete em todos os posts */
+.post-avatar {
+    /* ATENÇÃO: EDITAR TAMANHO DO AVATAR AQUI (Largura e Altura) */
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    
+    /* === ATENÇÃO: EDITAR LINK DA IMAGEM DE PERFIL AQUI (APENAS 1 VEZ) === */
+    background-image: url('SUA_FOTO_DE_PERFIL_AQUI'); 
+    background-size: cover;
+    background-position: center;
+    
+    /* COR: Borda do avatar */
+    border: 2px solid #a0aec0; 
+}
+
+/* 2. NOME DE USUÁRIO - EDITADO UMA ÚNICA VEZ VIA CSS */
+.post-user {
+    /* Oculta o conteúdo da tag <span> no HTML */
+    font-size: 0; 
+    line-height: 0; 
+}
+
+/* Injeta o nome em todos os locais onde a classe post-user é usada */
+.post-user::before {
+    /* === ATENÇÃO: DIGITE SEU NOME AQUI (APENAS 1 VEZ!) === */
+    content: 'SEU NOME COMPLETO AQUI'; 
+    font-weight: 700;
+    font-size: 1rem; 
+    color: white; 
+}
+
+/* 3. IMAGEM PRINCIPAL DO FEED - Imagem grande do conteúdo */
+.post-image {
+    width: 100%;
+    /* ATENÇÃO: EDITAR O TAMANHO DA ALTURA DA IMAGEM AQUI (200px é o padrão) */
+    height: 200px; 
+    object-fit: cover;
+    display: block;
+}
+
+/* ======================================= */
+/* O restante do CSS de conteúdo e responsividade... */
+/* ======================================= */
+
+.post-content {
+    padding: 15px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+.post-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white; 
+    margin-bottom: 10px;
+}
+
+.post-description {
+    font-size: 0.95rem;
+    color: #a0aec0; 
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.post-time {
+    font-size: 0.8rem;
+    color: #718096; 
+    align-self: flex-end;
+}
+
+/* Responsividade (Para telas menores/celulares) */
+@media (max-width: 768px) {
+    .feed-container {
+        grid-template-columns: 1fr; /* Muda para 1 coluna */
+        padding: 0 10px;
+    }
+}
