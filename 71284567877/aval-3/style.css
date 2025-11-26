@@ -1,0 +1,141 @@
+/* Reset básico */
+* {
+  margin: 0;
+    padding: 0;
+      box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        }
+
+        body {
+          background-color: #fafafa;
+            font-size: 14px;
+              color: #262626;
+                margin: 0;
+                  padding: 0;
+                  }
+
+                  /* Removendo restrição de largura no main para ocupar 100% da tela */
+                  main {
+                    width: 100vw;
+                      max-width: 100vw;
+                        background: #fff;
+                          border: 1px solid #dbdbdb;
+                            border-radius: 0;
+                              box-shadow: none;
+                                margin: 0 auto;
+                                }
+
+                                /* Navegação */
+                                header nav {
+                                  display: flex;
+                                    justify-content: center;
+                                      gap: 20px;
+                                        padding: 15px;
+                                          border-bottom: 1px solid #e6e6e6;
+                                            background-color: white;
+                                            }
+
+                                            nav a {
+                                              text-decoration: none;
+                                                color: #0095f6;
+                                                  font-weight: 600;
+                                                    font-size: 1rem;
+                                                    }
+
+                                                    nav a:hover {
+                                                      text-decoration: underline;
+                                                      }
+
+                                                      /* Post card sem restrição de largura */
+                                                      .post-card {
+                                                        margin: 20px 0;
+                                                          background-color: white;
+                                                            border: none;
+                                                              border-radius: 0;
+                                                                overflow: hidden;
+                                                                }
+
+                                                                /* Cabeçalho do post */
+                                                                .post-header {
+                                                                  display: flex;
+                                                                    align-items: center;
+                                                                      padding: 14px 15px;
+                                                                        max-width: 100vw;
+                                                                          box-sizing: border-box;
+                                                                          }
+
+                                                                          .foto-perfil {
+                                                                            width: 40px;
+                                                                              height: 40px;
+                                                                                border-radius: 50%;
+                                                                                  object-fit: cover;
+                                                                                    margin-right: 12px;
+                                                                                      border: 2px solid #0095f6;
+                                                                                        transition: none;
+                                                                                        }
+
+                                                                                        .post-header h2 {
+                                                                                          font-weight: 600;
+                                                                                            font-size: 1rem;
+                                                                                              color: #262626;
+                                                                                                white-space: nowrap;
+                                                                                                  overflow: hidden;
+                                                                                                    text-overflow: ellipsis;
+                                                                                                    }
+
+                                                                                                    /* Imagem do post ocupa toda a largura da viewport */
+                                                                                                    .post-image {
+                                                                                                      width: 100vw;  /* largura da janela do navegador */
+                                                                                                        height: auto;  /* altura automática para manter proporção */
+                                                                                                          max-height: 90vh; /* evitar ultrapassar altura tela */
+                                                                                                            object-fit: cover;
+                                                                                                              display: block;
+                                                                                                                transition: transform 0.5s ease;
+                                                                                                                  cursor: pointer;
+                                                                                                                    border-bottom: 1px solid #dbdbdb;
+                                                                                                                      user-select: none;
+                                                                                                                      }
+
+                                                                                                                      .post-image:hover {
+                                                                                                                        transform: scale(1.05); /* zoom suave um pouco menor */
+                                                                                                                        }
+
+                                                                                                                        /* Conteúdo do post */
+                                                                                                                        .post-content {
+                                                                                                                          padding: 12px 15px 20px;
+                                                                                                                            font-size: 14px;
+                                                                                                                              max-width: 100vw;
+                                                                                                                                box-sizing: border-box;
+                                                                                                                                }
+
+                                                                                                                                .post-content p {
+                                                                                                                                  margin: 8px 0;
+                                                                                                                                    line-height: 1.3;
+                                                                                                                                      color: #262626;
+                                                                                                                                      }
+
+                                                                                                                                      /* Rodapé com tempo e ícone alinhados */
+                                                                                                                                      .post-time {
+                                                                                                                                        font-size: 0.75rem;
+                                                                                                                                          color: #8e8e8e;
+                                                                                                                                            margin-right: 10px;
+                                                                                                                                              vertical-align: middle;
+                                                                                                                                              }
+
+                                                                                                                                              .post-content > div {
+                                                                                                                                                display: flex;
+                                                                                                                                                  align-items: center;
+                                                                                                                                                    margin-bottom: 8px;
+                                                                                                                                                    }
+
+                                                                                                                                                    .icon {
+                                                                                                                                                      width: 18px;
+                                                                                                                                                        height: 18px;
+                                                                                                                                                          vertical-align: middle;
+                                                                                                                                                            filter: invert(20%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(85%) contrast(85%);
+                                                                                                                                                            }
+
+                                                                                                                                                            /* Evitar que textos fiquem grudados no ícone */
+                                                                                                                                                            .post-content p + div, .post-content div + p {
+                                                                                                                                                              margin-top: 8px;
+                                                                                                                                                              }
