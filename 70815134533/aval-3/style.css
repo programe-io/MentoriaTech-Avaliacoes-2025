@@ -1,0 +1,69 @@
+/* 1. Direções de Base do Tailwind (Necessário se estiver usando @apply) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2. Estilos da Aplicação */
+
+/* Estilo do Corpo da Página */
+.makeup-body {
+    @apply bg-neutral-50 min-h-screen text-gray-800;
+}
+
+/* Estilo do Cabeçalho */
+.makeup-header {
+    @apply bg-pink-600 shadow-lg p-5 flex items-center justify-between;
+}
+
+/* Estilo do Título/Logo do Cabeçalho */
+.header-logo {
+    @apply uppercase font-extrabold text-white text-2xl tracking-wider text-center md:text-left;
+}
+
+/* Estilo dos Links de Navegação */
+.nav-link {
+    @apply text-white hover:text-pink-200 transition duration-300 font-bold;
+}
+
+/* Estilo da Seção Principal (Main) */
+.main-content {
+    @apply py-10 px-4 max-w-6xl mx-auto flex flex-col gap-8 md:flex-row md:justify-center;
+}
+
+/* Estilo do Card (Post) */
+.post-card {
+    /* Base do Card */
+    @apply bg-white w-full md:w-1/3 rounded-xl shadow-xl overflow-hidden;
+    /* Efeito de Hover */
+    @apply transform hover:scale-[1.02] transition duration-500;
+}
+
+/* Estilo do Cabeçalho do Card */
+.card-header {
+    @apply flex items-center p-4 gap-3 border-b border-pink-100;
+}
+
+/* Estilo da Imagem de Perfil/Produto Pequena */
+.card-avatar {
+    @apply h-14 w-14 rounded-full border-3 border-pink-700 object-cover;
+}
+
+/* Estilo do Título do Card */
+.card-title {
+    @apply text-xl font-semibold text-pink-700;
+}
+
+/* Estilo da Imagem Principal do Card */
+.card-image {
+    @apply w-full h-64 object-cover;
+}
+
+/* Estilo do Parágrafo de Conteúdo */
+.card-text {
+    @apply text-sm text-gray-600 text-justify mb-4;
+}
+
+/* Estilo do Timestamp (Hora) */
+.card-timestamp {
+    @apply text-xs text-gray-400 text-right block;
+}
