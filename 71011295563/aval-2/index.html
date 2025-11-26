@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌎 Nosso Planeta, Nosso Futuro</title>
     <style>
-        /* Estilos básicos para o site (incluídos no HTML para simplicidade) */
+        /* Estilos básicos para o site */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -41,31 +41,36 @@
             overflow: hidden;
             padding: 20px 0;
         }
-        /* MAIN agora envolve toda a área de conteúdo principal e lateral */
+        /* MAIN e seu layout flexível */
         main {
             display: flex; /* Garante que o conteúdo e aside fiquem lado a lado */
             gap: 20px;
         }
-        /* ARTICLE e SECTION são usadas dentro de MAIN */
-        article {
-            background: white;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        /* Wrapper para o conteúdo principal (Article + Sections) */
+        .content-wrapper {
             flex: 2; /* Ocupa 2/3 do espaço */
         }
-        article img {
+        /* Estilização para o conteúdo de texto */
+        article, section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px; /* Espaçamento entre as seções */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        /* Estilização das imagens */
+        img {
             max-width: 100%;
             height: auto;
             display: block;
             margin: 15px 0;
             border-radius: 5px;
         }
+        /* Estilização para a barra lateral */
         aside {
             background: #e0f2e0; /* Fundo mais claro para destacar */
             padding: 20px;
-            margin-top: 20px;
+            margin-top: 0; /* Alinha com o topo do main */
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             flex: 1; /* Ocupa 1/3 do espaço */
@@ -91,24 +96,43 @@
     <nav>
         <ul>
             <li><a href="#inicio">Início</a></li>
-            <li><a href="#noticias">Notícias</a></li>
+            <li><a href="#agua">Água</a></li>
+            <li><a href="#energia">Energia</a></li>
             <li><a href="#dicas">Dicas Ecológicas</a></li>
-            <li><a href="#contato">Contato</a></li>
         </ul>
     </nav>
     
     <div class="container">
         <main>
             
-            <article id="inicio">
-                <h2>Bem-vindo ao Portal do Meio Ambiente</h2>
-                <p>A proteção do meio ambiente é fundamental para garantir a sobrevivência e o bem-estar de todas as formas de vida na Terra. Pequenas ações no dia a dia fazem uma grande diferença.</p>
+            <div class="content-wrapper">
                 
-                <img src="caminho_para_sua_imagem_aqui.jpg" alt="Ilustração do planeta Terra com árvores e água limpa">
-                
-                <p>Explore as seções para aprender mais sobre sustentabilidade, biodiversidade e como você pode contribuir.</p>
-            </article>
+                <article id="inicio">
+                    <h2>Bem-vindo ao Portal do Meio Ambiente</h2>
+                    <p>A proteção do meio ambiente é fundamental para garantir a sobrevivência e o bem-estar de todas as formas de vida na Terra. Pequenas ações no dia a dia fazem uma grande diferença.</p>
+                    
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/5500744237856308137_0" alt="Vista de uma floresta exuberante com árvores altas e vegetação densa.">
+                    
+                    <p>Explore as seções para aprender mais sobre sustentabilidade, biodiversidade e como você pode contribuir ativamente para um futuro mais verde.</p>
+                </article>
 
+                <section id="agua">
+                    <h2>💧 Conservação da Água</h2>
+                    <p>A água é um recurso vital e finito. Pequenas mudanças em casa, como consertar vazamentos e reduzir o tempo no banho, ajudam a proteger este recurso essencial.</p>
+                    
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/9601297974471427192_0" alt="Mãos segurando um punhado de água limpa, simbolizando a conservação.">
+                    
+                </section>
+
+                <section id="energia">
+                    <h2>☀️ Energias Sustentáveis</h2>
+                    <p>Investir em energias renováveis, como a solar e a eólica, é crucial para diminuir a emissão de gases do efeito estufa e combater as mudanças climáticas.</p>
+
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/4295875942801330181_0" alt="Aerogeradores de energia eólica em um campo, representando energia limpa.">
+                    
+                </section>
+            </div>
+            
             <aside id="dicas">
                 <h2>🌱 Dicas Ecológicas Simples</h2>
                 <h3>Reduza, Reutilize, Recicle</h3>
