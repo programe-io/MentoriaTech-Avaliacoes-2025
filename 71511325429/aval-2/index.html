@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guia Informativo — Modelo</title>
+  <meta name="description" content="Página modelo com formato de texto informativo: título, resumo, seção principal, dicas, referências e ações." />
+  <link rel="stylesheet" href="estilo-texto-informativo.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <div class="container">
+    <article class="info-article" aria-labelledby="titulo-principal">
+      <header class="info-header">
+        <div class="info-logo" aria-hidden="true">GI</div>
+        <div>
+          <h1 id="titulo-principal" class="info-title">Como escrever um texto informativo — guia prático</h1>
+          <p class="info-lead">Estrutura clara, linguagem objetiva e recursos visuais leves para melhorar a compreensão.</p>
+          <div class="info-meta small">
+            <span>Autor: Equipe Editorial</span>
+            <span>•</span>
+            <time datetime="2025-11-26">26 de novembro de 2025</time>
+            <span>•</span>
+            <span>Leitura: ~4 minutos</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="info-body">
+        <section class="summary" aria-label="Resumo">
+          <strong>Resumo:</strong>
+          <p>Um texto informativo deve apresentar fatos e explicações de forma clara e organizada. Use títulos e subtítulos, elementos como listas e quadros de resumo, e termine com referências ou links para leitura adicional.</p>
+        </section>
+
+        <section aria-labelledby="por-que">
+          <h2 id="por-que">Por que usar este formato?</h2>
+          <p>O formato informativo facilita o acesso rápido à informação, melhora a retenção e funciona bem em páginas web, boletins e relatórios. Priorize a objetividade: o leitor deve entender a ideia principal sem esforço.</p>
+        </section>
+
+        <section aria-labelledby="estrutura">
+          <h2 id="estrutura">Estrutura recomendada</h2>
+          <ol>
+            <li><strong>Título:</strong> claro e direto.</li>
+            <li><strong>Resumo/lead:</strong> 1–3 frases com a ideia central.</li>
+            <li><strong>Corpo:</strong> seções com subtítulos; cada seção foca em um ponto.</li>
+            <li><strong>Recursos visuais:</strong> tabelas, listas e blocos de destaque.</li>
+            <li><strong>Referências:</strong> links e leituras complementares.</li>
+          </ol>
+        </section>
+
+        <section aria-labelledby="dicas">
+          <h2 id="dicas">Dicas rápidas</h2>
+          <div class="tip-list">
+            <div class="tip">
+              <strong>Use frases curtas</strong>
+              <p>Frases curtas ajudam a velocidade de leitura e reduzem ambiguidades.</p>
+            </div>
+            <div class="tip">
+              <strong>Prefira voz ativa</strong>
+              <p>A voz ativa torna o texto mais direto e engajante.</p>
+            </div>
+            <div class="tip">
+              <strong>Padronize termos</strong>
+              <p>Mantenha consistência em nomes, unidades e siglas.</p>
+            </div>
+            <div class="tip">
+              <strong>Adicione resumo visual</strong>
+              <p>Blocos de resumo (como este) destacam pontos-chave para leitores apressados.</p>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="exemplo">
+          <h2 id="exemplo">Exemplo curto</h2>
+          <p class="highlight">A água potável é essencial à vida humana. Para garantir qualidade, sistemas municipais tratam a água removendo impurezas, microrganismos e ajustando o pH. Manter redes e monitoramento regular reduz riscos à saúde.</p>
+        </section>
+
+        <section aria-labelledby="referencias" class="references">
+          <h3 id="referencias">Referências & links</h3>
+          <a href="#" rel="noopener">Guia de redação clara — Exemplo</a>
+          <a href="#" rel="noopener">Boas práticas de estruturação</a>
+        </section>
+
+        <div class="actions">
+          <button class="btn primary" onclick="window.print()" aria-label="Imprimir">Imprimir</button>
+          <button class="btn" onclick="downloadHTML()" aria-label="Baixar HTML">Baixar HTML</button>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <script>
+    function downloadHTML(){
+      const blob = new Blob([document.documentElement.outerHTML], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'texto-informativo.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Texto Informativo com Navegação</title>
+</head>
+<body>
+
+  <!-- Navegação principal -->
+  <nav aria-label="Menu principal">
+    <ul>
+      <li><a href="#introducao">Introdução</a></li>
+      <li><a href="#objetivo">Objetivo</a></li>
+      <li><a href="#importancia">Importância</a></li>
+      <li><a href="#conclusao">Conclusão</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo informativo -->
+  <main>
+    <section id="introducao">
+      <h1>Texto Informativo</h1>
+      <p>
+        Este texto apresenta informações de forma clara e objetiva, com o intuito
+        de informar o leitor sobre um determinado tema.
+      </p>
+    </section>
+
+    <section id="objetivo">
+      <h2>Objetivo</h2>
+      <p>
+        O objetivo principal de um texto informativo é transmitir conhecimento,
+        dados e explicações sem expressar opiniões pessoais.
+      </p>
+    </section>
+
+    <section id="importancia">
+      <h2>Importância</h2>
+      <p>
+        Esse tipo de texto é amplamente utilizado em livros didáticos, sites,
+        jornais e manuais técnicos.
+      </p>
+    </section>
+
+    <section id="conclusao">
+      <h2>Conclusão</h2>
+      <p>
+        A tag <code>&lt;nav&gt;</code> ajuda a organizar a navegação do conteúdo,
+        melhorando a acessibilidade e a experiência do usuário.
+      </p>
+    </section>
+  </main>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Texto Informativo com Aside</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    main {
+      display: flex;
+      gap: 20px;
+    }
+    article {
+      flex: 3;
+    }
+    aside {
+      flex: 1;
+      background-color: #f0f0f0;
+      padding: 15px;
+      border-left: 4px solid #0077cc;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <!-- Conteúdo principal -->
+    <article>
+      <h1>Texto Informativo</h1>
+      <p>
+        O texto informativo tem como finalidade transmitir informações objetivas
+        e claras sobre um determinado assunto.
+      </p>
+
+      <h2>Características</h2>
+      <p>
+        Ele utiliza linguagem formal, dados concretos e organização lógica das ideias.
+      </p>
+    </article>
+
+    <!-- Conteúdo complementar -->
+    <aside aria-labelledby="titulo-aside">
+      <h2 id="titulo-aside">Você sabia?</h2>
+      <p>
+        A tag <code>&lt;aside&gt;</code> é usada para conteúdos complementares,
+        como curiosidades, notas, definições ou informações extras relacionadas
+        ao conteúdo principal.
+      </p>
+    </aside>
+  </main>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Uso da Tag IMG</title>
+</head>
+<body>
+
+  <article>
+    <h1>Tag &lt;img&gt; em HTML</h1>
+    <p>
+      A tag <code>&lt;img&gt;</code> é usada para inserir imagens em uma página HTML,
+      enriquecendo o conteúdo visual e informativo.
+    </p>
+
+    <img 
+      src="natureza.jpg" 
+      alt="Paisagem natural com montanhas e um lago"
+      width="400">
+
+    <h2>Importância da imagem</h2>
+    <p>
+      As imagens ajudam na compreensão do texto, atraem a atenção do leitor e tornam
+      a leitura mais agradável.
+    </p>
+  </article>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Uso da Tag Footer</title>
+</head>
+<body>
+
+  <article>
+    <h1>Texto Informativo</h1>
+    <p>
+      Este texto apresenta informações de forma clara e objetiva
+      sobre as principais tags estruturais do HTML.
+    </p>
+  </article>
+
+  <!-- Rodapé da página -->
+  <footer>
+    <p>Autor: Maria Silva</p>
+    <p>Publicado em: 2025</p>
+    <p>
+      Fonte:
+      <a href="https://developer.mozilla.org/" target="_blank">
+        MDN Web Docs
+      </a>
+    </p>
+  </footer>
+
+</body>
+</html>

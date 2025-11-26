@@ -1,0 +1,108 @@
+/* Estilo: Texto Informativo — arquivo CSS
+   Uso: aplique ao seu HTML com <link rel="stylesheet" href="estilo-texto-informativo.css"> 
+   Objetivo: tipografia clara, hierarquia visual, acessibilidade e componentes úteis (resumo, dicas, referência).
+*/
+:root{
+  --bg: #f7fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #6b7280;
+  --accent: #0b63d6; /* azul principal */
+  --accent-2: #2b8bf3;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --radius: 12px;
+  --max-width: 900px;
+  --gutter: 20px;
+  --read-width: 65ch; /* largura agradável para leitura */
+}
+/* Reset simples */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
+  padding:32px 16px;
+}
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:24px;
+}
+/* Card principal */
+.info-article{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:24px;
+  box-shadow:0 8px 24px rgba(15,23,42,0.06);
+  margin-bottom:24px;
+}
+/* Cabeçalho */
+.info-header{display:flex;align-items:center;gap:16px;margin-bottom:12px}
+.info-logo{
+  width:56px;height:56px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:white;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+}
+.info-title{font-size:1.5rem;margin:0}
+.info-lead{color:var(--muted);margin-top:6px;font-size:0.98rem}
+/* Meta (autor, data, leitura) */
+.info-meta{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:0.92rem;margin-bottom:14px}
+/* Tipografia de corpo */
+.info-body{max-width:var(--read-width)}
+.info-body h1, .info-body h2, .info-body h3{color:var(--text);margin:1.2em 0 0.5em}
+.info-body h1{font-size:1.35rem}
+.info-body h2{font-size:1.15rem}
+.info-body h3{font-size:1rem}
+.info-body p{margin:0 0 1em}
+.info-body a{color:var(--accent);text-decoration:none;border-bottom:1px dashed rgba(11,99,214,0.12)}
+.info-body a:hover{text-decoration:underline}
+/* Blocos úteis */
+.summary{
+  background:#f1f7ff;
+  border-left:4px solid var(--accent);
+  padding:12px 14px;
+  border-radius:8px;
+  margin-bottom:14px;
+}
+.callout{
+  background:#fff7ed;
+  border-left:4px solid #f59e0b;
+  padding:12px 14px;border-radius:8px;margin-bottom:14px;color:#92400e
+}
+.tip-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.tip{background:#fbfdff;border:1px solid rgba(11,99,214,0.06);padding:10px;border-radius:8px}
+/* Listas e destaque */
+.info-body ul, .info-body ol{margin:0 0 1em 1.2rem}
+.highlight{background:linear-gradient(90deg, rgba(11,99,214,0.06), rgba(43,139,243,0.03));padding:6px 10px;border-radius:6px}
+/* Caixa de referências/links */
+.references{font-size:0.92rem;border-top:1px solid rgba(15,23,42,0.04);padding-top:12px;color:var(--muted)}
+.references a{display:inline-block;margin-right:12px}
+/* Botões simples para ações (imprimir/baixar) */
+.actions{display:flex;gap:8px;margin-top:12px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);background:white;cursor:pointer;font-weight:600;font-size:0.95rem
+}
+.btn.ghost{background:transparent}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;border:0}
+/* Acessibilidade */
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:640px){
+  .info-body{max-width:100%}
+  .info-title{font-size:1.2rem}
+}
+/* Impressão */
+@media print{
+  body{background:white;padding:0}
+  .container{padding:0;margin:0}
+  .info-article{box-shadow:none;border-radius:0}
+  .actions, .info-logo{display:none}
+}
+/* Pequenas utilidades */
+.kv{display:flex;gap:10px;flex-wrap:wrap}
+.kv .item{background:#f8fafc;padding:8px 10px;border-radius:8px;border:1px solid rgba(15,23,42,0.03)}
+.small{font-size:0.88rem;color:var(--muted)}
+/* END */
