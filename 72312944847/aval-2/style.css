@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog com CSS Completo</title>
+
+    <style>
+
+        /* ----- ESTILO GERAL ----- */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            color: #333;
+        }
+
+        /* ----- CABEÇALHO ----- */
+        header {
+            background: linear-gradient(90deg, #4b79ff, #6f9dff);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+
+        /* ----- MENU ----- */
+        nav {
+            background: #333;
+            padding: 15px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* ----- CONTEÚDO PRINCIPAL ----- */
+        main {
+            width: 70%;
+            float: left;
+            padding: 20px;
+        }
+
+        article {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        article h2 {
+            margin-top: 0;
+        }
+
+        time {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        figure {
+            margin: 15px 0;
+        }
+
+        figure img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        figcaption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* ----- FORMULÁRIO ----- */
+        form {
+            margin-top: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #4b79ff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #365bff;
+        }
+
+        /* ----- BARRA LATERAL ----- */
+        aside {
+            width: 25%;
+            float: right;
+            background: white;
+            padding: 20px;
+            margin-top: 20px;
+            margin-right: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        aside h3 {
+            margin-top: 0;
+        }
+
+        /* ----- RODAPÉ ----- */
+        footer {
+            clear: both;
+            background: #222;
+            padding: 25px;
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>Blog Estilizado com CSS</h1>
+        <p>Usando várias tags para criar um layout completo</p>
+    </header>
+
+    <!-- MENU -->
+    <nav>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Artigos</a></li>
+            <li><a href="#">Categorias</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- ARTIGO 1 -->
+        <article>
+            <h2>Primeiro Post do Blog</h2>
+            <time datetime="2025-11-26">26 de Novembro de 2025</time>
+
+            <figure>
+                <img src="https://via.placeholder.com/800x300" alt="Imagem ilustrativa">
+                <figcaption>Imagem ilustrativa do post</figcaption>
+            </figure>
+
+            <p>
+                Este é o primeiro post do blog. Aqui podemos utilizar várias tags HTML junto com CSS para criar
+                um layout moderno, limpo e elegante.
+            </p>
+        </article>
+
+        <!-- ARTIGO 2 -->
+        <article>
+            <h2>Segundo Post — HTML e CSS na prática</h2>
+            <time datetime="2025-11-25">25 de Novembro de 2025</time>
+
+            <p>
+                Neste post mostramos como combinar HTML semântico com estilos CSS para produzir páginas bonitas e funcionais.
+            </p>
+        </article>
+
+        <!-- FORMULÁRIO -->
+        <section>
+            <h3>Deixe seu comentário</h3>
+
+            <form>
+                <label>Nome:</label>
+                <input type="text" placeholder="Seu nome" required>
+
+                <label>Comentário:</label>
+                <textarea rows="5" placeholder="Escreva algo..." required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- BARRA LATERAL -->
+    <aside>
+        <h3>Posts Recentes</h3>
+        <ul>
+            <li>Como criar layouts com CSS</li>
+            <li>Dicas de HTML moderno</li>
+            <li>Responsividade sem complicação</li>
+        </ul>
+
+        <h3>Categorias</h3>
+        <ul>
+            <li>Programação</li>
+            <li>Web Design</li>
+            <li>Tutoriais</li>
+        </ul>
+    </aside>
+
+    <!-- RODAPÉ -->
+    <footer>
+        © 2025 — Blog Completo com CSS
+    </footer>
+
+</body>
+</html>
