@@ -1,0 +1,165 @@
+/* --- 1. Estilos Globais e do Corpo (Body) --- */
+body {
+    /* Define o gradiente de fundo rosa suave */
+    background: linear-gradient(to bottom, #fff0f5 0%, #fbcfe8 100%); 
+    font-family: 'Arial', sans-serif;
+    color: #4a4a4a; /* Tom de cinza escuro para o texto */
+    margin: 0;
+    min-height: 100vh;
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura */
+}
+
+/* --- 2. Estilos do Cabeçalho (Header) --- */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(255, 105, 135, 0.15); /* Sombra mais rosa/suave */
+    padding: 1.25rem 2rem; /* Aumenta o padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Mantém o cabeçalho no topo */
+    top: 0;
+    z-index: 1000;
+}
+
+.header-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e91e63; /* Cor rosa vibrante (rose-600) */
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    transition: color 0.3s;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    gap: 1.5rem;
+    font-weight: 600;
+}
+
+nav a {
+    color: #707070;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    color: #d81b60; /* Rosa mais escuro no hover */
+    transform: translateY(-2px); /* Efeito sutil de levantar */
+}
+
+/* --- 3. Estilos da Seção Principal (Main) --- */
+main {
+    padding: 2.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    main {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+/* --- 4. Estilos do Card de Produto --- */
+.product-card {
+    /* Largura e layout */
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 380px;
+    
+    /* Sombra e Transição */
+    box-shadow: 0 10px 25px rgba(233, 30, 99, 0.2); /* Sombra mais destacada, com cor rosa */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; 
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: scale(1.03); /* Efeito de zoom */
+    box-shadow: 0 15px 35px rgba(233, 30, 99, 0.4); /* Sombra mais intensa no hover */
+}
+
+/* Estilo do cabeçalho interno do card */
+.card-header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+    gap: 0.75rem;
+}
+
+.card-image-avatar {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: 3px solid #e91e63; /* Borda rosa no avatar */
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #e91e63;
+}
+
+/* Imagem principal do produto */
+.product-image {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f8bbd0; /* Linha sutil de separação */
+}
+
+/* Conteúdo do texto */
+.card-body {
+    padding-top: 1rem;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    text-align: justify;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.card-timestamp {
+    font-size: 0.75rem;
+    color: #aaa;
+    text-align: right;
+    display: block;
+}
+
+/* --- 5. Efeito Bônus: Efeito Glitter no Texto (Opcional) --- */
+.product-card h2::after {
+    content: " ✨";
+    opacity: 0.8;
+}
+
+/* Efeito de brilho no título principal */
+.header-logo {
+    text-shadow: 0 0 5px rgba(255, 105, 180, 0.5), 0 0 10px rgba(255, 105, 180, 0.3);
+}
+
+/* --- 6. Media Query para Responsividade (Garante que os estilos funcionem em telas menores) --- */
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    nav {
+        display: none; /* O menu estaria oculto e precisaria de JavaScript para aparecer */
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        text-align: center;
+        padding-top: 0.5rem;
+    }
+}
