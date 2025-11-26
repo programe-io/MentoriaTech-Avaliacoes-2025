@@ -1,0 +1,158 @@
+/* Simulação do CSS gerado a partir das classes do Tailwind */
+
+/* Variáveis de cores (ajustadas para CSS) */
+:root {
+    --pink-100: #fce7f3;
+    --pink-300: #f9a8d4;
+    --pink-500: #ec4899;
+    --pink-700: #be185d;
+    --gray-900: #111827;
+    --gray-700: #374151;
+    --gray-500: #6b7280;
+    --gray-200: #e5e7eb;
+}
+
+/* Body (bg-gradient-to-b from-pink-100 to-pink-300 h-screen text-gray-900) */
+body {
+    background-image: linear-gradient(to bottom, var(--pink-100), var(--pink-300));
+    min-height: 100vh;
+    color: var(--gray-900);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+/* Header (shadow-lg p-5 flex items-center bg-pink-700/80 backdrop-blur-sm sticky top-0 z-10 text-white) */
+header {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    background-color: rgba(190, 24, 93, 0.8); /* pink-700/80 */
+    backdrop-filter: blur(4px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    color: white;
+}
+
+/* Header Title (flex-1 uppercase font-extrabold text-2xl tracking-wider) */
+header .flex-1 {
+    flex: 1 1 0%;
+    text-transform: uppercase;
+    font-weight: 800; /* font-extrabold */
+    font-size: 1.5rem; /* text-2xl */
+    letter-spacing: 0.05em; /* tracking-wider */
+    text-align: center;
+}
+@media (min-width: 768px) {
+    header .flex-1 {
+        text-align: left;
+    }
+}
+header .text-pink-300 {
+    color: var(--pink-300);
+}
+
+/* Header Nav (font-bold gap-6 hidden md:flex text-lg) */
+header nav {
+    font-weight: 700;
+    gap: 1.5rem;
+    font-size: 1.125rem;
+    display: none;
+}
+@media (min-width: 768px) {
+    header nav {
+        display: flex;
+    }
+}
+header nav a {
+    transition-property: color;
+    transition-duration: 300ms;
+}
+header nav a:hover {
+    color: var(--pink-100);
+}
+
+/* Main Container (py-8 px-4 flex flex-col gap-6 md:flex-row md:justify-center md:items-start) */
+main {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    main {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+/* Cards (bg-white py-4 rounded-xl shadow-2xl max-w-xs transition-transform transform hover:scale-[1.02]) */
+main > div {
+    background-color: white;
+    padding: 1rem 0;
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+    max-width: 20rem; /* max-w-xs */
+    transition: transform 300ms ease-in-out;
+}
+main > div:hover {
+    transform: scale(1.02);
+}
+
+/* Card Header (flex items-center pb-4 px-4 gap-3 border-b border-gray-200) */
+main > div > div:first-child {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 0.75rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+/* Profile Image (h-12 w-12 rounded-full border-2 border-pink-500 object-cover) */
+.h-12 { height: 3rem; }
+.w-12 { width: 3rem; }
+.rounded-full { border-radius: 9999px; }
+.border-2 { border-width: 2px; }
+.border-pink-500 { border-color: var(--pink-500); }
+.object-cover { object-fit: cover; }
+
+/* Title (text-2xl font-semibold) */
+main h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Card Image (w-full object-cover mt-4) */
+main img:nth-of-type(2) {
+    width: 100%;
+    object-fit: cover;
+    margin-top: 1rem;
+}
+
+/* Card Content (pt-4 px-4) */
+main > div > div:last-child {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Paragraph (text-sm text-justify text-gray-700) */
+main p {
+    font-size: 0.875rem;
+    text-align: justify;
+    color: var(--gray-700);
+}
+
+/* Timestamp (text-xs text-gray-500 text-right block mt-3 mb-1) */
+main span {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    text-align: right;
+    display: block;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+}
