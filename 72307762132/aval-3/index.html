@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3 Postcards — Exemplo</title>
+  <style>
+    :root{
+      --card-bg: #ffffff;
+      --accent: #ff6b6b;
+      --shadow: 0 8px 24px rgba(15,23,42,0.12);
+      --radius: 14px;
+      --max-width: 1100px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: light;
+    }
+
+    body{
+      margin:0;
+      background:#eef2f7;
+      padding:32px 20px;
+    }
+
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      max-width:1100px;
+      margin:auto;
+      padding:16px 0;
+    }
+
+    .menu{list-style:none; display:flex; gap:16px; padding:0; margin:0}
+    .menu a{text-decoration:none; color:#334155; font-weight:600}
+
+    .page-header{text-align:center;margin:24px 0}
+    .page-title{
+      font-size:2.5rem;
+      font-weight:900;
+      background:linear-gradient(90deg,#7c3aed,#06b6d4,#22c55e);
+      background-size:200% 200%;
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+
+    .wrap{
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      gap:24px;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    }
+
+    .postcard{
+      background:white;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 8px 24px rgba(0,0,0,.12);
+    }
+
+    .hero img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .meta{padding:16px}
+    .title{margin:0 0 6px}
+    .subtitle{margin:0;color:#64748b}
+    .desc{font-size:.95rem;color:#334155}
+
+    .site-footer{text-align:center;margin-top:32px;color:#64748b}
+
+  
+    /* destaque usando span */
+    .highlight{
+      color:#7c3aed;
+      font-weight:900;
+    }
+
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <!-- Cabeçalho do site -->
+  <header class="site-header">
+    <nav class="nav">
+      <div class="logo">📮 PostCards</div>
+      <ul class="menu">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Coleção</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Título principal da página -->
+  <header class="page-header" role="banner">
+    <h1 class="page-title">Cartões Postais — Coleção</h1>
+    <p class="lead">Três cartões prontos para compartilhar.</p>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="wrap" role="main">
+
+    <!-- Postcard 1 -->
+    <article class="postcard" aria-labelledby="p1-title">
+      <div class="hero">
+        <img src="https://picsum.photos/id/1018/1200/800" alt="Paisagem ao amanhecer na costa" />
+      </div>
+      <div class="meta">
+        <h2 id="p1-title" class="title"><span class="highlight">Amanhecer</span> na Costa</h2>
+        <p class="subtitle">Saudação de uma manhã dourada</p>
+        <p class="desc">Cartão-postal vibrante capturando a luz suave do sol nas ondas. Perfeito para enviar lembranças de viagens ou inspirações matinais.</p>
+      </div>
+      <div class="footer">
+        <div class="info">Destino: Praia / Foto: Unsplash-style</div>
+        <button class="btn" onclick="navigator.clipboard?.writeText('Amanhecer na Costa — saudades!')">Copiar mensagem</button>
+      </div>
+    </article>
+
+    <!-- Postcard 2 -->
+    <article class="postcard" aria-labelledby="p2-title">
+      <div class="hero">
+        <img src="https://picsum.photos/id/1018/1200/800" alt="Paisagem ao amanhecer na costa" />
+      </div>
+      <div class="meta">
+        <h2 id="p2-title" class="title"><span class="highlight">Trilhas</span> & Cafés</h2>
+        <p class="subtitle">Um convite para desacelerar</p>
+        <p class="desc">Ilustração de uma tarde entre montanhas e pequenas cafeterias locais. Use este cartão para convidar alguém a uma escapada ou só para mandar boas vibrações.</p>
+      </div>
+      <div class="footer">
+        <div class="info">Tema: Natureza e lazer</div>
+        <button class="btn" onclick="navigator.clipboard?.writeText('Vamos tomar um café depois da caminhada?')">Copiar mensagem</button>
+      </div>
+    </article>
+
+    <!-- Postcard 3 -->
+    <article class="postcard" aria-labelledby="p3-title">
+      <div class="hero">
+        <img src="https://picsum.photos/id/1018/1200/800" alt="Paisagem ao amanhecer na costa" />
+      </div>
+      <div class="meta">
+        <h2 id="p3-title" class="title"><span class="highlight">Noite</span> na Cidade</h2>
+        <p class="subtitle">Luzes e memórias urbanas</p>
+        <p class="desc">Um cartão com visual noturno: ruas iluminadas, arquitetura e a sensação de uma cidade que nunca dorme. Ideal para saudações cosmopolitas.</p>
+      </div>
+      <div class="footer">
+        <div class="info">Hora: Noite / Estilo: Urbano</div>
+        <button class="btn" onclick="navigator.clipboard?.writeText('Lembranças da cidade — até breve!')">Copiar mensagem</button>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>© 2025 — Exemplo de Post Cards em HTML & CSS</p>
+    </div>
+  </footer>
+
+</body>
+</html>
