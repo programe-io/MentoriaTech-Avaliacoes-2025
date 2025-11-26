@@ -1,50 +1,144 @@
-*{box-sizing:border-box}
-body{
-  font-family: Arial, Helvetica, sans-serif;
-  margin:0;
-  background:#f2f2f2;
-  color:#222;
+/* Configurações Básicas */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Fundo levemente acinzentado */
+    color: #333;
+    line-height: 1.6;
 }
 
-/* header */
-header{background:#0a5c3b;color:#fff;padding:18px 10px;text-align:center}
-header h1 span{font-weight:700}
-header p span{opacity:0.95}
-
-/* nav */
-nav{background:#0e8e57;padding:8px 0}
-nav .nav-inner{max-width:1000px;margin:0 auto;padding:0 10px}
-nav ul{list-style:none;display:flex;justify-content:center;gap:18px;padding:0;margin:0}
-nav a{color:#fff;text-decoration:none;font-weight:600}
-nav a span{display:inline-block;padding:6px}
-
-/* container com main + aside */
-.container{max-width:1000px;margin:18px auto;display:flex;gap:20px;padding:0 10px}
-
-/* main e sections */
-main{flex:3}
-section{margin-bottom:18px}
-section h2{color:#0a5c3b;margin-bottom:10px}
-
-/* artigos */
-article{background:#fff;padding:14px;border-radius:8px;margin-bottom:14px;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
-article h3{margin-top:0}
-.thumb img{width:100%;height:auto;display:block;border-radius:6px;margin:10px 0}
-.texto p span{line-height:1.5}
-
-/* aside */
-aside{flex:1}
-.aside-inner{background:#fff;padding:14px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
-.aside-inner ul{padding-left:18px}
-
-/* footer */
-footer{background:#0a5c3b;color:#fff;text-align:center;padding:14px 10px;margin-top:20px}
-footer span{opacity:0.95}
-
-/* responsivo */
-@media(max-width:800px){
-  .container{flex-direction:column;padding:0 12px}
-  nav ul{flex-wrap:wrap;gap:10px}
+/* Estilo para a tag span (Destaque do texto) */
+.destaque {
+    color: #ff8c00; /* Cor Laranja Vibrante para dar destaque */
+    font-weight: 600;
 }
 
+/* Container principal */
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
 
+/* Cabeçalho (Header) */
+header {
+    background-color: #008080; /* Azul-petróleo/Ciano escuro, cor vibrante do Piauí */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Navegação (Nav) */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #005f5f; /* Tom mais escuro no hover */
+    border-radius: 5px;
+}
+
+/* Seções de Posts */
+.post-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.post-section h2 {
+    color: #008080; /* Cor de destaque */
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* Artigo (Post) */
+.post {
+    margin-bottom: 30px;
+    padding: 15px 0;
+}
+
+.post h2 {
+    font-size: 2em;
+    color: #008080;
+    margin-top: 0;
+}
+
+.post h3 {
+    color: #38a5a5; /* Um tom um pouco mais claro */
+    font-size: 1.5em;
+    margin-top: 25px;
+}
+
+.post-meta {
+    font-style: italic;
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Rodapé (Footer) */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+#contato {
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+/* Responsividade Básica para telas menores (celulares) */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .post h2 {
+        font-size: 1.5em;
+    }
+}
