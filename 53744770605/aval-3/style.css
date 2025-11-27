@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0a0a0a;
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 30px 0;
+    background: #111;
+    border-bottom: 3px solid #e50914;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #e50914;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #1a1a1a;
+    padding: 15px 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #e50914;
+}
+
+.sessao {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.sessao h2 {
+    color: #e50914;
+    margin-bottom: 20px;
+}
+
+.banner, .img-meio {
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* textos */
+.topico {
+    background: #1a1a1a;
+    padding: 15px;
+    border-left: 3px solid #e50914;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+/* carros */
+.carros-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1c1c1c;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: .3s;
+    border: 2px solid transparent;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    border-color: #e50914;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 10px 0;
+    color: #e50914;
+}
+
+/* modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #1c1c1c;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    animation: pop .3s;
+}
+
+@keyframes pop {
+    from { transform: scale(.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+#modalImg {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.fechar {
+    float: right;
+    font-size: 2rem;
+    color: #e50914;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    margin-top: 40px;
+}
