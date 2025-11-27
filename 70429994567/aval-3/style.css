@@ -1,0 +1,92 @@
+/* Reset simples */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #222;
+}
+
+header {
+  background-color: #222;
+  color: #fff;
+  padding: 18px 10px;
+  text-align: center;
+}
+
+header h1 { margin: 0; font-size: 1.4rem; }
+header .brand { font-weight: 300; font-size: 0.9rem; color: #bdbdbd; }
+
+nav {
+  margin-top: 10px;
+}
+nav a {
+  color: #61dafb;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 600;
+}
+nav .nav-count {
+  font-size: 0.8rem;
+  color: #d4f3ff;
+  margin-left: 6px;
+}
+
+/* Main / container */
+main { padding: 22px 0; }
+.container {
+  width: 90%;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+/* Post */
+.post {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+}
+.post img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Header dentro do post */
+.post-header {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.post-header h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.tag {
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  background: #eef6ff;
+  border-radius: 999px;
+  color: #0366d6;
+  font-weight: 600;
+}
+
+/* Meta (autor/data) usando spans */
+.meta {
+  font-size: 0.85rem;
+  color: #666;
+}
+.meta .author { font-weight: 600; color: #333; }
+.meta .date { color: #777; }
+
+/* Pequenina responsividade */
+@media (min-width: 700px) {
+  .post-header { flex-direction: row; justify-content: space-between; align-items: center; }
+}
