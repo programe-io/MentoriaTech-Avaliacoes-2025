@@ -1,0 +1,1 @@
+https://file+.vscode-resource.vscode-cdn.net/c%3A/Users/cleis/OneDrive/Documentos/EMILLY/PRATICA_02/wreck%20in%20ralph.jpeg?version%3D1764110865216$0
