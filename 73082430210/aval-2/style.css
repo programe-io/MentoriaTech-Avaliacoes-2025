@@ -1,0 +1,102 @@
+/* Configurações básicas */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+.main-header {
+    background-color: #ffaa00; /* Cor Laranja/Amarela */
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Navegação */
+.main-nav {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+.main-nav a:hover {
+    background-color: #555;
+}
+
+/* Layout de Colunas (usando Flexbox) */
+#row {
+    display: flex; /* Habilita o layout flexível */
+    flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
+    gap: 20px; /* Espaço entre as colunas */
+    margin-top: 20px;
+}
+
+.main-content {
+    flex: 3; /* Ocupa 3 partes do espaço (a coluna maior) */
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    flex: 1; /* Ocupa 1 parte do espaço (a coluna menor) */
+    background-color: #e0e0e0; /* Cor de fundo da sidebar */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h3 {
+    color: #ffaa00;
+}
+
+.sidebar .card {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid #ffaa00; /* Linha amarela na lateral */
+}
+
+/* Rodapé */
+.main-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+/* Tornando a barra lateral de largura total em telas muito pequenas */
+@media (max-width: 768px) {
+    #row {
+        flex-direction: column; /* Coloca as colunas em pilha */
+    }
+    .main-content, .sidebar {
+        flex: auto; /* Ocupa toda a largura */
+    }
+}/* Estilização da Imagem de Perfil */
+.profile-img {
+    width: 100%; /* Ocupa toda a largura do cartão */
+    max-width: 150px; /* Limita o tamanho máximo */
+    height: auto;
+    display: block; /* Garante que a imagem se comporte bem */
+    margin: 0 auto 15px auto; /* Centraliza e adiciona margem inferior */
+    border-radius: 50%; /* Torna a imagem redonda */
+    border: 3px solid #ffaa00; /* Adiciona uma borda colorida */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
