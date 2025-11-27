@@ -1,47 +1,86 @@
-/* Estilo do botão de Toggle */
-#dark-mode-toggle {
-    position: absolute; /* Para que fique fora do fluxo normal, como no canto */
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: #000000; /* Cor padrão do ícone (modo claro) */
-    cursor: pointer;
-    font-size: 1.5rem;
-    padding: 10px;
-    transition: color 0.3s;
-}
-
-/* Estilos Padrão (Modo Claro) */
 body {
-    background-color: rgb(255, 254, 254); /* Fundo Claro */
-    color: black; /* Texto Escuro */
-    transition: background-color 0.5s, color 0.5s; /* Transição suave */
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a2a66;
+      color: white;
+    }
 
-background-image:url
-}
-    #box{
-        width:400px;
-        height:200px;
-        background-image: url(Star.Wars.Logo.svg);
-        background-size: cover;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #040404;
+      border-bottom: 1px solid #161212;
+    }
 
-}
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      flex: 1;
+    }
 
-/* Estilos para o Modo Escuro (Aplicados pela classe 'dark-mode' do JS) */
-.dark-mode {
-    background-color:#000000f7; /* Fundo Escuro */
-    color: #f0f0f0; /* Texto Claro */
-}
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
 
-.dark-mode header, .dark-mode footer {
-    background-color: hsl(241, 27%, 38%); /* Fundo dos cabeçalhos/rodapés escuros */
-}
+    nav a {
+      color: rgb(96, 42, 42);
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-.dark-mode a {
-    color: #000000; /* Cor dos links no modo escuro */
-}
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-.dark-mode #dark-mode-toggle {
-    color: #f0f0f0; /* Ícone Claro */
-}
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: #171717;
+      border-radius: 10px;
+      width: 300px;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+
+    .card .timestamp {
+      font-size: 0.8rem;
+      color: #656060;
+      text-align: right;
+    }
+
+    @media (max-width: 900px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
