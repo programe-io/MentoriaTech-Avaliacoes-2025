@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        header, footer, nav {
+            text-align: center;
+            padding: 15px;
+            background-color: #222;
+            color: #fff;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calculadora {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        #visor {
+            width: 95%;
+            height: 50px;
+            background-color: #eee;
+            color: #333;
+            font-size: 2em;
+            text-align: right;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .botoes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .botoes button {
+            padding: 20px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #666;
+            color: white;
+            transition: background-color 0.1s;
+        }
+
+        .botoes button:hover {
+            background-color: #555;
+        }
+
+        .operador {
+            background-color: #ff9500;
+        }
+        .operador:hover {
+            background-color: #e08b00;
+        }
+
+        #limpar, #igual {
+            background-color: #ff3b30;
+        }
+        #limpar:hover, #igual:hover {
+            background-color: #e03229;
+        }
+
+        #igual {
+            grid-column: span 2;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header>
+        <h1>Calculadora <span>Simples</span></h1>
+        <h2>Versão de Demonstração</h2>
+        <img src="https://via.placeholder.com/150" alt="Logo da Calculadora">
+    </header>
+
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+    </nav>
+
+    <main>
+        <div class="calculadora">
+            <input type="text" id="visor" disabled value="0">
+            <div class="botoes">
+                <button id="limpar" onclick="limparVisor()">C</button>
+                <button class="operador" onclick="adicionarAVisor('/')">/</button>
+                <button class="operador" onclick="adicionarAVisor('*')">*</button>
+                <button class="operador" onclick="adicionarAVisor('-')">-</button>
+
+                <button onclick="adicionarAVisor('7')">7</button>
+                <button onclick="adicionarAVisor('8')">8</button>
+                <button onclick="adicionarAVisor('9')">9</button>
+                <button class="operador" onclick="adicionarAVisor('+')">+</button>
+
+                <button onclick="adicionarAVisor('4')">4</button>
+                <button onclick="adicionarAVisor('5')">5</button>
+                <button onclick="adicionarAVisor('6')">6</button>
+                <button onclick="adicionarAVisor('.')">.</button>
+
+                <button onclick="adicionarAVisor('1')">1</button>
+                <button onclick="adicionarAVisor('2')">2</button>
+                <button onclick="adicionarAVisor('3')">3</button>
+                <button onclick="adicionarAVisor('0')">0</button>
+
+                <button id="igual" onclick="calcular()">=</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Feito por <span>Devs</span></p>
+    </footer>
+
+    <script>
+        const visor = document.getElementById('visor');
+
+        function adicionarAVisor(valor) {
+            if (visor.value === '0' && valor !== '.') {
+                visor.value = valor;
+            } else {
+                visor.value += valor;
+            }
+        }
+
+        function limparVisor() {
+            visor.value = '0';
+        }
+
+        function calcular() {
+            try {
+                visor.value = eval(visor.value);
+            } catch (error) {
+                visor.value = 'Erro';
+            }
+        }
+
+        window.onload = limparVisor;
+    </script>
+<script src="script.js"></script></body>
+</html>
