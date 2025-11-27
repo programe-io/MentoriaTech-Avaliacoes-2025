@@ -1,0 +1,101 @@
+:root {
+    /* Paleta de Cores inspirada na Vila */
+    --cor-tijolo: #b74f39; 
+    --cor-grama: #6b8e23; 
+    --cor-madeira: #8b4513; 
+    --cor-fundo-claro: #f5f5dc; 
+    --cor-texto-escuro: #333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-escuro);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Cabeçalho e Navegação --- */
+
+.cabecalho {
+    background-color: var(--cor-tijolo);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--cor-madeira);
+}
+
+.cabecalho h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px var(--cor-madeira);
+}
+
+.menu-principal {
+    background-color: var(--cor-madeira);
+    padding: 10px 0;
+}
+
+.menu-principal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.menu-principal ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.menu-principal ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.menu-principal ul li a:hover {
+    background-color: var(--cor-grama);
+}
+
+/* --- Layout Principal --- */
+
+.conteudo-principal {
+    display: flex; 
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.post-destaque, .posts-recentes {
+    flex: 3; 
+    background-color: white;
+    padding: 20px;
+    margin-right: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px dashed var(--cor-tijolo);
+    /* Adicionado transition para o hover do JS ficar suave */
+    transition: background-color 0.3s; 
+}
+
+.barra-lateral {
+    flex: 1; 
+    background-color: #ffe4b5; 
+    padding: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--cor-madeira);
+}
+
+/* Estilo do Rodapé */
+.rodape {
+    background-color: var(--cor-texto-escuro);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 0.8em;
+}
