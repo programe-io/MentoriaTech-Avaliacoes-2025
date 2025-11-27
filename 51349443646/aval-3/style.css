@@ -1,0 +1,67 @@
+/* ======= RESET ======= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* ======= HEADER ======= */
+header {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header nav a {
+    transition: 0.2s ease;
+}
+
+header nav a:hover {
+    color: #60a5fa; /* azul claro */
+    transform: scale(1.05);
+}
+
+/* ======= POST CARD ======= */
+.post-card {
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ======= PROFILE IMAGE ======= */
+.profile-img {
+    border-radius: 50%;
+    border: 2px solid #3b82f6;
+}
+
+/* ======= POST IMAGE ======= */
+.post-img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+/* ======= TEXT ======= */
+.post-time {
+    opacity: 0.7;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (min-width: 768px) {
+    main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .post-card {
+        max-width: 380px;
+    }
+}
