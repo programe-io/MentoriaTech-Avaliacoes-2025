@@ -1,0 +1,747 @@
+PS C:\Users\idalina-pessoal\OneDrive\Documentos\CURSO-KAWANY\PRATICA_02>
+ *  History restored 
+
+PS C:\Users\idalina-pessoal\OneDrive\Documentos\CURSO-KAWANY\PRATICA_02>
+PS C:\Users\idalina-pessoal\OneDrive\Documentos\CURSO-KAWANY\PRATICA_02> /* =========================
+>>    Forum / Página de atividade
+>>    "Entre a Legalidade e a Gestão Escolar"
+>>    Concluído por ChatGPT
+>>    ========================= */
+>>
+>> /* ---------- :root / variáveis ---------- */
+>> :root{
+>>   --bg: #f7f8fb;
+>>   --card: #ffffff;
+>>   --muted: #6b7280;
+>>   --text: #0f172a;
+>>   --accent: #0ea5a4;      /* teal */
+>>   --accent-600: #059e9b;
+>>   --danger: #ef4444;
+>>   --success: #16a34a;
+>>   --glass: rgba(255,255,255,0.6);
+>>   --shadow-sm: 0 1px 2px rgba(16,24,40,0.05);
+>>   --shadow-md: 0 6px 18px rgba(16,24,40,0.08);
+>>   --radius: 12px;
+>>   --max-width: 980px;
+>>   --mono: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+>>   --ui: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+>>   --fs-base: 16px;
+>> }
+>>
+>> /* ---------- Reset e box-sizing ---------- */
+>> *,
+>> *::before,
+>> *::after{
+>>   box-sizing: border-box;
+>>   -webkit-font-smoothing: antialiased;
+>>   -moz-osx-font-smoothing: grayscale;
+>> }
+>>
+>> html,body{
+>>   height: 100%;
+>>   margin: 0;
+>>   font-family: var(--ui);
+>>   font-size: var(--fs-base);
+>>   background: linear-gradient(180deg, var(--bg), #eef2f7 200px);
+>>   color: var(--text);
+>>   line-height: 1.5;
+>>   -webkit-tap-highlight-color: transparent;
+>> }
+>>
+>> /* ---------- Layout container ---------- */
+>> .container{
+>>   width: min(96%, var(--max-width));
+>>   margin: 36px auto;
+>>   display: grid;
+>>   grid-template-columns: 1fr;
+>>   gap: 20px;
+>> }
+>>
+>> /* ---------- Header / Título ---------- */
+>> .forum-header{
+>>   display: flex;
+>>   align-items: center;
+>>   gap: 16px;
+>>   background: linear-gradient(180deg, rgba(14,165,164,0.06), rgba(14,165,164,0.03));
+>>   padding: 18px;
+>>   border-radius: var(--radius);
+>>   box-shadow: var(--shadow-sm);
+>>   border: 1px solid rgba(14,165,164,0.06);
+>> }
+>>
+>> .forum-title{
+>>   margin: 0;
+>>   font-size: 1.35rem;
+>>   font-weight: 700;
+>>   letter-spacing: -0.2px;
+>>   color: #053e3e;
+>> }
+>>
+>> .forum-sub{
+>>   margin: 0;
+>>   font-size: 0.95rem;
+>>   color: var(--muted);
+>> }
+>>
+>> /* Icon placeholder */
+>> .forum-header .logo{
+>>   width: 56px;
+>>   height: 56px;
+>>   border-radius: 10px;
+>>   background: linear-gradient(135deg,var(--accent),var(--accent-600));
+>>   display: grid;
+>>   place-items: center;
+>>   color: white;
+>>   font-weight: 700;
+>>   font-size: 1.05rem;
+>>   box-shadow: 0 6px 18px rgba(14,165,164,0.12);
+>> }
+>>
+>> /* ---------- Card: Texto de abertura ---------- */
+>> .card{
+>>   background: var(--card);
+>>   padding: 20px;
+>>   border-radius: 12px;
+>>   box-shadow: var(--shadow-md);
+>>   border: 1px solid rgba(15,23,42,0.03);
+>> }
+>>
+>> .opening{
+>>   display: grid;
+>>   gap: 12px;
+>> }
+>>
+>> .opening p{
+>>   margin: 0;
+>>   color: #0b1220;
+>>   font-size: 1rem;
+>> }
+>>
+>> /* Emphasized list (quando quiser destacar dilemas) */
+>> .dilemmas{
+>>   display: grid;
+>>   gap: 8px;
+>>   margin-top: 6px;
+>>   padding-left: 8px;
+>> }
+>>
+>> .dilemmas li{
+>>   margin: 0;
+>>   color: var(--muted);
+>>   font-size: 0.98rem;
+>> }
+>>
+>> /* ---------- Resposta / Texto corrido da atividade ---------- */
+>> .post{
+>>   background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(250,250,251,0.75));
+>>   padding: 18px;
+>>   border-radius: 12px;
+>>   border: 1px solid rgba(15,23,42,0.03);
+>>   box-shadow: var(--shadow-sm);
+>> }
+>>
+>> .post h2{
+>>   margin-top: 0;
+>>   font-size: 1.05rem;
+>>   color: #071b1b;
+>> }
+>>
+>> .post p{
+>>   margin: 0 0 12px 0;
+>>   text-align: justify;
+>>   color: #0b1220;
+>> }
+>>
+>> /* Destaques inline */
+>> .mark{
+>>   background: linear-gradient(90deg, rgba(14,165,164,0.12), rgba(14,165,164,0.06));
+>>   padding: 2px 6px;
+>>   border-radius: 6px;
+>>   color: #064b49;
+>>   font-weight: 600;
+>> }
+>>
+>> /* ---------- Listas e subitens ---------- */
+>> .post ul{
+>>   margin: 8px 0 12px 1.1rem;
+>>   color: var(--muted);
+>> }
+>>
+>> .post li{
+>>   margin-bottom: 6px;
+>> }
+>>
+>> /* ---------- Ações / Botões ---------- */
+>> .row-actions{
+>>   display: flex;
+>>   gap: 10px;
+>>   align-items: center;
+>>   margin-top: 10px;
+>> }
+>>
+>> .btn{
+>>   appearance: none;
+>>   border: none;
+>>   background: var(--accent);
+>>   color: white;
+>>   padding: 8px 12px;
+>>   border-radius: 10px;
+>>   cursor: pointer;
+>>   font-weight: 600;
+>>   box-shadow: 0 6px 14px rgba(14,165,164,0.12);
+>>   transition: transform .12s ease, box-shadow .12s ease, opacity
+ .12s ease;
+>>   font-size: 0.95rem;
+>> }
+>>
+>> .btn:hover{ transform: translateY(-2px); }
+>> .btn:active{ transform: translateY(0); }
+>> .btn.secondary{
+>>   background: transparent;
+>>   color: var(--accent-600);
+>>   border: 1.5px solid rgba(5,158,155,0.12);
+>>   box-shadow: none;
+>> }
+>> .btn.danger{
+>>   background: var(--danger);
+>>   box-shadow: 0 8px 20px rgba(239,68,68,0.12);
+>> }
+>>
+>> /* ---------- Avisos / Alerts ---------- */
+>> .alert{
+>>   padding: 12px 14px;
+>>   border-radius: 10px;
+>>   display: flex;
+>>   gap: 12px;
+>>   align-items: flex-start;
+>>   font-size: 0.95rem;
+>> }
+>>
+>> .alert.info{
+>>   background: linear-gradient(90deg, rgba(14,165,164,0.06), rgba(14,165,164,0.03));
+>>   color: #053e3e;
+>>   border: 1px solid rgba(14,165,164,0.06);
+>> }
+>>
+>> .alert.warn{
+>>   background: #fff7e6;
+>>   color: #7a4b00;
+>>   border: 1px solid rgba(250,204,21,0.12);
+>> }
+>>
+>> /* ---------- Formulário de comentário / resposta ---------- */ 
+>> .reply-box{
+>>   display: grid;
+>>   gap: 10px;
+>>   margin-top: 8px;
+>> }
+>>
+>> .reply-box textarea{
+>>   width: 100%;
+>>   min-height: 120px;
+>>   padding: 12px;
+>>   resize: vertical;
+>>   border-radius: 10px;
+>>   border: 1px solid rgba(15,23,42,0.06);
+>>   background: linear-gradient(180deg,#fff,#fbfdff);
+>>   font-size: 1rem;
+>>   font-family: var(--ui);
+>>   outline: none;
+>>   transition: box-shadow .12s ease, border-color .12s ease;     
+>> }
+>> .reply-box textarea:focus{
+>>   box-shadow: 0 6px 20px rgba(14,165,164,0.08);
+>>   border-color: var(--accent-600);
+>> }
+>>
+>> /* Small helper row */
+>> .helper-row{
+>>   display: flex;
+>>   justify-content: space-between;
+>>   align-items: center;
+>>   gap: 12px;
+>>   color: var(--muted);
+>>   font-size: 0.9rem;
+>> }
+>>
+>> /* ---------- Meta / assinatura ---------- */
+>> .meta{
+>>   display: flex;
+>>   gap: 12px;
+>>   align-items: center;
+>>   color: var(--muted);
+>>   font-size: 0.9rem;
+>> }
+>>
+>> .avatar{
+>>   width: 36px;
+>>   height: 36px;
+>>   border-radius: 8px;
+>>   background: linear-gradient(135deg,#e6eef0,#dfeff0);
+>>   display: grid;
+>>   place-items: center;
+>>   color: #08323a;
+>>   font-weight: 700;
+>> }
+>>
+>> /* ---------- Tabela simples (para cronograma ou fases) ---------- */
+>> .table{
+>>   width: 100%;
+>>   border-collapse: collapse;
+>>   margin-top: 8px;
+>>   font-size: 0.95rem;
+>> }
+>> .table th, .table td{
+>>   text-align: left;
+>>   padding: 10px 12px;
+>>   border-bottom: 1px dashed rgba(15,23,42,0.04);
+>> }
+>> .table th{
+>>   color: var(--muted);
+>>   font-weight: 600;
+>> }
+>>
+>> /* ---------- Código / citação ---------- */
+>> .quote{
+>>   padding: 12px;
+>>   border-left: 4px solid rgba(14,165,164,0.14);
+>>   background: rgba(6,75,73,0.02);
+>>   border-radius: 8px;
+>>   color: #073333;
+>>   font-style: italic;
+>> }
+>>
+>> /* ---------- Acessibilidade: foco visível ---------- */        
+>> :focus{
+>>   outline: 3px solid rgba(14,165,164,0.12);
+>>   outline-offset: 2px;
+>> }
+>>
+>> /* ---------- Responsividade ---------- */
+>> @media (min-width: 760px){
+>>   .container{
+>>     grid-template-columns: 1fr;
+>>   }
+>>   .forum-header{ padding: 22px; gap: 18px; }
+>>   .forum-title{ font-size: 1.5rem; }
+>>   .post p{ font-size: 1rem; }
+>> }
+>>
+>> @media (min-width: 1100px){
+>>   .container{
+>>     grid-template-columns: 1fr 360px; /* post + aside */        
+>>     gap: 24px;
+>>   }
+>>
+>>   /* Aside card */
+>>   .aside{
+>>     position: sticky;
+>>     top: 28px;
+>>     height: fit-content;
+>>   }
+>> }
+>>
+>> /* ---------- Impressão ---------- */
+>> @media print{
+>>   body{ background: white; color: #111; }
+>>   .container{ width: 100%; margin: 0; }
+>>   .btn, .row-actions, .reply-box, .aside{ display: none !important; }
+>>   .card, .post{ box-shadow: none; border: none; }
+>> }
+>>
+>> /* ---------- Utils ---------- */
+>> .text-center{ text-align:center; }
+>> .small{ font-size: .9rem; color: var(--muted); }
+>> .mb-6{ margin-bottom: 6px; }
+>> .mt-6{ margin-top: 6px; }
+>> .flex{ display:flex; gap:8px; align-items:center; }
+>> .kv{ font-weight:700; color:var(--muted); font-size:.95rem; }   
+>>
+>> /* ---------- Exemplo de uso semântica - classes que talvez você
+ já tenha ---------- */
+>> /* .heading, .lead, .section-title */
+>> .heading{ font-size:1.15rem; font-weight:700; color:#042f2f; }  
+>> .lead{ font-size:1rem; color:#16323a; margin-bottom:8px; }      
+>> .section-title{ font-weight:700; margin:10px 0; color:#083a3a; }
+>>
+>> /* ---------- Pequenas animações para micro-interações ---------- */
+>> .fade-in{
+>>   animation: fadeIn .26s ease;
+>> }
+>> @keyframes fadeIn{
+>>   from{ opacity:0; transform: translateY(6px); }
+>>   to{ opacity:1; transform: translateY(0); }
+>> }
+>>
+PS C:\Users\cleis\OneDrive\Documentos\EMILLY\PRATICA_02>
+PS C:\Users\cleis\OneDrive\Documentos\EMILLY\PRATICA_02> /* =========================
+>>    Forum / Página de atividade
+>>    "Entre a Legalidade e a Gestão Escolar"
+>>    Concluído por ChatGPT
+>>    ========================= */
+>> 
+>> /* ---------- :root / variáveis ---------- */
+>> :root{
+>>   --bg: #f7f8fb;
+>>   --card: #ffffff;
+>>   --muted: #6b7280;
+>>   --text: #0f172a;
+>>   --accent: #0ea5a4;      /* teal */
+>>   --accent-600: #059e9b;
+>>   --danger: #ef4444;
+>>   --success: #16a34a;
+>>   --glass: rgba(255,255,255,0.6);
+>>   --shadow-sm: 0 1px 2px rgba(16,24,40,0.05);
+>>   --shadow-md: 0 6px 18px rgba(16,24,40,0.08);
+>>   --radius: 12px;
+>>   --max-width: 980px;
+>>   --mono: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+>>   --ui: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+>>   --fs-base: 16px;
+>> }
+>>
+>> /* ---------- Reset e box-sizing ---------- */
+>> *,
+>> *::before,
+>> *::after{
+>>   box-sizing: border-box;
+>>   -webkit-font-smoothing: antialiased;
+>>   -moz-osx-font-smoothing: grayscale;
+>> }
+>>
+>> html,body{
+>>   height: 100%;
+>>   margin: 0;
+>>   font-family: var(--ui);
+>>   font-size: var(--fs-base);
+>>   background: linear-gradient(180deg, var(--bg), #eef2f7 200px);
+>>   color: var(--text);
+>>   line-height: 1.5;
+>>   -webkit-tap-highlight-color: transparent;
+>> }
+>>
+>> /* ---------- Layout container ---------- */
+>> .container{
+>>   width: min(96%, var(--max-width));
+>>   margin: 36px auto;
+>>   display: grid;
+>>   grid-template-columns: 1fr;
+>>   gap: 20px;
+>> }
+>>
+>> /* ---------- Header / Título ---------- */
+>> .forum-header{
+>>   display: flex;
+>>   align-items: center;
+>>   gap: 16px;
+>>   background: linear-gradient(180deg, rgba(14,165,164,0.06), rgba(14,165,164,0.03));
+>>   padding: 18px;
+>>   border-radius: var(--radius);
+>>   box-shadow: var(--shadow-sm);
+>>   border: 1px solid rgba(14,165,164,0.06);
+>> }
+>>
+>> .forum-title{
+>>   margin: 0;
+>>   font-size: 1.35rem;
+>>   font-weight: 700;
+>>   letter-spacing: -0.2px;
+>>   color: #053e3e;
+>> }
+>>
+>> .forum-sub{
+>>   margin: 0;
+>>   font-size: 0.95rem;
+>>   color: var(--muted);
+>> }
+>>
+>> /* Icon placeholder */
+>> .forum-header .logo{
+>>   width: 56px;
+>>   height: 56px;
+>>   border-radius: 10px;
+>>   background: linear-gradient(135deg,var(--accent),var(--accent-600));
+>>   display: grid;
+>>   place-items: center;
+>>   color: white;
+>>   font-weight: 700;
+>>   font-size: 1.05rem;
+>>   box-shadow: 0 6px 18px rgba(14,165,164,0.12);
+>> }
+>>
+>> /* ---------- Card: Texto de abertura ---------- */
+>> .card{
+>>   background: var(--card);
+>>   padding: 20px;
+>>   border-radius: 12px;
+>>   box-shadow: var(--shadow-md);
+>>   border: 1px solid rgba(15,23,42,0.03);
+>> }
+>>
+>> .opening{
+>>   display: grid;
+>>   gap: 12px;
+>> }
+>>
+>> .opening p{
+>>   margin: 0;
+>>   color: #0b1220;
+>>   font-size: 1rem;
+>> }
+>>
+>> /* Emphasized list (quando quiser destacar dilemas) */
+>> .dilemmas{
+>>   display: grid;
+>>   gap: 8px;
+>>   margin-top: 6px;
+>>   padding-left: 8px;
+>> }
+>>
+>> .dilemmas li{
+>>   margin: 0;
+>>   color: var(--muted);
+>>   font-size: 0.98rem;
+>> }
+>>
+>> /* ---------- Resposta / Texto corrido da atividade ---------- */
+>> .post{
+>>   background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(250,250,251,0.75));
+>>   padding: 18px;
+>>   border-radius: 12px;
+>>   border: 1px solid rgba(15,23,42,0.03);
+>>   box-shadow: var(--shadow-sm);
+>> }
+>>
+>> .post h2{
+>>   margin-top: 0;
+>>   font-size: 1.05rem;
+>>   color: #071b1b;
+>> }
+>>
+>> .post p{
+>>   margin: 0 0 12px 0;
+>>   text-align: justify;
+>>   color: #0b1220;
+>> }
+>>
+>> /* Destaques inline */
+>> .mark{
+>>   background: linear-gradient(90deg, rgba(14,165,164,0.12), rgba(14,165,164,0.06));
+>>   padding: 2px 6px;
+>>   border-radius: 6px;
+>>   color: #064b49;
+>>   font-weight: 600;
+>> }
+>>
+>> /* ---------- Listas e subitens ---------- */
+>> .post ul{
+>>   margin: 8px 0 12px 1.1rem;
+>>   color: var(--muted);
+>> }
+>>
+>> .post li{
+>>   margin-bottom: 6px;
+>> }
+>>
+>> /* ---------- Ações / Botões ---------- */
+>> .row-actions{
+>>   display: flex;
+>>   gap: 10px;
+>>   align-items: center;
+>>   margin-top: 10px;
+>> }
+>>
+>> .btn{
+>>   appearance: none;
+>>   border: none;
+>>   background: var(--accent);
+>>   color: white;
+>>   padding: 8px 12px;
+>>   border-radius: 10px;
+>>   cursor: pointer;
+>>   font-weight: 600;
+>>   box-shadow: 0 6px 14px rgba(14,165,164,0.12);
+>>   transition: transform .12s ease, box-shadow .12s ease, opacity
+ .12s ease;
+>>   font-size: 0.95rem;
+>> }
+>>
+>> .btn:hover{ transform: translateY(-2px); }
+>> .btn:active{ transform: translateY(0); }
+>> .btn.secondary{
+>>   background: transparent;
+>>   color: var(--accent-600);
+>>   border: 1.5px solid rgba(5,158,155,0.12);
+>>   box-shadow: none;
+>> }
+>> .btn.danger{
+>>   background: var(--danger);
+>>   box-shadow: 0 8px 20px rgba(239,68,68,0.12);
+>> }
+>>
+>> /* ---------- Avisos / Alerts ---------- */
+>> .alert{
+>>   padding: 12px 14px;
+>>   border-radius: 10px;
+>>   display: flex;
+>>   gap: 12px;
+>>   align-items: flex-start;
+>>   font-size: 0.95rem;
+>> }
+>>
+>> .alert.info{
+>>   background: linear-gradient(90deg, rgba(14,165,164,0.06), rgba(14,165,164,0.03));
+>>   color: #053e3e;
+>>   border: 1px solid rgba(14,165,164,0.06);
+>> }
+>>
+>> .alert.warn{
+>>   background: #fff7e6;
+>>   color: #7a4b00;
+>>   border: 1px solid rgba(250,204,21,0.12);
+>> }
+>>
+>> /* ---------- Formulário de comentário / resposta ---------- */ 
+>> .reply-box{
+>>   display: grid;
+>>   gap: 10px;
+>>   margin-top: 8px;
+>> }
+>>
+>> .reply-box textarea{
+>>   width: 100%;
+>>   min-height: 120px;
+>>   padding: 12px;
+>>   resize: vertical;
+>>   border-radius: 10px;
+>>   border: 1px solid rgba(15,23,42,0.06);
+>>   background: linear-gradient(180deg,#fff,#fbfdff);
+>>   font-size: 1rem;
+>>   font-family: var(--ui);
+>>   outline: none;
+>>   transition: box-shadow .12s ease, border-color .12s ease;     
+>> }
+>> .reply-box textarea:focus{
+>>   box-shadow: 0 6px 20px rgba(14,165,164,0.08);
+>>   border-color: var(--accent-600);
+>> }
+>>
+>> /* Small helper row */
+>> .helper-row{
+>>   display: flex;
+>>   justify-content: space-between;
+>>   align-items: center;
+>>   gap: 12px;
+>>   color: var(--muted);
+>>   font-size: 0.9rem;
+>> }
+>>
+>> /* ---------- Meta / assinatura ---------- */
+>> .meta{
+>>   display: flex;
+>>   gap: 12px;
+>>   align-items: center;
+>>   color: var(--muted);
+>>   font-size: 0.9rem;
+>> }
+>>
+>> .avatar{
+>>   width: 36px;
+>>   height: 36px;
+>>   border-radius: 8px;
+>>   background: linear-gradient(135deg,#e6eef0,#dfeff0);
+>>   display: grid;
+>>   place-items: center;
+>>   color: #08323a;
+>>   font-weight: 700;
+>> }
+>>
+>> /* ---------- Tabela simples (para cronograma ou fases) ---------- */
+>> .table{
+>>   width: 100%;
+>>   border-collapse: collapse;
+>>   margin-top: 8px;
+>>   font-size: 0.95rem;
+>> }
+>> .table th, .table td{
+>>   text-align: left;
+>>   padding: 10px 12px;
+>>   border-bottom: 1px dashed rgba(15,23,42,0.04);
+>> }
+>> .table th{
+>>   color: var(--muted);
+>>   font-weight: 600;
+>> }
+>>
+>> /* ---------- Código / citação ---------- */
+>> .quote{
+>>   padding: 12px;
+>>   border-left: 4px solid rgba(14,165,164,0.14);
+>>   background: rgba(6,75,73,0.02);
+>>   border-radius: 8px;
+>>   color: #073333;
+>>   font-style: italic;
+>> }
+>>
+>> /* ---------- Acessibilidade: foco visível ---------- */        
+>> :focus{
+>>   outline: 3px solid rgba(14,165,164,0.12);
+>>   outline-offset: 2px;
+>> }
+>>
+>> /* ---------- Responsividade ---------- */
+>> @media (min-width: 760px){
+>>   .container{
+>>     grid-template-columns: 1fr;
+>>   }
+>>   .forum-header{ padding: 22px; gap: 18px; }
+>>   .forum-title{ font-size: 1.5rem; }
+>>   .post p{ font-size: 1rem; }
+>> }
+>>
+>> @media (min-width: 1100px){
+>>   .container{
+>>     grid-template-columns: 1fr 360px; /* post + aside */        
+>>     gap: 24px;
+>>   }
+>>
+>>   /* Aside card */
+>>   .aside{
+>>     position: sticky;
+>>     top: 28px;
+>>     height: fit-content;
+>>   }
+>> }
+>>
+>> /* ---------- Impressão ---------- */
+>> @media print{
+>>   body{ background: white; color: #111; }
+>>   .container{ width: 100%; margin: 0; }
+>>   .btn, .row-actions, .reply-box, .aside{ display: none !important; }
+>>   .card, .post{ box-shadow: none; border: none; }
+>> }
+>>
+>> /* ---------- Utils ---------- */
+>> .text-center{ text-align:center; }
+>> .small{ font-size: .9rem; color: var(--muted); }
+>> .mb-6{ margin-bottom: 6px; }
+>> .mt-6{ margin-top: 6px; }
+>> .flex{ display:flex; gap:8px; align-items:center; }
+>> .kv{ font-weight:700; color:var(--muted); font-size:.95rem; }   
+>>
+>> /* ---------- Exemplo de uso semântica - classes que talvez você
+ já tenha ---------- */
+>> /* .heading, .lead, .section-title */
+>> .heading{ font-size:1.15rem; font-weight:700; color:#042f2f; }  
+>> .lead{ font-size:1rem; color:#16323a; margin-bottom:8px; }      
+>> .section-title{ font-weight:700; margin:10px 0; color:#083a3a; }
+>>
+>> /* ---------- Pequenas animações para micro-interações ---------- */
+>> .fade-in{
+>>   animation: fadeIn .26s ease;
+>> }
+>> @keyframes fadeIn{
+>>   from{ opacity:0; transform: translateY(6px); }
+>>   to{ opacity:1; transform: translateY(0); }
+>> }
+>>
