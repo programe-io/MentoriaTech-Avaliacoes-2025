@@ -1,0 +1,81 @@
+/* Variáveis de Cores (Opcional, mas útil para manutenção) */
+:root {
+    --primary-color: #1e3a8a; /* Indigo-900 (Azul Marinho Escuro) */
+    --highlight-color: #f59e0b; /* Amber-500 (Amarelo Ouro) */
+    --background-start: #f9fafb; /* Gray-50 (Cinza Claro) */
+    --background-end: #e0e7ff; /* Indigo-100 (Azul Suave) */
+    --text-color: #374151; /* Gray-700 (Cor do Texto Principal) */
+}
+
+/* Base Body Styles */
+.corolla-body {
+    /* Cor de fundo em degradê de cima para baixo */
+    background: linear-gradient(to bottom, var(--background-start), var(--background-end));
+    min-height: 100vh;
+    color: var(--text-color);
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header Styles */
+.corolla-header {
+    /* Fundo azul marinho semi-transparente e efeito blur */
+    background-color: rgba(30, 58, 138, 0.9); 
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    color: white;
+}
+
+.header-title {
+    flex: 1;
+    text-transform: uppercase;
+    font-weight: 800; /* extrabold */
+    font-size: 1.5rem; /* 2xl */
+    text-align: center;
+    letter-spacing: 0.05em; /* tracking-wider */
+}
+
+@media (min-width: 768px) { /* md:text-left */
+    .header-title {
+        text-align: left;
+    }
+}
+
+.text-highlight {
+    color: var(--highlight-color);
+}
+
+/* Navigation Styles */
+.header-nav {
+    font-weight: bold;
+    gap: 1.5rem; /* gap-6 */
+    display: none;
+    font-size: 1.125rem; /* lg */
+}
+
+@media (min-width: 768px) { /* md:flex */
+    .header-nav {
+        display: flex;
+    }
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    transition: color 300ms;
+}
+
+.nav-link:hover {
+    color: #fcd34d; /* Cor de hover Amber-400 */
+}
+
+/* Main Content Styles */
+.main-content {
+    padding: 3rem 1rem; /* py
