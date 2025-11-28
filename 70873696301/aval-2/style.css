@@ -1,0 +1,215 @@
+/* Definições de Cores e Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --cor-principal: #007bff; /* Azul Profissional */
+    --cor-acento: #ffc107; /* Amarelo/Dourado (Acento de Energia) */
+    --cor-fundo: #f4f4f9; /* Fundo Claro */
+    --cor-texto: #333333; /* Texto Escuro */
+    --cor-secundaria: #ffffff; /* Fundo de seção/cabeçalho (Branco) */
+    --cor-card-fundo: #ffffff; /* Fundo dos cards/posts (Branco) */
+}
+
+/* Reset e Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 20px 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 1.8em;
+    color: var(--cor-acento); /* Título em destaque */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--cor-acento);
+}
+
+/* Container Principal para Layout de Colunas */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+/* Área de Conteúdo Principal (<main>) */
+.content-area {
+    flex: 3;
+}
+
+#latest-posts h2 {
+    font-size: 2.2em;
+    color: var(--cor-principal);
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--cor-principal);
+    padding-bottom: 10px;
+}
+
+/* Estilo para a Tag <article> (Post do Blog) */
+.blog-post {
+    background-color: var(--cor-card-fundo);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--cor-acento); /* Linha de destaque */
+    transition: transform 0.3s;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.blog-post h3 {
+    font-size: 1.8em;
+    color: var(--cor-texto);
+    margin-bottom: 10px;
+}
+
+.blog-post .post-meta {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+/* Estilo para a Tag <img> dentro do <article> */
+.blog-post img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin: 15px 0;
+    border-radius: 6px;
+}
+
+.read-more {
+    display: inline-block;
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 15px;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: #0056b3;
+}
+
+/* Barra Lateral (<aside>) */
+.sidebar {
+    flex: 1;
+    background-color: var(--cor-secundaria);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+}
+
+.sidebar h3 {
+    color: var(--cor-principal);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--cor-acento);
+    padding-bottom: 5px;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.sidebar ul li a {
+    display: block;
+    color: var(--cor-texto);
+    padding: 8px 0;
+    text-decoration: none;
+    border-bottom: 1px dotted #ddd;
+    transition: color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: var(--cor-principal);
+}
+
+.newsletter-signup {
+    background-color: #e9ecef; /* Fundo cinza claro para destaque */
+    padding: 20px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid var(--cor-acento);
+}
+
+.newsletter-signup h4 {
+    color: var(--cor-principal);
+    margin-bottom: 10px;
+}
+
+.newsletter-signup p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.newsletter-signup img {
+    width: 60px; /* Tamanho do ícone/imagem */
+    margin-bottom: 15px;
+}
+
+.signup-button {
+    padding: 10px 20px;
+    background-color: var(--cor-acento);
+    color: var(--cor-texto);
+    font-weight: 700;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup-button:hover {
+    background-color: #e0a800; /* Tonalidade mais escura do acento */
+}
+
+/* Rodapé */
+footer {
+    background-color: #343a40; /* Cinza Escuro */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    margin-top: 30px;
+}
