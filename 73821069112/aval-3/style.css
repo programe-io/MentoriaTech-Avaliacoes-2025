@@ -1,0 +1,112 @@
+/* Reset simples */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+    background: #e6ecf0;
+      color: #14171a;
+        line-height: 1.4;
+          -webkit-font-smoothing:antialiased;
+          }
+
+          /* HEADER + NAV */
+          header {
+            background: #1da1f2;
+              color: #fff;
+                position: sticky;
+                  top: 0;
+                    z-index: 50;
+                      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+                      }
+                      .header-inner {
+                        max-width: 960px;
+                          margin: 0 auto;
+                            display: flex;
+                              align-items: center;
+                                justify-content: space-between;
+                                  padding: 14px 16px;
+                                  }
+                                  .logo { font-weight: 700; font-size: 20px; letter-spacing: 1px; }
+
+                                  /* NAV */
+                                  nav .nav-list {
+                                    list-style: none;
+                                      display: flex;
+                                        gap: 12px;
+                                          align-items: center;
+                                          }
+                                          nav .nav-list a {
+                                            color: white;
+                                              text-decoration: none;
+                                                padding: 8px 10px;
+                                                  border-radius: 8px;
+                                                    font-weight: 600;
+                                                      transition: background .15s;
+                                                      }
+                                                      nav .nav-list a:hover,
+                                                      nav .nav-list a:focus {
+                                                        background: rgba(255,255,255,0.15);
+                                                          outline: none;
+                                                          }
+
+                                                          /* MAIN & FEEDS */
+                                                          main { max-width: 960px; margin: 18px auto; padding: 0 16px; }
+                                                          .feed {
+                                                            background: #fff;
+                                                              border-radius: 12px;
+                                                                padding: 18px;
+                                                                  margin-bottom: 18px;
+                                                                    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+                                                                      border: 1px solid #d7dde2;
+                                                                      }
+                                                                      .feed.small { max-width: 420px; margin: 0 0 18px 0; }
+
+                                                                      .feed h2 {
+                                                                        color: #1da1f2;
+                                                                          margin-bottom: 8px;
+                                                                            font-size: 20px;
+                                                                            }
+                                                                            .section-description { color: #657786; margin-bottom: 12px; }
+
+                                                                            /* POSTS */
+                                                                            .post {
+                                                                              display: flex;
+                                                                                gap: 12px;
+                                                                                  padding: 12px 0;
+                                                                                    border-top: 1px solid #eef3f6;
+                                                                                    }
+                                                                                    .post:first-of-type { border-top: none; }
+
+                                                                                    .avatar {
+                                                                                      width: 64px;
+                                                                                        height: 64px;
+                                                                                          border-radius: 50%;
+                                                                                            object-fit: cover;
+                                                                                              border: 2px solid #cfeafc;
+                                                                                                flex-shrink: 0;
+                                                                                                }
+
+                                                                                                .content { flex: 1; }
+                                                                                                .content h3 { font-size: 16px; margin-bottom: 6px; }
+                                                                                                .username { color: #657786; font-weight: 600; font-size: 14px; }
+
+                                                                                                /* Span destacado */
+                                                                                                .name-highlight { font-weight: 700; color: #0b7fcf; }
+                                                                                                .word-strong { font-weight: 700; color: #14171a; }
+
+                                                                                                /* Footer */
+                                                                                                footer {
+                                                                                                  text-align: center;
+                                                                                                    color: #657786;
+                                                                                                      padding: 20px 0 40px;
+                                                                                                        font-size: 14px;
+                                                                                                        }
+
+                                                                                                        /* Responsividade */
+                                                                                                        @media (max-width: 700px) {
+                                                                                                          .header-inner { flex-direction: column; gap: 8px; padding: 12px; }
+                                                                                                            nav .nav-list { flex-wrap: wrap; justify-content: center; }
+                                                                                                              .post { flex-direction: row; align-items: flex-start; }
+                                                                                                                .avatar { width: 56px; height: 56px; }
+                                                                                                                  main { padding: 0 12px; }
+                                                                                                                  }
+                                                                                                                  
