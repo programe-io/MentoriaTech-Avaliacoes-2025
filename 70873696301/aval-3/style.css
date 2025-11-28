@@ -1,0 +1,123 @@
+/* Configurações de Cores e Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --cor-primaria: #FF0000; /* Vermelho */
+    --cor-secundaria: #FFC300; /* Amarelo */
+    --cor-fundo: #f4f4f4;
+    --cor-card: #ffffff;
+    --cor-texto: #333333;
+    --cor-texto-claro: #f4f4f4;
+}
+
+/* Estilos Gerais (Mantidos do projeto anterior) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.5;
+}
+
+/* Layout Principal e Header (Mantidos) */
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: 15px 0;
+    border-bottom: 5px solid var(--cor-secundaria);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+nav h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+}
+.container {
+    display: grid;
+    grid-template-columns: 3fr 1fr; 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.menu-item {
+    background-color: var(--cor-card);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+.menu-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; 
+    border-radius: 6px;
+    margin: 10px 0 15px;
+}
+/* ... outros estilos de navegação e item (omitidos para brevidade) ... */
+
+
+/* NOVO CSS: Estilizando as Tags <span> */
+
+/* 1. Estilizando o Preço de Destaque */
+.valor-destaque {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5em; /* Aumenta o tamanho dentro do div.price */
+    color: green; /* Verde para dar destaque positivo ao preço */
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* 2. Estilizando o Preço Antigo (Para combos/descontos) */
+.valor-antigo {
+    text-decoration: line-through; /* Risca o valor antigo */
+    color: #999; /* Cor cinza sutil */
+    font-size: 0.8em; /* Deixa o texto menor */
+    margin-right: 10px;
+}
+
+/* 3. Estilizando a Tag 'GRÁTIS' */
+.gratis-tag {
+    /* Fundo vermelho para chamar a atenção */
+    background-color: var(--cor-primaria); 
+    color: var(--cor-texto-claro);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-left: 5px;
+}
+
+/* 4. Estilizando o Tempo de Entrega */
+.tempo-entrega {
+    font-weight: 700;
+    color: var(--cor-primaria);
+    font-size: 1.1em;
+}
+
+/* Estilos para a Barra Lateral (para garantir que os spans funcionem bem) */
+.promo-box {
+    background-color: var(--cor-secundaria);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: var(--cor-texto);
+}
+.delivery-info {
+    background-color: #f0f0f0; /* Fundo mais claro para info */
+    padding: 20px;
+    border-radius: 10px;
+}
