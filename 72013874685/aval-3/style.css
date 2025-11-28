@@ -1,0 +1,35 @@
+/* ========================================================= */
+/* 1. Importação da Fonte e do Tailwind CSS */
+/* ========================================================= */
+
+/* Importação do Inter do Google Fonts (opcional, mas bom ter aqui) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+/* A diretiva @tailwind é necessária para que o Tailwind compile e injete seu estilo base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ========================================================= */
+/* 2. Estilos Globais Customizados (Se necessário) */
+/* ========================================================= */
+
+/* Exemplo de uma customização global (se quiser remover o fundo de seleção de texto) */
+::selection {
+    background-color: var(--accent-red); /* Substitua pela sua cor de destaque */
+    color: white;
+}
+
+/* Você pode definir variáveis CSS para usar em qualquer lugar (não estritamente necessário aqui, mas boa prática) */
+:root {
+    --primary-dark: #1C2833;
+    --accent-red: #E74C3C;
+}
+
+/* Exemplo de como você usaria @apply para criar uma classe customizada com Tailwind */
+.card-hover-effect {
+    @apply hover:shadow-xl transition duration-300;
+}
+
+/* Exemplo de uso: <div class="card-hover-effect">...</div> no HTML. */
