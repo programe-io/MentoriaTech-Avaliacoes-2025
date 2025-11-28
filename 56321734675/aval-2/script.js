@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Meu Site</title>
+</head>
+<body>
+
+    <header>
+
+        <h1>Meu Site</h1>
+        <p>Meu site muito top!</p>
+
+    </header>
+
+    <nav>
+
+        <a href="">Inicio</a>
+        <a href="">Pagina 2</a>        
+        <a href="">Pagina 3</a>        
+        <a href="">Pagina 4</a>        
+
+    </nav>
+
+    <section id="row">
+
+        <aside>
+
+            <h2>Sobre Mim</h2>
+            <h5>Fotinha</h5>
+            <div class="fakeimage">Imagem</div>
+
+            <p>Minha Bio</p>
+            <h3>Minha Galeria</h3>
+
+            <div class="fakeimage">Imagem</div>            
+            <div class="fakeimage">Imagem</div>            
+            <div class="fakeimage">Imagem</div>
+
+        </aside>
+
+        <main>
+            <article>
+                <h2>TITULO DA POSTAGEM</h2>
+                <h5>Jaiane, 24 de set, 2025</h5>
+                <img src="" alt="">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing 
+                    elit. Ex, minus aliquam nostrum, id veniam, 
+                    repellat distinctio libero molestiae dicta labore 
+                    veritatis dolore recusandae unde! Ipsum suscipit ducimus 
+                    quo magni rerum.</p>
+            </article>
+        </main>
+
+    </section>
+
+    <footer>
+        <p>CopyRight - Todos os Direitos Reservados - 2024 | programe.io</p>
+    </footer>
+
+</body>
+</html>
