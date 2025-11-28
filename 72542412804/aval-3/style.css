@@ -1,0 +1,203 @@
+/* Definição de Variáveis de Cores (Padrão: Light Mode) */
+:root {
+    --bg-primary: #fafafa;
+    --bg-secondary: #ffffff; 
+    --border-color: #dbdbdb; 
+    --text-primary: #262626; 
+    --text-secondary: #8e8e8e; 
+    --text-highlight: #0095f6; /* Cor do link/ação (azul do Instagram) */
+    --icon-color: #262626; /* Cor dos ícones (Curtir, Comentar) */
+}
+
+/* === DARK MODE VARIÁVEIS === */
+body.dark-mode {
+    --bg-primary: #000000; /* Fundo Preto Puro para visual moderno */
+    --bg-secondary: #121212; /* Fundo de Cards (um pouco mais claro) */
+    --border-color: #363636; 
+    --text-primary: #ffffff; 
+    --text-secondary: #a8a8a8; 
+    --text-highlight: #0095f6;
+    --icon-color: #ffffff; /* Ícones brancos no Dark Mode */
+}
+
+/* -------------------------------------- */
+/* ESTILOS GERAIS */
+/* -------------------------------------- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-primary); 
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    color: var(--text-primary); 
+}
+
+/* Cabeçalho mais simples */
+header {
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 0; /* Menos padding */
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 1.6em; /* Um pouco menor */
+    color: var(--text-primary);
+    margin: 0;
+}
+
+h2 {
+    /* Título H2 mantido, adaptado para as variáveis de cor */
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin: 40px auto 20px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color); /* Usando a variável */
+    padding-bottom: 10px;
+    width: 90%;
+    max-width: 630px; /* Largura do feed */
+}
+
+/* -------------------------------------- */
+/* ESTRUTURA E FEED */
+/* -------------------------------------- */
+.feed {
+    width: 100%;
+    max-width: 630px; 
+    margin: 0 auto;
+    padding-top: 20px; /* Adiciona um espaço no topo do feed */
+    padding-bottom: 50px;
+}
+
+.post-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Remove o gap entre os posts para ficarem mais juntos */
+}
+
+/* Estilo do Post (O CARD) - Mais moderno */
+.post {
+    background-color: var(--bg-secondary);
+    /* REMOVIDA A BORDA EXTERNA de 1px, o post se funde com o fundo, como no Instagram */
+    /* border: 1px solid var(--border-color); */
+    border-radius: 0; /* Sem arredondamento para posts de feed (exceto nos cantos da tela) */
+    margin-bottom: 20px; /* Mantém o espaçamento entre posts */
+}
+
+/* -------------------------------------- */
+/* CABEÇALHO DO POST */
+/* -------------------------------------- */
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px; /* Mais preenchimento vertical */
+}
+
+.profile-pic {
+    /* Adicione um estilo de imagem de perfil (você precisará da tag <img> no HTML) */
+    width: 32px; 
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+    border: 1px solid var(--border-color); /* Borda sutil */
+}
+
+.user-info {
+    font-weight: 600; 
+    color: var(--text-primary); /* Alterado para var(--text-primary) */
+    font-size: 0.95em;
+    margin-right: auto;
+}
+
+.location {
+    font-size: 0.8em;
+    color: var(--text-secondary);
+    display: block; /* Mover para linha de baixo se houver */
+    font-weight: 400;
+    margin-top: 2px;
+}
+
+/* -------------------------------------- */
+/* IMAGEM (FOCO NO 4:5 VERTICAL) */
+/* -------------------------------------- */
+.post-image {
+    width: 100%; 
+    /* Simula a proporção 4:5 (vertical) - O HTML da imagem deve ter um 'height' maior que 'width'
+       Se você estiver usando uma tag <img> real, ela se ajustará. 
+       Para simulação, podemos usar um truque: */
+    aspect-ratio: 4 / 5; 
+    max-height: 790px; /* Altura máxima para evitar posts muito longos em desktop */
+    display: block;
+    object-fit: cover;
+    /* REMOVIDA a borda inferior */
+}
+
+/* -------------------------------------- */
+/* AÇÕES (ÍCONES E LIKES) */
+/* -------------------------------------- */
+
+.post-actions {
+    display: flex;
+    justify-content: space-between; /* Espaçamento entre os grupos de ícones */
+    padding: 10px 15px 5px;
+}
+
+.left-actions {
+    display: flex;
+    gap: 16px; /* Espaço entre os ícones de ação (curtir, comentar) */
+}
+
+.icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--icon-color); /* Usa a cor do ícone definida */
+}
+
+.save-icon {
+    margin-left: auto; /* Empurra o ícone de salvar para a direita */
+}
+
+.likes-count {
+    padding: 0 15px;
+    font-weight: 600;
+    font-size: 0.9em;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+/* -------------------------------------- */
+/* CONTEÚDO E RODAPÉ */
+/* -------------------------------------- */
+.post-content {
+    padding: 0 15px 5px;
+    font-size: 0.95em;
+}
+
+.post-content p {
+    margin: 0;
+    word-break: break-word; /* Garante que palavras longas quebrem */
+}
+
+.username-caption {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.view-comments {
+    padding: 5px 15px 5px;
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.post-footer {
+    padding: 0 15px 10px;
+    color: var(--text-secondary);
+    font-size: 0.7em; /* Texto "há X horas" */
+    text-transform: uppercase;
+}
