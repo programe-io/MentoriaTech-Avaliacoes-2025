@@ -1,0 +1,47 @@
+/*
+   Este é o seu arquivo de entrada do Tailwind CSS. 
+   O conteúdo final deste arquivo (style.css) deve ser gerado pelo Tailwind CLI.
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================================================================
+   CSS Customizado (Adicione aqui qualquer estilo que não seja Tailwind)
+   =================================================================== 
+*/
+
+/* Estilo para a sombra 3xl personalizada com um toque dourado.
+   Embora você tenha a classe Tailwind 'shadow-3xl', criamos uma classe 
+   customizada aqui para controle total, se necessário, ou para 
+   apenas demonstrar um estilo extra.
+*/
+.shadow-3xl {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 40px rgba(180, 83, 9, 0.4); /* Combinação de sombra escura e um brilho ambar */
+}
+
+/* Estilo específico para o menu móvel ser exibido quando o JavaScript
+   adicionar a classe 'active'. 
+   Usamos !important para garantir que sobrescreva o 'hidden' do Tailwind no mobile.
+*/
+@media (max-width: 767px) {
+    .mobile-menu {
+        display: none; /* Padrão: Escondido no mobile */
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        position: absolute;
+        top: 60px; /* Ajuste para logo abaixo do header */
+        left: 0;
+        background-color: #0c0c0c; /* Fundo escuro para o menu */
+        border-bottom: 2px solid #fbbf24; /* Borda dourada */
+        padding: 1rem 0;
+        z-index: 10;
+        gap: 1rem;
+    }
+
+    .mobile-menu.active {
+        display: flex !important; /* Exibe quando ativo */
+    }
+}
