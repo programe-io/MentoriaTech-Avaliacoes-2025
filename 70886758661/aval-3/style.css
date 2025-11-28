@@ -1,0 +1,54 @@
+/* styles.css com Efeitos Especiais */
+
+/* 1. Efeito de Fundo de Pista/Velocidade */
+/* Cria um gradiente escuro que se move levemente, dando sensação de movimento */
+body {
+    /* Gradiente radial sutil para profundidade */
+    background: radial-gradient(circle at 50% 100%, #1a1a1a, #0d0d0d, #000000);
+    background-size: 200% 200%; /* Permite a animação se mover no background */
+    animation: background-pan 30s linear infinite alternate;
+}
+
+@keyframes background-pan {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* 2. Efeito de Sombra Neon (Melhorado) */
+.text-shadow-neon {
+    text-shadow: 0 0 7px #0070F3, 0 0 15px #0070F3, 0 0 20px #0070F3;
+}
+
+/* 3. Efeito Tilt/3D nos Cards (Sem usar o plugin do Tailwind para 3D) */
+.transform-tilt:hover {
+    /* Inclina no eixo X e Y (como uma moto fazendo uma curva) */
+    transform: perspective(1000px) rotateX(2deg) rotateY(3deg) translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 112, 243, 0.5); /* Sombra mais intensa no hover */
+}
+
+.transform-tilt {
+    /* Transição para suavizar o efeito de inclinação */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+/* 4. Estilos para Animação de Revelação (Scroll Reveal com Delay) */
+/* Inicialmente esconde e move o card para baixo */
+.reveal-card {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95); /* Entra de baixo para cima, levemente menor */
+    /* A transição será controlada pelo JS com delay */
+}
+
+/* Estilo para quando o card deve ser revelado (visível) */
+.reveal-card.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    /* A duração é definida no JS, mas a transição está aqui */
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
