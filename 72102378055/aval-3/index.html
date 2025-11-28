@@ -1,93 +1,136 @@
-!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MakeUp House </title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
+    <title>Boca Rosa Beauty</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'logo': ['Pacifico', 'cursive'],
+                    },
+                    colors: {
+                        'bg-light': '#FFF5F7',          // Fundo rosado claro
+                        'primary-dark': '#4B2B3A',      // Roxo escuro para títulos e header
+                        'accent-pink': '#FF3366',       // Rosa vibrante de destaque
+                        'text-muted': '#6B7280',        // Cinza suave para textos secundários
+                        'card-bg': '#FFFFFF',            // Fundo branco para cards
+                        'border-light': '#F3E8EE',       // Borda suave para cards
+                    },
+                    boxShadow: {
+                        'card': '0 10px 25px rgba(255, 51, 102, 0.1)', // sombra suave rosa
+                    }
+                }
+            }
+        }
+    </script>
+<script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
 
-<body class="bg-gradient-to-b from-pink-50 to-pink-200 h-full min-h-screen text-gray-800">
-    
-    <header class="shadow-lg p-5 flex bg-white">
+<body class="bg-bg-light min-h-screen text-primary-dark font-sans antialiased">
 
-        <div class="flex-1 uppercase font-bold text-center md:text-left text-rose-600 text-xl tracking-widest">
-            makeup house
+    <!-- Header -->
+    <header class="bg-primary-dark shadow-lg p-6 mb-12 flex justify-between items-center mx-auto max-w-7xl rounded-b-3xl">
+        <div class="flex-1 text-center text-accent-pink font-logo text-5xl uppercase tracking-wide">
+            Boca Rosa
         </div>
 
-        <nav class="font-semibold gap-6 hidden md:flex">
-            <a href="#" class="hover:text-rose-600 transition duration-300">Início</a>
-            <a href="https://imperiumbrazil.com.br/?gad_source=1&gad_campaignid=22741023080&gbraid=0AAAAA-RC9vi2p1emQgMKIp_AtDzcUmDQg&gclid=Cj0KCQiAxJXJBhD_ARIsAH_JGji_v7aTOTJZI77SXsqU1iWKCjuZUipBjqmF4FbNAUjIUuRsqBS_ZkMaAvavEALw_wcB" class="hover:text-rose-600 transition duration-300">Makes</a>
-            <a href="https://www.lojafenzzamakeup.com.br/gloss" class="hover:text-rose-600 transition duration-300">Gloss</a>
+        <nav class="font-semibold gap-6 hidden md:flex text-lg">
+            <a href="#" class="text-white hover:text-accent-pink px-4 py-2 rounded-lg transition duration-200">Início</a>
+            <a href="#" class="text-white hover:text-accent-pink px-4 py-2 rounded-lg transition duration-200">Nossa História</a>
+            <a href="#" class="text-white hover:text-accent-pink px-4 py-2 rounded-lg transition duration-200">Produtos</a>
+            <a href="#" class="text-white hover:text-accent-pink px-4 py-2 rounded-lg transition duration-200">Contato</a>
         </nav>
-
     </header>
 
-      <main class="py-10 px-4 flex flex-col gap-6 md:flex-row md:justify-center md:items-start">
- 
-        <div class="bg-white py-6 px-4 rounded-xl shadow-2xl max-w-sm w-full md:w-1/3">
+    <!-- Main content -->
+    <main class="py-6 px-4 flex flex-col gap-8 md:flex-row items-start max-w-7xl mx-auto">
 
-            <div class="flex items-center pb-4 gap-3">
-                <img class="h-12 w-12 rounded-full border-2 border-rose-500 object-cover" src=https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dwd28e73cf/images/Color%20BR/RARE%20BEAUTY/soft_pinch_blush/BLUSH-RARE%20BEAUTY-SOFT%20PINCH%20-%20DEWY%20LIQUID%20BLUSH%20-%20LUCKY840122900020_1500px.jpg?sw=556&sh=680&sm=fit alt="Gloss Kiko">
-                <h2 class="text-xl font-bold text-rose-600">blush liquido  rare </h2>
+        <!-- Card Corretivo -->
+        <div class="bg-card-bg p-6 rounded-2xl shadow-card hover:shadow-xl transition duration-300 w-full md:w-1/3">
+            <div class="flex items-center pb-4 gap-4">
+                <img class="h-14 w-14 rounded-full border border-border-light ring-2 ring-accent-pink object-cover"
+                     src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/product/MP21756/3b31dff0-8699-4fb8-8e94-9ffdb0208185-kit-boca-rosa-beauty-by-payot-pele-perfeita-2-3-produtos.png"
+                     alt="Corretivo">
+                <h2 class="text-2xl font-bold text-primary-dark uppercase">Corretivo</h2>
             </div>
             
-          <img class="w-full rounded-t-lg object-cover" src=https://www.sephora.com.br/dw/image/v2/BFJC_PRD/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dwd28e73cf/images/Color%20BR/RARE%20BEAUTY/soft_pinch_blush/BLUSH-RARE%20BEAUTY-SOFT%20PINCH%20-%20DEWY%20LIQUID%20BLUSH%20-%20LUCKY840122900020_1500px.jpg?sw=556&sh=680&sm=fit
-          <div class="pt-4">
-             <p class="text-sm text-justify leading-relaxed text-gray-700 mb-4">
-                 blush liquido
+            <img class="w-full object-cover h-52 rounded-xl mb-4" 
+                 src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/product/MP21756/3b31dff0-8699-4fb8-8e94-9ffdb0208185-kit-boca-rosa-beauty-by-payot-pele-perfeita-2-3-produtos.png" 
+                 alt="Corretivo Boca Rosa">
 
-             <span class="text-xs text-gray-400 text-right block">
-                 há 10 minutos
-             </span>
-          </div>
-        </div>
+            <div>
+                <p class="text-base text-justify text-text-muted leading-relaxed mb-4">
+                    O corretivo da Boca Rosa tem alta cobertura, ideal para disfarçar olheiras, manchas e imperfeições de pele — com apenas uma camada já dá um bom resultado. A textura é leve e macia, facilitando a aplicação e garantindo acabamento confortável e natural. Ele fixa bem e dura bastante, especialmente se selado com pó. Além disso, é vegano, hipoalergênico, sem fragrância e não testado em animais.
+                </p>
 
-        <div class="bg-white py-6 px-4 rounded-xl shadow-2xl max-w-sm w-full md:w-1/3">
-
-            <div class="flex items-center pb-4 gap-3">
-                <img class="h-12 w-12 rounded-full border-2 border-rose-500 object-cover" src=https://a-static.mlcdn.com.br/420x420/kit-maquiagem-melu-by-ruby-rose-base-po-mascara-para-cilios-delineador-balm-labial-gloss/supervaidosacosmeticos/mlb4580591528e/1c12d1be5f257bf9dfdd630d10e71056.jpeg
-                <h2 class="text-xl font-bold text-rose-600">mascara de cilios </h2>
+                <span class="text-xs text-text-muted text-right block pt-2 border-t border-border-light">
+                    Publicado: há 23 minutos
+                </span>
             </div>
-
-          <img class="w-full rounded-t-lg object-cover" src=https://a-static.mlcdn.com.br/420x420/kit-maquiagem-melu-by-ruby-rose-base-po-mascara-para-cilios-delineador-balm-labial-gloss/supervaidosacosmeticos/mlb4580591528e/1c12d1be5f257bf9dfdd630d10e71056.jpeg alt="Foto do Gloss LipHoney">
-
-          <div class="pt-4">
-            <p class="text-sm text-justify leading-relaxed text-gray-700 mb-4">
-            mascara de cilios melu 
-            </p>
-
-            <span class="text-xs text-gray-400 text-right block">
-                há 25 minutos
-            </span>
-
-          </div>
         </div>
 
-        <div class="bg-white py-6 px-4 rounded-xl shadow-2xl max-w-sm w-full md:w-1/3">
-
-            <div class="flex items-center pb-4 gap-3">
-                <img class="h-12 w-12 rounded-full border-2 border-rose-500 object-cover" src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjhmO0JPkB7viaEIW_US1LDXXNXRtUWK_i1Q&s alt="Gloss Carmed">
-                <h2 class="text-xl font-bold text-rose-600">lip tint</h2>
+        <!-- Card Pó -->
+        <div class="bg-card-bg p-6 rounded-2xl shadow-card hover:shadow-xl transition duration-300 w-full md:w-1/3">
+            <div class="flex items-center pb-4 gap-4">
+                <img class="h-14 w-14 rounded-full border border-border-light ring-2 ring-accent-pink object-cover"
+                     src="https://a-static.mlcdn.com.br/%7Bw%7Dx%7Bh%7D/kit-boca-rosa-maquiagem-dia-a-dia-6-produtos/evasperfumaria/18249p/26263b81bd2d513f2cbac53fc5bc656d.jpeg"
+                     alt="Pó">
+                <h2 class="text-2xl font-bold text-primary-dark uppercase">Pó</h2>
             </div>
             
-          <img class="w-full rounded-t-lg object-cover" src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjhmO0JPkB7viaEIW_US1LDXXNXRtUWK_i1Q&salt="Foto vestido ">
-          
-          <div class="pt-4">
-            <p class="text-sm text-justify leading-relaxed text-gray-700 mb-4">
-                 lip tint
-            </p>
+            <img class="w-full object-cover h-52 rounded-xl mb-4"
+                 src="https://a-static.mlcdn.com.br/%7Bw%7Dx%7Bh%7D/kit-boca-rosa-maquiagem-dia-a-dia-6-produtos/evasperfumaria/18249p/26263b81bd2d513f2cbac53fc5bc656d.jpeg"
+                 alt="Pó Boca Rosa">
 
-            <span class="text-xs text-gray-400 text-right block">
-                há 7 minutos
-            </span>
+            <div>
+                <p class="text-base text-justify text-text-muted leading-relaxed mb-4">
+                    Textura ultrafina e leve, que se espalha facilmente e adere bem à pele, resultando em acabamento natural e suave. Ajuda a controlar brilho e oleosidade, deixando a pele matte e sequinha por horas. Além disso, promove acabamento uniforme e aveludado, disfarçando poros e imperfeições, selando a maquiagem e aumentando sua durabilidade.
+                </p>
 
-          </div>
+                <span class="text-xs text-text-muted text-right block pt-2 border-t border-border-light">
+                    Publicado: há 40 minutos
+                </span>
+            </div>
+        </div>
+
+        <!-- Card Batom -->
+        <div class="bg-card-bg p-6 rounded-2xl shadow-card hover:shadow-xl transition duration-300 w-full md:w-1/3">
+            <div class="flex items-center pb-4 gap-4">
+                <img class="h-14 w-14 rounded-full border border-border-light ring-2 ring-accent-pink object-cover"
+                     src="https://images.tcdn.com.br/img/img_prod/929629/stick_cor_boca_rosa_pre_venda_2279_1_f0bae116c9d64307088f65906a310cfa.jpg"
+                     alt="Batom">
+                <h2 class="text-2xl font-bold text-primary-dark uppercase">Batom</h2>
+            </div>
+            
+            <img class="w-full object-cover h-52 rounded-xl mb-4"
+                 src="https://images.tcdn.com.br/img/img_prod/929629/stick_cor_boca_rosa_pre_venda_2279_1_f0bae116c9d64307088f65906a310cfa.jpg"
+                 alt="Batom Boca Rosa">
+
+            <div>
+                <p class="text-base text-justify text-text-muted leading-relaxed mb-4">
+                    Alta pigmentação: o batom entrega cor intensa já na primeira camada, deixando os lábios marcados e vibrantes. Acabamento matte e sofisticado, com textura cremosa que seca opaca, ideal para quem gosta de batom elegante. Boa duração, permanecendo nos lábios por várias horas, e disponível em diversas cores, desde nudes até rosas e vermelhos mais ousados.
+                </p>
+
+                <span class="text-xs text-text-muted text-right block pt-2 border-t border-border-light">
+                    Publicado: há 1 hora
+                </span>
+            </div>
         </div>
 
     </main>
+    
+    <!-- Footer -->
+    <footer class="mt-12 py-6 bg-primary-dark text-white text-center text-sm rounded-t-3xl">
+        © 2025 Boca Rosa Beauty. Todos os direitos reservados.
+    </footer>
 
 <script src="script.js"></script></body>
 </html>
