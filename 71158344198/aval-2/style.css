@@ -1,0 +1,43 @@
+/* style.css — Matias & Corinthians */
+
+:root{ --preto: #000000; --branco: #ffffff; --cinza: #f2f2f2; --cor-acento: #d50000; /* leve vermelho para detalhes */ --espacamento: 16px; --max-largura: 1000px; }
+
+*{box-sizing: border-box;} body{ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background: linear-gradient(180deg,var(--branco) 0%, var(--cinza) 100%); color: var(--preto); padding: calc(var(--espacamento) * 1); display:flex; justify-content:center; }
+
+header{ text-align:center; margin-bottom: 12px; max-width: var(--max-largura); width:100%; background: radial-gradient(circle at 10% 10%, rgba(0,0,0,0.06), transparent 20%); padding: 20px; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+
+header h1{font-size:28px; margin:6px 0; letter-spacing:1px;} header p{margin:0; font-size:14px; opacity:0.9}
+
+nav{ display:flex; gap:12px; justify-content:center; margin:14px 0; max-width: var(--max-largura); width:100%; }
+
+nav a{ text-decoration:none; padding:8px 14px; border-radius:8px; font-weight:600; background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01)); transition: transform .14s ease, box-shadow .14s ease; }
+
+nav a:hover{transform: translateY(-3px); box-shadow:0 8px 18px rgba(0,0,0,0.08);}
+
+#row{ display:flex; gap:18px; max-width: var(--max-largura); width:100%; }
+
+aside{ flex: 0 0 260px; background: var(--branco); padding:14px; border-radius:10px; box-shadow: 0 8px 26px rgba(0,0,0,0.04); height:fit-content; }
+
+aside h2{margin-top:0;} aside h5{margin:8px 0; font-weight:600; color:rgba(0,0,0,0.65)}
+
+.fakeimage{ height:92px; border-radius:8px; background: linear-gradient(135deg,#eeeeee,#dddddd); display:flex; align-items:center; justify-content:center; color:#666; font-weight:600; margin-bottom:10px; }
+
+aside p{font-size:14px; line-height:1.4}
+
+aside h3{margin-top:12px}
+
+main{flex:1;}
+
+article{ background: var(--branco); padding:18px; border-radius:10px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); }
+
+article h2{margin-top:0;} article h5{color:rgba(0,0,0,0.6); font-size:13px} article img{width:100%; border-radius:8px; margin:12px 0; display:block} article p{line-height:1.6}
+
+footer{ margin-top:16px; max-width: var(--max-largura); width:100%; text-align:center; padding:12px; color:rgba(0,0,0,0.6); font-size:13px; }
+
+/* Responsivo */ @media (max-width:820px){ #row{flex-direction:column} aside{flex:unset} nav{flex-wrap:wrap} }
+
+/* Detalhes corinthianos sutis */ header{border-left:6px solid var(--preto)}
+
+nav a:nth-child(1){font-weight:700}
+
+/* pequeno destaque vermelho nas chamadas */ article h2::after{content:''; display:block; width:44px; height:4px; margin-top:8px; border-radius:4px; background:var(--cor-acento)}
