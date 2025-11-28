@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Completa com Footer</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        /* HEADER */
+        header {
+            background: #4CAF50;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        /* NAV */
+        nav {
+            background: #333;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+        }
+
+        /* LAYOUT PRINCIPAL */
+        .layout {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* ASIDE */
+        aside {
+            width: 250px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        aside h3 {
+            color: #4CAF50;
+        }
+
+        aside a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        aside a:hover {
+            color: #4CAF50;
+        }
+
+        /* MAIN */
+        main {
+            flex: 1;
+        }
+
+        article {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        article h2 {
+            color: #4CAF50;
+        }
+
+        .imagem {
+            width: 100%;
+            max-width: 400px;
+            display: block;
+            margin: 15px auto;
+            border-radius: 6px;
+        }
+
+        .tag-span {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>Meu Site Completo</h1>
+        <p>Com div, header, nav, main, img, span, aside, article e footer</p>
+    </header>
+
+    <!-- NAVEGAÇÃO -->
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Artigos</a>
+        <a href="#">Galeria</a>
+        <a href="#">Contato</a>
+    </nav>
+
+    <!-- LAYOUT PRINCIPAL (ASIDE + MAIN) -->
+    <div class="layout">
+
+        <!-- MENU LATERAL -->
+        <aside>
+            <h3>Menu Lateral</h3>
+            <ul>
+                <li><a href="#">Link A</a></li>
+                <li><a href="#">Link B</a></li>
+                <li><a href="#">Link C</a></li>
+                <li><a href="#">Link D</a></li>
+            </ul>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main>
+
+            <article>
+                <h2>Primeiro Artigo</h2>
+                <img src="https://via.placeholder.com/400x250" alt="Imagem de exemplo" class="imagem">
+                <p>
+                    Este é um artigo com uma palavra destacada usando 
+                    <span class="tag-span">span</span>.
+                </p>
+            </article>
+
+            <article>
+                <h2>Segundo Artigo</h2>
+                <p>
+                    O elemento <span class="tag-span">span</span> é útil para destacar palavras dentro de um texto.
+                </p>
+                <img src="https://via.placeholder.com/400x250/4CAF50/ffffff" alt="Imagem verde" class="imagem">
+            </article>
+
+        </main>
+
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>© 2025 – Meu Site Completo</p>
+    </footer>
+
+</body>
+</html>
