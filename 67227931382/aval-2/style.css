@@ -1,0 +1,134 @@
+/* styles.css - estilo separado para o blog */
+
+/* garantir que elementos personalizados fiquem como bloco */
+headset, saúde {
+  display: block;
+  }
+
+  /* reset simples */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height: 1.45;
+        color: #222;
+          background: #f6f8fb;
+          }
+
+          /* container central */
+          .container {
+            max-width: 1000px;
+              margin: 0 auto;
+                padding: 1rem;
+                }
+
+                /* headset (cabeçalho) */
+                .site-headset {
+                  background: linear-gradient(90deg, #556cd6, #7b61ff);
+                    color: #fff;
+                      padding: 2rem 0;
+                        margin-bottom: 0.5rem;
+                        }
+                        .site-headset h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+                        .subtitle { opacity: 0.95; }
+
+                        /* nav */
+                        .main-nav {
+                          background: #fff;
+                            border-bottom: 1px solid #e6e9ef;
+                            }
+                            .main-nav .container {
+                              display: flex;
+                                gap: 1rem;
+                                  align-items: center;
+                                    padding: 0.75rem 1rem;
+                                    }
+                                    .main-nav a {
+                                      text-decoration: none;
+                                        color: #333;
+                                          padding: 0.4rem 0.6rem;
+                                            border-radius: 6px;
+                                            }
+                                            .main-nav a:hover { background: #f0f2ff; }
+
+                                            /* layout principal: content + aside */
+                                            main.container {
+                                              display: grid;
+                                                grid-template-columns: 1fr 320px;
+                                                  gap: 1.25rem;
+                                                    align-items: start;
+                                                      margin-top: 1rem;
+                                                      }
+
+                                                      /* post */
+                                                      .post { background: #fff; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(25,30,40,0.03); }
+                                                      .post h2 { margin-bottom: 0.65rem; }
+
+                                                      /* imagem hero */
+                                                      .hero-img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 1rem; }
+
+                                                      /* calculadora */
+                                                      .calc-box { display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap; margin-top:0.5rem; }
+                                                      .calc-box label { min-width: 140px; }
+                                                      .calc-box input[type="number"] {
+                                                        padding: 0.5rem 0.6rem;
+                                                          border: 1px solid #dfe6f3;
+                                                            border-radius: 8px;
+                                                              width: 160px;
+                                                              }
+                                                              .calc-box button {
+                                                                padding: 0.55rem 0.9rem;
+                                                                  border: none;
+                                                                    border-radius: 8px;
+                                                                      background: #556cd6;
+                                                                        color: #fff;
+                                                                          cursor: pointer;
+                                                                          }
+                                                                          .calc-box button:hover { filter: brightness(0.95); }
+
+                                                                          .result {
+                                                                            width: 100%;
+                                                                              margin-top: 0.9rem;
+                                                                                padding: 0.6rem;
+                                                                                  border-radius: 8px;
+                                                                                    background: #f7f9ff;
+                                                                                      border: 1px solid #e6ebff;
+                                                                                      }
+
+                                                                                      /* erro */
+                                                                                      .result.error { background: #fff5f5; border-color: #ffd7d7; color: #700; }
+
+                                                                                      /* aside (barra lateral) */
+                                                                                      .sidebar {
+                                                                                        background: #fff;
+                                                                                          padding: 1rem;
+                                                                                            border-radius: 10px;
+                                                                                              box-shadow: 0 2px 6px rgba(25,30,40,0.03);
+                                                                                              }
+                                                                                              .sidebar h3 { margin-bottom: 0.5rem; }
+
+                                                                                              /* seção saúde */
+                                                                                              .saude-section {
+                                                                                                margin: 1.25rem auto;
+                                                                                                  background: #fff;
+                                                                                                    padding: 1rem;
+                                                                                                      border-radius: 10px;
+                                                                                                        max-width: 1000px;
+                                                                                                          box-shadow: 0 2px 6px rgba(25,30,40,0.03);
+                                                                                                          }
+                                                                                                          .saude-section h2 { margin-bottom: 0.4rem; }
+
+                                                                                                          /* footer */
+                                                                                                          .site-footer {
+                                                                                                            margin-top: 1.5rem;
+                                                                                                              padding: 1rem 0;
+                                                                                                                color: #666;
+                                                                                                                  text-align: center;
+                                                                                                                    font-size: 0.95rem;
+                                                                                                                    }
+
+                                                                                                                    /* responsividade */
+                                                                                                                    @media (max-width: 880px) {
+                                                                                                                      main.container { grid-template-columns: 1fr; }
+                                                                                                                        .main-nav .container { flex-wrap: wrap; }
+                                                                                                                          .calc-box { flex-direction: column; align-items: stretch; }
+                                                                                                                          }

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <title>Blog — Calculadora de Raiz Quadrada</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link href="style.css" rel="stylesheet"></head>
+        <body>
+
+          <!-- elemento personalizado 'headset' usado como cabeçalho -->
+            <headset class="site-headset">
+                <div class="container">
+                      <h1>Blog do Cálculo — Raiz Quadrada</h1>
+                            <p class="subtitle">Ferramenta simples para calcular raízes quadradas e conteúdo sobre saúde matemática</p>
+                                </div>
+                                  </headset>
+
+                                    <nav class="main-nav">
+                                        <div class="container">
+                                              <a href="#calculadora">Calculadora</a>
+                                                    <a href="#sobre">Sobre</a>
+                                                          <a href="#saude">Saúde</a>
+                                                                <a href="#contato">Contato</a>
+                                                                    </div>
+                                                                      </nav>
+
+                                                                        <main class="container" id="calculadora">
+                                                                            <article class="post">
+                                                                                  <header>
+                                                                                          <h2>Calculadora de Raiz Quadrada</h2>
+                                                                                                </header>
+
+                                                                                                      <!-- imagem de exemplo -->
+                                                                                                            <img src="https://via.placeholder.com/900x220?text=Calculadora+de+Raiz+Quadrada" alt="Banner calculadora" class="hero-img" />
+
+                                                                                                                  <section class="calc-box">
+                                                                                                                          <label for="num">Digite um número (≥ 0):</label>
+                                                                                                                                  <input id="num" type="number" min="0" step="any" placeholder="Ex: 25" />
+                                                                                                                                          <button id="calcBtn" type="button">Calcular √</button>
+
+                                                                                                                                                  <div id="result" class="result" aria-live="polite">Resultado: —</div>
+                                                                                                                                                        </section>
+                                                                                                                                                            </article>
+
+                                                                                                                                                                <!-- aside com conteúdo complementar -->
+                                                                                                                                                                    <aside class="sidebar" aria-label="Dicas">
+                                                                                                                                                                          <h3>Dicas rápidas</h3>
+                                                                                                                                                                                <ul>
+                                                                                                                                                                                        <li>Raiz quadrada de 0 é 0.</li>
+                                                                                                                                                                                                <li>Se o número for negativo, o navegador avisará — aqui só admitimos números reais (≥ 0).</li>
+                                                                                                                                                                                                        <li>Use casas decimais quando necessário (ex.: √2 ≈ 1.4142).</li>
+                                                                                                                                                                                                              </ul>
+                                                                                                                                                                                                                  </aside>
+                                                                                                                                                                                                                    </main>
+
+                                                                                                                                                                                                                      <!-- elemento personalizado 'saúde' para conteúdo relacionado -->
+                                                                                                                                                                                                                        <saúde id="saude" class="saude-section">
+                                                                                                                                                                                                                            <div class="container">
+                                                                                                                                                                                                                                  <h2>Saúde e Estudo</h2>
+                                                                                                                                                                                                                                        <p>Manter a mente descansada melhora seu desempenho em cálculos — faça pausas curtas e pratique exercícios.</p>
+                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                              </saúde>
+
+                                                                                                                                                                                                                                                <footer class="site-footer" id="contato">
+                                                                                                                                                                                                                                                    <div class="container">
+                                                                                                                                                                                                                                                          <p>© <span id="ano"></span> Blog do Cálculo — contato@exemplo.com</p>
+                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                </footer>
+
+                                                                                                                                                                                                                                                                  <!-- script que faz o cálculo da raiz quadrada -->
+                                                                                                                                                                                                                                                                    <script>
+                                                                                                                                                                                                                                                                        // Definindo ano no rodapé
+                                                                                                                                                                                                                                                                            document.getElementById('ano').textContent = new Date().getFullYear();
+
+                                                                                                                                                                                                                                                                                const numInput = document.getElementById('num');
+                                                                                                                                                                                                                                                                                    const btn = document.getElementById('calcBtn');
+                                                                                                                                                                                                                                                                                        const result = document.getElementById('result');
+
+                                                                                                                                                                                                                                                                                            btn.addEventListener('click', () => {
+                                                                                                                                                                                                                                                                                                  const value = parseFloat(numInput.value);
+
+                                                                                                                                                                                                                                                                                                        if (isNaN(value) || value < 0) {
+                                                                                                                                                                                                                                                                                                                result.textContent = 'Resultado: Por favor insira um número real maior ou igual a 0.';
+                                                                                                                                                                                                                                                                                                                        result.classList.add('error');
+                                                                                                                                                                                                                                                                                                                                return;
+                                                                                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                                                                                            const raiz = Math.sqrt(value);
+                                                                                                                                                                                                                                                                                                                                                  // formatar para até 6 casas decimais, retirando zeros finais
+                                                                                                                                                                                                                                                                                                                                                        const formatada = parseFloat(raiz.toFixed(6)).toString();
+
+                                                                                                                                                                                                                                                                                                                                                              result.classList.remove('error');
+                                                                                                                                                                                                                                                                                                                                                                    result.textContent = `Resultado: √${value} ≈ ${formatada}`;
+                                                                                                                                                                                                                                                                                                                                                                        });
+
+                                                                                                                                                                                                                                                                                                                                                                            // permitir calcular com Enter no input
+                                                                                                                                                                                                                                                                                                                                                                                numInput.addEventListener('keydown', (e) => {
+                                                                                                                                                                                                                                                                                                                                                                                      if (e.key === 'Enter') btn.click();
+                                                                                                                                                                                                                                                                                                                                                                                          });
+                                                                                                                                                                                                                                                                                                                                                                                            </script>
+                                                                                                                                                                                                                                                                                                                                                                                            </body>
+                                                                                                                                                                                                                                                                                                                                                                                            </html>
