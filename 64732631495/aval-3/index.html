@@ -1,50 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Blog do Víctor Gabriel</title>
-  <link rel="stylesheet" href="style.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Estudante - Victor Gabriel Lima Lopes</title>
+    <link rel="stylesheet" href="style.css">
 <link href="style.css" rel="stylesheet"></head>
+
 <body>
-  <div class="container">
-    <header>
-      <h1>Bem-vindo ao Blog do Víctor Gabriel</h1>
-      <nav>
-        <ul>
-          <li><a href="#sobre">Sobre mim</a></li>
-          <li><a href="#gostos">Meus gostos</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
-    </header>
+    <form id="formEstudante" onsubmit="enviarFormulario(event)">
 
-    <main>
-      <div class="sobre" id="sobre">
-        <section>
-          <h2>Sobre mim</h2>
-          <img src="images/victor-gabriel.jpg" alt="Foto de Víctor Gabriel" width="200">
-          <p>Olá! Meu nome é <span>Víctor Gabriel</span>. Sou apaixonado por leitura, música e tudo que envolve criatividade.</p>
-        </section>
-      </div>
+        <!-- ===== HEADER ===== -->
+        <header>
+            <h2>Cadastro de Estudante</h2>
+            <h4>Formulário de Victor Gabriel Lima Lopes</h4>
+        </header>
 
-      <div class="gostos" id="gostos">
-        <section>
-          <h2>Meus gostos</h2>
-          <ul>
-            <li>📚 Ler livros de ficção e filosofia</li>
-            <li>🎧 Escutar música (rock, MPB, lo-fi)</li>
-            <li>📝 Escrever pensamentos e reflexões</li>
-          </ul>
-        </section>
-      </div>
-    </main>
+        <!-- ===== IMAGEM ===== -->
+        <center>
+            <img id="fotoVictor" 
+                 alt="Foto do Victor"
+                 style="width: 200px; border-radius: 12px;"
+                 src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAQABQADASIAAhEBAxEB/8QAHQAAAQQDAQEAAAAAAAAAAAAABgEDBQcCCAEACf/EAEAQAAEDAwIDBQUEBwYHAAAAAAECAwQABREGEiExBxNBUWFxgRQiMoGRBxUyUoKxweEzgpLh8FSy4fEkYoL/xAAaAQADAQEBAQAAAAAAAAAAAAAAEQIDBAUG/8QAMREBAAICAQMCBQMEAwAAAAAAAAECAxEEEiExQVEFE2FxkbEjMqHBFCNSwdHh8TP/2gAMAwEAAhEDEQA/ANHYotjBRDLaCVhwnGSOBkkgGSR5IpoUoUIQaKKKACiiigAooooAKKKKACnZpJjXGZyCGUj0DkZ9DTtNEso2oE1HwoooAKKKKACiiigAooooA//2Q==">
 
-    <footer>
-      <p>© 2025 Víctor Gabriel</p>
-    </footer>
-  </div>
+            <p style="font-size: 15px; margin-top: 8px; color: #444;">
+                Esta é a foto de 
+                <span style="font-weight: bold; color: #000;">
+                    Victor Gabriel Lima Lopes
+                </span>.
+            </p>
+        </center>
 
-  <script src="script.js"></script>
+        <!-- ===== NAV ===== -->
+        <nav class="menu">
+            <a href="#">Início</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+        </nav>
+
+        <!-- ===== MAIN ===== -->
+        <main>
+
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" 
+                   value="Victor Gabriel Lima Lopes" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" 
+                   value="victorlimalopes28@gmail.com" required>
+
+            <label for="estudante">Sou estudante de:</label>
+            <input type="text" id="estudante" name="estudante" 
+                   value="Informática / Ensino Médio Técnico" required>
+
+            <label for="descricao">Sobre mim:</label>
+            <textarea id="descricao" name="descricao" rows="4">
+Sou Victor Gabriel Lima Lopes, um estudante dedicado e apaixonado por tecnologia. Tenho interesse em programação, desenvolvimento de sistemas e inovação digital. Busco constantemente aprimorar meus conhecimentos e transformar ideias em projetos criativos e funcionais.
+            </textarea>
+
+            <div class="musicas">
+                <label>Músicas Preferidas:</label>
+
+                <a href="https://youtu.be/WGU_4-5RaxU?si=1izPU2yITO5w7VlS" target="_blank">
+                    🎵 Bohemian Rhapsody – Queen
+                </a>
+
+                <a href="https://youtu.be/vabnZ9-ex7o?si=Y6Kkp_7fX-dt6D1H" target="_blank">
+                    🎵 Welcome to the Black Parade – My Chemical Romance
+                </a>
+            </div>
+
+            <button type="submit">Enviar</button>
+
+            <div id="mensagem" class="mensagem">
+                ✅ Formulário enviado com sucesso! Valeu, Victor! 🔥
+            </div>
+
+        </main>
+
+    </form>
+
+    <script src="script.js"></script>
 <script src="script.js"></script></body>
 </html>
