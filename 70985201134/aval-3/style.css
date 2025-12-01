@@ -3,13 +3,13 @@
 
 :root {
     --cor-principal: #673AB7; /* Roxo (Foco) */
-    --cor-acento: #00BCD4; /* Ciano (Destaque/Ação) */
-    --cor-fundo: #f4f7f6; /* Fundo Suave */
+    --cor-acento: #FFC107; /* Amarelo (Destaque/Ação) */
+    --cor-fundo: #e8eaf6; /* Fundo Suave */
     --cor-card: #ffffff;
-    --cor-texto: #2c3e50;
+    --cor-texto: #333333;
 }
 
-/* Reset e Body */
+/* Reset e Corpo */
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +28,7 @@ header {
     background-color: var(--cor-principal);
     color: var(--cor-card);
     padding: 15px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 nav {
@@ -77,12 +77,13 @@ nav ul li a:hover {
     font-size: 2em;
     color: var(--cor-principal);
     margin-bottom: 30px;
+    grid-column: 1 / -1; /* Ocupa toda a largura da coluna de quizzes */
 }
 
 .quiz-area section {
     display: grid;
-    /* Três cards de quiz por linha */
-    grid-template-columns: repeat(3, 1fr); 
+    /* Duas colunas para os cards */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 20px;
 }
 
@@ -90,7 +91,7 @@ nav ul li a:hover {
 .quiz-card {
     background-color: var(--cor-card);
     border-radius: 10px;
-    padding: 20px;
+    padding: 25px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
@@ -98,49 +99,53 @@ nav ul li a:hover {
 
 .quiz-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(103, 58, 183, 0.2);
+    box-shadow: 0 8px 15px rgba(103, 58, 183, 0.3);
+    border-bottom: 5px solid var(--cor-acento);
 }
 
 .quiz-card h3 {
-    font-size: 1.5em;
-    color: var(--cor-texto);
+    font-size: 1.6em;
+    color: var(--cor-principal);
     margin-bottom: 15px;
 }
 
 /* Estilo para a <img> do Quiz */
 .quiz-card img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
-    margin: 10px 0 15px;
+    margin: 10px 0 20px;
 }
 
 .quiz-stats {
     margin: 15px 0;
-    font-size: 0.9em;
+    font-size: 1em;
     color: #555;
 }
 
-/* Estilizando Tags <span> de Dificuldade */
+/* Estilizando Tags <span> de Dificuldade e Tempo */
 .dificuldade-tag {
+    /* Usado para o nível de dificuldade */
     background-color: var(--cor-acento);
-    color: var(--cor-card);
+    color: var(--cor-texto);
     padding: 4px 8px;
-    border-radius: 20px;
+    border-radius: 4px;
     font-weight: 600;
-    margin-left: 5px;
+    margin-right: 15px;
 }
 
 .dificuldade-tag.facil {
-    background-color: #4CAF50; /* Verde para Fácil */
+    background-color: #8BC34A; /* Verde para Fácil */
+    color: white;
 }
 
 .dificuldade-tag.dificil {
     background-color: #F44336; /* Vermelho para Difícil */
+    color: white;
 }
 
-.total-perguntas {
-    font-weight: 700;
+.tempo-estimado {
+    font-weight: 600;
     color: var(--cor-principal);
 }
 
@@ -148,19 +153,18 @@ nav ul li a:hover {
 .start-quiz-btn {
     background-color: var(--cor-principal);
     color: var(--cor-card);
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
-    border-radius: 25px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 1.1em;
     font-weight: 700;
     transition: background-color 0.3s;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .start-quiz-btn:hover {
-    background-color: var(--cor-acento);
-    color: var(--cor-texto);
+    background-color: #5E35B1;
 }
 
 /* Barra Lateral (<aside>) */
@@ -170,7 +174,7 @@ nav ul li a:hover {
     height: fit-content;
 }
 
-.ranking-box, .rules-info {
+.rules-box, .call-to-action {
     background-color: var(--cor-card);
     padding: 20px;
     border-radius: 10px;
@@ -178,45 +182,42 @@ nav ul li a:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.ranking-box h4, .rules-info h4 {
-    color: var(--cor-acento);
-    font-size: 1.4em;
+.rules-box h4, .call-to-action h4 {
+    color: var(--cor-principal);
+    font-size: 1.3em;
     margin-bottom: 15px;
-    border-bottom: 1px dashed #ddd;
+    border-bottom: 2px solid var(--cor-acento);
     padding-bottom: 5px;
 }
 
-.ranking-box ol {
-    list-style-position: inside;
-    padding-left: 0;
+/* Estilizando <span> no Aside */
+.destaque-pontos {
+    font-weight: 800;
+    color: #FF5722; /* Laranja de destaque */
+    font-size: 1.1em;
 }
 
-.ranking-box ol li {
-    padding: 8px 0;
-    border-bottom: 1px dotted #eee;
+.btn-desafio {
+    display: block;
+    text-align: center;
+    background-color: var(--cor-acento);
     color: var(--cor-texto);
-    display: flex;
-    justify-content: space-between;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
 }
 
-.score {
-    font-weight: 700;
-    color: var(--cor-principal);
-}
-
-/* Estilizando <span> nas Regras */
-.regra-tempo {
-    font-weight: 700;
-    color: var(--cor-principal);
-    background-color: #e0f7fa; /* Fundo leve para destaque */
-    padding: 2px 5px;
-    border-radius: 3px;
+.btn-desafio:hover {
+    background-color: #FFB300;
 }
 
 /* Rodapé */
 footer {
-    background-color: var(--cor-texto);
-    color: var(--cor-fundo);
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-card);
     text-align: center;
     padding: 20px;
     font-size: 0.9em;
