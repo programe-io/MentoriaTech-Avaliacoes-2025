@@ -1,0 +1,156 @@
+/* desenvolvimento-ia.css
+   Arquivo CSS autônomo que apresenta um texto sobre o desenvolvimento da IA
+      - Cole em "develop-ia.css" e vincule a um HTML simples <link rel="stylesheet" href="develop-ia.css">
+         - O texto é inserido via body::before para demonstrar somente com CSS.
+            - Feito com foco em acessibilidade e responsividade.
+            */
+
+            /* --- Variáveis de tema --- */
+            :root{
+              --bg: #0f1724;            /* fundo geral */
+                --card-bg: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+                  --accent: #7dd3fc;        /* azul suave */
+                    --muted: #9ca3af;         /* texto secundário */
+                      --glass: rgba(255,255,255,0.04);
+                        --radius: 14px;
+                          --max-width: 860px;
+                            --shadow: 0 8px 30px rgba(2,6,23,0.6);
+                              --glass-border: rgba(255,255,255,0.06);
+                                --font-stack: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+                                }
+
+                                /* --- Reset mínimo --- */
+                                *,
+                                *::before,
+                                *::after{
+                                  box-sizing: border-box;
+                                    margin: 0;
+                                      padding: 0;
+                                      }
+
+                                      /* --- Página --- */
+                                      html, body{
+                                        height: 100%;
+                                          background: radial-gradient(1200px 600px at 10% 10%, rgba(125,211,252,0.04), transparent),
+                                                        radial-gradient(1000px 500px at 90% 90%, rgba(124,58,237,0.03), transparent),
+                                                                      var(--bg);
+                                                                        color: white;
+                                                                          font-family: var(--font-stack);
+                                                                            -webkit-font-smoothing: antialiased;
+                                                                              -moz-osx-font-smoothing: grayscale;
+                                                                                line-height: 1.5;
+                                                                                  padding: 3rem 1.25rem;
+                                                                                    display: grid;
+                                                                                      place-items: start center;
+                                                                                      }
+
+                                                                                      /* --- Card de conteúdo inserido via CSS --- */
+                                                                                      body::before{
+                                                                                        content:
+                                                                                            "Desenvolvimento da Inteligência Artificial\\A\\A"
+                                                                                                "1) Origens e conceitos iniciais:\\A"
+                                                                                                    "A história da IA começa na década de 1940–50 com a formalização de ideias sobre máquinas que processam símbolos e resolvem problemas. Pesquisadores pioneiros propuseram modelos teóricos (autômatos, lógica formal) e criaram as primeiras redes neurais artificiais simples.\\A\\A"
+                                                                                                        "2) Avanços em aprendizagem de máquina:\\A"
+                                                                                                            "Entre as décadas de 1980 e 2000, o foco mudou para algoritmos que aprendem com dados — aprendizagem de máquina (machine learning). Métodos como árvores de decisão, métodos de kernel e modelos probabilísticos tornaram problemas antes difíceis mais tratáveis.\\A\\A"
+                                                                                                                "3) A era do deep learning:\\A"
+                                                                                                                    "No final dos anos 2000 e 2010, redes neurais profundas (deep learning) e arquiteturas como convolucionais (CNNs) e recorrentes (RNNs/transformers) transformaram áreas como visão computacional, tradução automática e reconhecimento de voz, beneficiadas por grandes conjuntos de dados e GPUs.\\A\\A"
+                                                                                                                        "4) Aplicações práticas e ubiquidade:\\A"
+                                                                                                                            "IA hoje está presente em sistemas de recomendação, diagnóstico médico assistido, veículos autônomos, assistentes pessoais, otimização industrial e criação de conteúdo. Muitas soluções ingerem grandes volumes de dados e automatizam decisões repetitivas.\\A\\A"
+                                                                                                                                "5) Ética, segurança e governança:\\A"
+                                                                                                                                    "Com poder crescente, surgem preocupações sobre vieses, privacidade, transparência e impactos socioeconômicos. A pesquisa atual avança em IA explicável, mitigação de vieses, regulamentação e frameworks de segurança para reduzir riscos.\\A\\A"
+                                                                                                                                        "6) Desafios futuros:\\A"
+                                                                                                                                            "Entre os próximos desafios estão: modelos mais eficientes energeticamente, integração humano-máquina responsável, generalização robusta, e mecanismos de controle e auditoria que garantam uso seguro e justo.\\A\\A"
+                                                                                                                                                "Resumo:\\A"
+                                                                                                                                                    "O desenvolvimento da IA é uma jornada de conceitos teóricos, avanços algorítmicos, capacidade computacional crescente e intensa reflexão ética. O futuro exige tecnologia poderosa aliada a governança e responsabilidade social."
+                                                                                                                                                      ;
+                                                                                                                                                        /* Estilo do "card" */
+                                                                                                                                                          display: block;
+                                                                                                                                                            max-width: var(--max-width);
+                                                                                                                                                              width: min(96%, var(--max-width));
+                                                                                                                                                                background: var(--card-bg);
+                                                                                                                                                                  border-radius: var(--radius);
+                                                                                                                                                                    padding: 2.25rem;
+                                                                                                                                                                      box-shadow: var(--shadow);
+                                                                                                                                                                        border: 1px solid var(--glass-border);
+                                                                                                                                                                          margin: 0.5rem auto;
+                                                                                                                                                                            white-space: pre-wrap;   /* respeitar \A */
+                                                                                                                                                                              font-size: 1.05rem;
+                                                                                                                                                                                color: #e6eef8;
+                                                                                                                                                                                  line-height: 1.55;
+                                                                                                                                                                                    letter-spacing: 0.14px;
+                                                                                                                                                                                      position: relative;
+                                                                                                                                                                                        overflow: hidden;
+                                                                                                                                                                                          backdrop-filter: blur(6px) saturate(120%);
+                                                                                                                                                                                          }
+
+                                                                                                                                                                                          /* Cabeçalho visual (pequeno indicador) */
+                                                                                                                                                                                          body::after{
+                                                                                                                                                                                            content: "IA — Linha do tempo e desafios";
+                                                                                                                                                                                              position: absolute;
+                                                                                                                                                                                                left: 2.25rem;
+                                                                                                                                                                                                  top: 1rem;
+                                                                                                                                                                                                    transform: translateY(-100%);
+                                                                                                                                                                                                      background: linear-gradient(90deg, rgba(125,211,252,0.12), rgba(124,58,237,0.08));
+                                                                                                                                                                                                        padding: 0.35rem 0.65rem;
+                                                                                                                                                                                                          border-radius: 999px;
+                                                                                                                                                                                                            font-size: 0.82rem;
+                                                                                                                                                                                                              color: var(--accent);
+                                                                                                                                                                                                                border: 1px solid rgba(125,211,252,0.12);
+                                                                                                                                                                                                                  box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                  /* Destaques de palavras (simulado via marcador visual na margem) */
+                                                                                                                                                                                                                  body::before{
+                                                                                                                                                                                                                    /* adiciona uma barra decorativa à esquerda do "card" */
+                                                                                                                                                                                                                      box-shadow: inset 6px 0 0 rgba(125,211,252,0.06);
+                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                      /* Responsividade */
+                                                                                                                                                                                                                      @media (max-width: 600px){
+                                                                                                                                                                                                                        body{
+                                                                                                                                                                                                                            padding: 1.25rem;
+                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                body::before{
+                                                                                                                                                                                                                                    padding: 1.25rem;
+                                                                                                                                                                                                                                        font-size: 0.98rem;
+                                                                                                                                                                                                                                            border-radius: 12px;
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                body::after{
+                                                                                                                                                                                                                                                    left: 1.25rem;
+                                                                                                                                                                                                                                                        font-size: 0.78rem;
+                                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                          /* Acessibilidade: respeitar preferência por reduzir movimento */
+                                                                                                                                                                                                                                                          @media (prefers-reduced-motion: reduce){
+                                                                                                                                                                                                                                                            *{
+                                                                                                                                                                                                                                                                transition: none !important;
+                                                                                                                                                                                                                                                                    animation: none !important;
+                                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                      /* Impressão: tornar legível em papel (cores claras sobre fundo branco) */
+                                                                                                                                                                                                                                                                      @media print{
+                                                                                                                                                                                                                                                                        html, body{
+                                                                                                                                                                                                                                                                            background: white;
+                                                                                                                                                                                                                                                                                color: black;
+                                                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                                    body::before{
+                                                                                                                                                                                                                                                                                        background: white;
+                                                                                                                                                                                                                                                                                            color: black;
+                                                                                                                                                                                                                                                                                                box-shadow: none;
+                                                                                                                                                                                                                                                                                                    border: none;
+                                                                                                                                                                                                                                                                                                        max-width: 100%;
+                                                                                                                                                                                                                                                                                                            width: 100%;
+                                                                                                                                                                                                                                                                                                                padding: 0;
+                                                                                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                                                                    body::after{ display: none; }
+                                                                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                                                                    /* Pequena melhoria: quando o usuário passar o mouse, leve destaque */
+                                                                                                                                                                                                                                                                                                                    body::before:hover{
+                                                                                                                                                                                                                                                                                                                      transform: translateY(-2px);
+                                                                                                                                                                                                                                                                                                                        transition: transform 240ms cubic-bezier(.2,.9,.3,1);
+                                                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                                                        /* Fim do arquivo */
