@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensi Free Fire – Completa</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #0d0d0d;
+            color: #fff;
+        }
+
+        header {
+            background: #111;
+            padding: 25px;
+            text-align: center;
+            border-bottom: 3px solid #ffcc00;
+        }
+
+        header h1 {
+            color: #ffcc00;
+        }
+
+        nav {
+            background: #1b1b1b;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 12px;
+            border-bottom: 2px solid #333;
+        }
+
+        nav a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        main {
+            width: 70%;
+            float: left;
+            padding: 20px;
+        }
+
+        article {
+            background: #1a1a1a;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-left: 4px solid #ffcc00;
+            border-radius: 4px;
+        }
+
+        article h2 {
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+
+        article img {
+            width: 100%;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        aside {
+            width: 30%;
+            float: right;
+            background: #1a1a1a;
+            padding: 20px;
+            border-left: 3px solid #ffcc00;
+            min-height: 100vh;
+        }
+
+        footer {
+            clear: both;
+            background: #111;
+            color: #777;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            border-top: 3px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MELHORES SENSI – FREE FIRE</h1>
+        <p>Sensibilidade ideal para subir capa!</p>
+    </header>
+
+    <nav>
+        <a href="#sensi">Sensibilidade</a>
+        <a href="#dpi">DPI</a>
+        <a href="#config">Configurações</a>
+        <a href="#hud">HUD</a>
+    </nav>
+
+    <main>
+
+        <!-- ARTICLE 1 -->
+        <article id="sensi">
+            <h2>🔥 Melhores Sensibilidades</h2>
+
+            <img src="https://i.imgur.com/Vi5bCwJ.jpeg" alt="Imagem Free Fire Sensibilidade">
+
+            <h3>📱 Celulares Fracos</h3>
+            <ul>
+                <li>Geral: 92</li>
+                <li>Red Dot: 88</li>
+                <li>2x: 76</li>
+                <li>4x: 69</li>
+                <li>AWM: 35</li>
+            </ul>
+
+            <h3>📱 Celulares Médios</h3>
+            <ul>
+                <li>Geral: 95</li>
+                <li>Red Dot: 90</li>
+                <li>2x: 78</li>
+                <li>4x: 72</li>
+                <li>AWM: 40</li>
+            </ul>
+        </article>
+
+        <!-- ARTICLE 2 -->
+        <article id="dpi">
+            <h2>📏 DPI Ideal</h2>
+
+            <img src="https://i.imgur.com/a0X2hCq.jpeg" alt="Imagem Configuração DPI">
+
+            <p><strong>Samsung:</strong> 650–730</p>
+            <p><strong>Xiaomi/Poco:</strong> 400–500</p>
+            <p><strong>Motorola:</strong> 450–500</p>
+            <p><strong>LG:</strong> 600–680</p>
+            <p><strong>iPhone:</strong> Não usa DPI</p>
+        </article>
+
+        <!-- ARTICLE 3 -->
+        <article id="config">
+            <h2>⚙ Configurações do Jogo</h2>
+
+            <img src="https://i.imgur.com/8fEoNd1.jpeg" alt="Configurações do Free Fire">
+
+            <ul>
+                <li>Sombra: desativado</li>
+                <li>Anti-aliasing: desativado</li>
+                <li>Gráficos: suave</li>
+                <li>FPS alto: ativado</li>
+                <li>Minimapa: rotacionar</li>
+            </ul>
+        </article>
+
+        <!-- ARTICLE 4 -->
+        <article id="hud">
+            <h2>🎮 Melhor HUD</h2>
+
+            <img src="https://i.imgur.com/NtNmG9z.jpeg" alt="HUD Free Fire">
+
+            <ul>
+                <li>Botão de atirar: 45–55%</li>
+                <li>Botão de correr: 70%</li>
+                <li>Botão do gelo: 56–65%</li>
+            </ul>
+        </article>
+
+    </main>
+
+    <aside>
+        <h2 style="color:#ffcc00;">📌 Dicas Extras</h2>
+        <p>✔ Treine mira por 10 min/dia</p>
+        <p>✔ Jogue no suave para ganhar FPS</p>
+        <p>✔ Não deixe o celular esquentar</p>
+
+        <br>
+
+        <h3 style="color:#ffcc00;">📢 Novidades</h3>
+        <p>🔥 Novo personagem chegando</p>
+        <p>💥 Nova arma em teste</p>
+        <p>🎯 Atualização de sensi em breve</p>
+    </aside>
+
+    <footer>
+        <p>Site criado para avaliação – Free Fire © 2025</p>
+    </footer>
+
+</body>
+</html>
