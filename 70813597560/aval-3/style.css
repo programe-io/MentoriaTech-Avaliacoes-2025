@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>3 Post Cards Informativo</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa6b2;
+      --accent:#7c3aed;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,var(--bg),#071023 120%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      padding:48px 24px;
+    }
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+    }
+    h1.title-css{font-size:2.2rem;font-weight:800;background:linear-gradient(90deg,#7c3aed,#5b21b6);-webkit-background-clip:text;color:transparent;margin-bottom:24px;}
+
+h1{
+      font-size:1.6rem;
+      margin:0 0 20px 0;
+      letter-spacing:0.2px;
+    }
+    p.lead{color:var(--muted);margin:6px 0 28px 0}
+
+    /* grid */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+    }
+
+    /* card */
+    .card{
+      background:linear-gradient(180deg,var(--card), rgba(10,15,25,0.6));
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 6px 20px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      transition:transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s;
+      display:flex;
+      flex-direction:column;
+      min-height:420px;
+    }
+    .card:hover{transform:translateY(-8px);box-shadow:0 14px 40px rgba(2,6,23,0.7)}
+
+    .card .media{
+      position:relative;
+      height:190px;
+      overflow:hidden;
+      flex-shrink:0;
+    }
+    .card .media img{
+      width:100%;height:100%;object-fit:cover;display:block;transform:scale(1);transition:transform .6s ease;
+    }
+    .card:hover .media img{transform:scale(1.06)}
+
+    .card .content{
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      flex:1 1 auto;
+    }
+
+    .meta{
+      display:flex;gap:10px;align-items:center;font-size:13px;color:var(--muted)
+    }
+    .meta .tag{
+      background:var(--glass);
+      padding:6px 10px;border-radius:999px;font-weight:600;font-size:12px;color:var(--muted);
+      border:1px solid rgba(255,255,255,0.03)
+    }
+    .meta time{opacity:.9}
+
+    .title{font-size:1.07rem;margin:0;line-height:1.25}
+    .excerpt{color:var(--muted);font-size:0.95rem;margin:0}
+
+    .footer{
+      display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:6px;border-top:1px solid rgba(255,255,255,0.02)
+    }
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#5b21b6);color:white;text-decoration:none;font-weight:600;font-size:0.95rem;box-shadow:0 6px 18px rgba(124,58,237,0.18);
+    }
+    .stats{color:var(--muted);font-size:0.92rem;display:flex;gap:12px;align-items:center}
+
+    /* responsive tweaks */
+    @media (max-width:420px){
+      body{padding:18px}
+      .card{min-height:380px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title-css">3 Post Cards Informativos</h1>
+    <p class="lead">Exemplo de layout com 3 cartões informativos — cada cartão contém imagem, tag, resumo e ação.</p>
+
+    <div class="grid">
+
+      <!-- Card 1 -->
+      <article class="card">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60" alt="Paisagem natural"/>
+        </div>
+        <div class="content">
+          <div class="meta">
+            <span class="tag">Meio Ambiente</span>
+            <time datetime="2025-12-01">01 Dez 2025</time>
+          </div>
+          <h2 class="title">Como pequenas ações ajudam o planeta</h2>
+          <p class="excerpt">Descubra hábitos simples que reduzem desperdício, economizam energia e protegem ecossistemas — práticas fáceis para aplicar no dia a dia.</p>
+
+          <div class="footer">
+            <div class="stats">★ 4.8 • 1.2k leituras</div>
+            <a class="btn" href="#">Ler mais →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=60" alt="Tecnologia"/>
+        </div>
+        <div class="content">
+          <div class="meta">
+            <span class="tag">Tecnologia</span>
+            <time datetime="2025-11-20">20 Nov 2025</time>
+          </div>
+          <h2 class="title">Tendências tech que você precisa conhecer</h2>
+          <p class="excerpt">Uma visão prática das inovações em IA, computação e segurança digital que já impactam empresas e consumidores.</p>
+
+          <div class="footer">
+            <div class="stats">★ 4.7 • 980 leituras</div>
+            <a class="btn" href="#">Ler mais →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=60" alt="Alimentação saudável"/>
+        </div>
+        <div class="content">
+          <div class="meta">
+            <span class="tag">Saúde</span>
+            <time datetime="2025-10-05">05 Out 2025</time>
+          </div>
+          <h2 class="title">Alimentação inteligente em 5 passos</h2>
+          <p class="excerpt">Dicas simples e baseadas em hábitos para melhorar sua dieta, manter energia e reduzir o estresse no dia a dia.</p>
+
+          <div class="footer">
+            <div class="stats">★ 4.9 • 2.1k leituras</div>
+            <a class="btn" href="#">Ler mais →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</body>
+</html>
