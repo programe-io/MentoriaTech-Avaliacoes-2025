@@ -1,0 +1,224 @@
+/* Configurações de Cores e Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+:root {
+    --cor-principal: #673AB7; /* Roxo (Foco) */
+    --cor-acento: #00BCD4; /* Ciano (Destaque/Ação) */
+    --cor-fundo: #f4f7f6; /* Fundo Suave */
+    --cor-card: #ffffff;
+    --cor-texto: #2c3e50;
+}
+
+/* Reset e Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.5;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--cor-principal);
+    color: var(--cor-card);
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav h1 {
+    font-size: 1.8em;
+    font-weight: 800;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--cor-card);
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--cor-acento);
+}
+
+/* Layout Principal (Grid para o Menu + Sidebar) */
+.container {
+    display: grid;
+    /* 3 partes para os quizzes e 1 parte para a barra lateral */
+    grid-template-columns: 3fr 1fr; 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.quiz-area h2 {
+    font-size: 2em;
+    color: var(--cor-principal);
+    margin-bottom: 30px;
+}
+
+.quiz-area section {
+    display: grid;
+    /* Três cards de quiz por linha */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+}
+
+/* Estilo para a Tag <article> (Card de Quiz) */
+.quiz-card {
+    background-color: var(--cor-card);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.quiz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(103, 58, 183, 0.2);
+}
+
+.quiz-card h3 {
+    font-size: 1.5em;
+    color: var(--cor-texto);
+    margin-bottom: 15px;
+}
+
+/* Estilo para a <img> do Quiz */
+.quiz-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 10px 0 15px;
+}
+
+.quiz-stats {
+    margin: 15px 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Estilizando Tags <span> de Dificuldade */
+.dificuldade-tag {
+    background-color: var(--cor-acento);
+    color: var(--cor-card);
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.dificuldade-tag.facil {
+    background-color: #4CAF50; /* Verde para Fácil */
+}
+
+.dificuldade-tag.dificil {
+    background-color: #F44336; /* Vermelho para Difícil */
+}
+
+.total-perguntas {
+    font-weight: 700;
+    color: var(--cor-principal);
+}
+
+/* Botão de Iniciar */
+.start-quiz-btn {
+    background-color: var(--cor-principal);
+    color: var(--cor-card);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.start-quiz-btn:hover {
+    background-color: var(--cor-acento);
+    color: var(--cor-texto);
+}
+
+/* Barra Lateral (<aside>) */
+.sidebar {
+    position: sticky; 
+    top: 40px;
+    height: fit-content;
+}
+
+.ranking-box, .rules-info {
+    background-color: var(--cor-card);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ranking-box h4, .rules-info h4 {
+    color: var(--cor-acento);
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 5px;
+}
+
+.ranking-box ol {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.ranking-box ol li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #eee;
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: space-between;
+}
+
+.score {
+    font-weight: 700;
+    color: var(--cor-principal);
+}
+
+/* Estilizando <span> nas Regras */
+.regra-tempo {
+    font-weight: 700;
+    color: var(--cor-principal);
+    background-color: #e0f7fa; /* Fundo leve para destaque */
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
