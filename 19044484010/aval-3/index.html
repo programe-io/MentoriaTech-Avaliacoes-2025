@@ -1,66 +1,87 @@
-<!doctype html>
+"<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Social Feed Completo</title>
-
-                <!-- Importa o arquivo CSS separado -->
-                    <link rel="stylesheet" href="style.css">
-                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neymar Jr. Fã Clube - Tema P&B</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Configurações Tailwind para o tema Preto e Branco */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'njr-bg-dark': '#1A1A1A',        /* Fundo escuro principal */
+                        'njr-header-bg': '#333333',      /* Fundo do cabeçalho */
+                        'njr-card-bg': '#4A4A4A',        /* Fundo do card */
+                        'njr-card-hover': '#666666',     /* Fundo do card em hover */
+                        'njr-accent': '#CCCCCC',         /* Destaque (Cinza Claro) */
+                        'njr-text': '#FFFFFF',           /* Texto principal (Branco) */
+                        'njr-button-text': '#000000',    /* Texto do botão (Preto) */
+                    }
+                }
+            }
+        }
+        
+        /* Garante que o fundo do corpo seja sempre a cor definida */
+        body {
+            min-height: 100vh;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
+<body class="bg-njr-bg-dark text-njr-text">
 
-                    <body>
+    <header class="shadow-lg p-5 flex bg-njr-header-bg">
+        <nav class="font-bold gap-8 hidden md:flex items-center">
+            <a href="#" class="text-njr-accent hover:text-white transition duration-300">NJR ⚡️</a>
+            <a href="#" class="hover:text-njr-accent transition duration-300">Perfil</a>
+            <a href="#" class="hover:text-njr-accent transition duration-300">Estatísticas</a>
+            <a href="#" class="hover:text-njr-accent transition duration-300">Notícias</a>
+        </nav>
+        <div class="ml-auto text-njr-accent font-semibold">#NEYDAY</div>
+    </header>
 
-                    <header class="header">
-                        <h1>Logo</h1>
-                            <nav class="nav">
-                                    <a href="">Início</a>
-                                            <a href="">Amigos</a>
-                                                    <a href="">Perfil</a>
-                                                        </nav>
-                                                            <button class="btn-primary">Menu</button>
-                                                            </header>
+    <main class="py-10 px-4 flex flex-col gap-6 md:flex-row md:flex-wrap md:justify-center">
+        
+        <div class="bg-njr-card-bg py-4 px-6 rounded-xl shadow-2xl max-w-sm w-full transition duration-300 hover:bg-njr-card-hover transform hover:scale-[1.02]">
+            <h3 class="text-xl font-bold mb-2 text-njr-accent">Gols Históricos</h3>
+            <p class="text-sm">Os 5 gols mais incríveis da carreira de Neymar no Santos, Barcelona e PSG.</p>
+            <button class="mt-4 bg-njr-accent text-njr-button-text font-bold py-1 px-3 rounded-full text-xs hover:opacity-90">Ver Vídeo</button>
+            
+            <img src="https://i.ytimg.com/vi/2utgFYerVBc/hqdefault.jpg?sqp=-oaymwEnCOADEI4CSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDyIc_tvveaTStGl41yqYW6Xl8emg" 
+                 alt="Neymar marcando gol" 
+                 class="w-full h-auto object-cover rounded-md mt-4 grayscale">
+        </div>
 
-                                                            <section class="new-post-box">
-                                                                <h2>Criar Publicação</h2>
-                                                                    <textarea class="new-post-textarea" placeholder="O que você está pensando?"></textarea>
-                                                                        <br><br>
-                                                                            <button class="btn-primary">Enviar</button>
-                                                                            </section>
+        <div class="bg-njr-card-bg py-4 px-6 rounded-xl shadow-2xl max-w-sm w-full transition duration-300 hover:bg-njr-card-hover transform hover:scale-[1.02]">
+            <h3 class="text-xl font-bold mb-2 text-njr-accent">Números de NJR</h3>
+            <ul class="text-sm list-disc ml-4">
+                <li>Partidas: 750+</li>
+                <li>Gols: 480+</li>
+                <li>Assistências: 280+</li>
+            </ul>
+            
+            <img src="https://i.ytimg.com/vi/TUlPzM72sqE/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAIsHnrqEUqgst-3MEwZISpzqtYug" 
+                 alt="Neymar com a camisa do Brasil" 
+                 class="w-full h-auto object-cover rounded-md mt-4 grayscale">
+        </div>
 
-                                                                            <article class="post-card">
-                                                                                <div class="post-header">
-                                                                                        <img class="profile-img" src="images/profile_01.jpg">
-                                                                                                <div>
-                                                                                                            <h2>FroJoho</h2>
-                                                                                                                        <small>há 2 horas</small>
-                                                                                                                                </div>
-                                                                                                                                    </div>
+        <div class="bg-njr-card-bg py-4 px-6 rounded-xl shadow-2xl max-w-sm w-full transition duration-300 hover:bg-njr-card-hover transform hover:scale-[1.02]">
+            <h3 class="text-xl font-bold mb-2 text-njr-accent">Lesão e Retorno</h3>
+            <p class="text-sm">Atualização sobre a recuperação do craque e a data prevista para o seu retorno aos campos.</p>
+            <span class="block mt-3 text-xs opacity-75">Fonte: GE Esportes</span>
+            
+            <img src="https://i.ytimg.com/vi/pKL7chmhdfQ/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDC7OH-Fy1izIQq2g2f12slklgMSA" 
+                 alt="Neymar machucado" 
+                 class="w-full h-auto object-cover rounded-md mt-4 grayscale">
+        </div>
 
-                                                                                                                                        <img class="post-img" src="images/post_01.png">
-
-                                                                                                                                            <div class="post-content">
-                                                                                                                                                    <p>
-                                                                                                                                                                Hoje foi um dia incrível para testar novas tecnologias!  
-                                                                                                                                                                            O que vocês acham desse novo projeto?
-                                                                                                                                                                                    </p>
-                                                                                                                                                                                        </div>
-
-                                                                                                                                                                                            <div class="post-actions">
-                                                                                                                                                                                                    <button>👍 Curtir</button>
-                                                                                                                                                                                                            <button>💬 Comentar</button>
-                                                                                                                                                                                                                    <button>🔄 Compartilhar</button>
-                                                                                                                                                                                                                        </div>
-
-                                                                                                                                                                                                                            <div class="comments-box">
-                                                                                                                                                                                                                                    <div class="comment"><strong class="comment-author">Craque Neto:</strong>Palmeiras não tem mundial!</div>
-                                                                                                                                                                                                                                            <div class="comment"><strong class="comment-author">Yuri Alberto:</strong> Vai Corinthians!</div>
-                                                                                                                                                                                                                                                    <input class="comment-input" placeholder="Escreva um comentário...">
-                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                        </article>
-
-                                                                                                                                                                                                                                                        </body>
-                                                                                                                                                                                                                                                        </html>
-                                                                                                                                                                                                                                                        <main>
-                                                                                                                                                                                                                                                            <span>
+    </main>
+    <footer class="text-center py-3 text-xs text-njr-accent/50">
+        &copy; 2025 Fã Site Não Oficial | Feito com 🤍 e Tailwind CSS.
+    </footer>
+<h2>
+</body>
+</html>
