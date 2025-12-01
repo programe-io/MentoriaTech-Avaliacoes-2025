@@ -1,99 +1,67 @@
-/* Importação de uma fonte temática (opcional) */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
-
-/* Estilo Básico */
 body {
-    font-family: 'Roboto', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #000; /* Fundo preto para destaque */
-    color: #fff;
-    text-align: center;
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #898686;
 }
 
-/* Header */
 header {
-    background-color: #e30419; /* Vermelho vibrante */
-    padding: 20px;
-    border-bottom: 5px solid #001f5c; /* Borda azul escura */
+background-color: #34363b;
+color: #ffffff;
+padding: 20px;
+text-align: center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px #000;
+.logo {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 20px;
 }
 
-/* Main Content */
-main {
-    padding: 40px 20px;
+.logo img {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+margin-right: 10px;
+border-radius: 50%;
+border-color: #b21111 ;
+border-width: 2px;
+border-style: solid; 
+
+
 }
 
-/* Seção Hero */
-.hero {
-    background: #001f5c; /* Azul escuro */
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(227, 4, 25, 0.7); /* Sombra vermelha */
+.logo h1 {
+margin: 0;
 }
 
-.hero h2 {
-    color: #fff;
-    font-size: 1.8em;
+.app-screenshots {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 20px;
+padding: 40px;
+border-top: 4px solid #b21111;
 }
 
-/* Card de Informação */
-.info-card {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 8px;
-    border-left: 5px solid #e30419;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
+.app-screenshots img {
+width: 100%;
+height: auto;
+box-shadow: 0 8px 16px rgba(178, 17, 17, 0.4);
+filter: drop-shadow(0 4px 8px rgba(178, 17, 17, 0.3));
 }
 
-/* Botão */
-#web-button {
-    background-color: #e30419; /* Vermelho */
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    margin-top: 15px;
-    font-size: 1.1em;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.1s;
+.description {
+padding: 40px;
+text-align: center;
 }
 
-#web-button:hover {
-    background-color: #ff3347;
+.menu-btn {
+background-color: #5f1414;
+color: #ffffff;
+border-radius: 0%;
+border-width: 2px;
+border-style: solid rgb(230, 230, 230);
+margin: 10px;
 }
 
-#web-button:active {
-    transform: scale(0.98); /* Efeito de clique */
-}
-
-/* Footer */
-footer {
-    background-color: #1a1a1a;
-    color: #aaa;
-    padding: 10px;
-    margin-top: 50px;
-}
-
-/* Estilo para a Teia (criado pelo JS) */
-#web-effect-area {
-    min-height: 50px; /* Garante que a div tenha espaço */
-}
-
-.web-line {
-    position: absolute; /* Permite posicionamento livre na tela */
-    height: 3px;
-    background-color: rgba(255, 255, 255, 0.8); /* Linha branca da teia */
-    transform-origin: left;
-    transition: width 0.5s ease-out, opacity 0.5s ease-out;
-    pointer-events: none; /* Ignora cliques na linha */
-}
