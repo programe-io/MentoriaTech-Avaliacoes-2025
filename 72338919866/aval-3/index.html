@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Post Cards Informativos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f6f9;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      background-color: #0b2540;
+      padding: 15px 30px;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(rgba(11,37,64,0.7), rgba(11,37,64,0.7)),
+      url("https://images.unsplash.com/photo-1498050108023-c5249f4df085") center/cover;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: auto;
+      opacity: 0.9;
+    }
+
+    /* ===== MAIN ===== */
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .post-card {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .post-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .post-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .post-content {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .post-content h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #0b2540;
+    }
+
+    .post-content p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .post-content span {
+      margin-top: auto;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">MeuSite</a>
+      <ul class="nav-links">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Posts</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Informação que transforma</h1>
+    <p>Conteúdos informativos sobre tecnologia, sustentabilidade e qualidade de vida.</p>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <section class="posts">
+
+      <article class="post-card">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="">
+        <div class="post-content">
+          <h2>Trabalho remoto</h2>
+          <p>O modelo remoto vem ganhando espaço e oferece flexibilidade e produtividade.</p>
+          <span>10/11/2025</span>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231" alt="">
+        <div class="post-content">
+          <h2>Energia limpa</h2>
+          <p>Fontes renováveis ajudam a preservar o meio ambiente e reduzir custos.</p>
+          <span>05/11/2025</span>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <img src="https://images.unsplash.com/photo-1518611012118-f0c5e7c2c2c5" alt="">
+        <div class="post-content">
+          <h2>Vida saudável</h2>
+          <p>Atividade física e bons hábitos impactam diretamente a qualidade de vida.</p>
+          <span>01/11/2025</span>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+</body>
+</html>
