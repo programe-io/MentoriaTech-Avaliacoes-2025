@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles (2).css">
+  <title>App social freed - funcional</title>
+
+  <!-- 🔗 Arquivo CSS externo -->
+  <link rel="stylesheet" href="styles (2).css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header></header>
+    <a></a><p></p>
+    <h2></h2>
+
+  <h1>Postagens</h1>
+
+  <nav>
+    <button data-target="inicio">Início</button>
+    <button data-target="perfil">Perfil</button>
+    <button data-target="postagens">Postagens</button>
+    <button data-target="todos">Mostrar todos</button>
+  </nav>
+
+  <main class="container" id="cards-container">
+
+    <!-- CARD 1 -->
+    <article id="inicio" class="card">
+      <div class="header">
+        <div class="avatar" style="background-image:url('https://img.elo7.com.br/product/main/3BB50A3/painel-redondo-meninas-super-poderosas-decoracao-infantil.jpg');"></div>
+        <div><strong>Isabela@</strong></div>
+      </div>
+      <img class="main-img" src="https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2023/04/24/istock-1394934715-rh4zeatjvo84.jpg" alt="Imagem" />
+      <div class="content">
+       O churrasco é muito mais do que uma refeição no Brasil; é um evento social e uma tradição cultural enraizada, sinônimo de união e celebração com amigos e familiares. Originário da cultura gaúcha, que assava carne em buracos no chão, o método evoluiu para a paixão nacional que é hoje. 
+        <span class="meta">Há 10 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article id="perfil" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://img.elo7.com.br/product/main/3BB50A3/painel-redondo-meninas-super-poderosas-decoracao-infantil.jpg');"></div>
+        <div><strong>Isabela@</strong></div>
+      </div>
+      <img class="main-img" src="https://blog.venturas.com.br/wp-content/uploads/2016/06/Travessia-Len%C3%A7%C3%B3is-Ma-Jota-Marincek-321.jpg" alt="Imagem" />
+      <div class="content">
+       A paisagem dos Lençóis Maranhenses é caracterizada por imensas dunas de areia branca e lagoas de água doce e cristalina que se formam entre elas, criando um cenário único no mundo
+        <span class="meta">Há 30 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article id="postagens" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://img.elo7.com.br/product/main/3BB50A3/painel-redondo-meninas-super-poderosas-decoracao-infantil.jpg');"></div>
+        <div><strong>Isabela@</strong></div>
+      </div>
+      <img class="main-img" src="https://static.wikia.nocookie.net/lemondededisney/images/b/b7/Profile_-_Stitch.jpg/revision/latest/thumbnail/width/360/height/360?cb=20200406152006&path-prefix=fr" alt="Imagem" />
+      <div class="content">
+       Stitch, originalmente chamado Experimento 626, é uma criatura alienígena azul, forte, inteligente e destrutiva criada pelo cientista Jumba Jookiba
+        <span class="meta">Há 1 hora</span>
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function mostrarCard(id) {
+      const cards = document.querySelectorAll('#cards-container .card');
+      cards.forEach(card => {
+        if (id === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.id === id) {
+            card.classList.remove('hidden');
+            setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        mostrarCard(target);
+      });
+    });
+  </script>
+
+</body>
+</html>
