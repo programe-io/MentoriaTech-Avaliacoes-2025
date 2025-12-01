@@ -1,0 +1,180 @@
+/* ===========================================================
+   Hello Kitty — Mega Stylesheet
+   - Variáveis, layout, animações, componentes, dark-mode, print
+   - Cole este CSS num arquivo styles.css e ligue ao HTML
+   =========================================================== */
+
+/* -------------------------
+   Variáveis e reset
+   ------------------------- */
+:root{
+  --bg: #fff7fb;
+  --panel: #ffffff;
+  --accent: #ff6fa6;
+  --accent-2: #ffd6e8;
+  --muted: #7b6f74;
+  --text: #222;
+  --glass: rgba(255,255,255,0.65);
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 20px;
+
+  --gap: 1rem;
+  --maxw: 1200px;
+
+  --shadow-soft: 0 8px 28px rgba(39,24,34,0.06);
+  --shadow-lg: 0 18px 60px rgba(39,24,34,0.08);
+
+  --ff-sans: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* sensible reset */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;padding:0;font-family:var(--ff-sans);-webkit-font-smoothing:antialiased;background:linear-gradient(180deg,var(--bg),#fff);color:var(--text)}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none}
+button{font-family:inherit}
+
+/* -------------------------
+   Page container & grid
+   ------------------------- */
+.container, .wrap{width:calc(100% - 2rem);max-width:var(--maxw);margin:0 auto;padding:2rem 1rem}
+.header, header.site-header{padding:1rem;border-radius:var(--radius);background:linear-gradient(90deg, rgba(255,111,166,0.06), rgba(255,111,166,0.02));box-shadow:var(--shadow-soft)}
+.brand{display:flex;align-items:center;gap:.9rem}
+.logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ffb3d1);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
+.main-nav{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+.main-nav a{padding:.45rem .7rem;border-radius:10px;color:var(--muted);font-weight:700}
+.main-nav a:hover{background:var(--accent-2);color:var(--accent)}
+
+/* layout grid */
+.layout{display:grid;grid-template-columns:1fr;gap:var(--gap);align-items:start}
+@media(min-width:1000px){ .layout{grid-template-columns:1fr 380px} }
+
+/* -------------------------
+   Hero / Intro
+   ------------------------- */
+.hero{display:grid;grid-template-columns:1fr;gap:1rem;padding:1.25rem;border-radius:16px;background:linear-gradient(180deg,#fff,#fff3fb);box-shadow:var(--shadow-lg)}
+@media(min-width:900px){ .hero{grid-template-columns:1fr 420px} }
+.hero-left h1{font-size:2.2rem;margin:0;line-height:1.03}
+.hero-sub{color:var(--muted);margin:.4rem 0}
+.cta-group{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
+.btn{display:inline-block;padding:.7rem 1rem;border-radius:12px;background:var(--accent);color:#fff;font-weight:800;cursor:pointer;box-shadow:0 8px 20px rgba(255,111,166,0.12);border:0}
+.btn.ghost{background:transparent;border:2px solid rgba(255,111,166,0.12);color:var(--accent)}
+
+/* hero right - kitty card */
+.kitty-box{width:380px;height:320px;border-radius:18px;background:linear-gradient(180deg,#fff,#fff7fb);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:var(--shadow-lg);overflow:visible}
+.spark{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--accent);opacity:.14;filter:blur(.7px)}
+.spark.s1{left:18px;top:12px;animation:floaty 5s ease-in-out infinite}
+.spark.s2{right:20px;bottom:18px;animation:floaty 6s ease-in-out infinite}
+@keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+
+/* -------------------------
+   Cards & sections
+   ------------------------- */
+.card{background:var(--panel);padding:1rem;border-radius:12px;box-shadow:var(--shadow-soft);margin-top:1rem}
+.section-title{color:var(--accent);font-size:1.4rem;margin:0 0 .6rem 0}
+.small{font-size:.92rem;color:var(--muted)}
+.sep{height:1px;background:linear-gradient(90deg,transparent,#ffe0ef,transparent);margin:1rem 0;border-radius:4px}
+
+/* two-column helpers */
+.cols-2{display:grid;grid-template-columns:1fr;gap:1rem}
+@media(min-width:800px){ .cols-2{grid-template-columns:repeat(2,1fr)} }
+
+/* utility */
+.center{text-align:center}
+.pulse{animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.02)}100%{transform:scale(1)}}
+
+/* -------------------------
+   Gallery / Carousel
+   ------------------------- */
+.carousel{position:relative;overflow:hidden;border-radius:12px;background:linear-gradient(180deg,#fff,#fff9fb)}
+.carousel-track{display:flex;transition:transform .45s cubic-bezier(.2,.9,.3,1)}
+.carousel-item{min-width:100%;flex-shrink:0;padding:1rem;display:flex;align-items:center;justify-content:center}
+.carousel-controls{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);display:flex;justify-content:space-between;padding:0 1rem}
+.control-btn{background:rgba(255,255,255,0.9);border:0;padding:.5rem .8rem;border-radius:8px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,0.06)}
+
+/* gallery grid */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}
+@media(min-width:700px){ .gallery{grid-template-columns:repeat(4,1fr)} }
+.gallery figure{margin:0;padding:.4rem;border-radius:10px;display:flex;align-items:center;justify-content:center;min-height:120px;background:linear-gradient(180deg,#fff,#fff9fb)}
+
+/* modal */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(12,6,8,0.6);z-index:90;padding:1rem}
+.modal.open{display:flex}
+.modal .inner{max-width:1000px;width:100%;background:var(--panel);padding:1rem;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.modal img{max-width:100%;height:auto}
+
+/* -------------------------
+   Timeline reveal
+   ------------------------- */
+.timeline{padding-left:1rem;border-left:3px dashed rgba(255,111,166,0.08);margin-top:1rem}
+.timeline-item{margin-bottom:1rem;opacity:0;transform:translateY(12px);transition:opacity .45s ease,transform .45s ease}
+.timeline-item.in-view{opacity:1;transform:translateY(0)}
+
+/* -------------------------
+   FAQ / Accordion
+   ------------------------- */
+.faq-item{border-radius:10px;padding:.6rem;border:1px solid rgba(39,24,34,0.04);background:linear-gradient(180deg,#fff,#fffefc);margin-top:.6rem;cursor:pointer}
+.faq-question{display:flex;justify-content:space-between;align-items:center}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease;padding-top:0}
+
+/* -------------------------
+   Table styles
+   ------------------------- */
+table{width:100%;border-collapse:collapse;margin-top:1rem}
+table th, table td{padding:.75rem;border:1px solid #eee;text-align:left}
+table th{background:var(--accent-2);font-weight:700}
+
+/* -------------------------
+   Footer
+   ------------------------- */
+.site-footer{margin-top:1.2rem;padding:1.2rem 0;text-align:center;color:var(--muted);font-size:.95rem}
+
+/* -------------------------
+   Accessibility focus
+   ------------------------- */
+a:focus,button:focus,input:focus{outline:3px solid rgba(255,111,166,0.18);outline-offset:3px}
+:focus{scroll-margin-top:1.5rem}
+
+/* -------------------------
+   Dark mode
+   ------------------------- */
+.dark{
+  --bg:#0f0810;
+  --panel:linear-gradient(180deg,#100816,#1b1520);
+  --accent:#ff7ab3;
+  --accent-2:#3a1730;
+  --muted:#c9bfc4;
+  --text:#f7f3f6;
+  --glass: rgba(255,255,255,0.04);
+}
+.dark body{background:linear-gradient(180deg,#070308,#0b0710)}
+
+/* adjust components for dark mode */
+.dark .header, .dark .card, .dark .modal .inner{box-shadow: none}
+.dark .gallery figure, .dark .carousel{background:rgba(255,255,255,0.02)}
+.dark .logo{box-shadow:0 8px 24px rgba(255,122,179,0.06)}
+
+/* -------------------------
+   Print styles
+   ------------------------- */
+@media print{
+  body{background:#fff;color:#000}
+  .main-nav,.kitty-box,.carousel-controls,.modal,.spark{display:none}
+  .container, .wrap{width:100%;padding:0;margin:0}
+  .card{box-shadow:none;border:1px solid #eee}
+}
+
+/* -------------------------
+   Extra helpers (micro-interactions)
+   ------------------------- */
+/* subtle hover lift for cards */
+.card:hover{transform:translateY(-4px);transition:transform .28s ease;box-shadow:0 22px 60px rgba(39,24,34,0.08)}
+/* small badges */
+.tag{display:inline-block;padding:.35rem .6rem;border-radius:999px;background:var(--accent-2);color:var(--accent);font-weight:700;font-size:.85rem;margin:.2rem .2rem 0 0}
+
+/* -------------------------
+   End of stylesheet
+   ------------------------- */
