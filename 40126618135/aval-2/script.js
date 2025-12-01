@@ -1,9 +1,4 @@
-function showSection(sectionId) {
-    const sections = document.querySelectorAll('.content-section');
-
-    sections.forEach(sec => {
-        sec.classList.add('hidden');
-    });
-
-    document.getElementById(sectionId).classList.remove('hidden');
-}
+document.getElementById("botao").addEventListener("click", () => {
+    document.getElementById("mensagem").textContent =
+        "Recomendação: também assista 'Interestelar', do mesmo diretor!";
+});
