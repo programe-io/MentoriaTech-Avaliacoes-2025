@@ -1,65 +1,114 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Feed Completo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Galeria — Estilo Cards</title>
+  <style>
+    :root{
+      --primary:#2563eb;
+      --primary-light:#3b82f6;
+      --accent:#ff8800;
+      --background:#0f172a;
+      --surface:#ffffffee;
+      --card-bg:#f8fafc;
+      --muted:#74818a;
+      --text:#0b1220;
+      --radius:12px;
+    }
 
-    <!-- Importa o arquivo CSS separado -->
-    <link rel="stylesheet" href="style.css">
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;background:var(--background);font-family:Inter, Arial, Helvetica, sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
+
+    .topbar{background:linear-gradient(180deg,var(--accent),#cc6b00);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;color:#fff}
+    .logo{font-weight:800;letter-spacing:1px}
+    .nav{display:flex;gap:18px}
+    .nav a{color:rgba(255,255,255,0.9);text-decoration:none}
+
+    .wrap{max-width:1200px;margin:30px auto;padding:0 20px}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start}
+
+    /* Conteúdo */
+    h2{color:#fff;margin-bottom:18px;text-align:center;font-size:28px}
+    span{color:#ffbb00;font-weight:bold}
+
+    .card{
+      background:var(--card-bg);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 6px 20px rgba(2,6,23,0.6);
+      border:1px solid rgba(0,0,0,0.06);
+      overflow:hidden;
+      display:flex;flex-direction:column;
+    }
+
+    .card h3{font-size:20px;margin-bottom:12px}
+
+    .card .thumb{width:100%;height:170px;border-radius:10px;object-fit:cover;border:1px solid rgba(0,0,0,0.08)}
+
+    .card p{margin-top:12px;line-height:1.5;color:var(--muted);font-size:14px}
+
+    .card .content{flex:1}
+
+    @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){
+      .grid{grid-template-columns:1fr}
+      .topbar{height:88px;flex-direction:column;gap:8px;padding:12px}
+    }
+
+    .card:hover{transform:translateY(-6px);transition:.28s ease;box-shadow:0 12px 30px rgba(2,6,23,0.7)}
+
+    .note{color:#cbd5e1;text-align:center;margin-top:18px;font-size:13px}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
-
 <body>
 
-<header class="header">
-    <h1>Logo</h1>
+  <header class="topbar">
+    <div class="logo"><span>FUTEBOL</span></div> <!-- AQUI ENTRA O SPAN -->
     <nav class="nav">
-        <a href="">Início</a>
-        <a href="">Amigos</a>
-        <a href="">Perfil</a>
+      <a href="#">Início</a>
+      <a href="#">Artigos</a>
+      <a href="#">Perfil</a>
     </nav>
-    <button class="btn-primary">Menu</button>
-</header>
+  </header>
 
-<section class="new-post-box">
-    <h2>Criar Publicação</h2>
-    <textarea class="new-post-textarea" placeholder="O que você está pensando?"></textarea>
-    <br><br>
-    <button class="btn-primary">Enviar</button>
+  <main class="wrap">
+
+    <h2><span>JOGADORES</span></h2> <!-- TAGS EXIGIDAS -->
+
+    <section class="grid">
+
+<article class="card">
+<h3>Lionel Messi</h3>
+<img class="thumb" src="https://imagens.ebc.com.br/gnI4BvUvr_DaNi1UYumXCW4N1fU=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/2020-09-04t074743z_1244062587_rc2jri9dq6xt_rtrmadp_3_soccer-spain-advertisaing.jpg?itok=z64e34Yz">
+<div class="content">
+<p><span>Lionel Messi</span> Frequentemente considerado o melhor jogador do mundo e na opinião da grande maioria dos especialistas do esporte, sua qualidade técnica, jogadas, velocidade, habilidade com a perna esquerda, trabalho de equipe e extraordinária vocação para o gol, tornam Messi um dos melhores futebolistas de todos os tempos.</p>
+</div>
+</article>
+
+<article class="card">
+<h3>Neymar Jr</h3>
+<img class="thumb" src="https://e0.365dm.com/17/08/2048x1152/skysports-neymar-barcelona-champions-cup_4064313.jpg?20170803135513">
+<div class="content">
+<p><span>Neymar Jr</span> Revelado pelo próprio Santos em 2009, desde cedo correspondeu às expectativas e conquistou diversos títulos com o clube, incluindo dois Campeonatos Paulistas seguidos, uma Copa do Brasil e uma Libertadores, sendo esta a primeira do Peixe desde 1963. Ganhou por duas vezes seguidas o prêmio de melhor jogador sul-americano do ano, em 2011 e 2012, e um prêmio Puskás de gol mais bonito do ano em 2011.</p>
+</div>
+</article>
+
+<article class="card">
+<h3>Lamine Yamal</h3>
+<img class="thumb" src="https://assets.goal.com/images/v3/blt8ca5bd15ac808229/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORSGYYQ====/GettyImages-2232509303.jpg?auto=webp&format=pjpg&width=3840&quality=60">
+<div class="content">
+<p><span>Lamine Yamal</span> é canhoto, mas também consegue finalizar bem com a perna direita. Possui excelente visão de jogo, habilidades de drible, passe e criação de jogadas. É capaz de atuar como centroavante, meio-campista ou ponta, mas se destaca especificamente pelo lado direito.</p>
+</div>
+</article>
+
 </section>
 
-<article class="post-card">
-    <div class="post-header">
-        <img class="profile-img" src="images/profile_01.jpg">
-        <div>
-            <h2>samuel chaves</h2>
-            <small>há 2 horas</small>
-        </div>
-    </div>
+<p class="note">Você pode trocar imagens e adicionar mais cards quando quiser.</p>
 
-    <img class="post-img" src="images/post_01.png">
-
-    <div class="post-content">
-        <p>
-            Hoje foi um dia incrível para testar novas tecnologias!  
-            O que vocês acham desse novo projeto?
-        </p>
-    </div>
-
-    <div class="post-actions">
-        <button>👍 Curtir</button>
-        <button>💬 Comentar</button>
-        <button>🔄 Compartilhar</button>
-    </div>
-
-    <div class="comments-box">
-        <div class="comment"><strong class="comment-author">Anna:</strong> Ficou incrível! 👏</div>
-        <div class="comment"><strong class="comment-author">Marcelo:</strong> Quero ver mais disso!</div>
-        <input class="comment-input" placeholder="Escreva um comentário...">
-    </div>
-</article>
-<main>
-    <span>
+</main>
 </body>
 </html>
