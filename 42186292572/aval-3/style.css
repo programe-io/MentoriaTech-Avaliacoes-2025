@@ -1,0 +1,49 @@
+/* fastfood_styles.css — Estilos para o site Burguer Flash */
+:root{--bg:#fff5ef;--card:#ffffff;--accent:#ff5a1f;--accent-2:#ffd9c7;--muted:#6b7280;--radius:14px;--shadow:0 10px 30px rgba(2,6,23,0.08);}
+*{box-sizing:border-box}html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:var(--bg);color:#0f172a}
+.container{max-width:1100px;margin:0 auto;padding:28px}
+.header-inner{display:flex;align-items:center;gap:18px;justify-content:space-between}
+.brand{margin:0;font-size:20px}
+.brand span{color:var(--accent);font-weight:800}
+.main-nav a{margin:0 8px;text-decoration:none;color:#0f172a;font-weight:600}
+.btn{padding:8px 12px;border-radius:10px;border:0;background:#111827;color:#fff;cursor:pointer}
+.btn.ghost{background:transparent;border:1px solid rgba(0,0,0,0.06);color:#111827}
+.btn.primary{background:var(--accent);font-weight:800}
+
+.hero{padding:36px 0}
+.hero-inner{display:flex;gap:30px;align-items:center}
+.hero-text h2{font-size:32px;margin:0 0 8px}
+.hero-text p{color:var(--muted);margin:0 0 16px}
+.cta-row{display:flex;gap:12px}
+.hero-visual img{border-radius:12px;max-width:100%;height:auto}
+
+.menu-section h3{margin-top:0}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:12px}
+.card{background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow)}
+.card img{width:100%;height:auto;border-radius:10px}
+.card-row{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
+.price{font-weight:800}
+.muted{color:var(--muted)}
+
+.promo-section,.contact-section{margin-top:18px}
+.footer-inner{padding:18px;text-align:center;color:var(--muted)}
+
+/* modal carrinho */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;align-items:center;justify-content:center;padding:20px}
+.modal[aria-hidden="false"]{display:flex}
+.modal-card{background:#fff;padding:18px;border-radius:12px;min-width:320px;max-width:480px;box-shadow:var(--shadow)}
+.cart-items{max-height:240px;overflow:auto;margin:8px 0}
+.cart-item{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #f0f0f0}
+.cart-total{font-weight:800;margin-top:8px}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+
+/* responsivo */
+@media (max-width:900px){
+  .hero-inner{flex-direction:column;text-align:center}
+  .header-inner{flex-direction:column;align-items:flex-start}
+}
+
+/* acessibilidade - foco */
+a:focus,button:focus{outline:3px solid rgba(255,90,31,0.18);outline-offset:3px}
+
+/* fim */
