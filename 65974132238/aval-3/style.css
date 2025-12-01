@@ -2,14 +2,14 @@
    VARIÁVEIS DE TEMA
 ============================================================ */
 :root {
-    --primary: #2563eb;
-    --primary-light: #3b82f6;
-    --primary-dark: #1e40af;
-    --accent: #22d3ee;
-    --background: #0f172a;
-    --surface: #1e293b;
-    --surface-light: #334155;
-    --text: #e2e8f0;
+    --primary: #e06fc8;
+    --primary-light: #f716c6;
+    --primary-dark: #be0791;
+    --accent: #e700c8;
+    --background: #6d508d;
+    --surface: #510a5f;
+    --surface-light: #2f0b58;
+    --text: #bb1abb;
     --radius: 10px;
 }
 
@@ -220,5 +220,38 @@ button {
 ============================================================ */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Imagens em linha (3 imagens lado a lado) */
+.imagens-row {
+    border: 3px solid #e700c8;
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+    justify-content: center;
+    /* Permitir quebra quando necessário e manter centralizado */
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    padding-bottom: 6px;
+}
+
+.imagens-row img {
+    flex: 1 1 calc(33.333% - 8px); /* 3 imagens iguais por linha */
+    max-width: calc(33.333% - 8px);
+    height: auto; /* altura fixa para todas ficarem iguais */
+    border-radius: 8px;
+    object-fit: cover;
+    
+}
+
+@media (min-width: 1400px) {
+    .imagens-row img { flex: 1 1 calc(33.333% - 8px); }
+}
+
+@media (max-width: 900px) {
+    .imagens-row img { flex: 1 1 calc(50% - 8px); max-width: calc(50% - 8px); height: 180px; }
+}
+
+@media (max-width: 520px) {
+    .imagens-row img { flex: 1 1 100%; max-width: 100%; height: 160px; }
 }
