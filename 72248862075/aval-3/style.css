@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página Completa Sobre Carros</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; line-height: 1.8; }
+        h1, h2, h3 { font-weight: bold; text-transform: uppercase; }
+        p { font-size: 1.1rem; color: #222; }
+        :root { --azul-escuro: #0a1a44; --azul: #1e40af; --destaque: #ffcc00; --cinza-claro: #f5f5f5; }
+        header { border-bottom: 5px solid var(--destaque); background: linear-gradient(90deg, var(--azul-escuro), var(--azul)); }
+        nav a { transition: 0.3s; }
+        nav a:hover { color: var(--destaque); transform: scale(1.1); }
+        .hero-title { text-shadow: 4px 4px 10px #000; animation: surgir 1.5s ease forwards; }
+        @keyframes surgir { from { opacity: 0; transform: translateY(40px);} to { opacity: 1; transform: translateY(0);} }
+        .card-custom { border: 3px solid var(--cinza-claro); transition: 0.4s; }
+        .card-custom:hover { transform: translateY(-10px); border-color: var(--destaque); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        table { border-collapse: collapse; overflow: hidden; }
+        th { background: var(--azul); color: white !important; }
+        tr:nth-child(even) { background: #e8e8e8; }
+        td, th { border: 1px solid #ddd; }
+        .galeria-img { transition: 0.3s; border: 4px solid white; outline: 2px solid #ccc; }
+        .galeria-img:hover { transform: scale(1.05); border-color: var(--destaque); outline-color: var(--azul); }
+        form input, form textarea { transition: 0.3s; }
+        form input:focus, form textarea:focus { border-color: var(--azul); box-shadow: 0 0 10px rgba(30, 64, 175, 0.4); outline: none; }
+        .btn { padding: 12px 20px; font-weight: bold; border-radius: 6px; transition: 0.3s; }
+        .btn:hover { transform: scale(1.05); cursor: pointer; }
+        footer { background: var(--azul-escuro); border-top: 4px solid var(--destaque); }
+        @media (max-width: 768px) { header nav { flex-direction: column; gap: 10px; } .hero-title { font-size: 2.6rem; } table { font-size: 0.9rem; } }
+        @media (max-width: 500px) { .galeria-img { height: 180px; object-fit: cover; } h2 { font-size: 1.6rem; } }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- CABEÇALHO -->
+    <header class="text-white p-6 shadow-xl">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-4xl font-extrabold">Mundo dos <span class="text-yellow-400">Carros</span></h1>
+            <nav class="flex gap-6 text-lg font-semibold">
+                <a href="#sobre">Sobre</a>
+                <a href="#categorias">Categorias</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative">
+        <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg"
+             class="w-full h-[420px] object-cover opacity-90" alt="Carro moderno">
+
+        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+            <h2 class="hero-title text-5xl text-white font-extrabold">
+                Bem-vindo ao Universo <span class="text-yellow-400">Automotivo</span>
+            </h2>
+        </div>
+    </section>
+
+    <!-- PRINCIPAL -->
+    <main class="container mx-auto py-12 px-5">
+
+        <!-- SOBRE -->
+        <section id="sobre" class="mb-16">
+            <h2 class="text-4xl font-bold mb-6 text-blue-700">Sobre</h2>
+            <p class="mb-4">
+                Carros são mais do que veículos: são símbolos de liberdade, aventura e tecnologia.
+                Nesta página, exploramos categorias, tabelas, galeria completa e ainda uma área de contato.
+            </p>
+        </section>
+
+        <!-- CARDS -->
+        <section id="categorias" class="mb-20">
+            <h2 class="text-4xl font-bold mb-8 text-blue-700">Categorias de Carros</h2>
+
+            <div class="grid md:grid-cols-3 gap-10">
+
+                <!-- Card 1 -->
+                <div class="card-custom bg-white rounded-xl shadow-lg p-6 flex flex-col">
+                    <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg" class="rounded-lg mb-4">
+                    <h3 class="text-3xl text-red-600 mb-3">Esportivos <span class="text-yellow-400">🔥</span></h3>
+                    <p class="flex-grow">Alta velocidade, motores potentes e design agressivo.</p>
+                    <button class="btn bg-red-600 text-white mt-4">Saiba <span class="font-bold">Mais</span></button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card-custom bg-white rounded-xl shadow-lg p-6 flex flex-col">
+                    <img src="https://images.pexels.com/photos/1149831/pexels-photo-1149831.jpeg" class="rounded-lg mb-4">
+                    <h3 class="text-3xl text-green-700 mb-3">Elétricos <span class="text-yellow-400">⚡</span></h3>
+                    <p class="flex-grow">Zero poluição e tecnologia de ponta.</p>
+                    <button class="btn bg-green-700 text-white mt-4">Saiba <span class="font-bold">Mais</span></button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card-custom bg-white rounded-xl shadow-lg p-6 flex flex-col">
+                    <img src="https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg" class="rounded-lg mb-4">
+                    <h3 class="text-3xl text-orange-600 mb-3">SUVs <span class="text-yellow-400">🚙</span></h3>
+                    <p class="flex-grow">Espaço, conforto e segurança para toda a família.</p>
+                    <button class="btn bg-orange-600 text-white mt-4">Saiba <span class="font-bold">Mais</span></button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- GALERIA -->
+        <section id="galeria" class="mb-20">
+            <h2 class="text-4xl font-bold mb-8 text-blue-700">Galeria</h2>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <img class="galeria-img rounded-lg shadow-xl" src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg">
+                <img class="galeria-img rounded-lg shadow-xl" src="https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg">
+                <img class="galeria-img rounded-lg shadow-xl" src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg">
+                <img class="galeria-img rounded-lg shadow-xl" src="https://images.pexels.com/photos/1149831/pexels-photo-1149831.jpeg">
+                <img class="galeria-img rounded-lg shadow-xl" src="https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg">
+                <img class="galeria-img rounded-lg shadow-xl" src="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg">
+            </div>
+        </section>
+
+        <!-- FORMULÁRIO -->
+        <section id="contato" class="mb-20">
+            <h2 class="text-4xl font-bold mb-8 text-blue-700">Contato</h2>
+
+            <form class="bg-white p-8 rounded-xl shadow-xl max-w-2xl mx-auto">
+                <input class="w-full p-3 mb-4 border rounded-lg" type="text" placeholder="Seu nome">
+                <input class="w-full p-3 mb-4 border rounded-lg" type="email" placeholder="Seu email">
+                <textarea class="w-full p-3 mb-4 border rounded-lg" rows="5" placeholder="Escreva sua mensagem"></textarea>
+                <button class="btn bg-blue-700 text-white w-full">Enviar <span>📧</span></button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="text-white text-center p-6 mt-10">
+        <p>&copy; 2025 | Mundo dos <span class="text-yellow-400">Carros</span></p>
+        <p class="text-sm">Projeto criado para avaliação</p>
+    </footer>
+
+</body>
+</html>
