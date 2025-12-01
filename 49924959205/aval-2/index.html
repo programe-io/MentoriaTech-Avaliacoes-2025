@@ -1,0 +1,180 @@
+Abaixo estão os três arquivos separados: HTML, CSS e JavaScript.
+
+## index.html
+
+```html
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thais - Perfil</title>
+  <link rel="stylesheet" href="style.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <nav>
+  <div class="container">
+    <a href="#" class="logo">Thais</a>
+    <ul class="menu">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#gostos">Gostos</a></li>
+      <li><a href="#receitas">Receitas</a></li>
+    </ul>
+  </div>
+</nav>
+<header>
+    <div class="container">
+      <div class="profile">
+        <div class="avatar"><img src="img/thais.jpg" alt="Foto de Thais" style="width:100%;height:100%;border-radius:10px;object-fit:cover"></div>
+        <div>
+          <h1>Thais</h1>
+          <p class="lead">Estudante do Ceti Joel Ribeiro — mora em Teresina</p>
+          <div class="tags">
+            <span class="tag">Gosta de rosa</span>
+            <span class="tag">Academia</span>
+            <span class="tag">Receitas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <article class="card">
+        <h2>Sobre Thais</h2>
+        <p class="muted">Thais é aluna do Ceti Joel Ribeiro, vive em Teresina e adora a cor rosa. Ela treina na academia e gosta de testar receitas nos fins de semana.</p>
+
+        <ul class="info-list">
+          <li>Local: Teresina, PI</li>
+          <li>Escola: Ceti Joel Ribeiro</li>
+          <li>Hobbys: Academia, culinária, decoração rosa</li>
+        </ul>
+
+        <button class="btn" id="openRecipe">Ver receita favorita</button>
+        <button class="btn alt" id="toggleTheme">Alternar contraste</button>
+      </article>
+
+      <aside class="card">
+        <h2>Coisas que ela gosta</h2>
+        <div class="likes">
+          <div class="like"><strong>Rosa</strong><span class="muted">Cor favorita</span></div>
+          <div class="like pulse"><strong>Academia</strong><span class="muted">Treinos</span></div>
+          <div class="like"><strong>Receitas</strong><span class="muted">Doces e salgadas</span></div>
+        </div>
+
+        <h3>Contato</h3>
+        <form id="msgForm" onsubmit="return false">
+          <input id="name" placeholder="Seu nome" />
+          <textarea id="msg" placeholder="Mensagem"></textarea>
+          <button class="btn" id="sendMsg">Enviar</button>
+          <div id="msgStatus" class="muted"></div>
+        </form>
+      </aside>
+    </div>
+
+    <section class="card">
+      <h2>Receitas testadas</h2>
+      <ul>
+        <li>Bolo de iogurte rosa</li>
+        <li>Panqueca proteica</li>
+        <li>Tapioca recheada</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Site sobre Thais — exemplo educativo</p>
+  </footer>
+
+  <div class="modal" id="modal">
+    <div class="box">
+      <h3>Bolo de iogurte rosa</h3>
+      <p>Ingredientes: farinha, açúcar, ovos, iogurte e morango.</p>
+      <p>Modo: misturar tudo e assar por 35 minutos.</p>
+      <button class="btn" id="closeModal">Fechar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
+```
+
+---
+
+## style.css
+
+```css
+:root{
+  --bg:#fff6fb;
+  --card:#fff;
+  --text:#333;
+  --muted:#666;
+  --accent:#ff66b2;
+  font-family:Arial;
+}
+body{margin:0;background:var(--bg);color:var(--text)}
+header{background:var(--accent);color:#fff;padding:20px}
+.container{max-width:900px;margin:auto;padding:10px}
+.profile{display:flex;gap:10px;align-items:center}
+.avatar{width:100px;height:100px;background:#ffd6ee;border-radius:10px}
+.tag{background:#ffe6f2;padding:4px 8px;border-radius:20px;color:var(--accent);font-size:14px;margin-right:5px}
+.card{background:var(--card);padding:15px;border-radius:10px;margin-top:15px;box-shadow:0 2px 8px #0002}
+.likes{display:flex;gap:10px;flex-wrap:wrap}
+.like{background:#fff0f7;padding:10px;border-radius:10px;text-align:center}
+.btn{background:var(--accent);color:white;border:none;padding:8px 12px;border-radius:8px;cursor:pointer;margin-top:10px}
+.btn.alt{background:white;color:var(--accent);border:2px solid var(--accent)}
+.muted{color:var(--muted)}
+.info-list{list-style:none;padding:0;margin:10px 0}
+footer{text-align:center;margin:20px 0;color:var(--muted)}
+.modal{position:fixed;inset:0;background:#0006;display:none;align-items:center;justify-content:center}
+.modal.open{display:flex}
+.box{background:white;padding:20px;border-radius:10px;width:80%;max-width:500px}
+```
+
+---
+
+## script.js
+
+```javascript
+const toggle = document.getElementById('toggleTheme');
+
+toggle.addEventListener('click', () => {
+  const root = document.documentElement;
+  if(root.style.getPropertyValue('--bg') === 'black'){
+    root.style.setProperty('--bg','#fff6fb');
+    root.style.setProperty('--card','#fff');
+    root.style.setProperty('--text','#333');
+    root.style.setProperty('--muted','#666');
+  } else {
+    root.style.setProperty('--bg','black');
+    root.style.setProperty('--card','#111');
+    root.style.setProperty('--text','#eee');
+    root.style.setProperty('--muted','#bbb');
+  }
+});
+
+const modal = document.getElementById('modal');
+document.getElementById('openRecipe').addEventListener('click',()=> modal.classList.add('open'));
+document.getElementById('closeModal').addEventListener('click',()=> modal.classList.remove('open'));
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
+
+document.getElementById('sendMsg').addEventListener('click',()=>{
+  const nome = document.getElementById('name').value.trim();
+  const msg = document.getElementById('msg').value.trim();
+  const status = document.getElementById('msgStatus');
+
+  if(!nome || !msg){
+    status.textContent = 'Preencha nome e mensagem.';
+    return;
+  }
+
+  status.textContent = `Obrigado, ${nome}! Mensagem enviada.`;
+});
+```
+
+
+
