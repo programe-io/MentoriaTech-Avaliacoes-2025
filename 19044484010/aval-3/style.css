@@ -32,4 +32,148 @@ header {
     background-color: var(--njr-header-bg); 
 }
 
-nav
+nav {
+    /* font-bold gap-8 hidden md:flex items-center */
+    font-weight: 700;
+    gap: 2rem; /* gap-8 */
+    align-items: center;
+}
+
+/* Esconde a nav por padrão e mostra em telas médias (md) */
+@media (max-width: 767px) {
+    nav {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    nav {
+        display: flex;
+    }
+}
+
+header > div {
+    /* ml-auto text-njr-accent font-semibold */
+    margin-left: auto;
+    color: var(--njr-accent);
+    font-weight: 600;
+}
+
+nav a {
+    /* transition duration-300 */
+    transition: color 0.3s ease;
+    text-decoration: none;
+    color: var(--njr-text); /* Cor padrão dos links */
+}
+
+nav a:first-child {
+    /* text-njr-accent */
+    color: var(--njr-accent);
+}
+
+nav a:hover {
+    /* hover:text-njr-accent ou hover:text-white para os links não-accent */
+    color: var(--njr-accent);
+}
+
+nav a:first-child:hover {
+    /* NJR ⚡️ tem um hover diferente para o branco puro */
+    color: var(--njr-text); 
+}
+
+/* --- CONTEÚDO PRINCIPAL (MAIN) --- */
+main {
+    /* py-10 px-4 flex flex-col gap-6 md:flex-row md:flex-wrap md:justify-center */
+    padding: 2.5rem 1rem; /* py-10 px-4 */
+    display: flex;
+    flex-direction: column; /* flex-col */
+    gap: 1.5rem; /* gap-6 */
+    align-items: center; /* Centraliza a coluna no mobile */
+}
+
+@media (min-width: 768px) {
+    main {
+        flex-direction: row; /* md:flex-row */
+        flex-wrap: wrap; /* md:flex-wrap */
+        justify-content: center; /* md:justify-center */
+    }
+}
+
+
+/* --- POST CARDS --- */
+main > div {
+    /* bg-njr-card-bg py-4 px-6 rounded-xl shadow-2xl max-w-sm w-full transition duration-300 hover:bg-njr-card-hover transform hover:scale-[1.02] */
+    background-color: var(--njr-card-bg);
+    padding: 1rem 1.5rem; /* py-4 px-6 */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+    max-width: 24rem; /* max-w-sm */
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+main > div:hover {
+    /* hover:bg-njr-card-hover transform hover:scale-[1.02] */
+    background-color: var(--njr-card-hover);
+    transform: scale(1.02);
+}
+
+main h3 {
+    /* text-xl font-bold mb-2 text-njr-accent */
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700;
+    margin-bottom: 0.5rem; /* mb-2 */
+    color: var(--njr-accent);
+}
+
+main p, main span, main li {
+    /* text-sm */
+    font-size: 0.875rem;
+}
+
+main ul {
+    /* list-disc ml-4 */
+    list-style-type: disc;
+    margin-left: 1rem; /* ml-4 */
+}
+
+/* --- BOTÃO --- */
+button {
+    /* mt-4 bg-njr-accent text-njr-button-text font-bold py-1 px-3 rounded-full text-xs hover:opacity-90 */
+    margin-top: 1rem; /* mt-4 */
+    background-color: var(--njr-accent);
+    color: var(--njr-button-text);
+    font-weight: 700;
+    padding: 0.25rem 0.75rem; /* py-1 px-3 */
+    border-radius: 9999px; /* rounded-full */
+    font-size: 0.75rem; /* text-xs */
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+button:hover {
+    /* hover:opacity-90 */
+    opacity: 0.9;
+}
+
+/* --- IMAGENS DENTRO DOS CARDS --- */
+main img {
+    /* Adicionando o filtro de escala de cinza aqui também, para refletir o Tailwind */
+    /* w-full h-auto object-cover rounded-md mt-4 grayscale */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.375rem; /* rounded-md */
+    margin-top: 1rem; /* mt-4 */
+    filter: grayscale(100%); /* Adiciona o filtro P&B */
+}
+
+/* --- RODAPÉ --- */
+footer {
+    /* text-center py-3 text-xs text-njr-accent/50 */
+    text-align: center;
+    padding: 0.75rem 0; /* py-3 */
+    font-size: 0.75rem; /* text-xs */
+    color: rgba(204, 204, 204, 0.5); /* njr-accent/50 */
+}
