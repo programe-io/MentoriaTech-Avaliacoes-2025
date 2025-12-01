@@ -1,0 +1,133 @@
+/* Importando uma fonte para dar um toque mais dramático */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    /* Definição de Cores Temáticas */
+    --cor-principal: #A90000; /* Vermelho Sangue / Pennywise */
+    --cor-secundaria: #F0E68C; /* Amarelo Sujo (Balão) */
+    --cor-fundo: #0E0E0E; /* Preto Quase Total (Clima de Terror) */
+    --cor-texto: #F4F4F4;
+    --cor-borda-escura: #555555;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    transition: background-color 0.5s ease;
+}
+
+/* --- Cabeçalho (Header) --- */
+header {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--cor-secundaria);
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Creepster', cursive; /* Fonte assustadora para o título */
+    font-size: 4em;
+    text-shadow: 4px 4px 6px #000000;
+    letter-spacing: 5px;
+    /* Animação sutil no título */
+    animation: pulse-title 4s infinite ease-in-out;
+}
+
+header p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+/* --- Container Principal --- */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #1a1a1a; /* Fundo do container um pouco mais claro que o body */
+    box-shadow: 0 0 25px rgba(169, 0, 0, 0.5); /* Sombra vermelha assustadora */
+    border-radius: 8px;
+}
+
+/* --- Títulos de Seção --- */
+h2 {
+    color: var(--cor-principal);
+    border-bottom: 3px dashed var(--cor-secundaria);
+    padding-bottom: 10px;
+    margin-top: 35px;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+h3 {
+    color: var(--cor-secundaria);
+    margin-top: 20px;
+}
+
+/* --- Conteúdo e Parágrafos --- */
+.section-content p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* --- Lista de Detalhes (Clube dos Perdedores) --- */
+.list-details {
+    list-style-type: '🎈 '; /* Usando o balão como marcador */
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.list-details li {
+    padding: 5px 0;
+    border-bottom: 1px dotted var(--cor-borda-escura);
+}
+
+/* --- Citação (Quote) --- */
+.quote {
+    font-style: italic;
+    border-left: 8px solid var(--cor-principal);
+    padding: 15px;
+    margin: 25px 0;
+    background-color: #2a2a2a;
+    color: lightgray;
+    border-radius: 4px;
+}
+
+/* --- Linha Separadora (HR) --- */
+hr {
+    border: none;
+    border-top: 1px dashed var(--cor-borda-escura);
+    margin: 40px 0;
+}
+
+/* --- Rodapé (Footer) --- */
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    background-color: var(--cor-borda-escura);
+    color: var(--cor-texto);
+    font-size: 0.9em;
+}
+
+/* --- Animações --- */
+@keyframes pulse-title {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.03);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
