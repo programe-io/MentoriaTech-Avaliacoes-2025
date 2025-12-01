@@ -1,0 +1,132 @@
+/* ===============================
+   ESTILO PARA O SITE "CORREDORES"
+   Compatível com o HTML enviado
+   Tema escuro moderno + layout responsivo
+   =============================== */
+
+:root {
+  --bg: #0f1114;
+  --card: #14161a;
+  --text: #e6eef6;
+  --muted: #a5acb8;
+  --accent: #7c5cff;
+  --radius: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  padding: 20px 0;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+header p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+/* Menu */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: var(--card);
+  padding: 12px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  margin-bottom: 25px;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(124,92,255,0.4);
+}
+
+/* Layout principal */
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+}
+
+article, aside {
+  background: var(--card);
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+article h2 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+article img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  margin: 12px 0;
+}
+
+/* Aside */
+aside h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+aside ul {
+  padding-left: 18px;
+}
+
+aside ul li {
+  margin-bottom: 8px;
+  color: var(--muted);
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  padding: 15px;
+  background: var(--card);
+  border-radius: var(--radius);
+  color: var(--muted);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
