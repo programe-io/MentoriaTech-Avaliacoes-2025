@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apresentação - Francisco Rian</title>
+  <link rel="stylesheet" href="style.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="logo.png" alt="Logo do site" class="logo" />
+        <div class="brand-text">
+          <h1>Francisco Rian <span class="badge">Apresentação</span></h1>
+          <p class="intro">Organize e apresente seu perfil pessoal</p>
+        </div>
+      </div>
+
+      <!-- NAV obrigatória -->
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#perfil">Perfil</a></li>
+          <li><a href="#biografia">Biografia</a></li>
+          <li><a href="#cotidiano">Cotidiano</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="site-main">
+    <div class="container">
+
+      <!-- CONTEÚDO PRINCIPAL (ARTICLES) -->
+      <div class="content">
+
+        <!-- ARTICLE Perfil -->
+        <article id="perfil" class="perfil" aria-labelledby="perfil-title">
+          <h2 id="perfil-title">Perfil</h2>
+          <p>Seção contendo imagem, nome e apresentação pessoal.</p>
+
+          <div class="perfil-card">
+            <img src="foto-perfil.jpg" alt="Foto do Weslley" class="foto">
+
+            <div class="perfil-info">
+              <h3><span>Francisco Rian</span></h3>
+              <p class="bio">Desenvolvedor em formação, estudando HTML, CSS e JavaScript para criar interfaces modernas.</p>
+
+              <div class="perfil-actions">
+                <input type="text" id="nomeInput" placeholder="Digite seu nome" />
+                <button id="btnSalvarNome" type="button">Salvar</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ARTICLE Biografia -->
+        <article id="biografia" aria-labelledby="bio-title">
+          <h2 id="bio-title">Biografia</h2>
+          <p>
+            Sempre fui apaixonado por tecnologia. Hoje estudo desenvolvimento web e busco evoluir diariamente
+            construindo projetos e aprendendo novas ferramentas.
+          </p>
+        </article>
+
+        <!-- ARTICLE Cotidiano -->
+        <article id="cotidiano" aria-labelledby="cotidiano-title">
+          <h2 id="cotidiano-title">Cotidiano</h2>
+          <p>Minha rotina envolve estudos, prática de exercícios e criação de pequenos projetos para aperfeiçoar minhas habilidades.</p>
+
+          <h3>Atividades Frequentes</h3>
+          <ul>
+            <li>Estudar programação</li>
+            <li>Fazer exercícios físicos</li>
+            <li>Criar projetos pessoais</li>
+          </ul>
+        </article>
+
+        <!-- ARTICLE Contato -->
+        <article id="contato" aria-labelledby="contato-title">
+          <h2 id="contato-title">Contato</h2>
+          <p>Envie uma mensagem rápida:</p>
+
+          <form id="formContato" onsubmit="event.preventDefault(); alert('Mensagem enviada (simulação)');">
+            <label for="mensagem" class="sr-only">Mensagem</label>
+            <textarea id="mensagem" rows="4" placeholder="Digite sua mensagem..."></textarea>
+            <button type="submit">Enviar</button>
+          </form>
+        </article>
+
+      </div>
+
+      <!-- ASIDE (BARRA LATERAL) — A TAG OBRIGATÓRIA -->
+      <aside class="sidebar" aria-labelledby="aside-title">
+        <h2 id="aside-title">Informações Extras</h2>
+        <p>Use este espaço para destaques, links rápidos e widgets.</p>
+
+        <!-- links rápidos -->
+        <nav class="quick-links" aria-label="Links rápidos">
+          <ul>
+            <li><a href="#perfil">Ver Perfil</a></li>
+            <li><a href="#biografia">Ler Biografia</a></li>
+            <li><a href="#cotidiano">Rotina</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+
+        <p class="destaque">Disponibilidade: <span>Freelance</span></p>
+
+        <div class="widget">
+          <img src="badge.png" alt="Badge" class="widget-img" />
+          <p>Badge de conclusão de curso</p>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="ano"></span> Francisco Rian. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // pequenos comportamentos de exemplo
+    document.getElementById('ano').textContent = new Date().getFullYear();
+    document.getElementById('btnSalvarNome').addEventListener('click', () => {
+      const nome = document.getElementById('nomeInput').value.trim();
+      if (nome) {
+        alert('Nome salvo (simulado): ' + nome);
+      } else {
+        alert('Digite um nome antes de salvar.');
+      }
+    });
+  </script>
+</body>
+</html>
