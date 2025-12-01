@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles (1).css">
+  <title>App social freed - funcional</title>
+
+  <!-- 🔗 Arquivo CSS externo -->
+  <link rel="stylesheet" href="styles (1).css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header></header>
+    <a></a><p></p>
+    <h2></h2>
+
+  <h1>Postagens</h1>
+
+  <nav>
+    <button data-target="inicio">Início</button>
+    <button data-target="perfil">Perfil</button>
+    <button data-target="postagens">Postagens</button>
+    <button data-target="todos">Mostrar todos</button>
+  </nav>
+
+  <main class="container" id="cards-container">
+
+    <!-- CARD 1 -->
+    <article id="inicio" class="card">
+      <div class="header">
+        <div class="avatar" style="background-image:url('https://ogimg.infoglobo.com.br/cultura/15052868-dbc-a53/FT1086A/The-Amazing-Spider.jpg');"></div>
+        <div><strong>Mateus@</strong></div>
+      </div>
+      <img class="main-img" src="https://www.civitatis.com/f/francia/paris/subida-torre-eiffel-589x392.jpg" alt="Imagem" />
+      <div class="content">
+        A Torre Eiffel é um monumento de Paris, construído por Gustave Eiffel para a Exposição Universal de 1889, que comemorava os 100 anos da Revolução Francesa. 
+        <span class="meta">Há 10 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article id="perfil" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://ogimg.infoglobo.com.br/cultura/15052868-dbc-a53/FT1086A/The-Amazing-Spider.jpg');"></div>
+        <div><strong>Mateus@</strong></div>
+      </div>
+      <img class="main-img" src="https://i.pinimg.com/736x/bb/d0/38/bbd038304e9029c9488a0c2a71b55dfd.jpg" alt="Imagem" />
+      <div class="content">
+      A "pantera negra" não é uma espécie única, mas sim um termo popular para grandes felinos com pelagem preta, como leopardos e onças-pintadas. 
+        <span class="meta">Há 30 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article id="postagens" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://ogimg.infoglobo.com.br/cultura/15052868-dbc-a53/FT1086A/The-Amazing-Spider.jpg');"></div>
+        <div><strong>Mateus@</strong></div>
+      </div>
+      <img class="main-img" src="https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/05/corinthians-campanha-lgbt-1-e1684345850421.png?w=419&h=283&crop=0" alt="Imagem" />
+      <div class="content">
+       O Corinthians, oficialmente Sport Club Corinthians Paulista, é um clube de futebol fundado em 1910, em São Paulo, e é um dos times mais populares e vitoriosos do Brasil, conhecido como "Timão" e com uma torcida apaixonada chamada "Fiel".
+        <span class="meta">Há 1 hora</span>
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function mostrarCard(id) {
+      const cards = document.querySelectorAll('#cards-container .card');
+      cards.forEach(card => {
+        if (id === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.id === id) {
+            card.classList.remove('hidden');
+            setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        mostrarCard(target);
+      });
+    });
+  </script>
+
+</body>
+</html>
