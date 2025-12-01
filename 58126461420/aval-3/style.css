@@ -1,0 +1,92 @@
+
+}/* Reset simples */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0b0b;
+  color: #fff;
+}
+
+/* wrapper */
+.site-wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+
+/* header */
+header { background: #036b2f; }
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-inner h1 { font-size: 1.6rem; }
+.brand-prefix { font-weight: 700; opacity: 0.95; }
+
+/* nav */
+nav ul { list-style: none; display: flex; gap: 14px; }
+nav a { color: #fff; text-decoration: none; font-weight: 700; }
+.nav-label { padding: 4px 6px; border-radius: 4px; }
+
+/* banner */
+.banner-wrap { margin-top: 12px; position: relative; }
+.banner img { width: 100%; height: 320px; object-fit: cover; display: block; border-radius: 4px; }
+.badge { position: absolute; top: 12px; left: 12px; background: rgba(3,196,76,0.95); padding: 6px 10px; border-radius: 20px; font-weight: 700; }
+
+/* layout principal */
+.container {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+}
+
+/* conteúdo */
+.content .card {
+  background: rgba(255,255,255,0.03);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.article-title { font-weight: 700; }
+
+/* lista de fatos com spans */
+.content ul { margin-top: 8px; padding-left: 18px; }
+.fact { display: inline-block; }
+
+/* botão */
+.btn-row { margin-top: 10px; }
+button {
+  padding: 10px 16px;
+  background: #03c44c;
+  border: none;
+  color: #000;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.05); }
+
+/* resultado */
+.result { margin-top: 12px; padding: 10px; background: rgba(255,255,255,0.02); border-radius: 6px; }
+
+/* sidebar */
+.sidebar { background: rgba(255,255,255,0.03); padding: 14px; border-radius: 8px; }
+.aside-inner h3 { margin-bottom: 8px; }
+.aside-inner ul { padding-left: 18px; margin-bottom: 10px; }
+.player { display:flex; gap:10px; align-items:center; margin-top:8px; }
+.player img { width: 64px; height: 64px; object-fit:cover; border-radius:6px; }
+
+/* footer */
+footer { margin-top: auto; background: #081b10; }
+.footer-inner { padding: 14px; text-align: center; }
+
+/* mobile */
+@media (max-width: 860px) {
+  .container { grid-template-columns: 1fr; }
+  .banner img { height: 200px; }
+}
+
