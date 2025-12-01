@@ -1,0 +1,155 @@
+:root{
+  --bg:#0b0b0b;
+  --card:#111;
+  --accent:#d71920;
+  --accent-dark:#a30e14;
+  --text:#eee;
+  --maxw:1000px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  background:linear-gradient(180deg,#070707,#111);
+  color:var(--text);
+  line-height:1.6;
+}
+
+/* CONTAINER GERAL */
+.wrap{
+  max-width:var(--maxw);
+  margin:28px auto;
+  padding:20px;
+}
+
+/* CABEÇALHO */
+header{
+  display:flex;
+  gap:16px;
+  align-items:center;
+}
+
+.logo{
+  width:84px;
+  height:84px;
+  border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  font-size:28px;
+  box-shadow:0 8px 24px rgba(0,0,0,.6);
+}
+
+h1{
+  margin:0;
+  font-size:clamp(20px,3.6vw,34px);
+}
+
+p.lead{
+  opacity:.9;
+}
+
+/* NAV */
+nav{
+  margin-top:12px;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+a.btn{
+  background:transparent;
+  border:1px solid rgba(255,255,255,.06);
+  padding:8px 12px;
+  border-radius:8px;
+  color:var(--text);
+  text-decoration:none;
+  font-size:14px;
+  transition:.2s;
+}
+
+a.btn:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+}
+
+/* ÁREA PRINCIPAL */
+main{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+  margin-top:18px;
+}
+
+/* CARTÕES */
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,.6);
+}
+
+/* SEÇÃO HERO */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:18px;
+  align-items:center;
+}
+
+.hero img{
+  width:100%;
+  border-radius:10px;
+  object-fit:cover;
+  max-height:320px;
+}
+
+/* LINHA DO TEMPO */
+.timeline{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.event{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+}
+
+.year{
+  min-width:72px;
+  font-weight:700;
+  color:var(--accent);
+}
+
+.small{
+  font-size:13px;
+  opacity:.9;
+}
+
+/* RODAPÉ */
+footer{
+  margin-top:8px;
+  padding:12px;
+  text-align:center;
+  opacity:.85;
+  font-size:13px;
+}
+
+/* RESPONSIVO */
+@media (max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+  .hero img{
+    max-height:240px;
+  }
+}
