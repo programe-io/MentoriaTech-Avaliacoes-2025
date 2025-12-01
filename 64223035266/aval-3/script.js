@@ -1,0 +1,1 @@
+console.log("Blog do Scooby-Doo carregado com sucesso! Criado por Valentina.");
