@@ -1,224 +1,267 @@
 /* ============================================================
    VARIÁVEIS DE TEMA
-   ============================================================ */
-   :root {
-       --primary: #2563eb;
-           --primary-light: #3b82f6;
-               --primary-dark: #1e40af;
-                   --accent: #22d3ee;
-                       --background: #0f172a;
-                           --surface: #1e293b;
-                               --surface-light: #334155;
-                                   --text: #e2e8f0;
-                                       --radius: 10px;
-                                       }
+============================================================ */
+:root {
+    --primary: #eb2525;
+    --primary-light: #dd0000;
+    --primary-dark: #00e04b;
+    --accent: #094852;
+    --background: #000000;
+    --surface: #000000;
+    --surface-light: #e61009;
+    --text: #e2e8f0;
+    --radius: 10px;
+}
 
-                                       /* ============================================================
-                                          RESET GLOBAL
-                                          ============================================================ */
-                                          *, *::before, *::after {
-                                              margin: 0;
-                                                  padding: 0;
-                                                      box-sizing: border-box;
-                                                      }
+/* ============================================================
+   RESET GLOBAL
+============================================================ */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-                                                      html, body {
-                                                          background: var(--background);
-                                                              color: var(--text);
-                                                                  font-family: Arial, Helvetica, sans-serif;
-                                                                      min-height: 100vh;
-                                                                          scroll-behavior: smooth;
-                                                                          }
+html, body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
 
-                                                                          /* ============================================================
-                                                                             TIPOGRAFIA
-                                                                             ============================================================ */
-                                                                             h1, h2, h3, h4 {
-                                                                                 font-weight: bold;
-                                                                                 }
+/* ============================================================
+   TIPOGRAFIA
+============================================================ */
+h1, h2, h3, h4 {
+    font-weight: bold;
+}
 
-                                                                                 p {
-                                                                                     line-height: 1.6;
-                                                                                         margin-bottom: 10px;
-                                                                                         }
+p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
 
-                                                                                         a {
-                                                                                             color: var(--primary-light);
-                                                                                                 text-decoration: none;
-                                                                                                 }
+a {
+    color: var(--primary-light);
+    text-decoration: none;
+}
 
-                                                                                                 a:hover {
-                                                                                                     text-decoration: underline;
-                                                                                                     }
+a:hover {
+    text-decoration: underline;
+}
 
-                                                                                                     /* ============================================================
-                                                                                                        HEADER
-                                                                                                        ============================================================ */
-                                                                                                        .header {
-                                                                                                            display: flex;
-                                                                                                                justify-content: space-between;
-                                                                                                                    align-items: center;
-                                                                                                                        padding: 18px;
-                                                                                                                            background: rgba(30, 41, 59, 0.5);
-                                                                                                                                backdrop-filter: blur(10px);
-                                                                                                                                    border-bottom: 1px solid rgba(255,255,255,0.1);
-                                                                                                                                    }
+/* ============================================================
+   HEADER
+============================================================ */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(54, 27, 27, 0.1);
+}
 
-                                                                                                                                    .nav a {
-                                                                                                                                        margin-left: 20px;
-                                                                                                                                            transition: 0.3s;
-                                                                                                                                            }
+.nav a {
+    margin-left: 20px;
+    transition: 0.3s;
+}
 
-                                                                                                                                            .nav a:hover {
-                                                                                                                                                color: var(--accent);
-                                                                                                                                                }
+.nav a:hover {
+    color: var(--accent);
+}
 
-                                                                                                                                                /* ============================================================
-                                                                                                                                                   BOTÕES GERAIS
-                                                                                                                                                   ============================================================ */
-                                                                                                                                                   button {
-                                                                                                                                                       cursor: pointer;
-                                                                                                                                                       }
+/* ============================================================
+   BOTÕES GERAIS
+============================================================ */
+button {
+    cursor: pointer;
+}
 
-                                                                                                                                                       .btn-primary {
-                                                                                                                                                           background: var(--primary);
-                                                                                                                                                               color: white;
-                                                                                                                                                                   padding: 10px 18px;
-                                                                                                                                                                       border-radius: var(--radius);
-                                                                                                                                                                           border: none;
-                                                                                                                                                                               transition: 0.3s;
-                                                                                                                                                                               }
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    padding: 10px 18px;
+    border-radius: var(--radius);
+    border: none;
+    transition: 0.3s;
+}
 
-                                                                                                                                                                               .btn-primary:hover {
-                                                                                                                                                                                   background: var(--primary-light);
-                                                                                                                                                                                   }
+.btn-primary:hover {
+    background: var(--primary-light);
+}
 
-                                                                                                                                                                                   .btn-outline {
-                                                                                                                                                                                       background: transparent;
-                                                                                                                                                                                           border: 2px solid var(--primary);
-                                                                                                                                                                                               color: var(--primary-light);
-                                                                                                                                                                                                   padding: 10px 18px;
-                                                                                                                                                                                                       border-radius: var(--radius);
-                                                                                                                                                                                                           transition: 0.3s;
-                                                                                                                                                                                                           }
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary-light);
+    padding: 10px 18px;
+    border-radius: var(--radius);
+    transition: 0.3s;
+}
 
-                                                                                                                                                                                                           .btn-outline:hover {
-                                                                                                                                                                                                               background: var(--primary);
-                                                                                                                                                                                                                   color: white;
-                                                                                                                                                                                                                   }
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
 
-                                                                                                                                                                                                                   /* ============================================================
-                                                                                                                                                                                                                      NOVO POST
-                                                                                                                                                                                                                      ============================================================ */
-                                                                                                                                                                                                                      .new-post-box {
-                                                                                                                                                                                                                          background: var(--surface);
-                                                                                                                                                                                                                              padding: 20px;
-                                                                                                                                                                                                                                  border-radius: var(--radius);
-                                                                                                                                                                                                                                      margin: 25px auto;
-                                                                                                                                                                                                                                          max-width: 700px;
-                                                                                                                                                                                                                                              border: 1px solid var(--surface-light);
-                                                                                                                                                                                                                                              }
+/* ============================================================
+   NOVO POST
+============================================================ */
+.new-post-box {
+    background: var(--surface);
+    padding: 20px;
+    border-radius: var(--radius);
+    margin: 25px auto;
+    max-width: 700px;
+    border: 1px solid var(--surface-light);
+}
 
-                                                                                                                                                                                                                                              .new-post-textarea {
-                                                                                                                                                                                                                                                  width: 100%;
-                                                                                                                                                                                                                                                      padding: 12px;
-                                                                                                                                                                                                                                                          border-radius: var(--radius);
-                                                                                                                                                                                                                                                              border: 2px solid var(--surface-light);
-                                                                                                                                                                                                                                                                  background: var(--surface-light);
-                                                                                                                                                                                                                                                                      color: white;
-                                                                                                                                                                                                                                                                          resize: none;
-                                                                                                                                                                                                                                                                          }
+.new-post-textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--radius);
+    border: 2px solid var(--surface-light);
+    background: var(--surface-light);
+    color: white;
+    resize: none;
+}
 
-                                                                                                                                                                                                                                                                          .new-post-textarea:focus {
-                                                                                                                                                                                                                                                                              border-color: var(--primary-light);
-                                                                                                                                                                                                                                                                                  outline: none;
-                                                                                                                                                                                                                                                                                  }
+.new-post-textarea:focus {
+    border-color: var(--primary-light);
+    outline: none;
+}
 
-                                                                                                                                                                                                                                                                                  /* ============================================================
-                                                                                                                                                                                                                                                                                     POST CARD
-                                                                                                                                                                                                                                                                                     ============================================================ */
-                                                                                                                                                                                                                                                                                     .post-card {
-                                                                                                                                                                                                                                                                                         background: var(--surface);
-                                                                                                                                                                                                                                                                                             border-radius: var(--radius);
-                                                                                                                                                                                                                                                                                                 border: 1px solid var(--surface-light);
-                                                                                                                                                                                                                                                                                                     max-width: 700px;
-                                                                                                                                                                                                                                                                                                         padding-bottom: 20px;
-                                                                                                                                                                                                                                                                                                             margin: 20px auto;
-                                                                                                                                                                                                                                                                                                                 box-shadow: 0 0 25px rgba(0,0,0,0.3);
-                                                                                                                                                                                                                                                                                                                     animation: fadeIn 0.8s ease;
-                                                                                                                                                                                                                                                                                                                     }
+/* ============================================================
+   POST CARD
+============================================================ */
+.post-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--surface-light);
+    max-width: 700px;
+    padding-bottom: 20px;
+    margin: 20px auto;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    animation: fadeIn 0.8s ease;
+}
 
-                                                                                                                                                                                                                                                                                                                     .post-header {
-                                                                                                                                                                                                                                                                                                                         display: flex;
-                                                                                                                                                                                                                                                                                                                             align-items: center;
-                                                                                                                                                                                                                                                                                                                                 gap: 15px;
-                                                                                                                                                                                                                                                                                                                                     padding: 15px;
-                                                                                                                                                                                                                                                                                                                                     }
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    justify-content: center;
+}
 
-                                                                                                                                                                                                                                                                                                                                     .profile-img {
-                                                                                                                                                                                                                                                                                                                                         width: 50px;
-                                                                                                                                                                                                                                                                                                                                             height: 50px;
-                                                                                                                                                                                                                                                                                                                                                 border-radius: 100%;
-                                                                                                                                                                                                                                                                                                                                                     border: 2px solid var(--primary);
-                                                                                                                                                                                                                                                                                                                                                     }
+.post-header > div {
+    width: 100%;
+    text-align: center;
+}
 
-                                                                                                                                                                                                                                                                                                                                                     .post-img {
-                                                                                                                                                                                                                                                                                                                                                         width: 100%;
-                                                                                                                                                                                                                                                                                                                                                             max-height: 400px;
-                                                                                                                                                                                                                                                                                                                                                                 object-fit: cover;
-                                                                                                                                                                                                                                                                                                                                                                     border-radius: var(--radius);
-                                                                                                                                                                                                                                                                                                                                                                     }
+.post-content p {
+    text-align: center;
+}
 
-                                                                                                                                                                                                                                                                                                                                                                     /* ============================================================
-                                                                                                                                                                                                                                                                                                                                                                        BOTÕES DO POST
-                                                                                                                                                                                                                                                                                                                                                                        ============================================================ */
-                                                                                                                                                                                                                                                                                                                                                                        .post-actions {
-                                                                                                                                                                                                                                                                                                                                                                            display: flex;
-                                                                                                                                                                                                                                                                                                                                                                                justify-content: space-around;
-                                                                                                                                                                                                                                                                                                                                                                                    border-top: 1px solid var(--surface-light);
-                                                                                                                                                                                                                                                                                                                                                                                        padding-top: 10px;
-                                                                                                                                                                                                                                                                                                                                                                                        }
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 2px solid var(--primary);
+}
 
-                                                                                                                                                                                                                                                                                                                                                                                        .post-actions button {
-                                                                                                                                                                                                                                                                                                                                                                                            background: none;
-                                                                                                                                                                                                                                                                                                                                                                                                border: none;
-                                                                                                                                                                                                                                                                                                                                                                                                    color: white;
-                                                                                                                                                                                                                                                                                                                                                                                                        padding: 10px;
-                                                                                                                                                                                                                                                                                                                                                                                                            transition: 0.3s;
-                                                                                                                                                                                                                                                                                                                                                                                                            }
+.post-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
 
-                                                                                                                                                                                                                                                                                                                                                                                                            .post-actions button:hover {
-                                                                                                                                                                                                                                                                                                                                                                                                                color: var(--primary-light);
-                                                                                                                                                                                                                                                                                                                                                                                                                    transform: scale(1.05);
-                                                                                                                                                                                                                                                                                                                                                                                                                    }
+/* ============================================================
+   BOTÕES DO POST
+============================================================ */
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid var(--surface-light);
+    padding-top: 10px;
+}
 
-                                                                                                                                                                                                                                                                                                                                                                                                                    /* ============================================================
-                                                                                                                                                                                                                                                                                                                                                                                                                       COMENTÁRIOS
-                                                                                                                                                                                                                                                                                                                                                                                                                       ============================================================ */
-                                                                                                                                                                                                                                                                                                                                                                                                                       .comments-box {
-                                                                                                                                                                                                                                                                                                                                                                                                                           padding: 15px;
-                                                                                                                                                                                                                                                                                                                                                                                                                           }
+.post-actions button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px;
+    transition: 0.3s;
+}
 
-                                                                                                                                                                                                                                                                                                                                                                                                                           .comment {
-                                                                                                                                                                                                                                                                                                                                                                                                                               background: var(--surface-light);
-                                                                                                                                                                                                                                                                                                                                                                                                                                   padding: 10px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                       border-radius: var(--radius);
-                                                                                                                                                                                                                                                                                                                                                                                                                                           margin-bottom: 10px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                           }
+.post-actions button:hover {
+    color: var(--primary-light);
+    transform: scale(1.05);
+}
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                           .comment-input {
-                                                                                                                                                                                                                                                                                                                                                                                                                                               width: 100%;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                   padding: 10px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                       background: var(--surface-light);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                           border: 1px solid var(--surface);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                               color: white;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                   border-radius: var(--radius);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                   }
+/* ============================================================
+   COMENTÁRIOS
+============================================================ */
+.comments-box {
+    padding: 15px;
+}
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                   /* ============================================================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ANIMAÇÕES
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ============================================================ */
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @keyframes fadeIn {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          from { opacity: 0; transform: translateY(10px); }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                              to { opacity: 1; transform: translateY(0); }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                              }
+.comment {
+    background: var(--surface-light);
+    padding: 10px;
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+}
+
+.comment-input {
+    width: 100%;
+    padding: 10px;
+    background: var(--surface-light);
+    border: 1px solid var(--surface);
+    color: white;
+    border-radius: var(--radius);
+}
+
+/* ============================================================
+   ANIMAÇÕES
+============================================================ */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Imagens em linha (3 imagens lado a lado) */
+.imagens-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    justify-content: center;
+    /* Permitir quebra quando necessário e manter centralizado */
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    padding-bottom: 6px;
+}
+
+.imagens-row img {
+    flex: 0 1 30%; /* ocupa cerca de 30% cada, proporcional */
+    aspect-ratio: 3 / 4; /* formato retrato (porta) responsivo */
+    height: auto;
+    min-width: 160px;
+    max-width: 360px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+@media (min-width: 1400px) {
+    .imagens-row img { flex: 0 1 28%; }
+}
+
+@media (max-width: 900px) {
+    .imagens-row img { flex: 0 1 45%; }
+}
+
+@media (max-width: 520px) {
+    .imagens-row img { flex: 0 1 90%; }
+}
