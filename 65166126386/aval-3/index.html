@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+  <title>App social freed - funcional</title>
+
+  <!-- 🔗 Arquivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header></header>
+    <a></a><p></p>
+    <h2></h2>
+
+  <h1>Postagens</h1>
+
+  <nav>
+    <button data-target="inicio">Início</button>
+    <button data-target="perfil">Perfil</button>
+    <button data-target="postagens">Postagens</button>
+    <button data-target="todos">Mostrar todos</button>
+  </nav>
+
+  <main class="container" id="cards-container">
+
+    <!-- CARD 1 -->
+    <article id="inicio" class="card">
+      <div class="header">
+        <div class="avatar" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiLwZE23iQg75Wu3qNOKeWoWGE6TlIdvSusw&s');"></div>
+        <div><strong>Wanderson@</strong></div>
+      </div>
+      <img class="main-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtnw1c8iLy7OfQtun-wYzi7l_gvVNsHGvgkQ&s" alt="Imagem" />
+      <div class="content">
+       O Melhor
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article id="perfil" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiLwZE23iQg75Wu3qNOKeWoWGE6TlIdvSusw&s');"></div>
+        <div><strong>Wanderson@</strong></div>
+      </div>
+      <img class="main-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY9dB-WQoIca9YiiffKHR3ih61R_tNmH3uNw&s" alt="Imagem" />
+      "Interestelar" é um filme de ficção científica sobre uma Terra à beira da extinção devido a problemas ambientais, onde um ex-piloto da NASA, Cooper, lidera uma missão espacial através de um buraco de minhoca para encontrar um novo lar para a humanidade.
+        <span class="meta">Há 30 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article id="postagens" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiLwZE23iQg75Wu3qNOKeWoWGE6TlIdvSusw&s');"></div>
+        <div><strong>Wanderson@</strong></div>
+      </div>
+      <img class="main-img" src="https://m.media-amazon.com/images/S/pv-target-images/785ad514a2dce775e0d7f3bc894daf668d156b5444b821b0a1e4029f7ee4deb3.jpg" alt="Imagem" />
+      <div class="content">
+      O termo "sobrenatural" refere-se a tudo que está fora da ordem natural, incluindo fenômenos paranormais, espirituais e divinos.
+        <span class="meta">Há 1 hora</span>
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function mostrarCard(id) {
+      const cards = document.querySelectorAll('#cards-container .card');
+      cards.forEach(card => {
+        if (id === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.id === id) {
+            card.classList.remove('hidden');
+            setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        mostrarCard(target);
+      });
+    });
+  </script>
+
+</body>
+</html>
