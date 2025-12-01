@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Site Exemplo — Meu Site</title>
+  <meta name="description" content="Site exemplo criado em um único arquivo HTML com CSS e JavaScript." />
+  <style>
+    /* Reset simples */
+    :root{
+      --accent:#6C63FF;
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#95a3b8;
+      --glass: rgba(255,255,255,0.04);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#071028 0%, #0f1724 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.5;
+      padding:24px;
+    }
+
+    /* Layout */
+    .container{max-width:1100px;margin:0 auto}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .mark{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4cc0ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042135}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+    nav a:hover{color:var(--accent)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin-bottom:28px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    h1{font-size:clamp(28px,4vw,44px);margin:0 0 10px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .cta{display:inline-block;padding:12px 16px;border-radius:10px;background:var(--accent);color:#07203a;text-decoration:none;font-weight:600}
+
+    /* Features */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .card{background:var(--card);padding:16px;border-radius:10px}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0}
+    .gallery img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+
+    /* Contact */
+    form{display:grid;gap:10px}
+    input,textarea,button{font:inherit;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+    input:focus,textarea:focus{outline:2px solid rgba(108,99,255,0.15);border-color:var(--accent)}
+    .row{display:flex;gap:8px}
+    .row > *{flex:1}
+
+    footer{margin-top:28px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between}
+
+    /* Responsivo */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      body{padding:16px}
+      .gallery img{height:100px}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">MS</div>
+        <div>
+          <div style="font-weight:700">Meu Site</div>
+          <div class="muted" style="font-size:12px">Um exemplo simples em HTML, CSS e JS</div>
+        </div>
+      </div>
+      <nav aria-label="Menu principal">
+        <a href="#features">Recursos</a>
+        <a href="#gallery">Galeria</a>
+        <a href="#contact">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card">
+          <h1>Crie coisas bonitas — rápido</h1>
+          <p class="lead">Página exemplo responsiva, acessível e pronta para personalizar. Use como base para portfólio, produto ou landing page.</p>
+          <a class="cta" href="#contact">Contrate agora</a>
+
+          <div class="grid" style="margin-top:20px">
+            <div class="card">
+              <strong>Design moderno</strong>
+              <div class="muted">Componentes simples, aparência contemporânea.</div>
+            </div>
+            <div class="card">
+              <strong>Responsivo</strong>
+              <div class="muted">Funciona bem em mobile, tablet e desktop.</div>
+            </div>
+            <div class="card">
+              <strong>Leve</strong>
+              <div class="muted">Somente HTML, CSS e um JS pequeno — nada pesado.</div>
+            </div>
+          </div>
+        </div>
+
+        <aside style="padding:18px;border-radius:12px;background:var(--glass);height:100%">
+          <h3 style="margin-top:0">Sobre este template</h3>
+          <p class="muted">Inclui: navegação, hero, cards de recursos, galeria de imagens e formulário de contato com validação simples em JavaScript.</p>
+
+          <div style="margin-top:12px">
+            <strong>Últimas novidades</strong>
+            <div class="muted" style="margin-top:6px">Atualize textos, imagens e cores para combinar com sua marca.</div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="gallery">
+        <h2>Galeria</h2>
+        <div class="gallery" aria-live="polite">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1" alt="Paisagem 1">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" alt="Paisagem 2">
+          <img src="https://images.unsplash.com/photo-1533743983669-94fa1a8756a8?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3" alt="Paisagem 3">
+        </div>
+      </section>
+
+      <section id="features" style="margin-top:12px">
+        <h2>Recursos</h2>
+        <div class="grid" style="margin-top:12px">
+          <div class="card">
+            <h3 style="margin:0 0 8px">Acessibilidade</h3>
+            <div class="muted">Semântica HTML, contraste e navegação por teclado.</div>
+          </div>
+          <div class="card">
+            <h3 style="margin:0 0 8px">SEO básico</h3>
+            <div class="muted">Meta tags, títulos e estrutura apropriada.</div>
+          </div>
+          <div class="card">
+            <h3 style="margin:0 0 8px">Fácil de customizar</h3>
+            <div class="muted">CSS claro e organizado para edição rápida.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:18px">
+        <h2>Contato</h2>
+        <div class="hero-card" style="margin-top:10px">
+          <form id="contactForm" novalidate>
+            <div class="row">
+              <input type="text" id="name" name="name" placeholder="Seu nome" required aria-required="true">
+              <input type="email" id="email" name="email" placeholder="email@exemplo.com" required aria-required="true">
+            </div>
+            <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem" required></textarea>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div class="muted">Ou envie um e-mail para <strong>contato@exemplo.com</strong></div>
+              <button type="submit" aria-label="Enviar mensagem">Enviar</button>
+            </div>
+            <div id="formResult" class="muted" style="margin-top:8px"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Meu Site</div>
+      <div class="muted">Feito com ♥ — personalize à vontade</div>
+    </footer>
+  </div>
+
+  <script>
+    // Ajustes simples de interação
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Validação simples do formulário
+    const form = document.getElementById('contactForm');
+    const result = document.getElementById('formResult');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if(!name || !email || !message){
+        result.textContent = 'Por favor, preencha todos os campos.';
+        return;
+      }
+      if(!/^\S+@\S+\.\S+$/.test(email)){
+        result.textContent = 'Insira um e-mail válido.';
+        return;
+      }
+
+      // Simula envio (aqui você pode integrar com API)
+      result.textContent = 'Enviando...';
+      setTimeout(()=>{
+        result.textContent = 'Mensagem enviada — obrigado!';
+        form.reset();
+      },700);
+    });
+  </script>
+</body>
+</html>

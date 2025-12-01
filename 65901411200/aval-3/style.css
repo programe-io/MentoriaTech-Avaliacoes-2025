@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loja Exemplo — Minha Loja</title>
+  <meta name="description" content="Template de loja simples com carrinho, produtos e checkout mock." />
+  <style>
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#0ea5a4;
+      --accent-dark:#087f7d;
+      --shadow: 0 6px 20px rgba(16,24,40,0.06);
+      --radius:12px;
+      --max:1100px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:#0f1724;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.45;
+      padding:24px;
+    }
+    .container{max-width:var(--max);margin:0 auto}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4cc0ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    nav a{margin-left:18px;color:var(--muted);text-decoration:none}
+
+    /* Search & filters */
+    .toolbar{display:flex;gap:12px;align-items:center;margin:18px 0}
+    .search{flex:1;display:flex;gap:8px}
+    .search input{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(15,23,36,0.06);background:var(--card)}
+    .filters{display:flex;gap:8px}
+    .btn{padding:10px 12px;border-radius:10px;border:none;background:var(--accent);color:#fff;cursor:pointer}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(14,165,164,0.12)}
+
+    /* Grid */
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:20px}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .product{background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+    .product img{width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px}
+    .product h3{margin:0 0 6px;font-size:16px}
+    .price{font-weight:700}
+    .add{margin-top:auto;display:flex;justify-content:space-between;align-items:center}
+
+    /* Cart */
+    .cart{background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow);position:relative}
+    .cart h3{margin-top:0}
+    .cart-list{display:flex;flex-direction:column;gap:10px;max-height:320px;overflow:auto;padding-right:6px}
+    .cart-item{display:flex;gap:10px;align-items:center}
+    .cart-item img{width:56px;height:56px;object-fit:cover;border-radius:8px}
+    .qty{display:flex;gap:6px;align-items:center}
+    .qty button{padding:6px 8px;border-radius:8px;border:1px solid rgba(15,23,36,0.06);background:transparent}
+    .total{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-weight:700}
+
+    /* Checkout */
+    .checkout{margin-top:12px}
+    label{font-size:13px;color:var(--muted)}
+    input,select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,23,36,0.06);margin-top:6px;background:transparent}
+
+    /* Empty state */
+    .empty{padding:28px;border-radius:12px;text-align:center;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .products{grid-template-columns:repeat(2,1fr)}
+      .grid{grid-template-columns:1fr}
+    }
+    @media (max-width:560px){
+      .products{grid-template-columns:1fr}
+      body{padding:16px}
+    }
+
+    /* Tiny helpers */
+    .badge{background:rgba(14,165,164,0.12);color:var(--accent);padding:6px 8px;border-radius:999px;font-weight:600}
+    a.link{color:var(--accent);text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">L</div>
+        <div>
+          <div style="font-weight:700">Minha Loja</div>
+          <div style="font-size:13px;color:var(--muted)">Produtos selecionados com carinho</div>
+        </div>
+      </div>
+
+      <nav aria-label="menu">
+        <a href="#" class="link">Início</a>
+        <a href="#" class="link">Ofertas</a>
+        <a href="#" class="link">Contato</a>
+      </nav>
+    </header>
+
+    <div class="toolbar">
+      <div class="search">
+        <input id="searchInput" placeholder="Pesquisar produtos..." aria-label="Pesquisar produtos">
+        <button class="btn ghost" id="clearSearch">Limpar</button>
+      </div>
+      <div class="filters">
+        <select id="sortSelect" aria-label="Ordenar">
+          <option value="default">Ordenar: Padrão</option>
+          <option value="price-asc">Preço: menor → maior</option>
+          <option value="price-desc">Preço: maior → menor</option>
+        </select>
+        <button class="btn" id="viewCartBtn">Carrinho (<span id="cartCount">0</span>)</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <section>
+        <h2>Produtos</h2>
+        <div class="products" id="products"></div>
+      </section>
+
+      <aside class="cart" id="cartPanel">
+        <h3>Carrinho</h3>
+        <div class="cart-list" id="cartList"></div>
+        <div class="total"><div>Total</div><div id="cartTotal">R$ 0,00</div></div>
+
+        <div class="checkout" id="checkoutArea">
+          <h4>Finalizar compra</h4>
+          <label for="name">Nome</label>
+          <input id="custName" placeholder="Seu nome" />
+          <label for="email">E‑mail</label>
+          <input id="custEmail" placeholder="seu@exemplo.com" />
+          <label for="method">Pagamento (simulado)</label>
+          <select id="method"><option>Cartão de crédito</option><option>PIX</option><option>Boleto</option></select>
+          <button class="btn" id="checkoutBtn" style="width:100%;margin-top:10px">Pagar agora (simulado)</button>
+        </div>
+      </aside>
+    </div>
+
+    <footer style="margin-top:18px;color:var(--muted);font-size:13px">© <span id="year"></span> Minha Loja — Template de loja simples</footer>
+  </div>
+
+  <script>
+    // Dados de exemplo — substitua por sua API
+    const PRODUCTS = [
+      {id:1,title:'Camiseta Básica',price:59.90,img:'https://images.unsplash.com/photo-1520975912306-7c5f4b820b4b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1'},
+      {id:2,title:'Tênis Esportivo',price:249.00,img:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2'},
+      {id:3,title:'Mochila de Lona',price:129.50,img:'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3'},
+      {id:4,title:'Relógio Minimal',price:399.00,img:'https://images.unsplash.com/photo-1518546305928-07b88d8f9b6e?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=4'},
+      {id:5,title:'Óculos de Sol',price:179.90,img:'https://images.unsplash.com/photo-1518544880367-3b4734d1c6c8?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=5'},
+      {id:6,title:'Jaqueta Leve',price:299.00,img:'https://images.unsplash.com/photo-1520975912306-7c5f4b820b4b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=6'}
+    ];
+
+    // Utilitários
+    const formatBRL = v => v.toLocaleString('pt-BR', {style:'currency',currency:'BRL'});
+
+    // Estado do carrinho
+    let cart = JSON.parse(localStorage.getItem('cart_v1')||'{}');
+
+    // Render produtos
+    const productsEl = document.getElementById('products');
+    const cartListEl = document.getElementById('cartList');
+    const cartTotalEl = document.getElementById('cartTotal');
+    const cartCountEl = document.getElementById('cartCount');
+
+    function renderProducts(list){
+      productsEl.innerHTML = '';
+      list.forEach(p => {
+        const el = document.createElement('div'); el.className='product';
+        el.innerHTML = `
+          <img src="${p.img}" alt="${p.title}">
+          <h3>${p.title}</h3>
+          <div class="muted">Descrição curta do produto.</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:10px">
+            <div class="price">${formatBRL(p.price)}</div>
+            <div style="margin-left:auto" class="add">
+              <button class="btn ghost" data-id="${p.id}">Ver</button>
+              <button class="btn" data-add="${p.id}">Adicionar</button>
+            </div>
+          </div>
+        `;
+        productsEl.appendChild(el);
+      });
+
+      // attach handlers
+      document.querySelectorAll('[data-add]').forEach(btn=>btn.addEventListener('click',()=>{
+        addToCart(parseInt(btn.getAttribute('data-add')));
+      }));
+    }
+
+    function addToCart(id){
+      const prod = PRODUCTS.find(p=>p.id===id);
+      if(!prod) return;
+      cart[id] = cart[id]||{...prod,qty:0};
+      cart[id].qty++;
+      saveCart();
+      renderCart();
+    }
+
+    function changeQty(id,delta){
+      if(!cart[id]) return;
+      cart[id].qty += delta;
+      if(cart[id].qty<=0) delete cart[id];
+      saveCart();renderCart();
+    }
+
+    function saveCart(){
+      localStorage.setItem('cart_v1', JSON.stringify(cart));
+    }
+
+    function renderCart(){
+      const items = Object.values(cart);
+      cartListEl.innerHTML = '';
+      if(items.length===0){
+        cartListEl.innerHTML = '<div class="empty">Seu carrinho está vazio.</div>';
+        cartTotalEl.textContent = formatBRL(0);
+        cartCountEl.textContent = 0;
+        return;
+      }
+      let total = 0, count=0;
+      items.forEach(it=>{
+        total += it.price*it.qty; count += it.qty;
+        const div = document.createElement('div'); div.className='cart-item';
+        div.innerHTML = `
+          <img src="${it.img}" alt="${it.title}">
+          <div style="flex:1">
+            <div style="font-weight:600">${it.title}</div>
+            <div style="font-size:13px;color:${getComputedStyle(document.documentElement).getPropertyValue('--muted')}">${formatBRL(it.price)} x ${it.qty}</div>
+          </div>
+          <div class="qty">
+            <button data-dec="${it.id}">-</button>
+            <div>${it.qty}</div>
+            <button data-inc="${it.id}">+</button>
+          </div>
+        `;
+        cartListEl.appendChild(div);
+      });
+      cartTotalEl.textContent = formatBRL(total);
+      cartCountEl.textContent = count;
+
+      // attach qty handlers
+      document.querySelectorAll('[data-inc]').forEach(b=>b.addEventListener('click',()=>changeQty(b.getAttribute('data-inc')|0,1)));
+      document.querySelectorAll('[data-dec]').forEach(b=>b.addEventListener('click',()=>changeQty(b.getAttribute('data-dec')|0,-1)));
+    }
+
+    // Search & sort
+    const searchInput = document.getElementById('searchInput');
+    const clearSearch = document.getElementById('clearSearch');
+    const sortSelect = document.getElementById('sortSelect');
+
+    function applyFilters(){
+      let list = [...PRODUCTS];
+      const q = searchInput.value.trim().toLowerCase();
+      if(q) list = list.filter(p=>p.title.toLowerCase().includes(q));
+      const sort = sortSelect.value;
+      if(sort==='price-asc') list.sort((a,b)=>a.price-b.price);
+      if(sort==='price-desc') list.sort((a,b)=>b.price-a.price);
+      renderProducts(list);
+    }
+
+    searchInput.addEventListener('input',applyFilters);
+    clearSearch.addEventListener('click',()=>{searchInput.value='';applyFilters();});
+    sortSelect.addEventListener('change',applyFilters);
+
+    // Checkout (simulado)
+    document.getElementById('checkoutBtn').addEventListener('click',()=>{
+      const name = document.getElementById('custName').value.trim();
+      const email = document.getElementById('custEmail').value.trim();
+      if(!name||!email){alert('Preencha nome e e-mail para prosseguir.');return}
+      if(Object.keys(cart).length===0){alert('Seu carrinho está vazio.');return}
+      // Simula sucesso
+      alert('Pagamento simulado realizado com sucesso — obrigado, '+name+'!');
+      cart = {}; saveCart(); renderCart();
+      document.getElementById('custName').value=''; document.getElementById('custEmail').value='';
+    });
+
+    // Inicialização
+    document.getElementById('year').textContent = new Date().getFullYear();
+    renderProducts(PRODUCTS);
+    renderCart();
+
+    // Small helpers for keyboard/accessibility
+    document.getElementById('viewCartBtn').addEventListener('click',()=>{
+      const cartPanel = document.getElementById('cartPanel');
+      cartPanel.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+
+  </script>
+  <script>
+    // Loja com JavaScript — versão interativa
+    const produtos = [
+      { id: 1, nome: "Camiseta Premium", preco: 79.90, img: "https://source.unsplash.com/400x400/?tshirt" },
+      { id: 2, nome: "Tênis Conforto", preco: 199.90, img: "https://source.unsplash.com/400x400/?shoes" },
+      { id: 3, nom
+</html>
