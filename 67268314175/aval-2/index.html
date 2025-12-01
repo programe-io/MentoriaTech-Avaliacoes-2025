@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Completa com Header, Nav, Aside, Article, IMG e Footer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        /* Barra lateral */
+        aside {
+            width: 220px;
+            background: #e8e8e8;
+            padding: 20px;
+            height: 100vh;
+            box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+        }
+
+        /* Conteúdo principal */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Área dos artigos */
+        .container {
+            flex: 1;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        article {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        article img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: auto;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <aside>
+        <h3>Menu Lateral</h3>
+        <ul>
+            <li><a href="#link1">Link 1</a></li>
+            <li><a href="#link2">Link 2</a></li>
+            <li><a href="#link3">Link 3</a></li>
+        </ul>
+    </aside>
+
+    <main>
+
+        <header>
+            <h1>Meu Site Completo</h1>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </header>
+
+        <div class="container">
+
+            <article>
+                <h2>Artigo com Imagem</h2>
+                <p>Este artigo contém a tag <strong>img</strong> exibindo uma imagem ilustrativa.</p>
+
+                <img src="https://via.placeholder.com/800x300" alt="Imagem de exemplo">
+
+                <button onclick="alert('Você clicou no artigo com imagem!')">Ação</button>
+            </article>
+
+            <article>
+                <h2>Artigo 2</h2>
+                <p>Outro conteúdo dentro de um article.</p>
+                <button onclick="alert('Você clicou no Artigo 2!')">Ação</button>
+            </article>
+
+        </div>
+
+        <!-- FOOTER ADICIONADO AQUI -->
+        <footer>
+            © 2025 - Meu Site Completo. Todos os direitos reservados.
+        </footer>
+
+    </main>
+
+<script src="script.js"></script></body>
+</html>
