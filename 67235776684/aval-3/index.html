@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css222.css">
+  <title>App social freed - funcional</title>
+
+  <!-- 🔗 Arquivo CSS externo -->
+  <link rel="stylesheet" href="styles.css222.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header></header>
+    <a></a><p></p>
+    <h2></h2>
+
+  <h1>Postagens</h1>
+
+  <nav>
+    <button data-target="inicio">Início</button>
+    <button data-target="perfil">Perfil</button>
+    <button data-target="postagens">Postagens</button>
+    <button data-target="todos">Mostrar todos</button>
+  </nav>
+
+  <main class="container" id="cards-container">
+
+    <!-- CARD 1 -->
+    <article id="inicio" class="card">
+      <div class="header">
+        <div class="avatar" style="background-image:url('https://media.c5n.com/p/8a480bd1be26c92ffe3574bfd964d8e8/adjuntos/326/imagenes/000/284/0000284814/790x0/smart/midjourney-pulzo-ia-54-1024x1024jpg.jpg');"></div>
+        <div><strong>Maia@</strong></div>
+      </div>
+      <img class="main-img" src="https://s2-ge.glbimg.com/-Gke5q8UP9tEQV_Nb4geKPKJX4s=/0x0:2446x1673/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2025/M/0/ByJJ2VS5uJwOgdYng28g/2025-11-30t000421z-868319830-up1elbu00780a-rtrmadp-3-soccer-libertadores-pal-fla.jpg" alt="Imagem" />
+      <div class="content">
+      Desde 2018, o Flamengo é considerado o clube mais valioso do Brasil, tornando-se em 2019, o time mais valioso da América do Sul, além de ser o 70º time de futebol mais valioso do mundo, avaliado em mais de 145,7 milhões de euros.
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article id="perfil" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://media.c5n.com/p/8a480bd1be26c92ffe3574bfd964d8e8/adjuntos/326/imagenes/000/284/0000284814/790x0/smart/midjourney-pulzo-ia-54-1024x1024jpg.jpg');"></div>
+        <div><strong>Maia@</strong></div>
+      </div>
+      <img class="main-img" src="https://lumiere-a.akamaihd.net/v1/images/gallery_princess_merida_8_72603f1f_7e30631c.jpeg?region=0%2C0%2C2181%2C1223" alt="Imagem" />
+      <div class="content">
+  O termo "Mérida" pode se referir a diferentes entidades notáveis. Dependendo do que você procura, pode ser a personagem principal do filme "Valente" da Disney/Pixar, ou o nome de cidades importantes na Espanha, México e Venezuela.
+        <span class="meta">Há 30 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article id="postagens" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://media.c5n.com/p/8a480bd1be26c92ffe3574bfd964d8e8/adjuntos/326/imagenes/000/284/0000284814/790x0/smart/midjourney-pulzo-ia-54-1024x1024jpg.jpg');"></div>
+        <div><strong>Maia@</strong></div>
+      </div>
+      <img class="main-img" src="https://upload.wikimedia.org/wikipedia/pt/4/46/Moana_movie_poster_p_2016.jpg" alt="Imagem" />
+      <div class="content">
+       Moana, em termos de animação, se refere à personagem e ao filme "Moana: Um Mar de Aventuras", que narra a jornada de uma jovem polinesia para salvar seu povo
+        <span class="meta">Há 1 hora</span>
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function mostrarCard(id) {
+      const cards = document.querySelectorAll('#cards-container .card');
+      cards.forEach(card => {
+        if (id === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.id === id) {
+            card.classList.remove('hidden');
+            setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        mostrarCard(target);
+      });
+    });
+  </script>
+
+</body>
+</html>
