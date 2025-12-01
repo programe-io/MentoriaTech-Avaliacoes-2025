@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Maquiagem</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff4f8;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background: #ff9ac6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* MAIN LAYOUT */
+        main {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* ARTICLES */
+        article {
+            width: 65%;
+            margin-bottom: 30px;
+        }
+
+        article h2 {
+            margin-bottom: 10px;
+            color: #c74086;
+        }
+
+        /* PRODUTOS */
+        .produtos-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .produto {
+            background: white;
+            width: 30%;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #0002;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .produto img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* ASIDE */
+        aside {
+            width: 30%;
+            background: #ffe1ef;
+            padding: 20px;
+            border-radius: 10px;
+            height: fit-content;
+            box-shadow: 0 0 10px #0002;
+        }
+
+        aside h2 {
+            color: #c74086;
+            margin-bottom: 10px;
+        }
+
+        aside ul {
+            list-style: square;
+            padding-left: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #ff9ac6;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 900px) {
+            main {
+                flex-direction: column;
+            }
+
+            article, aside {
+                width: 100%;
+            }
+
+            .produto {
+                width: 48%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .produto {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Mundo da Maquiagem</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#dicas">Dicas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Conteúdo Principal -->
+        <article id="sobre">
+            <h2>Sobre a Maquiagem</h2>
+            <p>
+                A maquiagem é uma arte que permite realçar características, expressar emoções 
+                e elevar a autoestima. Aqui você encontra informações, produtos e dicas para 
+                aprimorar suas técnicas e realçar sua beleza natural.
+            </p>
+        </article>
+
+        <article id="produtos">
+            <h2>Produtos em Destaque</h2>
+
+            <div class="produtos-container">
+
+                <div class="produto">
+                    <img src="https://i.imgur.com/IMt7V5w.jpg" alt="Base">
+                    <h3>Base Líquida</h3>
+                    <p>Cobertura uniforme e acabamento natural.</p>
+                </div>
+
+                <div class="produto">
+                    <img src="https://i.imgur.com/oZ9oWtV.jpg" alt="Paleta de sombras">
+                    <h3>Paleta de Sombras</h3>
+                    <p>Variedade de cores para looks criativos.</p>
+                </div>
+
+                <div class="produto">
+                    <img src="https://i.imgur.com/ZF1LxDT.jpg" alt="Batom matte">
+                    <h3>Batom Matte</h3>
+                    <p>Longa duração e acabamento aveludado.</p>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- ASIDE Obrigatório -->
+        <aside id="dicas">
+            <h2>Dicas Rápidas</h2>
+            <ul>
+                <li>Use primer para maior fixação.</li>
+                <li>Hidrate bem a pele antes da maquiagem.</li>
+                <li>Aplique base com esponja para acabamento natural.</li>
+                <li>Use iluminador para destacar áreas do rosto.</li>
+                <li>Lave seus pincéis com frequência.</li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>Mundo da Maquiagem — Site desenvolvido para avaliação © 2025</p>
+    </footer>
+
+</body>
+</html>
