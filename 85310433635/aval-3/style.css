@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>História do Vasco</title>
+  <style>
+    :root{
+      --dark:#0b0b0b;
+      --vasco-black:#000000;
+      --vasco-white:#ffffff;
+      --accent:#8b0000; /* vinho - lembra o escudo */
+      --muted:#f4f4f4;
+      --card-shadow: 0 6px 18px rgba(2,2,2,0.25);
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg, var(--muted), #fff 60%);
+      color:var(--vasco-black);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+    }
+
+    header{
+      background: radial-gradient(circle at 10% 10%, rgba(139,0,0,0.08), transparent 20%), #000;
+      color:var(--vasco-white);
+      padding:3rem 1.5rem;
+      display:flex;
+      align-items:center;
+      gap:1.25rem;
+      flex-wrap:wrap;
+    }
+    .brand{
+      display:flex;align-items:center;gap:.85rem;
+    }
+    .logo{
+      width:84px;height:84px;border-radius:12px;background:linear-gradient(180deg,#111,#222);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 -6px 18px rgba(255,255,255,0.03);
+      border:4px solid #fff;
+      font-weight:900;color:#fff;font-size:22px;
+    }
+    h1{font-size:1.8rem;margin:0}
+    p.lead{opacity:.9;margin:.25rem 0 0}
+
+    nav{
+      margin-left:auto;
+    }
+    nav a{color:var(--vasco-white);text-decoration:none;margin-left:1rem;font-weight:600;opacity:.95}
+
+    .container{max-width:1100px;margin:2rem auto;padding:0 1rem}
+
+    .hero{
+      display:grid;grid-template-columns:1fr 360px;gap:1.25rem;align-items:start;margin-top:1.2rem;
+    }
+    .card{background:#fff;border-radius:14px;padding:1.25rem;box-shadow:var(--card-shadow)}
+
+    .timeline{display:flex;flex-direction:column;gap:12px}
+    .event{display:flex;gap:12px;align-items:flex-start}
+    .event .year{min-width:72px;font-weight:700;color:var(--accent)}
+    .event .desc{color:#222}
+
+    .stats{display:flex;gap:12px;flex-wrap:wrap}
+    .stat{flex:1;min-width:140px;background:linear-gradient(180deg,#fff,#fafafa);padding:1rem;border-radius:10px;text-align:center}
+    .stat h3{margin:0;font-size:1.5rem}
+    .stat p{margin:.25rem 0 0;color:#666}
+
+    .image{height:220px;background:url('https://picsum.photos/800/400?random=16') center/cover;border-radius:10px}
+
+    footer{margin-top:2rem;padding:2rem 1rem;background:#0b0b0b;color:#eee}
+    footer p{margin:0;text-align:center}
+
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+
+    /* responsividade */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .brand .logo{width:66px;height:66px;font-size:18px}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:520px){
+      header{padding:1.25rem}
+      nav{width:100%;order:3;margin-top:.75rem}
+      nav a{margin-left:0;margin-right:1rem}
+      .gallery img{height:90px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">CRV</div>
+      <div>
+        <h1>Club de Regatas Vasco da Gama</h1>
+        <p class="lead">História, conquistas e legado do Vasco — de 1898 aos dias atuais</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#historia">História</a>
+      <a href="#conquistas">Conquistas</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <h2 id="historia">Resumo histórico</h2>
+        <p>Fundado em 21 de agosto de 1898 por um grupo de remadores, o Club de Regatas Vasco da Gama ganhou destaque nacional e internacional ao longo do século XX. Inicialmente clube de remo, o Vasco se profissionalizou no futebol e se tornou referência por sua cultura popular, inclusão social e resistência a discriminações.</p>
+
+        <div style="margin-top:1rem" class="timeline">
+          <div class="event"><div class="year">1898</div><div class="desc">Fundação do clube como agremiação de remo no Rio de Janeiro.</div></div>
+          <div class="event"><div class="year">1923</div><div class="desc">Primeira grande mobilização: o clube enfrentou elitismo e defendeu a inclusão de jogadores populares e negros.</div></div>
+          <div class="event"><div class="year">1940-50</div><div class="desc">Crescimento no futebol — títulos estaduais e consolidação da torcida.</div></div>
+          <div class="event"><div class="year">1974</div><div class="desc">Conquista do Campeonato Brasileiro (1974) — marco importante no futebol nacional.</div></div>
+          <div class="event"><div class="year">1998</div><div class="desc">Centenário do Vasco com comemorações e projetos sociais.</div></div>
+        </div>
+
+        <h3 style="margin-top:1rem">Missão e identidade</h3>
+        <p>O Vasco sempre se posicionou como um clube de massas, com forte ligação com as comunidades populares, a cultura luso-brasileira e ações sociais — mantendo programas de formação e inclusão.</p>
+
+      </div>
+
+      <aside class="card">
+        <div class="image" aria-hidden="true"></div>
+
+        <div style="margin-top:1rem">
+          <h3 id="conquistas">Conquistas rápidas</h3>
+          <div class="stats">
+            <div class="stat"><h3>+20</h3><p>Títulos Estaduais</p></div>
+            <div class="stat"><h3>4</h3><p>Campeonatos Brasileiros*</p></div>
+            <div class="stat"><h3>1</h3><p>Copa Libertadores*</p></div>
+          </div>
+          <small style="display:block;margin-top:.5rem;color:#666">*Números ilustrativos — ajuste conforme fonte histórica precisa.</small>
+        </div>
+      </aside>
+    </section>
+
+    <section style="margin-top:1.25rem" class="card">
+      <h2>Linha do tempo detalhada</h2>
+      <p>Abaixo uma seleção de momentos marcantes — ideal para transformar em uma página interativa ou projeto escolar.</p>
+
+      <ol>
+        <li><strong>1898:</strong> Fundação como clube de remo.</li>
+        <li><strong>1915–1930:</strong> Expansão do futebol; fortalecimento da base social do clube.</li>
+        <li><strong>1924:</strong> Polêmica sobre o regulamento que restringia jogadores — o Vasco se posicionou contra o racismo e elite esportiva.</li>
+        <li><strong>Anos 40–60:</strong> Reconhecimento no cenário nacional.</li>
+        <li><strong>Décadas recentes:</strong> Projetos sociais, centros de formação e fortalecimento da marca.</li>
+      </ol>
+
+      <p>Se quiser que eu pesquise fontes históricas (datas exatas, títulos oficiais e referências), eu posso integrar uma bibliografia e ajustar os números com verificações.</p>
+    </section>
+
+    <section id="galeria" class="card" style="margin-top:1rem">
+      <h2>Galeria</h2>
+      <div class="gallery">
+        <img src="https://picsum.photos/seed/vasco1/400/240" alt="Foto antiga do Vasco">
+        <img src="https://picsum.photos/seed/vasco2/400/240" alt="Torcida do Vasco">
+        <img src="https://picsum.photos/seed/vasco3/400/240" alt="Jogadores do Vasco">
+      </div>
+      <p style="margin-top:.75rem;color:#555">Substitua as imagens placeholder por fotos reais do acervo do clube ou imagens com licença adequada.</p>
+    </section>
+
+    <section id="contato" class="card" style="margin-top:1rem">
+      <h2>Quer editar ou publicar?</h2>
+      <p>Posso gerar uma versão com áudio narrado, uma página impressa (PDF) ou converter este projeto para React/Tailwind se preferir.</p>
+
+      <form onsubmit="event.preventDefault();alert('Obrigado! (formulário de demonstração)')" style="display:grid;gap:.5rem;margin-top:.5rem">
+        <input type="text" placeholder="Seu nome" style="padding:.6rem;border-radius:8px;border:1px solid #ddd">
+        <input type="email" placeholder="Seu e‑mail" style="padding:.6rem;border-radius:8px;border:1px solid #ddd">
+        <textarea placeholder="O que gostaria de adicionar?" rows="3" style="padding:.6rem;border-radius:8px;border:1px solid #ddd"></textarea>
+        <button style="padding:.7rem;border-radius:10px;border:0;background:linear-gradient(180deg,var(--accent),#600);color:#fff;font-weight:700;">Enviar</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Feito com ❤ — Página modelo sobre a história do Club de Regatas Vasco da Gama. Conteúdos e imagens são apenas ilustrativos.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
