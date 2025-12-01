@@ -1,0 +1,119 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #121212;
+  color: #e0e0e0;
+}
+
+/* Cabeçalho */
+header {
+  background: #1f1f1f;
+  color: #e0e0e0;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+header .logo {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+header nav a {
+  color: #e0e0e0;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #4a90e2;
+}
+
+/* Container dos cards */
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+/* Card */
+.card {
+  background: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.7);
+}
+
+.card-header {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  background: #2a2a2a;
+  border-bottom: 1px solid #333;
+}
+
+.perfil-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.perfil-img {
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  border: 2px solid #4a90e2;
+}
+
+.card-header .perfil {
+  font-weight: bold;
+  color: #4a90e2;
+}
+
+.card-header .tempo {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-footer {
+  padding: 12px;
+  border-top: 1px solid #333;
+}
+
+.card-footer .comentario {
+  background: #2a2a2a;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #ccc;
+}
