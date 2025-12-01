@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo da Maquiagem</title>
+
+    <!-- TAILWIND CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CONFIGURAÇÃO CUSTOMIZADA DE CORES -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rosa: "#fbc2eb",
+                        rosaforte: "#ff5fa2",
+                        rosaclara: "#ffe4f2",
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-rosaclara text-gray-800">
+
+    <!-- ================= CABEÇALHO ================ -->
+    <header class="bg-rosaforte text-white py-5 shadow-lg">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
+            <h1 class="text-2xl font-bold tracking-wide">Mundo da Maquiagem</h1>
+
+            <nav>
+                <ul class="flex gap-6 text-lg font-medium">
+                    <li><a href="#sobre" class="hover:underline">Sobre</a></li>
+                    <li><a href="#produtos" class="hover:underline">Produtos</a></li>
+                    <li><a href="#contato" class="hover:underline">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- =============== CONTEÚDO PRINCIPAL =============== -->
+    <main class="max-w-6xl mx-auto px-4 py-10">
+
+        <!-- SEÇÃO SOBRE -->
+        <section id="sobre" class="mb-16">
+            <h2 class="text-3xl font-bold text-rosaforte mb-4">Beleza Que Inspira</h2>
+            <p class="text-lg leading-relaxed max-w-3xl">
+                A maquiagem é muito mais do que estética — é uma forma de expressão,
+                criatividade e autoestima. Aqui você encontra produtos, técnicas e 
+                inspirações para elevar sua beleza natural e explorar seu estilo único.
+            </p>
+        </section>
+
+        <!-- SEÇÃO PRODUTOS -->
+        <section id="produtos" class="mb-16">
+            <h2 class="text-3xl font-bold text-rosaforte mb-6">Produtos em Destaque</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- CARD 1 -->
+                <div class="bg-white rounded-xl shadow-md p-5 hover:scale-105 transition-transform">
+                    <img src="https://i.imgur.com/IMt7V5w.jpg" alt="Base Líquida" 
+                        class="rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-rosaforte mb-2">Base Líquida</h3>
+                    <p class="text-gray-600">Acabamento natural com cobertura impecável.</p>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="bg-white rounded-xl shadow-md p-5 hover:scale-105 transition-transform">
+                    <img src="https://i.imgur.com/oZ9oWtV.jpg" alt="Sombras" 
+                        class="rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-rosaforte mb-2">Paleta de Sombras</h3>
+                    <p class="text-gray-600">Cores vibrantes para looks elegantes e criativos.</p>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="bg-white rounded-xl shadow-md p-5 hover:scale-105 transition-transform">
+                    <img src="https://i.imgur.com/ZF1LxDT.jpg" alt="Batom Matte" 
+                        class="rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-rosaforte mb-2">Batom Matte</h3>
+                    <p class="text-gray-600">Alta pigmentação e longa duração.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO CONTATO -->
+        <section id="contato" class="mb-16">
+            <h2 class="text-3xl font-bold text-rosaforte mb-4">Fale Conosco</h2>
+
+            <form class="bg-white shadow-md rounded-xl p-6 max-w-lg">
+
+                <label class="block mb-3">
+                    <span class="text-gray-700 font-medium">Seu nome</span>
+                    <input type="text" class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-rosaforte" />
+                </label>
+
+                <label class="block mb-3">
+                    <span class="text-gray-700 font-medium">Email</span>
+                    <input type="email" class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-rosaforte" />
+                </label>
+
+                <label class="block mb-4">
+                    <span class="text-gray-700 font-medium">Mensagem</span>
+                    <textarea rows="4" class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-rosaforte"></textarea>
+                </label>
+
+                <button 
+                    class="bg-rosaforte text-white px-6 py-2 rounded-lg font-semibold hover:bg-pink-700 transition">
+                    Enviar
+                </button>
+                
+            </form>
+        </section>
+
+    </main>
+
+    <!-- ================== RODAPÉ ================== -->
+    <footer class="bg-rosaforte text-white py-4 text-center mt-10">
+        <p class="font-medium">© 2025 Mundo da Maquiagem — Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
