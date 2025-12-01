@@ -1,0 +1,299 @@
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Loja Exemplo — Index</title>
+  <meta name="description" content="Loja simples em HTML/CSS/JS — catálogo, carrinho e contato" />
+
+  <style>
+    :root{
+      --bg:#f6f7fb; --card:#ffffff; --accent:#ff6b6b; --muted:#6b7280; --shadow: 0 6px 18px rgba(16,24,40,0.08);
+      --radius:12px; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.4}
+
+    header{background:linear-gradient(90deg,#fff 0%,#fbfbff 100%);padding:20px 24px;position:sticky;top:0;z-index:30;box-shadow:0 1px 0 rgba(15,23,42,0.04)}
+    .nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ff9a9e);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    nav a{margin-right:14px;color:var(--muted);text-decoration:none;font-weight:600}
+    .actions{display:flex;gap:10px;align-items:center}
+    .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+    .btn.ghost{background:transparent;color:var(--muted);border:1px solid rgba(15,23,42,0.06)}
+
+    .container{max-width:1100px;margin:28px auto;padding:0 16px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center}
+    .hero-card{background:var(--card);padding:28px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    h1{margin:0 0 10px;font-size:28px}
+    p.lead{margin:0;color:var(--muted)}
+<article/>
+    /* produtos */
+    .filters{display:flex;gap:8px;margin:18px 0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+    .product{background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+    .product img{width:100%;height:180px;object-fit:cover;border-radius:10px}
+    .meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+    .price{font-weight:800}
+    .add{margin-top:10px;padding:8px;border-radius:10px;border:none;background:#0f172a;color:#fff;cursor:pointer}
+
+    /* carrinho modal */
+    .cart-btn{position:relative}
+    .badge{position:absolute;top:-8px;right:-8px;background:#0f172a;color:#fff;border-radius:999px;padding:4px 8px;font-size:12px}
+    .modal{position:fixed;right:20px;top:80px;width:360px;background:var(--card);border-radius:12px;box-shadow:0 20px 50px rgba(2,6,23,0.2);padding:18px;display:none;z-index:60}
+    .modal.open{display:block}
+    .cart-item{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed rgba(15,23,42,0.06)}
+    .cart-item img{width:56px;height:56px;border-radius:8px;object-fit:cover}
+    .tot{display:flex;justify-content:space-between;margin-top:12px;font-weight:800}
+
+    footer{max-width:1100px;margin:28px auto;padding:24px 16px;color:var(--muted)}
+
+    /* responsivo */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .hero-card{order:2}
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">LX</div>
+        <div>
+          <div style="font-weight:800">Loja Exemplo</div>
+          <small style="color:var(--muted)">Moda & Acessórios</small>
+        </div>
+      </div>
+      <nav>
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="actions">
+        <button class="btn ghost" id="themeToggle">Tema</button>
+        <div class="cart-btn">
+          <button class="btn" id="cartOpen">Carrinho 🛒</button>
+          <div class="badge" id="cartCount">0</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Roupas elegantes. Entrega rápida.</h1>
+        <p class="lead">Coleção de temporada com peças versáteis. Veja os produtos abaixo e adicione ao carrinho.</p>
+
+        <div style="margin-top:18px">
+          <div class="filters">
+            <select id="categoryFilter">
+              <option value="all">Todas as categorias</option>
+              <option value="vestidos">Vestidos</option>
+              <option value="camisetas">Camisetas</option>
+              <option value="acessorios">Acessórios</option>
+            </select>
+            <input id="search" placeholder="Pesquisar produto..." style="padding:8px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);flex:1" />
+            <button class="btn ghost" id="clear">Limpar</button>
+          </div>
+        </div>
+
+        <div id="produtos" class="grid" style="margin-top:16px">
+          <!-- produtos gerados por JS -->
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3>Promoção</h3>
+        <p class="lead">Frete grátis para compras acima de R$150. Aproveite cupons e lançamentos.</p>
+        <hr style="margin:12px 0" />
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <strong>Atendimento</strong>
+          <small class="muted">Seg a Sex — 9h às 18h</small>
+          <div style="margin-top:8px">
+            <button class="btn" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Fale conosco</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="sobre" style="margin-top:26px">
+      <div class="hero-card">
+        <h2>Sobre a Loja</h2>
+        <p class="lead">Somos uma loja fictícia criada como exemplo. O site vem com catálogo, carrinho simples em JavaScript e formulário de contato.
+        </p>
+      </div>
+    </section>
+
+    <section id="contato" style="margin-top:18px">
+      <div class="hero-card">
+        <h2>Contato</h2>
+        <form id="contactForm">
+          <div style="display:flex;gap:8px;margin-bottom:8px">
+            <input required placeholder="Nome" id="nome" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)" />
+            <input required placeholder="E-mail" id="email" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)" />
+          </div>
+          <textarea required placeholder="Mensagem" id="mensagem" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)"></textarea>
+          <div style="margin-top:8px;display:flex;justify-content:flex-end">
+            <button class="btn" type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="modal" id="cartModal" aria-hidden="true">
+    <h3>Seu carrinho</h3>
+    <div id="cartItems"></div>
+    <div class="tot">
+      <div>Total</div>
+      <div id="cartTotal">R$0,00</div>
+    </div>
+    <div style="margin-top:12px;display:flex;gap:8px;justify-content:space-between">
+      <button class="btn ghost" id="clearCart">Limpar</button>
+      <button class="btn" id="checkout">Finalizar compra</button>
+    </div>
+  </div>
+<article>
+  <h2>Título do Artigo</h2>
+  <p>
+    Este é um exemplo de conteúdo dentro da tag <code>&lt;article&gt;</code>.
+    Ela representa um bloco de informação independente, que pode existir sozinho.
+  </p>
+  <footer>
+    <small>Publicado em 01/12/2025</small>
+  </footer>
+</article>
+
+  <footer>
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <strong>Loja Exemplo</strong><br />
+        <small class="muted">Endereço fictício • Todos os direitos reservados</small>
+      </div>
+      <div>
+        <small class="muted">Pagamento seguro • SSL</small>
+      </div>
+    </div>
+  </footer>
+<img src="https://via.placeholder.com/300" alt="Descrição da imagem">
+
+
+  <script>
+    /* Dados de exemplo */
+    const products = [
+      {id:1,title:'Vestido Floral',price:129.90,category:'vestidos',img:'https://via.placeholder.com/600x400?text=Vestido+Floral'},
+      {id:2,title:'Camiseta Básica',price:59.90,category:'camisetas',img:'https://via.placeholder.com/600x400?text=Camiseta+Básica'},
+      {id:3,title:'Bolsa Tiracolo',price:189.90,category:'acessorios',img:'https://via.placeholder.com/600x400?text=Bolsa+Tiracolo'},
+      {id:4,title:'Vestido Preto',price:149.90,category:'vestidos',img:'https://via.placeholder.com/600x400?text=Vestido+Preto'},
+      {id:5,title:'Boné Sport',price:49.90,category:'acessorios',img:'https://via.placeholder.com/600x400?text=Bone+Sport'},
+      {id:6,title:'Camiseta Estampada',price:79.90,category:'camisetas',img:'https://via.placeholder.com/600x400?text=Camiseta+Estampada'}
+    ];
+
+    const state = {cart:{}};
+
+    function formatBRL(v){return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+
+    function renderProducts(list){
+      const wrap = document.getElementById('produtos');
+      wrap.innerHTML = '';
+      list.forEach(p=>{
+        const el = document.createElement('div'); el.className='product';
+        el.innerHTML = `
+          <img src="${p.img}" alt="${p.title}" />
+          <div style="margin-top:8px">
+            <div style="font-weight:800">${p.title}</div>
+            <div style="color:var(--muted);font-size:13px">${p.category}</div>
+            <div class="meta">
+              <div class="price">${formatBRL(p.price)}</div>
+            </div>
+            <button class="add" onclick="addToCart(${p.id})">Adicionar</button>
+          </div>
+        `;
+        wrap.appendChild(el);
+      })
+    }
+
+    function addToCart(id){
+      const p = products.find(x=>x.id===id);
+      if(!p) return;
+      state.cart[id] = state.cart[id] ? {...state.cart[id], qty: state.cart[id].qty+1} : { ...p, qty:1 };
+      updateCartUI();
+    }
+
+    function updateCartUI(){
+      const count = Object.values(state.cart).reduce((s,i)=>s+i.qty,0);
+      document.getElementById('cartCount').textContent = count;
+      const items = document.getElementById('cartItems');
+      items.innerHTML = '';
+      let total = 0;
+      Object.values(state.cart).forEach(i=>{
+        total += i.price * i.qty;
+        const div = document.createElement('div'); div.className='cart-item';
+        div.innerHTML = `
+          <img src="${i.img}" alt="${i.title}" />
+          <div style="flex:1">
+            <div style="font-weight:700">${i.title}</div>
+            <div style="color:var(--muted);font-size:13px">${i.qty} x ${formatBRL(i.price)}</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <button onclick="changeQty(${i.id},1)">+</button>
+            <button onclick="changeQty(${i.id},-1)">-</button>
+          </div>
+        `;
+        items.appendChild(div);
+      })
+      document.getElementById('cartTotal').textContent = formatBRL(total);
+    }
+
+    function changeQty(id,delta){
+      if(!state.cart[id]) return;
+      state.cart[id].qty += delta;
+      if(state.cart[id].qty <= 0) delete state.cart[id];
+      updateCartUI();
+    }
+
+    // filtros
+    document.getElementById('categoryFilter').addEventListener('change',applyFilters);
+    document.getElementById('search').addEventListener('input',applyFilters);
+    document.getElementById('clear').addEventListener('click',()=>{document.getElementById('search').value='';document.getElementById('categoryFilter').value='all';applyFilters()});
+
+    function applyFilters(){
+      const cat = document.getElementById('categoryFilter').value;
+      const q = document.getElementById('search').value.toLowerCase().trim();
+      let out = products.filter(p=> (cat==='all' || p.category===cat) && (p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q)) );
+      renderProducts(out);
+    }
+
+    // carrinho modal
+    document.getElementById('cartOpen').addEventListener('click',()=>{
+      const m = document.getElementById('cartModal'); m.classList.toggle('open');
+    });
+    document.getElementById('clearCart').addEventListener('click',()=>{state.cart={};updateCartUI();});
+    document.getElementById('checkout').addEventListener('click',()=>{alert('Checkout simulado — integrar com gateway de pagamento.');});
+
+    // tema simples
+    document.getElementById('themeToggle').addEventListener('click',()=>{
+      document.documentElement.style.setProperty('--accent', getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()==='#ff6b6b' ? '#0ea5a4' : '#ff6b6b');
+    });
+
+    // formulário de contato (simulado)
+    document.getElementById('contactForm').addEventListener('submit',(e)=>{
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      alert('Obrigado, '+nome+'! Sua mensagem foi recebida. (Simulação)');
+      e.target.reset();
+    });
+
+    // inicialização
+    renderProducts(products);
+    updateCartUI();
+  </script>
+<script src="script.js"></script></body>
+</html>

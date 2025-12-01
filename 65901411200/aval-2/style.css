@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Loja — CSS Focado</title>
+  <meta name="description" content="Exemplo de site de loja com CSS avançado (grid, variáveis, animações)" />
+
+  <!-- Estilos focados em CSS: arquitetura, variáveis, responsividade e animações -->
+  <style>
+    /* ----- Variáveis e reset ----- */
+    :root{
+      --bg:#0f172a; /* fundo escuro */
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#ff6b6b;
+      --accent-2:#7c3aed;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(2,6,23,0.6);
+      --maxw:1200px;
+      --gap:20px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+
+    /* ----- Layout base ----- */
+    body{
+      background: linear-gradient(180deg,var(--bg) 0%, #071024 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px 20px;
+      display:flex;justify-content:center;
+    }
+    .site{width:100%;max-width:var(--maxw)}
+
+    /* ----- Header ----- */
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:var(--gap);margin-bottom:28px
+    }
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:grid;place-items:center;font-weight:800;color:#fff;font-size:18px;box-shadow:var(--shadow);
+    }
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{padding:8px 12px;border-radius:10px;font-weight:600;color:var(--muted)}
+    nav a:hover{background:var(--glass);color:#fff}
+
+    /* ----- Hero ----- */
+    .hero{
+      display:grid;grid-template-columns:1fr 380px;gap:var(--gap);align-items:center;margin-bottom:30px
+    }
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:28px;border-radius:var(--radius);box-shadow:0 6px 30px rgba(2,6,23,0.5);}
+    .hero h1{margin:0 0 8px;font-size:28px;line-height:1.05}
+    .hero p{margin:0;color:var(--muted)}
+
+    /* ----- Busca e filtros (CSS grid avançado) ----- */
+    .filters{display:grid;grid-template-columns: 1fr 220px 120px;gap:12px;margin-top:18px}
+    .search{display:flex;gap:8px}
+    .search input{flex:1;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    .select{padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+
+    /* ----- Catálogo usando CSS Grid com auto-fill ----- */
+    .catalog{margin-top:20px;display:grid;grid-template-columns: repeat(auto-fill,minmax(220px,1fr));gap:18px}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:12px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,0.03);
+      transition:transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s;
+    }
+    .card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(2,6,23,0.6)}
+    .thumb{height:160px;border-radius:10px;overflow:hidden}
+    .meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+    .title{font-weight:700}
+    .muted{color:var(--muted);font-size:13px}
+    .price{font-weight:800}
+
+    /* ----- Badge com pseudo-element e animação pura em CSS ----- */
+    .badge{position:absolute;left:12px;top:12px;background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:8px 10px;border-radius:999px;font-weight:700;color:#fff;font-size:13px;transform:translateY(-6px);box-shadow:0 8px 20px rgba(124,58,237,0.18)}
+    .pulse{position:absolute;left:12px;top:12px;width:40px;height:40px;border-radius:50%;background:transparent;filter:blur(10px);pointer-events:none;opacity:.6;animation:pulse 2.2s infinite}
+    @keyframes pulse{0%{transform:scale(.8);opacity:.6}50%{transform:scale(1.6);opacity:.12}100%{transform:scale(.8);opacity:.6}}
+
+    /* ----- Carrinho lateral (apenas CSS + :target para abrir) ----- */
+    .cart-panel{
+      position:fixed;right:24px;top:80px;width:360px;background:linear-gradient(180deg,var(--card),#071126);padding:18px;border-radius:16px;box-shadow:0 30px 80px rgba(2,6,23,0.7);transform:translateY(-10px);opacity:0;pointer-events:none;transition:all .25s ease-in-out;
+    }
+    /* Usamos um checkbox escondido controlado por JS normalmente, mas aqui mostramos a técnica com :target */
+    /* para ativar, clique no link com href="#cart" */
+    #cart:target + .cart-panel{opacity:1;pointer-events:auto;transform:translateY(0)}
+
+    .cart-item{display:flex;gap:12px;align-items:center;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,0.03)}
+    .cart-item img{width:56px;height:56px;border-radius:8px;object-fit:cover}
+
+    /* ----- CTA e rodapé ----- */
+    .cta{display:flex;gap:12px;align-items:center;margin-top:14px}
+    .btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:10px 14px;border-radius:12px;font-weight:800;color:#061122;border:none;cursor:pointer}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:8px 12px;border-radius:12px}
+
+    footer{margin-top:36px;color:var(--muted);font-size:14px;padding:20px;border-top:1px solid rgba(255,255,255,0.02);border-radius:8px}
+
+    /* ----- Responsividade (mobile-first adjustments) ----- */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .hero-card{order:2}
+      .hero aside{order:1}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+    }
+    @media (max-width:520px){
+      .filters{grid-template-columns:1fr 120px}
+      .catalog{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+      .hero h1{font-size:22px}
+    }
+
+    /* ----- Acessibilidade e foco ----- */
+    :focus{outline:3px solid rgba(124,58,237,0.18);outline-offset:3px}
+
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header>
+      <div class="brand">
+        <div class="logo">LX</div>
+        <div>
+          <div style="font-weight:800">Loja CSS</div>
+          <small class="muted">Design moderno • Só CSS</small>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#produtos">Produtos</a>
+        <a href="#ofertas">Ofertas</a>
+        <a href="#contato">Contato</a>
+        <a href="#cart">Carrinho</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Peças selecionadas com design contemporâneo</h1>
+        <p>Exemplo de loja onde a maior parte das interações e layout é feita com CSS moderno: grid, variáveis e animações.</p>
+
+        <div class="filters">
+          <div class="search"><input placeholder="Pesquisar produto..." aria-label="Pesquisar" /></div>
+          <select class="select"><option>Todos</option><option>Vestidos</option><option>Camisetas</option><option>Acessórios</option></select>
+          <button class="ghost">Filtrar</button>
+        </div>
+
+        <div id="produtos" class="catalog">
+          <!-- Card 1 -->
+          <article class="card">
+            <div class="badge">Novo</div><div class="pulse" aria-hidden></div>
+            <div class="thumb"><img src="https://via.placeholder.com/600x400?text=Produto+1" alt="Produto 1" /></div>
+            <div class="meta"><div><div class="title">Vestido Seda</div><div class="muted">Vestidos</div></div><div class="price">R$149,90</div></div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card">
+            <div class="badge">-20%</div>
+            <div class="thumb"><img src="https://via.placeholder.com/600x400?text=Produto+2" alt="Produto 2" /></div>
+            <div class="meta"><div><div class="title">Camiseta Urbana</div><div class="muted">Camisetas</div></div><div class="price">R$79,90</div></div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card">
+            <div class="thumb"><img src="https://via.placeholder.com/600x400?text=Produto+3" alt="Produto 3" /></div>
+            <div class="meta"><div><div class="title">Bolsa Mini</div><div class="muted">Acessórios</div></div><div class="price">R$199,90</div></div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card">
+            <div class="thumb"><img src="https://via.placeholder.com/600x400?text=Produto+4" alt="Produto 4" /></div>
+            <div class="meta"><div><div class="title">Jaqueta Denim</div><div class="muted">Casacos</div></div><div class="price">R$249,90</div></div>
+          </article>
+
+        </div>
+
+        <div class="cta">
+          <button class="btn">Comprar agora</button>
+          <button class="ghost">Ver catálogo</button>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3>Ofertas da semana</h3>
+        <p class="muted">Frete grátis acima de R$150 • Troca fácil em 30 dias</p>
+        <div style="margin-top:12px">
+          <strong>Atendimento</strong>
+          <p class="muted">Seg-Sex • 9h–18h</p>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <strong>Loja CSS</strong><br />
+          <small class="muted">Modelo de site feito com foco em CSS moderno</small>
+        </div>
+        <div class="muted">© 2025 • Todos os direitos reservados</div>
+      </div>
+    </footer>
+
+    <!-- Técnica: target para painel de carrinho (sem JS) -->
+    <a id="cart"></a>
+    <div class="cart-panel" aria-hidden="true">
+      <h3>Seu carrinho</h3>
+      <div class="cart-item"><img src="https://via.placeholder.com/120x120?text=1" alt="item"/><div><strong>Vestido Seda</strong><div class="muted">1 x R$149,90</div></div></div>
+      <div style="display:flex;justify-content:space-between;margin-top:12px;font-weight:800">Total <span>R$149,90</span></div>
+      <div style="margin-top:12px;display:flex;gap:8px"><a href="#" class="btn">Finalizar</a><a href="#" class="ghost">Continuar</a></div>
+    </div>
+
+  </div>
+</body>
+</html>
