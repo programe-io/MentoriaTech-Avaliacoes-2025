@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #003366;
+    color: white;
+    padding: 15px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #c0d9ff;
+}
+
+#btn-mobile {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+.banner {
+    background: url("https://via.placeholder.com/1300x400?text=CETI+Joel+Ribeiro") center/cover no-repeat;
+    padding: 120px 20px;
+    text-align: center;
+    font-size: 32px;
+    color: white;
+    font-weight: bold;
+}
+
+.container {
+    padding: 40px 10%;
+}
+
+.container-principal {
+    display: flex;
+    gap: 40px;
+    padding: 40px 10%;
+}
+
+.sidebar {
+    background: #f0f0f0;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+}
+
+.projetos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    width: 30%;
+    min-width: 260px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card h3 {
+    margin: 15px;
+}
+
+.card p {
+    margin: 0 15px 20px;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.carousel-container img {
+    width: 600px;
+    border-radius: 10px;
+}
+
+.prev, .next {
+    background: #003366;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+}
+
+button {
+    padding: 12px;
+    background: #003366;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00224d;
+}
+
+footer {
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #003366;
+        padding: 20px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+    }
+
+    nav.active ul {
+        display: flex;
+    }
+
+    #btn-mobile {
+        display: block;
+    }
+
+    .container-principal {
+        flex-direction: column;
+    }
+
+    .carousel-container img {
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
