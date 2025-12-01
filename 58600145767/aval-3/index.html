@@ -1,65 +1,114 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Feed Completo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Galeria — Estilo Cards</title>
+  <style>
+    :root{
+      --primary:#2563eb;
+      --primary-light:#3b82f6;
+      --accent:#ff8800;
+      --background:#0f172a;
+      --surface:#ffffffee;
+      --card-bg:#f8fafc;
+      --muted:#74818a;
+      --text:#0b1220;
+      --radius:12px;
+    }
 
-    <!-- Importa o arquivo CSS separado -->
-    <link rel="stylesheet" href="style.css">
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;background:var(--background);font-family:Inter, Arial, Helvetica, sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
+
+    .topbar{background:linear-gradient(180deg,var(--accent),#cc6b00);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;color:#fff}
+    .logo{font-weight:800;letter-spacing:1px}
+    .nav{display:flex;gap:18px}
+    .nav a{color:rgba(255,255,255,0.9);text-decoration:none}
+
+    .wrap{max-width:1200px;margin:30px auto;padding:0 20px}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start}
+
+    /* Conteúdo */
+    h2{color:#fff;margin-bottom:18px;text-align:center;font-size:28px}
+    span{color:#ffbb00;font-weight:bold}
+
+    .card{
+      background:var(--card-bg);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 6px 20px rgba(2,6,23,0.6);
+      border:1px solid rgba(0,0,0,0.06);
+      overflow:hidden;
+      display:flex;flex-direction:column;
+    }
+
+    .card h3{font-size:20px;margin-bottom:12px}
+
+    .card .thumb{width:100%;height:170px;border-radius:10px;object-fit:cover;border:1px solid rgba(0,0,0,0.08)}
+
+    .card p{margin-top:12px;line-height:1.5;color:var(--muted);font-size:14px}
+
+    .card .content{flex:1}
+
+    @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){
+      .grid{grid-template-columns:1fr}
+      .topbar{height:88px;flex-direction:column;gap:8px;padding:12px}
+    }
+
+    .card:hover{transform:translateY(-6px);transition:.28s ease;box-shadow:0 12px 30px rgba(2,6,23,0.7)}
+
+    .note{color:#cbd5e1;text-align:center;margin-top:18px;font-size:13px}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
-
 <body>
 
-<header class="header">
-    <h1>Logo</h1>
+  <header class="topbar">
+    <div class="logo"><span>DESENHOS DA INFANCIA</span></div> <!-- AQUI ENTRA O SPAN -->
     <nav class="nav">
-        <a href="">Início</a>
-        <a href="">Amigos</a>
-        <a href="">Perfil</a>
+      <a href="#">Início</a>
+      <a href="#">Artigos</a>
+      <a href="#">Perfil</a>
     </nav>
-    <button class="btn-primary">Menu</button>
-</header>
+  </header>
 
-<section class="new-post-box">
-    <h2>Criar Publicação</h2>
-    <textarea class="new-post-textarea" placeholder="O que você está pensando?"></textarea>
-    <br><br>
-    <button class="btn-primary">Enviar</button>
+  <main class="wrap">
+
+    <h2><span>Nostalgia</span></h2> <!-- TAGS EXIGIDAS -->
+
+    <section class="grid">
+
+<article class="card">
+<h3>Lindinha</h3>
+<img class="thumb" src="https://i.pinimg.com/564x/03/d7/99/03d799af6472701a888de918f9e911c0.jpg">
+<div class="content">
+<p><span>Lindinha</span> É uma das três Meninas Superpoderosas. Ela é conhecida por sua personalidade doce e inocente, o que contrasta com suas poderosas habilidades. Elaé a mais meiga e otimista das três irmãs. Ela é carinhosa, sensível e muitas vezes vista como a "coração" do grupo.</p>
+</div>
+</article>
+
+<article class="card">
+<h3>Florzinha</h3>
+<img class="thumb" src="https://i.pinimg.com/736x/51/5b/f6/515bf6e2cac3ce2a468ee87740ff6a3d.jpg">
+<div class="content">
+<p><span>Florzinha</span> É das Meninas Superpoderosas, é conhecida por ser a líder, inteligente e organizada do grupo. Ela é a estrategista que planeja as ações em momentos de perigo, é a mais madura e, às vezes, um pouco mandona ou vaidosa, além de ser frequentemente considerada a mais inteligente das três.</p>
+</div>
+</article>
+
+<article class="card">
+<h3>Docinho</h3>
+<img class="thumb" src="https://i.pinimg.com/736x/88/2b/49/882b4962797bd4e007c28b017509ee1b.jpg">
+<div class="content">
+<p><span>Docinho</span> Ela tem uma personalidade agressiva, competitiva e forte, sendo a "durona" do trio das Meninas Superpoderosas. Ela é ousada, gosta de lutar e prefere agir antes de pensar, mas também é leal e protetora com suas irmãs. Apesar de seu exterior duro, ela pode esconder um lado sensível e se importa profundamente com suas irmãs e com os cidadãos de Townsville.</p>
+</div>
+</article>
+
 </section>
 
-<article class="post-card">
-    <div class="post-header">
-        <img class="profile-img" src="images/profile_01.jpg">
-        <div>
-            <h2>Annevic</h2>
-            <small>há 2 horas</small>
-        </div>
-    </div>
+<p class="note">Você pode trocar imagens e adicionar mais cards quando quiser.</p>
 
-    <img class="post-img" src="images/post_01.png">
-
-    <div class="post-content">
-        <p>
-            Hoje foi um dia incrível para testar novas tecnologias!  
-            O que vocês acham desse novo projeto?
-        </p>
-    </div>
-
-    <div class="post-actions">
-        <button>👍 Curtir</button>
-        <button>💬 Comentar</button>
-        <button>🔄 Compartilhar</button>
-    </div>
-
-    <div class="comments-box">
-        <div class="comment"><strong class="comment-author">Anna:</strong> Ficou incrível! 👏</div>
-        <div class="comment"><strong class="comment-author">Marcelo:</strong> Quero ver mais disso!</div>
-        <input class="comment-input" placeholder="Escreva um comentário...">
-    </div>
-</article>
-<main>
-    <span>
+</main>
 </body>
 </html>
