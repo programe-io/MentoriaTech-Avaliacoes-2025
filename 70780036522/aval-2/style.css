@@ -1,0 +1,280 @@
+/* ===========================
+   RESET DE ESTILO BÁSICO
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a1a;
+    color: #f2f2f2;
+}
+
+/* ===========================
+   CABEÇALHO
+=========================== */
+header {
+    background-color: #111;
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 3px solid #76b900;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #76b900;
+}
+
+header p {
+    font-size: 1rem;
+    color: #ccc;
+    margin-top: 5px;
+}
+
+/* ===========================
+   MENU DE NAVEGAÇÃO
+=========================== */
+nav {
+    background-color: #222;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: #76b900;
+    transform: scale(1.1);
+}
+
+/* ===========================
+   CONTEÚDO PRINCIPAL
+=========================== */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* ===========================
+   POSTS / ARTIGOS
+=========================== */
+section {
+    flex: 3;
+    min-width: 300px;
+}
+
+article {
+    background-color: #2a2a2a;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+article h2 {
+    color: #76b900;
+    margin-bottom: 10px;
+}
+
+article small {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+article p {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+/* ===========================
+   IMAGENS NOS POSTS
+=========================== */
+article img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+article img:hover {
+    transform: scale(1.05);
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+aside {
+    flex: 1;
+    min-width: 200px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+aside h3 {
+    color: #76b900;
+    margin-bottom: 10px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+aside ul li {
+    margin-bottom: 8px;
+    padding-left: 10px;
+    position: relative;
+}
+
+aside ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #76b900;
+}
+
+/* ===========================
+   RODAPÉ
+=========================== */
+footer {
+    text-align: center;
+    background-color: #111;
+    color: #777;
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 3px solid #76b900;
+}
+
+/* ===========================
+   LINKS
+=========================== */
+a {
+    color: #76b900;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===========================
+   TABELAS (se precisar)
+=========================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #444;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #222;
+    color: #76b900;
+}
+
+/* ===========================
+   FORMULÁRIOS (se precisar)
+=========================== */
+input, textarea, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #f2f2f2;
+    font-size: 1rem;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: 2px solid #76b900;
+}
+
+button {
+    background-color: #76b900;
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #5fa300;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+@media screen and (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    aside {
+        margin-top: 20px;
+    }
+}
+
+/* ===========================
+   EFEITOS ADICIONAIS
+=========================== */
+h2, h3 {
+    text-shadow: 1px 1px 2px #000;
+}
+
+blockquote {
+    border-left: 5px solid #76b900;
+    padding-left: 10px;
+    margin: 15px 0;
+    color: #ccc;
+    font-style: italic;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #76b900;
+    border-radius: 10px;
+    border: 2px solid #111;
+}
