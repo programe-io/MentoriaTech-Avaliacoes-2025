@@ -1,65 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Feed Completo</title>
-
-    <!-- Importa o arquivo CSS separado -->
-    <link rel="stylesheet" href="style.css">
+    <title>Flamengo Fã Clube - Site Rubro-Negro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Configurações Tailwind para o tema Flamengo */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'flamengo-black': '#121212',      /* Fundo escuro */
+                        'flamengo-red': '#DA291C',        /* Vermelho principal */
+                        'flamengo-darker': '#000000',     /* Preto mais intenso para bordas/sombras */
+                        'flamengo-card': '#202020',       /* Fundo do card */
+                        'flamengo-card-hover': '#333333', /* Card hover */
+                        'flamengo-text': '#FFFFFF',       /* Texto principal (Branco) */
+                    }
+                }
+            }
+        }
+        
+        /* Garante o corpo com altura mínima e cor de fundo */
+        body {
+            min-height: 100vh;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
+<body class="bg-flamengo-black text-flamengo-text">
 
-<body>
+    <header class="shadow-lg p-5 flex bg-flamengo-darker border-b-4 border-flamengo-red">
+        <nav class="font-bold gap-8 hidden md:flex items-center">
+            <a href="#" class="text-flamengo-red hover:text-white transition duration-300">CRF 🚩</a>
+            <a href="#" class="hover:text-flamengo-red transition duration-300">Elenco</a>
+            <a href="#" class="hover:text-flamengo-red transition duration-300">Jogos</a>
+            <a href="#" class="hover:text-flamengo-red transition duration-300">Títulos</a>
+        </nav>
+        <div class="ml-auto text-flamengo-red font-semibold">#MENGÃO</div>
+    </header>
 
-<header class="header">
-    <h1>Logo</h1>
-    <nav class="nav">
-        <a href="">Início</a>
-        <a href="">Amigos</a>
-        <a href="">Perfil</a>
-    </nav>
-    <button class="btn-primary">Menu</button>
-</header>
-
-<section class="new-post-box">
-    <h2>Criar Publicação</h2>
-    <textarea class="new-post-textarea" placeholder="O que você está pensando?"></textarea>
-    <br><br>
-    <button class="btn-primary">Enviar</button>
-</section>
-
-<article class="post-card">
-    <div class="post-header">
-        <img class="profile-img" src="images/profile_01.jpg">
-        <div>
-            <h2>Victor</h2>
-            <small>há 2 horas</small>
+    <main class="py-10 px-4 flex flex-col gap-6 md:flex-row md:flex-wrap md:justify-center">
+        
+        <div class="bg-flamengo-card py-4 px-6 rounded-xl shadow-2xl max-w-sm w-full transition duration-300 hover:bg-flamengo-card-hover transform hover:scale-[1.02] border-l-4 border-flamengo-red">
+            <h3 class="text-xl font-bold mb-2 text-flamengo-red">Gols Memoráveis</h3>
+            <p class="text-sm">Os maiores gols de artilheiros como Zico, Gabigol e Pedro no Maracanã.</p>
+            <button class="mt-4 bg-flamengo-red text-flamengo-text font-bold py-1 px-3 rounded-full text-xs hover:opacity-90">Ver Vídeo</button>
+            
+            <img src="https://i.ytimg.com/vi/3KvJSJTECho/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDTIYnTnyHaEj_vedIvCPktX_0sTA" 
+                 alt="Gol do Flamengo" 
+                 class="w-full h-auto object-cover rounded-md mt-4 border border-flamengo-red">
         </div>
-    </div>
 
-    <img class="post-img" src="images/post_01.png">
+        <div class="bg-flamengo-card py-4 px-6 rounded-xl shadow-2xl max-w-sm w-full transition duration-300 hover:bg-flamengo-card-hover transform hover:scale-[1.02] border-l-4 border-flamengo-red">
+            <h3 class="text-xl font-bold mb-2 text-flamengo-red">Estatísticas do Time</h3>
+            <ul class="text-sm list-disc ml-4">
+                <li>Partidas: Últimos 10 jogos</li>
+                <li>Vitórias: 8</li>
+                <li>Gols Marcados: 25</li>
+            </ul>
+            
+            <img src="https://i.ytimg.com/vi/uLu89M5y-m8/hqdefault.jpg?sqp=-oaymwEnCOADEI4CSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBaxa0tZoh9VQSoAtaSb0ar4eSTag" 
+                 alt="Jogadores do Flamengo comemorando" 
+                 class="w-full h-auto object-cover rounded-md mt-4 border border-flamengo-red">
+        </div>
 
-    <div class="post-content">
-        <p>
-            Hoje foi um dia incrível para testar novas tecnologias!  
-            O que vocês acham desse novo projeto?
-        </p>
-    </div>
+        <div class="bg-flamengo-card py-4 px-6 rounded-xl shadow-2xl max-w-sm w-full transition duration-300 hover:bg-flamengo-card-hover transform hover:scale-[1.02] border-l-4 border-flamengo-red">
+            <h3 class="text-xl font-bold mb-2 text-flamengo-red">Notícias do CT</h3>
+            <p class="text-sm">Treino focado em posse de bola e coletivo antes do próximo clássico.</p>
+            <span class="block mt-3 text-xs opacity-75">Fonte: FlaTV</span>
+            
+            <img src="https://i.ytimg.com/vi/bK4YUfQQl68/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLA5YPgzbg_YCxg07smS8ld87MDk3A" 
+                 alt="Treino do Flamengo" 
+                 class="w-full h-auto object-cover rounded-md mt-4 border border-flamengo-red">
+        </div>
 
-    <div class="post-actions">
-        <button>👍 Curtir</button>
-        <button>💬 Comentar</button>
-        <button>🔄 Compartilhar</button>
-    </div>
-
-    <div class="comments-box">
-        <div class="comment"><strong class="comment-author">Anna:</strong> Ficou incrível! 👏</div>
-        <div class="comment"><strong class="comment-author">Marcelo:</strong> Quero ver mais disso!</div>
-        <input class="comment-input" placeholder="Escreva um comentário...">
-    </div>
-</article>
-<main>
-    <span>
+    </main>
+    <footer class="text-center py-3 text-xs text-flamengo-text/70 bg-flamengo-darker mt-auto">
+        &copy; 2025 Fã Site Não Oficial | Feito com o Manto Sagrado e Tailwind CSS.
+    </footer>
+<h2>
 </body>
 </html>
