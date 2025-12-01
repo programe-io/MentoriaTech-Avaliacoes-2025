@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Área de Entrega - Avaliações</title>
+
+  <!-- Importa o CSS -->
+  <link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="opacity:.9">
+      <rect x="1" y="1" width="22" height="22" rx="4" stroke="rgba(0,0,0,0.06)"/>
+      <path d="M6 8h12M6 12h6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+    <div class="brand">
+      <h1>Área de Entrega - Avaliações</h1>
+      <h3 class="subtitle">Revise antes de publicar. Use o preview para testar.</h3>
+    </div>
+
+    <!-- NAV -->
+    <nav class="main-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#editor">Editor</a></li>
+        <li><a href="#previewWrap">Preview</a></li>
+        <li><a href="#checklist">Checklist</a></li>
+        <li><a href="#submission">Envio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN ADICIONADO -->
+  <main>
+    <div class="container">
+
+      <!-- ASIDE: informações rápidas -->
+      <aside class="sidebar" aria-labelledby="sidebar-title">
+        <h2 id="sidebar-title">Informações</h2>
+        <h3>Dicas rápidas</h3>
+        <p>Aqui você pode adicionar notas, lembretes ou orientações extras para sua entrega.</p>
+        <ul>
+          <li>⚠ Salve antes de enviar</li>
+          <li>📄 Use comentários no código</li>
+          <li>💬 Pergunte ao professor se tiver dúvidas</li>
+        </ul>
+        <!-- figura de exemplo -->
+        <figure>
+          <img src="" alt="" aria-hidden="true" style="display:none">
+          <figcaption>Modelo de entrega: nomeie arquivos claramente.</figcaption>
+        </figure>
+      </aside>
+
+      <!-- ARTICLE: conteúdo principal de submissão -->
+      <article id="submission" class="card" aria-labelledby="submission-title">
+        <header>
+          <h2 id="submission-title">Envio do Trabalho</h2>
+          <p class="meta">Envie seu código aqui — editor simples com preview ao vivo.</p>
+        </header>
+
+        <!-- SECTION: instruções -->
+        <section class="instructions" aria-labelledby="instructions-title">
+          <h3 id="instructions-title" class="editor-title">Instruções do Editor</h3>
+          <p class="description">Use as abas para editar HTML, CSS e JavaScript. Quando terminar, atualize o preview e publique.</p>
+        </section>
+
+        <!-- SECTION: editor (form sem backend, apenas UI) -->
+        <section class="editor" aria-labelledby="editor-controls" role="region">
+          <div class="tabs" role="tablist" aria-label="Editor de código">
+            <button class="tab active" data-target="html" role="tab" aria-selected="true" aria-controls="html">HTML</button>
+            <button class="tab" data-target="css" role="tab" aria-selected="false" aria-controls="css">CSS</button>
+            <button class="tab" data-target="js" role="tab" aria-selected="false" aria-controls="js">JavaScript</button>
+          </div>
+
+          <div id="editor-area">
+            <div id="html" class="pane" role="tabpanel" aria-labelledby="html">
+              <label for="html-input">HTML</label>
+              <textarea id="html-input" name="html"><!-- Exemplo: insira HTML aqui -->
+<div class="hello">
+  <h2>Olá, professor!</h2>
+  <h3>Subtítulo / Assunto do Trabalho</h3>
+  <p>Este é meu trabalho entregue via Área de Entrega.</p>
+</div></textarea>
+            </div>
+
+            <div id="css" class="pane" style="display:none" role="tabpanel" aria-hidden="true">
+              <label for="css-input">CSS</label>
+              <textarea id="css-input" name="css">body{font-family:Arial,Helvetica,sans-serif}
+.hello{padding:14px;background:#e6f7ff;border-radius:6px}
+.editor-title{margin-top:12px;color:#334155}</textarea>
+            </div>
+
+            <div id="js" class="pane" style="display:none" role="tabpanel" aria-hidden="true">
+              <label for="js-input">JavaScript</label>
+              <textarea id="js-input" name="js">console.log("Entrega OK");</textarea>
+            </div>
+          </div>
+
+          <div class="controls" id="editor-controls">
+            <button id="run" class="small">Atualizar Preview</button>
+            <button id="autoRun" class="small ghost" aria-pressed="false">Auto Preview: OFF</button>
+          </div>
+
+        </section>
+
+        <!-- SECTION: checklist -->
+        <section id="checklist" class="checklist" aria-labelledby="checklist-title">
+          <h3 id="checklist-title">Checklist antes de publicar</h3>
+          <ul>
+            <li>Executou o preview e confirmou que tudo funciona;</li>
+            <li>Incluiu comentários importantes no código;</li>
+            <li>Verificou compatibilidade HTML/CSS/JS;</li>
+            <li>Validação do console sem erros.</li>
+          </ul>
+        </section>
+
+        <!-- FOOTER do artigo: ações -->
+        <footer class="article-actions">
+          <div class="actions">
+            <button id="submit" class="small">Publicar / Enviar</button>
+            <div id="status" class="uploaded" style="display:none" role="status" aria-live="polite">Enviado ✔</div>
+          </div>
+        </footer>
+      </article>
+
+      <!-- PREVIEW card (mantive como card separado) -->
+      <section class="card preview-card" aria-labelledby="preview-title">
+        <header>
+          <h2 id="preview-title">Pré-visualização</h2>
+          <p class="muted">Veja como ficará</p>
+        </header>
+
+        <div class="preview" id="previewWrap">
+          <iframe id="preview" sandbox="allow-scripts allow-forms" title="Pré-visualização do código"></iframe>
+        </div>
+
+        <div class="preview-controls">
+          <button id="openNew" class="ghost small">Abrir em nova aba</button>
+          <button id="copyHtml" class="ghost small">Copiar HTML</button>
+        </div>
+      </section>
+
+    </div> <!-- fim container -->
+  </main>
+  <!-- FIM DO MAIN -->
+
+  <footer>
+    <p>Dica: copie o HTML final para um README ou arquivo index.html</p>
+    <address>
+      <strong>Contato:</strong> professor@example.edu.br
+    </address>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
