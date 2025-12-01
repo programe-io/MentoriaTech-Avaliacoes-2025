@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futsal Mania - Site Completo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap');
+    body { font-family: 'Roboto', sans-serif; }
+    h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- CABEÇALHO -->
+  <header class="bg-gradient-to-r from-blue-800 to-blue-600 text-white shadow-xl sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center p-6">
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-wider">Futsal <span class="text-yellow-400">Mania</span></h1>
+      <nav>
+        <ul class="flex space-x-6 text-lg md:text-xl font-medium">
+          <li><a href="#historia" class="hover:text-yellow-400 transition-all duration-300">História</a></li>
+          <li><a href="#regras" class="hover:text-yellow-400 transition-all duration-300">Regras</a></li>
+          <li><a href="#posicoes" class="hover:text-yellow-400 transition-all duration-300">Posições</a></li>
+          <li><a href="#curiosidades" class="hover:text-yellow-400 transition-all duration-300">Curiosidades</a></li>
+          <li><a href="#dicas" class="hover:text-yellow-400 transition-all duration-300">Dicas</a></li>
+          <li><a href="#galeria" class="hover:text-yellow-400 transition-all duration-300">Galeria</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="container mx-auto p-6 space-y-20">
+
+    <!-- HISTÓRIA -->
+    <section id="historia" class="bg-white rounded-3xl shadow-2xl p-10 hover:shadow-3xl transition-shadow duration-500 border-l-8 border-blue-600">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-6 border-b-4 border-blue-300 pb-2">História do Futsal</h2>
+      <div class="flex flex-col md:flex-row gap-8 items-center">
+        <img src="https://cdn.pixabay.com/photo/2016/11/18/15/23/indoor-soccer-1836840_1280.jpg" 
+             alt="Quadra de futsal" 
+             class="w-full md:w-1/3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-500 border-4 border-gray-200">
+        <p class="text-gray-700 text-lg md:text-xl leading-relaxed">
+          O futsal nasceu no <span class="text-blue-600 font-bold">Uruguai</span> na década de <span class="text-yellow-500 font-semibold">1930</span>, adaptando o futebol para quadras menores. É praticado em escolas e clubes, ajudando jovens atletas a desenvolverem <span class="text-green-600 font-medium">habilidade</span>, <span class="text-green-600 font-medium">agilidade</span> e <span class="text-green-600 font-medium">visão de jogo</span>. Com o tempo, a modalidade se espalhou pelo mundo e hoje é reconhecida internacionalmente.
+        </p>
+      </div>
+    </section>
+
+    <!-- REGRAS -->
+    <section id="regras" class="bg-white rounded-3xl shadow-2xl p-10 hover:shadow-3xl transition-shadow duration-500 border-l-8 border-blue-600">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-6 border-b-4 border-blue-300 pb-2">Regras do Futsal</h2>
+      <div class="flex flex-col md:flex-row gap-8">
+        <img src="https://cdn.pixabay.com/photo/2018/08/10/09/53/football-3596035_1280.jpg" 
+             alt="Bola de futsal" 
+             class="w-full md:w-1/3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-500 border-4 border-gray-200">
+        <ul class="list-disc list-inside text-gray-700 text-lg md:text-xl space-y-3">
+          <li><span class="font-bold text-blue-600">5 jogadores</span> por equipe</li>
+          <li><span class="font-bold text-blue-600">Dois tempos</span> de 20 minutos</li>
+          <li><span class="font-bold text-blue-600">Substituições ilimitadas</span></li>
+          <li>Bola menor e mais pesada</li>
+          <li>Quadra menor que a de futebol de campo</li>
+          <li>Faltas acumulativas geram arremesso livre</li>
+          <li>Cartões amarelo e vermelho aplicáveis</li>
+          <li>Arremesso de meta rápido e controlado</li>
+          <li>Escanteios e laterais seguem regras próprias</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- POSIÇÕES -->
+    <section id="posicoes" class="bg-white rounded-3xl shadow-2xl p-10 hover:shadow-3xl transition-shadow duration-500 border-l-8 border-blue-600">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-6 border-b-4 border-blue-300 pb-2">Posições no Futsal</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="bg-blue-600 text-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center hover:bg-blue-700 hover:scale-105 transition-all duration-300 border-2 border-gray-200">
+          <h3 class="text-xl md:text-2xl
