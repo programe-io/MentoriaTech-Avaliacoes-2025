@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Completo com Span</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header div {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Nav */
+        nav {
+            background-color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+
+        /* Main layout */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        article {
+            flex: 1 1 65%;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin-right: 20px;
+        }
+
+        article img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        aside {
+            flex: 1 1 30%;
+            background-color: #e7e7e7;
+            padding: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+
+        footer div {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Span example */
+        .highlight {
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        @media(max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+
+            article {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<header>
+    <div>
+        <h1>Meu <span class="highlight">Site</span> Exemplo</h1>
+        <h3>Bem-vindo ao nosso site</h3>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+    </ul>
+</nav>
+
+<main>
+    <article>
+        <h2>Artigo Principal</h2>
+        <h3>Subtítulo do <span class="highlight">Artigo</span></h3>
+        <p>Este é o conteúdo principal da página. Aqui você pode colocar textos e imagens.</p>
+        <img src="https://via.placeholder.com/600x300" alt="Imagem de exemplo">
+    </article>
+
+    <aside>
+        <h2>Sidebar</h2>
+        <h3>Informações <span class="highlight">Extras</span></h3>
+        <p>Conteúdo lateral, links úteis ou anúncios.</p>
+    </aside>
+</main>
+
+<footer>
+    <div>
+        <p>© 2025 Meu <span class="highlight">Site</span> Exemplo</p>
+    </div>
+</footer>
+
+<script src="script.js"></script></body>
+</html>
