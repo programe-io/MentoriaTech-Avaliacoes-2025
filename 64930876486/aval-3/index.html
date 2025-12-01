@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+  <title>App social freed - funcional</title>
+
+  <!-- 🔗 Arquivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header></header>
+    <a></a><p></p>
+    <h2></h2>
+
+  <h1>Postagens</h1>
+
+  <nav>
+    <button data-target="inicio">Início</button>
+    <button data-target="perfil">Perfil</button>
+    <button data-target="postagens">Postagens</button>
+    <button data-target="todos">Mostrar todos</button>
+  </nav>
+
+  <main class="container" id="cards-container">
+
+    <!-- CARD 1 -->
+    <article id="inicio" class="card">
+      <div class="header">
+        <div class="avatar" style="background-image:url('https://i.pinimg.com/236x/e4/28/c3/e428c36799e628dca8d523c755576d73.jpg');"></div>
+        <div><strong>Gabriely@</strong></div>
+      </div>
+      <img class="main-img" src="https://upload.wikimedia.org/wikipedia/pt/c/c1/The_Weeknd_-_After_Hours.png" alt="Imagem" />
+      <div class="content">
+     The Weeknd, nome artístico de Abel Makkonen Tesfaye, é um cantor, compositor e produtor canadense que se tornou um dos artistas mais populares do mundo, conhecido por misturar R&B, pop e eletrônica. Ele começou sua carreira de forma anônima em 2010 lançando músicas no YouTube e ganhou notoriedade com as mixtapes que deram origem ao seu primeiro álbum de compilação, Trilogy. 
+        <span class="meta">Há 10 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article id="perfil" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://i.pinimg.com/236x/e4/28/c3/e428c36799e628dca8d523c755576d73.jpg');"></div>
+        <div><strong>Gabriely@</strong></div>
+      </div>
+      <img class="main-img" src="https://m.media-amazon.com/images/I/51sb7DyKmoL._AC_UF1000,1000_QL80_.jpg" alt="Imagem" />
+      <div class="content">
+     "Pinga Drea" é uma provável referência popular ou coloquial ao Conhaque Dreher, uma bebida alcoólica mista, muito conhecida e tradicional no Brasil.
+        <span class="meta">Há 30 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article id="postagens" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://i.pinimg.com/236x/e4/28/c3/e428c36799e628dca8d523c755576d73.jpg');"></div>
+        <div><strong>Gabriely@</strong></div>
+      </div>
+      <img class="main-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbSoSOkVqTCgmkPeXkcWmQnZosaxZVBVJLPw&s" alt="Imagem" />
+      <div class="content">
+      A maquiagem é a arte de aplicar cosméticos para realçar ou alterar a aparência, funcionando como expressão pessoal, autoestima e até mesmo arte.
+        <span class="meta">Há 1 hora</span>
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function mostrarCard(id) {
+      const cards = document.querySelectorAll('#cards-container .card');
+      cards.forEach(card => {
+        if (id === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.id === id) {
+            card.classList.remove('hidden');
+            setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        mostrarCard(target);
+      });
+    });
+  </script>
+
+</body>
+</html>
