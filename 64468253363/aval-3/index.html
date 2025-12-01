@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+  <title>App social freed - funcional</title>
+
+  <!-- 🔗 Arquivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header></header>
+    <a></a><p></p>
+    <h2></h2>
+  <h1>Postagens</h1>
+
+  <nav>
+    <button data-target="inicio">Início</button>
+    <button data-target="perfil">Perfil</button>
+    <button data-target="postagens">Postagens</button>
+    <button data-target="todos">Mostrar todos</button>
+  </nav>
+
+  <main class="container" id="cards-container">
+
+    <!-- CARD 1 -->
+    <article id="inicio" class="card">
+      <div class="header">
+        <div class="avatar" style="background-image:url('https://static.wikia.nocookie.net/disney/images/7/7d/Profile_-_Moana.png/revision/latest/scale-to-width-down/1200?cb=20250326012923&path-prefix=pt-br');"></div>
+        <div><strong>Evellyn@</strong></div>
+      </div>
+      <img class="main-img" src="https://i.pinimg.com/originals/e8/26/dc/e826dcad1e8f95c65218e8f9c4ab4902.jpg" alt="Imagem" />
+      <div class="content">
+      A paisagem de praia é um ambiente costeiro dinâmico, resultado da interação entre a terra e o mar, caracterizado por elementos naturais como a areia, o oceano (ou mar, lago, rio) e, muitas vezes, vegetação específica como coqueiros ou restinga.
+        <span class="meta">Há 10 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article id="perfil" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://static.wikia.nocookie.net/disney/images/7/7d/Profile_-_Moana.png/revision/latest/scale-to-width-down/1200?cb=20250326012923&path-prefix=pt-br');"></div>
+        <div><strong>Evellyn@</strong></div>
+      </div>
+      <img class="main-img" src="https://m.media-amazon.com/images/I/71-jVxvYIfL._AC_UF1000,1000_QL80_.jpg" alt="Imagem" />
+      <div class="content">
+      Frida Kahlo foi uma pintora mexicana reconhecida internacionalmente por seus autorretratos intensos e coloridos, que retratam sua vida, dores físicas e emocionais, e sua identidade
+        <span class="meta">Há 30 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article id="postagens" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://static.wikia.nocookie.net/disney/images/7/7d/Profile_-_Moana.png/revision/latest/scale-to-width-down/1200?cb=20250326012923&path-prefix=pt-br');"></div>
+        <div><strong>Evellyn@</strong></div>
+      </div>
+      <img class="main-img" src="https://br.web.img3.acsta.net/r_654_368/newsv7/20/08/11/00/17/4052018.jpg" alt="Imagem" />
+      <div class="content">
+      Em 365 Days (365 DNI, no original), Massimo Torricelli (Michele Morrone), além de pertencer a uma poderosa família mafiosa da Sicília, é um jovem e imponente patrão. Laura Biel (Anna-Maria Sieklucka) é uma diretora de vendas de grande sucesso em sua vida profissional, porém, sua vida amorosa é um desastre.
+        <span class="meta">Há 1 hora</span>
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function mostrarCard(id) {
+      const cards = document.querySelectorAll('#cards-container .card');
+      cards.forEach(card => {
+        if (id === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.id === id) {
+            card.classList.remove('hidden');
+            setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        mostrarCard(target);
+      });
+    });
+  </script>
+
+</body>
+</html>
