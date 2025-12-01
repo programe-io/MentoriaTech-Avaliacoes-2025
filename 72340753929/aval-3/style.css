@@ -1,0 +1,169 @@
+/* ==================================== */
+/* 1. VARIÁVEIS E ESTILOS GLOBAIS (RESET) */
+/* ==================================== */
+:root {
+    /* Cores */
+    --primary-color: #335d9d; /* Azul Escuro */
+    --secondary-color: #f06449; /* Laranja/Terra */
+    --background-light: #ffffff;
+    --background-dark: #f4f4f9;
+    --text-dark: #2c2c2c;
+    --text-light: #ffffff;
+    /* Fontes */
+    --font-heading: 'Roboto', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+* {
+    /* Reset básico */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* A propriedade mais importante para layout! */
+}
+
+body {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    line-height: 1.6; /* Espaçamento entre linhas */
+}
+
+/* ==================================== */
+/* 2. TIPOGRAFIA */
+/* ==================================== */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    text-transform: uppercase; /* Deixa o texto em caixa alta */
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    transition: color 0.3s ease; /* Transição suave para o efeito hover */
+}
+
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* ==================================== */
+/* 3. LAYOUT E CABEÇALHO (HEADER/NAV) */
+/* ==================================== */
+.container {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o contêiner na página */
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: var(--text-light);
+}
+
+nav ul {
+    list-style: none; /* Remove os marcadores de lista */
+    display: flex; /* Habilita o Flexbox para alinhar os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens no contêiner */
+    gap: 30px; /* Espaço entre os links */
+    margin-top: 10px;
+}
+
+.nav-link {
+    color: var(--text-light);
+    font-weight: bold;
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+    border-bottom: 2px solid var(--secondary-color);
+    text-decoration: none;
+}
+
+/* ==================================== */
+/* 4. SEÇÃO PRINCIPAL (MAIN/SECTION/ARTICLE) */
+/* ==================================== */
+main {
+    padding: 40px 0;
+}
+
+.episode-grid {
+    display: grid; /* Habilita o CSS Grid para um layout de cartões */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+    gap: 30px; /* Espaço entre os cartões */
+}
+
+.episode-card {
+    background-color: var(--background-light);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Garante que o conteúdo fique dentro do cartão */
+}
+
+.episode-card:hover {
+    transform: translateY(-5px); /* Move o cartão para cima no hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para a imagem de capa do episódio */
+.episode-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+}
+
+/* Estilo para o reprodutor de áudio HTML5 */
+audio {
+    width: 100%;
+    margin-top: 15px;
+    /* Você pode estilizar o controle de áudio, mas é complexo e varia entre navegadores */
+}
+
+/* ==================================== */
+/* 5. RODAPÉ (FOOTER) */
+/* ==================================== */
+footer {
+    background-color: var(--text-dark);
+    color: var(--background-dark);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* ==================================== */
+/* 6. RESPONSIVIDADE (MEDIA QUERIES) */
+/* ==================================== */
+@media (max-width: 768px) {
+    /* Diminui o tamanho da fonte em telas menores */
+    h1 {
+        font-size: 2em;
+    }
+
+    /* Transforma o menu de navegação em coluna em telas pequenas */
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
