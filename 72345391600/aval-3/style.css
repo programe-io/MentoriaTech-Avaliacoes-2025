@@ -1,0 +1,96 @@
+/*
+ * ========================================
+ * 1. LAYOUT DO CONTÊINER DE CARDS (FLEXBOX)
+ * ========================================
+ */
+.container-de-cards {
+    /* Usa Flexbox para organizar os cards lado a lado */
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem para a linha de baixo em telas menores */
+    gap: 30px;       /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza os cards no contêiner */
+    padding: 20px 0;
+}
+
+/*
+ * ========================================
+ * 2. ESTILO BASE DO CARD (DIV.post-card)
+ * ========================================
+ */
+.post-card {
+    /* Define o tamanho inicial do card. Usa calc() para garantir 3 cards por linha + espaçamento */
+    width: 300px;
+    
+    /* Estilo visual */
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 10px;       /* Cantos arredondados */
+    overflow: hidden;          /* Garante que a imagem se encaixe nos cantos arredondados */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+    
+    /* Transições e Interatividade */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+}
+
+/* Efeito de HOVER (ao passar o mouse) */
+.post-card:hover {
+    transform: translateY(-8px); /* Levanta o card */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+}
+
+/*
+ * ========================================
+ * 3. ESTILO DA IMAGEM E CONTEÚDO
+ * ========================================
+ */
+
+/* Estilo da Imagem */
+.card-image {
+    width: 100%;             /* Ocupa 100% da largura do card */
+    height: 200px;           /* Altura fixa para uniformidade */
+    object-fit: cover;       /* Garante que a imagem cubra a área sem distorcer */
+}
+
+/* Padding interno do conteúdo de texto */
+.card-content {
+    padding: 15px 20px;
+}
+
+/* Estilo do Título (h3) */
+.card-title {
+    font-size: 1.4em;
+    color: #1a1a1a;
+    margin-top: 0;           /* Remove margem superior padrão */
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+/* Estilo do Resumo (p.card-excerpt) */
+.card-excerpt {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Estilo dos Metadados (Data, Autor) */
+.card-meta {
+    font-size: 0.85em;
+    color: #888;
+    margin-bottom: 15px;
+    border-top: 1px solid #eee; /* Linha divisória sutil */
+    padding-top: 10px;
+}
+
+/* Estilo do Link "Leia Mais" */
+.read-more-link {
+    display: inline-block;
+    color: #007bff;          /* Cor de destaque azul */
+    text-decoration: none;   /* Remove o sublinhado */
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent; /* Para o efeito hover */
+    transition: border-bottom 0.2s;
+}
+
+.read-more-link:hover {
+    border-bottom: 2px solid #0056b3; /* Sublinhado na cor escura ao passar o mouse */
+}
