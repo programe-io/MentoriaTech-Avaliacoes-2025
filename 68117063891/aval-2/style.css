@@ -1,0 +1,116 @@
+/* ======== RESET ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ======== VARIÁVEIS E BASE ======== */
+:root{
+  --bg-top:#1e3a8a;
+  --bg-bottom:#0f172a;
+  --card:#1f2937;
+  --accent:#3b82f6;
+  --muted:#a1a1aa;
+  --white:#ffffff;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+  color: var(--white);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ======== HEADER ======== */
+.topo {
+  background-color: rgba(15, 23, 42, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.titulo-site {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.menu {
+  display: flex;
+  gap: 18px;
+}
+
+.menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color .2s ease, text-shadow .2s ease;
+}
+
+.menu a:hover {
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(59,130,246,0.2);
+}
+
+/* ======== LAYOUT (ASIDE + MAIN) ======== */
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 28px;
+  align-items: start;
+  padding: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ======== SIDEBAR / ASIDE ======== */
+.sidebar {
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.5);
+}
+
+.perfil-aside {
+  text-align: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  margin-bottom: 12px;
+}
+
+.aside-avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 12px rgba(59,130,246,0.18);
+  display: inline-block;
+}
+
+.aside-nome {
+  margin-top: 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.aside-status {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.aside-section {
+  margin-top: 14px;
+}
+
+.aside-section h3 {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: #e
