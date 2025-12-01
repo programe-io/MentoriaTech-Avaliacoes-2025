@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles (3).css">
+  <title>App social freed - funcional</title>
+
+  <!-- 🔗 Arquivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header></header>
+    <a></a><h2></h2>
+    <p></p>
+  <h1>Postagens</h1>
+
+  <nav>
+    <button data-target="inicio">Início</button>
+    <button data-target="perfil">Perfil</button>
+    <button data-target="postagens">Postagens</button>
+    <button data-target="todos">Mostrar todos</button>
+  </nav>
+
+  <main class="container" id="cards-container">
+
+    <!-- CARD 1 -->
+    <article id="inicio" class="card">
+      <div class="header">
+        <div class="avatar" style="background-image:url('https://wallpapers.com/images/hd/aesthetic-anime-profile-pictures-j01j2xnhispa1eon.jpg');"></div>
+        <div><strong>Lavila@</strong></div>
+      </div>
+      <img class="main-img" src="https://i.pinimg.com/564x/e2/73/85/e27385ef3913cb475d907f8d9c252afb.jpg" alt="Imagem" />
+      <div class="content">
+        Malleus Draconia é um dos personagens principais de Twisted Wonderland, baseado na Malévola de "A Bela Adormecida". Ele é o líder do dormitório Diasomnia e um dos magos mais poderosos do mundo, conhecido por sua aura intimidadora, mas também por um lado ingênuo e curioso devido ao seu isolamento.
+        <span class="meta">Há 10 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article id="perfil" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://wallpapers.com/images/hd/aesthetic-anime-profile-pictures-j01j2xnhispa1eon.jpg');"></div>
+        <div><strong>Lavila@</strong></div>
+      </div>
+      <img class="main-img" src="https://static.wikia.nocookie.net/naruto/images/2/24/Itachi-Uchiha.png/revision/latest?cb=20181104200812&path-prefix=pt-br" alt="Imagem" />
+      <div class="content">
+        Itachi Uchiha é um personagem complexo e amado de Naruto, conhecido como um prodígio do clã Uchiha que se tornou um criminoso internacional ao assassinar seu clã para proteger a vila de uma guerra civil. 
+        <span class="meta">Há 30 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article id="postagens" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://wallpapers.com/images/hd/aesthetic-anime-profile-pictures-j01j2xnhispa1eon.jpg');"></div>
+        <div><strong>Lavila@</strong></div>
+      </div>
+      <img class="main-img" src="https://i.pinimg.com/564x/28/0e/07/280e07fe4db98d9eaaad968fe093e7f4.jpg" alt="Imagem" />
+      <div class="content">
+     Ele é um poderoso yokai raposa (espírito/demônio) que, no início da história, serve relutantemente como o familiar da nova e humana deusa da terra, Nanami Momozono
+        <span class="meta">Há 1 hora</span>
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function mostrarCard(id) {
+      const cards = document.querySelectorAll('#cards-container .card');
+      cards.forEach(card => {
+        if (id === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.id === id) {
+            card.classList.remove('hidden');
+            setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        mostrarCard(target);
+      });
+    });
+  </script>
+
+</body>
+</html>
