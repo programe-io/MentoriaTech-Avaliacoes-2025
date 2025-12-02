@@ -1,0 +1,72 @@
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* VARIÁVEIS */
+:root{
+    --bg: #fff1f6;
+    --accent: #ff4f9a;
+    --card: #ffffff;
+    --text: #222;
+    --muted: #6b6b6b;
+    --radius: 12px;
+}
+
+/* BASE */
+body{
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: linear-gradient(180deg, #fff1f6 0%, #ffe6f2 100%);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+}
+
+/* HEADER */
+header { padding: 18px 16px; text-align: center; }
+.topbar h1 { font-size: 1.8rem; }
+.topbar .pink { color: var(--accent); }
+.autor { color: var(--muted); margin-top: 6px; }
+
+/* NAV */
+nav { margin-top: 12px; }
+.menu { list-style: none; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.menu a { text-decoration: none; color: var(--accent); font-weight: 600; padding: 8px 12px; border-radius: 999px; transition: background .18s; }
+.menu a:hover { background: rgba(255,79,154,0.08); }
+
+/* MAIN */
+main#main-content { width: min(1000px, 94%); margin: 20px auto; padding-bottom: 30px; }
+
+/* SECTIONS */
+.conteudo { margin-bottom: 28px; text-align: center; padding: 0 8px; }
+h2 { font-size: 1.4rem; margin-bottom: 12px; padding-left: 10px; border-left: 4px solid var(--accent); display: inline-block; text-align: left; }
+
+/* CARDS */
+.card { background: var(--card); width: 90%; max-width: 520px; margin: 14px auto; padding: 16px; border-radius: var(--radius); box-shadow: 0 6px 18px rgba(0,0,0,0.06); text-align: center; }
+.card img { width: 220px; height: auto; display: block; margin: 0 auto 12px; border-radius: 10px; }
+.card h3 { color: var(--accent); margin-bottom: 8px; }
+.meta { color: var(--muted); font-size: 0.95rem; }
+
+/* GALERIA */
+.galeria { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
+.galeria figure { width: 260px; background: #fff; border-radius: 10px; padding: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.05); }
+.galeria img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; display: block; }
+figcaption { margin-top: 8px; font-size: 0.95rem; color: var(--muted); }
+
+/* LINKS */
+a { color: var(--accent); }
+
+/* FOOTER */
+footer { background: rgba(255,79,154,0.06); padding: 18px 8px; text-align: center; margin-top: 18px; }
+.footer-inner p { margin-bottom: 6px; color: var(--muted); }
+
+/* RESPONSIVO */
+@media (max-width:900px){
+    .card img { width: 180px; }
+    .galeria figure { width: 46%; }
+}
+
+@media (max-width:600px){
+    h2 { font-size: 1.2rem; }
+    .galeria figure { width: 100%; }
+    .menu { gap: 8px; }
+}
