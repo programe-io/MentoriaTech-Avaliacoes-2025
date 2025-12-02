@@ -1,0 +1,157 @@
+/* CSS completo para Blog Gamer — arquivo separado: blog-gamer-style.css
+   - Variáveis, responsivo, componentes, formulários, tabelas, mídia e animações
+   - Compatível com o HTML fornecido anteriormente
+*/
+:root{
+  --bg:#071028;
+  --surface:#0b1220;
+  --card:#0f1724;
+  --muted:#9aa4b2;
+  --text:#e6eef8;
+  --accent:#ff4757;
+  --glass:rgba(255,255,255,0.03);
+  --glass-2:rgba(255,255,255,0.02);
+  --radius:12px;
+  --shadow:0 8px 30px rgba(2,6,23,0.6);
+  --max-width:1180px;
+  --container-padding:1.25rem;
+  --transition:200ms cubic-bezier(.2,.9,.3,1);
+  --focus-ring:3px rgba(99,102,241,0.12);
+}
+
+/* Reset leve */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:linear-gradient(180deg,var(--bg) 0%, #050814 100%);color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;height:auto;display:block}
+button,input,select,textarea{font:inherit}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Layout container */
+.container{max-width:var(--max-width);margin:0 auto;padding:0 var(--container-padding)}
+.site-header{backdrop-filter:blur(6px);background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-bottom:1px solid rgba(255,255,255,0.03)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 0}
+.brand{display:flex;align-items:center;gap:.75rem}
+.brand h1{font-size:1.125rem;margin:0}
+.brand small{font-weight:400;color:var(--muted);font-size:.9rem}
+.brand img{width:44px;height:44px;border-radius:10px;object-fit:cover}
+
+/* Navigation */
+nav.primary ul{display:flex;gap:1rem;list-style:none;padding:0;margin:0}
+nav.primary a{display:inline-block;padding:.45rem .6rem;border-radius:8px;color:var(--text);opacity:.92}
+nav.primary a:hover, nav.primary a:focus{background:var(--glass);transform:translateY(-1px)}
+
+/* Search form */
+.actions form{display:flex;align-items:center;gap:.5rem}
+.actions input[type="search"]{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:.45rem .6rem;border-radius:8px;color:var(--text);outline:none;min-width:180px}
+.actions button{background:transparent;border:0;padding:.45rem .6rem;cursor:pointer;color:var(--muted)}
+.actions input[type="search"]:focus{box-shadow:var(--focus-ring);border-color:rgba(99,102,241,0.16)}
+
+/* Main layout */
+main.layout{display:grid;grid-template-columns:1fr 320px;gap:1.25rem;padding:1.25rem 0;max-width:var(--max-width);margin:0 auto}
+@media (max-width:1000px){main.layout{grid-template-columns:1fr 300px}}
+@media (max-width:900px){main.layout{grid-template-columns:1fr;padding:0.75rem}}
+
+/* Cards / posts */
+.post{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1rem;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.02)}
+.post h2,.post h3,.post h4{margin:.25rem 0 .6rem}
+.post p{color:var(--muted);line-height:1.5}
+.post .meta{font-size:.9rem;color:var(--muted)}
+.post figure{margin:0 0 .5rem;border-radius:8px;overflow:hidden}
+.post img{display:block;width:100%;height:auto}
+
+/* Hero area */
+.hero{display:grid;grid-template-columns:2fr 1fr;gap:1rem}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+
+/* Tags */
+.tags{display:flex;gap:.5rem;flex-wrap:wrap}
+.tag{background:var(--glass);padding:.25rem .6rem;border-radius:999px;font-size:.85rem;color:var(--muted)}
+
+/* Meter and progress styling */
+meter{width:100%;height:14px;border-radius:8px;background:var(--glass-2)}
+progress{width:100%;height:12px}
+
+/* Grid de cards */
+.cards-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+@media(max-width:700px){.cards-grid{grid-template-columns:1fr}}
+
+/* Forms (sidebar newsletter and contact) */
+form label{display:block;margin:.5rem 0 .25rem;font-size:.9rem;color:var(--muted)}
+form input[type="text"],form input[type="email"],form select,form textarea{width:100%;padding:.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);outline:none}
+form input:focus,form select:focus,form textarea:focus{box-shadow:var(--focus-ring);border-color:rgba(99,102,241,0.14)}
+button[type="submit"],button{background:linear-gradient(90deg,var(--accent),#ff6b6b);border:0;padding:.6rem .9rem;border-radius:10px;color:white;cursor:pointer;transition:transform var(--transition)}
+button[type="submit"]:hover{transform:translateY(-2px)}
+
+/* Sidebar */
+#sidebar .post{margin-bottom:1rem}
+#sidebar address{font-style:normal;color:var(--muted)}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;background:transparent;border-radius:8px;overflow:hidden}
+th,td{padding:.6rem;text-align:left;border-bottom:1px solid rgba(255,255,255,0.03)}
+caption{caption-side:top;text-align:left;padding:.5rem 0;font-weight:600}
+
+/* Code blocks */
+pre{background:#071226;padding:1rem;border-radius:8px;overflow:auto;color:#cbd5e1}
+code{background:rgba(255,255,255,0.02);padding:.125rem .35rem;border-radius:6px}
+
+/* Media players */
+audio,video{border-radius:8px;background:#060815}
+
+/* Footer */
+.site-footer{padding:1.25rem 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);margin-top:1.25rem}
+.site-footer nav ul{display:flex;gap:1rem;justify-content:center;list-style:none;padding:0;margin:.5rem 0}
+.site-footer p{margin:.5rem 0 0}
+
+/* Details/summary */
+details summary{cursor:pointer;padding:.5rem;border-radius:8px}
+
+/* Template usage visuals (progressive enhancement) */
+template{display:none}
+
+/* Small utilities */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.flex{display:flex}
+.center{display:flex;align-items:center;justify-content:center}
+.mb-1{margin-bottom:1rem}
+.mt-1{margin-top:1rem}
+
+/* Accessibility: focus outlines */
+:focus{outline:3px solid rgba(99,102,241,0.08);outline-offset:2px}
+
+/* Small screens adjustments */
+@media (max-width:720px){
+  nav.primary ul{display:none}
+  .site-header .container{justify-content:space-between}
+  .brand h1{font-size:1rem}
+}
+
+/* Subtle animations */
+@keyframes floatUp{0%{transform:translateY(6px);opacity:0}100%{transform:none;opacity:1}}
+.post{animation:floatUp .45s var(--transition) both}
+
+/* Dark mode toggle helpers (if implemented) */
+.theme-dark body{background:#050511}
+
+/* Utility for small badges */
+.badge{display:inline-block;padding:.25rem .5rem;border-radius:999px;background:rgba(255,255,255,0.03);font-size:.8rem;color:var(--muted)}
+
+/* Responsive table for narrow screens */
+@media (max-width:560px){
+  table, thead, tbody, th, td, tr{display:block}
+  thead tr{position:absolute;top:-9999px;left:-9999px}
+  tr{margin:0 0 1rem}
+  td{border:0;padding:.5rem 0;position:relative;padding-left:50%}
+  td:before{position:absolute;left:0;width:45%;padding-left:.5rem;white-space:nowrap;font-weight:600;color:var(--muted)}
+  /* example labels could be injected via data-label attribute server-side or JS */
+}
+
+/* Print styles */
+@media print{
+  body{color:#000;background:#fff}
+  header,footer,aside{display:none}
+  .post{box-shadow:none;border:0}
+}
