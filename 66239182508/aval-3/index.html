@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Social FoodFeed</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body>
+
+<div class="app">
+
+  <!-- NAV OBRIGATÓRIO -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#">🏠 Início</a></li>
+      <li><a href="#">🍽 Receitas</a></li>
+      <li><a href="#">⭐ Favoritos</a></li>
+      <li><a href="#">👤 Perfil</a></li>
+    </ul>
+  </nav>
+
+  <!-- TOPO -->
+  <header class="topbar">
+    <h2 class="logo">FoodFeed</h2>
+    <img class="avatar-sm" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=200&auto=format&fit=crop" alt="Perfil">
+  </header>
+
+  <!-- FEED -->
+  <main class="feed">
+
+    <!-- CARD 1 — HAMBÚRGUER -->
+    <article class="card">
+
+      <header class="card__header">
+        <img class="card__avatar" src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=200" alt="Avatar">
+        <div>
+          <strong class="card__user">Chef Marcos</strong>
+          <span class="card__time">3h atrás</span>
+        </div>
+      </header>
+
+      <div class="card__media">
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1200" alt="Hambúrguer artesanal suculento">
+      </div>
+
+      <div class="card__body">
+        <p class="card__text">
+          Novo hambúrguer artesanal com pão brioche, cheddar especial e bacon crocante! 🌟🔥  
+          Qual nota você daria?
+        </p>
+
+        <div class="card__actions">
+          <button class="btn btn-like" onclick="toggleLike(this)">❤️ Curtir</button>
+          <button class="btn" onclick="openComment()">💬 Comentar</button>
+          <button class="btn" onclick="sharePost()">🔗 Compartilhar</button>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CARD 2 — PIZZA -->
+    <article class="card">
+
+      <header class="card__header">
+        <img class="card__avatar" src="https://images.unsplash.com/photo-1543877087-ebf71fde2be6?q=80&w=200" alt="Avatar">
+        <div>
+          <strong class="card__user">Pizza Lovers</strong>
+          <span class="card__time">1 dia atrás</span>
+        </div>
+      </header>
+
+      <div class="card__media">
+        <img src="https://images.unsplash.com/photo-1601925260429-6f7b0b3f7aa7?q=80&w=1200" alt="Pizza deliciosa">
+      </div>
+
+      <div class="card__body">
+        <p class="card__text">
+          Pizza marguerita saindo quentinha do forno 🍕✨  
+          Simples, leve e perfeita!
+        </p>
+
+        <div class="card__actions">
+          <button class="btn btn-like" onclick="toggleLike(this)">❤️ Curtir</button>
+          <button class="btn" onclick="openComment()">💬 Comentar</button>
+          <button class="btn" onclick="sharePost()">🔗 Compartilhar</button>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- CARD 3 — SUSHI -->
+    <article class="card">
+
+      <header class="card__header">
+        <img class="card__avatar" src="https://images.unsplash.com/photo-1583805489531-ad1a8fda0f69?q=80&w=200" alt="Avatar">
+        <div>
+          <strong class="card__user">Tokyo House</strong>
+          <span class="card__time">2 dias atrás</span>
+        </div>
+      </header>
+
+      <div class="card__media">
+        <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?q=80&w=1200" alt="Prato de sushi">
+      </div>
+
+      <div class="card__body">
+        <p class="card__text">
+          Combinação premium de sushi e sashimi frescos 🐟🍣  
+          Uma explosão de sabor!
+        </p>
+
+        <div class="card__actions">
+          <button class="btn btn-like" onclick="toggleLike(this)">❤️ Curtir</button>
+          <button class="btn" onclick="openComment()">💬 Comentar</button>
+          <button class="btn" onclick="sharePost()">🔗 Compartilhar</button>
+        </div>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- ÁREA DE CRIAR POST -->
+  <footer class="composer">
+    <input type="text" id="composer-input" placeholder="Escreva algo...">
+    <button onclick="sendPost()">➤</button>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
