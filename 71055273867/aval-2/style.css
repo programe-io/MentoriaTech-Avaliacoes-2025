@@ -1,0 +1,122 @@
+/* ======== SELETORES BÁSICOS ======== */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: Arial; background: #f2f2f2; padding: 20px; }
+
+h1, h2, h3 { font-weight: bold; }
+div { margin-bottom: 20px; }
+
+/* Classe */
+.box { background: #ddd; padding: 20px; border-radius: 5px; }
+
+/* ID */
+#secao1 { background: #fafafa; }
+
+/* Elemento */
+span { color: red; }
+
+/* Atributo */
+input[type="text"] { border: 2px solid blue; }
+
+/* Descendente */
+section p { color: #333; }
+
+/* Filho direto */
+nav > ul { list-style: none; }
+
+/* Irmão adjacente */
+h2 + p { font-style: italic; }
+
+/* ======== PSEUDO-CLASSES ======== */
+
+a:hover { color: red; }
+input:focus { outline: 2px solid red; }
+button:hover { background: #222; color: #fff; }
+li:first-child { font-weight: bold; }
+
+/* ======== PSEUDO-ELEMENTOS ======== */
+
+p::first-letter { font-size: 2em; color: blue; }
+span::after { content: " ★"; }
+
+/* ======== DISPLAY | FLEX | GRID ======== */
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+aside {
+    grid-column: span 2;
+}
+
+/* ======== TABELAS ======== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #444;
+    padding: 10px;
+}
+
+/* ======== FORMULÁRIO ======== */
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+input, textarea, select, button {
+    padding: 10px;
+    width: 100%;
+}
+
+/* ======== ANIMAÇÕES ======== */
+
+@keyframes girar {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+}
+
+span.destaque {
+    animation: girar 2s linear infinite;
+}
+
+/* ======== MEDIA QUERIES ======== */
+
+@media (max-width: 600px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ======== OUTRAS REGRAS ======== */
+
+@supports (display: grid) {
+    body {
+        border: 5px solid green;
+    }
+}
+
+@layer reset, base, layout;
+
+@layer reset {
+    * { margin: 0; }
+}
+
+@layer base {
+    body { font-family: sans-serif; }
+}
+
+@layer layout {
+    header { background: #444; color: #fff; padding: 20px; }
+}
