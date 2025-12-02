@@ -1,0 +1,109 @@
+:root {
+  --verde-xbox: #107c10;
+  --verde-claro: #3db43d;
+  --cinza-escuro: #1c1c1c;
+  --cinza-claro: #e6e6e6;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c 60%, #107c10 100%);
+  color: var(--cinza-claro);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Cabeçalho */
+.topo {
+  background: linear-gradient(90deg, var(--verde-xbox), var(--verde-claro));
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo { width: 50px; height: 50px; }
+.titulo-site {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 12px #000;
+}
+.titulo-site span {
+  color: var(--verde-claro);
+  text-shadow: 0 0 12px var(--verde-claro);
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+}
+.menu a:hover { text-decoration: underline; }
+.menu .ativo { border-bottom: 2px solid #fff; }
+
+/* Biblioteca */
+.biblioteca {
+  padding: 40px 20px;
+}
+.biblioteca h2 {
+  color: var(--verde-claro);
+  margin-bottom: 20px;
+}
+.carrossel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+.carrossel::-webkit-scrollbar { height: 8px; }
+.carrossel::-webkit-scrollbar-thumb {
+  background: var(--verde-xbox);
+  border-radius: 4px;
+}
+.jogo {
+  flex: 0 0 auto;
+  text-align: center;
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.jogo img {
+  width: 200px;
+  height: 280px;
+  border-radius: 6px;
+}
+.jogo span {
+  display: block;
+  margin-top: 8px;
+  font-weight: 600;
+}
+.jogo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px var(--verde-claro);
+}
+
+/* Sobre */
+.sobre {
+  padding: 40px 20px;
+  background: #222;
+  border-top: 2px solid var(--verde-xbox);
+}
+.sobre h2 {
+  color: var(--verde-claro);
+  margin-bottom: 16px;
+  font-size: 22px;
+}
+.sobre p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* Rodapé */
+.rodape {
+  background: #111;
+  text-align: center;
+  padding: 20px;
+  color: #888;
+}
