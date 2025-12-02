@@ -1,0 +1,146 @@
+:root{
+  --bg: #0b0b0b;
+  --surface: #121212;
+  --muted: #1a1a1a;
+  --text: #eaeaea;
+  --subtext: #b5b5b5;
+  --accent: #c7a64b; /* dourado suave */
+  --accent-2: #8c6a2e;
+  --ring: #2a2a2a;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.container{
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+.site-header{
+  background: linear-gradient(180deg, #0b0b0b 0%, #121212 100%);
+  border-bottom: 1px solid var(--ring);
+}
+
+.header-wrap{
+  padding: 48px 0 24px 0;
+}
+
+.brand{
+  font-family: "Playfair Display", serif;
+  font-size: 2.4rem;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+  color: var(--text);
+}
+
+.tagline{
+  margin: 0 0 20px 0;
+  color: var(--subtext);
+  font-size: 1rem;
+}
+
+.nav{
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.nav a{
+  color: var(--accent);
+  text-decoration: none;
+  padding: 8px 12px;
+  border: 1px solid var(--ring);
+  border-radius: 999px;
+  background: #0e0e0e;
+  font-weight: 600;
+}
+
+.nav a:hover{
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.legend-section{
+  padding: 36px 0 8px 0;
+  border-top: 1px solid var(--ring);
+}
+
+.legend-section h2{
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin: 0 0 20px 0;
+  color: var(--text);
+}
+
+.site-footer{
+  border-top: 1px solid var(--ring);
+  margin-top: 32px;
+  background: var(--muted);
+}
+
+.footer-wrap{
+  padding: 24px 0;
+  color: var(--subtext);
+  font-size: 0.95rem;
+}
+
+/* Tipografia e acessibilidade */
+h3{
+  font-size: 1.25rem;
+  margin: 0 0 8px 0;
+}
+
+p{
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.legend-meta{
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--subtext);
+  font-size: 0.9rem;
+}
+
+.sources{
+  padding-bottom: 40px;
+}
+
+.sources-list{
+  list-style: none;
+  padding: 0;
+  margin: 18px 0;
+}
+
+.sources-list li{
+  margin-bottom: 8px;
+}
+
+.sources-list a{
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--accent-2);
+}
+
+.sources-list a:hover{
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+
+/* Imagens */
+.legend-img{
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--ring);
+  background: #0e0e0e;
+  margin-bottom: 12px;
+}
