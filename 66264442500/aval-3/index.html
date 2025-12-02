@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog — Carros da Pixar</title>
+  <link rel="stylesheet" href="style.css" />
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <!-- HEADER obrigatório (contendo nav) -->
+  <header>
+    <div class="header-inner">
+      <h1><span>Blog Carros — Pixar</span></h1>
+      <p class="credit">Criado por <strong>Gustavo Almeida</strong></p>
+
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#personagens">Personagens</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#curiosidades">Curiosidades</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN obrigatório -->
+  <main>
+    <section id="inicio" class="section">
+      <h2><span>Introdução</span></h2>
+      <p>Bem-vindo ao blog sobre a franquia <strong>Carros</strong> da Pixar. Aqui você encontra curiosidades, personagens e imagens principais do universo do Relâmpago McQueen.</p>
+    </section>
+
+    <section id="personagens" class="section">
+      <h2><span>Personagens Principais</span></h2>
+      <ul>
+        <li><strong>Relâmpago McQueen</strong> — Piloto jovem e competitivo.</li>
+        <li><strong>Mate</strong> — Caminhão-guincho engraçado e leal.</li>
+        <li><strong>Sally</strong> — Porsche carinhosa e inteligente.</li>
+        <li><strong>Doc Hudson</strong> — Mentor com passado de campeão.</li>
+      </ul>
+    </section>
+
+    <section id="galeria" class="section">
+      <h2><span>Galeria</span></h2>
+      <p>Clique na imagem para abrir em nova aba (toque no celular).</p>
+
+      <div class="gallery">
+        <!-- Imagens públicas confiáveis (Wikimedia / Wikipedia / Imgur) -->
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Cars_2006.jpg" alt="Poster Cars (2006)">
+          <figcaption>Poster oficial</figcaption>
+        </figure>
+
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/en/1/12/Lightning_McQueen.png" alt="Lightning McQueen">
+          <figcaption>Relâmpago McQueen</figcaption>
+        </figure>
+
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/en/4/4f/Mater_%28Cars%29.png" alt="Mater">
+          <figcaption>Mater</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="curiosidades" class="section">
+      <h2><span>Curiosidades</span></h2>
+      <ol>
+        <li>O número 95 do McQueen é uma homenagem ao ano de lançamento de Toy Story (1995).</li>
+        <li>Radiator Springs foi inspirado em localidades da Rota 66.</li>
+        <li>A Pixar consultou designers automotivos para o realismo dos carros.</li>
+      </ol>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 — Blog Carros (Pixar) • Criado por <span>Gustavo Almeida</span></p>
+  </footer>
+
+  <!-- JS mínimo embutido para abrir imagens (opcional: você pode mover para script.js) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('.gallery img').forEach(img=>{
+        img.addEventListener('click', ()=> window.open(img.src, '_blank'));
+      });
+    });
+  </script>
+</body>
+</html>
