@@ -1,0 +1,219 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    min-height: 100vh; /* Garante que o footer fique no final */
+}
+
+/* Navegação */
+nav {
+    background-color: #2c3e50;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #34495e;
+}
+
+/* Header e Título */
+.game-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+#game-icon {
+    width: 60px;
+    height: auto;
+}
+
+.game-header h1 {
+    color: #333;
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Layout Principal (Jogo + Aside) */
+#main-content {
+    display: flex;
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 90%;
+    align-items: flex-start;
+}
+
+/* Container do Jogo */
+#game-container {
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabuleiro (Grid) */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 8px;
+    margin: 20px auto;
+    background-color: #2c3e50;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.cell:hover {
+    background-color: #bdc3c7;
+}
+
+#message {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+#reset-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#reset-button:hover {
+    background-color: #c0392b;
+}
+
+/* Barra Lateral (Aside) */
+#sidebar {
+    width: 250px;
+    padding: 15px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#sidebar h3 {
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin-top: 0;
+    color: #3498db;
+}
+
+/* Seções de Regras e Pontuação */
+#game-rules, #score-history {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+#score-history span {
+    color: #27ae60;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* Rodapé */
+footer {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: auto; /* Empurra o footer para baixo */
+}
+
+.footer-links a {
+    color: #f1c40f;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* ========================================= */
+/* --- MEDIA QUERIES PARA RESPONSIVIDADE --- */
+/* ========================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. LAYOUT PRINCIPAL: Empilhar Jogo e Barra Lateral */
+    #main-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    /* 2. BARRA LATERAL (ASIDE) e GAME CONTAINER: Dar largura total */
+    #sidebar, #game-container {
+        width: 90%;
+        padding: 15px;
+    }
+    
+    /* 3. TABULEIRO: Ajuste para caber na largura do celular */
+    .board {
+        grid-template-columns: repeat(3, 1fr); /* Células flexíveis */
+        width: 100%; 
+        grid-gap: 5px;
+        padding: 5px;
+    }
+    
+    /* 4. CÉLULAS: Reduzir tamanho */
+    .cell {
+        height: 80px;
+        width: auto;
+        font-size: 40px;
+    }
+
+    /* 5. Seções de Conteúdo */
+    #game-rules, #score-history {
+        width: 90%;
+        margin: 20px auto;
+    }
+}
