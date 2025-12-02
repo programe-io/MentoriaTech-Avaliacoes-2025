@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <!-- Metadados essenciais -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Exemplo de documento HTML completo com tags semânticas e componentes comuns." />
+  <meta name="author" content="Seu Nome" />
+  <title>Exemplo HTML Completo</title>
+
+  <!-- Open Graph (opcional, para compartilhamento em redes sociais) -->
+  <meta property="og:title" content="Exemplo HTML Completo" />
+  <meta property="og:description" content="Documento de exemplo contendo as principais tags HTML." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Favicon (exemplo) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🌐%3C/text%3E%3C/svg%3E" />
+
+  <!-- CSS básico embutido (para exemplo) -->
+  <style>
+    :root{
+      --bg: #f7f7fb;
+      --card: #ffffff;
+      --accent: #2563eb;
+      --text: #111827;
+      --muted: #6b7280;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);}
+    .container{max-width:1000px;margin:2rem auto;padding:1.25rem;}
+    header, footer{background:var(--card);padding:1rem;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+    nav ul{list-style:none;padding:0;margin:0;display:flex;gap:0.5rem;flex-wrap:wrap;}
+    nav a{display:inline-block;padding:.4rem .7rem;border-radius:8px;text-decoration:none;color:var(--accent);}
+    main{display:grid;grid-template-columns:2fr 1fr;gap:1rem;margin-top:1rem;}
+    article{background:var(--card);padding:1rem;border-radius:12px;}
+    aside{background:var(--card);padding:1rem;border-radius:12px;}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+    table{width:100%;border-collapse:collapse;}
+    th,td{padding:.5rem;border:1px solid #e6e9ef;text-align:left;}
+    footer p{margin:0;font-size:.9rem;color:var(--muted);}
+    .btn{display:inline-block;padding:.5rem .8rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;}
+    @media (max-width:800px){main{grid-template-columns:1fr}}
+  </style>
+
+  <!-- Script pequeno no head (por exemplo: configuração) -->
+  <script>
+    // Pequena função utilitária para detectar suporte a JS
+    document.documentElement.className = document.documentElement.className.replace('no-js','js');
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body class="no-js">
+  <!-- Skip link para acessibilidade -->
+  <a href="#conteudo-principal" class="visually-hidden" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+    Ir para o conteúdo principal
+  </a>
+
+  <div class="container">
+    <!-- Cabeçalho com marca e navegação -->
+    <header role="banner" aria-label="Cabeçalho do site">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+        <div style="display:flex;align-items:center;gap:.75rem;">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24'%3E%3Cpath fill='%232563eb' d='M12 2L2 7l10 5 10-5-10-5z'/%3E%3C/svg%3E" alt="Logotipo" style="width:36px;height:36px;">
+          <div>
+            <strong>Meu Site</strong><br>
+            <small style="color:var(--muted)">Exemplo HTML completo</small>
+          </div>
+        </div>
+
+        <nav role="navigation" aria-label="Navegação principal">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#contato" class="btn">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Conteúdo principal + barra lateral -->
+    <main id="conteudo-principal" role="main" aria-label="Conteúdo principal">
+      <!-- Artigo principal -->
+      <article aria-labelledby="titulo-principal">
+        <h1 id="titulo-principal">Página de Exemplo: estrutura HTML completa</h1>
+        <p>Este documento demonstra o uso das principais tags HTML semânticas, formulários, mídia, tabelas e exemplos de acessibilidade.</p>
+
+        <!-- Seção com imagens (figure e picture) -->
+        <section id="galeria" aria-labelledby="galeria-titulo">
+          <h2 id="galeria-titulo">Galeria</h2>
+          <p>Exemplo de <code>&lt;figure&gt;</code> com legenda e uso de <code>&lt;picture&gt;</code> para responsividade.</p>
+          <figure>
+            <picture>
+              <!-- fontes alternativas (exemplo) -->
+              <source media="(max-width:600px)" srcset="https://via.placeholder.com/400x200?text=mobile">
+              <img src="https://via.placeholder.com/800x400?text=desktop" alt="Exemplo de imagem responsiva" style="max-width:100%;height:auto;border-radius:8px;">
+            </picture>
+            <figcaption style="color:var(--muted);font-size:.95rem;margin-top:.4rem;">Legenda da imagem — creditos: placeholder</figcaption>
+          </figure>
+        </section>
+
+        <!-- Formulário de contato (comariações e labels) -->
+        <section id="contato" aria-labelledby="contato-titulo" style="margin-top:1rem;">
+          <h2 id="contato-titulo">Formulário de contato</h2>
+          <form action="#" method="post" novalidate aria-describedby="contato-desc">
+            <p id="contato-desc" style="color:var(--muted)">Preencha os campos abaixo e envie sua mensagem.</p>
+            <div style="display:grid;gap:.5rem;margin-bottom:.5rem;">
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" type="text" required placeholder="Seu nome" style="padding:.5rem;border-radius:6px;border:1px solid #dbe2ef;">
+            </div>
+
+            <div style="display:grid;gap:.5rem;margin-bottom:.5rem;">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="seu@exemplo.com" style="padding:.5rem;border-radius:6px;border:1px solid #dbe2ef;">
+            </div>
+
+            <div style="display:grid;gap:.5rem;margin-bottom:.5rem;">
+              <label for="assunto">Assunto</label>
+              <select id="assunto" name="assunto" required style="padding:.5rem;border-radius:6px;border:1px solid #dbe2ef;">
+                <option value="">-- selecione --</option>
+                <option>Informações</option>
+                <option>Suporte</option>
+                <option>Parcerias</option>
+              </select>
+            </div>
+
+            <div style="display:grid;gap:.5rem;margin-bottom:.5rem;">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..." style="padding:.5rem;border-radius:6px;border:1px solid #dbe2ef;"></textarea>
+            </div>
+
+            <div style="display:flex;gap:.5rem;align-items:center;">
+              <input id="aceite" type="checkbox" name="aceite" required>
+              <label for="aceite">Concordo com os termos e envio de dados.</label>
+            </div>
+
+            <div style="margin-top:.75rem;">
+              <button type="submit" class="btn">Enviar</button>
+              <button type="reset" style="margin-left:.5rem;padding:.5rem .8rem;border-radius:8px;border:1px solid #dbe2ef;background:transparent;">Limpar</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Tabela de exemplo -->
+        <section aria-labelledby="tabela-titulo" style="margin-top:1rem;">
+          <h2 id="tabela-titulo">Tabela de dados</h2>
+          <table aria-describedby="tabela-desc">
+            <caption id="tabela-desc">Exemplo de tabela com cabeçalho e corpo.</caption>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Descrição</th>
+                <th>Quantidade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>001</td>
+                <td>Produto A</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>002</td>
+                <td>Produto B</td>
+                <td>5</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Mídia: vídeo / áudio -->
+        <section aria-labelledby="midia-titulo" style="margin-top:1rem;">
+          <h2 id="midia-titulo">Áudio e Vídeo</h2>
+          <p style="color:var(--muted)">Elementos nativos para mídia (com controles e legenda no vídeo).</p>
+
+          <video controls width="100%" style="border-radius:8px;">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento <code>video</code>.
+          </video>
+
+          <audio controls style="margin-top:.5rem;width:100%;">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento <code>audio</code>.
+          </audio>
+        </section>
+
+        <!-- Elementos interativos: details/summary e template -->
+        <section aria-labelledby="extras-titulo" style="margin-top:1rem;">
+          <h2 id="extras-titulo">Extras: detalhes e template</h2>
+          <details>
+            <summary>Mais informações (clique para expandir)</summary>
+            <p>Este bloco usa <code>&lt;details&gt;</code> e <code>&lt;summary&gt;</code> para revelar conteúdo adicional.</p>
+          </details>
+
+          <!-- Template (exemplo de uso via JS) -->
+          <template id="cartao-template">
+            <article class="card">
+              <h3></h3>
+              <p></p>
+            </article>
+          </template>
+        </section>
+      </article>
+
+      <!-- Barra lateral / aside -->
+      <aside role="complementary" aria-labelledby="sidebar-titulo">
+        <h2 id="sidebar-titulo">Barra lateral</h2>
+
+        <div style="margin-bottom:.75rem;">
+          <h3>Links úteis</h3>
+          <ul>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="#midia-titulo">Mídia</a></li>
+          </ul>
+        </div>
+
+        <div style="margin-bottom:.75rem;">
+          <h3>Lista (ord. e não ord.)</h3>
+          <ol>
+            <li>Primeiro</li>
+            <li>Segundo</li>
+            <li>Terceiro</li>
+          </ol>
+        </div>
+
+        <div>
+          <h3>Formulário rápido</h3>
+          <form onsubmit="event.preventDefault(); alert('Obrigado!');">
+            <label for="newsletter">Email</label>
+            <input id="newsletter" type="email" placeholder="seu@exemplo.com" required style="padding:.4rem;border-radius:6px;border:1px solid #e6e9ef;width:100%;">
+            <div style="margin-top:.5rem;">
+              <button type="submit" class="btn">Assinar</button>
+            </div>
+          </form>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Área de rodapé -->
+    <footer role="contentinfo" style="margin-top:1rem;">
+      <p>© <span id="ano"></span> Meu Site. Todos os direitos reservados.</p>
+      <p style="margin-top:.4rem;color:var(--muted)">Feito com HTML — exemplo educativo.</p>
+    </footer>
+  </div>
+
+  <!-- Scripts ao final do body -->
+  <script>
+    // Preencher ano automaticamente
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    // Exemplo simples: usar template para criar um cartão dinamicamente
+    (function(){
+      const tpl = document.getElementById('cartao-template');
+      if (!tpl) return;
+      const clone = tpl.content.cloneNode(true);
+      clone.querySelector('h3').textContent = 'Cartão gerado';
+      clone.querySelector('p').textContent = 'Este cartão foi criado a partir de um <template>.';
+      // adicionar ao aside
+      const aside = document.querySelector('aside');
+      aside.appendChild(clone);
+    })();
+
+    // Acessibilidade: melhorar foco do skip link quando usado (exemplo)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', ()=>{ /* poderia adicionar lógica extra aqui */ });
+    });
+  </script>
+</body>
+</html>
