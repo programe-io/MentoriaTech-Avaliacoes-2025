@@ -1,0 +1,295 @@
+/* ================================
+   Tema dinâmico com fundo de frutas
+   ================================ */
+
+/* Variáveis de tema */
+:root {
+  --bg-overlay: rgba(255, 255, 255, 0.6);
+  --text: #181818;
+  --muted: #555;
+  --primary: #ff6b6b;
+  --secondary: #4ecdc4;
+  --accent: #ffa500;
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --backdrop-blur: 8px;
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 10px 24px rgba(0, 0, 0, 0.12);
+
+  --radius: 14px;
+  --radius-sm: 10px;
+
+  --max-w: 1100px;
+  --spacing: 18px;
+
+  --grid-gap: 18px;
+  --grid-min: 260px;
+}
+
+/* Modo escuro opcional */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-overlay: rgba(0, 0, 0, 0.45);
+    --text: #f4f4f4;
+    --muted: #c9c9c9;
+    --card-bg: rgba(20, 20, 20, 0.7);
+    --backdrop-blur: 10px;
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* Reset básico */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.6;
+
+  /* Fundo com a imagem enviada */
+  /* Ajuste o caminho conforme sua estrutura de pastas */
+  background-image: url("84WfpHXCGqPb911RtczaS.png");
+  background-repeat: repeat;           /* padrão repetido para criar textura */
+  background-size: 420px 420px;        /* controla a densidade do mosaico */
+  background-position: 0 0;
+  background-attachment: fixed;        /* efeito parallax sutil ao rolar */
+
+  /* Filme de cor animado para dinamismo */
+  /* Dica: se quiser menos movimento, reduza a duração para 30s */
+  --noise-a: rgba(255, 255, 255, 0.06);
+  --noise-b: rgba(255, 255, 255, 0.12);
+}
+
+/* Camada de overlay para legibilidade */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  backdrop-filter: blur(var(--backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--backdrop-blur));
+
+  /* Gradiente vívido e animado */
+  background:
+    radial-gradient(1200px 1200px at 10% 10%, var(--noise-a), transparent 60%),
+    radial-gradient(1200px 1200px at 90% 20%, var(--noise-b), transparent 55%),
+    linear-gradient(135deg, rgba(255, 107, 107, 0.18), rgba(78, 205, 196, 0.18) 50%, rgba(255, 165, 0, 0.18));
+  animation: floatHue 50s ease-in-out infinite;
+}
+
+/* Container principal */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: calc(var(--spacing) * 2) var(--spacing);
+}
+
+/* Cabeçalho com efeito sticky e translucidez */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin-bottom: var(--spacing);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 14px 18px;
+}
+.header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand .logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: conic-gradient(from 180deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+  box-shadow: inset 0 0 12px rgba(255,255,255,0.35), 0 4px 10px rgba(0,0,0,0.18);
+  animation: spinSlow 16s linear infinite;
+}
+.brand .title {
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+/* Cartões com microinterações */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: calc(var(--spacing) * 1.2);
+  transition: transform 240ms ease, box-shadow 240ms ease, background 240ms ease;
+  will-change: transform;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.card h2 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Grade responsiva */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--grid-min), 1fr));
+  gap: var(--grid-gap);
+  margin-top: calc(var(--spacing) * 1.2);
+}
+
+/* Botões vibrantes */
+.button {
+  --btn-bg: linear-gradient(135deg, var(--primary), var(--secondary));
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  color: white;
+  background: var(--btn-bg);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  filter: brightness(1.05);
+}
+.button:active {
+  transform: translateY(0);
+  filter: brightness(0.95);
+}
+
+/* Barra de navegação com indicador ativo */
+.nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: var(--spacing);
+}
+.nav a {
+  text-decoration: none;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px 12px;
+  border-radius: 12px;
+  transition: background 160ms ease, color 160ms ease;
+}
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+.nav a.active {
+  color: white;
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+}
+
+/* Rodapé com suavidade */
+.footer {
+  margin-top: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 1.5);
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  font-size: 0.95rem;
+}
+
+/* Animações */
+@keyframes floatHue {
+  0%   { filter: hue-rotate(0deg) saturate(100%); background-position: 0 0, 0 0, 0 0; }
+  50%  { filter: hue-rotate(18deg) saturate(115%); background-position: 10px -8px, -12px 10px, 0 0; }
+  100% { filter: hue-rotate(0deg) saturate(100%); background-position: 0 0, 0 0, 0 0; }
+}
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Responsividade */
+@media (max-width: 860px) {
+  :root {
+    --grid-min: 220px;
+    --spacing: 16px;
+  }
+  .header {
+    border-radius: 0;
+  }
+}
+@media (max-width: 560px) {
+  :root {
+    --grid-min: 180px;
+    --spacing: 14px;
+  }
+  .brand .title {
+    font-size: 1rem;
+  }
+}
+
+/* Estados de foco e acessibilidade */
+:focus-visible {
+  outline: 3px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+/* Utilitários */
+.hidden {
+  display: none !important;
+}
+.center {
+  display: grid;
+  place-items: center;
+}
+.spacer {
+  height: 28px;
+}
+
+/* Exemplo de seção hero com vidro fosco */
+.hero {
+  position: relative;
+  margin-top: calc(var(--spacing) * 1.2);
+  border-radius: var(--radius);
+  padding: calc(var(--spacing) * 2);
+  background: var(--card-bg);
+  backdrop-filter: blur(12px) saturate(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
+  box-shadow: var(--shadow-md);
+}
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+}
+.hero .lead {
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+/* Sutileza extra: luz de destaque ao mover o mouse */
+.hero {
+  --x: 50%;
+  --y: 50%;
+  background-image:
+    radial-gradient(600px 400px at var(--x) var(--y), rgba(255,255,255,0.18), transparent 60%),
+    var(--card-bg);
+}
+.hero:hover {
+  transition: background-position 120ms ease;
+}

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Planilha de Frutas</title>
+
+  <!-- Estilos básicos para visual de planilha -->
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #555;
+      --border: #e5e7eb;
+      --header-bg: #f8fafc;
+      --accent: #0284c7;
+      --row-alt: #fcfdff;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    header {
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 1.75rem;
+      margin: 0 0 .25rem 0;
+    }
+
+    header p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 900px; /* garante espaço em telas pequenas com scroll */
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      background: var(--header-bg);
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      padding: .75rem .6rem;
+      white-space: nowrap;
+    }
+
+    tbody td {
+      border-bottom: 1px solid var(--border);
+      padding: .65rem .6rem;
+      vertical-align: top;
+    }
+
+    tbody tr:nth-child(odd) {
+      background: var(--row-alt);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: .15rem .45rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: .85rem;
+      background: #f9fafb;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: .2rem .5rem;
+      border-radius: 4px;
+      font-size: .85rem;
+      color: #0b3b57;
+      background: #e0f2fe;
+      border: 1px solid #bae6fd;
+    }
+
+    tfoot td {
+      padding: .75rem .6rem;
+      color: var(--muted);
+      background: #f9fafb;
+    }
+
+    /* Acessibilidade: foco visível em links e botões (se houver) */
+    a:focus, button:focus, .tag:focus, .badge:focus {
+      outline: 3px solid #93c5fd;
+      outline-offset: 2px;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <div class="container" role="region" aria-label="Planilha de frutas">
+    <header>
+      <h1>Planilha detalhada de frutas</h1>
+      <p>Informações gerais: categoria, cor, sabor, safra, nutrientes, preço médio, origem, consumo e observações.</p>
+    </header>
+
+    <div class="table-wrapper" role="table" aria-label="Tabela de frutas">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Fruta</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Cor</th>
+            <th scope="col">Sabor</th>
+            <th scope="col">Safra no Brasil</th>
+            <th scope="col">Nutrientes principais</th>
+            <th scope="col">Preço médio</th>
+            <th scope="col">Origem</th>
+            <th scope="col">Formas de consumo</th>
+            <th scope="col">Observações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Banana</strong></td>
+            <td><span class="tag">Tropical</span></td>
+            <td>Amarela</td>
+            <td>Doce suave</td>
+            <td>O ano todo, com pico de oferta em climas quentes</td>
+            <td>
+              Potássio, vitamina B6, fibra<br />
+              <span class="badge">Energia rápida</span>
+            </td>
+            <td>Baixo</td>
+            <td>Sudeste Asiático; amplamente cultivada no Brasil</td>
+            <td>In natura, vitaminas, bolos, grelhada/caramelizada</td>
+            <td>Madura rapidamente; ideal para congelar e usar em smoothies.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Maçã</strong></td>
+            <td><span class="tag">Temperada</span></td>
+            <td>Vermelha/Verde</td>
+            <td>Doce a levemente ácida</td>
+            <td>Outono–inverno (Sul e Sudeste)</td>
+            <td>
+              Fibra (pectina), vitamina C, antioxidantes
+            </td>
+            <td>Médio</td>
+            <td>Ásia Central; cultivada no Sul do Brasil</td>
+            <td>In natura, sucos, tortas, compotas</td>
+            <td>Cascas concentram antioxidantes; boa para saciedade.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Laranja</strong></td>
+            <td><span class="tag">Cítrica</span></td>
+            <td>Laranja</td>
+            <td>Doce e ácida</td>
+            <td>Primavera–verão (varia por variedade)</td>
+            <td>
+              Vitamina C, folato, potássio
+            </td>
+            <td>Baixo</td>
+            <td>Sudeste Asiático; forte produção no Sudeste/Paraná</td>
+            <td>Suco, in natura, molhos, doces</td>
+            <td>Casca e bagaço ricos em fibra; ótimas para imunidade.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Manga</strong></td>
+            <td><span class="tag">Tropical</span></td>
+            <td>Amarela/Alaranjada</td>
+            <td>Doce intensa</td>
+            <td>Primavera–verão (Nordeste e Sudeste)</td>
+            <td>
+              Vitamina A (betacaroteno), C, fibras
+            </td>
+            <td>Médio</td>
+            <td>Sul da Ásia; muito cultivada no Nordeste</td>
+            <td>In natura, sorvetes, chutney, saladas</td>
+            <td>Variedades: Tommy, Palmer, Haden; cuidado com fibras do caroço.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Abacaxi</strong></td>
+            <td><span class="tag">Tropical</span></td>
+            <td>Amarelo (polpa)</td>
+            <td>Ácido a doce</td>
+            <td>Verão (pico), disponível o ano todo</td>
+            <td>
+              Vitamina C, bromelina
+            </td>
+            <td>Médio</td>
+            <td>América do Sul; amplamente cultivado no Brasil</td>
+            <td>In natura, sucos, grelhado, sobremesas</td>
+            <td>Bromelina ajuda na digestão; remover o miolo se muito fibroso.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Uva</strong></td>
+            <td><span class="tag">Temperada</span></td>
+            <td>Verde/Roxa</td>
+            <td>Doce</td>
+            <td>Fim do inverno–outono (varia por região)</td>
+            <td>
+              Resveratrol, vitamina K, vitamina C
+            </td>
+            <td>Médio</td>
+            <td>Mediterrâneo; produção no RS e SP</td>
+            <td>In natura, sucos, geleias, vinho</td>
+            <td>Uvas escuras têm mais polifenóis; lavar bem antes do consumo.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Mamão</strong></td>
+            <td><span class="tag">Tropical</span></td>
+            <td>Alaranjado</td>
+            <td>Doce suave</td>
+            <td>O ano todo (Nordeste e Sudeste)</td>
+            <td>
+              Vitamina A, C, papaína (enzima)
+            </td>
+            <td>Baixo</td>
+            <td>América Tropical</td>
+            <td>In natura, vitaminas, saladas, sobremesas</td>
+            <td>Boa digestão; sementes têm sabor picante, úteis em pequenas quantidades.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Maracujá</strong></td>
+            <td><span class="tag">Cítrica</span></td>
+            <td>Amarelo/Roxo (casca)</td>
+            <td>Ácido aromático</td>
+            <td>Primavera–verão</td>
+            <td>
+              Vitamina C, fibras, compostos aromáticos
+            </td>
+            <td>Médio</td>
+            <td>América do Sul</td>
+            <td>Suco, caldas, sobremesas, molhos</td>
+            <td>Polpa com sementes crocantes; casca usada em farinhas ricas em fibra.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Morango</strong></td>
+            <td><span class="tag">Temperada</span></td>
+            <td>Vermelho</td>
+            <td>Doce com acidez</td>
+            <td>Outono–inverno em estufas; primavera a céu aberto</td>
+            <td>
+              Vitamina C, manganês, antioxidantes
+            </td>
+            <td>Variável</td>
+            <td>Europa; cultivado em SP, MG, RS</td>
+            <td>In natura, geleias, bolos, smoothies</td>
+            <td>Fruto delicado; consumir rápido e evitar lavar muito tempo antes.</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td colspan="10">
+              Dica: priorize frutas da estação para melhor preço, sabor e nutrientes. Armazene em locais ventilados e evite exposição prolongada ao sol.
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
+<!-- Cabeçalho com <nav> obrigatório -->
+<header class="header">
+  <div class="brand">
+    <div class="logo" aria-hidden="true"></div>
+    <span class="title">Meu Site de Frutas</span>
+  </div>
+
+  <!-- TAG NAV OBRIGATÓRIA -->
+  <nav class="nav" aria-label="Navegação principal">
+    <a href="#inicio" class="active">Início</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+<!-- Cabeçalho com navegação -->
+<header class="header">
+  <div class="brand">
+    <div class="logo" aria-hidden="true"></div>
+    <span class="title">Meu Site de Frutas</span>
+  </div>
+
+  <nav class="nav" aria-label="Navegação principal">
+    <a href="#inicio" class="active">Início</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<!-- Conteúdo principal -->
+<main class="container" id="inicio">
+  <section class="hero">
+    <h1>Bem-vindo ao mundo das frutas!</h1>
+    <p class="lead">Explore nosso catálogo colorido e descubra curiosidades deliciosas sobre cada fruta.</p>
+  </section>
+
+  <div class="grid" id="catalogo">
+    <div class="card">
+      <h2>Maçã</h2>
+      <p>Fonte de fibras e antioxidantes. Perfeita para lanches saudáveis.</p>
+    </div>
+    <div class="card">
+      <h2>Banana</h2>
+      <p>Rica em potássio e energia. Ideal para pré-treino.</p>
+    </div>
+    <div class="card">
+      <h2>Morango</h2>
+      <p>Doce, suculento e cheio de vitamina C.</p>
+    </div>
+    <!-- Adicione mais cards conforme necessário -->
+  </div>
+
+  <section class="spacer" id="sobre"></section>
+  <section class="card">
+    <h2>Sobre nós</h2>
+    <p>Somos apaixonados por frutas e criamos este espaço para compartilhar conhecimento e sabor.</p>
+  </section>
+
+  <section class="spacer" id="contato"></section>
+  <section class="card">
+    <h2>Contato</h2>
+    <p>Envie suas dúvidas ou sugestões para <a href="mailto:contato@frutas.com">contato@frutas.com</a>.</p>
+  </section>
+</main>
+
+<!-- Rodapé -->
+<footer class="footer">
+  &copy; 2025 Meu Site de Frutas. Todos os direitos reservados.
+</footer>
+<!-- Cabeçalho com navegação -->
+<header class="header">
+  <div class="brand">
+    <div class="logo" aria-hidden="true"></div>
+    <span class="title">Meu Site de Frutas</span>
+  </div>
+
+  <nav class="nav" aria-label="Navegação principal">
+    <a href="#inicio" class="active">Início</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<!-- Conteúdo principal -->
+<main class="container" id="inicio">
+  <section class="hero">
+    <h1>Bem-vindo ao mundo das frutas!</h1>
+    <p class="lead">Explore nosso catálogo colorido e descubra curiosidades deliciosas sobre cada fruta.</p>
+
+    <!-- TAG IMG OBRIGATÓRIA -->
+    <img src="img/morango-destaque.png" alt="Imagem de um morango suculento" width="220" height="220" loading="lazy" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
+  </section>
+
+  <div class="grid" id="catalogo">
+    <div class="card">
+      <h2>Maçã</h2>
+      <p>Fonte de fibras e antioxidantes. Perfeita para lanches saudáveis.</p>
+    </div>
+    <div class="card">
+      <h2>Banana</h2>
+      <p>Rica em potássio e energia. Ideal para pré-treino.</p>
+    </div>
+    <div class="card">
+      <h2>Morango</h2>
+      <p>Doce, suculento e cheio de vitamina C.</p>
+    </div>
+  </div>
+
+  <section class="spacer" id="sobre"></section>
+  <section class="card">
+    <h2>Sobre nós</h2>
+    <p>Somos apaixonados por frutas e criamos este espaço para compartilhar conhecimento e sabor.</p>
+  </section>
+
+  <section class="spacer" id="contato"></section>
+  <section class="card">
+    <h2>Contato</h2>
+    <p>Envie suas dúvidas ou sugestões para <a href="mailto:contato@frutas.com">contato@frutas.com</a>.</p>
+  </section>
+</main>
+
+<!-- Rodapé -->
+<footer class="footer">
+  &copy; 2025 Meu Site de Frutas. Todos os direitos reservados.
+</footer>
