@@ -1,0 +1,241 @@
+/* Importação de Fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis de Cores */
+:root {
+    --cor-primaria: #4CAF50; /* Verde Calmo */
+    --cor-secundaria: #81C784; /* Verde Claro */
+    --cor-fundo: #F9F9F9; /* Fundo Suave */
+    --cor-texto: #333333;
+    --cor-destaque: #E8F5E9; /* Fundo de seção suave */
+    --cor-aside-fundo: #FFFDE7;
+    --cor-aside-borda: #FFCC80;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+/* Navegação */
+nav {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 15px 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-primaria);
+}
+
+/* Conteúdo Principal e Seções */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.secao {
+    padding: 40px;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.secao:nth-child(even) { 
+    background-color: var(--cor-destaque);
+}
+
+.secao h2 {
+    color: var(--cor-primaria);
+    font-size: 2em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--cor-secundaria);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Estilos para Imagens */
+.card-image {
+    width: 100%;
+    height: auto;
+    max-height: 150px; /* Limita a altura das imagens dentro dos cards */
+    object-fit: cover;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+.section-image {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards (Elementos <article>) */
+.card-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap; 
+}
+
+.card {
+    flex: 1;
+    min-width: 250px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+    border-left: 5px solid var(--cor-secundaria);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+/* Aside (Dica Rápida) */
+.dica-aside {
+    background-color: var(--cor-aside-fundo); 
+    color: var(--cor-texto);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    border-left: 5px solid var(--cor-aside-borda); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+}
+
+.dica-aside h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+/* Formulário de Contato */
+.contact-form {
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Botão de Chamada para Ação (CTA) */
+.cta-button {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #66BB6A; 
+    transform: scale(1.05);
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-texto);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .card-container {
+        flex-direction: column;
+    }
+
+    .secao {
+        padding: 20px;
+    }
+}
