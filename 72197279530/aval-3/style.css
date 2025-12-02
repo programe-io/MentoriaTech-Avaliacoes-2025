@@ -1,0 +1,200 @@
+/* era-do-gelo.css
+   Tema "A Era do Gelo" — cores frias, gradiente glacial, partículas de neve, brilho e bordas de gelo.
+*/
+
+/* Variáveis de tema */
+:root{
+  --bg-deep: #071028;        /* fundo noturno frio */
+  --ice-1: #aee9ff;         /* gelo claro */
+  --ice-2: #8fd7ff;         /* gelo médio */
+  --ice-3: #67c2ff;         /* azul gélido */
+  --frost: rgba(255,255,255,0.12);
+  --accent: #cfefff;        /* brilho suave */
+  --glass-blur: 6px;
+  --font-sans: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Reset simples */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+
+/* Fundo principal com gradiente + textura sutil */
+.body-era-do-gelo{
+  min-height:100vh;
+  background: radial-gradient(1200px 600px at 10% 20%, rgba(120,190,255,0.06), transparent 12%),
+              linear-gradient(180deg,var(--bg-deep) 0%, #0b2a42 45%, #06223a 100%);
+  color: var(--accent);
+  font-family: var(--font-sans);
+  padding: 3rem 2rem;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Neblina / vapor sutil */
+.body-era-do-gelo::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+  pointer-events:none;
+  mix-blend-mode:screen;
+}
+
+/* Card em estilo vidro congelado */
+.glass-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(200,245,255,0.12);
+  border-radius: 18px;
+  backdrop-filter: blur(var(--glass-blur)) saturate(120%);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  padding: 1.4rem;
+  box-shadow: 0 8px 30px rgba(2,9,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+/* Título gelado */
+.title-ice{
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  color: var(--ice-1);
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.05),
+    0 6px 24px rgba(40,120,180,0.18);
+  letter-spacing: 0.6px;
+  margin-bottom: .6rem;
+  font-weight:700;
+}
+
+/* Subtítulo com "frosted edge" */
+.subtitle-ice{
+  color: var(--ice-2);
+  font-size: .95rem;
+  margin-bottom: 1rem;
+  opacity:.95;
+}
+
+/* Botão estilo bloco de gelo */
+.btn-ice{
+  display:inline-block;
+  padding:.6rem 1rem;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(140,220,255,0.18);
+  color: var(--ice-3);
+  font-weight:600;
+  text-decoration:none;
+  box-shadow: 0 6px 20px rgba(30,80,120,0.18);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.btn-ice:hover{ transform: translateY(-3px); box-shadow: 0 12px 30px rgba(30,80,120,0.28) }
+
+/* Linha decorativa de gelo */
+.ice-divider{
+  height:3px;
+  border-radius:6px;
+  background: linear-gradient(90deg, transparent, rgba(200,245,255,0.18), transparent);
+  margin:1rem 0 1.3rem;
+  box-shadow: 0 2px 8px rgba(80,160,220,0.06), inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+/* Ícones ou pequenos blocos com borda de cristais */
+.crystal{
+  display:inline-block;
+  padding:.6rem;
+  border-radius:10px;
+  border:1px solid rgba(180,240,255,0.12);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+}
+
+/* Efeito de brilho animado (passa sobre elementos) */
+.shimmer{
+  position:relative;
+  overflow:hidden;
+}
+.shimmer::after{
+  content:"";
+  position:absolute;
+  left:-150%;
+  top:0;
+  width:50%;
+  height:100%;
+  transform: skewX(-18deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07), transparent);
+  animation: shimmerMove 3.6s linear infinite;
+}
+@keyframes shimmerMove{
+  to { left: 150%; }
+}
+
+/* ANIMAÇÃO: flocos de neve (pequeno e leve) */
+.snowflake {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle at 40% 35%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 40%, rgba(255,255,255,0.35) 100%);
+  border-radius:50%;
+  opacity:0.9;
+  pointer-events:none;
+  animation: fall linear infinite;
+  filter: blur(.2px);
+}
+@keyframes fall {
+  to {
+    transform: translate3d(-100px, 120vh, 30px) rotate(360deg);
+    opacity: 0.06;
+  }
+}
+
+/* Responsividade: centraliza o conteúdo */
+.container-era{
+  max-width:1080px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:1.2rem;
+}
+
+/* Estética adicional para listas e blocos de conteúdo */
+.features{
+  display:flex;
+  gap: .9rem;
+  flex-wrap:wrap;
+}
+.feature-item{
+  flex:1 1 220px;
+  min-width:180px;
+}
+
+/* Pequenos detalhes "gelo rachado" via pseudo-elementos */
+.cracked-edge{
+  position:relative;
+  padding: .8rem;
+}
+.cracked-edge::after{
+  content:"";
+  position:absolute;
+  left: 0; right:0; bottom: -8px;
+  height: 8px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.05));
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  opacity: .7;
+}
+
+/* Tipografia pequena */
+.small-muted{
+  font-size:.86rem;
+  color: rgba(200,235,255,0.7);
+}
+
+/* Utility: criar várias snowflakes com delays usando nth-child no HTML */
+.snow-container{ position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+.snow-container .snowflake{
+  width:8px;height:8px;
+  animation-duration: calc(6s + var(--i)*1.8s);
+  left: calc(var(--i) * 6%); /* posição inicial baseada na variável --i */
+  opacity: calc(0.7 - var(--i)*0.02);
+  transform: translateY(-10vh);
+}
+
+/* Fim do arquivo */
