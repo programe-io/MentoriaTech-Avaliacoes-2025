@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projeto da avaliação</title>
+  <meta name="description" content="Página do projeto seguindo a estrutura proposta na avaliação." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1b1b1b;
+      --muted: #666;
+      --primary: #2563eb;
+      --border: #e5e7eb;
+    }
+    * { box-sizing: border-box }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: #f8fafc;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+    nav ul {
+      display: flex;
+      gap: 16px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+    nav a:hover, nav a[aria-current="page"] {
+      background: #eef2ff;
+      color: var(--primary);
+    }
+    main {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 24px;
+      padding: 24px 0;
+    }
+    @media (max-width: 900px) {
+      main { grid-template-columns: 1fr }
+      aside { order: -1 }
+    }
+    section {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      background: #fff;
+    }
+    section + section { margin-top: 16px }
+    h1, h2 {
+      margin: 0 0 12px;
+      line-height: 1.2;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+    .hero img {
+      width: 100%; height: auto; display: block; border-radius: 12px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .gallery img {
+      width: 100%; height: auto; display: block; border-radius: 8px;
+    }
+    aside {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      background: #fafafa;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      background: #f8fafc;
+      margin-top: 24px;
+    }
+    footer .container {
+      padding: 16px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <!-- Cabeçalho e navegação -->
+  <header>
+    <div class="container topbar">
+      <a href="/" aria-label="Página inicial">
+        <strong>Logo do Projeto</strong>
+      </a>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="#" aria-current="page">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL: a tag main obrigatória -->
+  <main class="container">
+    <!-- Coluna de conteúdo -->
+    <div>
+      <section class="hero" id="sobre">
+        <div>
+          <h1>Projeto da avaliação</h1>
+          <p>Este projeto segue a estrutura semântica proposta: header, nav, main, sections, aside e footer. Use esta base e substitua os conteúdos conforme o vídeo da avaliação.</p>
+          <p><a href="#galeria" class="cta" style="color: var(--primary);">Ver galeria</a></p>
+        </div>
+        <!-- Imagem destaque -->
+        <figure>
+          <img src="imagens/destaque.jpg" alt="Imagem de destaque do projeto">
+          <figcaption class="sr-only">Imagem de destaque do projeto</figcaption>
+        </figure>
+      </section>
+
+      <section id="galeria" aria-labelledby="titulo-galeria">
+        <h2 id="titulo-galeria">Galeria</h2>
+        <div class="gallery">
+          <img src="imagens/foto1.jpg" alt="Foto 1 da galeria">
+          <img src="imagens/foto2.jpg" alt="Foto 2 da galeria">
+          <img src="imagens/foto3.jpg" alt="Foto 3 da galeria">
+        </div>
+      </section>
+
+      <section id="conteudo">
+        <h2>Conteúdo</h2>
+        <p>Inclua aqui os textos, listas ou cards do seu projeto. Você pode adicionar mais sections conforme necessário.</p>
+      </section>
+    </div>
+
+    <!-- Barra lateral -->
+    <aside aria-label="Informações complementares">
+      <h2>Barra lateral</h2>
+      <p>Coloque links úteis, contatos ou um pequeno resumo.</p>
+      <ul>
+        <li><strong>Contato:</strong> seuemail@exemplo.com</li>
+        <li><strong>Local:</strong> Teresina, PI</li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Seu Nome ou Organização</p>
+      <nav aria-label="Links de rodapé">
+        <a href="#contato">Contato</a>
+        <span aria-hidden="true">•</span>
+        <a href="#sobre">Sobre</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
