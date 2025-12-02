@@ -1,0 +1,305 @@
+/* --- Importação das Fontes Sofisticadas (Playfair Display & Lato) --- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&family=Playfair+Display:wght@400;500;700&display=swap');
+
+/* --- Variáveis Globais (Cores e Fontes) --- */
+:root {
+    --pr-main: #111827;
+    --pr-accent: #991b1b;
+    --pr-light: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-700: #374151;
+
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Lato', sans-serif;
+}
+
+/* --- Reset Básico e Estilos do Corpo --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    color: var(--pr-main);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Header --- */
+.site-header {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.site-header__title {
+    font-family: var(--font-serif);
+    font-size: 2.25rem; /* 36px */
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--pr-main);
+    text-align: center;
+}
+
+.site-header__subtitle {
+    display: block;
+    font-size: 0.875rem; /* 14px */
+    font-weight: 300;
+    color: var(--pr-accent);
+    margin-top: 0.25rem;
+    letter-spacing: 0.1em;
+}
+
+/* --- Layout Principal e Seções --- */
+.main-content {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    max-width: 62rem; /* 992px */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.content-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 1.875rem; /* 30px */
+    font-weight: 400;
+    color: var(--pr-main);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(153, 27, 27, 0.5); /* pr-accent/50 */
+}
+
+/* --- Seção de Introdução --- */
+.intro-section {
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.intro-section__text {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75;
+    color: var(--gray-700);
+    font-weight: 300;
+}
+
+.intro-section__quote {
+    margin-top: 1.5rem;
+    font-size: 1.125rem; /* 18px */
+    color: var(--gray-500);
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* --- Grade de Detalhes (Sobre + Circuito) --- */
+.details-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.details-box {
+    background-color: var(--pr-light);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-200);
+}
+
+.details-box__title {
+    font-family: var(--font-serif);
+    font-size: 1.25rem; /* 20px */
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--pr-accent);
+}
+
+.details-box__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: var(--gray-700);
+    font-weight: 300;
+}
+
+.details-box__list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.details-box__list span {
+    font-weight: 700;
+}
+
+.circuit-box {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-200);
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.circuit-box__title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem; /* 24px */
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--pr-main);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(153, 27, 27, 0.5);
+}
+
+.circuit-box__text {
+    font-size: 1.125rem; /* 18px */
+    color: var(--gray-700);
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.circuit-box__list-title {
+    font-weight: 700;
+    color: var(--pr-accent);
+}
+
+.circuit-box__list {
+    list-style-position: inside;
+    list-style-type: disc;
+    margin-left: 1rem;
+    color: var(--gray-700);
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.circuit-box__image {
+    margin-top: 1.5rem;
+    height: 10rem;
+    width: 100%;
+    background-color: var(--pr-light);
+    border: 1px dashed var(--gray-400);
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- Grade de Atletas --- */
+.athlete-grid {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.athlete-card {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gray-200);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.athlete-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.athlete-card__image {
+    height: 20rem; /* 320px */
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid var(--pr-accent);
+}
+
+.athlete-card__content {
+    padding: 1.5rem;
+}
+
+.athlete-card__title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem; /* 24px */
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: var(--pr-accent);
+}
+
+.athlete-card__title span {
+    font-family: var(--font-sans);
+    font-size: 0.875rem; /* 14px */
+    color: var(--gray-500);
+}
+
+.athlete-card__text {
+    font-size: 1.125rem; /* 18px */
+    color: var(--gray-700);
+    font-weight: 300;
+}
+
+/* --- Artigo "O Pavé" --- */
+.article-section {
+    margin-top: 5rem;
+    padding-top: 2.5rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.article-section__text {
+    font-size: 1.125rem; /* 18px */
+    color: var(--gray-700);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.article-section__image {
+    height: 16rem; /* 256px */
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center 70%;
+}
+
+/* --- Footer --- */
+.site-footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--gray-400);
+    font-size: 0.875rem; /* 14px */
+    border-top: 1px solid var(--gray-200);
+    margin-top: 4rem;
+    width: 100%;
+    font-weight: 300;
+}
+
+/* --- Regras Responsivas (Media Queries) --- */
+@media (min-width: 768px) {
+    .details-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .circuit-box {
+        grid-column: span 2 / span 2;
+    }
+
+    .athlete-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .article-section {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+}
