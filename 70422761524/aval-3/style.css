@@ -1,0 +1,39 @@
+Aqui está um exemplo de **“texto informativo em CSS”**, usando **comentários** e também **pseudo-elementos** (`::before`) para exibir texto informativo apenas via CSS — já que o CSS não cria textos diretamente no HTML, mas pode inseri-los com `content:`.
+
+Se quiser outro tema, é só pedir!
+
+---
+
+## ✅ **Exemplo de texto informativo usando apenas CSS (com `content:`)**
+
+```css
+/* 
+   Este arquivo CSS contém um texto informativo sobre acessibilidade na web.
+   CSS normalmente não exibe texto sozinho, mas podemos gerar conteúdo
+   usando pseudo-elementos, como ::before e ::after.
+*/
+
+.info {
+    width: 100%;
+    padding: 20px;
+    border-left: 5px solid #3b82f6;
+    background: #f0f7ff;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+}
+
+.info::before {
+    content: "Acessibilidade na Web: A acessibilidade garante que sites e aplicações possam ser utilizados por todos, incluindo pessoas com deficiência. Ela envolve boas práticas como uso correto de contraste, alternativas textuais, navegação por teclado e estruturas semânticas adequadas.";
+    color: #1e3a8a;
+    font-size: 16px;
+    line-height: 1.6;
+    display: block;
+}
+```
+
+---
+
+## Como usar no HTML:
+
+```html
+<div class="info"></div>
