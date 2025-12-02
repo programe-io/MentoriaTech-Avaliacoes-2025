@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Galeria — Estilo Cards</title>
+  <style>
+    :root{
+      --primary:#2563eb;
+      --primary-light:#3b82f6;
+      --accent:#ff8800;
+      --background:#0f172a;
+      --surface:#ffffffee;
+      --card-bg:#f8fafc;
+      --muted:#74818a;
+      --text:#0b1220;
+      --radius:12px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;background:var(--background);font-family:Inter, Arial, Helvetica, sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
+
+    .topbar{background:linear-gradient(180deg,var(--accent),#cc6b00);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;color:#fff}
+    .logo{font-weight:800;letter-spacing:1px}
+    .nav{display:flex;gap:18px}
+    .nav a{color:rgba(255,255,255,0.9);text-decoration:none}
+
+    .wrap{max-width:1200px;margin:30px auto;padding:0 20px}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start}
+
+    /* Conteúdo */
+    h2{color:#fff;margin-bottom:18px;text-align:center;font-size:28px}
+    span{color:#ffbb00;font-weight:bold}
+
+    .card{
+      background:var(--card-bg);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 6px 20px rgba(2,6,23,0.6);
+      border:1px solid rgba(0,0,0,0.06);
+      overflow:hidden;
+      display:flex;flex-direction:column;
+    }
+
+    .card h3{font-size:20px;margin-bottom:12px}
+
+    .card .thumb{width:100%;height:170px;border-radius:10px;object-fit:cover;border:1px solid rgba(0,0,0,0.08)}
+
+    .card p{margin-top:12px;line-height:1.5;color:var(--muted);font-size:14px}
+
+    .card .content{flex:1}
+
+    @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){
+      .grid{grid-template-columns:1fr}
+      .topbar{height:88px;flex-direction:column;gap:8px;padding:12px}
+    }
+
+    .card:hover{transform:translateY(-6px);transition:.28s ease;box-shadow:0 12px 30px rgba(2,6,23,0.7)}
+
+    .note{color:#cbd5e1;text-align:center;margin-top:18px;font-size:13px}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <header class="topbar">
+    <div class="logo"><span>FILME DE animação</span></div> <!-- AQUI ENTRA O SPAN -->
+    <nav class="nav">
+      <a href="#">Início</a>
+      <a href="#">Artigos</a>
+      <a href="#">Perfil</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+
+    <h2><span>FILME</span></h2> <!-- TAGS EXIGIDAS -->
+
+    <section class="grid">
+
+<article class="card">
+<h3>filme relâmpago Mcqueen</h3>
+<img class="thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLbKX98C_hhiz6RTNjuSMfvKY4xpqr9_T9Rg&s">
+<div class="content">
+<p><span>filme relâmpago Mcqueen</span> O filme narra a história de Relâmpago McQueen, um carro de corrida ambicioso que, a caminho da final da Copa Pistão, acaba perdido e encalhado na cidade abandonada de Radiator Springs. Lá, ele é forçado a consertar a rua principal e conhece os moradores, como Mate e Doc Hudson. Através dessa experiência, Relâmpago McQueen aprende lições sobre humildade, amizade e que o mais importante não é vencer, mas sim a jornada e as conexões que faz.  
+A jornada de um carro ambicioso: Relâmpago McQueen é um carro de corrida novato, confiante e focado em ganhar a Copa Pistão para assinar um patrocínio com a Dinoco. 
+O acidente e o desvio: Após a última corrida, ele e seu caminhão de reboque, Mack, se perdem e ele acaba caindo do reboque na estrada. 
+Chegada a Radiator Springs: Perdido e sem faróis, ele é perseguido pela polícia e acaba destruindo a rua principal de Radiator Springs, sendo condenado a consertá-la. 
+Descobrindo a amizade e a humildade: Enquanto cumpre sua pena, ele conhece os habitantes da cidade, como Mate e o antigo campeão Doc Hudson, e aos poucos percebe que a vida é mais do que fama e troféus. 
+O desfecho: No final, McQueen aprende o verdadeiro espírito de corrida, recusando a oferta de patrocínio da Dinoco por lealdade e decidindo estabelecer sua sede em Radiator Springs, revitalizando a cidade e encontrando uma nova família de amigos. </p>
+</div>
+</article>
+
+<article class="card">
+<h3>relãmpago mcQueen</h3>
+<img class="thumb" src="https://s3.amazonaws.com/blog.dentrodahistoria.com.br/wp-content/uploads/2022/09/14102229/relampago-mcqueen.png">
+<div class="content">
+<p><span>relãmpago mcQueen</span> Relâmpago McQueen é um carro de corrida antropomórfico e o protagonista da franquia de filmes da Disney/Pixar "Carros". Ele é um carro de corrida vermelho com o número 95, conhecido por sua velocidade e talento, mas inicialmente arrogante, que aprende lições sobre amizade e humildade em Radiator Springs.</p>
+</div>a
+</article>
+
+<article class="card">
+<h3> Martin</h3>
+<img class="thumb" src="https://s3.amazonaws.com/blog.dentrodahistoria.com.br/wp-content/uploads/2022/09/14102436/Mate.png">
+<div class="content">
+<p><span> Martin</span>Sir Tow Mate, KBE, mais conhecido como Tow Mate ou simplesmente Mate, é um personagem fictício do filme de animação Carros nascido possívelmente no interior do Texas, criado pela Pixar nascido entre 1956 a 1966 tem entre 40 a 50 anos em Carros.</p>
+</div>
+</article>
+
+</section>
+
+<p class="note">Você pode trocar imagens e adicionar mais cards quando quiser.</p>
+
+</main>
+</body>
+</html>

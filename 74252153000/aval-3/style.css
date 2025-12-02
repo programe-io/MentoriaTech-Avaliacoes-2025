@@ -1,0 +1,77 @@
+:root{
+    --accent:#db1010;
+    --background:#070101;
+    --card-bg:#fff;
+    --text:#111;
+    --muted:#606060;
+    --radius:12px;
+}
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{
+    height:100%;
+    background:var(--background);
+    color:var(--text);
+    font-family:Inter, Arial, Helvetica, sans-serif;
+}
+
+/* TOPBAR */
+.topbar{
+    background:linear-gradient(180deg,var(--accent),#000000);
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 28px;
+    color:#fff;
+}
+.nav{display:flex;gap:18px}
+.nav a{text-decoration:none;color:#fff;font-weight:500}
+
+/* CONTAINER */
+.wrap{max-width:1200px;margin:30px auto;padding:0 20px}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+}
+
+/* CARD */
+.card{
+    background:var(--card-bg);
+    padding:18px;
+    border-radius:var(--radius);
+    box-shadow:0 6px 20px rgba(0,0,0,.4);
+    display:flex;
+    flex-direction:column;
+}
+.card:hover{
+    transform:translateY(-6px);
+    transition:.3s;
+    box-shadow:0 14px 30px rgba(0,0,0,.6);
+}
+
+/* IMAGEM */
+.thumb{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* TEXTO */
+.card h3{margin-bottom:10px}
+.card p{margin-top:12px;color:var(--muted)}
+
+/* RESPONSIVO */
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){
+    .grid{grid-template-columns:1fr}
+    .topbar{flex-direction:column;height:auto;padding:15px}
+}
+
+/* Rodapé */
+.note{text-align:center;color:#d4d4d4;margin-top:20px}
