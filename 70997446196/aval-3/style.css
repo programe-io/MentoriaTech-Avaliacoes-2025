@@ -1,0 +1,275 @@
+/* -------------------------------------------------------- */
+/* RESET E VARIÁVEIS */
+/* -------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --text: #111;
+    --muted: #6b7280;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --radius: 12px;
+    --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    --transition: 0.25s ease;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* Container central */
+.wrap {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* -------------------------------------------------------- */
+/* HEADER */
+/* -------------------------------------------------------- */
+header.site {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.brand a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* Barra de busca */
+.search input {
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: var(--radius);
+    width: 220px;
+    transition: var(--transition);
+}
+
+.search input:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+/* Nav principal */
+nav.primary ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+
+nav.primary a {
+    background: var(--card);
+    padding: 8px 12px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    color: var(--text);
+    transition: var(--transition);
+}
+
+nav.primary a:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* -------------------------------------------------------- */
+/* LAYOUT */
+/* -------------------------------------------------------- */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* -------------------------------------------------------- */
+/* FEED E POSTS */
+/* -------------------------------------------------------- */
+
+.feed article {
+    background: var(--card);
+    padding: 18px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 18px;
+    animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feed h2 {
+    margin-bottom: 8px;
+}
+
+figure img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+figcaption {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 6px;
+}
+
+/* Info do autor */
+.meta {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: 8px 0;
+}
+
+/* Botões do post */
+.controls button,
+.controls a {
+    padding: 6px 12px;
+    border-radius: var(--radius);
+    border: none;
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.controls button:hover,
+.controls a:hover {
+    background: var(--accent-hover);
+}
+
+/* Progress e meter */
+progress,
+meter {
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* -------------------------------------------------------- */
+/* FORMULÁRIO DE PUBLICAÇÃO */
+/* -------------------------------------------------------- */
+form textarea,
+form input,
+form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: var(--radius);
+    border: 1px solid #d1d5db;
+    margin-bottom: 14px;
+}
+
+form button {
+    padding: 10px 16px;
+    border: none;
+    background: var(--accent);
+    color: white;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+form button:hover {
+    background: var(--accent-hover);
+}
+
+/* Fieldset */
+fieldset {
+    border: 1px solid #d1d5db;
+    border-radius: var(--radius);
+    padding: 16px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 6px;
+}
+
+/* -------------------------------------------------------- */
+/* ASIDE / SIDEBAR */
+/* -------------------------------------------------------- */
+aside.sidebar {
+    background: var(--card);
+    padding: 16px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+aside h4 {
+    margin-bottom: 6px;
+}
+
+aside section {
+    margin-bottom: 20px;
+}
+
+/* -------------------------------------------------------- */
+/* FOOTER */
+/* -------------------------------------------------------- */
+footer.site {
+    margin-top: 40px;
+    padding: 20px 0;
+    text-align: center;
+    color: var(--muted);
+    border-top: 1px solid #e5e7eb;
+}
+
+/* -------------------------------------------------------- */
+/* DIALOG */
+/* -------------------------------------------------------- */
+dialog {
+    padding: 20px;
+    border: none;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* -------------------------------------------------------- */
+/* RESPONSIVIDADE */
+/* -------------------------------------------------------- */
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    nav.primary ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .search input {
+        width: 160px;
+    }
+}
+
+@media (max-width: 600px) {
+    header.site {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .search input {
+        width: 100%;
+    }
+}
