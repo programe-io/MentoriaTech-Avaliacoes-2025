@@ -1,0 +1,167 @@
+/* ======================================= */
+/* 1. CONFIGURAÇÃO GERAL E TIPOGRAFIA      */
+/* ======================================= */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0; 
+    padding: 0;
+    background-color: #f8f8f8; 
+    color: #333; 
+    line-height: 1.6;
+}
+
+/* LINKS */
+a {
+    color: #007bff; 
+    text-decoration: none; 
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3; 
+    text-decoration: underline;
+}
+
+/* CONTAINER PRINCIPAL (Centraliza o conteúdo) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow: hidden; /* Para garantir que o layout flutuante funcione */
+}
+
+/* TÍTULOS */
+h1, h2, h3 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+/* ======================================= */
+/* 2. CABEÇALHO (HEADER) E NAVEGAÇÃO (NAV) */
+/* ======================================= */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+}
+
+header h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0;
+    float: left; 
+}
+
+/* NAVEGAÇÃO */
+nav {
+    float: right; 
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+nav ul li a {
+    font-weight: 500;
+    color: #555;
+    padding: 5px 0;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+    text-decoration: none;
+    border-bottom: 2px solid #007bff;
+}
+
+/* ======================================= */
+/* 3. CONTEÚDO PRINCIPAL E GALERIA         */
+/* ======================================= */
+main {
+    padding: 40px 0;
+}
+
+/* GALERIA (LAYOUT GRID RESPONSIVO) */
+.galeria-container {
+    display: grid;
+    /* Define colunas: ajusta automaticamente para o máximo de colunas que cabem, com mínimo de 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; 
+    margin-top: 20px;
+}
+
+.galeria-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.galeria-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 220px; 
+    object-fit: cover; 
+    display: block;
+}
+        
+.galeria-link {
+    display: block;
+}
+
+.galeria-legenda {
+    padding: 15px;
+    text-align: center;
+    font-size: 1em;
+    color: #444;
+}
+
+/* ======================================= */
+/* 4. RODAPÉ (FOOTER)                      */
+/* ======================================= */
+footer {
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ======================================= */
+/* 5. RESPONSIVIDADE (Para telas menores)  */
+/* ======================================= */
+@media (max-width: 600px) {
+    /* Em telas muito pequenas, alinhar o título e remover o float da navegação */
+    header h1 {
+        float: none;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        float: none;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block; /* Itens do menu empilhados */
+        margin: 5px 0;
+    }
+}
