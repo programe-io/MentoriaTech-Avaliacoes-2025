@@ -1,94 +1,77 @@
-/*
- * Arquivo: output.css
- * Baseado nas classes Tailwind CSS do vídeo.
- */
-
-/* Estilos do Body - Fundo e Cor do Texto */
-body {
-    /* bg-gradient-to-b from-blue-900 to-blue-950 */
-    background: linear-gradient(to bottom, #1e3a8a, #0c1a3b); /* Tons de azul escuro */
-    min-height: 100vh; /* h-screen */
-    color: white; /* text-white */
-    font-family: sans-serif;
+:root{
+    --accent:#83db10;
+    --background:#010607;
+    --card-bg:#fff;
+    --text:#111;
+    --muted:#606060;
+    --radius:12px;
 }
 
-/* Estilos do Header */
-.header {
-    /* shadow-md p-5 flex */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-    padding: 1.25rem; /* p-5 */
-    display: flex; /* flex */
-    align-items: center;
-    justify-content: space-between;
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{
+    height:100%;
+    background:var(--background);
+    color:var(--text);
+    font-family:Inter, Arial, Helvetica, sans-serif;
 }
 
-.logo {
-    /* flex-1 uppercase font-bold text-center md:text-left */
-    flex-grow: 1; /* flex-1 */
-    text-transform: uppercase; /* uppercase */
-    font-weight: bold; /* font-bold */
-    text-align: center;
+/* TOPBAR */
+.topbar{
+    background:linear-gradient(180deg,var(--accent),#000000);
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 28px;
+    color:#fff;
+}
+.nav{display:flex;gap:18px}
+.nav a{text-decoration:none;color:#fff;font-weight:500}
+
+/* CONTAINER */
+.wrap{max-width:1200px;margin:30px auto;padding:0 20px}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
 }
 
-/* Estilos da Navegação */
-.nav {
-    /* font-bold gap-3 hidden md:flex */
-    display: none; /* hidden */
-    font-weight: bold; /* font-bold */
-    gap: 0.75rem; /* gap-3 */
+/* CARD */
+.card{
+    background:var(--card-bg);
+    padding:18px;
+    border-radius:var(--radius);
+    box-shadow:0 6px 20px rgba(0,0,0,.4);
+    display:flex;
+    flex-direction:column;
+}
+.card:hover{
+    transform:translateY(-6px);
+    transition:.3s;
+    box-shadow:0 14px 30px rgba(0,0,0,.6);
 }
 
-/* Media Query para Responsividade (md:flex) */
-@media (min-width: 768px) {
-    .nav {
-        display: flex;
-        text-align: left; /* md:text-left para o logo */
-    }
+/* IMAGEM */
+.thumb{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    border-radius:10px;
 }
 
-/* Estilos do Conteúdo Principal */
-.main-content {
-    /* py-4 px-4 */
-    padding: 1rem; /* py-4 px-4 */
+/* TEXTO */
+.card h3{margin-bottom:10px}
+.card p{margin-top:12px;color:var(--muted)}
+
+/* RESPONSIVO */
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){
+    .grid{grid-template-columns:1fr}
+    .topbar{flex-direction:column;height:auto;padding:15px}
 }
 
-/* Estilos do Card de Post */
-.post-card {
-    /* bg-gray-800 py-4 rounded-lg shadow-md max-w-lg mx-auto */
-    background-color: #273041; /* bg-gray-800 */
-    padding-top: 1rem; /* py-4 */
-    padding-bottom: 1rem; /* py-4 */
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* shadow-md */
-    max-width: 32rem; /* max-w-lg */
-    margin-left: auto; /* mx-auto */
-    margin-right: auto; /* mx-auto */
-}
-
-.post-image {
-    /* w-full */
-    width: 100%; /* w-full */
-    height: auto;
-    display: block;
-}
-
-.card-body {
-    /* px-4 py-4 */
-    padding: 1rem; /* px-4 py-4 */
-}
-
-.post-text {
-    /* text-sm text-justify */
-    font-size: 0.875rem; /* text-sm */
-    text-align: justify; /* text-justify */
-    margin-bottom: 0;
-}
-
-.post-timestamp {
-    /* text-xs text-gray-300 text-right block mt-1 */
-    font-size: 0.75rem; /* text-xs */
-    color: #d1d5db; /* text-gray-300 */
-    text-align: right; /* text-right */
-    display: block; /* block */
-    margin-top: 0.25rem; /* mt-1 */
-}
+/* Rodapé */
+.note{text-align:center;color:#d4d4d4;margin-top:20px}

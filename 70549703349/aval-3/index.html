@@ -1,49 +1,115 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Feed</title>
-    <link href="output.css" rel="stylesheet"> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Galeria — Estilo Cards</title>
+  <style>
+    :root{
+      --primary:#2563eb;
+      --primary-light:#3b82f6;
+      --accent:#ff8800;
+      --background:#0f172a;
+      --surface:#ffffffee;
+      --card-bg:#f8fafc;
+      --muted:#74818a;
+      --text:#0b1220;
+      --radius:12px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;background:var(--background);font-family:Inter, Arial, Helvetica, sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
+
+    .topbar{background:linear-gradient(180deg,var(--accent),#cc6b00);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;color:#fff}
+    .logo{font-weight:800;letter-spacing:1px}
+    .nav{display:flex;gap:18px}
+    .nav a{color:rgba(255,255,255,0.9);text-decoration:none}
+
+    .wrap{max-width:1200px;margin:30px auto;padding:0 20px}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start}
+
+    /* Conteúdo */
+    h2{color:#fff;margin-bottom:18px;text-align:center;font-size:28px}
+    span{color:#ffbb00;font-weight:bold}
+
+    .card{
+      background:var(--card-bg);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 6px 20px rgba(2,6,23,0.6);
+      border:1px solid rgba(0,0,0,0.06);
+      overflow:hidden;
+      display:flex;flex-direction:column;
+    }
+
+    .card h3{font-size:20px;margin-bottom:12px}
+
+    .card .thumb{width:100%;height:170px;border-radius:10px;object-fit:cover;border:1px solid rgba(0,0,0,0.08)}
+
+    .card p{margin-top:12px;line-height:1.5;color:var(--muted);font-size:14px}
+
+    .card .content{flex:1}
+
+    @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){
+      .grid{grid-template-columns:1fr}
+      .topbar{height:88px;flex-direction:column;gap:8px;padding:12px}
+    }
+
+    .card:hover{transform:translateY(-6px);transition:.28s ease;box-shadow:0 12px 30px rgba(2,6,23,0.7)}
+
+    .note{color:#cbd5e1;text-align:center;margin-top:18px;font-size:13px}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
-
 <body>
-    <header class="header">
-        <div class="logo">
-            Logo
-        </div>
-        <nav class="nav">
-            <a href="#">Início</a>
-            <a href="#">Amigos</a>
-            <a href="#">Perfil</a>
-        </nav>
-    </header>
 
-    <main class="main-content">
-        
-        <h2 class="section-title">Feed de Notícias</h2>
-        
-        <div class="post-card">
-            
-            <img class="post-image" src="./images/post_01.png" alt="Imagem do Post"> 
-            
-            <div class="card-body">
-                
-                <p class="post-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod beatae quis nisl sed fugit voluptatum. Quos beatae quis nisl sed fugit voluptatum. Magnam molestias reiciendis et tempora nobis dolorem, blanditiis temporibus nihil ipsa praesentium, eligendi!
-                </p>
+  <header class="topbar">
+    <div class="logo"><span>ANIMAÇÃO</span></div> <!-- AQUI ENTRA O SPAN -->
+    <nav class="nav">
+      <a href="#">Início</a>
+      <a href="#">Artigos</a>
+      <a href="#">Perfil</a>
+    </nav>
+  </header>
 
-                <span class="post-timestamp">
-                    há 10 minutos
-                </span>
+  <main class="wrap">
 
-            </div>
+    <h2><span>SERIADOS</span></h2> <!-- TAGS EXIGIDAS -->
 
-        </div>
-        
-    </main>
-    
-    <script src="script.js"></script>
-<script src="script.js"></script></body>
+    <section class="grid">
+
+<article class="card">
+<h3>rick and morty</h3>
+<img class="thumb" src="https://wallpapers.com/images/hd/rick-and-morty-pictures-f4ktdcy2fy77bjgt.jpg">
+<div class="content">
+<p><span>rick and morty</span> Rick and Morty é uma animação de ficção científica que acompanha as aventuras interdimensionais do cientista alcoólatra Rick Sanchez e seu neto Morty Smith, mas também aborda temas como niilismo, ética e a dinâmica familiar disfuncional dos Smith. A série equilibra humor ácido e tramas científicas complexas com a realidade doméstica da família.  
+.</p>
+</div>
+</article>
+
+<article class="card">
+<h3> Morty Smith</h3>
+<img class="thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKK7gydQIvgUc7m1dN8cy6tPN1Ln9y_GCpeg&s">
+<div class="content">
+<p><span> Morty Smith</span>é um dos personagens homônimos dasérie de animação americana Rick e Morty . Criado por Justin Roiland e Dan Harmon , e dublado pelo primeiro nas seis primeiras temporadas da série, seguido por Harry Belden a partir da sétima temporada , Morty é um garoto de 14 anos vagamente inspirado por Marty McFly de Michael J.</p>
+</div>
+</article>
+
+<article class="card">
+<h3> Rick Sanchez</h3>
+<img class="thumb" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUTExIVFRUXFhgXGBUYFxcVFxUXFhYYFhUYFxUYHSggGBolGxUVITEhJSktLi4uGB8zODMtNygtLisBCgoKDg0OGxAQGi8lICUtLS0tLS0tLS0tLy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAN0A5AMBIgACEQEDEQH/xAAcAAAABwEBAAAAAAAAAAAAAAAAAQIDBAUGBwj/xABJEAACAAMEBQcIBgkDBQEBAAABAgADEQQSITEFQVFhcQYTIjJSgZEUI0JykqGx0VNigqKywQcVFjNjc8Lh8bPS8CRDVJPD04P/xAAaAQACAwEBAAAAAAAAAAAAAAACBAABAwUG/8QALxEAAgIBAwIFAwMEAwAAAAAAAAECEQMSITEEURMiQVJhMnGRFIGhFSOx8DPR8f/aAAwDAQACEQMRAD8A5dAgQIcGgQDAhLGLKCJgQUHFlAgQIEQoECBAiEBBQuVLLMqjNmCjixAHvMTtPaLNmnGXiVIDITrU7d4II/zBU6shXQObF7EVqPh/mFqIEw0x2f4MZy3QcaTVl5I5Lq4qHWmHobQDhjsIh39kB219n+8CwzmMtbpNRVTQnVivuNO6JF+btf70Luzuw6fC4p6SN+yI7a+x/eDHI6tTeXDPoZe+JcmVMYgEuo1khjQcBmd0OzWYgqJcwIOquNS2V+YadI0rhkMhrrN+5b6XF7Su/ZAdtfY/vAPJAdtfZ/vD/k8zsv4GAbO/YbwMS33L/S4faVvk8yysGQgqdnVbcw1GLObOW0y7yYTExu6xtG8Ea+EOSpTlSpQ5E0INCNan48RFJa5fNOrSiwJrQa1pqrky/wDN8MYczj5XwZZIeFF19Pb/AKJslwaHVnF3IbCM5Y3Y1JS7jWmrHE02Cvxi9kTqAR1MMrVhdNO1ZNEPyLvSvV6ppTbqER0aBLYmtRSGBwXAJhN01rXDZDkhELDnK3a/4yiEZJkzpYADS6nbXOBEaYRU0yqacNUHEJSOdiBDdmaqjdh4Q5HDR5ZBMYRBwUEirLCzaGnTJXOy1EwVIZVPTUjapzwIOFc4gEEEgggjMHAjiNUaLkPpHm55lk9GaKDc61K+IqPCNppHRUmeKTZYY6myYcGGMMQw642mZuVM5TAjU6V5GTFq0hucHYagfuOTe6MvMQqSrAqwzBFCOIMZShKPISkmFAgQRMAWXvIyxc5aVb0ZYvnjkg8TX7Mablpo/nJHOAdKV0vsHr+6jfZh/knovmJAvCjv0m2jsr3D3kxcOoIIIqCCCNoOBh/Hi/t0/Uyct7OQwCIetln5uY8s+gzLxCkgHvFD3wzHPa3o3HrFbJkrqPTLUDll8TEv9orR2x7CxWMYSIHw0zVZ8kVSky1/aK0dtfYED9orR2l9kRVwInhQ7E/U5vcy1HKO0dpfZED9orR2l9gRVQInhR7E/U5fcyzblDaD6YHBREK02+Y2JpnXKlDtEMwRieHFcFPqMr5ky7s828KkUORGsEZiLWTqin0UOdW6DSagwr/3E2HeMq8IspEyu0EYEHAg7DHSwytHU6eVxTZaSnrDwiFJakSkMNIfixyFyJRZgopjths2kIDVQ1RTHVvG+CDVHGLLvehTy6EjYaeECLHR7SwvSLE11ADUNpg4orUcisbYkbcfCJDGG2lBekBlj3a/dCo4cDzHAIOCg4MECsQQQaEEEHYQag+IjrGircJ8lJo9IYjYwwYdxBEcmjY/o/t37yQT/EX3K4/Ce8wx086lXcCa2NlEPSmipVoWkxATqYYMvBvyyiZAh5pPkyObad5NzLNVh5yV2wMV9cauOXCHuR+h+em84w83LIPrPmo4DAnu2x0Mw1ZbMkpQktQqipAGAxNT7zC/6dar9A9e1D0FAgQyAc05TrS1zvWU+MtD+cVaqWIVQWY5AAkngBiY6FpHkxLnTjNZ2AIF5FoKkClb2oUA8M4tLBo+VJFJUtV2kZnixxPfCT6aTk2a+JSMdobkc7kNaOgvYB6Z4kYKPfwjMzmUsxUAKWYqBkFLEqPCkdT03aeas819YRqcSKL7yI5OlcgMsIDPGOOki4XJi4EJ6XZ94gdLs+8QvqRrol2FQIT0uz7xB0OweMTUieHLsHAhPS2e8QMdnvETUiaJdhyTOZGDKaEZfI7RGrl0tCCanRelDxGat+RjIY7PeIsNCW9pMypHQbBsa02NTdGmLKounwN9LNwlpktn/HyX9nnZgijDMawflviZJMJtNnWYA6EXqdFhiCNh2iGrHaSQcKHFWGdDr/zHRjL0Z1o3F0ycRWDhkTIdMoqoJyatO6NTZMamzXBwGECJdnkKwqZiruMCLBa+TnRcbR4w1JOFNmHyiLdhyQaGm34iOBHZnmG7JMHBQK6teyNig4seTdp5u1SWrgWuHg/R+JHhCbHoS0TepJem1hcHi1K90X+jORTVDTpoFCDdl4moNR0yMPDvjSEJN2kU2qNpAgzEWZMZ2KIboHXfWD2V+ttOqu3LoSkoq2YpNukKnWoA3QCz9laVAOtjko3nurCRKmt1nCbkAYj7b4H2RD8mSqCiigz2knWSTiTvMLhWWaT4Go4UuSN5K300zj5v4XKQRWauRWYNhFxvaHRJ3UHGDNuWpChphGdwVAIzBc0UHdWB5Q/0LDiyD4ExUZT9CSjjFyLQHrSoIzU4MvEfnkdUOxAtSzGoRLuuvVYMppuINLynWK+BoRIsloLjpKUcUvIaGlcqEYEYHHdDMJt8oXkknsyi5e2m7Z1TtuB3L0z7wvjGAlmjcRTvGI/ONly8sU52R1QtLVSOjUlWJ6RYbKBcdxyjFlsKiEeptyNcL00zWy59661SFYA4atTAd4MWHlEkayfaig0TNvIV2dIeqaBvfdPjF0uix9IO4f3hCR6bE9UU0O+XSth8P7w5ItMtzdVTXgKADMkk4ADXDH6o+v7v7w+bAAlxXpXFzTFscFGOCjPeeAgfL3NGn2GzpCV2T4CDFvlbPuiCmaOUhReAoM6YsTmSSfdqhv8AVyfSfD5xKRK+Bz9YSuyfAfOIlqeXNN0rRSMDgCraiNmyH/1fL+l96wk2GX9KPd84tUinG1uinlzJllbtSyct+unZbd/mJ82appOQ1VqB/qnUSNWw90OWhRiAQ4FA2xhqPEZV4b4qpklpRLy8UODKdmVHGsbGhzDncdmKzhLGtuP8FyHh6b0QuIN4VwNacdhim0XbQ4K41XbnTVjr2RPrHUhNSVoOGTVG0SZb1GUCGAYKDs0UjBQR27IOBHCPNGw5IS7HNpLmywZvolmYrMHqk0DbqY6o3FmsUuXhLlonqqF+EcdszasiDUH3jHjHQ+SvKTnqSZp876LfSAf1/GH+nyRqmjKSZp6wUCBDpmM2yaQoC9ZjdXiamtNdAC3dDkiSEUKMh4k6yTrJOJO+Gc53qJXvmMRXuEs+1C7TPu0AF526q1plmSdSjDHeNZhTNK5UNYUlG2LnTVQFmNAP+ADad0RWQzATM6EvO4TQsNsw6h9Xx2AMoSkya15q0XDAEjKWmdc9pz1QpZBmUaYKDMS8xuL6mO7IbzjFaVDeX4KcpT2iBJjOPNgKmp2GY+ogphvJG4EQryZ/p39mV+aRKrDc2aFArXEhQBiSSaf34AwLySZosUVyMeSv9PM8JX/5xDtM2VJa+HF4fvKmrMu/euYGyoAxi2g6wOuXcjxx7CEcEAggg5EYg98Q7ZoezzTWZJRj2qUb2hjB2iXzdZi4DOYoyZdbU1MM66wKbKOaQtiyZbzWyUV47AN5NB3w3GcZrcVnBxdGO5T6PsllW7LVhNYG6BNmURTgWIvdwGvuMZa+3ab2j84ettqabMaY5qzGp3bANwGEMUjnzUXLZDELiuQ+cbtN7TfOBfbtN7R+cCBSB0LsHql3DvntN7R+cC+3ab2j84FIFIvQuxNUu4d9u03tH5wL7dpvaPzgUgUi9C7BapdwxMYZM3tN84JyTgWbxMGBB0gtC7F2+5ZaItgHRYAEekBSo3xcRlkqDUGhGuNDometA12+AOnKBxXev1a6v8Q1hnXlY902XbSyTWBBIQRUZGDhkcMHAhFTugVO6OIedHEahB7jE1Bry2HIgjIg6jFdjuiZJtAIxrXgTFp0UjofJblDzwEqafOgYHLnAP6gMxrz200cYDktoEzys5qrLBqpFVZyDhQ5hQRn4R0COnglKUfMZTSvYiyv3z/y5f4psOT5F4hgxVgCK0BwahIIO9R4QhsJy/WRh3qyke5miQ7UBJyAr4Rhk2mxnFThTGZNlCm8SWelL7YmmsCgAUbgBD8NWQsUUsasVBPEippuh2AuzRJLgjzkcEsjXtstqUPqtSqnjUcM4aacHaSwyLNTUQwRhQjURRxTjEl51DdALOckUVbidSjeaDfEW16PcMyvdBcCaoUsLrIQrAuKHEXQSKZniaplMnMaCpNBtOENyXMz90hf63Vl/wDsOB+zU7onaLs1ncXlli8poQ9Zjy22EuSRuIzGIi2EarHZZVSdDBv3zB/4Ywl94zfvw3CMTyqvmwSqVIrLLnPohDQndeu4xq7RaZwefL51XvsAl1aeToR0r7a3xwGOonCImjGBlKK1Aqm2twlDX2YOCTuKF8r4ZyikCkbvSvI6W9Wknmz2aVQ8BmvdhujKaS0TNkECYmeRUhq0zoB0qcRGMsbjyHGaZApApCwh7L+y3ygXD2X9lvlA7GlCaQdIVcPZb2W+UC6ey3st8ovYKhNIMCFBT2X9lvlB3T2W9lvlBKgkhNIOkKunsv7LfKAAey3st8ovYukJhyRMZGDKaEf8odogvst7LfKFD1W9lvlBJruGti5lWiS4vMxlsc1BIFdZECKmv1W9lvlAgvEGFn+EUECBAhA5IYFcBGq5KcnjPN5xSSpx1c4R6I3bT3cKnQFmks9bRMKJhgFYltwKg3RtOezaOkWXTdjChVnSlUCgWoQAbgaRvgxqTuTM5SLRVAAAFABQAZADICDhqTapb9WYjeqwPwMPUjoqvQyIttwMtuzMFeD1l/Fwe6JLKCCDkRTxhu1Sr6MtaVBAOw6j3Ghg7NNvorUpeANNh1g8DhC2deaxrA9mhrRvOOgCymYr0GaqqoZcDma0OeAOBEWMnRLt+9e6OxLr75pFfZCnfEZCyNflkAml5T1XplWmTarw765RK/W70/cY/wAxbvjSv3Yyjp9TUXOtkmytJkiWQZz3VuLXEUqztnrFSamItsnCZOJU1VFuA7WJrMptAuqOIYaoTabTMmDpuJa4C6hIrXCjTTQkGuQC13wSKAAAAAMABgANwiSl6IiGLZJJF5MHXIglWYa0vChx8K0rBPaAyBmnTCppSrMvcQlPAwqTPN4o9L2JU5Blrq3jAEd+uE2fozHTUaTB9okOB9oXuLwFljasWFyUpRe2VuBdtxSKs2+lNeORak2Uo7JLcot1WVaKy5XWwpePVUnpDrRZRGteDS32NcPqzKAffEuLTa3KlFNblNpzlL5Oty7WfsxuAanrrB1DiNUYK1Wp5jl3YsxzJ+A2DcI0HLCW8601RCVCBQ1VAcqWLXSSK0JpGetdmmS6X0Irlip+BiTeSSutjDSk9hImnafGDE9u03iYYv8A1T7vnEqy2KZMW8qEipGajEZ5mM4xm3STCUpBC1P228TA8qftt4mH/wBUTvo/vL84H6pnfR/eX5wfhZuz/DL1T+SNz7dpvEwflL9pvExHD7j7vnC5Ks7BVU1OWI2V27oDz/JWuXce8pftt4mDW1uPTPjWHv1TP+j+8vzgfqmf9H95fnGnhZvay9U/kSNJTO17hCv1pM2jwiA5IJF01BIOIzBodcGlTkpzA1azQa9sBc/kvxp9yf8ArSZtHhAgv1RP+j+8vzgRp4ebs/wF4uTuykhcpKndrhES5SXR8YWMmLhUqWWIVc2NB/z3wmL3k7ZKAzTrwXhrPefhDHTYXlyKKJFW6D0vZFl2a6AMCuNMTjia74c5FyJ0ycCJkwS5fSYB2uk+ilK0xz4CF6aDTAsmWLzuy4bBXD4HuBOqNloXRq2eUstcTmzdpjmf+agI6WeMVk0x4SRWZpOiaTTE4b4r7BbJd6YqzEIU84CGFArkk1Prhz3iC5SrWyz/AOWx9npflGBk6RcUDUmAGovdZSMirjEHfjCvUS9DPHLS7Omzpd4YMVOYKnEfkRuMMiXO+lSn8o18b9PdGc0bym1Fq/VmdFvszBg3A4740Nl0kjkCpVj6LYE8Dk3cTCvI2pJi5dkFQzEuwyLUw9VQAoO8Cu+JECBFhDc+QHFDtqCMCpGRB1GESZBDXme8aXRgBhWprTMnDZllCp9pVKVOJyUVLHgoxMNXprZASxtbpOfsg0XjU8IhWxKiDpEko6MnRYXQ4N4AnBS6kCnSplUbaQ6LCp65aYfrNh7Aovuht7GB0JctUVqF2FBUA9UAazlXUDEI7IWkNJyriI0otfRXCgABQcukSKEU1YiMPp2a5KggBbzXeleYCgwJuisa/SDyWlANMCzEeYEAqzUExloVXG6QB4A6ox+m2JEuooelhnsjoqnivf0+xjBLSyDY0q6g5E4xcaGnOqEKqkB2xLEHPZdMVWjv3i8fyMW+i+ofXf8AFGuBbp/cOG8ib5VM7Ce2f9sJNqmdhPaP+2Dgmyh2Sdcs2oycvIcIsbAtDKcAFr7DE0FLhiul5DhFtYOrK/mN+Fo5eFX/AL9hbsW/lMzsJ7R/2wPKpnYT2z/tgQI6tPuxqjLTSSzE53m/EYk2EYORqKU43wfyiNO6z+u34jEywdR+KfijlY1v+RV8F75VM7Ce23+2BApAjqpP3MZ0/JjbOmvwiRAAphAjyqQoP2OzGY4Qa8zsUZn8u+NY7LLXYqjAe4ARB0HY7iXiOk+J3D0R+ffDk97709FD4t/b48I73RYfCx6n9UjfHGkWPJp5KXps2aizWJorMFKLlrpnTwA2mL/9aSPp5X/sT5xg9NfujxX8QjPkRjlThOjGeLzcnVrdbJM2VMlrNlszS3AUOpJqhyAOMc1BjQcnpV61INiAn2Jo/qEZWbMKgYEnI01UA3a8fCE+q2Zg1RKiTZ7a6CgNV7DC8vgcu6I0upw/5lWHboGeJ2QsiJ0aLRvKMjMldz1dO5+svfgNkXqaWv0BIkrTr1DBq6kbqrxbHdrjAmpzwGyFSbUyHzZK44jMHipwi7NI5Wjp8iQqdUZ5tUlm4scTDsVHJ1LomLUkBxSpyqik0GQxOQwi3ghqLtAgVgRU8orZcl82OtMw4J6R/IbzugoxcnSLMyr1q3aZn9ti35xVae9D7X5RbUip096H2vyjtZo6cOn7FzVRIejf3i9/wMW+jeqfXf8AEYp9HHzi8T8DF1YBRW9d/wARjPp/T9zKH1kmCbIwdIDZGHZcDBkpeQ4CLewZSvXb8LxUS8hwi30f1ZX8xvwvHLwf7/Ap2LaBAg46o2ZWd1n9dvxGJlg6j+sn4hEOb1n9dvxGJej+q/GX+KORj5/Io+C+MCDgo7CQ2ZWJ2iLHzszHqrQtvPoj8+6INO86htJyEa3R1lEqWAc82O859wy7o8/0WDxcm/C3YpCNsctk4qKL1mwXdtPACGJcu6KDVBylvHnDrFFGxdXec/DZDwSO+lb1fgYT9Sr03+6PrL+IRQRotPr5r7S/GM8Y53Vf8v7Izm7kabRFpaVOLqAfNKuJIpUk1wzyOzOGrZo8TGLYKxxoq0Wuvo6vGHNHrUt6qfAxOWSWIUZsyoDsLsFB8SI2jgxyi5TV8gwhFq2Vmj+T9pmkrJl3lGBcEKo3EtTHcKw5b+TlqkCrWdiBm60mD7hJA4iOu2WzrLRZaCiqKAcPzhyOVLFFvYF4kcFvVxrWAuY4j4x1XlLyPlWmrywJU7O8MFc/XA/EMeOUcvmyGlzTLcXXVwrLrBqPEb9YIjCUHExlBxZ0LQf/AHf5g/00i0il0KXPOlLhHOZknMS0Byzyp4wzpE2ucwk2aahYhixUXAoW6Lodi3S6WQxEWhmMkok7S2mEkdHrTDSiDfkWPojD5RmZjszF3N5mzPwAGoDZ/eE/svbJOMyUz9NWLIRNOGZIHSJ7odAjrdDiju/UOEre42RFRp8dTi3wEXl2KflGMJfrH4Q11S/tP9v8lzexWWE+cXjF9Yx1vXaM/Yz5xfWHxjSWFev65+AjDpeUZRdTHKQGXCHbkNNPQZuviPhDsqS3N3JIyErIcIt9HdWV/Mb8DRF0fomfOB5qUzXQCchQNWnWIr1T4RZ2ewTpYlh5MxTzvYanSBVReyxJAz1xycEkhTxI9yfSABDr9E3W6LdlsD/cbxUQdyOuqa2G1NPdGOndd/Xb8RiVo/J+Mv8AHEaf139dvxGJWj8m4y/xxx8fP5FnwaCkCH7kFHZoYszmhbnOXndVuZAkCrHXjsHxi2tNvlMQnOJdzY3hQjUtd5z3cYzcFHnsPWPFDQkLqTSo3ctrOQD5XIG6+uH3oV/0/wD5kj21/wB0YKBGv9TydkZf3Pd/Bp+VBkiR0LRKc316KspO80BMZTnBtEOCDjDJ1cpy1NBRcly7NNoGdIYOWtEuXggF5lFaKa5kRoNDJJa0yRLny5pvliqlSQERmrgcryr4xziNd+jBK20nZJc/elj840j1s2tHcpKV87djq0CBAixojaRchKKaM7KgIzF40YjeFvN3RUcotGS2mK7y1dXN1gwBo4HQbdUAqTuQRa2ihmyRsEyYPsqE+E0wrSVm5yU6DMjonY46SHuYAwLVmc46k0Z5rBJOcqWdXUXId0LmgLcOQDAG7hRHBltllQOW+yIVJm31Vh6QBpsqK0gTpQdWU5MCp7xSLpCCbTL7R80tLBbrCqt66Eqx4EgkbiIoOUOgxeM5KgHGaoFf/wCij8Q1551rY6LtBJRjhz6BjunIoWYOJAGH8NotoLHNx3XJ0eUc7/6T/wAyV7afOM/yuMkJL5uekw3jUKymgunE0MXPL/kpzZa1SF6BNZqAdQnNwOydY1Z5VphYmXrcjTi0LaMie8rClTwrA1GBBz2RrtDzrOyOWtEtGvmgZlFeitDicqxk4v8AROjRLlraJihyelLl5qMaB5m3EGi7sdgHD1OS6iiZG/R7lrNVQFopm3gpqzlV6aBh0UphjrJg7PPYSlVPNFmmkLL6CgrdWlBwMR7TaWQSmOZRkOVKy2IH3SphKibOWUZaMxBmEkCgBL9E3moMabdcNOUaTkyowUlFvfff+SW891QX3Ll51Kk16CIBThed4FisjF/Nks1CAS9BQMFmuM+kASi4YG9sEHN5P2h1listAiMDViSWdy7HBaDMeERLNjbQpF9US6qyZh6CgUrf6JJGN4a72vKMJ5YuDjEixbVXr/4Xk2wJduss+WAahujNCnapo1wbcAIZk6JIFUcTkqT0bqtiamnoE1P1RFnIJNeamk0zlzAajjUB1rtNeECis+IMqbtFOkBsPVmDccRsELwzTxu4sY8OK42OX6TlmXNmK6lDfYgMKEqWJB34bIXo6egqGcCrS8yMr+J7hjHS9IWETpTJPRSQCVYbaYMtcVO7Hvjk6zajAfkIi6iUWBJaVR0IzbJ/5kr20+cCOeEnb4QUb/1PKL3P3jt4bYK+Noif5b9X3wPLfq++Eax+4b8P5IF8bR4wd4bR4xO8tHZgeVr2fhF1D3E8P5IVRtECJZtCdj3CEmbL+jHgIrTH3Irw/kjUja/oqX/qZp2ST73T5Rkr8v6MeAjbfosumdPKrSktQe9j8oKCWpblqFM6NBiChM1qKTsB+ENhlVoPHmyfRssrxm1Lf6a+MXEVeghQMNglL4SJZ/qizgY8EXBm7l15qdmY1OD0mjuF+ndC4d0ktLQdjS0PerOG9xSGYJcHPyKpMkaMlX5UyWDdZJpZG2M1JobhedgRrFRrix0Za+elBypQksCpNbpR2QivFTFdohqTmHblg/8ArYg/6q+EVWkdKmwWw84T5NaOlt5qYKK7Lu6pI+tUZGoN1uOY3cUzXkVFDiDmNsco5c8lfJW56UPMMcvomOr1DqOrLZHVlYEAgggioIxBByIMItKoUYTApQqb17q3adK9XVSJOCkg2rOC2OytNdZaCrMaAfEk6gBjG2TRDSUEiW5mP164AS2JFa9mWwrhiarUA1NJ/J/QkuSXmoG6ZNwN1klZqp3nM1xyByi5VAK0AFTU7zSlTtNAIwxtwdoBY01uVti0Mi0abSY4N7EdBSQoNxDlgoxOPDKG7VbLS9Vs8kKPpZ3RH2ZY6R7wIt4hWyZPrSSkunbmMQO5FBJ7yIuUm3bNKSWxWz9AzZt8TZ5IYKLoF67TO6TRak67kV8/k9IkEHytpbjFalK13KKE8InW3QtqnHp2u6vYRSBwJBUnviu0voN5UtSqpcSpYrUNQilSpz8awcEns3QKSSLTROkltICubs9a3XApeHaUHUcCUP8Ai0XzgMuYvSFDhUA9l0OYxHEEcCcXo+ReYtUi7S6QaecY3JQB3uw7qxvoLNiWOVJhbatK9CJpadckTX7Mtz900jkAEdL5c2m5ZGGuYyoOFbzfdU+Mc1hafIvne9AMFAMCAMCY8rZEZjQjZl8onRGtEvPfA5I+qOjNBKKmkPiUIjSmyMTImNJokKYnmxsgXBshUCNaRpQnmxsjb/orl0mWk/VlfGZ8oxUbv9Fi42k/yh/qH84KCWpASWxvYjaTakmadktz4KYkxE0uKyJo2oV9ro/nDTAE6HHmr3bZmG9a3UPsKkTYhWfzT80eoa81upiZXcKlfqgj0cZsRcERT6bXzspvqzF8TLYfhMRYm6f/AOyf4hHjKmH+mIUWhLP9YuyNdnyj2r6eKF/jLEJ5d6HNpsxuisyWb6DWaCjKOK17wIQzUaW2ybLHtsJf9ZiZyjaZMltZ7PTnH6LtWiyUPXZiMmIwAGPSrkKwE6ppmuB+QxnIXlPzNLPNYmU2EtqElCcloMSp1bDuOGn0tpBp6UlL5vBjewM5RjdUeip2tnlShrEnk5yYk2QVHTm0oZhGO8IPQHv2kwxNl83NmJktecXYFepIrucPwBEVGLqmHlk0rQcuYGAYYhgCDtBFRCogaNnjm0AV2oKC7LmOKAkLiqkUoBE4JNbqyH4sUQd4LXvdGRqpKg4j2xJrYS5ioNbFL57qsAO+sUHKTTVqs8zmzKRKiqtUzA41lTRRUHAgjDvEUJ027XecLHHpv0X6NagrJZboYA0qM6RT7FTbUbSsvrVo+W7UmaQnM3YV11Z+bRT8IpbXZLPdYSnMy6jNVkKspqMyQL2vVhTfDmlZspBQTBOcgFWW6gSuIctLCkPSlFBw1xA0Zp8lgJ0vnrxC3loJrAtQKdUyuAxod8aQcYS8wss0quti3lWWb5hZYGDpPmVwqa+al7uiWbdURsbPPVxUaswcGU7GGow4NClJLNiZ7FZjCtRVWL82mQHRJQHXQVivtRlsvOBbzHorQsjFiaBCy0Zccxqoa5Rc05NyZcZSx/UuTKfpDnsXlrQ3FvCuozCASOIW77R2GMjG15ZzZUuzpIDXpge9XE4ipmMSa0JL5Vr0oxLGkKy5Am7diXekCFVgooAsEmVhM8YQwpiUcREi9So6SdohS9Y2H44xNQ4CIXpcR8P8wqsZQlpYEHRMhJmARGqdsFBvL2Dcxxppjon6Jx5u0H66DwUn845vHTP0TjzE8/xh7pa/OCwNuaAs3ERNKnzYG2ZKHjOQH3RLiLbxXmxtmp92rD3qIffBGPWmQHUqa7QRmpBqrA7QaGGtH2gupvUvIxQsOq5XNl+BGohhjSsFpKYwUBTdLuqXta3jQsBtAy3+ESJMoIoVRRVFANwiepPUrOUGUn+d/wDKaIgu4UEkgAZk5CJvKM0WUf4v/wAZphGhLIHSXaH6TMAyL6Muuwa2+se6lTEsWy43OewzZ9GvOoXvS5dQQMprXSGB/hioB7XqxeSJKot1QFA1Dfmd5O2HIKIbwgoqkCMT+lGWebksCQC7S2ANAwK3xWmdCh8Y20Yz9Kr/APSyhTOcMdlJcz5wGR1FsJ0PciOVXlA5ia3nlHRb6VR/WNY157aa6PPsmYyMGVirKaqwwIIyIjtfJPSrWqyy5zgBjeDUyJRipIGqtK0jPBm1bMlj+m9ES7VKMuYN6sOsjamHy1xyDTOj5llmmVNFCMQw6rrqZd3wjt8VPKPQcu1yij4MKlHHWRto2g6xrg8kLVrku6OLTZwCmmz3xr/0XaBvv5U46MvoywdcynSbeFBpxO6MWsm+6S60vuqVpWl5qVp76R3zR9iSRLSVLFEQBQPzO0k4k74wwrU7foZvzS+xIiv0nZLMA06dLl0QFmdlBIAB168KjvpFhHO/0r6UcGXZhgjDnG+sQ1FHAEV402QzN0rCm6VmK07pQ2mc0y7cXqy5YoBLQdVQBhXWd5MVszKFQmZl3j4wkxJuxOGNaQIEyXWBFFH/2Q==">
+<div class="content">
+<p><span> Rick Sanchez</span> Rick Sanchez é um personagem fictício, o protagonista genial e alcoólatra da série animada Rick and Morty. Ele é um cientista que, ao retornar para sua família após um longo desaparecimento, embarca em aventuras perigosas e excêntricas com seu neto, Morty Smith. Rick é conhecido por sua inteligência, niilismo e comportamento imprevisível. </p>
+</div>
+</article>
+
+</section>
+
+<p class="note">Você pode trocar imagens e adicionar mais cards quando quiser.</p>
+
+</main>
+</body>
 </html>
