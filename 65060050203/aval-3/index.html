@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles (3).css">
+  <title>App social freed - funcional</title>
+
+  <!-- 🔗 Arquivo CSS externo -->
+  <link rel="stylesheet" href="styles (3).css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header></header>
+    <a></a><p></p>
+    <h2></h2>
+
+  <h1>Postagens</h1>
+
+  <nav>
+    <button data-target="inicio">Início</button>
+    <button data-target="perfil">Perfil</button>
+    <button data-target="postagens">Postagens</button>
+    <button data-target="todos">Mostrar todos</button>
+  </nav>
+
+  <main class="container" id="cards-container">
+
+    <!-- CARD 1 -->
+    <article id="inicio" class="card">
+      <div class="header">
+        <div class="avatar" style="background-image:url('https://img.odcdn.com.br/wp-content/uploads/2023/03/lua.jpg');"></div>
+        <div><strong>Ana Vitoria@</strong></div>
+      </div>
+      <img class="main-img" src="https://www.publicdomainpictures.net/pictures/540000/nahled/sternenhimmel-vollmond-mond.jpg" alt="Imagem" />
+      <div class="content">
+      Um céu estrelado com a Lua pode ser um convite à observação astronômica, à inspiração ou ao questionamento sobre nosso lugar no universo
+        <span class="meta">Há 10 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article id="perfil" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://img.odcdn.com.br/wp-content/uploads/2023/03/lua.jpg');"></div>
+        <div><strong>Ana Vitoria@</strong></div>
+      </div>
+      <img class="main-img" src="https://pt.quizur.com/_image?href=https://img.quizur.com/f/img60ff8d52d44a51.34769970.jpg?lastEdited=1627360601&w=1024&h=1024&f=webp" alt="Imagem" />
+      <div class="content">
+       Tinker Bell, ou Sininho, é uma fada artesã, descrita como elétrica, impulsiva e temperamental, mas também leal e determinada.
+        <span class="meta">Há 30 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article id="postagens" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://img.odcdn.com.br/wp-content/uploads/2023/03/lua.jpg');"></div>
+        <div><strong>Ana Vitoria@</strong></div>
+      </div>
+      <img class="main-img" src="https://yt3.googleusercontent.com/p-lbVutCzOzpPvdVF3S6vymnKS5gi7gqemuBg1IdFE3_Nda3WXMYH6U6_IhGxdu2jemaaDhYPQ=s900-c-k-c0x00ffffff-no-rj" alt="Imagem" />
+      <div class="content">
+     Desde 2018, o Flamengo é considerado o clube mais valioso do Brasil, tornando-se em 2019, o time mais valioso da América do Sul, além de ser o 70º time de futebol mais valioso do mundo, avaliado em mais de 145,7 milhões de euros.
+        <span class="meta">Há 1 hora</span>
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function mostrarCard(id) {
+      const cards = document.querySelectorAll('#cards-container .card');
+      cards.forEach(card => {
+        if (id === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.id === id) {
+            card.classList.remove('hidden');
+            setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        mostrarCard(target);
+      });
+    });
+  </script>
+
+</body>
+</html>
