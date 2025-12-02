@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cuidados Pessoais & Academia — Projeto</title>
+
+  <!-- Fonte e CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- seu CSS (o "mudas é melhor" que combinamos) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="#">CuidaFit</a>
+      <nav>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#treinos">Treinos</a></li>
+          <li><a href="#cuidados">Cuidados</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="menu-btn" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="sobre" class="secao hero">
+      <div class="container">
+        <h1>Cuidados Pessoais & Rotina de Academia</h1>
+        <p>Guias práticos, treinos e autocuidado para você evoluir com saúde.</p>
+      </div>
+    </section>
+
+    <!-- TREINOS -->
+    <section id="treinos" class="secao">
+      <div class="container">
+        <h2>Rotinas de Treino</h2>
+        <div class="grid">
+          <article class="card">
+            <img src="https://source.unsplash.com/900x700/?gym,weights" alt="Treino de força">
+            <h3>Iniciante — 3x/semana</h3>
+            <p>Exercícios compostos, progressão segura e recuperação adequada.</p>
+          </article>
+
+          <article class="card">
+            <img src="https://source.unsplash.com/900x700/?cardio,run" alt="Cardio">
+            <h3>Cardio & Resistência</h3>
+            <p>20–40 min de cardio moderado para melhorar condicionamento.</p>
+          </article>
+
+          <article class="card">
+            <img src="https://source.unsplash.com/900x700/?stretch,yoga" alt="Alongamento">
+            <h3>Alongamento & Mobilidade</h3>
+            <p>Rotina para reduzir lesões e aumentar amplitude de movimento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUIDADOS (COM ASIDE OBRIGATÓRIO) -->
+    <section id="cuidados" class="secao">
+      <div class="container two-col">
+
+        <!-- Conteúdo principal -->
+        <div>
+          <h2>Cuidados Pessoais Essenciais</h2>
+          <p>Hidratação, sono, higiene e alimentação são pilares do progresso.</p>
+
+          <h3>Checklist diário</h3>
+          <ul class="lista-dicas">
+            <li>Beber 2–3L de água (ajuste conforme treino)</li>
+            <li>Consumir proteína em todas as refeições</li>
+            <li>Sono 7–9 horas</li>
+            <li>Higiene pós-treino (banho, troca de roupa)</li>
+            <li>Rotina básica de skincare: limpar, hidratar e proteger</li>
+          </ul>
+        </div>
+
+        <!-- ASIDE: conteúdo lateral / obrigatório -->
+        <aside aria-labelledby="aside-title" class="card aside">
+          <h3 id="aside-title">Dicas Rápidas</h3>
+          <p><strong>Intolerância à lactose?</strong> Prefira whey isolado sem lactose, ovos, frango e leguminosas.</p>
+          <p><strong>Recuperação:</strong> inclua dias de descanso ativo (caminhada, mobilidade).</p>
+          <p><strong>Suplementos:</strong> consulte um nutricionista antes de iniciar.</p>
+          <a href="#contato" class="btn-primary">Peça orientação</a>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria" class="secao">
+      <div class="container">
+        <h2>Galeria</h2>
+        <div class="grid">
+          <article class="card"><img src="https://source.unsplash.com/600x400/?fitness,workout" alt=""><h3>Força</h3></article>
+          <article class="card"><img src="https://source.unsplash.com/600x400/?yoga,stretch" alt=""><h3>Mobilidade</h3></article>
+          <article class="card"><img src="https://source.unsplash.com/600x400/?skincare,spa" alt=""><h3>Skincare</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO (com outro aside opcional; remova se só precisar de 1 aside) -->
+    <section id="contato" class="secao">
+      <div class="container contact-grid">
+        <div class="card contact-card">
+          <h2>Fale com a gente</h2>
+          <form onsubmit="event.preventDefault(); alert('Formulário simulado.');">
+            <label>Nome<br><input type="text" name="nome" required></label><br><br>
+            <label>Email<br><input type="email" name="email" required></label><br><br>
+            <label>Mensagem<br><textarea name="mensagem" rows="4"></textarea></label><br><br>
+            <button class="btn-primary" type="submit">Enviar</button>
+          </form>
+        </div>
+
+        <!-- ASIDE OPCIONAL (se o avaliador aceitar 2 asides, ótimo; se não, apague este bloco) -->
+        <aside class="card aside contact-aside">
+          <h3>Atendimento Rápido</h3>
+          <p>Email: contato@cuidafit.ex</p>
+          <p>Telefone: (00) 0000-0000</p>
+          <p>Horário: Seg–Sex 9:00–18:00</p>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="ano"></span> CuidaFit — Cuidados Pessoais & Academia</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="script.js"></script> <!-- seu JS com menu, scroll suave, etc. -->
+  <script>
+    // coloca ano automaticamente se não estiver no script.js
+    const ano = document.getElementById('ano');
+    if (ano) ano.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
