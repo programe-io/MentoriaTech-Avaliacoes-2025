@@ -1,136 +1,135 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog de Noticias</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Galeria — Estilo Cards</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #37393b;
-      color: white;
+    :root{
+      --primary:#2563eb;
+      --primary-light:#3b82f6;
+      --accent:#ff8800;
+      --background:#0f172a;
+      --surface:#ffffffee;
+      --card-bg:#f8fafc;
+      --muted:#74818a;
+      --text:#0b1220;
+      --radius:12px;
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background-color: #5f5f5f;
-      border-bottom: 1px solid #c0c0c0;
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;background:var(--background);font-family:Inter, Arial, Helvetica, sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
+
+    .topbar{background:linear-gradient(180deg,var(--accent),#cc6b00);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;color:#fff}
+    .logo{font-weight:800;letter-spacing:1px}
+    .nav{display:flex;gap:18px}
+    .nav a{color:rgba(255,255,255,0.9);text-decoration:none}
+
+    .wrap{max-width:1200px;margin:30px auto;padding:0 20px}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start}
+
+    /* Conteúdo */
+    h2{color:#fff;margin-bottom:18px;text-align:center;font-size:28px}
+    span{color:#ffbb00;font-weight:bold}
+
+    .card{
+      background:var(--card-bg);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 6px 20px rgba(2,6,23,0.6);
+      border:1px solid rgba(0,0,0,0.06);
+      overflow:hidden;
+      display:flex;flex-direction:column;
     }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-align: center;
-      flex: 1;
+    .card h3{font-size:20px;margin-bottom:12px}
+
+    .card .thumb{width:100%;height:170px;border-radius:10px;object-fit:cover;border:1px solid rgba(0,0,0,0.08)}
+
+    .card p{margin-top:12px;line-height:1.5;color:var(--muted);font-size:14px}
+
+    .card .content{flex:1}
+
+    @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){
+      .grid{grid-template-columns:1fr}
+      .topbar{height:88px;flex-direction:column;gap:8px;padding:12px}
     }
 
-    nav {
-      display: flex;
-      gap: 1rem;
-    }
+    .card:hover{transform:translateY(-6px);transition:.28s ease;box-shadow:0 12px 30px rgba(2,6,23,0.7)}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .card {
-      background-color: #5e5e5e;
-      border-radius: 10px;
-      width: 300px;
-      padding: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    .card h2 {
-      margin-top: 0;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-    }
-<main></main>
-    .card p {
-      font-size: 0.9rem;
-      line-height: 1.4;
-      margin-bottom: 0.5rem;
-    }
-
-    .card .timestamp {
-      font-size: 0.8rem;
-      color: #ccc;
-      text-align: right;
-    }
-
-    @media (max-width: 900px) {
-      .cards {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
+    .note{color:#cbd5e1;text-align:center;margin-top:18px;font-size:13px}
   </style>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
 <body>
-  <header>
-    <div class="logo">Noticia Escolar </div>
-    <nav>
+
+  <header class="topbar">
+    <div class="logo"><span>SAGA DE FILMES</span></div> <!-- AQUI ENTRA O SPAN -->
+    <nav class="nav">
       <a href="#">Início</a>
-      <a href="#">Blog</a>
-      <a href="#">Conta</a>
+      <a href="#">Artigos</a>
+      <a href="#">Perfil</a>
     </nav>
   </header>
 
-  <section class="cards">
-    <div class="card">
-      <h2>Reforma Escolar</h2>
-      <img src="https://tse3.mm.bing.net/th/id/OIP.uPgDy7hxxpWPQglb8nozAwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Imagem 1" />
-      <p>Na manhã do dia 21 de maio de 2025, o Governo do Estado do Piauí realizou a entrega oficial da reforma, ampliação e modernização do Centro Estadual de Tempo Integral (CETI) Maria Modestina Bezerra, localizado no bairro Novo Horizonte, zona Sudeste de Teresina. A solenidade contou com a presença do governador Rafael Fonteles e do secretário de Estado da Educação, Washington Bandeira. 
+  <main class="wrap">
 
-Para Lucas Campos, um estudante universitário de 19 anos, algo aprendido no Minecraft o ajudou a avançar no programa de perguntas e respostas Quem Quer Ser Um Milionário? e a garantir R$ 100 mil.</p>
-      <div class="timestamp">Postado em 14 de agosto</div>
-    </div>
+    <h2><span>VELOZES E FURIOSOS</span></h2> <!-- TAGS EXIGIDAS -->
 
-    <div class="card">
-      <h2>Ultimas Noticias</h2>
-      <img src="https://th.bing.com/th?id=OIF.qpOqXBNUDuD%2fceXd76%2b6rg&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Imagem 2" />
-      <p>Uma megaoperação policial nos complexos da Penha e do Alemão resultou em pelo menos 64 mortos e 81 presos, sendo considerada a mais letal da história do estado do Rio de Janeiro. Na manhã do dia 28 de outubro de 2025, uma grande operação das polícias Civil e Militar foi realizada nos complexos da Penha e do Alemão, na Zona Norte do Rio de Janeiro.</p>
-      <div class="timestamp">Postado em 29 de outubro</div>
-    </div>
+    <section class="grid">
 
-    <div class="card">
-      <h2>Casos de Saúde</h2>
-      <img src="https://imagens.ebc.com.br/EgH6EJ43xYeQ3wUr2r9oC4N44Pw=/1600x800/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/2025/10/10/sao_paulo_cria_protocolo_para_detectar_metanol_em_bebidas.jpg?itok=LdoE3jU9" alt="Imagem 3" />
-      <p>O metanol é uma substância altamente tóxica que tem sido encontrada em bebidas alcoólicas adulteradas, resultando em casos de intoxicação e mortes no Brasil.
-O que é Metanol?
-O metanol, também conhecido como álcool metílico É uma substância líquida, incolor e inflamável, que pode ser confundida com o etanol, o álcool comum encontrado em bebidas. A ingestão de metanol pode ser fatal, mesmo em pequenas quantidades.</p>
-      <div class="timestamp">Postado há 1 hora atrás</div>
-    </div>
-  </section>
+<article class="card">
+<h3>velozes e furiosos 1</h3>
+<img class="thumb" src="https://www.blogdehollywood.com.br/wp-content/uploads/2023/05/Mais-_Velozes_-mais-Furiosos_-750x375.jpg">
+<div class="content">
+<p><span>velozes e furiosos 1</span> O primeiro filme de "Velozes e Furiosos" (2001) acompanha o policial Brian O'Conner (Paul Walker) que se infiltra na gangue de corridas de rua de Dominic Toretto (Vin Diesel) para investigar uma série de roubos de equipamentos eletrônicos. Durante sua missão, Brian se aproxima de Dom, ganha a confiança da equipe e se apaixona por Mia (Jordana Brewster), a irmã de Dom. A trama culmina em um confronto onde Brian precisa escolher entre honrar sua lealdade como policial ou sua nova amizade e afeto por Mia, resultando na libertação de Dom para escapar da polícia.  
+Infiltração: Brian O'Conner é um policial novato que se disfarça para se infiltrar na gangue de Dominic Toretto, suspeita de roubar caminhões de eletrônicos. 
+Desenvolvimento da trama: Para ganhar a confiança de Dom, Brian participa de corridas ilegais e o ajuda a escapar da polícia. Ele também se aproxima de Mia, a irmã de Dom, e se apaixona por ela, criando um conflito entre seu trabalho e seus sentimentos. 
+Conflito: Brian descobre que a gangue de Dom é de fato responsável pelos roubos. No entanto, ele se sente dividido entre sua lealdade para com o chefe de polícia e sua crescente amizade com Dom e a família que encontrou. 
+Conclusão: Brian escolhe honrar sua amizade com Dom, entregando a ele a chave do seu carro para que ele escape da polícia após um confronto que resulta na morte de um dos rivais da gangue de Dom. </p>
+</div>
+</article>
+
+<article class="card">
+<h3>velozes e furiosos 9</h3>
+<img class="thumb" src="https://s2-techtudo.glbimg.com/BehfQT7Lmc2f27991nLmX6vO70c=/0x0:1440x750/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/G/N/HbXPRMTOmB2h5MbBeTWQ/velozes-furiosos-justwatch-techtudo.jpg">
+<div class="content">
+<p><span>velozes e furiosos 9</span> Em Velozes e Furiosos 9, Dominic Toretto (Vin Diesel) e sua equipe são forçados a sair da aposentadoria pacífica para enfrentar o irmão desaparecido de Dom, Jakob (John Cena), um assassino habilidoso que trabalha com aterrorista Cipher (Charlize Theron). A missão é impedir que Jakob utilize o poderoso dispositivo "Projeto Ares", que pode dominar todos os dispositivos eletrônicos do mundo. O filme também explica o retorno de Han Lue (Sung Kang), que estava vivo e foi ajudado pelo Sr. Ninguém.  
+Ameaça e missão: Dominic, Letty e sua família são forçados a reunir a equipe quando o Sr. Ninguém é atacado e Cipher é sequestrada. Ao investigarem, eles descobrem que o sequestro foi uma armadilha para iniciar o "Projeto Ares", um dispositivo que pode hackear todos os sistemas do mundo. A equipe precisa recuperá-lo antes que caia nas mãos erradas. 
+O vilão é o irmão de Dom: A principal ameaça é Jakob Toretto, o irmão há muito desaparecido de Dominic. Ele está trabalhando com aterrorista Cipher para obter o Projeto Ares, e os dois precisam ser detidos. 
+O retorno de Han: A equipe descobre que Han, que todos pensavam estar morto, está vivo. Ele foi resgatado pelo Sr. Ninguém e estava se escondendo em Tóquio. 
+Uma aventura global: A missão leva a equipe a várias localizações ao redor do mundo, incluindo Edimburgo, na Escócia. 
+Brian O'Conner: Brian, o personagem interpretado por Paul Walker, não aparece no filme, mas sua ausência é explicada por ele estar cuidando dos filhos de Dom e Mia. No entanto, o filme termina com uma cena pós-créditos que sugere seu retorno. 
+Outras cenas: Os personagens viajam para o espaço sideral, e Roman e Tej (Tyrese Gibson) cumprem uma missão nesse contexto. 
+Cena pós-créditos: Na cena pós-créditos, Han confronta Deckard Shaw, o homem que tentou matá-lo.</p>
+</div>
+</article>
+
+<article class="card">
+<h3>velozes e furiosos 5</h3>
+<img class="thumb" src="https://occ-0-8407-2218.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABXcdeLaQUQQkeinOF7cU1n25miT1sIA7Zv1ryYCPsPpsyR5clp9NEZC3QaRte4gYiq0ZWj2w2kT1OjPT4bfwN4DZqoMwHC997a1J.jpg?r=c18">
+<div class="content">
+<p><span>velozes e furiosos 5</span> Em Velozes e Furiosos 5: Operação Rio, Dom e Brian fogem para o Rio de Janeiro após um resgate de prisão e se envolvem em um plano para roubar o empresário corrupto Hernan Reyes. Eles reúnem a antiga equipe para realizar um assalto épico ao cofre de Reyes, que eles arrastam por toda a cidade, com o objetivo de usar a fortuna para comprar sua liberdade e fugir de um agente federal implacável, Luke Hobbs. 
+Principais eventos:
+Fuga para o Rio: Dominic Toretto, Brian O'Conner e Mia Toretto fogem para o Brasil após um resgate audacioso, buscando esconderijo na cidade. 
+Plano de assalto: A equipe se reúne com Vince para um roubo de carros, que dá errado e os coloca na mira do corrupto Hernan Reyes e do agente federal Luke Hobbs. 
+Roubo do cofre: O plano muda para um assalto audacioso: roubar o dinheiro de Reyes, que está em um cofre enorme. 
+Perseguição épica: A equipe arrasta o cofre pela cidade em carros de corrida enquanto a polícia e os homens de Reyes os perseguem. 
+Desfecho: Dom e Brian são forçados a deixar a equipe para trás para enfrentar a polícia e os homens de Reyes, usando o próprio cofre para se defender. 
+Resgate e fuga: Hobbs chega ao local e mata Reyes, dando a Dom e Brian 24 horas para escapar em troca de deixarem o cofre em paz. 
+Final e cenas pós-créditos:
+A equipe de Dom troca o cofre por um caminhão de lixo, dividindo o dinheiro e seguindo seus próprios caminhos.
+A cena pós-créditos mostra Hobbs recebendo um arquivo sobre o sequestro de um comboio militar em Berlim, onde encontra uma foto de Letty, que se pensava estar morta. </p>
+</div>
+</article>
+
+</section>
+
+<p class="note">Você pode trocar imagens e adicionar mais cards quando quiser.</p>
+
+</main>
 </body>
-<main></main><span></span>
 </html>
