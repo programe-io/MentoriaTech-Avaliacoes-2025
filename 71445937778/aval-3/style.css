@@ -1,0 +1,43 @@
+/* style.css */
+
+/* Define o estilo do botão de menu hamburguer */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 20; /* Garante que fique acima de outros elementos */
+}
+
+/* Estilo das barras do hamburguer */
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Oculta o menu de navegação por padrão no celular */
+.mobile-menu-hidden {
+    display: none !important;
+}
+
+/* Transições para o ícone de fechar (X) */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
