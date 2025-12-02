@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="avaliaçao jorge02.css">
+  <title>App social freed - funcional</title>
+
+  <!-- 🔗 Arquivo CSS externo -->
+  <link rel="stylesheet" href="avaliaçao jorge02.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header></header>
+   <a></a><p></p>
+   <h2></h2>
+  <h1>Postagens</h1>
+
+  <nav>
+    <button data-target="inicio">Início</button>
+    <button data-target="perfil">Perfil</button>
+    <button data-target="postagens">Postagens</button>
+    <button data-target="todos">Mostrar todos</button>
+  </nav>
+
+  <main class="container" id="cards-container">
+
+    <!-- CARD 1 -->
+    <article id="inicio" class="card">
+      <div class="header">
+        <div class="avatar" style="background-image:url('https://www.portaldodog.com.br/wp-content/uploads/2024/09/4-curiosidades-sobre-racas-de-cachorros-pequenos.jpg');"></div>
+        <div><strong>thamyrys@</strong></div>
+      </div>
+      <img class="main-img" src="https://recreio.com.br/wp-content/uploads/2024/03/anna-dormindo.jpg" alt="Imagem" />
+      <div class="content">
+       A princesa que só dorme é Aurora, também conhecida como a Bela Adormecida
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article id="perfil" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://www.portaldodog.com.br/wp-content/uploads/2024/09/4-curiosidades-sobre-racas-de-cachorros-pequenos.jpg');"></div>
+        <div><strong>thamyrys@</strong></div>
+      </div>
+      <img class="main-img" src="https://i.pinimg.com/474x/bf/18/a1/bf18a1f27614747b569bd3e9be6c940a.jpg" alt="Imagem" />
+      <div class="content">
+      A Magali, personagem da Turma da Mônica, é universalmente conhecida por sua fome insaciável e paixão por comer, sendo a melancia sua comida favorita absoluta
+        <span class="meta">Há 30 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article id="postagens" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://www.portaldodog.com.br/wp-content/uploads/2024/09/4-curiosidades-sobre-racas-de-cachorros-pequenos.jpg');"></div>
+        <div><strong>thamyrys@</strong></div>
+      </div>
+      <img class="main-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfEI4TbfsvGIp5Tv-ylq4rdL99db7Mjrwd6w&s" alt="Imagem" />
+      <div class="content">
+      Uma menina jogando vôlei pode se referir a atletas profissionais, como a brasileira-alemã Julia Bergmann, que se destaca na seleção brasileira feminina, ou a jovens talentos que demonstram habilidade e paixão pelo esporte
+        <span class="meta">Há 1 hora</span>
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function mostrarCard(id) {
+      const cards = document.querySelectorAll('#cards-container .card');
+      cards.forEach(card => {
+        if (id === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.id === id) {
+            card.classList.remove('hidden');
+            setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        mostrarCard(target);
+      });
+    });
+  </script>
+
+</body>
+</html>
