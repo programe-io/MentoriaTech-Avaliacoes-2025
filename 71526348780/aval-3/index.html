@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Cards Informativos</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+        }
+
+        /* --- HEADER + NAV --- */
+        header {
+            background: #2a4d8f;
+            color: #fff;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header h1 span {
+            color: #ffdf6b;
+            font-style: italic;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.7;
+        }
+
+        /* --- MAIN + CARDS --- */
+        main {
+            padding: 40px;
+        }
+
+        .cards-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        article.card {
+            background: #fff;
+            width: 320px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        article.card:hover {
+            transform: translateY(-5px);
+        }
+
+        figure {
+            margin: 0;
+        }
+
+        figure img {
+            width: 100%;
+            display: block;
+        }
+
+        .conteudo {
+            padding: 20px;
+        }
+
+        .conteudo h2 {
+            margin-top: 0;
+            color: #2a4d8f;
+        }
+
+        .conteudo h2 span {
+            color: #ff4ecd;
+        }
+
+        .conteudo p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .conteudo p span {
+            font-weight: bold;
+            color: #2a4d8f;
+        }
+
+        a.botao {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #2a4d8f;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a.botao:hover {
+            background: #1c3360;
+        }
+
+        footer {
+            background: #2a4d8f;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <!-- HEADER + NAV -->
+    <header>
+        <h1>Posts <span>Informativos</span></h1>
+
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Posts</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cards-container">
+
+            <!-- CARD 1 -->
+            <article class="card">
+                <figure>
+                    <img src="https://via.placeholder.com/400x230.png?text=Tecnologia" alt="Imagem sobre tecnologia">
+                    <figcaption>Tecnologia <span>Moderna</span></figcaption>
+                </figure>
+
+                <div class="conteudo">
+                    <h2>Avanço da <span>Tecnologia</span></h2>
+                    <p>A <span>tecnologia</span> cresce de forma acelerada, influenciando desde a educação até a saúde, facilitando a vida cotidiana.</p>
+                    <a href="#" class="botao">Saiba Mais</a>
+                </div>
+            </article>
+
+            <!-- CARD 2 -->
+            <article class="card">
+                <figure>
+                    <img src="https://via.placeholder.com/400x230.png?text=Sa%C3%BAde" alt="Imagem sobre saúde">
+                    <figcaption>Cuidados <span>Essenciais</span></figcaption>
+                </figure>
+
+                <div class="conteudo">
+                    <h2>Importância da <span>Saúde</span></h2>
+                    <p>Manter hábitos <span>saudáveis</span> é fundamental para uma vida longa e equilibrada, incluindo alimentação e exercícios.</p>
+                    <a href="#" class="botao">Ler Mais</a>
+                </div>
+            </article>
+
+            <!-- CARD 3 -->
+            <article class="card">
+                <figure>
+                    <img src="https://via.placeholder.com/400x230.png?text=Educa%C3%A7%C3%A3o" alt="Imagem sobre educação">
+                    <figcaption>Aprendizado <span>Constante</span></figcaption>
+                </figure>
+
+                <div class="conteudo">
+                    <h2>Educação <span>Digital</span></h2>
+                    <p>A educação <span>digital</span> permite acesso ampliado ao conhecimento, promovendo inclusão e desenvolvimento pessoal.</p>
+                    <a href="#" class="botao">Ver Detalhes</a>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        © 2025 — Desenvolvido por <span>Você</span>
+    </footer>
+
+</body>
+</html>
+
