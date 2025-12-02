@@ -1,0 +1,108 @@
+/* PADRÃO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f3f4f6;
+}
+
+/* CABEÇALHO */
+header {
+    background-color: #2563eb;
+    padding: 60px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* MENU */
+nav {
+    display: flex;
+    background-color: #1e293b;
+}
+
+nav a {
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+}
+
+nav a:hover {
+    background-color: #334155;
+    color: #fff;
+}
+
+/* LAYOUT */
+#row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* CAIXA DAS IMAGENS */
+.fakeimage {
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    object-fit: cover;
+    background-color: #cbd5e1;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+/* LATERAL (aside) */
+aside {
+    flex: 30%;
+    background-color: #f1f5f9;
+    padding: 20px;
+    border-right: 1px solid #e2e8f0;
+}
+
+aside img {
+    height: 180px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+/* POSTAGEM */
+article {
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 12px;
+    background: #fff;
+}
+
+/* RODAPÉ */
+footer {
+    background-color: #1e293b;
+    color: #fff;
+    text-align: center;
+    padding: 40px;
+    font-size: 12px;
+    margin-top: 30px;
+    letter-spacing: 1px;
+}
+
+/* RESPONSIVIDADE */
+@media screen and (max-width: 700px) {
+    #row {
+        flex-direction: column;
+    }
+
+    aside {
+        flex: 100%;
+    }
+
+    main {
+        flex: 100%;
+    }
+}
