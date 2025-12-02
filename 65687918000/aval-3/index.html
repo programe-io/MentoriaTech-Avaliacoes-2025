@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+  <title>App social freed - funcional</title>
+
+  <!-- 🔗 Arquivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header></header>
+    <a></a><p></p>
+    <h2></h2>
+    
+
+  <h1>Postagens</h1>
+
+  <nav>
+    <button data-target="inicio">Início</button>
+    <button data-target="perfil">Perfil</button>
+    <button data-target="postagens">Postagens</button>
+    <button data-target="todos">Mostrar todos</button>
+  </nav>
+
+  <main class="container" id="cards-container">
+
+    <!-- CARD 1 -->
+    <article id="inicio" class="card">
+      <div class="header">
+        <div class="avatar" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk469Q1Qi5VbqsFU6J9pNve6WBoacVoN_HeQ&s');"></div>
+        <div><strong>Rian@</strong></div>
+      </div>
+      <img class="main-img" src="https://media.santosfc.com.br/wp-content/uploads/2025/03/54362031773_f7b74e3fab_o-scaled.jpg" alt="Imagem" />
+      <div class="content">
+      Neymar da Silva Santos Júnior é um futebolista brasileiro que atua como meio-campista ou atacante no Santos. Wikipédia
+      Nascimento: 5 de fevereiro de 1992 (idade 33 anos), Mogi das Cruzes, São Paulo
+      Equipes atuais: Santos Futebol Clube (#10 / Atacante), Brazil
+      Salário: 100 milhões EUR (2024)
+      Início de carreira: 1999
+      Altura: 1,75 m
+       Irmãs: Rafaella Santos
+      Pais: Neymar da Silva Santos, Nadine Santos
+        <span class="meta">Há 10 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article id="perfil" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk469Q1Qi5VbqsFU6J9pNve6WBoacVoN_HeQ&s');"></div>
+        <div><strong>Rian@</strong></div>
+      </div>
+      <img class="main-img" src="https://s2-oglobo.glbimg.com/Ugu7oJrT2IIWZw6lk2SZWMssfVs=/0x0:388x536/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2025/I/I/F2fFG1S0e9te1nfnUpXg/captura-de-tela-2025-04-01-125110.png" alt="Imagem" />
+      <div class="content">
+       No Velho Continente, passou por Granada, Watford, Valladolid, Nastic, Zaragoza, Olympique de Marselha e Almería. A melhor temporada de sua carreira foi com a camisa do Almería. Em 2024-25, ele marcou 31 gols e distribuiu oito assistências em 43 partidas.
+        <span class="meta">Há 30 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article id="postagens" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk469Q1Qi5VbqsFU6J9pNve6WBoacVoN_HeQ&s');"></div>
+        <div><strong>Rian@</strong></div>
+      </div>
+      <img class="main-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ02JeqFXawSgA4iG7yZ2R5kgKvi3KmzIsqTQ&s" alt="Imagem" />
+      <div class="content">
+     Lamine Yamal é um jogador de futebol espanhol, ponta-direita do Barcelona e da Seleção Espanhola, conhecido por quebrar diversos recordes de precocidade.
+        <span class="meta">Há 1 hora</span>
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function mostrarCard(id) {
+      const cards = document.querySelectorAll('#cards-container .card');
+      cards.forEach(card => {
+        if (id === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.id === id) {
+            card.classList.remove('hidden');
+            setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        mostrarCard(target);
+      });
+    });
+  </script>
+
+</body>
+</html>
