@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Feed Online — Exemplo semântico</title>
+  <meta name="description" content="Exemplo de feed online usando tags HTML5 semânticas: header, nav, main, article, section, aside, footer, figure, figcaption, time, address, details, summary, form, dialog, template, etc." />
+  <style>
+    /* Estilo mínimo para visualização */
+    :root { --bg:#f6f7fb; --card:#fff; --muted:#6b7280; --accent:#3b82f6; --radius:10px; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:#111;line-height:1.45}
+    .wrap{max-width:1100px;margin:24px auto;padding:16px}
+    header.site{display:flex;gap:12px;align-items:center;justify-content:space-between}
+    .brand a{text-decoration:none;color:var(--accent);font-weight:700;font-size:1.25rem}
+    .search input{padding:8px;border-radius:8px;border:1px solid #ddd;width:220px}
+    nav.primary ul{display:flex;gap:8px;list-style:none;padding:0;margin:0}
+    nav.primary a{text-decoration:none;padding:6px 10px;border-radius:8px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .layout{display:grid;grid-template-columns:1fr 320px;gap:16px;margin-top:16px}
+    main{min-height:60vh}
+    .feed article{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.03);margin-bottom:12px}
+    figure img{max-width:100%;border-radius:8px}
+    .meta{color:var(--muted);font-size:.9rem;margin-bottom:8px}
+    .controls{display:flex;gap:8px;align-items:center}
+    aside.sidebar{background:linear-gradient(180deg,#fff,#fbfbff);padding:12px;border-radius:12px}
+    form input, form textarea, form select{width:100%;padding:8px;border:1px solid #e2e8f0;border-radius:8px;margin-top:6px}
+    fieldset{border:1px solid #e6e7eb;padding:12px;border-radius:10px}
+    footer.site{margin-top:20px;padding-top:12px;border-top:1px solid #e6e7eb;color:var(--muted);text-align:center}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    summary{cursor:pointer}
+    .badge{background:var(--accent);color:#fff;padding:2px 8px;border-radius:999px;font-size:.75rem}
+    @media (max-width:900px){ .layout{grid-template-columns:1fr} nav.primary ul{flex-wrap:wrap} .search input{width:160px} }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <div class="wrap">
+
+    <!-- HEADER: marca + busca + navegação principal -->
+    <header class="site" role="banner">
+      <div class="brand" itemscope itemtype="http://schema.org/Organization">
+        <a href="#" itemprop="url"><span itemprop="name">FeedOnline</span></a>
+        <p class="sr-only">Exemplo didático de semântica HTML5</p>
+      </div>
+
+      <form class="search" role="search" action="#" method="get" aria-label="Pesquisar no feed">
+        <label for="q" class="sr-only">Pesquisar</label>
+        <input id="q" name="q" type="search" placeholder="Pesquisar posts, autores..." aria-label="Pesquisar" />
+        <button type="submit" aria-label="Buscar">Buscar</button>
+      </form>
+
+      <nav class="primary" role="navigation" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#popular">Popular <span class="badge" aria-hidden="true">🔥</span></a></li>
+          <li><a href="#seguindo">Seguindo</a></li>
+          <li><a href="#explorar">Explorar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- BREADCRUMB (Navegação secundária) -->
+    <nav aria-label="Você está aqui" class="breadcrumb" style="margin-top:12px;">
+      <ol style="list-style:none;display:flex;gap:6px;padding:0;margin:0;font-size:.95rem">
+        <li><a href="#">Início</a></li>
+        <li aria-current="page">Feed</li>
+      </ol>
+    </nav>
+
+    <div class="layout">
+      <!-- MAIN: apenas um main por página -->
+      <main role="main" aria-label="Conteúdo principal">
+        <!-- SECTION: conjunto de posts -->
+        <section class="feed" aria-label="Feed de posts">
+
+          <!-- ARTICLE 1 (exemplo de artigo com microdata) -->
+          <article id="post-1" itemscope itemtype="http://schema.org/Article">
+            <header>
+              <h2 itemprop="headline">Como usar tags semânticas em um feed online</h2>
+              <p class="meta">Por <a href="#" itemprop="author"> <span itemprop="name">Ana Silva</span> </a> • <time datetime="2025-11-30" itemprop="datePublished">30 nov 2025</time></p>
+            </header>
+
+            <!-- FIGURE + FIGCAPTION -->
+            <figure>
+              <picture>
+                <source media="(min-width:800px)" srcset="https://via.placeholder.com/900x300">
+                <img src="https://img.freepik.com/vetores-gratis/fundo-preto-de-estilo-3d-com-camada-de-papel_206725-669.jpg?semt=ais_hybrid&w=740&q=80" alt="Ilustração do uso de tags" />
+              </picture>
+              <figcaption>Ilustração: layout de feed com semântica.</figcaption>
+            </figure>
+
+            <p itemprop="articleBody">
+              Este é um exemplo de post demonstrando o uso de elementos HTML5 semânticos — <mark>header</mark>, <mark>nav</mark>, <mark>main</mark>, <mark>article</mark>, <mark>section</mark>, <mark>aside</mark>, <mark>footer</mark> e mais. <span class="highlight">Melhore a acessibilidade</span> e a estrutura do seu HTML usando as tags corretas.
+            </p>
+
+            <!-- controles do artigo: botões, progress, meter -->
+            <footer class="meta" aria-label="Controles do post">
+              <div class="controls" role="group" aria-label="Ações do post">
+                <button aria-pressed="false" aria-label="Curtir post">Curtir</button>
+                <button aria-label="Compartilhar post">Compartilhar</button>
+                <a href="#comments-post-1">Comentários</a>
+              </div>
+
+              <div style="margin-top:8px;">
+                <label for="load-post-1" class="sr-only">Progresso de carregamento</label>
+                <progress id="load-post-1" value="80" max="100">80%</progress>
+                <meter value="0.72" min="0" max="1">72%</meter>
+              </div>
+            </footer>
+
+            <!-- COMMENTS (subsection dentro do artigo) -->
+            <section id="comments-post-1" aria-label="Comentários do post" itemprop="discussionUrl">
+              <h3>Comentários</h3>
+              <ul>
+                <li>
+                  <article class="comment" aria-label="Comentário de João">
+                    <header>
+                      <p class="meta">João • <time datetime="2025-12-01">1 dez 2025</time></p>
+                    </header>
+                    <p>Excelente explicação — obrigado!</p>
+                  </article>
+                </li>
+              </ul>
+            </section>
+          </article>
+
+          <!-- ARTICLE 2 (controles nativos: details/summary) -->
+          <article id="post-2">
+            <header>
+              <h2>Atualização: novos componentes web</h2>
+              <p class="meta">Por <a href="#"><span>Equipe Dev</span></a> • <time datetime="2025-12-02">2 dez 2025</time></p>
+            </header>
+
+            <p>Posts podem incluir controles nativos para conteúdo expansível:</p>
+
+            <details>
+              <summary>Mostrar mais</summary>
+              <p>Conteúdo expandido dentro do próprio post usando <code>details</code> e <code>summary</code>. Ótimo para spoilers, FAQs e conteúdos secundários.</p>
+            </details>
+
+            <p>Exibimos também medições com <code>progress</code> e <code>meter</code>:</p>
+            <p>Carregamento do feed: <progress value="70" max="100">70%</progress></p>
+            <p>Popularidade: <meter value="0.6">60%</meter></p>
+
+            <footer>
+              <p class="meta">Tags: <a href="#">HTML</a>, <a href="#">Acessibilidade</a></p>
+            </footer>
+          </article>
+
+          <!-- Modelo/template para uso via JS -->
+          <template id="post-template">
+            <article class="post">
+              <header><h2></h2></header>
+              <p></p>
+            </article>
+          </template>
+
+        </section>
+
+        <!-- FORM: publicar algo -->
+        <section aria-labelledby="postar" style="margin-top:18px">
+          <h3 id="postar">Publicar algo</h3>
+          <form action="#" method="post" aria-label="Formulário de nova publicação">
+            <fieldset>
+              <legend>Criar nova publicação</legend>
+
+              <label for="title">Título</label>
+              <input id="title" name="title" type="text" required />
+
+              <label for="content">Conteúdo</label>
+              <textarea id="content" name="content" rows="4" required></textarea>
+
+              <label for="visibility">Visibilidade</label>
+              <select id="visibility" name="visibility">
+                <option value="public">Público</option>
+                <option value="private">Privado</option>
+              </select>
+
+              <p>
+                <label>
+                  <input type="checkbox" name="notify" /> Notificar seguidores
+                </label>
+              </p>
+
+              <p>
+                <button type="submit">Publicar</button>
+                <button type="reset">Limpar</button>
+              </p>
+
+              <output name="status" aria-live="polite">Pronto para publicar</output>
+            </fieldset>
+          </form>
+        </section>
+
+      </main>
+
+      <!-- ASIDE: conteúdo complementar -->
+      <aside class="sidebar" role="complementary" aria-label="Barra lateral do feed">
+        <section aria-labelledby="sobre">
+          <h4 id="sobre">Sobre</h4>
+          <p>Este feed é um exemplo didático de semântica HTML5.</p>
+        </section>
+
+        <section aria-labelledby="contato">
+          <h4 id="contato">Contato</h4>
+          <address>
+            Desenvolvedor: <a href="mailto:dev@exemplo.com">dev@exemplo.com</a><br />
+            Local: Fortaleza, Brasil
+          </address>
+        </section>
+
+        <section aria-labelledby="stats">
+          <h4 id="stats">Estatísticas</h4>
+          <p>Usuários ativos: <output name="active">1.234</output></p>
+          <p>Novos hoje: <output name="newToday">18</output></p>
+        </section>
+
+        <section aria-labelledby="links-uteis">
+          <h4 id="links-uteis">Links úteis</h4>
+          <nav aria-label="Links úteis">
+            <ul>
+              <li><a href="#">Ajuda</a></li>
+              <li><a href="#">Termos</a></li>
+            </ul>
+          </nav>
+        </section>
+
+      </aside>
+    </div>
+
+    <!-- DIALOG (modal) de exemplo -->
+    <dialog id="shareDialog" aria-labelledby="shareTitle">
+      <h3 id="shareTitle">Compartilhar post</h3>
+      <p>Link copiado para a área de transferência!</p>
+      <menu>
+        <button id="closeDialog">Fechar</button>
+      </menu>
+    </dialog>
+
+    <!-- FOOTER: conteúdo de rodapé -->
+    <footer class="site" role="contentinfo">
+      <p>&copy; <time datetime="2025">2025</time> FeedOnline — Exemplo educativo.</p>
+      <p class="muted">Endereço legal: <address>Rua Exemplo, 123 — Fortaleza, CE</address></p>
+    </footer>
+
+  </div>
+
+  <!-- Pequeno script apenas para demo do dialog (opcional) -->
+  <script>
+    // demo: abrir/fechar dialog (não necessário para semântica)
+    const dialog = document.getElementById('shareDialog');
+    const closeBtn = document.getElementById('closeDialog');
+    if (dialog && closeBtn) {
+      closeBtn.addEventListener('click', () => dialog.close());
+      // Exemplo: mostrar dialog uma vez (comentado)
+      // dialog.showModal();
+    }
+  </script>
+</body>
+</html>
