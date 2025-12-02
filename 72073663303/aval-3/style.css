@@ -1,0 +1,245 @@
+/* Importação de Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis de Cores (Glamour) */
+:root {
+    --cor-primaria: #D81B60; /* Rosa Vibrante */
+    --cor-secundaria: #F06292; /* Rosa Médio */
+    --cor-fundo: #FAFAFA; /* Fundo Suave */
+    --cor-texto: #333333;
+    --cor-aside: #FCE4EC; /* Rosa Claro */
+    --cor-destaque: #6A1B9A; /* Roxo para títulos */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    letter-spacing: 2px;
+}
+
+/* Navegação */
+nav {
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--cor-destaque);
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-primaria);
+}
+
+/* Layout Principal do Blog (Main + Aside) */
+.blog-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex; /* Habilita layout lado a lado */
+    gap: 30px;
+}
+
+.main-content {
+    flex: 3; /* Ocupa mais espaço */
+}
+
+.sidebar {
+    flex: 1; /* Ocupa menos espaço */
+}
+
+.main-content h2 {
+    color: var(--cor-destaque);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 5px;
+}
+
+/* Post de Destaque (<article>) */
+.featured-post {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.featured-post h3 {
+    color: var(--cor-primaria);
+    font-size: 1.8em;
+    margin-top: 10px;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+.featured-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* Galeria de Posts Menores (<article>) */
+.post-gallery {
+    margin-top: 40px;
+}
+
+.post-gallery h3 {
+    color: var(--cor-destaque);
+    margin-bottom: 20px;
+}
+
+.small-card {
+    /* <article> aqui */
+    display: flex;
+    margin-bottom: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.small-card .card-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.small-card h4 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+}
+
+/* Barra Lateral (<aside>) */
+.aside-box {
+    background-color: var(--cor-aside);
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--cor-secundaria);
+}
+
+.aside-box h3 {
+    color: var(--cor-destaque);
+    margin-bottom: 15px;
+}
+
+.aside-box ul {
+    list-style: none;
+}
+
+.aside-box ul li a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    display: block;
+    padding: 5px 0;
+    border-bottom: 1px dashed #E0E0E0;
+}
+
+.aside-box ul li a:hover {
+    color: var(--cor-primaria);
+}
+
+/* Botão CTA */
+.cta-button {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #A31545;
+}
+
+/* Rodapé */
+.full-width-footer {
+    background-color: var(--cor-texto);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Responsividade (Ajusta o layout lado a lado para pilhas em telas pequenas) */
+@media (max-width: 900px) {
+    .blog-container {
+        flex-direction: column;
+    }
+
+    .main-content, .sidebar {
+        flex: auto;
+    }
+
+    .sidebar {
+        order: -1; /* Coloca a barra lateral acima do conteúdo principal em telas pequenas */
+    }
+
+    .small-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .small-card .card-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        max-height: 200px;
+    }
+}
