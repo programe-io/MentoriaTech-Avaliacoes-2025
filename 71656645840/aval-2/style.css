@@ -1,0 +1,312 @@
+/* ----------------------------------------------------------
+   RESET E NORMALIZAÇÃO
+-----------------------------------------------------------*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: #f5f6fb;
+  color: #111827;
+  min-height: 100vh;
+}
+
+/* Remove estilos padrões */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+/* ----------------------------------------------------------
+   VARIÁVEIS
+-----------------------------------------------------------*/
+:root {
+  --bg: #f5f6fb;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --accent-hover: #1e4fc4;
+  --text: #111827;
+  --muted: #6b7280;
+  --radius: 12px;
+}
+
+/* ----------------------------------------------------------
+   TAGS SEMÂNTICAS PRINCIPAIS
+-----------------------------------------------------------*/
+header, footer, main, nav, section, article, aside {
+  display: block;
+  width: 100%;
+}
+
+header, footer {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  margin-bottom: 1rem;
+}
+
+main {
+  display: grid;
+  gap: 1rem;
+}
+
+section {
+  margin-top: 1rem;
+}
+
+article {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: var(--radius);
+}
+
+/* ----------------------------------------------------------
+   NAV
+-----------------------------------------------------------*/
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  padding: .4rem .8rem;
+  text-decoration: none;
+  border-radius: 8px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+nav a:hover {
+  background: rgba(37,99,235,0.1);
+}
+
+/* ----------------------------------------------------------
+   TIPOGRAFIA
+-----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: .5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+small {
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------------------------------------
+   LISTAS
+-----------------------------------------------------------*/
+ul, ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: .4rem;
+}
+
+/* ----------------------------------------------------------
+   TABELAS
+-----------------------------------------------------------*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: .5rem;
+}
+
+th, td {
+  border: 1px solid #e5e7eb;
+  padding: .6rem;
+  text-align: left;
+}
+
+thead {
+  background: #e9eef8;
+  font-weight: bold;
+}
+
+/* ----------------------------------------------------------
+   FORMULÁRIOS
+-----------------------------------------------------------*/
+label {
+  font-weight: 600;
+  margin-bottom: .3rem;
+  display: block;
+}
+
+input,
+select,
+textarea {
+  padding: .6rem;
+  border-radius: 8px;
+  border: 1px solid #dbe2ef;
+  width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+button,
+.btn {
+  background: var(--accent);
+  padding: .6rem 1rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+}
+
+button:hover,
+.btn:hover {
+  background: var(--accent-hover);
+}
+
+/* ----------------------------------------------------------
+   DETAILS / SUMMARY
+-----------------------------------------------------------*/
+details {
+  background: var(--card);
+  padding: .7rem;
+  border-radius: var(--radius);
+  margin: .5rem 0;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+summary:hover {
+  color: var(--accent);
+}
+
+/* ----------------------------------------------------------
+   CARDS
+-----------------------------------------------------------*/
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+/* ----------------------------------------------------------
+   FIGURE E IMAGENS
+-----------------------------------------------------------*/
+figure {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+figcaption {
+  margin-top: .3rem;
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+/* ----------------------------------------------------------
+   MULTIMÍDIA
+-----------------------------------------------------------*/
+video, audio {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-top: .5rem;
+}
+
+/* ----------------------------------------------------------
+   GRID E LAYOUT
+-----------------------------------------------------------*/
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .8rem;
+}
+
+@media(max-width: 800px) {
+  .grid-2,
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----------------------------------------------------------
+   ANIMAÇÕES
+-----------------------------------------------------------*/
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn .6s ease forwards;
+}
+
+/* ----------------------------------------------------------
+   UTILITÁRIOS
+-----------------------------------------------------------*/
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+.m-1 { margin: 1rem; }
+.mt-1 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 1rem; }
+.p-1 { padding: 1rem; }
+.shadow { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.rounded { border-radius: var(--radius); }
+.hide { display: none; }
+
+/* ----------------------------------------------------------
+   FOOTER
+-----------------------------------------------------------*/
+footer p {
+  font-size: .9rem;
+  color: var(--muted);
+  text-align: center;
+}
