@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles (6).css">
+  <title>App social freed - funcional</title>
+
+  <!-- 🔗 Arquivo CSS externo -->
+  <link rel="stylesheet" href="styles (6).css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header></header>
+    <P></P><a></a>
+    <h2></h2>
+
+  <h1>Postagens</h1>
+
+  <nav>
+    <button data-target="inicio">Início</button>
+    <button data-target="perfil">Perfil</button>
+    <button data-target="postagens">Postagens</button>
+    <button data-target="todos">Mostrar todos</button>
+  </nav>
+
+  <main class="container" id="cards-container">
+
+    <!-- CARD 1 -->
+    <article id="inicio" class="card">
+      <div class="header">
+        <div class="avatar" style="background-image:url('https://lncimg.lance.com.br/uploads/2024/09/Falcao-1.jpg');"></div>
+        <div><strong>Allisson@</strong></div>
+      </div>
+      <img class="main-img" src="https://i.ytimg.com/vi/2DBvl5aEe8k/maxresdefault.jpg" alt="Imagem" />
+      <div class="content">
+        "A Volta das que Não Foram" é o título de um filme de comédia brasileiro de 2016, que mistura a estética de reality shows com a cultura de concursos de drag queens. A trama acompanha as aventuras de um grupo de caricatas do Rio de Janeiro, com uma atmosfera comparada a "Sex and the City" e "RuPaul's Drag Race". É uma obra que explora a cultura pop, o humor e o universo das drag queens. 
+        <span class="meta">Há 10 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article id="perfil" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://lncimg.lance.com.br/uploads/2024/09/Falcao-1.jpg');"></div>
+        <div><strong>Allisson@</strong></div>
+      </div>
+      <img class="main-img" src="https://lncimg.lance.com.br/uploads/2024/09/Falcao-1.jpg" alt="Imagem" />
+      <div class="content">
+       Falcão é um nome de dois jogadores de futebol brasileiros famosos, o Falcão do futsal (Alessandro Rosa Vieira) e o Falcão do campo (Paulo Roberto Falcão).
+        <span class="meta">Há 30 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article id="postagens" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://lncimg.lance.com.br/uploads/2024/09/Falcao-1.jpg');"></div>
+        <div><strong>Allisson@</strong></div>
+      </div>
+      <img class="main-img" src="https://rollingstone.com.br/wp-content/uploads/2025/04/um-filme-minecraft-com-jason-momoa-e-jack-black-estreia-nos-cinemas-brasileiros.jpg" alt="Imagem" />
+      <div class="content">
+       O filme Um Filme Minecraft é sobre quatro amigos desajustados que são transportados acidentalmente para o mundo cúbico de Minecraft, o Overworld
+        <span class="meta">Há 1 hora</span>
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function mostrarCard(id) {
+      const cards = document.querySelectorAll('#cards-container .card');
+      cards.forEach(card => {
+        if (id === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.id === id) {
+            card.classList.remove('hidden');
+            setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        mostrarCard(target);
+      });
+    });
+  </script>
+
+</body>
+</html>
