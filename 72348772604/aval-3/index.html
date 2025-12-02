@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Três Post Cards Informativos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#7c3aed;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background: linear-gradient(180deg,#071024 0%, #071026 60%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px;
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+    }
+
+    .container{
+      width:100%;
+      max-width:1100px;
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap:20px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 6px 18px rgba(2,6,23,0.6), inset 0 1px rgba(255,255,255,0.02);
+      transition:transform .25s ease, box-shadow .25s ease;
+      border:1px solid rgba(255,255,255,0.03);
+      display:flex;
+      flex-direction:column;
+    }
+    .card:hover{transform:translateY(-8px); box-shadow:0 20px 40px rgba(2,6,23,0.75)}
+
+    .card .media{
+      width:100%;
+      aspect-ratio:16/9;
+      background-size:cover;
+      background-position:center center;
+      display:block;
+    }
+
+    .card-content{
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      flex:1 1 auto;
+    }
+
+    .kicker{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      color:var(--accent);
+      font-weight:700;
+    }
+
+    h3{
+      margin:0;
+      font-size:1.15rem;
+      line-height:1.15;
+    }
+
+    p{
+      margin:0;
+      color:var(--muted);
+      font-size:0.95rem;
+      line-height:1.45;
+    }
+
+    .meta{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+
+    .btn{
+      background:linear-gradient(90deg,var(--accent),#5b21b6);
+      color:white;
+      border:none;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-block;
+      box-shadow:0 6px 14px rgba(124,58,237,0.18);
+    }
+
+    .meta small{color:var(--muted)}
+
+    /* small decorative footer */
+    .card-footer{
+      padding:12px 18px;
+      border-top:1px solid rgba(255,255,255,0.02);
+      background:var(--glass);
+      font-size:13px;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    @media (max-width:420px){
+      body{padding:20px}
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <main class="container" aria-label="Lista de posts informativos">
+    <!-- Card 1 -->
+    <article class="card" role="article">
+      <div class="media" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=80');" aria-hidden="true"></div>
+      <div class="card-content">
+        <span class="kicker">Sustentabilidade</span>
+        <h3>Como reduzir o desperdício doméstico em 5 passos</h3>
+        <p>Pequenas mudanças na cozinha e no consumo podem reduzir muito o lixo produzido. Aprenda práticas simples e de alto impacto que você pode aplicar hoje.</p>
+        <div class="meta">
+          <small>Publicado: 2 de dezembro de 2025</small>
+          <a class="btn" href="#">Ler mais</a>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>⏱ 4 min de leitura</span>
+        <span>📍 Dicas práticas</span>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card" role="article">
+      <div class="media" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80');" aria-hidden="true"></div>
+      <div class="card-content">
+        <span class="kicker">Tecnologia</span>
+        <h3>5 ferramentas gratuitas que todo estudante deve conhecer</h3>
+        <p>Do gerenciamento de tarefas à anotação inteligente: conheça apps e extensões que aumentam a produtividade sem gastar nada.</p>
+        <div class="meta">
+          <small>Publicado: 15 de novembro de 2025</small>
+          <a class="btn" href="#">Ler mais</a>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>⭐ Recomendado</span>
+        <span>💡 Ferramentas</span>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card" role="article">
+      <div class="media" style="background-image:url('https://images.unsplash.com/photo-1542444459-db1b36f7f6c2?auto=format&fit=crop&w=1400&q=80');" aria-hidden="true"></div>
+      <div class="card-content">
+        <span class="kicker">Saúde</span>
+        <h3>Rotina de sono: 7 hábitos para dormir melhor</h3>
+        <p>Sono de qualidade melhora humor, memória e imunidade. Veja quais hábitos noturnos ajudam seu corpo a se recuperar naturalmente.</p>
+        <div class="meta">
+          <small>Publicado: 28 de outubro de 2025</small>
+          <a class="btn" href="#">Ler mais</a>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>🛏️ Saúde</span>
+        <span>📄 Guia rápido</span>
+      </div>
+    </article>
+
+  </main>
+</body>
+</html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Posts Informativos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(90deg, #4f46e5, #7c3aed);
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,.3);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+    }
+
+    header p {
+      margin-top: 12px;
+      font-size: 1.1rem;
+      color: #e0e7ff;
+    }
+
+    /* ===== CONTAINER ===== */
+    main {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    /* ===== CARD ===== */
+    .card {
+      background: #020617;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,.4);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 35px rgba(0,0,0,.6);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #818cf8;
+      text-transform: uppercase;
+    }
+
+    .card-content h3 {
+      margin: 12px 0 10px;
+      font-size: 1.3rem;
+    }
+
+    .card-content p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #cbd5f5;
+    }
+
+    .card-content a {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 16px;
+      background: linear-gradient(90deg, #6366f1, #7c3aed);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: opacity .3s;
+    }
+
+    .card-content a:hover {
+      opacity: .85;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #94a3b8;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 500px) {
+      header h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Portal de Conteúdo</h1>
+    <p>Informação clara, moderna e acessível</p>
+  </header>
+
+  <main>
+    <section class="cards">
+
+      <!-- Card 1 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80" alt="Natureza" />
+        <div class="card-content">
+          <span>Sustentabilidade</span>
+          <h3>Como reduzir o desperdício no dia a dia</h3>
+          <p>Dicas práticas para economizar recursos, evitar desperdício e viver de forma mais consciente.</p>
+          <a href="#">Leia mais</a>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Tecnologia" />
+        <div class="card-content">
+          <span>Tecnologia</span>
+          <h3>Ferramentas digitais que aumentam produtividade</h3>
+          <p>Conheça aplicativos e plataformas que ajudam a organizar estudos, trabalho e projetos.</p>
+          <a href="#">Leia mais</a>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1542444459-db1b36f7f6c2?auto=format&fit=crop&w=1200&q=80" alt="Saúde" />
+        <div class="card-content">
+          <span>Saúde</span>
+          <h3>Hábitos simples para melhorar o sono</h3>
+          <p>Veja como pequenas mudanças na rotina podem melhorar a qualidade do seu descanso.</p>
+          <a href="#">Leia mais</a>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    © 2025 • Portal de Conteúdo — Todos os direitos reservados
+  </footer>
+
+</body>
+</html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Posts Informativos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(90deg, #4f46e5, #7c3aed);
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,.3);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+    }
+
+    header p {
+      margin-top: 12px;
+      font-size: 1.1rem;
+      color: #e0e7ff;
+    }
+
+    /* ===== CONTAINER ===== */
+    main {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    /* ===== CARD ===== */
+    .card {
+      background: #020617;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,.4);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 35px rgba(0,0,0,.6);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #818cf8;
+      text-transform: uppercase;
+    }
+
+    .card-content h3 {
+      margin: 12px 0 10px;
+      font-size: 1.3rem;
+    }
+
+    .card-content p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #cbd5f5;
+    }
+
+    .card-content a {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 16px;
+      background: linear-gradient(90deg, #6366f1, #7c3aed);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: opacity .3s;
+    }
+
+    .card-content a:hover {
+      opacity: .85;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #94a3b8;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 500px) {
+      header h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="nav">
+      <div class="logo">Portal</div>
+      <ul class="menu">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Notícias</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+    <h1>Portal de Conteúdo</h1>
+    <p>Informação clara, moderna e acessível</p>
+  </header>
+
+  <main>
+    <section class="cards">
+
+      <!-- Card 1 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80" alt="Natureza" />
+        <div class="card-content">
+          <span>Sustentabilidade</span>
+          <h3>Como reduzir o desperdício no dia a dia</h3>
+          <p>Dicas práticas para economizar recursos, evitar desperdício e viver de forma mais consciente.</p>
+          <a href="#">Leia mais</a>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Tecnologia" />
+        <div class="card-content">
+          <span>Tecnologia</span>
+          <h3>Ferramentas digitais que aumentam produtividade</h3>
+          <p>Conheça aplicativos e plataformas que ajudam a organizar estudos, trabalho e projetos.</p>
+          <a href="#">Leia mais</a>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1542444459-db1b36f7f6c2?auto=format&fit=crop&w=1200&q=80" alt="Saúde" />
+        <div class="card-content">
+          <span>Saúde</span>
+          <h3>Hábitos simples para melhorar o sono</h3>
+          <p>Veja como pequenas mudanças na rotina podem melhorar a qualidade do seu descanso.</p>
+          <a href="#">Leia mais</a>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    © 2025 • Portal de Conteúdo — Todos os direitos reservados
+  </footer>
+
+</body>
+</html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Posts Informativos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(90deg, #4f46e5, #7c3aed);
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,.3);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+    }
+
+    header p {
+      margin-top: 12px;
+      font-size: 1.1rem;
+      color: #e0e7ff;
+    }
+
+    /* ===== CONTAINER ===== */
+    main {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    /* ===== CARD ===== */
+    .card {
+      background: #020617;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,.4);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 35px rgba(0,0,0,.6);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #818cf8;
+      text-transform: uppercase;
+    }
+
+    .card-content h3 {
+      margin: 12px 0 10px;
+      font-size: 1.3rem;
+    }
+
+    .card-content p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #cbd5f5;
+    }
+
+    .card-content a {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 16px;
+      background: linear-gradient(90deg, #6366f1, #7c3aed);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: opacity .3s;
+    }
+
+    .card-content a:hover {
+      opacity: .85;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #94a3b8;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 500px) {
+      header h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="nav">
+      <div class="logo">Portal</div>
+      <ul class="menu">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Notícias</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+    <h1>Portal de Conteúdo</h1>
+    <p>Informação clara, moderna e acessível</p>
+  </header>
+
+  <main>
+    <h2 class="section-title">Últimas Publicações</h2>
+    <section class="cards">
+
+      <!-- Card 1 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80" alt="Natureza" />
+        <div class="card-content">
+          <span>Sustentabilidade</span>
+          <h3>Como reduzir o desperdício no dia a dia</h3>
+          <p>Dicas práticas para economizar recursos, evitar desperdício e viver de forma mais consciente.</p>
+          <a href="#">Leia mais</a>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Tecnologia" />
+        <div class="card-content">
+          <span>Tecnologia</span>
+          <h3>Ferramentas digitais que aumentam produtividade</h3>
+          <p>Conheça aplicativos e plataformas que ajudam a organizar estudos, trabalho e projetos.</p>
+          <a href="#">Leia mais</a>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1542444459-db1b36f7f6c2?auto=format&fit=crop&w=1200&q=80" alt="Saúde" />
+        <div class="card-content">
+          <span>Saúde</span>
+          <h3>Hábitos simples para melhorar o sono</h3>
+          <p>Veja como pequenas mudanças na rotina podem melhorar a qualidade do seu descanso.</p>
+          <a href="#">Leia mais</a>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    © 2025 • Portal de Conteúdo — Todos os direitos reservados
+  </footer>
+
+</body>
+</html>
