@@ -1,0 +1,212 @@
+/* Variáveis para reutilizar a cor roxa */
+:root {
+    --cor-primaria: #8A2BE2; /* Roxo Blue Violet */
+    --cor-secundaria: #5E35B1; /* Roxo Escuro para hover */
+    --cor-fundo: #f8f8ff; /* Branco acinzentado */
+    --cor-texto: #333;
+    --cor-fundo-cabecalho: var(--cor-primaria);
+}
+
+/* Estilos Globais e Reset */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.cabecalho {
+    background-color: var(--cor-fundo-cabecalho);
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.cabecalho h1 {
+    margin-bottom: 0.5rem;
+}
+
+/* Navegação */
+.menu-nav {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.menu-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.menu-nav a:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* Layout Principal (Flexbox) */
+.main-layout {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px; 
+}
+
+.conteudo-principal {
+    flex: 3; /* 75% do espaço */
+}
+
+/* Posts */
+.post {
+    background: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--cor-primaria); /* Detalhe roxo */
+    display: flex; 
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.destaque .post {
+    flex-direction: column; 
+    text-align: center;
+}
+
+.post h3 {
+    color: var(--cor-secundaria);
+    margin-top: 0;
+}
+
+.data-post {
+    color: #666;
+    font-size: 0.9em;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+/* 🖼️ Espaço para Imagens */
+.imagem-post, .imagem-post-destaque {
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.imagem-post-destaque {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 15px;
+}
+
+.imagem-post {
+    width: 180px;
+    min-width: 180px;
+    height: 120px;
+}
+
+/* Botão "Leia Mais" (Roxo) */
+.btn-ler-mais {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.btn-ler-mais:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* Barra Lateral (<aside>) */
+.barra-lateral {
+    flex: 1; /* 25% do espaço */
+    min-width: 250px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.barra-lateral h3 {
+    color: var(--cor-secundaria);
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-bottom: 8px;
+    margin-top: 0;
+}
+
+.lista-aside {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.lista-aside li a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    display: block;
+    padding: 8px 0;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+}
+
+.lista-aside li a:hover {
+    color: var(--cor-primaria);
+    font-weight: bold;
+    border-left: 3px solid var(--cor-primaria);
+    padding-left: 5px;
+}
+
+.bloco-sobre {
+    text-align: center;
+    padding: 15px;
+    background-color: #f3e5f5; /* Roxo muito claro */
+    border-radius: 5px;
+}
+
+.imagem-perfil {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Imagem redonda */
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid var(--cor-primaria);
+}
+
+
+/* Rodapé */
+.rodape {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+/* Responsividade Básica */
+@media (max-width: 850px) {
+    .main-layout {
+        flex-direction: column; 
+    }
+    .post {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .imagem-post {
+        width: 100%;
+        height: auto;
+        min-width: unset;
+    }
+}
