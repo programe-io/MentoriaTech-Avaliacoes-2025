@@ -1,0 +1,168 @@
+/* ==============================
+   RESET BÁSICO
+============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==============================
+   VARIÁVEIS GLOBAIS
+============================== */
+:root {
+    --cor-primaria: #4CAF50;
+    --cor-secundaria: #333;
+    --cor-fundo: #f4f4f4;
+    --cor-texto: #222;
+    --cor-branco: #ffffff;
+    --cor-cinza: #888;
+
+    --fonte-base: 'Arial', sans-serif;
+    --largura-maxima: 1100px;
+}
+
+/* ==============================
+   ESTILOS GLOBAIS
+============================== */
+body {
+    font-family: var(--fonte-base);
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ==============================
+   TIPOGRAFIA
+============================== */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* ==============================
+   CLASSES UTILITÁRIAS
+============================== */
+.container {
+    max-width: var(--largura-maxima);
+    margin: auto;
+    padding: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+/* ==============================
+   CABEÇALHO
+============================== */
+header {
+    background: var(--cor-primaria);
+    color: var(--cor-branco);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+/* ==============================
+   NAVEGAÇÃO
+============================== */
+nav {
+    background: var(--cor-secundaria);
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: var(--cor-branco);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ==============================
+   LAYOUT PRINCIPAL
+============================== */
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Seções */
+section, article, aside {
+    background: var(--cor-branco);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ==============================
+   TABELAS
+============================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background: var(--cor-primaria);
+    color: var(--cor-branco);
+}
+
+/* ==============================
+   FORMULÁRIOS
+============================== */
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background: var(--cor-primaria);
+    color: var(--cor-branco);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* ==============================
+   ASIDE (BARRA LATERAL)
+============================== */
+aside h3 {
+    margin-b
