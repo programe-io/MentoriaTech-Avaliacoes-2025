@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo com Header, Nav, Main, Div, Span, Img e H2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .nav-container, .main-nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #007BFF;
+        }
+
+        .destaque {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        main .container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        main img {
+            width: 200px;
+            height: auto;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+        .footer-container {
+            margin: 20px;
+            padding: 10px;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <!-- Header da página -->
+    <header>
+        <div class="header-container">
+            <h1>Bem-vindo à minha página!</h1>
+            <p>Clique no <span id="meuSpan" class="destaque">texto em destaque</span> para mudar a cor.</p>
+
+            <!-- Navegação principal no header -->
+            <div class="nav-container">
+                <nav>
+                    <a href="#home">Home</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <div class="container">
+            <!-- Subtítulo com h2 -->
+            <h2>Seção Principal</h2>
+
+            <!-- Segunda navegação dentro do main -->
+            <div class="main-nav">
+                <nav>
+                    <a href="#item1">Item 1</a>
+                    <a href="#item2">Item 2</a>
+                    <a href="#item3">Item 3</a>
+                </nav>
+            </div>
+
+            <p>Esta é uma <strong>div</strong> que contém conteúdo adicional.</p>
+            <p>Você também pode adicionar mais elementos aqui.</p>
+            <!-- Adicionando a imagem -->
+            <img src="https://via.placeholder.com/200" alt="Exemplo de imagem">
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <div class="footer-container">
+        <p>Rodapé da página</p>
+    </div>
+
+    <script>
+        const span = document.getElementById('meuSpan');
+
+        span.addEventListener('click', () => {
+            // Gera uma cor aleatória
+            const corAleatoria = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            span.style.color = corAleatoria;
+        });
+    </script>
+<script src="script.js"></script></body>
+</html>
