@@ -1,0 +1,202 @@
+/* Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7; /* Fundo levemente cinza */
+}
+
+/* 🏎️ Cabeçalho (Header) */
+header {
+    /* Cor de destaque da F1, como um vermelho Ferrari ou o amarelo do Senna. */
+    background-color: #E10600; 
+    padding: 40px; /* Reduzido um pouco o padding */
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+/* 🚦 Navegação (Nav) */
+nav {
+    display: flex;
+    background-color: #1a1a1a; /* Preto fosco */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+    color: white;
+    padding: 15px 20px; /* Mais padding para botões maiores */
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #E10600; /* Cor de destaque da F1 no hover */
+    color: white;
+}
+
+/* Garante que o link do Carrinho fique à direita */
+nav a[href="#carrinho"] {
+    margin-left: auto; /* Empurra para a direita */
+}
+
+
+/* 🛠️ Layout Principal (Section/Row) */
+
+/* Altera o seletor para SECTION, pois no HTML modificado você está usando <section> */
+section {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar em telas menores */
+    margin: 20px auto;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+/* ASIDE: Vitrine/Destaque */
+aside {
+    flex: 30%;
+    background-color: #ffffff; /* Fundo branco para a vitrine */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* MAIN: Lista de Produtos */
+main {
+    flex: 70%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 🖼️ Imagens Placeholder/Imagens Reais */
+.fakeimg {
+    background-color: #e0e0e0;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 15px;
+    height: 200px; /* Define uma altura padrão para o placeholder */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-style: italic;
+}
+
+/* Estilo para as imagens reais, caso você as coloque */
+aside img, main img {
+    width: 100%; /* Garante que a imagem preencha o container */
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer (se necessário) */
+}
+
+
+/* 📦 Estilo dos Itens (Article) */
+article {
+    /* Melhoria no box-shadow para visual de "card" de produto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+    border-radius: 10px;
+    margin-bottom: 30px; /* Espaço entre os produtos */
+    border-left: 5px solid #E10600; /* Linha de destaque na lateral */
+    background-color: #fff;
+}
+
+article h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+article button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Estilos específicos para os botões do HTML modificado */
+article button[style*="blue"] {
+    background-color: #007bff; /* Azul padrão */
+    color: white;
+}
+article button[style*="blue"]:hover {
+    background-color: #0056b3;
+}
+
+aside button[style*="green"] {
+    background-color: #28a745; /* Verde para adicionar ao carrinho */
+    color: white;
+}
+aside button[style*="green"]:hover {
+    background-color: #1e7e34;
+}
+
+/* 🦶 Rodapé (Footer) */
+footer {
+    background-color: #1a1a1a;
+    padding: 30px;
+    color: #ccc;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #E10600;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* 📱 Responsividade */
+@media screen and (max-width: 800px) {
+    section {
+        flex-direction: column; /* Empilha o aside e o main em telas pequenas */
+    }
+    aside, main {
+        flex: 100%; /* Ocupa a largura total */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    nav {
+        flex-direction: column;
+    }
+    nav a[href="#carrinho"] {
+        margin-left: 0; /* Remove o empurrão para a direita quando em coluna */
+    }
+}
+
+/* Remove a regra de imagem que estava com valor muito alto (1500px) e corrigida */
+.aside img {
+    height: auto; 
+    width: 100%;
+}
