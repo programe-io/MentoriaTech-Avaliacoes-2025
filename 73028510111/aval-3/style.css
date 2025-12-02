@@ -1,0 +1,31 @@
+.card-img {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid var(--borda);
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  transition: transform 0.3s ease;
+}
+
+.card-img.brigadeiro {
+  background-image: url('attachments/bsFgwRhfX2etgzRaALdhf.png');
+}
+
+/* Efeito de zoom suave ao passar o mouse */
+.card:hover .card-img {
+  transform: scale(1.03);
+}
+
+/* Sombra leve para destacar a imagem */
+.card-img::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.05), rgba(0,0,0,0.08));
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
