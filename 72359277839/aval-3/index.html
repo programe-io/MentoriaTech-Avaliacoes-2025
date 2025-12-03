@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Feed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+  <body
+    class="bg-gradient-to-b from-blue-900 to-blue-950 min-h-screen text-white"
+  >
+    <!-- HEADER -->
+    <header class="shadow-md p-5 flex items-center">
+      <div
+        class="flex-1 text-center md:text-left uppercase font-bold tracking-wider"
+      >
+        <img
+            class="h-12 w-12 rounded-full border-2 border-blue-500"
+            src="https://th.bing.com/th/id/OIP.qtreDAG0zukqlcJM2cxtiQAAAA?w=130&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+            alt=""
+          />
+      </div>
+      <nav class="font-bold gap-6 hidden md:flex">
+        <a href="https://cetiapicella.com.br/" class="hover:text-blue-400">Início</a>
+        <a href="https://www.instagram.com/accounts/login/?next=%2Ffrei_jose_apicella%2F&source=omni_redirect" class="hover:text-blue-400">Amigos do Apicella</a>
+        <a href="https://cetiapicella.com.br/eventos" target="_blank" class="hover:text-blue-400">Eventos</a>
+      </nav>
+    </header>
+
+    <!-- POSTS -->
+    <main class="p-8 flex flex-col md:flex-row justify-center gap-6">
+      <!-- POST CARD 1 -->
+      <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-xs">
+        <!-- CARD HEADER -->
+        <div class="flex items-center gap-3 p-4">
+          <img
+            class="h-12 w-12 rounded-full border-2 border-blue-500"
+            src="data:image/webp;base64,UklGRhgQAABXRUJQVlA4IAwQAABwQgCdASqPALQAPp1CnEmlo6MhKPM9OLATiUiO5BmuFxme85z0Lj11+v/ZeqrlvfV55h/OF9L3+t31z0APLk/bf4j/7/knfiT+1+jrw0/a9OT8M0Bsw/YNqcdueHn/A8F/h7/YeoF7S/1G+G2g/4/qEeuPzn/af3Txqf9T0I+vP/K9wDvh/B28U9gD+Pf1X/n/3D8qvju/3v81/mf3R9yX0Z/5/818CH8z/sv/T/xHah/cD2Sf2A//582ugsbhofNX2TY97NBe77VITO7YqYKs28eQ3ekf3Tbq7bPTOofRMvedWq85/9jkvEktqJBJfLuoeDwtx3uMnZX7GeOe5t895uo1pzWhc3m5CpWfdCQz3gzJTalCK8JOJ5fwTDPHJhwvOV/xdEePEqTYPG3g3BURx8Si8T/p92rUScvDS1c0DuqBz0edY+Q6UuWZZzleq00DfGZ4fgw8PvPqNpJWNm0l5Y33zxgv59TWSRCN24C6GdvSL2hui5O97cc0qERMcRGK226ZktuBUCDzYKmK4htNEr6L2BsoevAs2qYdWYA22pJW9QhoU8zVVx7ADZvSlpvbG/DJ1mQ30Ff1R4/s/MJEyJ7+2yu7bpASUvxoQyEhuBTg0O7P04dLDXYmBEyQr0lTAV7tiVg1Go+lSRLEVJBC1cdlBwvWIv6N4c00OSZGzVb7zR87aaUOjaF/U6ATr531Bwfmt5jdjXSGmwAA/t4ys0TeQ/Ep9V1ejCHESo+19v6b+F6gl73kapojue09iZz18wbWhfhHzjM7LxKD74DJlRgfzuVWn06HjncUP7XBdB6A4JFb/l9FfxwF4Xxo+bLDdDhFoI6WiLqvXzC2KS4k7t1SLyIDFBKxpN+QzaiMIr2oK0dC6982Ld0NXq+l1NXoMeNaM5/wPdvigIJ5M4shiRrHU9mLNFgDNcCj+4azNcos2c3Dkh1ILb6VhQcCtSqkDnWHNi/bZDqhs9DysVm7li5ggxe1DEHEfib2haTjC7g56fBYyx2qyoJhpO+zIpiyXwGWmStPCfqWJLHXUP/mqzFRSoZM+XWab0hnhJgrbPj1pAY5Bf04Ip4TO26hc2iUSRRhYcLFpncKU6KJy/sD7iBJrXi6SNGqFYdb2xTdBOnrpSj0tBw+UTXeL7RXVJMOmuobSOPTD0HweZgfA7mYERcdgwbee4c19p8NVSvqT5scgQMNVdcuRszhUUtcTIpGocp2E+D7TZcuVfr7O/lhdjizvWTgu+ycEZNcOjY0XX3tPDjBdG1/Pa6sxnqAsUc/dJxMCuYMCiJ9OvjjsPbWMSwGeoyJnHBRGDt6odJV7cUN8qG5h2rnHVjP+HQZ9lVuUh97Sb1MakTFfn69oiIK20Saqbtzz8k5kRjCHHq5eejyklssVJALajygQ2wI7vBbMw+dzmiv46pzXVZsO0NHfzP6XAA/htr5QmGzoBbLgoKHJHJLPvSnn0LhAJP67Czo+5CgBXYsGnQv6t2ZM8WVGviaJtYaCFVzNPjIaX8SkI9jOXYkOQ1yi84+lA1YMcAZ0r7swtgerTsf2/XPv/OT+66bb6DlzYde2D4CrNGxnoI2X0ao2gXWoLD83e1fOYqshqI/zHDu5bjisJdwmtcHp8RBxCXzRdh472Ho297fqVsBZUaqTvX1KDy4z4k2qzW037jNvqoRMysF4yQY7PhlFoZWyOb3phvdLLX6ycSgWFDfg1+G8kDMOf3D4DWFAGgaFLxrgobY4T66lw+3vRzk+B/P61/5YozubDZQtCgag2o98Pz5m7jQk+YpFm97H1GKaAdVB6oZJQfCk5744Ml8LbPeIOm/KSQsCnGzeHeZ+0p0irEGugfHYJxRuyLEV+2J4VWWFGNXQyyuP/gRsqaT7Vme7w0Qt5lk/SW2d9LlFKjDv4npcSM7ykMDarq+LePzbLTC9zqsh3FexShNNSVYw7W7rB0/thS00cOwjzSPyo672mv+UYifAEogHsOcOHDw4d4l4rgJnzCvXQcUpS7Kz3cL0WbtIo363Rb8Zw8+aIuQiYj7/eOQBWsy0xnrXLxY8IdawxKduoKzav/tPpLabaNJbqUoar60b5gf6AjTblgmwYRN7dIPy8+AywtcodAekoQ4in/PkAQT8xSknV3dLnXRKG3OrrlhsH4BDEEC/kky5/TVEbcdWs0B6Q5rrbj+mbzjwPAAnURgW95bUU1RozjNgN4oWcRpp7s4Xl0G5/juhOr25AJ8fnfBXqnYDGzeZv3DzDKDX3XW/aYiZsjcy4BdEGaAsOOppb45gu+6qM2TzAjeQIIZxqOhVwoe7RBd/u6qaz9Y/YeHV+DXkjXFBDzvie7H/rHqdYjWMueMcd5AlQY9UHjbbaxsIYrutvNhH5GlydpbqTkPCADTv88pbEId9jaKAFWaIh63HiRQHIFPvivgjBYgdlOfg+54IAVsar77ZXOq6XfdMJmh7O/s1sIWpm+XLkKe6AFr0NBhh6Apmeo+S1UDLyuU7ShYKYckn5TLZT9FceOJ7lZqO+NpRt1okPdrdmDklDeQhojbVOg9RP/b3YJ8qRbgTpGoIw6Pw3JLUMmcETMdBlQqN/pRJ86coAcqyH1YLlRdzDHUX4h+uGlvudKSHo+3tKCDl2YDwhl6DSeUzgiT29U8nm39WGiSlHRCm4Gk/h5wBV+mnc/F1N/GrNHoTAvsv9gXLjAmXX1KhTZL8NwLEqbUK0yN4R60vihEA/eR7HqHQaTrsXKzVSZXSk7THqnIESOV5c8JO6W+4xzPbgx9MEwnEfm6uPiOF7/ZEZOgOZW9wbT8q54+24lq20w70/6aoEmLcmaL1SWzX1aC+xnMBqQBKnImrcmTzo3gou4MSLKnXtjo1UJG6pmrKsCtA3je7dBmg10qSowVq/ses/1gDgGXAUeO1PIkUjC04WQfnnD1iyfYBPxXOYsXAmgd6erIs8MuJ7xvllDFgyicmXcaoLYk3xmX04k4YJJrDFV2I3Sitq0hwMeJ2fK62EVPuQDBJ/E2TXfF0uH3pjuW2F3CdBjFpcToaO6z5X0aoUJ6fSNyNr/yHpuXRP3UGfxkBPLmQtkALQEg0jt3BcY4lmTewhOYIBV/tOhyRkjeTTuJ9X4jtlKiT/q58WqZDHqGsxt1LROLHefoVzvS8oz+bdyqgZRKOkl9icTcGTuPDNygts/88yRgQ//CoVgtpQPAHsXzwtIDliR8FSmQaoreHbrjCOMovdNRWAHclA3jpt1aHBBn/XAjywxe8jxMOJQ7v4+SvoyV2VcdLqaeIPxeEJAsevlVRyN4PiTbPIogBCCA/MGP871mAd89VBpW1F94nHgvPyfreSiPs/dDTp9U9SBnJ9b7aH1171O9T0iHC1zHHHg6wbEwnB14thgsdxkEqFq/CMPIoLKO0i4MUvVyX/T8IoBR0gIL4aBkPNP3yxF4Gkb+TfiO2a3zainlKMYyZb6USlqelwfZ0Gjiy/PkYOw3E48okEZQCysqt20QSlICDMSeaMpCIMz2pf1KTmGCE7pB++L0RCoL7Nbah6XHqKV4mvbOwjjHQqP+LpkQsZd9RmpDvhn48wLjGdiR5n3nab9ASkzRFS28G5iS/BHPvvUX0OiTIuYqaUxa8MFUrI+jRebna4G5vqNY3mEmUC52H4e+7Lqdk2U1kA2je4nFG4vrLt/slXjX854ZpKyw77wP/SVW4jazpIeIc9+dR5uR4psLImWgNEZOfiufMoWX02pJUIA1uEQsyWLdIDL6P9/XCto0r1ehKwmKH3jmL4/w/+Nq68ZGvCiZTX5Bw7k2e5ssSJRL7DTZdEBdXK12tLP7yuerkZkL5/oe+qMf4ZYxfwztCH/WlG6Spf/Ca6o7Yv17OJO+SWq+Rkxuyly8NnmGKDbDnOzqg/Dd18oVskF83kgS+7Vur95HXT8ymHh+gNQ8M+p1s+qMdoKOn7SxZQPk2JeK+HOMPI1c+95GB3Tq220x/Jd7MqceRzaDFpTxg1g26EDS1KwF9e3HBmGu8HVb5h4QkLhWqgnILpeSsayB/RGFL7G04g/OwP2HoFCPogiww1n/cPc8d8XHj5+On4tK4HO+r/R2MiMdK3xbULgdQQAMlA8Eewz7l7VVbFqiihgyk60T2N1dQyfK9GXrtZ7tgyv1DIKU9VG1Xd1GSD77OL7MYzRq7DLoWEKUADCJTBMswcMGl4G74sQyK6SD4V0ZR+AmDUXBSSkuql24KWCAKzss8EIaX87Sa38Z3W1tBuJsPKqcXMTSMmMvZpX9qMKLvjTyt3C0hImrLA6xYEU2i9PxY/j1+i+zMf9oJ/p40KkvyBr0lW8MMF9IF2K1hKMygXagDz4ohssRflebLg2QqAXvMpFaCnVMeL4mJw3GjVR7AkjqjGGqcrWy+1Hhtf6iESUhL8V39BLBFMfa3eAyCauPWtBCyzQnvcFx+zugfOtjIZuSW0m+QoQEjhITJm0BP2dfiMQfVv9F0881zSNQEj49bw90LKLEd/4cuTWdpxaw3ayeqx75HRbiOeFgyOaVZAC4PZrV7fSWDWD37TfEOghR3//DdrToCNVHpS0jh3XggySq0yLzdTwOfTFtEVksRlr4Xh+V93FswOtPUf37dwdbo/6cupy3YBfdpYOp271tlp9l4sq20WdVEDd/7Yhi3/ImjXxkEt2s+wTlIwBpIDEf58BVUDRM7fkEffq1Ur7BH5gq95+E+ITXVN3OsbiOke7Ye1DTeuKFskxvHLHXNuxESYAYRNDCJeCD3zL0VqFIk+U9jzqSp3YsX8aDS/oDr+BeV1uXKjkhKhT7Jorkdc16nxy1c2wLVu3kNL4PKf6OXbyj8H3RnJBliP412rtyjtKKirCAR3NkduvSry9dNquotgPvMvewvnqLInY2NY0kdpKqEt3OI+tm7YNpM0gzs1y8YBDtZR6AZaP6vuv4/49XEl6l1fkomDgmY8fRxBY6CnAEG7HSGqQr/9orVj376dl8W6wVeUbTa4oTE7C1c9y8UMjBuZ1ewie3L2n8B5D9Qqu4hHG7kCiAvuAIscFLYVr8ayj8DUsvTv2+KWkXHMuy2VIdQYgpBbb7HohaTh0PZGP/5nZhclk9Ds4rPM7Tw0VGigzkPtU3y5MV3amyG/f5sUo//Ha/D5HQnX85a92RTNpUJcwdKdlhEQMtvv9sIZM0071ItkzuazHbRNfsmLwXQwYkL2NptYNahYcZyn8H+LmExjSvRV2/xFxOt5E0MYiU86ohic8QtVplw1D2IerbZ3gdCT2REdClOieXw9bkb3mpSl3AZ4HEWxNAtplNGXIekVaVs45yhNvhFYLAOMBV/t+WNfo36gkkEy9zbIgfma5QpmVGjRlARUnARAFQUyPlk9QRI+V320VxrqZwFIpHevpobrAH7B8eLsqg+VX3ZNwtL1Y5KvU3Xmy/TPAAAAY6x8voP0HaLS+RLcrDWseRB/WVmOiDFhvq3CO7pJD5te2Az83HPZbfDKZYvFGAAAAA"
+            alt=""
+          />
+          <h2 class="text-lg font-semibold">CETI FREI JOSÉ APICELLA</h2>
+        </div>
+        <!-- CARD IMAGE -->
+        <img class="w-full h-48 object-cover" src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=375,fit=crop/mk3v9N2p1rSB43jo/img-20250623-wa0093-YNq2DaWjM1CQ3W5K.jpg" alt=""/>
+        <div class="p-4">
+          <p class="text-sm text-justify">
+            É oficial: o Apicella está fazendo história no Seduckathon! Nossa equipe chegou com tudo em Teresina e já está 100% pronta para transformar o primeiro dia do evento em um marco de inovação e criatividade! 💥🚀
+Os alunos já receberam seus kits exclusivos e estão superempolgados com a mochila, o moletom, a garrafinha personalizada… E claro, com uma motivação que não cabe dentro da bagagem! 😆🎒🧥 Tudo pronto para mergulhar nas atividades, trocar experiências e mostrar que, na escola pública, a inovação é uma realidade!
+O Seduckathon não é apenas uma competição, é um espaço onde jovens com atitude e ideias brilhantes podem criar soluções reais, com a força da tecnologia e o poder do trabalho em equipe. E o Apicella, como sempre, chega para dar o seu melhor e mostrar a força da nossa juventude! 💚🔥
+Fiquem ligados porque vem mais por aí! Quem sabe o próximo grande projeto não sai daqui? ✨ #ApicellaNoSeduckathon #JuventudeQueInova #EmpoderamentoJuvenil #RumoAoIntercâmbio
+          </p>
+          <span class="text-xs text-gray-400 block text-right mt-3"
+            >há 05 minutos</span
+          >
+        </div>
+      </div>
+
+      <!-- POST CARD 2 -->
+      <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-xs">
+        <div class="https://th.bing.com/th/id/OIP.-YmRUQHNIsKZzVNz-iD5PAHaEK?w=281&h=180&c=7&r=0&o=7&pid=1.7&rm=3">
+          <img
+            class="h-12 w-12 rounded-full border-2 border-blue-500"
+            src="https://th.bing.com/th/id/OIP.-YmRUQHNIsKZzVNz-iD5PAHaEK?w=281&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+            alt=""
+          />
+          <h2 class="text-lg font-semibold">CETI FREI JOSÉ APICELLA</h2>
+        </div>
+        <img class="w-full h-48 object-cover" src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,h=1152,fit=crop/mk3v9N2p1rSB43jo/img_6981-m7Vbp18DKPF5ZBD4.JPG" alt="" />
+        <div class="p-4">
+          <p class="text-sm text-justify">
+            
+          <span class="text-xs text-gray-400 block text-right mt-3"
+            >há 10 minutos</span
+          > Nossa participação no CETI Frei José Apicella nos Diálogos pelo Piauí foi um sucesso absoluto! Tivemos a honra de representar nossa escola no Stand da IA, levando tecnologia, inovação e muita criatividade para o evento.Quem nos visitou pôde conferir de perto: - Meta Quest 3, o incrível óculos de realidade virtual da Meta, proporcionando uma experiência imersiva única; - AgroScan, nosso projeto premiado no Seduckathon, que combina inteligência artificial e agricultura para transformar o setor; - SchoolGain, uma solução inovadora que desenvolvemos para aprimorar o ensino e a aprendizagem no contexto escolar.O nosso stand foi visitado por várias personalidades importantes, como o deputado estadual Dr. Marcus Vinícius, professores, alunos da rede municipal, representantes da 10ª GRE, membros do nosso instituto e, claro, o público em geral. Um momento muito especial foi a visita do Prof. Dr. Adriano Santana, ex-professor da escola, que nos deixou extremamente felizes com sua presença.Os professores Samuel Sá e Raimundo Nonato Ribeiro, que foram responsáveis pela organização e coordenação do stand, fizeram tudo com muito carinho e dedicação, e não poderíamos deixar de agradecer a eles.Agradecemos imensamente a todos que nos prestigiaram e que, assim como nós, acreditam que a tecnologia e a educação são as chaves para o futuro! 🚀📚💡 #CETIFreiJoséApicella #DiálogosPeloPiauí #InovaçãoNaEducação #TecnologiaEducacional #OrgulhoDeSerApicellA
+        </div>
+      </div>
+
+      <!-- POST CARD 3 -->
+      <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-xs">
+        <div class="flex items-center gap-3 p-4">
+          <img
+            class="h-12 w-12 rounded-full border-2 border-blue-500"
+            src="https://superlegalbrinquedos.vtexassets.com/arquivos/ids/207462-1200-auto?v=637997898589100000&width=1200&height=auto&aspect=true"
+            alt=""
+          />
+          <h2 class="text-lg font-semibold">CETI Cônego Cardoso</h2>
+        </div>
+        <img class="w-full h-48 object-cover" src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=768,fit=crop/mk3v9N2p1rSB43jo/img_6874-mjEGP3bRnbFPpZB2.JPG" alt=""/>
+        <div class="p-4">
+          <p class="text-sm text-justify">
+            Alunos do Ceti Frei José Apicella arrasando no Sedukathon 2025! 💡🔧 Com criatividade, trabalho em equipe e muito entusiasmo, eles estão se destacando ao desenvolver soluções inovadoras para transformar o futuro da educação. #Sedukathon2025 #CetiFreiJoséApicella #InovaçãoNaEducação #FuturoPromissor
+          </p>
+          <span class="text-xs text-gray-400 block text-right mt-3"
+            >há 15 minutos</span
+          >
+        
+      </div>
+  </body>
+  <footer style="text-align: center; padding: 15px 0; background-color: #422ef1; color: white; font-family: Arial, sans-serif; font-size: 14px;">
+  © <span id="ano-atual"></span> Prof. Eduardo Mineiro.'. Todos os direitos reservados.
+</footer>
+
+<script>
+  document.getElementById('ano-atual').textContent = new Date().getFullYear();
+</script>
+</html>
