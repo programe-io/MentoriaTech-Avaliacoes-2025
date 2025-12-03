@@ -1,0 +1,611 @@
+/* ======= Reset e base ======= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #05060a;
+  --bg-alt: #0a0d16;
+  --text: #e7ecff;
+  --muted: #aab3d7;
+  --primary: #7aa2ff;
+  --primary-strong: #4f7bff;
+  --accent: #a07bff;
+  --accent-2: #00d1ff;
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-strong: rgba(255, 255, 255, 0.14);
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --radius: 14px;
+  --radius-sm: 10px;
+  --radius-lg: 22px;
+  --maxw: 1100px;
+}
+
+html, body {
+  height: 100%;
+  background: radial-gradient(1200px 800px at 70% 0%, #0b0f1e, #04050a 60%, #000 100%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Canvas de estrelas atrás de tudo */
+#stars {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+/* ======= Header com efeito vidro ======= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 24px;
+  background: linear-gradient(to bottom, rgba(7, 9, 16, 0.6), rgba(7, 9, 16, 0.2));
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand .logo {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--accent), var(--primary));
+  box-shadow: 0 0 18px var(--accent);
+  color: white;
+  font-size: 18px;
+}
+
+.brand h1 {
+  font-size: 18px;
+  margin: 0;
+  letter-spacing: 0.5px;
+  color: var(--text);
+}
+
+.site-nav {
+  display: flex;
+  gap: 18px;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  transition: color .2s ease, background .2s ease, transform .2s ease;
+}
+
+.site-nav a:hover {
+  color: var(--text);
+  background: var(--glass);
+  transform: translateY(-1px);
+}
+
+/* ======= Hero ======= */
+.hero {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 32px;
+  padding: 60px 24px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.hero-content h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  margin: 0 0 12px 0;
+  text-shadow: 0 2px 30px rgba(122, 162, 255, 0.2);
+}
+
+.hero-content p {
+  color: var(--muted);
+  margin: 0 0 20px 0;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--glass);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  background: var(--glass-strong);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-color: transparent;
+}
+
+.btn-ghost {
+  background: transparent;
+}
+
+/* Visual de planeta no hero */
+.hero-visual {
+  position: relative;
+  height: 280px;
+}
+
+.planet {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #394a9f, #0c1742 60%, #060a20 100%);
+  box-shadow: inset -18px -24px 60px rgba(255,255,255,0.06), 0 0 70px rgba(64, 110, 255, 0.35);
+  animation: drift 18s ease-in-out infinite;
+}
+
+.ring {
+  position: absolute;
+  left: 30px;
+  top: 120px;
+  width: 220px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid rgba(180, 220, 255, 0.25);
+  transform: rotate(20deg);
+  filter: drop-shadow(0 0 12px rgba(120,170,255,0.2));
+}
+
+.glow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(64,110,255,0.16), transparent 70%);
+  animation: pulse 5s ease-in-out infinite;
+}
+
+/* Animações */
+@keyframes drift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ======= Seções padrão ======= */
+.section {
+  position: relative;
+  z-index: 1;
+  max-width: var(--maxw);
+  margin: 40px auto;
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(10,14,24,0.6), rgba(10,14,24,0.3));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.section h3 {
+  margin: 0 0 8px 0;
+  font-size: 22px;
+}
+
+.section-intro {
+  margin: 0 0 20px 0;
+  color: var(--muted);
+}
+
+/* Variante alternada */
+.section-alt {
+  background: linear-gradient(180deg, rgba(8,10,18,0.7), rgba(8,10,18,0.4));
+}
+
+/* ======= Grid de cards ======= */
+.grid.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 30% 30%, rgba(122,162,255,0.25), transparent 55%);
+  transform: rotate(10deg);
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.card h4 {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+}
+
+.card p {
+  margin: 0 0 10px 0;
+  color: var(--muted);
+}
+
+.card .details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.card .details li {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  color: var(--text);
+}
+
+.card .details strong {
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
+/* ======= Galeria de nebulosas ======= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.nebula {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.nebula img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.15) contrast(1.05);
+  transition: transform .3s ease, filter .3s ease;
+}
+
+.nebula figcaption {
+  padding: 12px;
+  color: var(--muted);
+  background: linear-gradient(180deg, rgba(12,14,22,0.7), rgba(12,14,22,0.45));
+  border-top: 1px solid var(--border);
+}
+
+.nebula:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.nebula:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.25) contrast(1.1);
+}
+
+/* ======= Lista de recursos ======= */
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.06);
+  transition: transform .2s ease, background .2s ease;
+}
+
+.feature:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.09);
+}
+
+.feature .icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--primary), var(--accent));
+  box-shadow: 0 0 16px rgba(122, 162, 255, 0.35);
+}
+
+/* ======= Formulário de contato ======= */
+.contact {
+  backdrop-filter: blur(4px);
+}
+
+.contact-form {
+  display: grid;
+  gap: 12px;
+  max-width: 680px;
+}
+
+.form-row {
+  display: grid;
+  gap: 8px;
+}
+
+.form-row label {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.form-row input,
+.form-row textarea {
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+  color: #92a1c0;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  border-color: var(--primary);
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 0 0 3px rgba(122,162,255,0.25);
+}
+
+/* ======= Footer ======= */
+.site-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 40px;
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(6,8,14,0.7), rgba(6,8,14,0.4));
+}
+
+/* ======= Responsividade ======= */
+@media (max-width: 1000px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    height: 220px;
+    margin-top: -10px;
+  }
+}
+
+@media (max-width: 860px) {
+  .grid.cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .feature-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .site-nav {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 560px) {
+  .grid.cards,
+  .gallery,
+  .feature-list {
+    grid-template-columns: 1fr;
+  }
+  .site-header {
+    padding: 10px 14px;
+  }
+  .brand h1 {
+    font-size: 16px;
+  }
+  .hero {
+    padding: 40px 16px;
+    margin: 0 8px;
+  }
+  .section {
+    margin: 24px 8px;
+    padding: 16px;
+  }
+}
+
+/* ======= Detalhes visuais extras ======= */
+.section::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(122,162,255,0.35) 50%, transparent 100%);
+  opacity: 0.7;
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(160,123,255,0.35) 50%, transparent 100%);
+  opacity: 0.7;
+}
+
+/* Sutileza de brilho nas bordas do site */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(800px 500px at 10% 90%, rgba(160,123,255,0.06), transparent 70%),
+              radial-gradient(900px 600px at 90% 10%, rgba(0,209,255,0.06), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ======= Foco visível e acessibilidade ======= */
+:focus-visible {
+  outline: 3px solid rgba(122,162,255,0.5);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Preferência do usuário por reduzir animações */
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover,
+  .card:hover,
+  .nebula:hover,
+  .feature:hover {
+    transform: none;
+  }
+  .planet,
+  .glow {
+    animation: none;
+  }
+}
+
+/* ======= Barra de rolagem personalizada (webkit) ======= */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0d16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4f7bff, #a07bff);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #6b92ff, #b390ff);
+}
+
+/* ======= Pequeninos brilhos nos cards ======= */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.35), transparent 60%);
+  filter: blur(18px);
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+.card:hover::before {
+  opacity: 0.6;
+}
+
+/* ======= Microinteração nos links ======= */
+.site-nav a:active {
+  transform: translateY(0);
+}
+
+/* ======= Seleção de texto ======= */
+::selection {
+  background: rgba(122,162,255,0.35);
+  color: #fff;
+}
+
+/* ======= Fim ======= */
+.space-facts {
+  margin-top: 24px;
+  padding: 16px;
+  border-left: 4px solid var(--accent-2);
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.space-facts h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--accent-2);
+  font-size: 18px;
