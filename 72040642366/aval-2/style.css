@@ -1,107 +1,176 @@
-/* Importação de uma fonte do Google Fonts (opcional) */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* Configurações Globais */
+:root {
+    --cor-fundo-principal: #121212; /* Preto muito escuro */
+    --cor-destaque: #ff6f00; /* Laranja vibrante */
+    --cor-secundaria: #eceff1; /* Cinza claro quase branco */
+    --cor-texto-fundo: #0a0a0a; /* Fundo mais escuro para seções */
+}
 
-/* Estilo para todo o corpo da página */
 body {
-    font-family: 'Roboto', sans-serif; /* Aplica a fonte */
-        margin: 0; /* Remove margem padrão do navegador */
-            padding: 0;
-                background-color: #f4f4f9; /* Cor de fundo suave */
-                    color: #333; /* Cor do texto principal */
-                        line-height: 1.6; /* Espaçamento entre linhas */
-                        }
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-secundaria);
+    line-height: 1.7;
+}
 
-                        /* Estilo para o cabeçalho (topo da página) */
-                        header {
-                            background-color: #007bff; /* Azul vibrante */
-                                color: white;
-                                    padding: 20px 0;
-                                        text-align: center;
-                                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                                            }
+/* Cabeçalho */
+header {
+    background: linear-gradient(45deg, var(--cor-fundo-principal) 0%, #2c2c2c 100%);
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 6px solid var(--cor-destaque);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
 
-                                            header h1 {
-                                                margin: 0;
-                                                    font-size: 2.5em;
-                                                    }
+.header-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-                                                    header p {
-                                                        margin-top: 5px;
-                                                            font-size: 1.1em;
-                                                            }
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 4em;
+    margin-bottom: 10px;
+    letter-spacing: 4px;
+    color: white;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+}
 
-                                                            /* Estilo para o menu de navegação */
-                                                            nav {
-                                                                background-color: #333; /* Fundo escuro para o menu */
-                                                                    padding: 10px 0;
-                                                                    }
+header p {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: var(--cor-secundaria);
+}
 
-                                                                    nav ul {
-                                                                        list-style: none; /* Remove os marcadores de lista */
-                                                                            padding: 0;
-                                                                                margin: 0;
-                                                                                    text-align: center;
-                                                                                    }
+/* Conteúdo Principal */
+main {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
 
-                                                                                    nav ul li {
-                                                                                        display: inline; /* Coloca os itens do menu lado a lado */
-                                                                                            margin: 0 15px;
-                                                                                            }
+section {
+    margin-bottom: 60px;
+    padding: 40px;
+    background-color: var(--cor-texto-fundo);
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
 
-                                                                                            nav ul li a {
-                                                                                                color: white;
-                                                                                                    text-decoration: none; /* Remove o sublinhado dos links */
-                                                                                                        font-weight: bold;
-                                                                                                            padding: 5px 10px;
-                                                                                                                border-radius: 5px;
-                                                                                                                    transition: background-color 0.3s; /* Transição suave para o efeito hover */
-                                                                                                                    }
+section h2 {
+    color: var(--cor-destaque);
+    border-bottom: 4px solid var(--cor-secundaria);
+    padding-bottom: 15px;
+    margin-top: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.8em;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
 
-                                                                                                                    nav ul li a:hover {
-                                                                                                                        background-color: #555; /* Cor de fundo ao passar o mouse */
-                                                                                                                        }
+p {
+    margin-bottom: 20px;
+}
 
-                                                                                                                        /* Estilo para o conteúdo principal */
-                                                                                                                        main {
-                                                                                                                            padding: 20px;
-                                                                                                                                max-width: 1000px; /* Limita a largura do conteúdo */
-                                                                                                                                    margin: 20px auto; /* Centraliza o conteúdo */
-                                                                                                                                        background-color: white;
-                                                                                                                                            border-radius: 8px;
-                                                                                                                                                box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-                                                                                                                                                }
+/* Cards de Modalidades */
+.cards-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
-                                                                                                                                                /* Estilo para as seções */
-                                                                                                                                                section {
-                                                                                                                                                    margin-bottom: 30px;
-                                                                                                                                                        padding: 15px;
-                                                                                                                                                            border-left: 5px solid #007bff; /* Borda lateral azul */
-                                                                                                                                                                background-color: #ffffff;
-                                                                                                                                                                    border-radius: 4px;
-                                                                                                                                                                    }
+.card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px; /* Limita o tamanho máximo do card */
+    padding: 25px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    text-align: center;
+    border-top: 6px solid var(--cor-destaque);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
-                                                                                                                                                                    section h2 {
-                                                                                                                                                                        color: #007bff;
-                                                                                                                                                                            border-bottom: 2px solid #eee;
-                                                                                                                                                                                padding-bottom: 10px;
-                                                                                                                                                                                }
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    background-color: #2a2a2a;
+}
 
-                                                                                                                                                                                /* Estilo para os emojis nos títulos */
-                                                                                                                                                                                .emoji {
-                                                                                                                                                                                    font-size: 1.2em;
-                                                                                                                                                                                        margin-right: 5px;
-                                                                                                                                                                                        }
+.card h3 {
+    color: var(--cor-destaque);
+    font-size: 1.8em;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
 
-                                                                                                                                                                                        /* Estilo para listas dentro das seções */
-                                                                                                                                                                                        section ul, section ol {
-                                                                                                                                                                                            margin-left: 20px;
-                                                                                                                                                                                            }
+.card p {
+    font-size: 1.1em;
+}
 
-                                                                                                                                                                                            /* Estilo para o rodapé */
-                                                                                                                                                                                            footer {
-                                                                                                                                                                                                background-color: #333;
-                                                                                                                                                                                                    color: white;
-                                                                                                                                                                                                        text-align: center;
-                                                                                                                                                                                                            padding: 10px 0;
-                                                                                                                                                                                                                margin-top: 20px;
-                                                                                                                                                                                                                }
+/* Lista de Segurança */
+.dicas-seguranca ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 30px;
+}
+
+.dicas-seguranca li {
+    background: #252525;
+    margin: 18px 0;
+    padding: 20px;
+    border-left: 6px solid var(--cor-destaque);
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1.1em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-secundaria);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    font-size: 1.1em;
+    border-top: 4px solid var(--cor-destaque);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        max-width: 90%; /* Ajusta a largura do card em telas menores */
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.8em;
+        letter-spacing: 2px;
+    }
+
+    header p {
+        font-size: 1.1em;
+    }
+
+    section h2 {
+        font-size: 2.2em;
+    }
+
+    section {
+        padding: 25px;
+    }
+}
