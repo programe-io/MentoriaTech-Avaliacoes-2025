@@ -1,0 +1,230 @@
+/* ========== RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0d0d0d;
+    color: #e4e4e4;
+}
+
+a {
+    text-decoration: none;
+    color: #00ccff;
+}
+
+/* ========== CABEÇALHO ========== */
+header {
+    background: #111;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 4px solid #00ccff;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #00ccff;
+}
+
+/* ========== MENU ========== */
+nav {
+    background: #141414;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+    border-bottom: 2px solid #00ccff;
+}
+
+nav a {
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+nav a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #00ccff;
+}
+
+/* ========== BANNER ========== */
+.banner {
+    width: 100%;
+    height: 300px;
+    background: url("https://wallpapercave.com/wp/wp4676588.jpg") center/cover no-repeat;
+    border-bottom: 4px solid #00ccff;
+}
+
+/* ========== CONTEÚDO (POSTS + SIDEBAR) ========== */
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.posts {
+    flex: 3;
+}
+
+.post {
+    background: #1a1a1a;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #00ccff;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.post:hover {
+    transform: scale(1.01);
+}
+
+.post h2 {
+    color: #00ccff;
+    margin-bottom: 10px;
+}
+
+.post img {
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar {
+    flex: 1;
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #00ccff;
+    height: fit-content;
+}
+
+.sidebar h3 {
+    color: #00ccff;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.sidebar li {
+    margin-bottom: 8px;
+}
+
+/* ========== GALERIA ========== */
+.galeria {
+    padding: 20px;
+}
+
+.galeria h2 {
+    color: #00ccff;
+    margin-bottom: 15px;
+}
+
+.galeria-container {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.galeria img {
+    width: 100%;
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.04);
+}
+
+/* ========== CONTATO ========== */
+.contato {
+    background: #1a1a1a;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #00ccff;
+}
+
+.contato h2 {
+    color: #00ccff;
+}
+
+.contato input,
+.contato textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    color: #fff;
+    background: #111;
+    border: 1px solid #00ccff;
+    border-radius: 5px;
+}
+
+.contato button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #00ccff;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+}
+
+.contato button:hover {
+    background: #0099cc;
+}
+
+/* ========== RODAPÉ ========== */
+footer {
+    background: #111;
+    color: #777;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    border-top: 3px solid #00ccff;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .galeria-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .galeria-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===== ANIMAÇÃO FADE-IN ===== */
+.post,
+.sidebar,
+.galeria img,
+.contato {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s ease;
+}
+
+.animar {
+    opacity: 1;
+    transform: translateY(0);
+}
