@@ -1,0 +1,251 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #e8f5e9; /* Fundo muito suave */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- Cabeçalho --- */
+.blog-header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradiente de azul escuro */
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.blog-header h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    color: #c7e5ff; /* Azul claro para links */
+    text-decoration: none;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Uso da tag <span> para ícone na navegação */
+.nav-icon {
+    margin-right: 8px;
+    color: #ffc107; /* Amarelo de destaque */
+    font-size: 1.2em;
+}
+
+/* --- Layout Principal (Grid de 2 Colunas) --- */
+.blog-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding: 40px 0;
+}
+
+.main-content h2 {
+    font-family: 'Merriweather', serif;
+    color: #1e3c72;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #b3e5fc;
+    padding-bottom: 10px;
+}
+
+/* --- Artigos --- */
+.blog-post {
+    background-color: white;
+    border: 1px solid #cfd8dc;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    display: flex;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-img {
+    width: 180px;
+    height: 140px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.post-content h3 {
+    color: #2a5298;
+    font-size: 1.6em;
+    margin-bottom: 5px;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #607d8b;
+    margin-bottom: 15px;
+}
+
+/* Uso da tag <span> para a categoria */
+.category-tag {
+    background-color: #e0f7fa; /* Ciano claro */
+    color: #00838f;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
+.read-more {
+    display: inline-block;
+    color: #4a148c; /* Roxo para destaque */
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 10px;
+    transition: color 0.2s;
+}
+
+.read-more:hover {
+    color: #7b1fa2;
+}
+
+/* Uso da tag <aside> para Dica Rápida */
+.quick-tip {
+    background-color: #fce4ec; /* Rosa suave */
+    border-left: 5px solid #e91e63;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.quick-tip h4 {
+    color: #e91e63;
+    margin-bottom: 10px;
+}
+
+/* --- Barra Lateral (Aside) --- */
+.sidebar {
+    padding-top: 50px;
+}
+
+.widget {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.widget h4 {
+    color: #2a5298;
+    border-bottom: 2px solid #e1f5fe;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Newsletter e Formulário */
+.widget form input[type="text"],
+.widget form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #b3e5fc;
+    border-radius: 4px;
+}
+
+.widget form label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 3px;
+    color: #4a148c;
+}
+
+.btn-aside {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4a148c; /* Roxo principal */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.2s;
+}
+
+.btn-aside:hover {
+    background-color: #7b1fa2;
+}
+
+/* Categorias */
+.widget ul {
+    list-style: none;
+}
+
+.widget ul li a {
+    display: block;
+    padding: 8px 0;
+    color: #444;
+    text-decoration: none;
+    border-bottom: 1px dotted #e1f5fe;
+}
+
+.widget ul li a:hover {
+    color: #4a148c;
+    font-weight: 700;
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: #1e3c72;
+    color: #c7e5ff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+    .blog-layout {
+        grid-template-columns: 1fr; 
+    }
+    
+    .sidebar {
+        padding-top: 0;
+    }
+
+    .blog-post {
+        flex-direction: column; 
+    }
+
+    .post-img {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
