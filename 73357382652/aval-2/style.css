@@ -1,0 +1,160 @@
+/* Configurações Globais */
+:root {
+    --cor-primaria: #008000; /* Verde Escuro (Campo) */
+    --cor-secundaria: #FFD700; /* Dourado/Amarelo (Troféu) */
+    --cor-fundo: #f4f4f9;
+    --cor-texto: #333;
+    --cor-header: #0a0a20; /* Azul Marinho Quase Preto */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+/* Estilização do Header (Cabeçalho) */
+header {
+    background-color: var(--cor-header);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--cor-primaria);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+/* Estilização do Main (Conteúdo Principal) */
+main {
+    padding: 20px;
+    max-width: 1100px;
+    margin: 20px auto;
+}
+
+section {
+    background: white;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: var(--cor-primaria);
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilização da Seção de Benefícios */
+.beneficio-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite quebras de linha em telas pequenas */
+}
+
+.cartao {
+    flex: 1;
+    min-width: 300px; /* Garante que não fiquem muito estreitos */
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 5px solid var(--cor-secundaria);
+    transition: transform 0.3s ease;
+}
+
+.cartao:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.cartao h3 {
+    color: var(--cor-header);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.cartao ul {
+    list-style-type: none;
+}
+
+.cartao ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.cartao ul li:last-child {
+    border-bottom: none;
+}
+
+/* Estilização da Chamada para Ação */
+#chamada {
+    text-align: center;
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+#chamada h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.botao {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+    background-color: #e0b600; /* Tom mais escuro de dourado */
+}
+
+/* Estilização do Footer (Rodapé) */
+footer {
+    background-color: var(--cor-header);
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Media Queries para Responsividade (Telas Menores) */
+@media (max-width: 768px) {
+    .beneficio-grid {
+        flex-direction: column;
+    }
+
+    .cartao {
+        min-width: 100%;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
