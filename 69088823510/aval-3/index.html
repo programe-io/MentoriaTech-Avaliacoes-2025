@@ -1,46 +1,60 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Moderna Tailwind</title>
+    <title>Jogos Online - Página Moderna</title>
     <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet"></head>
+</head>
 
 <body class="bg-gray-100 text-gray-800">
 
     <!-- CABEÇALHO -->
     <header class="bg-white shadow-lg fixed left-0 right-0 top-0 z-50">
         <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
-            <h1 class="text-2xl font-bold text-blue-600">Meu Site</h1>
+            <h1 class="text-2xl font-bold text-blue-600">Jogos Online</h1>
 
             <nav class="hidden md:flex gap-6">
                 <a href="#home" class="hover:text-blue-600">Início</a>
-                <a href="#sobre" class="hover:text-blue-600">Sobre</a>
+                <a href="#tipos" class="hover:text-blue-600">Tipos de Jogos</a>
                 <a href="#contato" class="hover:text-blue-600">Contato</a>
             </nav>
 
             <button class="md:hidden text-3xl text-blue-600" onclick="menu.classList.toggle('hidden')">☰</button>
         </div>
 
+        <!-- MENU MOBILE -->
         <div id="menu" class="hidden md:hidden bg-white border-t">
             <a href="#home" class="block p-3 hover:bg-blue-100">Início</a>
-            <a href="#sobre" class="block p-3 hover:bg-blue-100">Sobre</a>
+            <a href="#tipos" class="block p-3 hover:bg-blue-100">Tipos de Jogos</a>
             <a href="#contato" class="block p-3 hover:bg-blue-100">Contato</a>
         </div>
     </header>
 
     <!-- BANNER -->
-    <section id="home" class="pt-28 pb-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+    <section id="home" class="pt-28 pb-20 bg-gradient-to-r from-purple-600 to-indigo-700 text-white">
         <div class="max-w-6xl mx-auto text-center px-4">
-            <h2 class="text-4xl md:text-5xl font-bold drop-shadow-xl mb-4">Bem-vindo ao Site Moderno</h2>
-            <p class="text-lg md:text-xl opacity-90 mb-6">Criado com Tailwind CSS e layout responsivo.</p>
+            <h2 class="text-4xl md:text-5xl font-bold drop-shadow-xl mb-4">
+                O Mundo dos Jogos Online
+            </h2>
+            <p class="text-lg md:text-xl opacity-90 mb-6">
+                Diversão, competição e interação com jogadores do mundo todo.
+            </p>
 
-            <a href="#sobre" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-gray-200 transition">
-                Saiba Mais
+            <a href="#tipos" 
+               class="bg-white text-purple-700 px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-gray-200 transition">
+                Explorar
             </a>
         </div>
     </section>
@@ -48,33 +62,45 @@
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="max-w-6xl mx-auto px-4 py-16">
 
-        <!-- SEÇÃO SOBRE -->
-        <section id="sobre" class="mb-20">
-            <h2 class="text-3xl font-bold text-blue-700 mb-6">Sobre o Projeto</h2>
+        <!-- SEÇÃO TIPOS DE JOGOS -->
+        <section id="tipos" class="mb-20">
+            <h2 class="text-3xl font-bold text-purple-700 mb-6">Principais Tipos de Jogos Online</h2>
 
             <div class="flex flex-col md:flex-row gap-10">
 
                 <!-- CARD 1 -->
-                <div class="bg-white shadow-lg rounded-xl border p-6 flex-1">
+                <div class="bg-white shadow-lg rounded-xl border p-6 flex-1 hover:shadow-2xl transition">
                     <img 
-                        src="https://cdn.pixabay.com/photo/2017/01/31/13/14/website-2024545_1280.png"
-                        alt="Imagem de tecnologia"
+                        src="https://cdn.pixabay.com/photo/2016/11/29/04/00/strategy-1865510_1280.jpg"
+                        alt="Jogos de Estratégia"
                         class="rounded-lg mb-4 shadow">
-                    <h3 class="text-xl font-bold mb-2">Tecnologias</h3>
+                    <h3 class="text-xl font-bold mb-2">Jogos de Estratégia</h3>
                     <p class="text-gray-600">
-                        A página usa HTML e Tailwind para criar um visual moderno e eficiente.
+                        Focados em planejamento, tática e inteligência. Exemplos: Clash of Clans, Age of Empires, League of Legends.
                     </p>
                 </div>
 
                 <!-- CARD 2 -->
-                <div class="bg-white shadow-lg rounded-xl border p-6 flex-1">
+                <div class="bg-white shadow-lg rounded-xl border p-6 flex-1 hover:shadow-2xl transition">
                     <img 
-                        src="https://cdn.pixabay.com/photo/2015/01/08/18/30/startup-593327_1280.jpg"
-                        alt="Imagem responsiva"
+                        src="https://cdn.pixabay.com/photo/2015/07/02/10/22/shooters-828935_1280.jpg"
+                        alt="Jogos de Tiro"
                         class="rounded-lg mb-4 shadow">
-                    <h3 class="text-xl font-bold mb-2">Responsividade</h3>
+                    <h3 class="text-xl font-bold mb-2">Jogos de Tiro (FPS/TPS)</h3>
                     <p class="text-gray-600">
-                        O layout adapta-se automaticamente para computadores, tablets e celulares.
+                        Populares e competitivos, incluem Free Fire, Fortnite, Call of Duty e Valorant.
+                    </p>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="bg-white shadow-lg rounded-xl border p-6 flex-1 hover:shadow-2xl transition">
+                    <img 
+                        src="https://cdn.pixabay.com/photo/2017/09/04/18/01/video-game-2713095_1280.jpg"
+                        alt="Jogos Casuais"
+                        class="rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold mb-2">Jogos Casuais</h3>
+                    <p class="text-gray-600">
+                        Simples e divertidos, perfeitos para passar o tempo. Exemplos: Candy Crush, Stumble Guys e Gartic.
                     </p>
                 </div>
 
@@ -83,37 +109,39 @@
 
         <!-- SEÇÃO CONTATO -->
         <section id="contato">
-            <h2 class="text-3xl font-bold text-blue-700 mb-6">Contato</h2>
+            <h2 class="text-3xl font-bold text-purple-700 mb-6">Fale Conosco</h2>
 
             <form class="bg-white rounded-xl border shadow-lg p-6 max-w-xl mx-auto">
                 <label class="block mb-4">
                     <span class="font-semibold">Nome</span>
-                    <input type="text" class="mt-1 w-full p-2 border rounded-lg focus:ring focus:ring-blue-300">
+                    <input type="text" 
+                           class="mt-1 w-full p-2 border rounded-lg focus:ring focus:ring-purple-300">
                 </label>
 
                 <label class="block mb-4">
                     <span class="font-semibold">E-mail</span>
-                    <input type="email" class="mt-1 w-full p-2 border rounded-lg focus:ring focus:ring-blue-300">
+                    <input type="email" 
+                           class="mt-1 w-full p-2 border rounded-lg focus:ring focus:ring-purple-300">
                 </label>
 
                 <label class="block mb-4">
                     <span class="font-semibold">Mensagem</span>
-                    <textarea rows="4" class="mt-1 w-full p-2 border rounded-lg focus:ring focus:ring-blue-300"></textarea>
+                    <textarea rows="4" 
+                           class="mt-1 w-full p-2 border rounded-lg focus:ring focus:ring-purple-300"></textarea>
                 </label>
 
-                <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                <button class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
                     Enviar
                 </button>
             </form>
         </section>
-
     </main>
 
     <!-- RODAPÉ -->
     <footer class="bg-gray-900 text-white text-center py-6 mt-16">
-        <p class="opacity-80">© 2025 — Site Moderno com Tailwind CSS</p>
-    </footer>
+        <p class="opacity-80">© 2025
 
-<script src="script.js"></script></body>
-
+  <script src="script.js"></script>
+  
+</body>
 </html>
