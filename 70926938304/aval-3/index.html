@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto - Personagens Mais Legais</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0d1b2a;
+            color: #e0e1dd;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, #ff6b08, #ff3d00);
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 5px solid #ffab00;
+            box-shadow: 0 5px 15px rgba(255, 107, 8, 0.3);
+        }
+        
+        h1 {
+            color: #fff;
+            font-size: 2.8rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            color: #ffab00;
+            border-bottom: 2px solid #ff6b08;
+            padding-bottom: 0.5rem;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        h3 {
+            color: #ff6b08;
+            margin: 1rem 0;
+        }
+        
+        nav {
+            background-color: #1b263b;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: #ffab00;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #ff6b08;
+            color: #0d1b2a;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .intro {
+            background-color: #1b263b;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 5px solid #ff6b08;
+        }
+        
+        .characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .character-card {
+            background-color: #415a77;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+        
+        .character-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .character-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 3px solid #ff6b08;
+        }
+        
+        .character-info {
+            padding: 1.5rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background-color: #1b263b;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #415a77;
+        }
+        
+        th {
+            background-color: #ff6b08;
+            color: #0d1b2a;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background-color: #415a77;
+        }
+        
+        .jutsu-list {
+            background-color: #1b263b;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        form {
+            background-color: #1b263b;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ffab00;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #415a77;
+            border-radius: 4px;
+            background-color: #0d1b2a;
+            color: #e0e1dd;
+        }
+        
+        button {
+            background: linear-gradient(to right, #ff6b08, #ff3d00);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: linear-gradient(to right, #ff3d00, #ff6b08);
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background-color: #1b263b;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-top: 3px solid #ff6b08;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #ffab00;
+            border-left: 3px solid #ff6b08;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .details summary {
+            cursor: pointer;
+            background-color: #415a77;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            font-weight: bold;
+        }
+        
+        .details p {
+            padding: 1rem;
+            background-color: #1b263b;
+            border-radius: 0 0 5px 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header>
+        <h1>Naruto: Personagens Mais Legais</h1>
+        <p>Explore o universo de Naruto com os três personagens mais icônicos</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#personagens">Personagens</a></li>
+            <li><a href="#sobre">Sobre Naruto</a></li>
+            <li><a href="#tabela">Comparação</a></li>
+            <li><a href="#form">Vote no seu favorito</a></li>
+            <li><a href="#video">Vídeo</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <section id="sobre" class="intro">
+            <h2>Sobre o Mundo de Naruto</h2>
+            <p><strong>Naruto</strong> é uma série de mangá escrita e ilustrada por <em>Masashi Kishimoto</em>. A história gira em torno de Naruto Uzumaki, um jovem ninja que constantemente procura por reconhecimento e sonha em se tornar Hokage, o líder máximo e mais poderoso de sua vila.</p>
+            
+            <blockquote class="quote">
+                "Eu nunca vou desistir! Eu nunca vou voltar atrás na minha palavra! Esse é o meu jeito ninja!"
+                <cite>— Naruto Uzumaki</cite>
+            </blockquote>
+            
+            <p>A série é ambientada em um mundo onde ninjas podem usar técnicas especiais chamadas <mark>jutsus</mark>, que variam desde habilidades básicas até poderosos ataques elementais.</p>
+        </section>
+        
+        <section id="personagens">
+            <h2>Personagens Mais Legais</h2>
+            <p>Conheça três dos personagens mais incríveis do universo Naruto:</p>
+            
+            <div class="characters">
+                <article class="character-card">
+                    <img src="https://th.bing.com/th/id/OIP.kPotDC_FESrLH6gkY-QDPwHaFb?w=225&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Naruto Uzumaki" class="character-img">
+                    <div class="character-info">
+                        <h3>Naruto Uzumaki</h3>
+                        <p>O protagonista da série, um ninja da Vila da Folha que carrega a Raposa de Nove Caudas dentro de si. Ele sonha em se tornar Hokage para ganhar o respeito de todos.</p>
+                        <div class="jutsu-list">
+                            <h4>Jutsus Principais:</h4>
+                            <ul>
+                                <li>Rasengan</li>
+                                <li>Modo Sábio dos Seis Caminhos</li>
+                                <li>Clone das Sombras</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="character-card">
+                    <img src="https://th.bing.com/th/id/OIP.z55b8FcCUaUPEWFQ8HrYeQHaEK?w=353&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Sasuke Uchiha" class="character-img">
+                    <div class="character-info">
+                        <h3>Sasuke Uchiha</h3>
+                        <p>Último membro sobrevivente do clã Uchiha, busca vingança contra seu irmão Itachi. Inicialmente rival de Naruto, torna-se um dos ninjas mais poderosos.</p>
+                        <div class="jutsu-list">
+                            <h4>Jutsus Principais:</h4>
+                            <ul>
+                                <li>Chidori</li>
+                                <li>Sharingan</li>
+                                <li>Susanoo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="character-card">
+                    <img src="https://th.bing.com/th/id/OIP.JMbqxXhSg6v4vrQfyOvFDwHaFO?w=208&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Kakashi Hatake" class="character-img">
+                    <div class="character-info">
+                        <h3>Kakashi Hatake</h3>
+                        <p>Conhecido como "Kakashi do Sharingan", é um ninja de elite e sensei do Time 7. Famoso por sua habilidade de copiar jutsus e por sempre estar atrasado.</p>
+                        <div class="jutsu-list">
+                            <h4>Jutsus Principais:</h4>
+                            <ul>
+                                <li>Chidori</li>
+                                <li>Sharingan</li>
+                                <li>Kamui</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <section id="tabela">
+            <h2>Comparação entre os Personagens</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Personagem</th>
+                        <th>Vila</th>
+                        <th>Especialidade</th>
+                        <th>Nível de Poder</th>
+                        <th>Classificação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Naruto Uzumaki</td>
+                        <td>Vila da Folha</td>
+                        <td>Senjutsu e Chakra da Raposa</td>
+                        <td>Kage</td>
+                        <td>Protagonista</td>
+                    </tr>
+                    <tr>
+                        <td>Sasuke Uchiha</td>
+                        <td>Vila da Folha</td>
+                        <td>Sharingan e Rinnegan</td>
+                        <td>Kage</td>
+                        <td>Co-protagonista</td>
+                    </tr>
+                    <tr>
+                        <td>Kakashi Hatake</td>
+                        <td>Vila da Folha</td>
+                        <td>Cópia de Jutsus</td>
+                        <td>Jōnin</td>
+                        <td>Mentor</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section class="details">
+            <details>
+                <summary>Curiosidades sobre o Mundo Ninja</summary>
+                <p>No universo de Naruto, existem cinco grandes nações ninja: Terra do Fogo, Vento, Raio, Terra e Água. Cada uma tem uma vila oculta principal que serve como centro militar e político. O sistema de classificação de ninjas vai desde Genin (iniciante) até Kage (líder máximo).</p>
+            </details>
+        </section>
+        
+        <section id="video">
+            <h2>Trailer de Naruto</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/-G9BqkgZXRA" title="Naruto Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+        
+        <section id="form">
+            <h2>Vote no seu Personagem Favorito</h2>
+            <form action="#" method="post">
+                <label for="nome">Seu Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                
+                <label for="personagem">Personagem Favorito:</label>
+                <select id="personagem" name="personagem" required>
+                    <option value="" disabled selected>Selecione um personagem</option>
+                    <option value="naruto">Naruto Uzumaki</option>
+                    <option value="sasuke">Sasuke Uchiha</option>
+                    <option value="kakashi">Kakashi Hatake</option>
+                    <option value="outro">Outro</option>
+                </select>
+                
+                <label for="justificativa">Por que este é seu personagem favorito?</label>
+                <textarea id="justificativa" name="justificativa" rows="4" placeholder="Explique sua escolha..."></textarea>
+                
+                <label for="nivel">Quanto você conhece sobre Naruto?</label>
+                <input type="range" id="nivel" name="nivel" min="1" max="10" value="5">
+                <output for="nivel" id="nivel-value">5</output>
+                
+                <button type="submit">Enviar Voto</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 - Página sobre Naruto criada para fins educativos</p>
+        <p>Todos os direitos do anime Naruto pertencem a Masashi Kishimoto e Studio Pierrot</p>
+        <p>Esta página utiliza imagens do Unsplash e vídeo do YouTube para fins ilustrativos</p>
+        <address>
+            Contato: <a href="mailto:naruto.fanpage@exemplo.com">naruto.fanpage@exemplo.com</a>
+        </address>
+    </footer>
+    
+    <script>
+        // Atualizar valor do range
+        const nivelInput = document.getElementById('nivel');
+        const nivelOutput = document.getElementById('nivel-value');
+        
+        nivelInput.addEventListener('input', function() {
+            nivelOutput.value = this.value;
+        });
+        
+        // Efeito de rolagem suave para links internos
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Efeito de destaque nos cards ao passar o mouse
+        const cards = document.querySelectorAll('.character-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 10px 20px rgba(255, 107, 8, 0.5)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
+            });
+        });
+    </script>
+</body>
+</html>
+<p>Naruto <span class="destaque">Uzumaki</span> é o <span style="color: #ff6b08; font-weight: bold;">protagonista</span> da série. Ele carrega a <span title="Besta de Nove Caudas">Kyubi</span> dentro de si e sonha em se tornar <span class="hokage">Hokage</span>.</p>
