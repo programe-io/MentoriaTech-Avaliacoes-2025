@@ -1,0 +1,143 @@
+/* Paleta de Cores Masha e o Urso */
+:root {
+    --masha-pink: #F780A7; /* Rosa da Masha */
+    --bear-brown: #5C4033; /* Marrom do Urso */
+    --forest-green: #79B87F; /* Verde da Floresta */
+    --sun-yellow: #FFD700; /* Amarelo do Sol/Destaque */
+    --text-dark: #333333;
+    --background-light: #FFFAF0; /* Fundo Creme Suave */
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fonte divertida */
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--masha-pink);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--sun-yellow);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px var(--bear-brown); /* Sombra para destaque */
+}
+
+.tagline {
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+/* Container Principal (Layout) */
+.content-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    gap: 30px;
+    /* Define o layout: 2 colunas para os cards, a seção 'about' usa todas as colunas */
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "masha bear"
+        "about about";
+}
+
+/* Estilo dos Cards de Personagem */
+.character-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.character-card:hover {
+    transform: translateY(-8px);
+}
+
+.masha-card {
+    border: 4px solid var(--masha-pink);
+    grid-area: masha;
+}
+
+.bear-card {
+    border: 4px solid var(--bear-brown);
+    grid-area: bear;
+}
+
+.character-card img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 3px solid var(--forest-green);
+}
+
+.character-card h2 {
+    color: var(--forest-green);
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+/* Seção Sobre */
+.about {
+    grid-area: about;
+    background-color: var(--forest-green);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: var(--sun-yellow);
+}
+
+.about p {
+    font-size: 1.1em;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--bear-brown);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+/* Responsividade Básica (Para telas menores, como celulares) */
+@media (max-width: 768px) {
+    .content-container {
+        /* Muda para uma única coluna */
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "masha"
+            "bear"
+            "about";
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+}
