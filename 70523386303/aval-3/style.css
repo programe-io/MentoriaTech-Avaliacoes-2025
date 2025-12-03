@@ -1,0 +1,29 @@
+/* Estilos Específicos Adicionais */
+.nav-menu-closed {
+    /* Configuração inicial para o menu móvel (escondido fora da tela) */
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.nav-menu-open {
+    /* Configuração quando o menu está aberto */
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Animação de Brilho no Título (Efeito sutil de elite) */
+@keyframes glow-text {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 15px rgba(255, 215, 0, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+}
+
+.title-glow {
+    animation: glow-text 5s infinite alternate;
+}
