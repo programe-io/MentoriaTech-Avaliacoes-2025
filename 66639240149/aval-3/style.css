@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GameHub — Blog Gamer</title>
+  <meta name="description" content="GameHub: notícias, reviews e dicas do mundo gamer. Artigos, vídeos e guias para jogadores de todos os níveis.">
+  <meta name="author" content="GameHub">
+  <meta name="keywords" content="games, review, gameplay, esports, dicas, tutorial">
+  <link rel="icon" href="/favicon.ico">
+  <!-- Estilos simples embutidos para facilitar cópia/uso -->
+  <style>
+    :root{
+      --bg:#0b0f17; --card:#0f1724; --accent:#ff3b6b; --muted:#9aa4b2; --glass: rgba(255,255,255,0.03);
+      --max-w:1100px; --radius:12px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:linear-gradient(180deg,#05060a 0%,#0b0f17 100%);color:#e6eef6;line-height:1.5}
+    .container{max-width:var(--max-w);margin:32px auto;padding:16px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:var(--glass);display:inline-flex;align-items:center;justify-content:center;font-weight:700}
+    nav ul{display:flex;gap:12px;list-style:none;padding:0;margin:0}
+    nav a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
+    nav a:hover{color:#fff;background:rgba(255,255,255,0.03)}
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:24px}
+    .featured{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:var(--radius)}
+    .featured h2{margin:0 0 8px}
+    .meta{color:var(--muted);font-size:0.9rem;margin-bottom:12px}
+    /* Imagem responsiva */
+    figure{margin:0}
+    img{width:100%;height:auto;border-radius:10px;display:block}
+    article.card{background:var(--card);padding:14px;border-radius:10px;margin-bottom:14px}
+    article.card h3{margin:0 0 8px}
+    aside{background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);padding:14px;border-radius:10px}
+    footer{margin-top:28px;padding:14px;text-align:center;color:var(--muted);font-size:0.9rem}
+    .grid-articles{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:14px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:6px;font-size:0.85rem;color:var(--muted)}
+    /* Acessibilidade */
+    a:focus{outline:3px solid rgba(255,59,107,0.2);outline-offset:2px}
+    @media (max-width:880px){.hero{grid-template-columns:1fr;}.brand .logo{width:48px;height:48px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">GH</div>
+        <div>
+          <h1 style="margin:0;font-size:1.15rem">GameHub</h1>
+          <p style="margin:0;color:var(--muted);font-size:0.85rem">Notícias, reviews e guias</p>
+        </div>
+      </div>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#guias">Guias</a></li>
+          <li><a href="#videos">Vídeos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="destaque">
+        <div class="featured" id="destaque">
+          <h2>Review: Shadow Frontier — O novo FPS que todos comentam</h2>
+          <p class="meta">Por Matheus • 3 de dezembro de 2025 • 8 min de leitura</p>
+          <figure>
+            <!-- tag img solicitada pelo usuário. Substitua src por sua imagem -->
+            <picture>
+              <source media="(max-width:600px)" srcset="images/shadow-frontier-small.jpg">
+              <source media="(min-width:601px)" srcset="images/shadow-frontier.jpg">
+              <img src="images/shadow-frontier.jpg" alt="Cena do jogo Shadow Frontier com dois personagens em ação" width="1200" height="675">
+            </picture>
+            <figcaption class="meta" style="margin-top:8px">Imagem: captura de gameplay</figcaption>
+          </figure>
+
+          <p style="margin-top:12px;color:var(--muted)">Uma análise completa do combate, gráficos e customização — o que funciona e o que ainda precisa melhorar.</p>
+
+          <p style="margin-top:12px"><a href="#post-detalhe" style="color:var(--accent);text-decoration:none;font-weight:600">Ler review completo →</a></p>
+        </div>
+
+        <aside aria-labelledby="destaques-rapidos">
+          <h3 id="destaques-rapidos">Destaques rápidos</h3>
+          <ul style="padding-left:18px;color:var(--muted)">
+            <li>Patch 1.02 para Shadow Frontier — correções e balanceamento</li>
+            <li>Top 10 headsets com melhor custo-benefício</li>
+            <li>Calendário: torneios nacionais de esports</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section aria-labelledby="ultimos-artigos" style="margin-top:22px">
+        <h2 id="ultimos-artigos">Últimos artigos</h2>
+        <div class="grid-articles">
+          <article class="card" aria-labelledby="a1">
+            <h3 id="a1">Guia de iniciante: dominar mira e movimentação</h3>
+            <p class="meta">Por Lara • 1 de dezembro de 2025</p>
+            <p style="color:var(--muted)">Dicas práticas e exercícios para treinar sua mira em jogos competitivos.</p>
+            <div class="tags" aria-hidden="true"><span class="tag">Guia</span><span class="tag">FPS</span></div>
+          </article>
+
+          <article class="card" aria-labelledby="a2">
+            <h3 id="a2">Hands-on: Console X — vale a pena?</h3>
+            <p class="meta">Por João • 28 de novembro de 2025</p>
+            <p style="color:var(--muted)">Teste prático com benchmarks, aquecimento e bibliotecas de jogos.</p>
+            <div class="tags" aria-hidden="true"><span class="tag">Hardware</span><span class="tag">Review</span></div>
+          </article>
+
+          <article class="card" aria-labelledby="a3">
+            <h3 id="a3">Os melhores jogos indie de 2025</h3>
+            <p class="meta">Por Equipe • 20 de novembro de 2025</p>
+            <p style="color:var(--muted)">Uma seleção de títulos pequenos que merecem sua atenção.</p>
+            <div class="tags" aria-hidden="true"><span class="tag">Indie</span><span class="tag">Curadoria</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="videos" aria-labelledby="sec-videos" style="margin-top:26px">
+        <h2 id="sec-videos">Vídeos recentes</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px">
+          <div class="card">
+            <figure>
+              <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.guiaviagensbrasil.com%2Fgalerias%2Fba%2Ffotos-da-praia-da-costa%2Fpraia-costa-itacare-ba-9599%2F&psig=AOvVaw1P5v596Kr4e_gcl26Cipd9&ust=1764872003650000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKDy0NmCopEDFQAAAAAdAAAAABAE" alt="Thumbnail do vídeo: dicas para ranqueadas" loading="lazy" width="640" height="360">
+              <figcaption class="meta">Dicas para subir no ranqueado</figcaption>
+            </figure>
+          </div>
+
+          <div class="card">
+            <figure>
+              <img src="images/video-thumb2.jpg" alt="Thumbnail do vídeo: montagem de PC" loading="lazy" width="640" height="360">
+              <figcaption class="meta">Montagem de PC gamer — passo a passo</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>&copy; 2025 GameHub — Todos os direitos reservados.</p>
+      <p style="margin-top:8px"><a href="#politica" style="color:var(--muted);text-decoration:none">Política de privacidade</a> • <a href="#termos" style="color:var(--muted);text-decoration:none">Termos de uso</a></p>
+    </footer>
+  </div>
+
+  <!-- Scripts mínimos: acessibilidade e interação simples -->
+  <script>
+    // Exemplo: rolagem suave para âncoras
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      })
+    });
+  </script>
+</body>
+</html>
