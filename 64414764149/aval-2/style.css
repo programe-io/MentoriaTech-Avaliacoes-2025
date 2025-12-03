@@ -1,0 +1,265 @@
+/* ============================= */
+/* CONFIGURAÇÕES GERAIS */
+/* ============================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #0d0d0f, #050505 70%);
+  color: #fff;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Efeito leve de brilho constante */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url("https://i.pinimg.com/originals/7a/39/51/7a39517a115fdd05a7969386680a7c52.png");
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* ============================= */
+/* NAVBAR */
+/* ============================= */
+
+.nav-principal {
+  width: 100%;
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(12px);
+  color: white;
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 15px rgba(100, 100, 255, 0.3);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #6d5dff;
+  box-shadow: 0 0 10px #6d5dff;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05rem;
+  position: relative;
+}
+
+.menu li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #6d5dff;
+  left: 0;
+  bottom: -3px;
+  transition: 0.3s;
+}
+
+.menu li a:hover::after {
+  width: 100%;
+}
+
+/* Botão menu */
+.btn-menu {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.7rem;
+  display: none;
+}
+
+/* ============================= */
+/* HEADER / FOTO */
+/* ============================= */
+
+.topo {
+  text-align: center;
+  padding: 70px 20px 40px;
+}
+
+.foto {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #7a6dff;
+  box-shadow: 0 0 25px #7a6dff;
+  margin-bottom: 18px;
+}
+
+.topo h1 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: #dcdcff;
+  text-shadow: 0 0 12px #7a6dff;
+}
+
+.subtitulo {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* ============================= */
+/* ASIDE */
+/* ============================= */
+
+.aside-info {
+  max-width: 850px;
+  margin: 25px auto;
+  background: rgba(255, 255, 255, 0.07);
+  padding: 25px;
+  border-radius: 14px;
+  border-left: 5px solid #7a6dff;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(120, 110, 255, 0.3);
+}
+
+.titulo-aside {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #cfcfff;
+}
+
+.aside-info ul {
+  list-style: none;
+}
+
+.aside-info li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ============================= */
+/* MAIN / CARDS */
+/* ============================= */
+
+main {
+  max-width: 850px;
+  margin: 35px auto;
+  padding: 10px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 25px rgba(130, 120, 255, 0.25);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 35px rgba(150, 140, 255, 0.4);
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  color: #e7e4ff;
+  margin-bottom: 8px;
+  text-shadow: 0 0 10px #6d5dff;
+}
+
+.subtitulo-card {
+  font-size: 1.15rem;
+  margin-bottom: 15px;
+  color: #d3d1ff;
+  font-weight: 500;
+}
+
+.card p {
+  margin-bottom: 15px;
+  color: #efeeff;
+  font-size: 1rem;
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+footer {
+  background: rgba(255, 255, 255, 0.07);
+  color: white;
+  padding: 18px;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  box-shadow: 0 0 20px rgba(150, 140, 255, 0.2);
+}
+
+/* ============================= */
+/* RESPONSIVIDADE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: #181818;
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  .menu-open {
+    display: flex;
+  }
+
+  .btn-menu {
+    display: block;
+  }
+}
