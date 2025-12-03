@@ -1,89 +1,89 @@
 body {
-        font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
                 display: flex;
                     justify-content: center;
                         align-items: center;
                             height: 100vh;
                                 margin: 0;
-                                }
+                                    color: #333;
+                                    }
 
-                                .container {
-                                    background: #fff;
-                                        padding: 20px;
-                                            border-radius: 8px;
-                                                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                                                    width: 100%;
-                                                        max-width: 400px;
-                                                        }
-
-                                                        h1 {
-                                                            text-align: center;
-                                                                color: #333;
+                                    .quiz-container {
+                                        background-color: #ffffff;
+                                            padding: 20px 40px;
+                                                border-radius: 10px;
+                                                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                                                        width: 90%;
+                                                            max-width: 500px;
+                                                                text-align: center;
                                                                 }
 
-                                                                .input-area {
-                                                                    display: flex;
-                                                                        justify-content: space-between;
+                                                                header h1 {
+                                                                    color: #0056b3; /* Cor inspirada na bandeira do Brasil */
+                                                                        margin-bottom: 20px;
+                                                                        }
+
+                                                                        .question-area {
                                                                             margin-bottom: 20px;
-                                                                            }
+                                                                                font-size: 1.2em;
+                                                                                    font-weight: bold;
+                                                                                    }
 
-                                                                            input[type="text"] {
-                                                                                padding: 10px;
-                                                                                    width: 70%;
-                                                                                        border: 1px solid #ccc;
-                                                                                            border-radius: 4px;
-                                                                                            }
+                                                                                    .options-container {
+                                                                                        display: flex;
+                                                                                            flex-direction: column;
+                                                                                                gap: 10px;
+                                                                                                }
 
-                                                                                            button {
-                                                                                                padding: 10px 15px;
-                                                                                                    background-color: #5cb85c;
+                                                                                                .option-button {
+                                                                                                    background-color: #007bff;
                                                                                                         color: white;
                                                                                                             border: none;
-                                                                                                                border-radius: 4px;
-                                                                                                                    cursor: pointer;
-                                                                                                                    }
-
-                                                                                                                    button:hover {
-                                                                                                                        background-color: #4cae4c;
-                                                                                                                        }
-
-                                                                                                                        ul {
-                                                                                                                            list-style-type: none;
-                                                                                                                                padding: 0;
+                                                                                                                padding: 15px;
+                                                                                                                    border-radius: 5px;
+                                                                                                                        cursor: pointer;
+                                                                                                                            font-size: 1em;
+                                                                                                                                transition: background-color 0.3s ease;
                                                                                                                                 }
 
-                                                                                                                                li {
-                                                                                                                                    padding: 10px;
-                                                                                                                                        background: #eee;
-                                                                                                                                            margin-bottom: 10px;
-                                                                                                                                                border-radius: 4px;
-                                                                                                                                                    display: flex;
-                                                                                                                                                        justify-content: space-between;
-                                                                                                                                                            align-items: center;
-                                                                                                                                                                cursor: pointer;
-                                                                                                                                                                    transition: background 0.3s;
-                                                                                                                                                                    }
+                                                                                                                                .option-button:hover {
+                                                                                                                                    background-color: #0056b3; /* Tonalidade mais escura no hover */
+                                                                                                                                    }
 
-                                                                                                                                                                    li:hover {
-                                                                                                                                                                        background: #ddd;
-                                                                                                                                                                        }
+                                                                                                                                    .option-button.correct {
+                                                                                                                                        background-color: #28a745; /* Verde para resposta correta */
+                                                                                                                                        }
 
-                                                                                                                                                                        /* Estilo aplicado via JavaScript quando a tarefa é concluída */
-                                                                                                                                                                        li.completed {
-                                                                                                                                                                            text-decoration: line-through;
-                                                                                                                                                                                color: gray;
-                                                                                                                                                                                    background: #d4edda;
+                                                                                                                                        .option-button.incorrect {
+                                                                                                                                            background-color: #dc3545; /* Vermelho para resposta incorreta */
+                                                                                                                                            }
+
+                                                                                                                                            .controls {
+                                                                                                                                                margin-top: 20px;
+                                                                                                                                                }
+
+                                                                                                                                                #next-button {
+                                                                                                                                                    background-color: #ffc107; /* Amarelo para o botão de próxima pergunta */
+                                                                                                                                                        color: #333;
+                                                                                                                                                            border: none;
+                                                                                                                                                                padding: 10px 20px;
+                                                                                                                                                                    border-radius: 5px;
+                                                                                                                                                                        cursor: pointer;
+                                                                                                                                                                            font-size: 1em;
+                                                                                                                                                                                transition: background-color 0.3s ease;
+                                                                                                                                                                                    display: none; /* Escondido inicialmente, gerenciado via JavaScript */
                                                                                                                                                                                     }
 
-                                                                                                                                                                                    .delete-btn {
-                                                                                                                                                                                        background-color: #dc3545;
-                                                                                                                                                                                            padding: 5px 10px;
-                                                                                                                                                                                                cursor: pointer;
-                                                                                                                                                                                                }
+                                                                                                                                                                                    #next-button:hover {
+                                                                                                                                                                                        background-color: #e0a800;
+                                                                                                                                                                                        }
 
-                                                                                                                                                                                                .delete-btn:hover {
-                                                                                                                                                                                                    background-color: #c82333;
-                                                                                                                                                                                                    }
-                                                                                                                                                                                                    
+                                                                                                                                                                                        #score-area {
+                                                                                                                                                                                            margin-top: 20px;
+                                                                                                                                                                                                font-size: 1.1em;
+                                                                                                                                                                                                    font-weight: bold;
+                                                                                                                                                                                                        color: #0056b3;
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                        
 }
