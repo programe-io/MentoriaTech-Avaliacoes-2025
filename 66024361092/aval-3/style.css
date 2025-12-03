@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página Exemplo — Landing Responsiva</title>
+  <meta name="description" content="Exemplo de página HTML responsiva com navegação, seção hero, cards de recursos e formulário de contato." />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass: rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#071025 0%,var(--bg) 100%);color:#e6eef6;-webkit-font-smoothing:antialiased}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:#021029}
+    nav{display:flex;gap:16px}
+    nav a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
+    nav a:hover{color:#fff;background:var(--glass)}
+    .cta{background:linear-gradient(90deg,#06b6d4,#7c3aed);padding:10px 14px;border-radius:10px;color:#021029;font-weight:600;text-decoration:none}
+
+    /* Mobile menu */
+    .menu-btn{display:none;background:none;border:2px solid var(--glass);padding:8px;border-radius:8px;color:var(--muted)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:36px}
+    .hero h1{font-size:clamp(28px,4vw,44px);margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 18px;line-height:1.6}
+    .actions{display:flex;gap:12px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+    .feature{padding:16px;border-radius:10px;background:var(--card)}
+    .feature h3{margin:0 0 8px}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* Contact */
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    button{padding:10px 12px;border-radius:8px;border:none;background:var(--accent);font-weight:600}
+
+    footer{margin-top:40px;color:var(--muted);font-size:14px;text-align:center}
+
+    /* Responsive */
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr}
+      .features{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      nav{display:none}
+      .menu-btn{display:inline-block}
+      .features{grid-template-columns:1fr}
+      .container{padding:16px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">LP</div>
+        <div>
+          <div style="font-weight:700">Minha Página</div>
+          <div class="muted" style="font-size:12px">Exemplo responsivo em HTML/CSS</div>
+        </div>
+      </div>
+
+      <nav aria-label="Navegação principal">
+        <a href="#features">Recursos</a>
+        <a href="#pricing">Preços</a>
+        <a href="#contact">Contato</a>
+        <a class="cta" href="#start">Começar</a>
+      </nav>
+
+      <button class="menu-btn" aria-expanded="false" id="menuBtn">☰</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Landing simples, rápida e acessível</h1>
+          <p>Exemplo completo e pronto para adaptar. Layout responsivo, foco em tipografia e espaçamento — ideal como ponto de partida para projetos reais.</p>
+          <div class="actions">
+            <a class="cta" href="#start">Iniciar Projeto</a>
+            <a class="card" href="#features" style="text-decoration:none;color:inherit;align-self:center">Ver recursos</a>
+          </div>
+
+          <div class="features" style="margin-top:20px">
+            <div class="feature">
+              <h3>Rápido</h3>
+              <div class="muted">Código limpo e leve — ideal para performance.</div>
+            </div>
+            <div class="feature">
+              <h3>Acessível</h3>
+              <div class="muted">Cores e semântica pensadas para acessibilidade.</div>
+            </div>
+            <div class="feature">
+              <h3>Responsivo</h3>
+              <div class="muted">Funciona bem em celulares, tablets e desktops.</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card" aria-label="Resumo e contato rápido">
+          <h3 id="pricing">Planos simples</h3>
+          <p class="muted">Comece grátis. Scale quando precisar.</p>
+          <ul class="muted">
+            <li>Plano grátis — básico</li>
+            <li>Pro — suporte por e-mail</li>
+            <li>Enterprise — SLA dedicado</li>
+          </ul>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:12px 0">
+          <h4>Contato rápido</h4>
+          <form id="contact" aria-label="Formulário de contato">
+            <input type="text" name="name" placeholder="Seu nome" required />
+            <input type="email" name="email" placeholder="seu@exemplo.com" required />
+            <textarea name="message" rows="4" placeholder="Como podemos ajudar?" required></textarea>
+            <button type="submit">Enviar</button>
+          </form>
+        </aside>
+      </section>
+
+      <section style="margin-top:32px">
+        <h2 style="margin:0 0 12px">Recursos detalhados</h2>
+        <p class="muted" style="margin:0 0 18px">Algumas notas rápidas sobre tecnologia e design.</p>
+        <div class="card" style="padding:16px">
+          <p class="muted" style="margin:0">Este template é apenas HTML/CSS/JS puro — sem dependências externas. Copie, personalize e publique.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Minha Página — Feito com ❤️</div>
+    </footer>
+  </div>
+
+  <script>
+    // Menu mobile simples
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn && menuBtn.addEventListener('click', ()=>{
+      const nav = document.querySelector('nav');
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      if(nav.style.display === 'flex') nav.style.display = '';
+      else nav.style.display = 'flex';
+    });
+
+    // Form fake submit (evita reload)
+    const form = document.querySelector('form#contact');
+    form && form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = form.elements['name'].value.trim();
+      alert('Obrigado, ' + (name||'amigo') + '! Mensagem recebida. (Formulário de exemplo)');
+      form.reset();
+    });
+
+    // Atualiza ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
