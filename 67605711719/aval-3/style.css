@@ -1,0 +1,295 @@
+/* Paleta de Cores Barbie */
+:root {
+    --barbie-pink-shock: #E91E63; /* Rosa Choque (Destaque Principal) */
+    --barbie-pink-baby: #F8BBD0;  /* Rosa Bebê (Fundo Suave) */
+    --barbie-gold: #FFD700;       /* Dourado (Brilho e Glamour) */
+    --barbie-white: #FFFFFF;
+    --text-dark: #4A148C;        /* Roxo Profundo (Contraste) */
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif; /* Fonte elegante */
+    background-color: var(--barbie-pink-baby);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* CABEÇALHO */
+header {
+    background-image: linear-gradient(to right, var(--barbie-pink-shock), #FF69B4); /* Degradê Rosa */
+    background-size: cover;
+    background-position: center;
+    color: var(--barbie-white);
+    padding: 30px 0;
+    text-align: center;
+    border-top: 10px solid var(--barbie-gold);
+    border-bottom: 5px solid var(--barbie-pink-shock);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    background-color: rgba(255, 255, 255, 0.2); /* Transparência suave */
+    padding: 20px 0;
+}
+
+header h1 {
+    font-family: 'Brush Script MT', cursive; /* Fonte manuscrita de impacto */
+    font-size: 4em; 
+    margin-bottom: 5px;
+    text-shadow: 3px 3px var(--barbie-pink-shock); 
+}
+
+.tagline {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    background-color: var(--barbie-white);
+    background-image: url('https://picsum.photos/150/150?grayscale'); /* Placeholder para um logo B&W */
+    background-size: cover;
+    border-radius: 50%;
+    border: 5px solid var(--barbie-gold);
+    margin: 0 auto 10px;
+    box-shadow: 0 0 15px var(--barbie-gold);
+}
+
+/* NAVEGAÇÃO */
+nav {
+    background-color: var(--barbie-pink-shock);
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: var(--barbie-gold);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul li a:hover {
+    background-color: var(--barbie-gold);
+    color: var(--barbie-pink-shock);
+}
+
+/* CONTAINER PRINCIPAL (GRID) */
+.content-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 250px 1fr 1fr; 
+    grid-template-areas: 
+        "aside masha bear"
+        "aside about about"
+        "aside videos jogos"; 
+}
+
+/* ASIDE (Curiosidades) */
+.curiosities {
+    grid-area: aside;
+    background-color: var(--barbie-white);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid var(--barbie-pink-shock);
+    height: fit-content;
+}
+
+.curiosities h3 {
+    color: var(--barbie-pink-shock);
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--barbie-gold);
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.curiosities ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.curiosities ul li {
+    background-color: var(--barbie-pink-baby);
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: var(--text-dark);
+}
+
+.quick-links a {
+    display: block;
+    text-align: center;
+    background-color: var(--barbie-gold);
+    color: var(--barbie-pink-shock);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    text-transform: uppercase;
+}
+
+.quick-links a:hover {
+    background-color: var(--barbie-pink-shock);
+    color: var(--barbie-gold);
+}
+
+/* CARDS DE CONTEÚDO (Carreiras) */
+.character-card {
+    background-color: var(--barbie-white);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.character-card:hover {
+    transform: scale(1.05); /* Efeito de zoom */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.barbie-card {
+    border: 4px solid var(--barbie-pink-shock);
+    grid-area: masha; /* Reutiliza a área masha do grid */
+}
+
+.ken-card {
+    border: 4px solid var(--barbie-gold);
+    grid-area: bear; /* Reutiliza a área bear do grid */
+}
+
+.character-card img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 3px solid var(--barbie-pink-baby);
+}
+
+.character-card h2 {
+    color: var(--barbie-pink-shock);
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+/* ARTICLE (Amigos e Família) */
+.about {
+    grid-area: about;
+    background-color: var(--barbie-pink-shock);
+    color: var(--barbie-white);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 3px solid var(--barbie-gold);
+}
+
+.about h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: var(--barbie-gold);
+    text-transform: uppercase;
+}
+
+.about p {
+    font-size: 1.1em;
+}
+
+.about .source-info {
+    margin-top: 15px;
+    font-size: 0.9em;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* SEÇÕES PLACEHOLDER (Filmes e Tendências) */
+.placeholder {
+    background-color: var(--barbie-white);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border: 3px dashed var(--barbie-gold);
+}
+
+.placeholder h2 {
+    color: var(--barbie-pink-shock);
+    margin-bottom: 10px;
+}
+
+/* RODAPÉ */
+footer {
+    background-color: var(--barbie-pink-shock);
+    color: var(--barbie-gold);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    font-size: 1em;
+    font-weight: bold;
+    border-top: 5px solid var(--barbie-gold);
+}
+
+/* RESPONSIVIDADE (Ajuste para telas menores) */
+@media (max-width: 900px) {
+    .content-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "aside aside"
+            "masha bear"
+            "about about"
+            "videos jogos";
+    }
+
+    header h1 {
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 600px) {
+    .content-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "aside"
+            "masha"
+            "bear"
+            "about"
+            "videos"
+            "jogos";
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
