@@ -1,0 +1,241 @@
+/* Importação de fonte básica */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Variáveis de Cores (Cores Naturais) */
+:root {
+    --cor-primaria-verde: #4CAF50; /* Verde Principal (Folha) */
+    --cor-secundaria-terra: #795548; /* Marrom (Terra) */
+    --cor-destaque-clara: #FFC107; /* Amarelo (Sol/Destaque) */
+    --cor-texto: #333;
+    --cor-fundo: #f0f4f7; /* Fundo levemente azulado/cinza */
+    --cor-card: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    gap: 30px;
+}
+
+/* Header (Cabeçalho) */
+header {
+    background: var(--cor-secundaria-terra);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--cor-primaria-verde);
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-style: italic;
+    color: #e0e0e0;
+}
+
+/* Posts Principal */
+.posts-list {
+    flex: 3; /* Ocupa 3/4 do espaço */
+}
+
+.posts-list h2 {
+    color: var(--cor-primaria-verde);
+    margin-bottom: 25px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.post-card {
+    background: var(--cor-card);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s;
+}
+
+.post-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.post-card h3 {
+    color: var(--cor-secundaria-terra);
+    margin-bottom: 8px;
+    font-size: 1.5em;
+}
+
+.post-meta {
+    font-size: 0.85em;
+    color: #888;
+    margin-bottom: 15px;
+    border-left: 3px solid var(--cor-destaque-clara);
+    padding-left: 10px;
+}
+
+.read-more {
+    display: inline-block;
+    color: var(--cor-primaria-verde);
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 15px;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: #388E3C; /* Verde mais escuro */
+}
+
+/* Paginação */
+.pagination {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 0 5px;
+    background-color: var(--cor-card);
+    color: var(--cor-secundaria-terra);
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover, .pagination a.current {
+    background-color: var(--cor-primaria-verde);
+    color: white;
+    border-color: var(--cor-primaria-verde);
+}
+
+/* Barra Lateral (Sidebar) */
+.sidebar {
+    flex: 1; /* Ocupa 1/4 do espaço */
+}
+
+.widget {
+    background: var(--cor-card);
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.widget h3 {
+    color: var(--cor-primaria-verde);
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #ccc;
+    font-size: 1.2em;
+}
+
+.widget ul {
+    list-style: none;
+}
+
+.widget ul li a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    display: block;
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.widget ul li a:hover {
+    color: var(--cor-secundaria-terra);
+    padding-left: 5px;
+}
+
+.search-input, .search-button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.search-input {
+    border: 1px solid #ccc;
+}
+
+.search-button {
+    background-color: var(--cor-secundaria-terra);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: var(--cor-primaria-verde);
+}
+
+.featured-post {
+    border: 2px solid var(--cor-primaria-verde);
+    text-align: center;
+}
+
+.featured-post .read-more {
+    color: white;
+    background-color: var(--cor-destaque-clara);
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+.featured-post .read-more:hover {
+    background-color: var(--cor-primaria-verde);
+}
+
+/* Footer (Rodapé) */
+footer {
+    background: var(--cor-secundaria-terra);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: var(--cor-destaque-clara);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--cor-primaria-verde);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .posts-list {
+        order: 2; 
+    }
+    
+    .sidebar {
+        order: 1; 
+    }
+}
