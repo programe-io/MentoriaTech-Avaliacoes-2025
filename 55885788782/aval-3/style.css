@@ -1,0 +1,155 @@
+/* styles.css - copie este conteúdo para um arquivo chamado styles.css */
+
+/* Reset simples */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(180deg,#203a78 0%, #11264a 100%);
+  color:#d7e3f6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:20px;
+}
+
+/* Cabeçalho */
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:linear-gradient(180deg,#2c4aa3,#27407f);
+  padding:20px 28px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.35);
+}
+header h1{
+  color:#ffffff;
+  font-weight:700;
+  font-size:22px;
+}
+header nav a{
+  color:#ffffff;
+  text-decoration:none;
+  margin-left:18px;
+  font-weight:600;
+}
+
+/* Main - área do feed */
+main{
+  max-width:1200px;
+  margin:24px auto 80px; /* espaço para o "webcam" */
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+/* Card (cada section será um card) */
+main > section{
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.12));
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.45);
+  padding-bottom:10px;
+  display:flex;
+  flex-direction:column;
+}
+
+/* topo do card: perfil */
+main > section h3{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:18px;
+  font-size:22px;
+  color:#ffffff;
+}
+
+/* imagem do perfil (filha direta do h3 será imagem) */
+main > section img[alt="Foto do usuário"]{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid rgba(255,255,255,0.06);
+}
+
+/* imagem do post (a segunda imagem dentro do section) */
+main > section img[alt="Imagem da postagem"],
+main > section img[alt="post"],
+main > section img[alt="post image"]{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  display:block;
+  border-top:1px solid rgba(255,255,255,0.03);
+}
+
+/* corpo do card - o parágrafo */
+main > section p{
+  padding:18px;
+  color:#c6d2e6;
+  line-height:1.6;
+  font-size:15px;
+  flex:1 0 auto;
+}
+
+/* footer do card (tempo) */
+main > section small{
+  display:block;
+  padding:12px 18px 18px 18px;
+  text-align:right;
+  color:#9aa6bf;
+  font-size:13px;
+}
+
+/* separadores (hr) — escondidos quando usar grid */
+main hr{display:none}
+
+/* Mini webcam: posicionamento fixo no canto inferior direito */
+footer img[alt="mini face"],
+.floating-face img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+footer{
+  position:fixed;
+  right:18px;
+  bottom:14px;
+  width:120px;
+  height:90px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  border:4px solid rgba(255,255,255,0.04);
+  background:rgba(0,0,0,0.15);
+}
+
+/* Responsividade */
+@media (max-width:1000px){
+  main{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  header{padding:14px}
+  main{grid-template-columns:1fr;gap:14px;padding:8px}
+  footer{right:10px;bottom:10px;width:96px;height:72px}
+  main > section img[alt="Imagem da postagem"]{height:180px}
+}
+
+/* Pequena interação visual quando o usuário passar o mouse */
+main > section:hover{
+  transform:translateY(-6px);
+  transition:transform .2s ease;
+  box-shadow:0 22px 48px rgba(2,6,23,0.6);
+}
+
+/* Links do menu com hover */
+header nav a:hover{opacity:0.9; text-decoration:underline}
+
+/* Ajustes para quando as imagens forem hospedadas localmente (ex.: /mnt/data) */
+main > section img[src^="/mnt/data"], header img[src^="/mnt/data"]{
+  background:#e6eefc; /* placeholder claro caso demore a carregar */
+}
+
+/* fim do styles.css */
