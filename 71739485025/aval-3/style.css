@@ -1,0 +1,218 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #444;
+    background-color: #f8f9fa;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Cabeçalho --- */
+.blog-header {
+    background-color: #28a745; /* Verde escuro forte */
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 5px solid #218838;
+}
+
+.blog-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+.blog-header p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* --- Layout Principal (Grid de 2 Colunas) --- */
+.blog-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2/3 para conteúdo, 1/3 para barra lateral */
+    gap: 40px;
+    padding: 40px 0;
+}
+
+.main-content h2 {
+    font-family: 'Playfair Display', serif;
+    color: #28a745;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+}
+
+/* --- Estilo dos Posts --- */
+.blog-post {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    padding: 20px;
+    display: flex;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.post-img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 6px;
+}
+
+.post-content h3 {
+    color: #343a40;
+    font-size: 1.7em;
+    margin-bottom: 5px;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 10px;
+    transition: color 0.2s;
+}
+
+.read-more:hover {
+    color: #0056b3;
+}
+
+/* --- Barra Lateral (Aside) --- */
+.sidebar {
+    padding-top: 55px; /* Alinha com o título principal */
+}
+
+.widget {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.widget h4 {
+    color: #28a745;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Newsletter */
+.widget form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.btn-aside {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ffc107; /* Amarelo de destaque */
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.2s;
+}
+
+.btn-aside:hover {
+    background-color: #ffae00;
+}
+
+/* Categorias */
+.widget ul {
+    list-style: none;
+}
+
+.widget ul li a {
+    display: block;
+    padding: 8px 0;
+    color: #444;
+    text-decoration: none;
+    border-bottom: 1px dotted #e9ecef;
+}
+
+.widget ul li:last-child a {
+    border-bottom: none;
+}
+
+.widget ul li a:hover {
+    color: #28a745;
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+    .blog-layout {
+        grid-template-columns: 1fr; /* Uma única coluna em telas menores */
+    }
+    
+    .sidebar {
+        padding-top: 0;
+    }
+
+    .blog-post {
+        flex-direction: column; /* Empilha imagem e texto no post */
+    }
+
+    .post-img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
