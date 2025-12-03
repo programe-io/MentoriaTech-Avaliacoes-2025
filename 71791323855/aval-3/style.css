@@ -1,0 +1,202 @@
+/* Configurações de Cores e Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --cor-principal: #FF416C; /* Rosa Forte (Pop) */
+    --cor-secundaria: #FFCD38; /* Amarelo Vibrante (Acento) */
+    --cor-fundo: #1A1A2E; /* Azul Marinho Escuro (Noturno) */
+    --cor-card: #282846; /* Roxo Escuro (Card) */
+    --cor-texto-claro: #F0F0F0;
+    --cor-texto-escuro: #333333;
+}
+
+/* Reset e Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-claro);
+    line-height: 1.5;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--cor-card);
+    padding: 15px 0;
+    border-bottom: 5px solid var(--cor-principal);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5em;
+    color: var(--cor-principal);
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--cor-texto-claro);
+    margin-left: 30px;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Layout Principal (Main + Aside) */
+.container {
+    display: grid;
+    /* 3 partes para o conteúdo e 1 parte para a barra lateral */
+    grid-template-columns: 3fr 1fr; 
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.content-main h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.2em;
+    color: var(--cor-secundaria);
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* Estilo para a Tag <article> (Card de Episódio) */
+.episode-card {
+    background-color: var(--cor-card);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-left: 5px solid transparent;
+    transition: border-left 0.3s;
+}
+
+.episode-card:hover {
+    border-left: 5px solid var(--cor-principal);
+}
+
+.episode-card h3 {
+    font-size: 1.5em;
+    color: var(--cor-texto-claro);
+    margin-bottom: 10px;
+}
+
+/* Estilo para a <img> do Episódio */
+.episode-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+/* Tags e Destaques (<span>) */
+.episode-meta {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #AAAAAA;
+}
+
+.tag-tempo, .tag-data {
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-right: 10px;
+    color: var(--cor-texto-escuro);
+    background-color: var(--cor-secundaria);
+    font-size: 0.8em;
+}
+
+/* Barra Lateral (<aside>) */
+.sidebar-popcast {
+    position: sticky; 
+    top: 40px;
+    height: fit-content;
+}
+
+.ranking-box, .cta-box {
+    background-color: var(--cor-card);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.ranking-box h4, .cta-box h4 {
+    font-family: 'Bebas Neue', cursive;
+    color: var(--cor-principal);
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.ranking-box ol {
+    padding-left: 20px;
+}
+
+.ranking-box ol li {
+    padding: 8px 0;
+    color: var(--cor-texto-claro);
+}
+
+/* Estilizando o <span> da CTA */
+.destaque-span {
+    font-weight: 700;
+    color: var(--cor-secundaria);
+}
+
+.btn-plataforma {
+    display: block;
+    text-align: center;
+    background-color: var(--cor-principal);
+    color: var(--cor-card);
+    padding: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.btn-plataforma:hover {
+    background-color: #E91E63;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-card);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    margin-top: 40px;
+    border-top: 2px solid var(--cor-principal);
+}
