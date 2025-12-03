@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Semântico Completo</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            transition: background-color 0.5s;
+        }
+
+        /* Header */
+        header {
+            background-color: #2e8b57;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* Layout principal */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        article {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1 1 400px;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Div para organizar conteúdo dentro do article */
+        .conteudo {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        aside {
+            background-color: #e0f7fa;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1 1 200px;
+            min-width: 200px;
+            text-align: left;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3cb371;
+        }
+
+        footer {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <!-- Header com nav -->
+    <header>
+        <h1>Projeto Semântico Completo</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <!-- Conteúdo principal da página -->
+        <article id="home">
+            <h2>Seção Principal</h2>
+
+            <!-- Imagem obrigatória -->
+            <img src="https://via.placeholder.com/400x200.png?text=Imagem+Exemplo" alt="Exemplo de imagem">
+
+            <!-- Div obrigatória para organizar conteúdo -->
+            <div class="conteudo">
+                <p id="mensagem">Clique no botão para mudar o texto e a cor de fundo!</p>
+                <button onclick="interagir()">Clique Aqui</button>
+            </div>
+        </article>
+
+        <!-- Conteúdo lateral -->
+        <aside>
+            <h3>Informações Extras</h3>
+            <p>Esta é a área lateral (aside) com conteúdo complementar, como links, dicas ou avisos.</p>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contato">
+        &copy; 2025 Meu Projeto Semântico
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function interagir() {
+            const paragrafo = document.getElementById('mensagem');
+            paragrafo.textContent = "Parabéns! Você interagiu com a página.";
+
+            const cores = ['#FFB6C1', '#87CEFA', '#90EE90', '#FFD700', '#FFA07A'];
+            const corAleatoria = cores[Math.floor(Math.random() * cores.length)];
+            document.body.style.backgroundColor = corAleatoria;
+        }
+    </script>
+
+<script src="script.js"></script></body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Semântico Completo</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            transition: background-color 0.5s;
+        }
+
+        /* Header */
+        header {
+            background-color: #2e8b57;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* Layout principal */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        article {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1 1 400px;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .conteudo {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para span */
+        .destaque {
+            color: #ff4500;
+            font-weight: bold;
+        }
+
+        aside {
+            background-color: #e0f7fa;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1 1 200px;
+            min-width: 200px;
+            text-align: left;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3cb371;
+        }
+
+        footer {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header com nav -->
+    <header>
+        <h1>Projeto Semântico Completo</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <!-- Conteúdo principal da página -->
+        <article id="home">
+            <h2>Seção Principal</h2>
+
+            <!-- Imagem obrigatória -->
+            <img src="https://via.placeholder.com/400x200.png?text=Imagem+Exemplo" alt="Exemplo de imagem">
+
+            <!-- Div obrigatória -->
+            <div class="conteudo">
+                <p>
+                    Clique no botão para mudar o texto e a cor de fundo! 
+                    <span class="destaque">Não perca esta oportunidade!</span>
+                </p>
+                <button onclick="interagir()">Clique Aqui</button>
+            </div>
+        </article>
+
+        <!-- Conteúdo lateral -->
+        <aside>
+            <h3>Informações Extras</h3>
+            <p>Esta é a área lateral (aside) com conteúdo complementar, como links, dicas ou avisos.</p>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contato">
+        &copy; 2025 Meu Projeto Semântico
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function interagir() {
+            const paragrafo = document.querySelector(".conteudo p");
+            paragrafo.innerHTML = 'Parabéns! <span class="destaque">Você interagiu com a página!</span>';
+
+            const cores = ['#FFB6C1', '#87CEFA', '#90EE90', '#FFD700', '#FFA07A'];
+            const corAleatoria = cores[Math.floor(Math.random() * cores.length)];
+            document.body.style.backgroundColor = corAleatoria;
+        }
+    </script>
+
+</body>
+</html>
