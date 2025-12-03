@@ -1,0 +1,212 @@
+/* Importação de Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Reset e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5; /* Fundo suave */
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #ff4500; /* Laranja de destaque */
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #cc3700;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho do Blog */
+.cabecalho-blog {
+    background-color: #1a1a1a; /* Preto escuro */
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cabecalho-blog .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho-blog h1 {
+    font-size: 2em;
+    color: #fff;
+}
+
+.cabecalho-blog nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.cabecalho-blog nav ul li {
+    margin-left: 25px;
+}
+
+.cabecalho-blog nav ul li a {
+    color: #fff;
+    font-weight: 600;
+}
+
+.cabecalho-blog nav ul li a:hover {
+    color: #ff4500;
+}
+
+/* Conteúdo Principal (Layout de Colunas) */
+.conteudo-principal {
+    display: flex;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+/* Lista de Posts (Main Content) */
+.posts-lista {
+    flex: 3; /* Ocupa 3 partes do espaço */
+    min-width: 0; /* Permite que o flex funcione corretamente */
+}
+
+.post {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.post h2 {
+    color: #1a1a1a;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 5px;
+}
+
+.post .meta-info {
+    font-size: 0.85em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.leia-mais {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #ff4500;
+}
+
+/* Barra Lateral (Aside) */
+.barra-lateral {
+    flex: 1; /* Ocupa 1 parte do espaço */
+    min-width: 250px;
+}
+
+.widget {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.widget h3 {
+    font-size: 1.3em;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 5px;
+}
+
+.widget ul {
+    list-style: none;
+}
+
+.widget ul li {
+    margin-bottom: 8px;
+}
+
+.widget input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.widget button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.widget button:hover {
+    background-color: #cc3700;
+}
+
+/* Rodapé */
+.rodape-blog {
+    background-color: #1a1a1a;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* Responsividade (Para dispositivos móveis) */
+@media (max-width: 900px) {
+    .cabecalho-blog .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cabecalho-blog nav ul {
+        margin-top: 15px;
+    }
+
+    .cabecalho-blog nav ul li {
+        margin: 0 10px;
+    }
+
+    .conteudo-principal {
+        flex-direction: column; /* Colunas em pilha em telas menores */
+    }
+
+    .posts-lista {
+        order: 2; /* Posts após a barra lateral no mobile */
+    }
+
+    .barra-lateral {
+        order: 1;
+        min-width: 100%;
+    }
+}
