@@ -1,0 +1,141 @@
+/* ======== CONFIGURAÇÕES GERAIS ======== */
+body {
+    margin: 0;
+    font-family: 'Orbitron', Arial, sans-serif;
+    background: #0a0a0a;
+    color: #eee;
+}
+
+img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+/* ======== HEADER ======== */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(90deg, #0a0a0a, #1a0000, #0a0a0a);
+    border-bottom: 3px solid #ff0000;
+    box-shadow: 0 0 25px #ff0000;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #ff1a1a;
+    text-shadow: 0 0 15px red;
+}
+
+/* ======== MENU ======== */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background: #111;
+    padding: 15px;
+    border-bottom: 2px solid #400000;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    text-decoration: none;
+    color: #eee;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff1a1a;
+    text-shadow: 0 0 8px red;
+}
+
+/* ======== LAYOUT ======== */
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.posts {
+    flex: 3;
+}
+
+.sidebar {
+    flex: 1;
+    background: #161616;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 15px #2e0000;
+    height: fit-content;
+}
+
+.sidebar h3 {
+    color: #ff3b3b;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.sidebar li {
+    padding: 6px 0;
+    transition: 0.3s;
+}
+
+.sidebar li:hover {
+    color: #ff1a1a;
+    margin-left: 6px;
+}
+
+/* ======== POSTS ======== */
+.post {
+    background: #161616;
+    padding: 20px;
+    border-left: 5px solid #ff1a1a;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px #2e0000;
+    transition: 0.3s;
+}
+
+.post:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px #ff0000;
+}
+
+.post h2 {
+    color: #ff3b3b;
+    margin-top: 0;
+}
+
+/* ======== FOOTER ======== */
+footer {
+    background: #000;
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    border-top: 2px solid #330000;
+    margin-top: 40px;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+}
