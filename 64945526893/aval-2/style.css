@@ -1,0 +1,145 @@
+/* Importação de Fonte temática (opcional, simulação) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #A60C1E; /* Vermelho escuro, cor de sangue/perigo */
+    --secondary-color: #1a1a1a; /* Preto quase absoluto */
+    --text-light: #f4f4f4; /* Texto claro */
+    --text-dark: #333;
+}
+
+body {
+    font-family: 'Roboto Slab', serif; 
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* 1. HEADER E NAVEGAÇÃO */
+.header {
+    background-color: #000;
+    color: var(--text-light);
+    padding: 20px 5%;
+    border-bottom: 3px solid var(--primary-color); 
+    text-align: center;
+    display: flex; /* Adiciona Flexbox para alinhar logo e navegação */
+    flex-direction: column; 
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+}
+
+/* Esconde o botão de toggle em desktop */
+#menu-toggle {
+    display: none; 
+}
+
+.navbar a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* 2. LAYOUT PRINCIPAL (Desktop) */
+.content-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 5%;
+    gap: 30px;
+}
+
+.posts-list {
+    flex: 3; 
+}
+
+.sidebar {
+    flex: 1; 
+    background-color: #222;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* 3. ESTILO DOS POSTS (mantido do anterior) */
+.post-card {
+    background-color: #303030;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+/* 4. RESPONSIVIDADE (MOBILE) */
+@media (max-width: 768px) {
+    
+    .header {
+        flex-direction: row; /* Volta para linha no mobile */
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 15px 5%;
+    }
+
+    .logo {
+        text-align: left;
+    }
+    .logo h1 {
+        font-size: 1.5em; /* Reduz tamanho da fonte do título */
+    }
+    .logo p {
+        font-size: 0.9em;
+    }
+
+    /* Mostra o botão de toggle no mobile */
+    #menu-toggle {
+        display: block; 
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        font-size: 1.8em;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    /* Esconde o menu por padrão no mobile */
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 80px; /* Abaixo do cabeçalho */
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        flex-direction: column;
+        z-index: 10;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Regra para mostrar o menu quando o JavaScript adiciona a classe .active */
+    .navbar.active {
+        display: flex; 
+    }
+
+    .navbar a {
+        margin: 10px 0;
+        padding: 10px 5%;
+        border-bottom: 1px solid #333;
+    }
+
+    .content-container {
+        flex-direction: column; /* Pilha verticalmente */
+        padding: 10px 5%;
+    }
+}
