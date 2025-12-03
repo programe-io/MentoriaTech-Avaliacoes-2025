@@ -1,0 +1,226 @@
+/* Configurações Globais */
+:root {
+    --cor-principal: #006400; /* Verde Escuro (Campo) */
+    --cor-destaque: #FFC300; /* Amarelo Vibrante */
+    --cor-fundo-site: #eef2f7;
+    --cor-fundo-card: white;
+    --cor-texto: #333;
+    --cor-header: #101820; /* Preto Quase Azul */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo-site);
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-principal);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilização do Header (Cabeçalho) */
+header {
+    background-color: var(--cor-header);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 8px solid var(--cor-destaque);
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+/* Layout Principal (Container e Colunas) */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px;
+}
+
+/* Main Content (Posts) */
+.posts {
+    flex: 3; /* Ocupa 3 partes do espaço */
+}
+
+.post {
+    background: var(--cor-fundo-card);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post h2 {
+    color: var(--cor-principal);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.data-categoria {
+    display: block;
+    color: #888;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    border-left: 3px solid var(--cor-destaque);
+    padding-left: 8px;
+}
+
+.post p {
+    margin-bottom: 15px;
+}
+
+.leia-mais {
+    display: inline-block;
+    color: var(--cor-principal);
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.leia-mais:hover {
+    color: var(--cor-destaque);
+    text-decoration: none;
+}
+
+/* Sidebar (Barra Lateral) */
+.sidebar {
+    flex: 1; /* Ocupa 1 parte do espaço */
+    min-width: 250px;
+}
+
+.widget {
+    background: var(--cor-fundo-card);
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.widget h3 {
+    font-size: 1.4em;
+    color: var(--cor-header);
+    border-bottom: 2px solid var(--cor-destaque);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Widget de Pesquisa */
+.busca {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.botao-busca {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--cor-principal);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.botao-busca:hover {
+    background-color: #004d00;
+}
+
+/* Widget de Categorias */
+.widget ul {
+    list-style: none;
+}
+
+.widget ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.widget ul li a {
+    color: var(--cor-texto);
+    display: block;
+}
+
+.widget ul li a:hover {
+    color: var(--cor-principal);
+    padding-left: 5px;
+    transition: padding-left 0.2s;
+    text-decoration: none;
+}
+
+/* Widget Destaque */
+.destaque {
+    background-color: var(--cor-principal);
+    color: white;
+    text-align: center;
+}
+
+.destaque h3 {
+    color: var(--cor-destaque);
+    border-bottom-color: white;
+}
+
+.link-destaque {
+    display: inline-block;
+    background-color: var(--cor-destaque);
+    color: var(--cor-header);
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: opacity 0.3s;
+}
+
+.link-destaque:hover {
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+/* Estilização do Footer (Rodapé) */
+footer {
+    background-color: var(--cor-header);
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Media Queries para Responsividade (Telas Menores) */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column; /* Pilha as colunas em telas menores */
+    }
+
+    .posts, .sidebar {
+        flex: auto; /* Ocupam a largura total */
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+}
