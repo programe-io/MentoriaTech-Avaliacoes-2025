@@ -1,0 +1,78 @@
+:root{
+      --bg:#060a10;
+        --panel:#0a0f14;
+          --accent:#4d6aff;
+            --muted:#8fa3bf;
+              --glass:rgba(90,120,170,0.08);
+              }
+
+              *{box-sizing:border-box}
+              body{
+                margin:0;
+                  font-family:Roboto, system-ui, sans-serif;
+                    background:linear-gradient(180deg,#050507 0%, #0b0b0d 100%);
+                      color:#fff;
+                        min-height:100vh;
+                        }
+
+                        header{padding:3rem 1.25rem;text-align:center}
+                        h1{
+                          font-family:'Uncial Antiqua', serif;
+                            font-size:3rem;
+                              margin:0;
+                                color:var(--accent);
+                                  letter-spacing:1px;
+                                  }
+
+                                  p.lead{color:var(--muted);margin-top:.5rem}
+                                  main{max-width:900px;margin:2rem auto;padding:1rem}
+
+                                  .controls{display:flex;gap:.5rem;justify-content:center;margin-bottom:1rem}
+                                  button{
+                                    background:var(--glass);
+                                      border:1px solid rgba(255,255,255,0.06);
+                                        color:#fff;
+                                          padding:.5rem .8rem;
+                                            border-radius:8px;
+                                              cursor:pointer;
+                                              }
+
+                                              article.story{
+                                                background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+                                                  border:1px solid rgba(255,255,255,0.03);
+                                                    padding:1.25rem;
+                                                      border-radius:12px;
+                                                        margin:1rem 0;
+                                                          box-shadow:0 6px 18px rgba(0,0,0,0.6);
+                                                          }
+
+                                                          article.story h2{
+                                                            margin:.2rem 0 .6rem;
+                                                              color:var(--accent);
+                                                                font-family:'Uncial Antiqua', serif;
+                                                                }
+
+                                                                .meta{font-size:.85rem;color:var(--muted);margin-bottom:.6rem}
+                                                                footer{max-width:900px;margin:2rem auto;color:var(--muted);text-align:center;padding:0 1rem 3rem}
+                                                                .small{font-size:.9rem}
+
+                                                                /* Responsividade */
+                                                                @media (max-width:600px){h1{font-size:2rem}}
+
+                                                                @media (max-width:768px){
+                                                                  main{padding:0.5rem}
+                                                                    h1{font-size:2.2rem}
+                                                                      article.story{padding:1rem}
+                                                                        .controls{flex-wrap:wrap}
+                                                                          button{flex:1 1 45%}
+                                                                          }
+
+                                                                          @media (max-width:480px){
+                                                                            h1{font-size:1.8rem}
+                                                                              p,.meta{font-size:0.95rem}
+                                                                                article.story h2{font-size:1.3rem}
+                                                                                  .controls{gap:0.3rem}
+                                                                                    button{padding:0.4rem;font-size:0.85rem}
+                                                                                    }
+                                                                                    
+}
