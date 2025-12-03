@@ -1,0 +1,242 @@
+/* Importação de fonte */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Variáveis de Cores (Cores de Campo e Bola) */
+:root {
+    --cor-verde-campo: #4CAF50;
+    --cor-primaria-bola: #007bff; /* Azul */
+    --cor-secundaria: #333; /* Cinza escuro */
+    --cor-texto: #444;
+    --cor-fundo: #f4f4f9;
+    --cor-borda: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    gap: 30px;
+}
+
+/* Header (Cabeçalho) */
+header {
+    background: var(--cor-secundaria);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--cor-verde-campo);
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-style: italic;
+    color: var(--cor-borda);
+}
+
+/* Posts Principal */
+.posts-list {
+    flex: 3; /* Ocupa 3/4 do espaço */
+}
+
+.posts-list h2 {
+    color: var(--cor-primaria-bola);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--cor-borda);
+    padding-bottom: 5px;
+}
+
+.post-card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.post-card h3 {
+    color: var(--cor-secundaria);
+    margin-bottom: 5px;
+    font-size: 1.6em;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 15px;
+    border-left: 3px solid var(--cor-verde-campo);
+    padding-left: 10px;
+}
+
+.read-more {
+    display: inline-block;
+    color: var(--cor-primaria-bola);
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 15px;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: var(--cor-verde-campo);
+}
+
+/* Paginação */
+.pagination {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 0 5px;
+    background-color: white;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover, .pagination a.current {
+    background-color: var(--cor-primaria-bola);
+    color: white;
+    border-color: var(--cor-primaria-bola);
+}
+
+/* Barra Lateral (Sidebar) */
+.sidebar {
+    flex: 1; /* Ocupa 1/4 do espaço */
+}
+
+.widget {
+    background: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.widget h3 {
+    color: var(--cor-primaria-bola);
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted var(--cor-borda);
+    font-size: 1.2em;
+}
+
+.widget ul {
+    list-style: none;
+}
+
+.widget ul li a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    display: block;
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.widget ul li a:hover {
+    color: var(--cor-verde-campo);
+    padding-left: 5px;
+}
+
+.search-input, .search-button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.search-input {
+    border: 1px solid var(--cor-borda);
+}
+
+.search-button {
+    background-color: var(--cor-verde-campo);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #388E3C; /* Verde mais escuro */
+}
+
+.featured-post {
+    border: 2px solid var(--cor-verde-campo);
+    text-align: center;
+}
+
+.featured-post .read-more {
+    color: white;
+    background-color: var(--cor-primaria-bola);
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+.featured-post .read-more:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* Footer (Rodapé) */
+footer {
+    background: var(--cor-secundaria);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: var(--cor-verde-campo);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: white;
+}
+
+/* Responsividade (Layout de coluna em telas menores) */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .posts-list {
+        order: 2; /* Coloca a lista de posts abaixo da sidebar */
+    }
+    
+    .sidebar {
+        order: 1; /* Coloca a sidebar no topo em mobile */
+    }
+}
