@@ -1,0 +1,315 @@
+/* --- Variáveis de Estilo Anime --- */
+:root {
+    --cor-primaria: #FF0055; /* Magenta Brilhante */
+    --cor-secundaria: #00F0FF; /* Ciano Neon */
+    --cor-fundo-claro: #182A49; /* Azul Marinho Claro */
+    --cor-fundo-escuro: #051025; /* Azul Marinho Escuro */
+    --cor-texto: #FFFFFF;
+    --cor-contorno-claro: #FFFFFF;
+    --cor-contorno-escuro: #000000;
+    --fonte-titulo: 'Orbitron', sans-serif;
+    --fonte-texto: 'Bebas Neue', sans-serif;
+\}
+
+/* --- Estilos Gerais e Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+\}
+
+body {
+    font-family: var(--fonte-texto);
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto);
+    line-height: 1.5;
+    min-height: 100vh;
+\}
+
+a { text-decoration: none; color: var(--cor-texto); \}
+
+/* --- Cabeçalho e Navegação (Estilo HUD) --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: var(--cor-fundo-claro);
+    border-bottom: 5px solid var(--cor-primaria);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+\}
+
+.logo {
+    font-family: var(--fonte-titulo);
+    font-size: 2em;
+    letter-spacing: 5px;
+    color: var(--cor-secundaria);
+    text-shadow: 3px 3px 0px var(--cor-primaria);
+\}
+
+nav ul { list-style: none; display: flex; gap: 25px; \}
+
+.nav-item {
+    font-family: var(--fonte-titulo);
+    font-size: 1.1em;
+    padding: 5px 0;
+    transition: color 0.3s;
+\}
+
+.nav-item:hover { color: var(--cor-secundaria); \}
+
+.nav-item.destaque {
+    color: var(--cor-primaria);
+    font-weight: 800;
+    border-bottom: 2px solid var(--cor-primaria);
+\}
+
+/* --- Hero Section --- */
+.hero-section {
+    background: url('https://picsum.photos/1200/400/?random=1') center center / cover no-repeat;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.6); 
+\}
+
+.intro-box {
+    padding: 30px;
+    border: 5px solid var(--cor-secundaria);
+    box-shadow: 10px 10px 0px var(--cor-primaria);
+    max-width: 800px;
+    animation: zoomIn 1s ease-out;
+\}
+
+.tagline { color: var(--cor-secundaria); font-size: 1.5em; margin-bottom: 10px; \}
+
+.titulo-principal {
+    font-family: var(--fonte-titulo);
+    font-size: 3.5em;
+    color: var(--cor-texto);
+    text-transform: uppercase;
+    text-shadow: 
+        5px 5px 0px var(--cor-primaria),
+        8px 8px 0px var(--cor-contorno-escuro);
+    margin-bottom: 20px;
+\}
+
+/* --- Botões de Ação --- */
+.botoes-acao { display: flex; justify-content: center; gap: 20px; \}
+
+.botao-primario, .botao-secundario {
+    font-family: var(--fonte-titulo);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+\}
+
+.botao-primario {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    border: 3px solid var(--cor-contorno-claro);
+    box-shadow: 4px 4px 0px var(--cor-contorno-escuro);
+\}
+
+.botao-primario:hover {
+    background-color: #DD0044;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--cor-contorno-escuro);
+\}
+
+.botao-secundario {
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-secundaria);
+    border: 3px solid var(--cor-secundaria);
+\}
+
+.botao-secundario:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fundo-escuro);
+    transform: scale(1.05);
+\}
+
+/* --- Seção de Cartas/Informações --- */
+.info-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px 30px;
+\}
+
+.info-card {
+    background-color: var(--cor-fundo-claro);
+    padding: 25px;
+    width: 300px;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.4);
+    transition: border-color 0.3s;
+\}
+
+.info-card:hover { border-color: var(--cor-primaria); \}
+
+.info-card h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-secundaria);
+    margin-bottom: 10px;
+\}
+
+.efeito-linha {
+    height: 2px;
+    width: 50%;
+    background: var(--cor-primaria);
+    margin-top: 15px;
+\}
+
+/* --- Layout Principal (Conteúdo + Aside) --- */
+.layout-principal {
+    display: flex; /* FLEXBOX para o layout Conteúdo x Sidebar */
+    gap: 30px; 
+    max-width: 1200px;
+    margin: 0px auto 40px auto;
+    padding: 0 20px;
+\}
+
+.conteudo-principal {
+    flex: 3; /* Ocupa 3/4 do espaço */
+    padding: 30px;
+    background-color: var(--cor-fundo-claro);
+    border: 2px solid var(--cor-primaria);
+\}
+
+.conteudo-principal h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-secundaria);
+    font-size: 2em;
+    margin-bottom: 15px;
+\}
+
+.descricao {
+    font-family: sans-serif;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+\}
+
+.bloco-info {
+    background-color: var(--cor-primaria);
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    margin: 20px 0;
+    border: 1px solid var(--cor-contorno-claro);
+    box-shadow: 2px 2px 0px var(--cor-contorno-escuro);
+\}
+
+/* --- Estilos da Imagem de Perfil --- */
+.personagem-perfil {
+    text-align: center;
+    margin: 20px 0;
+    display: block; 
+\}
+
+.img-anime {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+    
+    /* Efeito de contorno forte (Cel-Shading) */
+    border: 5px solid var(--cor-contorno-escuro); 
+    
+    /* Sombra externa para profundidade no estilo anime */
+    box-shadow: 
+        8px 8px 0px var(--cor-primaria), 
+        12px 12px 0px var(--cor-fundo-escuro); 
+    
+    transition: transform 0.3s;
+\}
+
+.img-anime:hover {
+    transform: translate(-3px, -3px);
+    cursor: pointer;
+\}
+
+figcaption {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-secundaria);
+    font-size: 1.1em;
+    padding: 5px;
+    background-color: var(--cor-fundo-escuro);
+    display: inline-block;
+    border: 1px solid var(--cor-secundaria);
+\}
+
+/* --- Aside (Barra Lateral) --- */
+.sidebar-anime {
+    flex: 1; /* Ocupa 1/4 do espaço */
+    background-color: #1A3052; 
+    padding: 20px;
+    border: 3px solid var(--cor-secundaria);
+    box-shadow: 5px 5px 0px var(--cor-contorno-escuro); 
+\}
+
+.sidebar-anime h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-primaria);
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 5px;
+\}
+
+.sidebar-anime ul { list-style: none; margin-bottom: 30px; \}
+
+.sidebar-anime ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+\}
+
+.sidebar-anime ul li a {
+    color: var(--cor-texto);
+    font-size: 0.95em;
+    transition: color 0.2s, text-shadow 0.2s;
+    font-family: sans-serif;
+\}
+
+.sidebar-anime ul li a:hover {
+    color: var(--cor-secundaria);
+    text-shadow: 0 0 5px var(--cor-secundaria);
+\}
+
+.propaganda {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 0, 85, 0.1);
+    border: 1px solid var(--cor-primaria);
+    text-align: center;
+\}
+
+.propaganda h4 { color: var(--cor-primaria); margin-bottom: 5px; \}
+
+/* --- Rodapé (Status Bar) --- */
+footer {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.9em;
+    font-family: var(--fonte-titulo);
+    letter-spacing: 1px;
+    border-top: 3px solid var(--cor-secundaria);
+    box-shadow: 0 -5px 15px rgba(255, 0, 85, 0.3);
+\}
+
+/* --- Keyframes de Animação --- */
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.8); \}
+    to { opacity: 1; transform: scale(1); \}
+\}$0
