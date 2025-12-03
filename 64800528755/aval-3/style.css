@@ -1,0 +1,197 @@
+/* --- Variáveis de Cores --- */
+:root {
+    --cor-principal: #1A237E; /* Azul Marinho Escuro (Cabeçalho, Destaque) */
+    --cor-secundaria: #FF6F00; /* Laranja Vívido (Títulos, Detalhes) */
+    --cor-fundo-claro: #F4F6F9; /* Cinza Gelo (Fundo) */
+    --cor-texto: #333333; /* Cinza Escuro (Texto Principal) */
+    --cor-link-hover: #3F51B5; /* Azul Médio */
+\}
+
+/* --- Estilos Gerais --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo-claro); 
+    color: var(--cor-texto);
+    line-height: 1.6;
+\}
+
+/* --- Cabeçalho e Navegação --- */
+.cabecalho {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+\}
+
+.cabecalho h1 {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8em;
+    letter-spacing: 2px;
+\}
+
+.menu-nav {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Espaçamento entre os links */
+\}
+
+.menu-nav a {
+    color: rgb(173, 8, 8);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+    border: 1px solid transparent; /* Para evitar mudança de layout no hover */
+\}
+
+.menu-nav a:hover {
+    background-color: var(--cor-link-hover);
+    transform: translateY(-2px); /* Efeito sutil de elevação */
+\}
+
+/* --- Conteúdo Principal e Seções --- */
+.conteudo-principal {
+    max-width: 1100px;
+    margin: 40px auto; 
+    padding: 0 20px;
+\}
+
+.secao-esporte {
+    background-color: white;
+    padding: 35px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra mais destacada */
+    border-left: 5px solid var(--cor-secundaria); /* Linha lateral de destaque */
+\}
+
+.secao-esporte h2 {
+    color: var(--cor-secundaria); 
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 2px solid var(--cor-principal);
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-size: 2em;
+\}
+
+.secao-esporte strong {
+    color: var(--cor-principal);
+    font-weight: 700;
+\}
+
+/* --- Lista de Notícias --- */
+.secao-esporte ul {
+    list-style-type: none; /* Remove os marcadores de lista padrão */
+    padding: 0;
+\}
+
+.secao-esporte li {
+    background-color: #e0e0f0; /* Fundo suave para os itens */
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-left: 4px solid var(--cor-secundaria);
+    border-radius: 4px;
+    transition: background-color 0.3s;
+\}
+
+.secao-esporte li:hover {
+    background-color: #c9c9e5;
+\}
+
+
+/* --- Tabela de Classificação --- */
+.tabela-container {
+    overflow-x: auto; 
+    margin-top: 25px;
+\}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 8px;
+    overflow: hidden; /* Garante que o border-radius funcione */
+\}
+
+table th, table td {
+    padding: 14px 10px;
+    border: 1px solid #e0e0e0;
+\}
+
+/* Cabeçalho da Tabela */
+table thead {
+    background-color: var(--cor-secundaria); 
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+\}
+
+/* Linhas do Corpo da Tabela */
+table tbody tr:nth-child(even) {
+    background-color: #f8f8fc; /* Listra muito clara */
+\}
+
+table tbody tr:hover {
+    background-color: #fff3e0; /* Fundo laranja claríssimo ao passar o mouse */
+    cursor: pointer;
+\}
+
+/* Posição de Destaque (1º lugar) */
+table tbody tr:first-child td {
+    font-weight: 700;
+    color: var(--cor-principal);
+    background-color: #c5cae9; /* Azul bem claro */
+\}
+
+.nota-tabela {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #666;
+    text-align: center;
+    font-style: italic;
+\}
+
+/* --- Rodapé --- */
+.rodape {
+    background-color: var(--cor-principal);
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+    font-size: 0.9em;
+\}
+
+.rodape p {
+    margin: 4px 0;
+\}
+
+
+/* --- Media Query: Responsividade --- */
+@media (max-width: 768px) {
+    .cabecalho h1 {
+        font-size: 2em;
+    \}
+    .menu-nav {
+        flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+        gap: 10px;
+    \}
+    .menu-nav a {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    \}
+    .secao-esporte {
+        padding: 20px;
+    \}
+    .secao-esporte h2 {
+        font-size: 1.5em;
+    \}
+\}$0
