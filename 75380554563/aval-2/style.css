@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Programas Ambientais • Ações e Projetos</title>
+  <meta name="description" content="Informações sobre programas ambientais, como participar e apoiar iniciativas locais." />
+  <style>
+    :root{
+      --bg:#f3fbf6; --card:#ffffff; --accent:#117a65; --accent-2:#19a974;
+      --muted:#4b5563; --glass:rgba(255,255,255,0.6);
+      --shadow: 0 6px 22px rgba(6,20,14,0.06);
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;background:
+      linear-gradient(180deg,#eaf9f0 0%,var(--bg)100%);color:#03302a}
+    a{color:inherit}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:20px}
+    header{background:transparent;padding:12px 0;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:10px;background:
+      linear-gradient(135deg,var(--accent),var(--accent-2));display:inline-block;box-shadow:var(--shadow)}
+    nav{display:flex;gap:10px;align-items:center}
+    nav a{padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;color:var(--muted)}
+    nav a.active{background:rgba(17,122,101,0.12);color:var(--accent)}
+    .hero{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;margin-top:8px}
+    .hero-card{background:var(--card);padding:22px;border-radius:14px;box-shadow:var(--shadow)}
+    .hero h1{margin:0 0 8px;font-size:1.6rem;color:var(--accent)}
+    .hero p{margin:0;color:var(--muted)}
+    .controls{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+    input[type="search"],select{padding:10px;border-radius:10px;border:1px solid #e6f2ea;min-width:180px}
+    button{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow);border:1px solid rgba(5, 40, 30, 0.04)}
+    .card h3{margin:0 0 6px;color:#044036}
+    .card p{margin:0;color:var(--muted)}
+    .tag{display:inline-block;background:rgba(25,169,116,0.12);color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:700;font-size:0.85rem}
+    .programs .program{display:flex;flex-direction:column;gap:8px}
+    .program-head{display:flex;justify-content:space-between;align-items:start;gap:12px}
+    .meta{font-size:0.85rem;color:var(--muted)}
+    .actions{display:flex;gap:8px;flex-wrap:wrap}
+    .pill{padding:6px 10px;border-radius:999px;background:#eefaf3;color:var(--accent-2);font-weight:700;border:1px solid rgba(25,169,116,0.06)}
+    footer{margin-top:24px;padding:18px;text-align:center;color:var(--muted);font-size:0.9rem}
+    .hero-stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .stat{background:linear-gradient(180deg,rgba(25,169,116,0.06),transparent);padding:10px;border-radius:10px;min-width:120px;text-align:center}
+    .stat strong{display:block;font-size:1.2rem;color:var(--accent)}
+    .detail{display:none;padding-top:8px;color:var(--muted);border-top:1px dashed rgba(3,48,42,0.06);margin-top:8px}
+    @media(min-width:900px){ .hero{grid-template-columns:1fr 340px} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand" aria-hidden="false">
+        <span class="logo" role="img" aria-label="Folha"></span>
+        <div>
+          <div style="font-weight:800">Programas Ambientais</div>
+          <div style="font-size:0.85rem;color:var(--muted)">Ações, projetos e como participar</div>
+        </div>
+      </div>
+      <nav id="nav">
+        <a href="#home" data-target="home" class="active">Início</a>
+        <a href="#programs" data-target="programs">Programas</a>
+        <a href="#resources" data-target="resources">Recursos</a>
+        <a href="#contact" data-target="contact">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero" aria-labelledby="home-title">
+        <div class="hero-card">
+          <h1 id="home-title">Proteja o planeta: conheça programas ambientais</h1>
+          <p>Informações sobre programas governamentais e comunitários que atuam em conservação, educação ambiental, reciclagem e restauração.</p>
+
+          <div class="controls" role="search" aria-label="Pesquisar programas">
+            <input id="search" type="search" placeholder="Pesquisar por nome ou tema" />
+            <select id="filter">
+              <option value="">Todas as categorias</option>
+              <option value="conservacao">Conservação</option>
+              <option value="educacao">Educação</option>
+              <option value="reciclagem">Reciclagem</option>
+              <option value="restauracao">Restauração</option>
+            </select>
+            <button id="clear">Limpar</button>
+          </div>
+
+          <div class="hero-stats" aria-hidden="false">
+            <div class="stat"><strong id="count">0</strong><span class="meta">Programas listados</span></div>
+            <div class="stat"><strong>+150</strong><span class="meta">Voluntários ativos</span></div>
+            <div class="stat"><strong>12</strong><span class="meta">Parcerias</span></div>
+          </div>
+        </div>
+
+        <aside class="card" style="min-width:220px">
+          <h3>Destaques</h3>
+          <p class="meta">Projetos com inscrições abertas e impacto local mensurável.</p>
+          <div style="margin-top:10px" id="featured"></div>
+        </aside>
+      </section>
+
+      <section id="programs" style="margin-top:18px" class="card programs" hidden>
+        <h2>Programas</h2>
+        <p class="meta">Filtre e explore programas por categoria. Clique em "Detalhes" para mais informações.</p>
+        <div id="programs-list" style="margin-top:12px"></div>
+      </section>
+
+      <section id="resources" style="margin-top:18px" hidden>
+        <div class="card">
+          <h2>Recursos</h2>
+          <p class="meta">Materiais, guias e links úteis para organizar ações ambientais.</p>
+          <ul style="margin-top:10px">
+            <li><a href="#" target="_blank">Guia de Compostagem Doméstica (PDF)</a></li>
+            <li><a href="#" target="_blank">Manual de Educação Ambiental nas Escolas</a></li>
+            <li><a href="#" target="_blank">Como montar uma campanha de limpeza local</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:18px" hidden>
+        <div class="card">
+          <h2>Contato</h2>
+          <p class="meta">Faça perguntas ou proponha parcerias.</p>
+          <form id="contact-form" style="margin-top:10px">
+            <div style="display:grid;gap:8px">
+              <input id="name" type="text" placeholder="Seu nome" required />
+              <input id="email" type="email" placeholder="Seu e-mail" required />
+              <textarea id="message" rows="5" placeholder="Mensagem" required></textarea>
+            </div>
+            <div style="margin-top:10px;display:flex;gap:8px">
+              <button type="submit">Enviar</button>
+              <button type="button" id="mailto">Abrir no e-mail</button>
+            </div>
+            <p id="feedback" style="color:green;margin-top:8px;display:none">Mensagem enviada (simulação).</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © 2025 • Programas Ambientais — Exemplo. Abra o arquivo no navegador para testar.
+    </footer>
+  </div>
+
+  <script>
+    (function(){
+      const programs = [
+        {id:1, title:"Reflorestamento Comunitário", cat:"restauracao", level:"Local", location:"Serra Verde", desc:"Plantio de espécies nativas em áreas degradadas; voluntariado e oficinas."},
+        {id:2, title:"Educação Ambiental nas Escolas", cat:"educacao", level:"Regional", location:"Rede Municipal", desc:"Aulas, trilhas e materiais pedagógicos para alunos e professores."},
+        {id:3, title:"Coleta Seletiva e Reciclagem", cat:"reciclagem", level:"Municipal", location:"Centro Urbano", desc:"Estações de coleta, pontos de entrega e campanhas de conscientização."},
+        {id:4, title:"Proteção de Nascentes", cat:"conservacao", level:"Local", location:"Vale Azul", desc:"Monitoramento e cercamento de nascentes; recuperação de mata ciliar."},
+        {id:5, title:"Monitoramento de Fauna", cat:"conservacao", level:"Regional", location:"Parque Natural", desc:"Inventário de espécies, armadilhas fotográficas e relatórios técnicos."}
+      ];
+
+      const el = id => document.getElementById(id);
+      const sections = ["home","programs","resources","contact"];
+
+      function renderFeatured(){
+        const root = el('featured');
+        root.innerHTML = '';
+        programs.slice(0,3).forEach(p=>{
+          const div = document.createElement('div');
+          div.style.marginBottom='8px';
+          div.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center"><div><strong>${p.title}</strong><div class="meta">${p.location} • ${p.level}</div></div><span class="tag">${p.cat}</span></div>`;
+          root.appendChild(div);
+        });
+      }
+
+      function renderPrograms(list){
+        const root = el('programs-list');
+        root.innerHTML = '';
+        if(!list.length){ root.innerHTML = '<div class="meta">Nenhum programa encontrado.</div>'; return; }
+        list.forEach(p=>{
+          const card = document.createElement('div');
+          card.className = 'card program';
+          card.innerHTML = `
+            <div class="program-head">
+              <div>
+                <h3>${p.title}</h3>
+                <div class="meta">${p.location} • ${p.level}</div>
+              </div>
+              <div class="actions">
+                <span class="pill">${p.cat}</span>
+                <button class="details" data-id="${p.id}">Detalhes</button>
+              </div>
+            </div>
+            <p class="meta" style="margin-top:8px">${p.desc}</p>
+            <div class="detail" id="detail-${p.id}">
+              <p class="meta">Como participar: envie email ou compareça às reuniões mensais. Recursos: apoio técnico e ferramentas.</p>
+            </div>
+          `;
+          root.appendChild(card);
+        });
+        root.querySelectorAll('.details').forEach(btn=>{
+          btn.addEventListener('click', e=>{
+            const id = e.target.dataset.id;
+            const d = el(`detail-${id}`);
+            d.style.display = d.style.display === 'block' ? 'none' : 'block';
+            e.target.textContent = d.style.display === 'block' ? 'Fechar' : 'Detalhes';
+          });
+        });
+        el('count').textContent = list.length;
+      }
+
+      function applyFilter(){
+        const q = el('search').value.trim().toLowerCase();
+        const cat = el('filter').value;
+        const filtered = programs.filter(p=>{
+          const text = (p.title + ' ' + p.desc + ' ' + p.location).toLowerCase();
+          const okQ = !q || text.includes(q);
+          const okCat = !cat || p.cat === cat;
+          return okQ && okCat;
+        });
+        renderPrograms(filtered);
+        if(q || cat) showSection('programs');
+      }
+
+      function showSection(name){
+        sections.forEach(s=>{
+          const sec = el(s);
+          if(!sec) return;
+          sec.hidden = s !== name;
+          const link = document.querySelector(`#nav a[data-target="${s}"]`);
+          if(link) link.classList.toggle('active', s===name);
+        });
+        history.replaceState(null,'',`#${name}`);
+      }
+
+      function debounce(fn, wait=200){
+        let t;
+        return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn.apply(this,a), wait); };
+      }
+
+      document.addEventListener('DOMContentLoaded', ()=>{
+        renderFeatured();
+        renderPrograms(programs);
+        const initial = (location.hash||'#home').replace('#','');
+        showSection(sections.includes(initial) ? initial : 'home');
+
+        el('search').addEventListener('input', debounce(applyFilter,250));
+        el('filter').addEventListener('change', applyFilter);
+        el('clear').addEventListener('click', ()=>{ el('search').value=''; el('filter').value=''; renderPrograms(programs); });
+
+        document.querySelectorAll('#nav a').forEach(a=>{
+          a.addEventListener('click', e=>{ e.preventDefault(); showSection(a.dataset.target); });
+        });
+
+        el('contact-form').addEventListener('submit', e=>{
+          e.preventDefault();
+          el('feedback').style.display = 'block';
+          el('contact-form').reset();
+        });
+        el('mailto').addEventListener('click', ()=>{
+          const subj = encodeURIComponent('Parceria – Programas Ambientais');
+          const body = encodeURIComponent('Olá,\n\nQuero saber como participar do programa...');
+          window.location.href = `mailto:contato@exemplo.org?subject=${subj}&body=${body}`;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
