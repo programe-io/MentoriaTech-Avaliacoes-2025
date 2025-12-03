@@ -1,0 +1,131 @@
+/* Importação de fontes e reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5; /* Cor de fundo clara do Facebook */
+    color: #1c1e21;
+}
+
+/* --- NAVBAR (Barra Superior) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    height: 56px;
+    background-color: #ffffff; /* Fundo branco para a navbar (novo design) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: #0866ff; /* Azul característico do logo */
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.navbar-center nav {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-icon {
+    font-size: 24px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #606770;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-icon.active {
+    color: #0866ff;
+    border-bottom-color: #0866ff;
+}
+
+/* --- CONTAINER PRINCIPAL (Layout de 3 Colunas) --- */
+.main-container {
+    display: flex;
+    max-width: 1312px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+.left-sidebar, .right-sidebar {
+    /* 25% da largura, fixo para simular o layout */
+    width: 25%; 
+    padding: 10px;
+    position: sticky;
+    top: 76px; /* Para que sidebar seja "pegajosa" abaixo da navbar */
+    height: calc(100vh - 76px); /* Altura da tela menos o cabeçalho */
+    overflow-y: auto; /* Permite rolagem se o conteúdo for longo */
+}
+
+.feed-content {
+    /* 50% da largura, onde o conteúdo principal está */
+    width: 50%;
+    min-width: 500px;
+}
+
+/* --- ESTILO DAS POSTAGENS --- */
+.post-creator, .post {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.post-creator input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+.post-creator button {
+    background-color: #0866ff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-actions button {
+    background: none;
+    border: none;
+    color: #606770;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.post-actions button:hover {
+    background-color: #f2f2f2;
+    border-radius: 4px;
+}
+
+/* Adicione mais estilos para listas, botões e responsividade */
