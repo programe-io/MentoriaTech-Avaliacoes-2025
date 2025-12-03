@@ -1,0 +1,234 @@
+/* Importação de fonte básica */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Estilos Globais */
+:root {
+    --cor-primaria: #007bff; /* Azul vibrante */
+    --cor-secundaria: #343a40; /* Cinza escuro */
+    --cor-destaque: #ffc107; /* Amarelo */
+    --cor-fundo: #f8f9fa; /* Fundo claro */
+    --cor-texto: #212529; /* Texto escuro */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Header (Cabeçalho) */
+header {
+    background: var(--cor-secundaria);
+    color: white;
+    padding: 15px 0;
+    border-bottom: 5px solid var(--cor-primaria);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2em;
+    color: var(--cor-destaque);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0 15px;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: var(--cor-primaria);
+}
+
+/* Hero Section (Destaque) */
+.hero {
+    background: url('fundo-futebol.jpg') no-repeat center center/cover; /* Altere para o nome da sua imagem de fundo */
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Overlay escuro */
+}
+
+.hero h2, .hero p, .hero a {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.btn-cta {
+    display: inline-block;
+    background: var(--cor-primaria);
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background 0.3s;
+}
+
+.btn-cta:hover {
+    background: #0056b3; /* Um tom de azul mais escuro */
+}
+
+/* Notícias (Grid de Cards) */
+#noticias h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--cor-primaria);
+}
+
+.card-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.noticia-card {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.noticia-card:hover {
+    transform: translateY(-5px);
+}
+
+.noticia-card h3 {
+    color: var(--cor-secundaria);
+    margin-bottom: 10px;
+}
+
+.noticia-card a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: 700;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Tabelas */
+.placar {
+    text-align: center;
+    background: #e9ecef;
+    padding: 40px 0;
+}
+
+.placar h2 {
+    color: var(--cor-secundaria);
+    margin-bottom: 20px;
+}
+
+table {
+    width: 70%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+th {
+    background-color: var(--cor-primaria);
+    color: white;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Footer (Rodapé) */
+footer {
+    background: var(--cor-secundaria);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--cor-primaria);
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    header nav ul {
+        margin-top: 10px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        padding: 5px 0;
+    }
+
+    .card-grid {
+        flex-direction: column;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    table {
+        width: 95%;
+    }
+}
