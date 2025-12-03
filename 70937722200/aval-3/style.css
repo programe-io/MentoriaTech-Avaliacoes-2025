@@ -1,0 +1,206 @@
+/* ====== GLOBAL ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle, #060412, #0c001b 70%);
+    color: #8ff9ff;
+    overflow-x: hidden;
+}
+
+/* =============== MENU LATERAL =============== */
+.side-menu {
+    position: fixed;
+    left: -230px;
+    top: 0;
+    width: 230px;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(0,255,255,0.35);
+    box-shadow: 4px 0 25px rgba(0,255,255,0.2);
+    padding: 20px;
+    transition: .4s;
+}
+
+.side-menu.open {
+    left: 0;
+}
+
+.menu-header {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 12px cyan;
+}
+
+.side-menu nav a {
+    display: block;
+    margin: 18px 0;
+    font-size: 1.1rem;
+    color: #aafaff;
+    text-decoration: none;
+    padding-left: 5px;
+    transition: .3s;
+}
+
+.side-menu nav a:hover {
+    color: #00faff;
+    text-shadow: 0 0 8px #00ffff;
+    padding-left: 10px;
+}
+
+/* ======= HAMBURGUER ======= */
+.hamburger {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    width: 38px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 5px;
+    margin: 5px 0;
+    background: cyan;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+/* ====== HERO ====== */
+.hero {
+    padding: 120px 20px 80px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 20px cyan;
+}
+
+/* ====== CARROUSEL 3D ====== */
+.carousel-section h2 {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 2rem;
+}
+
+.carousel3d {
+    perspective: 1200px;
+    height: 350px;
+    position: relative;
+}
+
+.spinner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: .8s;
+    position: absolute;
+}
+
+.spinner img {
+    position: absolute;
+    width: 280px;
+    height: 180px;
+    left: calc(50% - 140px);
+    top: calc(50% - 90px);
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 15px cyan;
+}
+
+/* Posicionamento circular 3D */
+.spinner img:nth-child(1) { transform: rotateY(0deg) translateZ(420px); }
+.spinner img:nth-child(2) { transform: rotateY(72deg) translateZ(420px); }
+.spinner img:nth-child(3) { transform: rotateY(144deg) translateZ(420px); }
+.spinner img:nth-child(4) { transform: rotateY(216deg) translateZ(420px); }
+.spinner img:nth-child(5) { transform: rotateY(288deg) translateZ(420px); }
+
+/* BOTÕES 3D */
+.controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.controls button {
+    background: rgba(0,255,255,0.2);
+    border: 1px solid cyan;
+    padding: 10px 18px;
+    font-size: 1.5rem;
+    color: cyan;
+    cursor: pointer;
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    transition: .3s;
+}
+
+.controls button:hover {
+    background: cyan;
+    color: #000e16;
+}
+
+/* ===== CARDS NEON ====== */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 80px 0;
+}
+
+.card {
+    padding: 25px;
+    width: 260px;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid cyan;
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 18px cyan;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px cyan;
+}
+
+/* SOBRE PAGE */
+.sobre {
+    max-width: 700px;
+    margin: 150px auto;
+    padding: 40px;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid cyan;
+    box-shadow: 0 0 25px cyan;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 12px;
+    background: cyan;
+    border: none;
+    color: black;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    margin: 80px 0;
+    color: #8ff9ff;
+}
