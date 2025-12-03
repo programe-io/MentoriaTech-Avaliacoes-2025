@@ -1,0 +1,143 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* CABEÇALHO */
+.cabecalho {
+    background-color: #004d40; /* Verde escuro */
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cabecalho h1 {
+    font-size: 1.8em;
+}
+
+.cabecalho nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.cabecalho nav ul li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.cabecalho nav ul li a:hover {
+    color: #80cbc4; /* Verde claro ao passar o mouse */
+}
+
+/* CONTEÚDO PRINCIPAL (MAIN) */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.secao {
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.secao h2 {
+    color: #004d40;
+    border-bottom: 3px solid #80cbc4;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.destaque {
+    background-color: #e0f2f1; /* Fundo mais claro para destaque */
+    border-left: 5px solid #004d40;
+}
+
+/* CARDS DE IMPACTOS */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Garante que os cards quebrem a linha em telas menores */
+}
+
+.card {
+    flex: 1; /* Distribui o espaço igualmente entre os cards */
+    min-width: 250px;
+    padding: 20px;
+    background-color: #00796b; /* Outro tom de verde */
+    color: white;
+    border-radius: 6px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    color: #a7ffeb;
+}
+
+/* LISTA DE SOLUÇÕES */
+.lista-solucoes {
+    list-style: disc;
+    margin-left: 40px;
+    padding: 10px 0;
+}
+
+.lista-solucoes li {
+    margin-bottom: 10px;
+}
+
+/* RODAPÉ */
+.rodape {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* RESPONSIVIDADE BÁSICA */
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .cabecalho nav ul {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cabecalho nav ul li a {
+        margin: 5px 0;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+}
