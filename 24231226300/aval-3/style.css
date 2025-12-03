@@ -1,0 +1,138 @@
+:root{--bg:#0f1724;--card:#0b1220;--accent:#07c;--muted:#9aa4b2;--glass: rgba(255,255,255,0.04)}
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+    font-family:Inter, system-ui;
+      background:var(--bg);
+        color:#e6eef8;
+        }
+
+        header{
+          padding:28px 20px;
+            display:flex;
+              align-items:center;
+                gap:16px;
+                }
+
+                .logo{
+                  width:56px;height:56px;
+                    border-radius:12px;
+                      background:#0b2b46;
+                        display:flex;
+                          align-items:center;
+                            justify-content:center;
+                              color:white;
+                                font-weight:700;
+                                  font-size:22px;
+                                  }
+
+                                  .brand h1{margin:0;font-size:20px}
+                                  .lead{margin:4px 0 0;color:var(--muted);font-size:13px}
+
+                                  .controls{
+                                    margin:12px 20px;
+                                      display:flex;
+                                        gap:12px;
+                                          flex-wrap:wrap;
+                                          }
+
+                                          .search,.select{
+                                            background:var(--card);
+                                              border:1px solid rgba(255,255,255,0.05);
+                                                padding:8px 12px;
+                                                  border-radius:10px;
+                                                    color:white;
+                                                    }
+
+                                                    .btn{
+                                                      background:var(--accent);
+                                                        border:none;
+                                                          color:white;
+                                                            padding:8px 12px;
+                                                              border-radius:10px;
+                                                                cursor:pointer;
+                                                                }
+
+                                                                .gallery{
+                                                                  padding:20px;
+                                                                    display:grid;
+                                                                      grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+                                                                        gap:14px;
+                                                                        }
+
+                                                                        .card{
+                                                                          position:relative;
+                                                                            border-radius:12px;
+                                                                              overflow:hidden;
+                                                                                background:var(--glass);
+                                                                                  cursor:pointer;
+                                                                                    box-shadow:0 6px 18px rgba(0,0,0,0.6);
+                                                                                    }
+
+                                                                                    .card img{
+                                                                                      width:100%;
+                                                                                        height:160px;
+                                                                                          object-fit:cover;
+                                                                                            transition:.35s;
+                                                                                            }
+
+                                                                                            .card:hover img{transform:scale(1.05)}
+
+                                                                                            .overlay{
+                                                                                              position:absolute;
+                                                                                                bottom:0;
+                                                                                                  left:0;
+                                                                                                    right:0;
+                                                                                                      padding:10px;
+                                                                                                        background:linear-gradient(0deg, rgba(0,0,0,0.8), transparent);
+                                                                                                        }
+
+                                                                                                        .caption{font-weight:600;font-size:14px}
+                                                                                                        .sub{font-size:12px;color:#cfe3ff88}
+
+                                                                                                        .lightbox{
+                                                                                                          position:fixed;
+                                                                                                            inset:0;
+                                                                                                              background:rgba(0,0,0,0.85);
+                                                                                                                display:none;
+                                                                                                                  align-items:center;
+                                                                                                                    justify-content:center;
+                                                                                                                    }
+
+                                                                                                                    .lightbox.show{display:flex}
+
+                                                                                                                    .lightbox-content{max-width:1200px;width:95%}
+                                                                                                                    .lightbox img{width:100%;border-radius:8px}
+
+                                                                                                                    .lb-controls{
+                                                                                                                      position:absolute;
+                                                                                                                        top:50%;
+                                                                                                                          left:0;
+                                                                                                                            right:0;
+                                                                                                                              display:flex;
+                                                                                                                                justify-content:space-between;
+                                                                                                                                }
+
+                                                                                                                                .lb-controls button{
+                                                                                                                                  background:rgba(0,0,0,0.4);
+                                                                                                                                    border:0;
+                                                                                                                                      color:white;
+                                                                                                                                        padding:14px;
+                                                                                                                                          border-radius:50%;
+                                                                                                                                            cursor:pointer;
+                                                                                                                                            }
+
+                                                                                                                                            .lb-meta{
+                                                                                                                                              margin-top:8px;
+                                                                                                                                                display:flex;
+                                                                                                                                                  justify-content:space-between;
+                                                                                                                                                    color:white;
+                                                                                                                                                    }
+
+                                                                                                                                                    footer{
+                                                                                                                                                      text-align:center;
+                                                                                                                                                        color:var(--muted);
+                                                                                                                                                          padding:20px;
+                                                                                                                                                            font-size:13px;
+                                                                                                                                                            }
