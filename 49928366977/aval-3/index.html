@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Galeria — Estilo Cards</title>
+  <style>
+    :root{
+      --primary:#2563eb;
+      --primary-light:#3b82f6;
+      --accent:#ff8800;
+      --background:#0f172a;
+      --surface:#ffffffee;
+      --card-bg:#f8fafc;
+      --muted:#74818a;
+      --text:#0b1220;
+      --radius:12px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;background:var(--background);font-family:Inter, Arial, Helvetica, sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
+
+    .topbar{background:linear-gradient(180deg,var(--accent),#cc6b00);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;color:#fff}
+    .logo{font-weight:800;letter-spacing:1px}
+    .nav{display:flex;gap:18px}
+    .nav a{color:rgba(255,255,255,0.9);text-decoration:none}
+
+    .wrap{max-width:1200px;margin:30px auto;padding:0 20px}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start}
+
+    /* Conteúdo */
+    h2{color:#fff;margin-bottom:18px;text-align:center;font-size:28px}
+    span{color:#ffbb00;font-weight:bold}
+
+    .card{
+      background:var(--card-bg);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 6px 20px rgba(2,6,23,0.6);
+      border:1px solid rgba(0,0,0,0.06);
+      overflow:hidden;
+      display:flex;flex-direction:column;
+    }
+
+    .card h3{font-size:20px;margin-bottom:12px}
+
+    .card .thumb{width:100%;height:170px;border-radius:10px;object-fit:cover;border:1px solid rgba(0,0,0,0.08)}
+
+    .card p{margin-top:12px;line-height:1.5;color:var(--muted);font-size:14px}
+
+    .card .content{flex:1}
+
+    @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){
+      .grid{grid-template-columns:1fr}
+      .topbar{height:88px;flex-direction:column;gap:8px;padding:12px}
+    }
+
+    .card:hover{transform:translateY(-6px);transition:.28s ease;box-shadow:0 12px 30px rgba(2,6,23,0.7)}
+
+    .note{color:#cbd5e1;text-align:center;margin-top:18px;font-size:13px}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <header class="topbar">
+    <div class="logo"><span>SÉRIES</span></div> <!-- AQUI ENTRA O SPAN -->
+    <nav class="nav">
+      <a href="#">Início</a>
+      <a href="#">Artigos</a>
+      <a href="#">Perfil</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+
+    <h2><span>Galeria de Séries</span></h2> <!-- TAGS EXIGIDAS -->
+
+    <section class="grid">
+
+<article class="card">
+<h3>Stranger Things</h3>
+<img class="thumb" src="https://i.redd.it/i-found-part-of-the-offical-season-5-poster-v0-5eus8dzysusf1.jpg?width=1198&format=pjpg&auto=webp&s=cb164ca4b83a2e4cc52df90663b682e67690ee5e">
+<div class="content">
+<p><span>Stranger Things</span> é uma série que mistura terror, ficção científica e aventura, mostrando a vida de um grupo de crianças em uma pequena cidade dos Estados Unidos durante os anos 1980.A história começa quando Will, um dos meninos, desaparece misteriosamente. Enquanto seus amigos procuram por ele, eles encontram Eleven, uma garota com poderes telecinéticos que fugiu de um laboratório secreto. Aos poucos, eles descobrem que Will foi levado para uma dimensão sombria chamada Mundo Invertido, onde vivem criaturas perigosas.
+
+A série acompanha:
+	•	As investigações sobre o laboratório secreto do governo
+	•	As criaturas do Mundo Invertido
+	•	As amizades e conflitos entre as crianças
+	•	As batalhas para impedir que o mal dessa dimensão invada a cidade
+
+No geral, Stranger Things trata de amizade, coragem e mistérios sobrenaturais, sempre com clima de suspense e nostalgia dos anos 80.</p>
+</div>
+</article>
+
+<article class="card">
+<h3>Outer Banks</h3>
+<img class="thumb" src="https://original.fontsinuse.com/fontsinuse.com/use-images/N207/207178/207178.jpeg">
+<div class="content">
+<p><span>Outer Banks</span> é uma série de aventura, mistério e ação que acompanha um grupo de adolescentes que vivem em uma ilha dividida entre dois lados:
+	•	Os Pogues (jovens pobres)
+	•	Os Kooks (ricos e poderosos)
+
+A história segue John B e seus amigos Pogues que descobrem pistas sobre um tesouro lendário ligado ao desaparecimento do pai dele. A partir disso, eles embarcam em uma busca perigosa, enfrentando inimigos, perseguições, traições e conflitos com os Kooks.
+
+A série mostra:
+	•	A amizade e união dos Pogues
+	•	A busca por diferentes tesouros ao longo das temporadas
+	•	Romance, rivalidades e muita aventura
+	•	Conflito social entre ricos e pobres
+	•	Fugidas, investigações e mistérios
+
+Em resumo: Outer Banks trata da luta de um grupo de amigos para encontrar tesouros escondidos enquanto enfrentam injustiças, perigos e segredos que mudam suas vidas.</p>
+</div>
+</article>
+
+<article class="card">
+<h3>House of the Dragon</h3>
+<img class="thumb" src="https://m.media-amazon.com/images/S/pv-target-images/58fdd428fe3d0414f3ec954fe6e740a85369a251191dcc9baa7d9881f5a9d3ab.jpg">
+<div class="content">
+<p><span>House of the Dragon</span> (A Casa do Dragão) é uma série que mostra a história da família Targaryen cerca de 200 anos antes dos eventos de Game of Thrones.
+
+A trama gira em torno de uma grande disputa pelo trono, chamada Dança dos Dragões, uma guerra civil dentro da própria família. Tudo começa quando o rei Viserys Targaryen escolhe sua filha, Rhaenyra, como herdeira. Porém, após casar novamente, o rei tem filhos homens — e isso cria uma enorme divisão entre os Targaryen.
+
+A série mostra:
+	•	Intrigas políticas e traições dentro da corte
+	•	A rivalidade entre Rhaenyra e seu meio-irmão Aegon
+	•	A disputa entre duas facções: os Verdes (que apoiam Aegon) e os Pretos (que apoiam Rhaenyra)
+	•	Muitas batalhas e conflitos envolvendo dragões, a maior arma dos Targaryen.
+Em resumo: A Casa do Dragão é sobre a luta pelo poder que destrói a família Targaryen e dá início à guerra mais famosa da história de Westeros.</p>
+</div>
+</article>
+
+</section>
+
+<p class="note">Você pode trocar imagens e adicionar mais cards quando quiser.</p>
+
+</main>
+</body>
+</html>
