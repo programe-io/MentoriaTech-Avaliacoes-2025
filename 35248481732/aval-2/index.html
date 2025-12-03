@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mercado de TI — Saiba Mais</title>
+  <!-- Link para arquivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <!-- Imagem de logo obrigatória -->
+        <img src="logo.png" alt="Logo Conecta TI" class="logo-img">
+        <h1 class="logo">Conecta TI</h1>
+      </div>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Carreiras</a></li>
+          <li><a href="#">Cursos</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main container">
+    <article class="card" aria-labelledby="titulo">
+      <h2 id="titulo">Mercado de TI: panorama rápido</h2>
+
+      <!-- Imagem ilustrativa do artigo (obrigatória) -->
+      <figure class="hero-figure">
+        <img src="hero.png" alt="Ilustração de profissionais de TI trabalhando" class="hero-img">
+        <figcaption class="sr-only">Profissionais de tecnologia trabalhando em projeto</figcaption>
+      </figure>
+
+      <p>
+        O mercado de Tecnologia da Informação (TI) segue em crescimento acelerado, com alta demanda por
+        desenvolvedores, especialistas em nuvem, segurança da informação, ciência de dados e automação.
+        Empresas de todos os segmentos digitalizam processos e buscam talento especializado — criando
+        oportunidades para quem se atualiza constantemente e desenvolve habilidades práticas.
+      </p>
+
+      <div class="link-wrap">
+        <!-- Link principal — substitua `#` pelo destino real -->
+        <a id="primaryLink" class="button" href="#" target="_blank" rel="noopener noreferrer">Leia mais sobre o mercado de TI</a>
+
+        <!-- Link de referência curto -->
+        <a id="quickLink" class="textlink" href="#" target="_blank" rel="noopener noreferrer">Guia rápido: carreiras e salários</a>
+
+        <!-- Botão extra para copiar o link principal -->
+        <button id="copyBtn" class="copy-btn" title="Copiar link">Copiar link</button>
+      </div>
+
+      <footer class="card-footer">
+        Dica: foque em aprender fundamentos (algoritmos, redes), ferramentas modernas (Git, Docker, cloud)
+        e soft skills (comunicação, trabalho em equipe) — isso torna seu perfil muito mais competitivo.
+      </footer>
+    </article>
+
+    <!-- Aside obrigatório: conteúdo relacionado / links / resumo -->
+    <aside class="sidebar" aria-labelledby="relacionados">
+      <h3 id="relacionados">Conteúdos relacionados</h3>
+
+      <!-- Imagem pequena na sidebar (obrigatória) -->
+      <img src="career.png" alt="Ícone de carreira" class="aside-img">
+
+      <ul>
+        <li><a href="#">Como começar em Desenvolvimento Web</a></li>
+        <li><a href="#">O que é Computação em Nuvem?</a></li>
+        <li><a href="#">Segurança da Informação: primeiros passos</a></li>
+        <li><a href="#">Bootcamps e cursos recomendados</a></li>
+      </ul>
+
+      <div class="newsletter">
+        <h4>Receba novidades</h4>
+        <p>Insira seu e-mail abaixo para receber atualizações sobre vagas e cursos.</p>
+        <form id="newsletterForm">
+          <input type="email" id="emailInput" placeholder="seu@email.com" required>
+          <button type="submit">Assinar</button>
+        </form>
+        <p id="newsletterMsg" aria-live="polite"></p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Conecta TI — Informações sobre carreiras e formação em tecnologia.</p>
+    </div>
+  </footer>
+
+  <!--
+    Conteúdo do arquivo styles.css — copie para um arquivo chamado `styles.css` na mesma pasta.
+
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#7dd3fc;--muted:#94a3b8}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; margin:0; background:linear-gradient(180deg,#071126 0%, #071633 100%); color:#e6eef8; min-height:100vh}
+    .container{max-width:1100px;margin:0 auto;padding:1rem}
+    .site-header{background:rgba(255,255,255,0.02);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+    .site-header .container{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem}
+    .brand{display:flex;align-items:center;gap:.6rem}
+    .logo-img{width:42px;height:42px;object-fit:contain}
+    .logo{margin:0;font-size:1.1rem;color:var(--accent)}
+    .main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+    .main-nav a{color:var(--muted);text-decoration:none;font-weight:600}
+
+    .site-main{display:grid;grid-template-columns:1fr 320px;gap:1.6rem;padding:2rem 0}
+    .card{background:rgba(255,255,255,0.03); border-radius:14px; padding:1.6rem; box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    h2{margin:0 0 .6rem; font-size:1.4rem}
+    p{color:var(--muted); margin:0 0 1rem; line-height:1.5}
+    .hero-figure{margin:0 0 1rem}
+    .hero-img{width:100%;border-radius:10px;display:block}
+    .link-wrap{display:flex; gap:.8rem; align-items:center}
+    a.button{background:linear-gradient(90deg,var(--accent),#60a5fa); color:#04293a; text-decoration:none; padding:.6rem .9rem; border-radius:10px; font-weight:600}
+    a.textlink{color:var(--accent); text-decoration:underline}
+    .copy-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:.45rem .6rem;border-radius:8px;cursor:pointer}
+    .card-footer{margin-top:1rem; color:var(--muted); font-size:.85rem}
+
+    .sidebar{background:rgba(255,255,255,0.02);padding:1rem;border-radius:12px}
+    .aside-img{width:64px;height:64px;display:block;margin:0 0 1rem}
+    .sidebar h3{margin-top:0;color:var(--accent)}
+    .sidebar ul{list-style:none;padding:0;margin:0 0 1rem}
+    .sidebar li{margin-bottom:.6rem}
+    .sidebar a{color:var(--muted);text-decoration:none}
+
+    .newsletter input[type="email"]{width:100%;padding:.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.06);margin-top:.5rem}
+    .newsletter button{margin-top:.5rem;padding:.55rem .8rem;border-radius:8px;border:none;background:linear-gradient(90deg,var(--accent),#60a5fa);color:#04293a;font-weight:600;cursor:pointer}
+
+    .site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:1rem 0;margin-top:2rem}
+
+    @media (max-width:900px){.site-main{grid-template-columns:1fr}}
+
+    /* Pequena área onde os corações aparecem */
+    .heart{position:fixed;pointer-events:none;font-size:18px;opacity:0.95;transform:translateY(0);transition:transform 1.2s linear, opacity 1.2s linear}
+
+    /* Acessibilidade: texto apenas para leitores de tela */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  -->
+
+  <!-- Referência ao arquivo JavaScript externo -->
+  <script src="script.js"></script>
+
+  <!--
+    Conteúdo do arquivo script.js — copie para um arquivo chamado `script.js` na mesma pasta.
+
+    // script.js
+    document.addEventListener('DOMContentLoaded', () => {
+      const primaryLink = document.getElementById('primaryLink');
+      const quickLink = document.getElementById('quickLink');
+      const copyBtn = document.getElementById('copyBtn');
+      const newsletterForm = document.getElementById('newsletterForm');
+      const newsletterMsg = document.getElementById('newsletterMsg');
+      const yearSpan = document.getElementById('year');
+
+      // Exemplo: atualiza dinamicamente os hrefs (troque pelas URLs reais)
+      const MAIN_URL = 'https://example.com/mercado-ti';
+      const GUIDE_URL = 'https://example.com/guia-carreiras';
+      primaryLink.href = MAIN_URL;
+      quickLink.href = GUIDE_URL;
+
+      // Define o ano no rodapé
+      yearSpan.textContent = new Date().getFullYear();
+
+      // Feedback visual simples ao clicar no link principal
+      primaryLink.addEventListener('click', (e) => {
+        // animações leves com corações
+        spawnHeart(e.pageX, e.pageY);
+      });
+
+      // Copiar link para clipboard
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(MAIN_URL);
+          copyBtn.textContent = 'Copiado!';
+          setTimeout(() => (copyBtn.textContent = 'Copiar link'), 1600);
+        } catch (err) {
+          copyBtn.textContent = 'Erro';
+          console.error('Clipboard error:', err);
+        }
+      });
+
+      // Newsletter (simples simulação local)
+      newsletterForm.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        const email = document.getElementById('emailInput').value;
+        newsletterMsg.textContent = `Obrigado, ${email}! Você está inscrito.`;
+        newsletterForm.reset();
+      });
+
+      // Função que cria um coração flutuante no ponto clicado
+      function spawnHeart(x, y) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.textContent = '❤';
+        document.body.appendChild(heart);
+        // posiciona centralizado no clique
+        heart.style.left = (x - 10) + 'px';
+        heart.style.top = (y - 10) + 'px';
+
+        // anima para cima e desaparece
+        requestAnimationFrame(() => {
+          heart.style.transform = 'translateY(-80px) scale(1.4)';
+          heart.style.opacity = '0';
+        });
+
+        // remove depois da animação
+        setTimeout(() => heart.remove(), 1400);
+      }
+
+      // Acessibilidade: permitir abrir no teclado (Enter) para o link principal
+      primaryLink.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          window.open(MAIN_URL, '_blank', 'noopener');
+        }
+      });
+    });
+  -->
+</body>
+</html>
