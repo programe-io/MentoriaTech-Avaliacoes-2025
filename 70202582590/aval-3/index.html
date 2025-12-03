@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Douma — Lua Superior Dois</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+   body {
+    font-family:sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+  }
+
+    .snowflake { position: absolute; top: -10px; color: white; opacity: 0.8; animation: fall linear infinite; }
+    @keyframes fall { 0% { transform: translateY(0); } 100% { transform: translateY(100vh); } }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body class="bg-gradient-to-b from-[#0b0020] via-[#120033] to-[#0a001a] text-white overflow-x-hidden">
+  <script>
+    function createSnow() {
+      const snow = document.createElement('div');
+      snow.classList.add('snowflake');
+      snow.innerHTML = '*';
+      snow.style.left = Math.random() * window.innerWidth + 'px';
+      snow.style.fontSize = (Math.random() * 10 + 10) + 'px';
+      snow.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      document.body.appendChild(snow);
+      setTimeout(() => snow.remove(), 10000);
+    }
+    setInterval(createSnow, 200);
+  </script>
+  <section id="inicio" class="min-h-screen flex flex-col justify-center items-center text-center px-4">
+
+    <header class="absolute top-0 w-full flex justify-between items-center p-6">
+      <div class="flex items-center gap-4">
+        <img src="icone.jpg" class="w-14 h-14 rounded-full object-cover border border-white/20 backdrop-blur">
+        <span class="text-xl tracking-widest">DOUMA</span>
+      </div>
+      <nav class="flex gap-8 text-lg">
+        <a href="#sobre" class="hover:text-purple-300 duration-200">Sobre</a>
+        <a href="#galeria" class="hover:text-purple-300 duration-200">Galeria</a>
+        <a href="#curiosidades" class="hover:text-purple-300 duration-200">Curiosidades</a>
+        <a href="#habilidades" class="hover:text-purple-300 duration-200">Habilidades</a>
+        <a href="#musicas" class="hover:text-purple-300 duration-200">Músicas</a>
+      </nav>
+    </header>
+
+    <h1 class="text-4xl md:text-6xl font-bold">DOUMA — LUA SUPERIOR DOIS</h1>
+    <p class="text-lg md:text-2xl mt-4 italic">“O sorriso é apenas o reflexo do vazio.”</p>
+
+    <div class="relative inline-block">
+      <img src="187 Sem Título_20251109102811.png">
+    </div>
+
+    <a href="#sobre" class="mt-10 px-10 py-3 text-xl bg-purple-700 hover:bg-purple-900 rounded-full duration-300 shadow-lg shadow-purple-900/40">Explorar</a>
+  </section>
+  <section id="sobre" class="py-32 px-6 max-w-5xl mx-auto">
+<main>
+    <h2 class="text-4xl mb-6">Sobre Douma</h2>
+    <ul>
+    <p class="leading-relaxed text-lg">
+      Douma é um membro dos Doze Demônios da Lua, sendo a Lua Superior Dois. Como um humano, ele nasceu sem a capacidade de sentir emoções, não se importando mesmo ao ver seus pais mortos em sua frente. Como um Demônio, ele foi o responsável por transformar Gyutaro em um demônio, matar Kanae Kocho e finalmente Shinobu Kocho antes de ser morto pelos esforços combinados de Inosuke Hashibira e Kanao Tsuyuri.
+    </p>
+    <p class="leading-relaxed text lg">
+      Douma é exteriormente amigável, possuindo um ar acessível e carismático, mas inegavelmente mortal e calculista. Sob a crença de que ele os está salvando de seu sofrimento, Douma devorou alegremente seus seguidores e outras jovens. Embora ele pareça se importar com seus companheiros, ele não sentiu nada pela morte deles. Douma é bastante niilista e carece de emoção humana, admitindo que, mesmo durante seus dias como humano, todo o conceito de emoção é completamente estranho para ele. Consciente de que isso é anormal, Douma compensou seu "coração" vazio com mentiras, aprendendo a fingir suas emoções o suficiente para enganar todos, exceto os mais observadores. Ele é mostrado como um psicopata, sem empatia até pelos seus pais mortos e apenas reclamando do cheiro de sangue que pairava no quarto após a morte deles.
+    </ul>
+    </p>
+    </main>
+  </section>
+  <section id="galeria" class="py-32 px-6 max-w-5xl mx-auto text-center">
+  
+    <h2 class="text-4xl mb-6">Galeria Rápida</h2>
+
+    <div class="relative w-full max-w-xl mx-auto">
+      <img id="carrossel" class="rounded-xl border border-white/20" src="796d116c0718bfdfd1d2ea6a8a3c19de.jpg" />
+
+      <button onclick="mudar(-1)" class="absolute left-0 top-1/2 -translate-y-1/2 bg-purple-900/50 p-3 rounded-full">‹</button>
+      <button onclick="mudar(1)" class="absolute right-0 top-1/2 -translate-y-1/2 bg-purple-900/50 p-3 rounded-full">›</button>
+    </div>
+
+    <script>
+      const imgs = [
+        'doumamanga2.jpg',
+        'doumamanga1.jpg',
+        'doumamanga3.jpg',
+        'doumamanga4.jpg',
+        'doumamanga5.jpg',
+      ];
+      let i = 0;
+      function mudar(v) {
+        i = (i + v + imgs.length) % imgs.length;
+        document.getElementById('carrossel').src = imgs[i];
+      }
+    </script>
+  </section>
+  <section id="curiosidades" class="py-32 px-6 max-w-6xl mx-auto">
+
+    <h2 class="text-4xl mb-10">Curiosidades</h2>
+
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="bg-white/10 p-6 rounded-xl border border-white/20">Culto do Paraíso Eterno:<br><span class="text-sm">Seu Culto do Paraíso Eterno ensina que se deve viver uma vida serena e divertida. Dizem que ninguém precisa passar po angústias nem fazer nada sofrido. Tem aproximadamente 250 seguidores. Como ele é repreendido caso chame muita atanção, não pretende expandir a seita.</span></div>
+      <div class="bg-white/10 p-6 rounded-xl border border-white/20">Curiosidade por sentimentos:<br><span class="text-sm">Seus fiéis costumavam pedir conselhos e Douma achava ridículo que ele se arruinassem por causa de suas ambições, fosse por dinheiro, status ou amor. No entanto, parece que também tinha curiosidade sobre como seria ter esses sentimentos. Ele tinha dinheiro, status e um corpo quase imortal, então, como não sentia nada em especial, costumava brincar de namorar, trocando sempre de parceira.</span></div>
+      <div class="bg-white/10 p-6 rounded-xl border border-white/20">Primeiro encontro com Muzan:<br><span class="text-sm">Conheceu Muzan com 20 anos e foi transformado por ele em oni. Como Douma ficou emocionado ao encontrá-lo, fez com que Muzan se tornasse o deus do Culto do Paraíso Eterno.</span></div>
+      <div class="bg-white/10 p-6 rounded-xl border border-white/20">Criocinese:<br><span class="text-sm">Uma possível consequência de lutar contra a criocinese de Douma é a inabilidade forçada de ativar a Marca do Caçador. Já que um dos requisitos para ativar a marca é conseguir sobreviver uma temperatura corporal acima de 39 graus ceusius, o ambiente gélido causado pelas habilidades de Douma fazem iso ser impossível de conseguir.</span></div>
+      <div class="bg-white/10 p-6 rounded-x1 border border-white/20">Alimentação peculiar:<br><span class="text-sm">Douma tem um método peculiar de consumir suas vítimas. Em vez de simplesmente devorá-las, ele as congela com seu poder de gelo e as consome lentamente, apreciando o processo.</span></div>
+      <div class="bg-white/10 p-6 rounded-x1 border border-white/20">Conflito com outros onis:<br><span class="text-sm">Douma não é bem-visto por alguns de seus companheiros demônios. Akaza, outro membro dos Doze Kizuki, especialmente, despreza Douma devido à sua natureza insensível e sua forma de agir.</span></div>
+    </div>
+  </section>
+
+  <section id="habilidades" class="py-32 px-6 max-w-6xl mx-auto">
+
+    <h2 class="text-4xl mb-10">Habilidades</h2>
+
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="bg-white/10 p-6 rounded-xl border border-white/20">Kekkijutsu (Arte Demoníaca de Sangue): As Artes Demoníacas de Sangue de Douma eram todas baseadas principalmente na criação e produção de gelo usando sua própria carne e sangue.</div>
+      <div class="bg-white/10 p-6 rounded-xl border border-white/20">Imortalidade e Regeneração: Demônios devido as suas características físicas e regeneração aprimorada podem facilmente sobreviver golpes que seriam mortais a humanos, conseguindo facilmente regenerar membros cortados e se regenerarem mesmo após serem decapitados. Como um Demônio da Lua Superior, a regeneração de Douma é muito mais rápida que a de demônios comuns, com ele conseguindo se regenerar instantaneamente de ter sua cabeça destruída por Akaza.</div>
+      <div class="bg-white/10 p-6 rounded-xl border border-white/20">Absorção: Douma possui a capacidade de absorver completamente humanos que ele matou em alguns segundos, tendo feito isso com o corpo de Shinobu Kocho após ter matado ela.</div>
+    </div>
+  </section>
+
+<section id="musicas" class="py-32 px-6 max-w-6xl mx-auto">
+
+  <h2 class="text-4xl mb-10">Músicas</h2>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div class="bg-white/10 p-5 rounded-xl border border-white/20 backdrop-blur text-center">
+      <img src="arcoiris.jpg" class="w-full aspect-square object-cover rounded-lg mb-4">
+      <h3 class="text-xl mb-2">Arco Íris (Igris)</h3>
+      <a href="https://youtu.be/0h4smkagWGM?si=2n8rq6R2rnjkveBk" target="_blank" class="px-4 py-2 bg-purple-700 hover:bg-purple-900 rounded-lg inline-block duration-200">
+        Ouvir Música
+      </a>
+    </div>
+
+    <div class="bg-white/10 p-5 rounded-xl border border-white/20 backdrop-blur text-center">
+      <img src="ciclodedevocao.jpg" class="w-full aspect-square object-cover rounded-lg mb-4">
+      <h3 class="text-xl mb-2">Ciclo de Devoção (Novatroop)</h3>
+      <a href="https://youtu.be/ay-r2W-_jmQ?si=Zxa6H6GMcwzEphNK" target="_blank" class="px-4 py-2 bg-purple-700 hover:bg-purple-900 rounded-lg inline-block duration-200">
+        Ouvir Música
+      </a>
+    </div>
+
+    <div class="bg-white/10 p-5 rounded-xl border border-white/20 backdrop-blur text-center">
+      <img src="luasuperiordois.jpg" class="w-full aspect-square object-cover rounded-lg mb-4">
+      <h3 class="text-xl mb-2">Lua Superior Dois (M4rkim)</h3>
+      <a href="https://youtu.be/xZPoJKVmU3s?si=k5avxrQriXew4LSg" target="_blank" class="px-4 py-2 bg-purple-700 hover:bg-purple-900 rounded-lg inline-block duration-200">
+        Ouvir Música
+      </a>
+    </div>
+
+    <div class="bg-white/10 p-5 rounded-xl border border-white/20 backdrop-blur text-center">
+      <img src="cultocongelado.jpg" class="w-full aspect-square object-cover rounded-lg mb-4">
+      <h3 class="text-xl mb-2">Culto Congelado (HzRaps)</h3>
+      <a href="https://youtu.be/bBU9Zr87UY0?si=HoJlvDExxeLtDZ48" target="_blank" class="px-4 py-2 bg-purple-700 hover:bg-purple-900 rounded-lg inline-block duration-200">
+        Ouvir Música
+      </a>
+    </div>
+
+    <div class="bg-white/10 p-5 rounded-xl border border-white/20 backdrop-blur text-center">
+      <img src="friaseemocoes.jpg" class="w-full aspect-square object-cover rounded-lg mb-4">
+      <h3 class="text-xl mb-2">Frias Emoções (Anirap)</h3>
+      <a href="https://youtu.be/0PnC0YVfm60?si=dMbxuHy080GrLHug" target="_blank" class="px-4 py-2 bg-purple-700 hover:bg-purple-900 rounded-lg inline-block duration-200">
+        Ouvir Música
+      </a>
+    </div>
+
+    <div class="bg-white/10 p-5 rounded-xl border border-white/20 backdrop-blur text-center">
+      <img src="inverno.jpg" class="w-full aspect-square object-cover rounded-lg mb-4">
+      <h3 class="text-xl mb-2">Inverno (Trezze)</h3>
+      <a href="https://youtu.be/AoCJJawPW7w?si=GJvOpWfPkwVRGJ_1" target="_blank" class="px-4 py-2 bg-purple-700 hover:bg-purple-900 rounded-lg inline-block duration-200">
+        Ouvir Música
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
