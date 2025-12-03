@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Quest</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: #fff;
+            margin: 0;
+        }
+
+        a {
+            color: #00ff99;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            background: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #00ff99;
+        }
+
+        header h1 {
+            color: #00ff99;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        section {
+            flex: 3;
+            background: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        article {
+            background: #121212;
+            border: 2px solid #00ff99;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        article img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        aside {
+            flex: 1;
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            height: fit-content;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1f1f1f;
+            border-top: 3px solid #00ff99;
+            margin-top: 20px;
+        }
+
+        .game-card {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        button {
+            background: #00ff99;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #00cc77;
+        }
+
+        @media(max-width: 768px){
+            main {
+                flex-direction: column;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Adventure Quest</h1>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <!-- Seção principal -->
+        <section id="sobre">
+            <h2>Sobre o Jogo</h2>
+
+            <article>
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/400x200.png?text=Aventura" alt="Exploração Épica">
+                    <h3>Exploração Épica</h3>
+                    <p>Adventure Quest leva você a um mundo cheio de mistérios, monstros e tesouros escondidos.</p>
+                    <button class="btn-jogar">Jogar</button>
+                    <p>Pontuação: <span class="score">0</span></p>
+                </div>
+            </article>
+
+            <article>
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/400x200.png?text=Batalha" alt="Batalhas Incríveis">
+                    <h3>Batalhas Incríveis</h3>
+                    <p>Enfrente inimigos desafiadores em batalhas estratégicas e evolua seu personagem.</p>
+                    <button class="btn-jogar">Jogar</button>
+                    <p>Pontuação: <span class="score">0</span></p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Barra lateral -->
+        <aside>
+            <h2>Dicas & Notícias</h2>
+
+            <article>
+                <div>
+                    <h3>Evento Especial</h3>
+                    <p>Participe do evento de inverno e ganhe recompensas exclusivas!</p>
+                </div>
+            </article>
+
+            <article>
+                <div>
+                    <h3>Dicas de Jogo</h3>
+                    <p>Lembre-se de salvar frequentemente e explorar todos os cantos do mapa.</p>
+                </div>
+            </article>
+
+        </aside>
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="contato">
+        <p>&copy; 2025 Adventure Quest. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script JavaScript -->
+    <script>
+        const botoesJogar = document.querySelectorAll('.btn-jogar');
+
+        botoesJogar.forEach((botao) => {
+            let score = 0;
+
+            botao.addEventListener('click', () => {
+                score++;
+                const scoreDisplay = botao.nextElementSibling.querySelector('.score');
+                scoreDisplay.textContent = score;
+
+                if(score % 3 === 0) {
+                    alert(`Você jogou ${score} vezes neste jogo!`);
+                }
+
+                botao.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    botao.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+    </script>
+
+<script src="script.js"></script></body>
+</html>
