@@ -1,0 +1,161 @@
+/* Importação de fonte fofa */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+:root {
+    --rosa-claro: #FFB6C1; /* Light Pink */
+    --azul-claro: #ADD8E6; /* Light Blue */
+    --branco-puro: #FFFFFF;
+    --preto-suave: #333;
+    --cor-acento: #FF69B4; /* Hot Pink para acentos */
+    --sombra-caixa: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    background-color: var(--branco-puro);
+    color: var(--preto-suave);
+    transition: background-color 0.5s ease;
+}
+
+/* --- Header e Navegação --- */
+header {
+    background-color: var(--rosa-claro);
+    color: var(--preto-suave);
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: var(--sombra-caixa);
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--preto-suave);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- Seções Principais --- */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    background-color: var(--branco-puro);
+    border-radius: 10px;
+    box-shadow: var(--sombra-caixa);
+}
+
+section h2 {
+    color: var(--cor-acento);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* --- Seção Hero (Sobre) --- */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    min-height: 400px;
+    background-color: var(--azul-claro);
+    color: var(--preto-suave);
+    padding: 50px;
+}
+
+.hero img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid var(--branco-puro);
+}
+
+#mudarCorBtn {
+    background-color: var(--cor-acento);
+    color: var(--branco-puro);
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#mudarCorBtn:hover {
+    background-color: #ff3896; /* Cor mais escura */
+}
+
+/* --- Galeria --- */
+.galeria-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.galeria-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.galeria-container img:hover {
+    transform: scale(1.05);
+}
+
+/* --- Fatos Interessantes --- */
+#fatos-lista {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#fatos-lista li {
+    background-color: var(--rosa-claro);
+    margin: 10px 0;
+    padding: 15px;
+    border-left: 5px solid var(--cor-acento);
+    border-radius: 5px;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--preto-suave);
+    color: var(--branco-puro);
+    margin-top: 20px;
+}
