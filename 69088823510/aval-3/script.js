@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Moderna Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- CABEÇALHO -->
+    <header class="bg-white shadow-lg fixed left-0 right-0 top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+            <h1 class="text-2xl font-bold text-blue-600">Meu Site</h1>
+
+            <nav class="hidden md:flex gap-6">
+                <a href="#home" class="hover:text-blue-600">Início</a>
+                <a href="#sobre" class="hover:text-blue-600">Sobre</a>
+                <a href="#contato" class="hover:text-blue-600">Contato</a>
+            </nav>
+
+            <button class="md:hidden text-3xl text-blue-600" onclick="menu.classList.toggle('hidden')">☰</button>
+        </div>
+
+        <div id="menu" class="hidden md:hidden bg-white border-t">
+            <a href="#home" class="block p-3 hover:bg-blue-100">Início</a>
+            <a href="#sobre" class="block p-3 hover:bg-blue-100">Sobre</a>
+            <a href="#contato" class="block p-3 hover:bg-blue-100">Contato</a>
+        </div>
+    </header>
+
+    <!-- BANNER -->
+    <section id="home" class="pt-28 pb-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+        <div class="max-w-6xl mx-auto text-center px-4">
+            <h2 class="text-4xl md:text-5xl font-bold drop-shadow-xl mb-4">Bem-vindo ao Site Moderno</h2>
+            <p class="text-lg md:text-xl opacity-90 mb-6">Criado com Tailwind CSS e layout responsivo.</p>
+
+            <a href="#sobre" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-gray-200 transition">
+                Saiba Mais
+            </a>
+        </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="max-w-6xl mx-auto px-4 py-16">
+
+        <!-- SEÇÃO SOBRE -->
+        <section id="sobre" class="mb-20">
+            <h2 class="text-3xl font-bold text-blue-700 mb-6">Sobre o Projeto</h2>
+
+            <div class="flex flex-col md:flex-row gap-10">
+
+                <!-- CARD 1 -->
+                <div class="bg-white shadow-lg rounded-xl border p-6 flex-1">
+                    <img 
+                        src="https://cdn.pixabay.com/photo/2017/01/31/13/14/website-2024545_1280.png"
+                        alt="Imagem de tecnologia"
+                        class="rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold mb-2">Tecnologias</h3>
+                    <p class="text-gray-600">
+                        A página usa HTML e Tailwind para criar um visual moderno e eficiente.
+                    </p>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="bg-white shadow-lg rounded-xl border p-6 flex-1">
+                    <img 
+                        src="https://cdn.pixabay.com/photo/2015/01/08/18/30/startup-593327_1280.jpg"
+                        alt="Imagem responsiva"
+                        class="rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold mb-2">Responsividade</h3>
+                    <p class="text-gray-600">
+                        O layout adapta-se automaticamente para computadores, tablets e celulares.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO CONTATO -->
+        <section id="contato">
+            <h2 class="text-3xl font-bold text-blue-700 mb-6">Contato</h2>
+
+            <form class="bg-white rounded-xl border shadow-lg p-6 max-w-xl mx-auto">
+                <label class="block mb-4">
+                    <span class="font-semibold">Nome</span>
+                    <input type="text" class="mt-1 w-full p-2 border rounded-lg focus:ring focus:ring-blue-300">
+                </label>
+
+                <label class="block mb-4">
+                    <span class="font-semibold">E-mail</span>
+                    <input type="email" class="mt-1 w-full p-2 border rounded-lg focus:ring focus:ring-blue-300">
+                </label>
+
+                <label class="block mb-4">
+                    <span class="font-semibold">Mensagem</span>
+                    <textarea rows="4" class="mt-1 w-full p-2 border rounded-lg focus:ring focus:ring-blue-300"></textarea>
+                </label>
+
+                <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                    Enviar
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-gray-900 text-white text-center py-6 mt-16">
+        <p class="opacity-80">© 2025 — Site Moderno com Tailwind CSS</p>
+    </footer>
+
+</body>
+
+</html>
