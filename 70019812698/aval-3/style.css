@@ -1,0 +1,97 @@
+/* Tornar span e div block */
+span, div {
+    display: block;
+}
+
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #1c1c1c;
+    color: #f2f2f2;
+}
+
+/* Header */
+header {
+    background-color: #262626;
+    padding: 25px;
+    text-align: center;
+    border-bottom: 3px solid #00bfff;
+}
+
+.header-img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Menu */
+nav div span a {
+    color: #fff;
+    margin: 0 18px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav div span a:hover {
+    color: #00bfff;
+}
+
+/* Container */
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Posts */
+.posts {
+    flex: 3;
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* Sidebar */
+.sidebar img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* Footer */
+footer img.footer-img {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    nav div span a {
+        display: inline-block;
+        margin: 10px;
+    }
+}
+
+/* Modo escuro via classe */
+body.dark-mode {
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+body.dark-mode header,
+body.dark-mode nav,
+body.dark-mode footer {
+    background-color: #262626;
+}
