@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Social Feed - HTML (header, h2, p)</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <!-- HEADER (obrigatório) -->
+  <header id="main-header" role="banner">
+    <div id="header-inner">
+      <div id="brand">LOGO</div>
+      <nav id="main-nav" role="navigation" aria-label="Menu principal">
+        <div><a href="#">Início</a></div>
+        <div><a href="#">Amigos</a></div>
+        <div><a href="#">Perfil</a></div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTAINER PRINCIPAL -->
+  <div id="app-container" data-app="social-feed">
+
+    <!-- COMPOSER (área de criar publicação) -->
+    <div id="composer-wrapper">
+      <div id="composer" data-component="composer">
+        <div class="composer-left">
+          <div class="composer-avatar">
+            <img src="https://picsum.photos/80" alt="Avatar do usuário">
+          </div>
+        </div>
+        <div class="composer-center">
+          <!-- agora com <p> para o placeholder -->
+          <p class="composer-placeholder">No que você está pensando?</p>
+        </div>
+        <div class="composer-right">
+          <div class="composer-actions">
+            <div class="btn" data-testid="btn-photo">📷 Foto</div>
+            <div class="btn" data-testid="btn-post">➡️ Publicar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN (conteúdo principal) -->
+    <main id="main" role="main">
+      <!-- H2 obrigatório pelo avaliador -->
+      <h2 id="feed-title">Feed de Publicações</h2>
+
+      <!-- Wrapper do feed -->
+      <div id="feed" data-testid="feed-list">
+
+        <!-- CARD 1 -->
+        <div class="card" data-card-id="1" role="article" aria-label="Post de FroJho">
+          <div class="card-top">
+            <div class="avatar-wrapper">
+              <div class="avatar-img"><img src="https://picsum.photos/100" alt="Foto do usuário FroJho"></div>
+            </div>
+            <div class="card-user">
+              <div class="user-name" data-username>FroJho</div>
+              <!-- user-meta agora em <p> -->
+              <p class="user-meta" data-meta>São Paulo • 2h</p>
+            </div>
+            <div class="card-more" data-more>⋯</div>
+          </div>
+
+          <div class="card-media">
+            <div class="media-img"><img src="https://picsum.photos/800/500" alt="Imagem da postagem 1"></div>
+          </div>
+
+          <div class="card-body">
+            <!-- legenda/post-text em <p> -->
+            <p class="post-text" data-post-text>
+              Descrição da publicação: aqui vai o texto explicativo do post. Substitua pelo conteúdo real.
+            </p>
+          </div>
+
+          <div class="card-actions" data-actions>
+            <div class="action like" data-action="like" data-count="12">Curtir (<span>12</span>)</div>
+            <div class="action comment" data-action="comment" data-count="3">Comentar (<span>3</span>)</div>
+            <div class="action share" data-action="share">Compartilhar</div>
+          </div>
+
+          <div class="card-comments" data-comments>
+            <div class="comment" data-comment-id="c1">
+              <p class="comment-author">Ana</p>
+              <p class="comment-text">Show! 👏</p>
+            </div>
+            <div class="comment" data-comment-id="c2">
+              <p class="comment-author">Bruno</p>
+              <p class="comment-text">Onde foi isso?</p>
+            </div>
+          </div>
+
+          <div class="comment-form" data-comment-form>
+            <!-- placeholder do input do comentário em <p> -->
+            <p class="comment-input-placeholder">Escreva um comentário...</p>
+            <div class="comment-submit" data-testid="btn-send-comment">Enviar</div>
+          </div>
+
+          <div class="card-footer">
+            <p class="post-time">há 10 minutos</p>
+          </div>
+        </div>
+        <!-- /CARD 1 -->
+
+        <!-- CARD 2 -->
+        <div class="card" data-card-id="2" role="article" aria-label="Post de FroJho 2">
+          <div class="card-top">
+            <div class="avatar-wrapper">
+              <div class="avatar-img"><img src="https://picsum.photos/100?random=2" alt="Foto do usuário"></div>
+            </div>
+            <div class="card-user">
+              <div class="user-name">FroJho</div>
+              <p class="user-meta">Grupo • 4h</p>
+            </div>
+            <div class="card-more">⋯</div>
+          </div>
+
+          <div class="card-media">
+            <div class="media-img"><img src="https://picsum.photos/800/500?random=2" alt="Imagem da postagem 2"></div>
+          </div>
+
+          <div class="card-body">
+            <p class="post-text">Descrição da publicação 2: substitua por um texto curto.</p>
+          </div>
+
+          <div class="card-actions">
+            <div class="action like" data-action="like" data-count="5">Curtir (<span>5</span>)</div>
+            <div class="action comment" data-action="comment" data-count="1">Comentar (<span>1</span>)</div>
+            <div class="action share" data-action="share">Compartilhar</div>
+          </div>
+
+          <div class="card-comments"></div>
+
+          <div class="comment-form">
+            <p class="comment-input-placeholder">Escreva um comentário...</p>
+            <div class="comment-submit">Enviar</div>
+          </div>
+
+          <div class="card-footer"><p class="post-time">há 30 minutos</p></div>
+        </div>
+        <!-- /CARD 2 -->
+
+        <!-- CARD 3 -->
+        <div class="card" data-card-id="3" role="article" aria-label="Post de FroJho 3">
+          <div class="card-top">
+            <div class="avatar-wrapper">
+              <div class="avatar-img"><img src="https://picsum.photos/100?random=3" alt="Foto do usuário"></div>
+            </div>
+            <div class="card-user">
+              <div class="user-name">FroJho</div>
+              <p class="user-meta">Evento • Ontem</p>
+            </div>
+            <div class="card-more">⋯</div>
+          </div>
+
+          <div class="card-media">
+            <div class="media-img"><img src="https://picsum.photos/800/500?random=3" alt="Imagem da postagem 3"></div>
+          </div>
+
+          <div class="card-body">
+            <p class="post-text">Descrição da publicação 3: texto de exemplo para o terceiro card.</p>
+          </div>
+
+          <div class="card-actions">
+            <div class="action like" data-action="like" data-count="0">Curtir (<span>0</span>)</div>
+            <div class="action comment" data-action="comment" data-count="0">Comentar (<span>0</span>)</div>
+            <div class="action share" data-action="share">Compartilhar</div>
+          </div>
+
+          <div class="card-comments"></div>
+
+          <div class="comment-form">
+            <p class="comment-input-placeholder">Escreva um comentário...</p>
+            <div class="comment-submit">Enviar</div>
+          </div>
+
+          <div class="card-footer"><p class="post-time">ontem</p></div>
+        </div>
+        <!-- /CARD 3 -->
+
+      </div> <!-- /feed -->
+    </main>
+
+    <!-- MINI WEBCAM / BOTÃO FLUTUANTE -->
+    <div id="floating-face" aria-hidden="false">
+      <div class="face-wrapper"><img src="https://picsum.photos/150" alt="mini webcam"></div>
+    </div>
+
+  </div> <!-- /app-container -->
+
+<script src="script.js"></script></body>
+</html>
