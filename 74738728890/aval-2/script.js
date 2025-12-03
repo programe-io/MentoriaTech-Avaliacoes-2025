@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Melhore no Free Fire — Guia Completo</title>
+  <meta name="description" content="Dicas, guias e treino para melhorar no Free Fire. Iniciação, táticas, mapas, armas e treino diário." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --accent:#ff7b00; /* orange */
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --maxw:1100px;
+      --gap:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,#071020 0%, #07172a 60%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:24px;
+      display:flex;justify-content:center;
+    }
+    .container{width:100%;max-width:var(--maxw)}
+
+    /* Header */
+    header{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:12px;margin-bottom:20px;
+    }
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ffb86b);display:grid;place-items:center;font-weight:700;color:#08131d;box-shadow:0 6px 18px rgba(0,0,0,0.5)
+    }
+    .brand h1{font-size:18px;margin:0}
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px}
+    nav a.active, nav a:hover{color:#07131b;background:linear-gradient(90deg,var(--accent),#ffb86b);font-weight:600}
+
+    /* Main layout */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:var(--gap);align-items:start;margin-bottom:22px}
+    .card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+
+    /* Home left */
+    .intro h2{margin:0 0 10px 0;font-size:28px}
+    .intro p{color:var(--muted);margin:0 0 16px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .tip{background:var(--glass);padding:12px;border-radius:12px}
+    .tip h4{margin:0 0 6px 0}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;text-decoration:none;background:linear-gradient(90deg,var(--accent),#ffb86b);color:#07131b;font-weight:700}
+
+    /* Sidebar */
+    .sidebar h3{margin:0 0 12px 0}
+    .progress{height:12px;background:#07131b;border-radius:999px;overflow:hidden}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#ffb86b)}
+
+    /* Sections */
+    section{margin-bottom:18px}
+    .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+
+    /* About & Contact page styles */
+    .about-grid{display:grid;grid-template-columns:1fr 320px;gap:16px}
+    .features{display:grid;gap:10px}
+
+    /* Contact form */
+    form{display:grid;gap:12px}
+    label{font-size:13px;color:var(--muted)}
+    input[type=text], input[type=email], textarea{
+      width:100%;padding:10px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit
+    }
+    textarea{min-height:120px}
+
+    footer{margin-top:24px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .about-grid{grid-template-columns:1fr}
+      nav{display:none}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class=\"logo\"><img src=\"images/logo.png\" alt=\"Logo Melhore no Free Fire\" style=\"width:100%;height:100%;object-fit:cover;border-radius:12px\"></div>
+        <div>
+          <h1>Melhore no Free Fire</h1>
+          <div class="kicker">Guias • Treino • Estratégia</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#home" class="active" onclick="navigate(event,'home')">Início</a>
+        <a href="#about" onclick="navigate(event,'about')">Sobre</a>
+        <a href="#contact" onclick="navigate(event,'contact')">Contato</a>
+      </nav>
+    </header>
+
+    <!-- Single-file multi-page app: sections shown/hidden by JS -->
+    <main>
+      <article id="home" class="page">
+        <div class="hero">
+          <div class="card intro">
+            <h2>Suba de nível no Free Fire — Comece agora</h2>
+            <p>Guia prático com treinos, posicionamento, escolha de armas, rotação no mapa e dicas para evoluir rápido e com consistência.</p>\n            <img src=\"images/hero.jpg\" alt=\"Treino Free Fire\" style=\"width:100%;border-radius:12px;margin-top:12px;border:1px solid rgba(255,255,255,0.04)\">
+            <div class="grid">
+              <div class="tip">
+                <h4>1. Treino diário</h4>
+                <p class="muted">30 minutos por dia no campo de treino focando mira e recoil.</p>
+              </div>
+              <div class="tip">
+                <h4>2. Sensibilidade</h4>
+                <p class="muted">Teste 3 configurações e mantenha a que te dá mais controle.</p>
+              </div>
+              <div class="tip">
+                <h4>3. Comunicação</h4>
+                <p class="muted">Use pings e fale com o time — estratégia vence habilidade bruta.</p>
+              </div>
+              <div class="tip">
+                <h4>4. Map awareness</h4>
+                <p class="muted">Aprenda hotspots e rotas de rotação para sempre ter vantagem.</p>
+              </div>
+            </div>
+
+            <section style="margin-top:14px">
+              <div class="section-title">
+                <h3 style="margin:0">Rotinas de treino</h3>
+                <a class="btn" href="#contact" onclick="navigate(event,'contact')">Receber plano</a>
+              </div>
+              <ol class="muted">
+                <li>Aquecimento (10 min): mira em alvos móveis</li>
+                <li>Tiro em movimento (10 min): ADS e controle de recuo</li>
+                <li>Partidas educativas (10 min): foco em decisões e posicionamento</li>
+              </ol>
+            </section>
+          </div>
+
+          <aside class="card sidebar">
+            <h3>Seu progresso</h3>
+            <p class="muted">Hoje: prática concluída — 20/30 min</p>
+            <div style="margin:10px 0" class="progress" aria-hidden="true"><span style="width:65%"></span></div>
+            <h4 style="margin-top:14px">Tópicos rápidos</h4>
+            <ul class="muted">
+              <li>Recoil de AK e M1014</li>
+              <li>Melhores pontos para melhores loot</li>
+              <li>Jogando com Squad vs Solo</li>
+            </ul>
+          </aside>
+        </div>
+
+        <section class="card">
+          <div class="section-title">
+            <h3 style="margin:0">Guia de armas e escolha</h3>
+            <div class="muted">Comparativo por estilo de jogo</div>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <div style="flex:1;min-width:220px">
+              <h4>Rifles (AK, M4)</h4>
+              <p class="muted">Versáteis para médio-longo alcance. Foque controle de recuo e acessórios.</p>
+            </div>
+            <div style="flex:1;min-width:220px">
+              <h4>Shotguns</h4>
+              <p class="muted">Perfeitas para espaços fechados e emboscadas — alta letalidade em curtas distâncias.</p>
+            </div>
+            <div style="flex:1;min-width:220px">
+              <h4>SMG</h4>
+              <p class="muted">Mobilidade e DPS alto em curtas/medias distâncias. Ideal para jogos agressivos.</p>
+            </div>
+          </div>
+        </section>
+
+      </article>
+
+      <article id="about" class="page" style="display:none">
+        <div class="card">
+          <div class="section-title">
+            <h2 style="margin:0">Sobre este site</h2>
+            <div class="muted">Missão: tornar suas partidas melhores com rotinas simples.</div>
+          </div>
+          <div class="about-grid" style="margin-top:12px">
+            <div>
+              <p class="muted">Este site reúne métodos práticos, exercícios de mira, planos de treino e princípios táticos aplicáveis por jogadores iniciantes e intermediários. Tudo pensado para maximizar evolução sem sobrecarregar.</p>
+
+              <h3>Metodologia</h3>
+              <div class="features">
+                <div class="tip"><strong>Consistência</strong><div class="muted">Pequenas sessões diárias rendem mais que longos treinos esporádicos.</div></div>
+                <div class="tip"><strong>Objetivo</strong><div class="muted">Treine com metas: mira, rotação, tomada de decisão.</div></div>
+                <div class="tip"><strong>Revisão</strong><div class="muted">Grave e reveja partidas para corrigir erros.</div></div>
+              </div>
+            </div>
+
+            <aside class=\"card\">\n              <img src=\"images/about-side.jpg\" alt=\"Jogadores treinando\" style=\"width:100%;border-radius:10px;margin-bottom:10px;border:1px solid rgba(255,255,255,0.04)\">\n              <h4>Quem pode usar</h4>
+              <p class="muted">Qualquer jogador que queira melhorar com foco e disciplina: solo, duo ou squad.</p>
+              <h4 style="margin-top:12px">Recursos</h4>
+              <ul class="muted">
+                <li>Checklists de treino</li>
+                <li>Mapas de rotação</li>
+                <li>Planos semanais</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </article>
+
+      <article id="contact" class="page" style="display:none">
+        <div class="card">
+          <h2>Contato</h2>
+          <p class="muted">Preencha o formulário para pedir um plano de treino personalizado ou enviar dúvidas.</p>
+          <form id="contactForm" onsubmit="submitForm(event)">
+            <div>
+              <label for="name">Nome</label>
+              <input id="name" name="name" type="text" required placeholder="Seu nome" />
+            </div>
+            <div>
+              <label for="email">E‑mail</label>
+              <input id="email" name="email" type="email" required placeholder="seu@exemplo.com" />
+            </div>
+            <div>
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" required placeholder="Escreva sua mensagem"></textarea>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center">
+              <button class="btn" type="submit">Enviar mensagem</button>
+              <div id="formStatus" class="muted"></div>
+            </div>
+          </form>
+        </div>
+      </article>
+
+    </main>
+
+    <footer>
+      © <span id="year"></span> Melhore no Free Fire — Feito com foco em treino e prática.
+    </footer>
+  </div>
+
+  <script>
+    // simple navigation
+    function navigate(e,id){
+      if(e) e.preventDefault();
+      document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+      document.getElementById(id).style.display='block';
+      document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
+      document.querySelectorAll('nav a').forEach(a=>{ if(a.getAttribute('onclick') && a.getAttribute('onclick').includes("'"+id+"'")) a.classList.add('active') });
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // form handling (no backend) — show a friendly message and reset
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const status = document.getElementById('formStatus');
+      if(!name){ status.textContent='Nome obrigatório.'; return; }
+      status.textContent = 'Enviando...';
+      // simulate success
+      setTimeout(()=>{
+        status.textContent = 'Mensagem enviada! Em breve entraremos em contato.';
+        document.getElementById('contactForm').reset();
+      },800);
+    }
+
+    // on load ensure home is visible
+    navigate(null,'home');
+  </script>
+</body>
+</html>
