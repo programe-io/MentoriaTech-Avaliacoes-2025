@@ -1,0 +1,133 @@
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, #dcdcdc, #f4f4f4);
+    color: #333;
+    transition: 0.3s;
+}
+
+/* --------- GLASSMORPHISM --------- */
+.glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+}
+
+/* DARK MODE GLASS */
+body.dark .glass {
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* NAVBAR */
+.navbar {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* GRID CONTAINER */
+.container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    padding: 30px;
+}
+
+/* ARTICLES */
+article img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ------------- CARROSSEL ------------- */
+.carrossel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carrossel-imagens {
+    display: flex;
+    transition: transform .5s ease;
+}
+
+.carrossel img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+/* SETAS ANIMADAS */
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.3);
+    border: none;
+    font-size: 2.2rem;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.carrossel-btn:hover {
+    background: rgba(255,255,255,0.6);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.left { left: 15px; }
+.right { right: 15px; }
+
+/* SOBRE PAGE */
+.sobre {
+    margin: 60px auto;
+    max-width: 700px;
+    padding: 40px;
+    text-align: center;
+    line-height: 1.7;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
