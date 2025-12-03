@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Feed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+  <body
+    class="bg-gradient-to-b from-blue-900 to-blue-950 min-h-screen text-white"
+  >
+    <!-- HEADER -->
+    <header class="shadow-md p-5 flex items-center">
+      <div
+        class="flex-1 text-center md:text-left uppercase font-bold tracking-wider"
+      >
+        <img
+            class="h-12 w-12 rounded-full border-2 border-blue-500"
+            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=366,fit=crop,trim=13.278688524590164;0;13.278688524590164;0/mk3v9N2p1rSB43jo/logo-apicella.png-mp8JB2Qea0SJ2LJ5.png"
+            alt=""
+          />
+      </div>
+      <nav class="font-bold gap-6 hidden md:flex">
+        <a href="https://cetiapicella.com.br/" class="hover:text-blue-400">Início</a>
+        <a href="https://www.instagram.com/accounts/login/?next=%2Ffrei_jose_apicella%2F&source=omni_redirect" class="hover:text-blue-400">Amigos do Apicella</a>
+        <a href="https://cetiapicella.com.br/eventos" target="_blank" class="hover:text-blue-400">Eventos</a>
+      </nav>
+    </header>
+
+    <!-- POSTS -->
+    <main class="p-8 flex flex-col md:flex-row justify-center gap-6">
+      <!-- POST CARD 1 -->
+      <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-xs">
+        <!-- CARD HEADER -->
+        <div class="flex items-center gap-3 p-4">
+          <img
+            class="h-12 w-12 rounded-full border-2 border-blue-500"
+            src="data:image/png;base64,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"
+            alt=""
+          />
+          <h2 class="text-lg font-semibold">CETI FREI JOSÉ APICELLA</h2>
+        </div>
+        <!-- CARD IMAGE -->
+        <img class="w-full h-48 object-cover" src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,h=1152,fit=crop/mk3v9N2p1rSB43jo/a682046f-bdde-4b1d-a110-5b75dd689751-AMq8aOWJWRCyEgKe.JPG" alt="" />
+        <!-- CARD CONTENT -->
+        <div class="p-4">
+          <p class="text-sm text-justify">
+            É oficial: o Apicella chegou com tudo! Nossa equipe já está em Teresina, pronta pra encarar o primeiro dia do Seduckathon — e o clima é de empolgação total! 😎💻
+
+Os alunos já receberam os kits do evento e estão mais que preparados com mochila, moletom, garrafa personalizada e muita motivação na bagagem! 🧥🎒💧 Agora é foco total nas atividades, troca de ideias e, claro, mostrar o poder da inovação que nasce dentro da escola pública!
+
+O Seduckathon é mais que uma competição — é um espaço onde jovens criam soluções reais com tecnologia, criatividade e trabalho em equipe. E o Apicella tá aqui pra representar com orgulho! 💚✨
+          </p>
+          <span class="text-xs text-gray-400 block text-right mt-3"
+            >há 05 minutos</span
+          >
+        </div>
+      </div>
+
+      <!-- POST CARD 2 -->
+      <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-xs">
+        <div class="flex items-center gap-3 p-4">
+          <img
+            class="h-12 w-12 rounded-full border-2 border-blue-500"
+            src="data:image/png;base64,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"
+            alt=""
+          />
+          <h2 class="text-lg font-semibold">CETI Cônego Cardoso</h2>
+        </div>
+        <img class="w-full h-48 object-cover" src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=375,fit=crop/mk3v9N2p1rSB43jo/c4ec9bdb-aa10-42f0-86aa-d8b352a78558-ALp2WLL3EKiVGoPQ.jpg" alt="" />
+        <div class="p-4">
+          <p class="text-sm text-justify">
+            Nesta segunda-feira, dia 06 de outubro, teve início no CETI Frei José Apicella a aplicação das provas do Sistema de Avaliação da Educação do Piauí (SAEPI) 2025. A avaliação, promovida pela Secretaria de Estado da Educação (Seduc), tem como objetivo diagnosticar o nível de aprendizagem dos estudantes da rede estadual e subsidiar ações pedagógicas para o aprimoramento do ensino.
+
+As provas são aplicadas em diferentes dias para cada série do Ensino Médio: no dia 06/10 para os alunos do 1º ano, 07/10 para o 2º ano, e 08/10 para o 3º ano. Durante esses dias, os estudantes participam com dedicação e compromisso, conscientes da importância do exame para o fortalecimento da educação pública piauiense.
+          <span class="text-xs text-gray-400 block text-right mt-3"
+            >há 10 minutos</span
+          >
+        </div>
+      </div>
+
+      <!-- POST CARD 3 -->
+      <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-xs">
+        <div class="flex items-center gap-3 p-4">
+          <img
+            class="h-12 w-12 rounded-full border-2 border-blue-500"
+            src="https://superlegalbrinquedos.vtexassets.com/arquivos/ids/207462-1200-auto?v=637997898589100000&width=1200&height=auto&aspect=true"
+            alt=""
+          />
+          <h2 class="text-lg font-semibold">CETI Frei José Apicella</h2>
+        </div>
+        <img class="w-full h-48 object-cover" src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=375,fit=crop/mk3v9N2p1rSB43jo/img_8199-mP4322nvL7IWZa96.jpg" alt="" />
+        <div class="p-4">
+          <p class="text-sm text-justify">
+            
+Os estudantes do 3º ano dos cursos técnicos em Agropecuária e Zootecnia do CETI Frei José Apicella participaram de uma visita técnica à Fazenda CHAO, localizada no município de Jerumenha.
+
+A atividade teve como objetivo aproximar os alunos da realidade do campo, proporcionando contato direto com a rotina de uma propriedade rural. Durante a visita, os jovens puderam conhecer a estrutura e o funcionamento da fazenda, além de trocar experiências e aprender com os profissionais que atuam no local.
+
+A iniciativa representou uma oportunidade de ampliar os conhecimentos adquiridos em sala de aula, reforçando a importância da prática na formação dos futuros técnicos. Para os estudantes, foi um momento de aprendizado enriquecedor que contribuirá significativamente para sua qualificação profissional.
+
+O CETI Frei José Apicella segue investindo em ações que valorizam a vivência prática, preparando seus alunos para os desafios do mercado de trabalho.
+          </p>
+          <span class="text-xs text-gray-400 block text-right mt-3"
+            >há 15 minutos</span
+          >
+        </div>
+      </div>
+    </main>
+  </body>
+  <footer style="text-align: center; padding: 15px 0; background-color: #422ef1; color: white; font-family: Arial, sans-serif; font-size: 14px;">
+  © <span id="ano-atual"></span> Prof. Eduardo Mineiro.'. Todos os direitos reservados.
+</footer>
+
+<script>
+  document.getElementById('ano-atual').textContent = new Date().getFullYear();
+</script>
+</html>
