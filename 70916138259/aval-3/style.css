@@ -1,0 +1,155 @@
+/* Importação de Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap');
+
+/* Variáveis de Cores (Cores Tema CS:GO) */
+:root {
+    --primary-color: #ff9800; /* Laranja/Amarelo do CS */
+        --secondary-color: #333; /* Cinza Escuro */
+            --background-color: #1a1a1a; /* Fundo Preto Quase Total */
+                --text-color: #e0e0e0; /* Branco Suave */
+                    --highlight-color: #5cb85c; /* Destaque CT (Verde) */
+                    }
+
+                    /* Estilos Globais */
+                    * {
+                        margin: 0;
+                            padding: 0;
+                                box-sizing: border-box;
+                                }
+
+                                body {
+                                    font-family: 'Roboto', sans-serif;
+                                        background-color: var(--background-color);
+                                            color: var(--text-color);
+                                                line-height: 1.6;
+                                                }
+
+                                                h1, h2 {
+                                                    font-family: 'Oswald', sans-serif;
+                                                        color: var(--primary-color);
+                                                            text-transform: uppercase;
+                                                            }
+
+                                                            /* Seção de Cabeçalho (Hero) */
+                                                            .hero-section {
+                                                                background: url('caminho/para/imagem_hero.jpg') no-repeat center center/cover; /* **Substitua com uma imagem de fundo do CS:GO** */
+                                                                    height: 100vh;
+                                                                        display: flex;
+                                                                            justify-content: center;
+                                                                                align-items: center;
+                                                                                    text-align: center;
+                                                                                        position: relative;
+                                                                                        }
+                                                                                        [attachment_2](attachment)
+
+                                                                                        .hero-section::before {
+                                                                                            content: '';
+                                                                                                position: absolute;
+                                                                                                    top: 0;
+                                                                                                        left: 0;
+                                                                                                            right: 0;
+                                                                                                                bottom: 0;
+                                                                                                                    background: rgba(0, 0, 0, 0.6); /* Sobreposição Escura */
+                                                                                                                    }
+
+                                                                                                                    .hero-content {
+                                                                                                                        z-index: 1;
+                                                                                                                        }
+
+                                                                                                                        .hero-content h1 {
+                                                                                                                            font-size: 4rem;
+                                                                                                                                margin-bottom: 0.5rem;
+                                                                                                                                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+                                                                                                                                    }
+
+                                                                                                                                    .hero-content p {
+                                                                                                                                        font-size: 1.5rem;
+                                                                                                                                            margin-bottom: 2rem;
+                                                                                                                                            }
+
+                                                                                                                                            #scrollToSkins {
+                                                                                                                                                padding: 10px 20px;
+                                                                                                                                                    font-size: 1.1rem;
+                                                                                                                                                        background-color: var(--primary-color);
+                                                                                                                                                            color: var(--background-color);
+                                                                                                                                                                border: none;
+                                                                                                                                                                    cursor: pointer;
+                                                                                                                                                                        transition: background-color 0.3s ease, transform 0.2s;
+                                                                                                                                                                            text-transform: uppercase;
+                                                                                                                                                                                font-weight: bold;
+                                                                                                                                                                                }
+
+                                                                                                                                                                                #scrollToSkins:hover {
+                                                                                                                                                                                    background-color: #ffb347;
+                                                                                                                                                                                        transform: scale(1.05);
+                                                                                                                                                                                        }
+
+                                                                                                                                                                                        /* Seções de Conteúdo */
+                                                                                                                                                                                        .content-section {
+                                                                                                                                                                                            padding: 80px 5%;
+                                                                                                                                                                                                text-align: center;
+                                                                                                                                                                                                }
+
+                                                                                                                                                                                                .content-section h2 {
+                                                                                                                                                                                                    font-size: 2.5rem;
+                                                                                                                                                                                                        margin-bottom: 40px;
+                                                                                                                                                                                                            border-bottom: 3px solid var(--highlight-color);
+                                                                                                                                                                                                                display: inline-block;
+                                                                                                                                                                                                                    padding-bottom: 5px;
+                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                    /* Layout de Grid (Skins e Mapas) */
+                                                                                                                                                                                                                    .grid-container {
+                                                                                                                                                                                                                        display: grid;
+                                                                                                                                                                                                                            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                                                                                                                                                                                                                                gap: 30px;
+                                                                                                                                                                                                                                    max-width: 1200px;
+                                                                                                                                                                                                                                        margin: 0 auto;
+                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                        /* Estilo dos Cards (Skins e Mapas) */
+                                                                                                                                                                                                                                        .card {
+                                                                                                                                                                                                                                            background-color: var(--secondary-color);
+                                                                                                                                                                                                                                                border: 1px solid var(--primary-color);
+                                                                                                                                                                                                                                                    border-radius: 8px;
+                                                                                                                                                                                                                                                        overflow: hidden;
+                                                                                                                                                                                                                                                            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+                                                                                                                                                                                                                                                                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                .card:hover {
+                                                                                                                                                                                                                                                                    transform: translateY(-5px);
+                                                                                                                                                                                                                                                                        box-shadow: 0 8px 20px rgba(255, 152, 0, 0.4);
+                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                        .card img {
+                                                                                                                                                                                                                                                                            width: 100%;
+                                                                                                                                                                                                                                                                                height: 200px;
+                                                                                                                                                                                                                                                                                    object-fit: cover;
+                                                                                                                                                                                                                                                                                        display: block;
+                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                        .card-content {
+                                                                                                                                                                                                                                                                                            padding: 20px;
+                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                            .card-content h3 {
+                                                                                                                                                                                                                                                                                                color: var(--primary-color);
+                                                                                                                                                                                                                                                                                                    margin-bottom: 10px;
+                                                                                                                                                                                                                                                                                                        font-size: 1.5rem;
+                                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                                        .card-content p {
+                                                                                                                                                                                                                                                                                                            font-size: 1rem;
+                                                                                                                                                                                                                                                                                                                color: var(--text-color);
+                                                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                                                /* Rodapé */
+                                                                                                                                                                                                                                                                                                                footer {
+                                                                                                                                                                                                                                                                                                                    background-color: #0d0d0d;
+                                                                                                                                                                                                                                                                                                                        color: #999;
+                                                                                                                                                                                                                                                                                                                            text-align: center;
+                                                                                                                                                                                                                                                                                                                                padding: 20px 0;
+                                                                                                                                                                                                                                                                                                                                    border-top: 2px solid var(--primary-color);
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    
