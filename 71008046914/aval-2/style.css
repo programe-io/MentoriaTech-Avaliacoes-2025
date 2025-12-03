@@ -1,0 +1,221 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- Cabeçalho e Navegação --- */
+.site-header {
+    background-color: #00796b; /* Teal escuro */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #004d40;
+}
+
+.site-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+}
+
+.site-header p {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    display: block;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Layout Principal (Grid de 2 Colunas) --- */
+.main-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* 3/4 conteúdo, 1/4 sidebar */
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.content-area h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #00796b;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e0f2f1;
+    padding-bottom: 10px;
+}
+
+/* --- Artigos --- */
+.tech-article {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tech-article h3 {
+    color: #26a69a;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.meta {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.data-tag {
+    background-color: #ffe0b2; /* Laranja suave */
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.article-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.tech-article h4 {
+    color: #004d40;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.tech-article ul {
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.tech-article ul li {
+    margin-bottom: 8px;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #d32f2f; /* Vermelho para destaque de impacto */
+}
+
+/* --- Barra Lateral (Aside) --- */
+.sidebar {
+    padding-top: 60px; /* Alinha com o título principal */
+}
+
+.widget {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-left: 5px solid #ffb300; /* Destaque amarelo para soluções */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.widget h4 {
+    color: #ffb300;
+    margin-bottom: 15px;
+    border-bottom: 1px dotted #ffecb3;
+    padding-bottom: 8px;
+}
+
+.widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.widget ul li a {
+    display: block;
+    padding: 8px 0;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.widget ul li a:hover {
+    color: #00796b;
+    font-weight: 700;
+}
+
+/* Formulário de Contato */
+.contato-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.contato-form input[type="text"],
+.contato-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #004d40;
+}
+
+/* --- Rodapé --- */
+.site-footer {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .main-layout {
+        grid-template-columns: 1fr; /* Coluna única em telas menores */
+    }
+
+    .sidebar {
+        padding-top: 0;
+    }
+}
