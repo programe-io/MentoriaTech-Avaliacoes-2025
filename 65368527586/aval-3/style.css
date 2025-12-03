@@ -1,0 +1,255 @@
+/* --- RESET E VARIÁVEIS --- */
+:root {
+    --bg-color: #fafafa;
+    --border-color: #dbdbdb;
+    --text-main: #262626;
+    --text-secondary: #8e8e8e;
+    --link-color: #00376b;
+    --btn-primary: #0095f6;
+    --btn-hover: #1877f2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+/* --- NAV SUPERIOR --- */
+nav {
+    background: white;
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-content {
+    width: 100%;
+    max-width: 975px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Grand Hotel', cursive;
+    letter-spacing: 1px;
+}
+
+.search-bar {
+    background: #efefef;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 250px;
+    outline: none;
+    display: none;
+}
+
+@media(min-width: 650px) {
+    .search-bar { display: block; }
+}
+
+.nav-icons i {
+    font-size: 1.4rem;
+    margin-left: 20px;
+    cursor: pointer;
+    color: var(--text-main);
+}
+
+/* --- CONTAINER PRINCIPAL --- */
+main {
+    max-width: 975px;
+    margin: 90px auto 0;
+    padding: 0 20px;
+}
+
+/* --- CABEÇALHO DO PERFIL --- */
+.profile-header {
+    display: flex;
+    margin-bottom: 44px;
+    padding-bottom: 44px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-pic-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.profile-info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.username {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.btns-profile button {
+    background: #efefef;
+    border: none;
+    padding: 7px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btns-profile .btn-follow {
+    background-color: var(--btn-primary);
+    color: white;
+}
+
+.btns-profile .btn-follow.following {
+    background-color: #efefef;
+    color: black;
+    border: 1px solid var(--border-color);
+}
+
+.profile-stats {
+    display: flex;
+    margin-bottom: 20px;
+    list-style: none;
+}
+
+.profile-stats li {
+    margin-right: 40px;
+    font-size: 1rem;
+}
+
+.profile-stats strong {
+    font-weight: 600;
+}
+
+.profile-bio p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.profile-bio .link {
+    color: var(--link-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* --- ABAS (POSTS, REELS, ETC) --- */
+.profile-tabs {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid var(--border-color);
+    margin-top: -45px;
+    margin-bottom: 20px;
+}
+
+.tab-item {
+    padding: 15px 0;
+    margin: 0 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tab-item.active {
+    border-top: 1px solid var(--text-main);
+    color: var(--text-main);
+    margin-top: -1px;
+}
+
+/* --- GRID DE FOTOS --- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 50px;
+}
+
+.gallery-item {
+    position: relative;
+    cursor: pointer;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+
+.gallery-item:hover .gallery-overlay {
+    display: flex;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    gap: 20px;
+}
+
+.gallery-overlay i {
+    margin-right: 5px;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .profile-header { flex-direction: column; padding-left: 15px; }
+    .profile-pic-container { justify-content: flex-start; margin-bottom: 20px; }
+    .profile-pic { width: 80px; height: 80px; }
+    .gallery { gap: 3px; }
+    .profile-stats li { margin-right: 15px; font-size: 0.9rem; }
+    .profile-stats { justify-content: space-around; border-top: 1px solid var(--border-color); padding: 15px 0; }
+}
