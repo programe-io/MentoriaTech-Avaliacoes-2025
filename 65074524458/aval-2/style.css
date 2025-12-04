@@ -1,0 +1,244 @@
+/* Importação de Fonte (Exemplo) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+/* Reset Básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos Globais e do Corpo */
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #3c3c3c; /* Cor de fundo escura, como um porão */
+    color: #f0f0f0; /* Cor de texto clara */
+    line-height: 1.6;
+}
+
+/* Estilo do Cabeçalho */
+header {
+    background-color: #2e2e2e;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #5aa93d; /* Destaque verde do Minecraft */
+    position: sticky; /* Sticky Header */
+    top: 0;
+    z-index: 100;
+}
+
+#titulo-principal {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    text-shadow: 3px 3px #000000;
+}
+
+/* Estilo da Navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 1px dashed transparent;
+    transition: all 0.3s ease;
+}
+
+nav a:hover, nav a:focus {
+    background-color: #5aa93d;
+    border-color: #fff;
+    transform: scale(1.05);
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Estilo das Seções e Artigos */
+section, article, aside {
+    background-color: #4a4a4a;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    color: #5aa93d;
+    border-bottom: 2px solid #5aa93d;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Estilo da Citação */
+blockquote {
+    background-color: #6a6a6a;
+    border-left: 5px solid #5aa93d;
+    padding: 15px;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+/* Detalhes Expansíveis */
+details {
+    margin-top: 15px;
+    border: 1px solid #777;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #5aa93d;
+}
+
+/* Pré-formatado */
+pre {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+}
+
+/* Imagem e Legenda */
+figure {
+    text-align: center;
+    margin: 20px 0;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #777;
+    border-radius: 4px;
+}
+
+figcaption {
+    font-style: italic;
+    color: #ccc;
+    margin-top: 5px;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+th, td {
+    border: 1px solid #777;
+    padding: 10px;
+    text-align: left;
+}
+
+thead {
+    background-color: #5aa93d;
+    color: #2e2e2e;
+}
+
+tfoot {
+    font-style: italic;
+    background-color: #6a6a6a;
+}
+
+/* Formulários */
+fieldset {
+    border: 1px solid #5aa93d;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+legend {
+    color: #fff;
+    background-color: #5aa93d;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #777;
+    border-radius: 4px;
+    width: calc(100% - 10px);
+    background-color: #3c3c3c;
+    color: #f0f0f0;
+}
+
+input[type="submit"], button {
+    background-color: #3d79a9; /* Azul de Destaque */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #2a587a;
+}
+
+/* Saída (Output) */
+output {
+    display: block;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #2e2e2e;
+    border: 2px dashed #ff8800; /* Laranja de Destaque */
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Rodapé */
+footer {
+    background-color: #2e2e2e;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #5aa93d;
+    text-decoration: none;
+}
+
+/* Mídias Queries para Responsividade */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+    nav a {
+        display: block;
+        padding: 5px;
+    }
+}

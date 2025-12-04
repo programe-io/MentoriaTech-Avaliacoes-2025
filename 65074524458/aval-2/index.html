@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft World - Seu Guia Completo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png"> 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <h1 id="titulo-principal">🌍 Minecraft World ⛏️</h1>
+        <nav aria-label="Navegação Principal">
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#blocos">Blocos</a></li>
+                <li><a href="#mobs">Mobs</a></li>
+                <li><a href="#receitas">Receitas</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <article id="inicio">
+            <header>
+                <h2>O que é Minecraft?</h2>
+                <p><time datetime="2025-12-04">Postado em 04 de Dezembro de 2025</time></p>
+            </header>
+            
+            <p>Minecraft é um jogo eletrônico tipo **sandbox** que permite aos jogadores construir com uma variedade de diferentes blocos texturizados em um mundo 3D gerado processualmente. É um jogo sobre colocar blocos e ir em aventuras.</p>
+            
+            <blockquote>
+                <q>A imaginação é o único limite.</q>
+                <footer>— Comunidade Minecraft</footer>
+            </blockquote>
+
+            <details>
+                <summary>Veja a História do Jogo</summary>
+                <p>Criado por Markus "Notch" Persson e desenvolvido pela Mojang Studios, foi lançado em 2011.</p>
+            </details>
+            
+            <pre>
+/give @p diamond_sword 1
+            </pre>
+            
+            <figure>
+                <img id="imagem-minecraft" src="" alt="Imagem de uma paisagem de Minecraft" width="600" height="300"> 
+                <figcaption>Uma paisagem típica no Minecraft.</figcaption>
+            </figure>
+            
+        </article>
+        
+        <hr> <section id="blocos">
+            <h2>🧱 Blocos Essenciais</h2>
+            
+            <dl>
+                <dt>Grama</dt>
+                <dd>O bloco mais comum na superfície do mundo.</dd>
+                
+                <dt>Pedra</dt>
+                <dd>Pode ser minerada para obter Pedregulho (Cobblestone).</dd>
+                
+                <dt>Minério de Diamante</dt>
+                <dd>Bloco raro, essencial para ferramentas de alto nível.</dd>
+            </dl>
+            
+            <h3>Tabela de Materiais Básicos</h3>
+            <table>
+                <caption>Recursos para Sobrevivência Inicial</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Material</th>
+                        <th scope="col">Obtenção</th>
+                        <th scope="col">Uso Principal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Madeira</th>
+                        <td>Árvores (Axe)</td>
+                        <td>Tábuas, Vara, Carvão Vegetal</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Pedregulho</th>
+                        <td>Mineração (Pickaxe)</td>
+                        <td>Ferramentas, Fornalha</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Comece sempre coletando Madeira.</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <hr>
+        
+        <aside id="mobs">
+            <h2>👾 Mobs (Criaturas)</h2>
+            <p>Os mobs são criaturas móveis que habitam o mundo. Eles podem ser hostis, neutros ou passivos.</p>
+            
+            <ul>
+                <li>Creeper (Hostil)</li>
+                <li>Zumbi (Hostil)</li>
+                <li>Porco (Passivo)</li>
+                <li>Aldeão (Neutro)</li>
+            </ul>
+        </aside>
+
+        <hr>
+        
+        <section id="receitas">
+            <h2>🛠️ Receitas de Criação</h2>
+            
+            <p>Clique no botão para ver uma receita aleatória no console e no elemento de saída abaixo.</p>
+            
+            <button onclick="mostrarReceita()">Gerar Receita Aleatória</button>
+            
+            <output id="resultado-receita">Nenhuma receita gerada ainda.</output>
+            
+            <form>
+                <fieldset>
+                    <legend>Pesquisar Item</legend>
+                    <label for="item-busca">Nome do Item:</label>
+                    <input type="text" id="item-busca" name="item-busca" list="sugestoes-itens">
+                    
+                    <datalist id="sugestoes-itens">
+                        <option value="Espada de Diamante">
+                        <option value="Picareta de Ferro">
+                        <option value="Tocha">
+                    </datalist>
+                    
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" id="quantidade" name="quantidade" min="1" max="64" value="1">
+                    
+                    <input type="submit" value="Buscar Receita">
+                </fieldset>
+            </form>
+            
+        </section>
+
+        <hr>
+        
+        <section id="contato">
+            <h2>📧 Entre em Contato</h2>
+            <address>
+                <p>Envie suas dúvidas para:</p>
+                <a href="mailto:contato@minecraftworld.com">contato@minecraftworld.com</a>
+                <br>
+                <a href="tel:+5511999999999">(11) 99999-9999</a>
+            </address>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p><small>&copy; <time datetime="2025">2025</time> Minecraft World. Todos os direitos reservados.</small></p>
+        <p>Desenvolvido com <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr> e JavaScript.</abbr></p>
+        <p><a href="#titulo-principal">Voltar ao topo</a></p>
+    </footer>
+
+    <script src="script.js" defer></script>
+    
+<script src="script.js"></script></body>
+</html>
