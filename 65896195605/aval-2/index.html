@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Site educativo sobre a série Gossip Girl — resumo, personagens, curiosidades e interatividade." />
+  <meta name="author" content="Raylla" />
+  <title>Gossip Girl — Resumo Interativo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://picsum.photos/16/16" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header role="banner" class="site-header">
+    <div class="brand">
+      <img src="https://picsum.photos/80/80" alt="Logo Gossip" width="60" height="60" />
+      <h1>Gossip Girl</h1>
+      <p class="tagline">Escute. Conte. Repita.</p>
+    </div>
+
+    <nav role="navigation" aria-label="Menu principal" class="main-nav">
+      <button id="menuToggle" aria-expanded="false" aria-controls="mainMenu">☰ Menu</button>
+      <ul id="mainMenu" class="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#personagens">Personagens</a></li>
+        <li><a href="#episodios">Episódios</a></li>
+        <li><a href="#curiosidades">Curiosidades</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" role="main">
+    <section id="hero" class="hero">
+      <figure>
+        <picture>
+          <source media="(min-width:800px)" srcset="https://picsum.photos/1200/400" />
+          <img src="https://picsum.photos/800/300" alt="Upper East Side - representação" />
+        </picture>
+        <figcaption>Upper East Side — cenário principal da série.</figcaption>
+      </figure>
+
+      <article id="sobre" class="sobre">
+        <header>
+          <h2>Sobre Gossip Girl</h2>
+          <p class="lead">Drama teen que mistura segredos, estilo e intriga social.</p>
+        </header>
+        <p>
+          <strong>Gossip Girl</strong> é uma série de televisão ambientada no bairro Upper East Side,
+          em Nova York. A trama acompanha um grupo de jovens privilegiados, seus relacionamentos,
+          escândalos e a blogueira anônima que conta tudo. <em>Baseada nos livros de Cecily von Ziegesar.</em>
+        </p>
+
+        <dl>
+          <dt>Gênero</dt>
+          <dd>Drama, Romance, Mistério</dd>
+          <dt>Temporadas</dt>
+          <dd>6</dd>
+          <dt>Episódios</dt>
+          <dd>121</dd>
+          <dt>Idioma</dt>
+          <dd>Inglês (legendado/dublado em PT-BR)</dd>
+        </dl>
+
+        <aside aria-labelledby="assistir">
+          <h3 id="assistir">Como assistir</h3>
+          <p>Disponível em serviços de streaming conforme região.</p>
+        </aside>
+      </article>
+    </section>
+
+    <section id="personagens" class="grid">
+      <h2>Personagens principais</h2>
+
+      <ul class="cards" role="list">
+        <li class="card" data-id="1">
+          <img src="https://picsum.photos/200/140?random=1" alt="Personagem 1" />
+          <h3>Serena van der Woodsen</h3>
+          <p class="small">A elegante e muito observada socialite.</p>
+          <a href="#detalhe1" class="more" data-open="detalhe1">Ver mais</a>
+        </li>
+
+        <li class="card" data-id="2">
+          <img src="https://picsum.photos/200/140?random=2" alt="Personagem 2" />
+          <h3>Blair Waldorf</h3>
+          <p class="small">Rainha do clã: ambiciosa e carismática.</p>
+          <a href="#detalhe2" class="more" data-open="detalhe2">Ver mais</a>
+        </li>
+
+        <li class="card" data-id="3">
+          <img src="https://picsum.photos/200/140?random=3" alt="Personagem 3" />
+          <h3>Dan Humphrey</h3>
+          <p class="small">O outsider que observa a elite.</p>
+          <a href="#detalhe3" class="more" data-open="detalhe3">Ver mais</a>
+        </li>
+      </ul>
+
+      <details id="detalhesPersonagens">
+        <summary>Lista completa de personagens</summary>
+        <p>Além dos principais, a série tem muitos coadjuvantes memoráveis — de professores a familiares.</p>
+      </details>
+    </section>
+
+    <section id="episodios" class="episodios">
+      <h2>Episódios (exemplo)</h2>
+      <table role="table" class="table">
+        <caption>Exemplo de episódios — temporada 1</caption>
+        <thead>
+          <tr><th scope="col">#</th><th scope="col">Título</th><th scope="col">Data</th><th scope="col">Duração</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Pilot</td><td><time datetime="2007-09-19">19 set 2007</time></td><td><data value="42">42 min</data></td></tr>
+          <tr><td>2</td><td>The Beautiful Life</td><td><time datetime="2007-09-26">26 set 2007</time></td><td><data value="42">42 min</data></td></tr>
+        </tbody>
+      </table>
+
+      <form id="filterForm" class="filter" role="search" aria-label="Filtrar episódios">
+        <label for="season">Temporada</label>
+        <select id="season" name="season">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <label for="duracao">Mín. duração (min)</label>
+        <input type="number" id="duracao" name="duracao" min="10" max="120" value="0" />
+        <button type="button" id="filtrar">Filtrar</button>
+        <output id="resultCount" for="season duracao">0 resultados</output>
+      </form>
+    </section>
+
+    <section id="curiosidades" class="curiosidades">
+      <h2>Curiosidades</h2>
+      <ol>
+        <li><mark>O seriado lançou várias tendências de moda.</mark></li>
+        <li>O narrador anônimo foi ponto central da trama.</li>
+        <li>Existem adaptações e spin-offs e reboots.</li>
+      </ol>
+
+      <blockquote cite="https://en.wikipedia.org/wiki/Gossip_Girl">
+        "An influential teen drama..." — <cite>Referência informativa</cite>
+      </blockquote>
+
+      <figure class="multimedia">
+        <audio controls preload="none" aria-label="Trilha sonora (exemplo)">
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+          Seu navegador não suporta áudio.
+        </audio>
+        <figcaption>Trecho de trilha (exemplo público).</figcaption>
+      </figure>
+
+      <figure class="multimedia">
+        <video controls width="320" height="180" aria-label="Trailer (exemplo)">
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+          Vídeo não suportado.
+        </video>
+        <figcaption>Vídeo exemplo (ilustrativo).</figcaption>
+      </figure>
+    </section>
+
+    <section id="quiz" class="quiz">
+      <h2>Quiz rápido</h2>
+      <form id="quizForm" aria-labelledby="quiz">
+        <fieldset>
+          <legend>Quem disse: "I got your back"?</legend>
+          <label><input type="radio" name="q1" value="Serena" /> Serena</label>
+          <label><input type="radio" name="q1" value="Blair" /> Blair</label>
+          <label><input type="radio" name="q1" value="Dan" /> Dan</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Marque as opções verdadeiras</legend>
+          <label><input type="checkbox" name="f1" value="Moda" /> Influenciou moda</label>
+          <label><input type="checkbox" name="f2" value="Esporte" /> Foco em esportes</label>
+        </fieldset>
+
+        <button type="button" id="submitQuiz">Enviar respostas</button>
+        <output id="quizResult"></output>
+      </form>
+    </section>
+
+    <section id="extras" class="extras">
+      <h2>Ferramentas extra</h2>
+      <progress id="progress" value="30" max="100">30%</progress>
+      <meter value="0.7" min="0" max="1">70%</meter>
+
+      <div class="canvas-wrap">
+        <canvas id="sigCanvas" width="300" height="80" aria-label="Canvas de exemplo"></canvas>
+      </div>
+
+      <svg width="120" height="60" role="img" aria-label="Exemplo de SVG">
+        <rect width="120" height="60" fill="none" stroke="currentColor"></rect>
+        <text x="10" y="35" font-size="12">Gossip SVG</text>
+      </svg>
+    </section>
+
+    <section id="contato" class="contato">
+      <h2>Contato</h2>
+      <form id="contactForm" action="#" method="post" novalidate>
+        <fieldset>
+          <legend>Fale conosco</legend>
+          <label for="name">Nome</label>
+          <input id="name" name="name" type="text" required minlength="2" />
+
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" required placeholder="seu@exemplo.com" />
+
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+          <label for="interesse">Interesse</label>
+          <datalist id="interesses">
+            <option value="Resumo"/>
+            <option value="Personagens"/>
+            <option value="Episódios"/>
+            <option value="Moda"/>
+          </datalist>
+          <input id="interesse" name="interesse" list="interesses" />
+
+          <button type="submit">Enviar</button>
+        </fieldset>
+      </form>
+
+      <address>
+        Produzido por: <strong>Raylla</strong><br />
+        Email: <a href="mailto:exemplo@example.com">exemplo@example.com</a>
+      </address>
+    </section>
+  </main>
+
+  <footer role="contentinfo" class="site-footer">
+    <p>&copy; <time datetime="2025">2025</time> — Fanpage educativa. Conteúdo ilustrativo.</p>
+    <nav aria-label="Links de rodapé">
+      <ul>
+        <li><a href="#top">Voltar ao topo</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <template id="modalTemplate">
+    <dialog class="modal" role="dialog" aria-modal="true">
+      <button class="close" aria-label="Fechar">✕</button>
+      <div class="modal-body"></div>
+    </dialog>
+  </template>
+
+  <script src="script.js" defer></script>
+<script src="script.js"></script></body>
+</html>

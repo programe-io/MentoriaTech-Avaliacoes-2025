@@ -1,0 +1,53 @@
+/* Reset simples */
+* {box-sizing: border-box; margin: 0; padding: 0;}
+html,body {height:100%; font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#f8f7fb; color:#222;}
+a {color: #2a6df4; text-decoration: none;}
+img {max-width:100%; display:block;}
+
+/* Layout */
+.site-header {display:flex; align-items:center; justify-content:space-between; padding:1rem; background:linear-gradient(90deg,#111827,#1f2937); color:white;}
+.brand {display:flex; align-items:center; gap:0.75rem;}
+.brand h1 {font-size:1.25rem; margin:0;}
+.main-nav .menu {list-style:none; display:flex; gap:0.5rem; align-items:center;}
+.main-nav .menu a {padding:0.4rem 0.6rem; border-radius:6px;}
+.main-nav button {background:transparent; color:inherit; border:1px solid rgba(255,255,255,0.12); padding:0.4rem 0.6rem; border-radius:6px; cursor:pointer;}
+
+/* Hero */
+.hero {padding:1.25rem; display:grid; gap:1rem;}
+.sobre {background:white; padding:1rem; border-radius:10px; box-shadow:0 6px 18px rgba(16,24,40,0.06);}
+
+/* Grid de cards */
+.grid {padding:1rem;}
+.cards {display:flex; gap:1rem; flex-wrap:wrap; list-style:none;}
+.card {background:#fff; padding:0.75rem; border-radius:10px; width:220px; box-shadow:0 6px 18px rgba(16,24,40,0.04);}
+.card h3 {margin:0.5rem 0 0.25rem;}
+.card .small {font-size:0.85rem; color:#555;}
+.card .more {display:inline-block; margin-top:0.5rem; font-weight:600;}
+
+/* Table & form */
+.table {width:100%; border-collapse:collapse; margin-top:0.5rem;}
+.table th, .table td {border:1px solid #e6e6e6; padding:0.5rem; text-align:left;}
+.filter {display:flex; gap:0.5rem; align-items:center; margin-top:0.5rem;}
+.filter input, .filter select {padding:0.3rem;}
+
+/* Quiz */
+.quiz {background:linear-gradient(180deg,#fff,#fafafa); padding:1rem; border-radius:10px; margin:1rem 0;}
+.quiz label {display:block; margin:0.25rem 0;}
+
+/* Extras */
+.canvas-wrap {background:white; padding:0.5rem; border-radius:8px; display:inline-block;}
+.multimedia {margin-top:0.5rem;}
+
+/* Footer */
+.site-footer {padding:1rem; text-align:center; margin-top:1rem; background:#111827; color:white;}
+.site-footer a {color:#9ad0ff}
+
+/* Modal */
+.modal {border:none; border-radius:12px; padding:1rem; width:min(90%,500px);}
+
+/* Responsive */
+@media (max-width:800px) {
+  .main-nav .menu {display:none;}
+  .main-nav .menu.open {display:flex; flex-direction:column; background:#fff; position:absolute; right:1rem; top:64px; padding:0.5rem; border-radius:8px; box-shadow:0 8px 24px rgba(0,0,0,0.12);}
+  .brand h1 {font-size:1rem;}
+}
