@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil Social - Empresa de Instrumentos Musicais</title>
+
+  <style>
+    /* ============ ESTILOS GERAIS ============ */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background: #f7f7f7; color: #222; animation: fadeIn 1s ease forwards; opacity: 0; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* ============ CABEÇALHO ============ */
+    header { background: #111; color: #fff; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { cursor: pointer; transition: 0.3s; }
+    header h1:hover { transform: scale(1.05); }
+    nav a { color: #fff; margin-left: 20px; text-decoration: none; position: relative; }
+    nav a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0%; height: 2px; background: #ffcc00; transition: 0.3s; }
+    nav a:hover::after { width: 100%; }
+
+    /* ============ HERO ============ */
+    .hero { padding: 60px; text-align: center; }
+    .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.1rem; opacity: 0.7; }
+
+    /* ============ PRODUTOS ============ */
+    .produtos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px; }
+    .card { background: #fff; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s; cursor: pointer; }
+    .card:hover { transform: translateY(-5px) scale(1.03); box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
+    .card img { width: 100%; border-radius: 10px; }
+    .card button { padding: 10px 15px; margin-top: 10px; border: none; background: #111; color: #fff; cursor: pointer; border-radius: 10px; transition: 0.3s; }
+    .card button:hover { background: #ffcc00; color: #111; }
+
+    /* ============ MODAL ============ */
+    .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; justify-content: center; align-items: center; animation: fadeIn 0.5s; }
+    .modal-content { background: #fff; padding: 30px; border-radius: 15px; text-align: center; width: 300px; animation: scaleIn 0.4s ease; }
+    @keyframes scaleIn { from { transform: scale(0.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+    /* ============ REDES SOCIAIS ============ */
+    .social { display: flex; justify-content: center; gap: 15px; margin: 40px 0; }
+    .social a { font-size: 1.8rem; transition: 0.3s; color: #111; }
+    .social a:hover { transform: translateY(-5px); color: #ffcc00; }
+
+    /* ============ RODAPÉ ============ */
+    footer { background: #111; color: #fff; padding: 30px; text-align: center; margin-top: 40px; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 onclick="scrollToTop()">Music World</h1>
+    <nav>
+      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Instrumentos Musicais para Todos os Estilos</h2>
+    <p>A melhor qualidade, com o melhor preço. Do iniciante ao profissional.</p>
+  </section>
+
+  <section id="produtos" class="produtos">
+    <div class="card">
+      <img src="https://img.irroba.com.br/filters:fill(fff):quality(80)/digiorgi/catalog/produtos/classico38e/nova-captacao-4b/classico-38e-1.jpg" alt="Violão" />
+      <h3>Violão Clássico</h3>
+      <button onclick="openModal()">Adicionar</button>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn.awsli.com.br/82/82881/produto/44676306/176e093c9c.jpg" alt="Teclado" />
+      <h3>Teclado Profissional</h3>
+      <button onclick="openModal()">Adicionar</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.tcdn.com.br/img/img_prod/757946/guitarra_eletrica_strato_giannini_g100_3ts_wh_sunburst_com_escudo_white_14349_1_de9097ef488f3676f47c1f3ea3cc1c87.png" alt="Guitarra" />
+      <h3>Guitarra Elétrica</h3>
+      <button onclick="openModal()">Adicionar</button>
+    </div>
+  </section>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h3>Item adicionado!</h3>
+      <p>Seu produto foi adicionado com sucesso.</p>
+      <button onclick="closeModal()">Fechar</button>
+    </div>
+  </div>
+
+  <div class="social">
+    <a href="#">📸</a>
+    <a href="#">📘</a>
+    <a href="#">▶️</a>
+    <a href="#">💬</a>
+  </div>
+
+  <footer>
+    <p>© <span id="ano"></span> Music World - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    function openModal() { document.getElementById('modal').style.display = 'flex'; }
+    function closeModal() { document.getElementById('modal').style.display = 'none'; }
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
