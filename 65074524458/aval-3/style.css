@@ -1,0 +1,201 @@
+/* Importação de Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Variáveis de Cores (Cores do Piauí: Verde e Amarelo, ou cores escolares neutras) */
+:root {
+    --cor-primaria: #0056b3; /* Azul Escuro */
+    --cor-secundaria: #ffc107; /* Amarelo Destaque */
+    --cor-fundo: #f8f9fa; /* Branco Suave */
+    --cor-texto: #343a40; /* Cinza Escuro */
+}
+
+/* Reset Básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos Globais e do Corpo */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* Estilo do Cabeçalho */
+header {
+    background-color: var(--cor-primaria);
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#nome-escola {
+    margin-bottom: 5px;
+    font-size: 2.5em;
+}
+
+.slogan {
+    font-style: italic;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+/* Estilo da Navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover, nav a:focus {
+    color: var(--cor-secundaria);
+    border-bottom: 2px solid var(--cor-secundaria);
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Estilo das Seções e Artigos */
+section, article, aside {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--cor-primaria);
+}
+
+h2 {
+    color: var(--cor-primaria);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Imagens */
+figure {
+    text-align: center;
+    margin: 20px 0;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: left;
+}
+
+thead {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+tfoot {
+    background-color: #f1f1f1;
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* Formulário e Inputs */
+fieldset {
+    border: 1px solid var(--cor-secundaria);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+legend {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+input[type="text"], input[type="number"], input[type="email"] {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 400px;
+}
+
+input[type="submit"], button {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #004085;
+}
+
+/* Saída (Output) */
+output {
+    display: block;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #e2f0ff; /* Azul claro */
+    border-left: 5px solid var(--cor-secundaria);
+    font-weight: 600;
+    color: var(--cor-texto);
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-primaria);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+}
