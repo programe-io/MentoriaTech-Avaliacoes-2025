@@ -1,89 +1,132 @@
+/* Reset básico e fontes */
 body {
-        font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-                display: flex;
-                    justify-content: center;
-                        align-items: center;
-                            height: 100vh;
-                                margin: 0;
-                                    color: #333;
-                                    }
+    font-family: sans-serif;
+        margin: 0;
+            padding: 0;
+                line-height: 1.6;
+                    background-color: #f4f4f4;
+                        color: #333;
+                        }
 
-                                    .quiz-container {
-                                        background-color: #ffffff;
-                                            padding: 20px 40px;
-                                                border-radius: 10px;
-                                                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                                                        width: 90%;
-                                                            max-width: 500px;
-                                                                text-align: center;
+                        .container {
+                            display: flex;
+                                max-width: 1200px;
+                                    margin: 20px auto;
+                                        padding: 0 20px;
+                                            gap: 20px; /* Espaço entre o main e o aside */
+                                            }
+
+                                            /* Estilização do cabeçalho (<header>) e navegação (<nav>) */
+                                            header {
+                                                background-color: #333;
+                                                    color: white;
+                                                        padding: 1rem 0;
+                                                            text-align: center;
+                                                                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
                                                                 }
 
-                                                                header h1 {
-                                                                    color: #0056b3; /* Cor inspirada na bandeira do Brasil */
-                                                                        margin-bottom: 20px;
-                                                                        }
+                                                                header .logo h1 {
+                                                                    margin: 0;
+                                                                    }
 
-                                                                        .question-area {
-                                                                            margin-bottom: 20px;
-                                                                                font-size: 1.2em;
-                                                                                    font-weight: bold;
-                                                                                    }
+                                                                    nav ul {
+                                                                        list-style-type: none;
+                                                                            padding: 0;
+                                                                                margin: 0;
+                                                                                    display: flex;
+                                                                                        justify-content: center;
+                                                                                        }
 
-                                                                                    .options-container {
-                                                                                        display: flex;
-                                                                                            flex-direction: column;
-                                                                                                gap: 10px;
-                                                                                                }
+                                                                                        nav ul li a {
+                                                                                            color: white;
+                                                                                                text-decoration: none;
+                                                                                                    padding: 0.5rem 1rem;
+                                                                                                        display: block;
+                                                                                                            transition: background-color 0.3s;
+                                                                                                            }
 
-                                                                                                .option-button {
-                                                                                                    background-color: #007bff;
-                                                                                                        color: white;
-                                                                                                            border: none;
-                                                                                                                padding: 15px;
-                                                                                                                    border-radius: 5px;
-                                                                                                                        cursor: pointer;
-                                                                                                                            font-size: 1em;
-                                                                                                                                transition: background-color 0.3s ease;
-                                                                                                                                }
+                                                                                                            nav ul li a:hover {
+                                                                                                                background-color: #555;
+                                                                                                                }
 
-                                                                                                                                .option-button:hover {
-                                                                                                                                    background-color: #0056b3; /* Tonalidade mais escura no hover */
-                                                                                                                                    }
+                                                                                                                /* Estilização do conteúdo principal (<main>) e posts (<article>) */
+                                                                                                                main {
+                                                                                                                    flex: 3; /* Ocupa 3 partes do espaço disponível */
+                                                                                                                    }
 
-                                                                                                                                    .option-button.correct {
-                                                                                                                                        background-color: #28a745; /* Verde para resposta correta */
+                                                                                                                    .post {
+                                                                                                                        background: white;
+                                                                                                                            margin-bottom: 20px;
+                                                                                                                                padding: 20px;
+                                                                                                                                    border-radius: 5px;
+                                                                                                                                        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
                                                                                                                                         }
 
-                                                                                                                                        .option-button.incorrect {
-                                                                                                                                            background-color: #dc3545; /* Vermelho para resposta incorreta */
+                                                                                                                                        .post h2 {
+                                                                                                                                            color: #333;
                                                                                                                                             }
 
-                                                                                                                                            .controls {
-                                                                                                                                                margin-top: 20px;
-                                                                                                                                                }
+                                                                                                                                            .post-meta {
+                                                                                                                                                color: #888;
+                                                                                                                                                    font-size: 0.9rem;
+                                                                                                                                                    }
 
-                                                                                                                                                #next-button {
-                                                                                                                                                    background-color: #ffc107; /* Amarelo para o botão de próxima pergunta */
-                                                                                                                                                        color: #333;
-                                                                                                                                                            border: none;
-                                                                                                                                                                padding: 10px 20px;
-                                                                                                                                                                    border-radius: 5px;
-                                                                                                                                                                        cursor: pointer;
-                                                                                                                                                                            font-size: 1em;
-                                                                                                                                                                                transition: background-color 0.3s ease;
-                                                                                                                                                                                    display: none; /* Escondido inicialmente, gerenciado via JavaScript */
-                                                                                                                                                                                    }
+                                                                                                                                                    /* Estilização de imagens (<img>) */
+                                                                                                                                                    img {
+                                                                                                                                                        max-width: 100%;
+                                                                                                                                                            height: auto;
+                                                                                                                                                                border-radius: 5px;
+                                                                                                                                                                    margin: 10px 0;
+                                                                                                                                                                    }
 
-                                                                                                                                                                                    #next-button:hover {
-                                                                                                                                                                                        background-color: #e0a800;
-                                                                                                                                                                                        }
+                                                                                                                                                                    /* Estilização da barra lateral (<aside>) */
+                                                                                                                                                                    aside {
+                                                                                                                                                                        flex: 1; /* Ocupa 1 parte do espaço disponível */
+                                                                                                                                                                            background: white;
+                                                                                                                                                                                padding: 20px;
+                                                                                                                                                                                    border-radius: 5px;
+                                                                                                                                                                                        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                                                                                                                                                                                            height: fit-content; /* Ajusta a altura ao conteúdo */
+                                                                                                                                                                                            }
 
-                                                                                                                                                                                        #score-area {
-                                                                                                                                                                                            margin-top: 20px;
-                                                                                                                                                                                                font-size: 1.1em;
-                                                                                                                                                                                                    font-weight: bold;
-                                                                                                                                                                                                        color: #0056b3;
-                                                                                                                                                                                                        }
-                                                                                                                                                                                                        
-}
+                                                                                                                                                                                            aside .widget h3 {
+                                                                                                                                                                                                margin-top: 0;
+                                                                                                                                                                                                    color: #333;
+                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                    aside ul {
+                                                                                                                                                                                                        list-style-type: none;
+                                                                                                                                                                                                            padding: 0;
+                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                            aside ul li a {
+                                                                                                                                                                                                                text-decoration: none;
+                                                                                                                                                                                                                    color: #333;
+                                                                                                                                                                                                                        display: block;
+                                                                                                                                                                                                                            padding: 5px 0;
+                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                            /* Estilização do rodapé (<footer>) */
+                                                                                                                                                                                                                            footer {
+                                                                                                                                                                                                                                background-color: #333;
+                                                                                                                                                                                                                                    color: white;
+                                                                                                                                                                                                                                        text-align: center;
+                                                                                                                                                                                                                                            padding: 1rem 0;
+                                                                                                                                                                                                                                                margin-top: 20px;
+                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                /* Design responsivo para telas menores */
+                                                                                                                                                                                                                                                @media (max-width: 768px) {
+                                                                                                                                                                                                                                                    .container {
+                                                                                                                                                                                                                                                            flex-direction: column; /* Coloca main e aside em colunas em telas pequenas */
+                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                    nav ul {
+                                                                                                                                                                                                                                                                            flex-direction: column;
+                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                        nav ul li a {
+                                                                                                                                                                                                                                                                                                text-align: left;
+                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                    
