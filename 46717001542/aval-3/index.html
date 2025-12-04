@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfólio — Seu Nome</title>
+  <link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <h1>Seu Nome</h1>
+      <p class="sub">Designer gráfico &amp; Programador</p>
+      <button id="menuBtn" aria-expanded="false" aria-controls="mainNav" class="menu-btn">Menu</button>
+    </div>
+    <nav id="mainNav" class="nav">
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main id="main" role="main">
+    <section id="sobre" class="section container" aria-labelledby="sobre-title">
+      <h2 id="sobre-title">Sobre mim</h2>
+      <p>Sou designer gráfico e desenvolvedor front-end. Trabalho com identidade visual, interfaces e projetos responsivos.</p>
+    </section>
+
+    <section id="projetos" class="section container" aria-labelledby="projetos-title">
+      <h2 id="projetos-title">Projetos</h2>
+      <div class="projetos-grid" role="list">
+        <article class="card" role="listitem">
+          <img src="https://via.placeholder.com/600x360" alt="Miniatura projeto 1">
+          <h3>Projeto 1</h3>
+          <p>Descrição curta do projeto — objetivo, tecnologia e resultado.</p>
+          <a class="btn" href="#" aria-label="Ver projeto 1">Ver projeto</a>
+        </article>
+
+        <article class="card" role="listitem">
+          <img src="https://via.placeholder.com/600x360" alt="Miniatura projeto 2">
+          <h3>Projeto 2</h3>
+          <p>Descrição curta do projeto — objetivo, tecnologia e resultado.</p>
+          <a class="btn" href="#" aria-label="Ver projeto 2">Ver projeto</a>
+        </article>
+
+        <article class="card" role="listitem">
+          <img src="https://via.placeholder.com/600x360" alt="Miniatura projeto 3">
+          <h3>Projeto 3</h3>
+          <p>Descrição curta do projeto — objetivo, tecnologia e resultado.</p>
+          <a class="btn" href="#" aria-label="Ver projeto 3">Ver projeto</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contato" class="section container" aria-labelledby="contato-title">
+      <h2 id="contato-title">Contato</h2>
+      <p>Prefere email ou mensagem rápida? Use o formulário abaixo.</p>
+
+      <form id="contactForm" class="contact-form" novalidate>
+        <label>
+          <span>Nome</span>
+          <input type="text" name="name" required>
+        </label>
+
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required>
+        </label>
+
+        <label>
+          <span>Mensagem</span>
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Enviar</button>
+          <button type="button" id="btnContato" class="btn">Dizer oi</button>
+        </div>
+
+        <p id="formStatus" class="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> — Seu Nome</p>
+      <small>Feito com HTML, CSS e JavaScript</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
