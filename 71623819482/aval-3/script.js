@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moto Street | Acelere sua Paixão</title>
+    <!-- Carregamento da fonte Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Link para o arquivo CSS (style.css) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Header (Cabeçalho) -->
+    <header class="header">
+        <div class="container header-content">
+            <!-- Logo/Nome da Loja -->
+            <a href="#" class="logo">
+                <!-- Ícone de Moto Customizado (SVG simples) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 14v6m-4-6h4m0 0l-4-4m4 4l-4 4m6-4a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Moto Street
+            </a>
+
+            <!-- Barra de Pesquisa -->
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar modelos, peças, acessórios...">
+                <!-- Ícone de busca -->
+                <button class="absolute right-0 top-0 mt-2 mr-3 text-gray-500 hover:text-primary-red">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Ícones de Ação (Carrinho e Usuário) -->
+            <div class="action-icons">
+                <button id="cart-button">
+                    <!-- Ícone do Carrinho -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.2 2.2a2 2 0 000 2.8l1 1c.7.7 2 .7 2.7 0L17 17.8a2 2 0 000-2.8l-1-1a2 2 0 00-2.8 0L7 13z" />
+                    </svg>
+                    <!-- Contador de itens do carrinho -->
+                    <span id="cart-count" class="cart-counter">0</span>
+                </button>
+                <button>
+                    <!-- Ícone do Usuário -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navegação Principal (Tag NAV OBRIGATÓRIA) -->
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#">Motos Novas</a></li>
+                <li><a href="#">Peças e Customização</a></li>
+                <li><a href="#">Capacetes</a></li>
+                <li><a href="#">Outlet</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 2. Main Content Area -->
+    <main class="container">
+
+        <!-- Banner Promocional (Hero Section) -->
+        <section class="hero-banner">
+            <div class="hero-content">
+                <h1>Liberdade na Estrada!</h1>
+                <p>Oportunidade única: Financiamento com taxa zero na linha Sport.</p>
+                <a href="#featured-product" class="hero-button">Ver Moto em Destaque</a>
+            </div>
+        </section>
+
+        <!-- Categorias de Produto em Destaque -->
+        <section class="mb-12">
+            <h2>Explore o Universo Custom</h2>
+            <div class="grid-container categories">
+                <!-- Cartão de Categoria 1 -->
+                <a href="#" class="category-card">
+                    <span class="category-icon" role="img" aria-label="Motor">⚙️</span>
+                    <p class="category-name">Peças Performance</p>
+                </a>
+                <!-- Cartão de Categoria 2 -->
+                <a href="#" class="category-card">
+                    <span class="category-icon" role="img" aria-label="Capacete">⛑️</span>
+                    <p class="category-name">Vestuário de Segurança</p>
+                </a>
+                <!-- Cartão de Categoria 3 -->
+                <a href="#" class="category-card">
+                    <span class="category-icon" role="img" aria-label="Bagagem">📦</span>
+                    <p class="category-name">Acessórios para Viagem</p>
+                </a>
+                <!-- Cartão de Categoria 4 (Oculto em Mobile) -->
+                <div class="category-card hidden-mobile">
+                    <span class="category-icon" role="img" aria-label="Chave">🔑</span>
+                    <p class="category-name">Serviços e Manutenção</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sidebar de Promoção/Informação (Tag ASIDE OBRIGATÓRIA) -->
+        <aside class="sidebar-promo mb-12">
+            <h3>Agende seu Test-Ride</h3>
+            <p>Sinta a emoção antes de comprar. Teste a R-Series 1000cc na pista.</p>
+            <a href="#" class="aside-button">Reservar Horário</a>
+        </aside>
+
+        <!-- Produtos em Destaque (Grid com apenas UM produto) -->
+        <section class="mb-12" id="featured-product">
+            <h2>Moto em Destaque</h2>
+            <div class="grid-container products one-product-grid">
+                <!-- Cartão de Produto Único (Tag ARTICLE OBRIGATÓRIA) -->
+                <article class="product-card full-width-card">
+                    <img src="https://placehold.co/800x450/1F2937/E31C25?text=R-Series+1000cc" 
+                         alt="Moto Esportiva R-Series 1000cc em Vermelho e Preto">
+                    <div class="product-info">
+                        <h3 class="product-title">Moto Esportiva R-Series 1000cc</h3>
+                        <p class="product-brand">Motor 4 Cilindros | 180 HP | Edição Limitada</p>
+                        <div class="product-price">R$ 79.990,00</div>
+                        <button class="add-to-cart-btn">Comprar ou Simular Financiamento</button>
+                    </div>
+                </article>
+                
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 3. Footer (Rodapé) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Coluna 1: Informações da Loja -->
+                <div>
+                    <h5>Moto Street</h5>
+                    <p class="text-sm text-gray-400">Desde 1995 acelerando a paixão por duas rodas no Brasil.</p>
+                </div>
+
+                <!-- Coluna 2: Navegação Rápida -->
+                <div>
+                    <h5>Navegação</h5>
+                    <ul>
+                        <li><a href="#">Localização da Concessionária</a></li>
+                        <li><a href="#">Catálogo Completo</a></li>
+                        <li><a href="#">Política de Troca</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: Atendimento -->
+                <div>
+                    <h5>Contato e Suporte</h5>
+                    <p>Telefone: (00) 5555-5555</p>
+                    <p>E-mail: vendas@motostreet.com.br</p>
+                </div>
+
+                <!-- Coluna 4: Redes Sociais -->
+                <div>
+                    <h5>Siga a Paixão</h5>
+                    <div class="flex space-x-3 text-2xl mb-4">
+                        <a href="#" class="text-white hover:text-primary-red">🏍️</a>
+                        <a href="#" class="text-white hover:text-primary-red">🔥</a>
+                        <a href="#" class="text-white hover:text-primary-red">🔗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Moto Street. Todos os direitos reservados. Não beba e dirija.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Feedback (Oculto por padrão, ativado pelo JS) -->
+    <div id="feedback-modal-overlay" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-icon">🏍️</div>
+            <p id="modal-message" class="modal-message">Simulação iniciada com sucesso!</p>
+        </div>
+    </div>
+    
+    <!-- Link para o arquivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
