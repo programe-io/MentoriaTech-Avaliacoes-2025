@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Feed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+  <body
+    class="bg-gradient-to-b from-blue-900 to-blue-950 min-h-screen text-white"
+  >
+    <!-- HEADER -->
+    <header class="shadow-md p-5 flex items-center">
+      <div
+        class="flex-1 text-center md:text-left uppercase font-bold tracking-wider"
+      >
+        <img
+            class="h-12 w-12 rounded-full border-2 border-blue-500"
+            src="data:image/webp;base64,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"
+            alt=""
+          />
+      </div>
+      <nav class="font-bold gap-6 hidden md:flex">
+        <a href="https://cetiapicella.com.br/" class="hover:text-blue-400">Início</a>
+        <a href="https://www.instagram.com/accounts/login/?next=%2Ffrei_jose_apicella%2F&source=omni_redirect" class="hover:text-blue-400">Amigos do Apicella</a>
+        <a href="https://cetiapicella.com.br/eventos" target="_blank" class="hover:text-blue-400">Eventos</a>
+      </nav>
+    </header>
+
+    <!-- POSTS -->
+    <main class="p-8 flex flex-col md:flex-row justify-center gap-6">
+      <!-- POST CARD 1 -->
+      <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-xs">
+        <!-- CARD HEADER -->
+        <div class="flex items-center gap-3 p-4">
+          <img
+            class="h-12 w-12 rounded-full border-2 border-blue-500"
+            src="https://tse4.mm.bing.net/th/id/OIP.WbTdtcSd4UB7bmikX3ht8AHaJf?cb=ucfimg2&ucfimg=1&w=789&h=1012&rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt=""
+          />
+          <h2 class="text-lg font-semibold">CETI FREI JOSÉ APICELLA</h2>
+        </div>
+        <!-- CARD IMAGE -->
+        <img class="w-full h-48 object-cover" src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=768,fit=crop/mk3v9N2p1rSB43jo/a682046f-bdde-4b1d-a110-5b75dd689751-AMq8aOWJWRCyEgKe.JPG" alt="" />
+        <!-- CARD CONTENT -->
+        <div class="p-4">
+          <p class="text-sm text-justify">
+           As 12 escolas que não foram selecionadas para o intercâmbio internacional foram selecionadas para o intercâmbio nacional — e o destino é o IMPA Tech, no Rio de Janeiro, um dos maiores centros de inovação e tecnologia do país! 🔥
+
+Lá, nossos alunos vão mergulhar em experiências únicas, visitar laboratórios de ponta e mostrar que o talento do interior do Piauí tem força nacional! 💚💡
+
+Além da equipe de alunos que brilhou na apresentação, o professor Sidinei Chagas representou a direção da escola no evento, e o professor Samuel Sá esteve presente fazendo a cobertura completa dessa jornada inesquecível! 🎥📸
+          </p>
+          <span class="text-xs text-gray-400 block text-right mt-3"
+            >há 05 minutos</span
+          >
+        </div>
+      </div>
+
+      <!-- POST CARD 2 -->
+      <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-xs">
+        <div class="flex items-center gap-3 p-4">
+          <img
+            class="h-12 w-12 rounded-full border-2 border-blue-500"
+            src="https://tse1.mm.bing.net/th/id/OIP.knXBU8bCIAW6zxIzMZGqGAHaHa?cb=ucfimg2&ucfimg=1&w=500&h=500&rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt=""
+          />
+          <h2 class="text-lg font-semibold">CETI Cônego Cardoso</h2>
+        </div>
+        <img class="w-full h-48 object-cover" src="https://assets.zyrosite.com/mk3v9N2p1rSB43jo/img_2875-mP43QQKP4PTJnovb.jpg" alt="" />
+        <div class="p-4">
+          <p class="text-sm text-justify">
+            
+Na última terça-feira (5 de agosto), o CETI Frei José Apicella viveu um momento especial com a realização de sua primeira Olimpíada de Lançamento de Foguetes. A atividade reuniu os alunos do 1º ano, que, sob a orientação do professor de Física José Ribamar Sousa, desenvolveram e lançaram seus próprios modelos.
+
+O evento foi acompanhado por toda a comunidade escolar, que pôde assistir de perto cada lançamento e compartilhar a empolgação dos participantes. Mais do que uma competição, a iniciativa permitiu que os estudantes colocassem em prática conceitos aprendidos em sala de aula, unindo teoria, criatividade e trabalho em equipe.
+
+A estreia da olimpíada deixou claro que esta é uma atividade com potencial para se tornar tradição, incentivando o interesse pela ciência e despertando a curiosidade para novos desafios.🚀✨
+          </p>
+          <span class="text-xs text-gray-400 block text-right mt-3"
+            >há 10 minutos</span
+          >
+        </div>
+      </div>
+
+      <!-- POST CARD 3 -->
+      <div class="bg-gray-800 rounded-lg shadow-md overflow-hidden max-w-xs">
+        <div class="flex items-center gap-3 p-4">
+          <img
+            class="h-12 w-12 rounded-full border-2 border-blue-500"
+            src="https://png.pngitem.com/pimgs/s/765-7651072_for-an-illustrator-class-i-did-this-vector.png"
+            alt=""
+          />
+          <h2 class="text-lg font-semibold">CETI Cônego Cardoso</h2>
+        </div>
+        <img class="w-full h-48 object-cover" src="https://assets.zyrosite.com/mk3v9N2p1rSB43jo/img_8199-mP4322nvL7IWZa96.jpg" alt="" />
+        <div class="p-4">
+          <p class="text-sm text-justify">
+           
+Os estudantes do 3º ano dos cursos técnicos em Agropecuária e Zootecnia do CETI Frei José Apicella participaram de uma visita técnica à Fazenda CHAO, localizada no município de Jerumenha.
+
+A atividade teve como objetivo aproximar os alunos da realidade do campo, proporcionando contato direto com a rotina de uma propriedade rural. Durante a visita, os jovens puderam conhecer a estrutura e o funcionamento da fazenda, além de trocar experiências e aprender com os profissionais que atuam no local.
+
+A iniciativa representou uma oportunidade de ampliar os conhecimentos adquiridos em sala de aula, reforçando a importância da prática na formação dos futuros técnicos. Para os estudantes, foi um momento de aprendizado enriquecedor que contribuirá significativamente para sua qualificação profissional.
+
+O CETI Frei José Apicella segue investindo em ações que valorizam a vivência prática, preparando seus alunos para os desafios do mercado de trabalho.
+          </p>
+          <span class="text-xs text-gray-400 block text-right mt-3"
+            >há 15 minutos</span
+          >
+        </div>
+      </div>
+    </main>
+  </body>
+  <footer style="text-align: center; padding: 15px 0; background-color: #422ef1; color: white; font-family: Arial, sans-serif; font-size: 14px;">
+  © <span id="ano-atual"></span> Prof. Eduardo Mineiro.'. Todos os direitos reservados.
+</footer>
+
+<script>
+  document.getElementById('ano-atual').textContent = new Date().getFullYear();
+</script>
+</html>
