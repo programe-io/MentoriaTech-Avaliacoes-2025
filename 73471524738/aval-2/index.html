@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer Blog</title>
+    <link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <!-- ==========================
+         HEADER
+    =========================== -->
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo Gamer Blog" class="logo-img">
+            <div>
+                <h1>Gamer Blog</h1>
+                <span class="slogan">Notícias, reviews e tudo sobre games</span>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="#">Início</a>
+            <a href="#">Notícias</a>
+            <a href="#">Reviews</a>
+            <a href="#">Top Games</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <!-- ==========================
+         LAYOUT PRINCIPAL
+    =========================== -->
+    <div class="layout">
+
+        <!-- ==========================
+             MAIN – CONTEÚDO PRINCIPAL
+        =========================== -->
+        <main class="container">
+
+            <!-- Seção de posts -->
+            <section aria-label="Posts do blog">
+
+                <article class="post">
+                    <img src="img/cyberpunk.jpg" alt="Imagem do jogo Cyberpunk 2077">
+                    <h2>Review: Cyberpunk 2077 – Atualização Definitiva</h2>
+                    <p>Depois de diversas atualizações, Cyberpunk 2077 finalmente se tornou o jogo que os fãs esperavam.</p>
+                </article>
+
+                <article class="post">
+                    <img src="img/gta6.jpg" alt="Imagem do novo GTA VI">
+                    <h2>Notícia: GTA VI Ganha Trailer Oficial</h2>
+                    <p>A Rockstar divulgou o trailer e surpreendeu com gráficos ultra realistas e cidades vivas.</p>
+                </article>
+
+                <article class="post">
+                    <img src="img/multiplayer.jpg" alt="Imagem de jogos multiplayer">
+                    <h2>Top 5 Jogos Multiplayer de 2025</h2>
+                    <p>Veja os jogos mais jogados do momento — shooters competitivos e RPGs cooperativos.</p>
+                </article>
+
+            </section>
+
+        </main>
+
+        <!-- ==========================
+             ASIDE – INFORMAÇÕES LATERAIS
+        =========================== -->
+        <aside class="sidebar" aria-label="Informações adicionais">
+
+            <section>
+                <h3>Últimos Lançamentos</h3>
+                <ul>
+                    <li>⚡ Elden Ring: Shadow of the Erdtree</li>
+                    <li>🔥 Call of Duty 2025</li>
+                    <li>🚀 Starfield DLC Nova Era</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Plataformas</h3>
+                <ul>
+                    <li><img src="img/ps5.png" alt="Logo PS5"> PlayStation 5</li>
+                    <li><img src="img/xbox.png" alt="Logo Xbox"> Xbox Series X</li>
+                    <li><img src="img/pc.png" alt="Logo PC Gamer"> PC Gamer</li>
+                    <li><img src="img/switch.png" alt="Logo Nintendo Switch"> Nintendo Switch</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Publicidade</h3>
+                <div class="ad-box">
+                    <img src="img/ad.jpg" alt="Anúncio patrocinado" class="ad-img">
+                </div>
+            </section>
+
+        </aside>
+
+    </div>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button id="btnTop">↑</button>
+
+    <!-- ==========================
+         FOOTER
+    =========================== -->
+    <footer>
+        <p>© 2025 Gamer Blog — Todos os direitos reservados</p>
+    </footer>
+
+    <!-- ==========================
+         JAVASCRIPT
+    =========================== -->
+    <script>
+        const btnTop = document.getElementById("btnTop");
+
+        window.onscroll = () => {
+            btnTop.style.display = window.scrollY > 300 ? "block" : "none";
+        };
+
+        btnTop.onclick = () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+    </script>
+
+</body>
+</html>
