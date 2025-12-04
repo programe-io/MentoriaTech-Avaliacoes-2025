@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site de Música</title>
+  <link rel="stylesheet" href="styles.css">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <img src="logo.png" alt="logo mundo da música" width="64" height="64">
+    <h1>Mundo da Música</h1>
+    <p>Exploração musical completa</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#"><img src="icon-home.svg" alt="" aria-hidden="true"> Início</a></li>
+      <li><a href="#catalogo"><img src="icon-album.svg" alt="" aria-hidden="true"> Catálogo</a></li>
+      <li><a href="#player"><img src="icon-player.svg" alt="" aria-hidden="true"> Player</a></li>
+      <li><a href="#contato"><img src="icon-mail.svg" alt="" aria-hidden="true"> Contato</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <article id="art-player" role="article" aria-labelledby="player-title">
+      <header>
+        <h2 id="player-title">Player Musical</h2>
+      </header>
+
+      <section id="player">
+        <figure>
+          <img src="capa-player.jpg" alt="capa do álbum atual" width="600" height="220">
+          <figcaption>Capa do álbum tocando</figcaption>
+        </figure>
+
+        <audio id="audioPlayer" controls>
+          <source src="musica.mp3" type="audio/mpeg">
+          seu navegador não suporta o elemento audio
+        </audio>
+
+        <label for="volumeRange">volume</label>
+        <input type="range" id="volumeRange" min="0" max="1" step="0.01">
+      </section>
+
+      <footer>
+        <p class="muted">Artigo: player musical</p>
+      </footer>
+    </article>
+
+    <section id="catalogo" aria-label="catálogo de álbuns">
+      <h2>Catálogo</h2>
+
+      <article class="album" role="article" aria-labelledby="alb1-title">
+        <img src="album1.jpg" alt="capa álbum exemplo 1" width="120" height="120">
+        <h3 id="alb1-title">Álbum Exemplo 1</h3>
+        <p>Artista A — 2021 — Eletrônica</p>
+        <ul>
+          <li>Faixa 1 — 3:20</li>
+          <li>Faixa 2 — 4:10</li>
+        </ul>
+      </article>
+
+      <article class="album" role="article" aria-labelledby="alb2-title">
+        <img src="album2.jpg" alt="capa álbum exemplo 2" width="120" height="120">
+        <h3 id="alb2-title">Álbum Exemplo 2</h3>
+        <p>Artista B — 2019 — Folk</p>
+        <ul>
+          <li>Faixa A — 2:50</li>
+          <li>Faixa B — 3:40</li>
+        </ul>
+      </article>
+
+    </section>
+
+    <aside role="complementary" aria-label="painel lateral">
+      <h3>Busca</h3>
+      <label for="buscar" class="visually-hidden">Buscar música</label>
+      <input type="search" id="buscar" placeholder="Buscar música...">
+      <button onclick="buscarMusica()">Buscar</button>
+
+      <h4>Favoritos</h4>
+      <ul>
+        <li><img src="ico-heart.svg" alt="" aria-hidden="true"> Faixa Exemplo A</li>
+        <li><img src="ico-heart.svg" alt="" aria-hidden="true"> Faixa Exemplo B</li>
+      </ul>
+
+      <details>
+        <summary>Opções</summary>
+        <p class="muted">Filtros, histórico e preferências</p>
+      </details>
+    </aside>
+  </main>
+
+  <footer>
+    <p><img src="logo-sm.png" alt="logo pequena" width="24" height="24"> Site de Música - Exemplo Educacional</p>
+  </footer>
+
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
