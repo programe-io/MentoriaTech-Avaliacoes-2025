@@ -83,4 +83,12 @@ function animateParticles(){
     particles.forEach(p=>{
         ctxBg.beginPath();
         ctxBg.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctxBg.fillStyle='
+        ctxBg.fillStyle='rgba(0,255,153,0.7)';
+        ctxBg.fill();
+        p.x += p.dx; p.y += p.dy;
+        if(p.x<0) p.x=width; if(p.x>width) p.x=0;
+        if(p.y<0) p.y=height; if(p.y>height) p.y=0;
+    });
+    requestAnimationFrame(animateParticles);
+}
+animateParticles();
