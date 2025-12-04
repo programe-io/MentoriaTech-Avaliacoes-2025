@@ -1,0 +1,172 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #333; /* Fundo escuro para destacar o preto e o vermelho */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 10px;
+    min-height: 100vh;
+}
+
+/* Container Principal do Perfil */
+.perfil-container {
+    width: 100%;
+    max-width: 420px;
+    background-color: #1a1a1a; /* Fundo preto acinzentado */
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    padding: 30px 20px;
+    text-align: center;
+    color: #f4f4f4; /* Texto claro */
+}
+
+/* Cores do Tema (Vermelho e Preto) */
+:root {
+    --vermelho: #e71d36; /* Vermelho forte */
+    --preto: #000000;
+    --texto-claro: #f4f4f4;
+}
+
+/* Cabeçalho */
+.perfil-header h2 {
+    color: var(--vermelho);
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.perfil-header h1 {
+    color: var(--texto-claro);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Foto de Perfil */
+.perfil-foto img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--vermelho); /* Borda vermelha em destaque */
+    margin-bottom: 20px;
+}
+
+/* Descrição */
+.perfil-descricao {
+    color: var(--texto-claro);
+    font-size: 1em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Títulos de Seção */
+h3 {
+    color: var(--vermelho);
+    font-size: 1.2em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 20px 0;
+}
+
+/* Botões de Ação e Links Sociais */
+.botoes-acao, .links-sociais {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.botao, .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Estilo dos Botões de Ação */
+.botao.agendamento {
+    background-color: var(--vermelho);
+    color: var(--texto-claro);
+    border: 2px solid var(--vermelho);
+}
+
+.botao.agendamento:hover {
+    background-color: #c91b30;
+    transform: scale(1.02);
+}
+
+.botao.servicos {
+    background-color: transparent;
+    color: var(--vermelho);
+    border: 2px solid var(--vermelho);
+}
+
+.botao.servicos:hover {
+    background-color: var(--vermelho);
+    color: var(--texto-claro);
+    transform: scale(1.02);
+}
+
+/* Estilo dos Links Sociais */
+.social-link {
+    background-color: #333;
+    color: var(--texto-claro);
+}
+
+.social-link i {
+    margin-right: 10px;
+    color: var(--vermelho);
+}
+
+.social-link:hover {
+    background-color: #444;
+    transform: scale(1.02);
+}
+
+.social-link.instagram:hover i { color: #feda75; } /* Detalhe: Simulação de cor do Instagram */
+.social-link.whatsapp:hover i { color: #25D366; }
+.social-link.facebook:hover i { color: #3b5998; }
+
+
+/* Galeria de Imagens */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 150px; /* Altura fixa para alinhar */
+    object-fit: cover; /* Recorta para preencher o espaço */
+    border-radius: 8px;
+    border: 2px solid #333;
+    transition: transform 0.3s ease-in-out;
+}
+
+.galeria img:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    border-color: var(--vermelho);
+}
