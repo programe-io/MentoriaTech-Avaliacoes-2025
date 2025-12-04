@@ -1,113 +1,51 @@
-/* style.css */
-/* Variáveis e reset simples */
-:root{
-  --bg:#f4f6f9;
-  --card:#ffffff;
-  --accent:#1f7a8c;
-  --muted:#6b7280;
-  --max-width:1100px;
-  --radius:12px;
-}
+// script.js — interações: tema, modal, form simples e pequenos efeitos
+document.addEventListener('DOMContentLoaded', () => {
+  const themeBtn = document.getElementById('themeToggle');
+  const body = document.body;
+  const promoBtn = document.getElementById('openPromo');
+  const promoDlg = document.getElementById('promoDlg');
+  const closePromo = document.getElementById('closePromo');
+  const form = document.getElementById('contactForm');
+  const output = document.getElementById('formOutput');
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background:linear-gradient(180deg,#f7fbfc,var(--bg));
-  color:#1a202c;
-  line-height:1.5;
-  -webkit-font-smoothing:antialiased;
-}
+  // tema toggle (salva em localStorage)
+  const saved = localStorage.getItem('site-theme');
+  if (saved === 'light') body.classList.add('theme-light');
+  themeBtn.addEventListener('click', () => {
+    const isLight = body.classList.toggle('theme-light');
+    themeBtn.setAttribute('aria-pressed', String(isLight));
+    localStorage.setItem('site-theme', isLight ? 'light' : 'dark');
+  });
 
-.site-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:1rem;
-  max-width:var(--max-width);
-  margin:1rem auto;
-  padding:1rem;
-}
+  // modal/dialog (progressive enhancement)
+  promoBtn.addEventListener('click', async () => {
+    if (typeof promoDlg.showModal === 'function') {
+      promoDlg.showModal();
+    } else {
+      alert('Promo: Página Diva — visite os workshops!');
+    }
+  });
+  closePromo.addEventListener('click', () => promoDlg.close());
 
-.brand{display:flex;gap:0.8rem;align-items:center}
-.brand h1{margin:0;font-size:1.2rem}
-.tagline{margin:0;color:var(--muted);font-size:0.9rem}
+  // form: validação e feedback
+  form.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      output.textContent = 'Corrija os campos destacados antes de enviar.';
+      return;
+    }
+    const data = new FormData(form);
+    const nome = data.get('nome');
+    output.textContent = `Obrigado, ${nome}! Sua mensagem foi recebida.`;
+    form.reset();
+  });
 
-.main-nav .menu{display:flex;gap:0.6rem;list-style:none;padding:0;margin:0}
-.main-nav a{color:var(--accent);text-decoration:none;font-weight:600}
-#menu-toggle{display:none}
-
-/* Layout principal */
-main{max-width:var(--max-width);margin:0 auto;padding:1rem}
-.hero{
-  background:var(--card);
-  border-radius:var(--radius);
-  padding:1.2rem;
-  display:grid;
-  gap:0.8rem;
-  align-items:center;
-  box-shadow:0 6px 18px rgba(16,24,40,0.06);
-}
-.hero h2{margin:0}
-.hero-actions{display:flex;gap:0.6rem}
-
-.btn{
-  display:inline-block;
-  padding:0.6rem 1rem;
-  border-radius:8px;
-  background:var(--accent);
-  color:white;
-  text-decoration:none;
-  border:none;
-  cursor:pointer;
-}
-.btn.outline{background:transparent;color:var(--accent);border:2px solid var(--accent)}
-
-/* Sections */
-section{margin-top:1rem}
-.cards{display:flex;gap:1rem;list-style:none;padding:0;margin:0}
-.card{
-  background:var(--card);
-  padding:1rem;border-radius:10px;flex:1;box-shadow:0 6px 14px rgba(16,24,40,0.04);
-}
-.quick-info{background:#fff;padding:0.8rem;border-radius:10px;box-shadow:0 3px 10px rgba(16,24,40,0.03);margin-top:0.8rem}
-
-table{width:100%;border-collapse:collapse;margin-top:0.6rem}
-th,td{padding:0.5rem;border:1px solid #e6eef2;text-align:left}
-caption{font-weight:600;padding:0.5rem 0}
-
-footer.site-footer{
-  max-width:var(--max-width);
-  margin:1.2rem auto;padding:1rem;display:flex;justify-content:space-between;align-items:center;color:var(--muted);
-}
-
-/* Galeria */
-.thumbs{display:flex;gap:0.6rem;padding:0;list-style:none;margin-top:0.6rem}
-.thumbs img{width:100px;height:60px;object-fit:cover;cursor:pointer;border-radius:6px;border:2px solid transparent}
-.thumbs img:hover{border-color:var(--accent)}
-
-.lightbox{
-  position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.7);
-}
-.lightbox img{max-width:90%;max-height:80%}
-
-/* Formulário */
-form{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
-input,textarea,select{width:100%;padding:0.6rem;margin:0.3rem 0 0.8rem;border:1px solid #dbe7eb;border-radius:8px}
-label{font-weight:600;font-size:0.9rem}
-
-/* Responsivo */
-@media(max-width:820px){
-  .cards{flex-direction:column}
-  .main-nav .menu{display:none}
-  #menu-toggle{display:inline-block}
-}
-
-/* Pequena animação para chamar atenção */
-@keyframes float {
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-6px)}
-  100%{transform:translateY(0)}
-}
-.brand img{animation:float 4s ease-in-out infinite}
+  // pequenos toques: keyboard shortcut para abrir promo (D)
+  window.addEventListener('keydown', (e) => {
+    if (e.key.toLowerCase() === 'd' && !e.metaKey && !e.ctrlKey) {
+      e.preventDefault();
+      if (typeof promoDlg.showModal === 'function') promoDlg.showModal();
+    }
+  });
+});
