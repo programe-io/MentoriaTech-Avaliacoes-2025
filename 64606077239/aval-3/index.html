@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todas as Tags HTML (com &lt;div&gt;)</title>
+<base href="https://example.com/">
+<link rel="stylesheet" href="style.css">
+<style> body{font-family: sans-serif; margin:18px;} img{max-width:100%;} header,footer,main,section{margin-bottom:12px;} </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<header>
+  <div class="header-container">
+    <h1>Todas as tags HTML demonstradas (incluindo &lt;div&gt;)</h1>
+    <nav>
+      <ul>
+        <li><a href="#img">Imagem</a></li>
+        <li><a href="#texto">Texto</a></li>
+        <li><a href="#form">Formulário</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div id="page-wrapper">
+
+    <section id="img">
+      <div class="section-inner">
+        <h2>Imagem</h2>
+        <div class="image-group">
+          <img src="https://via.placeholder.com/400x220" alt="Imagem Exemplo">
+          <figure>
+            <img src="https://via.placeholder.com/200" alt="Figura">
+            <figcaption>Legenda da figura</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <article>
+      <div class="article-inner">
+        <h2>Texto e marcações</h2>
+        <p>Texto com <b>negrito</b>, <strong>importante</strong>, <i>itálico</i>, <em>ênfase</em>,
+          <u>sublinhado</u>, <mark>marcado</mark>, <small>pequeno</small>,
+          <sub>subscrito</sub>, <sup>sobrescrito</sup>, <del>removido</del>,
+          <ins>inserido</ins>, <code>código</code>.
+        </p>
+
+        <div class="quotes">
+          <blockquote>Citação longa de exemplo.</blockquote>
+          <q>Citação curta.</q>
+        </div>
+
+        <div class="meta">
+          <cite>Referência</cite>
+          <abbr title="HyperText Markup Language">HTML</abbr>
+          <address>Rua Exemplo, 123</address>
+          <time datetime="2025-01-01">1 de janeiro de 2025</time>
+        </div>
+
+        <hr>
+      </div>
+    </article>
+
+    <section>
+      <div class="lists-and-table">
+        <h2>Listas</h2>
+        <div class="lists">
+          <ul><li>Item A</li><li>Item B</li></ul>
+          <ol><li>Primeiro</li><li>Segundo</li></ol>
+          <dl><dt>Termo</dt><dd>Descrição</dd></dl>
+        </div>
+
+        <h2>Tabela</h2>
+        <div class="table-wrap">
+          <table border="1">
+            <caption>Exemplo</caption>
+            <thead><tr><th>Nome</th><th>Idade</th></tr></thead>
+            <tbody><tr><td>Ana</td><td>20</td></tr></tbody>
+            <tfoot><tr><td>Total</td><td>1</td></tr></tfoot>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="multimedia">
+        <h2>Multimídia</h2>
+        <div class="media-row">
+          <audio controls><source src="audio.mp3" type="audio/mpeg"></audio>
+          <video controls width="300"><source src="video.mp4" type="video/mp4"></video>
+        </div>
+        <div class="graphics">
+          <canvas id="canvas" width="200" height="100" style="border:1px solid #ccc;"></canvas>
+          <svg width="100" height="100"><circle cx="50" cy="50" r="40" fill="blue"/></svg>
+        </div>
+        <div class="embeds">
+          <embed src="example.pdf" type="application/pdf" width="200" height="120">
+          <object data="example.pdf" width="200" height="120"></object>
+        </div>
+      </div>
+    </section>
+
+    <section id="form">
+      <div class="form-area">
+        <h2>Formulários</h2>
+        <form>
+          <div class="field-row">
+            <label for="nome">Nome:</label>
+            <input id="nome" type="text" name="nome" placeholder="Seu nome">
+          </div>
+
+          <div class="field-row">
+            <label for="email">Email:</label>
+            <input id="email" type="email" name="email">
+          </div>
+
+          <div class="field-row">
+            <label>Sexo:</label>
+            <label><input type="radio" name="sexo" value="m"> M</label>
+            <label><input type="radio" name="sexo" value="f"> F</label>
+          </div>
+
+          <div class="field-row">
+            <label><input type="checkbox" name="aceito"> Aceito</label>
+          </div>
+
+          <div class="field-row">
+            <label for="faixa">Faixa:</label>
+            <input id="faixa" type="range" min="0" max="10" value="5">
+          </div>
+
+          <div class="field-row">
+            <label for="coment">Comentário:</label>
+            <textarea id="coment" rows="4"></textarea>
+          </div>
+
+          <div class="field-row">
+            <label for="opcoes">Opções:</label>
+            <select id="opcoes"><option>Opção 1</option><option>Opção 2</option></select>
+          </div>
+
+          <fieldset>
+            <legend>Grupo</legend>
+            <input type="text" name="grupo-campo">
+          </fieldset>
+
+          <div class="field-row">
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar</button>
+          </div>
+
+          <output name="resultado">Resultado aqui</output>
+          <progress value="40" max="100"></progress>
+          <meter value="0.6">60%</meter>
+          <input list="sugestoes" placeholder="Sugestões">
+          <datalist id="sugestoes"><option value="HTML"><option value="CSS"></datalist>
+        </form>
+
+        <dialog open id="dlg">Exemplo de dialog</dialog>
+        <template id="tpl"><p>Conteúdo do template</p></template>
+      </div>
+    </section>
+
+    <section>
+      <div class="rare-tags">
+        <h2>Tags raras / semânticas</h2>
+        <aside>Conteúdo lateral (aside)</aside>
+        <details><summary>Ver mais</summary><p>Texto escondido</p></details>
+        <noscript>Javascript desabilitado</noscript>
+        <iframe src="about:blank" title="iframe exemplo" width="300" height="120"></iframe>
+        <map name="mapa"><area shape="rect" coords="0,0,50,50" href="#"></map>
+        <img src="https://via.placeholder.com/100" usemap="#mapa" alt="mapa imagem">
+        <ruby>漢<rt>kan</rt></ruby>
+        <bdi>bdi</bdi>
+        <bdo dir="rtl">texto rtl</bdo>
+        <wbr>palavra<wbr>quebrada
+      </div>
+    </section>
+
+    <div class="extras">
+      <h2>Outros exemplos</h2>
+      <div class="inline-examples">
+        <span>Span</span> <code>code</code> <samp>samp</samp> <kbd>Ctrl</kbd>+<kbd>C</kbd> <var>x</var>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-inner">
+        <p>Fim do documento — © 2025</p>
+      </div>
+    </footer>
+
+  </div> <!-- /page-wrapper -->
+</main>
+
+<script>
+  // desenhar no canvas só para demo
+  (function(){
+    var c = document.getElementById('canvas');
+    if(!c) return;
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = '#e0e0ff';
+    ctx.fillRect(0,0,c.width,c.height);
+    ctx.fillStyle = '#334';
+    ctx.font = '14px sans-serif';
+    ctx.fillText('Canvas demo', 10, 50);
+  })();
+</script>
+
+<script src="script.js"></script></body>
+</html>
