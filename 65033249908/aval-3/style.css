@@ -1,0 +1,79 @@
+/* styles.css — versão atualizada com suporte para spans e muitas linhas para estudo */
+
+/* reset básico */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* corpo e tipografia */
+html, body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
+  color: #222;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0 1rem;
+}
+
+/* cabeçalho */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.brand h1 { font-size: 1.5rem; display:flex; gap:.4rem; align-items:baseline; }
+.brand .label-school { font-weight:700; color:#0b5cff; font-size:.95rem; }
+.brand .name-school { font-weight:800; letter-spacing:-0.4px; }
+
+/* nav */
+.main-nav ul { list-style:none; display:flex; gap:.5rem; }
+.main-nav a { text-decoration:none; color:#0b5cff; font-weight:600; padding:.45rem .6rem; border-radius:8px; }
+.main-nav a:hover { background: rgba(11,92,255,0.08); }
+
+/* hero */
+.hero { margin:1rem 0; padding:1.6rem; border-radius:12px; background: linear-gradient(90deg, rgba(11,92,255,0.06), rgba(0,0,0,0.02)); display:flex; align-items:center; justify-content:center; }
+.hero-content { max-width:960px; text-align:center; }
+.hero .lead { margin-top:.6rem; color:#334; }
+
+/* botões */
+.btn { display:inline-block; border:none; background:#0b5cff; color:white; padding:.55rem .9rem; border-radius:10px; cursor:pointer; font-weight:700; margin:.35rem; }
+.btn.ghost { background:transparent; color:#0b5cff; border:2px solid rgba(11,92,255,0.12); }
+
+/* cards e seções */
+.card { background:white; margin:1rem 0; padding:1.1rem; border-radius:10px; box-shadow:0 6px 18px rgba(10,10,30,0.04); }
+.card-highlight { border-left:6px solid #0b5cff; }
+
+/* descrição em lista */
+.ficha { display:grid; grid-template-columns:160px 1fr; gap:.3rem .7rem; margin-top:.6rem; }
+.ficha dt { color:#556; font-weight:700; }
+.ficha dd { margin-left:0; color:#222; }
+
+/* galeria */
+.gallery-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:.6rem; margin-top:.8rem; }
+.gallery-grid figure { background:#fafafa; padding:.35rem; border-radius:8px; text-align:center; }
+.gallery-grid img { width:100%; height:auto; border-radius:6px; display:block; }
+
+/* contato */
+.contact-card { margin-top:1rem; }
+
+/* rodapé */
+.site-footer { margin:2rem 0 4rem 0; text-align:center; color:#667; font-size:.9rem; }
+
+/* utilitários */
+.hidden { display:none !important; }
+.small { font-size:.85rem; color:#667; }
+.note { color:#444; font-style:italic; margin-top:.6rem; }
+.hint { color:#445; margin-top:.6rem; }
+
+/* spans específicos (para visual ou debug) */
+span.label-school { text-transform:uppercase; letter-spacing:0.8px; }
+span.hero-strong { font-weight:800; color:#0b5cff; }
+
+/* responsividade */
+@media (max-width:720px) {
+  .main-nav ul { display:none; } /* nav simples para mobile */
+  .hero { padding:1rem; }
+  .brand h1 { font-size:1.25rem; }
+}
