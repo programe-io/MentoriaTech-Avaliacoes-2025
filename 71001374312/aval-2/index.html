@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Completo com Article e Aside</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        a:hover {
+            color: #4CAF50;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header nav a {
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        /* Conteúdo principal com aside */
+        .content-wrapper {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        main {
+            flex: 3;
+        }
+
+        aside {
+            flex: 1;
+            background-color: #e0e0e0;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        main h2, article h3, aside h3 {
+            color: #333;
+        }
+
+        main p, article p, aside p {
+            color: #555;
+        }
+
+        /* Artigos */
+        article {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Seção de imagens */
+        section img {
+            width: 200px;
+            height: auto;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        section img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Meu Site Exemplo</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Sobre</a>
+            <a href="#">Galeria</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal com aside -->
+    <div class="content-wrapper">
+        <main>
+            <h2>Bem-vindo!</h2>
+            <p>Esta página demonstra o uso das tags semânticas: <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code> e <code>&lt;img&gt;</code>.</p>
+
+            <!-- Seção de artigos -->
+            <article>
+                <h3>Artigo 1</h3>
+                <p>Este é um exemplo de artigo. Artigos representam blocos independentes de conteúdo.</p>
+                <img src="https://via.placeholder.com/200" alt="Imagem do artigo 1">
+            </article>
+
+            <article>
+                <h3>Artigo 2</h3>
+                <p>Outro exemplo de artigo com imagem ilustrativa.</p>
+                <img src="https://via.placeholder.com/200" alt="Imagem do artigo 2">
+            </article>
+
+            <!-- Seção de imagens -->
+            <section>
+                <h2>Galeria de Imagens</h2>
+                <img src="https://via.placeholder.com/200" alt="Imagem 1">
+                <img src="https://via.placeholder.com/200" alt="Imagem 2">
+                <img src="https://via.placeholder.com/200" alt="Imagem 3">
+            </section>
+        </main>
+
+        <!-- Aside com conteúdo lateral -->
+        <aside>
+            <h3>Informações Adicionais</h3>
+            <p>Aqui você pode colocar notícias, links importantes ou anúncios.</p>
+            <p>Exemplo de link: <a href="#">Mais informações</a></p>
+        </aside>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Meu Site Exemplo. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Você</p>
+    </footer>
+
+<script src="script.js"></script></body>
+</html>
