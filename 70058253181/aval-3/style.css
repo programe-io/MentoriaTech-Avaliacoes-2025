@@ -1,0 +1,150 @@
+/* Importando uma fonte mais limpa (Inter) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif; /* Mudado para Inter que é mais clean */
+}
+
+/* Fundo */
+body {
+  /* Fundo escuro neutro (Zinc-950) em vez do azul */
+  background-color: #09090b; 
+  color: #f4f4f5;
+  -webkit-font-smoothing: antialiased; /* Texto mais nítido */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  
+  /* Efeito Glassmorphism */
+  background-color: rgba(9, 9, 11, 0.8); /* Transparente */
+  backdrop-filter: blur(12px); /* Desfoque no fundo */
+  border-bottom: 1px solid #27272a; /* Borda sutil */
+  
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px; /* Tracking negativo é mais moderno */
+  color: #fff;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 32px; /* Mais espaço entre os links */
+}
+
+.navbar a {
+  color: #a1a1aa; /* Cinza claro inativo */
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #fff; /* Branco ativo */
+}
+
+/* Container de Cards */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 32px; /* Aumentado o gap para respirar */
+  padding: 60px 20px;
+}
+
+/* Card */
+.card {
+  background-color: #18181b; /* Zinc-900 */
+  border: 1px solid #27272a; /* Borda fina */
+  border-radius: 16px; /* Bordas mais arredondadas */
+  width: 320px;
+  padding: 0; /* Removido padding global para a imagem tocar a borda */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Garante que a imagem respeite o radius */
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: #3f3f46;
+}
+
+/* Cabeçalho do Card (Onde fica o avatar) */
+.card-header {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Usuário */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #27272a;
+}
+
+/* Nome do Usuário (se houver tag h2 ou similar dentro) */
+.user-info h2, .card h2 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Imagem do post */
+.post-img {
+  width: 100%;
+  height: 240px; /* Altura fixa para alinhar todos */
+  object-fit: cover; /* Corta a imagem sem esticar */
+  display: block;
+  border-radius: 0; /* Remove a borda da imagem pois o card já tem overflow hidden */
+}
+
+/* Conteúdo de texto */
+.card-content {
+  padding: 16px;
+}
+
+/* Texto */
+.card p {
+  font-size: 14px;
+  line-height: 1.6; /* Melhor leitura */
+  color: #d4d4d8; /* Zinc-300 */
+  margin-bottom: 16px;
+}
+
+.time {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #71717a; /* Zinc-500 */
+  text-align: right;
+}
