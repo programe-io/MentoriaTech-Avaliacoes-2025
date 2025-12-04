@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Stranger Things - Fã Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site sobre a série Stranger Things">
+  <link rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body>
+
+<header>
+  <nav>
+    <h1>Stranger <span>Things</span></h1>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#personagens">Personagens</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <figure>
+    <img src="https://via.placeholder.com/1000x350?text=Stranger+Things" alt="Banner Stranger Things">
+    <figcaption>Bem-vindo ao Mundo Invertido</figcaption>
+  </figure>
+</header>
+
+<main>
+
+<section id="sobre">
+  <article>
+    <h2>Sobre a Série</h2>
+    <p>Stranger Things é uma série de ficção científica, mistério e terror ambientada nos anos 80.</p>
+
+    <dl>
+      <dt>Gênero</dt>
+      <dd>Ficção científica, Terror, Drama</dd>
+
+      <dt>Temas</dt>
+      <dd>Amizade, Coragem, Mistério</dd>
+    </dl>
+  </article>
+
+  <aside>
+    <h3>Curiosidades</h3>
+    <ul>
+      <li>Inspirada nos anos 80</li>
+      <li>Trilha sonora marcante</li>
+      <li>Personagens icônicos</li>
+    </ul>
+  </aside>
+</section>
+
+<section id="personagens">
+  <h2>Personagens</h2>
+
+  <div class="cards">
+
+    <article class="card">
+      <h3>Eleven</h3>
+      <img src="https://via.placeholder.com/200?text=Eleven">
+      <p>Garota com poderes sobrenaturais.</p>
+      <button onclick="abrirModal('Eleven')">Ver mais</button>
+    </article>
+
+    <article class="card">
+      <h3>Will</h3>
+      <img src="https://via.placeholder.com/200?text=Will">
+      <p>Menino preso no Mundo Invertido.</p>
+      <button onclick="abrirModal('Will')">Ver mais</button>
+    </article>
+
+  </div>
+</section>
+
+<section id="quiz">
+  <h2>Quiz</h2>
+
+  <form id="quizForm">
+    <label>Onde Will ficou preso?</label>
+    <select id="resposta">
+      <option value="">Selecione</option>
+      <option value="mundo">Mundo Invertido</option>
+      <option value="escola">Escola</option>
+    </select>
+
+    <button type="submit">Responder</button>
+  </form>
+
+  <progress id="progresso" max="1" value="0"></progress>
+  <p id="resultado"></p>
+</section>
+
+<section id="contato">
+  <h2>Contato</h2>
+
+  <form id="contatoForm">
+    <input type="text" placeholder="Nome" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Mensagem"></textarea>
+
+    <label>
+      <input type="checkbox"> Quero receber novidades
+    </label>
+
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+</main>
+
+<footer>
+  <p>Site educacional - 2025</p>
+  <time datetime="2025-12-04">04/12/2025</time>
+</footer>
+
+<dialog id="modal">
+  <p id="modalTexto"></p>
+  <button onclick="fecharModal()">Fechar</button>
+</dialog>
+
+<script src="script.js"></script>
+
+<script src="script.js"></script></body>
+</html>
