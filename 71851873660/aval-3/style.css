@@ -1,0 +1,106 @@
+/* -------------------------------------------------------------------------- */
+/* 1. Reset Básico e Tipografia Global */
+/* -------------------------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho do elemento */
+}
+
+:root {
+    /* Cores do Açaí */
+    --cor-acai: #8A2BE2; /* Roxo vibrante */
+    --cor-secundaria: #32CD32; /* Verde Limão (para destaque) */
+    --cor-fundo: #FAFAFA; /* Fundo leve */
+    --cor-texto-principal: #333;
+    --cor-texto-claro: #FFFFFF;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto-principal);
+    background-color: var(--cor-fundo);
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+    color: var(--cor-acai);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. Cabeçalho e Navegação */
+/* -------------------------------------------------------------------------- */
+
+header {
+    background-color: var(--cor-acai);
+    color: var(--cor-texto-claro);
+    padding: 10px 0;
+    position: sticky; /* Cabeçalho fixo no topo */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+header h1 {
+    color: var(--cor-texto-claro);
+    font-size: 2em;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. Estilização dos Botões */
+/* -------------------------------------------------------------------------- */
+
+.btn {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background-color: #2AAA2A; /* Um verde um pouco mais escuro */
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
