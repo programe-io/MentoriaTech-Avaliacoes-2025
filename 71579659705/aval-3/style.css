@@ -1,63 +1,91 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #0b1c3d;
+* {
     margin: 0;
-    padding: 20px;
-    color: #fff;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #06347a, #0d2b66, #0a1e4d);
+    color: white;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+header nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logo {
+    font-size: 22px;
+}
+
+main {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
 }
 
 .feed-container {
+    width: 90%;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.card {
-    width: 330px;
-    background: #1e2b4a;
-    border-radius: 12px;
+/* Card */
+.post {
+    background: #1e2a3a;
+    width: 300px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 12px rgba(0,0,0,0.3);
-    transition: 0.2s;
+    padding-bottom: 15px;
+    box-shadow: 0 0 10px #000;
 }
 
-.card:hover {
-    transform: scale(1.03);
-}
-
-.card-header {
+.post-header {
     display: flex;
     align-items: center;
-    padding: 15px;
     gap: 10px;
+    padding: 15px;
 }
 
-.card-header img {
-    width: 45px;
-    height: 45px;
+.post-header img {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
 }
 
-.card-header h3 {
-    margin: 0;
-    font-size: 19px;
+.post-title {
+    font-weight: bold;
 }
 
-.card img.post-image {
+.post img.post-img {
     width: 100%;
-    height: 190px;
+    height: 160px;
     object-fit: cover;
 }
 
-.card-content {
+.post-text {
     padding: 15px;
-    line-height: 1.4;
-    font-size: 15px;
+    color: #ddd;
+    font-size: 14px;
 }
 
-.card-footer {
-    padding: 12px 15px;
-    font-size: 13px;
-    opacity: 0.7;
+.post-time {
+    text-align: right;
+    padding: 0 15px;
+    font-size: 12px;
+    color: #aaa;
 }
