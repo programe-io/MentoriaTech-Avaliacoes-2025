@@ -1,0 +1,433 @@
+/*
+ * ----------------------------------------------------
+ * 1. CONFIGURAÇÕES BÁSICAS GLOBAIS
+ * ----------------------------------------------------
+ */
+
+* {
+    /* Reseta o box model para incluir padding e borda no tamanho total */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333; /* Cor do texto principal */
+    background-color: #f8f8f8; /* Fundo claro da página */
+}
+
+a {
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: #007bff; /* Cor padrão dos links (azul) */
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%; /* Garante que imagens não ultrapassem o container */
+    height: auto;
+    display: block; /* Remove o espaço extra abaixo da imagem */
+}
+
+/* Centraliza o conteúdo principal */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/*
+ * ----------------------------------------------------
+ * 2. CABEÇALHO E NAVEGAÇÃO
+ * ----------------------------------------------------
+ */
+
+/* Top Bar (Barra superior de informações) */
+#top-bar {
+    background-color: #333;
+    color: #fff;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+#top-bar a {
+    color: #ffcc00; /* Cor de destaque para links na top bar */
+    margin: 0 10px;
+}
+
+/* Cabeçalho Principal (Logo, Nav e Busca) */
+#main-header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    display: flex; /* Habilita layout flexível */
+    justify-content: space-between; /* Espaça os itens: Logo, Nav, Busca */
+    align-items: center;
+    padding: 10px 5%;
+}
+
+#main-header h1 {
+    color: #e91e63; /* Cor da marca (tom de rosa/beleza) */
+    font-size: 1.8em;
+}
+
+/* Navegação Principal */
+#main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+#main-nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#main-nav ul li a:hover {
+    background-color: #ffe5ee; /* Fundo suave no hover */
+    text-decoration: none;
+}
+
+/* Submenu (para Categorias) - Requer JS para funcionar perfeitamente em telas menores */
+.submenu {
+    display: none; /* Esconde o submenu por padrão */
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    z-index: 10;
+    min-width: 180px;
+}
+
+.dropdown:hover .submenu {
+    display: block; /* Mostra no hover */
+}
+
+.submenu li {
+    border-bottom: 1px solid #eee;
+}
+
+/* Barra de Busca */
+.search-bar input[type="search"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    width: 200px;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    border: 1px solid #e91e63;
+    background-color: #e91e63;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+/*
+ * ----------------------------------------------------
+ * 3. SEÇÕES DE CONTEÚDO PRINCIPAL
+ * ----------------------------------------------------
+ */
+
+h2 {
+    text-align: center;
+    color: #e91e63;
+    margin: 30px 0 20px;
+    font-size: 2em;
+}
+
+/* Botões de Chamada para Ação (CTA) */
+.btn-cta, .btn-adicionar {
+    display: inline-block;
+    background-color: #ff69b4; /* Rosa mais forte */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-cta:hover, .btn-adicionar:hover {
+    background-color: #e91e63;
+    text-decoration: none;
+}
+
+/* Banner Principal (Carrossel - Estilização básica) */
+#carousel-destaques {
+    background-color: #fff0f5; /* Fundo suave para o banner */
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+#carousel-destaques .slide h3 {
+    color: #880e4f;
+    margin: 10px 0;
+}
+
+/*
+ * ----------------------------------------------------
+ * 4. GRADE DE PRODUTOS
+ * ----------------------------------------------------
+ */
+
+.lista-produtos {
+    display: grid; /* Layout em grade */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas responsivas */
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.produto {
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.produto:hover {
+    transform: translateY(-5px); /* Efeito sutil de levantar no hover */
+}
+
+.produto img {
+    height: 200px; /* Altura fixa para manter a grade uniforme */
+    object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+    margin: 0 auto 10px;
+}
+
+.produto h3 {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.preco, .preco-promocao {
+    color: #e91e63;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.preco-antigo {
+    color: #999;
+    font-size: 0.9em;
+    text-decoration: line-through;
+}
+
+.avaliacao span {
+    color: gold;
+}
+
+/* Etiquetas */
+.etiqueta-venda, .etiqueta-oferta {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    padding: 4px 8px;
+    font-size: 0.8em;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/*
+ * ----------------------------------------------------
+ * 5. OUTRAS SEÇÕES
+ * ----------------------------------------------------
+ */
+
+/* Categorias Rápidas */
+#categorias-rapidas {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.categoria-item a {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.categoria-item img {
+    border-radius: 50%; /* Imagens circulares */
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #f06292;
+}
+
+
+/* Nossos Valores */
+#nossos-valores {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.valor-item {
+    width: 30%;
+    padding: 15px;
+}
+
+.valor-item h3 {
+    color: #4caf50; /* Destaque verde para valores de sustentabilidade */
+    margin-bottom: 10px;
+}
+
+/* Newsletter */
+#newsletter {
+    text-align: center;
+    background-color: #e1bee7; /* Fundo roxo suave */
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+#newsletter input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+#newsletter button {
+    padding: 10px 15px;
+    background-color: #880e4f;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/*
+ * ----------------------------------------------------
+ * 6. RODAPÉ
+ * ----------------------------------------------------
+ */
+
+#main-footer {
+    background-color: #333;
+    color: #f8f8f8;
+    padding: 30px 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 0.9em;
+}
+
+.footer-coluna {
+    width: 200px; /* Largura base para colunas */
+    margin-bottom: 20px;
+}
+
+.footer-coluna h4 {
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+.footer-coluna ul {
+    list-style: none;
+}
+
+.footer-coluna ul li a, .redes-sociais a {
+    color: #bbb;
+    display: block;
+    padding: 3px 0;
+}
+
+.footer-coluna ul li a:hover, .redes-sociais a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.copyright {
+    width: 100%;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/*
+ * ----------------------------------------------------
+ * 7. MEDIA QUERIES (Responsividade)
+ * ----------------------------------------------------
+ */
+
+@media (max-width: 900px) {
+    /* Ajusta o cabeçalho em telas médias */
+    #main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #main-nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .search-bar {
+        margin-top: 10px;
+    }
+
+    /* Ajusta as colunas do rodapé */
+    #main-footer {
+        justify-content: space-around;
+        padding: 30px 20px;
+    }
+
+    .footer-coluna {
+        width: 40%;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Ajusta o layout para celular */
+    .lista-produtos {
+        grid-template-columns: 1fr; /* Apenas uma coluna em telas pequenas */
+    }
+
+    #categorias-rapidas, #nossos-valores {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .categoria-item, .valor-item {
+        margin-bottom: 20px;
+        width: 80%;
+    }
+
+    #newsletter input[type="email"], #newsletter button {
+        width: 100%;
+        margin: 5px 0;
+        border-radius: 5px;
+    }
+    
+    #top-bar span, #top-bar a {
+        display: block;
+        padding: 2px 0;
+    }
+}
