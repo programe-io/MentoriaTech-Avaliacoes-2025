@@ -1,0 +1,341 @@
+/* ------------------------------------------- */
+/* CSS Puro para Loja de Remédios (Farmácia)   */
+/* Baseado em uma estrutura limpa e focada em saúde */
+/* ------------------------------------------- */
+
+/* Variáveis de Cores */
+:root {
+    --primary-color: #059669; /* Verde (Saúde) */
+    --secondary-color: #3B82F6; /* Azul (Ação) */
+    --bg-light: #F9FAFB;
+    --text-dark: #1F2937;
+    --border-light: #E5E7EB;
+}
+
+/* Base Geral */
+body {
+    font-family: 'Inter', sans-serif; /* Assumindo que a fonte Inter é carregada */
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contêiner Principal */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ------------------------------------------- */
+/* Cabeçalho (Header) */
+/* ------------------------------------------- */
+
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 1rem 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.75rem; /* 28px */
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Barra de Pesquisa */
+.search-bar {
+    flex-grow: 1;
+    max-width: 500px;
+    margin: 0 2rem;
+    position: relative;
+    display: none; /* Esconde por padrão, ativado em telas maiores */
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    transition: border-color 0.15s ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2);
+}
+
+.action-icons button {
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    padding: 0.5rem;
+    border-radius: 9999px; /* Arredondamento total */
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.action-icons button:hover {
+    color: var(--primary-color);
+}
+
+/* ------------------------------------------- */
+/* Seções de Conteúdo (Main) */
+/* ------------------------------------------- */
+
+/* Banner/Hero */
+.hero-banner {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.hero-banner h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.hero-banner p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-button {
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.hero-button:hover {
+    background-color: #2563EB;
+    transform: scale(1.05);
+}
+
+/* Títulos de Seção */
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+/* Grid de Categorias/Produtos */
+.grid-container {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* Cartões de Categoria */
+.category-card, .product-card {
+    background-color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    border: 1px solid var(--border-light);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.category-name {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* Cartões de Produto */
+.product-card {
+    padding: 0;
+    overflow: hidden;
+    text-align: left;
+}
+
+.product-card img {
+    width: 100%;
+    height: 12rem; /* 192px */
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    padding: 1rem;
+}
+
+.product-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.25rem;
+}
+
+.product-brand {
+    font-size: 0.875rem;
+    color: #6B7280; /* Gray 500 */
+    margin-bottom: 0.75rem;
+}
+
+.product-price {
+    font-size: 1.875rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #2563EB;
+    transform: scale(0.98);
+}
+
+/* ------------------------------------------- */
+/* Rodapé (Footer) */
+/* ------------------------------------------- */
+
+.footer {
+    background-color: #1F2937; /* Gray 800 */
+    color: #fff;
+    margin-top: 3rem;
+    padding: 3rem 0;
+}
+
+.footer-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.footer h5 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+.footer ul li a {
+    color: #9CA3AF; /* Gray 400 */
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.footer ul li a:hover {
+    color: #fff;
+}
+
+.copyright {
+    padding-top: 1.5rem;
+    border-top: 1px solid #374151; /* Gray 700 */
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #6B7280;
+}
+
+/* ------------------------------------------- */
+/* Responsividade (Ajustes para Mobile/Tablet) */
+/* ------------------------------------------- */
+
+@media (min-width: 640px) {
+    /* Ativar barra de pesquisa no Header para telas maiores */
+    .search-bar {
+        display: block;
+    }
+
+    /* Grid de 2 colunas para Categorias em telas sm */
+    .grid-container.categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Grid de 2 colunas para Produtos em telas sm */
+    .grid-container.products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3rem;
+    }
+
+    /* Grid de 4 colunas para Categorias em telas md */
+    .grid-container.categories {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    /* Grid de 6 colunas para Categorias em telas lg */
+    .grid-container.categories {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    /* Grid de 4 colunas para Produtos em telas lg */
+    .grid-container.products {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
