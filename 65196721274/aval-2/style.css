@@ -1,0 +1,94 @@
+/* Reset / base */
+* { box-sizing: border-box; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #f5f7fb;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* Header */
+.site-header { background: #fff; border-bottom: 1px solid #e6e9ee; }
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.logo { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; background: #ddd; }
+.brand-text h1 { margin: 0; font-size: 1.1rem; }
+.brand-text .badge {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 0.8rem;
+  color: #fff;
+  background: #1976d2;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+.intro { margin: 4px 0 0 0; font-size: 0.9rem; color: #555; }
+
+/* Nav */
+.main-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 14px; }
+.main-nav a { text-decoration: none; color: #333; font-weight: 600; padding: 6px 10px; border-radius: 6px; }
+.main-nav a:hover { background: #eef6ff; }
+
+/* Main layout: content + aside */
+.site-main .container {
+  max-width: 1100px;
+  margin: 28px auto;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 20px;
+  padding: 0 16px;
+}
+
+/* Content articles */
+.content article { background: #fff; padding: 18px; border-radius: 10px; margin-bottom: 18px; box-shadow: 0 6px 18px rgba(20,20,40,0.03); }
+.content h2 { margin-top: 0; color: #0b5ed7; }
+
+/* Perfil card */
+.perfil-card { display: flex; gap: 18px; align-items: center; }
+.foto { width: 120px; height: 120px; border-radius: 8px; object-fit: cover; background: #ddd; }
+.perfil-info h3 { margin: 0 0 6px 0; }
+.bio { margin: 0 0 8px 0; color: #444; }
+
+/* input + button inside profile */
+.perfil-actions { display: flex; gap: 8px; margin-top: 8px; }
+.perfil-actions input { padding: 8px 10px; border-radius: 6px; border: 1px solid #ccc; }
+.perfil-actions button { padding: 8px 12px; border-radius: 6px; border: none; background: #1976d2; color: white; cursor: pointer; }
+
+/* Activities list */
+ul { padding-left: 18px; }
+.atividades { margin: 8px 0 0 18px; }
+
+/* Form contato */
+form textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; resize: vertical; }
+form button { margin-top: 10px; padding: 10px 16px; border-radius: 8px; border: none; background: #198754; color: #fff; cursor: pointer; }
+
+/* Sidebar / aside */
+.sidebar { background: #fff; padding: 16px; border-radius: 10px; box-shadow: 0 6px 18px rgba(20,20,40,0.03); height: fit-content; }
+.sidebar h2 { margin-top: 0; }
+.quick-links ul { list-style: none; padding: 0; margin: 8px 0; }
+.quick-links li { margin: 6px 0; }
+.quick-links a { text-decoration: none; color: #1976d2; }
+.destaque { margin-top: 12px; font-weight: 600; }
+.widget { display: flex; gap: 10px; align-items: center; margin-top: 12px; }
+.widget-img { width: 48px; height: 48px; object-fit: cover; border-radius: 6px; background: #eee; }
+
+/* Footer */
+.site-footer { margin-top: 20px; padding: 14px 0; background: #fff; border-top: 1px solid #e6e9ee; text-align: center; }
+
+/* Helpers */
+.sr-only { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+
+/* Responsive: stack columns on small screens */
+@media (max-width: 880px) {
+  .site-main .container { grid-template-columns: 1fr; }
+  .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
