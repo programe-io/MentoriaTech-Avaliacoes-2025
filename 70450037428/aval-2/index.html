@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom & Jerry - O Site Oficial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        body {
+            background-color: #fff9e6;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header e Navegação */
+        header {
+            background: linear-gradient(to right, #ff6b6b, #ffd166);
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo h1 {
+            color: #fff;
+            text-shadow: 2px 2px 0 #333;
+            font-size: 2.5rem;
+        }
+        
+        .logo img {
+            height: 60px;
+            filter: drop-shadow(2px 2px 0 #333);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: #fff;
+            color: #ff6b6b;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: #4ecdc4;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 8px dashed #ff6b6b;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0 #333;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            color: #fff;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero-image {
+            max-width: 800px;
+            margin: 30px auto 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border: 8px solid #fff;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Seções principais */
+        section {
+            padding: 60px 0;
+        }
+        
+        section:nth-child(even) {
+            background-color: #f0f7ff;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ff6b6b;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 150px;
+            height: 5px;
+            background-color: #ffd166;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+        
+        /* Cards de personagens */
+        .characters-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .character-card {
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .character-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .character-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .character-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .character-card:hover .character-img img {
+            transform: scale(1.05);
+        }
+        
+        .character-info {
+            padding: 20px;
+        }
+        
+        .character-info h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .character-info p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        /* Episódios */
+        .episode-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .episode-item {
+            background-color: #fff;
+            margin-bottom: 15px;
+            padding: 15px 20px;
+            border-left: 5px solid #ff6b6b;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .episode-item h3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .episode-year {
+            background-color: #ffd166;
+            color: #333;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        
+        /* Galeria */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Formulário */
+        .contact-form {
+            max-width: 700px;
+            margin: 40px auto 0;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: #4ecdc4;
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        /* Tabela */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .info-table th, .info-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .info-table th {
+            background-color: #ffd166;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .info-table tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #ffd166;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #ff6b6b;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #ff6b6b;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #ffd166;
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animações */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+        
+        /* Destaques */
+        .highlight {
+            background-color: #ffd166;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .warning {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link href="style.css" rel="stylesheet"></head>
+<body>
+    <!-- Cabeçalho com navegação -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="Tom e Jerry">
+                <h1>Tom & Jerry</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Início</a></li>
+                    <li><a href="#characters">Personagens</a></li>
+                    <li><a href="#episodes">Episódios</a></li>
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#history">História</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção principal (Hero) -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>A maior dupla de desenho animado de todos os tempos!</h2>
+            <p>Desde 1940, Tom e Jerry encantam gerações com suas trapalhadas hilárias. O gato Tom e o rato Jerry travam batalhas épicas que sempre terminam com muita risada.</p>
+            <div class="hero-image">
+                <img src="https://www.bing.com/th/id/OIP.Rcr2CIDnW0dHXQFmP0-4zQHaKd?w=160&h=211&c=8&rs=1&qlt=90&o=6&cb=ucfimg1&pid=3.1&rm=2&ucfimg=1" alt="Tom e Jerry em ação">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Personagens -->
+    <section id="characters">
+        <div class="container">
+            <h2 class="section-title">Personagens Principais</h2>
+            <div class="characters-container">
+                <!-- Personagem 1 -->
+                <article class="character-card">
+                    <div class="character-img">
+                        <img src="data:image/webp;base64,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" alt="Tom, o gato">
+                    </div>
+                    <div class="character-info">
+                        <h3>Tom</h3>
+                        <p>Tom é um gato doméstico que sempre tenta capturar Jerry, mas nunca consegue. Apesar de ser o antagonista, muitas vezes é vítima de suas próprias armadilhas.</p>
+                        <p><strong>Características:</strong> Persistente, astuto, mas sempre azarado.</p>
+                    </div>
+                </article>
+                
+                <!-- Personagem 2 -->
+                <article class="character-card">
+                    <div class="character-img">
+                        <img src="https://www.bing.com/th/id/OIP.PxeuerWQatQNGCmXBHMO1QHaEK?w=238&h=211&c=8&rs=1&qlt=90&o=6&cb=ucfimg1&pid=3.1&rm=2&ucfimg=1" alt="Jerry, o rato">
+                    </div>
+                    <div class="character-info">
+                        <h3>Jerry</h3>
+                        <p>Jerry é um rato pequeno e inteligente que sempre consegue escapar das armadilhas de Tom. Usa sua astúcia para virar o jogo contra o gato.</p>
+                        <p><strong>Características:</strong> Inteligente, rápido e sempre um passo à frente.</p>
+                    </div>
+                </article>
+                
+                <!-- Personagem 3 -->
+                <article class="character-card">
+                    <div class="character-img">
+                        <img src="https://th.bing.com/th/id/OIP.9OP1UMvan-3TGiqy2UDHJwHaLI?w=203&h=306&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Spike, o bulldog">
+                    </div>
+                    <div class="character-info">
+                        <h3>Spike</h3>
+                        <p>Spike é um bulldog rabugento que frequentemente é acordado pelo barulho das brigas de Tom e Jerry. Geralmente protege Jerry de Tom.</p>
+                        <p><strong>Características:</strong> Forte, rabugento, mas com coração mole.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Episódios -->
+    <section id="episodes">
+        <div class="container">
+            <h2 class="section-title">Episódios Memoráveis</h2>
+            <div class="episode-list">
+                <!-- Lista de episódios -->
+                <div class="episode-item">
+                    <h3>Puss Gets the Boot <span class="episode-year">1940</span></h3>
+                    <p>O primeiro episódio da série, onde a dinâmica entre Tom e Jerry foi estabelecida.</p>
+                </div>
+                
+                <div class="episode-item">
+                    <h3>The Yankee Doodle Mouse <span class="episode-year">1943</span></h3>
+                    <p>Episódio que ganhou o Oscar de Melhor Curta-Metragem de Animação.</p>
+                </div>
+                
+                <div class="episode-item">
+                    <h3>Cat Concerto <span class="episode-year">1947</span></h3>
+                    <p>Tom tenta tocar piano enquanto Jerry interfere, criando uma apresentação caótica.</p>
+                </div>
+                
+                <div class="episode-item">
+                    <h3>The Two Mouseketeers <span class="episode-year">1952</span></h3>
+                    <p>Jerry e um rato menor tentam roubar comida do castelo real, com Tom como guarda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Galeria -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">Galeria de Imagens</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Confira alguns momentos icônicos da dupla mais famosa dos desenhos animados!</p>
+            
+            <div class="gallery-container">
+                <figure class="gallery-item">
+                    <img src="https://th.bing.com/th/id/OIP.x-_6Xk2wXHBz1sGKosg7owHaLI?w=203&h=306&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Tom perseguindo Jerry">
+                    <figcaption style="display: none;">Tom perseguindo Jerry</figcaption>
+                </figure>
+                
+                <figure class="gallery-item">
+                    <img src="https://th.bing.com/th/id/OIP.sAj5uJK8GVcA98XQEYhC4gHaLI?w=203&h=306&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Jerry rindo de Tom">
+                    <figcaption style="display: none;">Jerry rindo de Tom</figcaption>
+                </figure>
+                
+                <figure class="gallery-item">
+                    <img src="https://th.bing.com/th/id/OIP.1KmdZxrDwJHIqIM4oyAEEQHaLI?w=203&h=306&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Tom com expressão de surpresa">
+                    <figcaption style="display: none;">Tom com expressão de surpresa</figcaption>
+                </figure>
+                
+                <figure class="gallery-item">
+                    <img src="https://th.bing.com/th/id/OIP.XAKi8nMkz0XnU2hSM5X9SAHaKd?w=203&h=287&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Tom e Jerry em uma cena clássica">
+                    <figcaption style="display: none;">Tom e Jerry em uma cena clássica</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de História -->
+    <section id="history">
+        <div class="container">
+            <h2 class="section-title">História e Curiosidades</h2>
+            
+            <div class="warning">
+                <p><i class="fas fa-exclamation-triangle"></i> Atenção: Tom e Jerry são personagens fictícios, mas suas aventuras são repletas de lições sobre persistência e criatividade!</p>
+            </div>
+            
+            <p>Tom e Jerry foi criado por <span class="highlight">William Hanna e Joseph Barbera</span> em 1940 para a Metro-Goldwyn-Mayer. A dupla se tornou um dos desenhos animados mais famosos e duradouros da história.</p>
+            
+            <p>A série ganhou <span class="highlight">7 Oscars</span> de Melhor Curta-Metragem de Animação, um recorde para uma série de desenho animado.</p>
+            
+            <h3 style="margin: 30px 0 15px; color: #ff6b6b;">Informações Técnicas</h3>
+            
+            <!-- Tabela de informações -->
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Detalhe</th>
+                        <th>Ano</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Criação</td>
+                        <td>William Hanna e Joseph Barbera</td>
+                        <td>1940</td>
+                    </tr>
+                    <tr>
+                        <td>Primeiro episódio</td>
+                        <td>Puss Gets the Boot</td>
+                        <td>10 de fevereiro de 1940</td>
+                    </tr>
+                    <tr>
+                        <td>Episódios</td>
+                        <td>Mais de 160 curtas-metragens</td>
+                        <td>1940-1967</td>
+                    </tr>
+                    <tr>
+                        <td>Premiações</td>
+                        <td>7 Oscars, 1 Emmy</td>
+                        <td>1943-1953</td>
+                    </tr>
+                    <tr>
+                        <td>Dubladores originais</td>
+                        <td>Sem fala (apenas efeitos sonoros)</td>
+                        <td>1940-presente</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 style="margin: 30px 0 15px; color: #ff6b6b;">Outras Tags HTML Demonstradas</h3>
+            
+            <!-- Demonstração de outras tags HTML -->
+            <div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                <p>Tags HTML adicionais usadas nesta página:</p>
+                <ul style="columns: 2; margin-top: 10px;">
+                    <li><code>&lt;abbr&gt;</code> - <abbr title="HyperText Markup Language">HTML</abbr></li>
+                    <li><code>&lt;cite&gt;</code> - <cite>Tom e Jerry</cite> é uma obra de Hanna-Barbera</li>
+                    <li><code>&lt;code&gt;</code> - Exemplo de código: <code>console.log("Tom & Jerry");</code></li>
+                    <li><code>&lt;del&gt;</code> - Preço original: <del>R$ 50,00</del></li>
+                    <li><code>&lt;ins&gt;</code> - Novo preço: <ins>R$ 39,90</ins></li>
+                    <li><code>&lt;kbd&gt;</code> - Pressione <kbd>Ctrl</kbd> + <kbd>C</kbd> para copiar</li>
+                    <li><code>&lt;mark&gt;</code> - Não perca os <mark>episódios clássicos</mark>!</li>
+                    <li><code>&lt;q&gt;</code> - Como dizia o criador: <q>O humor físico universal é a chave do sucesso</q></li>
+                    <li><code>&lt;s&gt;</code> - Promoção: <s>Disponível apenas na TV</s> Agora também streaming!</li>
+                    <li><code>&lt;small&gt;</code> - <small>Imagens meramente ilustrativas</small></li>
+                    <li><code>&lt;strong&gt;</code> - <strong>Atenção:</strong> Cenas de violência cartunizada</li>
+                    <li><code>&lt;sub&gt;</code> - A fórmula do humor: Risada<sub>universal</sub></li>
+                    <li><code>&lt;sup&gt;</code> - Tom & Jerry<sup>®</sup> é uma marca registrada</li>
+                    <li><code>&lt;time&gt;</code> - Próxima exibição: <time datetime="2023-12-25">Natal</time></li>
+                    <li><code>&lt;var&gt;</code> - A variável <var>risadas</var> aumenta com cada episódio</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">Tem alguma pergunta sobre Tom e Jerry? Quer sugerir um episódio favorito? Envie sua mensagem!</p>
+            
+            <form class="contact-form" action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" class="form-control" required placeholder="Digite seu nome">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" class="form-control" required placeholder="seu@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Assunto:</label>
+                    <select id="subject" name="subject" class="form-control">
+                        <option value="">Selecione um assunto</option>
+                        <option value="episode">Sugestão de episódio</option>
+                        <option value="character">Curiosidade sobre personagens</option>
+                        <option value="history">História da série</option>
+                        <option value="other">Outro</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" class="form-control" required placeholder="Digite sua mensagem aqui..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="newsletter" checked> Desejo receber notícias sobre Tom e Jerry
+                    </label>
+                </div>
+                
+                <div style="text-align: center;">
+                    <button type="submit" class="btn">Enviar Mensagem</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tom & Jerry</h3>
+                    <p>O site oficial da dupla mais icônica dos desenhos animados. Aqui você encontra informações, curiosidades e muito mais sobre as aventuras de Tom e Jerry.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#home" style="color: #ddd; text-decoration: none; display: block; margin-bottom: 10px;">Início</a></li>
+                        <li><a href="#characters" style="color: #ddd; text-decoration: none; display: block; margin-bottom: 10px;">Personagens</a></li>
+                        <li><a href="#episodes" style="color: #ddd; text-decoration: none; display: block; margin-bottom: 10px;">Episódios</a></li>
+                        <li><a href="#gallery" style="color: #ddd; text-decoration: none; display: block; margin-bottom: 10px;">Galeria</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Informações Legais</h3>
+                    <p>Tom & Jerry é uma marca registrada da Warner Bros. Entertainment Inc.</p>
+                    <p>Este site é apenas para fins educativos e de entretenimento, sem fins comerciais.</p>
+                    <p>Imagens utilizadas são meramente ilustrativas.</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Site do Tom e Jerry. Todos os direitos reservados aos criadores originais.</p>
+                <p>Desenvolvido com <i class="fas fa-heart" style="color: #ff6b6b;"></i> para fãs de desenhos animados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão de voltar ao topo -->
+    <a href="#home" style="position: fixed; bottom: 30px; right: 30px; background-color: #ff6b6b; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 1000;" class="bounce">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Script para rolagem suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Script para validação do formulário
+        const contactForm = document.querySelector('.contact-form');
+        if(contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                if(name && email && message) {
+                    alert('Obrigado por sua mensagem, ' + name + '! Entraremos em contato em breve.');
+                    contactForm.reset();
+                } else {
+                    alert('Por favor, preencha todos os campos obrigatórios.');
+                }
+            });
+        }
+        
+        // Ativar item de menu conforme rolagem
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if(scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+<aside class="info-box">
+    <h3>Você Sabia?</h3>
+    <p>Tom e Jerry ganharam 7 prêmios Oscar durante sua trajetória.</p>
+</aside>
+
+<main class="conteudo-principal">
+    <h1>As Aventuras de Tom e Jerry</h1>
+    <p>Os episódios mais engraçados da famosa dupla animada.</p>
+</main>
