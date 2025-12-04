@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site oficial do Bob Esponja - Tudo sobre o personagem mais famoso de Fenda do Biquíni">
+    <meta name="keywords" content="Bob Esponja, SpongeBob, Patrick, Lula Molusco, Fenda do Biquíni">
+    <meta name="author" content="Bob Esponja Calça Quadrada">
+    <title>Bob Esponja - Site Oficial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <style>
+        /* ESTILOS GERAIS */
+        :root {
+            --amarelo: #FFD700;
+            --vermelho: #FF6B6B;
+            --azul: #4ECDC4;
+            --verde: #2ECC71;
+            --roxo: #9B59B6;
+            --marinho: #1A5276;
+            --cinza-claro: #F8F9FA;
+            --cinza-escuro: #2C3E50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Comic Neue', cursive;
+            background-color: var(--cinza-claro);
+            color: var(--cinza-escuro);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--amarelo) 0%, #FFEC8B 100%);
+            padding: 20px 0;
+            border-bottom: 8px solid var(--marinho);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo h1 {
+            font-family: 'Bubblegum Sans', cursive;
+            font-size: 2.5rem;
+            color: var(--marinho);
+            text-shadow: 2px 2px 0 var(--vermelho);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: var(--marinho);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: var(--marinho);
+            color: white;
+        }
+        
+        /* MAIN CONTENT */
+        main {
+            min-height: 70vh;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(255, 215, 0, 0.8), rgba(255, 236, 139, 0.9)), 
+                        url('https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 5px dashed var(--vermelho);
+        }
+        
+        .hero h2 {
+            font-family: 'Bubblegum Sans', cursive;
+            font-size: 3.5rem;
+            color: var(--marinho);
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0 white;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--marinho);
+            max-width: 800px;
+            margin: 0 auto 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 15px;
+        }
+        
+        /* SECTIONS */
+        section {
+            padding: 60px 0;
+        }
+        
+        section:nth-child(even) {
+            background-color: white;
+            border-top: 5px solid var(--azul);
+            border-bottom: 5px solid var(--azul);
+        }
+        
+        .section-title {
+            font-family: 'Bubblegum Sans', cursive;
+            font-size: 2.5rem;
+            color: var(--marinho);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 5px;
+            background-color: var(--vermelho);
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+        
+        /* CARDS */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 3px solid var(--amarelo);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            padding: 20px;
+            background-color: var(--amarelo);
+            text-align: center;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        /* FORMS */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--marinho);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--azul);
+        }
+        
+        /* TABLES */
+        .table-container {
+            overflow-x: auto;
+            margin: 30px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background-color: var(--azul);
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* ASIDE */
+        aside {
+            background-color: var(--amarelo);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 3px dashed var(--marinho);
+        }
+        
+        aside h3 {
+            color: var(--marinho);
+            margin-bottom: 15px;
+            font-family: 'Bubblegum Sans', cursive;
+        }
+        
+        /* FOOTER */
+        footer {
+            background-color: var(--marinho);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-family: 'Bubblegum Sans', cursive;
+            color: var(--amarelo);
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--amarelo);
+            color: var(--marinho);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* UTILITÁRIOS */
+        .btn {
+            display: inline-block;
+            background-color: var(--vermelho);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+        
+        .btn:hover {
+            background-color: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .highlight {
+            background-color: var(--amarelo);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* ANIMAÇÕES */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .bounce {
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-water" style="font-size: 2.5rem; color: var(--marinho);"></i>
+                <h1>Bob Esponja</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#characters">Personagens</a></li>
+                    <li><a href="#episodes">Episódios</a></li>
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO SECTION -->
+        <section id="home" class="hero">
+            <div class="container">
+                <h2 class="bounce">Bob Esponja Calça Quadrada</h2>
+                <p>O personagem mais otimista e feliz de Fenda do Biquípi está aqui para trazer diversão e alegria para o seu dia! Junte-se a Bob Esponja, Patrick, Lula Molusco e toda a turma nesta aventura submarina.</p>
+                <button class="btn float">Vamos lá!</button>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">Sobre Bob Esponja</h2>
+                <article>
+                    <h3>A Lenda de Fenda do Biquíni</h3>
+                    <p><strong>Bob Esponja Calça Quadrada</strong> é o personagem principal da série de animação americana "Bob Esponja". Criado pelo biólogo marinho e animador <mark>Stephen Hillenburg</mark>, o personagem apareceu pela primeira vez em <time datetime="1999-05-01">1 de maio de 1999</time>.</p>
+                    
+                    <blockquote cite="https://pt.wikipedia.org/wiki/Bob_Esponja">
+                        "Bob Esponja é uma esponja-do-mar otimista e ingênua que vive em um abacaxi e trabalha como chef no Siri Cascudo."
+                    </blockquote>
+                    
+                    <p>Ele mora em uma casa em forma de <em>abacaxi</em> na <abbr title="Fenda do Biquíni">FdB</abbr> e trabalha no restaurante Siri Cascudo, onde prepara os melhores hambúrgueres de siri do oceano.</p>
+                </article>
+                
+                <aside>
+                    <h3>Você Sabia?</h3>
+                    <p>Bob Esponja foi originalmente chamado de "SpongeBoy", mas o nome já estava registrado. Daí surgiu "SpongeBob SquarePants"!</p>
+                    <p>A série já ganhou <span class="highlight">6 prêmios Emmy</span> e foi indicada a muitos outros.</p>
+                </aside>
+            </div>
+        </section>
+
+        <!-- CHARACTERS SECTION -->
+        <section id="characters" style="background-color: #E8F4FD;">
+            <div class="container">
+                <h2 class="section-title">Personagens</h2>
+                <p style="text-align: center; margin-bottom: 30px;">Conheça todos os habitantes de Fenda do Biquíni!</p>
+                
+                <div class="cards-container">
+                    <!-- BOB ESPONJA -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-smile"></i> Bob Esponja</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Espécie:</strong> Esponja-do-mar</p>
+                            <p><strong>Ocupação:</strong> Chef no Siri Cascudo</p>
+                            <p><strong>Características:</strong> Otimista, inocente, trabalhador e sempre alegre.</p>
+                            <p><q>Estou pronto! Estou pronto!</q></p>
+                        </div>
+                    </div>
+                    
+                    <!-- PATRICK ESTRELA -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-star"></i> Patrick Estrela</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Espécie:</strong> Estrela-do-mar</p>
+                            <p><strong>Ocupação:</strong> Desempregado profissional</p>
+                            <p><strong>Características:</strong> Divertido, leal, mas não muito inteligente.</p>
+                            <p><q>A imaginação é o lugar secreto debaixo da escada!</q></p>
+                        </div>
+                    </div>
+                    
+                    <!-- LULA MOLUSCO -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-guitar"></i> Lula Molusco</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Espécie:</strong> Lula</p>
+                            <p><strong>Ocupação:</strong> Caixa e artista</p>
+                            <p><strong>Características:</strong> Sarcástico, ranzinza, mas com coração mole.</p>
+                            <p><q>Estou deprimido demais para responder isso.</q></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- TABLE OF CHARACTERS -->
+                <div class="table-container">
+                    <table>
+                        <caption>Lista Completa de Personagens Principais</caption>
+                        <thead>
+                            <tr>
+                                <th>Personagem</th>
+                                <th>Voz Original</th>
+                                <th>Primeira Aparição</th>
+                                <th>Espécie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bob Esponja</td>
+                                <td>Tom Kenny</td>
+                                <td>1999</td>
+                                <td>Esponja-do-mar</td>
+                            </tr>
+                            <tr>
+                                <td>Patrick Estrela</td>
+                                <td>Bill Fagerbakke</td>
+                                <td>1999</td>
+                                <td>Estrela-do-mar</td>
+                            </tr>
+                            <tr>
+                                <td>Lula Molusco</td>
+                                <td>Rodger Bumpass</td>
+                                <td>1999</td>
+                                <td>Lula</td>
+                            </tr>
+                            <tr>
+                                <td>Sr. Siriguejo</td>
+                                <td>Clancy Brown</td>
+                                <td>1999</td>
+                                <td>Caranguejo</td>
+                            </tr>
+                            <tr>
+                                <td>Plankton</td>
+                                <td>Mr. Lawrence</td>
+                                <td>1999</td>
+                                <td>Plâncton</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- EPISODES SECTION -->
+        <section id="episodes">
+            <div class="container">
+                <h2 class="section-title">Episódios Memoráveis</h2>
+                
+                <article>
+                    <header>
+                        <h3>Episódios Mais Populares</h3>
+                    </header>
+                    
+                    <section>
+                        <h4>Temporada 1</h4>
+                        <ol>
+                            <li><strong>Procurados</strong> - Bob e Patrick são procurados por "heróis"</li>
+                            <li><strong>Pizza de Siri</strong> - O Siri Cascudo vende pizza</li>
+                            <li><strong>O Dia Seguinte</strong> - O episódio que acontece "no dia seguinte"</li>
+                        </ol>
+                    </section>
+                    
+                    <section>
+                        <h4>Temporada 3</h4>
+                        <ul>
+                            <li><strong>Mergulho</strong> - Sandy ensina todos a mergulhar</li>
+                            <li><strong>Estúdio de Tatuagem</strong> - Bob e Patrick abrem um estúdio</li>
+                            <li><strong>O Incrível Homem-Esponja</strong> - Bob se torna um super-herói</li>
+                        </ul>
+                    </section>
+                    
+                    <footer>
+                        <p><small>Fonte: Nickelodeon Studios</small></p>
+                    </footer>
+                </article>
+                
+                <!-- AUDIO E VIDEO -->
+                <div style="margin: 40px 0;">
+                    <h3>Vídeo do Tema de Abertura</h3>
+                    <figure>
+                        <audio controls>
+                            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <figcaption>Música tema de Bob Esponja (exemplo)</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery" style="background-color: #FFF9E6;">
+            <div class="container">
+                <h2 class="section-title">Galeria</h2>
+                
+                <div class="cards-container">
+                    <figure class="card">
+                        <div class="card-header">
+                            <h4>Bob Esponja Feliz</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="https://th.bing.com/th/id/OIP.PDycBrF3srLlWQGofRGyvgHaFj?w=249&h=187&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Bob Esponja sorrindo" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                            <figcaption>Bob Esponja em um dia normal de trabalho</figcaption>
+                        </div>
+                    </figure>
+                    
+                    <figure class="card">
+                        <div class="card-header">
+                            <h4>Fenda do Biquíni</h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="https://th.bing.com/th/id/OIP.LRh6I1a9I_Y1rrg5kqZ69AHaEK?w=333&h=187&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Cidade submarina" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                            <figcaption>Vista aérea de Fenda do Biquíni</figcaption>
+                        </div>
+                    </figure>
+                </div>
+                
+                <!-- PROGRESS BAR -->
+                <div style="margin-top: 40px;">
+                    <h3>Popularidade dos Personagens</h3>
+                    <label for="bob">Bob Esponja:</label>
+                    <progress id="bob" value="95" max="100">95%</progress><br>
+                    
+                    <label for="patrick">Patrick:</label>
+                    <progress id="patrick" value="85" max="100">85%</progress><br>
+                    
+                    <label for="lula">Lula Molusco:</label>
+                    <meter id="lula" value="75" min="0" max="100" low="30" high="70" optimum="80">75%</meter>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Contato</h2>
+                
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Informações Pessoais</legend>
+                        
+                        <div class="form-group">
+                            <label for="nome" class="form-label">Nome:</label>
+                            <input type="text" id="nome" name="nome" class="form-control" required placeholder="Digite seu nome">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">E-mail:</label>
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="seu@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="assunto" class="form-label">Assunto:</label>
+                            <select id="assunto" name="assunto" class="form-control">
+                                <option value="">Selecione...</option>
+                                <option value="duvida">Dúvida sobre Bob Esponja</option>
+                                <option value="sugestao">Sugestão de episódio</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Mensagem</legend>
+                        
+                        <div class="form-group">
+                            <label for="mensagem" class="form-label">Mensagem:</label>
+                            <textarea id="mensagem" name="mensagem" class="form-control" rows="5" required placeholder="Digite sua mensagem..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Como você conheceu Bob Esponja?</label><br>
+                            <input type="radio" id="tv" name="conheceu" value="tv">
+                            <label for="tv">TV</label><br>
+                            
+                            <input type="radio" id="internet" name="conheceu" value="internet">
+                            <label for="internet">Internet</label><br>
+                            
+                            <input type="radio" id="amigos" name="conheceu" value="amigos">
+                            <label for="amigos">Amigos</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Quais personagens você gosta?</label><br>
+                            <input type="checkbox" id="bob2" name="personagens" value="bob">
+                            <label for="bob2">Bob Esponja</label><br>
+                            
+                            <input type="checkbox" id="patrick2" name="personagens" value="patrick">
+                            <label for="patrick2">Patrick</label><br>
+                            
+                            <input type="checkbox" id="lula2" name="personagens" value="lula">
+                            <label for="lula2">Lula Molusco</label>
+                        </div>
+                    </fieldset>
+                    
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                        <button type="reset" class="btn" style="background-color: var(--cinza-escuro);">Limpar</button>
+                    </div>
+                </form>
+                
+                <!-- DETAILS ELEMENT -->
+                <details style="margin-top: 40px; background-color: var(--amarelo); padding: 20px; border-radius: 10px;">
+                    <summary><strong>Informações de Contato Adicionais</strong></summary>
+                    <p>Endereço: Fenda do Biquíni, Oceano Pacífico</p>
+                    <p>Restaurante: Siri Cascudo - Melhores hambúrgueres de siri!</p>
+                    <p>Telefone: <s>Não temos telefone subaquático</s> <ins>Use bolhas de mensagem!</ins></p>
+                </details>
+            </div>
+        </section>
+        
+        <!-- ADDITIONAL TAGS DEMONSTRATION -->
+        <section style="background-color: #F0F7FF; padding: 40px 0;">
+            <div class="container">
+                <h2 class="section-title">Demonstração de Tags HTML</h2>
+                
+                <div style="background-color: white; padding: 30px; border-radius: 15px;">
+                    <h3>Exemplos de Outras Tags HTML</h3>
+                    
+                    <p><code>&lt;abbr&gt;</code>: <abbr title="Fenda do Biquíni">FdB</abbr></p>
+                    
+                    <p><code>&lt;cite&gt;</code>: <cite>Bob Esponja</cite> foi criado por Stephen Hillenburg</p>
+                    
+                    <p><code>&lt;data&gt;</code>: O episódio mais visto tem <data value="7500000">7.5 milhões</data> de visualizações</p>
+                    
+                    <p><code>&lt;dfn&gt;</code>: <dfn>Krabby Patty</dfn> é o hambúrguer secreto do Siri Cascudo</p>
+                    
+                    <p><code>&lt;kbd&gt;</code>: Pressione <kbd>Ctrl</kbd> + <kbd>C</kbd> para copiar</p>
+                    
+                    <p><code>&lt;samp&gt;</code>: Mensagem do computador: <samp>Error: Siri Cascudo fechado</samp></p>
+                    
+                    <p><code>&lt;var&gt;</code>: A fórmula do sucesso é: <var>alegria</var> + <var>trabalho duro</var> = Bob Esponja</p>
+                    
+                    <p><code>&lt;del&gt;</code> e <code>&lt;ins&gt;</code>: Preço antigo: <del>R$ 10,00</del> Novo preço: <ins>R$ 8,99</ins></p>
+                    
+                    <p><code>&lt;sub&gt;</code> e <code>&lt;sup&gt;</code>: H<sub>2</sub>O é água. Bob Esponja<sup>®</sup> é marca registrada.</p>
+                    
+                    <p><code>&lt;time&gt;</code>: Próximo episódio especial: <time datetime="2023-12-25">Natal 2023</time></p>
+                    
+                    <p><code>&lt;wbr&gt;</code>: Palavraquebravelonga<wbr>comquebraopcional</p>
+                    
+                    <p><code>&lt;bdi&gt;</code>: Nome: <bdi>إسفنج</bdi> (Esponja em árabe)</p>
+                    
+                    <p><code>&lt;ruby&gt;</code>: 
+                        <ruby>
+                            海<rt>mar</rt>
+                            綿<rt>esponja</rt>
+                        </ruby>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bob Esponja</h3>
+                    <p>O site oficial do personagem mais feliz dos sete mares! Trazendo alegria e diversão desde 1999.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <nav>
+                        <ul style="list-style: none;">
+                            <li><a href="#home" style="color: white; text-decoration: none;">Início</a></li>
+                            <li><a href="#about" style="color: white; text-decoration: none;">Sobre</a></li>
+                            <li><a href="#characters" style="color: white; text-decoration: none;">Personagens</a></li>
+                            <li><a href="#episodes" style="color: white; text-decoration: none;">Episódios</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Informações Legais</h3>
+                    <address>
+                        Produzido por: Nickelodeon<br>
+                        Criador: Stephen Hillenburg<br>
+                        Primeira exibição: 1999
+                    </address>
+                    <p>© 2023 Bob Esponja. Todos os direitos reservados.</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>Desenvolvido com <i class="fas fa-heart" style="color: var(--vermelho);"></i> para fãs de Bob Esponja</p>
+                <p><small>Este site é apenas para fins educativos e de entretenimento.</small></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <a href="#home" id="back-to-top" style="position: fixed; bottom: 30px; right: 30px; background-color: var(--vermelho); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 1000; display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // JavaScript para funcionalidades básicas
+        document.addEventListener('DOMContentLoaded', function() {
+            // Botão voltar ao topo
+            const backToTop = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = 'flex';
+                } else {
+                    backToTop.style.display = 'none';
+                }
+            });
+            
+            // Rolagem suave para âncoras
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Formulário de contato
+            const contactForm = document.querySelector('form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Obrigado pela sua mensagem! Bob Esponja responderá em breve com muita alegria!');
+                    this.reset();
+                });
+            }
+            
+            // Menu ativo
+            const navLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('section[id]');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (scrollY >= (sectionTop - 100)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Efeito de digitação no título (opcional)
+            const heroTitle = document.querySelector('.hero h2');
+            if (heroTitle && heroTitle.textContent) {
+                const originalText = heroTitle.textContent;
+                heroTitle.textContent = '';
+                
+                let i = 0;
+                function typeWriter() {
+                    if (i < originalText.length) {
+                        heroTitle.textContent += originalText.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 100);
+                    }
+                }
+                
+                // Inicia a animação após 1 segundo
+                setTimeout(typeWriter, 1000);
+            }
+        });
+        
+  
+  
+</body>
+</html>
