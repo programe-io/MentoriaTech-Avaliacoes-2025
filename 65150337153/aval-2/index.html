@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Breaking Bad — Bem-vindo</title>
+  <link rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1>Breaking Bad</h1>
+      <p class="tagline">Bem-vindos a Albuquerque — Cuidado com Heisenberg</p>
+    </div>
+
+    <nav class="main-nav" aria-label="Navegação principal">
+      <button id="menuToggle" aria-expanded="false" aria-controls="navList">☰ Menu</button>
+      <ul id="navList" class="nav-list">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#personagens">Personagens</a></li>
+        <li><a href="#quimica">Química</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sobre" class="card">
+      <h2>Sobre a Série</h2>
+      <article>
+        <p>Breaking Bad conta a transformação de <strong>Walter White</strong> de professor de química a Heisenberg — um drama intenso sobre escolhas, poder e consequências.</p>
+        <figure>
+          <img src="breaking-bad-logo.png" alt="Breaking Bad logo" width="280">
+          <figcaption>Logo — elementos químicos: Br e Ba.</figcaption>
+        </figure>
+      </article>
+      <details>
+        <summary>Curiosidade</summary>
+        <p>Vince Gilligan criou a série com forte uso de simbolismo químico e visuais contrastantes.</p>
+      </details>
+    </section>
+
+    <section id="personagens" class="card">
+      <h2>Personagens Principais</h2>
+      <aside class="note">
+        <p>Destaques: Walter, Jesse, Saul, Skyler e Hank.</p>
+      </aside>
+
+      <table class="table">
+        <caption>Resumo</caption>
+        <thead>
+          <tr><th>Personagem</th><th>Ator</th><th>Resumo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Walter White</td><td>Bryan Cranston</td><td>Professor de química → Heisenberg.</td></tr>
+          <tr><td>Jesse Pinkman</td><td>Aaron Paul</td><td>Ex-aluno, parceiro e conflito moral contínuo.</td></tr>
+          <tr><td>Saul Goodman</td><td>Bob Odenkirk</td><td>Advogado astuto e controverso.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="quimica" class="card">
+      <h2>O Lado da Química</h2>
+      <h3> serie legal<h3/>
+      <blockquote>“No more half measures.” — Mike</blockquote>
+      <pre><code>// Exemplo estilizado: Br + Ba = Breaking Bad (tema visual)</code></pre>
+
+      <p>
+        Clique para revelar a citação icônica:
+        <button id="quoteBtn">Mostrar citação</button>
+      </p>
+      <p id="quoteOutput" class="muted"></p>
+    </section>
+
+    <section id="galeria" class="card">
+      <h2>Galeria</h2>
+
+      <figure>
+        <picture>
+          <source media="(min-width:900px)" srcset="albuquerque-large.jpg">
+          <img src="albuquerque-small.jpg" alt="Albuquerque" width="520">
+        </picture>
+        <figcaption>Albuquerque, cenário da série.</figcaption>
+      </figure>
+
+      <div class="media-row">
+        <video controls width="360" preload="metadata">
+          <source src="clip.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+
+        <audio controls>
+          <source src="theme.mp3" type="audio/mpeg">
+          Seu navegador não suporta áudio.
+        </audio>
+      </div>
+
+      <canvas id="logoCanvas" width="420" height="120" aria-label="Canvas com texto Breaking Bad"></canvas>
+    </section>
+
+    <section id="contato" class="card">
+      <h2>Contato / Feedback</h2>
+
+      <form id="contactForm" autocomplete="on" novalidate>
+        <label for="name">Nome</label>
+        <input id="name" name="name" type="text" placeholder="Seu nome" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="seu@exemplo.com" required>
+
+        <label for="season">Temporada favorita</label>
+        <select id="season" name="season">
+          <option value="">Escolha...</option>
+          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+        </select>
+
+        <label for="message">Mensagem</label>
+        <textarea id="message" name="message" rows="4" placeholder="Comentário..."></textarea>
+
+        <div class="form-actions">
+          <button type="submit">Enviar</button>
+          <button type="reset" class="secondary">Limpar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>&copy; <span id="year"></span> — Breaking Bad Fan Page</small>
+    <nav aria-label="Rodapé">
+      <ul class="footer-links">
+        <li><a href="#sobre">Topo</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="script.js" defer></script>
+<script src="script.js"></script></body>
+</html>
