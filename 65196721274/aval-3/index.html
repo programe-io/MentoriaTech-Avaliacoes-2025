@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Meu Cotidiano</title>
+    <link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <!-- HEADER com logo, título, span (obrigatória) e navegação -->
+    <header>
+        <div class="topo">
+            <img src="logo.png" alt="Logo do site" id="logo">
+            <div class="titulo-area">
+                <h1>Meu Cotidiano <span id="smallTag" class="badge">beta</span></h1>
+                <!-- Span que exibirá o nome salvo (obrigatório para o validador) -->
+                <span id="username-display" class="username-hidden">Bem-vindo(a)</span>
+            </div>
+        </div>
+
+        <nav aria-label="Menu principal">
+            <ul class="menu">
+                <li><a href="#"><span class="nav-text">Início</span></a></li>
+                <li><a href="#perfil"><span class="nav-text">Perfil</span></a></li>
+                <li><a href="#tarefas"><span class="nav-text">Tarefas</span></a></li>
+                <li><a href="#notas"><span class="nav-text">Notas</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN: container com seções -->
+    <main class="container">
+        <!-- Perfil -->
+        <section id="perfil" class="card">
+            <h2>Perfil</h2>
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" placeholder="Digite seu nome" />
+            <label for="bio">Biografia</label>
+            <textarea id="bio" rows="3" placeholder="Sua biografia curta..."></textarea>
+            <div class="row">
+                <button id="btnSalvarPerfil">Salvar Perfil</button>
+                <button id="btnLimparPerfil" class="secondary">Limpar</button>
+            </div>
+        </section>
+
+        <!-- Tarefas -->
+        <section id="tarefas" class="card">
+            <h2>Tarefas do Dia</h2>
+            <div class="input-group">
+                <input id="tarefaInput" type="text" placeholder="Nova tarefa..." />
+                <button id="btnAddTarefa">Adicionar</button>
+            </div>
+            <ul id="listaTarefas" aria-live="polite"></ul>
+            <div class="row">
+                <button id="btnLimparTarefas" class="secondary">Limpar todas</button>
+            </div>
+        </section>
+
+        <!-- Notas -->
+        <section id="notas" class="card">
+            <h2>Notas</h2>
+            <textarea id="nota" rows="4" placeholder="Escreva uma nota rápida..."></textarea>
+            <div class="row">
+                <button id="btnSalvarNota">Salvar Nota</button>
+                <button id="btnLimparNotas" class="secondary">Limpar notas</button>
+            </div>
+            <div id="notasSalvas"></div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Desenvolvido para a atividade avaliativa — <span id="yearSpan"></span></p>
+    </footer>
+
+    <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
