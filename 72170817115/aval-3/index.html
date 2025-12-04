@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PãoHouse - Padaria social</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #fff7e6;
+        margin: 0;
+    }
+    header {
+        background: #e7a754;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    #feed, #comentarios {
+        max-width: 600px;
+        margin: 20px auto;
+    }
+    .post, .comentario {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        margin-bottom: 20px;
+    }
+    .post h3, .comentario h4 {
+        margin-top: 0;
+        color: #c97a2a;
+    }
+    .post img {
+        width: 100%;
+        border-radius: 8px;
+    }
+    button {
+        background: #c97a2a;
+        border: none;
+        padding: 10px;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link href="style.css" rel="stylesheet"></head>
+<body>
+
+<header> PãoHouse – Padaria social</header>
+
+<div id="feed"></div>
+
+<h2 style="text-align:center; color:#c97a2a;">Comentários dos clientes</h2>
+<div id="comentarios"></div>
+
+<script>
+    const posts = [
+        {titulo: "Perfil da Padaria",
+         texto: "a nossa padaria PãoHouse fas pães quentinhos, bolos e café da manhã para você, nosso raio de sol! "
+        },
+        {
+            titulo: "Pão quentinho saindo agora!",
+            imagem:"160790-tudo-que-voce-precisa-saber-sobre-pao-frances.webp",
+            texto:"Venha esperimentar o pão da casa ,quentinho"
+        },
+        {
+            titulo: "Promoção do dia",
+            imagem: "360_F_177698223_6WjwRwrV0C6rJxbB7uRjiiaK3YzKUDhR.jpg",
+            texto: "Café + pão na chapa por apenas R$ 5,99!"
+        },
+        {
+            titulo: "Bolo de cenoura com cobertura de chocolate",
+            imagem: "bolo_cenoura_horizontal.jpg",
+            texto: "O favorito da casa! Preparado hoje pela manhã 🍰"
+        }
+    ];
+
+    const comentarios = [
+        {nome: "Ana Luiza Rodrigues", texto: "Passei hoje de manhã e o cheiro do pão quentinho tomou a rua inteira! Atendimento ótimo e o pão francês é outro nível."},
+        {nome: "Marcelo Tavares", texto: "Esse bolo de cenoura deveria ser tombado pelo patrimônio histórico. Nunca comi um tão fofinho!"},
+        {nome: "Júlia Fernandes", texto: "Promoção do café + pão na chapa salvou meu dia! Preço ótimo e tudo muito gostoso."},
+        {nome: "Renata Castro", texto: "O pão saiu fumegando do forno, fresquinho demais! Lugar super acolhedor."},
+        {nome: "Victor Mendes", texto: "Amei o estilo da padaria! Sabor tradicional que é difícil de achar hoje em dia."},
+        {nome: "Paula Nogueira", texto: "O bolo de cenoura estava tão bom que levei dois pedaços pra casa. Nota 10!"},
+        {nome: "Gabriel Soares", texto: "A PãoHouse tem um carinho especial em tudo que faz. Dá pra sentir no sabor."},
+        {nome: "Camila Duarte", texto: "Pão na chapa crocante do jeito certo 😍 Recomendo demais!"},
+        {nome: "Felipe Arruda", texto: "Já virou parada obrigatória no meu caminho pro trabalho. Café forte e delicioso!"},
+        {nome: "Bianca Moura", texto: "Tudo muito caprichado. Dá pra ver que é feito com amor. Parabéns à equipe!"}
+    ];
+
+    function carregarFeed() {
+        const feed = document.getElementById("feed");
+        posts.forEach(p => {
+            feed.innerHTML += `
+                <div class="post">
+                    <h3>${p.titulo}</h3>
+                    ${p.imagem ? `<img src="${p.imagem}" alt="">` : ""}
+                    <p>${p.texto}</p>
+                    <button onclick="alert('Você curtiu este post!')">Curtir ❤️</button>
+                </div>
+            `;
+        });
+    }
+
+    function carregarComentarios() {
+        const area = document.getElementById("comentarios");
+        comentarios.forEach(c => {
+            area.innerHTML += `
+                <div class="comentario">
+                    <h4>${c.nome}</h4>
+                    <p>${c.texto}</p>
+                </div>
+            `;
+        });
+    }
+
+    carregarFeed();
+    carregarComentarios();
+</script>
+
+</body>
+</html>
+<nav>
+<a>
+<main>
+<img>
+<p>
+<span>
