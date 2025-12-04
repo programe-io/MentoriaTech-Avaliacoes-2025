@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nome da Empresa — Perfil</title>
+  <style>
+    :root{
+      --bg:#f7f7f9; --card:#ffffff; --accent:#0b74de; --muted:#666;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    body{margin:0;background:var(--bg);color:#111;}
+    .container{max-width:1000px;margin:28px auto;padding:18px;}
+    .header{display:flex;gap:16px;align-items:center;}
+    .logo{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#0366a6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:28px;}
+    .hero{flex:1;}
+    h1{margin:0;font-size:20px;}
+    p.lead{margin:6px 0 0;color:var(--muted);}
+    .card{background:var(--card);border-radius:12px;padding:16px;margin-top:18px;box-shadow:0 6px 18px rgba(13,24,40,0.06);}
+    .links{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(0,0,0,0.06);background:#fff;color:#111;font-weight:600;}
+    .btn.primary{background:var(--accent);color:#fff;border:none;}
+    .grid{display:grid;grid-template-columns:1fr 300px;gap:18px;margin-top:18px;}
+    .about h2{margin-top:0;}
+    .social-list{display:flex;flex-direction:column;gap:8px;}
+    .social-item{display:flex;align-items:center;gap:8px;padding:8px;border-radius:8px;background:#fbfbfc;}
+    .iconsvg{width:18px;height:18px;opacity:0.9}
+    .footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center;}
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr; }
+      .header{flex-direction:row;}
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">NE</div>
+      <div class="hero">
+        <h1>Tabacaria anubes</h1>
+        <p class="lead">Flamengo pra sempre</p>
+        <div class="links">
+          <a class="btn primary" href="#contato">Entrar em contato</a>
+          <a class="btn" href="#sobre">Sobre</a>
+          <a class="btn" href="#redes">Redes Sociais</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="card about" id="sobre">
+      <h2><p/>
+        <li><strong>Serviço/Produto principal:</strong> Ex.: Consultoria, Loja física, E-commerce.</li>
+        <li><strong>Localização:</strong> Cidade — Estado</li>
+        <li><strong>Horário:</strong> Seg–Sex 9:00–18:00</li>
+      </ul>
+    </section>
+
+    <div class="grid">
+      <div>
+        <section class="card" id="produtos">
+          <h2>Destaques</h2>
+          <p></p>
+          <ol>
+            <li><strong>Produto/Serviço A</strong> — Pods de preço variado</li>
+            <li><strong>Produto/Serviço B</strong> — Prensados e skanks</li>
+            <li><strong>Produto/Serviço C</strong> — Gift e gramas de erva</li>
+          </ol>
+        </section>
+
+        <section class="card" id="depoimentos" style="margin-top:12px;">
+          <h2>Depoimentos</h2>
+          <blockquote>"Ótima experiência — atendimento rápido e produto de qualidade." — Cliente Satisfeito</blockquote>
+        </section>
+      </div>
+
+      <aside class="card" id="contato">
+        <h2>Contato & Redes</h2>
+        <div class="social-list" id="redes">
+          <a class="social-item" href="#" target="_blank">
+            <!-- exemplo ícone -->
+            <svg class="iconsvg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#111" stroke-opacity="0.12"/></svg>
+            @nomedaempresa
+          </a>
+          <a class="social-item" href="#" target="_blank">
+            <svg class="iconsvg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#111" stroke-opacity="0.12"/></svg>
+            facebook.com/nomedaempresa
+          </a>
+          <a class="social-item" href="mailto:contato@exemplo.com">
+            <svg class="iconsvg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8l9 6 9-6" stroke="#111" stroke-opacity="0.12"/></svg>
+            contato@exemplo.com
+          </a>
+        </div>
+
+        <div style="margin-top:12px;">
+          <a class="btn" href="tel:+550000000000">Ligar</a>
+          <a class="btn" href="#" style="margin-left:8px;">Enviar Mensagem</a>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="footer">
+      © <span id="year"></span> Nome da Empresa — Todos os direitos reservados.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+<nav>
+    <main>
+        <a>
+            <span>
+                <img>
