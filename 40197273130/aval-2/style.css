@@ -1,0 +1,128 @@
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff8a8a, #ffb86c, #ffd86c, #8aff9e, #6cbaff, #b66cff);
+    background-size: 600% 600%;
+    animation: gradientFlow 16s ease infinite;
+    color: #333;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    background: #ffffffcc;
+    backdrop-filter: blur(8px);
+    padding: 25px;
+    text-align: center;
+    border-bottom: 2px solid #ffffff88;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+}
+
+header h1 {
+    margin: 0 0 15px 0;
+    font-size: 38px;
+    color: #222;
+}
+
+/* Menu de navegação */
+nav ul.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav ul.menu li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav ul.menu li a:hover {
+    background-color: rgba(255,255,255,0.5);
+    color: #000;
+}
+
+/* Layout principal: container + aside */
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.container {
+    flex: 3;
+    min-width: 300px;
+}
+
+/* Aside lateral */
+aside {
+    flex: 1;
+    min-width: 220px;
+    background: #ffffffcc;
+    backdrop-filter: blur(6px);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    height: fit-content;
+}
+
+aside h2 {
+    margin-top: 0;
+    color: #111;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+/* Cartões coloridos */
+.card {
+    padding: 28px;
+    margin-bottom: 35px;
+    border-radius: 20px;
+    background: white;
+    color: #222;
+    border: 3px solid transparent;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+    border-color: rgba(255,255,255,0.8);
+}
+
+/* Cartões coloridos individuais */
+#eu { background: #ff8a8aaa; }
+#hobbies { background: #8aff9ecc; }
+#personalidade { background: #6cbaffcc; }
+#objetivos { background: #b66cffcc; }
+
+h2 {
+    margin-top: 0;
+    color: #111;
+}
+
+/* h3 incluído no CSS, sem alterar visual */
+h3 {}
+
+/* Imagens dentro dos cards */
+.card-img {
+    width: 100%;
+    height: auto;
+    border-radius:
