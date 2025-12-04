@@ -1,136 +1,321 @@
+```html
 <!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>YK2 Moda • Tendências e Estilo</title>
+  <meta name="description" content="CETI Joel Ribeiro - escola pública em Teresina">
+  <title>CETI Joel Ribeiro - Teresina</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
-
 <body>
-<header class="topo">
-  <h1>YK2 Moda</h1>
-  <nav>
-    <ul>
-      <li><a href="#colecao">Coleção</a></li>
-      <li><a href="#lookbook">Lookbook</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
-</header>
+  <div id="page-wrapper">
 
-<section id="hero" class="hero">
-  <div class="hero-text">
-    <h2>Nova Coleção YK2</h2>
-    <p>Moda inspirada no futuro, feita no presente.</p>
-    <a href="#colecao" class="btn">Ver Coleção</a>
-  </div>
-</section>
+    <header id="site-header" role="banner">
+      <div class="branding">
+        <h1 id="site-title">CETI Joel Ribeiro</h1>
+        <p class="slogan"><em>Educação, Inovação e Cidadania</em></p>
+      </div>
 
-<main>
-<section id="colecao" class="colecao">
-  <h2>Coleção</h2>
-  <p>Seleção de peças YK2</p>
+      <nav id="main-nav" aria-label="menu principal">
+        <div class="nav-container">
+          <button id="menu-toggle" aria-expanded="false" aria-controls="nav-list">menu</button>
+          <ul id="nav-list" role="menubar">
+            <li role="none"><a role="menuitem" href="#inicio">Início</a></li>
+            <li role="none"><a role="menuitem" href="#sobre">Sobre</a></li>
+            <li role="none"><a role="menuitem" href="#cursos">Cursos</a></li>
+            <li role="none"><a role="menuitem" href="#galeria">Galeria</a></li>
+            <li role="none"><a role="menuitem" href="#noticias">Notícias</a></li>
+            <li role="none"><a role="menuitem" href="#contato">Contato</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-  <div class="filtros">
-    <label for="filtroTipo">Tipo</label>
-    <select id="filtroTipo">
-      <option value="todos">Todos</option>
-      <option value="camisa">Camisa</option>
-      <option value="calca">Calça</option>
-      <option value="vestido">Vestido</option>
-    </select>
+    <div id="hero-wrap">
+      <section id="inicio" class="hero" aria-labelledby="site-title">
+        <picture>
+          <source media="(min-width:900px)" srcset="https://via.placeholder.com/1400x500">
+          <img src="https://via.placeholder.com/900x400" alt="Fachada do CETI Joel Ribeiro">
+        </picture>
+        <div class="hero-content">
+          <h2>Bem-vindo ao CETI Joel Ribeiro</h2>
+          <p>Formando cidadãos para o século XXI em Teresina.</p>
+          <a class="btn" href="#sobre">Saiba mais</a>
+        </div>
+      </section>
+    </div>
 
-    <label for="filtroOrdenar">Ordenar</label>
-    <select id="filtroOrdenar">
-      <option value="popular">Mais Popular</option>
-      <option value="cresc">Preço Crescente</option>
-      <option value="decresc">Preço Decrescente</option>
-    </select>
-  </div>
+    <main id="main" role="main">
+      <div class="container">
 
-  <div class="colecao-grid">
-    <ul id="listaProdutos" class="produtos">
-      <li class="produto" data-tipo="vestido" data-preco="199">
-        <img src="https://via.placeholder.com/300x380" alt="Vestido Future Glow">
-        <h3>Vestido Future Glow</h3>
-        <p class="preco">R$199,00</p>
-      </li>
+        <section id="sobre" aria-labelledby="sobre-title">
+          <header>
+            <h2 id="sobre-title">Sobre a Escola</h2>
+            <p class="lead">História, missão e valores do CETI Joel Ribeiro.</p>
+          </header>
 
-      <li class="produto" data-tipo="camisa" data-preco="129">
-        <img src="https://via.placeholder.com/300x380" alt="Camisa Oversized Neo">
-        <h3>Camisa Oversized Neo</h3>
-        <p class="preco">R$129,00</p>
-      </li>
+          <article aria-labelledby="art-historia">
+            <h3 id="art-historia">História</h3>
+            <div class="text-wrap">
+              <p>O <strong>CETI Joel Ribeiro</strong> é referência em educação pública em <mark>Teresina</mark>. Fundado com foco na formação integral, desenvolve projetos técnicos e culturais.</p>
+              <p><abbr title="Centro de Ensino Técnico Integrado">CETI</abbr> oferece infraestrutura com laboratórios, biblioteca e quadra poliesportiva.</p>
+              <blockquote cite="#art-historia"><p>“Educar é transformar” — direção da escola</p></blockquote>
+            </div>
+          </article>
 
-      <li class="produto" data-tipo="calca" data-preco="179">
-        <img src="https://via.placeholder.com/300x380" alt="Calça Wide Cyber">
-        <h3>Calça Wide Cyber</h3>
-        <p class="preco">R$179,00</p>
-      </li>
-    </ul>
+          <article aria-labelledby="art-missao">
+            <h3 id="art-missao">Missão e Valores</h3>
+            <ul>
+              <li>Qualidade de ensino</li>
+              <li>Inclusão social</li>
+              <li>Sustentabilidade</li>
+            </ul>
+            <p>Cita: <cite>Plano Pedagógico 2025</cite></p>
+          </article>
 
-    <aside class="promo" aria-labelledby="promo-title">
-      <h4 id="promo-title">Promoções e Newsletter</h4>
-      <p>Assine a newsletter e ganhe 10% na primeira compra. Receba novidades e pré-venda exclusiva.</p>
-      <form id="newsletter" aria-label="assinatura newsletter">
-        <label for="email-news">E-mail</label>
-        <input id="email-news" type="email" placeholder="seu@exemplo.com" required>
-        <button type="submit">Assinar</button>
-      </form>
-      <hr>
-      <p><strong>Promo:</strong> frete grátis acima de R$ 299</p>
-    </aside>
-  </div>
-</section>
+          <div class="info-grid">
+            <aside aria-labelledby="quick-title">
+              <h4 id="quick-title">Informações Rápidas</h4>
+              <ul>
+                <li><strong>Local:</strong> Teresina, PI</li>
+                <li><strong>Turnos:</strong> Matutino e Vespertino</li>
+                <li><strong>Projetos:</strong> Robótica, Meio Ambiente, Cultura</li>
+              </ul>
+            </aside>
 
-<section id="lookbook" class="lookbook">
-  <h2>Lookbook</h2>
-  <div class="carousel">
-    <button class="prev" aria-label="anterior">‹</button>
-    <ul class="slides">
-      <li><img src="https://via.placeholder.com/800x450" alt="Look 1"></li>
-      <li><img src="https://via.placeholder.com/800x450" alt="Look 2"></li>
-      <li><img src="https://via.placeholder.com/800x450" alt="Look 3"></li>
-    </ul>
-    <button class="next" aria-label="próximo">›</button>
-  </div>
-</section>
+            <div class="contact-card" role="complementary">
+              <h4>Contato</h4>
+              <address>
+                Rua Exemplo, 123<br>
+                Teresina - PI<br>
+                <a href="tel:+558699999999">(86) 99999-9999</a><br>
+                <a href="mailto:contato@cetijr.edu.br">contato@cetijr.edu.br</a>
+              </address>
+              <p><a href="#contato" class="btn small">Enviar Mensagem</a></p>
+            </div>
+          </div>
+        </section>
 
-<section id="sobre" class="sobre">
-  <h2>Sobre a YK2</h2>
-  <article>
-    <p>A YK2 traz um novo conceito de moda futurista, moderna e consciente. Todas as peças são criadas com foco em estilo e sustentabilidade.</p>
-    <address>
-      Rua Exemplo, 123<br>
-      E-mail: <a href="mailto:contato@yk2.com">contato@yk2.com</a>
-    </address>
-  </article>
-</section>
+        <section id="cursos" aria-labelledby="cursos-title">
+          <header><h2 id="cursos-title">Cursos e Atividades</h2></header>
 
-<section id="contato" class="contato">
-  <h2>Contato</h2>
-  <form id="formContato">
-    <label for="nome">Nome</label>
-    <input type="text" id="nome" required>
+          <div class="courses-wrap">
+            <article class="course" aria-labelledby="curso1">
+              <h3 id="curso1">Ensino Fundamental</h3>
+              <p>Duração: 9 anos — Turno: Manhã</p>
+            </article>
 
-    <label for="email">E-mail</label>
-    <input type="email" id="email" required>
+            <article class="course" aria-labelledby="curso2">
+              <h3 id="curso2">Ensino Médio</h3>
+              <p>Duração: 3 anos — Turno: Tarde</p>
+            </article>
 
-    <label for="mensagem">Mensagem</label>
-    <textarea id="mensagem" rows="4"></textarea>
+            <article class="course" aria-labelledby="curso3">
+              <h3 id="curso3">Técnico em Informática</h3>
+              <p>Duração: 2 anos — Turno: Integral</p>
+            </article>
 
-    <button type="submit">Enviar</button>
-  </form>
-</section>
-</main>
+            <table aria-describedby="table-desc">
+              <caption id="table-desc">Lista de cursos oferecidos</caption>
+              <thead>
+                <tr><th scope="col">Curso</th><th scope="col">Duração</th><th scope="col">Turno</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Ensino Fundamental</td><td>9 anos</td><td>Manhã</td></tr>
+                <tr><td>Ensino Médio</td><td>3 anos</td><td>Tarde</td></tr>
+                <tr><td>Técnico em Informática</td><td>2 anos</td><td>Integral</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="3">Matrículas abertas conforme calendário</td></tr>
+              </tfoot>
+            </table>
 
-<footer class="rodape">
-  <p>YK2 Moda © <time datetime="2025-12-04">2025</time></p>
-</footer>
+            <div class="filters" role="search">
+              <form id="search-form" role="search" onsubmit="return false">
+                <label for="q">Pesquisar</label>
+                <input id="q" name="q" type="search" list="sugestoes" placeholder="Buscar curso, projeto ou notícia">
+                <datalist id="sugestoes">
+                  <option value="Robótica">
+                  <option value="Meio Ambiente">
+                  <option value="Técnico em Informática">
+                </datalist>
+                <button type="submit">Buscar</button>
+              </form>
 
-<script src="script.js"></script>
+              <form id="subscribe" aria-label="assinatura newsletter">
+                <label for="email">Newsletter</label>
+                <input id="email" name="email" type="email" placeholder="seu@exemplo.com" required>
+                <button type="submit">Assinar</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section id="galeria" aria-labelledby="galeria-title">
+          <header><h2 id="galeria-title">Galeria</h2></header>
+
+          <div class="media-grid">
+            <figure>
+              <img src="https://via.placeholder.com/400x250" alt="Alunos em laboratório">
+              <figcaption>Alunos no laboratório de informática</figcaption>
+            </figure>
+
+            <figure>
+              <img src="https://via.placeholder.com/400x250" alt="Aula prática">
+              <figcaption>Aula prática de matemática</figcaption>
+            </figure>
+
+            <figure>
+              <video controls width="400" preload="metadata">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                seu navegador não suporta vídeo
+              </video>
+              <figcaption>Visita técnica</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section id="noticias" aria-labelledby="noticias-title">
+          <header><h2 id="noticias-title">Últimas Notícias</h2></header>
+
+          <ol>
+            <li>
+              <article aria-labelledby="not1">
+                <h3 id="not1">Torneio de Robótica</h3>
+                <p>Equipe representará a escola em competição estadual.</p>
+                <p><time datetime="2025-06-12">12 de junho de 2025</time></p>
+              </article>
+            </li>
+            <li>
+              <article aria-labelledby="not2">
+                <h3 id="not2">Semana Cultural</h3>
+                <p>Programação com feiras, exposições e apresentações.</p>
+                <p><time datetime="2025-08-20">20 de agosto de 2025</time></p>
+              </article>
+            </li>
+          </ol>
+        </section>
+
+        <section id="professores" aria-labelledby="prof-title">
+          <header><h2 id="prof-title">Equipe</h2></header>
+
+          <div class="staff-grid">
+            <article class="staff" aria-labelledby="p1">
+              <h3 id="p1">Prof.ª Ana Silva</h3>
+              <p>Coordenadora pedagógica</p>
+              <address>ana.silva@cetijr.edu.br</address>
+            </article>
+
+            <article class="staff" aria-labelledby="p2">
+              <h3 id="p2">Prof. Carlos Souza</h3>
+              <p>Professor de Matemática</p>
+              <address>carlos.souza@cetijr.edu.br</address>
+            </article>
+          </div>
+        </section>
+
+        <section id="contato" aria-labelledby="contato-title">
+          <header><h2 id="contato-title">Contato e Ouvidoria</h2></header>
+
+          <article aria-labelledby="art-contato">
+            <h3 id="art-contato">Fale Conosco</h3>
+
+            <form id="formContato" enctype="multipart/form-data">
+              <fieldset>
+                <legend>Fale conosco</legend>
+
+                <div class="form-row">
+                  <label for="nome">Nome</label>
+                  <input id="nome" name="nome" type="text" required>
+                </div>
+
+                <div class="form-row">
+                  <label for="telefone">Telefone</label>
+                  <input id="telefone" name="telefone" type="tel" pattern="\d{8,15}">
+                </div>
+
+                <div class="form-row">
+                  <label for="assunto">Assunto</label>
+                  <select id="assunto" name="assunto">
+                    <option value="matricula">Matrícula</option>
+                    <option value="aluno">Aluno</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                </div>
+
+                <div class="form-row">
+                  <label for="mensagem">Mensagem</label>
+                  <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                </div>
+
+                <div class="form-row">
+                  <label for="arquivo">Anexar arquivo</label>
+                  <input id="arquivo" name="arquivo" type="file" accept="image/*,.pdf">
+                </div>
+
+                <div class="form-row">
+                  <label><input type="checkbox" name="newsletter"> Quero receber novidades</label>
+                </div>
+
+                <div class="form-row">
+                  <button type="submit">Enviar</button>
+                  <button type="reset">Limpar</button>
+                </div>
+              </fieldset>
+            </form>
+          </article>
+
+          <aside class="meta" aria-label="informações de atendimento">
+            <p>Atendimento: <time datetime="2025-01-01">Seg - Sex, 8h - 17h</time></p>
+            <p>Consulte nosso <a href="#">regulamento interno</a>.</p>
+            <p><a href="mailto:contato@cetijr.edu.br">contato@cetijr.edu.br</a></p>
+          </aside>
+        </section>
+
+        <details>
+          <summary>Perguntas frequentes</summary>
+          <article>
+            <h4>Como me matricular?</h4>
+            <p>Verifique o calendário e compareça à secretaria com documentos necessários.</p>
+          </article>
+
+          <article>
+            <h4>Quais atividades extracurriculares estão disponíveis?</h4>
+            <p>Robótica, coral, esporte escolar e clubes de leitura.</p>
+          </article>
+        </details>
+
+        <canvas id="decor-canvas" width="600" height="80" aria-hidden="true"></canvas>
+
+      </div> <!-- container -->
+    </main>
+
+    <footer id="site-footer" role="contentinfo">
+      <div class="footer-inner">
+        <p>&copy; <time datetime="2025">2025</time> CETI Joel Ribeiro - Teresina</p>
+        <nav aria-label="rodape">
+          <ul>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Acessibilidade</a></li>
+            <li><a href="#">Mapa do Site</a></li>
+          </ul>
+        </nav>
+        <div class="stats">
+          <meter value="0.6" min="0" max="1">60%</meter>
+          <progress value="30" max="100">30%</progress>
+        </div>
+        <small>Desenvolvido para fins educativos</small>
+      </div>
+    </footer>
+
+  </div> <!-- page-wrapper -->
+
+  <script src="script.js" defer></script>
 <script src="script.js"></script></body>
 </html>
+```
+
