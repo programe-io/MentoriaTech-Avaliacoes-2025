@@ -1,0 +1,246 @@
+# Site da Escola CETI Joel Ribeiro — HTML, CSS e JS separados
+
+Abaixo estão os três arquivos: **index.html**, **style.css** e **script.js**.
+Copie cada bloco para o arquivo correspondente no seu editor.
+
+---
+
+## 📌 index.html
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site oficial da Escola CETI Joel Ribeiro">
+    <title>CETI Joel Ribeiro</title>
+    <link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <!-- TAG <main> obrigatória adicionada abaixo -->
+    <header>
+        <div class="logo-area">
+            <img src="https://via.placeholder.com/70" alt="Logo CETI" class="logo">
+            <h1>CETI Joel Ribeiro <span class="slogan">Educação e Futuro</span></h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="home" role="main">
+        <section class="banner">
+            <h2>Bem-vindo ao CETI Joel Ribeiro</h2>
+            <p>Educação de qualidade para transformar vidas.</p>
+            <a href="#sobre" class="btn">Conheça mais</a>
+        </section>
+
+        <section id="sobre" class="sobre">
+            <h2>Sobre a Escola</h2>
+            <p>O CETI Joel Ribeiro é uma instituição comprometida com a formação integral dos estudantes, oferecendo ensino médio completo e atividades complementares.</p>
+            <aside>
+                <h3>Missão</h3>
+                <p>Promover educação humanizada e tecnológica.</p>
+            </aside>
+        </section>
+
+        <section id="cursos" class="cursos">
+            <h2>Cursos Oferecidos</h2>
+            <article class="curso-card">
+                <header>
+                    <h3>Ensino Médio</h3>
+                </header>
+                <p>Formação completa com foco acadêmico e tecnológico.</p>
+                <footer>
+                    <small>Turnos: manhã e tarde</small>
+                </footer>
+            </article>
+
+            <article class="curso-card">
+                <header>
+                    <h3>Projetos Extracurriculares</h3>
+                </header>
+                <p>Robótica, dança, música e programas científicos.</p>
+                <footer>
+                    <small>Disponível para todos os alunos</small>
+                </footer>
+            </article>
+        </section>
+
+        <section id="galeria" class="galeria">
+            <h2>Galeria de Fotos</h2>
+            <div class="grid">
+                <figure>
+                    <img src="https://via.placeholder.com/300x200" alt="Evento escolar">
+                    <figcaption>Evento Cultural 2024</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/300x200" alt="Alunos estudando">
+                    <figcaption>Estudantes em sala de aula</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="contato" class="contato">
+            <h2>Fale Conosco</h2>
+            <form id="formContato">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="msg">Mensagem:</label>
+                <textarea id="msg" name="msg" rows="4"></textarea>
+
+                <fieldset>
+                    <legend>Assunto:</legend>
+                    <label><input type="radio" name="assunto" value="duvidas"> Dúvidas</label>
+                    <label><input type="radio" name="assunto" value="matricula"> Matrícula</label>
+                    <label><input type="radio" name="assunto" value="outros"> Outros</label>
+                </fieldset>
+
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CETI Joel Ribeiro — Todos os direitos reservados.</p>
+        <nav>
+            <ul class="social">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <dialog id="dialogMsg">
+        <h3>Mensagem enviada!</h3>
+        <p>Obrigado pelo contato. Em breve responderemos.</p>
+        <button id="closeDialog">Fechar</button>
+    </dialog>
+
+    <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
+```
+
+---
+
+## 🎨 style.css
+
+```css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+body {
+    background: #f2f2f2;
+    color: #333;
+}
+header {
+    background: #003366;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    border-radius: 50%;
+}
+nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.banner {
+    padding: 60px;
+    text-align: center;
+    background: linear-gradient(#003366cc, #003366cc), url('https://via.placeholder.com/1200x400');
+    color: white;
+}
+.btn {
+    padding: 10px 20px;
+    display: inline-block;
+    background: #0066cc;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.sobre, .cursos, .galeria, .contato {
+    padding: 30px;
+    background: white;
+    margin: 20px;
+    border-radius: 10px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+figure img {
+    width: 100%;
+    border-radius: 8px;
+}
+footer {
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+.social {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+dialog {
+    border: none;
+    padding: 20px;
+    border-radius: 8px;
+}
+```
+
+---
+
+## ⚙️ script.js
+
+```javascript
+const form = document.querySelector('#formContato');
+const dialog = document.querySelector('#dialogMsg');
+const btnClose = document.querySelector('#closeDialog');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    dialog.showModal();
+});
+
+btnClose.addEventListener('click', () => {
+    dialog.close();
+});
+```
+
+---
+
+Se quiser, posso criar mais páginas, adicionar animações, criar um layout mais moderno ou gerar um arquivo ZIP com tudo pronto.
