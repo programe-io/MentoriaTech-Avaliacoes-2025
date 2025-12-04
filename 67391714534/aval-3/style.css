@@ -1,0 +1,174 @@
+/* Reset / básico */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #d9e4f5, #f5f7fa);
+    color: #222;
+    line-height: 1.35;
+    padding: 0;
+}
+
+/* HEADER */
+header {
+    background: #4CAF50;
+    color: #fff;
+    padding: 18px 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.topo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+}
+
+#logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: rgba(255,255,255,0.08);
+    padding: 4px;
+    display: inline-block;
+}
+
+.titulo-area h1 {
+    font-size: 20px;
+    margin-bottom: 4px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge {
+    font-size: 12px;
+    background: rgba(255,255,255,0.18);
+    padding: 3px 8px;
+    border-radius: 12px;
+}
+
+/* username span (mostra quando houver nome salvo) */
+.username-hidden { display: none; }
+.username-visible {
+    display: block;
+    font-size: 13px;
+    opacity: 0.95;
+}
+
+/* NAV */
+nav { margin-top: 12px; }
+nav .menu {
+    list-style: none;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+}
+nav .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background .18s;
+}
+nav .menu a:hover { background: rgba(255,255,255,0.12); }
+
+/* MAIN container */
+.container {
+    max-width: 820px;
+    margin: 22px auto;
+    padding: 18px;
+    display: grid;
+    gap: 18px;
+}
+
+/* Cards / Seções */
+.card {
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* Inputs */
+label { font-weight: 600; font-size: 14px; display: block; margin-bottom: 6px; color:#333; }
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: box-shadow .18s, border-color .18s;
+}
+input:focus, textarea:focus { outline: none; border-color: #4CAF50; box-shadow: 0 0 8px rgba(76,175,80,0.12); }
+
+/* Botões */
+button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+}
+button.secondary {
+    background: #e0e0e0;
+    color: #333;
+    border: 1px solid #ccc;
+}
+.row { display:flex; gap:10px; margin-top:6px; justify-content:flex-end; }
+
+/* Input group (tarefa) */
+.input-group { display:flex; gap:10px; align-items:center; }
+.input-group input { flex: 1; }
+.input-group button { width: 120px; }
+
+/* Lista de tarefas */
+#listaTarefas { margin-top: 12px; list-style: none; padding-left: 0; }
+#listaTarefas li {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background:#f7f7f7;
+    margin-bottom:8px;
+}
+.task-text { flex:1; margin-right:8px; word-break: break-word; }
+.task-actions { display:flex; gap:8px; }
+
+/* notas salvas */
+#notasSalvas p {
+    background: #e9ffe9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 8px;
+    border-left: 4px solid #4CAF50;
+}
+
+/* Footer */
+footer {
+    text-align:center;
+    padding: 16px;
+    background: #f1f1f1;
+    color: #333;
+    margin-top: 22px;
+    font-size: 14px;
+}
+
+/* Responsividade */
+@media (max-width:600px) {
+    .topo { flex-direction: column; gap:8px; }
+    nav .menu { flex-wrap: wrap; gap:8px; }
+    .row { flex-direction: column-reverse; align-items: stretch; }
+    .input-group { flex-direction: column; }
+    .input-group button { width: 100%; }
+}
