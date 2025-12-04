@@ -1,0 +1,382 @@
+Aqui está o HTML revisado com várias ocorrências de tag span (incluindo em headings, botões, legendas e labels). Cole no seu arquivo index.html — os CSS e JS podem permanecer os mesmos.
+
+```html
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="CETI Joel Ribeiro — escola em Teresina. Informações, cursos, galeria, contato e notícias.">
+  <meta name="author" content="CETI Joel Ribeiro">
+  <title>CETI Joel Ribeiro — Teresina</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <div id="page" class="page">
+
+    <header id="site-header" role="banner">
+      <div class="branding">
+        <h1 id="site-title"><span class="brand-prefix">CETI</span> <span class="brand-suffix">Joel Ribeiro</span></h1>
+        <p class="slogan"><em><span>Educação</span> • <span>Inovação</span> • <span>Cidadania</span></em></p>
+      </div>
+
+      <nav id="main-nav" role="navigation" aria-label="Menu principal">
+        <button id="menu-toggle" aria-expanded="false" aria-controls="nav-list"><span class="menu-icon">≡</span> <span class="menu-text">menu</span></button>
+        <ul id="nav-list" class="nav-list" role="menubar">
+          <li role="none"><a role="menuitem" href="#inicio"><span>Início</span></a></li>
+          <li role="none"><a role="menuitem" href="#sobre"><span>Sobre</span></a></li>
+          <li role="none"><a role="menuitem" href="#cursos"><span>Cursos</span></a></li>
+          <li role="none"><a role="menuitem" href="#galeria"><span>Galeria</span></a></li>
+          <li role="none"><a role="menuitem" href="#noticias"><span>Notícias</span></a></li>
+          <li role="none"><a role="menuitem" href="#contato"><span>Contato</span></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="hero-wrap">
+      <section id="inicio" class="hero" role="region" aria-labelledby="hero-title">
+        <picture>
+          <source media="(min-width:1000px)" srcset="https://via.placeholder.com/1400x500">
+          <source media="(min-width:600px)" srcset="https://via.placeholder.com/900x350">
+          <img src="https://via.placeholder.com/600x300" alt="Fachada do CETI Joel Ribeiro">
+        </picture>
+
+        <div class="hero-content">
+          <h2 id="hero-title"><span>Bem-vindo</span> ao <span class="hero-school">CETI Joel Ribeiro</span></h2>
+          <p><span>Formando cidadãos para o século XXI</span> em Teresina</p>
+          <a class="btn" href="#cursos"><span>Ver cursos</span></a>
+          <small>Atualizado: <time datetime="2025-12-04"><span>4 dez 2025</span></time></small>
+        </div>
+      </section>
+    </div>
+
+    <main id="main" role="main">
+      <div class="container">
+
+        <section id="sobre" aria-labelledby="sobre-title">
+          <header>
+            <h2 id="sobre-title"><span>Sobre</span> a Escola</h2>
+            <p class="lead"><span>Missão</span>, visão e infraestrutura</p>
+          </header>
+
+          <article id="historia" aria-labelledby="historia-title">
+            <h3 id="historia-title"><span>História</span></h3>
+            <p>O <strong><span>CETI Joel Ribeiro</span></strong> é referência em educação técnica e integrada em <span>Teresina</span>.</p>
+            <p><strong>Infraestrutura:</strong> <span>laboratórios</span>, <span>biblioteca</span>, <span>quadra esportiva</span>, <span>salas multimídia</span>.</p>
+            <figure>
+              <img src="https://via.placeholder.com/800x400" alt="Vista aérea da escola">
+              <figcaption><span>Vista aérea do campus</span></figcaption>
+            </figure>
+          </article>
+
+          <article id="missao" aria-labelledby="missao-title">
+            <h3 id="missao-title"><span>Missão</span></h3>
+            <p><span>Promover educação de qualidade e inclusiva</span> com foco técnico e cidadania.</p>
+            <blockquote cite="#missao">
+              <p><span>\"Educar para transformar\"</span></p>
+            </blockquote>
+            <address>
+              Secretaria escolar: <span>Rua Exemplo, 123</span>, Teresina - PI<br>
+              Contato: <a href="tel:+558699999999"><span>(86) 99999-9999</span></a> — <a href="mailto:contato@cetijr.edu.br"><span>contato@cetijr.edu.br</span></a>
+            </address>
+          </article>
+
+          <div class="aside-and-cta">
+            <aside aria-labelledby="quick-info">
+              <h4 id="quick-info"><span>Informações Rápidas</span></h4>
+              <ul>
+                <li><time datetime="2025"><span>Ano referência: 2025</span></time></li>
+                <li><span>Turnos:</span> <span>Matutino</span> e <span>Vespertino</span></li>
+                <li><span>Projetos:</span> <span>Robótica</span>, <span>Meio Ambiente</span>, <span>Cultura</span></li>
+              </ul>
+            </aside>
+
+            <div class="cta">
+              <p><a class="btn" href="#contato"><span>Falar com a secretaria</span></a></p>
+              <progress value="45" max="100"><span>45%</span></progress>
+            </div>
+          </div>
+        </section>
+
+        <section id="cursos" aria-labelledby="cursos-title">
+          <header><h2 id="cursos-title"><span>Cursos</span> e Atividades</h2></header>
+
+          <div class="courses">
+            <article class="course" id="curso-fundamental" aria-labelledby="curso-fundamental-title">
+              <h3 id="curso-fundamental-title"><span>Ensino Fundamental</span></h3>
+              <p><span>Duração:</span> 9 anos — <span>Turno:</span> Manhã</p>
+              <details>
+                <summary><span>Mais detalhes</span></summary>
+                <p><span>Programa curricular amplo com ênfase em ciências e tecnologia.</span></p>
+              </details>
+            </article>
+
+            <article class="course" id="curso-medio" aria-labelledby="curso-medio-title">
+              <h3 id="curso-medio-title"><span>Ensino Médio</span></h3>
+              <p><span>Duração:</span> 3 anos — <span>Turno:</span> Tarde</p>
+              <dl>
+                <dt><span>Ênfases</span></dt>
+                <dd><span>Tecnologia, Cidadania</span></dd>
+                <dt><span>Atividades</span></dt>
+                <dd><span>Feiras, projetos interdisciplinares</span></dd>
+              </dl>
+            </article>
+
+            <article class="course" id="curso-tecnico" aria-labelledby="curso-tecnico-title">
+              <h3 id="curso-tecnico-title"><span>Técnico em Informática</span></h3>
+              <p><span>Duração:</span> 2 anos — <span>Turno:</span> Integral</span></p>
+            </article>
+          </div>
+
+          <figure class="course-table">
+            <figcaption><span>Quadro resumo de cursos</span></figcaption>
+            <table>
+              <caption><span>Resumo dos cursos</span></caption>
+              <colgroup>
+                <col style="width:50%">
+                <col style="width:25%">
+                <col style="width:25%">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col"><span>Curso</span></th>
+                  <th scope="col"><span>Duração</span></th>
+                  <th scope="col"><span>Turno</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><span>Ensino Fundamental</span></td><td><span>9 anos</span></td><td><span>Manhã</span></td></tr>
+                <tr><td><span>Ensino Médio</span></td><td><span>3 anos</span></td><td><span>Tarde</span></td></tr>
+                <tr><td><span>Técnico em Informática</span></td><td><span>2 anos</span></td><td><span>Integral</span></td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="3"><span>Consulte calendário para matrículas</span></td></tr>
+              </tfoot>
+            </table>
+          </figure>
+
+          <form id="inscricao" class="form-inline" method="post" action="#inscricao" enctype="multipart/form-data">
+            <fieldset>
+              <legend><span>Pré-inscrição</span></legend>
+
+              <label for="nome"><span>Nome</span></label>
+              <input id="nome" name="nome" type="text" required>
+
+              <label for="nasc"><span>Data de nascimento</span></label>
+              <input id="nasc" name="nasc" type="date">
+
+              <label for="curso-esc"><span>Curso desejado</span></label>
+              <select id="curso-esc" name="curso-esc">
+                <optgroup label="Ensino">
+                  <option value="fundamental"><span>Ensino Fundamental</span></option>
+                  <option value="medio"><span>Ensino Médio</span></option>
+                </optgroup>
+                <optgroup label="Técnico">
+                  <option value="informatica"><span>Técnico em Informática</span></option>
+                </optgroup>
+              </select>
+
+              <label for="turno"><span>Turno</span></label>
+              <input id="turno" name="turno" list="turnos" placeholder="escolha um turno">
+              <datalist id="turnos">
+                <option value="Manhã"><span>Manhã</span></option>
+                <option value="Tarde"><span>Tarde</span></option>
+                <option value="Integral"><span>Integral</span></option>
+              </datalist>
+
+              <label for="file"><span>Documentos</span> (pdf ou imagem)</label>
+              <input id="file" name="file" type="file" accept=".pdf,image/*">
+
+              <label for="agree"><input id="agree" name="agree" type="checkbox"> <span>Declaro que as informações são verdadeiras</span></label>
+
+              <div class="form-actions">
+                <button type="submit"><span>Enviar</span></button>
+                <button type="reset"><span>Limpar</span></button>
+              </div>
+            </fieldset>
+          </form>
+
+        </section>
+
+        <section id="galeria" aria-labelledby="galeria-title">
+          <header><h2 id="galeria-title"><span>Galeria</span></h2></header>
+
+          <div class="media-grid">
+            <figure>
+              <img src="https://via.placeholder.com/400x250" alt="Alunos no laboratório">
+              <figcaption><span>Laboratório de informática</span></figcaption>
+            </figure>
+
+            <figure>
+              <img src="https://via.placeholder.com/400x250" alt="Aula prática">
+              <figcaption><span>Aula prática</span></figcaption>
+            </figure>
+
+            <figure>
+              <video controls preload="metadata" width="400">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                seu navegador não suporta vídeo
+              </video>
+              <figcaption><span>Visita técnica</span></figcaption>
+            </figure>
+
+            <figure>
+              <audio controls>
+                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                áudio não suportado
+              </audio>
+              <figcaption><span>Jingle institucional</span></figcaption>
+            </figure>
+          </div>
+
+        </section>
+
+        <section id="noticias" aria-labelledby="noticias-title">
+          <header><h2 id="noticias-title"><span>Notícias</span></h2></header>
+
+          <ol>
+            <li>
+              <article id="noticia-robotica" aria-labelledby="noticia-robotica-title">
+                <h3 id="noticia-robotica-title"><span>Torneio de Robótica</span></h3>
+                <p><span>A equipe representará a escola em competição estadual.</span></p>
+                <footer><small>Publicado em <time datetime="2025-06-12"><span>12 jun 2025</span></time></small></footer>
+              </article>
+            </li>
+
+            <li>
+              <article id="noticia-cultural" aria-labelledby="noticia-cultural-title">
+                <h3 id="noticia-cultural-title"><span>Semana Cultural</span></h3>
+                <p><span>Programação com feiras, exposições e apresentações.</span></p>
+                <footer><small>Publicado em <time datetime="2025-08-20"><span>20 ago 2025</span></time></small></footer>
+              </article>
+            </li>
+          </ol>
+
+          <nav aria-label="paginação de notícias" class="pager">
+            <button type="button" id="older"><span>Mais antigas</span></button>
+            <button type="button" id="newer"><span>Mais recentes</span></button>
+          </nav>
+        </section>
+
+        <section id="professores" aria-labelledby="prof-title">
+          <header><h2 id="prof-title"><span>Equipe</span></h2></header>
+
+          <div class="staff-grid">
+            <article class="staff" id="prof-ana" aria-labelledby="prof-ana-name">
+              <h3 id="prof-ana-name"><span>Ana Silva</span></h3>
+              <p><span>Coordenadora Pedagógica</span></p>
+              <address><a href="mailto:ana.silva@cetijr.edu.br"><span>ana.silva@cetijr.edu.br</span></a></address>
+            </article>
+
+            <article class="staff" id="prof-carlos" aria-labelledby="prof-carlos-name">
+              <h3 id="prof-carlos-name"><span>Carlos Souza</span></h3>
+              <p><span>Professor de Matemática</span></p>
+              <address><a href="mailto:carlos.souza@cetijr.edu.br"><span>carlos.souza@cetijr.edu.br</span></a></address>
+            </article>
+          </div>
+        </section>
+
+        <section id="contato" aria-labelledby="contato-title">
+          <header><h2 id="contato-title"><span>Contato</span> e Ouvidoria</h2></header>
+
+          <article aria-labelledby="art-contato">
+            <h3 id="art-contato"><span>Fale Conosco</span></h3>
+
+            <form id="formContato" enctype="multipart/form-data">
+              <fieldset>
+                <legend><span>Fale conosco</span></legend>
+
+                <label for="nome2"><span>Nome</span></label>
+                <input id="nome2" name="nome2" type="text">
+
+                <label for="email2"><span>E-mail</span></label>
+                <input id="email2" name="email2" type="email">
+
+                <label for="mensagem2"><span>Mensagem</span></label>
+                <textarea id="mensagem2" name="mensagem2" rows="4"></textarea>
+
+                <label for="prioridade"><span>Prioridade</span></label>
+                <input id="prioridade" type="range" min="0" max="10" value="5">
+
+                <label for="sugestao"><span>Sugestão rápida</span></label>
+                <input id="sugestao" name="sugestao" type="text" list="sugest-list" placeholder="ex: mais aulas de robótica">
+                <datalist id="sugest-list">
+                  <option value="Robótica"></option>
+                  <option value="Esportes"></option>
+                  <option value="Clubes de leitura"></option>
+                </datalist>
+
+                <div class="form-actions">
+                  <button type="submit"><span>Enviar</span></button>
+                  <button type="reset"><span>Limpar</span></button>
+                </div>
+              </fieldset>
+            </form>
+          </article>
+
+          <aside class="meta" aria-label="informações de atendimento">
+            <h4><span>Atendimento</span></h4>
+            <p><span>Seg - Sex, 8h - 17h</span></p>
+            <p><a href="mailto:contato@cetijr.edu.br"><span>contato@cetijr.edu.br</span></a></p>
+          </aside>
+        </section>
+
+        <details>
+          <summary><span>Perguntas frequentes</span></summary>
+          <article>
+            <h4><span>Como me matricular?</span></h4>
+            <p><span>Compareça à secretaria com documentos pessoais e comprovante de residência.</span></p>
+          </article>
+
+          <article>
+            <h4><span>Quais atividades extracurriculares?</span></h4>
+            <p><span>Robótica, coral, esportes, oficinas de arte e clubes de leitura.</span></p>
+          </article>
+        </details>
+
+        <template id="card-template">
+          <article class="notice-card">
+            <h3 class="card-title"><span></span></h3>
+            <p class="card-text"><span></span></p>
+          </article>
+        </template>
+
+        <output id="result" name="result"><span>Nenhuma ação ainda</span></output>
+
+        <canvas id="decor" width="600" height="80" aria-hidden="true"></canvas>
+
+        <svg role="img" aria-label="logo simples" width="100" height="40" viewBox="0 0 100 40">
+          <rect width="100" height="40" rx="6" fill="#0b6"></rect>
+          <text x="50" y="25" font-size="14" fill="#fff" text-anchor="middle" dominant-baseline="middle"><tspan>CETI</tspan></text>
+        </svg>
+
+      </div> <!-- .container -->
+    </main>
+
+    <footer id="site-footer" role="contentinfo">
+      <div class="footer-inner">
+        <small><span>Desenvolvido</span> para fins educativos</small>
+        <nav aria-label="rodape">
+          <ul>
+            <li><a href="#"><span>Política de Privacidade</span></a></li>
+            <li><a href="#"><span>Acessibilidade</span></a></li>
+            <li><a href="#"><span>Mapa do Site</span></a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-meta">
+          <meter value="0.7" min="0" max="1"><span>70%</span></meter>
+          <progress value="40" max="100"><span>40%</span></progress>
+        </div>
+      </div>
+    </footer>
+
+  </div> <!-- #page -->
+
+  <script src="script.js" defer></script>
+<script src="script.js"></script></body>
+</html>
+```
