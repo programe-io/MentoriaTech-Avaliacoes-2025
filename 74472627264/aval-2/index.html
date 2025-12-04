@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Clube Neymar • Futebol Profissional</title>
+  <meta name="description" content="Site profissional sobre futebol com destaque ao Neymar. Notícias, galeria, estatísticas e contatos." />
+  <link rel="stylesheet" href="css/style.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">
+        <img src="images/logo.png" alt="Logo do site" />
+        <span>Clube Neymar</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#noticias">Notícias</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#estatisticas">Estatísticas</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button id="navToggle" class="nav-toggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero" role="banner" aria-label="Destaque Neymar">
+    <!-- Substitua images/neymar-hero.jpg pela sua imagem -->
+    <div class="hero-bg" style="background-image: url('images/neymar-hero.jpg');" aria-hidden="true"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Bem-vindo ao Clube Neymar</h1>
+      <p>Notícias, partidas e momentos inesquecíveis. Tudo sobre futebol com foco no craque.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#noticias">Últimas notícias</a>
+        <a class="btn btn-ghost" href="#galeria">Ver galeria</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="noticias" class="section noticias container">
+      <header class="section-header">
+        <h2>Últimas notícias</h2>
+        <p>Fique por dentro das principais manchetes e análises.</p>
+      </header>
+
+      <div class="cards noticias-grid">
+        <article class="card">
+          <img src="images/neymar-1.jpg" alt="Neymar comemorando" />
+          <div class="card-body">
+            <h3>Golaço decisivo</h3>
+            <p>Resumo do jogo: Neymar definiu a partida com um gol nos acréscimos e garantiu a vitória do time.</p>
+            <a class="card-link" href="#">Ler mais →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/neymar-2.jpg" alt="Neymar em treino" />
+          <div class="card-body">
+            <h3>Treino tático</h3>
+            <p>Confira como o treinador tem preparado o time para a próxima competição.</p>
+            <a class="card-link" href="#">Ler mais →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/neymar-3.jpg" alt="Neymar cumprimentando torcedores" />
+          <div class="card-body">
+            <h3>Encontro com a torcida</h3>
+            <p>Resumo do evento e bastidores do encontro com fãs.</p>
+            <a class="card-link" href="#">Ler mais →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="galeria" class="section galeria">
+      <div class="container">
+        <header class="section-header">
+          <h2>Galeria</h2>
+          <p>Momentos em alta resolução — clique para ampliar.</p>
+        </header>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <figure class="thumb" tabindex="0">
+            <img src="images/neymar-1.jpg" alt="Neymar imagem 1" data-full="images/neymar-1.jpg" />
+          </figure>
+          <figure class="thumb" tabindex="0">
+            <img src="images/neymar-2.jpg" alt="Neymar imagem 2" data-full="images/neymar-2.jpg" />
+          </figure>
+          <figure class="thumb" tabindex="0">
+            <img src="images/neymar-3.jpg" alt="Neymar imagem 3" data-full="images/neymar-3.jpg" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="estatisticas" class="section estatisticas container">
+      <header class="section-header">
+        <h2>Estatísticas</h2>
+        <p>Números e desempenho — dados ilustrativos.</p>
+      </header>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Gols</h3>
+          <p class="stat-value" id="golsCount">350</p>
+        </div>
+        <div class="stat-card">
+          <h3>Assistências</h3>
+          <p class="stat-value" id="assistCount">180</p>
+        </div>
+        <div class="stat-card">
+          <h3>Partidas</h3>
+          <p class="stat-value" id="gamesCount">650</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section contato container">
+      <header class="section-header">
+        <h2>Contato</h2>
+        <p>Fale com a equipe do site para parcerias e imprensa.</p>
+      </header>
+
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="form-row">
+          <label for="name">Nome</label>
+          <input id="name" name="name" type="text" required />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+
+        <div class="form-row">
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Enviar</button>
+          <button class="btn btn-ghost" type="reset">Limpar</button>
+        </div>
+
+        <p class="form-feedback" id="formFeedback" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Clube Neymar — Todos os direitos reservados.</p>
+      <nav class="socials" aria-label="Redes sociais">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Twitter">Twitter</a>
+        <a href="#" aria-label="YouTube">YouTube</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- MODAL DE IMAGEM -->
+  <div id="imageModal" class="image-modal" aria-hidden="true" role="dialog" aria-label="Visualizador de imagem">
+    <button class="modal-close" id="modalClose" aria-label="Fechar">×</button>
+    <img id="modalImg" src="" alt="" />
+  </div>
+
+  <script src="js/main.js" defer></script>
+<script src="script.js"></script></body>
+</html>
+<aside>
