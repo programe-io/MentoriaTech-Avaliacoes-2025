@@ -1,0 +1,366 @@
+# Site K-pop — arquivos separados
+
+Abaixo estão os três arquivos separados que compõem o site: `index.html`, `style.css` e `script.js`. Copie cada bloco para o respetivo arquivo no seu editor.
+
+---
+
+## index.html
+
+```html
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Fã-site de K-pop com informações, player, galeria e interatividade." />
+  <title>K-Pop Fan Zone</title>
+  <link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link href="style.css" rel="stylesheet"></head>
+<body>
+  <!-- TAG HEADER (obrigatória) -->
+  <header class="site-header" role="banner">
+    <div class="topbar">
+      <h1 id="site-title">K‑Pop Fan Zone <small>✨</small></h1>
+      <button id="theme-toggle" aria-pressed="false" aria-label="Alternar tema">🌙</button>
+    </div>
+    <nav role="navigation" aria-label="Menu principal">
+      <ul class="nav-list">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#news">Notícias</a></li>
+        <li><a href="#gallery">Galeria</a></li>
+        <li><a href="#player">Player</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <picture>
+        <source media="(min-width: 900px)" srcset="https://via.placeholder.com/1400x400.png?text=K-pop+Banner">
+        <img src="https://via.placeholder.com/800x300.png?text=K-pop+Banner" alt="Banner K-pop estilizado">
+      </picture>
+      <div class="hero-content">
+        <h2 id="hero-title">Bem-vindo à K‑Pop Fan Zone</h2>
+        <p>Notícias, músicas, vídeos e tudo para fãs de K‑pop.</p>
+        <a class="cta" href="#news">Ver novidades</a>
+      </div>
+    </section>
+
+    <section id="news" class="news" aria-labelledby="news-h">
+      <h3 id="news-h">Últimas notícias</h3>
+      <article class="card" aria-labelledby="n1-title">
+        <header>
+          <h4 id="n1-title">Novo comeback anunciado</h4>
+          <time datetime="2025-12-01">1 Dez 2025</time>
+        </header>
+        <p>Uma agência anunciou o retorno do grupo X com novo single.</p>
+        <details>
+          <summary>Leia mais</summary>
+          <p>Informações sobre música, pré-venda e datas de show.</p>
+        </details>
+        <footer>
+          <small>Fonte: <cite>Agência Oficial</cite></small>
+        </footer>
+      </article>
+
+      <article class="card" aria-labelledby="n2-title">
+        <h4 id="n2-title">Festival internacional de K‑pop</h4>
+        <p>Line-up confirmado com nomes populares do cenário.</p>
+      </article>
+
+      <aside class="sidebar" aria-label="Destaques rápidos">
+        <h4>Destaques</h4>
+        <dl>
+          <dt>Vídeo do dia</dt>
+          <dd><a href="#player">Clipe oficial de Y</a></dd>
+          <dt>Top 3</dt>
+          <dd>
+            <ol>
+              <li>Grupo A</li>
+              <li>Grupo B</li>
+              <li>Grupo C</li>
+            </ol>
+          </dd>
+        </dl>
+      </aside>
+    </section>
+
+    <section id="gallery" class="gallery" aria-labelledby="gallery-h">
+      <h3 id="gallery-h">Galeria</h3>
+      <div class="grid" role="list">
+        <figure role="listitem">
+          <img alt="Foto do grupo A" src="https://via.placeholder.com/300x200.png?text=Grupo+A"/>
+          <figcaption>Grupo A — Concerto 2025</figcaption>
+        </figure>
+        <figure role="listitem">
+          <img alt="Foto do grupo B" src="https://via.placeholder.com/300x200.png?text=Grupo+B"/>
+          <figcaption>Grupo B — Vídeo musical</figcaption>
+        </figure>
+        <figure role="listitem">
+          <img alt="Fanart K-pop" src="https://via.placeholder.com/300x200.png?text=Fanart"/>
+          <figcaption>Fanart</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="player" class="player" aria-labelledby="player-h">
+      <h3 id="player-h">Player — música em destaque</h3>
+      <div class="player-wrap">
+        <audio id="audio" controls>
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+          Seu browser não suporta áudio.
+        </audio>
+        <div class="player-controls">
+          <label for="volume">Volume</label>
+          <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8">
+          <button id="fav-btn" aria-pressed="false">♡ Favoritar</button>
+        </div>
+        <progress id="progress" value="0" max="100" aria-hidden="true"></progress>
+      </div>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-h">
+      <h3 id="contact-h">Contato</h3>
+      <form id="contact-form" action="#" method="post">
+        <label for="name">Nome</label>
+        <input id="name" name="name" type="text" required placeholder="Seu nome">
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required placeholder="email@exemplo.com">
+
+        <label for="reason">Motivo</label>
+        <select id="reason" name="reason">
+          <option value="report">Reportar erro</option>
+          <option value="collab">Colaboração</option>
+          <option value="other">Outro</option>
+        </select>
+
+        <label for="message">Mensagem</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <fieldset>
+          <legend>Assuntos</legend>
+          <label><input type="checkbox" name="topic" value="news"> Notícias</label>
+          <label><input type="checkbox" name="topic" value="music"> Música</label>
+          <label><input type="checkbox" name="topic" value="events"> Eventos</label>
+        </fieldset>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <section class="extras">
+      <h3>Curiosidades</h3>
+      <dl>
+        <dt>Origem</dt>
+        <dd>O termo K‑pop refere-se à música popular da Coreia do Sul.</dd>
+      </dl>
+      <blockquote>
+        <p>“A música conecta fãs ao redor do mundo.”</p>
+        <footer>— <cite>Portal K‑Pop</cite></footer>
+      </blockquote>
+
+      <table>
+        <caption>Comparativo rápido</caption>
+        <thead>
+          <tr><th>Grupo</th><th>Debut</th><th>Hits</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Grupo A</td><td>2018</td><td>5</td></tr>
+          <tr><td>Grupo B</td><td>2020</td><td>3</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="3">Dados fictícios</td></tr>
+        </tfoot>
+      </table>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; <time datetime="2025">2025</time> K‑Pop Fan Zone. Todos os direitos reservados.</p>
+    <nav aria-label="Redes sociais">
+      <ul class="socials">
+        <li><a href="#" title="Instagram">Instagram</a></li>
+        <li><a href="#" title="YouTube">YouTube</a></li>
+        <li><a href="#" title="Twitter">X</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <div id="modal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <h4 id="modal-title">Mensagem</h4>
+      <p id="modal-text"></p>
+      <button id="modal-close">Fechar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
+```
+
+---
+
+## style.css
+
+```css
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#ff4da6;
+  --glass: rgba(255,255,255,0.03);
+  --gap:16px;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.4;color:var(--muted);background:linear-gradient(180deg,#071025 0%, #0f1724 100%);}
+a{color:inherit;text-decoration:none}
+.site-header{padding:var(--gap);border-bottom:1px solid rgba(255,255,255,0.04)}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+#site-title{font-size:1.3rem;color:white;margin:0}
+.nav-list{display:flex;gap:12px;list-style:none;padding:0;margin:8px 0}
+.nav-list a{padding:6px 10px;border-radius:8px}
+.hero{display:grid;grid-template-columns:1fr;gap:var(--gap);align-items:center;padding:24px}
+.hero img{width:100%;height:auto;border-radius:12px}
+.hero-content{position:relative;top:-80px;padding:16px}
+.hero-content h2{color:white;margin:0 0 8px}
+.cta{display:inline-block;padding:8px 12px;background:var(--accent);color:white;border-radius:8px}
+.main{padding:var(--gap)}
+section{padding:18px;margin:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
+.card{padding:12px;background:var(--glass);border-radius:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.site-footer{padding:18px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.04)}
+.player-wrap{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6)}
+.modal[aria-hidden="false"]{display:flex}
+.modal-content{background:#071425;padding:18px;border-radius:12px;color:var(--muted);max-width:90%;}
+input,select,textarea,button{font:inherit;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+button{cursor:pointer}
+@media(min-width:900px){
+  .hero{grid-template-columns:1fr 1fr}
+  .hero-content{top:0}
+}
+/* tema claro (quando body.tema-claro existe) */
+body.tema-claro{--bg:#f6f8fb;--card:#fff;--muted:#1b2430;--accent:#ff2d95}
+```
+
+---
+
+## script.js
+
+```javascript
+// Script principal: interatividade mínima, sem dependências
+document.addEventListener('DOMContentLoaded',()=>{
+  const themeBtn = document.getElementById('theme-toggle');
+  const body = document.body;
+  // carregamento do tema salvo
+  if(localStorage.getItem('tema') === 'claro'){
+    body.classList.add('tema-claro');
+    themeBtn.textContent = '☀️';
+    themeBtn.setAttribute('aria-pressed','true');
+  }
+
+  themeBtn.addEventListener('click',()=>{
+    const ativo = body.classList.toggle('tema-claro');
+    themeBtn.setAttribute('aria-pressed', String(ativo));
+    themeBtn.textContent = ativo ? '☀️' : '🌙';
+    localStorage.setItem('tema', ativo ? 'claro' : 'escuro');
+  });
+
+  // Player: atualizar progress
+  const audio = document.getElementById('audio');
+  const progress = document.getElementById('progress');
+  const volume = document.getElementById('volume');
+  const favBtn = document.getElementById('fav-btn');
+
+  if(audio){
+    audio.addEventListener('timeupdate',()=>{
+      const pct = (audio.currentTime / audio.duration) * 100 || 0;
+      progress.value = pct;
+    });
+  }
+
+  volume?.addEventListener('input',(e)=>{
+    if(audio) audio.volume = parseFloat(e.target.value);
+  });
+
+  // favoritos
+  const FAVORITES_KEY = 'kpfav';
+  favBtn?.addEventListener('click',()=>{
+    const favs = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
+    const track = audio?.currentSrc || 'track-1';
+    if(favs.includes(track)){
+      const idx = favs.indexOf(track); if(idx>-1) favs.splice(idx,1);
+      favBtn.textContent = '♡ Favoritar';
+      favBtn.setAttribute('aria-pressed','false');
+      showModal('Removido dos favoritos');
+    } else {
+      favs.push(track);
+      favBtn.textContent = '♥ Favoritado';
+      favBtn.setAttribute('aria-pressed','true');
+      showModal('Adicionado aos favoritos');
+    }
+    localStorage.setItem(FAVORITES_KEY, JSON.stringify(favs));
+  });
+
+  // Form submit (validação simples)
+  const form = document.getElementById('contact-form');
+  form?.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    const data = new FormData(form);
+    const nome = data.get('name')?.toString().trim();
+    const email = data.get('email')?.toString().trim();
+    if(!nome || !email){
+      showModal('Por favor, preencha nome e email.');
+      return;
+    }
+    showModal('Obrigado! Mensagem enviada (demo).');
+    form.reset();
+  });
+
+  // Modal utilitário
+  const modal = document.getElementById('modal');
+  const modalText = document.getElementById('modal-text');
+  const modalClose = document.getElementById('modal-close');
+
+  window.showModal = (msg)=>{
+    if(!modal) return;
+    modalText.textContent = msg;
+    modal.setAttribute('aria-hidden','false');
+    // foco acessível
+    modalClose.focus();
+  }
+  modalClose?.addEventListener('click',()=>{
+    modal.setAttribute('aria-hidden','true');
+  });
+
+  // fechar modal com ESC
+  document.addEventListener('keydown',(e)=>{
+    if(e.key === 'Escape') modal?.setAttribute('aria-hidden','true');
+  });
+
+  // Keyboard shortcuts: / abre busca (demo)
+  document.addEventListener('keydown',(e)=>{
+    if(e.key === '/'){
+      e.preventDefault();
+      showModal('Atalho: você pressionou / — busque no site (demo)');
+    }
+  });
+});
+```
+
+---
+
+Se quiser, eu posso:
+
+* Gerar um arquivo ZIP com estes arquivos.
+* Acrescentar mais páginas (ex: `sobre.html`, `discografia.html`) ou designs diferentes.
+* Traduzir para inglês ou outro idioma.
+
+Diga o que prefere que eu faça a seguir.
