@@ -1,0 +1,35 @@
+/* ====================== styles.css ====================== */
+/* Salve este bloco como: styles.css */
+:root{
+  --bg:#0b0712; --card:#121018; --accent:#7a4bd6; --muted:#bdb8c7; --glass: rgba(255,255,255,0.04); --maxWidth:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient(circle at 10% 20%, rgba(122,75,214,0.12), transparent 10%), linear-gradient(180deg,#05030a, var(--bg));
+  color:var(--muted);line-height:1.45;padding:2rem;display:flex;justify-content:center;
+}
+#conteudo{max-width:var(--maxWidth);width:100%;display:grid;grid-template-columns:1fr;gap:1.25rem}
+header, footer{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1rem;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+nav ul{display:flex;gap:0.75rem;list-style:none}
+nav a{color:var(--muted);text-decoration:none;padding:0.35rem 0.6rem;border-radius:8px}
+nav a:hover, nav a:focus{background:var(--glass);color:#fff}
+section{background:linear-gradient(180deg,var(--card),rgba(0,0,0,0.15));padding:1rem;border-radius:12px}
+table{width:100%;border-collapse:collapse}
+thead th{font-weight:600;padding:0.5rem;text-align:left}
+tbody td, tfoot td{padding:0.4rem}
+input, textarea, select, button{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:0.5rem;border-radius:8px}
+input:focus, select:focus, button:focus{outline:2px solid rgba(122,75,214,0.22)}
+#mapCanvas{width:100%;height:auto;border-radius:8px;display:block;box-shadow:inset 0 0 80px rgba(122,75,214,0.05)}
+.criatura{padding:0.6rem;border-left:4px solid var(--accent);margin:0.5rem 0;border-radius:6px;background:linear-gradient(0deg, rgba(255,255,255,0.01), transparent)}
+@media (min-width:900px){#conteudo{grid-template-columns: 1fr 420px}nav ul{gap:1rem}}
+@supports (backdrop-filter: blur(4px)){header, section, footer{backdrop-filter:blur(6px)}}
+button{cursor:pointer;transition:transform .18s ease, box-shadow .18s}
+button:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(122,75,214,0.08)}
+@keyframes pulseAccent{0%{box-shadow:0 0 0 0 rgba(122,75,214,0.3)}50%{box-shadow:0 0 0 10px rgba(122,75,214,0.05)}100%{box-shadow:0 0 0 0 rgba(122,75,214,0)}}
+.pulse{animation:pulseAccent 3s infinite}
+h1::after{content:" — Itan";display:block;font-size:0.7rem;color:var(--muted);margin-top:0.2rem}
+li:nth-child(odd){opacity:0.98}
+li:nth-child(even){opacity:0.85}
+@media print{body{background:white;color:black}nav, form, menu{display:none}}

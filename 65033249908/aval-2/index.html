@@ -1,0 +1,180 @@
+<!-- INDEX.HTML -->
+<!-- Salve este bloco como: index.html -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Mundo Itan — guia interativo com lore, mapas, criaturas e mecânicas de éter.">
+  <title>Itan — Guia Interativo (index.html)</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23704c9c'/%3E%3C/text x='50' y='55' font-size='36' text-anchor='middle' fill='%23fff'%3EI%3C/text%3E%3C/svg%3E">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header id="topo" role="banner">
+    <hgroup>
+      <h1>Itan</h1>
+      <h2>O éter, as cidades e as pistas esquecidas</h2>
+    </hgroup>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="#lore">Lore</a></li>
+        <li><a href="#mapa">Mapa</a></li>
+        <li><a href="#bestiario">Bestiário</a></li>
+        <li><a href="#ferramentas">Ferramentas</a></li>
+        <li><a href="#experimentos">Experimentos</a></li>
+      </ul>
+    </nav>
+    <address>
+      Criado por: <a href="#author">Endo</a>
+    </address>
+  </header>
+
+  <main id="conteudo" role="main">
+    <section id="lore" aria-labelledby="lore-title">
+      <h3 id="lore-title">Lore de Itan</h3>
+      <article>
+        <p><mark>Éter</mark> em Itan é uma mistura física: água, oxigênio, metano e minerais. Medimos o éter com o <abbr title="Analisador de Éter">AdÉ</abbr> (níveis 1–7).</p>
+        <dl>
+          <dt>Níveis</dt>
+          <dd>
+            <ol>
+              <li>1-2: Baixo</li>
+              <li>3-4: Médio (mutagênese)</li>
+              <li>5: Alto (Ancestrais surgem)</li>
+              <li>6-7: Muito abundante</li>
+            </ol>
+          </dd>
+        </dl>
+      </article>
+      <figure>
+        <img src="mapa-itam.png" alt="Mapa estilizado de Itan" width="640" height="360">
+        <figcaption>Mapa esquemático — regiões de alto éter marcadas em violeta.</figcaption>
+      </figure>
+    </section>
+
+    <section id="mapa">
+      <h3>Mapa interativo</h3>
+      <aside>
+        <form id="mapa-form" aria-label="Controles do mapa">
+          <label for="camada">Camada:</label>
+          <select id="camada" name="camada">
+            <option value="topo">Topográfico</option>
+            <option value="eter">Éter</option>
+            <option value="recursos">Recursos</option>
+            <option value="perigos">Perigos</option>
+          </select>
+
+          <label for="zoom">Zoom</label>
+          <input type="range" id="zoom" name="zoom" min="1" max="10" value="3">
+
+          <label><input type="checkbox" id="mostrar-anc" name="mostrar-anc"> Mostrar Ancestrais</label>
+
+          <button type="button" id="btn-reset">Resetar</button>
+        </form>
+      </aside>
+
+      <figure>
+        <canvas id="mapCanvas" width="960" height="480" role="img" aria-label="Mapa de Itan interativo"></canvas>
+        <figcaption>Canvas do mapa: desenhado via script.js.</figcaption>
+      </figure>
+
+      <details>
+        <summary>Legenda</summary>
+        <table>
+          <thead>
+            <tr><th>Símbolo</th><th>Significado</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>&#9679;</td><td>Poço de éter</td></tr>
+            <tr><td>&#10071;</td><td>Perigo mutagênico</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="2">Atualizado: <time datetime="2025-12-04">04 de Dezembro de 2025</time></td></tr>
+          </tfoot>
+        </table>
+      </details>
+    </section>
+
+    <section id="bestiario">
+      <h3>Bestiário</h3>
+      <ul>
+        <li>
+          <article class="criatura" data-nivel="3">
+            <header><h4>Rasgaterra</h4><small>— bestial terrestre</small></header>
+            <p>Vive em zonas de éter nível 3–4. Pode sofrer mutações se exposto ao nível 6.</p>
+            <footer>
+              <time datetime="2025-11-01">Descoberto em 1 Nov 2025</time>
+            </footer>
+          </article>
+        </li>
+        <li>
+          <article class="criatura" data-nivel="5">
+            <header><h4>Ancestral Sussurrante</h4><small>— potencialmente Ancestral</small></header>
+            <p>Surge em poços com nível 5 de éter. Presença acompanhada de <code>aura</code> distorcida.</p>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section id="ferramentas">
+      <h3>Ferramentas e dispositivos</h3>
+      <ol>
+        <li><dfn title="Analisador de Éter">AdÉ</dfn> — Mede e emite relatório em JSON.</li>
+        <li>Catalisador de Ancestralidade — experimental.</li>
+      </ol>
+
+      <form id="calibra-form">
+        <fieldset>
+          <legend>Calibrar AdÉ</legend>
+          <label for="serial">Serial:</label>
+          <input type="text" id="serial" name="serial" pattern="[A-Z0-9]{6}" placeholder="AB12CD" required>
+
+          <label for="nivel">Nível alvo:</label>
+          <input list="niveis" id="nivel" name="nivel" required>
+          <datalist id="niveis">
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+            <option value="6"></option>
+            <option value="7"></option>
+          </datalist>
+
+          <button type="submit">Enviar</button>
+        </fieldset>
+      </form>
+
+      <output id="calibra-output" for="serial nivel"></output>
+    </section>
+
+    <section id="experimentos">
+      <h3>Experimentos</h3>
+      <menu>
+        <li><button type="button" data-ex="sim1" class="exp-btn">Simular Mutação</button></li>
+        <li><button type="button" data-ex="sim2" class="exp-btn">Simular Ancestral</button></li>
+      </menu>
+
+      <template id="log-template">
+        <article class="log">
+          <h4></h4>
+          <p></p>
+          <small></small>
+        </article>
+      </template>
+
+      <section id="logs" aria-live="polite"></section>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>© Itan Project — Ficção & Ferramentas. <a href="#topo">Voltar ao topo</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
+
