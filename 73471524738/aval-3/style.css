@@ -1,0 +1,254 @@
+/* ============================================================
+   ESTILOS GERAIS
+============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+
+/* ============================================================
+   HEADER
+============================================================ */
+header {
+    background: #141414;
+    padding: 20px 30px;
+    border-bottom: 3px solid #00d9ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 70px;
+    height: auto;
+}
+
+.slogan {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* MENU */
+nav ul.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+nav ul.menu li a:hover {
+    background: #00d9ff;
+    color: #000;
+    border-radius: 5px;
+}
+
+
+/* ============================================================
+   LAYOUT PRINCIPAL
+============================================================ */
+main {
+    max-width: 1300px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 20px;
+}
+
+
+/* ============================================================
+   POSTS (MAIN)
+============================================================ */
+.posts {
+    flex: 3;
+}
+
+.post {
+    background: #1a1a1a;
+    padding: 20px;
+    border-left: 5px solid #00d9ff;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.post:hover {
+    transform: scale(1.015);
+}
+
+.post h2 {
+    color: #00d9ff;
+    margin-bottom: 10px;
+}
+
+.post figure {
+    margin-bottom: 10px;
+}
+
+.post figcaption {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 5px;
+}
+
+
+/* ============================================================
+   ASIDE (BARRA LATERAL)
+============================================================ */
+.sidebar {
+    flex: 1;
+    background: #1a1a1a;
+    padding: 20px;
+    border: 2px solid #00d9ff;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.sidebar h3 {
+    color: #00d9ff;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.ad-box {
+    background: #0d0d0d;
+    padding: 10px;
+    border: 1px dashed #00d9ff;
+    text-align: center;
+}
+
+.ad-box img {
+    width: 100%;
+}
+
+
+/* ============================================================
+   BOTÃO VOLTAR AO TOPO
+============================================================ */
+#btnTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px;
+    background: #00d9ff;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    font-size: 18px;
+    box-shadow: 0 0 12px #00d9ff;
+    transition: 0.3s;
+}
+
+#btnTop:hover {
+    background: #00a3c7;
+}
+
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer {
+    background: #0e0e0e;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #00d9ff;
+    margin-top: 40px;
+}
+
+
+/* ============================================================
+   RESPONSIVIDADE (MOBILE)
+============================================================ */
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        order: 2;
+    }
+
+    .posts {
+        order: 1;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    nav ul.menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .logo {
+        width: 50px;
+    }
+
+    nav ul.menu li a {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    #btnTop {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
