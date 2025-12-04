@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT - Bem-vindos a Derry</title>
+    <link rel="stylesheet" href="styles.css">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<header>
+    <h1>🎈 IT — Bem-vindos a Derry</h1>
+    <p class="tagline">“Todos flutuam aqui embaixo...”</p>
+
+    <nav>
+        <ul>
+            <li><a href="#about">Sobre Derry</a></li>
+            <li><a href="#media">Mídias</a></li>
+            <li><a href="#form">Entrar no Clube dos Perdedores</a></li>
+            <li><a href="#table">Desaparecidos</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+<section id="about">
+    <article>
+        <h2>Sobre a Cidade</h2>
+        <p>
+            Derry é uma cidade aparentemente comum, mas <strong>esconde segredos sombrios</strong>.
+            A cada <time datetime="27Y">27 anos</time>, algo desperta.
+        </p>
+        <details>
+            <summary>Ver história oculta</summary>
+            <p>Relatos antigos mencionam um ser conhecido como <strong>Pennywise</strong>.</p>
+        </details>
+    </article>
+
+    <aside>
+        <h3>Bexiga Vermelha</h3>
+        <svg width="120" height="180">
+            <ellipse cx="60" cy="60" rx="40" ry="55" fill="red"></ellipse>
+            <line x1="60" y1="115" x2="60" y2="170" stroke="red" stroke-width="3"/>
+        </svg>
+        <p>O símbolo mais famoso de Derry.</p>
+    </aside>
+</section>
+
+<hr>
+
+<section id="media">
+    <h2>Mídias da Cidade</h2>
+
+    <figure>
+        <picture>
+            <source media="(min-width: 800px)" srcset="derry-large.jpg">
+            <img src="derry-small.jpg" alt="Vista de Derry" width="400">
+        </picture>
+        <figcaption>Pontos turísticos de Derry</figcaption>
+    </figure>
+
+    <video controls width="420">
+        <source src="pennywise.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+    </video>
+
+    <audio controls>
+        <source src="sewer-sound.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <canvas id="canvas" width="400" height="120"></canvas>
+</section>
+
+<hr>
+
+<section id="form">
+    <h2>Entre para o Clube dos Perdedores</h2>
+
+    <form id="loserForm">
+        <fieldset>
+            <legend>Informações:</legend>
+
+            <label>Nome:
+                <input type="text" name="nome" required>
+            </label>
+
+            <label>Email:
+                <input type="email" name="email" required>
+            </label>
+
+            <label>Nível de coragem:
+                <input type="range" min="0" max="10">
+            </label>
+
+            <label>Bairro:
+                <select name="bairro">
+                    <option value="barrens">The Barrens</option>
+                    <option value="neibolt">Rua Neibolt</option>
+                </select>
+            </label>
+
+            <label>Mensagem:
+                <textarea rows="4"></textarea>
+            </label>
+        </fieldset>
+
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpar</button>
+    </form>
+
+    <dialog id="dialog">
+        <h3>🎈 Você entrou para o Clube!</h3>
+        <p>Agora você sabe que ele volta a cada 27 anos...</p>
+        <button id="closeDialog">Fechar</button>
+    </dialog>
+</section>
+
+<hr>
+
+<section id="table">
+    <h2>Registros de Desaparecidos</h2>
+
+    <table>
+        <caption>Casos recentes</caption>
+
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Bairro</th>
+                <th>Probabilidade de flutuar</th>
+            </tr>
+        </thead>
+
+        <tbody id="missingTable">
+            <tr>
+                <td>Georgie Denbrough</td>
+                <td>Jackson Street</td>
+                <td><meter value="100" min="0" max="100"></meter></td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="3"><span id="count">1</span> registro(s)</td>
+            </tr>
+        </tfoot>
+    </table>
+</section>
+
+</main>
+
+<footer>
+    <p>© <span id="year"></span> — Derry, Maine</p>
+</footer>
+
+<script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
