@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Site animado sobre Joel Ribeiro — biografia, projetos e galeria." />
+  <title>Joel Ribeiro — Super Página Animada</title>
+  <link rel="stylesheet" href="styles.css" />
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header role="banner">
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <h1 id="home"><mark>Joel Ribeiro</mark> — energia pura!</h1>
+    <p class="tagline">Bem-vindo à página mais animada sobre Joel.</p>
+    <button id="toggleTheme" aria-pressed="false">Alternar Tema</button>
+  </header>
+
+  <main>
+    <section id="sobre" aria-labelledby="sobre-title">
+      <h2 id="sobre-title">Sobre Joel</h2>
+      <article>
+        <figure>
+          <picture>
+            <source srcset="joel.webp" type="image/webp" />
+            <img src="joel.jpg" alt="Retrato de Joel Ribeiro (ilustrativo)" width="320" height="320" />
+          </picture>
+          <figcaption>Joel em ação — sempre sorrindo.</figcaption>
+        </figure>
+
+        <p><strong>Joel Ribeiro</strong> é uma pessoa criativa, comunicativa e cheia de energia. <em>Adora desafios</em> e está sempre experimentando coisas novas.</p>
+
+        <dl>
+          <dt>Profissão</dt>
+          <dd>Designer / Criador de Conteúdo</dd>
+          <dt>Hobbies</dt>
+          <dd>Fotografia, música e skate</dd>
+        </dl>
+
+        <blockquote cite="https://exemplo.com">
+          "A atitude é o que transforma ideias em realidade" — <cite>Joel Ribeiro</cite>
+        </blockquote>
+
+        <p>
+          Veja um pouco mais no <a href="#projetos">portfólio</a> e na <a href="#galeria">galeria</a>.
+        </p>
+
+      </article>
+    </section>
+
+    <section id="projetos" aria-labelledby="proj-title">
+      <h2 id="proj-title">Projetos</h2>
+
+      <table>
+        <caption>Projetos recentes</caption>
+        <thead>
+          <tr><th>Nome</th><th>Descrição</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Projeto A</td><td>Site interativo</td><td><meter min="0" max="100" value="80">80%</meter></td></tr>
+          <tr><td>Projeto B</td><td>Mini-documentário</td><td><meter min="0" max="100" value="60">60%</meter></td></tr>
+        </tbody>
+      </table>
+
+      <ul>
+        <li><strong>Design</strong>: identidade visual</li>
+        <li><em>Vídeo</em>: edição e direção</li>
+        <li><code>Web</code>: experiências interativas</li>
+      </ul>
+
+      <details>
+        <summary>Mais sobre os projetos</summary>
+        <p>Planos futuros incluem uma exposição e workshop. <time datetime="2026-03-01">Março de 2026</time>.</p>
+      </details>
+
+      <form id="newsletter" onsubmit="return false;">
+        <fieldset>
+          <legend>Inscreva-se na newsletter</legend>
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" placeholder="Seu nome" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="seu@exemplo.com" required />
+
+          <label for="interesse">Área de interesse</label>
+          <select id="interesse" name="interesse">
+            <option>Design</option>
+            <option>Fotografia</option>
+            <option>Música</option>
+          </select>
+
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+
+          <button type="submit" id="btnSubscribe">Inscrever</button>
+          <output id="formOutput" name="result" aria-live="polite"></output>
+        </fieldset>
+      </form>
+
+    </section>
+
+    <aside id="galeria" aria-labelledby="gal-title">
+      <h2 id="gal-title">Galeria</h2>
+      <ol>
+        <li><figure><img src="foto1.jpg" alt="Foto 1" /><figcaption>Foto 1 — energia</figcaption></figure></li>
+        <li><figure><img src="foto2.jpg" alt="Foto 2" /><figcaption>Foto 2 — cor e movimento</figcaption></figure></li>
+        <li><figure><img src="foto3.jpg" alt="Foto 3" /><figcaption>Foto 3 — cidade</figcaption></figure></li>
+      </ol>
+
+      <audio controls>
+        <source src="musica.mp3" type="audio/mpeg" />
+        Seu navegador não suporta o elemento de áudio.
+      </audio>
+
+      <video controls width="320" poster="video-poster.jpg">
+        <source src="clip.mp4" type="video/mp4" />
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
+    </aside>
+
+    <section id="extra">
+      <h2>Interatividade extra</h2>
+      <canvas id="confettiCanvas" width="800" height="200" role="img" aria-label="Animação confete"></canvas>
+
+      <svg viewBox="0 0 100 20" aria-hidden="true" focusable="false">
+        <text x="0" y="15" font-size="10">Joel ✦ Criatividade ✦ Movimento</text>
+      </svg>
+
+      <figure>
+        <img src="badge.svg" alt="Badge" />
+        <figcaption>Badge comemorativo</figcaption>
+      </figure>
+    </section>
+<span></span>
+  </main>
+<div> MANEIRO </div>
+  <footer id="contato" role="contentinfo">
+    <address>
+      Contato: <a href="mailto:joel@example.com">joel@example.com</a><br />
+      <small>Rua Exemplo, 123 — Cidade</small>
+    </address>
+
+    <nav aria-label="Redes sociais">
+      <ul>
+        <li><a href="#" aria-label="Instagram">Instagram</a></li>
+        <li><a href="#" aria-label="YouTube">YouTube</a></li>
+        <li><a href="#" aria-label="GitHub">GitHub</a></li>
+      </ul>
+    </nav>
+
+    <p><small>© <time datetime="2025">2025</time> Joel Ribeiro — todos os direitos reservados.</small></p>
+  </footer>
+
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
