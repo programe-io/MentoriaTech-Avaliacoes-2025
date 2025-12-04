@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Site fã sobre BTS — biografia, membros, discografia e interações." />
+  <title>BTS Fan Site</title>
+
+  <!-- favicon (placeholder) -->
+  <link rel="icon" href="https://via.placeholder.com/32" />
+
+  <!-- styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- preconnect / preload examples -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header id="top" role="banner">
+    <nav aria-label="Principal" class="nav">
+      <a class="brand" href="#top" title="Voltar ao topo">BTS Fan</a>
+      <button id="menuToggle" aria-expanded="false" aria-controls="mainMenu">☰</button>
+      <ul id="mainMenu" class="menu" role="menubar">
+        <li role="none"><a role="menuitem" href="#about">Sobre</a></li>
+        <li role="none"><a role="menuitem" href="#members">Membros</a></li>
+        <li role="none"><a role="menuitem" href="#discography">Discografia</a></li>
+        <li role="none"><a role="menuitem" href="#media">Mídia</a></li>
+        <li role="none"><a role="menuitem" href="#contact">Contato</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero" aria-labelledby="heroTitle">
+      <h1 id="heroTitle">BTS — Beyond The Scene</h1>
+      <p class="lead">Um site fã com informações, galeria e interações.</p>
+
+      <figure class="hero-figure" role="group" aria-label="Foto do BTS">
+        <img src="https://via.placeholder.com/900x300?text=BTS" alt="Foto representativa do BTS" />
+        <figcaption>Imagem ilustrativa — fã clube</figcaption>
+      </figure>
+    </section>
+  </header>
+
+  <main id="main" role="main">
+    <article id="about" aria-labelledby="aboutTitle">
+      <h2 id="aboutTitle">Sobre o Grupo</h2>
+      <p>
+        BTS é um grupo musical sul-coreano conhecido mundialmente. Aqui temos uma
+        visão geral informativa, sem reproduzir letras.
+      </p>
+
+      <dl>
+        <dt>Origem</dt>
+        <dd>Seul, Coreia do Sul</dd>
+
+        <dt>Estreia</dt>
+        <dd><time datetime="2013-06-13">13 de junho de 2013</time></dd>
+
+        <dt>Gêneros</dt>
+        <dd>Pop, K-pop, Hip-Hop, R&B</dd>
+      </dl>
+    </article>
+
+    <section id="members" aria-labelledby="membersTitle">
+      <h2 id="membersTitle">Membros</h2>
+
+      <div class="members-grid" role="list">
+        <!-- Example member card (replicar com outros nomes) -->
+        <article class="member" role="listitem" data-name="RM">
+          <header><h3>RM <small>(Líder)</small></h3></header>
+          <figure>
+            <img src="https://via.placeholder.com/200?text=RM" alt="RM" />
+            <figcaption>RM — líder e rapper</figcaption>
+          </figure>
+          <p><strong>Função:</strong> Rapper, líder, compositor</p>
+          <p><abbr title="Anos de atividade">Ativo</abbr>: desde 2013</p>
+          <button class="more-btn" aria-expanded="false">Mais</button>
+          <details>
+            <summary>Curiosidades</summary>
+            <p>Gosta de leitura e rap; fluente em inglês.</p>
+          </details>
+        </article>
+
+        <article class="member" role="listitem" data-name="Jin">
+          <h3>Jin</h3>
+          <img src="https://via.placeholder.com/200?text=Jin" alt="Jin" />
+          <p><em>Vocal</em></p>
+        </article>
+
+        <article class="member" role="listitem" data-name="Suga">
+          <h3>Suga</h3>
+          <img src="https://via.placeholder.com/200?text=Suga" alt="Suga" />
+          <p><em>Rapper</em></p>
+        </article>
+
+        <article class="member" role="listitem" data-name="J-Hope">
+          <h3>J-Hope</h3>
+          <img src="https://via.placeholder.com/200?text=J-Hope" alt="J-Hope" />
+          <p><em>Rapper / Dancer</em></p>
+        </article>
+
+        <article class="member" role="listitem" data-name="Jimin">
+          <h3>Jimin</h3>
+          <img src="https://via.placeholder.com/200?text=Jimin" alt="Jimin" />
+          <p><em>Vocal / Dancer</em></p>
+        </article>
+
+        <article class="member" role="listitem" data-name="V">
+          <h3>V</h3>
+          <img src="https://via.placeholder.com/200?text=V" alt="V" />
+          <p><em>Vocal</em></p>
+        </article>
+
+        <article class="member" role="listitem" data-name="Jungkook">
+          <h3>Jungkook</h3>
+          <img src="https://via.placeholder.com/200?text=Jungkook" alt="Jungkook" />
+          <p><em>Maknae / Vocal</em></p>
+        </article>
+      </div>
+
+      <form id="searchMember" aria-label="Filtrar membros">
+        <label for="memberQuery">Pesquisar membro:</label>
+        <input id="memberQuery" name="memberQuery" type="search" placeholder="ex: RM, Jin..." />
+        <button type="submit">Buscar</button>
+        <button type="button" id="resetSearch">Mostrar todos</button>
+      </form>
+    </section>
+
+    <section id="discography" aria-labelledby="discographyTitle">
+      <h2 id="discographyTitle">Discografia selecionada</h2>
+
+      <table>
+        <caption>Álbuns selecionados</caption>
+        <thead>
+          <tr>
+            <th scope="col">Ano</th>
+            <th scope="col">Álbum</th>
+            <th scope="col">Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><time datetime="2013">2013</time></td>
+            <td>2 Cool 4 Skool</td>
+            <td>Mini-álbum</td>
+          </tr>
+          <tr>
+            <td><time datetime="2016">2016</time></td>
+            <td>Wings</td>
+            <td>Álbum</td>
+          </tr>
+          <tr>
+            <td><time datetime="2020">2020</time></td>
+            <td>Map of the Soul: 7</td>
+            <td>Álbum</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <figure>
+        <blockquote cite="https://pt.wikipedia.org/wiki/BTS">
+          <p>Informações e histórico do grupo disponíveis em fontes públicas.</p>
+        </blockquote>
+        <figcaption>Referência: fontes públicas e entrevistas.</figcaption>
+      </figure>
+    </section>
+
+    <section id="media" aria-labelledby="mediaTitle">
+      <h2 id="mediaTitle">Mídia</h2>
+
+      <article class="multimedia">
+        <h3>Vídeo (exemplo)</h3>
+        <video controls preload="metadata" width="480" aria-label="Vídeo de exemplo">
+          <source src="" type="video/mp4" />
+          <p>Seu navegador não suporta o elemento <code>&lt;video&gt;</code>.</p>
+        </video>
+
+        <h3>Áudio (exemplo)</h3>
+        <audio controls>
+          <source src="" type="audio/mpeg" />
+          <p>Seu navegador não suporta o elemento <code>&lt;audio&gt;</code>.</p>
+        </audio>
+      </article>
+
+      <aside aria-labelledby="relatedTitle">
+        <h4 id="relatedTitle">Links úteis</h4>
+        <ul>
+          <li><a href="https://www.bighit.co.kr" target="_blank" rel="noopener noreferrer">Agência (BigHit)</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/BTS" target="_blank" rel="noopener noreferrer">BTS — Wikipedia (en)</a></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="interactive" aria-labelledby="interactiveTitle">
+      <h2 id="interactiveTitle">Interações</h2>
+
+      <form id="fanForm" aria-label="Formulário de fã">
+        <fieldset>
+          <legend>Envie uma saudação</legend>
+
+          <label for="fanName">Nome</label>
+          <input id="fanName" name="fanName" type="text" required maxlength="30" placeholder="Seu nome" />
+
+          <label for="fanEmail">E-mail</label>
+          <input id="fanEmail" name="fanEmail" type="email" placeholder="email@exemplo.com" />
+
+          <label for="fanMessage">Mensagem</label>
+          <textarea id="fanMessage" name="fanMessage" rows="4" maxlength="300" placeholder="Deixe uma mensagem de fã"></textarea>
+
+          <label for="memberSelect">Membro favorito</label>
+          <select id="memberSelect" name="memberSelect">
+            <option value="">Escolha...</option>
+            <option>RM</option>
+            <option>Jin</option>
+            <option>Suga</option>
+            <option>J-Hope</option>
+            <option>Jimin</option>
+            <option>V</option>
+            <option>Jungkook</option>
+          </select>
+
+          <div class="form-actions">
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar</button>
+          </div>
+        </fieldset>
+      </form>
+
+      <output id="formResult" role="status"></output>
+
+      <details>
+        <summary>Progresso do fã clube</summary>
+        <meter id="fanMeter" min="0" max="100" value="45">45%</meter>
+        <progress id="downloadProg" value="0" max="100">0%</progress>
+      </details>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <address>
+      Site criado por fã — não oficial. <br />
+      Contato: <a href="mailto:fan@example.com">fan@example.com</a>
+    </address>
+
+    <nav aria-label="Rodapé">
+      <ul>
+        <li><a href="#top">Topo</a></li>
+        <li><a href="#contact">Política</a></li>
+      </ul>
+    </nav>
+
+    <small>&copy; <span id="year"></span> BTS Fan — Sem fins comerciais</small>
+  </footer>
+
+  <!-- template for member card duplication -->
+  <template id="memberTemplate">
+    <article class="member" role="listitem">
+      <h3></h3>
+      <img alt="" />
+      <p></p>
+    </article>
+  </template>
+
+  <!-- script -->
+  <script src="script.js" defer></script>
+<script src="script.js"></script></body>
+</html>
