@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <!-- Metadados básicos -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Exemplo com muitas tags HTML5 para estudo">
+  <meta name="author" content="ChatGPT">
+  <base href="./"> <!-- base para links relativos -->
+  <title>Exemplo HTML com Muitas Tags</title>
+
+  <!-- Link para favicon / CSS externo (exemplo) -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css" media="all">
+
+  <!-- CSS interno mínimo só para organização visual -->
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; line-height:1.5; margin:1rem; }
+    header, footer, main, nav, section, article, aside { border: 1px solid #ddd; padding: 0.6rem; margin: 0.6rem 0; border-radius:6px; }
+    pre { background:#f7f7f7; padding:0.6rem; overflow:auto; }
+    table { border-collapse: collapse; width:100%; }
+    th, td { border:1px solid #ccc; padding:0.4rem; text-align:left; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:0.6rem; }
+    .muted { color:#666; font-size:0.9rem; }
+  </style>
+
+  <!-- Scripts no head (ex.: analytics) -->
+  <script>
+    // pequeno script de demonstração
+    console.log("Página de exemplo com muitas tags HTML carregada.");
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header role="banner">
+    <h1>Demonstrador de Tags HTML</h1>
+    <p class="muted">Arquivo de exemplo reunindo muitas das tags HTML5 (estruturais, inline, formulários, multimídia, etc.).</p>
+
+    <!-- Navegação principal -->
+    <nav role="navigation" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#semantica">Semântica</a></li>
+        <li><a href="#formularios">Formulários</a></li>
+        <li><a href="#multimidia">Multimídia</a></li>
+        <li><a href="#tabelas">Tabelas</a></li>
+        <li><a href="#extras">Outras tags</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main / Conteúdo principal -->
+  <main role="main">
+
+    <!-- Semântica HTML5 -->
+    <section id="semantica" aria-labelledby="sec-sem">
+      <h2 id="sec-sem">Elementos semânticos</h2>
+
+      <article aria-labelledby="art-title">
+        <h3 id="art-title">Article — artigo independente</h3>
+        <p>Um parágrafo com <strong>strong</strong>, <em>em</em>, <mark>mark</mark> e <small>small</small>. Também: <b>bold</b>, <i>italics</i>.</p>
+
+        <figure>
+          <img src="example.jpg" alt="imagem de exemplo" width="320" height="180">
+          <figcaption>Figura de exemplo usando <code>&lt;figure&gt;</code> e <code>&lt;figcaption&gt;</code>.</figcaption>
+        </figure>
+
+        <p>Exemplo de citação em bloco:</p>
+        <blockquote cite="https://example.com">
+          "Este é um exemplo de <code>&lt;blockquote&gt;</code> com atributo cite e conteúdo de múltiplas linhas."
+        </blockquote>
+
+        <p>Uma citação curta: <q>texto citado</q>.</p>
+
+        <p>Exemplo de <abbr title="HyperText Markup Language">HTML</abbr> e <dfn title="Termo definido">definição</dfn>.</p>
+
+        <p>Data: <time datetime="2025-12-04">4 de dezembro de 2025</time>.</p>
+      </article>
+
+      <aside>
+        <h4>Aside — conteúdo relacionado</h4>
+        <p class="muted">Conteúdo lateral (notícias, links, anúncios, etc.).</p>
+        <ul>
+          <li><a href="#tabelas">Ir para tabelas</a></li>
+          <li><a href="#formularios">Ir para formulários</a></li>
+        </ul>
+      </aside>
+
+      <section aria-label="Níveis de cabeçalho">
+        <h3>Cabeçalhos</h3>
+        <h1>H1 - título de nível 1</h1>
+        <h2>H2 - nível 2</h2>
+        <h3>H3 - nível 3</h3>
+        <h4>H4 - nível 4</h4>
+        <h5>H5 - nível 5</h5>
+        <h6>H6 - nível 6</h6>
+      </section>
+
+      <nav aria-label="Navegação secundária">
+        <h3>Links úteis</h3>
+        <ul>
+          <li><a href="https://developer.mozilla.org" rel="noopener noreferrer" target="_blank">MDN (externo)</a></li>
+          <li><a href="#semantica" accesskey="s">Voltar à semântica (accesskey s)</a></li>
+        </ul>
+      </nav>
+
+    </section>
+
+    <!-- Formulários -->
+    <section id="formularios" aria-labelledby="sec-forms">
+      <h2 id="sec-forms">Formulários e controles</h2>
+
+      <form action="/submit" method="post" enctype="multipart/form-data" autocomplete="on" novalidate>
+        <fieldset>
+          <legend>Informações pessoais</legend>
+
+          <label for="nome">Nome completo:</label>
+          <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+
+          <label for="email">E-mail:</label>
+          <input id="email" name="email" type="email" placeholder="exemplo@dominio.com" required>
+
+          <label for="senha">Senha:</label>
+          <input id="senha" name="senha" type="password" minlength="6" required>
+
+          <label for="nasc">Data de nascimento:</label>
+          <input id="nasc" name="nasc" type="date">
+
+          <label for="hora">Hora preferida:</label>
+          <input id="hora" name="hora" type="time">
+
+          <label for="range">Satisfação (0-10): <output id="outRange">5</output></label>
+          <input id="range" name="range" type="range" min="0" max="10" value="5" oninput="outRange.value = range.value">
+
+          <label for="numero">Quantidade:</label>
+          <input id="numero" name="numero" type="number" min="0" max="100" value="1">
+
+          <label for="cor">Cor favorita:</label>
+          <input id="cor" name="cor" type="color" value="#336699">
+
+          <label for="url">Site pessoal:</label>
+          <input id="url" name="url" type="url" placeholder="https://">
+
+          <label for="telefone">Telefone:</label>
+          <input id="telefone" name="telefone" type="tel">
+
+          <label for="arquivo">Enviar arquivo:</label>
+          <input id="arquivo" name="arquivo" type="file" multiple>
+
+          <label for="escolha">Escolha uma opção:</label>
+          <select id="escolha" name="escolha">
+            <optgroup label="Grupo A">
+              <option value="1">Opção 1</option>
+              <option value="2" selected>Opção 2</option>
+            </optgroup>
+            <optgroup label="Grupo B">
+              <option value="3">Opção 3</option>
+            </optgroup>
+          </select>
+
+          <label>Checkboxes:</label>
+          <div>
+            <label><input type="checkbox" name="gosta_html" value="sim" checked> Gosta de HTML</label>
+            <label><input type="checkbox" name="gosta_css" value="sim"> Gosta de CSS</label>
+          </div>
+
+          <label>Radio:</label>
+          <div>
+            <label><input type="radio" name="nivel" value="iniciante" checked> Iniciante</label>
+            <label><input type="radio" name="nivel" value="avancado"> Avançado</label>
+          </div>
+
+          <label for="coment">Comentário:</label>
+          <textarea id="coment" name="coment" rows="4" placeholder="Escreva algo..."></textarea>
+
+          <datalist id="sugestoes">
+            <option value="HTML"></option>
+            <option value="CSS"></option>
+            <option value="JavaScript"></option>
+          </datalist>
+
+          <label for="curso">Curso (sugestões):</label>
+          <input id="curso" name="curso" list="sugestoes">
+
+          <label for="botao">Botões:</label>
+          <div>
+            <button type="button" id="botao" onclick="alert('Clique detectado')">Botão</button>
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar</button>
+          </div>
+
+        </fieldset>
+
+        <!-- Elementos de formulário menos comuns -->
+        <label for="meter">Progresso do nível (meter):</label>
+        <meter id="meter" min="0" max="100" value="70">70%</meter>
+
+        <label for="progresso">Progresso (progress):</label>
+        <progress id="progresso" value="30" max="100">30%</progress>
+
+        <input type="hidden" name="token" value="abc123">
+      </form>
+
+      <!-- Dialog (modal) -->
+      <dialog id="dlg" aria-labelledby="dlg-title">
+        <h3 id="dlg-title">Dialog de exemplo</h3>
+        <p>Este é um <code>&lt;dialog&gt;</code>. Feche para continuar.</p>
+        <menu>
+          <button onclick="document.getElementById('dlg').close()">Fechar</button>
+        </menu>
+      </dialog>
+      <p><button onclick="document.getElementById('dlg').showModal()">Abrir Dialog</button></p>
+
+    </section>
+
+    <!-- Multimídia -->
+    <section id="multimidia" aria-labelledby="sec-media">
+      <h2 id="sec-media">Multimídia e gráficos</h2>
+
+      <figure>
+        <figcaption>Vídeo com legendas e <code>&lt;track&gt;</code>:</figcaption>
+        <video controls width="480" preload="metadata">
+          <source src="video.mp4" type="video/mp4">
+          <source src="video.webm" type="video/webm">
+          <track src="legenda.vtt" kind="subtitles" srclang="pt" label="Português" default>
+          Seu navegador não suporta o elemento <code>&lt;video&gt;</code>.
+        </video>
+      </figure>
+
+      <figure>
+        <figcaption>Áudio com controle:</figcaption>
+        <audio controls>
+          <source src="audio.mp3" type="audio/mpeg">
+          <source src="audio.ogg" type="audio/ogg">
+          Seu navegador não suporta o elemento <code>&lt;audio&gt;</code>.
+        </audio>
+      </figure>
+
+      <figure>
+        <figcaption>Canvas 2D (desenhado via JS):</figcaption>
+        <canvas id="meuCanvas" width="300" height="120" aria-label="Canvas demonstrativo"></canvas>
+      </figure>
+
+      <p>Embed / object:</p>
+      <embed src="document.pdf" type="application/pdf" width="300" height="200" aria-label="PDF embed"></embed>
+
+      <p>SVG inline:</p>
+      <svg width="120" height="80" role="img" aria-label="Exemplo SVG">
+        <rect width="100" height="50" x="10" y="10" rx="8" ry="8" fill="#88a"></rect>
+        <text x="20" y="40" font-size="12" fill="#fff">SVG</text>
+      </svg>
+
+    </section>
+
+    <!-- Tabelas -->
+    <section id="tabelas" aria-labelledby="sec-tables">
+      <h2 id="sec-tables">Tabelas</h2>
+
+      <table>
+        <caption>Tabela de exemplo</caption>
+        <thead>
+          <tr><th>#</th><th>Nome</th><th>Nota</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Ana</td><td><strong>9.5</strong></td></tr>
+          <tr><td>2</td><td>Bruno</td><td>8.0</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="2">Média</td><td>8.75</td></tr>
+        </tfoot>
+      </table>
+
+      <dl>
+        <dt>HTML</dt>
+        <dd>Linguagem de marcação para a web.</dd>
+        <dt>CSS</dt>
+        <dd>Folhas de estilo.</dd>
+      </dl>
+
+    </section>
+
+    <!-- Outras tags e elementos -->
+    <section id="extras" aria-labelledby="sec-extras">
+      <h2 id="sec-extras">Outras tags e elementos diversos</h2>
+
+      <p>Exemplos inline: <span>span</span>, <code>code</code>, <samp>samp</samp>, <kbd>Ctrl</kbd>+<kbd>C</kbd>, <var>x</var>, <s>texto riscado</s>, <u>sublinhado</u>, <ins datetime="2025-12-04">texto inserido</ins>, <del datetime="2024-01-01">texto removido</del>.</p>
+
+      <p>Mapa de imagem com <code>&lt;map&gt;</code> e <code>&lt;area&gt;</code> (exemplo):</p>
+      <img src="mapa.jpg" usemap="#mapaEx" alt="Mapa de exemplo" width="300">
+      <map name="mapaEx">
+        <area shape="rect" coords="0,0,100,100" href="#!" alt="Área 1">
+        <area shape="circle" coords="150,75,50" href="#!" alt="Área 2">
+      </map>
+
+      <p>Modelo/template:</p>
+      <template id="tpl">
+        <p>Conteúdo do template que pode ser clonado com JavaScript.</p>
+      </template>
+
+      <p>Elementos menos comuns e meta: <bdi>bdi</bdi>, <bdo dir="rtl">texto RTL</bdo>, <rp>(</rp><rt>furigana</rt><rp>)</rp> (ruby): <ruby>漢<rt>kan</rt></ruby>.</p>
+
+      <p>Noscript (conteúdo quando JS desabilitado):</p>
+      <noscript><div class="muted">Ative JavaScript para uma melhor experiência.</div></noscript>
+
+      <p>IFrame (incorporação):</p>
+      <iframe src="about:blank" title="IFrame de exemplo" width="320" height="160"></iframe>
+
+      <p>Microdados / data-* and <code>&lt;data&gt;</code>:</p>
+      <p>Preço: <data value="49.90">R$49,90</data></p>
+      <div data-user-id="42">Data attribute de exemplo</div>
+
+      <p>WBR (word break opportunity): ex: "sobre<wbr>posição".</p>
+
+      <p>Example of <code>&lt;output&gt;</code> (associado a formulário): <output for="range">5</output></p>
+
+      <p>Progressive enhancement: <meter min="0" max="1" value="0.6">60%</meter></p>
+
+      <p>Semântica de rodapé:</p>
+      <footer role="contentinfo">
+        <p>Rodapé com <a href="#top">voltar ao topo</a>. <small>© Exemplo 2025</small></p>
+      </footer>
+
+    </section>
+
+  </main>
+
+  <!-- Scripts finais -->
+  <script>
+    // desenhar no canvas (exemplo simples)
+    (function(){
+      var c = document.getElementById('meuCanvas');
+      if(!c) return;
+      var ctx = c.getContext('2d');
+      ctx.fillStyle = '#e0e0ff';
+      ctx.fillRect(0,0,c.width,c.height);
+      ctx.fillStyle = '#334';
+      ctx.font = '16px sans-serif';
+      ctx.fillText('Canvas: desenho via JS', 10, 30);
+    })();
+
+    // clonar template para demonstração
+    (function(){
+      var tpl = document.getElementById('tpl');
+      if(tpl && tpl.content){
+        var clone = tpl.content.cloneNode(true);
+        document.getElementById('sec-extras').appendChild(clone);
+      }
+    })();
+
+    // exemplo para mostrar como usar <output> e <progress>
+    document.addEventListener('input', function(e){
+      var r = document.getElementById('range');
+      var o = document.querySelector('output[for="range"]') || document.querySelector('output');
+      if(r && o) o.textContent = r.value;
+    });
+  </script>
+
+  <!-- Metadados finais e CDN script (exemplo) -->
+  <script src="https://cdn.example.com/lib.js" defer></script>
+
+<script src="script.js"></script></body>
+</html>
