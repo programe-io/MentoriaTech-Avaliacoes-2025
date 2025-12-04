@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechNova - Site App Completo</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+<script src="script.js" defer></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<!-- Fundo animado -->
+<canvas id="bgCanvas"></canvas>
+
+<!-- Menu -->
+<nav>
+    <div class="logo">TechNova</div>
+    <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#posts">Posts</a></li>
+        <li><a href="#numeros">Números</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#" id="toggle-dark">🌙</a></li>
+    </ul>
+    <div class="hamburger"><div></div><div></div><div></div></div>
+</nav>
+
+<!-- Header -->
+<header>
+    <h1>TechNova</h1>
+    <p>Conectando inovação à sua vida</p>
+</header>
+
+<!-- Slideshow -->
+<section class="slideshow-container">
+    <div class="slide active-slide"><img src="https://images.unsplash.com/photo-1581093588401-0f4c05810e03?auto=format&fit=crop&w=1500&q=80" alt="Tecnologia inovadora"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1500&q=80" alt="Conexão digital"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1500&q=80" alt="Futuro da tecnologia"></div>
+</section>
+
+<!-- Social Links -->
+<div class="socials">
+    <a href="#" target="_blank">Instagram</a>
+    <a href="#" target="_blank">LinkedIn</a>
+    <a href="#" target="_blank">TikTok</a>
+</div>
+
+<!-- Sobre Nós -->
+<section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>TechNova é uma empresa de tecnologia que transforma ideias em soluções inteligentes. Desenvolvemos software, hardware e serviços inovadores para conectar pessoas, empresas e o futuro.</p>
+</section>
+
+<!-- Posts -->
+<section id="posts">
+    <h2>Posts Iniciais</h2>
+    <div class="posts">
+        <article>
+            <h3>Bem-vindo à TechNova!</h3>
+            <p>Aqui, transformamos inovação em soluções práticas que conectam pessoas e negócios. Siga-nos e fique por dentro do futuro da tecnologia.</p>
+        </article>
+        <article>
+            <h3>Dica de Tecnologia</h3>
+            <p>Automação inteligente pode aumentar a produtividade da sua empresa em até 40%!</p>
+        </article>
+        <article>
+            <h3>Inspiração Tech</h3>
+            <p>O futuro não espera. Estamos desenvolvendo soluções de IA que tornam seu dia a dia mais simples e eficiente.</p>
+            <p class="hashtags">#Inovação #TechNova #TransformaçãoDigital</p>
+        </article>
+    </div>
+</section>
+
+<!-- Números -->
+<section id="numeros">
+    <h2>Nossos Números</h2>
+    <div class="counters">
+        <div class="counter"><h3 class="count" data-target="120">0</h3><p>Projetos Entregues</p></div>
+        <div class="counter"><h3 class="count" data-target="80">0</h3><p>Clientes Atendidos</p></div>
+        <div class="counter"><h3 class="count" data-target="15">0</h3><p>Ano de Experiência</p></div>
+    </div>
+    <div class="charts">
+        <canvas id="chart1" width="300" height="300"></canvas>
+        <canvas id="chart2" width="300" height="300"></canvas>
+    </div>
+</section>
+
+<!-- Produtos -->
+<section id="produtos">
+    <h2>Nossos Produtos</h2>
+    <div class="products-container">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1612831455540-3e0e4b15b0c2?auto=format&fit=crop&w=400&q=80" alt="Produto 1">
+            <h4>Software de Automação</h4>
+            <p>Automatize processos e aumente produtividade.</p>
+            <button>Saiba Mais</button>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Produto 2">
+            <h4>Plataforma de IA</h4>
+            <p>Inteligência artificial integrada para empresas.</p>
+            <button>Saiba Mais</button>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1605902711622-cfb43c443c1a?auto=format&fit=crop&w=400&q=80" alt="Produto 3">
+            <h4>Dispositivos IoT</h4>
+            <p>Conecte e monitore dispositivos em tempo real.</p>
+            <button>Saiba Mais</button>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-item">
+        <button>O que a TechNova oferece?</button>
+        <div class="answer"><p>Oferecemos soluções de software, hardware e consultoria tecnológica.</p></div>
+    </div>
+    <div class="faq-item">
+        <button>Como posso entrar em contato?</button>
+        <div class="answer"><p>Contato via redes sociais ou email: contato@technova.com.br</p></div>
+    </div>
+    <div class="faq-item">
+        <button>Quais tecnologias vocês usam?</button>
+        <div class="answer"><p>IA, automação, apps, IoT e soluções de hardware inteligentes.</p></div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 TechNova - Tecnologia que conecta à sua vida
+</footer>
+
+<script src="script.js"></script></body>
+</html>
+<main>
+    <span>
