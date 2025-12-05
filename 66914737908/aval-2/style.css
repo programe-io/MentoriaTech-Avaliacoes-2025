@@ -1,0 +1,126 @@
+/* Importante: Configuração inicial para todos os elementos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif; /* Fonte padrão */
+}
+
+body {
+    background-color: #f4f4f4; /* Cor de fundo suave */
+    color: #333;
+}
+
+/* 1. LAYOUT PRINCIPAL usando Flexbox */
+.container {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 20px auto; /* Centraliza o container */
+    display: flex; /* Habilita Flexbox */
+    gap: 20px; /* Espaço entre a sidebar e o conteúdo principal */
+    padding: 0 20px;
+}
+
+/* BARRA LATERAL (SIDEBAR) */
+.sidebar {
+    width: 300px; /* Largura fixa da barra lateral */
+    flex-shrink: 0; /* Impede que a sidebar encolha */
+}
+
+/* CONTEÚDO PRINCIPAL (MAIN CONTENT) */
+.main-content {
+    flex-grow: 1; /* Permite que o conteúdo principal ocupe o espaço restante */
+}
+
+/* 2. ESTILO DA SIDEBAR (Sobre Mim e Galeria) */
+
+.about-me, .gallery {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.about-me h2, .gallery h3 {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 15px;
+    color: #1a73e8; /* Cor de destaque para títulos */
+}
+
+/* Imagem de Capa do Perfil */
+.profile-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+/* Estilo da Bio */
+.bio-content p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+/* Galeria de Imagens */
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+    gap: 5px;
+}
+
+.gallery-images img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Garante que as imagens sejam quadradas */
+    object-fit: cover; /* Recorta a imagem para preencher o quadrado */
+    border-radius: 4px;
+}
+
+
+/* 3. ESTILO DO CONTEÚDO PRINCIPAL (Postagem) */
+
+.post {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-header h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Imagem Principal da Postagem */
+.post-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* Corpo do Texto */
+.post-body p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* 4. RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Em telas menores, empilha os elementos */
+    }
+
+    .sidebar {
+        width: 100%; /* A sidebar ocupa a largura total */
+    }
+}
