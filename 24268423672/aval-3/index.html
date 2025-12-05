@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Espetinho Delícia</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <!-- Header -->
+  <header class="bg-red-600 text-white p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">
+      Espetinho <span class="text-yellow-300">Delícia</span>
+    </h1>
+    <nav>
+      <ul class="flex gap-6">
+        <li><a href="#menu" class="hover:text-yellow-300">Cardápio</a></li>
+        <li><a href="#contato" class="hover:text-yellow-300">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="p-6">
+    <!-- Aside -->
+    <aside class="bg-yellow-100 border-l-4 border-yellow-500 p-4 mb-6 text-lg font-semibold text-center">
+      O melhor espetinho da região!
+    </aside>
+
+    <!-- Cardápio -->
+    <section id="menu" class="mb-10">
+      <h2 class="text-xl font-bold mb-6 text-red-700">Nosso Cardápio</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <!-- Espeto de Carne -->
+        <div class="espeto-item bg-white shadow-md rounded-lg p-4 text-center">
+          <h3 class="text-lg font-semibold text-red-600">Espeto de Carne</h3>
+          <p class="text-gray-600 mb-3">
+            Carne bovina temperada e assada na brasa <br>
+            Preço: <span class="font-bold text-red-600">R$ 5,00</span>
+          </p>
+          <img class="w-full h-48 object-cover rounded-md" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTZVIintsTNrXPPdnLD675LKf5UWmvul1J-r0dB2d3jyaVvIapvas3YdSy0HoMpEtBOsj9k1z_a" alt="Espeto de Carne">
+        </div>
+
+        <!-- Espeto de Frango -->
+        <div class="espeto-item bg-white shadow-md rounded-lg p-4 text-center">
+          <h3 class="text-lg font-semibold text-red-600">Espeto de Frango</h3>
+          <p class="text-gray-600 mb-3">
+            Frango marinado com especiarias <br>
+            Preço: <span class="font-bold text-red-600">R$ 4,50</span>
+          </p>
+          <img class="w-full h-48 object-cover rounded-md" src="https://cdn.sistemawbuy.com.br/arquivos/3c097e9d0120ba85db93128378d4e556/produtos/680a4df6767e9/4-2-6862f700e984c.jpg" alt="Espeto de Frango">
+        </div>
+
+        <!-- Espeto Misto -->
+        <div class="espeto-item bg-white shadow-md rounded-lg p-4 text-center">
+          <h3 class="text-lg font-semibold text-red-600">Espeto Misto</h3>
+          <p class="text-gray-600 mb-3">
+            Carne bovina, frango e linguiça <br>
+            Preço: <span class="font-bold text-red-600">R$ 6,00</span>
+          </p>
+          <img class="w-full h-48 object-cover rounded-md" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGx2B9RaCytholFkXCSd03g0XYpzpWZRIgaw&s" alt="Espeto Misto">
+        </div>
+      </div>
+
+      <!-- Ingredientes -->
+      <article class="mt-8 bg-gray-100 p-4 rounded-lg shadow">
+        <h2 class="text-lg font-bold text-red-700 mb-3">Ingredientes do Tempero:</h2>
+        <ul class="list-disc list-inside text-gray-700">
+          <li><span>Alho amassado</span></li>
+          <li><span>Sal grosso</span></li>
+          <li><span>Pimenta-do-reino</span></li>
+          <li><span>Limão</span></li>
+          <li><span>Ervas frescas</span></li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="mb-10">
+      <h2 class="text-xl font-bold mb-6 text-red-700">Contato</h2>
+      <form class="space-y-4 bg-white p-6 rounded-lg shadow-md max-w-md">
+        <a href="https://wa.me/5589981332287?text=Olá! Quero pedir espetinhos."  
+           class="block bg-green-500 text-white text-center py-2 rounded-lg hover:bg-green-600">
+          📲 <span class="font-semibold">WhatsApp:</span> 89981332287
+        </a>
+        <input type="email" placeholder="espetinhodelicia@gmail.com" required 
+               class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-red-500" />
+        <textarea placeholder="Espeto de Carne = R$ 5,00" required 
+                  class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-red-500"></textarea>
+        <textarea placeholder="Espeto de Frango = R$ 4,50" required 
+                  class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-red-500"></textarea>
+        <textarea placeholder="Espeto Misto = R$ 6,00" required 
+                  class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-red-500"></textarea>
+        <button type="submit" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700">
+          <span>Enviar Pedido</span>
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-red-600 text-white text-center py-4">
+    <p>&copy; 2025 <span>Espetinho Delícia</span>. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
