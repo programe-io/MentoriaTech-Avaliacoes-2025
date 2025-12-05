@@ -1,0 +1,219 @@
+// ARQUIVO: javascript_completo.js
+
+// --- 1. VARIÁVEIS, CONSTANTES E TIPOS DE DADOS ---
+const PI = 3.14159; // Constante (não muda)
+let contador = 0; // Variável (pode mudar)
+var legado = "Evitar usar 'var' em código moderno"; // Variável antiga
+let isJogoAtivo = true;
+let nomeJogador = null; // Valor nulo
+let tipoObjeto; // Valor undefined
+
+// Tipos de Dados complexos
+const arrayDePontos = [10, 20, 30]; // Array
+const objetoJogador = { vida: 100, x: 50, y: 50 }; // Objeto
+const mapa = new Map(); // Estrutura de dados Map
+
+// --- 2. FUNÇÕES E ARROW FUNCTIONS ---
+function somar(a, b) {
+    return a + b;
+}
+
+const subtrair = (a, b) => a - b; // Arrow function curta
+
+const logarMensagem = (msg) => {
+    console.log(`[LOG] ${msg}`);
+};
+
+// Chamadas de funções
+logarMensagem(`A soma é: ${somar(5, 3)}`);
+
+// --- 3. ESTRUTURAS DE CONTROLE (Fluxo) ---
+
+// Condicional IF/ELSE/ELSE IF
+if (contador === 0) {
+    logarMensagem("Início do contador.");
+} else if (contador > 0) {
+    logarMensagem("Contador positivo.");
+} else {
+    logarMensagem("Contador negativo.");
+}
+
+// Loop FOR
+for (let i = 0; i < arrayDePontos.length; i++) {
+    logarMensagem(`Ponto ${i}: ${arrayDePontos[i]}`);
+}
+
+// Loop FOR...OF (Para iterar sobre valores de array)
+for (const ponto of arrayDePontos) {
+    logarMensagem(`Valor do ponto: ${ponto}`);
+}
+
+// Loop WHILE
+let vidas = 3;
+while (vidas > 0) {
+    vidas--;
+    // Comandos de controle de loop
+    if (vidas === 1) continue; // Pula o resto da iteração
+    if (vidas === 0) break; // Sai do loop
+}
+
+// Estrutura SWITCH
+const estado = "RUNNING";
+switch (estado) {
+    case "PAUSED":
+        logarMensagem("Jogo Pausado");
+        break;
+    case "RUNNING":
+        logarMensagem("Jogo Rodando");
+        break;
+    default:
+        logarMensagem("Estado Desconhecido");
+}
+
+// --- 4. CLASSES (OOP) ---
+
+class GameObject {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    
+    // Método de classe
+    mover(dx, dy) {
+        this.x += dx;
+        this.y += dy;
+    }
+}
+
+class Player extends GameObject {
+    constructor(x, y, vida) {
+        super(x, y); // Chama o construtor do pai
+        this.vida = vida;
+    }
+    
+    // Sobrescreve o método do pai
+    mover(dx, dy) {
+        super.mover(dx * 2, dy * 2);
+        logarMensagem(`Player moveu para (${this.x}, ${this.y})`);
+    }
+}
+
+const meuJogador = new Player(10, 10, 100);
+meuJogador.mover(5, 0);
+
+// --- 5. MANIPULAÇÃO DO DOM (HTML) ---
+
+// Espera o HTML ser totalmente carregado
+document.addEventListener('DOMContentLoaded', () => {
+    // Seleção de elementos
+    const canvas = document.getElementById('gameCanvas'); // Seleção por ID
+    const botao = document.querySelector('button'); // Seleção por seletor CSS
+    
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        
+        // Manipulação de estilo e atributos
+        canvas.style.border = '2px solid red';
+        canvas.setAttribute('tabindex', '0');
+        
+        // Manipulação de eventos (Inputs e Lógica)
+        canvas.addEventListener('keydown', (event) => {
+            logarMensagem(`Tecla Pressionada: ${event.key}`);
+            
+            // Lógica de Previnição de Default
+            if (event.key === ' ') {
+                event.preventDefault(); // Impede o comportamento padrão do navegador
+            }
+        });
+    }
+
+    // Criação de novos elementos (Inserção de Tags HTML)
+    const novoParagrafo = document.createElement('p'); // Cria a tag <p>
+    novoParagrafo.textContent = "Objeto DOM inserido com sucesso!";
+    document.body.appendChild(novoParagrafo); // Adiciona ao body
+});
+
+
+// --- 6. ASYNC / AWAIT E PROMISES (Comandos modernos) ---
+
+// Simulação de uma operação demorada (Ex: carregar um recurso do jogo)
+function carregarRecurso(nome) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (nome === 'erro') {
+                reject(`Falha ao carregar ${nome}`);
+            } else {
+                resolve(`Recurso ${nome} carregado.`);
+            }
+        }, 1000); // Espera 1 segundo
+    });
+}
+
+async function iniciarJogoAsync() {
+    try {
+        logarMensagem("Iniciando carregamento...");
+        
+        // Await pausa a execução até que a Promise seja resolvida
+        const resultado = await carregarRecurso('mapa');
+        logarMensagem(resultado); 
+        
+        logarMensagem("Carregamento concluído. Jogo pronto.");
+
+    } catch (error) {
+        console.error("Erro no carregamento:", error);
+    }
+}
+
+iniciarJogoAsync();
+
+// --- 7. COMANDOS DE TEMPO E O GAME LOOP (Essencial para jogos) ---
+
+// Game Loop Profissional (Melhor performance)
+function gameLoop(timestamp) {
+    // Lógica do jogo (update e render)
+    // ...
+    
+    // Chamada recursiva para manter o loop
+    requestAnimationFrame(gameLoop);
+}
+
+// Inicia o loop
+// requestAnimationFrame(gameLoop); // Comentado para não rodar sem o Canvas
+
+// Timer simples (Para atrasos ou eventos)
+setTimeout(() => {
+    logarMensagem("Este log apareceu 2 segundos após o carregamento.");
+}, 2000);
+
+// Intervalo (Para eventos repetitivos, ex: um contador de placar)
+// const intervalo = setInterval(() => {
+//     console.log("Contador de 1 segundo.");
+//     clearInterval(intervalo); // Para o intervalo após a primeira execução (exemplo)
+// }, 1000);
+
+// --- 8. MÉTODOS DE ARRAY E OBJETO ÚTEIS ---
+
+// Map (Transforma o array)
+const dobro = arrayDePontos.map(ponto => ponto * 2);
+
+// Filter (Filtra o array)
+const maioresQue20 = arrayDePontos.filter(ponto => ponto > 20);
+
+// ForEach (Itera sobre o array)
+arrayDePontos.forEach(ponto => logarMensagem(`Ponto: ${ponto}`));
+
+// Spread Operator (...)
+const novoArray = [...arrayDePontos, 40, 50]; 
+
+// Object Destructuring
+const { vida, x } = objetoJogador;
+logarMensagem(`Vida: ${vida}, Posição X: ${x}`);
+
+// --- 9. TRATAMENTO DE ERROS ---
+try {
+    throw new Error("Erro simulado para demonstração.");
+} catch (e) {
+    console.error("Erro capturado:", e.message);
+} finally {
+    logarMensagem("Bloco 'finally' executado.");
+}
