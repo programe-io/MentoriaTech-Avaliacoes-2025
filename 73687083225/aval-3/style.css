@@ -1,0 +1,51 @@
+/* ARQUIVO: style.css - Seleção Completa de Tags */
+
+/* --- 1. Reset Básico e Estrutura --- */
+* {
+    margin: 0;
+        padding: 0;
+            box-sizing: border-box;
+            }
+
+            html, body {
+                font-family: Arial, sans-serif;
+                    background-color: #111;
+                        color: #f0f0f0;
+                            min-height: 100vh;
+                            }
+
+                            /* Tags de Seção e Layout (Semânticas) */
+                            header, footer, main, section, article, aside, nav, address {
+                                margin: 15px 0;
+                                    padding: 10px;
+                                        border: 1px dashed #444; 
+                                        }
+
+                                        div { 
+                                            border: 1px solid #555; 
+                                                margin: 5px; 
+                                                    padding: 5px;
+                                                    }
+
+                                                    /* Tags de Conteúdo e Títulos */
+                                                    h1, h2, h3, h4, h5, h6 {
+                                                        margin-top: 15px;
+                                                            margin-bottom: 5px;
+                                                                color: #ff9900;
+                                                                }
+                                                                p { margin-bottom: 10px; }
+                                                                ul, ol, menu { margin-left: 30px; padding-left: 10px; } 
+
+                                                                /* Tags de Formatação e Semântica em Linha */
+                                                                a { color: #00e5ff; text-decoration: underline; }
+                                                                strong, b { font-weight: bold; color: #ff0077; }
+                                                                span { /* A tag SPAN */ color: inherit; } 
+
+                                                                /* Tags de Mídia e Incorporação */
+                                                                img { max-width: 100%; height: auto; display: block; border: 1px solid #666; }
+                                                                canvas { border: 3px solid #00ffff; display: block; margin: 15px auto; }
+
+                                                                /* Tags de Formulário e Interação */
+                                                                form { padding: 20px; border: 1px solid #666; background-color: #3a3a3a; }
+                                                                fieldset { border: 1px solid #999; padding: 15px; margin-bottom: 15px; }
+                                                                input, textarea, select, button { padding: 8px; margin-bottom: 10px; background-color: #444; color: white; border: 1px solid #555; }
