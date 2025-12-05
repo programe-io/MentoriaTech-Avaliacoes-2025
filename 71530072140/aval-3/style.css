@@ -1,0 +1,144 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ff5722; /* Laranja tema delivery */
+    color: #ffffff;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3, h4 {
+    color: #333;
+}
+
+nav {
+    background: #444;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 15px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff5722;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px;
+}
+
+article#menu {
+    flex: 3; /* Ocupa mais espaço */
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.menu-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-item img {
+    border-radius: 5px;
+}
+
+.menu-item h4 {
+    margin: 0 0 5px 0;
+}
+
+.menu-item p {
+    margin: 0 0 10px 0;
+}
+
+.price {
+    font-weight: bold;
+    color: #ff5722;
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #28a745; /* Botão verde */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+aside#cart {
+    flex: 1; /* Ocupa menos espaço */
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    height: fit-content; /* Ajusta a altura ao conteúdo */
+}
+
+aside#cart.cart-closed {
+    /* Estilo para quando o carrinho estiver fechado em mobile (opcional) */
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#cart-items li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    background: #333;
+    color: #fff;
+}
+
+/* Media Query para responsividade */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    aside#cart {
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme's Lanches | Delivery App</title>
+    <!-- Linka o arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Importa a fonte do Google Fonts -->
+    <link href="fonts.googleapis.com" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <h1>Guilherme's Lanches</h1>
+        <p>O melhor lanche da cidade, entregue na sua porta!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#" onclick="toggleCart(); return false;">Ver Carrinho</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article id="menu">
+            <h2>Nosso Cardápio</h2>
+            <h3>Lanches Artesanais</h3>
+            
+            <div class="menu-item">
+                <img src="via.placeholder.com" alt="Imagem do Hamburguer Clássico">
+                <div>
+                    <h4>Hamburguer Clássico</h4>
+                    <p>Pão de brioche, blend bovino 180g, queijo prato, alface, tomate e maionese da casa.</p>
+                    <span class="price">R$ 25,00</span>
+                    <button onclick="addToCart('Hamburguer Clássico', 25.00)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="via.placeholder.com" alt="Imagem do Cheeseburguer Duplo">
+                <div>
+                    <h4>Cheeseburguer Duplo</h4>
+                    <p>Duplo blend bovino, cheddar cremoso, bacon crocante e molho barbecue.</p>
+                    <span class="price">R$ 35,00</span>
+                    <button onclick="addToCart('Cheeseburguer Duplo', 35.00)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <h3>Bebidas</h3>
+
+            <div class="menu-item">
+                <img src="via.placeholder.com" alt="Imagem do Refrigerante">
+                <div>
+                    <h4>Refrigerante Lata</h4>
+                    <p>Coca-Cola, Guaraná ou Pepsi (350ml).</p>
+                    <span class="price">R$ 6,00</span>
+                    <button onclick="addToCart('Refrigerante Lata', 6.00)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </article>
+
+        <aside id="cart" class="cart-closed">
+            <h2>Seu Carrinho</h2>
+            <ul id="cart-items">
+                <!-- Itens do carrinho serão adicionados aqui via JS -->
+            </ul>
+            <p>Total: <span id="cart-total">R$ 0,00</span></p>
+            <button onclick="checkout()">Finalizar Pedido</button>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Guilherme's Lanches. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Linka o arquivo JavaScript no final do body para melhor performance -->
+    <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
