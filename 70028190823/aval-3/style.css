@@ -1,0 +1,141 @@
+/* Variável para a cor azul-marinho */
+:root {
+    --marinho-escuro: #000080; /* Azul Marinho */
+    --marinho-claro: #001f3f;  /* Tom mais escuro para fundo */
+    --cor-texto: #ffffff;
+    --cor-destaque: #ADD8E6; /* Azul claro para contraste */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--marinho-claro); /* Fundo em azul escuro */
+    color: var(--cor-texto);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--marinho-escuro);
+    padding: 15px 0;
+}
+
+/* --- Navegação (nav) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Cabeçalho (h2) --- */
+.feed-heading {
+    text-align: center;
+    margin-top: 10px;
+    color: var(--cor-destaque);
+}
+
+/* --- Feed Container e Posts --- */
+.feed-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+.post {
+    background-color: var(--marinho-escuro);
+    border: 1px solid var(--marinho-escuro);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.username {
+    font-weight: bold;
+    color: var(--cor-destaque);
+}
+
+.timestamp {
+    color: #ccc;
+}
+
+.post-content p {
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+}
+
+.post-footer button {
+    background-color: var(--cor-destaque);
+    color: var(--marinho-escuro);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.post-footer button:hover {
+    background-color: #87CEEB; /* Azul mais claro */
+}
+
+/* --- Botão de Adicionar Post --- */
+#add-post-btn {
+    display: block;
+    width: 100%;
+    background-color: var(--cor-destaque);
+    color: var(--marinho-escuro);
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#add-post-btn:hover {
+    background-color: #87CEEB;
+}
+
+/* --- Rodapé --- */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: var(--marinho-escuro);
+    color: #aaa;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
