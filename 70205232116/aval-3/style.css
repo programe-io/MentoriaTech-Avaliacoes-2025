@@ -1,0 +1,158 @@
+/* Cores */
+:root {
+    --cor-principal: #2ecc71; /* Verde primário */
+    --cor-secundaria: #27ae60; /* Verde mais escuro */
+    --cor-fundo: #f0f2f5; /* Fundo levemente cinza/azul para redes sociais */
+    --cor-post: #ffffff; /* Fundo branco para posts */
+    --cor-texto: #1c1e21;
+    --cor-texto-claro: #fff;
+    --cor-borda: #ddd;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Header */
+header {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Nav */
+nav {
+    background-color: var(--cor-secundaria);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--cor-texto-claro);
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #1e8449; 
+}
+
+/* Main Content (Container do Feed) */
+#feed-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+/* Post Individual */
+.social-post {
+    background-color: var(--cor-post);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid var(--cor-principal);
+}
+
+.post-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+    color: var(--cor-secundaria);
+}
+
+.timestamp {
+    margin-left: auto;
+    font-size: 0.8em;
+    color: #606770;
+}
+
+.post-content h2 {
+    color: var(--cor-principal);
+    font-size: 1.3em;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.post-content p {
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.post-media {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+/* Footer de Ações */
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    border-top: 1px solid var(--cor-borda);
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: #606770;
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: bold;
+}
+
+.action-btn:hover {
+    background-color: #e4e6eb;
+}
+
+/* Footer Geral */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo);
+    margin-top: 20px;
+    font-size: 0.85em;
+}
+
+footer strong {
+    color: var(--cor-principal);
+}
