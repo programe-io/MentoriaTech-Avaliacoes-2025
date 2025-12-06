@@ -1,0 +1,133 @@
+:root {
+    --primary-color: #007bff; /* Azul vibrante */
+    --secondary-color: #0056b3; /* Azul mais escuro */
+    --background-color: #f0f2f5; /* Fundo cinza claro (padrão de feeds) */
+    --card-background: #ffffff;
+    --text-color: #212529; /* Texto escuro */
+    --border-color: #dee2e6;
+    --like-color: #dc3545; /* Coração vermelho para contraste */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Cabeçalho Azul --- */
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header h1 {
+    font-size: 1.5em;
+}
+
+/* --- Layout do Feed --- */
+.feed {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* --- Estilo do Post --- */
+.post {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid var(--primary-color);
+    object-fit: cover;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.timestamp {
+    font-size: 0.8em;
+    color: #6c757d;
+}
+
+.post-content {
+    margin-bottom: 15px;
+}
+
+.post-content p {
+    margin-bottom: 10px;
+}
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* --- Ações (Curtir/Comentar) --- */
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+}
+
+.like-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    font-weight: bold;
+}
+
+.like-btn:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.like-btn[data-liked="true"] {
+    color: var(--like-color); /* Coração vermelho quando curtido */
+}
+
+.comments {
+    font-size: 0.9em;
+    color: #6c757d;
+}
