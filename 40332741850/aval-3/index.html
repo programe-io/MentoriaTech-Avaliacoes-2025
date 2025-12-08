@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feed Social Vermelho com Ciano</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color: #FF0000; /* fundo vermelho */
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Navbar */
+    nav {
+      width: 100%;
+      background-color: #FF0000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: #ffcccc;
+    }
+
+    /* Título principal */
+    header {
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    /* Main feed */
+    main {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .feed-container {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      padding: 1rem;
+      max-width: 1200px;
+      background-color: #00FFFF; /* fundo ciano para o container de posts */
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .post {
+      background-color: #1C1C1C; /* cinza escuro */
+      border-radius: 1rem;
+      min-width: 300px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .post:hover {
+      transform: scale(1.05);
+    }
+
+    .post-header {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      border-bottom: 1px solid #444;
+    }
+
+    .profile-pic {
+      background-color: white;
+      border-radius: 50%;
+      padding: 2px;
+      margin-right: 0.75rem;
+    }
+
+    .profile-pic img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .username {
+      font-weight: bold;
+      color: #FF0000; /* vermelho */
+    }
+
+    .time {
+      font-size: 0.8rem;
+      color: #333;
+    }
+
+    .post-content {
+      padding: 1rem;
+    }
+
+    .post-content p {
+      margin-bottom: 0.75rem;
+      color: #eee;
+    }
+
+    .post-content img {
+      width: 100%;
+      border-radius: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .post-footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem 1rem 1rem;
+      font-weight: bold;
+      color: #FF0000;
+    }
+
+    /* Scrollbar personalizada */
+    .feed-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .feed-container::-webkit-scrollbar-thumb {
+      background-color: #00cccc;
+      border-radius: 4px;
+    }
+
+    .feed-container::-webkit-scrollbar-track {
+      background: rgba(0,0,0,0.1);
+    }
+
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Perfil</a></li>
+      <li><a href="#">Configurações</a></li>
+    </ul>
+  </nav>
+
+  <!-- Título -->
+  <header>
+    <h1>Feed Social</h1>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <div class="feed-container">
+
+      <!-- Post 1 -->
+      <div class="post">
+        <div class="post-header">
+          <div class="profile-pic">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUM5U5ALUhD3sTkP6_6jvip_rJ3HeHJc-IJw&s" alt="Jose Henrique">
+          </div>
+          <div>
+            <h2 class="username">Jose Henrique</h2>
+            <div class="time">2 horas atrás</div>
+          </div>
+        </div>
+        <div class="post-content">
+          <p>Vamos pra cima mengão agora somos treta.</p>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAlAPTGKfFoUbGlcgeEzbZaSm6N8JqQ4rVBA&s" alt="Post de Jose Henrique">
+        </div>
+        <div class="post-footer">
+          <span>❤️ 24</span>
+          <span>💬 6</span>
+        </div>
+      </div>
+
+      <!-- Post 2 -->
+      <div class="post">
+        <div class="post-header">
+          <div class="profile-pic">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMw9dBzB4g0nV5zN9AtcbNxQZE0RtlxpKYWA&s" alt="Felipe">
+          </div>
+          <div>
+            <h2 class="username">Felipe</h2>
+            <div class="time">5 horas atrás</div>
+          </div>
+        </div>
+        <div class="post-content">
+          <p>Gente quem voces acham que vai ganher esta luta?</p>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQamMfSfQ4rwfghyvjD4AymbR_nCuwsUtFJRA&s" alt="Post de Felipe">
+        </div>
+        <div class="post-footer">
+          <span>❤️ 15</span>
+          <span>💬 3</span>
+        </div>
+      </div>
+
+      <!-- Post 3 -->
+      <div class="post">
+        <div class="post-header">
+          <div class="profile-pic">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX---3gPDHbNoeD2iO3J6gEG69J9TtKsGNTw&s" alt="Alisson">
+          </div>
+          <div>
+            <h2 class="username">Alisson</h2>
+            <div class="time">1 dia atrás</div>
+          </div>
+        </div>
+        <div class="post-content">
+          <p>Galera como o max park consegui o montar o cubo tao rapido fico empressionado</p>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQudjoNz3OozBjjXtY5eztCt4EvdgFNo4Oy9Q&s" alt="Post de Alisson">
+        </div>
+        <div class="post-footer">
+          <span>❤️ 42</span>
+          <span>💬 8</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
