@@ -1,0 +1,165 @@
+/* Configurações Globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho (Header) */
+header {
+    background-color: #004d99; /* Azul escuro */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+/* Navegação (Nav) */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #0073e6; /* Azul mais claro ao passar o mouse */
+}
+
+/* Conteúdo Principal (Main) e Seções */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+section {
+    padding: 40px;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+    color: #004d99;
+    border-bottom: 2px solid #0073e6;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Seção Hero (Introdução) */
+.hero {
+    background-color: #e6f2ff; /* Azul claro para destaque */
+    text-align: center;
+}
+
+.hero p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 15px auto;
+}
+
+/* Tipos de Robôs (Cards) */
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permite que os cards quebrem a linha em telas menores */
+    gap: 20px;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 30%; /* Três cards por linha */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    min-width: 250px; /* Garante que não fiquem muito pequenos */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: #0073e6;
+    margin-top: 0;
+}
+
+/* Aplicações (Lista) */
+#aplicacoes ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#aplicacoes ul li {
+    background: #f0f8ff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-left: 5px solid #0073e6;
+    border-radius: 4px;
+}
+
+#aplicacoes ul li strong {
+    color: #004d99;
+}
+
+/* Rodapé (Footer) */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column; /* Coloca os cards em coluna */
+        align-items: center;
+    }
+
+    .card {
+        width: 80%; /* Ocupa mais largura em telas menores */
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
