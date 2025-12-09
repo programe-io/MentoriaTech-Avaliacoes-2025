@@ -1,0 +1,249 @@
+/* Importação de Fonte Simples */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Comfortaa:wght@400;700&display=swap');
+
+/* --- Variáveis e Reset --- */
+:root {
+    --cor-primaria: #FF69B4; /* Rosa Choque - Destaque */
+    --cor-secundaria: #87CEEB; /* Azul Céu - Fundo Secundário */
+    --cor-fundo-claro: #F5F5F5; /* Cinza Claro */
+    --cor-texto: #333333;
+    --cor-texto-meta: #777777;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto);
+}
+
+/* --- Cabeçalho (Header) --- */
+header {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 30px 5%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 2.8em;
+    margin-bottom: 5px;
+}
+
+header p {
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* Navegação (Nav) */
+nav ul {
+    list-style: none;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Amarelo */
+}
+
+/* --- Layout Principal do Blog (Main) --- */
+.blog-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+/* Conteúdo Principal - Artigos */
+.main-articles {
+    flex: 3; /* Ocupa 3/4 do espaço */
+}
+
+.main-articles h2 {
+    color: var(--cor-primaria);
+    font-family: 'Comfortaa', cursive;
+    font-size: 2em;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 10px;
+}
+
+/* Artigo Individual */
+.blog-post {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.color-bg-light {
+    background-color: #FFF0F5; /* Rosa bem suave */
+}
+
+.post-header h3 {
+    color: var(--cor-texto);
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.post-meta {
+    color: var(--cor-texto-meta);
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    border-left: 3px solid var(--cor-primaria);
+    padding-left: 8px;
+}
+
+.blog-post p {
+    margin-bottom: 20px;
+}
+
+.read-more {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.read-more:hover {
+    opacity: 0.8;
+}
+
+/* Paginação */
+.pagination {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: var(--cor-secundaria);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #6a9ac9;
+}
+
+/* --- Barra Lateral (Sidebar) --- */
+.sidebar {
+    flex: 1; /* Ocupa 1/4 do espaço */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: fit-content; /* Ajusta a altura ao conteúdo */
+}
+
+.sidebar h3 {
+    color: var(--cor-primaria);
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed var(--cor-primaria);
+    padding-bottom: 5px;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.sidebar ul li {
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--cor-fundo-claro);
+    color: var(--cor-texto);
+    font-size: 0.95em;
+}
+
+/* Newsletter */
+.newsletter-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.newsletter-form button {
+    width: 100%;
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+    background-color: #c74c8b;
+}
+
+/* --- Rodapé (Footer) --- */
+footer {
+    background-color: var(--cor-texto);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+    .blog-container {
+        flex-direction: column; /* Coloca os artigos e a barra lateral em coluna */
+    }
+
+    .main-articles, .sidebar {
+        flex: auto; /* Remove a proporção fixa */
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .blog-post {
+        padding: 20px;
+    }
+
+    .pagination a {
+        padding: 8px 15px;
+    }
+}
