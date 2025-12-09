@@ -1,0 +1,308 @@
+/* Importação de Fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* --- Variáveis e Reset Básico --- */
+:root {
+    --primary-color: #ff4500; /* Laranja Vívido (Destaque) */
+    --secondary-color: #1a1a1a; /* Preto Quase Escuro (Elementos) */
+    --text-light: #f4f4f4; /* Branco Quase Puro (Texto Claro) */
+    --bg-dark: #2c2c2c; /* Fundo Principal Escuro */
+    --bg-darker: #121212; /* Fundo Secundário/Seção */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    scroll-behavior: smooth; 
+}
+
+/* --- Cabeçalho e Navegação --- */
+.main-header {
+    background: var(--secondary-color);
+    text-align: center;
+    padding: 40px 20px 20px;
+    border-bottom: 5px solid var(--primary-color);
+}
+
+.main-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.main-nav {
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+.main-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: color 0.3s, border-bottom 0.3s;
+    padding-bottom: 3px;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* --- Seções Gerais --- */
+section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+section h2 {
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-size: 2em;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* --- Sobre a Raissa --- */
+.about-raissa {
+    background-color: var(--bg-dark);
+}
+
+.profile-card {
+    background: var(--secondary-color);
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--text-light);
+}
+
+/* --- Estilização do ASIDE (CORREÇÃO) --- */
+.sidebar {
+    background-color: var(--primary-color); 
+    color: var(--secondary-color); 
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--secondary-color);
+}
+
+.sidebar h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.sidebar p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Ajuste no botão dentro do aside */
+.sidebar .btn-primary {
+    background-color: var(--secondary-color); 
+    color: var(--primary-color);
+    padding: 8px 20px;
+    font-size: 0.9em;
+}
+
+.sidebar .btn-primary:hover {
+    background-color: #333; 
+    transform: none;
+}
+
+
+/* --- Jogo de Destaque --- */
+.featured-game {
+    background-color: var(--bg-darker);
+}
+
+.game-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.game-info h3 {
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.game-banner {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* --- Botão Principal (Global) --- */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #ff6a2f;
+    transform: translateY(-2px);
+}
+
+/* --- Seção de Vídeos --- */
+.video-section {
+    background-color: var(--bg-dark);
+}
+
+.video-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-item {
+    width: 300px;
+    background: var(--secondary-color);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 180px;
+    border-radius: 5px;
+}
+
+.video-item p {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: var(--text-light);
+}
+
+/* --- Seção de Contato --- */
+.contact-section {
+    background-color: var(--bg-darker);
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    background: var(--secondary-color);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: var(--text-light);
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .btn-primary {
+    width: 100%;
+    margin-top: 25px;
+}
+
+
+/* --- Rodapé --- */
+footer {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    border-top: 3px solid var(--primary-color);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    /* Ajuste do Cabeçalho e Nav */
+    .main-header h1 {
+        font-size: 2em;
+    }
+    .main-nav a {
+        display: block;
+        margin: 10px 0;
+        padding: 5px 0;
+    }
+    
+    /* Ajuste da Seção de Jogo em Destaque */
+    .game-details {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .game-info {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .game-banner {
+        max-width: 100%;
+    }
+    
+    /* Ajuste da Galeria de Vídeos */
+    .video-item {
+        width: 100%; 
+    }
+}
