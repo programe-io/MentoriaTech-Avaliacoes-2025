@@ -1,50 +1,9 @@
-const botoesAdicionar = document.querySelectorAll(".botao-adicionar");
-const contadorCarrinho = document.getElementById("contador-carrinho");
-const listaCarrinho = document.getElementById("lista-carrinho");
-const totalCarrinho = document.getElementById("total-carrinho");
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("form-portfolio3");
+  const retorno = document.getElementById("retorno");
 
-let quantidadeItens = 0;
-let total = 0;
-let itens = [];
-
-function formatarReal(valor) {
-  return valor.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  });
-}
-
-function atualizarListaCarrinho() {
-  listaCarrinho.innerHTML = "";
-
-  if (itens.length === 0) {
-    const li = document.createElement("li");
-    li.textContent = "Nenhum item no carrinho.";
-    listaCarrinho.appendChild(li);
-    return;
-  }
-
-  itens.forEach((item) => {
-    const li = document.createElement("li");
-    li.textContent = `${item.nome} (${formatarReal(item.preco)})`;
-    listaCarrinho.appendChild(li);
-  });
-}
-
-botoesAdicionar.forEach((botao) => {
-  botao.addEventListener("click", () => {
-    const article = botao.closest(".produto");
-    const nome = article.dataset.nome;
-    const preco = parseFloat(article.dataset.preco);
-
-    quantidadeItens += 1;
-    total += preco;
-
-    itens.push({ nome, preco });
-
-    contadorCarrinho.textContent = quantidadeItens;
-    totalCarrinho.textContent = formatarReal(total);
-    atualizarListaCarrinho();
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    retorno.textContent = "Mensagem enviada com sucesso neste portfólio acadêmico fictício!";
   });
 });
-
