@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doce Sabor | Confeitaria Artesanal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Variáveis de Cores (Paleta de Bolo) --- */
+        :root {
+            --cor-fundo: #FFF5F7;       /* Rosa muito claro */
+            --cor-primaria: #D65A84;    /* Rosa Morango */
+            --cor-secundaria: #6D4C41;  /* Marrom Chocolate */
+            --cor-destaque: #FFE082;    /* Amarelo Creme */
+            --branco: #FFFFFF;
+        }
+
+        /* --- Reset Básico --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-secundaria);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Tipografia --- */
+        h1, h2, h3 {
+            font-family: 'Pacifico', cursive;
+            font-weight: 400;
+        }
+
+        /* --- Cabeçalho --- */
+        header {
+            background-color: var(--branco);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(214, 90, 132, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            color: var(--cor-primaria);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--cor-secundaria);
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--cor-primaria);
+        }
+
+        /* --- MAIN --- */
+        main {
+            flex: 1;
+            width: 100%;
+        }
+
+        /* --- Seção Hero --- */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 245, 247, 0.9)), 
+                        url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--cor-primaria);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0px #fff;
+        }
+
+        .btn-cta {
+            background-color: var(--cor-primaria);
+            color: var(--branco);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: transform 0.3s, background 0.3s;
+            box-shadow: 0 5px 15px rgba(214, 90, 132, 0.4);
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            background-color: #b04368;
+        }
+
+        /* --- Seção de Cardápio --- */
+        .menu-section {
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .menu-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--cor-secundaria);
+        }
+
+        .grid-bolos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card-bolo {
+            background: var(--branco);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .card-bolo:hover {
+            transform: scale(1.02);
+            border-color: var(--cor-fundo);
+        }
+
+        .card-img {
+            height: 200px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-info {
+            padding: 20px;
+        }
+
+        .card-info h3 {
+            color: var(--cor-primaria);
+            margin-bottom: 10px;
+        }
+
+        .preco {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--cor-secundaria);
+            margin-top: 10px;
+        }
+
+        /* --- NOVO: Estilo do ARTICLE (Blog) --- */
+        .blog-section {
+            padding: 40px 5%;
+            background-color: #fff; /* Fundo branco para diferenciar */
+        }
+
+        .blog-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--cor-secundaria);
+        }
+
+        article.historia-bolo {
+            max-width: 800px;
+            margin: 0 auto;
+            border-left: 5px solid var(--cor-primaria); /* Detalhe na lateral */
+            padding: 20px 30px;
+            background-color: var(--cor-fundo);
+            border-radius: 0 20px 20px 0;
+        }
+
+        article .meta-data {
+            font-size: 0.9rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        article p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        article a {
+            color: var(--cor-primaria);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* --- Estilo do ASIDE --- */
+        aside.segredo-chef {
+            background-color: var(--cor-destaque);
+            margin: 40px 5%;
+            padding: 40px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            box-shadow: 0 8px 20px rgba(235, 180, 50, 0.2);
+            text-align: left;
+        }
+
+        aside .texto-aside {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 20px;
+        }
+
+        aside h3 {
+            font-size: 2rem;
+            color: var(--cor-secundaria);
+            margin-bottom: 15px;
+        }
+
+        aside p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        aside .badge {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        aside .img-aside {
+            max-width: 250px;
+            border-radius: 50%;
+            border: 5px solid var(--branco);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* --- Rodapé --- */
+        footer {
+            background-color: var(--cor-secundaria);
+            color: var(--branco);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            aside.segredo-chef {
+                text-align: center;
+                flex-direction: column-reverse;
+                gap: 20px;
+            }
+            aside .texto-aside {
+                padding-right: 0;
+            }
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <a href="#" class="logo">🍰 Doce Sabor</a>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#bolos">Bolos</a></li>
+                <li><a href="#contato">Encomendar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="home" class="hero">
+            <h1>Felicidade em Fatias</h1>
+            <p>Bolos artesanais feitos com amor, ingredientes frescos e aquele toque especial de carinho.</p>
+            <a href="#bolos" class="btn-cta">Ver Nossas Delícias</a>
+        </section>
+
+        <section id="bolos" class="menu-section">
+            <h2>Nossos Favoritos</h2>
+            
+            <div class="grid-bolos">
+                <div class="card-bolo">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                    <div class="card-info">
+                        <h3>Floresta Negra</h3>
+                        <p>Massa de chocolate úmida, chantilly fresco e cerejas selecionadas.</p>
+                        <span class="preco">R$ 85,00 /kg</span>
+                    </div>
+                </div>
+
+                <div class="card-bolo">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                    <div class="card-info">
+                        <h3>Red Velvet</h3>
+                        <p>O clássico veludo vermelho com recheio cremoso de cream cheese.</p>
+                        <span class="preco">R$ 95,00 /kg</span>
+                    </div>
+                </div>
+
+                <div class="card-bolo">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                    <div class="card-info">
+                        <h3>Frutas Vermelhas</h3>
+                        <p>Bolo branco leve com geleia artesanal de morango e framboesa.</p>
+                        <span class="preco">R$ 90,00 /kg</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-section">
+            <h2>Blog do Confeiteiro</h2>
+            
+            <article class="historia-bolo">
+                <span class="meta-data">Curiosidade • 12 Outubro</span>
+                <h3>A Origem do Red Velvet</h3>
+                <p>Você sabia que a cor vermelha original do bolo não vinha de corantes? Antigamente, a reação química entre o cacau em pó não processado e o vinagre (usado para amaciar a massa) revelava um tom avermelhado natural!</p>
+                <p>Hoje usamos um pouco de ajuda da cor para intensificar esse clássico, mas mantemos a maciez tradicional.</p>
+                <a href="#">Ler história completa &rarr;</a>
+            </article>
+
+        </section>
+
+        <aside class="segredo-chef">
+            <div class="texto-aside">
+                <span class="badge">Ingredientes Premium</span>
+                <h3>O Segredo da Nossa Cozinha</h3>
+                <p>Não utilizamos pré-misturas industriais. Todos os nossos bolos são feitos com ovos de granja, farinha especial e chocolate belga 70%. É o sabor da infância com a sofisticação que você merece.</p>
+                <p><strong>👩‍🍳 Dica:</strong> Encomende com 48h de antecedência para garantir ingredientes ultra frescos.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Ingredientes de confeitaria" class="img-aside">
+        </aside>
+
+    </main>
+
+    <footer id="contato">
+        <h3>Faça sua Encomenda</h3>
+        <p>📞 (11) 99999-9999 | ✉️ contato@docesabor.com.br</p>
+        <p>Rua dos Confeitos, 123 - Cidade Doce</p>
+        <br>
+        <p>&copy; 2023 Doce Sabor Confeitaria. Todos os direitos reservados.</p>
+    </footer>
+
+<script src="script.js"></script></body>
+</html>

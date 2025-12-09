@@ -1,0 +1,287 @@
+/* =========================================
+   1. Importação de Fontes e Variáveis
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    /* Cores Principais */
+    --rosa-glace: #ffe4e9;       
+    --rosa-chiclete: #ff8fa3;    
+    --rosa-intenso: #ff4d6d;     
+    --chocolate-amargo: #592e2e; 
+    --creme-baunilha: #fffdf5;   
+    --branco: #ffffff;
+    
+    /* Sombras e Bordas */
+    --sombra-suave: 0 8px 24px rgba(255, 77, 109, 0.15);
+    --borda-arredondada: 25px;
+}
+
+/* =========================================
+   2. Reset e Estilos Globais
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--rosa-glace);
+    background-image: radial-gradient(var(--creme-baunilha) 2px, transparent 2px);
+    background-size: 30px 30px;
+    color: var(--chocolate-amargo);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Pacifico', cursive;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   3. Cabeçalho (Header)
+   ========================================= */
+header {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(89, 46, 46, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: var(--rosa-intenso);
+    font-family: 'Pacifico', cursive;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--chocolate-amargo);
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--rosa-intenso);
+}
+
+/* =========================================
+   4. Seção Hero (Banner Principal)
+   ========================================= */
+.hero {
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 245, 247, 0.8)), 
+                url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: var(--rosa-intenso);
+    text-shadow: 2px 2px 0px #fff;
+    margin-bottom: 15px;
+}
+
+.btn-cta {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--rosa-chiclete), var(--rosa-intenso));
+    color: var(--branco);
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+    transform: translateY(-3px) scale(1.05);
+    background-color: #b04368;
+}
+
+/* =========================================
+   5. Seção de Produtos (Cardápio)
+   ========================================= */
+.menu-section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.menu-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    color: var(--chocolate-amargo);
+}
+
+/* Correção: Usando .grid-bolos para alinhar com HTML */
+.grid-bolos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Correção: Usando .card-bolo para alinhar com HTML */
+.card-bolo {
+    background: var(--creme-baunilha);
+    border-radius: var(--borda-arredondada);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s ease;
+    border: 2px solid transparent;
+    text-align: left; /* Alinhamento interno */
+}
+
+.card-bolo:hover {
+    transform: translateY(-10px);
+    border-color: var(--rosa-chiclete);
+}
+
+/* Área da Imagem do Bolo */
+.card-img {
+    height: 220px;
+    background-color: #eee;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 5px solid var(--rosa-glace);
+}
+
+.card-info {
+    padding: 25px;
+}
+
+.card-info h3 {
+    color: var(--rosa-intenso);
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.preco {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--chocolate-amargo);
+    margin-top: 15px;
+    background-color: var(--rosa-glace);
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+
+/* Botão de Adicionar (JS) */
+.btn-adicionar {
+    background-color: var(--rosa-chiclete);
+    color: white;
+    border: none;
+    padding: 10px 0;
+    border-radius: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.btn-adicionar:hover {
+    background-color: var(--rosa-intenso);
+}
+
+/* =========================================
+   6. Rodapé
+   ========================================= */
+footer {
+    background-color: var(--chocolate-amargo);
+    color: var(--rosa-glace);
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 60px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+/* =========================================
+   7. Elementos Flutuantes (JS)
+   ========================================= */
+#carrinho-flutuante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--branco);
+    border: 2px solid var(--rosa-chiclete);
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-weight: bold;
+    color: var(--chocolate-amargo);
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#carrinho-flutuante:hover {
+    transform: scale(1.05);
+}
+
+.toast {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background-color: var(--chocolate-amargo);
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    animation: slideIn 0.5s, fadeOut 0.5s 2.5s forwards;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Animações */
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    
+    header { flex-direction: column; gap: 15px; }
+    
+    nav ul { gap: 15px; font-size: 0.9rem; }
+}
