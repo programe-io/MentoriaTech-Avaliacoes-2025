@@ -1,0 +1,204 @@
+/* Importação da Fonte (Poppins) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #ff4500; /* Laranja/Vermelho vibrante - Cor de destaque */
+    --secondary-color: #333;
+    --background-color: #f0f2f5;
+    --card-background: #fff;
+    --text-dark: #1c1e21;
+    --text-light: #606770;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* --- Header e Avatar --- */
+
+.profile-header {
+    position: relative;
+    height: 200px;
+}
+
+.cover-photo {
+    height: 100%;
+    background: linear-gradient(135deg, #1c1e21, #606770); /* Gradiente escuro */
+    /* Você pode substituir o gradiente por uma imagem de alta resolução de cadarços ou solas de tênis */
+}
+
+.profile-avatar {
+    position: absolute;
+    bottom: -60px; /* Metade do tamanho do avatar para ficar centralizado verticalmente na borda */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 5px solid var(--card-background);
+    background-color: #ccc; /* Placeholder se 'avatar.jpg' não existir */
+    object-fit: cover;
+}
+
+/* --- Informações do Perfil --- */
+
+.profile-info {
+    text-align: center;
+    padding: 70px 20px 20px; /* Padding extra no topo para o avatar */
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-info h1 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.profile-info .username {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.profile-info .bio {
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.btn-follow, .btn-shop {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+    font-size: 0.9rem;
+}
+
+.btn-follow {
+    background-color: var(--primary-color);
+    color: var(--card-background);
+}
+
+.btn-follow:hover {
+    background-color: #e63900;
+}
+
+.btn-shop {
+    background-color: #eee;
+    color: var(--text-dark);
+    border: 1px solid #ddd;
+}
+
+.btn-shop:hover {
+    background-color: #e0e0e0;
+}
+
+
+/* --- Estatísticas --- */
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 2px;
+}
+
+/* --- Galeria de Produtos --- */
+
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+    gap: 1px; /* Espaçamento mínimo entre os itens para um visual de feed */
+    background-color: #ddd; /* Cor de fundo para que a separação fique visível */
+}
+
+.gallery-item {
+    height: 150px; /* Altura fixa para todos os itens */
+    background-color: #ccc; /* Placeholder para as imagens dos tênis */
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Para fins de demonstração, simulando imagens de tênis */
+.product-gallery div:nth-child(1) { background-image: url('https://picsum.photos/300/300?random=1'); }
+.product-gallery div:nth-child(2) { background-image: url('https://picsum.photos/300/300?random=2'); }
+.product-gallery div:nth-child(3) { background-image: url('https://picsum.photos/300/300?random=3'); }
+.product-gallery div:nth-child(4) { background-image: url('https://picsum.photos/300/300?random=4'); }
+.product-gallery div:nth-child(5) { background-image: url('https://picsum.photos/300/300?random=5'); }
+.product-gallery div:nth-child(6) { background-image: url('https://picsum.photos/300/300?random=6'); }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--card-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+/* Responsividade Básica (Opcional, mas recomendado) */
+@media (max-width: 480px) {
+    .profile-container {
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .product-gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas muito pequenas */
+    }
+}
