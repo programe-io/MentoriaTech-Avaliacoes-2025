@@ -1,0 +1,85 @@
+/* styles.css — folhas de estilo para Verde Vivo */
+:root{
+  --bg:#f4f9f4;
+    --card:#ffffff;
+      --accent:#2f8f4a;
+        --accent-2:#7bd78b;
+          --muted:#6b6b6b;
+            --text:#102a16;
+              --maxw:1100px;
+                --radius-lg:12px;
+                  --radius-sm:8px;
+                  }
+
+                  /* Reset simples */
+                  *{box-sizing:border-box;margin:0;padding:0}
+                  html,body{height:100%}
+                  body{
+                    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                      background:var(--bg);
+                        color:var(--text);
+                          line-height:1.5;
+                            -webkit-font-smoothing:antialiased;
+                              padding:2rem 1rem;
+                                display:flex;
+                                  justify-content:center;
+                                  }
+
+                                  .container{width:100%;max-width:var(--maxw)}
+
+                                  /* Header */
+                                  header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
+                                  .logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit}
+                                  .logo .mark{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.25rem}
+
+                                  h1{font-size:1.6rem;margin:0}
+                                  .lead{color:var(--muted);margin-top:.25rem;font-size:.95rem}
+
+                                  nav{margin-left:auto}
+                                  nav a{color:var(--muted);text-decoration:none;margin-left:1rem;font-size:.95rem}
+                                  nav a:focus{outline:2px solid rgba(47,143,74,0.18);outline-offset:3px;border-radius:6px}
+
+                                  /* Layout principal */
+                                  main{display:grid;grid-template-columns:1fr 330px;gap:1.25rem;align-items:start}
+
+                                  /* Posts */
+                                  .post-card{background:var(--card);border-radius:var(--radius-lg);box-shadow:0 6px 20px rgba(16,42,22,0.06);overflow:hidden}
+                                  .hero{width:100%;height:220px;object-fit:cover;display:block}
+                                  .post-content{padding:1rem 1.15rem}
+                                  .post-content h2,.post-content h3{margin:0 0 .5rem}
+                                  .meta{font-size:.88rem;color:var(--muted);margin-bottom:.5rem}
+                                  .excerpt{margin:0 0 1rem}
+                                  .read-more{display:inline-block;padding:.5rem .75rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+                                  .read-more:focus{outline:3px solid rgba(47,143,74,0.22);outline-offset:3px}
+
+                                  /* Aside / widgets */
+                                  aside .card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(16,42,22,0.05)}
+                                  .tag{display:inline-block;padding:.2rem .5rem;border-radius:999px;background:#eaf6ea;color:var(--accent);font-size:.85rem;margin:.25rem .25rem 0 0}
+
+                                  /* Footer */
+                                  footer{margin-top:1.5rem;color:var(--muted);font-size:.9rem;text-align:center}
+
+                                  /* Small utilities */
+                                  .u-hidden{display:none}
+                                  .small{font-size:.85rem}
+
+                                  /* Accessibility: dark-mode prefers */
+                                  @media (prefers-color-scheme:dark){
+                                    :root{--bg:#07120a;--card:#0d1b12;--text:#e6f5ea;--muted:#9fb8a6}
+                                      body{background:linear-gradient(180deg,rgba(0,0,0,0.25),transparent),var(--bg)}
+                                      }
+
+                                      /* Responsive */
+                                      @media (max-width:900px){
+                                        main{grid-template-columns:1fr}
+                                          .hero{height:180px}
+                                            nav{display:none}
+                                              .container{padding:0}
+                                              }
+
+                                              /* Small polish */
+                                              a{color:inherit}
+                                              img{max-width:100%;height:auto;display:block}
+                                              button{font:inherit}
+
+                                              /* End of stylesheet */
