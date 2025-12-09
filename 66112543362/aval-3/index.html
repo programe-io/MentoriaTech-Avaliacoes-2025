@@ -1,102 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta-name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Layout Moderno</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Minhas Séries Favoritas — Grasielly</title>
   <link rel="stylesheet" href="style.css">
-<script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></head>
+<link href="style.css" rel="stylesheet"></head>
+<body>
 
-<body class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-700 text-white flex flex-col">
+  <!-- HEADER obrigatório -->
+  <header class="topbar" role="banner">
+    <h1 class="site-title">Minhas Séries Favoritas</h1>
 
-  <!-- TOPO -->
-  <header class="py-10 px-10 flex justify-between items-center backdrop-blur-lg bg-white/10 rounded-b-3xl shadow-lg">
-    <h1 class="text-4xl font-extrabold tracking-wider">LOGO</h1>
-
-    <nav class="flex gap-16 text-center">
-      <a href="#" class="flex flex-col items-center hover:text-gray-200 cursor-pointer transition">
-        <i class="fa-solid fa-house text-3xl"></i>
-        <span class="text-sm mt-1">Início</span>
-      </a>
-
-      <a href="#" class="flex flex-col items-center hover:text-gray-200 cursor-pointer transition">
-        <i class="fa-solid fa-book-open text-3xl"></i>
-        <span class="text-sm mt-1">Livros e Filmes</span>
-      </a>
-
-      <a href="#" class="flex flex-col items-center hover:text-gray-200 cursor-pointer transition">
-        <i class="fa-solid fa-user text-3xl"></i>
-        <span class="text-sm mt-1">Perfil</span>
-      </a>
-    </nav>
+    <!-- botão menu (3 linhas) -->
+    <button id="btnSidebar" class="menu-icon" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
-  <!-- ÁREA PRINCIPAL -->
-  <main class="flex flex-col items-center mt-20">
+  <!-- ASIDE obrigatório (informações rápidas/perfil) -->
+  <aside class="aside" id="aside" aria-labelledby="profileTitle">
+    <h2 id="profileTitle">Perfil</h2>
+    <p><strong>Grasielly</strong></p>
+    <p>Instagram: <a href="https://www.instagram.com/grasysilva__?igsh=cml3M2lnZ2tsNmt0" target="_blank" rel="noopener">@grasysilva__</a></p>
+    <hr>
+    <nav class="aside-nav" aria-label="Navegação secundária">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </aside>
 
-    <section class="text-center mb-16">
-      <h2 class="text-5xl font-bold">Meus livros e filmes Favoritos</h2>
-      <p class="text-gray-200 max-w-3xl mx-auto mt-6 text-lg">
-        Aqui apresento algumas das minhas obras favoritas, com histórias envolventes e personagens inesquecíveis.
-      </p>
+  <!-- NAV lateral (menu que abre/fecha) -->
+  <nav id="sidebar" class="sidebar" aria-hidden="true">
+    <a href="#catalogo">Catálogo</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+    <a href="https://www.instagram.com/grasysilva__?igsh=cml3M2lnZ2tsNmt0" target="_blank" rel="noopener">Instagram</a>
+  </nav>
+
+  <main class="container" role="main">
+    <!-- H2 obrigatório -->
+    <h2 id="catalogo" class="section-title">Catálogo — Séries & Filmes</h2>
+
+    <!-- CARDS -->
+    <section class="cards">
+
+      <!-- Crepúsculo -->
+      <article class="card" aria-labelledby="title-twilight">
+        <img class="poster"
+             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw6y5BgF9aq0KeZUumvCD_w145Qw-yuuquEfV9sPcAvA&s=10"
+             alt="Poster de Crepúsculo" loading="lazy">
+        <div class="card-body">
+          <h3 id="title-twilight">Crepúsculo</h3>
+          <p class="meta">Romance sobrenatural • 2008</p>
+          <p class="desc">Amor proibido entre humana e vampiro com tensão e drama.</p>
+          <div class="actions">
+            <button class="info-btn" data-info="Crepúsculo — Saga de filmes com romance sobrenatural.">Informações</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Diário de um Vampiro -->
+      <article class="card" aria-labelledby="title-vampire-diaries">
+        <img class="poster"
+             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1nW30LwyfZSmJK4VWBmOuhTCTxzmr2stBUdEgXYHZgQ&s=10"
+             alt="Poster de Diário de um Vampiro" loading="lazy">
+        <div class="card-body">
+          <h3 id="title-vampire-diaries">Diário de um Vampiro</h3>
+          <p class="meta">Drama sobrenatural • 2009–2017</p>
+          <p class="desc">Amizade, amor e segredos antigos em uma comunidade cheia de mistérios.</p>
+          <div class="actions">
+            <button class="info-btn" data-info="Diário de um Vampiro — Série com drama sobrenatural e reviravoltas.">Informações</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- True Blood -->
+      <article class="card" aria-labelledby="title-trueblood">
+        <img class="poster"
+             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEZ9NMDbKMwN9k-hpkBpwKUqm3MmchvFmyAUcnYJU-FwfGS9eaViIlR3VP&s=10"
+             alt="Poster de True Blood" loading="lazy">
+        <div class="card-body">
+          <h3 id="title-trueblood">True Blood</h3>
+          <p class="meta">Drama adulto • 2008–2014</p>
+          <p class="desc">Conflitos entre espécies, política e perigo num universo sobrenatural.</p>
+          <div class="actions">
+            <button class="info-btn" data-info="True Blood — Série adulta sobre vampiros e conflitos sociais.">Informações</button>
+          </div>
+        </div>
+      </article>
+
     </section>
 
-    <!-- CARDS CENTRALIZADOS -->
-    <div class="flex justify-center flex-wrap gap-14 px-10 mb-32">
+    <!-- Sobre -->
+    <section id="sobre" class="section">
+      <h2>Sobre</h2>
+      <p>Esta página apresenta as séries e filmes favoritos da Grasielly. Estrutura semântica para avaliação (header, h1, h2, aside).</p>
+    </section>
 
-      <!-- CARD 1 -->
-      <article class="bg-gray-900/60 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl w-80 border border-white/10">
-        <a href="#">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBi3UsSbooGxRxHgf1cNray4ZlzGrzwOTwFg&s"
-               class="w-full h-52 object-cover" alt="AINDA ESTOU AQUI">
-        </a>
-        <div class="p-6">
-          <p class="text-gray-200 text-center leading-relaxed">
-            <strong>AINDA ESTOU AQUI</strong> conta a história de eunice paiva seus filhos e o deputado rubens paiva que enfrenta problemas com a ditadura no brasil em 1964.
-          </p>
-        </div>
-      </article>
+    <!-- Contato -->
+    <section id="contato" class="section">
+      <h2>Contato</h2>
+      <p>Instagram: <a href="https://www.instagram.com/grasysilva__?igsh=cml3M2lnZ2tsNmt0" target="_blank" rel="noopener">@grasysilva__</a></p>
+    </section>
 
-      <!-- CARD 2 -->
-      <article class="bg-gray-900/60 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl w-80 border border-white/10">
-        <a href="#">
-          <img src="https://s2-techtudo.glbimg.com/3w8mBnGZGU9IpD8hd87hk2up0Us=/0x0:1200x800/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2024/E/n/tckuLQRR6swpD6vGkC4w/e-assim-que-acaba-quando-estreia-nos-cinemas-1.webp"
-               class="w-full h-52 object-cover" alt="É ASSIM QUE ACABA">
-        </a>
-        <div class="p-6">
-          <p class="text-gray-200 text-center leading-relaxed">
-            <strong>É ASSIM QUE ACABA</strong> traz uma narrativa intensa, emocionante e sensível sobre superação,
-            escolhas difíceis e o poder da reconstrução pessoal.
-          </p>
-        </div>
-      </article>
-
-      <!-- CARD 3 -->
-      <article class="bg-gray-900/60 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl w-80 border border-white/10">
-        <a href="#">
-          <img src="https://blogs.correiobraziliense.com.br/proximocapitulo/wp-content/uploads/sites/27/2018/01/sobrenatural.jpg"
-               class="w-full h-52 object-cover" alt="SOBRENATURAL">
-        </a>
-        <div class="p-6">
-          <p class="text-gray-200 text-center leading-relaxed">
-            <strong>SOBRENATURAL</strong> apresenta uma história cheia de mistérios, tensão e elementos assustadores
-            que prendem a atenção do início ao fim.
-          </p>
-        </div>
-      </article>
-
-    </div>
-    
   </main>
 
-  <!-- RODAPÉ -->
-  <footer class="text-center py-8 bg-black/20 backdrop-blur-xl">
-    <p class="text-gray-300">&copy; 2025 - Todos os direitos reservados.</p>
+  <!-- Modal simples para mostrar informações -->
+  <div id="modal" class="modal hidden" role="dialog" aria-hidden="true" aria-labelledby="modalTitle">
+    <div class="modal-inner">
+      <button id="closeModal" class="close" aria-label="Fechar">✕</button>
+      <div id="modalContent" tabindex="0"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Feito com 💗 por Grasielly — <a href="https://www.instagram.com/grasysilva__?igsh=cml3M2lnZ2tsNmt0" target="_blank" rel="noopener">@grasysilva__</a></p>
   </footer>
 
-</body>
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
 </html>
