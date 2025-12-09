@@ -1,0 +1,48 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:Inter, Poppins, system-ui, -apple-system, "Segoe UI", Roboto, Arial;background:#07070b;color:#e9eef8}
+.container{width:min(1100px,94%);margin:0 auto}
+.site-header{background:linear-gradient(90deg,#0b1020,#1a1530);padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand h1{font-size:20px;color:#fff}
+.brand-accent{color:#7c5cff}
+.tagline{color:#9fb0ff;font-size:13px;margin-top:6px}
+.main-nav{position:relative}
+.nav-list{display:flex;gap:14px;list-style:none}
+.nav-list a{text-decoration:none;color:#b8c8ff;padding:8px 10px;border-radius:8px;display:inline-flex;align-items:center}
+.nav-list a:hover{background:rgba(255,255,255,0.03);color:#fff}
+.nav-toggle{display:none;background:transparent;border:0;color:#b8c8ff;font-size:20px;cursor:pointer}
+
+.layout{display:grid;grid-template-columns:2fr 1fr;gap:24px;padding:34px 0}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.card-inner h2{color:#cfe0ff;margin-bottom:10px}
+.card-inner p{color:#d6e1ff;line-height:1.6;margin-bottom:12px}
+.quick-stats{display:flex;gap:12px;margin-top:12px}
+.stat h3{color:#fff;font-size:20px}
+.stat p{color:#9fb0ff;font-size:13px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.grid img{width:100%;border-radius:8px;display:block}
+figure{margin:0}
+figcaption{color:#9fb0ff;font-size:13px;margin-top:6px}
+
+.aside-card .btn,.contact-card .btn,.btn{display:inline-block;background:linear-gradient(90deg,#7c5cff,#3aa0ff);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;border:0;cursor:pointer;margin-top:8px}
+.btn span{font-weight:600}
+
+.contact-form{display:flex;flex-direction:column;gap:10px}
+.field label{display:flex;flex-direction:column;color:#cfe0ff;font-size:14px}
+.field input,.field textarea{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);padding:10px;border-radius:8px;color:#fff;margin-top:6px}
+
+.site-footer{background:linear-gradient(90deg,#0b1020,#151427);padding:16px 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:30px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.footer-inner p{color:#9fb0ff}
+.socials a{text-decoration:none;color:#b8c8ff;margin-left:12px;display:inline-flex;align-items:center}
+
+@media(max-width:1000px){
+  .layout{grid-template-columns:1fr;padding:20px 0}
+    .footer-inner{flex-direction:column;align-items:flex-start;gap:8px}
+    }
+    @media(max-width:800px){
+      .nav-list{position:absolute;right:12px;top:64px;background:rgba(8,8,12,0.98);padding:12px;border-radius:8px;flex-direction:column;display:none;width:200px}
+        .nav-list.open{display:flex}
+          .nav-toggle{display:inline-block}
+          }
