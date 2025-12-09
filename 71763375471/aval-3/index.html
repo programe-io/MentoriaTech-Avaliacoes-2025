@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loja Mística</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col">
+
+  <nav class="bg-slate-950 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-500 to-cyan-400 flex items-center justify-center">
+          <span class="text-xl font-bold">∞</span>
+        </div>
+        <span class="font-bold text-lg">Loja Mística</span>
+      </a>
+
+      <ul class="flex items-center gap-6 text-sm">
+        <li><a href="#produtos" class="hover:text-cyan-300">Produtos</a></li>
+        <li><a href="#info" class="hover:text-cyan-300">Informações</a></li>
+        <li><a href="#contato" class="hover:text-cyan-300">Contato</a></li>
+      </ul>
+
+      <button id="botao-carrinho" class="relative inline-flex items-center gap-2 border border-cyan-400 px-3 py-1 rounded-full text-sm hover:bg-cyan-400 hover:text-slate-900 transition">
+        🛒 Carrinho
+        <span id="contador-carrinho" class="inline-flex items-center justify-center w-6 h-6 text-xs rounded-full bg-cyan-400 text-slate-900 font-bold">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-purple-900 via-slate-900 to-cyan-900">
+    <div class="max-w-6xl mx-auto px-4 py-12 grid gap-10 md:grid-cols-2 items-center">
+      <section>
+        <h1 class="text-4xl font-extrabold mb-4">Produtos Místicos e Poderosos</h1>
+        <p class="text-slate-200 mb-4 leading-relaxed">
+          Artefatos raros, substâncias impossíveis e itens encantados para elevar sua jornada.
+        </p>
+
+        <h3 class="text-lg font-semibold mb-2">Destaques</h3>
+        <ul class="list-disc list-inside text-sm text-slate-200 space-y-1">
+          <li>Itens lendários</li>
+          <li>Objetos energizados</li>
+          <li>Essências proibidas</li>
+        </ul>
+
+        <div class="mt-6 flex gap-3">
+          <a href="#produtos" class="px-4 py-2 rounded-md bg-cyan-400 text-slate-900 font-semibold text-sm hover:bg-cyan-300">Catálogo</a>
+          <a href="#info" class="px-4 py-2 rounded-md border border-slate-500 text-sm hover:bg-slate-800">Informações</a>
+        </div>
+      </section>
+
+      <aside class="bg-slate-950/60 border border-slate-700 rounded-xl p-5 shadow-lg">
+        <h2 class="text-xl font-bold mb-3">Energia Arcana Detectada</h2>
+        <p class="text-sm text-slate-200 mb-3">
+          Sua presença ativou o campo mágico. Explore os itens com cuidado.
+        </p>
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-cyan-400 to-purple-500 flex items-center justify-center text-3xl">
+            ✨
+          </div>
+          <p class="text-sm">A energia flui ao seu redor, guiando suas escolhas.</p>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <div class="max-w-6xl mx-auto px-4 py-10 grid gap-8 lg:grid-cols-[2fr_1fr]">
+
+      <section id="produtos" class="space-y-6">
+        <header>
+          <h2 class="text-2xl font-bold mb-2">Produtos Místicos</h2>
+        </header>
+
+        <article class="produto bg-slate-950 border border-slate-800 rounded-xl p-5 flex flex-col md:flex-row gap-4"
+          data-nome="Pó de Chifre de Unicórnio" data-preco="199.90">
+          <div class="w-full md:w-40 h-32 rounded-lg bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-400 flex items-center justify-center">
+            <span class="text-4xl">🦄</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold mb-1">Pó de Chifre de Unicórnio</h3>
+            <p class="text-sm text-slate-200 mb-2">
+              Essência cintilante coletada de campos etéreos.
+            </p>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-lg font-bold text-cyan-300">R$ 199,90</span>
+              <button class="botao-adicionar bg-cyan-400 text-slate-900 px-3 py-1.5 rounded-md text-sm font-semibold hover:bg-cyan-300">
+                Adicionar
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto bg-slate-950 border border-slate-800 rounded-xl p-5 flex flex-col md:flex-row gap-4"
+          data-nome="Chave do Infinito" data-preco="299.90">
+          <div class="w-full md:w-40 h-32 rounded-lg bg-gradient-to-br from-cyan-400 via-blue-500 to-slate-900 flex items-center justify-center">
+            <span class="text-4xl">🔑</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold mb-1">Chave do Infinito</h3>
+            <p class="text-sm text-slate-200 mb-2">
+              Forjada no abismo além do tempo.
+            </p>
+            <ul class="list-disc list-inside text-sm text-slate-200 mb-2">
+              <li>Desbloqueia energia contínua</li>
+              <li>Canaliza o fluxo universal</li>
+            </ul>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-lg font-bold text-cyan-300">R$ 299,90</span>
+              <button class="botao-adicionar bg-cyan-400 text-slate-900 px-3 py-1.5 rounded-md text-sm font-semibold hover:bg-cyan-300">
+                Adicionar
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto bg-slate-950 border border-slate-800 rounded-xl p-5 flex flex-col md:flex-row gap-4"
+          data-nome="Areia do Tempo" data-preco="149.90">
+          <div class="w-full md:w-40 h-32 rounded-lg bg-gradient-to-br from-amber-400 via-orange-500 to-red-600 flex items-center justify-center">
+            <span class="text-4xl">⏳</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold mb-1">Areia do Tempo</h3>
+            <p class="text-sm text-slate-200 mb-2">
+              Fragmentos de ciclos perdidos preservados em cristal.
+            </p>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-lg font-bold text-cyan-300">R$ 149,90</span>
+              <button class="botao-adicionar bg-cyan-400 text-slate-900 px-3 py-1.5 rounded-md text-sm font-semibold hover:bg-cyan-300">
+                Adicionar
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <aside id="info" class="space-y-6">
+        <section class="bg-slate-950 border border-slate-800 rounded-xl p-5">
+          <header><h3 class="text-lg font-semibold mb-2">Informações</h3></header>
+          <p class="text-sm text-slate-200 mb-3">
+            Artefatos, relíquias e itens raros energizados com forças antigas.
+          </p>
+          <ul class="list-disc list-inside text-xs text-slate-300 space-y-1">
+            <li>Aprimoram a aura</li>
+            <li>Conectam com o plano arcano</li>
+            <li>Podem reagir ao toque</li>
+          </ul>
+        </section>
+
+        <section class="bg-slate-950 border border-slate-800 rounded-xl p-5">
+          <header class="mb-3"><h3 class="text-lg font-semibold">Carrinho</h3></header>
+          <ul id="lista-carrinho" class="text-xs text-slate-300 space-y-1 border border-slate-800 rounded-md p-2 max-h-40 overflow-y-auto bg-slate-900">
+            <li>Nenhum item no carrinho.</li>
+          </ul>
+          <p class="text-sm mt-3">
+            Total:
+            <span id="total-carrinho" class="font-bold text-cyan-300">R$ 0,00</span>
+          </p>
+        </section>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <footer id="contato" class="bg-slate-950 border-t border-slate-800 mt-8">
+    <div class="max-w-6xl mx-auto px-4 py-6 grid gap-4 md:grid-cols-3 text-sm">
+      <div>
+        <h3 class="font-semibold mb-2">Localização</h3>
+        <p class="text-slate-300">Planície das Energias Antigas</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Navegação</h3>
+        <ul class="space-y-1">
+          <li><a href="#produtos" class="hover:text-cyan-300">Catálogo</a></li>
+          <li><a href="#info" class="hover:text-cyan-300">Informações</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Contato</h3>
+        <p class="text-slate-300 text-xs">
+          E-mail: contato@misticos.com<br>
+          Telefone: (00) 0000-0000
+        </p>
+      </div>
+    </div>
+    <div class="text-center text-xs text-slate-500 pb-4">© 2025 Loja Mística</div>
+  </footer>
+
+  <script src="script.js"></script>
+<script src="script.js"></script></body>
+</html>
+
+<img>
