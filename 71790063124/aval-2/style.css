@@ -1,0 +1,132 @@
+/* Configurações Globais */
+:root {
+    --cor-principal: #6b3e2e; /* Marrom escuro */
+    --cor-secundaria: #a37c5f; /* Marrom claro */
+    --cor-fundo: #f4f4f4;
+    --cor-texto: #333;
+    --cor-contraste: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Header */
+header {
+    background-color: var(--cor-principal);
+    color: var(--cor-contraste);
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 30px 0;
+}
+
+section h2 {
+    color: var(--cor-principal);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 5px;
+    font-size: 2em;
+}
+
+/* Galeria de Raças */
+.galeria-racas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.raca-card {
+    background-color: var(--cor-contraste);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(33% - 20px); /* 3 cards por linha */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.raca-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.raca-card h3 {
+    color: var(--cor-secundaria);
+    margin-bottom: 10px;
+}
+
+.raca-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 15px;
+    display: block;
+    object-fit: cover;
+}
+
+/* Curiosidades */
+#curiosidades ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#curiosidades li {
+    background-color: var(--cor-contraste);
+    border-left: 5px solid var(--cor-secundaria);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--cor-principal);
+    color: var(--cor-contraste);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .raca-card {
+        width: calc(50% - 20px); /* 2 cards por linha em telas médias */
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .raca-card {
+        width: 100%; /* 1 card por linha em telas pequenas */
+    }
+}
