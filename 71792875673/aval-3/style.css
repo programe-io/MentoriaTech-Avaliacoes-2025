@@ -1,0 +1,154 @@
+/* -------------------- */
+/* BLOG - Estrutura     */
+/* -------------------- */
+
+.main-content {
+    /* Altera o layout principal para usar Flexbox no blog (Conteúdo + Sidebar) */
+    display: flex;
+    gap: 30px;
+    align-items: flex-start; /* Alinha o conteúdo ao topo */
+}
+
+/* Garante que a seção de posts ocupe o espaço necessário */
+#posts {
+    flex: 3; 
+    padding: 0;
+    border-bottom: none; /* Remove a linha divisória da seção principal */
+}
+
+.blog-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Estilo para cada Post */
+.post-card {
+    background-color: #fff;
+    padding: 25px;
+    border-left: 5px solid #ffcc00; /* Detalhe lateral */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.post-card h3 {
+    font-family: 'Oswald', sans-serif;
+    color: #c00;
+    margin-bottom: 5px;
+}
+
+.post-meta {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: #c00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Post de Destaque */
+.featured-post {
+    background-color: #333;
+    color: #f4f4f4;
+    border-left: 5px solid #c00;
+}
+
+.featured-post h3, .featured-post .read-more {
+    color: #ffcc00; /* Cores claras no destaque */
+}
+
+/* -------------------- */
+/* SIDEBAR (Lateral)    */
+/* -------------------- */
+
+.sidebar {
+    flex: 1; /* Ocupa menos espaço que o conteúdo principal */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-title {
+    font-family: 'Oswald', sans-serif;
+    color: #000;
+    font-size: 1.5em;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px dashed #eee;
+}
+
+.sidebar ul li a:hover {
+    color: #c00;
+    padding-left: 5px;
+    background-color: #fafafa;
+}
+
+/* Newsletter */
+.newsletter-box input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.newsletter-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #c00;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.newsletter-box button:hover {
+    background-color: #900;
+}
+
+/* -------------------- */
+/* RESPONSIVIDADE DO BLOG */
+/* -------------------- */
+
+@media (max-width: 900px) {
+    /* Em telas menores, o conteúdo e a sidebar empilham */
+    .main-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
