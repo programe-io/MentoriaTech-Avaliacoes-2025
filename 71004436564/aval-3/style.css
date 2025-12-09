@@ -1,0 +1,187 @@
+/* --- Estilos Globais e Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff; /* Azul padrão para links */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Cabeçalho e Navegação --- */
+.cabecalho-blog {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    border-bottom: 5px solid #ff4500; /* Laranja/Vermelho do FF */
+}
+
+.cabecalho-blog .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho-blog h1 {
+    font-size: 2em;
+    color: #ff4500;
+}
+
+.cabecalho-blog nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.cabecalho-blog nav ul li {
+    margin-left: 25px;
+}
+
+.cabecalho-blog nav ul li a {
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.cabecalho-blog nav ul li a:hover {
+    color: #ff4500;
+}
+
+/* --- Layout Principal (Grid) --- */
+main.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Duas colunas: 2/3 para posts, 1/3 para lateral */
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* --- Área de Posts --- */
+.post-destaque, .post {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.post-destaque h2 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.lista-posts h3 {
+    font-size: 1.5em;
+    color: #ff4500;
+    margin-bottom: 5px;
+}
+
+.meta {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.leia-mais {
+    display: inline-block;
+    color: #ff4500;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: color 0.3s;
+}
+
+.leia-mais:hover {
+    color: #cc3700;
+    text-decoration: none;
+}
+
+/* --- Barra Lateral (Sidebar) --- */
+.barra-lateral {
+    padding: 20px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+}
+
+.barra-lateral h2 {
+    font-size: 1.8em;
+    color: #333;
+    border-bottom: 2px solid #ff4500;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.barra-lateral ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.barra-lateral ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #ccc;
+}
+
+.barra-lateral ul li a {
+    color: #555;
+}
+
+.anuncio {
+    background-color: #ff4500;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #ff4500;
+}
+
+/* --- Responsividade Básica --- */
+@media (max-width: 992px) {
+    main.container {
+        grid-template-columns: 1fr; /* Layout de uma coluna em telas menores */
+    }
+
+    .cabecalho-blog .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cabecalho-blog nav {
+        margin-top: 15px;
+    }
+
+    .cabecalho-blog nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
