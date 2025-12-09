@@ -1,0 +1,274 @@
+/* --- Fontes, Variáveis e Reset --- */
+:root {
+    --cor-fundo-principal: #121212; /* Preto Quase Total */
+    --cor-fundo-secundario: #1E1E1E; /* Cinza Escuro */
+    --cor-primaria: #FF0054; /* Vermelho/Pink Vibrante - Destaque */
+    --cor-secundaria: #00FFFF; /* Ciano - Destaque Secundário */
+    --cor-texto-claro: #F0F0F0;
+    --cor-texto-meta: #AAAAAA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-claro);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Cabeçalho (Header) --- */
+header {
+    background-color: var(--cor-fundo-secundario);
+    padding: 30px 0;
+    border-bottom: 3px solid var(--cor-primaria);
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    color: var(--cor-secundaria);
+}
+
+header p {
+    font-style: italic;
+    color: var(--cor-texto-meta);
+    margin-bottom: 20px;
+}
+
+/* Navegação (Nav) */
+nav ul {
+    list-style: none;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--cor-primaria);
+}
+
+/* --- Layout Principal do Blog (Flexbox) --- */
+.blog-container {
+    display: flex;
+    margin: 40px auto;
+    gap: 30px;
+    align-items: flex-start; /* Alinha o conteúdo ao topo */
+}
+
+/* Coluna de Artigos */
+.main-articles {
+    flex: 3; /* Ocupa mais espaço */
+}
+
+.main-articles h2 {
+    color: var(--cor-primaria);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 10px;
+}
+
+/* Artigo Individual */
+.blog-post {
+    background-color: var(--cor-fundo-secundario);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border-left: 5px solid var(--cor-primaria);
+}
+
+/* Destaque para um fundo secundário */
+.secondary-bg {
+    background-color: #252525;
+    border-left: 5px solid var(--cor-secundaria);
+}
+
+.post-header h3 {
+    color: var(--cor-texto-claro);
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.post-meta {
+    color: var(--cor-texto-meta);
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.blog-post p {
+    margin-bottom: 20px;
+    color: var(--cor-texto-meta);
+}
+
+.read-more {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Paginação */
+.pagination {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fundo-principal);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #00AAAA;
+}
+
+/* --- Barra Lateral (Sidebar) --- */
+.sidebar {
+    flex: 1; /* Ocupa menos espaço */
+    background-color: var(--cor-fundo-secundario);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar h3 {
+    color: var(--cor-secundaria);
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed var(--cor-texto-meta);
+    padding-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.sidebar ul li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #333;
+    color: var(--cor-texto-claro);
+    font-size: 0.95em;
+}
+
+/* Newsletter e Links na Sidebar */
+.newsletter-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--cor-primaria);
+    border-radius: 4px;
+    background-color: #333;
+    color: var(--cor-texto-claro);
+}
+
+.btn-sidebar {
+    width: 100%;
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.btn-sidebar:hover {
+    background-color: #CC0044;
+}
+
+.featured-link {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #252525;
+    border-radius: 8px;
+    border: 1px solid var(--cor-secundaria);
+}
+
+.featured-link h4 {
+    color: var(--cor-secundaria);
+    margin-bottom: 5px;
+}
+
+.featured-link p {
+    color: var(--cor-texto-meta);
+    margin-bottom: 15px;
+}
+
+/* --- Rodapé (Footer) --- */
+footer {
+    background-color: black;
+    color: var(--cor-texto-meta);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.85em;
+    margin-top: 40px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+    .blog-container {
+        flex-direction: column; 
+    }
+
+    .main-articles, .sidebar {
+        flex: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .blog-post {
+        padding: 20px;
+    }
+}
