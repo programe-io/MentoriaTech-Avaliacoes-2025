@@ -1,0 +1,245 @@
+/* --- Estilos Globais e Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Cabeçalho e Navegação --- */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #ff5722; /* Laranja forte, cor de destaque */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff5722;
+}
+
+/* --- Estilos de Seção Comuns --- */
+.secao-principal {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.secao-conteudo {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #ff5722;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* --- Seção Hero (Destaque Principal) --- */
+#hero {
+    background: url('caminho/para/imagem/freefire_hero.jpg') no-repeat center center/cover;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    background-color: #555; /* Cor de fallback */
+}
+
+#hero h1 {
+    color: white;
+}
+
+.botao-principal {
+    display: inline-block;
+    background-color: #ff5722;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.botao-principal:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+}
+
+/* --- Seção Sobre (Cards) --- */
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 250px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    color: #ff5722;
+    margin-bottom: 10px;
+}
+
+/* --- Seção Personagens (Fundo Escuro) --- */
+.fundo-escuro {
+    background-color: #333;
+    color: white;
+}
+
+.fundo-escuro h2 {
+    color: white;
+    border-bottom-color: #ff5722;
+}
+
+.personagem-lista {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.personagem {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ff5722;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.personagem h3 {
+    color: #ffc107; /* Amarelo para destaque */
+    margin-bottom: 8px;
+}
+
+/* --- Seção Download --- */
+.botoes-download {
+    margin-top: 30px;
+}
+
+.botao-download {
+    display: inline-block;
+    padding: 15px 40px;
+    margin: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    transition: opacity 0.3s;
+}
+
+.botao-download:hover {
+    opacity: 0.8;
+}
+
+.google-play {
+    background-color: #4CAF50; /* Verde */
+}
+
+.app-store {
+    background-color: #007AFF; /* Azul da Apple */
+}
+
+/* --- Rodapé --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: #ccc;
+    font-size: 0.9em;
+}
+
+/* --- Responsividade Básica (Opcional, mas recomendado) --- */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 10px;
+        padding-left: 0;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .card-container, .personagem-lista {
+        flex-direction: column;
+    }
+
+    .card, .personagem {
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+}
