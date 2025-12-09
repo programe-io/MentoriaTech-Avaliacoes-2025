@@ -1,0 +1,196 @@
+[18:35, 09/12/2025] Wellingtonxz: Layla
+[18:35, 09/12/2025] Wellingtonxz: <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Amigo App: Serviços e Adoção</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'primary-pet': '#00BCD4', // Azul Ciano (Destaque)
+                'secondary-pet': '#795548', // Marrom (Cor principal do texto/fundo)
+                'bg-light': '#FFFDE7', // Creme Claro (Fundo Amigável)
+              }
+            }
+          }
+        }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body class="bg-bg-light">
+
+<div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+
+    <header class="bg-white shadow-lg rounded-xl p-4 mb-8 sticky top-0 z-10 border-t-4 border-primary-pet">
+        <div class="flex items-center justify-between">
+            <h1 class="text-3xl font-extrabold text-secondary-pet flex items-center space-x-2">
+                <span class="text-4xl text-primary-pet">🐾</span>
+                <span>Pet Amigo App</span>
+            </h1>
+
+            <nav class="flex space-x-4 sm:space-x-6 items-center">
+                <a href="#menu-section" class="text-secondary-pet hover:text-primary-pet font-medium transition hidden sm:block">Serviços / Pets</a>
+                <a href="#order-details-block" class="text-secondary-pet hover:text-primary-pet font-medium transition hidden sm:block">Meu Pedido</a>
+                <button class="text-white bg-primary-pet py-2 px-4 rounded-lg text-sm font-semibold hover:bg-secondary-pet transition shadow-md">
+                    Minha Conta
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        <section class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg" id="menu-section">
+            <h2 class="text-2xl font-bold mb-6 text-secondary-pet border-b pb-2">Serviços e Raças para Adoção</h2>
+
+            <img src="https://placehold.co/1200x250/00BCD4/ffffff?text=Promo%C3%A7%C3%A3o%3A+Primeiro+Banho+Gratis"
+                 class="w-full h-auto rounded-lg shadow mb-6 border-l-4 border-primary-pet">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <div class="bg-white p-4 rounded-xl shadow-md border-l-4 border-primary-pet">
+                    <img src="https://clubpetrj.com.br/wp-content/uploads/2020/05/tosa-bebe-1170x731-1.jpg.webp"
+                         alt="Cachorro tomando banho"
+                         class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-secondary-pet">Banho e Tosa Completa</h3>
+                    <p class="text-primary-pet font-semibold mb-3">R$ 55,00 (Preço)</p>
+                    <button onclick="selecionarServico('Banho e Tosa Completa', 55.00)"
+                            class="w-full bg-primary-pet text-white py-2 rounded-lg font-bold hover:bg-secondary-pet transition">
+                        Agendar Serviço
+                    </button>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-md border-l-4 border-primary-pet">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYXkr6oxoCwv0toiBctdSyS-UA4vLbOsBWSA&s"
+                         alt="Cachorro passeando"
+                         class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-secondary-pet">Passeio de 30 Minutos</h3>
+                    <p class="text-primary-pet font-semibold mb-3">R$ 25,00 (Preço)</p>
+                    <button onclick="selecionarServico('Passeio de 30 Minutos', 25.00)"
+                            class="w-full bg-primary-pet text-white py-2 rounded-lg font-bold hover:bg-secondary-pet transition">
+                        Contratar Dog Walker
+                    </button>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-md border-l-4 border-primary-pet">
+                    <img src="https://www.pedigree.com.br/sites/g/files/fnmzdf2401/files/2024-12/vira-lata-caramelo-03.jpg"
+                         alt="Cachorro Vira-lata Caramelo"
+                         class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-secondary-pet">Vira-Lata Caramelo (Buddy)</h3>
+                    <p class="text-primary-pet font-semibold mb-3">R$ 0,00 (Adoção)</p>
+                    <button onclick="selecionarServico('Adoção: Buddy, Caramelo', 0.00)"
+                            class="w-full bg-primary-pet text-white py-2 rounded-lg font-bold hover:bg-secondary-pet transition">
+                        Ver Perfil de Adoção
+                    </button>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-md border-l-4 border-primary-pet">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuxy2WXdESja4UERmiTEzhk1otagrdbgA4mw&s"
+                         alt="Cachorro Labrador"
+                         class="w-full h-48 object-cover rounded-lg mb-4 shadow">
+                    <h3 class="text-xl font-bold text-secondary-pet">Labrador (Thor)</h3>
+                    <p class="text-primary-pet font-semibold mb-3">R$ 0,00 (Adoção)</p>
+                    <button onclick="selecionarServico('Adoção: Thor, Labrador', 0.00)"
+                            class="w-full bg-primary-pet text-white py-2 rounded-lg font-bold hover:bg-secondary-pet transition">
+                        Ver Perfil de Adoção
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <aside class="lg:col-span-1 space-y-8">
+            
+            <div class="bg-white p-6 rounded-xl shadow-lg" id="order-details-block">
+                <h2 class="text-2xl font-bold mb-4 text-primary-pet border-b pb-2">Detalhes do Serviço / Pet</h2>
+
+                <div id="selected-item-display" class="mb-4 p-3 bg-primary-pet/10 rounded-lg border-l-4 border-primary-pet">
+                    <p id="item-name" class="font-semibold text-secondary-pet">Nenhum item selecionado.</p>
+                    <p id="item-price" class="text-sm text-gray-600">Clique para adicionar ao seu carrinho.</p>
+                </div>
+
+                <div class="space-y-2 mb-6">
+                    <div class="flex justify-between text-gray-700 font-medium">
+                        <span>Taxa de Agendamento:</span>
+                        <span id="subtotal" class="font-bold">R$ 5,00</span>
+                    </div>
+
+                    <div class="flex justify-between text-secondary-pet font-medium">
+                        <span>Desconto Fidelidade:</span>
+                        <span id="delivery-fee" class="font-bold">- R$ 0,00</span>
+                    </div>
+
+                    <div class="flex justify-between text-xl font-extrabold text-primary-pet border-t pt-2">
+                        <span>Total do Serviço:</span>
+                        <span id="total-amount">R$ 5,00</span>
+                    </div>
+                </div>
+
+                <button onclick="simulateOrder()"
+                        class="w-full bg-primary-pet text-white py-3 rounded-lg font-bold hover:bg-secondary-pet transition shadow-md">
+                    Confirmar Agendamento
+                </button>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg hidden" id="tracker-section-block">
+                <h2 class="text-2xl font-bold mb-4 text-secondary-pet border-b">Acompanhamento do Serviço</h2>
+
+                <div id="map-container" class="relative rounded-lg bg-gray-200 h-48 mb-6 border-2 border-primary-pet">
+                    <div id="delivery-marker" class="absolute text-3xl" style="left: 10%; top: 30%;">🐕</div> 
+                    <div class="absolute text-3xl" style="right: 10%; bottom: 10%;">🏠</div>
+                </div>
+
+                <div class="p-4 border border-primary-pet/50 bg-primary-pet/10 rounded-lg">
+                    <h3 class="text-xl font-bold text-primary-pet mb-1">Status do Pet</h3>
+                    <div id="status-display" class="text-2xl font-semibold text-secondary-pet">
+                        Aguardando a Busca...
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">
+                        Previsão de término: <span id="eta">50 minutos</span>
+                    </p>
+                </div>
+
+                <button onclick="updateTrackingStatus()"
+                        class="mt-4 w-full bg-primary-pet text-white py-3 rounded-lg font-bold hover:bg-secondary-pet transition shadow-md">
+                    Atualizar Status do Serviço
+                </button>
+
+                <p id="message-box"
+                   class="mt-3 hidden text-green-700 text-center text-sm font-medium">
+                    Serviço concluído! Seu pet está pronto para buscar! 🐶
+                </p>
+            </div>
+
+        </aside>
+    </main>
+
+    <div id="confirmation-modal"
+         class="fixed inset-0 bg-secondary-pet bg-opacity-70 hidden justify-center items-center z-50">
+        <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full text-center">
+            <div class="text-primary-pet text-6xl mb-4">✅</div>
+            <h3 class="text-xl font-bold mb-2">Serviço Agendado!</h3>
+            <p class="text-gray-600 mb-6">Seu agendamento foi confirmado. Acompanhe o status do serviço aqui!</p>
+
+            <button onclick="closeModal()"
+                    class="w-full bg-primary-pet text-white py-2 rounded-lg font-bold hover:bg-secondary-pet transition">
+                Ver Acompanhamento
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+<script src="script.js"></script></body>
+</html>

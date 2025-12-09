@@ -1,0 +1,85 @@
+/*
+   Arquivo: styles.css
+   Tema: Pet Shop / Cachorros (Azul Ciano e Marrom)
+*/
+
+/* As cores primárias agora são:
+   primary-pet: #00BCD4 (Azul Ciano)
+   secondary-pet: #795548 (Marrom)
+   bg-light: #FFFDE7 (Creme Claro)
+*/
+
+/* 1. Reset Básico e Fontes */
+body {
+    /* Define uma fonte amigável e limpa */
+    font-family: 'Open Sans', 'Inter', sans-serif;
+    color: #795548; /* Cor principal do texto (secondary-pet - Marrom) */
+    line-height: 1.6;
+}
+
+/* 2. Estilos para Títulos e Destaques */
+h1, h2, h3 {
+    font-weight: 700; /* Bold */
+}
+
+/* 3. Efeitos de Transição para Interatividade */
+a, button {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* 4. Estilo Específico para o Marcador do Pet no Mapa */
+#delivery-marker {
+    /* Animação de pulo sutil para simular o pet */
+    animation: jump-wag 2.5s infinite;
+}
+
+/* 5. Keyframes para o Efeito de Pulo/Movimento do Pet */
+@keyframes jump-wag {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5px) scaleX(1.1); /* Pulo e leve alargamento */
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: rotate(5deg); /* Leve balanço */
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* 6. Destaque em Hover nos Itens/Serviços (Usando a classe grid > div) */
+.grid > div {
+    /* Usa uma sombra amigável */
+    transition: box-shadow 0.3s ease-in-out, transform 0.1s ease-in-out;
+    border: 1px solid #E0E0E0; /* Borda suave */
+}
+
+.grid > div:hover {
+    box-shadow: 0 8px 15px -3px rgba(0, 188, 212, 0.2); /* Sombra suave com a cor primária */
+    transform: translateY(-3px); /* Efeito de elevação */
+}
+
+/* 7. Estilo para o background do Mapa (Cores mais claras e divertidas) */
+#map-container {
+    /* Simula um mapa de passeio, mais verde/claro */
+    background: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 100%); /* Gradiente de Azul Claro */
+    position: relative;
+    overflow: hidden;
+}
+
+/* 8. Estilo do Botão Principal na Lateral (Para dar destaque) */
+#order-details-block button {
+    box-shadow: 0 4px 6px -1px rgba(0, 188, 212, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+#order-details-block button:hover {
+    /* Mudança de cor no hover do botão principal */
+    background-color: #795548; 
+}
