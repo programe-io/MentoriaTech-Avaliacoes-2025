@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Futurista do Estudante</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-main: radial-gradient(circle at top, #271b68 0, #050816 45%, #02010a 100%);
+      --accent: #7b5cff;
+      --accent-soft: rgba(123, 92, 255, 0.25);
+      --accent-strong: #00f6ff;
+      --text-main: #f5f5ff;
+      --text-muted: #b6b6d8;
+      --card-bg: rgba(9, 10, 30, 0.8);
+      --border-soft: rgba(255, 255, 255, 0.08);
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .matrix-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.08) 0, transparent 40%),
+        radial-gradient(circle at 80% 0%, rgba(123, 92, 255, 0.25) 0, transparent 55%),
+        radial-gradient(circle at 90% 80%, rgba(0, 255, 149, 0.2) 0, transparent 50%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .grid-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border-soft);
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(3, 5, 20, 0.9), rgba(3, 5, 20, 0.5));
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .logo-mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 18px rgba(123, 92, 255, 0.7);
+      background: radial-gradient(circle at 30% 30%, #ffffff 0, #7b5cff 40%, #050816 100%);
+      font-size: 0.7rem;
+    }
+
+    .logo-icon span {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .logo-text h1 {
+      font-size: 1.2rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .logo-text p {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+      transition: width 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      border-color: rgba(123, 92, 255, 0.7);
+      background: rgba(6, 14, 40, 0.9);
+    }
+
+    nav a:hover::after {
+      width: 70%;
+    }
+
+    .btn-pulse {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 246, 255, 0.5);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: radial-gradient(circle at top, rgba(0, 246, 255, 0.25), transparent 60%);
+      color: var(--accent-strong);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-pulse::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.35s ease;
+    }
+
+    .btn-pulse:hover::before {
+      transform: translateX(100%);
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 18px auto 40px auto;
+      padding: 0 18px 24px 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(260px, 1.4fr);
+      gap: 22px;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 18px 18px 20px 18px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(123, 92, 255, 0.2) 0, transparent 55%);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent-strong);
+      margin-bottom: 4px;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 4px;
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin: 10px 0 6px 0;
+      color: var(--accent-strong);
+    }
+
+    p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(220px, 1.1fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+
+    .hero-title span {
+      color: var(--accent-strong);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(0, 246, 255, 0.12);
+      border: 1px solid rgba(0, 246, 255, 0.7);
+      font-size: 0.75rem;
+      margin-bottom: 6px;
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-strong);
+      box-shadow: 0 0 12px rgba(0, 246, 255, 0.9);
+    }
+
+    .typewriter {
+      font-size: 0.95rem;
+      color: var(--accent-strong);
+      min-height: 1.3em;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid var(--accent-strong);
+      animation: caret 0.9s steps(1) infinite;
+      margin-bottom: 8px;
+    }
+
+    @keyframes caret {
+      0%, 50% {
+        border-color: var(--accent-strong);
+      }
+      51%, 100% {
+        border-color: transparent;
+      }
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .btn-primary {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+      color: #010308;
+      box-shadow: 0 12px 25px rgba(0, 246, 255, 0.3);
+    }
+
+    .btn-ghost {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      font-size: 0.9rem;
+      background: transparent;
+      color: var(--text-main);
+    }
+
+    .hero-holo {
+      position: relative;
+      border-radius: 18px;
+      padding: 12px;
+      background: radial-gradient(circle at top, rgba(0, 246, 255, 0.12), rgba(6, 10, 35, 0.95));
+      border: 1px solid rgba(123, 92, 255, 0.7);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.9);
+    }
+
+    .holo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .holo-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .holo-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.2);
+    }
+
+    .holo-dot:nth-child(1) { background: #ff5f57; }
+    .holo-dot:nth-child(2) { background: #febc2e; }
+    .holo-dot:nth-child(3) { background: #28c840; }
+
+    .holo-chip {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 246, 255, 0.7);
+      color: var(--accent-strong);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .holo-body {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .holo-level {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: var(--accent-strong);
+    }
+
+    .holo-bar {
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      overflow: hidden;
+      margin-top: 4px;
+    }
+
+    .holo-bar-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+      width: 78%;
+    }
+
+    aside {
+      align-self: flex-start;
+    }
+
+    .aside-title {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+    }
+
+    .timeline {
+      list-style: none;
+      border-left: 1px solid rgba(0, 246, 255, 0.4);
+      margin-left: 6px;
+      padding-left: 14px;
+    }
+
+    .timeline li {
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -9px;
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent-strong);
+      box-shadow: 0 0 12px rgba(0, 246, 255, 0.9);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .chip {
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: rgba(4, 8, 25, 0.9);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .mini-card {
+      padding: 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(4, 9, 26, 0.9);
+    }
+
+    .mini-card h3 {
+      margin-top: 0;
+    }
+
+    .mini-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.8rem;
+    }
+
+    th, td {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 6px 8px;
+      text-align: left;
+    }
+
+    thead {
+      background: rgba(123, 92, 255, 0.25);
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(6, 10, 35, 0.85);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .gallery figure {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 246, 255, 0.2);
+      background: rgba(2, 6, 20, 0.95);
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      filter: saturate(1.3);
+    }
+
+    .gallery figcaption {
+      font-size: 0.75rem;
+      padding: 6px 8px;
+      color: var(--text-muted);
+    }
+
+    form {
+      margin-top: 8px;
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    input, textarea, select {
+      margin-top: 2px;
+      padding: 7px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(2, 7, 24, 0.95);
+      color: var(--text-main);
+      font-size: 0.86rem;
+    }
+
+    textarea {
+      border-radius: 12px;
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(182, 182, 216, 0.7);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 12px 18px 16px 18px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+      background: linear-gradient(to top, rgba(2, 4, 14, 0.95), rgba(2, 4, 14, 0.7));
+    }
+
+    footer a {
+      color: var(--accent-strong);
+      text-decoration: none;
+      margin-left: 6px;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .feedback {
+      font-size: 0.8rem;
+      margin-top: 4px;
+      color: var(--accent-strong);
+    }
+
+    @media (max-width: 860px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-card {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <div class="matrix-bg"></div>
+  <div class="grid-overlay"></div>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo-mark">
+        <div class="logo-icon">
+          <span>EA</span>
+        </div>
+        <div class="logo-text">
+          <h1>Estudante Andromeda</h1>
+          <p>Portfólio acadêmico de uma mente do futuro</p>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Perfil</a>
+        <a href="#projetos">Missões</a>
+        <a href="#matrix">Desempenho</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <button type="button" class="btn-pulse" id="btnStatus">
+        Modo observador
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="card intro-card">
+      <div class="card-inner hero-layout">
+        <div>
+          <div class="section-label">Arquivo de identidade estudantil 4.0</div>
+          <h2 class="hero-title">
+            Estudante em formação para <span>realidades futuras</span>
+          </h2>
+
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Perfil ativo no núcleo acadêmico interestelar
+          </div>
+
+          <p class="typewriter" id="typewriter"></p>
+
+          <article>
+            <p>
+              Este portfólio registra a jornada de um aluno do ensino médio em uma linha temporal imaginária,
+              onde a escola utiliza simulações, laboratórios virtuais e salas imersivas para preparar mentes
+              para desafios que ainda nem existem.
+            </p>
+            <p>
+              Cada disciplina funciona como um módulo de treinamento e cada trabalho se torna um pequeno experimento
+              para testar raciocínio, criatividade e colaboração.
+            </p>
+          </article>
+
+          <div class="hero-actions">
+            <button type="button" class="btn-primary" id="btnHighlight">
+              Ver projetos em destaque
+            </button>
+            <button type="button" class="btn-ghost" id="btnScroll">
+              Explorar módulo acadêmico
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-holo">
+          <div class="holo-header">
+            <div class="holo-dots">
+              <div class="holo-dot"></div>
+              <div class="holo-dot"></div>
+              <div class="holo-dot"></div>
+            </div>
+            <div class="holo-chip">Painel acadêmico futuro</div>
+          </div>
+          <div class="holo-body">
+            <p>
+              Perfil simulado de estudante do ensino médio focado em ciências, tecnologia
+              e pensamento crítico aplicado a problemas do século futuro.
+            </p>
+            <div class="holo-level">
+              Nível de evolução acadêmica
+              <div class="holo-bar">
+                <div class="holo-bar-fill" id="barFill"></div>
+              </div>
+            </div>
+            <p style="margin-top:6px;font-size:0.76rem;">
+              Atualização automática conforme novos projetos, trabalhos e pesquisas são concluídos
+              no ambiente escolar ampliado.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="card">
+      <div class="card-inner">
+        <div class="aside-title">Resumo do módulo escolar</div>
+        <h3>Dados principais</h3>
+        <ul class="timeline">
+          <li>
+            <strong>Série</strong>: ensino médio em progressão
+          </li>
+          <li>
+            <strong>Perfil acadêmico</strong>: explorador de conceitos
+          </li>
+          <li>
+            <strong>Foco atual</strong>: projetos interdisciplinares com tecnologia
+          </li>
+        </ul>
+
+        <h3>Competências em expansão</h3>
+        <div class="chip-row">
+          <span class="chip">Leitura crítica</span>
+          <span class="chip">Comunicação científica</span>
+          <span class="chip">Pensamento lógico</span>
+          <span class="chip">Trabalho em grupo</span>
+          <span class="chip">Uso de ferramentas digitais</span>
+        </div>
+
+        <h3>Portais de conhecimento</h3>
+        <p style="margin-top:4px;">
+          <a href="https://scholar.google.com" target="_blank" style="color:var(--accent-strong);text-decoration:none;">
+            Biblioteca de artigos simulados
+          </a>
+        </p>
+        <p>
+          <a href="https://www.khanacademy.org" target="_blank" style="color:var(--accent-strong);text-decoration:none;">
+            Laboratório virtual de estudos
+          </a>
+        </p>
+      </div>
+    </aside>
+
+    <section id="sobre" class="card">
+      <div class="card-inner">
+        <div class="section-label">Perfil simulado</div>
+        <h2>Quem é o estudante deste futuro</h2>
+        <article>
+          <p>
+            Este aluno fictício imagina a escola como uma base de treinamento em órbita terrestre.
+            Cada sala de aula é vista como um módulo com atmosferas diferentes, onde os conteúdos
+            de história, matemática, ciências e linguagens se conectam como constelações.
+          </p>
+          <p>
+            Ao invés de memorizar tudo de uma vez, ele cria trilhas de estudo, registra dúvidas
+            em diários digitais e transforma trabalhos em micro projetos que podem ser aprimorados
+            ao longo do ano letivo.
+          </p>
+
+          <div class="grid-2" style="margin-top:10px;">
+            <div class="mini-card">
+              <h3>Rotina de bordo</h3>
+              <p class="mini-meta">Organização diária de estudos</p>
+              <p>
+                Alterna entre leituras, exercícios, sessões de revisão rápida e construção de mapas
+                mentais com colegas em ambiente colaborativo.
+              </p>
+            </div>
+            <div class="mini-card">
+              <h3>Estilo de aprendizado</h3>
+              <p class="mini-meta">Explorador com curiosidade ativa</p>
+              <p>
+                Gosta de testar, errar, ajustar a rota e tentar de novo. Vê as avaliações como scanners
+                de progresso e não como sentença final.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projetos" class="card">
+      <div class="card-inner">
+        <div class="section-label">Missões acadêmicas</div>
+        <h2>Projetos em universo escolar</h2>
+        <article>
+          <p>
+            Cada projeto a seguir nasce em uma sala comum de escola de ensino médio,
+            mas é imaginado como parte de uma missão maior em um laboratório futurista.
+          </p>
+
+          <div class="grid-2">
+            <div class="mini-card highlightable">
+              <h3>Mapa da realidade aumentada da escola</h3>
+              <p class="mini-meta">Projeto de geografia e tecnologia</p>
+              <p>
+                Criação de um mapa da escola com pontos de interesse acadêmico,
+                como sala de leitura, laboratório, auditório e espaços de convivência.
+              </p>
+            </div>
+            <div class="mini-card highlightable">
+              <h3>Crônicas de uma cidade do futuro</h3>
+              <p class="mini-meta">Produção de texto e literatura</p>
+              <p>
+                Escrita de histórias curtas que mostram como seria o cotidiano
+                em uma cidade que cuida do meio ambiente e dá espaço para a ciência.
+              </p>
+            </div>
+            <div class="mini-card highlightable">
+              <h3>Painel de dados da turma</h3>
+              <p class="mini-meta">Matemática e estatística</p>
+              <p>
+                Montagem de um painel com gráficos sobre hábitos de leitura,
+                tempo de estudo e interesses de carreira dos colegas.
+              </p>
+            </div>
+            <div class="mini-card highlightable">
+              <h3>Laboratório de experimentos simples</h3>
+              <p class="mini-meta">Ciências e apresentação oral</p>
+              <p>
+                Seleção de experimentos seguros para mostrar em feira de ciências
+                com explicações claras pensadas para toda a comunidade escolar.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="matrix" class="card">
+      <div class="card-inner">
+        <div class="section-label">Painel de desempenho</div>
+        <h2>Matriz de evolução acadêmica imaginária</h2>
+        <article>
+          <p>
+            A tabela abaixo simula um acompanhamento nas principais áreas da escola,
+            unindo notas, participação e interesse em projetos.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Área</th>
+                <th>Foco atual</th>
+                <th>Nível estimado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Linguagens</td>
+                <td>Redações, debates e apresentações</td>
+                <td>Em expansão constante</td>
+              </tr>
+              <tr>
+                <td>Matemática</td>
+                <td>Resolução de problemas e gráficos</td>
+                <td>Boa base com espaço para novos desafios</td>
+              </tr>
+              <tr>
+                <td>Ciências</td>
+                <td>Experimentos, observações e relatórios</td>
+                <td>Alta curiosidade e envolvimento</td>
+              </tr>
+              <tr>
+                <td>Humanas</td>
+                <td>Contexto histórico e leitura crítica</td>
+                <td>Sólida compreensão com boa participação</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 style="margin-top:12px;">Momentos registrados</h3>
+          <div class="gallery">
+            <figure>
+              <img src="https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sala de aula futurista">
+              <figcaption>Sala de aula vista como ponte para outros tempos.</figcaption>
+            </figure>
+            <figure>
+              <img src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Estudante em laboratório">
+              <figcaption>Experimentos simples que despertam perguntas novas.</figcaption>
+            </figure>
+            <figure>
+              <img src="https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cadernos e dispositivos">
+              <figcaption>Cadernos e telas como ferramentas de uma mesma missão.</figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contato" class="card">
+      <div class="card-inner">
+        <div class="section-label">Canal de mensagens</div>
+        <h2>Envie um sinal para este portfólio</h2>
+        <article>
+          <p>
+            Este formulário não envia dados reais. Ele existe apenas para representar
+            como seria um canal de contato entre o estudante e quem acompanha sua jornada.
+          </p>
+
+          <form id="formContato">
+            <div>
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" type="text" placeholder="Digite seu nome">
+            </div>
+
+            <div>
+              <label for="relacao">Sua relação com o aluno</label>
+              <select id="relacao" name="relacao">
+                <option value="">Selecione uma opção</option>
+                <option value="professor">Professor</option>
+                <option value="colega">Colega de turma</option>
+                <option value="familia">Responsável ou familiar</option>
+                <option value="outro">Outro observador curioso</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Deixe um incentivo, sugestão ou observação"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">
+              Registrar mensagem fictícia
+            </button>
+          </form>
+
+          <p id="feedback" class="feedback"></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Portfólio escolar imaginário gerado para estudos de HTML, CSS e JavaScript.
+      <a href="#inicio">Voltar ao início</a>
+    </p>
+  </footer>
+
+  <script>
+    const typewriterElement = document.getElementById("typewriter");
+    const phrases = [
+      "Aluno do ensino médio explorando possibilidades futuras.",
+      "Sala de aula vista como laboratório de missões acadêmicas.",
+      "Cada trabalho é um pequeno experimento de evolução pessoal."
+    ];
+    let phraseIndex = 0;
+    let charIndex = 0;
+
+    function typeEffect() {
+      const currentPhrase = phrases[phraseIndex];
+      typewriterElement.textContent = currentPhrase.slice(0, charIndex + 1);
+      charIndex++;
+
+      if (charIndex === currentPhrase.length) {
+        setTimeout(() => {
+          charIndex = 0;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(typeEffect, 500);
+        }, 1400);
+      } else {
+        setTimeout(typeEffect, 45);
+      }
+    }
+
+    typeEffect();
+
+    const btnHighlight = document.getElementById("btnHighlight");
+    const highlightCards = document.querySelectorAll(".highlightable");
+    btnHighlight.addEventListener("click", () => {
+      highlightCards.forEach(card => {
+        card.style.boxShadow = "0 0 24px rgba(0, 246, 255, 0.6)";
+        card.style.borderColor = "rgba(0, 246, 255, 0.8)";
+        setTimeout(() => {
+          card.style.boxShadow = "";
+          card.style.borderColor = "";
+        }, 700);
+      });
+    });
+
+    const btnScroll = document.getElementById("btnScroll");
+    btnScroll.addEventListener("click", () => {
+      const target = document.getElementById("projetos");
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+
+    const btnStatus = document.getElementById("btnStatus");
+    let observerMode = true;
+    btnStatus.addEventListener("click", () => {
+      observerMode = !observerMode;
+      btnStatus.textContent = observerMode ? "Modo observador" : "Modo explorador ativo";
+    });
+
+    const form = document.getElementById("formContato");
+    const feedback = document.getElementById("feedback");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const nome = document.getElementById("nome").value.trim();
+      const relacao = document.getElementById("relacao").value;
+
+      let texto = "Mensagem registrada neste cenário imaginário.";
+      if (nome) {
+        texto = "Obrigado, " + nome + ". Seu sinal foi registrado como " +
+          (relacao || "observador") +
+          " neste portfólio acadêmico futurista.";
+      }
+
+      feedback.textContent = texto;
+      form.reset();
+    });
+  </script>
+</body>
+</html>
