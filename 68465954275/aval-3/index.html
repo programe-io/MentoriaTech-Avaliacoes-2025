@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Semântico com Header, Nav, Main, Imagem e Span</title>
+
+    <style>
+        /* ------------------------------------------- */
+        /* CSS PRINCIPAL */
+        /* ------------------------------------------- */
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #e9eef2;
+            color: #2c3e50;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ESTILOS DO HEADER */
+        header {
+            background-color: #3498db; 
+            color: white;
+            padding: 20px 0 10px 0;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            padding-bottom: 10px;
+        }
+
+        /* ESTILOS DA NAVEGAÇÃO (<nav>) */
+        nav {
+            background-color: #2980b9; 
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #ecf0f1;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 3px;
+        }
+        
+        /* ESTILOS DA IMAGEM */
+        #imagem-projeto {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px auto;
+            border: 3px solid #1abc9c;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            display: block;
+        }
+
+        /* ESTILOS DO CONTAINER E COMPONENTES */
+        main {
+            padding-bottom: 50px; 
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            color: #1abc9c;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        #meuBotao {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1em;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px #c0392b;
+        }
+
+        #meuBotao:hover { background-color: #c0392b; }
+        
+        #meuBotao:active { 
+            transform: translateY(2px);
+            box-shadow: 0 2px #9c2a1b;
+        }
+
+        #mensagem {
+            margin-top: 30px;
+            font-size: 1.3em;
+            padding: 10px;
+            min-height: 30px;
+            font-weight: bold;
+        }
+        
+        /* ------------------------------------------- */
+        /* ESTILOS DO NOVO SPAN */
+        /* ------------------------------------------- */
+        .contador-destaque {
+            color: #e74c3c; /* Vermelho para destaque */
+            font-size: 1.5em; /* Aumenta o tamanho da fonte */
+            font-weight: 900; /* Super negrito */
+            padding: 0 5px;
+        }
+
+        /* CLASSES CSS ADICIONADAS PELO JAVASCRIPT */
+        .clicou-uma-vez { border: 2px solid #f39c12; } 
+        .clicou-muito { box-shadow: 0 0 20px rgba(46, 204, 113, 0.8); }
+
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <h1 id="tituloCabecalho">🛠️ Meu Projeto Web</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+   <span>
+    <main>
+        <div class="container">
+            <h2>🖼️ Visual e Interatividade</h2>
+            <p>O projeto agora usa a tag **&lt;span&gt;** para destacar o contador de cliques.</p>
+            
+            <img id="imagem-projeto" src="https://via.placeholder.com/300x200?text=Sua+Imagem+Aqui" alt="Exemplo de Diagrama de Estrutura Web">
+            
+            <p>Clique no botão abaixo para ver a interatividade do JavaScript:</p>
+
+            <button id="meuBotao">Clique em Mim!</button>
+            
+            <p id="mensagem">Aguardando seu primeiro clique...</p>
+        </div>
+    </main>
+
+    <script>
+        // ==============================================
+        // CÓDIGO JAVASCRIPT (MODIFICADO para usar <span>)
+        // ==============================================
+        
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const botao = document.getElementById('meuBotao');
+            const campoMensagem = document.getElementById('mensagem');
+            const container = document.querySelector('.container');
+            
+            let contadorCliques = 0;
+
+            function lidarComClique() {
+                contadorCliques++;
+                let textoMensagem = "";
+                
+                // CRIAÇÃO DA ESTRUTURA SPAN PARA DESTAQUE
+                // Note que aqui usamos o <span> e aplicamos o CSS com a classe 'contador-destaque'
+                const spanDestaque = `<span class="contador-destaque">${contadorCliques}</span>`;
+
+                if (contadorCliques === 1) {
+                    textoMensagem = `🎉 **Primeiro Clique!** Você clicou ${spanDestaque} vez!`;
+                    container.classList.add('clicou-uma-vez');
+                    container.classList.remove('clicou-muito');
+                    campoMensagem.style.color = '#f39c12';
+                } else if (contadorCliques < 5) {
+                    textoMensagem = `Você clicou ${spanDestaque} vezes! Continue explorando.`;
+                    campoMensagem.style.color = '#2c3e50';
+                } else {
+                    textoMensagem = `🚀 Uau! Você clicou ${spanDestaque} vezes! O JavaScript está funcionando perfeitamente!`;
+                    container.classList.remove('clicou-uma-vez');
+                    container.classList.add('clicou-muito');
+                    campoMensagem.style.color = '#2ecc71';
+                }
+
+                // Usamos innerHTML para que o browser renderize a tag <span>
+                campoMensagem.innerHTML = textoMensagem;
+                console.log(`Botão clicado ${contadorCliques} vezes.`);
+            }
+
+            if (botao) {
+                botao.addEventListener('click', lidarComClique);
+            }
+        }); 
+    </script>
+<script src="script.js"></script></body>
+</html>

@@ -1,0 +1,137 @@
+/*
+ * Arquivo: estilos.css
+ * Descrição: Estilos para uma página web simples de boas-vindas.
+ */
+
+/* ------------------------------------------- */
+/* 1. Estilos Globais e do Corpo da Página */
+/* ------------------------------------------- */
+body {
+    /* Define a família da fonte e um fallback */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    /* Cor de fundo suave para toda a página */
+    background-color: #e9eef2;
+    /* Cor do texto principal */
+    color: #2c3e50;
+    /* Centraliza o conteúdo principal horizontalmente */
+    text-align: center;
+    /* Adiciona um espaço no topo */
+    padding-top: 50px;
+    /* Remove margens padrão do navegador */
+    margin: 0;
+}
+
+/* ------------------------------------------- */
+/* 2. Estilos do Container Principal */
+/* ------------------------------------------- */
+.container {
+    /* Fundo branco para destacar o conteúdo */
+    background-color: #ffffff;
+    /* Espaçamento interno */
+    padding: 40px;
+    /* Cantos arredondados */
+    border-radius: 12px;
+    /* Sombra suave para dar profundidade */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    /* Largura máxima do container */
+    max-width: 700px;
+    /* Centraliza o container na página */
+    margin: 0 auto;
+    /* Animação de entrada suave */
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* ------------------------------------------- */
+/* 3. Estilos de Tipografia */
+/* ------------------------------------------- */
+h1 {
+    /* Cor principal para o título */
+    color: #3498db;
+    /* Espaçamento inferior */
+    margin-bottom: 10px;
+    /* Tamanho maior da fonte */
+    font-size: 2.5em;
+}
+
+h2 {
+    /* Cor secundária */
+    color: #1abc9c;
+    /* Borda inferior sutil */
+    border-bottom: 2px solid #ecf0f1;
+    /* Espaçamento interno na parte inferior */
+    padding-bottom: 10px;
+    /* Espaçamento no topo */
+    margin-top: 30px;
+}
+
+p {
+    /* Espaçamento vertical para parágrafos */
+    line-height: 1.6;
+    /* Margem inferior */
+    margin-bottom: 15px;
+}
+
+/* ------------------------------------------- */
+/* 4. Estilos do Botão (Interatividade) */
+/* ------------------------------------------- */
+#meuBotao {
+    /* Cor de fundo atraente */
+    background-color: #e74c3c;
+    /* Texto branco */
+    color: white;
+    /* Sem borda padrão */
+    border: none;
+    /* Tamanho do padding */
+    padding: 12px 25px;
+    /* Tamanho da fonte */
+    font-size: 1em;
+    /* Borda ligeiramente arredondada */
+    border-radius: 6px;
+    /* Faz o cursor parecer clicável */
+    cursor: pointer;
+    /* Transição suave para efeitos de hover */
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    /* Display em linha */
+    display: inline-block;
+    /* Sombra do botão */
+    box-shadow: 0 4px #c0392b;
+}
+
+#meuBotao:hover {
+    /* Cor mais escura no hover */
+    background-color: #c0392b;
+}
+
+#meuBotao:active {
+    /* Efeito de "afundar" ao clicar */
+    background-color: #9c2a1a;
+    transform: translateY(2px);
+    box-shadow: 0 2px #9c2a1a;
+}
+
+/* ------------------------------------------- */
+/* 5. Estilo da Mensagem Dinâmica */
+/* ------------------------------------------- */
+#mensagem {
+    margin-top: 30px;
+    font-size: 1.3em;
+    color: #27ae60;
+    padding: 10px;
+    border: 1px dashed #2ecc71;
+    min-height: 30px;
+}
+
+/* ------------------------------------------- */
+/* 6. Keyframes para Animação */
+/* ------------------------------------------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
