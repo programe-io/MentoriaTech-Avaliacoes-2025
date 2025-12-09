@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja TechZone Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles2.css">
+    <script src="app2.js" defer></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body class="bg-blue-50 text-gray-900">
+
+<header class="bg-blue-700 text-white shadow-lg p-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <img src="https://images.pexels.com/photos/507410/pexels-photo-507410.jpeg" alt="Logo TechZone" class="w-12 h-12 rounded object-cover border-2 border-white">
+            <h1 class="text-3xl font-bold">TechZone Demo</h1>
+        </div>
+        <p class="text-sm">Tecnologia ao seu alcance</p>
+    </div>
+</header>
+
+<nav class="bg-blue-600 text-blue-100 p-3 shadow">
+    <div class="max-w-6xl mx-auto flex gap-4 text-sm font-semibold">
+        <a href="#home">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#ofertas">Ofertas</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </div>
+</nav>
+
+<div class="max-w-6xl mx-auto mt-6 flex flex-col md:flex-row gap-4 px-4">
+
+    <aside class="md:w-1/4 bg-white shadow rounded p-4">
+        <h3 class="text-xl font-bold mb-2">Filtros</h3>
+        <form id="filtroTech" class="space-y-2 text-sm">
+            <label class="block">
+                <span>Categoria</span>
+                <select class="border rounded px-2 py-1 w-full">
+                    <option>Todos</option>
+                    <option>Smartphones</option>
+                    <option>Periféricos</option>
+                    <option>Notebooks</option>
+                </select>
+            </label>
+            <label class="block">
+                <span>Preço Máximo</span>
+                <input type="number" id="precoMaxTech" placeholder="Ex: 2000" class="border rounded px-2 py-1 w-full">
+            </label>
+            <button type="button" id="btnFiltrarTech" class="w-full bg-blue-700 text-white py-2 rounded">Aplicar filtro</button>
+        </form>
+    </aside>
+
+    <main id="home" class="flex-1 space-y-6">
+
+        <section class="bg-white p-4 shadow rounded flex flex-col md:flex-row gap-4">
+            <div class="md:w-1/2 space-y-3">
+                <h3 class="text-2xl font-bold">Bem vindo à TechZone Demo</h3>
+                <p class="text-sm">A loja fictícia mais moderna para estudar HTML, Tailwind CSS e JavaScript.</p>
+                <button id="btnVerAviso" class="bg-green-600 text-white px-4 py-2 rounded text-sm">Ver aviso importante</button>
+                <p id="textoAviso" class="hidden text-green-700 font-semibold text-sm">Atenção: descontos exclusivos disponíveis nesta página de demonstração.</p>
+            </div>
+            <figure class="md:w-1/2">
+                <img src="https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg" alt="Tecnologia" class="w-full h-52 object-cover rounded shadow-inner">
+                <figcaption class="text-xs text-gray-500 mt-1 text-center">Imagem ilustrativa de tecnologia moderna.</figcaption>
+            </figure>
+        </section>
+
+        <section id="produtos" class="space-y-3">
+            <h3 class="text-xl font-bold">Produtos em Destaque</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                <article class="produto-card" data-preco="1500" data-nome="Smartphone ZX Pro">
+                    <img src="https://images.pexels.com/photos/6078124/pexels-photo-6078124.jpeg" alt="Smartphone" class="produto-img">
+                    <div class="p-3 space-y-1">
+                        <h3 class="text-lg font-bold">Smartphone ZX Pro</h3>
+                        <p class="text-sm">128GB, Câmera Tripla, Super Tela OLED.</p>
+                        <p class="text-sm font-semibold">R$ 1500,00</p>
+                        <button class="btn-add-tech">Adicionar ao carrinho</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-preco="220" data-nome="Mouse Gamer XFire">
+                    <img src="https://images.pexels.com/photos/1337247/pexels-photo-1337247.jpeg" alt="Mouse Gamer" class="produto-img">
+                    <div class="p-3 space-y-1">
+                        <h3 class="text-lg font-bold">Mouse Gamer XFire</h3>
+                        <p class="text-sm">RGB, 7 botões, Alta precisão.</p>
+                        <p class="text-sm font-semibold">R$ 220,00</p>
+                        <button class="btn-add-tech">Adicionar ao carrinho</button>
+                    </div>
+                </article>
+
+                <article class="produto-card" data-preco="3500" data-nome="Notebook UltraSlim 15">
+                    <img src="https://images.pexels.com/photos/18105/pexels-photo.jpg" alt="Notebook" class="produto-img">
+                    <div class="p-3 space-y-1">
+                        <h3 class="text-lg font-bold">Notebook UltraSlim 15</h3>
+                        <p class="text-sm">8GB RAM, SSD 512GB, Tela Full HD.</p>
+                        <p class="text-sm font-semibold">R$ 3500,00</p>
+                        <button class="btn-add-tech">Adicionar ao carrinho</button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="ofertas" class="bg-white shadow p-4 rounded">
+            <h3 class="text-xl font-bold mb-2">Ofertas da Semana</h3>
+
+            <table class="w-full border-collapse text-sm">
+                <thead class="bg-blue-300 text-white">
+                    <tr>
+                        <th class="border p-2">Produto</th>
+                        <th class="border p-2">Categoria</th>
+                        <th class="border p-2">Preço</th>
+                        <th class="border p-2">Desconto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border p-2">Teclado Mecânico RGB</td>
+                        <td class="border p-2">Periféricos</td>
+                        <td class="border p-2">R$ 380,00</td>
+                        <td class="border p-2">20%</td>
+                    </tr>
+                    <tr class="bg-blue-100">
+                        <td class="border p-2">Headset Surround X</td>
+                        <td class="border p-2">Periféricos</td>
+                        <td class="border p-2">R$ 420,00</td>
+                        <td class="border p-2">15%</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" class="text-center p-2 border">Ofertas fictícias para demonstração.</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="sobre" class="bg-white p-4 shadow rounded space-y-2">
+            <h3 class="text-xl font-bold">Sobre a TechZone</h3>
+            <article class="text-sm leading-relaxed">
+                <p>Esta página foi criada para estudo completo de HTML, Tailwind, tabelas, formulários e interações JS.</p>
+                <p>Ideal para iniciantes praticarem marcação, estrutura e responsividade.</p>
+            </article>
+        </section>
+
+        <section id="contato" class="bg-white p-4 shadow rounded space-y-3 mb-8">
+            <h3 class="text-xl font-bold">Contato</h3>
+
+            <form id="form2" class="space-y-2 text-sm">
+                <label class="block">
+                    <span>Nome</span>
+                    <input type="text" id="nome2" class="border rounded w-full px-2 py-1" required>
+                </label>
+                <label class="block">
+                    <span>Email</span>
+                    <input type="email" id="email2" class="border rounded w-full px-2 py-1" required>
+                </label>
+                <label class="block">
+                    <span>Mensagem</span>
+                    <textarea id="msg2" rows="4" class="border rounded w-full px-2 py-1"></textarea>
+                </label>
+                <button type="submit" class="bg-blue-700 text-white py-2 px-4 rounded">Enviar</button>
+                <p id="msgSucesso2" class="text-green-700 font-semibold hidden">Mensagem enviada com sucesso!</p>
+            </form>
+        </section>
+
+    </main>
+</div>
+
+<footer class="bg-blue-900 text-blue-200 text-center text-sm p-4 mt-6">
+    <p>&copy; 2025 TechZone Demo. Página criada para estudo prático.</p>
+</footer>
+
+<script src="script.js"></script></body>
+</html>
+
+<H2>
