@@ -1,105 +1,121 @@
-/* Reset */
-* {
-  margin: 0;
-    padding: 0;
-      box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-        }
+/* HEADER */
+.header {
+  background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(14px);
+      box-shadow: 0 0 10px rgba(128, 0, 128, 0.5);
+        padding: 20px;
+          display: flex;
+            align-items: center;
+              border-bottom: 1px solid #7e22ce;
+              }
 
-        /* Fundo */
-        body {
-          background: linear-gradient(to bottom, #0a2a66, #1a2a64);
-            color: #fff;
-            }
-
-            /* Navbar */
-            .navbar {
-              display: flex;
-                justify-content: space-between;
-                  align-items: center;
-                    padding: 15px 50px;
-                      background-color: #0d1b52;
-                        position: sticky;
-                          top: 0;
-                            z-index: 100;
+              .logo {
+                flex: 1;
+                  text-align: center;
+                    text-transform: uppercase;
+                      font-weight: 900;
+                        font-size: 1.2rem;
+                          letter-spacing: 4px;
+                            color: #d8b4fe;
                             }
 
-                            .logo {
-                              font-size: 20px;
-                                font-weight: bold;
-                                  letter-spacing: 1px;
+                            .menu {
+                              font-weight: 600;
+                                gap: 20px;
+                                  display: none;
                                   }
 
-                                  .navbar ul {
-                                    list-style: none;
-                                      display: flex;
-                                        gap: 20px;
-                                        }
+                                  @media (min-width: 768px) {
+                                    .menu {
+                                        display: flex;
+                                          }
+                                          }
 
-                                        .navbar a {
-                                          color: #fff;
-                                            text-decoration: none;
-                                              font-weight: 500;
-                                                transition: 0.3s;
+                                          .menu a {
+                                            color: white;
+                                              transition: 0.3s;
+                                              }
+
+                                              .menu a:hover {
+                                                color: #d8b4fe;
                                                 }
 
-                                                .navbar a:hover {
-                                                  color: #6ea8ff;
-                                                  }
-
-                                                  /* Container de Cards */
-                                                  .container {
+                                                /* POSTS */
+                                                .posts {
+                                                  padding: 40px;
                                                     display: flex;
-                                                      justify-content: center;
-                                                        align-items: flex-start;
-                                                          flex-wrap: wrap;
-                                                            gap: 25px;
-                                                              padding: 40px 20px;
-                                                              }
+                                                      flex-wrap: wrap;
+                                                        justify-content: center;
+                                                          gap: 40px;
+                                                          }
 
-                                                              /* Card */
-                                                              .card {
-                                                                background-color: #1e2a48;
-                                                                  border-radius: 10px;
-                                                                    width: 300px;
-                                                                      padding: 15px;
-                                                                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-                                                                          transition: transform 0.3s;
+                                                          /* CARD GLOBAL */
+                                                          .card {
+                                                            background: rgba(31, 41, 55, 0.7);
+                                                              backdrop-filter: blur(10px);
+                                                                border-radius: 20px;
+                                                                  box-shadow: 0 0 15px rgba(128, 0, 128, 0.3);
+                                                                    overflow: hidden;
+                                                                      width: 320px;
+                                                                        border: 1px solid;
+                                                                          transition: 0.3s;
                                                                           }
 
                                                                           .card:hover {
-                                                                            transform: translateY(-5px);
+                                                                            transform: scale(1.08);
                                                                             }
 
-                                                                            /* Usuário */
-                                                                            .user-info {
+                                                                            /* CARD HEADER */
+                                                                            .card-header {
                                                                               display: flex;
                                                                                 align-items: center;
-                                                                                  gap: 10px;
-                                                                                    margin-bottom: 10px;
+                                                                                  gap: 12px;
+                                                                                    padding: 20px;
                                                                                     }
 
                                                                                     .avatar {
-                                                                                      width: 40px;
-                                                                                        height: 40px;
-                                                                                          border-radius: 50%;
-                                                                                          }
+                                                                                      width: 50px;
+                                                                                        height: 50px;
+                                                                                          border-radius: 999px;
+                                                                                            border-width: 2px;
+                                                                                            }
 
-                                                                                          /* Imagem do post */
-                                                                                          .post-img {
-                                                                                            width: 100%;
-                                                                                              border-radius: 8px;
-                                                                                                margin-bottom: 10px;
+                                                                                            .username {
+                                                                                              font-size: 1.1rem;
+                                                                                                font-weight: 700;
                                                                                                 }
 
-                                                                                                /* Texto */
-                                                                                                .card p {
-                                                                                                  font-size: 14px;
-                                                                                                    color: #ddd;
-                                                                                                      margin-bottom: 10px;
+                                                                                                /* IMG */
+                                                                                                .card-img {
+                                                                                                  width: 100%;
+                                                                                                    height: 200px;
+                                                                                                      object-fit: cover;
                                                                                                       }
 
-                                                                                                      .time {
-                                                                                                        font-size: 12px;
-                                                                                                          color: #aaa;
-                                                                                                          }
+                                                                                                      /* BODY */
+                                                                                                      .card-body {
+                                                                                                        padding: 20px;
+                                                                                                        }
+
+                                                                                                        .card-text {
+                                                                                                          font-size: 0.9rem;
+                                                                                                            text-align: justify;
+                                                                                                              color: #e5e7eb;
+                                                                                                              }
+
+                                                                                                              .card-time {
+                                                                                                                font-size: 0.75rem;
+                                                                                                                  display: block;
+                                                                                                                    text-align: right;
+                                                                                                                      margin-top: 10px;
+                                                                                                                      }
+
+                                                                                                                      /* ESPECIAL */
+                                                                                                                      .special {
+                                                                                                                        box-shadow: 0 0 25px rgba(236, 72, 153, 0.7);
+                                                                                                                        }
+
+                                                                                                                        .special:hover {
+                                                                                                                          box-shadow: 0 0 30px rgba(236, 72, 153, 0.9);
+                                                                                                                          }
+                                                                                                                          
