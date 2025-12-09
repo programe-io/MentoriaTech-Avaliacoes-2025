@@ -1,0 +1,175 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* --- HEADER e NAVEGAÇÃO --- */
+header {
+    background-color: #007bff; /* Azul primário */
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.8em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3; /* Azul mais escuro no hover */
+}
+
+/* --- BOTÕES GERAIS --- */
+.botao-principal, .botao-secundario {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+
+.botao-principal {
+    background-color: #ff5722; /* Laranja de destaque */
+    color: white;
+    border: none;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.botao-principal:hover {
+    background-color: #e64a19;
+}
+
+/* --- BANNER DE DESTAQUE --- */
+#banner-destaque {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1200x400?text=Carro+de+Luxo') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#banner-destaque h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* --- LAYOUT PRINCIPAL (CATÁLOGO E ASIDE) --- */
+main {
+    display: flex;
+    padding: 20px 5%;
+    gap: 25px;
+}
+
+#filtros {
+    width: 250px; /* Largura fixa para a barra lateral */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    height: fit-content; /* Ajusta a altura ao conteúdo */
+}
+
+#filtros h3 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.filtro-grupo {
+    margin-bottom: 20px;
+}
+
+.filtro-grupo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#estoque {
+    flex-grow: 1;
+}
+
+/* --- CATÁLOGO DE CARROS --- */
+.catalogo-carros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout responsivo em grade */
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.carro-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.carro-card:hover {
+    transform: translateY(-5px); /* Efeito de elevação */
+}
+
+.carro-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.carro-card h3 {
+    padding: 10px 15px 5px;
+    font-size: 1.4em;
+    color: #007bff;
+}
+
+.carro-card .detalhes {
+    padding: 0 15px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.carro-card .preco {
+    padding: 10px 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff5722;
+}
+
+.carro-card a.botao-principal {
+    display: block;
+    margin: 15px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cálculo de Média Escolar</title>
+    <style>
+        /* [Estilos anteriores do seu código aqui] */
+        /* ... outros estilos ... */
+
+        /* Estilo para o novo SPAN */
+        .ano-copyright {
+            font-weight: bold;
+            color: #ccc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8em;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <main>
+        
+        <article class="container">
+            
+            <header>
+                <nav class="navegacao">
+                    <ul>
+                        <li><a href="#calculo">Calcular</a></li>
+                        <li><a href="#ajuda">Ajuda</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-content">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/A_simple_calculator_icon.svg" alt="Ícone de Calculadora"> 
+                    <h1>📊 Cálculo de Média</h1>
+                </div>
+
+            </header>
+            
+            <aside style="padding: 10px; background-color: #ffe0b2; border-left: 5px solid #ff9800; margin-bottom: 20px;">
+                <p style="margin: 0;">⚠️ **Regra:** Aprovado se a Média $\ge$ 7.0. Recuperação se $\ge$ 5.0.</p>
+            </aside>
+            
+            <h3>Insira suas Notas Abaixo</h3> 
+            
+            <form id="formularioNotas">
+                
+                <div class="campo-nota">
+                    <label for="nota1">Nota 1 (Peso 1):</label>
+                    <input type="number" id="nota1" min="0" max="10" step="0.1" required>
+                </div>
+                
+                <div class="campo-nota">
+                    <label for="nota2">Nota 2 (Peso 1):</label>
+                    <input type="number" id="nota2" min="0" max="10" step="0.1" required>
+                </div>
+                
+                <div class="campo-nota">
+                    <label for="nota3">Nota 3 (Peso 1):</label>
+                    <input type="number" id="nota3" min="0" max="10" step="0.1" required>
+                </div>
+                
+                <button type="submit">Calcular Média</button>
+                
+            </form>
+
+            <h2>Resultado:</h2>
+            <div id="resultado">
+                <p>Insira as notas e clique em Calcular.</p>
+            </div>
+
+        </article>
+
+    </main>
+    
+    <footer>
+        <p>&copy; <span class="ano-copyright">2025</span> Sistema de Notas. Desenvolvido para fins de aprendizado de HTML Semântico.</p>
+    </footer>
+
+<script src="script.js"></script></body>
+</html>
