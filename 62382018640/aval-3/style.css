@@ -1,0 +1,80 @@
+/*
+   Arquivo: styles.css
+   Tema: Motofrete / Logística (Laranja e Grafite)
+*/
+
+/* 1. Reset Básico e Fontes (Mantendo a compatibilidade com o Tailwind) */
+body {
+    /* Define uma fonte moderna e limpa */
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333; /* Cor principal do texto (secondary-moto) */
+    line-height: 1.6;
+}
+
+/* 2. Estilos para Títulos e Destaques */
+h1, h2, h3 {
+    font-weight: 700; /* Bold */
+}
+
+/* 3. Efeitos de Transição para Interatividade (Melhora a UX) */
+a, button {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* 4. Estilo Específico para o Marcador da Moto no Mapa */
+#delivery-marker {
+    /* Efeito de movimento sutil para simular a moto se movendo */
+    animation: pulse-move 2s infinite;
+}
+
+/* 5. Keyframes para o Efeito de Movimento da Moto */
+@keyframes pulse-move {
+    0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05) translateY(-5px);
+        opacity: 0.95;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* 6. Estilos para as Seções (Opcional: Adiciona bordas de destaque) */
+#menu-section,
+#order-details-block,
+#tracker-section-block {
+    border: 1px solid #E0E0E0; /* Borda suave para definição de blocos */
+}
+
+
+/* 7. Destaque em Hover nas Entregas (Pacotes) */
+/* Aplicado ao div pai que contém os detalhes da entrega */
+.grid > div {
+    /* Usa uma sombra mais pronunciada no hover */
+    transition: box-shadow 0.3s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.grid > div:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Sombra mais forte */
+    transform: translateY(-2px); /* Efeito de elevação sutil */
+}
+
+/* 8. Estilo para o Modal de Confirmação (Garanto que fique no topo) */
+#confirmation-modal {
+    /* Garante que o modal cubra tudo e fique no topo */
+    z-index: 999;
+}
+
+/* 9. Estilo para o background do Mapa (Adiciona um toque temático) */
+#map-container {
+    /* Adiciona um gradiente sutil de fundo para simular um mapa */
+    background: linear-gradient(135deg, #F0F0F0 0%, #D0D0D0 100%);
+    position: relative;
+    overflow: hidden;
+}
