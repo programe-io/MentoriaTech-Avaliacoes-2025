@@ -1,0 +1,174 @@
+/* 1. Reset Básico e Tipografia */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Fundo muito claro */
+    color: #343a40;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. Cabeçalho (Header) */
+header {
+    background-color: #007bff; /* Azul primário */
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0 0 5px;
+    font-size: 2.8em;
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* 3. Layout Principal (Flexbox para 2 colunas) */
+.main-content {
+    display: flex;
+    gap: 30px; /* Espaço entre as colunas */
+    padding-top: 30px;
+}
+
+.posts-area {
+    flex: 3; /* Ocupa 3/4 do espaço */
+    min-width: 0; /* Correção para flexbox */
+}
+
+.sidebar {
+    flex: 1; /* Ocupa 1/4 do espaço */
+}
+
+/* 4. Estilo dos Artigos (Posts) */
+.post {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.post h2 {
+    color: #007bff;
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+.post-meta {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #e9ecef;
+    padding-bottom: 5px;
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+.read-more {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: #0056b3;
+}
+
+
+/* 5. Estilo da Barra Lateral (Sidebar) */
+.sidebar .widget {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar h3 {
+    color: #343a40;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 5px 0;
+    color: #495057;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: #007bff;
+    padding-left: 5px;
+}
+
+/* Estilo do formulário de Newsletter */
+.sidebar input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.sidebar button {
+    width: 100%;
+    background-color: #28a745; /* Verde */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sidebar button:hover {
+    background-color: #1e7e34;
+}
+
+/* 6. Rodapé (Footer) */
+footer {
+    background-color: #343a40; /* Cinza escuro */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* 7. Responsividade */
+@media (max-width: 992px) {
+    .main-content {
+        flex-direction: column; /* Colunas viram linha em telas menores */
+    }
+
+    .posts-area, .sidebar {
+        flex: none;
+        width: 100%;
+    }
+}
