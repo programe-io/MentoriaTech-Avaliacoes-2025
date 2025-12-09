@@ -1,0 +1,371 @@
+/* Definição de Variáveis de Cores (Paleta DBS) */
+:root {
+    --ssj-blue: #007FFF; /* Azul Elétrico (SSJ Blue) */
+    --ultra-instinct: #E0FFFF; /* Prateado/Cinzento (Ultra Instinto) */
+    --ssj-god: #FF4500; /* Vermelho Vivo (SSJ God) */
+    --goku-gi: #FF8C00; /* Laranja Escuro (Goku Gi) */
+    --ultra-ego: #8A2BE2; /* Roxo Intenso */
+    --background-dark: #0A0A1F; /* Fundo Escuro para Destaque */
+    --ki-level: #00FF00; /* Verde Brilhante para Ki */
+    --stamina-level: #FFFF00; /* Amarelo para Stamina */
+}
+
+/* --- Estilos Gerais --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-dark);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #f0f0f0; 
+    padding-top: 80px; /* Espaço para o header fixo */
+}
+
+/* --- HEADER PRINCIPAL (LOGO E NAV) --- */
+
+.main-header {
+    width: 100%;
+    background-color: #282846; 
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid var(--ssj-blue); 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    font-size: 2.2em;
+    font-weight: 900;
+    line-height: 1;
+    display: flex;
+    align-items: baseline;
+}
+
+.db-text {
+    color: var(--ssj-god); 
+    text-shadow: 1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000;
+}
+
+.super-text {
+    color: var(--ultra-instinct); 
+    font-size: 0.6em;
+    margin-left: 5px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px var(--ultra-instinct);
+}
+
+/* Links de Navegação */
+.nav-links a {
+    color: var(--ultra-instinct);
+    text-decoration: none;
+    margin-left: 25px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--goku-gi); 
+    background-color: rgba(255, 140, 0, 0.1);
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+}
+
+/* --- CONTEÚDO PRINCIPAL MAIN --- */
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* --- CARD CONTAINER (Flexbox para Card + Aside) --- */
+
+.card-container {
+    padding: 20px;
+    display: flex; 
+    justify-content: center;
+    gap: 30px; 
+    margin-top: 20px;
+    align-items: flex-start;
+}
+
+/* --- ARTICLE/CARTÃO DO PERSONAGEM --- */
+
+.character-card { /* Esta classe se aplica ao <article> */
+    width: 350px; 
+    background-color: #1a1a30; 
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(0, 127, 255, 0.6); 
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.character-card:hover {
+    transform: scale(1.03); 
+}
+
+/* Placeholder da Imagem */
+.image-placeholder {
+    height: 180px;
+    background: linear-gradient(135deg, #30304a, #1a1a30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 5px solid var(--ssj-blue);
+}
+
+.placeholder-text {
+    color: var(--ssj-blue);
+    font-size: 1.2em;
+    font-weight: bold;
+    opacity: 0.6;
+}
+
+/* Cabeçalho do Card (SSJ Blue) */
+.header-ssjblue {
+    background-color: #005bb5; 
+    padding: 10px 15px;
+    text-align: center;
+}
+
+/* h3 - Título da Transformação */
+.power-level {
+    color: var(--ultra-instinct);
+    font-size: 1.5em; 
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(224, 255, 255, 0.8); 
+    letter-spacing: 2px;
+}
+
+/* Barras de Status */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 5px;
+}
+
+.ki-bar, .stamina-bar {
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: #1a1a30;
+}
+
+.ki-bar {
+    background-color: var(--ki-level);
+}
+
+.stamina-bar {
+    background-color: var(--stamina-level);
+}
+
+/* Conteúdo do Card */
+.content {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+/* h1 - Nome do Personagem */
+.character-name {
+    color: var(--ssj-blue); 
+    font-size: 2.5em; 
+    margin-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid var(--ultra-instinct); 
+    display: inline-block;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0, 127, 255, 0.5); 
+    margin-bottom: 10px;
+}
+
+.description {
+    line-height: 1.6;
+    font-size: 0.95em;
+    color: #ccc;
+    text-align: left;
+}
+
+/* h2 - Subtítulo (Técnicas Especiais) */
+.content h2 { 
+    color: var(--goku-gi);
+    margin-top: 20px;
+    border-left: 5px solid var(--goku-gi);
+    padding-left: 10px;
+    font-size: 1.4em; 
+    display: block;
+    text-align: left;
+}
+
+/* Lista de Técnicas */
+.techniques {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.techniques li {
+    padding: 5px 0;
+    margin-bottom: 3px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    font-size: 0.9em;
+}
+
+.tech-ssj-blue {
+    color: var(--ssj-blue);
+    font-weight: bold;
+}
+
+.tech-ssj-god {
+    color: var(--ssj-god);
+}
+
+.tech-ultra-instinct {
+    color: var(--ultra-instinct);
+    text-shadow: 0 0 3px var(--ultra-instinct);
+}
+
+/* Tags de Detalhe */
+.details {
+    margin: 20px 0 10px 0;
+    text-align: left;
+}
+
+.detail-tag {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px 5px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.detail-tag.blue {
+    background-color: var(--ssj-blue);
+    color: #fff;
+}
+
+.detail-tag.red {
+    background-color: var(--ssj-god);
+    color: #fff;
+}
+
+.detail-tag.ultra {
+    background-color: var(--ultra-instinct);
+    color: #1a1a30; 
+    box-shadow: 0 0 8px var(--ultra-instinct);
+}
+
+/* Botão de Ação */
+.btn-ki {
+    display: block;
+    background-color: var(--goku-gi); 
+    color: #fff;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-ki:hover {
+    background-color: #FF6900; 
+    box-shadow: 0 0 20px rgba(255, 140, 0, 1);
+}
+
+/* --- ASIDE (Barra Lateral) --- */
+
+.universes-aside {
+    width: 280px;
+    background-color: #1a1a30; 
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.4); 
+    border: 2px solid var(--ultra-ego); 
+    min-height: 400px; 
+}
+
+.aside-title {
+    color: var(--ultra-instinct); 
+    font-size: 1.5em;
+    border-bottom: 2px solid var(--goku-gi); 
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.universe-list {
+    list-style: none;
+    padding: 0;
+}
+
+.universe-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9em;
+}
+
+.uni-number {
+    font-weight: bold;
+    color: var(--ssj-blue); 
+    margin-right: 15px;
+    padding: 5px;
+    border: 1px solid var(--ssj-blue);
+    border-radius: 4px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.uni-name {
+    color: #ccc;
+    flex-grow: 1;
+}
+
+.universe-item.best {
+    background-color: rgba(255, 140, 0, 0.1); 
+    padding: 10px 5px;
+    border-radius: 5px;
+    border: 1px solid var(--ssj-god);
+    margin: 5px 0;
+}
+
+.universe-item.best .uni-number {
+    color: var(--ssj-god); 
+    font-size: 1.1em;
+    border-color: var(--ssj-god);
+}
+
+.aside-note {
+    font-size: 0.8em;
+    color: #aaa;
+    margin-top: 25px;
+    text-align: center;
+    border-top: 1px dashed #555;
+    padding-top: 10px;
+}
