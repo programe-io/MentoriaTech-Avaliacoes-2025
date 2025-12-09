@@ -1,0 +1,56 @@
+/* Estilo geral do corpo para visualização */
+body {
+    background-color: #f0f0f0; /* Fundo cinza claro */
+    display: flex; /* Para centralizar ou organizar as notas */
+    flex-wrap: wrap; /* Permite quebrar as notas em várias linhas */
+    gap: 20px; /* Espaço entre as notas */
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+/* Estilo principal da "caixa" da nota */
+.nota {
+    background-color: #fff; /* Fundo branco da nota */
+    border: 1px solid #ccc; /* Borda leve */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 300px; /* Largura fixa ou ajuste conforme necessário */
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo para o cabeçalho da nota (onde ficam os botões) */
+.cabecalho-nota {
+    display: flex;
+    justify-content: flex-end; /* Alinha os botões à direita */
+    padding: 5px 10px;
+    border-bottom: 1px solid #eee; /* Linha divisória */
+}
+
+/* Estilo para a área de conteúdo da nota */
+.corpo-nota {
+    padding: 15px;
+    flex-grow: 1; /* Permite que o corpo preencha o espaço restante */
+    white-space: pre-wrap; /* Preserva espaços e quebras de linha */
+    overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo for muito longo */
+}
+
+/* Estilo dos botões */
+.botao-editar, .botao-apagar {
+    background-color: transparent;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.botao-apagar:hover {
+    color: #e74c3c; /* Vermelho ao passar o mouse */
+}
+
+.botao-editar:hover {
+    color: #3498db; /* Azul ao passar o mouse */
+}
