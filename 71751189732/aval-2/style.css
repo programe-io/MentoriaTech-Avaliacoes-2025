@@ -1,0 +1,321 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f3f3;
+  color: #333;
+  line-height: 1.6;
+}
+
+body.tema-escuro {
+  background: #121212;
+  color: #f5f5f5;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header e navegação */
+
+header {
+  background: #0056b3;
+  color: #fff;
+  padding: 15px 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.logo-area h1 {
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.btn-tema {
+  border: none;
+  padding: 8px 12px;
+  background: #fff;
+  color: #0056b3;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Layout principal */
+
+main {
+  margin: 20px 0 40px 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+/* Cards genéricos */
+
+.card {
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+body.tema-escuro .card {
+  background: #1f1f1f;
+}
+
+/* Seção Sobre */
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+figure {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+figcaption {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+body.tema-escuro figcaption {
+  color: #ccc;
+}
+
+.sobre-texto h3 {
+  margin-bottom: 8px;
+}
+
+.sobre-texto p + p {
+  margin-top: 8px;
+}
+
+/* Aside */
+
+aside.destaque {
+  border-left: 4px solid #0056b3;
+}
+
+aside h3 {
+  margin-bottom: 8px;
+}
+
+aside ul,
+aside ol {
+  margin-left: 18px;
+  margin-bottom: 12px;
+}
+
+aside li {
+  margin-bottom: 4px;
+}
+
+aside a {
+  color: #0056b3;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+aside a:hover {
+  text-decoration: underline;
+}
+
+/* Estudos */
+
+.lista-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 15px 0;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  background: #e3f2fd;
+  font-size: 0.85rem;
+}
+
+body.tema-escuro .tag {
+  background: #263238;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+thead {
+  background: #0056b3;
+  color: #fff;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+body.tema-escuro tbody tr:nth-child(even) {
+  background: #2a2a2a;
+}
+
+/* Hobbies */
+
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.hobbies-grid ul {
+  margin-left: 18px;
+}
+
+/* Formulário de contato */
+
+.campo {
+  margin-bottom: 12px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: #0056b3;
+}
+
+.btn-enviar {
+  padding: 10px 16px;
+  border-radius: 4px;
+  border: none;
+  background: #0056b3;
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.btn-enviar:hover {
+  opacity: 0.9;
+}
+
+.feedback {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Rodapé */
+
+footer {
+  background: #0056b3;
+  color: #fff;
+  padding: 15px 0;
+}
+
+.rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.link-topo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.link-topo:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hobbies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+}
