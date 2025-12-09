@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Cores */
+/* Paleta de cores */
 :root {
   --bg-body: linear-gradient(to bottom, #0a2a66, #1a2a64);
   --bg-navbar: #0d1b52;
@@ -17,7 +17,7 @@
   --accent-color: #6ea8ff;
 }
 
-/* Fundo */
+/* Fundo geral */
 body {
   background: var(--bg-body);
   color: var(--text-primary);
@@ -27,7 +27,7 @@ body {
   line-height: 1.6;
 }
 
-/* Links */
+/* Estilo dos links */
 a {
   color: var(--text-primary);
   text-decoration: none;
@@ -38,7 +38,7 @@ a:hover {
   color: var(--accent-color);
 }
 
-/* Estrutura principal */
+/* Cabeçalho principal */
 .main-header {
   background-color: var(--bg-navbar);
   position: sticky;
@@ -46,6 +46,7 @@ a:hover {
   z-index: 100;
 }
 
+/* Barra de navegação */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -53,6 +54,7 @@ a:hover {
   padding: 15px 20px;
 }
 
+/* Logo */
 .logo {
   font-size: 20px;
   font-weight: bold;
@@ -63,7 +65,7 @@ a:hover {
   color: var(--text-primary);
 }
 
-/* Botão do menu (mobile) */
+/* Botão do menu (versão mobile) */
 .menu-btn {
   display: block;
   background: none;
@@ -73,6 +75,7 @@ a:hover {
   cursor: pointer;
 }
 
+/* Lista de navegação */
 .nav-list {
   list-style: none;
   display: none;
@@ -87,7 +90,7 @@ a:hover {
   font-weight: 500;
 }
 
-/* Media queries para layout responsivo */
+/* Menu responsivo: mostra no desktop */
 @media (min-width: 768px) {
   .menu-btn {
     display: none;
@@ -100,7 +103,7 @@ a:hover {
   }
 }
 
-/* Container principal */
+/* Container principal do feed */
 .container {
   display: grid;
   grid-template-columns: 1fr;
@@ -111,19 +114,21 @@ a:hover {
   flex: 1;
 }
 
+/* Grid com 2 colunas em telas médias */
 @media (min-width: 600px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Grid com 3 colunas em telas grandes */
 @media (min-width: 992px) {
   .container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Card */
+/* Cartão do post */
 .card {
   background-color: var(--bg-card);
   border-radius: 10px;
@@ -139,17 +144,19 @@ a:hover {
   transform: translateY(-5px);
 }
 
+/* Cabeçalho do card */
 .card-header {
   margin-bottom: 10px;
 }
 
-/* Informações do usuário */
+/* Informações do usuário (foto + nome) */
 .user-info {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+/* Foto do usuário */
 .avatar {
   width: 40px;
   height: 40px;
@@ -157,7 +164,7 @@ a:hover {
   object-fit: cover;
 }
 
-/* Título do usuário (h2) */
+/* Nome do usuário */
 .user-info h2 {
   font-size: 16px;
   font-weight: 500;
@@ -177,12 +184,14 @@ a:hover {
   object-fit: cover;
 }
 
+/* Texto do post */
 .card p {
   font-size: 14px;
   color: var(--text-secondary);
   margin-bottom: 10px;
 }
 
+/* Rodapé do card */
 .card-footer {
   margin-top: auto;
 }
@@ -194,7 +203,7 @@ a:hover {
   text-align: right;
 }
 
-/* Rodapé */
+/* Rodapé final do site */
 .main-footer {
   background-color: var(--bg-navbar);
   padding: 15px 20px;
