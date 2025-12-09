@@ -1,0 +1,218 @@
+/* Configurações Globais */
+:root {
+    --cor-principal: #6b3e2e; /* Marrom Escuro */
+    --cor-secundaria: #a37c5f; /* Marrom Claro/Destaque */
+    --cor-fundo: #f8f8f8;
+    --cor-texto: #333;
+    --cor-contraste: #fff;
+    --cor-link: #3a7bd5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header e Navegação */
+header {
+    background-color: var(--cor-principal);
+    color: var(--cor-contraste);
+    padding: 20px 0;
+    border-bottom: 5px solid var(--cor-secundaria);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--cor-contraste);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+/* Layout Principal (Posts e Sidebar) */
+.main-content {
+    display: flex;
+    gap: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.posts-list {
+    flex: 3; /* Ocupa mais espaço */
+}
+
+.sidebar {
+    flex: 1; /* Ocupa menos espaço */
+    padding: 20px;
+    background-color: var(--cor-contraste);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo do Card do Post */
+.post-card {
+    background-color: var(--cor-contraste);
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-card img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.post-card h2 {
+    color: var(--cor-principal);
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.post-meta {
+    color: #888;
+    font-size: 0.9em;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    display: inline-block;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 8px 0;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Sidebar Estilos */
+.sidebar h3 {
+    color: var(--cor-principal);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--cor-fundo);
+    padding-bottom: 5px;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 8px 0;
+    color: var(--cor-texto);
+    text-decoration: none;
+    border-bottom: 1px dotted #ddd;
+    transition: color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: var(--cor-secundaria);
+}
+
+.newsletter-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.newsletter-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-contraste);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+    background-color: #7b5f49;
+}
+
+/* Footer */
+footer {
+    background-color: var(--cor-principal);
+    color: var(--cor-contraste);
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+    .main-content {
+        flex-direction: column; /* Pilha a sidebar e os posts */
+    }
+
+    .posts-list, .sidebar {
+        flex: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        margin-top: 15px;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0 10px;
+    }
+}
