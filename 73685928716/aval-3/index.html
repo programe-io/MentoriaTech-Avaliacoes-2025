@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pjd - programação de jogos digitais</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-950 text-white font-sans">
+
+    <!-- HEADER -->
+    <header class="bg-gray-900 py-4 shadow-md">
+        <h1 class="text-center text-2xl font-bold uppercase tracking-widest">
+            PJD – <span class="text-blue-400">Programação de Jogos Digitais</span>
+        </h1>
+    </header>
+
+    <!-- NAV -->
+    <nav class="bg-gray-800 py-3 shadow-inner">
+        <ul class="max-w-4xl mx-auto flex justify-center space-x-8 text-lg font-medium">
+            <li><a href="#hero" class="hover:text-blue-400 transition"><span>Início</span></a></li>
+            <li><a href="#sobre" class="hover:text-blue-400 transition"><span>Sobre</span></a></li>
+            <li><a href="#conteudo" class="hover:text-blue-400 transition"><span>Conteúdo</span></a></li>
+            <li><a href="#interacao" class="hover:text-blue-400 transition"><span>Interação</span></a></li>
+            <li><a href="#contato" class="hover:text-blue-400 transition"><span>Contato</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="max-w-5xl mx-auto px-4 py-10">
+
+        <!-- HERO -->
+        <section id="hero" class="relative w-full h-64 md:h-80 mb-10">
+            <img src="https://png.pngtree.com/thumb_back/fh260/background/20240528/pngtree-background-of-monitor-computer-with-online-game-streaming-desktop-image_15734081.jpg"
+                 class="w-full h-full object-cover opacity-70">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <h2 class="text-3xl md:text-4xl font-bold drop-shadow-lg">
+                    Bem-vindo ao <span class="text-blue-400">Mundo dos Games!</span>
+                </h2>
+            </div>
+        </section>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <article id="conteudo" class="mb-10">
+            <h3 id="sobre" class="text-2xl font-bold mb-4">
+                O que é <span class="text-blue-400">PJD?</span>
+            </h3>
+            <p class="text-gray-300 text-lg leading-relaxed">
+                O curso de <span class="text-blue-400">Programação de Jogos Digitais</span> ensina conceitos de lógica, design, engines,
+                criação de personagens, mecânicas, storytelling e a construção de jogos reais.
+            </p>
+
+            <!-- IMAGEM EXTRA -->
+            <div class="mt-6">
+                <img src="https://images.unsplash.com/photo-1547658718-1cdaa0852790?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBhcGVsJTIwZGUlMjBwYXJlZGUlMjBwYXJhJTIwcGN8ZW58MHx8MHx8fDA%3D"
+                     class="rounded-lg shadow-lg w-full object-cover">
+            </div>
+        </article>
+
+        <!-- ASIDE COM INFORMAÇÃO COMPLEMENTAR -->
+        <aside class="bg-gray-800 p-6 rounded-lg shadow-lg mb-10">
+            <h3 class="text-xl font-bold mb-2">Dica <span class="text-blue-400">Rápida</span></h3>
+            <p class="text-gray-300 text-lg">
+                Explore engines gratuitas como <span class="text-blue-400">Unity</span> ou <span class="text-blue-400">Godot</span> para começar seus próprios projetos de forma prática.
+                <a href="https://unity.com/" target="_blank" class="text-blue-400 hover:underline"><span>Unity</span></a> |
+                <a href="https://godotengine.org/" target="_blank" class="text-blue-400 hover:underline"><span>Godot</span></a>
+            </p>
+        </aside>
+
+        <!-- BOTÃO INTERAÇÃO -->
+        <section id="interacao" class="text-center py-10">
+            <button id="btn"
+                    class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg text-lg font-semibold transition">
+                Clique para ver uma <span class="text-yellow-300">mensagem</span>
+            </button>
+            <p id="msg" class="mt-4 text-lg text-gray-300"></p>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 py-4 text-center text-gray-400 text-sm">
+        &copy; 2025 PJD – <span class="text-blue-400">Programação de Jogos Digitais</span>. Todos os direitos reservados.
+    </footer>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", () => {
+            document.getElementById("msg").textContent =
+                "Você está pronto para criar seus próprios jogos!";
+        });
+    </script>
+
+</body>
+</html>
