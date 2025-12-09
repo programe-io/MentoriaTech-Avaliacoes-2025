@@ -1,0 +1,143 @@
+/* Estilos Globais e Reset Básico */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Cor de fundo suave */
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff; /* Azul padrão para links */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header (Cabeçalho) */
+header {
+    background-color: #1e3f66; /* Azul Escuro (Cor de time) */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+}
+
+/* Navegação (Menu) */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3; /* Azul mais escuro no hover */
+    text-decoration: none;
+}
+
+/* Layout Principal com Flexbox */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    gap: 20px; /* Espaço entre as colunas */
+}
+
+.main-content {
+    flex: 3; /* Ocupa 3/4 do espaço */
+}
+
+.sidebar {
+    flex: 1; /* Ocupa 1/4 do espaço */
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Cards de Notícias */
+.noticia-card {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 5px solid #ff5722; /* Laranja (Destaque) */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.noticia-card h3 {
+    color: #ff5722;
+    margin-top: 0;
+}
+
+.noticia-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #1e3f66;
+    font-weight: bold;
+}
+
+/* Sidebar Links Rápidos e Destaque */
+.sidebar h3 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 0;
+    color: #1e3f66;
+}
+
+.sidebar ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 8px;
+}
+
+.destaque {
+    text-align: center;
+    padding: 15px;
+    background-color: #fffbe6; /* Amarelo claro para destaque */
+    border: 1px solid #ffcc00;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* Footer (Rodapé) */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #1e3f66;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Media Query para Responsividade (Telas menores) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Empilha as colunas em telas pequenas */
+        width: 9
