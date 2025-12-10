@@ -1,103 +1,158 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Exemplo de Título com CSS</title>
-  <style>
-    /* Reset básico */
-    * {box-sizing: border-box; margin: 0; padding: 0}
-    html, body {height: 100%;}
-    body {
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(180deg, #0f172a 0%, #071133 100%);
-      color: #fff;
-      padding: 2rem;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exemplo de título personalizado com CSS e efeitos">
+    <meta name="author" content="Seu Nome">
+    <title>Título Personalizado com CSS</title>
+    
+    <!-- Importando uma fonte personalizada do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-    /* Container do título */
-    .hero {
-      max-width: 900px;
-      width: 100%;
-      text-align: center;
-      padding: 2.5rem;
-      border-radius: 16px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
-      backdrop-filter: blur(6px);
-    }
+    <style>
+        /* Estilos gerais do corpo */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
 
-    /* Título principal estilizado */
-    .page-title {
-      font-size: clamp(1.75rem, 4.5vw, 3.5rem);
-      line-height: 1.02;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.6rem;
-      display: inline-block;
-      background: linear-gradient(90deg, #7c3aed, #06b6d4, #14b8a6);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 6px 18px rgba(2,6,23,0.6);
-    }
+        /* Estilo do cabeçalho */
+        header {
+            width: 100%;
+            background-color: #222;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    /* Subtítulo / descrição */
-    .subtitle {
-      font-size: 1rem;
-      opacity: 0.85;
-      margin-bottom: 1.25rem;
-    }
+        header .logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5em;
+            text-align: center;
+            margin: 0;
+        }
 
-    /* Linhas decorativas */
-    .title-underline {
-      height: 6px;
-      width: 220px;
-      margin: 0.75rem auto 0;
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(124,58,237,0.9), rgba(6,182,212,0.9));
-      box-shadow: 0 6px 18px rgba(6,182,212,0.12);
-      transform-origin: left center;
-      animation: expand 1s cubic-bezier(.16,1,.3,1) both;
-    }
+        /* Estilo do menu de navegação */
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
 
-    @keyframes expand {
-      from {transform: scaleX(0)}
-      to   {transform: scaleX(1)}
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
 
-    /* Responsividade para mobile */
-    @media (max-width: 480px) {
-      .hero {padding: 1.6rem}
-      .title-underline {width: 140px}
-    }
+        nav a:hover {
+            background-color: #ee0979;
+            border-radius: 5px;
+        }
 
-    /* Preferência de redução de movimento */
-    @media (prefers-reduced-motion: reduce) {
-      .title-underline {animation: none}
-    }
+        /* Estilo do título */
+        .custom-title {
+            font-size: 4em;
+            font-family: 'Pacifico', cursive;
+            font-weight: bold;
+            text-align: center;
+            background: linear-gradient(45deg, #ff6a00, #ee0979);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            animation: glow 1.5s ease-in-out infinite alternate;
+            margin-top: 20px;
+        }
 
-    /* Classe utilitária para variantes (ex: escuro/claro) */
-    .muted {
-      opacity: 0.7;
-      font-weight: 500;
-    }
-  </style>
+        /* Animação de glow no título */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #ff6a00, 0 0 10px #ff6a00, 0 0 15px #ee0979, 0 0 20px #ee0979;
+            }
+            100% {
+                text-shadow: 0 0 10px #ff6a00, 0 0 20px #ff6a00, 0 0 30px #ee0979, 0 0 40px #ee0979;
+            }
+        }
+
+        /* Estilos do conteúdo */
+        section {
+            padding: 20px;
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        /* Estilo do rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Estilos de link */
+        a {
+            color: #ee0979;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <header class="hero" role="banner">
-    <h1 class="page-title" aria-label="Título principal do site">Design de Título com CSS</h1>
-    <p class="subtitle muted">Exemplo simples e moderno mostrando como estilizar um título com gradiente, sombreado e animação.</p>
-    <div class="title-underline" aria-hidden="true"></div>
-  </header>
 
-  <!-- Dicas:
-    - Altere o texto do <h1> para seu título.
-    - Troque as cores do gradiente em .page-title para sua paleta.
-    - Use classes utilitárias (muted) para variações de peso/tonalidade.
-    - Para usar em projetos maiores, mova o CSS para um arquivo .css e importe no <head>.
-  -->
+    <!-- Cabeçalho -->
+    <header>
+        <h1 class="logo">Meu Site Personalizado</h1>
+        <!-- Menu de navegação -->
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Seção principal -->
+    <section id="home">
+        <h2 class="custom-title">Título Personalizado com Efeitos</h2>
+        <p>Este é um exemplo de título estilizado com CSS. Você pode personalizar os efeitos, cores e fontes conforme necessário.</p>
+        <p>Veja mais detalhes sobre o uso de CSS e HTML em <a href="https://www.w3schools.com" target="_blank">W3Schools</a>.</p>
+    </section>
+
+    <!-- Seção sobre -->
+    <section id="sobre">
+        <h2>Sobre</h2>
+        <p>Esta seção contém informações sobre o site ou projeto. Você pode detalhar o propósito do seu site ou fornecer informações adicionais.</p>
+    </section>
+
+    <!-- Seção de contato -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Se deseja entrar em contato, envie um e-mail para <a href="mailto:contato@exemplo.com">contato@exemplo.com</a>.</p>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Seu Nome. Todos os direitos reservados.</p>
+    </footer>
+
 </body>
 </html>
