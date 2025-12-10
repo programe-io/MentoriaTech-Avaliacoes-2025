@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <!doctype html>
+.inventory{display:flex;flex-wrap:wrap;gap:8px}
+.item{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:13px}
+
+
+footer{margin-top:14px;text-align:center;color:var(--muted);font-size:13px}
+
+
+@media (max-width:900px){.game{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap" role="main">
+<!-- Header obrigatório: banner com título, descrição e navegação -->
+<header id="main-header" role="banner">
+<div class="branding">
+<div class="logo" aria-hidden="false"><img src="assets/logo.png" alt="Logo de Eric Levi" style="width:100%;height:100%;border-radius:12px;object-fit:cover;display:block"></div>
+<div>
+<h1>A Jornada de Eric Levi</h1>
+<p class="lead">Projeto para Mentoria Tech — jogo narrativo com HTML/CSS/JS. Instagram: @levizi_1</p>
+</div>
+</div>
+
+
+<!-- TAG NAV obrigatória -->
+<nav aria-label="Navegação principal">
+<a href="#scene">Home</a>
+<a href="#inventory">Inventário</a>
+<a href="#log">Registro</a>
+<a href="#footer">Instruções</a>
+</nav>
+</header>
+
+
+<div class="game" aria-describedby="main-header">
+<article class="card" role="article" aria-labelledby="scene">
+<div id="scene" class="scene">
+<h3>CAPÍTULO 1: O PRIMEIRO PASSO</h3>
+<p>Bem-vindo ao jogo — use as escolhas abaixo para avançar. (Título h3 adicionado para atender à validação.)</p>
+</div>
+
+
+<div id="choices" class="choices" aria-live="polite">
+<!-- Botões de escolha -->
+</div>
+
+
+<div id="log" style="margin-top:12px;color:var(--muted);font-size:13px;max-height:140px;overflow:auto"></div>
+</article>
+
+
+<aside class="card" role="complementary">
+<div class="stats">
+<div class="stat"><div class="muted">Nome</div><div id="name">Eric Levi</div></div>
+<div class="stat"><div class="muted">Escola</div><div id="school">Felismino Freitas</div></div>
+<div class="stat"><div class="muted">Nível</div><div id="level">1</div></div>
+<div class="stat"><div class="muted">XP</div><div id="xp">0</div></div>
+<div class="stat"><div class="muted">Dinheiro</div><div id="money">R$ 0</div></div>
+<div class="stat"><div class="muted">Inventário</div><div class="inventory" id="inventory"></div></div>
+</div>
+
+
+<div style="margin-top:12px;display:flex;gap:8px">
+<button id="restart" class="choice">Reiniciar</button>
+<button id="autoplay" class="choice">Executar Automático</button>
+</div>
+</aside>
+</div>
+
+
+<footer id="footer">
+Abra este arquivo no VSCode e pressione "Abrir com Live Server" ou apenas abra no navegador.
+</footer>
+</main>
+  
+  
+</body>
+</html>

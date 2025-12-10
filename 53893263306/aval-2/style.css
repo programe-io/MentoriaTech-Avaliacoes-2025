@@ -1,0 +1,107 @@
+<body>
+
+<header>
+    <h1>Meu Jogo Interativo</h1>
+    <img src="https://via.placeholder.com/120" alt="Foto do personagem">
+</header>
+
+<nav>
+    <ul>
+        <li>Início</li>
+        <li>Inventário</li>
+        <li>Status</li>
+    </ul>
+</nav>
+
+<main>
+    <article>
+        <h3>Capítulo Atual</h3>
+        <p>O jogo inicia aqui...</p>
+    </article>
+</main>
+<script>
+}
+
+
+function ganharXP(qtd){
+jogador.xp += qtd; log('+'+qtd+' XP');
+while(jogador.xp >= jogador.nivel * 100){ jogador.nivel++; log('✨ Subiu para o nível '+jogador.nivel); }
+atualizaUI();
+}
+
+
+function ganharDinheiro(qtd){ jogador.dinheiro += qtd; log('💰 Recebeu R$ '+qtd); atualizaUI(); }
+
+
+// Capítulos
+const cap1 = () => {
+sceneEl.innerHTML = '<h3>CAPÍTULO 1: O PRIMEIRO PASSO</h3><p>Um novo dia começa. Em que você foca?</p>';
+choicesEl.innerHTML = '';
+addChoice('1 - Estudar programação', ()=>{ log('Estudou lógica e Python.'); ganharXP(60); cap2(); });
+addChoice('2 - Melhorar habilidades sociais', ()=>{ log('Praticou comunicação.'); ganharXP(40); cap2(); });
+addChoice('3 - Mexer no Instagram', ()=>{ log('Relaxou e riu.'); ganharXP(10); cap2(); });
+};
+
+
+const cap2 = () => {
+sceneEl.innerHTML = '<h3>CAPÍTULO 2: O PRIMEIRO TRABALHO</h3><p>Hora de ganhar dinheiro. Escolha uma oportunidade:</p>';
+choicesEl.innerHTML = '';
+addChoice('1 - Freelancer de tecnologia', ()=>{ const v = rand(80,250); log('Projeto freelancer finalizado.'); ganharDinheiro(v); ganharXP(50); cap3(); });
+addChoice('2 - Trabalho em loja', ()=>{ const v = rand(50,150); log('Dia longo na loja.'); ganharDinheiro(v); ganharXP(20); cap3(); });
+addChoice('3 - Serviços gerais', ()=>{ const v = rand(20,120); log('Ajudou e ganhou algum dinheiro.'); ganharDinheiro(v); ganharXP(30); cap3(); });
+};
+
+
+const cap3 = () => {
+sceneEl.innerHTML = '<h3>CAPÍTULO 3: CONSTRUINDO O FUTURO</h3><p>Com o dinheiro disponível, o que você faz?</p>';
+choicesEl.innerHTML = '';
+addChoice('1 - Guardar o dinheiro', ()=>{ log('Escolheu guardar.'); ganharXP(40); fim(); });
+addChoice('2 - Comprar um livro de programação (R$50)', ()=>{
+if(jogador.dinheiro >= 50){ jogador.inventario.push('Livro de Programação'); jogador.dinheiro -= 50; log('Comprou um livro.'); ganharXP(60); atualizaUI(); } else { log('Dinheiro insuficiente.'); }
+fim();
+});
+addChoice('3 - Investir (arriscado)', ()=>{
+log('Tentando investir...'); const ok = Math.random() < 0.5; if(ok){ ganharDinheiro(150); ganharXP(80); log('Investimento bem sucedido!'); } else { jogador.dinheiro = Math.max(0, jogador.dinheiro - 70); ganharXP(10); log('Investimento fracassou.'); } atualizaUI(); fim();
+});
+};
+
+
+const fim = () => {
+sceneEl.innerHTML = '<h3>RESULTADO FINAL</h3>';
+choicesEl.innerHTML = '';
+const summary = document.createElement('div');
+summary.innerHTML = `<p>Nível: ${jogador.nivel}</p><p>XP: ${jogador.xp}</p><p>Dinheiro: R$ ${jogador.dinheiro}</p><p>Inventário: ${jogador.inventario.join(', ') || '—'}</p>`;
+sceneEl.appendChild(summary);
+if(jogador.dinheiro >= 200){ log('FINAL EXCELENTE: futuro sólido!'); }
+else if(jogador.dinheiro >= 100){ log('FINAL BOM: no caminho certo.'); }
+else { log('FINAL NEUTRO: precisa se organizar melhor.'); }
+addChoice('Jogar novamente', reset);
+};
+
+
+// Helpers
+function addChoice(text, fn){ const b=document.createElement('button'); b.className='choice'; b.textContent=text; b.addEventListener('click', fn); choicesEl.appendChild(b); }
+function rand(min,max){ return Math.floor(Math.random()*(max-min+1))+min; }
+function reset(){ jogador.dinheiro=0; jogador.xp=0; jogador.nivel=1; jogador.inventario=[]; log('Jogo reiniciado.'); atualizaUI(); cap1(); }
+
+
+// Autoplay: roda escolhas aleatórias (útil para demonstrar e para ambientes sem input)
+function autoplay(){ reset(); autoplayBtn.disabled=true; const seq=[]; seq.push(String(rand(1,3))); seq.push(String(rand(1,3))); seq.push(String(rand(1,3))); // simples
+// executar escolhas em sequência com delays
+setTimeout(()=>{ document.querySelectorAll('.choice')[Number(seq[0])-1].click(); }, 400);
+setTimeout(()=>{ document.querySelectorAll('.choice')[Number(seq[1])-1].click(); }, 1200);
+setTimeout(()=>{ document.querySelectorAll('.choice')[Number(seq[2])-1].click(); autoplayBtn.disabled=false; }, 2000);
+}
+
+
+restartBtn.addEventListener('click', reset);
+autoplayBtn.addEventListener('click', autoplay);
+
+
+// inicia UI
+atualizaUI(); cap1();
+
+
+</script>
+</body>
+</html>
