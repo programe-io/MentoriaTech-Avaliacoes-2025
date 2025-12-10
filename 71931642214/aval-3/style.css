@@ -1,0 +1,169 @@
+/* Reset básico */
+* {
+  margin: 0;
+    padding: 0;
+      box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+        }
+
+        body {
+          background-color: #fff0f5; /* rosa claro */
+            color: #333;
+            }
+
+            /* Header */
+            header {
+              text-align: center;
+                padding: 15px 0;
+                  background-color: #ff69b4; /* rosa */
+                    color: white;
+                      position: sticky;
+                        top: 0;
+                          z-index: 10;
+                          }
+
+                          header h2 {
+                            font-size: 24px;
+                            }
+
+                            header .frase {
+                              font-size: 14px;
+                                color: #fffacd; /* amarelo claro */
+                                }
+
+                                /* Nav */
+                                nav {
+                                  display: flex;
+                                    justify-content: center;
+                                      background-color: #ffe4e1;
+                                        padding: 10px 0;
+                                        }
+
+                                        nav a {
+                                          margin: 0 15px;
+                                            text-decoration: none;
+                                              color: #ff69b4;
+                                                font-weight: bold;
+                                                }
+
+                                                /* Stories */
+                                                .stories {
+                                                  display: flex;
+                                                    overflow-x: auto;
+                                                      padding: 10px;
+                                                        margin: 0;
+                                                          background-color: #fff0f5;
+                                                            border-bottom: 1px solid #ff69b4;
+                                                              position: sticky;
+                                                                top: 80px;
+                                                                  z-index: 5;
+                                                                  }
+
+                                                                  .story {
+                                                                    display: flex;
+                                                                      flex-direction: column;
+                                                                        align-items: center;
+                                                                          margin-right: 15px;
+                                                                            flex: 0 0 auto;
+                                                                              cursor: pointer;
+                                                                              }
+
+                                                                              .story img {
+                                                                                width: 70px;
+                                                                                  height: 70px;
+                                                                                    border-radius: 50%;
+                                                                                      border: 3px solid #ffda00;
+                                                                                        object-fit: cover;
+                                                                                          transition: transform 0.3s;
+                                                                                          }
+
+                                                                                          .story img:hover {
+                                                                                            transform: scale(1.1);
+                                                                                            }
+
+                                                                                            .story span {
+                                                                                              margin-top: 5px;
+                                                                                                font-size: 12px;
+                                                                                                  color: #ff69b4;
+                                                                                                  }
+
+                                                                                                  /* Feed */
+                                                                                                  .feed {
+                                                                                                    display: flex;
+                                                                                                      flex-direction: column;
+                                                                                                        align-items: center;
+                                                                                                          padding: 10px 0;
+                                                                                                          }
+
+                                                                                                          .post {
+                                                                                                            width: 90%;
+                                                                                                              background-color: #fff0f5;
+                                                                                                                margin-bottom: 20px;
+                                                                                                                  border: 1px solid #ff69b4;
+                                                                                                                    border-radius: 10px;
+                                                                                                                      overflow: hidden;
+                                                                                                                      }
+
+                                                                                                                      .post img {
+                                                                                                                        width: 100%;
+                                                                                                                          display: block;
+                                                                                                                          }
+
+                                                                                                                          .post .actions {
+                                                                                                                            display: flex;
+                                                                                                                              justify-content: space-between;
+                                                                                                                                padding: 10px;
+                                                                                                                                  color: #ff69b4;
+                                                                                                                                    font-weight: bold;
+                                                                                                                                    }
+
+                                                                                                                                    .post .actions span {
+                                                                                                                                      cursor: pointer;
+                                                                                                                                        transition: transform 0.2s;
+                                                                                                                                        }
+
+                                                                                                                                        .post .actions span:hover {
+                                                                                                                                          transform: scale(1.2);
+                                                                                                                                          }
+
+                                                                                                                                          .post .likes-comments {
+                                                                                                                                            padding: 0 10px 10px;
+                                                                                                                                              font-size: 14px;
+                                                                                                                                                color: #ff69b4;
+                                                                                                                                                }
+
+                                                                                                                                                /* Coração animado */
+                                                                                                                                                .heart {
+                                                                                                                                                  position: absolute;
+                                                                                                                                                    font-size: 50px;
+                                                                                                                                                      color: #ff69b4;
+                                                                                                                                                        opacity: 0;
+                                                                                                                                                          pointer-events: none;
+                                                                                                                                                            animation: pop 0.6s forwards;
+                                                                                                                                                            }
+
+                                                                                                                                                            @keyframes pop {
+                                                                                                                                                              0% { transform: scale(0.2); opacity: 1; }
+                                                                                                                                                                50% { transform: scale(1.2); }
+                                                                                                                                                                  100% { transform: scale(1); opacity: 0; }
+                                                                                                                                                                  }
+
+                                                                                                                                                                  /* Botão flutuante */
+                                                                                                                                                                  #uploadBtn {
+                                                                                                                                                                    position: fixed;
+                                                                                                                                                                      bottom: 20px;
+                                                                                                                                                                        right: 20px;
+                                                                                                                                                                          width: 60px;
+                                                                                                                                                                            height: 60px;
+                                                                                                                                                                              background-color: #ffda00;
+                                                                                                                                                                                border: none;
+                                                                                                                                                                                  border-radius: 15px;
+                                                                                                                                                                                    font-size: 30px;
+                                                                                                                                                                                      color: #ff69b4;
+                                                                                                                                                                                        cursor: pointer;
+                                                                                                                                                                                          box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+                                                                                                                                                                                          }
+
+                                                                                                                                                                                          #fileInput {
+                                                                                                                                                                                            display: none;
+                                                                                                                                                                                            }
