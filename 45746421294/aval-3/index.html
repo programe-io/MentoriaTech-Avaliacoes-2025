@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Galeria — Estilo Cards</title>
+  <style>
+    :root{
+      --primary:#2563eb;
+      --primary-light:#3b82f6;
+      --accent:#ff8800;
+      --background:#0f172a;
+      --surface:#ffffffee;
+      --card-bg:#f8fafc;
+      --muted:#74818a;
+      --text:#0b1220;
+      --radius:12px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;background:var(--background);font-family:Inter, Arial, Helvetica, sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
+
+    .topbar{background:linear-gradient(180deg,var(--accent),#cc6b00);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;color:#fff}
+    .logo{font-weight:800;letter-spacing:1px}
+    .nav{display:flex;gap:18px}
+    .nav a{color:rgba(255,255,255,0.9);text-decoration:none}
+
+    .wrap{max-width:1200px;margin:30px auto;padding:0 20px}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start}
+
+    /* Conteúdo */
+    h2{color:#fff;margin-bottom:18px;text-align:center;font-size:28px}
+    span{color:#ffbb00;font-weight:bold}
+
+    .card{
+      background:var(--card-bg);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 6px 20px rgba(2,6,23,0.6);
+      border:1px solid rgba(0,0,0,0.06);
+      overflow:hidden;
+      display:flex;flex-direction:column;
+    }
+
+    .card h3{font-size:20px;margin-bottom:12px}
+
+    .card .thumb{width:100%;height:170px;border-radius:10px;object-fit:cover;border:1px solid rgba(0,0,0,0.08)}
+
+    .card p{margin-top:12px;line-height:1.5;color:var(--muted);font-size:14px}
+
+    .card .content{flex:1}
+
+    @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){
+      .grid{grid-template-columns:1fr}
+      .topbar{height:88px;flex-direction:column;gap:8px;padding:12px}
+    }
+
+    .card:hover{transform:translateY(-6px);transition:.28s ease;box-shadow:0 12px 30px rgba(2,6,23,0.7)}
+
+    .note{color:#cbd5e1;text-align:center;margin-top:18px;font-size:13px}
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <header class="topbar">
+    <div class="logo"><span>ANIME HUB</span></div> <!-- AQUI ENTRA O SPAN -->
+    <nav class="nav">
+      <a href="#">Início</a>
+      <a href="#">Artigos</a>
+      <a href="#">Perfil</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+
+    <h2><span>Galeria de Animes</span></h2> <!-- TAGS EXIGIDAS -->
+
+    <section class="grid">
+
+<article class="card">
+<h3>Naruto</h3>
+<img class="thumb" src="https://wallpapers.com/images/hd/naruto-pictures-3n3frmm4xs2y0nvv.jpg">
+<div class="content">
+<p><span>Naruto</span> é a jornada de Naruto Uzumaki em busca de respeito e do sonho de se tornar Hokage.</p>
+</div>
+</article>
+
+<article class="card">
+<h3>Attack on Titan</h3>
+<img class="thumb" src="https://sm.ign.com/t/ign_in/screenshot/default/attack-on-titan-eren_duqn.1200.jpg">
+<div class="content">
+<p><span>Attack on Titan</span> acompanha a luta brutal da humanidade contra os Titãs e seus segredos.</p>
+</div>
+</article>
+
+<article class="card">
+<h3>Jujutsu Kaisen</h3>
+<img class="thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb1Lv0es8oRro1LMeHNu0d8Hx0gcGHRcE1bQ&s">
+<div class="content">
+<p><span>Yuji Itadori</span> se torna hospedeiro de Sukuna e enfrenta maldições em batalhas intensas.</p>
+</div>
+</article>
+
+</section>
+
+<p class="note">Você pode trocar imagens e adicionar mais cards quando quiser.</p>
+
+</main>
+</body>
+</html>
