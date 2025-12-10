@@ -1,0 +1,57 @@
+mport java.util.Scanner;
+
+public class SistemaEscolar {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        double[] notas = new double[8];
+
+        System.out.println("Digite as 8 notas anuais (1 por bimestre):");
+        for (int i = 0; i < 8; i++) {
+            System.out.print((i + 1) + "º Bimestre: ");
+            notas[i] = input.nextDouble();
+        }
+
+        // Cálculo das médias bimestrais (já são as próprias notas)
+        double semestre1 = (notas[0] + notas[1]) / 2;
+        double semestre2 = (notas[2] + notas[3]) / 2;
+        double semestre3 = (notas[4] + notas[5]) / 2;
+        double semestre4 = (notas[6] + notas[7]) / 2;
+
+        // Cálculo das médias semestrais
+        double mediaSemestre1 = (notas[0] + notas[1]) / 2;
+        double mediaSemestre2 = (notas[2] + notas[3]) / 2;
+        double mediaSemestre3 = (notas[4] + notas[5]) / 2;
+        double mediaSemestre4 = (notas[6] + notas[7]) / 2;
+
+        // Média final (média dos 4 semestres)
+        double mediaFinal = (mediaSemestre1 + mediaSemestre2 + mediaSemestre3 + mediaSemestre4) / 4;
+
+        // Saída formatada
+        System.out.println("\nRESULTADO\n");
+
+        System.out.println("1º Bimestre: " + notas[0]);
+        System.out.println("2º Bimestre: " + notas[1]);
+        System.out.println("1º Semestre: " + mediaSemestre1);
+        System.out.println("----------------------");
+
+        System.out.println("3º Bimestre: " + notas[2]);
+        System.out.println("4º Bimestre: " + notas[3]);
+        System.out.println("2º Semestre: " + mediaSemestre2);
+        System.out.println("----------------------");
+
+        System.out.println("5º Bimestre: " + notas[4]);
+        System.out.println("6º Bimestre: " + notas[5]);
+        System.out.println("3º Semestre: " + mediaSemestre3);
+        System.out.println("----------------------");
+
+        System.out.println("7º Bimestre: " + notas[6]);
+        System.out.println("8º Bimestre: " + notas[7]);
+        System.out.println("4º Semestre: " + mediaSemestre4);
+        System.out.println("----------------------");
+
+        System.out.println("Média Final: " + mediaFinal);
+
+        input.close();
+    }
+}
