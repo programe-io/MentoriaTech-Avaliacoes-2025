@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site da Evillyn</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background: #7a3dd8;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background: #5a2ca0;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        /* layout */
+        .layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+        @media (max-width: 800px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        article, aside {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        aside {
+            background: #e8dbff;
+        }
+
+        h2, h3 {
+            color: #5a2ca0;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #7a3dd8;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<header>
+    <h1>Site da Evillyn</h1>
+</header>
+
+<nav>
+    <a href="#">Início</a>
+    <a href="#">Página 2</a>
+    <a href="#">Página 3</a>
+    <a href="#">Página 4</a>
+    <a href="#">Sobre</a>
+</nav>
+
+<div class="layout">
+
+    <main>
+
+        <!-- ARTICLE: SOBRE MIM -->
+        <article>
+            <h2>Sobre Mim</h2>
+
+            <!-- FOTO -->
+            <img src="SUA-IMAGEM-AQUI.jpg" alt="Minha Foto">
+
+            <h3>Minha Bio</h3>
+            <p>
+                Tenho 15 anos, sou parda, sou uma menina tímida, 
+                mas sou uma boa pessoa para quem quer me conhecer.
+            </p>
+        </article>
+
+        <!-- ARTICLE: GALERIA -->
+        <article>
+            <h2>Minha Galeria</h2>
+
+            <div class="galeria">
+                <img src="IMAGEM1.jpg" alt="Imagem 1">
+                <img src="IMAGEM2.jpg" alt="Imagem 2">
+                <img src="IMAGEM3.jpg" alt="Imagem 3">
+            </div>
+        </article>
+
+        <!-- ARTICLE: POST DA LUA -->
+        <article>
+            <h2>A Lua: Satélite da Terra e Senhora das Noites</h2>
+            <p><strong>Evillyn, 03 Nov, 2025</strong></p>
+
+            <!-- IMAGEM DO POST -->
+            <img src="IMAGEM-DA-LUA.jpg" alt="Imagem da Lua">
+
+            <p>
+                A Lua é o único satélite natural da Terra e o quinto maior do Sistema Solar.
+                É um corpo celeste rochoso, sem luz própria, que brilha por refletir a luz do Sol.
+            </p>
+            <p>
+                Suas fases surgem conforme a parte iluminada visível muda durante sua órbita.
+                Ela influencia as marés e estabiliza a rotação da Terra.
+            </p>
+        </article>
+
+    </main>
+
+    <!-- ASIDE -->
+    <aside>
+        <h3>Informações Extras</h3>
+        <p>🌙 Post sobre a Lua atualizado.</p>
+        <p>📸 Galeria adicionada!</p>
+
+        <hr>
+
+        <h3>Links Úteis</h3>
+        <ul>
+            <li><a href="#">Meu Instagram</a></li>
+            <li><a href="#">Portfólio</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </aside>
+
+</div>
+
+<footer>
+    © 2025 - Site da Evillyn
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class ConversaoTemperatura {
+    public static void main(String[] args) {
+        // Criação do scanner para receber a entrada do usuário
+        Scanner scanner = new Scanner(System.in);
+        
+        // Solicita ao usuário a temperatura em Celsius
+        System.out.print("Digite a temperatura em Celsius (°C): ");
+        double celsius = scanner.nextDouble();
+        
+        // Cálculos de conversão
+        double fahrenheit = (celsius * 9/5) + 32;  // Fórmula para Fahrenheit
+        double kelvin = celsius + 273.15;          // Fórmula para Kelvin
+        
+        // Exibição dos resultados
+        System.out.println("\nResultados:");
+        System.out.println("Temperatura em Celsius: " + celsius + " °C");
+        System.out.println("Temperatura em Fahrenheit: " + fahrenheit + " °F");
+        System.out.println("Temperatura em Kelvin: " + kelvin + " K");
+    }
+}
