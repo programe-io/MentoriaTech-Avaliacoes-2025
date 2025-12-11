@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paixão por Cavalos</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* --- ESTILOS GERAIS --- */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+        }
+
+        header {
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-bottom: 2px solid #ccc;
+        }
+        
+        /* --- ESTILOS DA NAVEGAÇÃO --- */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #8b4513;
+        }
+
+        /* --- LAYOUT PRINCIPAL (Flexbox) --- */
+        main {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            gap: 30px;
+        }
+
+        .conteudo-principal {
+            flex: 3;
+        }
+
+        /* --- ESTILOS DAS IMAGENS (NOVO) --- */
+        img {
+            max-width: 100%; /* A imagem nunca será maior que o container */
+            height: auto;    /* Mantém a proporção da imagem */
+            border-radius: 8px; /* Cantos arredondados */
+            display: block;  /* Remove espaços extras abaixo da imagem */
+        }
+
+        .imagem-destaque {
+            margin-bottom: 20px; /* Espaço abaixo da imagem principal */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .imagem-artigo {
+            float: left; /* Flutua a imagem à esquerda do texto */
+            margin-right: 15px; /* Espaço entre imagem e texto */
+            margin-bottom: 10px;
+            width: 200px; /* Define um tamanho fixo para a imagem do artigo */
+        }
+
+        /* --- ESTILOS DO ARTICLE --- */
+        article {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden; /* Garante que o conteúdo flutuante fique dentro */
+        }
+
+        article h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        .autor-data {
+            color: #888;
+            font-size: 0.9em;
+            font-style: italic;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* --- ESTILOS DO ASIDE --- */
+        aside {
+            flex: 1;
+            background-color: #e8e4d9;
+            padding: 20px;
+            border-radius: 8px;
+            height: fit-content;
+            border-left: 5px solid #8b4513;
+        }
+
+        aside h3 {
+            color: #8b4513;
+            margin-top: 0;
+        }
+
+        .botao {
+            display: inline-block;
+            background-color: #8b4513;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            clear: both; /* Garante que o botão fique abaixo da imagem flutuante */
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header>
+        <h1>🐎 O Mundo Fascinante dos Cavalos 🌳</h1>
+        
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Raças</a></li>
+                <li><a href="#">Galeria</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="conteudo-principal">
+            
+            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Cavalo marrom correndo livre no campo" 
+                 class="imagem-destaque">
+
+            <h2>Bem-vindo ao Haras Digital</h2>
+            <p>
+                Os cavalos são animais magníficos que acompanham a humanidade há milênios, 
+                simbolizando força, beleza e liberdade. Aqui, celebramos sua história e diversidade.
+            </p>
+
+            <article>
+                <h3>📝 Artigo: A Importância da Escovação Diária</h3>
+                <span class="autor-data">Publicado em 12 de Outubro de 2025 por Dra. Ana Veterinária</span>
+                
+                <img src="https://thumbs.dreamstime.com/b/escovando-um-cavalo-24662403.jpg?w=992" 
+                     alt="Mãos escovando o pelo de um cavalo" 
+                     class="imagem-artigo">
+
+                <p>
+                    A escovação não serve apenas para deixar o cavalo bonito. Ela é fundamental para a 
+                    saúde da pele do animal, removendo sujeira, suor seco e pelos mortos.
+                </p>
+                <p>
+                    Além disso, o momento da escovação fortalece o vínculo entre o cavaleiro e o cavalo, 
+                    sendo uma excelente oportunidade para verificar se há pequenos ferimentos ou carrapatos.
+                </p>
+                <br style="clear: both;"> <a href="#" class="botao">Ler Artigo Completo</a>
+            </article>
+        </section>
+
+        <aside>
+            <h3>Você Sabia? 💡</h3>
+            <p>Os cavalos têm a capacidade de dormir em pé graças a um sistema especial de tendões e ligamentos.</p>
+            <hr>
+            <h3>Destaque do Mês</h3>
+            <p><strong>Raça:</strong> Mangalarga Marchador</p>
+            <p>Conhecido pelo seu conforto e resistência.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cavalos & Cia.</p>
+    </footer>
+<script src="script.js"></script></body>
+</html>
