@@ -1,0 +1,161 @@
+/* Importação da fonte (se usada no HTML) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@600&display=swap');
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis de Cores (Paleta inspirada em cores de futebol e troféu) */
+:root {
+    --cor-fundo: #f4f4f9; /* Fundo claro */
+    --cor-primaria: #004d40; /* Verde escuro (gramado) */
+    --cor-secundaria: #ffcc00; /* Amarelo/Dourado (troféu) */
+    --cor-texto-principal: #333;
+    --cor-destaque: #d32f2f; /* Vermelho (paixão) */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    line-height: 1.6;
+    padding-bottom: 50px; /* Espaço para o footer */
+}
+
+/* --- HEADER (Cabeçalho) --- */
+header {
+    background: var(--cor-primaria);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3em;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-style: italic;
+    color: var(--cor-secundaria);
+}
+
+/* --- MAIN (Conteúdo Principal) --- */
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: rgba(31, 6, 255, 0);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgb(19, 0, 0);
+    border-left: 5px solid var(--cor-destaque);
+}
+
+.card h2 {
+    color: var(--cor-primaria);
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 5px;
+}
+
+/* Destaque para a próxima data */
+.data-importante {
+    font-weight: bold;
+    color: var(--cor-destaque);
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #ff6702; /* Rosa claro para destaque */
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Estilo para a lista de campeões */
+.lista-campeoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.pais {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #c5f007;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pais:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgb(4, 247, 65);
+}
+
+.pais h3 {
+    color: var(--cor-secundaria);
+    background-color: var(--cor-primaria);
+    padding: 5px 0;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Estilo para a lista de curiosidades */
+#curiosidades ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#curiosidades li {
+    background-color: #e9e8f3; /* Fundo verde claro para os itens */
+    margin-bottom: 10px;
+    padding: 12px;
+    border-left: 4px solid var(--cor-primaria);
+    border-radius: 5px;
+}
+
+#curiosidades li strong {
+    color: var(--cor-destaque);
+}
+
+/* --- FOOTER (Rodapé) --- */
+footer {
+    background-color: var(--cor-texto-principal);
+    color: rgb(243, 227, 5);
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Query para telas menores (Responsividade) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    .lista-campeoes {
+        flex-direction: column;
+    }
+    
+    .pais {
+        margin: 0 auto;
+        width: 90%;
+    }
+}
