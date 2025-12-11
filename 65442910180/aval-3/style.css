@@ -1,0 +1,363 @@
+/* --- 1. VARIÁVEIS E CONFIGURAÇÕES GLOBAIS --- */
+:root {
+    --cor-primaria: #ef4444;    /* Vermelho Racing */
+    --cor-primaria-dark: #b91c1c; /* Vermelho Sangue (Hover) */
+    --cor-fundo: #f3f4f6;       /* Cinza Claro (Piso oficina) */
+    --cor-header: #111827;      /* Preto Fosco */
+    --cor-texto: #1f2937;       /* Cinza Escuro */
+    --cor-branco: #ffffff;
+    --sombra-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --sombra-forte: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    padding-bottom: 50px;
+}
+
+/* Layout Geral */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- 2. CABEÇALHO (ESTILO PAINEL DE MOTO) --- */
+header {
+    background-color: var(--cor-header);
+    color: var(--cor-branco);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid var(--cor-primaria);
+    box-shadow: var(--sombra-forte);
+    border-radius: 0 0 15px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    font-style: italic; /* Velocidade */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.logo span { color: var(--cor-primaria); }
+
+nav a {
+    color: #d1d5db;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 20px;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+nav a:hover { color: var(--cor-primaria); }
+
+.btn-login {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-login:hover {
+    background-color: var(--cor-primaria-dark);
+    transform: scale(1.05);
+}
+
+/* --- 3. LAYOUT GRID (LOJA + CARRINHO) --- */
+.main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Loja ocupa 2 partes, Carrinho 1 parte */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* --- 4. SEÇÃO DE PRODUTOS --- */
+.secao-titulo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-style: italic;
+    border-left: 6px solid var(--cor-primaria);
+    padding-left: 15px;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: var(--sombra-card);
+}
+
+/* Banner Hero */
+.hero-banner {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: var(--sombra-forte);
+}
+
+.hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.hero-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.hero-texto h2 {
+    font-size: 2.5rem;
+    font-style: italic;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Grid de Produtos */
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card-produto {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card-produto:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-primaria);
+    box-shadow: var(--sombra-forte);
+}
+
+.card-produto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.card-produto h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 5px; }
+.desc { font-size: 0.85rem; color: #6b7280; margin-bottom: 10px; }
+.preco { font-size: 1.4rem; color: var(--cor-primaria); font-weight: 900; display: block; margin-bottom: 15px; }
+
+.btn-add {
+    width: 100%;
+    padding: 10px;
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-add:hover { background-color: var(--cor-primaria); }
+
+/* --- 5. SIDEBAR / CARRINHO (TEMA ESCURO) --- */
+.sidebar-box {
+    background-color: var(--cor-header);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--sombra-forte);
+    border-top: 5px solid var(--cor-primaria);
+    margin-bottom: 30px;
+}
+
+.resumo-titulo {
+    text-transform: uppercase;
+    border-bottom: 1px solid #374151;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.display-item {
+    background-color: #1f2937;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #374151;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.linha-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+.total-destaque {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 900;
+    margin-top: 15px;
+    border-top: 1px solid #374151;
+    padding-top: 15px;
+}
+
+.btn-finalizar {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--cor-primaria);
+    color: white;
+    font-weight: 900;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-finalizar:hover { background-color: var(--cor-primaria-dark); }
+
+/* --- 6. RASTREADOR (ESTILO ASFALTO) --- */
+.tracker-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--sombra-card);
+}
+
+.mapa-asfalto {
+    height: 150px;
+    background-color: #374151;
+    /* Padrão de asfalto */
+    background-image: radial-gradient(#6b7280 2px, transparent 2px);
+    background-size: 20px 20px;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 20px;
+    border: 3px solid #1f2937;
+    overflow: hidden;
+}
+
+.faixa-estrada {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    border-top: 2px dashed white;
+    opacity: 0.5;
+}
+
+.marcador-moto {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    font-size: 3rem;
+    transition: left 1s cubic-bezier(0.4, 0, 0.2, 1); /* Movimento suave */
+    z-index: 10;
+}
+
+.marcador-casa {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    font-size: 2rem;
+}
+
+.status-box {
+    border-left: 4px solid var(--cor-primaria);
+    background-color: #f9fafb;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.msg-sucesso {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+    display: none; /* Escondido por padrão */
+}
+
+.msg-sucesso.visivel { display: block; }
+
+/* --- 7. MODAL --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.9);
+    display: none; /* Escondido */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-overlay.aberto { display: flex; }
+
+.modal-content {
+    background-color: #111827;
+    padding: 40px;
+    border-radius: 15px;
+    border: 2px solid var(--cor-primaria);
+    text-align: center;
+    color: white;
+    max-width: 400px;
+    width: 90%;
+}
+
+/* --- 8. RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .main-grid {
+        grid-template-columns: 1fr; /* Coluna única no celular */
+    }
+    
+    .sidebar-box {
+        order: -1; /* Carrinho aparece antes (opcional) ou depois */
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    nav { display: none; /* Simplificando para mobile */ }
+}
