@@ -1,0 +1,175 @@
+/* Importação de Fonte do Google Fonts (opcional, mas recomendado) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@700&display=swap');
+
+/* --- Estilos Gerais/Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4; /* Fundo cinza claro */
+}
+
+a {
+    color: #0066cc; /* Azul padrão para links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff4500; /* Laranja/Vermelho ao passar o mouse */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* --- Cabeçalho (Header) --- */
+.main-header {
+    background-color: #008000; /* Verde Escuro (Cor de Campo/Bandeira) */
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.8em;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.main-header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* --- Navegação (Nav) --- */
+.main-nav {
+    background-color: #ffd700; /* Amarelo Vibrante (Cor de Bandeira) */
+    padding: 10px 0;
+    text-align: center;
+}
+
+.main-nav ul {
+    list-style: none;
+}
+
+.main-nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.main-nav ul li a {
+    color: #333; /* Texto escuro */
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.main-nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+}
+
+/* --- Seção de Posts --- */
+#posts {
+    display: grid;
+    /* Layout de 3 colunas em telas maiores */
+    grid-template-columns: 2fr 1fr 1fr; 
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.post {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid transparent; /* Padrão */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Destaque (Post Principal/Featured) */
+.post.featured {
+    grid-column: 1 / 2; /* Ocupa a primeira coluna */
+    border-left-color: #ff4500; /* Borda Vermelha de Destaque */
+}
+
+/* Posts laterais */
+.post:not(.featured) {
+    grid-column: auto;
+    border-left-color: #0066cc; /* Borda Azul */
+}
+
+.post h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #004d40; /* Verde escuro */
+    margin-bottom: 10px;
+    font-size: 1.6em;
+}
+
+.post-meta {
+    font-size: 0.85em;
+    color: #777;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 5px;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ff4500;
+}
+
+/* --- Rodapé (Footer) --- */
+.main-footer {
+    background-color: #333; /* Cinza Escuro */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+.main-footer a {
+    color: #ffd700; /* Amarelo no rodapé */
+}
+
+/* --- Media Queries para Responsividade (Mobile) --- */
+@media (max-width: 768px) {
+    #posts {
+        /* Em telas menores, todos os posts ficam em uma única coluna */
+        grid-template-columns: 1fr;
+    }
+
+    .post.featured {
+        grid-column: 1 / 2; /* Garante que o destaque ocupe a coluna inteira */
+    }
+
+    .main-header h1 {
+        font-size: 2em;
+    }
+
+    .main-nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+}
