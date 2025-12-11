@@ -1,0 +1,237 @@
+/* Importação de fonte básica do Google Fonts (opcional) */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
+
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Roboto', sans-serif; */
+}
+
+body {
+    background-color: #1a1a1a; /* Fundo escuro, tema gamer */
+    color: #f0f0f0; /* Texto claro */
+    line-height: 1.6;
+}
+
+/* ---------------------------------- */
+/* 1. ESTILO DO CABEÇALHO E NAVEGAÇÃO */
+/* ---------------------------------- */
+header {
+    background-color: #330066; /* Cor roxa escura */
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Fixa o menu no topo */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    color: #ffcc00; /* Destaque amarelo */
+    font-size: 1.8rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffcc00; /* Muda a cor ao passar o mouse */
+}
+
+/* ---------------------------------- */
+/* 2. ESTILO DAS SEÇÕES PRINCIPAIS */
+/* ---------------------------------- */
+main {
+    padding: 0 5%;
+}
+
+section {
+    padding: 4rem 0;
+    border-bottom: 1px solid #333;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #ffcc00;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Seção Hero (Início) */
+.hero {
+    text-align: center;
+    background-color: #222;
+    padding: 6rem 5%;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Botão padrão */
+.btn {
+    display: inline-block;
+    background-color: #330066;
+    color: #fff;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #4a0080;
+    transform: translateY(-2px);
+}
+
+/* ---------------------------------- */
+/* 3. ESTILO DOS CARDS DE JOGOS */
+/* ---------------------------------- */
+.game-card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Quebra linha se não couber */
+    gap: 30px;
+}
+
+.game-card {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.game-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.game-card h3 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.btn-small {
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+/* ---------------------------------- */
+/* 4. ESTILO DO FORMULÁRIO DE CONTATO */
+/* ---------------------------------- */
+.form-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-section input[type="text"],
+.form-section input[type="email"],
+.form-section textarea {
+    padding: 10px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #f0f0f0;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.form-section textarea {
+    resize: vertical;
+}
+
+/* ---------------------------------- */
+/* 5. ESTILO DO RODAPÉ */
+/* ---------------------------------- */
+footer {
+    background-color: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Mídia Query básica para responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    nav ul {
+        margin-top: 10px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 4rem 5%;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .game-card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-card {
+        width: 90%;
+    }
+}
