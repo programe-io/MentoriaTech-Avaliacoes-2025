@@ -13,7 +13,7 @@
 <body>
     <!-- HEADER -->
     <header class="shadow-md p-5 flex items-center navbar">
-        <div class="flex-1 text-center md:text-left uppercase font-bold tracking-wider logo">privsmayrlla</div>
+        <div class="flex-1 text-center md:text-left uppercase font-bold tracking-wider logo">Bruno</div>
 
         <nav class="font-bold gap-6 hidden md:flex">
             <a href="#">Início</a>
@@ -29,7 +29,7 @@
         <div class="card">
             <div class="user-info">
                 <img class="avatar" src="images/profile_01.jpg" alt="avatar">
-                <h2 class="text-lg font-semibold">mayrlla</h2>
+                <h2 class="text-lg font-semibold">Bruno</h2>
             </div>
 
             <img class="w-full h-48 object-cover" src="images/post_01.png" alt="post">
@@ -47,7 +47,7 @@
         <div class="card">
             <div class="user-info">
                 <img class="avatar" src="images/profile_01.jpg" alt="avatar">
-                <h2 class="text-lg font-semibold">mayrlla</h2>
+                <h2 class="text-lg font-semibold">Bruno</h2>
             </div>
 
             <img class="w-full h-48 object-cover" src="images/post_02.png" alt="post">
@@ -65,7 +65,7 @@
         <div class="card">
             <div class="user-info">
                 <img class="avatar" src="images/profile_01.jpg" alt="avatar">
-                <h2 class="text-lg font-semibold">mayrlla</h2>
+                <h2 class="text-lg font-semibold">Bruno</h2>
             </div>
 
             <img class="w-full h-48 object-cover" src="images/post_03.png" alt="post">
