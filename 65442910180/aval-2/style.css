@@ -1,0 +1,188 @@
+/* --- 1. IMPORTAÇÃO DE FONTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;700&display=swap');
+
+/* --- 2. VARIÁVEIS (PALETA DE CORES) --- */
+:root {
+    /* Cores Doces */
+    --cor-fundo: #fff0f3;       /* Rosa bem clarinho (chantilly de morango) */
+    --cor-destaque: #ffccd5;    /* Rosa médio */
+    --cor-primaria: #ff4d6d;    /* Rosa forte (cereja) */
+    --cor-texto: #590d22;       /* Vinho/Chocolate escuro */
+    --cor-card: #ffffff;        /* Branco */
+    --sombra-suave: 0 8px 20px rgba(255, 77, 109, 0.15);
+}
+
+/* --- 3. RESET GERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif; /* Fonte redondinha e fácil de ler */
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* --- 4. CABEÇALHO --- */
+header {
+    background-color: var(--cor-card);
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-bottom: 5px solid var(--cor-destaque); /* Borda decorativa */
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive; /* Fonte estilo caligrafia */
+    font-size: 2.5rem;
+    color: var(--cor-primaria);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--cor-primaria);
+}
+
+/* --- 5. HERO (BANNER) --- */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,240,243,0.9)), 
+                url('https://images.unsplash.com/photo-1616031036666-68b327b8782a?auto=format&fit=crop&w=1000');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 50px 50px; /* Curva suave no final do banner */
+    margin-bottom: 50px;
+}
+
+.hero h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: var(--cor-primaria);
+}
+
+/* --- 6. BOTÕES --- */
+.btn {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px; /* Botão bem redondo */
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(255, 77, 109, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #c9184a;
+    transform: translateY(-3px); /* Leve pulinho ao passar o mouse */
+    box-shadow: 0 6px 15px rgba(255, 77, 109, 0.6);
+}
+
+/* --- 7. GRID DE PRODUTOS --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.titulo-secao {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--cor-texto);
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Detalhe sublinhado fofo no título */
+.titulo-secao::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 4px;
+    background-color: var(--cor-primaria);
+    margin: 5px auto 0;
+    border-radius: 2px;
+}
+
+.grid-bolos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+/* --- 8. CARTÃO DO BOLO (CARD) --- */
+.card-bolo {
+    background-color: var(--cor-card);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--cor-destaque);
+}
+
+.card-bolo:hover {
+    transform: scale(1.03); /* Aumenta um pouquinho */
+}
+
+.card-bolo img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-info h3 {
+    color: var(--cor-primaria);
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.preco {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--cor-texto);
+    margin: 15px 0;
+    background-color: var(--cor-fundo);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* --- 9. RODAPÉ --- */
+footer {
+    background-color: #ffccd5;
+    text-align: center;
+    padding: 40px;
+    margin-top: 50px;
+    color: var(--cor-texto);
+    font-weight: bold;
+}
