@@ -1,0 +1,112 @@
+
+  class GerenciadorDeHabitos {
+    constructor() {
+        this.STORAGE_KEY = 'habitosData';
+        this.habitos = this.carregarHabitos() || {};
+    }
+
+    carregarHabitos() {
+        const data = localStorage.getItem(this.STORAGE_KEY);
+        try {
+            return JSON.parse(data);
+        } catch (e) {
+            console.error("Erro ao carregar hábitos do localStorage:", e);
+            return null;
+        }
+    }
+
+    salvarHabitos() {
+        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.habitos));
+    }
+
+    adicionarHabito(nome, metaSemanal) {
+        if (this.habitos[nome]) return false;
+        this.habitos[nome] = {
+            meta: parseInt(metaSemanal),
+            progresso: 0,
+            dataCriacao: new Date().toLocaleDateString('pt-BR')
+        };
+        this.salvarHabitos();
+        return true;
+    }
+
+    registrarConclusao(nome) {
+        if (this.habitos[nome]) {
+            this.habitos[nome].progresso += 1;
+            this.salvarHabitos();
+        }
+    }
+
+    resetarProgresso(nome) {
+        if (this.habitos[nome]) {
+            this.habitos[nome].progresso = 0;
+            this.salvarHabitos();
+        }
+    }
+}
+
+const gerenciador = new GerenciadorDeHabitos();
+const listaHabitos = document.getElementById('lista-habitos');
+const formAdicionar = document.getElementById('form-adicionar-habito');
+const mensagemVazio = document.getElementById('mensagem-vazio');
+
+function renderizarHabitos() {
+    listaHabitos.innerHTML = ''; 
+    const nomesHabitos = Object.keys(gerenciador.habitos);
+
+    if (nomesHabitos.length === 0) {
+        mensagemVazio.textContent = "Comece adicionando seu primeiro hábito acima!";
+        mensagemVazio.className = "mensagem-alerta";
+        return;
+    } else {
+        mensagemVazio.textContent = "";
+    }
+
+    nomesHabitos.forEach(nome => {
+        const habito = gerenciador.habitos[nome];
+        const item = document.createElement('li');
+        item.className = 'habito-item' + (habito.progresso >= habito.meta ? ' meta-atingida' : '');
+        
+        const progressoTexto = `${habito.progresso} / ${habito.meta} vezes`;
+        
+        item.innerHTML = `
+            <div class="habito-info">${nome}</div>
+            <div class="habito-progresso">${progressoTexto}</div>
+            <button class="btn-registrar" data-habito="${nome}">
+                Registrar Conclusão
+            </button>
+        `;
+        
+        listaHabitos.appendChild(item);
+    });
+}
+
+formAdicionar.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nomeInput = document.getElementById('nome-habito');
+    const metaInput = document.getElementById('meta-semanal');
+    
+    const nome = nomeInput.value.trim();
+    const meta = metaInput.value;
+
+    if (nome && meta >= 1) {
+        if (gerenciador.adicionarHabito(nome, meta)) {
+            nomeInput.value = '';
+            metaInput.value = '';
+            renderizarHabitos();
+        } else {
+            alert(`O hábito "${nome}" já existe!`);
+        }
+    }
+});
+
+listaHabitos.addEventListener('click', (e) => {
+    if (e.target.classList.contains('btn-registrar')) {
+        const nomeHabito = e.target.getAttribute('data-habito');
+        gerenciador.registrarConclusao(nomeHabito);
+        renderizarHabitos(); 
+    }
+});
+
+// Inicializa a renderização carregando os hábitos salvos
+renderizarHabitos(); 

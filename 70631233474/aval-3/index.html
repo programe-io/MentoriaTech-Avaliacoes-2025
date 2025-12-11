@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Hábitos Semântico</title>
+    
+    <style>
+        :root {
+            --cor-principal: #007bff;
+            --cor-sucesso: #28a745;
+            --cor-aviso: #ffc107;
+            --cor-fundo: #f4f7f6;
+            --cor-texto: #333;
+            --cor-borda-clara: #eee;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--cor-fundo);
+            margin: 0;
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER & NAV */
+        header {
+            background-color: var(--cor-principal);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav li a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* MAIN & LAYOUT */
+        main {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        section {
+            flex: 3;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        aside {
+            flex: 1;
+            background-color: #fff3cd;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid var(--cor-aviso);
+            height: fit-content;
+        }
+
+        /* ARTICLE & FORM */
+        .form-container {
+            border: 1px dashed var(--cor-borda-clara);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        #form-adicionar-habito {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        #form-adicionar-habito input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid var(--cor-borda-clara);
+            border-radius: 5px;
+        }
+
+        #form-adicionar-habito button {
+            background-color: var(--cor-sucesso);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* LISTA DE HÁBITOS */
+        #lista-habitos {
+            list-style: none;
+            padding: 0;
+        }
+
+        .habito-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 1px solid var(--cor-borda-clara);
+            border-left: 5px solid var(--cor-principal);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .habito-progresso {
+            font-weight: bold;
+            color: var(--cor-principal);
+            margin-left: 20px;
+            min-width: 120px;
+            text-align: right;
+        }
+
+        .btn-registrar {
+            background-color: var(--cor-aviso);
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        
+        .meta-atingida {
+            border-left: 5px solid var(--cor-sucesso);
+            background-color: #e6ffec; 
+        }
+
+        /* SPAN e IMG */
+        .enfase {
+            color: #dc3545; /* Uso do span para destaque */
+            font-weight: bold;
+        }
+        .icon-small {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Monitor Semanal de Hábitos <span class="enfase">PRO</span></h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#monitor">Monitor</a></li>
+            <li><a href="#reset">Resetar Semana</a></li>
+            <li><a href="#">Estatísticas</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main>
+            
+            <section id="monitor">
+                <h2>Adicionar Novo Hábito</h2>
+                
+                <article class="form-container">
+                    <form id="form-adicionar-habito">
+                        <input type="text" id="nome-habito" placeholder="Nome do Hábito" required>
+                        <input type="number" id="meta-semanal" placeholder="Meta Semanal" min="1" required>
+                        <button type="submit">Adicionar Hábito</button>
+                    </form>
+                </article>
+
+                <h2>Meus Hábitos Atuais</h2>
+                <ul id="lista-habitos">
+                    </ul>
+                <p id="mensagem-vazio"></p>
+            </section>
+
+            <aside>
+                <h3>Ferramentas Úteis</h3>
+                <p>Use a função <span class="enfase">Resetar Semana</span> para zerar o progresso dos seus hábitos a cada domingo.</p>
+                
+                <p>
+                    <img src="https://via.placeholder.com/20" alt="Ícone de Persistência" class="icon-small"> 
+                    Lembre-se: A persistência é a chave!
+                </p>
+                <button id="btn-reset-semana" class="btn-registrar">Resetar Progresso Semanal</button>
+            </aside>
+            
+        </main>
+        </div>
+
+    <footer>
+        <p>Desenvolvido com <span class="enfase">HTML Semântico</span> | <span id="data-atual">2025</span></p>
+    </footer>
+
+    <script>
+        
+        class GerenciadorDeHabitos {
+            constructor() {
+                this.STORAGE_KEY = 'habitosData';
+                this.habitos = this.carregarHabitos() || {};
+                document.getElementById('data-atual').textContent = new Date().getFullYear();
+            }
+
+            carregarHabitos() {
+                const data = localStorage.getItem(this.STORAGE_KEY);
+                try {
+                    return JSON.parse(data);
+                } catch (e) {
+                    return null;
+                }
+            }
+
+            salvarHabitos() {
+                localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.habitos));
+            }
+
+            adicionarHabito(nome, metaSemanal) {
+                if (this.habitos[nome]) return false;
+                this.habitos[nome] = {
+                    meta: parseInt(metaSemanal),
+                    progresso: 0,
+                    dataCriacao: new Date().toLocaleDateString('pt-BR')
+                };
+                this.salvarHabitos();
+                return true;
+            }
+
+            registrarConclusao(nome) {
+                if (this.habitos[nome]) {
+                    this.habitos[nome].progresso += 1;
+                    this.salvarHabitos();
+                }
+            }
+
+            resetarProgressoDeTodos() {
+                for (const nome in this.habitos) {
+                    this.habitos[nome].progresso = 0;
+                }
+                this.salvarHabitos();
+            }
+        }
+
+        const gerenciador = new GerenciadorDeHabitos();
+        const listaHabitos = document.getElementById('lista-habitos');
+        const formAdicionar = document.getElementById('form-adicionar-habito');
+        const mensagemVazio = document.getElementById('mensagem-vazio');
+        const btnResetSemana = document.getElementById('btn-reset-semana');
+
+        function renderizarHabitos() {
+            listaHabitos.innerHTML = ''; 
+            const nomesHabitos = Object.keys(gerenciador.habitos);
+
+            if (nomesHabitos.length === 0) {
+                mensagemVazio.textContent = "Comece adicionando seu primeiro hábito!";
+                mensagemVazio.className = "mensagem-alerta";
+                return;
+            } else {
+                mensagemVazio.textContent = "";
+            }
+
+            nomesHabitos.forEach(nome => {
+                const habito = gerenciador.habitos[nome];
+                const item = document.createElement('li');
+                item.className = 'habito-item' + (habito.progresso >= habito.meta ? ' meta-atingida' : '');
+                
+                const progressoTexto = `${habito.progresso} / ${habito.meta} vezes`;
+                
+                item.innerHTML = `
+                    <div class="habito-info">${nome}</div>
+                    <div class="habito-progresso">${progressoTexto}</div>
+                    <button class="btn-registrar" data-habito="${nome}">
+                        + 1
+                    </button>
+                `;
+                
+                listaHabitos.appendChild(item);
+            });
+        }
+
+        formAdicionar.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nomeInput = document.getElementById('nome-habito');
+            const metaInput = document.getElementById('meta-semanal');
+            
+            const nome = nomeInput.value.trim();
+            const meta = metaInput.value;
+
+            if (nome && meta >= 1) {
+                if (gerenciador.adicionarHabito(nome, meta)) {
+                    nomeInput.value = '';
+                    metaInput.value = '';
+                    renderizarHabitos();
+                } else {
+                    alert(`O hábito "${nome}" já existe!`);
+                }
+            }
+        });
+
+        listaHabitos.addEventListener('click', (e) => {
+            if (e.target.classList.contains('btn-registrar')) {
+                const nomeHabito = e.target.getAttribute('data-habito');
+                gerenciador.registrarConclusao(nomeHabito);
+                renderizarHabitos(); 
+            }
+        });
+
+        btnResetSemana.addEventListener('click', () => {
+             if (confirm("Tem certeza que deseja zerar o progresso de TODOS os hábitos? Isso é ideal no início de uma nova semana.")) {
+                 gerenciador.resetarProgressoDeTodos();
+                 renderizarHabitos();
+                 alert("Progresso semanal resetado com sucesso!");
+             }
+        });
+
+        // Inicializa a renderização carregando os hábitos salvos
+        renderizarHabitos();
+        
+    </script>
+
+<script src="script.js"></script></body>
+</html>
