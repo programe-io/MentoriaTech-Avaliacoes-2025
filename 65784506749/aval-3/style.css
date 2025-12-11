@@ -1,0 +1,285 @@
+/* --- 1. VARIÁVEIS E CORES (Tema Salgados) --- */
+:root {
+    /* Tons de Laranja/Âmbar para comida */
+    --cor-primaria: #f59e0b;       /* Laranja vibrante */
+    --cor-primaria-hover: #d97706; /* Laranja mais escuro para botões */
+    --cor-destaque: #b45309;       /* Marrom alaranjado para textos fortes */
+    
+    /* Cores Neutras */
+    --fundo-pagina: #fffbeb;       /* Bege bem clarinho (quase branco) */
+    --fundo-card: #ffffff;
+    --texto-principal: #1f2937;
+    --texto-secundario: #6b7280;
+    --borda: #e5e7eb;
+
+    /* Cores de Status */
+    --sucesso: #16a34a;            /* Verde */
+    --info: #2563eb;               /* Azul */
+    
+    /* Espaçamento e Design */
+    --raio-borda: 12px;
+    --sombra-suave: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --sombra-forte: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 2. RESET BÁSICO --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: --fundo-pagina; /* Fundo bege suave */
+    color: var(--texto-principal);
+    line-height: 1.6;
+}
+
+/* --- 3. LAYOUT E CONTAINER --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Grid Principal (Cardápio vs Lateral) */
+main {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap; /* Para funcionar no celular */
+}
+
+.secao-cardapio {
+    flex: 2; /* Ocupa 2/3 da tela */
+    min-width: 300px;
+}
+
+.secao-lateral {
+    flex: 1; /* Ocupa 1/3 da tela */
+    min-width: 300px;
+}
+
+/* --- 4. HEADER --- */
+header {
+    background-color: var(--fundo-card);
+    padding: 15px 30px;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-suave);
+    margin-bottom: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 4px solid var(--cor-primaria); /* Detalhe laranja */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: var(--cor-destaque);
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--texto-secundario);
+    font-weight: 600;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--cor-primaria-hover);
+}
+
+/* --- 5. CARTÕES DE PRODUTOS (SALGADOS) --- */
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsivo */
+    gap: 20px;
+}
+
+.card-produto {
+    background: var(--fundo-card);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio-borda);
+    padding: 15px;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-produto:hover {
+    transform: translateY(-5px); /* Efeito de "levantar" */
+    box-shadow: var(--sombra-forte);
+    border-color: var(--cor-primaria);
+}
+
+.card-produto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card-produto h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--texto-principal);
+}
+
+.preco {
+    color: var(--cor-destaque);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* --- 6. BOTÕES --- */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
+.btn-login {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 8px 20px;
+    width: auto;
+}
+
+/* --- 7. BARRA LATERAL (PEDIDO & RASTREIO) --- */
+.box-lateral {
+    background: var(--fundo-card);
+    padding: 20px;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-suave);
+    border-top: 8px solid var(--cor-primaria); /* Topo laranja */
+    margin-bottom: 20px;
+}
+
+.resumo-pedido {
+    background-color: #fff7ed; /* Fundo laranja bem claro */
+    border: 1px solid #fed7aa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.linha-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.total-final {
+    font-size: 1.3rem;
+    color: var(--texto-principal);
+    font-weight: 800;
+    border-top: 1px solid var(--borda);
+    padding-top: 10px;
+}
+
+/* --- 8. MAPA / RASTREADOR --- */
+.mapa-container {
+    position: relative;
+    height: 200px;
+    background-color: #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 2px solid #d1d5db;
+}
+
+/* Textura de fundo do mapa (opcional) */
+.mapa-bg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: radial-gradient(#000 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.moto-icone {
+    position: absolute;
+    font-size: 2.5rem;
+    top: 40%;
+    left: 10%;
+    transition: left 1s ease-in-out; /* Animação suave */
+    z-index: 10;
+}
+
+.casa-icone {
+    position: absolute;
+    font-size: 2rem;
+    top: 40%;
+    right: 10%;
+}
+
+.caminho-linha {
+    position: absolute;
+    top: 55%;
+    left: 15%;
+    right: 15%;
+    height: 4px;
+    background-color: #9ca3af;
+    z-index: 1;
+}
+
+/* --- 9. MODAL (POPUP) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fundo escuro transparente */
+    display: none; /* Oculto por padrão */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: var(--raio-borda);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Utilitários */
+.hidden { display: none !important; }
+.flex { display: flex !important; }
