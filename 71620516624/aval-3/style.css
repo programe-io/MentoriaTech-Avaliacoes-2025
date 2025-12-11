@@ -1,0 +1,227 @@
+/* ===========================
+   CONFIGURAÇÕES GERAIS
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+    color: #222;
+    overflow-x: hidden;
+}
+
+/* HEADER FIXO COM ANIMAÇÃO */
+header {
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 100;
+    transition: 0.4s;
+}
+
+header.scrolled {
+    background: #000;
+    padding: 8px 0;
+}
+
+header .container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #00bfff;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* MENU */
+nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00bfff;
+}
+
+/* MENU MOBILE */
+.menu-btn {
+    display: none;
+}
+.menu-btn span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 6px;
+    background: #fff;
+}
+
+/* HERO */
+#hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1508979827199-ef4f9b52f184') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding-left: 8%;
+}
+
+.hero-content h2 {
+    font-size: 56px;
+    color: #fff;
+}
+.hero-content p {
+    margin: 20px 0;
+    color: #ddd;
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+/* BOTÕES */
+.btn {
+    padding: 12px 30px;
+    background: #00bfff;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.btn-animate {
+    transition: 0.3s;
+}
+.btn-animate:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00bfff;
+}
+
+/* SEÇÕES */
+section {
+    padding: 90px 5%;
+    text-align: center;
+}
+.section-title {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.4s;
+}
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+/* PRODUTOS */
+.produtos-lista {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.produto {
+    width: 300px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    transition: 0.4s;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+.produto:hover {
+    transform: translateY(-10px);
+}
+.produto img {
+    width: 100%;
+    border-radius: 10px;
+}
+.produto span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #00bfff;
+}
+
+/* FORMULÁRIO */
+.form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.form input, .form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ANIMAÇÕES SCROLL */
+.animate-fade, .animate-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s ease-out;
+}
+.show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* RESPONSIVO */
+@media (max-width: 850px) {
+    nav {
+        display: none;
+    }
+    nav.active {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 70px;
+        width: 100%;
+        background: #000;
+        padding: 20px 0;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .menu-btn {
+        display: block;
+        cursor: pointer;
+    }
+}
