@@ -1,0 +1,138 @@
+* {
+        box-sizing: border-box;
+            margin: 0;
+                padding: 0;
+                    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                    }
+
+                    /* fundo bege como na imagem */
+                    body {
+                        background-color: #fdf3e6;
+                            color: #222;
+                            }
+
+                            /* barra superior branca com título à esquerda */
+                            .topbar {
+                                background: #ffffff;
+                                    padding: 8px 16px;
+                                        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+                                            display: flex;
+                                                justify-content: space-between;
+                                                    align-items: center;
+                                                    }
+
+                                                    .topbar h1 {
+                                                        font-size: 18px;
+                                                            font-weight: 600;
+                                                            }
+
+                                                            .subtitle {
+                                                                font-size: 14px;
+                                                                    color: #888;
+                                                                    }
+
+                                                                    /* área central estreita, imitando celular */
+                                                                    .container {
+                                                                        max-width: 600px;
+                                                                            margin: 0 auto;
+                                                                                padding: 12px 8px 32px;
+                                                                                }
+
+                                                                                /* cabeçalho com avatar pequeno (como a princesa Tiana) */
+                                                                                .profile {
+                                                                                    margin-bottom: 8px;
+                                                                                    }
+
+                                                                                    .profile-user {
+                                                                                        display: flex;
+                                                                                            align-items: center;
+                                                                                                gap: 8px;
+                                                                                                    padding: 10px 12px;
+                                                                                                        background-color: #fff7ea;
+                                                                                                            border-radius: 12px;
+                                                                                                                border: 1px solid #f0ddc2;
+                                                                                                                }
+
+                                                                                                                .avatar {
+                                                                                                                    width: 32px;
+                                                                                                                        height: 32px;
+                                                                                                                            border-radius: 50%;
+                                                                                                                                object-fit: cover;
+                                                                                                                                    border: 2px solid #ffd700;   /* contorno amarelo para lembrar futebol/Brasil */
+                                                                                                                                    }
+
+                                                                                                                                    .profile-text {
+                                                                                                                                        display: flex;
+                                                                                                                                            flex-direction: column;
+                                                                                                                                            }
+
+                                                                                                                                            .profile-user-name {
+                                                                                                                                                font-size: 14px;
+                                                                                                                                                    font-weight: 600;
+                                                                                                                                                        margin-bottom: 2px;
+                                                                                                                                                        }
+
+                                                                                                                                                        .profile-user-sub {
+                                                                                                                                                            font-size: 12px;
+                                                                                                                                                                color: #777;
+                                                                                                                                                                }
+
+                                                                                                                                                                /* posts verticais grandes (cartões) */
+                                                                                                                                                                .feed {
+                                                                                                                                                                    display: flex;
+                                                                                                                                                                        flex-direction: column;
+                                                                                                                                                                            gap: 16px;
+                                                                                                                                                                                margin-top: 8px;
+                                                                                                                                                                                }
+
+                                                                                                                                                                                .post {
+                                                                                                                                                                                    background: #ffffff;
+                                                                                                                                                                                        border-radius: 12px;
+                                                                                                                                                                                            border: 1px solid #f0ddc2;
+                                                                                                                                                                                                box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+                                                                                                                                                                                                    overflow: hidden;
+                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                    /* imagem grande ocupando toda a largura, como no print */
+                                                                                                                                                                                                    .post-image {
+                                                                                                                                                                                                        width: 100%;
+                                                                                                                                                                                                            display: block;
+                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                            /* legenda logo abaixo da foto */
+                                                                                                                                                                                                            .post-caption {
+                                                                                                                                                                                                                padding: 8px 12px;
+                                                                                                                                                                                                                    font-size: 13px;
+                                                                                                                                                                                                                        line-height: 1.4;
+                                                                                                                                                                                                                            color: #333;
+                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                            /* linha de curtidas/comentários no rodapé */
+                                                                                                                                                                                                                            .post-footer {
+                                                                                                                                                                                                                                padding: 6px 12px 10px;
+                                                                                                                                                                                                                                    border-top: 1px solid #f0ddc2;
+                                                                                                                                                                                                                                        display: flex;
+                                                                                                                                                                                                                                            justify-content: space-between;
+                                                                                                                                                                                                                                                font-size: 12px;
+                                                                                                                                                                                                                                                    color: #666;
+                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                    /* responsivo para telas menores */
+                                                                                                                                                                                                                                                    @media (max-width: 480px) {
+                                                                                                                                                                                                                                                        .container {
+                                                                                                                                                                                                                                                                padding: 8px 4px 24px;
+                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                        .profile-user {
+                                                                                                                                                                                                                                                                                padding: 8px 10px;
+                                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                                        .post-caption {
+                                                                                                                                                                                                                                                                                                padding: 6px 10px;
+                                                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                                                        .post-footer {
+                                                                                                                                                                                                                                                                                                                padding: 6px 10px 8px;
+                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                    }
+}
