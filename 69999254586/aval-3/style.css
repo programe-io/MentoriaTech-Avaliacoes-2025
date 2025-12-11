@@ -1,0 +1,234 @@
+/* Definição de Variáveis e Reset Básico */
+:root {
+    --purple-primary: #7c3aed; /* Roxo principal, um tom vibrante */
+    --purple-light: #a78bfa;
+    --purple-dark: #6d28d9;
+    --text-color: #333;
+    --bg-color: #f3f4f6;
+    --card-bg: #fff;
+    --border-color: #e5e7eb;
+    --font-primary: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 1. Navbar (Cabeçalho) */
+.navbar {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--purple-primary);
+}
+
+.navbar nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: var(--purple-primary);
+}
+
+/* 2. Layout Principal */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px; /* Espaçamento entre barra lateral e feed */
+}
+
+/* 3. Profile Card (Barra Lateral) */
+.profile-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    flex-basis: 300px; /* Largura fixa para a barra lateral */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    align-self: flex-start; /* Fica no topo e não se estica */
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid var(--purple-light);
+}
+
+.profile-card h3 {
+    color: var(--purple-dark);
+    margin-bottom: 5px;
+}
+
+.profile-card p {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.developer-tag {
+    background-color: var(--purple-primary);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-stats div {
+    text-align: center;
+}
+
+.profile-stats strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--purple-dark);
+}
+
+.profile-stats span {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.edit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--purple-primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.edit-btn:hover {
+    background-color: var(--purple-dark);
+}
+
+/* 4. Feed Posts (Área Central) */
+.feed-posts {
+    flex-grow: 1; /* Ocupa o restante do espaço */
+    max-width: 700px; /* Limita a largura máxima do feed */
+}
+
+.post {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.post-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.post-info h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--purple-dark);
+}
+
+.post-time {
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+
+.post-content p {
+    margin-bottom: 15px;
+}
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.post-actions {
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: var(--purple-primary);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.action-btn:hover {
+    background-color: var(--purple-primary);
+    color: white;
+}
+
+/* 5. Responsividade para telas menores */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column; /* Empilha o perfil e o feed em telas menores */
+        gap: 20px;
+    }
+
+    .profile-card {
+        flex-basis: auto; /* Remove a largura fixa */
+        width: 100%;
+    }
+
+    .feed-posts {
+        max-width: 100%;
+    }
+}
