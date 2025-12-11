@@ -1,0 +1,193 @@
+/*
+ * 1. Reset Básico & Definições Globais
+ * Define fontes e remove margens/preenchimentos padrão para consistência.
+ */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Fundo cinza claro */
+    color: #333; /* Cor do texto principal */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+}
+
+/*
+ * 2. Layout Principal e Contêiner
+ * Centraliza o conteúdo principal na tela.
+ */
+main {
+    width: 90%; /* Largura principal em telas pequenas e médias */
+    max-width: 1100px; /* Limite máximo de largura em telas grandes */
+    margin: 20px auto; /* Centraliza o bloco na horizontal, com margem em cima/baixo */
+    padding: 20px;
+    background-color: #ffffff; /* Fundo branco para o conteúdo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar o bloco */
+}
+
+/*
+ * 3. Cabeçalho (Header) e Navegação (Nav)
+ */
+header {
+    background-color: #007bff; /* Azul vibrante */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Estilo da Lista de Navegação */
+nav ul {
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex; /* Permite alinhar os itens horizontalmente */
+    justify-content: center; /* Centraliza os links */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+/* Estilo dos Links */
+nav ul li a {
+    color: white;
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s; /* Transição suave ao passar o mouse */
+}
+
+nav ul li a:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+    border-radius: 5px;
+}
+
+/*
+ * 4. Seções de Conteúdo
+ */
+section {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd; /* Linha divisória sutil entre seções */
+}
+
+section:last-child {
+    border-bottom: none; /* Remove a linha da última seção */
+}
+
+section h2 {
+    color: #007bff;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/*
+ * 5. Estilo da Imagem
+ */
+img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove espaço extra abaixo da imagem */
+    margin: 20px auto; /* Centraliza a imagem */
+    border-radius: 8px; /* Cantos arredondados */
+}
+
+/*
+ * 6. Tabela
+ */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Remove as bordas duplas */
+    margin: 20px 0;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #e9ecef;
+    color: #333;
+}
+
+/*
+ * 7. Formulário de Contato
+ */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os elementos do formulário */
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: -10px; /* Ajusta o espaço entre o label e o input */
+}
+
+input[type="text"], 
+input[type="email"], 
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura total */
+}
+
+button[type="submit"] {
+    background-color: #28a745; /* Botão verde para ação */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #1e7e34;
+}
+
+/*
+ * 8. Rodapé (Footer)
+ */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/*
+ * 9. Responsividade (Media Queries)
+ * Ajustes para telas menores (ex: celulares).
+ */
+@media (max-width: 768px) {
+    /* Diminui o espaçamento e tamanho de fontes em telas menores */
+    header h1 {
+        font-size: 1.5em;
+    }
+    
+    nav ul {
+        flex-direction: column; /* Links da navegação empilhados verticalmente */
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
