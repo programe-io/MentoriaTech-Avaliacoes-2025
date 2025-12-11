@@ -1,0 +1,214 @@
+/*
+ * Arquivo: styles.css
+ * Tema: Plano de Estudos Semanal
+ * Objetivo: Estilizar o layout semântico (header, nav, main, section, aside, footer, table)
+ */
+
+/* -------------------- 1. RESET E BASE -------------------- */
+:root {
+    /* Cores Principais */
+    --cor-primaria: #007bff; /* Azul vibrante */
+    --cor-secundaria: #6c757d; /* Cinza escuro */
+    --cor-fundo-claro: #f4f7f6;
+    --cor-texto-escuro: #343a40;
+    --cor-borda: #dee2e6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', 'Arial', sans-serif;
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-escuro);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* -------------------- 2. HEADER E NAV -------------------- */
+
+header {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+nav {
+    background-color: var(--cor-secundaria);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav li a {
+    color: white;
+    padding: 15px 25px;
+    display: block;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav li a:hover {
+    background-color: var(--cor-primaria);
+}
+
+/* -------------------- 3. MAIN E SEÇÕES DE CONTEÚDO -------------------- */
+
+main {
+    display: flex;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+section {
+    flex: 3;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+aside {
+    flex: 1;
+    background-color: #fff8e1; /* Amarelo suave */
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 6px solid #ffc107; /* Amarelo de destaque */
+    height: fit-content; /* Para não esticar mais que o conteúdo */
+}
+
+aside h3 {
+    color: #ffc107;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffc107;
+    padding-bottom: 5px;
+}
+
+article p {
+    margin-bottom: 15px;
+    font-size: 1.05em;
+}
+
+/* Estilização para a <span> inline */
+.enfase {
+    color: #dc3545; /* Vermelho/perigo */
+    font-weight: 700;
+}
+
+/* -------------------- 4. TABELA DO PLANO DE ESTUDOS -------------------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95em;
+}
+
+th, td {
+    border: 1px solid var(--cor-borda);
+    padding: 12px 8px;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+th {
+    background-color: var(--cor-primaria);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa; /* Listra suave */
+}
+
+/* Cores de Foco */
+.foco-matematica { background-color: #e6f7ff; color: #0056b3; font-weight: bold; }
+.foco-descanso { background-color: #e9ecef; color: #6c757d; font-style: italic; }
+.foco-revisao { background-color: #fff9e0; color: #856404; font-weight: 500; }
+
+/* Efeito de hover na linha para destacar o horário */
+tbody tr:hover {
+    background-color: #e2f4ff;
+    cursor: default;
+}
+
+/* -------------------- 5. FOOTER -------------------- */
+
+footer {
+    background-color: var(--cor-secundaria);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+/* -------------------- 6. RESPONSIVIDADE (MOBILE) -------------------- */
+
+@media screen and (max-width: 992px) {
+    /* Mudar layout principal para empilhar em telas menores */
+    main {
+        flex-direction: column;
+    }
+
+    /* Reduzir padding para melhor uso do espaço */
+    section, aside {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    /* Ajustes para telas muito pequenas */
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    nav ul {
+        flex-wrap: wrap; /* Permite que os links quebrem linha */
+    }
+
+    nav li a {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    /* Tabela: Força o scroll horizontal em telas pequenas */
+    .container {
+        padding: 0;
+    }
+    
+    section {
+        overflow-x: auto; /* Permite scrollar a tabela */
+        padding: 15px;
+    }
+
+    table {
+        min-width: 700px; /* Garante que a tabela não encolha demais */
+    }
+
+    th, td {
+        padding: 8px 5px;
+        font-size: 0.85em;
+    }
+}
