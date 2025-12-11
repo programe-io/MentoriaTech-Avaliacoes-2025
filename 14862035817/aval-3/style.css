@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Feed</title>
+
+    <!-- Importando o CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="shadow-md p-5 flex items-center navbar">
+        <div class="flex-1 text-center md:text-left uppercase font-bold tracking-wider logo">privsmayrlla</div>
+
+        <nav class="font-bold gap-6 hidden md:flex">
+            <a href="#">Início</a>
+            <a href="#">Amigos</a>
+            <a href="#">Perfil</a>
+        </nav>
+    </header>
+
+    <!-- POSTS -->
+    <main class="p-8 flex flex-col md:flex-row justify-center gap-6 container">
+
+        <!-- POST CARD 1 -->
+        <div class="card">
+            <div class="user-info">
+                <img class="avatar" src="images/profile_01.jpg" alt="avatar">
+                <h2 class="text-lg font-semibold">mayrlla</h2>
+            </div>
+
+            <img class="w-full h-48 object-cover" src="images/post_01.png" alt="post">
+
+            <div class="p-4">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi beatae quae nihil fuga
+                    voluptatem, repellat delectus ut tempore debitis est dolorum deserunt.
+                </p>
+                <span class="time">há 10 minutos</span>
+            </div>
+        </div>
+
+        <!-- POST CARD 2 -->
+        <div class="card">
+            <div class="user-info">
+                <img class="avatar" src="images/profile_01.jpg" alt="avatar">
+                <h2 class="text-lg font-semibold">mayrlla</h2>
+            </div>
+
+            <img class="w-full h-48 object-cover" src="images/post_02.png" alt="post">
+
+            <div class="p-4">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi beatae quae nihil fuga
+                    voluptatem, repellat delectus ut tempore debitis est dolorum deserunt.
+                </p>
+                <span class="time">há 10 minutos</span>
+            </div>
+        </div>
+
+        <!-- POST CARD 3 -->
+        <div class="card">
+            <div class="user-info">
+                <img class="avatar" src="images/profile_01.jpg" alt="avatar">
+                <h2 class="text-lg font-semibold">mayrlla</h2>
+            </div>
+
+            <img class="w-full h-48 object-cover" src="images/post_03.png" alt="post">
+
+            <div class="p-4">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi beatae quae nihil fuga
+                    voluptatem, repellat delectus ut tempore debitis est dolorum deserunt.
+                </p>
+                <span class="time">há 10 minutos</span>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Fundo */
+body {
+    background: linear-gradient(to bottom, #751465, #98a7fc);
+    color: rgb(235, 128, 178);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #0d1b52;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Links do menu */
+nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #6ea8ff;
+}
+
+/* Container dos cards */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 40px 20px;
+}
+
+/* Cards */
+.card {
+    background-color: #211e48;
+    border-radius: 10px;
+    width: 300px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(167, 19, 110, 0.726);
+    transition: transform 0.3s;
+    overflow: hidden;
+    color: #fff;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Informações do usuário */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Texto do post */
+.card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #e6e6e6;
+}
+
+.time {
+    font-size: 12px;
+    color: #c9c9c9;
+}
