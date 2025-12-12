@@ -1,0 +1,1 @@
+https://file+.vscode-resource.vscode-cdn.net/c%3A/Users/Usuario/Desktop/atividade/unnamed.jpg?version%3D1765544270298$0
