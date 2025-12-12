@@ -1,0 +1,212 @@
+/* Configurações de Cores e Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap');
+
+:root {
+    --cor-principal: #8B4513; /* Marrom Rústico (Café/Terra) */
+    --cor-acento: #FFD700; /* Dourado (Gourmet) */
+    --cor-fundo: #F5F5DC; /* Bege Claro (Cozinha) */
+    --cor-card: #ffffff;
+    --cor-texto: #333333;
+}
+
+/* Reset e Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* Estrutura */
+.container {
+    display: grid;
+    grid-template-columns: 3fr 1fr; 
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho e Navegação */
+header {
+    background-color: var(--cor-principal);
+    color: var(--cor-card);
+    padding: 15px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: var(--cor-acento);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--cor-card);
+    margin-left: 25px;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--cor-acento);
+}
+
+/* Área Principal */
+.content-main h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: var(--cor-principal);
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+    border-bottom: 2px dashed #D2B48C; /* Marrom Claro */
+}
+
+/* Estilo para a Tag <article> (Card de Receita) */
+.recipe-card {
+    background-color: var(--cor-card);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    gap: 20px;
+    border-right: 5px solid transparent;
+    transition: border-right 0.3s, box-shadow 0.3s;
+}
+
+.recipe-card:hover {
+    border-right: 5px solid var(--cor-acento);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4em;
+    color: var(--cor-principal);
+    margin-bottom: 10px;
+}
+
+/* Estilo para a <img> da Receita */
+.recipe-card img {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+/* Tags e Destaques (<span>) */
+.recipe-meta {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.tag-tempo, .tag-dificuldade {
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 15px;
+    margin-right: 10px;
+    color: var(--cor-texto);
+    background-color: #EEE8AA; /* Amarelo Pastel */
+    font-size: 0.85em;
+}
+
+.tag-dificuldade.facil {
+    background-color: #A5D6A7; /* Verde Suave */
+}
+
+.tag-dificuldade.medio {
+    background-color: #FFB74D; /* Laranja Suave */
+}
+
+/* Barra Lateral (<aside>) */
+.sidebar-gourmet {
+    position: sticky; 
+    top: 40px;
+    height: fit-content;
+}
+
+.dicas-box, .newsletter-box {
+    background-color: var(--cor-card);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-top: 3px solid var(--cor-acento);
+}
+
+.dicas-box h4, .newsletter-box h4 {
+    color: var(--cor-principal);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.dicas-box ol {
+    padding-left: 20px;
+}
+
+.destaque-ingrediente {
+    font-weight: 700;
+    color: #DC143C; /* Vermelho (Destaque forte) */
+}
+
+/* Newsletter */
+.newsletter-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+}
+
+.btn-assinar {
+    width: 100%;
+    background-color: var(--cor-principal);
+    color: var(--cor-card);
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.btn-assinar:hover {
+    background-color: #A0522D;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-principal);
+    color: var(--cor-fundo);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
