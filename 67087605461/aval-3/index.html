@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto com Foto de Perfil</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .perfil {
+            text-align: center;
+        }
+
+        .perfil img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #555;
+        }
+
+        .galeria {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .item {
+            background: #fafafa;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .descricao {
+            margin-top: 8px;
+            font-size: 16px;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="perfil">
+        <h2>Meu Perfil</h2>
+        <img src="data:image/jpeg;base64,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">
+        <p>Roberto</p>
+    </div>
+
+    <div class="galeria">
+        <div class="item">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_694444-MLB86163763293_062025-O.webp">
+            <p class="descricao">Bomba Patch é uma série de mods (modificações) criados principalmente para Pro Evolution Soccer (PES), especialmente nas versões de PlayStation 2, que se popularizou enormemente no Brasil. Não é um jogo oficial, mas sim uma versão personalizada do PES, famosa por atualizar times, uniformes, jogadores e campeonatos de forma criativa — e muitas vezes bem-humorada.</p>
+        </div>
+
+        <div class="item">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/a/a8/Tony_Hawk%27s_Underground_2_PS2_capa.jpg" alt="Imagem 2">
+            <p class="descricao">Tony Hawk, nos jogos lançados para PlayStation 2, é uma das franquias de esportes mais marcantes da história, combinando skate, manobras radicais e música de peso. Os títulos do PS2 — como Tony Hawk’s Pro Skater 3, Tony Hawk’s Pro Skater 4, Tony Hawk’s Underground (THUG) e Underground 2 — foram especialmente populares e ajudaram a definir o estilo dos jogos de esportes no início dos anos 2000.</p>
+        </div>
+    </div>
+</div>
+<nav>
+    <a>
+        <article> 
+            <hearder> 
+                <main>
+                    <header>
+                        <head>
+                            <span>
+
+</body>
+</html>
