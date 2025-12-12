@@ -1,0 +1,96 @@
+/* ======= ESTILO GERAL ======= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #e8ecf0;
+    color: #333;
+}
+
+/* ======= HEADER ======= */
+header {
+    background: #6a89cc;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* ======= LAYOUT ======= */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+article {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ======= LISTA ======= */
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* ======= EXERCÍCIO VISUAL ======= */
+.exercicio-visual {
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circulo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: #82ccdd;
+    animation: respirar 4s ease-in-out infinite;
+}
+
+@keyframes respirar {
+    0% { transform: scale(1); background: #60a3bc; }
+    50% { transform: scale(1.25); background: #82ccdd; }
+    100% { transform: scale(1); background: #60a3bc; }
+}
+
+.instrucao {
+    text-align: center;
+    font-style: italic;
+    margin-top: 10px;
+    color: #3c6382;
+}
+
+/* ======= FOOTER ======= */
+footer {
+    text-align: center;
+    background: #6a89cc;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* ======= RESPONSIVO ======= */
+@media (max-width: 600px) {
+    .circulo {
+        width: 140px;
+        height: 140px;
+    }
+}
