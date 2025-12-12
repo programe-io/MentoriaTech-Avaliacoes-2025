@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Feed Escolar - Post</title>
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Feather icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- Registrar custom elements "nev" e "spam" -->
+  <script>
+    if (!customElements.get('nev')) {
+      class NevEl extends HTMLElement {}
+      customElements.define('nev', NevEl);
+    }
+    if (!customElements.get('spam')) {
+      class SpamEl extends HTMLElement {}
+      customElements.define('spam', SpamEl);
+    }
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://unpkg.com/feather-icons"></script></head>
+<body class="bg-gray-100 min-h-screen">
+
+  <!-- === HEADER (obrigatório) === -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <button class="p-2 rounded-md hover:bg-gray-100" aria-label="menu">
+          <i data-feather="menu"></i>
+        </button>
+        <h1 class="text-xl font-semibold">Rede Social Escolar</h1>
+      </div>
+
+      <!-- nav semântica -->
+      <nav class="hidden md:flex items-center gap-4 text-gray-700">
+        <a href="#" class="flex items-center gap-1"><i data-feather="home"></i><span class="ml-1">Home</span></a>
+        <a href="#" class="flex items-center gap-1"><i data-feather="search"></i><span class="ml-1">Buscar</span></a>
+        <a href="#" class="flex items-center gap-1"><i data-feather="bell"></i><span class="ml-1">Notificações</span></a>
+        <a href="#" class="flex items-center gap-1"><i data-feather="user"></i><span class="ml-1">Perfil</span></a>
+      </nav>
+
+      <!-- elemento custom "nev" pedido -->
+      <nev class="md:hidden">
+        <a class="p-2" href="#" aria-label="menu mobile"><i data-feather="more-vertical"></i></a>
+      </nev>
+    </div>
+  </header>
+
+  <!-- === LAYOUT PRINCIPAL === -->
+  <main class="max-w-4xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+    <!-- ASIDE (coluna lateral) -->
+    <aside class="hidden lg:block col-span-1">
+      <div class="bg-white rounded-xl p-4 shadow">
+        <h2 class="font-bold mb-3">Atalhos</h2>
+        <ul class="space-y-2 text-gray-700">
+          <li class="flex items-center gap-2"><i data-feather="calendar"></i> Eventos</li>
+          <li class="flex items-center gap-2"><i data-feather="image"></i> Galeria</li>
+          <li class="flex items-center gap-2"><i data-feather="users"></i> Comitês</li>
+        </ul>
+        <div class="mt-4 text-sm text-gray-500">
+          <p><span class="inline-block px-2 py-1 bg-blue-50 text-blue-700 rounded-full font-semibold">Dois pontos</span> Inscrições até 01/05</p>
+          <p class="mt-2">Contato: <spam class="text-xs text-gray-400">coordenação@escola.edu</spam></p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- FEED (conteúdo) -->
+    <section class="col-span-1 lg:col-span-2 space-y-6">
+
+      <!-- CARD DE POST (article obrigatório) -->
+      <article class="bg-white rounded-2xl shadow p-5">
+        <div class="flex items-start gap-4">
+          <img class="w-14 h-14 rounded-full object-cover" src="https://via.placeholder.com/120" alt="avatar">
+          <div class="flex-1">
+            <div class="flex items-center justify-between">
+              <div>
+                <h3 class="font-semibold">João Silva</h3>
+                <p class="text-sm text-gray-500">2 horas atrás • Biblioteca</p>
+              </div>
+              <div class="text-gray-400">
+                <button aria-label="mais opções" class="p-2 rounded hover:bg-gray-100"><i data-feather="more-vertical"></i></button>
+              </div>
+            </div>
+
+            <!-- conteúdo do post -->
+            <div class="mt-3 text-gray-800">
+              <p>Hoje rolou a <strong>Feira de Talentos</strong> — apresentações incríveis e comidas ótimas! 🍿🎶</p>
+              <div class="mt-3 rounded-lg overflow-hidden">
+                <img class="w-full h-64 object-cover" src="https://via.placeholder.com/900x500" alt="foto do evento">
+              </div>
+            </div>
+
+            <!-- ações (curtir, comentar, compartilhar) -->
+            <div class="mt-4 flex items-center justify-between text-gray-600">
+              <div class="flex items-center gap-2">
+                <button class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100" aria-pressed="false">
+                  <i data-feather="thumbs-up"></i>
+                  <span>Curtir</span>
+                </button>
+
+                <button class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100">
+                  <i data-feather="message-circle"></i>
+                  <span>Comentar</span>
+                </button>
+
+                <button class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100">
+                  <i data-feather="share-2"></i>
+                  <span>Compartilhar</span>
+                </button>
+              </div>
+
+              <!-- contador simples -->
+              <div class="text-sm text-gray-500">
+                <span class="font-medium">128</span> curtidas • <span class="font-medium">24</span> comentários
+              </div>
+            </div>
+
+            <!-- área de comentários (div) -->
+            <div class="mt-4">
+              <div class="bg-gray-50 rounded-lg p-3">
+                <div class="flex items-center gap-2">
+                  <img class="w-8 h-8 rounded-full object-cover" src="https://via.placeholder.com/64" alt="perfil pequeno">
+                  <input class="flex-1 bg-transparent outline-none text-sm" placeholder="Escreva um comentário..." />
+                  <button class="text-blue-600 font-semibold">Publicar</button>
+                </div>
+              </div>
+
+              <!-- exemplo de comentário (div) -->
+              <div class="mt-3 space-y-2">
+                <div class="flex items-start gap-3">
+                  <img class="w-8 h-8 rounded-full object-cover" src="https://via.placeholder.com/64" alt="avatar">
+                  <div>
+                    <div class="text-sm"><span class="font-semibold">Ana</span> Adorei a apresentação de dança!</div>
+                    <div class="text-xs text-gray-400">1h</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- tag obrigatória "spam" / custom -->
+            <spam class="mt-4 inline-block text-xs text-gray-400">#FeiraDeTalentos #Cultura</spam>
+
+          </div>
+        </div>
+      </article>
+
+      <!-- Outro post rápido -->
+      <article class="bg-white rounded-2xl shadow p-5">
+        <div class="flex items-start gap-4">
+          <img class="w-14 h-14 rounded-full object-cover" src="https://via.placeholder.com/120" alt="avatar2">
+          <div class="flex-1">
+            <div class="flex items-center justify-between">
+              <div>
+                <h3 class="font-semibold">Clara Mendes</h3>
+                <p class="text-sm text-gray-500">Ontem • Ginásio</p>
+              </div>
+            </div>
+
+            <div class="mt-3 text-gray-800">
+              <p>Resumo: Baile de Primavera foi sucesso! Obrigada a todo comitê de Cultura. 🌸</p>
+            </div>
+
+            <div class="mt-4 flex items-center gap-3 text-gray-600">
+              <button class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100"><i data-feather="thumbs-up"></i> Curtir</button>
+              <button class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100"><i data-feather="message-circle"></i> Comentar</button>
+              <button class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100"><i data-feather="share-2"></i> Compartilhar</button>
+            </div>
+
+            <spam class="mt-3 block text-xs text-gray-400">#BaileDePrimavera</spam>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER MOBILE (barra de navegação com ícones) -->
+  <footer class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-inner md:hidden">
+    <div class="max-w-4xl mx-auto px-4 py-2 flex justify-between">
+      <button class="flex flex-col items-center text-gray-600 text-sm"><i data-feather="home"></i><span>Home</span></button>
+      <button class="flex flex-col items-center text-gray-600 text-sm"><i data-feather="search"></i><span>Buscar</span></button>
+      <button class="flex flex-col items-center text-gray-600 text-sm"><i data-feather="bell"></i><span>Notifs</span></button>
+      <button class="flex flex-col items-center text-gray-600 text-sm"><i data-feather="user"></i><span>Perfil</span></button>
+    </div>
+  </footer>
+
+  <script>
+    feather.replace();
+  </script>
+<script>document.addEventListener('DOMContentLoaded',()=>{try{feather.replace();}catch(e){}});</script></body>
+</html>
