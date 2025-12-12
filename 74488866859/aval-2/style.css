@@ -1,0 +1,245 @@
+/* --- ADICIONADO PARA ESTILIZAR A TAG <NAV> --- */
+.main-nav {
+    background-color: #0056b3; /* Um azul um pouco mais escuro para o menu */
+    padding: 10px 0;
+    width: 100%;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* Alinha o menu à direita */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: var(--cor-card); /* Cor branca */
+    margin-left: 20px;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.main-nav ul li a:hover {
+    color: var(--cor-secundaria);
+}
+/* ----------------------------------------------- */
+
+/* --- CÓDIGO CSS ANTERIOR (Apenas para referência, o foco é o bloco acima) --- */
+/* Configurações de Cores e Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+:root {
+    --cor-primaria: #007bff; /* Azul (Confiança) */
+    --cor-secundaria: #FFC107; /* Amarelo (Ação/Alerta) */
+    --cor-fundo: #F8F9FA; 
+    --cor-card: #ffffff;
+    --cor-texto: #343A40;
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header (Hero Section) */
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-card);
+    /* Ajustando o padding superior por causa do nav */
+    padding: 0 0 80px 0; 
+    text-align: center;
+    box-shadow: 0 5px 15px var(--cor-sombra);
+}
+
+.header-content {
+    padding-top: 50px; /* Adiciona padding na seção de conteúdo para compensar o nav */
+}
+
+.header-content h1 {
+    font-size: 3em;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.destaque-tempo {
+    color: var(--cor-secundaria);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Botão de Chamada para Ação (CTA) */
+.btn-cta {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: #FFB300;
+}
+
+/* Seções Gerais */
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2em;
+    color: var(--cor-primaria);
+    margin-bottom: 40px;
+}
+
+/* Grade de Serviços */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-item {
+    background-color: var(--cor-card);
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--cor-sombra);
+    transition: transform 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    border-top: 5px solid var(--cor-primaria);
+}
+
+.service-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.service-item h3 {
+    color: var(--cor-texto);
+    margin-bottom: 10px;
+}
+
+/* Depoimentos */
+#depoimentos {
+    background-color: var(--cor-primaria);
+    color: var(--cor-card);
+}
+
+#depoimentos h2 {
+    color: var(--cor-secundaria);
+}
+
+.depoimento-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.depoimento-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--cor-texto);
+    padding: 20px;
+    border-radius: 8px;
+    font-style: italic;
+    text-align: left;
+}
+
+.cliente-nome {
+    font-weight: 700;
+    margin-top: 10px;
+    display: block;
+    text-align: right;
+    font-style: normal;
+    color: var(--cor-primaria);
+}
+
+/* Área de Contato (<aside>) */
+.contato-box {
+    background-color: var(--cor-card);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--cor-sombra);
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.contato-box h2 {
+    color: var(--cor-texto);
+    margin-bottom: 25px;
+}
+
+.contato-box input,
+.contato-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-cta-form {
+    background-color: var(--cor-primaria);
+    color: var(--cor-card);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-cta-form:hover {
+    background-color: #0056b3;
+}
+
+.urgencia-info {
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+.destaque-urgencia {
+    font-weight: 900;
+    color: var(--cor-secundaria);
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
