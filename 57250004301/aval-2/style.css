@@ -1,0 +1,178 @@
+/* RESET BÁSICO */
+* {
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8; /* Fundo cinza claro */
+    color: #333; /* Cor de texto principal */
+}
+
+/* 1. HEADER E NAVEGAÇÃO */
+header {
+    background-color: #004d40; /* Verde escuro institucional */
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.5em;
+}
+
+nav {
+    background-color: #00695c; /* Um tom de verde ligeiramente mais claro */
+    padding: 0.8rem 0;
+    position: sticky; /* Fixa a navegação no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 0.8rem;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background-color: #00897b;
+}
+
+/* 2. LAYOUT PRINCIPAL (MAIN E ASIDE) */
+main {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto;
+    gap: 30px; /* Espaço entre section e aside */
+    padding: 0 20px;
+}
+
+/* SECTION: Conteúdo principal, ocupa 70% da largura */
+section#conteudo-principal {
+    flex: 3;
+}
+
+/* ASIDE: Barra lateral, ocupa 30% da largura */
+aside#dicas {
+    flex: 1;
+    background-color: #e0f2f1; /* Verde-água muito claro */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 3. ESTILIZAÇÃO DOS ARTIGOS E ELEMENTOS */
+article {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+article h2, article h3 {
+    color: #004d40;
+    border-bottom: 2px solid #b2dfdb; /* Linha sutil para separar o título */
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* DIV para agrupar métodos */
+#metodos div {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-left: 5px solid #004d40;
+    background-color: #f1f8e9; /* Fundo claro para destaque do método */
+}
+
+/* Destaque de texto (usado com <span>) */
+.tip-highlight {
+    background-color: #ffeb3b; /* Amarelo vibrante para chamar atenção */
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* 4. TABELA DE HORÁRIOS */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+table th {
+    background-color: #b2dfdb; /* Cabeçalho da tabela */
+    color: #004d40;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) { /* Estilo zebrado */
+    background-color: #f9f9f9;
+}
+
+.schedule-time {
+    background-color: #e0f7fa; /* Cor de destaque para os horários */
+    font-weight: bold;
+    color: #004d40;
+}
+
+/* 5. IMAGENS */
+.method-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Torna a imagem circular */
+    object-fit: cover;
+    margin-right: 15px;
+    vertical-align: middle;
+    border: 2px solid #004d40;
+}
+
+/* 6. RODAPÉ */
+footer {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 30px;
+}
+
+/* Ajuste de responsividade */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* Coloca a barra lateral abaixo do conteúdo principal */
+    }
+
+    section#conteudo-principal, aside#dicas {
+        flex: auto; /* Permite que ocupem a largura total */
+    }
+
+    nav ul {
+        flex-direction: column; /* Links da navegação empilhados */
+        gap: 10px;
+    }
+}
