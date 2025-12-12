@@ -1,0 +1,95 @@
+/* Paleta de Cores Marrom */
+:root {
+    --cor-primaria: #4E342E; /* Marrom Escuro Principal */
+    --cor-secundaria: #6D4C41; /* Marrom Médio para fundos/cabeçalho */
+    --cor-destaque: #8D6E63; /* Marrom Claro para botões/links */
+    --cor-texto: #FBEFDD; /* Quase Branco/Bege para texto */
+    --cor-fundo: #A1887F; /* Marrom suave para o corpo */
+}
+
+/* Reset básico e tipografia */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    color: var(--cor-texto);
+    margin-top: 0;
+}
+
+/* Navegação */
+nav {
+    background-color: var(--cor-primaria);
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--cor-destaque);
+}
+
+nav a.active {
+    background-color: var(--cor-destaque);
+    font-weight: bold;
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white; /* Fundo branco ou mais claro para o conteúdo do post */
+    color: var(--cor-primaria); /* Texto escuro dentro do post */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-section {
+    padding: 20px 0;
+    border-bottom: 1px dashed var(--cor-destaque);
+    display: none; /* Esconde todos por padrão */
+}
+
+.post-section:last-child {
+    border-bottom: none;
+}
+
+.post-section.active {
+    display: block; /* Mostra o conteúdo ativo */
+}
+
+.post h3 {
+    color: var(--cor-secundaria);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    margin-top: 20px;
+}
