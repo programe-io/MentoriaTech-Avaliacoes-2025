@@ -1,65 +1,525 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+<!-- 
+    ========== COMANDOS HTML BÁSICOS ==========
+    DOCTYPE - Define o tipo de documento (HTML5)
+    <html> - Elemento raiz que contém todo o conteúdo
+    lang - Atributo que define o idioma da página
+-->
+
 <head>
+    <!-- Meta Tags - Informações sobre o documento -->
     <meta charset="UTF-8">
+    <!-- charset - Define o conjunto de caracteres (UTF-8 para suportar acentos) -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Meu Site</title>
+    <!-- viewport - Essencial para responsividade em dispositivos móveis -->
+    
+    <meta name="description" content="Página com exemplos dos comandos HTML básicos">
+    <!-- description - Descrição da página para mecanismos de busca -->
+    
+    <meta name="keywords" content="HTML, básico, comandos, tutorial">
+    <!-- keywords - Palavras-chave relevantes -->
+    
+    <meta name="author" content="Seu Nome">
+    <!-- author - Autor do documento -->
+    
+    <title>HTML - Comandos Básicos</title>
+    <!-- title - Título que aparece na aba do navegador -->
+    
+    <link rel="stylesheet" href="app.css">
+    <!-- link - Vincula arquivo CSS externo -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet"></head>
+
 <body>
+    <!-- body - Contém todo o conteúdo visível da página -->
 
+    <!-- ========== SEÇÃO 1: ESTRUTURA SEMÂNTICA ========== -->
     <header>
-
-        <h1>Meu Site</h1>
-        <p>Meu site muito top!</p>
-
+        <!-- header - Cabeçalho principal da página -->
+        <nav>
+            <!-- nav - Seção de navegação -->
+            <ul>
+                <!-- ul - Lista não ordenada -->
+                <li><a href="#basicos">Básicos</a></li>
+                <!-- li - Item de lista -->
+                <!-- a - Link/âncora para navegar -->
+                
+                <li><a href="#texto">Texto</a></li>
+                <li><a href="#listas">Listas</a></li>
+                <li><a href="#formulario">Formulário</a></li>
+                <li><a href="#midia">Mídia</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
+    <main>
+        <!-- main - Conteúdo principal e único da página -->
+        
+        <!-- ========== SEÇÃO 2: COMANDOS BÁSICOS ========== -->
+        <section id="basicos">
+            <!-- section - Define uma seção temática do documento -->
+            <h1>1. Comandos HTML Básicos</h1>
+            <!-- h1 até h6 - Títulos de diferentes níveis (h1 é o mais importante) -->
+            
+            <h2>Exemplo de H2</h2>
+            <h3>Exemplo de H3</h3>
+            <h4>Exemplo de H4</h4>
+            <h5>Exemplo de H5</h5>
+            <h6>Exemplo de H6</h6>
+            
+            <p>
+                Este é um parágrafo. A tag &lt;p&gt; define um parágrafo e cria espaço acima e abaixo.
+                <!-- &lt; e &gt; - Entidades HTML para mostrar < e > -->
+            </p>
+            
+            <p>
+                Você pode usar <strong>strong</strong> para texto importante (negrito semântico)
+                <!-- strong - Define texto com importância/ênfase forte -->
+            </p>
+            
+            <p>
+                Ou usar <b>b</b> para texto em negrito puro (sem semântica)
+                <!-- b - Negrito puro, apenas visual -->
+            </p>
+            
+            <p>
+                Também <em>em</em> para ênfase (itálico semântico)
+                <!-- em - Define ênfase/destaque (itálico semântico) -->
+            </p>
+            
+            <p>
+                E <i>i</i> para itálico puro
+                <!-- i - Itálico puro, sem semântica -->
+            </p>
+            
+            <p>
+                Você pode usar <u>u</u> para sublinhar
+                <!-- u - Sublinhado -->
+            </p>
+            
+            <p>
+                Ou <mark>mark</mark> para destacar com cor de fundo
+                <!-- mark - Marca/destaca com fundo colorido -->
+            </p>
+            
+            <p>
+                <small>small</small> para texto pequeno
+                <!-- small - Texto menor (legal notices, comentários) -->
+            </p>
+            
+            <p>
+                <del>Texto deletado</del> com <ins>texto inserido</ins>
+                <!-- del - Texto que foi deletado (barrado) -->
+                <!-- ins - Texto que foi inserido (sublinhado) -->
+            </p>
+            
+            <p>
+                <sub>Subscrito</sub> e <sup>Superscrito</sup>
+                <!-- sub - Subscrito (índice) -->
+                <!-- sup - Superscrito (expoente) -->
+            </p>
+            
+            <hr>
+            <!-- hr - Linha horizontal (separador) -->
+            
+            <p>
+                <code>&lt;code&gt;</code> é usado para mostrar código
+                <!-- code - Mostra código inline -->
+            </p>
+            
+            <pre>
+                <!-- pre - Preserva espaços e quebras de linha (preformatted) -->
+function exemplo() {
+    console.log("Código preserva espaçamento");
+}
+            </pre>
+            
+            <blockquote>
+                "Esta é uma citação em bloco. Geralmente tem indentação especial."
+                <!-- blockquote - Bloco de citação -->
+            </blockquote>
+        </section>
 
-        <a href="">Inicio</a>
-        <a href="">Pagina 2</a>        
-        <a href="">Pagina 3</a>        
-        <a href="">Pagina 4</a>        
+        <!-- ========== SEÇÃO 3: FORMATAÇÃO DE TEXTO ========== -->
+        <section id="texto">
+            <h2>2. Formatação de Texto</h2>
+            
+            <p>
+                Você pode quebrar<br>uma linha com &lt;br&gt;
+                <!-- br - Quebra de linha -->
+            </p>
+            
+            <address>
+                <!-- address - Informações de contato -->
+                João Silva<br>
+                Rua Principal, 123<br>
+                São Paulo, SP 01000-000
+            </address>
+            
+            <p>
+                Também há <abbr title="HyperText Markup Language">HTML</abbr> para abreviações
+                <!-- abbr - Abreviação com tooltip -->
+            </p>
+            
+            <p>
+                <q>Uma citação inline</q> é diferente de blockquote
+                <!-- q - Citação inline -->
+            </p>
+            
+            <p>
+                Use <cite>cite</cite> para referenciar títulos de obras
+                <!-- cite - Citação de uma obra criativa -->
+            </p>
+            
+            <p>
+                <kbd>Ctrl+S</kbd> é usado para teclado/entrada de usuário
+                <!-- kbd - Entrada do teclado -->
+            </p>
+            
+            <p>
+                <samp>Esta é uma saída de programa</samp>
+                <!-- samp - Saída de programa/computador -->
+            </p>
+            
+            <p>
+                <var>x</var> = <var>y</var> + 2
+                <!-- var - Variável em expressões matemáticas -->
+            </p>
+        </section>
 
-    </nav>
+        <!-- ========== SEÇÃO 4: LISTAS ========== -->
+        <section id="listas">
+            <h2>3. Listas</h2>
+            
+            <h3>Lista Não Ordenada (ul)</h3>
+            <!-- ul - Unordered List -->
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2
+                    <ul>
+                        <!-- Listas aninhadas/nested -->
+                        <li>Subitem 2.1</li>
+                        <li>Subitem 2.2</li>
+                    </ul>
+                </li>
+                <li>Item 3</li>
+            </ul>
+            
+            <h3>Lista Ordenada (ol)</h3>
+            <!-- ol - Ordered List -->
+            <ol>
+                <li>Primeiro passo</li>
+                <li>Segundo passo</li>
+                <li>Terceiro passo</li>
+            </ol>
+            
+            <h3>Lista de Descrição (dl)</h3>
+            <!-- dl - Description List -->
+            <dl>
+                <!-- dt - Description Term (termo) -->
+                <!-- dd - Description Definition (definição) -->
+                <dt>HTML</dt>
+                <dd>Linguagem de marcação para criar páginas web</dd>
+                
+                <dt>CSS</dt>
+                <dd>Linguagem para estilizar elementos HTML</dd>
+                
+                <dt>JavaScript</dt>
+                <dd>Linguagem de programação para interatividade</dd>
+            </dl>
+        </section>
 
-    <section id="row">
+        <!-- ========== SEÇÃO 5: FORMULÁRIO ========== -->
+        <section id="formulario">
+            <h2>4. Formulários</h2>
+            
+            <form id="contactForm" method="POST" action="#enviar">
+                <!-- form - Define um formulário interativo -->
+                <!-- method - GET (padrão, passa dados na URL) ou POST (passa no corpo) -->
+                <!-- action - URL onde o formulário será enviado -->
+                
+                <fieldset>
+                    <!-- fieldset - Agrupa campos relacionados -->
+                    <legend>Informações Pessoais</legend>
+                    <!-- legend - Título do fieldset -->
+                    
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <!-- label - Rótulo para input (vinculado pelo 'for') -->
+                        
+                        <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
+                        <!-- input - Campo de entrada (type='text' é o padrão) -->
+                        <!-- id - Identificador único (vincula com label) -->
+                        <!-- name - Nome do campo (enviado no formulário) -->
+                        <!-- placeholder - Texto de exemplo dentro do input -->
+                        <!-- required - Campo obrigatório -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        <!-- type='email' - Valida formato de email -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Telefone:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999">
+                        <!-- type='tel' - Para números de telefone -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age">Idade:</label>
+                        <input type="number" id="age" name="age" min="0" max="150">
+                        <!-- type='number' - Para números com min/max -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Data de Nascimento:</label>
+                        <input type="date" id="date" name="date">
+                        <!-- type='date' - Abre calendário -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time">Horário:</label>
+                        <input type="time" id="time" name="time">
+                        <!-- type='time' - Abre seletor de hora -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="color">Cor Favorita:</label>
+                        <input type="color" id="color" name="color">
+                        <!-- type='color' - Abre seletor de cor -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="file">Enviar Arquivo:</label>
+                        <input type="file" id="file" name="file" accept=".jpg,.png,.pdf">
+                        <!-- type='file' - Upload de arquivos -->
+                        <!-- accept - Tipos de arquivo aceitos -->
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Preferências</legend>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" name="message" rows="5" cols="40" placeholder="Digite sua mensagem..."></textarea>
+                        <!-- textarea - Área de texto multilinha -->
+                        <!-- rows - Número de linhas visíveis -->
+                        <!-- cols - Número de colunas visíveis -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country">País:</label>
+                        <select id="country" name="country">
+                            <!-- select - Dropdown/seleção -->
+                            <option value="">-- Selecione --</option>
+                            <!-- option - Opção dentro do select -->
+                            <option value="br">Brasil</option>
+                            <option value="us">Estados Unidos</option>
+                            <option value="ar">Argentina</option>
+                            <option value="mx">México</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="newsletter" value="sim">
+                            <!-- checkbox - Caixa de seleção múltipla -->
+                            Desejo receber newsletter
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="radio" name="genero" value="masculino">
+                            <!-- radio - Seleção única (exclui outras) -->
+                            Masculino
+                        </label>
+                        <label>
+                            <input type="radio" name="genero" value="feminino">
+                            Feminino
+                        </label>
+                        <label>
+                            <input type="radio" name="genero" value="outro">
+                            Outro
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="range">Satisfação (0-100):</label>
+                        <input type="range" id="range" name="range" min="0" max="100">
+                        <!-- type='range' - Controle deslizante -->
+                    </div>
+                </fieldset>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <!-- button type='submit' - Envia o formulário -->
+                    
+                    <button type="reset" class="btn">Limpar</button>
+                    <!-- button type='reset' - Limpa todos os campos -->
+                    
+                    <button type="button" class="btn">Cancelar</button>
+                    <!-- button type='button' - Botão comum (sem função padrão) -->
+                </div>
+            </form>
+        </section>
 
-        <aside>
+        <!-- ========== SEÇÃO 6: MÍDIA ========== -->
+        <section id="midia">
+            <h2>5. Mídia (Imagens, Vídeos, Áudio)</h2>
+            
+            <h3>Imagem</h3>
+            <img src="https://via.placeholder.com/300x200" alt="Imagem de exemplo">
+            <!-- img - Inserir imagem -->
+            <!-- src - Caminho/URL da imagem -->
+            <!-- alt - Texto alternativo (importante para acessibilidade) -->
+            
+            <h3>Figura com Legenda</h3>
+            <figure>
+                <!-- figure - Container semântico para imagem/diagrama -->
+                <img src="https://via.placeholder.com/300x200" alt="Imagem com legenda">
+                <figcaption>
+                    <!-- figcaption - Legenda da figura -->
+                    Esta é a legenda da imagem
+                </figcaption>
+            </figure>
+            
+            <h3>Vídeo</h3>
+            <video width="400" height="300" controls>
+                <!-- video - Reprodutor de vídeo -->
+                <!-- controls - Mostra botões de controle (play, pausa, volume) -->
+                <!-- width/height - Dimensões -->
+                
+                <source src="video.mp4" type="video/mp4">
+                <!-- source - Arquivo de vídeo (formato MP4) -->
+                
+                <source src="video.webm" type="video/webm">
+                <!-- Múltiplos formatos para compatibilidade -->
+                
+                Seu navegador não suporta o elemento video.
+                <!-- Fallback para navegadores antigos -->
+            </video>
+            
+            <h3>Áudio</h3>
+            <audio controls>
+                <!-- audio - Reprodutor de áudio -->
+                <source src="audio.mp3" type="audio/mpeg">
+                <!-- source - Arquivo de áudio -->
+                <source src="audio.ogg" type="audio/ogg">
+                Seu navegador não suporta o elemento audio.
+            </audio>
+            
+            <h3>Iframe (Conteúdo Externo)</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            <!-- iframe - Insere conteúdo de outra página (como YouTube) -->
+            <!-- src - URL do conteúdo -->
+            <!-- allow - Permissões de recursos -->
+            <!-- allowfullscreen - Permite tela cheia -->
+        </section>
 
-            <h2>Sobre Mim</h2>
-            <h5>Fotinha</h5>
-            <div class="fakeimage">Imagem</div>
+        <!-- ========== SEÇÃO 7: TABELA ========== -->
+        <section>
+            <h2>6. Tabelas</h2>
+            
+            <table border="1">
+                <!-- table - Define uma tabela -->
+                <!-- border - Adiciona bordas (deprecated, use CSS) -->
+                
+                <caption>Exemplo de Tabela</caption>
+                <!-- caption - Título/legenda da tabela -->
+                
+                <thead>
+                    <!-- thead - Cabeçalho da tabela -->
+                    <tr>
+                        <!-- tr - Linha da tabela -->
+                        <th>Coluna 1</th>
+                        <!-- th - Cabeçalho (header) da coluna -->
+                        <th>Coluna 2</th>
+                        <th>Coluna 3</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <!-- tbody - Corpo da tabela -->
+                    <tr>
+                        <td>Dados 1</td>
+                        <!-- td - Célula de dados -->
+                        <td>Dados 2</td>
+                        <td>Dados 3</td>
+                    </tr>
+                    <tr>
+                        <td>Dados 4</td>
+                        <td>Dados 5</td>
+                        <td>Dados 6</td>
+                    </tr>
+                </tbody>
+                
+                <tfoot>
+                    <!-- tfoot - Rodapé da tabela -->
+                    <tr>
+                        <td>Total</td>
+                        <td colspan="2">Informação rodapé</td>
+                        <!-- colspan - Célula que ocupa múltiplas colunas -->
+                    </tr>
+                </tfoot>
+            </table>
+            
+            <table border="1" style="margin-top: 20px;">
+                <tr>
+                    <td rowspan="2">Célula 1</td>
+                    <!-- rowspan - Célula que ocupa múltiplas linhas -->
+                    <td>Célula 2</td>
+                </tr>
+                <tr>
+                    <td>Célula 3</td>
+                </tr>
+            </table>
+        </section>
 
-            <p>Minha Bio</p>
-            <h3>Minha Galeria</h3>
-
-            <div class="fakeimage">Imagem</div>            
-            <div class="fakeimage">Imagem</div>            
-            <div class="fakeimage">Imagem</div>
-
-        </aside>
-
-        <main>
+        <!-- ========== SEÇÃO 8: ELEMENTOS SEMÂNTICOS ========== -->
+        <section>
+            <h2>7. Elementos Semânticos</h2>
+            
             <article>
-                <h2>TITULO DA POSTAGEM</h2>
-                <h5>Jaiane, 24 de set, 2025</h5>
-                <img src="" alt="">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing 
-                    elit. Ex, minus aliquam nostrum, id veniam, 
-                    repellat distinctio libero molestiae dicta labore 
-                    veritatis dolore recusandae unde! Ipsum suscipit ducimus 
-                    quo magni rerum.</p>
+                <!-- article - Conteúdo independente/autossuficiente -->
+                <h3>Artigo de Exemplo</h3>
+                <p>Este é um artigo que pode ser distribuído independentemente.</p>
             </article>
-        </main>
+            
+            <aside>
+                <!-- aside - Conteúdo relacionado mas separado (sidebar) -->
+                <h3>Informação Adicional</h3>
+                <p>Esta é uma barra lateral com informações extras.</p>
+            </aside>
+            
+            <details>
+                <!-- details - Conteúdo expansível/colapsável -->
+                <summary>Clique para mais detalhes</summary>
+                <!-- summary - Título/resumo do details -->
+                <p>Este conteúdo aparece quando você clica em "Detalhes"</p>
+            </details>
+        </section>
 
-    </section>
+    </main>
 
+    <!-- ========== RODAPÉ ========== -->
     <footer>
-        <p>CopyRight - Todos os Direitos Reservados - 2024 | programe.io</p>
+        <!-- footer - Rodapé da página -->
+        <p>&copy; 2025 Exemplos de HTML Básico. Todos os direitos reservados.</p>
+        <!-- &copy; - Entidade HTML para símbolo de copyright © -->
     </footer>
 
-</body>
+    <!-- ========== SCRIPT ========== -->
+    <script src="app.js"></script>
+    <!-- script - Carrega arquivo JavaScript externo -->
+    <!-- Você também pode adicionar JS inline: <script>console.log('Olá');</script> -->
+
+<script src="script.js"></script></body>
 </html>
