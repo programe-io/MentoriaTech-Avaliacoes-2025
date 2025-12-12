@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto com Foto de Perfil</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .perfil {
+            text-align: center;
+        }
+
+        .perfil img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #555;
+        }
+
+        .galeria {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .item {
+            background: #fafafa;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .descricao {
+            margin-top: 8px;
+            font-size: 16px;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<div class="container">
+    <div class="perfil">
+        <h2>Meu Perfil</h2>
+        <img src="data:image/jpeg;base64,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">
+        <p>samuel</p>
+    </div>
+
+    <div class="galeria">
+        <div class="item">
+            <img src="https://br.web.img2.acsta.net/img/9c/0f/9c0f6e33b4fafe1a3490b3fe4b4d7cce.jpg" alt="Imagem 1">
+            <p class="descricao">Castelo Infinito” mostra Tanjiro e os caçadores de demônios sendo levados para uma fortaleza misteriosa criada pelos Onis. Lá, eles enfrentam batalhas intensas contra inimigos poderosos enquanto tentam proteger a humanidade e derrotar as forças do mal. O filme marca o início do confronto final da história, com muita ação, emoção e momentos decisivos para os personagens..</p>
+        </div>
+
+        <div class="item">
+            <img src="https://www.otempo.com.br/content/dam/otempo/editorias/entretenimento/filmes-e-series/2023/6/entretenimento-black-clover-e-os-melhores-filmes-de-anime-para-ver-na-netflix-1708770801.jpeg" alt="Imagem 2">
+            <p class="descricao">Black Clover: A Espada do Rei Mago é o primeiro longa-metragem da série Black Clover, colocando o protagonista Asta no centro de uma ameaça inédita ao Reino Clover.
+
+A história apresenta o retorno do lendário Conrad Leto, um ex-Rei Mago que havia sido selado no passado. Reaparecendo com imenso poder e ideais distorcidos de justiça, Conrad pretende “reconstruir” o reino, mesmo que isso custe vidas inocentes. Para isso, ele liberta outros antigos Reis Magos que também haviam sido selados, formando um grupo de inimigos extremamente poderosos.
+
+Sem magia, mas com sua determinação inabalável e sua Anti-Magia, Asta se torna a peça central da resistência. Ao lado de Yuno, Yami, Noelle, e o resto dos Touros Negros, ele enfrenta batalhas colossais para impedir que o plano de Conrad destrua tudo o que eles juraram proteger.</p>
+        </div>
+    </div>
+</div>
+<herader>
+    <h2>
+        <main>
+            <pov>
+                <article>
+                    <header>
+                        <nav>
+                            <a>
+                                <span>
+
+</body>
+</html>
