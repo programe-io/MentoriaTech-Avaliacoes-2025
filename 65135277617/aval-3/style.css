@@ -1,0 +1,173 @@
+/* ------------------------------------------- */
+/* 1. Reset Básico e Estilo Geral              */
+/* ------------------------------------------- */
+
+/* Remove margem e preenchimento padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura total */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+    min-height: 100vh; /* Garante que o body ocupe a altura mínima da viewport */
+    display: flex;
+    flex-direction: column; /* Configuração para layout de rodapé fixo */
+}
+
+/* ------------------------------------------- */
+/* 2. Layout Principal (Usando CSS Grid)       */
+/* ------------------------------------------- */
+
+/* Usamos o body como container principal para a estrutura header/main/footer */
+/* No exemplo, o main é o container que vai organizar o artigo e o aside */
+main {
+    display: grid;
+    /* Define o layout principal: uma coluna para o artigo e uma para o aside */
+    grid-template-columns: 3fr 1fr; /* Artigo ocupa 3 partes, Aside ocupa 1 parte */
+    gap: 30px; /* Espaço entre as colunas */
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto; /* Centraliza o conteúdo */
+    padding: 20px 0;
+    flex-grow: 1; /* Permite que o main ocupe o espaço restante */
+}
+
+/* ------------------------------------------- */
+/* 3. Estilo do Cabeçalho e Navegação (Flexbox)*/
+/* ------------------------------------------- */
+
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center; /* Alinha verticalmente logo e título */
+    justify-content: space-between; /* Espaça o título da navegação */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    margin-right: 15px;
+    border-radius: 50%; /* Deixa o logo redondo */
+}
+
+header h1 {
+    font-size: 1.8em;
+    flex-grow: 1; /* Permite que o título ocupe o espaço restante */
+}
+
+/* Estilo para a tag NAV (links) */
+nav ul {
+    list-style: none;
+    display: flex; /* Alinha os itens da lista horizontalmente */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none; /* Remove sublinhado */
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #004085;
+    border-radius: 5px;
+}
+
+/* ------------------------------------------- */
+/* 4. Estilo do Conteúdo e Barra Lateral       */
+/* ------------------------------------------- */
+
+article {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    /* Ocupa a primeira coluna do Grid */
+    grid-column: 1 / 2; 
+}
+
+/* Estilo para a tag ASIDE */
+aside {
+    padding: 20px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    /* Ocupa a segunda coluna do Grid */
+    grid-column: 2 / 3;
+}
+
+aside ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+aside a {
+    color: #0056b3;
+}
+
+/* ------------------------------------------- */
+/* 5. Estilo de Elementos de Mídia e Rodapé    */
+/* ------------------------------------------- */
+
+img {
+    max-width: 100%; /* Garante que imagens não estourem o container */
+    height: auto;
+    display: block;
+    margin: 15px 0;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+}
+
+/* Estilo do Rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Empurra o rodapé para o final da página */
+}
+
+/* ------------------------------------------- */
+/* 6. Responsividade (Media Queries)           */
+/* ------------------------------------------- */
+
+/* Layout para telas pequenas (smartphones) */
+@media (max-width: 768px) {
+    
+    /* Reorganiza o layout principal do Grid para uma coluna */
+    main {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+    
+    /* Header (logo, título e nav) */
+    header {
+        flex-direction: column; /* Empilha o conteúdo (logo/título em cima, nav embaixo) */
+        text-align: center;
+    }
+    
+    nav ul {
+        flex-direction: column; /* Empilha os links de navegação */
+        margin-top: 10px;
+    }
+    
+    nav ul li a {
+        padding: 8px 0;
+    }
+    
+    /* O aside agora ocupa a largura total, abaixo do artigo */
+    aside {
+        grid-column: 1 / 2;
+    }
+}
