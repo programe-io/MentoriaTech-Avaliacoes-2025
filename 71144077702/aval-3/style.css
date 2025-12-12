@@ -1,0 +1,84 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #333;
+    color: white;
+    margin-top: 30px;
+}
+
+/* Estilos da Galeria (Flexbox) */
+.gallery-container {
+    display: flex;
+    /* Permite que os itens quebrem para a próxima linha */
+    flex-wrap: wrap; 
+    /* Distribui o espaço entre os itens e as bordas */
+    justify-content: space-around; 
+    padding: 20px;
+    max-width: 1200px; /* Limita a largura máxima da galeria */
+    margin: 0 auto; /* Centraliza a galeria */
+}
+
+.gallery-item {
+    /* Define a largura inicial do item. 
+       Aqui, 30% permite 3 colunas com um pouco de espaço. */
+    flex-basis: 30%; 
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Garante que o item não cresça ou encolha */
+    flex-grow: 0; 
+    flex-shrink: 0;
+    overflow: hidden; /* Importante para o efeito de hover */
+    border-radius: 8px;
+}
+
+.gallery-item img {
+    /* A imagem preenche o contêiner do item */
+    width: 100%; 
+    /* Define uma altura fixa para que todas as imagens fiquem uniformes */
+    height: 250px; 
+    /* Garante que a imagem cubra a área, cortando se necessário */
+    object-fit: cover; 
+    display: block;
+    /* Transição suave para o efeito de hover */
+    transition: transform 0.3s ease; 
+}
+
+/* Efeito de Hover (passar o mouse) */
+.gallery-item img:hover {
+    /* Aumenta a imagem em 5% ao passar o mouse */
+    transform: scale(1.05); 
+}
+
+
+/* Responsividade para Telas Menores (Ex: Tablets) */
+@media (max-width: 768px) {
+    .gallery-item {
+        /* Define 45% para que caibam 2 colunas */
+        flex-basis: 45%; 
+    }
+}
+
+/* Responsividade para Telas Muito Pequenas (Ex: Celulares) */
+@media (max-width: 480px) {
+    .gallery-item {
+        /* Define 100% para que haja 1 imagem por linha */
+        flex-basis: 100%; 
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
