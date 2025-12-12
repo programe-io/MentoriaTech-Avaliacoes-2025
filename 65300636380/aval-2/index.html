@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eventos Sociais - Escola</title>
+  <style>
+    /* Reset simples */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height: 1.5;
+      background: #f6f8fb;
+      color: #222;
+      padding: 20px;
+    }
+
+    header {
+      background: linear-gradient(90deg,#4b79a1,#283e51);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+    }
+
+    header h1 { font-size: 1.6rem; margin-bottom: 6px; }
+    header p { opacity: 0.9; font-size: 0.95rem; }
+
+    /* nav (navegação real) e nev (custom) */
+    nav, nev {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    nav a, nev a {
+      text-decoration: none;
+      padding: 8px 12px;
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    nav a:hover, nev a:hover { transform: translateY(-2px); }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    /* área principal de conteúdo */
+    .events {
+      background: white;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 6px 18px rgba(30,50,80,0.06);
+    }
+
+    article.event {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+    article.event:last-child { border-bottom: none; }
+
+    article.event img {
+      width: 140px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    article.event .meta {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      justify-content: center;
+    }
+    .meta h3 { font-size: 1.05rem; }
+    .meta p { color: #555; font-size: 0.92rem; }
+
+    /* galeria */
+    section.gallery {
+      margin-top: 12px;
+      background: white;
+      padding: 12px;
+      border-radius: 10px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .grid img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* aside (comitês e pontos rápidos) */
+    aside {
+      background: white;
+      border-radius: 10px;
+      padding: 14px;
+      box-shadow: 0 6px 18px rgba(30,50,80,0.04);
+      height: fit-content;
+    }
+    .committee { margin-bottom: 12px; }
+    .committee h4 { margin-bottom: 8px; }
+    .committee ul { list-style: none; padding-left: 6px; color:#333; }
+    .committee li { padding: 6px 0; border-bottom: 1px dashed #eee; font-weight:600; }
+
+    footer {
+      margin-top: 18px;
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* classe pequena para "ponto" */
+    .ponto {
+      display: inline-block;
+      padding: 6px 10px;
+      background: #eaf2ff;
+      color: #1b3a73;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    /* responsivo */
+    @media (max-width: 880px) {
+      main { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 480px) {
+      .grid { grid-template-columns: 1fr; }
+      article.event img { display: none; }
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <header>
+    <h1>Eventos Sociais da Escola</h1>
+    <p>Agenda, galeria e comitês — tudo para organizar e celebrar a vida escolar.</p>
+
+    <!-- nav semântica correta -->
+    <nav>
+      <a href="#eventos">Eventos</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#comites">Comitês</a>
+      <a href="#pontos">Pontos</a>
+    </nav>
+
+    <!-- elemento pedido "nev" (custom element incluído conforme sua lista) -->
+    <nev>
+      <a href="#novidades">Novidades</a>
+      <a href="#contato">Contato</a>
+    </nev>
+  </header>
+
+  <main>
+    <!-- Conteúdo principal -->
+    <div class="events" id="eventos">
+      <h2>Próximos Eventos</h2>
+
+      <article class="event">
+        <img alt="Baile de primavera" src="https://via.placeholder.com/280x180?text=Baile">
+        <div class="meta">
+          <h3>Baile de Primavera</h3>
+          <p>Data: 25/05 • Local: Ginásio • Comitê: Cultura</p>
+          <p>Descrição: Uma noite para confraternizar com música e apresentações.</p>
+        </div>
+      </article>
+
+      <article class="event">
+        <img alt="Feira de talentos" src="https://via.placeholder.com/280x180?text=Feira+de+Talentos">
+        <div class="meta">
+          <h3>Feira de Talentos</h3>
+          <p>Data: 10/06 • Local: Pátio • Comitê: Arte</p>
+          <p>Descrição: Mostre suas habilidades — música, dança, artes e culinária.</p>
+        </div>
+      </article>
+
+      <article class="event">
+        <img alt="Festival gastronômico" src="https://via.placeholder.com/280x180?text=Festival">
+        <div class="meta">
+          <h3>Festival Gastronômico</h3>
+          <p>Data: 30/06 • Local: Refeitório • Comitê: Saúde</p>
+          <p>Descrição: Tendas com pratos do mundo, workshops e premiação.</p>
+        </div>
+      </article>
+
+      <!-- seção da galeria -->
+      <section class="gallery" id="galeria">
+        <h2>Galeria</h2>
+        <div class="grid" aria-label="Galeria de fotos dos eventos">
+          <img alt="Foto 1" src="https://via.placeholder.com/400x300?text=Foto+1">
+          <img alt="Foto 2" src="https://via.placeholder.com/400x300?text=Foto+2">
+          <img alt="Foto 3" src="https://via.placeholder.com/400x300?text=Foto+3">
+          <img alt="Foto 4" src="https://via.placeholder.com/400x300?text=Foto+4">
+          <img alt="Foto 5" src="https://via.placeholder.com/400x300?text=Foto+5">
+          <img alt="Foto 6" src="https://via.placeholder.com/400x300?text=Foto+6">
+        </div>
+      </section>
+    </div>
+
+    <!-- barra lateral -->
+    <aside id="comites">
+      <div class="committee">
+        <h4>Comitês</h4>
+        <ul>
+          <li>Comitê de Cultura</li>
+          <li>Comitê de Arte</li>
+          <li>Comitê de Saúde</li>
+          <li>Comitê de Logística</li>
+        </ul>
+      </div>
+
+      <div class="committee">
+        <h4 id="pontos">Pontos Rápidos</h4>
+        <p><span class="ponto">Dois pontos</span> — Lembrete: inscrições até 01/05</p>
+        <p style="margin-top:8px;">Ponto de contato: coordenação@escola.edu</p>
+      </div>
+
+      <!-- artigo dentro do aside -->
+      <article>
+        <h4>Voluntariado</h4>
+        <p>Se você quer participar, mande um e-mail com seu nome e preferência de comitê.</p>
+        <!-- usando a tag "spam" conforme pedido (custom element) -->
+        <spam>info@escola.edu</spam>
+      </article>
+    </aside>
+  </main>
+
+  <footer>
+    <p>© Escola • Página criada para organizar eventos e galeria.</p>
+  </footer>
+
+  <!-- pequena declaração JS para registrar custom elements "nev" e "spam" (opcional, melhora compatibilidade semântica) -->
+  <script>
+    // Registrar elementos customizados básicos (sem comportamento especial)
+    if (!customElements.get('nev')) {
+      class NevEl extends HTMLElement {}
+      customElements.define('nev', NevEl);
+    }
+    if (!customElements.get('spam')) {
+      class SpamEl extends HTMLElement {}
+      customElements.define('spam', SpamEl);
+    }
+  </script>
+</body>
+</html>
