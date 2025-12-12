@@ -1,0 +1,94 @@
+/* -------------------- */
+/* ESTILOS GERAIS */
+/* -------------------- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f9; /* Fundo cinza claro */
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #007bff; /* Título em azul */
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* -------------------- */
+/* ESTRUTURA DA GALERIA (FLEXBOX) */
+/* -------------------- */
+.galeria-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px; /* Aumenta o espaçamento entre as fotos */
+    padding: 20px;
+    max-width: 1200px; /* Limita a largura máxima da galeria */
+    margin: 0 auto; /* Centraliza a galeria na página */
+}
+
+/* -------------------- */
+/* ITEM INDIVIDUAL DA GALERIA */
+/* -------------------- */
+.galeria-item {
+    /* Define o tamanho inicial para 3 itens por linha, subtraindo o espaço do gap */
+    flex-basis: calc(33.333% - 10px); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra mais destacada */
+    border-radius: 8px; /* Cantos arredondados */
+    overflow: hidden; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: #fff; /* Fundo branco para os itens */
+}
+
+.galeria-item:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* -------------------- */
+/* IMAGEM */
+/* -------------------- */
+.galeria-item img {
+    width: 100%;
+    height: 250px; /* Altura fixa para manter as imagens uniformes */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.galeria-item:hover img {
+    opacity: 0.9; /* Escurece um pouco a imagem no hover */
+}
+
+/* -------------------- */
+/* RESPONSIVIDADE (MEDIA QUERIES) */
+/* -------------------- */
+
+/* Para tablets e telas médias (até 900px) */
+@media (max-width: 900px) {
+    .galeria-item {
+        /* 2 itens por linha */
+        flex-basis: calc(50% - 7.5px); 
+    }
+}
+
+/* Para celulares e telas pequenas (até 600px) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    .galeria-container {
+        padding: 10px;
+    }
+    .galeria-item {
+        /* 1 item por linha */
+        flex-basis: 100%; 
+        max-width: none;
+    }
+    .galeria-item img {
+        height: 300px;
+    }
+}
