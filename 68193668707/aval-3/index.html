@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles (3).css">
+  <title>App social freed - funcional</title>
+
+  <!-- 🔗 Arquivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <h1>Postagens</h1>
+  <h2></h2>
+  <a></a><p></p>
+  <header></header>
+
+  <nav>
+    <button data-target="inicio">Início</button>
+    <button data-target="perfil">Perfil</button>
+    <button data-target="postagens">Postagens</button>
+    <button data-target="todos">Mostrar todos</button>
+  </nav>
+
+  <main class="container" id="cards-container">
+
+    <!-- CARD 1 -->
+    <article id="inicio" class="card">
+      <div class="header">
+        <div class="avatar" style="background-image:url('https://play-lh.googleusercontent.com/gnSC6s8-6Tjc4uhvDW7nfrSJxpbhllzYhgX8y374N1LYvWBStn2YhozS9XXaz1T_Pi2q');"></div>
+        <div><strong>Pedro.i@</strong></div>
+      </div>
+      <img class="main-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSByEbIyneEQp1sAxe3op-iiEPmrxtOaVMzNQ&s" alt="Imagem" />
+      <div class="content">
+       Clash Royale é um jogo de estratégia em tempo real da Supercell que mistura defesa de torre e cartas colecionáveis, onde o objetivo é destruir as torres do oponente usando um deck de cartas com tropas, feitiços e defesas, gerenciando o elixir para atacar e defender em batalhas rápidas 1v1 ou em modos 2v2 e de clãs
+        <span class="meta">Há 10 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article id="perfil" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://play-lh.googleusercontent.com/gnSC6s8-6Tjc4uhvDW7nfrSJxpbhllzYhgX8y374N1LYvWBStn2YhozS9XXaz1T_Pi2q');"></div>
+        <div><strong>Pedro.i@</strong></div>
+      </div>
+      <img class="main-img" src="data:image/jpeg;base64,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" alt="Imagem" />
+      <div class="content">
+      Bárbaros no Clash Royale são tropas corpo a corpo icônicas, conhecidas por seu dano alto e por serem um "tanque" de baixo custo,
+        <span class="meta">Há 30 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article id="postagens" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://play-lh.googleusercontent.com/gnSC6s8-6Tjc4uhvDW7nfrSJxpbhllzYhgX8y374N1LYvWBStn2YhozS9XXaz1T_Pi2q');"></div>
+        <div><strong>Pedro.i@</strong></div>
+      </div>
+      <img class="main-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQxUzlH1t2fFWy2H5XnlZ688rpY06-Qp8etg&s" alt="Imagem" />
+      <div class="content">
+      O Mega Cavaleiro é uma tropa Lendária em Clash Royale, conhecida por seu alto dano em área e habilidade de causar um grande impacto ao cair
+        <span class="meta">Há 1 hora</span>
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function mostrarCard(id) {
+      const cards = document.querySelectorAll('#cards-container .card');
+      cards.forEach(card => {
+        if (id === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.id === id) {
+            card.classList.remove('hidden');
+            setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        mostrarCard(target);
+      });
+    });
+  </script>
+
+</body>
+</html>
