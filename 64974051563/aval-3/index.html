@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+  <title>App social freed - funcional</title>
+
+  <!-- 🔗 Arquivo CSS externo -->
+  <link rel="stylesheet" href="styles (2).css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <h1>Postagens</h1>
+  <header></header>
+  <a></a><p></p>
+  <h2></h2>
+
+  <nav>
+    <button data-target="inicio">Início</button>
+    <button data-target="perfil">Perfil</button>
+    <button data-target="postagens">Postagens</button>
+    <button data-target="todos">Mostrar todos</button>
+  </nav>
+
+  <main class="container" id="cards-container">
+
+    <!-- CARD 1 -->
+    <article id="inicio" class="card">
+      <div class="header">
+        <div class="avatar" style="background-image:url('https://static.wikia.nocookie.net/robloxia-corruption/images/4/49/Dignity2.png/revision/latest?cb=20250723070225');"></div>
+        <div><strong>Murilo.D@</strong></div>
+      </div>
+      <img class="main-img" src="https://i.redd.it/the-amount-of-whining-about-the-mega-knight-a-lot-of-you-v0-8wi50n5wrfe81.jpg?width=3484&format=pjpg&auto=webp&s=55993730732705f413517bb947c2e91a1470f844" alt="Imagem" />
+      <div class="content">
+       O Mega Cavaleiro é uma carta lendária de Clash Royale conhecida por seu salto poderoso com dano em área (splash), gerando amor e ódio na comunidade por sua capacidade de defesa avassaladora e contra-ataques com combo de elixir, especialmente na defesa contra Barril de Goblins ou combo de Sparky, mas muitos jogadores acham que ele é "sem habilidade", exigindo pouco posicionamento e dominando o meio da arena com sua força bruta e dano massivo
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article id="perfil" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://static.wikia.nocookie.net/robloxia-corruption/images/4/49/Dignity2.png/revision/latest?cb=20250723070225');"></div>
+        <div><strong>Murilo.D@</strong></div>
+      </div>
+      <img class="main-img" src="https://i.redd.it/hgg9adb5r5xe1.png" alt="Imagem" />
+      <div class="content">
+        Larry no Clash Royale é um esqueleto carismático e popular da lore da Supercell, conhecido por sua jornada de um simples esqueleto da Bruxa para uma figura lendária, aparecendo em curtas como "Lost & Crowned" e ganhando um status de "meme" e até uma carta evoluída (Evo Larry), representando a tenacidade e o crescimento dentro do jogo, sendo amado pelos fãs por sua história de superação e coragem, 
+        <span class="meta">Há 30 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article id="postagens" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://static.wikia.nocookie.net/robloxia-corruption/images/4/49/Dignity2.png/revision/latest?cb=20250723070225');"></div>
+        <div><strong>Murilo.D@</strong></div>
+      </div>
+      <img class="main-img" src="https://pbs.twimg.com/media/GtWBq-3bMAMDnSd.jpg" alt="Imagem" />
+      <div class="content">
+    1x1x1x1 é uma das mais famosas lendas urbanas da comunidade do jogo online Roblox. A história o descreve como um suposto hacker poderoso, embora, na realidade, a conta tenha sido criada para fins de teste por um administrador do jogo. 
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function mostrarCard(id) {
+      const cards = document.querySelectorAll('#cards-container .card');
+      cards.forEach(card => {
+        if (id === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.id === id) {
+            card.classList.remove('hidden');
+            setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        mostrarCard(target);
+      });
+    });
+  </script>
+
+</body>
+</html>
