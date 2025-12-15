@@ -1,0 +1,273 @@
+/* =========================================================
+   BRAND HOMME — CSS BASE PREMIUM
+   Paleta:
+   - Azul profundo: #0A1E45
+   - Azul royal: #1F4FA8
+   - Azul gélido: #6FA8FF
+   - Prata Premium: #C8C9CC
+   ========================================================= */
+
+/* ========== RESET GLOBAL ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(to bottom, #6FA8FF, #1F4FA8, #0A1E45);
+    color: #C8C9CC;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ========== HEADER ========== */
+header {
+    width: 100%;
+    padding: 25px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(12px);
+    background: rgba(10, 30, 69, 0.5);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+header h1 {
+    font-size: 28px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #C8C9CC;
+    cursor: default;
+    transition: 0.3s;
+}
+
+header h1:hover {
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(111, 168, 255, 0.6);
+}
+
+nav a {
+    margin-left: 35px;
+    color: #C8C9CC;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* underline suave */
+nav a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #6FA8FF;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* ========== CONTAINER DE PRODUTOS ========== */
+.container {
+    padding: 50px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+/* ========== CARD DE PRODUTO ========== */
+.card {
+    width: 270px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+    transition: 0.35s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 16px 30px rgba(0,0,0,0.45);
+    border-color: rgba(111, 168, 255, 0.6);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    transition: 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+/* Descrição do produto */
+.card p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Botão interno caso você tenha */
+.card button {
+    margin-top: 12px;
+    padding: 10px 18px;
+    background: #1F4FA8;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background: #6FA8FF;
+    box-shadow: 0 0 12px rgba(111,168,255,0.6);
+}
+
+/* ========== MODAIS (Produto e Carrinho) ========== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    width: 450px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 14px;
+    padding: 25px;
+    color: white;
+    backdrop-filter: blur(12px);
+    animation: popup 0.35s ease;
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.close-btn {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+    color: #C8C9CC;
+    transition: 0.2s;
+}
+
+.close-btn:hover {
+    color: white;
+}
+
+/* ========== BOTÕES GERAIS ========== */
+button {
+    background: #1F4FA8;
+    border: none;
+    padding: 12px 22px;
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #6FA8FF;
+    box-shadow: 0 0 12px rgba(111,168,255,0.6);
+}
+
+/* Botão de finalizar compra */
+.checkout-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 14px 0;
+    font-size: 17px;
+    background: #6FA8FF;
+    color: #0A1E45;
+    font-weight: bold;
+}
+
+.checkout-btn:hover {
+    background: white;
+    box-shadow: 0 0 20px rgba(255,255,255,0.7);
+}
+
+/* ========== CARRINHO ITEM ========== */
+.cart-item {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item img {
+    width: 55px;
+    height: 55px;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 25px;
+    }
+
+    nav a {
+        margin-left: 20px;
+        font-size: 14px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}

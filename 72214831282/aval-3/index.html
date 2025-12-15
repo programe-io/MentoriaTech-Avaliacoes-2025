@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brand Homme — Loja</title>
+  <meta name="description" content="Loja Brand Homme — polos masculinas. Carrinho, checkout e confirmação." />
+  <style>
+    :root{
+      --deep-blue:#0A1E45;
+      --royal-blue:#1F4FA8;
+      --ice-blue:#6FA8FF;
+      --silver:#C8C9CC;
+      --card-bg: rgba(255,255,255,0.06);
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;color:#eef6ff;background:linear-gradient(180deg,var(--ice-blue) 0%,var(--royal-blue) 45%,var(--deep-blue) 100%);min-height:100vh;display:flex;flex-direction:column}
+    header{display:flex;align-items:center;justify-content:space-between;padding:20px 28px;border-bottom:1px solid rgba(255,255,255,0.04)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(145deg,rgba(255,255,255,0.12),rgba(255,255,255,0.02));display:grid;place-items:center;color:var(--deep-blue);font-weight:800}
+    .brand h1{margin:0;font-size:18px;color:var(--silver)}
+    nav a{color:rgba(255,255,255,0.9);margin-left:18px;text-decoration:none;font-weight:600}
+
+    main{flex:1;display:flex;gap:20px;padding:28px}
+    .catalog{flex:1;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+    .product{background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));border-radius:12px;padding:12px;box-shadow:0 8px 20px rgba(2,6,23,0.45);border:1px solid rgba(255,255,255,0.04);display:flex;flex-direction:column}
+    .product img{width:100%;height:260px;object-fit:cover;border-radius:8px}
+    .product h3{margin:10px 0 6px;font-size:16px}
+    .product p{margin:0;font-size:13px;color:rgba(255,255,255,0.85);flex:1}
+    .price-row{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+    .price{font-weight:800}
+    .btn{background:var(--ice-blue);color:var(--deep-blue);padding:8px 12px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit}
+
+    /* Cart drawer */
+    .cart-toggle{position:relative}
+    .cart-count{position:absolute;right:-6px;top:-8px;background:#ff6b6b;color:white;border-radius:50%;width:20px;height:20px;display:grid;place-items:center;font-size:12px}
+    .drawer{position:fixed;right:24px;top:84px;width:360px;max-width:92%;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));border-radius:12px;padding:16px;box-shadow:0 24px 60px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.04)}
+    .drawer h4{margin:0 0 10px}
+    .cart-item{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+    .cart-item img{width:64px;height:64px;object-fit:cover;border-radius:8px}
+    .qty{display:flex;gap:8px;align-items:center}
+    .small{font-size:13px;color:rgba(255,255,255,0.8)}
+
+    /* Checkout */
+    .checkout{padding:18px;border-radius:10px;background:rgba(255,255,255,0.02);margin-top:12px}
+    .field{display:flex;flex-direction:column;margin-bottom:10px}
+    label{font-size:13px;margin-bottom:6px}
+    input,select,textarea{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+    .total{display:flex;justify-content:space-between;align-items:center;font-weight:800;margin-top:8px}
+
+    footer{padding:12px 28px;text-align:center;color:rgba(255,255,255,0.7)}
+
+    /* modal product */
+    .modal{position:fixed;left:0;top:0;width:100%;height:100%;display:none;align-items:center;justify-content:center;background:linear-gradient(rgba(2,6,23,0.6),rgba(2,6,23,0.6));z-index:80}
+    .modal .card{width:min(920px,96%);display:grid;grid-template-columns:1fr 380px;gap:20px}
+    .modal img{height:420px}
+
+    /* responsive */
+    @media (max-width:900px){
+      main{flex-direction:column}
+      .modal .card{grid-template-columns:1fr}
+      .modal img{height:320px}
+    }
+
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">BH</div>
+      <div>
+        <h1>Brand Homme</h1>
+        <div style="font-size:12px;color:rgba(255,255,255,0.75)">Mentorias • Loja de Polos</div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:12px">
+      <nav>
+        <a href="#">Início</a>
+        <a href="#">Coleção</a>
+        <a href="#">Contato</a>
+      </nav>
+
+      <div class="cart-toggle">
+        <button id="openCart" class="btn">Carrinho</button>
+        <div id="cartCount" class="cart-count" style="display:none">0</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="catalog" id="catalog"></section>
+  </main>
+
+  <!-- Cart drawer -->
+  <aside id="drawer" class="drawer" style="display:none">
+    <h4>Carrinho</h4>
+    <div id="cartItems"></div>
+    <div class="checkout">
+      <div class="small">Subtotal</div>
+      <div class="total"><span id="subtotalLabel">R$ 0,00</span></div>
+
+      <div style="margin-top:8px">
+        <button id="goToCheckout" class="btn" style="width:100%">Finalizar compra</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Modal product / checkout -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="card">
+      <div style="padding:8px">
+        <img id="modalImg" src="" alt="produto">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc" style="color:rgba(255,255,255,0.85)"></p>
+      </div>
+
+      <div style="padding:10px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div style="font-weight:800" id="modalPrice">R$ 0,00</div>
+          <button id="closeModal" class="btn ghost">Fechar</button>
+        </div>
+
+        <div style="margin-top:14px">
+          <label>Quantidade</label>
+          <input id="modalQty" type="number" min="1" value="1" />
+        </div>
+
+        <div style="margin-top:14px;display:flex;gap:8px">
+          <button id="addToCartBtn" class="btn">Adicionar ao carrinho</button>
+          <button id="buyNowBtn" class="btn ghost">Comprar agora</button>
+        </div>
+
+        <div id="checkoutForm" style="display:none;margin-top:12px">
+          <h4>Finalizar compra</h4>
+          <div class="field"><label>Nome</label><input id="c_name"/></div>
+          <div class="field"><label>Email</label><input id="c_email" type="email"/></div>
+          <div class="field"><label>Endereço</label><textarea id="c_addr"></textarea></div>
+          <div style="display:flex;gap:8px"><button id="confirmOrder" class="btn">Confirmar pedido</button><button id="cancelCheckout" class="btn ghost">Cancelar</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>© <span id="year"></span> Brand Homme — Todos os direitos</footer>
+
+  <script>
+    // imagens providas pelo usuário (caminhos locais já no ambiente)
+    const products = [
+      {id:1,title:'Polo Classic Verde',desc:'Polo básica em piquet, caimento versátil.',price:129.90,image:'https://imagesa1.lacoste.com/dw/image/v2/BCWL_PRD/on/demandware.static/-/Sites-master/default/dwc2f664e5/PH9851_S86_20.jpg?imwidth=320&impolicy=pctp&imdensity=1'},
+      {id:2,title:'Polo Deep Green',desc:'Malha premium, toque macio.',price:139.90,image:'https://thelvll.com/cdn/shop/files/Forest-deep-lvll_2.webp?v=1761335261&width=4096'},
+      {id:3,title:'Polo Rust Red',desc:'Tom terroso e acabamento fino.',price:149.90,image:'https://images.tcdn.com.br/img/img_prod/727959/180_polo_tricot_decote_v_1503_8527_1_20250917120637_3c602d3f5e0b.jpg'},
+      {id:4,title:'Polo Graphite',desc:'Cores sóbrias e caimento moderno.',price:129.90,image:'https://redmillsstore.ie/cdn/shop/products/Dubarry-Men_s-Sweeney-Polo-Shirt-in-Graphite_3.jpg?v=1656671414&width=1024'},
+      {id:5,title:'Polo Blue Sky',desc:'Azul elegante para o dia a dia.',price:139.90,image:'https://xcdn.next.co.uk/common/items/default/default/itemimages/3_4Ratio/product/lge/AM6666s.jpg?im=Resize,width=750'},
+      {id:6,title:'Polo Navy Minimal',desc:'Design minimalista em tecido respirável.',price:129.90,image:'https://static.cdnlive.com.br/uploads/728/produto/17010968706949_zoom.jpeg'},
+      {id:7,title:'Polo Black Fit',desc:'Preto premium com corte slim.',price:149.90,image:'https://torratorra.vtexassets.com/arquivos/ids/2130387/22121002258136.jpg?v=638746646437030000'},
+      {id:8,title:'Polo Vermelha Classic',desc:'Vermelho vibrante para destacar.',price:119.90,image:'https://static.netshoes.com.br/produtos/camisa-polo-ellus-piquet-melange-classic-masculina/16/E63-5707-016/E63-5707-016_zoom1.jpg?ts=1750172761&ims=544x'},
+      {id:9,title:'Polo Bege Premium',desc:'Tecido Pima — maciez superior.',price:169.90,image:'https://casaspernambucanas.vtexassets.com/unsafe/1440x0/center/middle/https%3A%2F%2Fcasaspernambucanas.vtexassets.com%2Farquivos%2Fids%2F2130457%2FP.jpg%3Fv%3D638914026796330000'},
+      {id:10,title:'Polo Areia',desc:'Tom neutro versátil.',price:139.90,image:'https://images.tcdn.com.br/img/img_prod/863082/90_camisa_polo_masculina_linha_premium_crocker_5082_1_20250905104819_f8f194cf5e7e.jpg'}
+    ];
+
+    // helpers
+    function money(v){return 'R$ '+v.toFixed(2).replace('.',',')}
+
+    // render catálogo
+    const catalog = document.getElementById('catalog');
+    function renderCatalog(){
+      catalog.innerHTML='';
+      products.forEach(p=>{
+        const el = document.createElement('article');
+        el.className='product';
+        el.innerHTML = `
+          <img src="${p.image}" alt="${p.title}">
+          <h3>${p.title}</h3>
+          <p>${p.desc}</p>
+          <div class="price-row">
+            <div class="price">${money(p.price)}</div>
+            <div style="display:flex;gap:8px">
+              <button class="btn ghost" data-id="${p.id}" onclick="viewProduct(${p.id})">Visualizar</button>
+              <button class="btn" onclick="addToCart(${p.id},1)">Adicionar</button>
+            </div>
+          </div>
+        `;
+        catalog.appendChild(el);
+      });
+    }
+
+    // CART
+    let cart = JSON.parse(localStorage.getItem('bh_cart')||'[]');
+    const cartCountEl = document.getElementById('cartCount');
+    const drawer = document.getElementById('drawer');
+    const cartItemsEl = document.getElementById('cartItems');
+    const subtotalLabel = document.getElementById('subtotalLabel');
+
+    function saveCart(){localStorage.setItem('bh_cart',JSON.stringify(cart)); updateCartUI();}
+    function updateCartUI(){
+      const totalItems = cart.reduce((s,i)=>s+i.qty,0);
+      if(totalItems>0){cartCountEl.style.display='grid';cartCountEl.innerText=totalItems}else cartCountEl.style.display='none';
+      // items
+      cartItemsEl.innerHTML='';
+      if(cart.length===0){cartItemsEl.innerHTML='<div class="small">Seu carrinho está vazio.</div>'; subtotalLabel.innerText=money(0);return}
+      cart.forEach(it=>{
+        const p = products.find(x=>x.id===it.id);
+        const div = document.createElement('div'); div.className='cart-item';
+        div.innerHTML = `
+          <img src="${p.image}" alt="${p.title}">
+          <div style="flex:1">
+            <div style="font-weight:700">${p.title}</div>
+            <div class="small">${money(p.price)} x ${it.qty} = ${money(p.price*it.qty)}</div>
+            <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
+              <button class="btn ghost" onclick="changeQty(${it.id}, -1)">-</button>
+              <div class="small">${it.qty}</div>
+              <button class="btn ghost" onclick="changeQty(${it.id}, 1)">+</button>
+              <button class="btn ghost" style="margin-left:auto;color:#ff8b8b" onclick="removeFromCart(${it.id})">Remover</button>
+            </div>
+          </div>
+        `;
+        cartItemsEl.appendChild(div);
+      });
+      const subtotal = cart.reduce((s,i)=>{const p=products.find(x=>x.id===i.id);return s + p.price*i.qty},0);
+      subtotalLabel.innerText = money(subtotal);
+    }
+
+    function addToCart(id,qty=1){
+      const existing = cart.find(x=>x.id===id);
+      if(existing) existing.qty += qty; else cart.push({id,qty});
+      saveCart();
+      openDrawer();
+    }
+    function changeQty(id,delta){
+      const it = cart.find(x=>x.id===id); if(!it) return; it.qty += delta; if(it.qty<1) it.qty=1; saveCart();
+    }
+    function removeFromCart(id){cart = cart.filter(x=>x.id!==id); saveCart();}
+
+    // drawer open/close
+    const openCartBtn = document.getElementById('openCart');
+    openCartBtn.addEventListener('click',()=>{openDrawer()});
+    function openDrawer(){drawer.style.display='block';updateCartUI();}
+
+    // product modal
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalQty = document.getElementById('modalQty');
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const buyNowBtn = document.getElementById('buyNowBtn');
+    const closeModal = document.getElementById('closeModal');
+    const checkoutForm = document.getElementById('checkoutForm');
+
+    let currentProduct = null;
+    function viewProduct(id){
+      const p = products.find(x=>x.id===id); if(!p) return;
+      currentProduct=p;
+      modalImg.src=p.image; modalTitle.innerText=p.title; modalDesc.innerText=p.desc; modalPrice.innerText = money(p.price); modalQty.value=1; checkoutForm.style.display='none';
+      modal.style.display='flex'; modal.setAttribute('aria-hidden','false');
+    }
+    closeModal.addEventListener('click',()=>{modal.style.display='none'; modal.setAttribute('aria-hidden','true')});
+
+    addToCartBtn.addEventListener('click',()=>{const q = Math.max(1,Number(modalQty.value)); addToCart(currentProduct.id,q)});
+    buyNowBtn.addEventListener('click',()=>{checkoutForm.style.display='block'});
+
+    // checkout flow (simple mock)
+    document.getElementById('goToCheckout').addEventListener('click',()=>{
+      // open modal with checkout form prefilled
+      if(cart.length===0){alert('Seu carrinho está vazio.') ; return}
+      modal.style.display='flex'; modal.setAttribute('aria-hidden','false');
+      checkoutForm.style.display='block';
+    });
+
+    document.getElementById('cancelCheckout').addEventListener('click',()=>{checkoutForm.style.display='none'});
+    document.getElementById('confirmOrder').addEventListener('click',()=>{
+      const name = document.getElementById('c_name').value.trim();
+      const email = document.getElementById('c_email').value.trim();
+      const addr = document.getElementById('c_addr').value.trim();
+      if(!name||!email||!addr){alert('Preencha nome, email e endereço.');return}
+      // create order summary
+      const order = {id:'BH-'+Date.now(),name,email,addr,items:cart,subtotal:cart.reduce((s,i)=>s+products.find(p=>p.id===i.id).price*i.qty,0),created:new Date().toISOString()};
+      localStorage.setItem('bh_last_order',JSON.stringify(order));
+      // clear cart
+      cart = []; saveCart();
+      checkoutForm.style.display='none'; modal.style.display='none'; alert('Pedido confirmado! ID: '+order.id+' — Ver detalhes em localStorage (bh_last_order).');
+    });
+
+    // quick helpers
+    function removeAll(){cart=[];saveCart();}
+
+    // init
+    renderCatalog(); updateCartUI(); document.getElementById('year').innerText = new Date().getFullYear();
+
+    // expose some functions for buttons in HTML
+    window.viewProduct = viewProduct; window.addToCart = addToCart; window.changeQty = changeQty; window.removeFromCart = removeFromCart; window.openDrawer = openDrawer;
+  </script>
+<h2>
+    <main>
+
+</body>
+</html>
+   
