@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css222.css">
+  <title>App social freed - funcional</title>
+
+  <!-- 🔗 Arquivo CSS externo -->
+  <link rel="stylesheet" href="styles.css222.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <h1>Postagens</h1>
+  <h2></h2><a></a>
+  <p></p><header></header>
+
+  <nav>
+    <button data-target="inicio">Início</button>
+    <button data-target="perfil">Perfil</button>
+    <button data-target="postagens">Postagens</button>
+    <button data-target="todos">Mostrar todos</button>
+  </nav>
+
+  <main class="container" id="cards-container">
+
+    <!-- CARD 1 -->
+    <article id="inicio" class="card">
+      <div class="header">
+        <div class="avatar" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjxipybCUQ4Zm3LRJyz3rRFtm641vi6Ci8wQ&s');"></div>
+        <div><strong>Maia@</strong></div>
+      </div>
+      <img class="main-img" src="https://img.freepik.com/fotos-gratis/por-do-sol-no-arroz-fazenda-campo-tailandia_1150-17920.jpg?semt=ais_hybrid&w=740&q=80" alt="Imagem" />
+      <div class="content">
+    Paisagem é um recorte do espaço geográfico percebido pelos nossos sentidos (visão, audição, olfato, tato), abrangendo tanto elementos naturais (relevo, vegetação) quanto culturais (casas, ruas), e representa um momento que reflete a história e cultura de um lugar, sendo constantemente transformada pela natureza e pela ação humana. 
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article id="perfil" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjxipybCUQ4Zm3LRJyz3rRFtm641vi6Ci8wQ&s');"></div>
+        <div><strong>Maia@</strong></div>
+      </div>
+      <img class="main-img" src="https://upload.wikimedia.org/wikipedia/pt/a/ae/Cocofilme.png" alt="Imagem" />
+      <div class="content">
+  "Viva – A Vida é uma Festa" (originalmente Coco) é uma animação da Disney/Pixar que celebra a cultura mexicana, especialmente o Día de los Muertos, contando a história de Miguel, um menino que sonha em ser músico e viaja para a Terra dos Mortos para desvendar segredos familiares, aprendendo sobre amor, memória, ancestralidade e o verdadeiro significado de família, mostrando a morte não como um fim, mas como parte da vida, mantida viva pelas lembranças. 
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article id="postagens" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjxipybCUQ4Zm3LRJyz3rRFtm641vi6Ci8wQ&s');"></div>
+        <div><strong>Maia@</strong></div>
+      </div>
+      <img class="main-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6KAl9yE5qcfvrSPOE8P1-r8HIyzVjvFJdBA&s" alt="Imagem" />
+  Cachorros são mamíferos domesticados, descendentes do lobo, conhecidos como "melhores amigos do homem" por sua lealdade e capacidade de formar laços, possuindo sentidos aguçados como olfato e audição, e se comunicando através de latidos, linguagem corporal e até entendendo centenas de palavras humanas, com uma enorme diversidade de raças desenvolvidas por seleção artificial para diferentes propósitos. 
+        <span class="meta">Há 1 hora</span>
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function mostrarCard(id) {
+      const cards = document.querySelectorAll('#cards-container .card');
+      cards.forEach(card => {
+        if (id === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.id === id) {
+            card.classList.remove('hidden');
+            setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        mostrarCard(target);
+      });
+    });
+  </script>
+
+</body>
+</html>
