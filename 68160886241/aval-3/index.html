@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+  <title>App social freed - funcional</title>
+
+  <!-- 🔗 Arquivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+  <h1>Postagens</h1>
+  <h2></h2><header></header>
+  <a></a><p></p>
+
+  <nav>
+    <button data-target="inicio">Início</button>
+    <button data-target="perfil">Perfil</button>
+    <button data-target="postagens">Postagens</button>
+    <button data-target="todos">Mostrar todos</button>
+  </nav>
+
+  <main class="container" id="cards-container">
+
+    <!-- CARD 1 -->
+    <article id="inicio" class="card">
+      <div class="header">
+        <div class="avatar" style="background-image:url('https://m.media-amazon.com/images/M/MV5BZTNjOWI0ZTAtOGY1OS00ZGU0LWEyOWYtMjhkYjdlYmVjMDk2XkEyXkFqcGc@._V1_.jpg');"></div>
+        <div><strong>Rosa@</strong></div>
+      </div>
+      <img class="main-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDRBVumkDJlQcqtI71nAx2wXV7uhjKUhwaJA&s" alt="Imagem" />
+      <div class="content">
+     Detona Ralph (Wreck-It Ralph) é um filme de animação da Disney sobre Ralph, o vilão de um jogo de fliperama, que se cansa de seu papel e embarca numa aventura por outros jogos para provar que pode ser um herói, acabando por fazer amizade com Vanellope, uma "falha" de outro jogo, e descobrindo o verdadeiro significado de ser um herói e encontrar seu lugar. 
+        <span class="meta">Há 10 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article id="perfil" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://m.media-amazon.com/images/M/MV5BZTNjOWI0ZTAtOGY1OS00ZGU0LWEyOWYtMjhkYjdlYmVjMDk2XkEyXkFqcGc@._V1_.jpg');"></div>
+        <div><strong>Rosa@</strong></div>
+      </div>
+      <img class="main-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtm0VvjQBKczD7VgxvyO1I8FSQNWeVRQNySw&s" alt="Imagem" />
+      <div class="content">
+     As flores são estruturas reprodutivas essenciais das angiospermas, o grupo de plantas com maior diversidade na Terra. Elas são a chave para a reprodução sexuada dessas plantas, atraindo polinizadores e resultando na formação de sementes e frutos. .
+        <span class="meta">Há 30 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article id="postagens" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://m.media-amazon.com/images/M/MV5BZTNjOWI0ZTAtOGY1OS00ZGU0LWEyOWYtMjhkYjdlYmVjMDk2XkEyXkFqcGc@._V1_.jpg');"></div>
+        <div><strong>Rosa@</strong></div>
+      </div>
+      <img class="main-img" src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/9b138ef4-f8f2-45b8-a57c-a1b7bd3a77b4/compose?aspectRatio=1.78&format=webp&width=1200" alt="Imagem" />
+      <div class="content">
+      Alice no País das Maravilhas, de Lewis Carroll, é uma obra clássica de fantasia e nonsense sobre a curiosa menina Alice que, ao seguir um Coelho Branco, cai em um mundo fantástico cheio de criaturas surreais, regras ilógicas e situações absurdas, explorando temas como identidade, lógica, amadurecimento e o contraste entre sonho e realidade,
+        <span class="meta">Há 1 hora</span>
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function mostrarCard(id) {
+      const cards = document.querySelectorAll('#cards-container .card');
+      cards.forEach(card => {
+        if (id === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.id === id) {
+            card.classList.remove('hidden');
+            setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        mostrarCard(target);
+      });
+    });
+  </script>
+
+</body>
+</html>
