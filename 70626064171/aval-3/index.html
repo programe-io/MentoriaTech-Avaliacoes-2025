@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Plano de Estudos HTML</title>
+    <style>
+        :root { --p-color: #4a90e2; --s-color: #f39c12; }
+        body { font-family: sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; background: #f0f2f5; }
+        header { background: var(--p-color); color: white; padding: 20px; text-align: center; }
+        nav { background: #333; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        
+        .layout { display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; max-width: 1200px; margin: auto; }
+        main { flex: 3; min-width: 300px; }
+        aside { flex: 1; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); min-width: 250px; }
+        
+        section { margin-bottom: 30px; }
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        
+        article { background: white; padding: 15px; border-radius: 8px; border-top: 5px solid var(--s-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        article img { width: 100%; border-radius: 4px; margin-bottom: 10px; }
+        
+        .tag-info { background: #eee; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; color: #666; font-family: monospace; }
+        footer { background: #222; color: white; text-align: center; padding: 20px; margin-top: auto; }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+    <header>
+        <h1>🎓 Plano de Estudos: HTML Semântico</h1>
+        <p>Organização, Métodos e Prática</p>
+    </header>
+
+    <nav>
+        <a href="#horario">Horário</a>
+        <a href="#metodos">Métodos</a>
+        <a href="#dicas">Dicas</a>
+    </nav>
+
+    <div class="layout">
+        <main>
+            <section id="horario">
+                <h2>📅 Cronograma Diário</h2>
+                <div class="grid-cards">
+                    <article>
+                        <span class="tag-info">&lt;article&gt;</span>
+                        <h3>Manhã: Teoria</h3>
+                        <p>09:00 - 10:30: Estudo de tags semânticas e estrutura DOM.</p>
+                        <a href="#">Ver detalhes</a>
+                    </article>
+                    <article>
+                        <span class="tag-info">&lt;article&gt;</span>
+                        <h3>Tarde: Prática</h3>
+                        <p>14:00 - 16:00: Criar layouts responsivos com Flexbox/Grid.</p>
+                        <a href="#">Exercícios</a>
+                    </article>
+                </div>
+            </section>
+
+            <section id="metodos">
+                <h2>🧠 Métodos & Recursos</h2>
+                <article>
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=400&q=80" alt="Estudo">
+                    <h3>Método Pomodoro + Feynman</h3>
+                    <p>Use 25min de foco total e depois explique o código para alguém para fixar.</p>
+                </article>
+            </section>
+        </main>
+
+        <aside>
+            <span class="tag-info">&lt;aside&gt;</span>
+            <h3>Recursos Úteis</h3>
+            <ul>
+                <li><a href="#">MDN Web Docs</a></li>
+                <li><a href="#">W3Schools</a></li>
+                <li><a href="#">Frontend Mentor</a></li>
+            </ul>
+            <hr>
+            <h3>Dica Rápida</h3>
+            <p>Sempre use <strong>alt</strong> em suas imagens para acessibilidade!</p>
+        </aside>
+    </div>
+
+    <footer>
+        <span class="tag-info">&lt;footer&gt;</span>
+        <p>Feito com ❤️ para estudos de HTML5</p>
+    </footer>
+
+<script src="script.js"></script></body>
+</html>
