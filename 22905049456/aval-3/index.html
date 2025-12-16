@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+  <title>App social freed - funcional</title>
+
+  <!-- 🔗 Arquivo CSS externo -->
+  <link rel="stylesheet" href="styles (5).css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+<body>
+    <header></header>
+<a></a><p></p><h2></h2>
+
+  <h1>Postagens</h1>
+
+  <nav>
+    <button data-target="inicio">Início</button>
+    <button data-target="perfil">Perfil</button>
+    <button data-target="postagens">Postagens</button>
+    <button data-target="todos">Mostrar todos</button>
+  </nav>
+
+  <main class="container" id="cards-container">
+
+    <!-- CARD 1 -->
+    <article id="inicio" class="card">
+      <div class="header">
+        <div class="avatar" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt7gQwAgoFs6KUnWSf5hhlMxuk-E7QBAuHtA&s');"></div>
+        <div><strong>Tayna@</strong></div>
+      </div>
+      <img class="main-img" src="https://i.ytimg.com/vi/NB11TPkuFus/maxresdefault.jpg" alt="Imagem" />
+      <div class="content">
+        Bob Esponja Calça Quadrada é uma esponja do mar amarela, otimista e ingênua, protagonista de uma série animada da Nickelodeon sobre suas aventuras na cidade subaquática da Fenda do Biquíni, onde trabalha no Siri Cascudo e vive em um abacaxi com seu melhor amigo Patrick Estrela, sendo um ícone da cultura pop com humor, amizade e temas como perseverança, amado por todas as idades desde 1999. 
+        <span class="meta">Há 10 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article id="perfil" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt7gQwAgoFs6KUnWSf5hhlMxuk-E7QBAuHtA&s');"></div>
+        <div><strong>Tayna@</strong></div>
+      </div>
+      <img class="main-img" src="https://premierpet.com.br/wp-content/uploads/2025/04/model-banner-dicasprimeirocachorro-mobile-v1.png" alt="Imagem" />
+      <div class="content">
+       Cachorros são mamíferos domesticados, descendentes de lobos, conhecidos por sua lealdade e sentidos apurados (olfato e audição), que os tornam ótimos companheiros e ajudantes em diversas tarefas, desde pastoreio até resgate; eles se comunicam com latidos, linguagem corporal e compreendem muitas palavras, evoluíram junto aos humanos por milhares de anos e possuem anatomias únicas, como o focinho, que varia em formato e função, sendo um ponto de contato importante para entender o mundo deles. 
+        <span class="meta">Há 30 minutos</span>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article id="postagens" class="card hidden">
+      <div class="header">
+         <div class="avatar" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt7gQwAgoFs6KUnWSf5hhlMxuk-E7QBAuHtA&s');"></div>
+        <div><strong>Tayna@</strong></div>
+      </div>
+      <img class="main-img" src="https://s5.static.brasilescola.uol.com.br/be/2023/06/mulheres-da-selecao-brasileira-de-volei-fazem-bloqueio-em-partida.jpg" alt="Imagem" />
+      <div class="content">
+      O vôlei (ou voleibol) é um esporte coletivo jogado por duas equipes em uma quadra dividida por uma rede, com o objetivo de fazer a bola tocar no chão adversário, usando saque, recepção, levantamento, ataque e bloqueio,
+        <span class="meta">Há 1 hora</span>
+      </div>
+    </article>
+
+  </main>
+
+  <script>
+    function mostrarCard(id) {
+      const cards = document.querySelectorAll('#cards-container .card');
+      cards.forEach(card => {
+        if (id === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.id === id) {
+            card.classList.remove('hidden');
+            setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        mostrarCard(target);
+      });
+    });
+  </script>
+
+</body>
+</html>
