@@ -1,100 +1,93 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
 body {
+    margin: 0;
         font-family: Arial, sans-serif;
-            margin: 0;
-                background-color: #f0f2f5;
-                }
+            background-color: #fafafa;
+            }
 
-                /* HEADER */
-                header {
-                    background-color: #4a90e2;
-                        color: white;
-                            text-align: center;
-                                padding: 20px;
-                                }
+            /* --- CABEÇALHO --- */
+            header {
+                background-color: #ff7043;
+                    color: white;
+                        text-align: center;
+                            padding: 20px;
+                            }
 
-                                /* NAV */
-                                nav {
-                                    background-color: #357ABD;
-                                        padding: 10px;
-                                            text-align: center;
-                                            }
+                            /* --- MENU NAV --- */
+                            nav {
+                                background-color: #ff5722;
+                                    padding: 10px;
+                                        text-align: center;
+                                        }
 
-                                            nav a {
-                                                color: white;
+                                        nav a {
+                                            color: white;
+                                                text-decoration: none;
                                                     margin: 0 10px;
-                                                        text-decoration: none;
-                                                            font-weight: bold;
+                                                        font-weight: bold;
+                                                        }
+
+                                                        nav a:hover {
+                                                            text-decoration: underline;
                                                             }
 
-                                                            nav a:hover {
-                                                                text-decoration: underline;
-                                                                }
+                                                            /* --- MAIN (CONTEÚDO PRINCIPAL) --- */
+                                                            main {
+                                                                display: flex;
+                                                                    padding: 20px;
+                                                                    }
 
-                                                                /* MAIN */
-                                                                main {
-                                                                    display: flex;
-                                                                        margin: 20px;
-                                                                        }
+                                                                    /* --- ARTICLE (RECEITA PRINCIPAL) --- */
+                                                                    article {
+                                                                        flex: 3;
+                                                                            background-color: white;
+                                                                                padding: 20px;
+                                                                                    margin-right: 20px;
+                                                                                        border-radius: 10px;
+                                                                                            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+                                                                                            }
 
-                                                                        /* ARTICLE */
-                                                                        article {
-                                                                            flex: 3;
-                                                                                background-color: white;
-                                                                                    padding: 20px;
-                                                                                        margin-right: 20px;
-                                                                                            border-radius: 10px;
-                                                                                                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                                                                                            section {
+                                                                                                margin-bottom: 20px;
                                                                                                 }
 
-                                                                                                section {
-                                                                                                    margin-bottom: 20px;
-                                                                                                    }
+                                                                                                /* IMAGENS */
+                                                                                                img {
+                                                                                                    width: 100%;
+                                                                                                        border-radius: 10px;
+                                                                                                        }
 
-                                                                                                    /* IMAGENS */
-                                                                                                    img {
-                                                                                                        width: 100%;
-                                                                                                            border-radius: 10px;
-                                                                                                            }
+                                                                                                        /* SPAN (DESTAQUES) */
+                                                                                                        span {
+                                                                                                            color: #e64a19;
+                                                                                                                font-weight: bold;
+                                                                                                                }
 
-                                                                                                            /* SPAN */
-                                                                                                            span {
-                                                                                                                color: #e67e22;
-                                                                                                                    font-weight: bold;
-                                                                                                                    }
-
-                                                                                                                    /* HORÁRIOS */
-                                                                                                                    .horarios {
-                                                                                                                        background-color: #dff0d8;
-                                                                                                                            padding: 10px;
-                                                                                                                                border-radius: 8px;
+                                                                                                                /* --- ASIDE (SUGESTÕES) --- */
+                                                                                                                aside {
+                                                                                                                    flex: 1;
+                                                                                                                        background-color: #ffe0d3;
+                                                                                                                            padding: 20px;
+                                                                                                                                border-radius: 10px;
                                                                                                                                 }
 
-                                                                                                                                /* ASIDE */
-                                                                                                                                aside {
-                                                                                                                                    flex: 1;
-                                                                                                                                        background-color: #e7f0fa;
-                                                                                                                                            padding: 20px;
-                                                                                                                                                border-radius: 10px;
-                                                                                                                                                }
+                                                                                                                                /* --- RODAPÉ --- */
+                                                                                                                                footer {
+                                                                                                                                    background-color: #ff7043;
+                                                                                                                                        text-align: center;
+                                                                                                                                            color: white;
+                                                                                                                                                padding: 15px;
+                                                                                                                                                    margin-top: 20px;
+                                                                                                                                                    }
 
-                                                                                                                                                /* FOOTER */
-                                                                                                                                                footer {
-                                                                                                                                                    background-color: #4a90e2;
-                                                                                                                                                        color: white;
-                                                                                                                                                            text-align: center;
-                                                                                                                                                                padding: 15px;
-                                                                                                                                                                    margin-top: 20px;
+                                                                                                                                                    /* --- RESPONSIVIDADE --- */
+                                                                                                                                                    @media (max-width: 768px) {
+                                                                                                                                                        main {
+                                                                                                                                                                flex-direction: column;
                                                                                                                                                                     }
 
-                                                                                                                                                                    /* RESPONSIVIDADE */
-                                                                                                                                                                    @media (max-width: 768px) {
-                                                                                                                                                                        main {
-                                                                                                                                                                                flex-direction: column;
-                                                                                                                                                                                    }
-
-                                                                                                                                                                                        article {
-                                                                                                                                                                                                margin-right: 0;
-                                                                                                                                                                                                        margin-bottom: 20px;
-                                                                                                                                                                                                            }
-                                                                                                                                                                                                            }
-}
+                                                                                                                                                                        article {
+                                                                                                                                                                                margin-right: 0;
+                                                                                                                                                                                        margin-bottom: 20px;
+                                                                                                                                                                                            }
+                                                                                                                                                                                            }
