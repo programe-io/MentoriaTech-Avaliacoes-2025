@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Social Feed com cards para posts visuais e descrições únicas." />
+  <meta name="author" content="Evillyn">
+  <meta name="keywords" content="Social Feed, Natureza, Imagens Incríveis">
+  <title>Social Feed</title>
+  <link href="./style.css" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet"></head>
+
+<body class="bg-gradient-to-b from-blue-900 to-blue-950 min-h-screen text-white">
+  <!-- HEADER -->
+  <header class="header py-4 flex items-center justify-between bg-blue-800 text-white px-6">
+    <div class="logo font-bold text-2xl">
+      <span class="text-yellow-300">LOGO</span>
+    </div>
+
+    <nav class="nav hidden md:flex gap-6" aria-label="Menu principal" role="navigation">
+      <a href="#" class="nav-link hover:underline"><span>Início</span></a>
+      <a href="#" class="nav-link hover:underline"><span>Amigos</span></a>
+      <a href="#" class="nav-link hover:underline"><span>Perfil</span></a>
+    </nav>
+
+    <!-- Menu Mobile -->
+    <button id="menu-btn" class="menu-btn block md:hidden text-2xl" aria-expanded="false" aria-controls="main-menu">
+      <span>☰</span>
+    </button>
+  </header>
+
+  <!-- FEED DE POSTS -->
+  <main class="container mx-auto px-4 py-8">
+    <!-- Card 1 -->
+    <article class="card bg-white rounded-xl shadow-lg overflow-hidden mb-6" aria-label="Post sobre Pôr do Sol">
+      <header class="flex items-center gap-4 p-4">
+        <img class="avatar w-12 h-12 rounded-full" src="https://img.freepik.com/vetores-gratis/vetor-de-design-de-gradiente-colorido-de-passaro_343694-2506.jpg?semt=ais_incoming&w=740&q=80" alt="Avatar do autor Pô do Sol">
+        <h2 class="username text-lg font-semibold text-gray-800"><span class="text-blue-800">Pô do Sol</span></h2>
+      </header>
+      <img class="post-img w-full" src="https://img.freepik.com/fotos-gratis/ao-por-do-sol-na-praia-tropical-e-no-mar-com-coqueiro_74190-1075.jpg?semt=ais_hybrid&w=740&q=80" alt="Descrição visual de um pôr do sol na praia, com coqueiros ao fundo.">
+      <p class="p-4 text-gray-700 text-sm">
+        O <span class="font-semibold">pôr do sol</span> é uma paisagem muito linda, além de ser um fenômeno da natureza muito agradável de se observar. <span class="italic">Muitas pessoas tiram fotos de recordação.</span>
+      </p>
+      <footer class="p-4 text-right text-gray-500 text-xs"><span>há 10 minutos</span></footer>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card bg-white rounded-xl shadow-lg overflow-hidden mb-6" aria-label="Post sobre a Praia">
+      <header class="flex items-center gap-4 p-4">
+        <img class="avatar w-12 h-12 rounded-full" src="https://e7.pngegg.com/pngimages/777/224/png-clipart-blue-and-pink-logo-european-fashion-home-logo-purple-blue-thumbnail.png" alt="Avatar do autor Praia">
+        <h2 class="username text-lg font-semibold text-gray-800"><span class="text-blue-800">Praia</span></h2>
+      </header>
+      <img class="post-img w-full" src="https://portalleodias.com/diversos/wp-content/uploads/2025/08/Praia-em-santa-catarina_1754186892875.jpg" alt="Foto de uma praia tranquila e deserta, com mar calmo.">
+      <p class="p-4 text-gray-700 text-sm">
+        A <span class="underline">praia</span> é um local de paz e lazer. Milhões de pessoas, <span class="text-blue-800">uma ou duas vezes por ano</span>, viajam para esses lugares para descansarem a mente e o corpo.
+      </p>
+      <footer class="p-4 text-right text-gray-500 text-xs"><span>há 10 minutos</span></footer>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card bg-white rounded-xl shadow-lg overflow-hidden mb-6" aria-label="Post sobre Pinguins">
+      <header class="flex items-center gap-4 p-4">
+        <img class="avatar w-12 h-12 rounded-full" src="https://img.pikbest.com/backgrounds/20250409/abstract-logo-design-with-fluid-and-dynamic-shapes-a-glossy-finish_11656412.jpg!w700wp" alt="Avatar do autor Pinguins">
+        <h2 class="username text-lg font-semibold text-gray-800"><span class="text-blue-800">Pinguim</span></h2>
+      </header>
+      <img class="post-img w-full" src="https://static.todamateria.com.br/upload/pi/ng/pinguimimperador-cke.jpg" alt="Imagem de pinguim imperador em ambiente gélido.">
+      <p class="p-4 text-gray-700 text-sm">
+        <span class="font-bold">Pinguins</span> são animais que vivem em locais mais frios, pois é seu habitat natural. <span>Esses animais</span> cativam muitas pessoas, que viajam até esses lugares para observá-los.
+      </p>
+      <footer class="p-4 text-right text-gray-500 text-xs"><span>há 10 minutos</span></footer>
+    </article>
+  </main>
+
+  <script>
+    // Toggle Menu Mobile
+    const btn = document.getElementById('menu-btn');
+    const nav = document.querySelector('.nav');
+    btn.addEventListener('click', () => {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !isExpanded);
+      nav.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
