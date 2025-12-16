@@ -1,0 +1,144 @@
+:root {
+  --bg: #f4f4f9;
+  --text: #222;
+  --muted: #555;
+  --primary: #006400; /* verde futebol */
+  --secondary: #ffd700; /* dourado */
+  --card: #fff;
+  --shadow: 0 4px 12px rgba(0,0,0,0.1);
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Header e navegação */
+header {
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 20px;
+}
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  gap: 15px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav a:hover {
+  color: var(--secondary);
+}
+
+/* Hero */
+#hero {
+  background: linear-gradient(to right, #006400, #228b22);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+#hero h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+#hero img {
+  margin-top: 20px;
+  max-width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Seções */
+section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+section h2 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--secondary);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Artigos */
+article {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+article h3 {
+  margin-top: 0;
+  color: var(--primary);
+}
+article img {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-top: 10px;
+}
+
+/* Aside */
+aside {
+  background: #e9f5e9;
+  border-left: 5px solid var(--secondary);
+  padding: 20px;
+  margin: 40px auto;
+  max-width: 800px;
+  border-radius: var(--radius);
+}
+aside h2 {
+  margin-top: 0;
+  color: var(--primary);
+}
+aside ul {
+  padding-left: 20px;
+}
+aside img {
+  margin-top: 15px;
+  max-width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+footer a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #hero h2 {
+    font-size: 24px;
+  }
+}
