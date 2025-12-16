@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Receitas Rápidas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #ff7043;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #ffab91;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #333;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        section {
+            flex: 3;
+        }
+
+        aside {
+            flex: 1;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        article {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        article img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        article div {
+            padding: 15px;
+        }
+
+        article h3 {
+            margin-bottom: 10px;
+        }
+
+        span {
+            display: inline-block;
+            background: #ff7043;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        article a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #ff7043;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+<body>
+
+<header>
+    <h1>Receitas Rápidas</h1>
+    <p>Prontas em poucos minutos</p>
+</header>
+
+<nav>
+    <a href="#">Início</a>
+    <a href="#">Receitas</a>
+    <a href="#">Contato</a>
+</nav>
+
+<main>
+
+    <section>
+        <div class="cards">
+
+            <article>
+                <img src="https://via.placeholder.com/300x200" alt="Sanduíche Natural">
+                <div>
+                    <h3>Sanduíche Natural</h3>
+                    <span>10 minutos</span>
+                    <a href="#">Ver receita</a>
+                </div>
+            </article>
+
+            <article>
+                <img src="https://via.placeholder.com/300x200" alt="Macarrão Rápido">
+                <div>
+                    <h3>Macarrão Rápido</h3>
+                    <span>15 minutos</span>
+                    <a href="#">Ver receita</a>
+                </div>
+            </article>
+
+            <article>
+                <img src="https://via.placeholder.com/300x200" alt="Omelete Simples">
+                <div>
+                    <h3>Omelete Simples</h3>
+                    <span>8 minutos</span>
+                    <a href="#">Ver receita</a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <aside>
+        <h2>Dica do Dia</h2>
+        <p>Use ingredientes simples para ganhar tempo e sabor.</p>
+    </aside>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 - Receitas Rápidas</p>
+</footer>
+
+<script src="script.js"></script></body>
+</html>
