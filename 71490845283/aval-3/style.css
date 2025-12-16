@@ -1,0 +1,245 @@
+/* Importação de fonte alegre */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+    /* Cores inspiradas no Bob Esponja e no Oceano */
+    --cor-principal: #ffd700; /* Amarelo Vibrante (Bob Esponja) */
+    --cor-secundaria: #00bcd4; /* Azul Turquesa (Água) */
+    --cor-destaque: #ff4500; /* Laranja/Vermelho (Gênero) */
+    --cor-fundo: #e0ffff; /* Ciano Claro (Céu/Areia) */
+    --cor-texto: #333;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--cor-principal);
+    color: black;
+    padding: 40px 20px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--cor-destaque);
+}
+
+header h1 {
+    font-family: 'Bangers', cursive; /* Fonte do Título */
+    font-size: 3.5em;
+    margin-bottom: 5px;
+    color: var(--cor-destaque);
+    text-shadow: 2px 2px white;
+}
+
+header p {
+    font-style: italic;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* --- Estilização do Menu de Navegação (NAV) --- */
+
+nav {
+    margin-top: 20px;
+    background-color: var(--cor-secundaria); 
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    justify-content: center; 
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white; 
+    text-decoration: none; 
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: var(--cor-destaque); 
+    color: white; 
+}
+
+/* --- Estilização do Conteúdo Principal (MAIN) --- */
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Aplica estilo a SECTION e ARTICLE para consistência */
+section, article {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-basis: 100%; 
+}
+
+section h2, article h2 {
+    color: var(--cor-secundaria);
+    border-bottom: 3px solid var(--cor-destaque);
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-family: 'Bangers', cursive;
+    font-size: 2.2em;
+}
+
+/* Estilizando a lista de sucesso */
+#sucesso ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sucesso li {
+    background-color: #f0fff0; /* Verde bem claro (algas) */
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-left: 5px solid var(--cor-destaque);
+    border-radius: 8px;
+}
+
+#sucesso li strong {
+    color: var(--cor-destaque);
+}
+
+/* Estilizando a seção de personagens */
+.lista-personagens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.lista-personagens span {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto);
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    border: 2px solid var(--cor-destaque);
+}
+
+.lista-personagens span:hover {
+    transform: scale(1.05);
+    background-color: #ff9900; 
+}
+
+/* --- Estilização do ASIDE (Curiosidade) --- */
+aside.curiosidade {
+    background-color: var(--cor-secundaria); 
+    color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border: 3px solid var(--cor-principal);
+    
+    flex-basis: 100%; 
+    order: -1; 
+}
+
+aside.curiosidade h3 {
+    color: var(--cor-principal);
+    margin-top: 0;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: 'Bangers', cursive;
+    text-shadow: 1px 1px var(--cor-destaque);
+}
+
+aside.curiosidade p {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+/* --- Estilização da Imagem --- */
+
+.img-destaque {
+    width: 100%; 
+    max-width: 300px; 
+    height: auto;
+    display: block; 
+    margin: 0 auto 20px; 
+    border-radius: 10px;
+    border: 5px solid var(--cor-destaque); 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--cor-secundaria);
+    color: white;
+    margin-top: 20px;
+    border-top: 5px solid var(--cor-principal);
+    font-size: 0.9em;
+}
+
+/* --- Responsividade (Media Queries) --- */
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+    section, article {
+        padding: 20px;
+    }
+    nav ul {
+        flex-direction: column; 
+    }
+    nav li {
+        margin: 5px 0;
+    }
+}
+
+@media (min-width: 768px) {
+    aside.curiosidade {
+        flex-basis: 30%; 
+        order: 0; 
+    }
+    
+    section, article {
+        flex-basis: 65%; 
+    }
+    
+    #sobre {
+        margin-top: 0;
+    }
+    
+    #sobre .img-destaque {
+        float: left; 
+        margin: 0 20px 10px 0; 
+        max-width: 200px; 
+    }
+    
+    #sobre::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
