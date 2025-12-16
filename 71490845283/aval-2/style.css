@@ -1,0 +1,122 @@
+/* Importação de fonte para dar um toque infantil */
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+:root {
+    /* Cores inspiradas na Galinha Pintadinha */
+    --cor-principal: #6a5acd; /* Azul-Roxo */
+    --cor-secundaria: #ffd700; /* Amarelo Ouro */
+    --cor-destaque: #ff6347; /* Vermelho Tomate */
+    --cor-fundo: #f0f8ff; /* Azul-Claro Suave */
+    --cor-texto: #333;
+}
+
+body {
+    font-family: 'Chewy', cursive, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--cor-destaque);
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: var(--cor-destaque);
+    border-bottom: 3px dashed var(--cor-secundaria);
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-size: 2em;
+}
+
+/* Estilizando a lista de sucesso */
+#sucesso ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sucesso li {
+    background-color: #fce4ec; /* Rosa claro */
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-left: 5px solid var(--cor-principal);
+    border-radius: 8px;
+}
+
+#sucesso li strong {
+    color: var(--cor-principal);
+}
+
+/* Estilizando a seção de músicas */
+.lista-musicas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.lista-musicas span {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.lista-musicas span:hover {
+    transform: scale(1.05);
+    background-color: #f7e793; /* Amarelo um pouco mais claro */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--cor-principal);
+    color: white;
+    margin-top: 20px;
+    border-top: 5px solid var(--cor-destaque);
+    font-size: 0.9em;
+}
+
+/* Responsividade básica */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+    
+    section {
+        padding: 20px;
+    }
+}
