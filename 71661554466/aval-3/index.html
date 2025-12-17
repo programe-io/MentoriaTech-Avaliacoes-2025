@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Modelo Mobile com Navegação</title>
+  <style>
+    /* Estilo para ocultar as seções por padrão */
+    .content-section {
+      display: none;
+    }
+    /* Estilo para mostrar a seção ativa */
+    .content-section.active {
+      display: flex; /* ou block, dependendo do layout interno */
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen p-4">
+
+  <div class="w-full max-w-sm bg-white shadow-2xl overflow-hidden border border-gray-200">
+    
+    <header class="bg-[#98D8E9] p-6">
+      <nav class="flex justify-end gap-4 text-white font-bold text-lg">
+        <a href="#" class="menu-item hover:underline" data-target="home">Home</a>
+        <span>|</span>
+        <a href="#" class="menu-item hover:underline" data-target="sobre">Sobre</a>
+        <span>|</span>
+        <a href="#" class="menu-item hover:underline" data-target="contato">Contato</a>
+      </nav>
+    </header>
+
+    <main class="flex flex-col items-center p-6">
+      
+      <section id="home" class="content-section active flex-col items-center">
+        <div class="my-8">
+          <img 
+            src="https://img.freepik.com/fotos-premium/personagem-3d-de-um-menino-sentado-no-chao-e-lendo-um-livro_1029473-100346.jpg" 
+            alt="Menino lendo - Home" 
+            class="w-64 h-auto"
+          >
+        </div>
+        <hr class="w-full border-t border-black mb-6">
+        <article class="text-justify text-gray-800 leading-relaxed">
+          <h2 class="text-xl font-bold mb-4">Bem-vindo à Página Inicial!</h2>
+          <p>
+            Este é o conteúdo da sua página principal. Aqui você pode apresentar informações de destaque, novidades ou qualquer conteúdo que deseje que seus usuários vejam ao acessar o site.
+          </p>
+          <p class="mt-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </article>
+      </section>
+
+      <section id="sobre" class="content-section flex-col items-center">
+        <div class="my-8">
+          <img 
+            src="https://img.freepik.com/vetores-premium/imagem-de-perfil-de-desenho-animado-de-personagem-masculino-de-negocios_1029473-20700.jpg" 
+            alt="Pessoa em reunião - Sobre" 
+            class="w-64 h-auto"
+          >
+        </div>
+        <hr class="w-full border-t border-black mb-6">
+        <article class="text-justify text-gray-800 leading-relaxed">
+          <h2 class="text-xl font-bold mb-4">Sobre Nós</h2>
+          <p>
+            Aqui você encontrará informações sobre a nossa história, nossa missão, visão e valores. Somos uma equipe dedicada a oferecer as melhores soluções para você.
+          </p>
+          <p class="mt-4">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </article>
+      </section>
+
+      <section id="contato" class="content-section flex-col items-center">
+        <div class="my-8">
+          <img 
+            src="https://img.freepik.com/vetores-premium/personagem-de-desenho-animado-de-suporte-ao-cliente_1029473-20698.jpg" 
+            alt="Pessoa com fone de ouvido - Contato" 
+            class="w-64 h-auto"
+          >
+        </div>
+        <hr class="w-full border-t border-black mb-6">
+        <article class="text-justify text-gray-800 leading-relaxed">
+          <h2 class="text-xl font-bold mb-4">Entre em Contato</h2>
+          <p>
+            Temos o prazer em responder suas dúvidas e sugestões. Preencha o formulário abaixo ou utilize nossos canais de atendimento para falar conosco.
+          </p>
+          <ul class="mt-4 list-disc list-inside">
+            <li>Email: contato@exemplo.com</li>
+            <li>Telefone: (XX) XXXX-XXXX</li>
+            <li>Endereço: Rua Exemplo, 123 - Cidade/Estado</li>
+          </ul>
+        </article>
+      </section>
+
+    </main>
+
+    <footer class="bg-[#98D8E9] h-12 w-full mt-4"></footer>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuItems = document.querySelectorAll('.menu-item');
+      const contentSections = document.querySelectorAll('.content-section');
+
+      menuItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault(); // Impede o comportamento padrão do link
+
+          const targetId = item.dataset.target;
+
+          // Remove a classe 'active' de todas as seções
+          contentSections.forEach(section => {
+            section.classList.remove('active');
+          });
+
+          // Adiciona a classe 'active' à seção clicada
+          document.getElementById(targetId).classList.add('active');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
