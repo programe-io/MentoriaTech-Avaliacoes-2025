@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Receitas Rápidas & Estudos HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #ff7043;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        section {
+            flex: 3;
+        }
+
+        aside {
+            flex: 1;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #ff7043;
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        article {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        article img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        article a {
+            display: inline-block;
+            margin-top: 10px;
+            color: white;
+            background: #ff7043;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        /* RESPIRAÇÃO */
+        .respiracao {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .circulo {
+            width: 120px;
+            height: 120px;
+            background: #81c784;
+            border-radius: 50%;
+            margin: 20px auto;
+            animation: respirar 8s infinite;
+        }
+
+        @keyframes respirar {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.4);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        footer span {
+            color: #ff7043;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="style.css" rel="stylesheet"></head>
+
+<body>
+
+<header>
+    <h1>🍳 Receitas Rápidas & Estudos HTML</h1>
+    <nav>
+        <a href="#receitas">Receitas</a>
+        <a href="#estudos">Estudos</a>
+        <a href="#saude">Saúde Mental</a>
+    </nav>
+</header>
+
+<main>
+
+    <section id="receitas">
+        <h2>Receitas Rápidas</h2>
+
+        <div class="cards">
+            <article>
+                <img src="https://via.placeholder.com/300x180" alt="Sanduíche">
+                <h3>Sanduíche Natural</h3>
+                <p>Prático e saudável.</p>
+                <a href="#">Ver receita</a>
+            </article>
+
+            <article>
+                <img src="https://via.placeholder.com/300x180" alt="Omelete">
+                <h3>Omelete Rápida</h3>
+                <p>Pronto em 5 minutos.</p>
+                <a href="#">Ver receita</a>
+            </article>
+
+            <article>
+                <img src="https://via.placeholder.com/300x180" alt="Panqueca">
+                <h3>Panqueca</h3>
+                <p>Simples e deliciosa.</p>
+                <a href="#">Ver receita</a>
+            </article>
+        </div>
+    </section>
+
+    <aside id="estudos">
+        <h2>Plano de Estudos HTML</h2>
+
+        <div>
+            <h4>📘 Métodos</h4>
+            <span>Prática diária</span>
+            <p>Refazer códigos e testar.</p>
+        </div>
+
+        <div>
+            <h4>⏰ Horários</h4>
+            <span>30–40 min/dia</span>
+            <p>Melhor retenção.</p>
+        </div>
+
+        <div>
+            <h4>🔗 Recursos</h4>
+            <p>W3Schools, MDN Web Docs</p>
+        </div>
+
+        <div>
+            <h4>💡 Dicas</h4>
+            <p>Aprenda uma tag por dia.</p>
+        </div>
+    </aside>
+
+</main>
+
+<section id="saude" class="respiracao">
+    <h2>Saúde Mental</h2>
+    <p>Respire fundo acompanhando o círculo:</p>
+
+    <div class="circulo"></div>
+
+    <p>
+        Inspire quando crescer<br>
+        Expire quando diminuir
+    </p>
+</section>
+
+<footer>
+    <p>Desenvolvido por <span>Estudos HTML</span> © 2025</p>
+</footer>
+
+<script src="script.js"></script></body>
+</html>
