@@ -1,0 +1,120 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #ff7043;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navegação */
+nav {
+    background-color: #ffab91;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Conteúdo principal */
+main {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Área das receitas */
+section {
+    flex: 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Card da receita */
+article {
+    background-color: white;
+    width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Imagem da receita */
+article img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Conteúdo do card */
+article div {
+    padding: 15px;
+}
+
+/* Destaque de tempo */
+span {
+    color: #ff7043;
+    font-weight: bold;
+}
+
+/* Links */
+a {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Barra lateral */
+aside {
+    flex: 1;
+    background-color: #fff3e0;
+    padding: 15px;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+/* Rodapé */
+footer {
+    background-color: #ff7043;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    section {
+        justify-content: center;
+    }
+
+    article {
+        width: 90%;
+    }
+}
